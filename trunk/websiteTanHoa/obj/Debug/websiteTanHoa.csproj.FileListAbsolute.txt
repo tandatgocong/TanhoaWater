@@ -1,5 +1,0 @@
-E:\LEDAT\Project\websiteTanHoa\websiteTanHoa\bin\websiteTanHoa.dll
-E:\LEDAT\Project\websiteTanHoa\websiteTanHoa\bin\websiteTanHoa.pdb
-E:\LEDAT\Project\websiteTanHoa\websiteTanHoa\obj\Debug\ResolveAssemblyReference.cache
-E:\LEDAT\Project\websiteTanHoa\websiteTanHoa\obj\Debug\websiteTanHoa.dll
-E:\LEDAT\Project\websiteTanHoa\websiteTanHoa\obj\Debug\websiteTanHoa.pdb
