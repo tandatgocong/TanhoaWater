@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="TANHOA_WATER" Class="TanHoaDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=SERVER_HP380\SQLEXPRESS;Initial Catalog=TANHOA_WATER;Persist Security Info=True;User ID=tocntt" SettingsObjectName="TanHoaWater.Properties.Settings" SettingsPropertyName="TANHOA_WATERConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.LICHDOCSO" Member="LICHDOCSOs">
+    <Type Name="LICHDOCSO">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MAQUAN" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MAPHUONG" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="KY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NAM" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DOT" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NGAY" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="NOTES" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PHUONG" Member="PHUONGs">
+    <Type Name="PHUONG">
+      <Column Name="MAQUAN" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MAPHUONG" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TENPHUONG" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="QUAN_PHUONG" Member="QUAN" ThisKey="MAQUAN" Type="QUAN" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.QUAN" Member="QUANs">
+    <Type Name="QUAN">
+      <Column Name="MAQUAN" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TENQUAN" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="QUAN_PHUONG" Member="PHUONGs" OtherKey="MAQUAN" Type="PHUONG" />
+    </Type>
+  </Table>
+</Database>
