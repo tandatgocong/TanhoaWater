@@ -1,0 +1,14 @@
+E:\LEDAT\Project\TanHoaWater\TanHoaWater\bin\Debug\TanHoaWater.exe
+E:\LEDAT\Project\TanHoaWater\TanHoaWater\bin\Debug\TanHoaWater.pdb
+E:\LEDAT\Project\TanHoaWater\TanHoaWater\obj\Debug\ResolveAssemblyReference.cache
+E:\LEDAT\Project\TanHoaWater\TanHoaWater\obj\Debug\TanHoaWater.frm_Main.resources
+E:\LEDAT\Project\TanHoaWater\TanHoaWater\obj\Debug\TanHoaWater.Properties.Resources.resources
+E:\LEDAT\Project\TanHoaWater\TanHoaWater\obj\Debug\TanHoaWater.SplashScreen.resources
+E:\LEDAT\Project\TanHoaWater\TanHoaWater\obj\Debug\TanHoaWater.csproj.GenerateResource.Cache
+E:\LEDAT\Project\TanHoaWater\TanHoaWater\obj\Debug\TanHoaWater.exe
+E:\LEDAT\Project\TanHoaWater\TanHoaWater\obj\Debug\TanHoaWater.pdb
+E:\LEDAT\Project\TanHoaWater\TanHoaWater\obj\Debug\TanHoaWater.View.QLDHN.frm_QLDHN.resources
+E:\LEDAT\Project\TanHoaWater\TanHoaWater\bin\Debug\DevComponents.DotNetBar2.dll
+E:\LEDAT\Project\TanHoaWater\TanHoaWater\obj\Debug\TanHoaWater.View.QLDHN.controlAddLich.resources
+E:\LEDAT\Project\TanHoaWater\TanHoaWater\obj\Debug\TanHoaWater.View.QLDHN.controlViewLich.resources
+E:\LEDAT\Project\TanHoaWater\TanHoaWater\bin\Debug\TanHoaWater.exe.config
