@@ -1,0 +1,318 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="demoMenu.master.cs" Inherits="View_layout_MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>       
+    <link href="/portal/StyleSheet/Menu.css" rel="stylesheet" type="text/css" />
+    <link href="/portal/StyleSheet/StyleSheet.css" rel="stylesheet" type="text/css" />
+    <script src="/portal/JavaScript/transmenu.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="Home">
+     <div class="Header">
+       <img src="/portal/Image/logo.png" style=" margin-top:4px;" />
+     </div>
+     <div class="Menu">
+ 	 <div>
+ 		<ul class="menuhead">
+ 			<li id="mnHome" class="current"><a class="current_link" href="#"><span>TRANG CHỦ</span></a></li>
+ 			<li id="mnGioithieu" class="top"><a href="#" class="top_link"><span>GIỚI THIỆU</span>
+    		<!--[if gte IE 7]><!--></a><!--<![endif]-->
+    		<!--[if lte IE 6]><table><tr><td><![endif]-->    			
+                <ul class="sub_gioithieu">
+                	<li><a href="#" class="">CÔNG TY </a></li>
+                    <li><a href="#" class="">LỊCH SỬ HÌNH THÀNH</a></li>		         
+		            <li class="last"><a href="#" class="">CƠ CẤU TỔ CHỨC</a></li>
+		        </ul>
+    		<!--[if lte IE 6]></td></tr></table></a><![endif]-->
+  			</li>
+  			<li id="mndichvu" class="top"><a href="#" class="top_link"><span>DỊCH VỤ KHÁCH HÀNG</span>
+    		<!--[if gte IE 7]><!--></a><!--<![endif]-->
+    		<!--[if lte IE 6]><table><tr><td><![endif]-->
+    			<ul class="sub_dichvu">
+                     <li><a href="#">DỊCH VỤ KHÁCH HÀNG</a></li>
+           			 <li><a href="#" class="">HƯỚNG DẪN NGHIỆP VỤ</a></li>
+            		 <li><a href="#" class="">TRUY XUẤT THÔNG TIN KHÁCH HÀNG</a></li>
+           			 <li><a href="#" class="">LỊCH ĐỌC SỐ</a></li>
+                     <li class="last"><a href="#" class="">HỎI ĐÁP</a></li>
+    			</ul>
+    		<!--[if lte IE 6]></td></tr></table></a><![endif]-->
+  			</li>
+  			<li id="mnTintuc" class="top"><a href="#" class="top_link"><span>TIN TỨC</span>
+    		<!--[if gte IE 7]><!--></a><!--<![endif]-->
+    		<!--[if lte IE 6]><table><tr><td><![endif]-->
+    			<ul class="sub_tintuc">
+    				<li><a href="#">TIN TỔNG QUÁT</a></li>
+					<li><a href="#">TIN NỘI BỘ</a></li>
+				    <li class="last"><a href="#">TIN CÔNG ĐOÀN</a></li>		           
+    			</ul>
+    		<!--[if lte IE 6]></td></tr></table></a><![endif]-->
+  			</li>
+  			<li id="mnTuyendung" class="top"><a href="#" class="top_link"><span>TUYỂN DỤNG</span>            
+            </li>
+            <li id="mnLienHe" class="top"><a href="#" class="top_link"><span>LIÊN HỆ</span>
+            <!--[if gte IE 7]><!--></a><!--<![endif]-->
+            <!--[if lte IE 6]><table><tr><td><![endif]-->
+            <!--[if lte IE 6]></td></tr></table></a><![endif]-->
+            </li>         
+ 		</ul>
+ 	</div>
+    <div class="date_time">
+             <span id="clock"></span>        	 
+    </div>
+</div>
+ <!--		END MENU	-->
+<!-- Content -->
+<div class="Content">
+       <div id="wrap" class="menu" align="left">
+       <table id="menu" class="menu" cellSpacing="0" cellPadding="0">
+           <tr> 
+                <td> 
+                  <a id="menu5" href="javascript:void(0);" >Menu 1</a>
+                </td> 
+           </tr> 
+           <tr> 
+                <td> 
+                  <a id="menu4" href="javascript:void(0);" >Menu 2</a>
+                </td> 
+            </tr> 
+            <tr> 
+                <td> 
+                  <a id="menu6" href="javascript:void(0);" >Menu 3</a>
+                </td> 
+            </tr> 
+            <tr> 
+             <td> 
+                <a id="menu46" href="javascript:void(0);" >Menu 4</a>
+             </td> 
+            </tr> 
+            <tr> 
+                <td> 
+                    <a id="menu7" href="javascript:void(0);" >Menu 5</a>
+                </td> 
+             </tr> 
+             <tr> 
+                <td> 
+                    <a id="menu8" href="javascript:void(0);" >Menu 6</a>
+                </td> 
+              </tr> 
+              <tr> 
+                <td class="last"> 
+                  <a id="menu9" href="javascript:void(0);" >Menu 7</a>
+                </td> 
+              </tr> 
+             
+        </table>
+     </div>
+  
+   <!--<div id="subwrap">  -->
+   <script type="text/javascript">
+            <!--
+                if (TransMenu.isSupported()) {
+                    var ms = new TransMenuSet(TransMenu.direction.right, 0, 0, TransMenu.reference.topRight);
+                    var menu5 = ms.addMenu(document.getElementById("menu5"));
+                    menu5.addItem("Menu 5.1", "#", "0");
+                    menu5.addItem("Menu 5.2", "#", "0");
+                    menu5.addItem("Menu 5.3", "#", "0");
+                    menu5.addItem("Menu 5.4", "#", "0");
+                    menu5.addItem("Menu 5.5", "#", "0");
+                    menu5.addItem("Menu 5.6", "#", "0");
+                    menu5.addItem("Menu 5.7", "#", "0");
+                    var menu4 = ms.addMenu(document.getElementById("menu4"));
+                    menu4.addItem("Menu 4.1", "#", "0");
+                    menu4.addItem("Menu 4.2", "#", "0");
+                    menu4.addItem("Menu 4.3", "#", "0");
+                    var menu6 = ms.addMenu(document.getElementById("menu6"));
+                    menu6.addItem("Menu 6.1", "#", "0");
+                    menu6.addItem("Menu 6.1", "#", "0");
+                    menu6.addItem("Menu 6.1", "#", "0");
+                    menu6.addItem("Menu 6.1", "#", "0");
+                    menu6.addItem("Menu 6.1", "#", "0");
+                    var menu46 = ms.addMenu(document.getElementById("menu46"));
+                    menu46.addItem("Menu 7.1", "#", "0");
+                    menu46.addItem("Menu 7.2", "#", "1");
+                    menu46.addItem("Menu 7.3", "#", "0");
+                    menu46.addItem("Menu 7.4", "#", "0");
+                    menu46.addItem("Menu 7.5", "#", "0");
+                    var menu7 = ms.addMenu(document.getElementById("menu7"));
+                    menu7.addItem("Menu 8.1", "javascript:void(0);", "0");
+                    /* Level 2 */
+                    var menu47 = menu7.addMenu(menu7.items[0], 0, 0);
+                    menu47.addItem("Menu 8.1.1", "#", "0");
+                    menu47.addItem("Menu 8.1.2", "#", "0");
+                    menu47.addItem("Menu 8.1.3", "#", "0");
+                    menu47.addItem("Menu 8.1.4", "#", "0");
+                    /* -- */
+                    menu7.addItem("Menu 9.1", "javascript:void(0);", "0");
+                    var menu51 = menu7.addMenu(menu7.items[1], 0, 0);
+                    menu51.addItem("Menu 9.1.1", "#", "0");
+                    menu51.addItem("Menu 9.1.2", "#", "0");
+                    /* 
+                    var menu169 = menu7.addMenu(menu7.items[10], 0, 0);
+                    menu169.addItem("Tra điểm phân loại AV đầu vào 2010", "/index.php/to-chuc/phong-dao-tao/tra-diem-phan-loai-av-dau-vao-2010.html", "0");
+                    menu169.addItem("KQ TNCĐLT K4 - ngành TP & TS", "/index.php/to-chuc/phong-dao-tao/kq-tncdlt-k4-nganh-tp-a-ts.html", "0");
+                    menu169.addItem("Tra điểm thi phân loại AV đầu vào ngày 31/10/2010", "/index.php/to-chuc/phong-dao-tao/tra-diem-thi-phan-loai-av-dau-vao-ngay-31102010.html", "0");
+                    menu7.addItem("Phòng Quản lý Khoa học - ĐN và Hợp tác Quốc tế", "/index.php/to-chuc/phong-quan-ly-khoa-hoc-dn-va-hop-tac-quoc-te.html", "0");
+                    menu7.addItem("Phòng Công tác Chính trị", "/index.php/to-chuc/phong-cong-tac-chinh-tri.html", "0");
+                    var menu8 = ms.addMenu(document.getElementById("menu8"));
+                    menu8.addItem("Thông tin đào tạo", "http://daotao.cntp.edu.vn", "1");
+                    menu8.addItem("Đăng ký môn học", "http://dt.cntp.edu.vn", "1");
+                    var menu9 = ms.addMenu(document.getElementById("menu9"));
+                    menu9.addItem("Các điều kiện đảm bảo chất lượng giáo dục", "/index.php/cong-khai-giao-duc/cac-dieu-kien-dam-bao-chat-luong-giao-duc.html", "0");
+                    menu9.addItem("Chương trình đào tạo", "/index.php/cong-khai-giao-duc/chuong-trinh-dao-tao.html", "0");
+                    menu9.addItem("Công khai thu chi tài chính", "/index.php/cong-khai-giao-duc/cong-khai-thu-chi-tai-chinh.html", "0");
+                    var menu79 = ms.addMenu(document.getElementById("menu79"));
+                    menu79.addItem("Quyết định thành lập mạng lưới", "", "0");
+                    var menu198 = menu79.addMenu(menu79.items[0], 0, 0);
+                    menu198.addItem("Quyết định thành lập ban ISO", "/index.php/iso-90012008/quyet-dinh-thanh-lap-mang-luoi/quyet-dinh-thanh-lap-ban-iso.html", "0");
+                    menu198.addItem("Quyết định thành lập mạng lưới kiểm soát", "/index.php/iso-90012008/quyet-dinh-thanh-lap-mang-luoi/quyet-dinh-thanh-lap-mang-luoi-kiem-soat.html", "0");
+                    menu79.addItem("Sứ mạng", "/index.php/iso-90012008/su-mang.html", "0");
+                    menu79.addItem("Mục tiêu chất lượng", "/index.php/iso-90012008/muc-tieu-chat-luong.html", "0");
+                    menu79.addItem("Chứng nhận NQA", "/index.php/iso-90012008/chung-nhan-nqa.html", "0");
+                    menu79.addItem("Cam kết của lãnh đạo", "/index.php/iso-90012008/cam-ket-cua-lanh-dao.html", "0");
+                    menu79.addItem("Các đơn vị thực hiện", "", "0");
+                    var menu205 = menu79.addMenu(menu79.items[5], 0, 0);
+                    menu205.addItem("Ban giám hiệu - Ban ISO", "", "0");
+                    var menu210 = menu205.addMenu(menu205.items[0], 0, 0);
+                    menu210.addItem("Văn bản - Biểu mẫu", "/index.php/iso-90012008/cac-don-vi-thuc-hien/ban-giam-hieu-ban-iso/van-ban-bieu-mau.html", "0");
+                    menu205.addItem("Phòng đào tạo", "", "0");
+                    var menu211 = menu205.addMenu(menu205.items[1], 0, 0);
+                    menu211.addItem("Văn bản - Biểu mẫu", "/index.php/iso-90012008/cac-don-vi-thuc-hien/phong-dao-tao/van-ban-bieu-mau.html", "0");
+                    menu205.addItem("Phòng khảo thí & đảm bảo chất lượng", "", "0");
+                    var menu212 = menu205.addMenu(menu205.items[2], 0, 0);
+                    menu212.addItem("Văn bản - Biểu mẫu", "/index.php/iso-90012008/cac-don-vi-thuc-hien/phong-khao-thi-a-dam-bao-chat-luong/van-ban-bieu-mau.html", "0");
+                    menu205.addItem("Phòng quản lý khoa học & hợp tác quốc tế", "", "0");
+                    var menu213 = menu205.addMenu(menu205.items[3], 0, 0);
+                    menu213.addItem("Văn bản - Biểu mẫu", "", "0");
+                    var menu214 = menu213.addMenu(menu213.items[0], 0, 0);
+                    menu214.addItem("Cấp Bộ", "/index.php/iso-90012008/cac-don-vi-thuc-hien/phong-quan-ly-khoa-hoc-a-hop-tac-quoc-te/van-ban-bieu-mau/cap-bo.html", "0");
+                    menu214.addItem("Cấp Trường", "/index.php/iso-90012008/cac-don-vi-thuc-hien/phong-quan-ly-khoa-hoc-a-hop-tac-quoc-te/van-ban-bieu-mau/cap-truong.html", "0");
+                    menu205.addItem("Phòng Kế Hoạch Tài Chính", "", "0");
+                    var menu223 = menu205.addMenu(menu205.items[4], 0, 0);
+                    menu223.addItem("Văn bản - Biểu mẫu", "/index.php/iso-90012008/cac-don-vi-thuc-hien/phong-ke-hoach-tai-chinh/van-ban-bieu-mau.html", "0");
+                    menu205.addItem("Phòng Thanh Tra Giáo Dục", "", "0");
+                    menu205.addItem("Phòng Công tác HSSV", "", "0");
+                    menu205.addItem("Phòng ĐTXD&SC", "", "0");
+                    var menu224 = menu205.addMenu(menu205.items[7], 0, 0);
+                    menu224.addItem("Văn bản - Biểu mẫu", "/index.php/iso-90012008/cac-don-vi-thuc-hien/phong-dtxdasc/van-ban-bieu-mau.html", "0");
+                    menu205.addItem("Phòng QLKH-ĐN&HTQT", "", "0");
+                    menu205.addItem("Phòng Tổ Chức Hành Chính", "", "0");*/
+                    function init() {
+                        if (TransMenu.isSupported()) {
+                            TransMenu.initialize();
+                            menu5.onactivate = function () { document.getElementById("menu5").className = "hover"; };
+                            menu5.ondeactivate = function () { document.getElementById("menu5").className = ""; };
+                            menu4.onactivate = function () { document.getElementById("menu4").className = "hover"; };
+                            menu4.ondeactivate = function () { document.getElementById("menu4").className = ""; };
+                            menu6.onactivate = function () { document.getElementById("menu6").className = "hover"; };
+                            menu6.ondeactivate = function () { document.getElementById("menu6").className = ""; };
+                            menu46.onactivate = function () { document.getElementById("menu46").className = "hover"; };
+                            menu46.ondeactivate = function () { document.getElementById("menu46").className = ""; };
+                            menu7.onactivate = function () { document.getElementById("menu7").className = "hover"; };
+                            menu7.ondeactivate = function () { document.getElementById("menu7").className = ""; };
+                            menu8.onactivate = function () { document.getElementById("menu8").className = "hover"; };
+                            menu8.ondeactivate = function () { document.getElementById("menu8").className = ""; };
+                            menu9.onactivate = function () { document.getElementById("menu9").className = "hover"; };
+                            menu9.ondeactivate = function () { document.getElementById("menu9").className = ""; };
+                            document.getElementById("menu81").onmouseover = function () {
+                                ms.hideCurrent();
+                                this.className = "hover";
+                            }
+                            document.getElementById("menu81").onmouseout = function () { this.className = ""; }
+                            document.getElementById("menu176").onmouseover = function () {
+                                ms.hideCurrent();
+                                this.className = "hover";
+                            }
+                            document.getElementById("menu176").onmouseout = function () { this.className = ""; }
+                            menu79.onactivate = function () { document.getElementById("menu79").className = "hover"; };
+                            menu79.ondeactivate = function () { document.getElementById("menu79").className = ""; };
+                        }
+                    }
+                    TransMenu.dingbatSize = 0;
+                    TransMenu.spacerGif = "";
+                    TransMenu.dingbatOn = "";
+                    TransMenu.dingbatOff = "";
+                    TransMenu.sub_indicator = false;
+                    TransMenu.menuPadding = 0;
+                    TransMenu.itemPadding = 0;
+                    TransMenu.shadowSize = 2;
+                    TransMenu.shadowOffset = 3;
+                    TransMenu.shadowColor = "#888";
+                    TransMenu.backgroundColor = "#4180b5";
+                    TransMenu.hideDelay = 600;
+                    TransMenu.slideTime = 300;
+                    TransMenu.selecthack = 0;
+                    TransMenu.autoposition = 0;
+                    TransMenu.renderAll();
+                    if (typeof window.addEventListener != "undefined")
+                        window.addEventListener("load", init, false);
+                    else if (typeof window.attachEvent != "undefined") {
+                        window.attachEvent("onload", init);
+                    } else {
+                        if (window.onload != null) {
+                            var oldOnload = window.onload;
+                            window.onload = function (e) {
+                                oldOnload(e);
+                                init();
+                            }
+                        } else
+                            window.onload = init();
+                    }
+                }
+            -->
+            </script>
+ <!--  </div>   -->
+</div>
+<!-- End Content -->
+  <!--		START FOOTER	-->
+<div class="Foot clear">
+    <div class="copyright">
+      © Copyright 2011 CÔNG TY TNHH MTV Cấp nước Tân Hoà<br />
+        Địa chỉ : 95 Phạm Hữu Chí Phường 12 Quận 5<br />
+        Số điện thoại : (08)39555840 – (08)38558563.<br />
+        Fax : 39557977 
+     </div>
+    <div class="linkfoot">
+    	 <ul>
+       		<li><a href="#">Trang Chủ</a></li>
+        	<li><a href="#">Liên Hệ</a>  </li>
+        	<li class="last"><a href="#">Sơ Đồ</a></li>    
+        </ul>
+    </div>
+</div>
+  <!--		END FOOTER	-->   
+     
+</div>
+
+<script language="javascript">
+    function HamThoiGian() {
+        var ThoiGian = new Date();
+        var Gio = ThoiGian.getHours(); 
+        var Phut = ThoiGian.getMinutes(); 
+        var Giay = ThoiGian.getSeconds();
+        if (Gio < 10) {
+            Gio = "0" + Gio;
+        }
+        if (Phut < 10) {
+            Phut = "0" + Phut;
+        }
+        if (Giay < 10) {
+            Giay = "0" + Giay;
+        }
+        var ngay = ThoiGian.getDay();
+        var thang = ThoiGian.getMonth() + 1;
+        var nam = ThoiGian.getFullYear();
+        if (ngay < 10)
+            ngay = "0" + ngay;
+        if (thang < 10)
+            thang = "0" + thang;      
+        document.getElementById("clock").innerHTML = ngay  + "/" + thang + "/" + nam + "  " + Gio + ":" + Phut + ":" + Giay;
+    }
+    setInterval("HamThoiGian()", 1000); // S? d?ng setInterval d? g?i l?p di l?p l?i hàm HamThoiGian sau 1 giây.
+</script>
+</body>
+</html>
