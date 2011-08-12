@@ -87,5 +87,24 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
             this.createDate.ValueObject = null;
             this.loadGrid();
         }
+        int sokh = 0;
+        public void loadDetail(string madot) {
+
+            this.detail.DataSource = DAL.DONKHACHHANG.getListbyDot(madot);
+            sokh = DAL.DONKHACHHANG.getListbyDot(madot).Rows.Count;
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                string _madot = dataGridView1.Rows[e.RowIndex].Cells[0].Value != null ? dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString() : null;
+                loadDetail(_madot);
+                this.lbSoKHNhanDon.Text = "Có " + sokh + " khách hàng đợt nhận đơn " + _madot;
+            }
+            catch (Exception){
+             }
+            
+        }
     }
 }
