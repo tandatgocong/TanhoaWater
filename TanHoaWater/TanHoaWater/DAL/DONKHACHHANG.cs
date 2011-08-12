@@ -10,13 +10,14 @@ namespace TanHoaWater.DAL
 {
     public class DONKHACHHANG
     {
-        public DataTable  getListbyDot(string dot) {
+        public static DataTable  getListbyDot(string dot) {
             TanHoaDataContext db = new TanHoaDataContext();
             db.Connection.Open();
-            string sql = " SELECT SOHOSO , NGAYLAPDON, TENLOAI,";           
-            sql += " FROM DOT_NHAN_DON dot, LOAI_HOSO loai";
-            sql += " WHERE loai.MALOAI = dot.LOAIDON";
-            sql += " ORDER BY NGAYLAPDON DESC ";
+            string sql = " SELECT SOHOSO,HOTEN, (SONHA +' '+ DUONG +', P.'+p.TENPHUONG+', Q.'+ q.TENQUAN ) as 'DIACHI',NGAYNHAN, lkh.TENLOAI as 'LOAIDON' ";
+            sql += " FROM DON_KHACHHANG kh,QUAN q,PHUONG p, LOAI_KHACHHANG lkh ";
+            sql += " WHERE  kh.QUAN = q.MAQUAN AND q.MAQUAN=p.MAQUAN AND kh.PHUONG=p.MAPHUONG AND lkh.MALOAI=kh.LOAIKH";
+            sql += " AND MADOT='" + dot + "'";
+            sql += " ORDER BY NGAYNHAN DESC ";
             SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             DataTable table = new DataTable();
             adapter.Fill(table);
