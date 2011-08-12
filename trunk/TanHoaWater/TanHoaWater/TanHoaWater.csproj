@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -12,6 +12,26 @@
     <AssemblyName>TanHoaWater</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -58,7 +78,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class\AddValueCombox.cs" />
+    <Compile Include="DAL\DONKHACHHANG.cs" />
+    <Compile Include="DAL\DOTNHANDON.cs" />
+    <Compile Include="DAL\LOAIHOSO.cs" />
+    <Compile Include="DAL\Role.cs" />
+    <Compile Include="DAL\Users.cs" />
+    <Compile Include="Utilities\AddValueCombox.cs" />
+    <Compile Include="Utilities\LogIn.cs" />
     <Compile Include="Database\TanHoa.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -72,6 +98,24 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\Users\HSKHACHHANG\uct_DOTNHANDON.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Users\HSKHACHHANG\uct_DOTNHANDON.Designer.cs">
+      <DependentUpon>uct_DOTNHANDON.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Users\Uses_Main.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Users\Uses_Main.Designer.cs">
+      <DependentUpon>Uses_Main.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="View\Users\HSKHACHHANG\uct_DOTNHANDON.resx">
+      <DependentUpon>uct_DOTNHANDON.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\Uses_Main.resx">
+      <DependentUpon>Uses_Main.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Database\TanHoa.dbml.layout">
       <DependentUpon>TanHoa.dbml</DependentUpon>
     </None>
@@ -88,6 +132,13 @@
       <DependentUpon>SplashScreen.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Administrators\Admin_Main.resx">
+      <DependentUpon>Admin_Main.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Administrators\uct_Users.resx">
+      <DependentUpon>uct_Users.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\QLDHN\controlAddLich.resx">
       <DependentUpon>controlAddLich.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -98,6 +149,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\QLDHN\controlViewLich.resx">
       <DependentUpon>controlViewLich.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Main\frm_Login.resx">
+      <DependentUpon>frm_Login.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
@@ -120,6 +175,18 @@
     <Compile Include="SplashScreen.designer.cs">
       <DependentUpon>SplashScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Administrators\Admin_Main.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Administrators\Admin_Main.Designer.cs">
+      <DependentUpon>Admin_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Administrators\uct_Users.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Administrators\uct_Users.Designer.cs">
+      <DependentUpon>uct_Users.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\QLDHN\controlAddLich.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -137,6 +204,12 @@
     </Compile>
     <Compile Include="View\QLDHN\controlViewLich.Designer.cs">
       <DependentUpon>controlViewLich.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Main\frm_Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Main\frm_Login.Designer.cs">
+      <DependentUpon>frm_Login.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -214,6 +287,57 @@
   <ItemGroup>
     <None Include="Resources\man.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_add.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_delete.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_find.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\users1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\key1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\key.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lock2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\x.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hosokh.ico" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

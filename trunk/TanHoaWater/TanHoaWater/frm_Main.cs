@@ -8,6 +8,9 @@ using System.Text;
 using System.Windows.Forms;
 using System.Threading;
 using TanHoaWater.View.QLDHN;
+using TanHoaWater.View.Users;
+using TanHoaWater.View.Administrators;
+using TanHoaWater.View.Users.HSKHACHHANG;
 
 namespace TanHoaWater
 {
@@ -19,43 +22,65 @@ namespace TanHoaWater
         }
         public frm_Main()
         {
-            Thread th = new Thread(new ThreadStart(this.start));
-            th.Start();
-            Thread.Sleep(5000);
-            InitializeComponent();
-            th.Abort();
+            //  Thread th = new Thread(new ThreadStart(this.start));
+            //   th.Start();
+            //  Thread.Sleep(5000);
+            InitializeComponent();            
+            //  th.Abort();
         }
 
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Close();
+        public static frm_Login dn = new frm_Login();
+        public void dangnhap() {
+            dn.ShowDialog();
+            if (DAL.Users._roles != null && "AD".Equals(DAL.Users._roles.Trim()))
+            {
+                this.PanelContent.Controls.Clear();
+                this.PanelContent.Controls.Add(new Admin_Main());
+            }
+            else if (DAL.Users._roles != null && "US".Equals(DAL.Users._roles.Trim()))
+            {
+                this.PanelContent.Controls.Clear();
+                this.PanelContent.Controls.Add(new Uses_Main());
+
+            }          
+            formLoad();
+            this.skinEngine1.SkinFile = "office2007.ssk";
+        }
+        private void frm_Main_Load(object sender, EventArgs e)
+        {             
+            this.Show();
+            dangnhap();
         }
 
-        private void dữLiệuKháchHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        private void subThoat_Click(object sender, EventArgs e)
         {
-           // frm_DuLieuKH frm = new frm_DuLieuKH();
-          //  frm.ShowDialog();
+            if (MessageBox.Show(this, "Thoát Chương Trình ?", "..: Thông Báo :..", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
+            {
+                this.Dispose();
+            }
+        }
+        public void formLoad() {            
+            if (DAL.Users._userName == null) {
+                this.subdangnhap.Visible = true;
+            }
+            else if (DAL.Users._userName != null) {
+                this.subdangnhap.Visible = false;
+                this.subDangXuat.Visible = true;
+                this.subDoiMatKhau.Visible = true;
+            }
+
+
         }
 
-        private void thôngTinKháchHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        private void subdangnhap_Click(object sender, EventArgs e)
         {
-            //frm_DanhSachKH frm = new frm_DanhSachKH();
-            //frm.ShowDialog();
+            dangnhap();
         }
 
-    
-        private void lichGhiDHN_Click(object sender, EventArgs e)
+        private void btDotNhanDon_Click(object sender, EventArgs e)
         {
-            //frm_QLDongHoNuoc frm = new frm_QLDongHoNuoc();
-            //frm.ShowDialog();
-        }
-
-       
-
-        private void btDLDHNuoc_Click(object sender, EventArgs e)
-        {
-            frm_QLDHN frm = new frm_QLDHN();
-            frm.ShowDialog();
+            this.PanelContent.Controls.Clear();
+            this.PanelContent.Controls.Add(new uct_DOTNHANDON());
         }
     }
 }
