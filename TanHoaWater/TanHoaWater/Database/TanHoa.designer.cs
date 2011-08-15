@@ -3041,6 +3041,8 @@ namespace TanHoaWater.Database
 		
 		private string _SOHOSO;
 		
+		private string _HOTEN;
+		
 		private string _DIENTHOAI;
 		
 		private string _SONHA;
@@ -3091,6 +3093,22 @@ namespace TanHoaWater.Database
 				if ((this._SOHOSO != value))
 				{
 					this._SOHOSO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HOTEN", DbType="NVarChar(50)")]
+		public string HOTEN
+		{
+			get
+			{
+				return this._HOTEN;
+			}
+			set
+			{
+				if ((this._HOTEN != value))
+				{
+					this._HOTEN = value;
 				}
 			}
 		}
@@ -3223,7 +3241,7 @@ namespace TanHoaWater.Database
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENLOAI", DbType="NVarChar(250) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENLOAI", DbType="NVarChar(250)")]
 		public string TENLOAI
 		{
 			get

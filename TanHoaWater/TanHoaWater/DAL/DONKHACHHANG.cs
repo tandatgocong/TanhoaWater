@@ -24,5 +24,18 @@ namespace TanHoaWater.DAL
             return table;
         
         }
+        public static DataTable BangKeNhanDon(string madot)
+        {
+            TanHoaDataContext db = new TanHoaDataContext();
+            db.Connection.Open();
+            string sql = " SELECT * ";
+            sql += " FROM V_DONKHACHHANG ";
+            sql += " WHERE  MADOT='" + madot + "'";      
+            SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            return table;
+
+        }
     }
 }

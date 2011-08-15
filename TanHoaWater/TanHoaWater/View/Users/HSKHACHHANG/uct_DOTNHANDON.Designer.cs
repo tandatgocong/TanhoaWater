@@ -29,12 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(uct_DOTNHANDON));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.reflectionLabel1 = new DevComponents.DotNetBar.Controls.ReflectionLabel();
-            this.refresh = new DevComponents.DotNetBar.ButtonX();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.print = new System.Windows.Forms.PictureBox();
             this.lbSoKHNhanDon = new System.Windows.Forms.Label();
             this.detail = new System.Windows.Forms.DataGridView();
             this.SOHOSO = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,16 +48,18 @@
             this.NGAYNHAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LOAIDON = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SATUS = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.addNewDot = new DevComponents.DotNetBar.ButtonX();
-            this.SearchDot = new DevComponents.DotNetBar.ButtonX();
             this.txtsoDot = new System.Windows.Forms.MaskedTextBox();
             this.createDate = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cbLoaiHS = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.refresh = new DevComponents.DotNetBar.ButtonX();
+            this.addNewDot = new DevComponents.DotNetBar.ButtonX();
+            this.SearchDot = new DevComponents.DotNetBar.ButtonX();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.print)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.detail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.createDate)).BeginInit();
@@ -72,27 +75,13 @@
             this.reflectionLabel1.Text = "<font color=\"#ED1C24\"><b><font size=\"+6\">DANH SÁCH CÁC ĐỢT NHẬN ĐƠN KHÁCH HÀNG</f" +
                 "ont></b></font>";
             // 
-            // refresh
-            // 
-            this.refresh.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.refresh.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.refresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.refresh.Image = global::TanHoaWater.Properties.Resources.refresh;
-            this.refresh.ImageFixedSize = new System.Drawing.Size(20, 20);
-            this.refresh.Location = new System.Drawing.Point(526, 118);
-            this.refresh.Name = "refresh";
-            this.refresh.Size = new System.Drawing.Size(75, 23);
-            this.refresh.TabIndex = 29;
-            this.refresh.Text = "Làm lại    ";
-            this.refresh.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
-            this.refresh.Click += new System.EventHandler(this.refresh_Click);
-            // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.print);
             this.groupBox2.Controls.Add(this.lbSoKHNhanDon);
             this.groupBox2.Controls.Add(this.detail);
             this.groupBox2.Location = new System.Drawing.Point(611, 156);
@@ -101,6 +90,18 @@
             this.groupBox2.TabIndex = 30;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh sách Khách Hàng của Đợt nhận đơn ";
+            // 
+            // print
+            // 
+            this.print.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.print.Image = ((System.Drawing.Image)(resources.GetObject("print.Image")));
+            this.print.Location = new System.Drawing.Point(338, 15);
+            this.print.Name = "print";
+            this.print.Size = new System.Drawing.Size(19, 14);
+            this.print.TabIndex = 22;
+            this.print.TabStop = false;
+            this.print.Visible = false;
+            this.print.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // lbSoKHNhanDon
             // 
@@ -125,11 +126,11 @@
             this.DIACHI,
             this.NGAY_NHAN,
             this.loiDon});
-            this.detail.Location = new System.Drawing.Point(6, 43);
+            this.detail.Location = new System.Drawing.Point(6, 34);
             this.detail.Name = "detail";
             this.detail.ReadOnly = true;
             this.detail.RowHeadersVisible = false;
-            this.detail.Size = new System.Drawing.Size(354, 380);
+            this.detail.Size = new System.Drawing.Size(354, 389);
             this.detail.TabIndex = 20;
             // 
             // SOHOSO
@@ -189,8 +190,8 @@
             // DOTNHAN
             // 
             this.DOTNHAN.DataPropertyName = "MADOT";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.DOTNHAN.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.DOTNHAN.DefaultCellStyle = dataGridViewCellStyle1;
             this.DOTNHAN.HeaderText = "Đợt Nhận Đơn";
             this.DOTNHAN.Name = "DOTNHAN";
             this.DOTNHAN.ReadOnly = true;
@@ -199,8 +200,8 @@
             // NGAYNHAN
             // 
             this.NGAYNHAN.DataPropertyName = "NGAYLAPDON";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.NGAYNHAN.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.NGAYNHAN.DefaultCellStyle = dataGridViewCellStyle2;
             this.NGAYNHAN.HeaderText = "Ngày Lập Đơn";
             this.NGAYNHAN.Name = "NGAYNHAN";
             this.NGAYNHAN.ReadOnly = true;
@@ -220,38 +221,6 @@
             this.SATUS.HeaderText = "Tình Trạng";
             this.SATUS.Name = "SATUS";
             this.SATUS.ReadOnly = true;
-            // 
-            // addNewDot
-            // 
-            this.addNewDot.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.addNewDot.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.addNewDot.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addNewDot.Image = global::TanHoaWater.Properties.Resources.note_add;
-            this.addNewDot.ImageFixedSize = new System.Drawing.Size(20, 20);
-            this.addNewDot.Location = new System.Drawing.Point(322, 118);
-            this.addNewDot.Margin = new System.Windows.Forms.Padding(4);
-            this.addNewDot.Name = "addNewDot";
-            this.addNewDot.Size = new System.Drawing.Size(89, 22);
-            this.addNewDot.TabIndex = 27;
-            this.addNewDot.Text = "Thêm Mới    ";
-            this.addNewDot.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
-            this.addNewDot.Click += new System.EventHandler(this.addNewDot_Click);
-            // 
-            // SearchDot
-            // 
-            this.SearchDot.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.SearchDot.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.SearchDot.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SearchDot.Image = global::TanHoaWater.Properties.Resources.search2;
-            this.SearchDot.ImageFixedSize = new System.Drawing.Size(20, 20);
-            this.SearchDot.Location = new System.Drawing.Point(419, 119);
-            this.SearchDot.Margin = new System.Windows.Forms.Padding(4);
-            this.SearchDot.Name = "SearchDot";
-            this.SearchDot.Size = new System.Drawing.Size(87, 22);
-            this.SearchDot.TabIndex = 26;
-            this.SearchDot.Text = "Tìm Kiếm   ";
-            this.SearchDot.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
-            this.SearchDot.Click += new System.EventHandler(this.SearchDot_Click);
             // 
             // txtsoDot
             // 
@@ -347,6 +316,53 @@
             this.cbLoaiHS.Size = new System.Drawing.Size(295, 22);
             this.cbLoaiHS.TabIndex = 31;
             // 
+            // refresh
+            // 
+            this.refresh.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.refresh.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.refresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.refresh.Image = global::TanHoaWater.Properties.Resources.refresh;
+            this.refresh.ImageFixedSize = new System.Drawing.Size(20, 20);
+            this.refresh.Location = new System.Drawing.Point(526, 118);
+            this.refresh.Name = "refresh";
+            this.refresh.Size = new System.Drawing.Size(75, 23);
+            this.refresh.TabIndex = 29;
+            this.refresh.Text = "Làm lại    ";
+            this.refresh.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
+            this.refresh.Click += new System.EventHandler(this.refresh_Click);
+            // 
+            // addNewDot
+            // 
+            this.addNewDot.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.addNewDot.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.addNewDot.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addNewDot.Image = global::TanHoaWater.Properties.Resources.note_add;
+            this.addNewDot.ImageFixedSize = new System.Drawing.Size(20, 20);
+            this.addNewDot.Location = new System.Drawing.Point(322, 118);
+            this.addNewDot.Margin = new System.Windows.Forms.Padding(4);
+            this.addNewDot.Name = "addNewDot";
+            this.addNewDot.Size = new System.Drawing.Size(89, 22);
+            this.addNewDot.TabIndex = 27;
+            this.addNewDot.Text = "Thêm Mới    ";
+            this.addNewDot.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
+            this.addNewDot.Click += new System.EventHandler(this.addNewDot_Click);
+            // 
+            // SearchDot
+            // 
+            this.SearchDot.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.SearchDot.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.SearchDot.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchDot.Image = global::TanHoaWater.Properties.Resources.search2;
+            this.SearchDot.ImageFixedSize = new System.Drawing.Size(20, 20);
+            this.SearchDot.Location = new System.Drawing.Point(419, 119);
+            this.SearchDot.Margin = new System.Windows.Forms.Padding(4);
+            this.SearchDot.Name = "SearchDot";
+            this.SearchDot.Size = new System.Drawing.Size(87, 22);
+            this.SearchDot.TabIndex = 26;
+            this.SearchDot.Text = "Tìm Kiếm   ";
+            this.SearchDot.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
+            this.SearchDot.Click += new System.EventHandler(this.SearchDot_Click);
+            // 
             // uct_DOTNHANDON
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -371,6 +387,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.print)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.detail)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.createDate)).EndInit();
@@ -405,5 +422,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NGAY_NHAN;
         private System.Windows.Forms.DataGridViewTextBoxColumn loiDon;
         private DevComponents.DotNetBar.Controls.ComboBoxEx cbLoaiHS;
+        private System.Windows.Forms.PictureBox print;
     }
 }
