@@ -11,11 +11,13 @@ using TanHoaWater.View.QLDHN;
 using TanHoaWater.View.Users;
 using TanHoaWater.View.Administrators;
 using TanHoaWater.View.Users.HSKHACHHANG;
+using log4net;
 
 namespace TanHoaWater
 {
     public partial class frm_Main : Form
     {
+        private static readonly ILog log = LogManager.GetLogger(typeof(frm_Main).Name);
         public void start()
         {
             Application.Run(new SplashScreen());
@@ -25,7 +27,8 @@ namespace TanHoaWater
             //  Thread th = new Thread(new ThreadStart(this.start));
             //   th.Start();
             //  Thread.Sleep(5000);
-            InitializeComponent();            
+            InitializeComponent();
+            log4net.Config.XmlConfigurator.Configure();
             //  th.Abort();
         }
 

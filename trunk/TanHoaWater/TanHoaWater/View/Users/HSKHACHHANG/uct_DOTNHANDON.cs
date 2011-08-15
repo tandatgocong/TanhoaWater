@@ -7,12 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using TanHoaWater.Database;
+using TanHoaWater.View.Report;
 
 namespace TanHoaWater.View.Users.HSKHACHHANG
 {
     public partial class uct_DOTNHANDON : UserControl
     {
 
+        string _madot_ = null;
         public uct_DOTNHANDON()
         {
             InitializeComponent();
@@ -54,6 +56,8 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
             else if ("".Equals(loaiDonNhan))
             {
                 errorProvider1.SetError(this.cbLoaiHS, "Chọn loại nhận đơn.");
+            }else if(DAL.DOTNHANDON.findByMaDot(madot)!=null){
+                errorProvider1.SetError(this.txtsoDot, "Số đợt đã tồn tại.");
             }
             else {
                 errorProvider1.Clear();
@@ -92,6 +96,14 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
 
             this.detail.DataSource = DAL.DONKHACHHANG.getListbyDot(madot);
             sokh = DAL.DONKHACHHANG.getListbyDot(madot).Rows.Count;
+            if (sokh > 0)
+            {
+                this.print.Visible = true;
+            }
+            else {
+                this.print.Visible = false;
+                    ;
+            }
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -101,10 +113,17 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                 string _madot = dataGridView1.Rows[e.RowIndex].Cells[0].Value != null ? dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString() : null;
                 loadDetail(_madot);
                 this.lbSoKHNhanDon.Text = "Có " + sokh + " khách hàng đợt nhận đơn " + _madot;
+                _madot_ = _madot;
             }
             catch (Exception){
              }
             
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            rpt_View rpt = new rpt_View(_madot_);
+            rpt.ShowDialog();
         }
     }
 }

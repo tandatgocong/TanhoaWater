@@ -54,11 +54,17 @@
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="DevComponents.DotNetBar2, Version=8.0.0.0, Culture=neutral, PublicKeyToken=5fd520d36328f741, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\lib\DevComponents.DotNetBar2.dll</HintPath>
     </Reference>
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="IrisSkin2, Version=2006.3.22.45, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -68,6 +74,8 @@
     </Reference>
     <Reference Include="System.Design" />
     <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
@@ -86,6 +94,11 @@
     <Compile Include="DAL\LOAIHOSO.cs" />
     <Compile Include="DAL\Role.cs" />
     <Compile Include="DAL\Users.cs" />
+    <Compile Include="TANHOA_WATERDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TANHOA_WATERDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Utilities\AddValueCombox.cs" />
     <Compile Include="Utilities\LogIn.cs" />
     <Compile Include="Database\TanHoa.designer.cs">
@@ -101,17 +114,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="View\Report\CrystalReport1.cs">
+    <Compile Include="View\Report\prt_BangKeNhanDon.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CrystalReport1.rpt</DependentUpon>
+      <DependentUpon>prt_BangKeNhanDon.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="View\Report\CrystalReport2.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CrystalReport2.rpt</DependentUpon>
-      <SubType>Component</SubType>
+    <Compile Include="View\Report\rpt_View.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Report\rpt_View.Designer.cs">
+      <DependentUpon>rpt_View.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Users\HSKHACHHANG\uct_DOTNHANDON.cs">
       <SubType>UserControl</SubType>
@@ -125,13 +138,12 @@
     <Compile Include="View\Users\Uses_Main.Designer.cs">
       <DependentUpon>Uses_Main.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="View\Report\CrystalReport1.rpt">
+    <EmbeddedResource Include="View\Report\prt_BangKeNhanDon.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
+      <LastGenOutput>prt_BangKeNhanDon.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Report\CrystalReport2.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>CrystalReport2.cs</LastGenOutput>
+    <EmbeddedResource Include="View\Report\rpt_View.resx">
+      <DependentUpon>rpt_View.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\HSKHACHHANG\uct_DOTNHANDON.resx">
       <DependentUpon>uct_DOTNHANDON.cs</DependentUpon>
@@ -234,6 +246,17 @@
     <Compile Include="View\Main\frm_Login.Designer.cs">
       <DependentUpon>frm_Login.cs</DependentUpon>
     </Compile>
+    <None Include="TANHOA_WATERDataSet.xsc">
+      <DependentUpon>TANHOA_WATERDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="TANHOA_WATERDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TANHOA_WATERDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TANHOA_WATERDataSet.xss">
+      <DependentUpon>TANHOA_WATERDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\bg_head.jpg" />
@@ -360,6 +383,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\hosokh.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\print.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\printer.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\print.gif" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
