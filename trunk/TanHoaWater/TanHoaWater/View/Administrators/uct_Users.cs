@@ -27,7 +27,7 @@ namespace TanHoaWater.View.Administrators
              //this.cbRoles.DataSource =  Role.getList();
              //cbRoles.DisplayMember = "ROLENAME";
              //cbRoles.ValueMember = "ROLEID";
-            this.cbRoles.DataSource = Role.comboxSearch();
+            this.cbRoles.DataSource = C_Role.comboxSearch();
             this.cbRoles.DisplayMember = "Display";
             this.cbRoles.ValueMember = "Value";
             #endregion        

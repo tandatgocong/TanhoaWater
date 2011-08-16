@@ -89,11 +89,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DAL\DONKHACHHANG.cs" />
-    <Compile Include="DAL\DOTNHANDON.cs" />
-    <Compile Include="DAL\LOAIHOSO.cs" />
-    <Compile Include="DAL\Role.cs" />
-    <Compile Include="DAL\Users.cs" />
+    <Compile Include="DAL\C_DONKHACHHANG.cs" />
+    <Compile Include="DAL\C_DOTNHANDON.cs" />
+    <Compile Include="DAL\C_LOAIHOSO.cs" />
+    <Compile Include="DAL\C_LOAIKH.cs" />
+    <Compile Include="DAL\C_PHONGBAN.cs" />
+    <Compile Include="DAL\C_PHUONG.cs" />
+    <Compile Include="DAL\C_QUAN.cs" />
+    <Compile Include="DAL\C_Role.cs" />
+    <Compile Include="DAL\C_Users.cs" />
     <Compile Include="TANHOA_WATERDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -132,6 +136,12 @@
     <Compile Include="View\Users\HSKHACHHANG\uct_DOTNHANDON.Designer.cs">
       <DependentUpon>uct_DOTNHANDON.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Users\HSKHACHHANG\uct_NHANDONKH.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Users\HSKHACHHANG\uct_NHANDONKH.Designer.cs">
+      <DependentUpon>uct_NHANDONKH.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Users\Uses_Main.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -147,6 +157,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\HSKHACHHANG\uct_DOTNHANDON.resx">
       <DependentUpon>uct_DOTNHANDON.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\HSKHACHHANG\uct_NHANDONKH.resx">
+      <DependentUpon>uct_NHANDONKH.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\Uses_Main.resx">
       <DependentUpon>Uses_Main.cs</DependentUpon>
@@ -393,7 +406,9 @@
   <ItemGroup>
     <None Include="Resources\print.gif" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\login.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
