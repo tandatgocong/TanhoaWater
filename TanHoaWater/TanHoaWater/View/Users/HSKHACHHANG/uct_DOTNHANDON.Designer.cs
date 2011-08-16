@@ -35,7 +35,10 @@
             this.reflectionLabel1 = new DevComponents.DotNetBar.Controls.ReflectionLabel();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cbBOPHAN = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.checkCD = new DevComponents.DotNetBar.Controls.CheckBoxX();
             this.print = new System.Windows.Forms.PictureBox();
+            this.chyenTTK = new DevComponents.DotNetBar.ButtonX();
             this.lbSoKHNhanDon = new System.Windows.Forms.Label();
             this.detail = new System.Windows.Forms.DataGridView();
             this.SOHOSO = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -81,7 +84,10 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.cbBOPHAN);
+            this.groupBox2.Controls.Add(this.checkCD);
             this.groupBox2.Controls.Add(this.print);
+            this.groupBox2.Controls.Add(this.chyenTTK);
             this.groupBox2.Controls.Add(this.lbSoKHNhanDon);
             this.groupBox2.Controls.Add(this.detail);
             this.groupBox2.Location = new System.Drawing.Point(611, 156);
@@ -91,17 +97,54 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh sách Khách Hàng của Đợt nhận đơn ";
             // 
+            // cbBOPHAN
+            // 
+            this.cbBOPHAN.DisplayMember = "Text";
+            this.cbBOPHAN.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbBOPHAN.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbBOPHAN.FormattingEnabled = true;
+            this.cbBOPHAN.ItemHeight = 16;
+            this.cbBOPHAN.Location = new System.Drawing.Point(101, 22);
+            this.cbBOPHAN.Name = "cbBOPHAN";
+            this.cbBOPHAN.Size = new System.Drawing.Size(90, 22);
+            this.cbBOPHAN.TabIndex = 25;
+            this.cbBOPHAN.Visible = false;
+            // 
+            // checkCD
+            // 
+            this.checkCD.Location = new System.Drawing.Point(6, 22);
+            this.checkCD.Name = "checkCD";
+            this.checkCD.Size = new System.Drawing.Size(101, 23);
+            this.checkCD.TabIndex = 24;
+            this.checkCD.Text = "Chuyển Đơn";
+            this.checkCD.Visible = false;
+            this.checkCD.CheckedChanged += new System.EventHandler(this.checkCD_CheckedChanged);
+            // 
             // print
             // 
             this.print.Cursor = System.Windows.Forms.Cursors.Hand;
             this.print.Image = ((System.Drawing.Image)(resources.GetObject("print.Image")));
-            this.print.Location = new System.Drawing.Point(338, 15);
+            this.print.Location = new System.Drawing.Point(328, 30);
             this.print.Name = "print";
             this.print.Size = new System.Drawing.Size(19, 14);
             this.print.TabIndex = 22;
             this.print.TabStop = false;
             this.print.Visible = false;
             this.print.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // chyenTTK
+            // 
+            this.chyenTTK.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.chyenTTK.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.chyenTTK.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chyenTTK.Image = global::TanHoaWater.Properties.Resources.login;
+            this.chyenTTK.ImageFixedSize = new System.Drawing.Size(20, 20);
+            this.chyenTTK.Location = new System.Drawing.Point(197, 24);
+            this.chyenTTK.Name = "chyenTTK";
+            this.chyenTTK.Size = new System.Drawing.Size(33, 20);
+            this.chyenTTK.TabIndex = 23;
+            this.chyenTTK.Visible = false;
+            this.chyenTTK.Click += new System.EventHandler(this.chyenTTK_Click);
             // 
             // lbSoKHNhanDon
             // 
@@ -126,11 +169,11 @@
             this.DIACHI,
             this.NGAY_NHAN,
             this.loiDon});
-            this.detail.Location = new System.Drawing.Point(6, 34);
+            this.detail.Location = new System.Drawing.Point(6, 50);
             this.detail.Name = "detail";
             this.detail.ReadOnly = true;
             this.detail.RowHeadersVisible = false;
-            this.detail.Size = new System.Drawing.Size(354, 389);
+            this.detail.Size = new System.Drawing.Size(354, 373);
             this.detail.TabIndex = 20;
             // 
             // SOHOSO
@@ -226,7 +269,7 @@
             // 
             this.txtsoDot.Location = new System.Drawing.Point(25, 86);
             this.txtsoDot.Margin = new System.Windows.Forms.Padding(4);
-            this.txtsoDot.Mask = "0000/0000";
+            this.txtsoDot.Mask = "&&&&/&&&&";
             this.txtsoDot.Name = "txtsoDot";
             this.txtsoDot.Size = new System.Drawing.Size(106, 22);
             this.txtsoDot.TabIndex = 24;
@@ -367,13 +410,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.txtsoDot);
             this.Controls.Add(this.cbLoaiHS);
             this.Controls.Add(this.refresh);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.addNewDot);
             this.Controls.Add(this.SearchDot);
-            this.Controls.Add(this.txtsoDot);
             this.Controls.Add(this.createDate);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -423,5 +466,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn loiDon;
         private DevComponents.DotNetBar.Controls.ComboBoxEx cbLoaiHS;
         private System.Windows.Forms.PictureBox print;
+        private DevComponents.DotNetBar.ButtonX chyenTTK;
+        private DevComponents.DotNetBar.Controls.CheckBoxX checkCD;
+        private DevComponents.DotNetBar.Controls.ComboBoxEx cbBOPHAN;
     }
 }

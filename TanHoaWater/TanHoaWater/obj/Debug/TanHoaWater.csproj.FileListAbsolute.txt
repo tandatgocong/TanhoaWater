@@ -18,3 +18,7 @@ D:\Project\tanhoawater\TanHoaWater\TanHoaWater\obj\Debug\GenerateResource-ResGen
 D:\Project\tanhoawater\TanHoaWater\TanHoaWater\obj\Debug\GenerateResource-ResGen.write.1.tlog
 D:\Project\tanhoawater\TanHoaWater\TanHoaWater\obj\Debug\TanHoaWater.exe
 D:\Project\tanhoawater\TanHoaWater\TanHoaWater\obj\Debug\TanHoaWater.pdb
+D:\Project\tanhoawater\TanHoaWater\TanHoaWater\obj\Debug\TanHoaWater.View.Users.HSKHACHHANG.uct_NHANDONKH.resources
+D:\Project\tanhoawater\TanHoaWater\TanHoaWater\obj\Debug\GenerateResource.read.443.tlog
+D:\Project\tanhoawater\TanHoaWater\TanHoaWater\obj\Debug\GenerateResource.write.443.tlog
+D:\Project\tanhoawater\TanHoaWater\TanHoaWater\obj\Debug\GenerateResource.write.668.tlog

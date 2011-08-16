@@ -164,10 +164,13 @@
             // 
             // menuNhanDon
             // 
+            this.menuNhanDon.Checked = true;
+            this.menuNhanDon.CheckState = System.Windows.Forms.CheckState.Checked;
             this.menuNhanDon.Image = global::TanHoaWater.Properties.Resources.note_add;
             this.menuNhanDon.Name = "menuNhanDon";
-            this.menuNhanDon.Size = new System.Drawing.Size(111, 20);
-            this.menuNhanDon.Text = "Nhận Đơn KH";
+            this.menuNhanDon.Size = new System.Drawing.Size(126, 20);
+            this.menuNhanDon.Text = "Đơn Khách Hàng";
+            this.menuNhanDon.Click += new System.EventHandler(this.menuNhanDon_Click);
             // 
             // menuTimKiem
             // 
@@ -438,6 +441,7 @@
             this.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip2;
+            this.MaximizeBox = false;
             this.Name = "frm_Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tan Hoa Water co., ltd";
