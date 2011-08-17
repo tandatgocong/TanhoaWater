@@ -31,12 +31,22 @@
             this.components = new System.ComponentModel.Container();
             this.reflectionLabel1 = new DevComponents.DotNetBar.Controls.ReflectionLabel();
             this.tabControl1 = new DevComponents.DotNetBar.TabControl();
+            this.tabControlPanel2 = new DevComponents.DotNetBar.TabControlPanel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.tabItem2 = new DevComponents.DotNetBar.TabItem(this.components);
             this.tabControlPanel1 = new DevComponents.DotNetBar.TabControlPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataG = new System.Windows.Forms.DataGridView();
+            this.SOHOSO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HOTEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DIACHI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NGAY_NHAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.loiDon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtSHS = new System.Windows.Forms.MaskedTextBox();
             this.dienthoai = new System.Windows.Forms.MaskedTextBox();
             this.totalRecord = new DevComponents.DotNetBar.LabelX();
+            this.buttonX2 = new DevComponents.DotNetBar.ButtonX();
+            this.btInsert = new DevComponents.DotNetBar.ButtonX();
             this.textBoxX13 = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.label18 = new System.Windows.Forms.Label();
             this.dateTimeInput1 = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
@@ -76,26 +86,16 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabItem1 = new DevComponents.DotNetBar.TabItem(this.components);
-            this.tabControlPanel2 = new DevComponents.DotNetBar.TabControlPanel();
-            this.tabItem2 = new DevComponents.DotNetBar.TabItem(this.components);
             this.galleryContainer1 = new DevComponents.DotNetBar.GalleryContainer();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.SOHOSO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HOTEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DIACHI = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NGAY_NHAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.loiDon = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.buttonX2 = new DevComponents.DotNetBar.ButtonX();
-            this.btInsert = new DevComponents.DotNetBar.ButtonX();
-            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.tabControl1)).BeginInit();
             this.tabControl1.SuspendLayout();
+            this.tabControlPanel2.SuspendLayout();
             this.tabControlPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataG)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.soho)).BeginInit();
-            this.tabControlPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -112,8 +112,8 @@
             // tabControl1
             // 
             this.tabControl1.CanReorderTabs = true;
-            this.tabControl1.Controls.Add(this.tabControlPanel2);
             this.tabControl1.Controls.Add(this.tabControlPanel1);
+            this.tabControl1.Controls.Add(this.tabControlPanel2);
             this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(-5, 51);
             this.tabControl1.Name = "tabControl1";
@@ -126,6 +126,39 @@
             this.tabControl1.Tabs.Add(this.tabItem2);
             this.tabControl1.Text = "tabControl1";
             this.tabControl1.Click += new System.EventHandler(this.tabControl1_Click);
+            // 
+            // tabControlPanel2
+            // 
+            this.tabControlPanel2.Controls.Add(this.panel2);
+            this.tabControlPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControlPanel2.Location = new System.Drawing.Point(0, 26);
+            this.tabControlPanel2.Name = "tabControlPanel2";
+            this.tabControlPanel2.Padding = new System.Windows.Forms.Padding(1);
+            this.tabControlPanel2.Size = new System.Drawing.Size(1001, 535);
+            this.tabControlPanel2.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(179)))), ((int)(((byte)(231)))));
+            this.tabControlPanel2.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(237)))), ((int)(((byte)(254)))));
+            this.tabControlPanel2.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.tabControlPanel2.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(97)))), ((int)(((byte)(156)))));
+            this.tabControlPanel2.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right)
+                        | DevComponents.DotNetBar.eBorderSide.Bottom)));
+            this.tabControlPanel2.Style.GradientAngle = 90;
+            this.tabControlPanel2.TabIndex = 2;
+            this.tabControlPanel2.TabItem = this.tabItem2;
+            // 
+            // panel2
+            // 
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(1, 1);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(999, 533);
+            this.panel2.TabIndex = 0;
+            // 
+            // tabItem2
+            // 
+            this.tabItem2.AttachedControl = this.tabControlPanel2;
+            this.tabItem2.Name = "tabItem2";
+            this.tabItem2.Text = "Tìm Kiếm Đơn Khách Hàng";
+            this.tabItem2.Click += new System.EventHandler(this.tabItem2_Click);
             // 
             // tabControlPanel1
             // 
@@ -216,6 +249,46 @@
             this.dataG.Size = new System.Drawing.Size(920, 194);
             this.dataG.TabIndex = 44;
             // 
+            // SOHOSO
+            // 
+            this.SOHOSO.DataPropertyName = "SOHOSO";
+            this.SOHOSO.HeaderText = "Số Hồ Sơ";
+            this.SOHOSO.Name = "SOHOSO";
+            this.SOHOSO.ReadOnly = true;
+            this.SOHOSO.Width = 120;
+            // 
+            // HOTEN
+            // 
+            this.HOTEN.DataPropertyName = "HOTEN";
+            this.HOTEN.HeaderText = "Họ Tên";
+            this.HOTEN.Name = "HOTEN";
+            this.HOTEN.ReadOnly = true;
+            this.HOTEN.Width = 200;
+            // 
+            // DIACHI
+            // 
+            this.DIACHI.DataPropertyName = "DIACHI";
+            this.DIACHI.HeaderText = "Địa Chỉ";
+            this.DIACHI.Name = "DIACHI";
+            this.DIACHI.ReadOnly = true;
+            this.DIACHI.Width = 300;
+            // 
+            // NGAY_NHAN
+            // 
+            this.NGAY_NHAN.DataPropertyName = "NGAYNHAN";
+            this.NGAY_NHAN.HeaderText = "Ngày Nhận";
+            this.NGAY_NHAN.Name = "NGAY_NHAN";
+            this.NGAY_NHAN.ReadOnly = true;
+            this.NGAY_NHAN.Width = 135;
+            // 
+            // loiDon
+            // 
+            this.loiDon.DataPropertyName = "LOAIDON";
+            this.loiDon.HeaderText = "Loại Đơn";
+            this.loiDon.Name = "loiDon";
+            this.loiDon.ReadOnly = true;
+            this.loiDon.Width = 150;
+            // 
             // txtSHS
             // 
             this.txtSHS.Location = new System.Drawing.Point(117, 14);
@@ -243,6 +316,34 @@
             this.totalRecord.Size = new System.Drawing.Size(693, 23);
             this.totalRecord.TabIndex = 43;
             this.totalRecord.Text = "Tổng Cộng có";
+            // 
+            // buttonX2
+            // 
+            this.buttonX2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonX2.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.buttonX2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonX2.Image = global::TanHoaWater.Properties.Resources.refresh;
+            this.buttonX2.ImageFixedSize = new System.Drawing.Size(20, 20);
+            this.buttonX2.Location = new System.Drawing.Point(158, 240);
+            this.buttonX2.Name = "buttonX2";
+            this.buttonX2.Size = new System.Drawing.Size(93, 23);
+            this.buttonX2.TabIndex = 16;
+            this.buttonX2.Text = "Làm Lại";
+            this.buttonX2.Click += new System.EventHandler(this.buttonX2_Click);
+            // 
+            // btInsert
+            // 
+            this.btInsert.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btInsert.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btInsert.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btInsert.Image = global::TanHoaWater.Properties.Resources.add;
+            this.btInsert.ImageFixedSize = new System.Drawing.Size(20, 20);
+            this.btInsert.Location = new System.Drawing.Point(34, 240);
+            this.btInsert.Name = "btInsert";
+            this.btInsert.Size = new System.Drawing.Size(104, 23);
+            this.btInsert.TabIndex = 15;
+            this.btInsert.Text = "Thêm Mới";
+            this.btInsert.Click += new System.EventHandler(this.btInsert_Click);
             // 
             // textBoxX13
             // 
@@ -666,31 +767,6 @@
             this.tabItem1.Name = "tabItem1";
             this.tabItem1.Text = "Nhận Đơn Khách Hàng";
             // 
-            // tabControlPanel2
-            // 
-            this.tabControlPanel2.Controls.Add(this.panel2);
-            this.tabControlPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControlPanel2.Location = new System.Drawing.Point(0, 26);
-            this.tabControlPanel2.Name = "tabControlPanel2";
-            this.tabControlPanel2.Padding = new System.Windows.Forms.Padding(1);
-            this.tabControlPanel2.Size = new System.Drawing.Size(1001, 535);
-            this.tabControlPanel2.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(179)))), ((int)(((byte)(231)))));
-            this.tabControlPanel2.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(237)))), ((int)(((byte)(254)))));
-            this.tabControlPanel2.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.tabControlPanel2.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(97)))), ((int)(((byte)(156)))));
-            this.tabControlPanel2.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right)
-                        | DevComponents.DotNetBar.eBorderSide.Bottom)));
-            this.tabControlPanel2.Style.GradientAngle = 90;
-            this.tabControlPanel2.TabIndex = 2;
-            this.tabControlPanel2.TabItem = this.tabItem2;
-            // 
-            // tabItem2
-            // 
-            this.tabItem2.AttachedControl = this.tabControlPanel2;
-            this.tabItem2.Name = "tabItem2";
-            this.tabItem2.Text = "Tìm Kiếm Đơn Khách Hàng";
-            this.tabItem2.Click += new System.EventHandler(this.tabItem2_Click);
-            // 
             // galleryContainer1
             // 
             this.galleryContainer1.EnableGalleryPopup = false;
@@ -704,82 +780,6 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // SOHOSO
-            // 
-            this.SOHOSO.DataPropertyName = "SOHOSO";
-            this.SOHOSO.HeaderText = "Số Hồ Sơ";
-            this.SOHOSO.Name = "SOHOSO";
-            this.SOHOSO.ReadOnly = true;
-            this.SOHOSO.Width = 120;
-            // 
-            // HOTEN
-            // 
-            this.HOTEN.DataPropertyName = "HOTEN";
-            this.HOTEN.HeaderText = "Họ Tên";
-            this.HOTEN.Name = "HOTEN";
-            this.HOTEN.ReadOnly = true;
-            this.HOTEN.Width = 200;
-            // 
-            // DIACHI
-            // 
-            this.DIACHI.DataPropertyName = "DIACHI";
-            this.DIACHI.HeaderText = "Địa Chỉ";
-            this.DIACHI.Name = "DIACHI";
-            this.DIACHI.ReadOnly = true;
-            this.DIACHI.Width = 300;
-            // 
-            // NGAY_NHAN
-            // 
-            this.NGAY_NHAN.DataPropertyName = "NGAYNHAN";
-            this.NGAY_NHAN.HeaderText = "Ngày Nhận";
-            this.NGAY_NHAN.Name = "NGAY_NHAN";
-            this.NGAY_NHAN.ReadOnly = true;
-            this.NGAY_NHAN.Width = 135;
-            // 
-            // loiDon
-            // 
-            this.loiDon.DataPropertyName = "LOAIDON";
-            this.loiDon.HeaderText = "Loại Đơn";
-            this.loiDon.Name = "loiDon";
-            this.loiDon.ReadOnly = true;
-            this.loiDon.Width = 150;
-            // 
-            // buttonX2
-            // 
-            this.buttonX2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX2.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonX2.Image = global::TanHoaWater.Properties.Resources.refresh;
-            this.buttonX2.ImageFixedSize = new System.Drawing.Size(20, 20);
-            this.buttonX2.Location = new System.Drawing.Point(158, 240);
-            this.buttonX2.Name = "buttonX2";
-            this.buttonX2.Size = new System.Drawing.Size(93, 23);
-            this.buttonX2.TabIndex = 16;
-            this.buttonX2.Text = "Làm Lại";
-            this.buttonX2.Click += new System.EventHandler(this.buttonX2_Click);
-            // 
-            // btInsert
-            // 
-            this.btInsert.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btInsert.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btInsert.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btInsert.Image = global::TanHoaWater.Properties.Resources.add;
-            this.btInsert.ImageFixedSize = new System.Drawing.Size(20, 20);
-            this.btInsert.Location = new System.Drawing.Point(34, 240);
-            this.btInsert.Name = "btInsert";
-            this.btInsert.Size = new System.Drawing.Size(104, 23);
-            this.btInsert.TabIndex = 15;
-            this.btInsert.Text = "Thêm Mới";
-            this.btInsert.Click += new System.EventHandler(this.btInsert_Click);
-            // 
-            // panel2
-            // 
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(1, 1);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(999, 533);
-            this.panel2.TabIndex = 0;
-            // 
             // uct_NHANDONKH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -790,13 +790,13 @@
             this.Size = new System.Drawing.Size(988, 615);
             ((System.ComponentModel.ISupportInitialize)(this.tabControl1)).EndInit();
             this.tabControl1.ResumeLayout(false);
+            this.tabControlPanel2.ResumeLayout(false);
             this.tabControlPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataG)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.soho)).EndInit();
-            this.tabControlPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 

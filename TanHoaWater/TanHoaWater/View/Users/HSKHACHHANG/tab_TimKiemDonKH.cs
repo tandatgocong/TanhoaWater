@@ -15,5 +15,10 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
         {
             InitializeComponent();
         }
+
+        private void searchTimKiem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

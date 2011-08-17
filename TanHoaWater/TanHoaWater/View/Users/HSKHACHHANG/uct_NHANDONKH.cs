@@ -136,7 +136,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
             }
             else if (this.khan.Checked == true){
                 this.errorProvider1.Clear();
-                if (this.ghichukhan.Text != null || "".Equals(this.ghichukhan.Text))
+                if ( "".Equals(this.ghichukhan.Text))
                 {
                     this.errorProvider1.SetError(this.ghichukhan, "Ghi Chú Khẩn Không Được Trống.");
                 }
