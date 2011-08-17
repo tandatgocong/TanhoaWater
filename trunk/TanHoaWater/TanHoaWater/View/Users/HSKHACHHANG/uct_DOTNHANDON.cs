@@ -18,12 +18,13 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
         string _madot_ = null;
         public uct_DOTNHANDON()
         {
-            InitializeComponent();
+            InitializeComponent();            
         }
 
         private void DOTNHANDON_Load(object sender, EventArgs e)
         {
             formLoad();
+        
         }
 
         public void formLoad()
@@ -39,6 +40,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
             //#endregion
             #region Load Data
                 loadGrid();
+               
             #endregion
         }
 
@@ -85,15 +87,16 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
             }           
   
         }
-        public void loadGrid() {
-            
-            this.dataGridView1.DataSource = DAL.C_DOTNHANDON.getList();
+        public void loadGrid() {            
+            this.mainGrid.DataSource = DAL.C_DOTNHANDON.getList();
+            Utilities.DataGridV.formatRows(mainGrid);
         }
        
 
         private void SearchDot_Click(object sender, EventArgs e)
         {
-            this.dataGridView1.DataSource = DAL.C_DOTNHANDON.Search(this.txtsoDot.Text, this.createDate.Value, this.cbLoaiHS.SelectedValue.ToString());           
+            this.mainGrid.DataSource = DAL.C_DOTNHANDON.Search(this.txtsoDot.Text, this.createDate.Value, this.cbLoaiHS.SelectedValue.ToString());
+            Utilities.DataGridV.formatRows(mainGrid);
         }
 
         private void refresh_Click(object sender, EventArgs e)
@@ -102,6 +105,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
             this.txtsoDot.Text = null;        
             this.createDate.ValueObject = null;
             this.loadGrid();
+
         }
         int sokh = 0;
         public void loadDetail(string madot) {
@@ -118,13 +122,14 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                 this.print.Visible = false;              
                 this.checkCD.Visible = false; 
             }
+            Utilities.DataGridV.formatRows(detail);
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
-                string _madot = dataGridView1.Rows[e.RowIndex].Cells[0].Value != null ? dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString() : null;
+                string _madot = mainGrid.Rows[e.RowIndex].Cells[0].Value != null ? mainGrid.Rows[e.RowIndex].Cells[0].Value.ToString() : null;
                 loadDetail(_madot);
                 this.lbSoKHNhanDon.Text = "Có " + sokh + " khách hàng đợt nhận đơn " + _madot;
                 _madot_ = _madot;
@@ -143,7 +148,9 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                 rpt.ShowDialog();
             }
             catch (Exception ex)
-            { log.Error("In Loi " + ex.Message); }
+            {
+                MessageBox.Show(this, "..: Thông Báo :..", "Lỗi Khi In !", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                log.Error("In Loi " + ex.Message); }
 
         }
 
@@ -152,7 +159,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
             try
             {
                 #region Update DOT NHAN DON
-                string _madot = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[0].Value != null ? dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[0].Value.ToString() : null;
+                string _madot = mainGrid.Rows[mainGrid.CurrentRow.Index].Cells[0].Value != null ? mainGrid.Rows[mainGrid.CurrentRow.Index].Cells[0].Value.ToString() : null;
                 DOT_NHAN_DON dot = DAL.C_DOTNHANDON.findByMaDot(_madot);
                 dot.CHUYENDON = true;
                 dot.NGAYCHUYEN = DateTime.Now;

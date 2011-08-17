@@ -46,7 +46,7 @@
             this.DIACHI = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NGAY_NHAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.loiDon = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.mainGrid = new System.Windows.Forms.DataGridView();
             this.DOTNHAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NGAYNHAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LOAIDON = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,7 +64,7 @@
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.print)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.detail)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mainGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.createDate)).BeginInit();
             this.SuspendLayout();
             // 
@@ -212,23 +212,23 @@
             this.loiDon.Name = "loiDon";
             this.loiDon.ReadOnly = true;
             // 
-            // dataGridView1
+            // mainGrid
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.mainGrid.AllowUserToAddRows = false;
+            this.mainGrid.AllowUserToDeleteRows = false;
+            this.mainGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.mainGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.DOTNHAN,
             this.NGAYNHAN,
             this.LOAIDON,
             this.SATUS});
-            this.dataGridView1.Location = new System.Drawing.Point(14, 156);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(591, 450);
-            this.dataGridView1.TabIndex = 28;
-            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.mainGrid.Location = new System.Drawing.Point(14, 156);
+            this.mainGrid.Name = "mainGrid";
+            this.mainGrid.ReadOnly = true;
+            this.mainGrid.RowHeadersVisible = false;
+            this.mainGrid.Size = new System.Drawing.Size(591, 450);
+            this.mainGrid.TabIndex = 28;
+            this.mainGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // DOTNHAN
             // 
@@ -272,7 +272,7 @@
             this.txtsoDot.Mask = "&&&&/&&&&";
             this.txtsoDot.Name = "txtsoDot";
             this.txtsoDot.Size = new System.Drawing.Size(106, 22);
-            this.txtsoDot.TabIndex = 24;
+            this.txtsoDot.TabIndex = 1;
             // 
             // createDate
             // 
@@ -315,7 +315,7 @@
             this.createDate.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
             this.createDate.Name = "createDate";
             this.createDate.Size = new System.Drawing.Size(89, 22);
-            this.createDate.TabIndex = 23;
+            this.createDate.TabIndex = 2;
             // 
             // label3
             // 
@@ -357,7 +357,7 @@
             this.cbLoaiHS.Location = new System.Drawing.Point(306, 86);
             this.cbLoaiHS.Name = "cbLoaiHS";
             this.cbLoaiHS.Size = new System.Drawing.Size(295, 22);
-            this.cbLoaiHS.TabIndex = 31;
+            this.cbLoaiHS.TabIndex = 3;
             // 
             // refresh
             // 
@@ -369,7 +369,7 @@
             this.refresh.Location = new System.Drawing.Point(526, 118);
             this.refresh.Name = "refresh";
             this.refresh.Size = new System.Drawing.Size(75, 23);
-            this.refresh.TabIndex = 29;
+            this.refresh.TabIndex = 6;
             this.refresh.Text = "Làm lại    ";
             this.refresh.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
             this.refresh.Click += new System.EventHandler(this.refresh_Click);
@@ -385,7 +385,7 @@
             this.addNewDot.Margin = new System.Windows.Forms.Padding(4);
             this.addNewDot.Name = "addNewDot";
             this.addNewDot.Size = new System.Drawing.Size(89, 22);
-            this.addNewDot.TabIndex = 27;
+            this.addNewDot.TabIndex = 4;
             this.addNewDot.Text = "Thêm Mới    ";
             this.addNewDot.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
             this.addNewDot.Click += new System.EventHandler(this.addNewDot_Click);
@@ -401,7 +401,7 @@
             this.SearchDot.Margin = new System.Windows.Forms.Padding(4);
             this.SearchDot.Name = "SearchDot";
             this.SearchDot.Size = new System.Drawing.Size(87, 22);
-            this.SearchDot.TabIndex = 26;
+            this.SearchDot.TabIndex = 5;
             this.SearchDot.Text = "Tìm Kiếm   ";
             this.SearchDot.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
             this.SearchDot.Click += new System.EventHandler(this.SearchDot_Click);
@@ -414,7 +414,7 @@
             this.Controls.Add(this.cbLoaiHS);
             this.Controls.Add(this.refresh);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.mainGrid);
             this.Controls.Add(this.addNewDot);
             this.Controls.Add(this.SearchDot);
             this.Controls.Add(this.createDate);
@@ -432,7 +432,7 @@
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.print)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.detail)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mainGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.createDate)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -447,7 +447,7 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label lbSoKHNhanDon;
         private System.Windows.Forms.DataGridView detail;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView mainGrid;
         private System.Windows.Forms.DataGridViewTextBoxColumn DOTNHAN;
         private System.Windows.Forms.DataGridViewTextBoxColumn NGAYNHAN;
         private System.Windows.Forms.DataGridViewTextBoxColumn LOAIDON;

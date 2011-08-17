@@ -73,6 +73,7 @@
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
     <Reference Include="System.Design" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Drawing.Design" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Services" />
@@ -104,6 +105,7 @@
       <DependentUpon>TANHOA_WATERDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Utilities\AddValueCombox.cs" />
+    <Compile Include="Utilities\DataGridV.cs" />
     <Compile Include="Utilities\LogIn.cs" />
     <Compile Include="Database\TanHoa.designer.cs">
       <AutoGen>True</AutoGen>
@@ -130,6 +132,12 @@
     <Compile Include="View\Report\rpt_View.Designer.cs">
       <DependentUpon>rpt_View.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Users\HSKHACHHANG\tab_TimKiemDonKH.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Users\HSKHACHHANG\tab_TimKiemDonKH.Designer.cs">
+      <DependentUpon>tab_TimKiemDonKH.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Users\HSKHACHHANG\uct_DOTNHANDON.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -154,6 +162,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Report\rpt_View.resx">
       <DependentUpon>rpt_View.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\HSKHACHHANG\tab_TimKiemDonKH.resx">
+      <DependentUpon>tab_TimKiemDonKH.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\HSKHACHHANG\uct_DOTNHANDON.resx">
       <DependentUpon>uct_DOTNHANDON.cs</DependentUpon>
@@ -408,6 +419,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Symbol Blue Add.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

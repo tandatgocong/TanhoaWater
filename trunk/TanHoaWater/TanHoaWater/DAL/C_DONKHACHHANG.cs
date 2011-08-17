@@ -15,7 +15,7 @@ namespace TanHoaWater.DAL
         public static DataTable  getListbyDot(string dot) {
             TanHoaDataContext db = new TanHoaDataContext();
             db.Connection.Open();
-            string sql = " SELECT SOHOSO,HOTEN, (SONHA +' '+ DUONG +', P.'+p.TENPHUONG+', Q.'+ q.TENQUAN ) as 'DIACHI',NGAYNHAN, lkh.TENLOAI as 'LOAIDON' ";
+            string sql = " SELECT SOHOSO,HOTEN, (SONHA +' '+ DUONG +', P.'+p.TENPHUONG+', Q.'+ q.TENQUAN ) as 'DIACHI',NGAYNHAN= CONVERT(VARCHAR(10),NGAYNHAN,103), lkh.TENLOAI as 'LOAIDON' ";
             sql += " FROM DON_KHACHHANG kh,QUAN q,PHUONG p, LOAI_KHACHHANG lkh ";
             sql += " WHERE  kh.QUAN = q.MAQUAN AND q.MAQUAN=p.MAQUAN AND kh.PHUONG=p.MAPHUONG AND lkh.MALOAI=kh.LOAIKH";
             sql += " AND MADOT='" + dot + "'";
@@ -23,10 +23,11 @@ namespace TanHoaWater.DAL
             SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             DataTable table = new DataTable();
             adapter.Fill(table);
+            db.Connection.Close();
             return table;
         
         }
-         public static DON_KHACHHANG findBySOHOSO(string sohoso)
+        public static DON_KHACHHANG findBySOHOSO(string sohoso)
         {
             TanHoaDataContext db = new TanHoaDataContext();
             var data = from don in db.DON_KHACHHANGs where don.SOHOSO == sohoso select don;
@@ -70,8 +71,23 @@ namespace TanHoaWater.DAL
             SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             DataTable table = new DataTable();
             adapter.Fill(table);
+            db.Connection.Close();
             return table;
 
+        }
+        public static bool findByAddressAndLoaiHS(string dot, string loaiHS,string sonha, string duong, string phuong, string quan ){
+            TanHoaDataContext db = new TanHoaDataContext();
+            string sql = " SELECT SONHA = replace(SONHA,' ',''), DUONG = replace(SONHA,' ',''),PHUONG,QUAN ";
+            sql += " FROM DON_KHACHHANG ";
+            sql += " WHERE MADOT='" + dot + "' AND LOAIHOSO='" + loaiHS + "' AND SONHA='" + sonha + "' AND DUONG='" + duong + "' AND PHUONG='" + phuong + "' AND QUAN='" + quan + "' ";
+            SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);            
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            db.Connection.Close();
+            if (table.Rows.Count > 0)
+                return true;
+                     
+            return false;
         }
     }
 }
