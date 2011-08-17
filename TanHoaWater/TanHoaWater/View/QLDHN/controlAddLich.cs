@@ -283,7 +283,8 @@ namespace TanHoaWater.View.QLDHN
             }
 
         }
-
+        public void loadGird(string madotKH) { 
+        }
         private void dtg2_CellValidated(object sender, DataGridViewCellEventArgs e)
         {
             if (this.dtg2.Rows[e.RowIndex].Cells[0].Value == null)

@@ -18,6 +18,12 @@ namespace TanHoaWater.DAL
             var dotnhandon = from query in data.DOT_NHAN_DONs where query.MADOT == madot select query;
             return dotnhandon.SingleOrDefault();
         }
+        public static List<DOT_NHAN_DON> getALL()
+        {
+            TanHoaDataContext data = new TanHoaDataContext();
+            var dotnhandon = from query in data.DOT_NHAN_DONs orderby query.NGAYLAPDON ascending  select query;
+            return dotnhandon.ToList();
+        }
        
         public static bool InsertDot(DOT_NHAN_DON dnd)
         {
@@ -55,6 +61,7 @@ namespace TanHoaWater.DAL
             SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             DataTable table = new DataTable();
             adapter.Fill(table);
+            db.Connection.Close();
             return table;
         }
         public static DataTable Search(string madot, DateTime ngaylap, string maloai)
@@ -79,7 +86,23 @@ namespace TanHoaWater.DAL
             SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             DataTable table = new DataTable();
             adapter.Fill(table);
+            db.Connection.Close();
             return table;
         }
-    }
+
+        public static DataTable getListtMa_Dot()
+        {
+            TanHoaDataContext db = new TanHoaDataContext();
+            db.Connection.Open();
+            string sql = " SELECT MADOT , (MADOT + '   '+  TENLOAI) as 'TEND'";            
+            sql += " FROM DOT_NHAN_DON dot, LOAI_HOSO loai";
+            sql += " WHERE loai.MALOAI = dot.LOAIDON";
+            sql += " ORDER BY NGAYLAPDON DESC ";
+            SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            db.Connection.Close();
+            return table;
+        }
+     }
 }

@@ -83,6 +83,7 @@ namespace TanHoaWater.DAL
             SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             DataTable table = new DataTable();
             adapter.Fill(table);
+            db.Connection.Close();
            return table;
         }
         public bool UserLogin(string userName, string passWord) {

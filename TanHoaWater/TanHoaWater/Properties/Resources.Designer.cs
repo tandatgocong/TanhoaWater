@@ -298,6 +298,13 @@ namespace TanHoaWater.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap Symbol_Blue_Add {
+            get {
+                object obj = ResourceManager.GetObject("Symbol Blue Add", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap undo {
             get {
                 object obj = ResourceManager.GetObject("undo", resourceCulture);
