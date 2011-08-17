@@ -65,6 +65,8 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\log4net.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -99,11 +101,6 @@
     <Compile Include="DAL\C_QUAN.cs" />
     <Compile Include="DAL\C_Role.cs" />
     <Compile Include="DAL\C_Users.cs" />
-    <Compile Include="TANHOA_WATERDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>TANHOA_WATERDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Utilities\AddValueCombox.cs" />
     <Compile Include="Utilities\DataGridV.cs" />
     <Compile Include="Utilities\LogIn.cs" />
@@ -270,17 +267,6 @@
     <Compile Include="View\Main\frm_Login.Designer.cs">
       <DependentUpon>frm_Login.cs</DependentUpon>
     </Compile>
-    <None Include="TANHOA_WATERDataSet.xsc">
-      <DependentUpon>TANHOA_WATERDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="TANHOA_WATERDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>TANHOA_WATERDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="TANHOA_WATERDataSet.xss">
-      <DependentUpon>TANHOA_WATERDataSet.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\bg_head.jpg" />
@@ -325,7 +311,9 @@
     <None Include="Resources\stop.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Database\TanHoa.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>TanHoa.designer.cs</LastGenOutput>
@@ -422,6 +410,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Symbol Blue Add.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\First.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Previous.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Next.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Last.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -77,7 +77,7 @@ namespace TanHoaWater.DAL
         }
         public static bool findByAddressAndLoaiHS(string dot, string loaiHS,string sonha, string duong, string phuong, string quan ){
             TanHoaDataContext db = new TanHoaDataContext();
-            string sql = " SELECT SONHA = replace(SONHA,' ',''), DUONG = replace(SONHA,' ',''),PHUONG,QUAN ";
+            string sql = " SELECT SONHA = replace(SONHA,' ',''), DUONG = replace(DUONG,' ',''),PHUONG,QUAN ";
             sql += " FROM DON_KHACHHANG ";
             sql += " WHERE MADOT='" + dot + "' AND LOAIHOSO='" + loaiHS + "' AND SONHA='" + sonha + "' AND DUONG='" + duong + "' AND PHUONG='" + phuong + "' AND QUAN='" + quan + "' ";
             SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);            
@@ -88,6 +88,22 @@ namespace TanHoaWater.DAL
                 return true;
                      
             return false;
+        }
+        public static DataTable search(string dotND, string mahs, string tenkh, string diachi)
+        {
+            TanHoaDataContext db = new TanHoaDataContext();
+            db.Connection.Open();
+            string sql = " SELECT MADOT,SOHOSO,HOTEN,(SONHA +' '+ DUONG +', P.'+p.TENPHUONG+', Q.'+ q.TENQUAN ) as 'DIACHI', NGAYNHAN= CONVERT(VARCHAR(10),NGAYNHAN,103), lhs.TENLOAI,  DUONG = replace(SONHA+DUONG,' ','') ";
+            sql += " ROM DON_KHACHHANG kh,QUAN q,PHUONG p, LOAI_HOSO lhs ";
+            sql += " WHERE  kh.QUAN = q.MAQUAN AND q.MAQUAN=p.MAQUAN AND kh.PHUONG=p.MAPHUONG AND lhs.MALOAI=kh.LOAIHOSO  ";
+
+            sql += " ORDER BY NGAYNHAN DESC ";
+            SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            db.Connection.Close();
+            return table;
+
         }
     }
 }
