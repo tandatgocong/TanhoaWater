@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using CrystalDecisions.CrystalReports.Engine;
 
+
 namespace TanHoaWater.View.Report
 {
     public partial class rpt_View : Form

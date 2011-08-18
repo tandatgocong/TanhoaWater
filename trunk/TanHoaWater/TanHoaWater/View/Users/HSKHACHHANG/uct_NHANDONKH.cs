@@ -15,6 +15,12 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
 {
     public partial class uct_NHANDONKH : UserControl
     {
+        int currentPageIndex = 1;
+        int pageSize = 8;
+        int pageNumber = 0;
+        int FirstRow, LastRow;
+        int rows;
+
         private static readonly ILog log = LogManager.GetLogger(typeof(uct_NHANDONKH).Name);
         public uct_NHANDONKH()
         {
@@ -52,7 +58,30 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
             this.cbDotNhanDon.DisplayMember = "TEND";
             this.cbDotNhanDon.ValueMember = "MADOT";          
             #endregion        
-           
+            try
+            {
+                rows = DAL.C_DONKHACHHANG.TotalListByDot(this.cbDotNhanDon.SelectedValue.ToString());
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex);
+            }
+            PageTotal();
+            Utilities.DataGridV.formatRows(dataG);
+        }
+
+        private void PageTotal()
+        {
+            try
+            {
+                pageNumber = rows % pageSize != 0 ? rows / pageSize + 1 : rows / pageSize;                
+                lbPaing.Text = currentPageIndex + "/" + pageNumber;
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex); ;
+            }
+
         }
 
         private void cbQuan_SelectedValueChanged(object sender, EventArgs e)
@@ -102,22 +131,15 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
         {
             try
             {
+                loadDataGrid();
                 this.errorProvider1.Clear();
-                string _madot = this.cbDotNhanDon.SelectedValue.ToString();
-                this.dataG.DataSource = DAL.C_DONKHACHHANG.getListbyDot(_madot);
-                int sokh = DAL.C_DONKHACHHANG.getListbyDot(_madot).Rows.Count;
-                this.totalRecord.Text = "Tống công có " + sokh + " khách hàng đợt nhận đơn " + _madot;
-                Utilities.DataGridV.formatRows(dataG);
+             
             }
             catch (Exception )
             {
                  
             }
-        }
-        public void loadGird() {
-            this.dataG.DataSource = DAL.C_DONKHACHHANG.getListbyDot(this.cbDotNhanDon.SelectedValue.ToString());
-            Utilities.DataGridV.formatRows(dataG);
-        }
+        }       
         private void btInsert_Click(object sender, EventArgs e)
         {
             if (this.txtSHS.Text.Length < 5) {
@@ -173,7 +195,8 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                     donKH.GHICHUKHAN = this.ghichukhan.Text;
                 }
                 DAL.C_DONKHACHHANG.InsertDonHK(donKH);
-                loadGird();
+                loadDataGrid();
+                Utilities.DataGridV.formatRows(dataG);
             }
         }
 
@@ -213,6 +236,47 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
         {
             this.panel2.Controls.Clear();
             this.panel2.Controls.Add(new tab_TimKiemDonKH());
+        }
+            
+        public void loadDataGrid() {
+            string _madot = this.cbDotNhanDon.SelectedValue.ToString();
+            this.dataG.DataSource = DAL.C_DONKHACHHANG.getListbyDot(_madot, FirstRow, pageSize);
+            int sokh = DAL.C_DONKHACHHANG.TotalListByDot(_madot);
+            this.totalRecord.Text = "Tống công có " + sokh + " khách hàng đợt nhận đơn " + _madot;
+            Utilities.DataGridV.formatRows(dataG);
+        }
+
+        private void next_Click(object sender, EventArgs e)
+        {
+            if (currentPageIndex < pageNumber)
+            {
+                currentPageIndex = currentPageIndex + 1;
+                FirstRow = pageSize * (currentPageIndex - 1);
+                LastRow = pageSize * (currentPageIndex);
+                PageTotal();
+                loadDataGrid();
+            }
+           
+        }
+
+        private void pre(object sender, EventArgs e)
+        {
+            try
+            {
+                if (currentPageIndex >1)
+                {
+                    currentPageIndex = currentPageIndex - 1;
+                    FirstRow = pageSize * (currentPageIndex - 1);
+                    LastRow = pageSize * (currentPageIndex);
+                    PageTotal();
+                    loadDataGrid();
+                }
+            }
+            catch (Exception)
+            {
+               
+            }
+            
         }
     }
 }

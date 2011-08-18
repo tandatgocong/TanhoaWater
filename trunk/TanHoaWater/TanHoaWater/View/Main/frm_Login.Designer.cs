@@ -38,7 +38,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.lbFail = new System.Windows.Forms.Label();
-            this.skinEngine1 = new Sunisoft.IrisSkin.SkinEngine(((System.ComponentModel.Component)(this)));
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -122,11 +121,6 @@
             this.lbFail.Text = "(*) Sai tên đăng nhập hoặc mật khẩu";
             this.lbFail.Visible = false;
             // 
-            // skinEngine1
-            // 
-            this.skinEngine1.SerialNumber = "ka1IrSls+g6zvRIwndFNtlcG/kldZhGNQB8jV6VdktTsHDZFVg91og==";
-            this.skinEngine1.SkinFile = "";
-            // 
             // frm_Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -165,7 +159,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Label lbFail;
-        private Sunisoft.IrisSkin.SkinEngine skinEngine1;
 
 
     }

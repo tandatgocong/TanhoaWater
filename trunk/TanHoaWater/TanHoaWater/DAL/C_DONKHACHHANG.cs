@@ -6,13 +6,28 @@ using System.Data;
 using TanHoaWater.Database;
 using System.Data.SqlClient;
 using log4net;
+using System.Collections;
 
 namespace TanHoaWater.DAL
 {
     public class C_DONKHACHHANG
     {
         private static readonly ILog log = LogManager.GetLogger(typeof(C_DONKHACHHANG).Name);
-        public static DataTable  getListbyDot(string dot) {
+
+        public static int TotalListByDot(string dot) {
+            TanHoaDataContext db = new TanHoaDataContext();
+            SqlConnection conn = new SqlConnection(db.Connection.ConnectionString);
+            conn.Open();
+            string sql = " SELECT COUNT(*) ";
+            sql += " FROM DON_KHACHHANG kh,QUAN q,PHUONG p, LOAI_KHACHHANG lkh ";
+            sql += " WHERE  kh.QUAN = q.MAQUAN AND q.MAQUAN=p.MAQUAN AND kh.PHUONG=p.MAPHUONG AND lkh.MALOAI=kh.LOAIKH";
+            sql += " AND MADOT='" + dot + "'";           
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            int result =  Convert.ToInt32(cmd.ExecuteScalar());
+            conn.Close();
+            return result;
+        }
+        public static DataTable  getListbyDot(string dot, int FirstRow, int pageSize ) {
             TanHoaDataContext db = new TanHoaDataContext();
             db.Connection.Open();
             string sql = " SELECT SOHOSO,HOTEN, (SONHA +' '+ DUONG +', P.'+p.TENPHUONG+', Q.'+ q.TENQUAN ) as 'DIACHI',NGAYNHAN= CONVERT(VARCHAR(10),NGAYNHAN,103), lkh.TENLOAI as 'LOAIDON' ";
@@ -21,10 +36,10 @@ namespace TanHoaWater.DAL
             sql += " AND MADOT='" + dot + "'";
             sql += " ORDER BY NGAYNHAN DESC ";
             SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
-            DataTable table = new DataTable();
-            adapter.Fill(table);
+            DataSet dataset = new DataSet();
+            adapter.Fill(dataset, FirstRow, pageSize, "TABLE");
             db.Connection.Close();
-            return table;
+            return dataset.Tables[0];
         
         }
         public static DON_KHACHHANG findBySOHOSO(string sohoso)
@@ -33,6 +48,7 @@ namespace TanHoaWater.DAL
             var data = from don in db.DON_KHACHHANGs where don.SOHOSO == sohoso select don;
             return data.SingleOrDefault();
         }
+        
         public static bool InsertDonHK(DON_KHACHHANG donkh) {
             try
             {
@@ -47,6 +63,7 @@ namespace TanHoaWater.DAL
             }
             return false;
         }
+        
         public static bool UpdateDONKH(DON_KHACHHANG donkh)
         {
             try
@@ -61,6 +78,7 @@ namespace TanHoaWater.DAL
             }
             return false;
         }
+        
         public static DataTable BangKeNhanDon(string madot)
         {
             TanHoaDataContext db = new TanHoaDataContext();
@@ -75,6 +93,7 @@ namespace TanHoaWater.DAL
             return table;
 
         }
+        
         public static bool findByAddressAndLoaiHS(string dot, string loaiHS,string sonha, string duong, string phuong, string quan ){
             TanHoaDataContext db = new TanHoaDataContext();
             string sql = " SELECT SONHA = replace(SONHA,' ',''), DUONG = replace(DUONG,' ',''),PHUONG,QUAN ";
@@ -89,21 +108,78 @@ namespace TanHoaWater.DAL
                      
             return false;
         }
-        public static DataTable search(string dotND, string mahs, string tenkh, string diachi)
+       
+        public static DataTable search(string dotND, string mahs, string tenkh, string sonha,  string tenduong, int FirstRow, int pageSize)
         {
             TanHoaDataContext db = new TanHoaDataContext();
             db.Connection.Open();
-            string sql = " SELECT MADOT,SOHOSO,HOTEN,(SONHA +' '+ DUONG +', P.'+p.TENPHUONG+', Q.'+ q.TENQUAN ) as 'DIACHI', NGAYNHAN= CONVERT(VARCHAR(10),NGAYNHAN,103), lhs.TENLOAI,  DUONG = replace(SONHA+DUONG,' ','') ";
-            sql += " ROM DON_KHACHHANG kh,QUAN q,PHUONG p, LOAI_HOSO lhs ";
+            string sql = " SELECT MADOT,SOHOSO,HOTEN,(SONHA +' '+ DUONG +', P.'+p.TENPHUONG+', Q.'+ q.TENQUAN ) as 'DIACHI', NGAYNHAN= CONVERT(VARCHAR(10),NGAYNHAN,103), lhs.TENLOAI ";
+            sql += " FROM DON_KHACHHANG kh,QUAN q,PHUONG p, LOAI_HOSO lhs ";
             sql += " WHERE  kh.QUAN = q.MAQUAN AND q.MAQUAN=p.MAQUAN AND kh.PHUONG=p.MAPHUONG AND lhs.MALOAI=kh.LOAIHOSO  ";
 
+            if (dotND != null && !"".Equals(dotND))
+            {
+                sql += " AND MADOT='" + dotND + "'";
+            }
+            if (!"".Equals(mahs))
+            {
+                sql += " AND SOHOSO='" + mahs + "'";
+            }
+            if (!"".Equals(tenkh))
+            {
+                sql += " AND HOTEN LIKE '%" + tenkh + "%'";
+            }
+            if (!"".Equals(sonha))
+            {
+                sql += " AND SONHA = '" + sonha + "'";
+            }
+            if (!"".Equals(tenduong))
+            {
+                sql += " AND DUONG = '" + tenduong + "'";
+            }
             sql += " ORDER BY NGAYNHAN DESC ";
             SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
-            DataTable table = new DataTable();
-            adapter.Fill(table);
+            DataSet dataset = new DataSet();
+            adapter.Fill(dataset, FirstRow, pageSize,"TABLE");
             db.Connection.Close();
-            return table;
-
+            return dataset.Tables[0];
         }
+        public static int TotalPageSearch(string dotND, string mahs, string tenkh, string sonha, string tenduong)
+        { 
+            TanHoaDataContext db = new TanHoaDataContext();
+            db.Connection.Open();
+            string sql = " SELECT MADOT,SOHOSO,HOTEN,(SONHA +' '+ DUONG +', P.'+p.TENPHUONG+', Q.'+ q.TENQUAN ) as 'DIACHI', NGAYNHAN= CONVERT(VARCHAR(10),NGAYNHAN,103), lhs.TENLOAI ";
+            sql += " FROM DON_KHACHHANG kh,QUAN q,PHUONG p, LOAI_HOSO lhs ";
+            sql += " WHERE  kh.QUAN = q.MAQUAN AND q.MAQUAN=p.MAQUAN AND kh.PHUONG=p.MAPHUONG AND lhs.MALOAI=kh.LOAIHOSO  ";
+
+            if (dotND != null && !"".Equals(dotND))
+            {
+                sql += " AND MADOT='" + dotND + "'";
+            }
+            if (!"".Equals(mahs))
+            {
+                sql += " AND SOHOSO='" + mahs + "'";
+            }
+            if (!"".Equals(tenkh))
+            {
+                sql += " AND HOTEN LIKE '%" + tenkh + "%'";
+            }
+            if (!"".Equals(sonha))
+            {
+                sql += " AND SONHA = '" + sonha + "'";
+            }
+            if (!"".Equals(tenduong))
+            {
+                sql += " AND DUONG = '" + tenduong + "'";
+            }
+            sql += " ORDER BY NGAYNHAN DESC ";
+            SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
+            DataSet dataset = new DataSet();
+            adapter.Fill(dataset, "TABLE");
+            db.Connection.Close();
+            return dataset.Tables[0].Rows.Count;
+        }
+       
+        
     }
 }
