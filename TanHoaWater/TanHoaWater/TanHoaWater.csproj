@@ -423,6 +423,15 @@
   <ItemGroup>
     <None Include="Resources\Last.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\update.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres.dll_I0062_0409.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

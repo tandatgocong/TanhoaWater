@@ -194,6 +194,8 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                     donKH.HOSOKHAN = true;
                     donKH.GHICHUKHAN = this.ghichukhan.Text;
                 }
+                donKH.CREATEBY = DAL.Users._userName;
+                donKH.CREATEDATE = DateTime.Now;
                 DAL.C_DONKHACHHANG.InsertDonHK(donKH);
                 loadDataGrid();
                 Utilities.DataGridV.formatRows(dataG);

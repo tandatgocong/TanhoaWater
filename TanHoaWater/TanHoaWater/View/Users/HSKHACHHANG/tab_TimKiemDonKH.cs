@@ -14,7 +14,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
     public partial class tab_TimKiemDonKH : UserControl
     {
         int currentPageIndex = 1;
-        int pageSize = 16;
+        int pageSize = 6;
         int pageNumber = 0;
         int FirstRow, LastRow;
         int rows;
