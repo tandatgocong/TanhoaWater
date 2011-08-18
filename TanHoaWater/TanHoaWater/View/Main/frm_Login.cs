@@ -100,7 +100,7 @@ namespace TanHoaWater.View.Users
 
         private void frm_Login_Load(object sender, EventArgs e)
         {
-            this.skinEngine1.SkinFile = "office2007.ssk";
+      
         }     
       
     }

@@ -47,7 +47,7 @@ namespace TanHoaWater
 
             }          
             formLoad();
-            this.skinEngine1.SkinFile = "office2007.ssk";
+          
         }
         private void frm_Main_Load(object sender, EventArgs e)
         {             
@@ -91,5 +91,7 @@ namespace TanHoaWater
             this.PanelContent.Controls.Clear();
             this.PanelContent.Controls.Add(new uct_NHANDONKH());
         }
+
+        
     }
 }
