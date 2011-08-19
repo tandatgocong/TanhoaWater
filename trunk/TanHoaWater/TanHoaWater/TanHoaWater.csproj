@@ -129,6 +129,24 @@
     <Compile Include="View\Report\rpt_View.Designer.cs">
       <DependentUpon>rpt_View.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Users\HSKHACHHANG\Report\prt_theoDotQuan.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>prt_theoDotQuan.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\Users\HSKHACHHANG\Report\rpt_theoDot.cs">
+      <DependentUpon>rpt_theoDot.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="View\Users\HSKHACHHANG\tab_BaoCao.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Users\HSKHACHHANG\tab_BaoCao.Designer.cs">
+      <DependentUpon>tab_BaoCao.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Users\HSKHACHHANG\tab_TimKiemDonKH.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -162,6 +180,17 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Report\rpt_View.resx">
       <DependentUpon>rpt_View.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\HSKHACHHANG\Report\prt_theoDotQuan.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>prt_theoDotQuan.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\HSKHACHHANG\Report\rpt_theoDot.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_theoDot.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\HSKHACHHANG\tab_BaoCao.resx">
+      <DependentUpon>tab_BaoCao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\HSKHACHHANG\tab_TimKiemDonKH.resx">
       <DependentUpon>tab_TimKiemDonKH.cs</DependentUpon>

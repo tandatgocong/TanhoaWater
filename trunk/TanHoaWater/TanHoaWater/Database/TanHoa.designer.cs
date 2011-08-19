@@ -3085,17 +3085,71 @@ namespace TanHoaWater.Database
 	public partial class V_DONKHACHHANG
 	{
 		
+		private int _ID;
+		
 		private string _MADOT;
 		
 		private string _SOHOSO;
+		
+		private string _SHS;
+		
+		private string _DANHBO;
+		
+		private string _HOPDONG;
 		
 		private string _HOTEN;
 		
 		private string _DIENTHOAI;
 		
+		private System.Nullable<int> _SOHOBD;
+		
+		private System.Nullable<int> _SOHO;
+		
 		private string _SONHA;
 		
 		private string _DUONG;
+		
+		private string _PHUONG;
+		
+		private int _QUAN;
+		
+		private System.Nullable<System.DateTime> _NGAYNHAN;
+		
+		private string _LOAIKH;
+		
+		private string _LOAIHOSO;
+		
+		private System.Nullable<int> _TAPTHE;
+		
+		private System.Nullable<bool> _TINHKHOAN;
+		
+		private string _LOAIMIENPHI;
+		
+		private string _GHICHU;
+		
+		private System.Nullable<bool> _HOSOKHAN;
+		
+		private string _GHICHUKHAN;
+		
+		private System.Nullable<bool> _CHUYEN_HOSO;
+		
+		private string _BOPHANCHUYEN;
+		
+		private string _NGUOICHUYEN_HOSO;
+		
+		private System.Nullable<System.DateTime> _NGAYCHUYEN_HOSO;
+		
+		private System.Nullable<bool> _TRONGAICHUYEN_HOSO;
+		
+		private string _NOIDUNGTNCHUYEN;
+		
+		private string _CREATEBY;
+		
+		private System.Nullable<System.DateTime> _CREATEDATE;
+		
+		private string _MODIFYBY;
+		
+		private System.Nullable<System.DateTime> _MODIFYDATE;
 		
 		private int _MAQUAN;
 		
@@ -3105,12 +3159,26 @@ namespace TanHoaWater.Database
 		
 		private string _TENPHUONG;
 		
-		private System.Nullable<System.DateTime> _NGAYNHAN;
-		
 		private string _TENLOAI;
 		
 		public V_DONKHACHHANG()
 		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL")]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this._ID = value;
+				}
+			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MADOT", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
@@ -3141,6 +3209,54 @@ namespace TanHoaWater.Database
 				if ((this._SOHOSO != value))
 				{
 					this._SOHOSO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SHS", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string SHS
+		{
+			get
+			{
+				return this._SHS;
+			}
+			set
+			{
+				if ((this._SHS != value))
+				{
+					this._SHS = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DANHBO", DbType="VarChar(50)")]
+		public string DANHBO
+		{
+			get
+			{
+				return this._DANHBO;
+			}
+			set
+			{
+				if ((this._DANHBO != value))
+				{
+					this._DANHBO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HOPDONG", DbType="VarChar(50)")]
+		public string HOPDONG
+		{
+			get
+			{
+				return this._HOPDONG;
+			}
+			set
+			{
+				if ((this._HOPDONG != value))
+				{
+					this._HOPDONG = value;
 				}
 			}
 		}
@@ -3177,6 +3293,38 @@ namespace TanHoaWater.Database
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SOHOBD", DbType="Int")]
+		public System.Nullable<int> SOHOBD
+		{
+			get
+			{
+				return this._SOHOBD;
+			}
+			set
+			{
+				if ((this._SOHOBD != value))
+				{
+					this._SOHOBD = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SOHO", DbType="Int")]
+		public System.Nullable<int> SOHO
+		{
+			get
+			{
+				return this._SOHO;
+			}
+			set
+			{
+				if ((this._SOHO != value))
+				{
+					this._SOHO = value;
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SONHA", DbType="VarChar(50)")]
 		public string SONHA
 		{
@@ -3205,6 +3353,342 @@ namespace TanHoaWater.Database
 				if ((this._DUONG != value))
 				{
 					this._DUONG = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PHUONG", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
+		public string PHUONG
+		{
+			get
+			{
+				return this._PHUONG;
+			}
+			set
+			{
+				if ((this._PHUONG != value))
+				{
+					this._PHUONG = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_QUAN", DbType="Int NOT NULL")]
+		public int QUAN
+		{
+			get
+			{
+				return this._QUAN;
+			}
+			set
+			{
+				if ((this._QUAN != value))
+				{
+					this._QUAN = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAYNHAN", DbType="DateTime")]
+		public System.Nullable<System.DateTime> NGAYNHAN
+		{
+			get
+			{
+				return this._NGAYNHAN;
+			}
+			set
+			{
+				if ((this._NGAYNHAN != value))
+				{
+					this._NGAYNHAN = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LOAIKH", DbType="VarChar(10)")]
+		public string LOAIKH
+		{
+			get
+			{
+				return this._LOAIKH;
+			}
+			set
+			{
+				if ((this._LOAIKH != value))
+				{
+					this._LOAIKH = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LOAIHOSO", DbType="VarChar(10)")]
+		public string LOAIHOSO
+		{
+			get
+			{
+				return this._LOAIHOSO;
+			}
+			set
+			{
+				if ((this._LOAIHOSO != value))
+				{
+					this._LOAIHOSO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TAPTHE", DbType="Int")]
+		public System.Nullable<int> TAPTHE
+		{
+			get
+			{
+				return this._TAPTHE;
+			}
+			set
+			{
+				if ((this._TAPTHE != value))
+				{
+					this._TAPTHE = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TINHKHOAN", DbType="Bit")]
+		public System.Nullable<bool> TINHKHOAN
+		{
+			get
+			{
+				return this._TINHKHOAN;
+			}
+			set
+			{
+				if ((this._TINHKHOAN != value))
+				{
+					this._TINHKHOAN = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LOAIMIENPHI", DbType="NVarChar(50)")]
+		public string LOAIMIENPHI
+		{
+			get
+			{
+				return this._LOAIMIENPHI;
+			}
+			set
+			{
+				if ((this._LOAIMIENPHI != value))
+				{
+					this._LOAIMIENPHI = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GHICHU", DbType="NVarChar(250)")]
+		public string GHICHU
+		{
+			get
+			{
+				return this._GHICHU;
+			}
+			set
+			{
+				if ((this._GHICHU != value))
+				{
+					this._GHICHU = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HOSOKHAN", DbType="Bit")]
+		public System.Nullable<bool> HOSOKHAN
+		{
+			get
+			{
+				return this._HOSOKHAN;
+			}
+			set
+			{
+				if ((this._HOSOKHAN != value))
+				{
+					this._HOSOKHAN = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GHICHUKHAN", DbType="NVarChar(250)")]
+		public string GHICHUKHAN
+		{
+			get
+			{
+				return this._GHICHUKHAN;
+			}
+			set
+			{
+				if ((this._GHICHUKHAN != value))
+				{
+					this._GHICHUKHAN = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CHUYEN_HOSO", DbType="Bit")]
+		public System.Nullable<bool> CHUYEN_HOSO
+		{
+			get
+			{
+				return this._CHUYEN_HOSO;
+			}
+			set
+			{
+				if ((this._CHUYEN_HOSO != value))
+				{
+					this._CHUYEN_HOSO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BOPHANCHUYEN", DbType="VarChar(20)")]
+		public string BOPHANCHUYEN
+		{
+			get
+			{
+				return this._BOPHANCHUYEN;
+			}
+			set
+			{
+				if ((this._BOPHANCHUYEN != value))
+				{
+					this._BOPHANCHUYEN = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGUOICHUYEN_HOSO", DbType="VarChar(20)")]
+		public string NGUOICHUYEN_HOSO
+		{
+			get
+			{
+				return this._NGUOICHUYEN_HOSO;
+			}
+			set
+			{
+				if ((this._NGUOICHUYEN_HOSO != value))
+				{
+					this._NGUOICHUYEN_HOSO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAYCHUYEN_HOSO", DbType="DateTime")]
+		public System.Nullable<System.DateTime> NGAYCHUYEN_HOSO
+		{
+			get
+			{
+				return this._NGAYCHUYEN_HOSO;
+			}
+			set
+			{
+				if ((this._NGAYCHUYEN_HOSO != value))
+				{
+					this._NGAYCHUYEN_HOSO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TRONGAICHUYEN_HOSO", DbType="Bit")]
+		public System.Nullable<bool> TRONGAICHUYEN_HOSO
+		{
+			get
+			{
+				return this._TRONGAICHUYEN_HOSO;
+			}
+			set
+			{
+				if ((this._TRONGAICHUYEN_HOSO != value))
+				{
+					this._TRONGAICHUYEN_HOSO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NOIDUNGTNCHUYEN", DbType="NVarChar(50)")]
+		public string NOIDUNGTNCHUYEN
+		{
+			get
+			{
+				return this._NOIDUNGTNCHUYEN;
+			}
+			set
+			{
+				if ((this._NOIDUNGTNCHUYEN != value))
+				{
+					this._NOIDUNGTNCHUYEN = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CREATEBY", DbType="VarChar(50)")]
+		public string CREATEBY
+		{
+			get
+			{
+				return this._CREATEBY;
+			}
+			set
+			{
+				if ((this._CREATEBY != value))
+				{
+					this._CREATEBY = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CREATEDATE", DbType="DateTime")]
+		public System.Nullable<System.DateTime> CREATEDATE
+		{
+			get
+			{
+				return this._CREATEDATE;
+			}
+			set
+			{
+				if ((this._CREATEDATE != value))
+				{
+					this._CREATEDATE = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MODIFYBY", DbType="VarChar(20)")]
+		public string MODIFYBY
+		{
+			get
+			{
+				return this._MODIFYBY;
+			}
+			set
+			{
+				if ((this._MODIFYBY != value))
+				{
+					this._MODIFYBY = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MODIFYDATE", DbType="DateTime")]
+		public System.Nullable<System.DateTime> MODIFYDATE
+		{
+			get
+			{
+				return this._MODIFYDATE;
+			}
+			set
+			{
+				if ((this._MODIFYDATE != value))
+				{
+					this._MODIFYDATE = value;
 				}
 			}
 		}
@@ -3269,22 +3753,6 @@ namespace TanHoaWater.Database
 				if ((this._TENPHUONG != value))
 				{
 					this._TENPHUONG = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAYNHAN", DbType="DateTime")]
-		public System.Nullable<System.DateTime> NGAYNHAN
-		{
-			get
-			{
-				return this._NGAYNHAN;
-			}
-			set
-			{
-				if ((this._NGAYNHAN != value))
-				{
-					this._NGAYNHAN = value;
 				}
 			}
 		}

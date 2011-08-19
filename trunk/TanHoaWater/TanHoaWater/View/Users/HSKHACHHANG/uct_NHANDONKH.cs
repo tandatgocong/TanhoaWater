@@ -274,5 +274,16 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
             }
             
         }
+
+        private void tabItem3_Click(object sender, EventArgs e)
+        {
+            //this.panelBC.Controls.Clear();
+            //this.panelBC.Controls.Add(new tab_BaoCao());
+        }
+
+        private void tabItem1_Click(object sender, EventArgs e)
+        {
+            this.panel2.Controls.Clear();
+        }
     }
 }
