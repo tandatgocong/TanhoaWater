@@ -1,6 +1,4 @@
 D:\Project\tanhoawater\TanHoaWater\TanHoaWater\bin\Debug\TanHoaWater.exe.config
-D:\Project\tanhoawater\TanHoaWater\TanHoaWater\bin\Debug\TanHoaWater.exe
-D:\Project\tanhoawater\TanHoaWater\TanHoaWater\bin\Debug\TanHoaWater.pdb
 D:\Project\tanhoawater\TanHoaWater\TanHoaWater\obj\Debug\ResolveAssemblyReference.cache
 D:\Project\tanhoawater\TanHoaWater\TanHoaWater\obj\Debug\TanHoaWater.View.Report.rpt_View.resources
 D:\Project\tanhoawater\TanHoaWater\TanHoaWater\obj\Debug\TanHoaWater.View.Users.HSKHACHHANG.tab_TimKiemDonKH.resources
@@ -17,37 +15,8 @@ D:\Project\tanhoawater\TanHoaWater\TanHoaWater\obj\Debug\TanHoaWater.View.QLDHN.
 D:\Project\tanhoawater\TanHoaWater\TanHoaWater\obj\Debug\TanHoaWater.View.QLDHN.controlViewLich.resources
 D:\Project\tanhoawater\TanHoaWater\TanHoaWater\obj\Debug\TanHoaWater.View.Users.frm_Login.resources
 D:\Project\tanhoawater\TanHoaWater\TanHoaWater\obj\Debug\GenerateResource-ResGen.read.1.tlog
-D:\Project\tanhoawater\TanHoaWater\TanHoaWater\obj\Debug\GenerateResource.read.1632.tlog
-D:\Project\tanhoawater\TanHoaWater\TanHoaWater\obj\Debug\GenerateResource.read.443.tlog
 D:\Project\tanhoawater\TanHoaWater\TanHoaWater\obj\Debug\GenerateResource-ResGen.write.1.tlog
-D:\Project\tanhoawater\TanHoaWater\TanHoaWater\obj\Debug\GenerateResource.write.1182.tlog
-D:\Project\tanhoawater\TanHoaWater\TanHoaWater\obj\Debug\GenerateResource.write.443.tlog
-D:\Project\tanhoawater\TanHoaWater\TanHoaWater\obj\Debug\GenerateResource.write.547.tlog
-D:\Project\tanhoawater\TanHoaWater\TanHoaWater\obj\Debug\GenerateResource.write.668.tlog
+D:\Project\tanhoawater\TanHoaWater\TanHoaWater\bin\Debug\TanHoaWater.exe
+D:\Project\tanhoawater\TanHoaWater\TanHoaWater\bin\Debug\TanHoaWater.pdb
 D:\Project\tanhoawater\TanHoaWater\TanHoaWater\obj\Debug\TanHoaWater.exe
 D:\Project\tanhoawater\TanHoaWater\TanHoaWater\obj\Debug\TanHoaWater.pdb
-D:\Project\tanhoawater\TanHoaWater\TanHoaWater\obj\Debug\GenerateResource.read.898.tlog
-D:\Project\tanhoawater\TanHoaWater\TanHoaWater\obj\Debug\GenerateResource.write.898.tlog
-D:\Project\tanhoawater\TanHoaWater\TanHoaWater\obj\Debug\GenerateResource.write.1277.tlog
-D:\TAN HOA\Project\tanhoawater\TanHoaWater\TanHoaWater\bin\Debug\TanHoaWater.exe.config
-D:\TAN HOA\Project\tanhoawater\TanHoaWater\TanHoaWater\bin\Debug\TanHoaWater.exe
-D:\TAN HOA\Project\tanhoawater\TanHoaWater\TanHoaWater\bin\Debug\TanHoaWater.pdb
-D:\TAN HOA\Project\tanhoawater\TanHoaWater\TanHoaWater\obj\Debug\ResolveAssemblyReference.cache
-D:\TAN HOA\Project\tanhoawater\TanHoaWater\TanHoaWater\obj\Debug\TanHoaWater.View.Report.rpt_View.resources
-D:\TAN HOA\Project\tanhoawater\TanHoaWater\TanHoaWater\obj\Debug\TanHoaWater.View.Users.HSKHACHHANG.tab_TimKiemDonKH.resources
-D:\TAN HOA\Project\tanhoawater\TanHoaWater\TanHoaWater\obj\Debug\TanHoaWater.View.Users.HSKHACHHANG.uct_DOTNHANDON.resources
-D:\TAN HOA\Project\tanhoawater\TanHoaWater\TanHoaWater\obj\Debug\TanHoaWater.View.Users.HSKHACHHANG.uct_NHANDONKH.resources
-D:\TAN HOA\Project\tanhoawater\TanHoaWater\TanHoaWater\obj\Debug\TanHoaWater.View.Users.Uses_Main.resources
-D:\TAN HOA\Project\tanhoawater\TanHoaWater\TanHoaWater\obj\Debug\TanHoaWater.frm_Main.resources
-D:\TAN HOA\Project\tanhoawater\TanHoaWater\TanHoaWater\obj\Debug\TanHoaWater.Properties.Resources.resources
-D:\TAN HOA\Project\tanhoawater\TanHoaWater\TanHoaWater\obj\Debug\TanHoaWater.SplashScreen.resources
-D:\TAN HOA\Project\tanhoawater\TanHoaWater\TanHoaWater\obj\Debug\TanHoaWater.View.Administrators.Admin_Main.resources
-D:\TAN HOA\Project\tanhoawater\TanHoaWater\TanHoaWater\obj\Debug\TanHoaWater.View.Administrators.uct_Users.resources
-D:\TAN HOA\Project\tanhoawater\TanHoaWater\TanHoaWater\obj\Debug\TanHoaWater.View.QLDHN.controlAddLich.resources
-D:\TAN HOA\Project\tanhoawater\TanHoaWater\TanHoaWater\obj\Debug\TanHoaWater.View.QLDHN.frm_QLDHN.resources
-D:\TAN HOA\Project\tanhoawater\TanHoaWater\TanHoaWater\obj\Debug\TanHoaWater.View.QLDHN.controlViewLich.resources
-D:\TAN HOA\Project\tanhoawater\TanHoaWater\TanHoaWater\obj\Debug\TanHoaWater.View.Users.frm_Login.resources
-D:\TAN HOA\Project\tanhoawater\TanHoaWater\TanHoaWater\obj\Debug\ResGen.read.1.tlog
-D:\TAN HOA\Project\tanhoawater\TanHoaWater\TanHoaWater\obj\Debug\ResGen.write.1.tlog
-D:\TAN HOA\Project\tanhoawater\TanHoaWater\TanHoaWater\obj\Debug\TanHoaWater.exe
-D:\TAN HOA\Project\tanhoawater\TanHoaWater\TanHoaWater\obj\Debug\TanHoaWater.pdb
