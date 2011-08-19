@@ -42,6 +42,22 @@ namespace TanHoaWater.DAL
             return dataset.Tables[0];
         
         }
+        public static DataTable getListbyDot(string dot )
+        {
+            TanHoaDataContext db = new TanHoaDataContext();
+            db.Connection.Open();
+            string sql = " SELECT SOHOSO,HOTEN, (SONHA +' '+ DUONG +', P.'+p.TENPHUONG+', Q.'+ q.TENQUAN ) as 'DIACHI',NGAYNHAN= CONVERT(VARCHAR(10),NGAYNHAN,103), lkh.TENLOAI as 'LOAIDON' ";
+            sql += " FROM DON_KHACHHANG kh,QUAN q,PHUONG p, LOAI_KHACHHANG lkh ";
+            sql += " WHERE  kh.QUAN = q.MAQUAN AND q.MAQUAN=p.MAQUAN AND kh.PHUONG=p.MAPHUONG AND lkh.MALOAI=kh.LOAIKH";
+            sql += " AND MADOT='" + dot + "'";
+            sql += " ORDER BY NGAYNHAN DESC ";
+            SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
+            DataSet dataset = new DataSet();
+            adapter.Fill(dataset,"TABLE");
+            db.Connection.Close();
+            return dataset.Tables[0];
+
+        }
         public static DON_KHACHHANG findBySOHOSO(string sohoso)
         {
             TanHoaDataContext db = new TanHoaDataContext();

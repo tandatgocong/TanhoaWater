@@ -110,19 +110,20 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
         int sokh = 0;
         public void loadDetail(string madot) {
 
-            //this.detail.DataSource = DAL.C_DONKHACHHANG.getListbyDot(madot);
-            //sokh = DAL.C_DONKHACHHANG.getListbyDot(madot).Rows.Count;
-            //if (sokh > 0)
-            //{
-            //    this.print.Visible = true;    
-            //    this.checkCD.Visible = true; 
-                
-            //}
-            //else {
-            //    this.print.Visible = false;              
-            //    this.checkCD.Visible = false; 
-            //}
-            //Utilities.DataGridV.formatRows(detail);
+            this.detail.DataSource = DAL.C_DONKHACHHANG.getListbyDot(madot);
+            sokh = DAL.C_DONKHACHHANG.getListbyDot(madot).Rows.Count;
+            if (sokh > 0)
+            {
+                this.print.Visible = true;
+                this.checkCD.Visible = true;
+
+            }
+            else
+            {
+                this.print.Visible = false;
+                this.checkCD.Visible = false;
+            }
+            Utilities.DataGridV.formatRows(detail);
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)

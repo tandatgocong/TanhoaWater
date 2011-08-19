@@ -20,3 +20,4 @@ D:\Project\tanhoawater\TanHoaWater\TanHoaWater\bin\Debug\TanHoaWater.exe
 D:\Project\tanhoawater\TanHoaWater\TanHoaWater\bin\Debug\TanHoaWater.pdb
 D:\Project\tanhoawater\TanHoaWater\TanHoaWater\obj\Debug\TanHoaWater.exe
 D:\Project\tanhoawater\TanHoaWater\TanHoaWater\obj\Debug\TanHoaWater.pdb
+D:\Project\tanhoawater\TanHoaWater\TanHoaWater\obj\Debug\TanHoaWater.View.Users.HSKHACHHANG.tab_BaoCao.resources
