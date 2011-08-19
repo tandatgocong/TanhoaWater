@@ -157,6 +157,29 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
             this.cbDotNhanDon.ValueMember = "MADOT";
             #endregion                
         }
+        public void clear()
+        {
+            this.txtSHS.Text = null;
+            this.txtSoHoSo.Text = null;
+            this.txtSoHo.Value = 0;
+            this.txtHoTen.Text = null;
+            this.sonha.Text = null;
+            this.duong.Text = null;
+            cbQuan.Text = null;
+            cbPhuong.Text = null;
+            cbLoaiKH.Text = null;
+            cbLoaiHS.Text = null;
+            this.cbDotNhanDon.Text = null;
+            this.dienthoai.Text = null;
+            this.ghichu.Text = null;
+            this.khan.Checked = false;
+            this.ghichuKhan.Visible = false;
+            this.ghichuKhan.Text = null;
+            this.chuyenhoso.Checked = false;
+            this.bophanChuyen.Visible = false;
+            this.btUpdate.Enabled = true;
+            this.btDelete.Enabled = true;
+        }
         private void dataSearCh_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -200,10 +223,16 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                             this.chuyenhoso.Checked = true;
                             this.bophanChuyen.Visible = true;
                             // load bo phan chuyen
+                            this.btUpdate.Enabled = false;
+                            this.btDelete.Enabled = false;
+                            this.bophanChuyen.Text = DAL.C_PHONGBAN.findbyMaPhong(donkh.BOPHANCHUYEN).TENPHONG;
                         }
                         else {
                             this.chuyenhoso.Checked = false;
                             this.bophanChuyen.Visible = false;
+                            this.btUpdate.Enabled = true;
+                            this.btDelete.Enabled = true;
+                            this.bophanChuyen.Text = null;
                         }
                     
                     }
@@ -249,6 +278,20 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
             catch (Exception)
             {
             }
+        }
+
+        private void btUpdate_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btDelete_Click(object sender, EventArgs e)    {
+            string q = "Xóa Hồ Sơ " + this.txtSoHoSo.Text  + " ?";
+            if (MessageBox.Show(this, q, "..: Thông Báo :..", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) {
+                DAL.C_DONKHACHHANG.DeleteDonKH(this.txtSoHoSo.Text);
+                clear();
+                search();
+            }      
         }
     }
 }

@@ -78,7 +78,22 @@ namespace TanHoaWater.DAL
             }
             return false;
         }
-        
+        public static bool DeleteDonKH(string donkh)
+        {
+            try
+            {
+                TanHoaDataContext db = new TanHoaDataContext();
+                var ff = from aa in db.DON_KHACHHANGs where aa.SOHOSO == donkh select aa;
+                db.DON_KHACHHANGs.DeleteOnSubmit(ff.SingleOrDefault());
+                db.SubmitChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                log.Error("Delete Dot KHACH HANG LOI " + ex.Message);
+            }
+            return false;
+        }
         public static DataTable BangKeNhanDon(string madot)
         {
             TanHoaDataContext db = new TanHoaDataContext();

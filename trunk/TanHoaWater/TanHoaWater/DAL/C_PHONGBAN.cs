@@ -15,5 +15,16 @@ namespace TanHoaWater.DAL
             var phongab = from pb in data.PHONGBANDOIs select pb;
             return phongab.ToList();
         }
+        public static PHONGBANDOI findbyMaPhong(string maphong) {
+            TanHoaDataContext data = new TanHoaDataContext();
+            var phongab = from pb in data.PHONGBANDOIs where pb.MAPHONG==maphong select pb;
+            return phongab.SingleOrDefault();
+        }
+        public static PHONGBANDOI findbyTenPhong(string tenphong)
+        {
+            TanHoaDataContext data = new TanHoaDataContext();
+            var phongab = from pb in data.PHONGBANDOIs where pb.TENPHONG == tenphong select pb;
+            return phongab.SingleOrDefault();
+        }
     }
 }
