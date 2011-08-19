@@ -26,5 +26,17 @@ namespace TanHoaWater.DAL
             }
             return list;
         }
+        public static LOAI_HOSO findbyMaLoai(string maloai) {
+            TanHoaDataContext data = new TanHoaDataContext();
+            var loaihs = from lhs in data.LOAI_HOSOs where lhs.MALOAI== maloai select lhs;
+            return loaihs.SingleOrDefault();
+        }
+
+        public static LOAI_HOSO findbyTenLoai(string tenHoso)
+        {
+            TanHoaDataContext data = new TanHoaDataContext();
+            var loaihs = from lhs in data.LOAI_HOSOs where lhs.TENLOAI == tenHoso select lhs;
+            return loaihs.SingleOrDefault();
+        }
     }
 }
