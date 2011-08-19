@@ -58,6 +58,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
             this.cbDotNhanDon.DisplayMember = "TEND";
             this.cbDotNhanDon.ValueMember = "MADOT";          
             #endregion        
+            
             try
             {
                 rows = DAL.C_DONKHACHHANG.TotalListByDot(this.cbDotNhanDon.SelectedValue.ToString());
@@ -155,14 +156,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
             {
                 this.errorProvider1.Clear();
                 this.errorProvider1.SetError(this.duong, "Tên Đường Không Được Trống.");
-            }
-            else if (this.khan.Checked == true){
-                this.errorProvider1.Clear();
-                if ( "".Equals(this.ghichukhan.Text))
-                {
-                    this.errorProvider1.SetError(this.ghichukhan, "Ghi Chú Khẩn Không Được Trống.");
-                }
-            }
+            }            
             else if (DAL.C_DONKHACHHANG.findBySOHOSO(this.txtSoHoSo.Text)!=null) {
                 this.errorProvider1.Clear();
                 this.errorProvider1.SetError(this.txtSHS, "Số Hồ Sơ Đã Tồn Tại.");
