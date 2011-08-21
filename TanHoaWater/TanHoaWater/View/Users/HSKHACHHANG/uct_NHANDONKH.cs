@@ -188,7 +188,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                     donKH.HOSOKHAN = true;
                     donKH.GHICHUKHAN = this.ghichukhan.Text;
                 }
-                donKH.CREATEBY = DAL.Users._userName;
+                donKH.CREATEBY = DAL.C_USERS._userName;
                 donKH.CREATEDATE = DateTime.Now;
                 DAL.C_DONKHACHHANG.InsertDonHK(donKH);
                 loadDataGrid();
@@ -272,18 +272,55 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
             {
                
             }
-            
-        }
 
-        private void tabItem3_Click(object sender, EventArgs e)
-        {
-            //this.panelBC.Controls.Clear();
-            //this.panelBC.Controls.Add(new tab_BaoCao());
         }
 
         private void tabItem1_Click(object sender, EventArgs e)
         {
             this.panel2.Controls.Clear();
+        }
+
+        private void tab_BaoCao_Click(object sender, EventArgs e)
+        {
+            #region Bao cao Quan
+            this.BC_QUAN.DataSource = DAL.C_QUAN.getList();
+            this.BC_QUAN.DisplayMember = "TENQUAN";
+            this.BC_QUAN.ValueMember = "MAQUAN";
+            #endregion           
+            #region Loai Dot Nhan Don
+            this.BC_DOTNHANDON.DataSource = DAL.C_DOTNHANDON.getListtMa_Dot();
+            this.BC_DOTNHANDON.DisplayMember = "TEND";
+            this.BC_DOTNHANDON.ValueMember = "MADOT";
+            #endregion 
+            #region Load User
+            this.BC_NGUOIDUYET.DataSource = DAL.C_USERS.getAll();
+            this.BC_NGUOIDUYET.DisplayMember = "FULLNAME";
+            this.BC_NGUOIDUYET.ValueMember = "USERNAME";
+            #endregion
+        }
+
+        private void BC_LOAIBC_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (this.BC_LOAIBC.SelectedIndex == 0) {
+                this.BC_QUAN.Enabled = false;
+                this.BC_DOTNHANDON.Enabled = true;
+            }
+            if (this.BC_LOAIBC.SelectedIndex == 1)
+            {
+                this.BC_QUAN.Enabled = true;
+                this.BC_DOTNHANDON.Enabled = true;
+            }
+            if (this.BC_LOAIBC.SelectedIndex == 2)
+            {
+                this.BC_QUAN.Enabled = false;
+                this.BC_DOTNHANDON.Enabled = true;
+            }
+            if (this.BC_LOAIBC.SelectedIndex == 3)
+            {
+                this.BC_QUAN.Enabled = true;
+                this.BC_DOTNHANDON.Enabled = true;
+            }
+        
         }
     }
 }

@@ -35,12 +35,12 @@ namespace TanHoaWater
         public static frm_Login dn = new frm_Login();
         public void dangnhap() {
             dn.ShowDialog();
-            if (DAL.Users._roles != null && "AD".Equals(DAL.Users._roles.Trim()))
+            if (DAL.C_USERS._roles != null && "AD".Equals(DAL.C_USERS._roles.Trim()))
             {
                 this.PanelContent.Controls.Clear();
                 this.PanelContent.Controls.Add(new Admin_Main());
             }
-            else if (DAL.Users._roles != null && "US".Equals(DAL.Users._roles.Trim()))
+            else if (DAL.C_USERS._roles != null && "US".Equals(DAL.C_USERS._roles.Trim()))
             {
                 this.PanelContent.Controls.Clear();
                 this.PanelContent.Controls.Add(new Uses_Main());
@@ -63,10 +63,10 @@ namespace TanHoaWater
             }
         }
         public void formLoad() {            
-            if (DAL.Users._userName == null) {
+            if (DAL.C_USERS._userName == null) {
                 this.subdangnhap.Visible = true;
             }
-            else if (DAL.Users._userName != null) {
+            else if (DAL.C_USERS._userName != null) {
                 this.subdangnhap.Visible = false;
                 this.subDangXuat.Visible = true;
                 this.subDoiMatKhau.Visible = true;

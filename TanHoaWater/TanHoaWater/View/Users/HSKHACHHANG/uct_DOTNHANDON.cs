@@ -74,7 +74,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                     dotnhan.MADOT = madot;
                     dotnhan.NGAYLAPDON = ngaylap;
                     dotnhan.LOAIDON = loaiDonNhan;
-                    dotnhan.CREATEBY = DAL.Users._userName;
+                    dotnhan.CREATEBY = DAL.C_USERS._userName;
                     dotnhan.CREATEDATE = DateTime.Now;
                     dotnhan.CHUYENDON = false;
                     DAL.C_DOTNHANDON.InsertDot(dotnhan);
@@ -164,7 +164,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                 DOT_NHAN_DON dot = DAL.C_DOTNHANDON.findByMaDot(_madot);
                 dot.CHUYENDON = true;
                 dot.NGAYCHUYEN = DateTime.Now;
-                dot.NGUOICHUYEN = DAL.Users._userName;
+                dot.NGUOICHUYEN = DAL.C_USERS._userName;
                 dot.BOPHANCHUYEN = this.cbBOPHAN.SelectedValue.ToString();
                 DAL.C_DOTNHANDON.UpdateDot(dot);
                 #endregion

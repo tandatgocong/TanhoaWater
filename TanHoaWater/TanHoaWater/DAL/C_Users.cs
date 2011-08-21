@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 
 namespace TanHoaWater.DAL
 {
-   public class Users
+    public class C_USERS
     {
         public static string _fullName = null;
         public static string _userName = null;
@@ -101,6 +101,11 @@ namespace TanHoaWater.DAL
             return false;
         }
 
+        public static List<USER> getAll() {
+            TanHoaDataContext db = new TanHoaDataContext();
+            var data = from user in db.USERs   select user;       
+            return data.ToList();
+        }
 
     }
 }
