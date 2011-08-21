@@ -33,7 +33,7 @@ namespace TanHoaWater.View.Administrators
             #endregion        
         }
         public void LoadUsers(){
-            DAL.Users user = new DAL.Users();
+            DAL.C_USERS user = new DAL.C_USERS();
             userGridView.DataSource = null;
             userGridView.DataSource = user.getList(this.txtUserName.Text, this.txtName.Text, this.cbRoles.SelectedValue.ToString());            
         }
@@ -78,7 +78,7 @@ namespace TanHoaWater.View.Administrators
                     user.CREATEBY = "";
                     user.ENABLED = true;
                     user.CREATEDATE = DateTime.Now;
-                    DAL.Users users = new DAL.Users();
+                    DAL.C_USERS users = new DAL.C_USERS();
                     if (users.findByUserName(user.USERNAME) == null)
                     {
                         users.AddNew(user);

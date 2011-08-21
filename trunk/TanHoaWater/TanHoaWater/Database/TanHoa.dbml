@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="TANHOA_WATER" Class="TanHoaDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=KTCN-DAT;Initial Catalog=TANHOA_WATER;Persist Security Info=True;User ID=sa" SettingsObjectName="TanHoaWater.Properties.Settings" SettingsPropertyName="TANHOA_WATERConnectionString1" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=LEDAT-PC;Initial Catalog=TANHOA_WATER;Persist Security Info=True;User ID=sa" SettingsObjectName="TanHoaWater.Properties.Settings" SettingsPropertyName="TANHOA_WATERConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.DON_KHACHHANG" Member="DON_KHACHHANGs">
     <Type Name="DON_KHACHHANG">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -42,11 +42,18 @@
       <Association Name="QUAN_DON_KHACHHANG" Member="QUAN1" ThisKey="QUAN" OtherKey="MAQUAN" Type="QUAN" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.ROLES" Member="ROLEs">
-    <Type Name="ROLE">
-      <Column Name="ROLEID" Type="System.String" DbType="VarChar(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="ROLENAME" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Association Name="ROLE_USER" Member="USERs" ThisKey="ROLEID" OtherKey="ROLEID" Type="USER" />
+  <Table Name="dbo.USERS" Member="USERs">
+    <Type Name="USER">
+      <Column Name="USERNAME" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PASSWORD" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FULLNAME" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ROLEID" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="ENABLED" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CREATEBY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CREATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MODIFYBY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MODIFYDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="ROLE_USER" Member="ROLE" ThisKey="ROLEID" OtherKey="ROLEID" Type="ROLE" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.DOT_NHAN_DON" Member="DOT_NHAN_DONs">
@@ -124,18 +131,11 @@
       <Association Name="QUAN_PHUONG" Member="PHUONGs" ThisKey="MAQUAN" OtherKey="MAQUAN" Type="PHUONG" />
     </Type>
   </Table>
-  <Table Name="dbo.USERS" Member="USERs">
-    <Type Name="USER">
-      <Column Name="USERNAME" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="PASSWORD" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="FULLNAME" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="ROLEID" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
-      <Column Name="ENABLED" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="CREATEBY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="CREATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="MODIFYBY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="MODIFYDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Association Name="ROLE_USER" Member="ROLE" ThisKey="ROLEID" OtherKey="ROLEID" Type="ROLE" IsForeignKey="true" />
+  <Table Name="dbo.ROLES" Member="ROLEs">
+    <Type Name="ROLE">
+      <Column Name="ROLEID" Type="System.String" DbType="VarChar(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ROLENAME" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="ROLE_USER" Member="USERs" ThisKey="ROLEID" OtherKey="ROLEID" Type="USER" />
     </Type>
   </Table>
   <Table Name="dbo.V_DONKHACHHANG" Member="V_DONKHACHHANGs">
@@ -178,6 +178,7 @@
       <Column Name="MAPHUONG" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
       <Column Name="TENPHUONG" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="TENLOAI" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="NGUOILAP" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

@@ -64,7 +64,7 @@ namespace TanHoaWater.View.Users
                  errorProvider1.Clear();
              }
              string password = LogIn.Encrypt(pass);
-            DAL.Users users = new DAL.Users();
+            DAL.C_USERS users = new DAL.C_USERS();
             if (users.UserLogin(udi, password))    {
                 this.lbFail.Visible = false;
                 this.Close();
