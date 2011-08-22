@@ -3,7 +3,6 @@ D:\Project\tanhoawater\TanHoaWater\TanHoaWater\obj\Debug\ResolveAssemblyReferenc
 D:\Project\tanhoawater\TanHoaWater\TanHoaWater\obj\Debug\TanHoaWater.View.Report.rpt_View.resources
 D:\Project\tanhoawater\TanHoaWater\TanHoaWater\obj\Debug\TanHoaWater.View.Users.HSKHACHHANG.tab_TimKiemDonKH.resources
 D:\Project\tanhoawater\TanHoaWater\TanHoaWater\obj\Debug\TanHoaWater.View.Users.HSKHACHHANG.uct_DOTNHANDON.resources
-D:\Project\tanhoawater\TanHoaWater\TanHoaWater\obj\Debug\TanHoaWater.View.Users.HSKHACHHANG.uct_NHANDONKH.resources
 D:\Project\tanhoawater\TanHoaWater\TanHoaWater\obj\Debug\TanHoaWater.View.Users.Uses_Main.resources
 D:\Project\tanhoawater\TanHoaWater\TanHoaWater\obj\Debug\TanHoaWater.frm_Main.resources
 D:\Project\tanhoawater\TanHoaWater\TanHoaWater\obj\Debug\TanHoaWater.Properties.Resources.resources
@@ -20,5 +19,13 @@ D:\Project\tanhoawater\TanHoaWater\TanHoaWater\bin\Debug\TanHoaWater.exe
 D:\Project\tanhoawater\TanHoaWater\TanHoaWater\bin\Debug\TanHoaWater.pdb
 D:\Project\tanhoawater\TanHoaWater\TanHoaWater\obj\Debug\TanHoaWater.exe
 D:\Project\tanhoawater\TanHoaWater\TanHoaWater\obj\Debug\TanHoaWater.pdb
-D:\Project\tanhoawater\TanHoaWater\TanHoaWater\obj\Debug\TanHoaWater.View.Users.HSKHACHHANG.tab_BaoCao.resources
 D:\TAN HOA\Project\tanhoawater\TanHoaWater\TanHoaWater\bin\Debug\TanHoaWater.exe.config
+D:\Project\tanhoawater\TanHoaWater\TanHoaWater\obj\Debug\GenerateResource.read.762.tlog
+D:\Project\tanhoawater\TanHoaWater\TanHoaWater\obj\Debug\GenerateResource.write.762.tlog
+D:\Project\tanhoawater\TanHoaWater\TanHoaWater\obj\Debug\TanHoaWater.View.Users.HSKHACHHANG.HSKHACHHANG.resources
+D:\Project\tanhoawater\TanHoaWater\TanHoaWater\obj\Debug\GenerateResource.write.948.tlog
+D:\Project\tanhoawater\TanHoaWater\TanHoaWater\obj\Debug\GenerateResource.write.1161.tlog
+D:\Project\tanhoawater\TanHoaWater\TanHoaWater\obj\Debug\GenerateResource.read.561.tlog
+D:\Project\tanhoawater\TanHoaWater\TanHoaWater\obj\Debug\GenerateResource.write.561.tlog
+D:\Project\tanhoawater\TanHoaWater\TanHoaWater\obj\Debug\GenerateResource.read.1219.tlog
+D:\Project\tanhoawater\TanHoaWater\TanHoaWater\obj\Debug\GenerateResource.read.1764.tlog
