@@ -38,15 +38,27 @@ namespace TanHoaWater.DAL
 
             return false;
         }
-        public static bool UpdateDot(DOT_NHAN_DON dotnd)
+        public static bool chuyendon(DOT_NHAN_DON dotnd)
         {
             try
             {
                 TanHoaDataContext db = new TanHoaDataContext();
+                var dotnhandon = from query in db.DOT_NHAN_DONs where query.MADOT == dotnd.MADOT  select query;
+                DOT_NHAN_DON dot = dotnhandon.SingleOrDefault();
+                if ( dot!= null) {
+                    dot.CHUYENDON = dotnd.CHUYENDON;
+                    dot.NGAYCHUYEN = dotnd.NGAYCHUYEN;
+                    dot.BOPHANCHUYEN = dotnd.BOPHANCHUYEN;
+                    dot.NGUOICHUYEN = dotnd.NGUOICHUYEN;
+                   
+                }
                 db.SubmitChanges();
             }
             catch (Exception ex)
-            { log.Error("Update Dot Loi " + ex.Message); }
+            {
+
+                log.Error("Update Dot Loi " + ex.Message);
+            }
             return false;
         }
         public static DataTable getList()
@@ -104,5 +116,34 @@ namespace TanHoaWater.DAL
             db.Connection.Close();
             return table;
         }
+        public static DataTable getListtMa_Dot_NoChuyen()
+        {
+            TanHoaDataContext db = new TanHoaDataContext();
+            db.Connection.Open();
+            string sql = " SELECT MADOT , (MADOT + '   '+  TENLOAI) as 'TEND'";
+            sql += " FROM DOT_NHAN_DON dot, LOAI_HOSO loai";
+            sql += " WHERE loai.MALOAI = dot.LOAIDON AND CHUYENDON = 'False'";
+            sql += " ORDER BY NGAYLAPDON DESC ";
+            SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            db.Connection.Close();
+            return table;
+        }
+        public static DataTable getListChuaChuyen()
+        {
+            TanHoaDataContext db = new TanHoaDataContext();
+            db.Connection.Open();
+            string sql = " SELECT MADOT , NGAYLAPDON, TENLOAI ";
+            sql += " FROM DOT_NHAN_DON dot, LOAI_HOSO loai";
+            sql += " WHERE loai.MALOAI = dot.LOAIDON AND CHUYENDON = 'False'";
+            sql += " ORDER BY NGAYLAPDON DESC ";
+            SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            db.Connection.Close();
+            return table;
+        }
+        
      }
 }

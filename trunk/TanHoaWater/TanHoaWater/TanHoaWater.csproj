@@ -53,8 +53,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.Enterprise.Framework, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
-    <Reference Include="CrystalDecisions.Enterprise.InfoStore, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
@@ -95,6 +93,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL\C_BAOCAO_VIEW.cs" />
     <Compile Include="DAL\C_DONKHACHHANG.cs" />
     <Compile Include="DAL\C_DOTNHANDON.cs" />
     <Compile Include="DAL\C_LOAIHOSO.cs" />
@@ -132,16 +131,28 @@
     <Compile Include="View\Report\rpt_View.Designer.cs">
       <DependentUpon>rpt_View.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Users\HSKHACHHANG\Report\prt_BangKeNhanDon.cs">
-      <DependentUpon>prt_BangKeNhanDon.rpt</DependentUpon>
+    <Compile Include="View\Users\HSKHACHHANG\Report\rpt_DOT_KHAN.cs">
+      <DependentUpon>rpt_DOT_KHAN.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="View\Users\HSKHACHHANG\Report\prt_theoDotQuan.cs">
+    <Compile Include="View\Users\HSKHACHHANG\Report\rpt_DOT_QUAN_KHAN.cs">
+      <DependentUpon>rpt_DOT_QUAN_KHAN.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="View\Users\HSKHACHHANG\Report\rpt_DOT_QUAN.cs">
+      <DependentUpon>rpt_DOT_QUAN.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="View\Users\HSKHACHHANG\Report\rpt_DOT.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>prt_theoDotQuan.rpt</DependentUpon>
+      <DependentUpon>rpt_DOT.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="View\Users\HSKHACHHANG\tab_TimKiemDonKH.cs">
@@ -156,11 +167,11 @@
     <Compile Include="View\Users\HSKHACHHANG\uct_DOTNHANDON.Designer.cs">
       <DependentUpon>uct_DOTNHANDON.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Users\HSKHACHHANG\uct_NHANDONKH.cs">
+    <Compile Include="View\Users\HSKHACHHANG\HSKHACHHANG.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\Users\HSKHACHHANG\uct_NHANDONKH.Designer.cs">
-      <DependentUpon>uct_NHANDONKH.cs</DependentUpon>
+    <Compile Include="View\Users\HSKHACHHANG\HSKHACHHANG.Designer.cs">
+      <DependentUpon>HSKHACHHANG.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Users\Uses_Main.cs">
       <SubType>UserControl</SubType>
@@ -179,13 +190,21 @@
       <DependentUpon>rpt_View.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Users\HSKHACHHANG\Report\prt_BangKeNhanDon.rpt">
+    <EmbeddedResource Include="View\Users\HSKHACHHANG\Report\rpt_DOT_KHAN.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>prt_BangKeNhanDon.cs</LastGenOutput>
+      <LastGenOutput>rpt_DOT_KHAN.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Users\HSKHACHHANG\Report\prt_theoDotQuan.rpt">
+    <EmbeddedResource Include="View\Users\HSKHACHHANG\Report\rpt_DOT_QUAN_KHAN.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>prt_theoDotQuan.cs</LastGenOutput>
+      <LastGenOutput>rpt_DOT_QUAN_KHAN.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\HSKHACHHANG\Report\rpt_DOT_QUAN.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_DOT_QUAN.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\HSKHACHHANG\Report\rpt_DOT.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_DOT.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\HSKHACHHANG\tab_TimKiemDonKH.resx">
       <DependentUpon>tab_TimKiemDonKH.cs</DependentUpon>
@@ -195,8 +214,8 @@
       <DependentUpon>uct_DOTNHANDON.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Users\HSKHACHHANG\uct_NHANDONKH.resx">
-      <DependentUpon>uct_NHANDONKH.cs</DependentUpon>
+    <EmbeddedResource Include="View\Users\HSKHACHHANG\HSKHACHHANG.resx">
+      <DependentUpon>HSKHACHHANG.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\Uses_Main.resx">

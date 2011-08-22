@@ -64,6 +64,30 @@ namespace TanHoaWater.DAL
             var data = from don in db.DON_KHACHHANGs where don.SOHOSO == sohoso select don;
             return data.SingleOrDefault();
         }
+        public static void chuyenhs(string sohoso)
+        {
+            TanHoaDataContext db = new TanHoaDataContext();
+            var data = from don in db.DON_KHACHHANGs where don.SOHOSO == sohoso select don;
+            DON_KHACHHANG donKH =  data.SingleOrDefault();
+            if (donKH != null) {
+                donKH.CHUYEN_HOSO = true;
+            }
+            db.SubmitChanges();
+        }
+        public static void chuyenhs(string sohoso, string nguoichuyen, string pbchuyen)
+        {
+            TanHoaDataContext db = new TanHoaDataContext();
+            var data = from don in db.DON_KHACHHANGs where don.SOHOSO == sohoso select don;
+            DON_KHACHHANG donKH = data.SingleOrDefault();
+            if (donKH != null)
+            {
+                donKH.CHUYEN_HOSO = true;
+                donKH.NGAYCHUYEN_HOSO = DateTime.Now;
+                donKH.NGUOICHUYEN_HOSO = nguoichuyen;
+                donKH.BOPHANCHUYEN = pbchuyen;
+            }
+            db.SubmitChanges();
+        }
         
         public static bool InsertDonHK(DON_KHACHHANG donkh) {
             try

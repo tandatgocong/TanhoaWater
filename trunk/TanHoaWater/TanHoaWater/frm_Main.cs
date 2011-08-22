@@ -89,7 +89,7 @@ namespace TanHoaWater
         private void menuNhanDon_Click(object sender, EventArgs e)
         {
             this.PanelContent.Controls.Clear();
-            this.PanelContent.Controls.Add(new uct_NHANDONKH());
+            this.PanelContent.Controls.Add(new HSKHACHHANG());
         }
 
         

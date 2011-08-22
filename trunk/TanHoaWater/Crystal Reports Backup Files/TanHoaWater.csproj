@@ -1,0 +1,473 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B31428BB-7657-4AC0-895F-F6156B0E9502}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TanHoaWater</RootNamespace>
+    <AssemblyName>TanHoaWater</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Enterprise.Framework, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Enterprise.InfoStore, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="DevComponents.DotNetBar2, Version=8.0.0.0, Culture=neutral, PublicKeyToken=5fd520d36328f741, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\lib\DevComponents.DotNetBar2.dll</HintPath>
+    </Reference>
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="IrisSkin2, Version=2006.3.22.45, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Design" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DAL\C_DONKHACHHANG.cs" />
+    <Compile Include="DAL\C_DOTNHANDON.cs" />
+    <Compile Include="DAL\C_LOAIHOSO.cs" />
+    <Compile Include="DAL\C_LOAIKH.cs" />
+    <Compile Include="DAL\C_PHONGBAN.cs" />
+    <Compile Include="DAL\C_PHUONG.cs" />
+    <Compile Include="DAL\C_QUAN.cs" />
+    <Compile Include="DAL\C_Role.cs" />
+    <Compile Include="DAL\C_USERS.cs" />
+    <Compile Include="Database\TanHoa.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TanHoa.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities\AddValueCombox.cs" />
+    <Compile Include="Utilities\DataGridV.cs" />
+    <Compile Include="Utilities\LogIn.cs" />
+    <Compile Include="frm_Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Main.Designer.cs">
+      <DependentUpon>frm_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\Report\prt_BangKeNhanDon.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>prt_BangKeNhanDon.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\Report\rpt_View.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Report\rpt_View.Designer.cs">
+      <DependentUpon>rpt_View.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Users\HSKHACHHANG\Report\prt_BangKeNhanDon.cs">
+      <DependentUpon>prt_BangKeNhanDon.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="View\Users\HSKHACHHANG\Report\prt_theoDotQuan.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>prt_theoDotQuan.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\Users\HSKHACHHANG\tab_TimKiemDonKH.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Users\HSKHACHHANG\tab_TimKiemDonKH.Designer.cs">
+      <DependentUpon>tab_TimKiemDonKH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Users\HSKHACHHANG\uct_DOTNHANDON.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Users\HSKHACHHANG\uct_DOTNHANDON.Designer.cs">
+      <DependentUpon>uct_DOTNHANDON.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Users\HSKHACHHANG\uct_NHANDONKH.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Users\HSKHACHHANG\uct_NHANDONKH.Designer.cs">
+      <DependentUpon>uct_NHANDONKH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Users\Uses_Main.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Users\Uses_Main.Designer.cs">
+      <DependentUpon>Uses_Main.cs</DependentUpon>
+    </Compile>
+    <None Include="Database\TanHoa.dbml.layout">
+      <DependentUpon>TanHoa.dbml</DependentUpon>
+    </None>
+    <EmbeddedResource Include="View\Report\prt_BangKeNhanDon.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>prt_BangKeNhanDon.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Report\rpt_View.resx">
+      <DependentUpon>rpt_View.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\HSKHACHHANG\Report\prt_BangKeNhanDon.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>prt_BangKeNhanDon.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\HSKHACHHANG\Report\prt_theoDotQuan.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>prt_theoDotQuan.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\HSKHACHHANG\tab_TimKiemDonKH.resx">
+      <DependentUpon>tab_TimKiemDonKH.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\HSKHACHHANG\uct_DOTNHANDON.resx">
+      <DependentUpon>uct_DOTNHANDON.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\HSKHACHHANG\uct_NHANDONKH.resx">
+      <DependentUpon>uct_NHANDONKH.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\Uses_Main.resx">
+      <DependentUpon>Uses_Main.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Main.resx">
+      <DependentUpon>frm_Main.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SplashScreen.resx">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Administrators\Admin_Main.resx">
+      <DependentUpon>Admin_Main.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Administrators\uct_Users.resx">
+      <DependentUpon>uct_Users.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\QLDHN\controlAddLich.resx">
+      <DependentUpon>controlAddLich.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\QLDHN\frm_QLDHN.resx">
+      <DependentUpon>frm_QLDHN.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\QLDHN\controlViewLich.resx">
+      <DependentUpon>controlViewLich.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Main\frm_Login.resx">
+      <DependentUpon>frm_Login.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Database\TanHoa.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>TanHoa.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="SplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SplashScreen.designer.cs">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Administrators\Admin_Main.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Administrators\Admin_Main.Designer.cs">
+      <DependentUpon>Admin_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Administrators\uct_Users.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Administrators\uct_Users.Designer.cs">
+      <DependentUpon>uct_Users.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\QLDHN\controlAddLich.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\QLDHN\controlAddLich.Designer.cs">
+      <DependentUpon>controlAddLich.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\QLDHN\frm_QLDHN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\QLDHN\frm_QLDHN.Designer.cs">
+      <DependentUpon>frm_QLDHN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\QLDHN\controlViewLich.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\QLDHN\controlViewLich.Designer.cs">
+      <DependentUpon>controlViewLich.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Main\frm_Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Main\frm_Login.Designer.cs">
+      <DependentUpon>frm_Login.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg_head.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\head.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit Icon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exits.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\note_add.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\note_edit.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stop.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Resources\view.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\undo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\A093.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\man.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_add.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_delete.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_find.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\users1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\key1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\key.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lock2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\x.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hosokh.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\print.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\printer.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\print.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Symbol Blue Add.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\First.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Previous.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Next.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Last.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\update.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres.dll_I0062_0409.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

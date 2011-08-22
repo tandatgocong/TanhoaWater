@@ -123,6 +123,14 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                 this.print.Visible = false;
                 this.checkCD.Visible = false;
             }
+            if (DAL.C_DOTNHANDON.findByMaDot(madot).CHUYENDON == true)
+            {
+                this.checkCD.Visible = false;
+            }
+            else
+            {
+                this.checkCD.Visible = true;
+            }
             Utilities.DataGridV.formatRows(detail);
         }
 
@@ -131,6 +139,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
             try
             {
                 string _madot = mainGrid.Rows[e.RowIndex].Cells[0].Value != null ? mainGrid.Rows[e.RowIndex].Cells[0].Value.ToString() : null;
+               
                 loadDetail(_madot);
                 this.lbSoKHNhanDon.Text = "Có " + sokh + " khách hàng đợt nhận đơn " + _madot;
                 _madot_ = _madot;
@@ -166,26 +175,27 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                 dot.NGAYCHUYEN = DateTime.Now;
                 dot.NGUOICHUYEN = DAL.C_USERS._userName;
                 dot.BOPHANCHUYEN = this.cbBOPHAN.SelectedValue.ToString();
-                DAL.C_DOTNHANDON.UpdateDot(dot);
+                DAL.C_DOTNHANDON.chuyendon(dot);
                 #endregion
                 #region Update DON KHACH HANG
-                for (int i = 0; i < detail.Rows.Count; i++) {
+                for (int i = 0; i < detail.Rows.Count; i++)
+                {
                     string sohoso = detail.Rows[i].Cells[0].Value != null ? detail.Rows[i].Cells[0].Value.ToString() : null;
-                    if (sohoso != null) {
-                        DON_KHACHHANG donkh = DAL.C_DONKHACHHANG.findBySOHOSO(sohoso);
-                        if (donkh != null) {
-                            donkh.CHUYEN_HOSO = true;
-                            DAL.C_DONKHACHHANG.UpdateDONKH(donkh);
-                        }
+                    if (sohoso != null)
+                    {
+                        DAL.C_DONKHACHHANG.chuyenhs(sohoso);
                     }
                 }
 
                 #endregion
-              
+                MessageBox.Show(this, "Chuyển Đợt Nhận Đơn Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
-            { log.Error("Chuyen TTT Loi " + ex.Message); }
-            
+            {               
+                log.Error("Chuyen TTT Loi " + ex.Message);
+                MessageBox.Show(this, "Chuyển Đợt Nhận Đơn Thất Bại !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            loadGrid();
         }
 
         private void checkCD_CheckedChanged(object sender, EventArgs e)

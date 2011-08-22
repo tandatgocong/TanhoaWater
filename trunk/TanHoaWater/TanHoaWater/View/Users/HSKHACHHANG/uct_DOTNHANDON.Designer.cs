@@ -102,11 +102,12 @@
             this.cbBOPHAN.DisplayMember = "Text";
             this.cbBOPHAN.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbBOPHAN.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbBOPHAN.DropDownWidth = 250;
             this.cbBOPHAN.FormattingEnabled = true;
             this.cbBOPHAN.ItemHeight = 16;
             this.cbBOPHAN.Location = new System.Drawing.Point(101, 22);
             this.cbBOPHAN.Name = "cbBOPHAN";
-            this.cbBOPHAN.Size = new System.Drawing.Size(90, 22);
+            this.cbBOPHAN.Size = new System.Drawing.Size(137, 22);
             this.cbBOPHAN.TabIndex = 25;
             this.cbBOPHAN.Visible = false;
             // 
@@ -139,7 +140,7 @@
             this.chyenTTK.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chyenTTK.Image = global::TanHoaWater.Properties.Resources.login;
             this.chyenTTK.ImageFixedSize = new System.Drawing.Size(20, 20);
-            this.chyenTTK.Location = new System.Drawing.Point(197, 24);
+            this.chyenTTK.Location = new System.Drawing.Point(244, 24);
             this.chyenTTK.Name = "chyenTTK";
             this.chyenTTK.Size = new System.Drawing.Size(33, 20);
             this.chyenTTK.TabIndex = 23;
