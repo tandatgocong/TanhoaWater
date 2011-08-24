@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TanHoaWater.View.Users.HSKHACHHANG.Report {
+namespace TanHoaWater.View.Users.KEHOACH.Report {
     using System;
     using System.ComponentModel;
     using CrystalDecisions.Shared;
@@ -16,14 +16,14 @@ namespace TanHoaWater.View.Users.HSKHACHHANG.Report {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class rpt_DOT : ReportClass {
+    public class rpt_DOT_QUAN : ReportClass {
         
-        public rpt_DOT() {
+        public rpt_DOT_QUAN() {
         }
         
         public override string ResourceName {
             get {
-                return "rpt_DOT.rpt";
+                return "rpt_DOT_QUAN.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG.Report {
         
         public override string FullResourceName {
             get {
-                return "TanHoaWater.View.Users.HSKHACHHANG.Report.rpt_DOT.rpt";
+                return "TanHoaWater.View.Users.KEHOACH.Report.rpt_DOT_QUAN.rpt";
             }
             set {
                 // Do nothing
@@ -66,7 +66,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG.Report {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupHeaderSection1 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
             get {
                 return this.ReportDefinition.Sections[2];
             }
@@ -74,7 +74,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG.Report {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
             get {
                 return this.ReportDefinition.Sections[3];
             }
@@ -82,33 +82,17 @@ namespace TanHoaWater.View.Users.HSKHACHHANG.Report {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection1 {
-            get {
-                return this.ReportDefinition.Sections[4];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
-            get {
-                return this.ReportDefinition.Sections[5];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
         public CrystalDecisions.CrystalReports.Engine.Section Section5 {
             get {
-                return this.ReportDefinition.Sections[6];
+                return this.ReportDefinition.Sections[4];
             }
         }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class Cachedrpt_DOT : Component, ICachedReport {
+    public class Cachedrpt_DOT_QUAN : Component, ICachedReport {
         
-        public Cachedrpt_DOT() {
+        public Cachedrpt_DOT_QUAN() {
         }
         
         [Browsable(false)]
@@ -145,7 +129,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG.Report {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            rpt_DOT rpt = new rpt_DOT();
+            rpt_DOT_QUAN rpt = new rpt_DOT_QUAN();
             rpt.Site = this.Site;
             return rpt;
         }

@@ -7,7 +7,7 @@ using TanHoaWater.Database;
 
 namespace TanHoaWater.DAL
 {
-    public class C_PHONGBAN
+    public class C_PhongBan
     {
         public static List<PHONGBANDOI> getList()
         {

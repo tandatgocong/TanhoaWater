@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TanHoaWater.View.Users.HSKHACHHANG.Report {
+namespace TanHoaWater.View.Users.KEHOACH.Report {
     using System;
     using System.ComponentModel;
     using CrystalDecisions.Shared;
@@ -16,14 +16,14 @@ namespace TanHoaWater.View.Users.HSKHACHHANG.Report {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class rpt_DOT_QUAN_KHAN : ReportClass {
+    public class rpt_DOT_KHAN : ReportClass {
         
-        public rpt_DOT_QUAN_KHAN() {
+        public rpt_DOT_KHAN() {
         }
         
         public override string ResourceName {
             get {
-                return "rpt_DOT_QUAN_KHAN.rpt";
+                return "rpt_DOT_KHAN.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG.Report {
         
         public override string FullResourceName {
             get {
-                return "TanHoaWater.View.Users.HSKHACHHANG.Report.rpt_DOT_QUAN_KHAN.rpt";
+                return "TanHoaWater.View.Users.KEHOACH.Report.rpt_DOT_KHAN.rpt";
             }
             set {
                 // Do nothing
@@ -66,7 +66,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG.Report {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
+        public CrystalDecisions.CrystalReports.Engine.Section GroupHeaderSection1 {
             get {
                 return this.ReportDefinition.Sections[2];
             }
@@ -74,7 +74,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG.Report {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
             get {
                 return this.ReportDefinition.Sections[3];
             }
@@ -82,17 +82,33 @@ namespace TanHoaWater.View.Users.HSKHACHHANG.Report {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section5 {
+        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection1 {
             get {
                 return this.ReportDefinition.Sections[4];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
+            get {
+                return this.ReportDefinition.Sections[5];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.CrystalReports.Engine.Section Section5 {
+            get {
+                return this.ReportDefinition.Sections[6];
             }
         }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class Cachedrpt_DOT_QUAN_KHAN : Component, ICachedReport {
+    public class Cachedrpt_DOT_KHAN : Component, ICachedReport {
         
-        public Cachedrpt_DOT_QUAN_KHAN() {
+        public Cachedrpt_DOT_KHAN() {
         }
         
         [Browsable(false)]
@@ -129,7 +145,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG.Report {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            rpt_DOT_QUAN_KHAN rpt = new rpt_DOT_QUAN_KHAN();
+            rpt_DOT_KHAN rpt = new rpt_DOT_KHAN();
             rpt.Site = this.Site;
             return rpt;
         }

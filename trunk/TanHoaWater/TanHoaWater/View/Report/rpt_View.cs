@@ -17,7 +17,7 @@ namespace TanHoaWater.View.Report
         {
             InitializeComponent();
             ReportDocument rp = new prt_BangKeNhanDon();
-            rp.SetDataSource(DAL.C_DONKHACHHANG.BangKeNhanDon(dotkh));
+            rp.SetDataSource(DAL.C_DonKhachHang.BangKeNhanDon(dotkh));
             crystalReportViewer.ReportSource = rp;
         }        
     }

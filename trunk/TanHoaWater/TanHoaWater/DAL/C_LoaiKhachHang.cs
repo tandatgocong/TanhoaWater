@@ -6,7 +6,7 @@ using TanHoaWater.Database;
 
 namespace TanHoaWater.DAL
 {
-    public class C_LOAIKH
+    public class C_LoaiKhachHang
     {
         public static List<LOAI_KHACHHANG> getList()
         {

@@ -30,7 +30,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
         public void formLoad()
         {
             #region Load Combox Loai Ho So
-            this.cbLoaiHS.DataSource = DAL.C_LOAIHOSO.getListCombobox();
+            this.cbLoaiHS.DataSource = DAL.C_LoaiHoSo.getListCombobox();
             this.cbLoaiHS.DisplayMember = "Display";
             this.cbLoaiHS.ValueMember = "Value";            
             #endregion
@@ -63,7 +63,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                 {
                     errorProvider1.SetError(this.cbLoaiHS, "Chọn loại nhận đơn.");
                 }
-                else if (DAL.C_DOTNHANDON.findByMaDot(madot) != null)
+                else if (DAL.C_DotNhanDon.findByMaDot(madot) != null)
                 {
                     errorProvider1.SetError(this.txtsoDot, "Số đợt đã tồn tại.");
                 }
@@ -77,7 +77,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                     dotnhan.CREATEBY = DAL.C_USERS._userName;
                     dotnhan.CREATEDATE = DateTime.Now;
                     dotnhan.CHUYENDON = false;
-                    DAL.C_DOTNHANDON.InsertDot(dotnhan);
+                    DAL.C_DotNhanDon.InsertDot(dotnhan);
                     loadGrid();
                 }
             }
@@ -88,14 +88,14 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
   
         }
         public void loadGrid() {            
-            this.mainGrid.DataSource = DAL.C_DOTNHANDON.getList();
+            this.mainGrid.DataSource = DAL.C_DotNhanDon.getList();
             Utilities.DataGridV.formatRows(mainGrid);
         }
        
 
         private void SearchDot_Click(object sender, EventArgs e)
         {
-            this.mainGrid.DataSource = DAL.C_DOTNHANDON.Search(this.txtsoDot.Text, this.createDate.Value, this.cbLoaiHS.SelectedValue.ToString());
+            this.mainGrid.DataSource = DAL.C_DotNhanDon.Search(this.txtsoDot.Text, this.createDate.Value, this.cbLoaiHS.SelectedValue.ToString());
             Utilities.DataGridV.formatRows(mainGrid);
         }
 
@@ -110,8 +110,8 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
         int sokh = 0;
         public void loadDetail(string madot) {
 
-            this.detail.DataSource = DAL.C_DONKHACHHANG.getListbyDot(madot);
-            sokh = DAL.C_DONKHACHHANG.getListbyDot(madot).Rows.Count;
+            this.detail.DataSource = DAL.C_DonKhachHang.getListbyDot(madot);
+            sokh = DAL.C_DonKhachHang.getListbyDot(madot).Rows.Count;
             if (sokh > 0)
             {
                 this.print.Visible = true;
@@ -123,7 +123,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                 this.print.Visible = false;
                 this.checkCD.Visible = false;
             }
-            if (DAL.C_DOTNHANDON.findByMaDot(madot).CHUYENDON == true)
+            if (DAL.C_DotNhanDon.findByMaDot(madot).CHUYENDON == true)
             {
                 this.checkCD.Visible = false;
             }
@@ -170,12 +170,12 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
             {
                 #region Update DOT NHAN DON
                 string _madot = mainGrid.Rows[mainGrid.CurrentRow.Index].Cells[0].Value != null ? mainGrid.Rows[mainGrid.CurrentRow.Index].Cells[0].Value.ToString() : null;
-                DOT_NHAN_DON dot = DAL.C_DOTNHANDON.findByMaDot(_madot);
+                DOT_NHAN_DON dot = DAL.C_DotNhanDon.findByMaDot(_madot);
                 dot.CHUYENDON = true;
                 dot.NGAYCHUYEN = DateTime.Now;
                 dot.NGUOICHUYEN = DAL.C_USERS._userName;
                 dot.BOPHANCHUYEN = this.cbBOPHAN.SelectedValue.ToString();
-                DAL.C_DOTNHANDON.chuyendon(dot);
+                DAL.C_DotNhanDon.chuyendon(dot);
                 #endregion
                 #region Update DON KHACH HANG
                 for (int i = 0; i < detail.Rows.Count; i++)
@@ -183,7 +183,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                     string sohoso = detail.Rows[i].Cells[0].Value != null ? detail.Rows[i].Cells[0].Value.ToString() : null;
                     if (sohoso != null)
                     {
-                        DAL.C_DONKHACHHANG.chuyenhs(sohoso);
+                        DAL.C_DonKhachHang.chuyenhs(sohoso, DAL.C_USERS._userName, this.cbBOPHAN.SelectedValue.ToString());
                     }
                 }
 
@@ -203,7 +203,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
             if (checkCD.Checked == true) {
                 this.cbBOPHAN.Visible = true;
                 this.chyenTTK.Visible = true;
-                this.cbBOPHAN.DataSource = DAL.C_PHONGBAN.getList();
+                this.cbBOPHAN.DataSource = DAL.C_PhongBan.getList();
                 this.cbBOPHAN.DisplayMember = "TENPHONG";
                 this.cbBOPHAN.ValueMember = "MAPHONG";
             } else {

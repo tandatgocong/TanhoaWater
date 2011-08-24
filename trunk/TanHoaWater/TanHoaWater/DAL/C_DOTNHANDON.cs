@@ -9,9 +9,9 @@ using log4net;
 
 namespace TanHoaWater.DAL
 {
-    public class C_DOTNHANDON
+    public class C_DotNhanDon
     {
-        private static readonly ILog log = LogManager.GetLogger(typeof(C_DOTNHANDON).Name);
+        private static readonly ILog log = LogManager.GetLogger(typeof(C_DotNhanDon).Name);
         public static DOT_NHAN_DON findByMaDot(string madot)
         {
             TanHoaDataContext data = new TanHoaDataContext();
@@ -51,6 +51,30 @@ namespace TanHoaWater.DAL
                     dot.BOPHANCHUYEN = dotnd.BOPHANCHUYEN;
                     dot.NGUOICHUYEN = dotnd.NGUOICHUYEN;
                    
+                }
+                db.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+
+                log.Error("Update Dot Loi " + ex.Message);
+            }
+            return false;
+        }
+        public static bool chuyendon(string madot, string nguoichuyen, string bpchuyen)
+        {
+            try
+            {
+                TanHoaDataContext db = new TanHoaDataContext();
+                var dotnhandon = from query in db.DOT_NHAN_DONs where query.MADOT == madot select query;
+                DOT_NHAN_DON dot = dotnhandon.SingleOrDefault();
+                if (dot != null)
+                {
+                    dot.CHUYENDON = true;
+                    dot.NGAYCHUYEN = DateTime.Now;
+                    dot.BOPHANCHUYEN = bpchuyen;
+                    dot.NGUOICHUYEN = nguoichuyen;
+
                 }
                 db.SubmitChanges();
             }

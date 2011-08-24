@@ -42,9 +42,9 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
         public void search() {
             try
             {
-                rows = DAL.C_DONKHACHHANG.TotalPageSearch(SearchDotNhanDon.Text, this.SearchMaHoSo.Text, this.searchHoTenKH.Text, this.searchSoNha.Text, this.searchDiaChi.Text);
+                rows = DAL.C_DonKhachHang.TotalPageSearch(SearchDotNhanDon.Text, this.SearchMaHoSo.Text, this.searchHoTenKH.Text, this.searchSoNha.Text, this.searchDiaChi.Text);
                 PageTotal();
-                this.dataSearCh.DataSource = DAL.C_DONKHACHHANG.search(SearchDotNhanDon.Text, this.SearchMaHoSo.Text, this.searchHoTenKH.Text, this.searchSoNha.Text, this.searchDiaChi.Text, FirstRow, pageSize);
+                this.dataSearCh.DataSource = DAL.C_DonKhachHang.search(SearchDotNhanDon.Text, this.SearchMaHoSo.Text, this.searchHoTenKH.Text, this.searchSoNha.Text, this.searchDiaChi.Text, FirstRow, pageSize);
                 Utilities.DataGridV.formatRows(dataSearCh);
 
             }
@@ -137,22 +137,22 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
 
         public void loadAllCombox() {
             #region Load Quan
-            this.cbQuan.DataSource = DAL.C_QUAN.getList();
+            this.cbQuan.DataSource = DAL.C_Quan.getList();
             this.cbQuan.DisplayMember = "TENQUAN";
             this.cbQuan.ValueMember = "MAQUAN";
             #endregion
             #region Loai HoSo
-            this.cbLoaiHS.DataSource = DAL.C_LOAIHOSO.getList();
+            this.cbLoaiHS.DataSource = DAL.C_LoaiHoSo.getList();
             this.cbLoaiHS.DisplayMember = "TENLOAI";
             this.cbLoaiHS.ValueMember = "MALOAI";
             #endregion
             #region Loai KhaHang
-            this.cbLoaiKH.DataSource = DAL.C_LOAIKH.getList();
+            this.cbLoaiKH.DataSource = DAL.C_LoaiKhachHang.getList();
             this.cbLoaiKH.DisplayMember = "TENLOAI";
             this.cbLoaiKH.ValueMember = "MALOAI";
             #endregion
             #region Loai Dot Khach Hang
-            this.cbDotNhanDon.DataSource = DAL.C_DOTNHANDON.getALL();
+            this.cbDotNhanDon.DataSource = DAL.C_DotNhanDon.getALL();
             this.cbDotNhanDon.DisplayMember = "MADOT";
             this.cbDotNhanDon.ValueMember = "MADOT";
             #endregion                
@@ -187,7 +187,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                 string _soHoSo = this.dataSearCh.Rows[e.RowIndex].Cells[1].Value !=null? this.dataSearCh.Rows[e.RowIndex].Cells[1].Value.ToString() : null;
                 if (_soHoSo != null) {
                     loadAllCombox();
-                    Database.DON_KHACHHANG donkh= DAL.C_DONKHACHHANG.findBySOHOSO(_soHoSo);
+                    Database.DON_KHACHHANG donkh= DAL.C_DonKhachHang.findBySOHOSO(_soHoSo);
                     if (donkh != null) {
                         this.txtSHS.Text = donkh.SHS;
                         this.txtSoHoSo.Text = donkh.SOHOSO;
@@ -196,13 +196,13 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                         this.sonha.Text = donkh.SONHA;
                         this.duong.Text = donkh.DUONG;
                         // select Quan
-                        cbQuan.Text = DAL.C_QUAN.finByMaQuan(donkh.QUAN).TENQUAN;
+                        cbQuan.Text = DAL.C_Quan.finByMaQuan(donkh.QUAN).TENQUAN;
                         // select Phuong
-                        cbPhuong.Text = DAL.C_PHUONG.finbyPhuong(donkh.QUAN, donkh.PHUONG).TENPHUONG;
+                        cbPhuong.Text = DAL.C_Phuong.finbyPhuong(donkh.QUAN, donkh.PHUONG).TENPHUONG;
                         //select loaiKH
-                        cbLoaiKH.Text = DAL.C_LOAIKH.finbyMaLoai(donkh.LOAIKH).TENLOAI;
+                        cbLoaiKH.Text = DAL.C_LoaiKhachHang.finbyMaLoai(donkh.LOAIKH).TENLOAI;
                         // select loaiHoso
-                        cbLoaiHS.Text = DAL.C_LOAIHOSO.findbyMaLoai(donkh.LOAIHOSO).TENLOAI;
+                        cbLoaiHS.Text = DAL.C_LoaiHoSo.findbyMaLoai(donkh.LOAIHOSO).TENLOAI;
                         this.cbDotNhanDon.Text = donkh.MADOT;
                         this.dienthoai.Text = donkh.DIENTHOAI;
                         this.ghichu.Text = donkh.GHICHU;
@@ -225,7 +225,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                             // load bo phan chuyen
                             this.btUpdate.Enabled = false;
                             this.btDelete.Enabled = false;
-                            this.bophanChuyen.Text = DAL.C_PHONGBAN.findbyMaPhong(donkh.BOPHANCHUYEN).TENPHONG;
+                            this.bophanChuyen.Text = DAL.C_PhongBan.findbyMaPhong(donkh.BOPHANCHUYEN).TENPHONG;
                         }
                         else {
                             this.chuyenhoso.Checked = false;
@@ -255,7 +255,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
 
         private void chuyenhoso_CheckedChanged(object sender, EventArgs e)
         {
-            this.bophanChuyen.DataSource = DAL.C_PHONGBAN.getList();
+            this.bophanChuyen.DataSource = DAL.C_PhongBan.getList();
             this.bophanChuyen.DisplayMember = "TENPHONG";
             this.bophanChuyen.ValueMember = "MAPHONG";
             if (chuyenhoso.Checked) {
@@ -271,7 +271,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
             try
             {
                 int maquan = int.Parse(this.cbQuan.SelectedValue.ToString());
-                this.cbPhuong.DataSource = DAL.C_PHUONG.getListByQuan(maquan);
+                this.cbPhuong.DataSource = DAL.C_Phuong.getListByQuan(maquan);
                 this.cbPhuong.DisplayMember = "TENPHUONG";
                 this.cbPhuong.ValueMember = "MAPHUONG";
             }
@@ -288,7 +288,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
         private void btDelete_Click(object sender, EventArgs e)    {
             string q = "Xóa Hồ Sơ " + this.txtSoHoSo.Text  + " ?";
             if (MessageBox.Show(this, q, "..: Thông Báo :..", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) {
-                DAL.C_DONKHACHHANG.DeleteDonKH(this.txtSoHoSo.Text);
+                DAL.C_DonKhachHang.DeleteDonKH(this.txtSoHoSo.Text);
                 clear();
                 search();
             }      
