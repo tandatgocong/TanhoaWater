@@ -8,7 +8,7 @@ using TanHoaWater.Class;
 
 namespace TanHoaWater.DAL
 {
-    public class C_LOAIHOSO
+    public class C_LoaiHoSo
     {
         public static List<LOAI_HOSO> getList() {
             TanHoaDataContext data = new TanHoaDataContext();

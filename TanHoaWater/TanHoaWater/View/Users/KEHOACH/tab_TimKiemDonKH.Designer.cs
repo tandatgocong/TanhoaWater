@@ -55,6 +55,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cbDotNhanDon = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.bophanChuyen = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.label17 = new System.Windows.Forms.Label();
             this.chuyenhoso = new DevComponents.DotNetBar.Controls.CheckBoxX();
@@ -86,7 +87,6 @@
             this.cbLoaiKH = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.cbQuan = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.cbPhuong = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.cbDotNhanDon = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.next)).BeginInit();
@@ -409,6 +409,17 @@
             this.panel1.Size = new System.Drawing.Size(963, 168);
             this.panel1.TabIndex = 0;
             // 
+            // cbDotNhanDon
+            // 
+            this.cbDotNhanDon.DisplayMember = "Text";
+            this.cbDotNhanDon.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbDotNhanDon.FormattingEnabled = true;
+            this.cbDotNhanDon.ItemHeight = 16;
+            this.cbDotNhanDon.Location = new System.Drawing.Point(508, 69);
+            this.cbDotNhanDon.Name = "cbDotNhanDon";
+            this.cbDotNhanDon.Size = new System.Drawing.Size(135, 22);
+            this.cbDotNhanDon.TabIndex = 114;
+            // 
             // bophanChuyen
             // 
             this.bophanChuyen.DisplayMember = "Text";
@@ -529,7 +540,7 @@
             this.btDelete.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btDelete.Image = global::TanHoaWater.Properties.Resources.imageres_dll_I0062_0409;
             this.btDelete.ImageFixedSize = new System.Drawing.Size(20, 20);
-            this.btDelete.Location = new System.Drawing.Point(448, 136);
+            this.btDelete.Location = new System.Drawing.Point(428, 136);
             this.btDelete.Name = "btDelete";
             this.btDelete.Size = new System.Drawing.Size(79, 23);
             this.btDelete.TabIndex = 26;
@@ -557,6 +568,7 @@
             this.btUpdate.Size = new System.Drawing.Size(89, 23);
             this.btUpdate.TabIndex = 25;
             this.btUpdate.Text = "Cập Nhật";
+            this.btUpdate.Visible = false;
             this.btUpdate.Click += new System.EventHandler(this.btUpdate_Click);
             // 
             // label7
@@ -721,17 +733,6 @@
             this.cbPhuong.Name = "cbPhuong";
             this.cbPhuong.Size = new System.Drawing.Size(116, 22);
             this.cbPhuong.TabIndex = 15;
-            // 
-            // cbDotNhanDon
-            // 
-            this.cbDotNhanDon.DisplayMember = "Text";
-            this.cbDotNhanDon.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbDotNhanDon.FormattingEnabled = true;
-            this.cbDotNhanDon.ItemHeight = 16;
-            this.cbDotNhanDon.Location = new System.Drawing.Point(508, 69);
-            this.cbDotNhanDon.Name = "cbDotNhanDon";
-            this.cbDotNhanDon.Size = new System.Drawing.Size(135, 22);
-            this.cbDotNhanDon.TabIndex = 114;
             // 
             // tab_TimKiemDonKH
             // 

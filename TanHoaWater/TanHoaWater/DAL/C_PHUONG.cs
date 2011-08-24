@@ -5,7 +5,7 @@ using System.Text;
 using TanHoaWater.Database;
 namespace TanHoaWater.DAL
 {
-    public class C_PHUONG
+    public class C_Phuong
     {
         public static List<PHUONG> getListByQuan(int maquan) {
             TanHoaDataContext data = new TanHoaDataContext();

@@ -6,7 +6,7 @@ using TanHoaWater.Database;
 
 namespace TanHoaWater.DAL
 {
-    public class C_QUAN
+    public class C_Quan
     {
         public static List<QUAN> getList(){
             TanHoaDataContext data = new TanHoaDataContext();

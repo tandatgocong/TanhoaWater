@@ -93,15 +93,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DAL\C_BAOCAO_VIEW.cs" />
-    <Compile Include="DAL\C_DONKHACHHANG.cs" />
-    <Compile Include="DAL\C_DOTNHANDON.cs" />
-    <Compile Include="DAL\C_LOAIHOSO.cs" />
-    <Compile Include="DAL\C_LOAIKH.cs" />
-    <Compile Include="DAL\C_PHONGBAN.cs" />
-    <Compile Include="DAL\C_PHUONG.cs" />
-    <Compile Include="DAL\C_QUAN.cs" />
+    <Compile Include="DAL\C_BaoCao_View.cs" />
+    <Compile Include="DAL\C_DonKhachHang.cs" />
+    <Compile Include="DAL\C_DotNhanDon.cs" />
+    <Compile Include="DAL\C_LoaiHoSo.cs" />
+    <Compile Include="DAL\C_LoaiKhachHang.cs" />
+    <Compile Include="DAL\C_PhongBan.cs" />
+    <Compile Include="DAL\C_Phuong.cs" />
+    <Compile Include="DAL\C_Quan.cs" />
     <Compile Include="DAL\C_Role.cs" />
+    <Compile Include="DAL\C_ToThietKe.cs" />
     <Compile Include="DAL\C_USERS.cs" />
     <Compile Include="Database\TanHoa.designer.cs">
       <AutoGen>True</AutoGen>
@@ -131,47 +132,47 @@
     <Compile Include="View\Report\rpt_View.Designer.cs">
       <DependentUpon>rpt_View.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Users\HSKHACHHANG\Report\rpt_DOT_KHAN.cs">
+    <Compile Include="View\Users\KEHOACH\Report\rpt_DOT_KHAN.cs">
       <DependentUpon>rpt_DOT_KHAN.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="View\Users\HSKHACHHANG\Report\rpt_DOT_QUAN_KHAN.cs">
+    <Compile Include="View\Users\KEHOACH\Report\rpt_DOT_QUAN_KHAN.cs">
       <DependentUpon>rpt_DOT_QUAN_KHAN.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="View\Users\HSKHACHHANG\Report\rpt_DOT_QUAN.cs">
+    <Compile Include="View\Users\KEHOACH\Report\rpt_DOT_QUAN.cs">
       <DependentUpon>rpt_DOT_QUAN.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="View\Users\HSKHACHHANG\Report\rpt_DOT.cs">
+    <Compile Include="View\Users\KEHOACH\Report\rpt_DOT.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>rpt_DOT.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="View\Users\HSKHACHHANG\tab_TimKiemDonKH.cs">
+    <Compile Include="View\Users\KEHOACH\tab_TimKiemDonKH.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\Users\HSKHACHHANG\tab_TimKiemDonKH.Designer.cs">
+    <Compile Include="View\Users\KEHOACH\tab_TimKiemDonKH.Designer.cs">
       <DependentUpon>tab_TimKiemDonKH.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Users\HSKHACHHANG\uct_DOTNHANDON.cs">
+    <Compile Include="View\Users\KEHOACH\uct_DotNhanDon.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\Users\HSKHACHHANG\uct_DOTNHANDON.Designer.cs">
-      <DependentUpon>uct_DOTNHANDON.cs</DependentUpon>
+    <Compile Include="View\Users\KEHOACH\uct_DotNhanDon.Designer.cs">
+      <DependentUpon>uct_DotNhanDon.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Users\HSKHACHHANG\HSKHACHHANG.cs">
+    <Compile Include="View\Users\KEHOACH\HS_KhachHang.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\Users\HSKHACHHANG\HSKHACHHANG.Designer.cs">
-      <DependentUpon>HSKHACHHANG.cs</DependentUpon>
+    <Compile Include="View\Users\KEHOACH\HS_KhachHang.Designer.cs">
+      <DependentUpon>HS_KhachHang.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Users\Uses_Main.cs">
       <SubType>UserControl</SubType>
@@ -190,32 +191,32 @@
       <DependentUpon>rpt_View.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Users\HSKHACHHANG\Report\rpt_DOT_KHAN.rpt">
+    <EmbeddedResource Include="View\Users\KEHOACH\Report\rpt_DOT_KHAN.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_DOT_KHAN.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Users\HSKHACHHANG\Report\rpt_DOT_QUAN_KHAN.rpt">
+    <EmbeddedResource Include="View\Users\KEHOACH\Report\rpt_DOT_QUAN_KHAN.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_DOT_QUAN_KHAN.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Users\HSKHACHHANG\Report\rpt_DOT_QUAN.rpt">
+    <EmbeddedResource Include="View\Users\KEHOACH\Report\rpt_DOT_QUAN.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_DOT_QUAN.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Users\HSKHACHHANG\Report\rpt_DOT.rpt">
+    <EmbeddedResource Include="View\Users\KEHOACH\Report\rpt_DOT.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_DOT.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Users\HSKHACHHANG\tab_TimKiemDonKH.resx">
+    <EmbeddedResource Include="View\Users\KEHOACH\tab_TimKiemDonKH.resx">
       <DependentUpon>tab_TimKiemDonKH.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Users\HSKHACHHANG\uct_DOTNHANDON.resx">
-      <DependentUpon>uct_DOTNHANDON.cs</DependentUpon>
+    <EmbeddedResource Include="View\Users\KEHOACH\uct_DotNhanDon.resx">
+      <DependentUpon>uct_DotNhanDon.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Users\HSKHACHHANG\HSKHACHHANG.resx">
-      <DependentUpon>HSKHACHHANG.cs</DependentUpon>
+    <EmbeddedResource Include="View\Users\KEHOACH\HS_KhachHang.resx">
+      <DependentUpon>HS_KhachHang.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\Uses_Main.resx">
@@ -480,6 +481,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\imageres.dll_I0062_0409.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\print.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -10,9 +10,9 @@ using System.Collections;
 
 namespace TanHoaWater.DAL
 {
-    public class C_DONKHACHHANG
+    public class C_DonKhachHang
     {
-        private static readonly ILog log = LogManager.GetLogger(typeof(C_DONKHACHHANG).Name);
+        private static readonly ILog log = LogManager.GetLogger(typeof(C_DonKhachHang).Name);
 
         public static int TotalListByDot(string dot) {
             TanHoaDataContext db = new TanHoaDataContext();
@@ -86,6 +86,19 @@ namespace TanHoaWater.DAL
                 donKH.NGUOICHUYEN_HOSO = nguoichuyen;
                 donKH.BOPHANCHUYEN = pbchuyen;
             }
+            db.SubmitChanges();
+        }
+        public static void chuyenhsbydot(string sodot, string nguoichuyen, string pbchuyen)
+        {
+            TanHoaDataContext db = new TanHoaDataContext();
+            SqlConnection conn = new SqlConnection(db.Connection.ConnectionString);
+            conn.Open();
+            string sql = " UPDATE DON_KHACHHANG SET CHUYEN_HOSO='True' ";
+            sql += ",BOPHANCHUYEN = '" + pbchuyen + "', NGUOICHUYEN_HOSO = '" + nguoichuyen + "', NGAYCHUYEN_HOSO=''";
+            sql += " WHERE MADOT='" + sodot + "'";
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            cmd.ExecuteNonQuery();
+            conn.Close();
             db.SubmitChanges();
         }
         
