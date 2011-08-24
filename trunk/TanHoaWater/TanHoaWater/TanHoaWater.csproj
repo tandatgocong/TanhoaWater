@@ -156,6 +156,12 @@
       <DependentUpon>rpt_DOT.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="View\Users\KEHOACH\rpt_DanhSachChuyen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Users\KEHOACH\rpt_DanhSachChuyen.Designer.cs">
+      <DependentUpon>rpt_DanhSachChuyen.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Users\KEHOACH\tab_TimKiemDonKH.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -206,6 +212,9 @@
     <EmbeddedResource Include="View\Users\KEHOACH\Report\rpt_DOT.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_DOT.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\KEHOACH\rpt_DanhSachChuyen.resx">
+      <DependentUpon>rpt_DanhSachChuyen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\KEHOACH\tab_TimKiemDonKH.resx">
       <DependentUpon>tab_TimKiemDonKH.cs</DependentUpon>
