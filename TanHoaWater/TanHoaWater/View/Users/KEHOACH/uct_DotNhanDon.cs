@@ -188,6 +188,25 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                 }
 
                 #endregion
+                #region Add Chuyen TTK
+                if (_madot != null)
+                {
+                    for (int j = 0; j < detail.Rows.Count; j++)
+                    {
+                        if (detail.Rows[j].Cells[0].Value != null)
+                        {
+                            string sohskh = detail.Rows[j].Cells[0].Value.ToString();
+                            string shs = sohskh.Substring(5);
+                            TOTHIETKE ttk = new TOTHIETKE();
+                            ttk.MADOT = _madot;
+                            ttk.SOHOSO = sohskh;
+                            ttk.SHS = shs;
+                            ttk.NGAYNHAN = DateTime.Now;
+                            DAL.C_ToThietKe.addNew(ttk);
+                        }
+                    }
+                }
+                #endregion
                 MessageBox.Show(this, "Chuyển Đợt Nhận Đơn Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)

@@ -12,6 +12,7 @@ using System.Collections;
 using log4net;
 using CrystalDecisions.CrystalReports.Engine;
 using TanHoaWater.View.Users.KEHOACH.Report;
+using TanHoaWater.View.Users.KEHOACH;
 
 namespace TanHoaWater.View.Users.HSKHACHHANG
 {
@@ -145,35 +146,41 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
         }
         private void btInsert_Click(object sender, EventArgs e)
         {
-            if (this.txtSHS.Text.Length < 5)
+            if (this.txtSHS.Text.Length < 7)
             {
                 this.errorProvider1.Clear();
                 this.errorProvider1.SetError(this.txtSHS, "Số Hồ Sơ Không Hợp Lệ.");
+                this.txtSHS.Focus();
             }
             else if ("".Equals(this.txtHoTen.Text))
             {
                 this.errorProvider1.Clear();
                 this.errorProvider1.SetError(this.txtHoTen, "Họ Tên Khách Hàng Không Được Trống.");
+                this.txtHoTen.Focus();
             }
             else if ("".Equals(this.sonha.Text))
             {
                 this.errorProvider1.Clear();
                 this.errorProvider1.SetError(this.sonha, "Số Nhà Không Được Trống.");
+                this.sonha.Focus();
             }
             else if ("".Equals(this.duong.Text))
             {
                 this.errorProvider1.Clear();
                 this.errorProvider1.SetError(this.duong, "Tên Đường Không Được Trống.");
+                this.duong.Focus();
             }
-            else if (DAL.C_DonKhachHang.findBySOHOSO(this.txtSoHoSo.Text) != null)
+            else if (DAL.C_DonKhachHang.findBySOHOSO(this.txtSHS.Text) != null)
             {
                 this.errorProvider1.Clear();
                 this.errorProvider1.SetError(this.txtSHS, "Số Hồ Sơ Đã Tồn Tại.");
+                this.txtSHS.Focus();
             }
             else if (DAL.C_DonKhachHang.findByAddressAndLoaiHS(this.cbDotNhanDon.SelectedValue.ToString(), this.cbLoaiHS.SelectedValue.ToString(), this.sonha.Text, this.duong.Text, this.cbPhuong.SelectedValue.ToString(), this.cbQuan.SelectedValue.ToString()))
             {
                 this.errorProvider1.Clear();
                 this.errorProvider1.SetError(this.sonha, "Địa Chỉ Khách Hàng Đã Được Nhận Đơn.");
+                this.sonha.Focus();
             }
             else
             {
@@ -191,7 +198,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                 donKH.QUAN = int.Parse(this.cbQuan.SelectedValue.ToString());
                 donKH.NGAYNHAN = DateTime.Now;
                 donKH.LOAIKH = this.cbLoaiKH.SelectedValue.ToString();
-                donKH.LOAIHOSO = this.cbLoaiHS.SelectedValue.ToString();
+                donKH.LOAIHOSO = DAL.C_DotNhanDon.findByMaDot(this.cbDotNhanDon.SelectedValue.ToString()).LOAIDON;
                 donKH.GHICHU = this.ghichu.Text;
                 if (this.khan.Checked == true)
                 {
@@ -372,31 +379,33 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
             this.resultChuyen.Visible = false;
             this.resultDGChuyen.Visible = false;
             this.resultPrint.Visible = false;
+            this.CD_NguoiDuyetDon.Visible = false;
+            this.nguoiduyetDon.Visible = false;
             #region Load Bo Phan Chuyen
                 this.bophanChuyen.DataSource = DAL.C_PhongBan.getList();
                 this.bophanChuyen.DisplayMember = "TENPHONG";
                 this.bophanChuyen.ValueMember = "MAPHONG";
             #endregion
             // customize dataviewgrid, add checkbox column
-            if (flag == 0)
-            {
-                DataGridViewCheckBoxColumn checkboxColumn = new DataGridViewCheckBoxColumn();
-                checkboxColumn.Width = 30;
-                checkboxColumn.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                cd_MainGird.Columns.Insert(3, checkboxColumn);
+            //if (flag == 0)
+            //{
+            //    DataGridViewCheckBoxColumn checkboxColumn = new DataGridViewCheckBoxColumn();
+            //    checkboxColumn.Width = 30;
+            //    checkboxColumn.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //    cd_MainGird.Columns.Insert(3, checkboxColumn);
 
-                // add checkbox header
-                Rectangle rect = cd_MainGird.GetCellDisplayRectangle(3, -1, true);
-                // set checkbox header to center of header cell. +1 pixel to position correctly.
-                rect.X = rect.Location.X + (rect.Width / 4);
+            //    // add checkbox header
+            //    Rectangle rect = cd_MainGird.GetCellDisplayRectangle(3, -1, true);
+            //    // set checkbox header to center of header cell. +1 pixel to position correctly.
+            //    rect.X = rect.Location.X + (rect.Width / 4);
 
-                CheckBox checkboxHeader = new CheckBox();
-                checkboxHeader.Name = "checkboxHeader";
-                checkboxHeader.Size = new Size(17, 17);
-                checkboxHeader.Location = rect.Location;
-                checkboxHeader.CheckedChanged += new EventHandler(checkboxHeader_CheckedChanged);
-              //  cd_MainGird.Controls.Add(checkboxHeader);
-            }
+            //    CheckBox checkboxHeader = new CheckBox();
+            //    checkboxHeader.Name = "checkboxHeader";
+            //    checkboxHeader.Size = new Size(17, 17);
+            //    checkboxHeader.Location = rect.Location;
+            //    checkboxHeader.CheckedChanged += new EventHandler(checkboxHeader_CheckedChanged);
+            //  //  cd_MainGird.Controls.Add(checkboxHeader);
+            //}
            
             load_cd_Grid();
         }
@@ -412,32 +421,88 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
             }
             cd_MainGird.EndEdit();
         }
-
+        string _madot = null;
+        private void cd_MainGird_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                _madot = cd_MainGird.Rows[e.RowIndex].Cells[0].Value != null ? cd_MainGird.Rows[e.RowIndex].Cells[0].Value.ToString() : null;
+                loadDetail(_madot);
+                this.lbSoKHNhanDon.Text = "Có " + sokh + " khách hàng đợt nhận đơn " + _madot;
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+            }
+        }
         private void chuyenDot_Click(object sender, EventArgs e)
         {
             try
             {
-                #region  Update DOT NHAN DON
-                for (int i = 0; i < cd_MainGird.RowCount; i++)
+                if (cd_detail.Rows.Count <= 0)
                 {
-                    if (cd_MainGird[0, i].Value != null && "True".Equals(cd_MainGird[0, i].Value.ToString()))
-                    {
-                        string _madot=cd_MainGird.Rows[i].Cells[1].Value.ToString();
-                        string _user = DAL.C_USERS._userName;
-                        string _bpchuyen= this.bophanChuyen.SelectedValue.ToString();
-                        DAL.C_DotNhanDon.chuyendon(_madot,_user,_bpchuyen);
-                        DAL.C_DonKhachHang.chuyenhsbydot(_madot, _user, _bpchuyen);
-                    }
-                #endregion
+                    MessageBox.Show(this, "Không Có Hồ Sơ Nào Để Chuyển.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+                else {
+                    DateTime ngaynhan = DateTime.Now;
+                    #region  Update DOT NHAN DON
+                    //for (int i = 0; i < cd_MainGird.RowCount; i++)
+                    //{
+                    //    //if (cd_MainGird[0, i].Value != null && "True".Equals(cd_MainGird[0, i].Value.ToString()))
+                    //    //{
+                    //     //   _madot=cd_MainGird.Rows[i].Cells[0].Value.ToString();
+                    //        //string _user = DAL.C_USERS._userName;
+                    //        //string _bpchuyen= this.bophanChuyen.SelectedValue.ToString();
+                    //        //DAL.C_DotNhanDon.chuyendon(_madot,_user,_bpchuyen);
+                    //        //DAL.C_DonKhachHang.chuyenhsbydot(_madot, _user, _bpchuyen);
+                    //    //}
+                    //}
+                    string _user = DAL.C_USERS._userName;
+                    string _bpchuyen = this.bophanChuyen.SelectedValue.ToString();
+                    DAL.C_DotNhanDon.chuyendon(_madot, _user, _bpchuyen);
+                    DAL.C_DonKhachHang.chuyenhsbydot(_madot, _user, _bpchuyen);
+                    #endregion
 
-                #region Load Grid Da Chuyen
-                
-                #endregion
-                MessageBox.Show(this, "Chuyển Đợt Nhận Đơn Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.resultChuyen.Visible = true;
-                this.resultDGChuyen.Visible = true;
-                this.resultPrint.Visible = true;
+                    MessageBox.Show(this, "Chuyển Đợt Nhận Đơn Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    #region Add Chuyen TTK
+                    if (_madot != null)
+                    {
+                        for (int j = 0; j < cd_detail.Rows.Count; j++)
+                        {
+                            if (cd_detail.Rows[j].Cells[0].Value != null)
+                            {
+                                string sohskh = cd_detail.Rows[j].Cells[0].Value.ToString();
+                                string shs = sohskh.Substring(5);
+                                TOTHIETKE ttk = new TOTHIETKE();
+                                ttk.MADOT = _madot;
+                                ttk.SOHOSO = sohskh;
+                                ttk.SHS = shs;
+                                ttk.NGAYNHAN = ngaynhan;
+                                DAL.C_ToThietKe.addNew(ttk);
+                            }
+                        }
+                    }
+                    #endregion
+                    int count = DAL.C_ToThietKe.DanhSachChuyen(_madot).Rows.Count;
+                    if (count > 0)
+                    {
+                        this.resultChuyen.Text = "Đã Chuyển " + count + " Hồ Sơ Lên " + this.bophanChuyen.Text;
+                        this.resultDGChuyen.DataSource = DAL.C_ToThietKe.DanhSachChuyen(_madot);
+
+                        #region Nguoi Duyet Don
+                        this.CD_NguoiDuyetDon.DataSource = DAL.C_USERS.getAll();
+                        this.CD_NguoiDuyetDon.DisplayMember = "FULLNAME";
+                        this.CD_NguoiDuyetDon.ValueMember = "USERNAME";
+
+                        #endregion
+                        this.CD_NguoiDuyetDon.Visible = true;
+                        this.nguoiduyetDon.Visible = true;
+                        this.resultChuyen.Visible = true;
+                        this.resultDGChuyen.Visible = true;
+                        this.resultPrint.Visible = true;
+                        Utilities.DataGridV.formatRows(resultDGChuyen);
+                    }
+                }
             }
             catch (Exception ex)
             {
@@ -456,19 +521,13 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
             Utilities.DataGridV.formatRows(cd_detail);
         }
 
-        private void cd_MainGird_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-                string _madot = cd_MainGird.Rows[e.RowIndex].Cells[1].Value != null ? cd_MainGird.Rows[e.RowIndex].Cells[1].Value.ToString() : null;
+       
 
-                loadDetail(_madot);
-                this.lbSoKHNhanDon.Text = "Có " + sokh + " khách hàng đợt nhận đơn " + _madot;
-            }
-            catch (Exception ex)
-            {
-                log.Error(ex.Message);
-            }
+        private void resultPrint_Click(object sender, EventArgs e)
+        {
+
+            rpt_DanhSachChuyen ds = new rpt_DanhSachChuyen(_madot, DAL.C_USERS._userName, CD_NguoiDuyetDon.SelectedValue.ToString());
+            ds.ShowDialog();
         }
     }
 }
