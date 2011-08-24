@@ -202,4 +202,50 @@
       <Association Name="DON_KHACHHANG_TOTHIETKE" Member="DON_KHACHHANG" ThisKey="SOHOSO" OtherKey="SOHOSO" Type="DON_KHACHHANG" IsForeignKey="true" />
     </Type>
   </Table>
+  <Table Name="dbo.V_CHUYENDON" Member="V_CHUYENDONs">
+    <Type Name="V_CHUYENDON">
+      <Column Name="TTKMD" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="TTKSOHOSO" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MADOT" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="SOHOSO" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SHS" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DANHBO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="HOPDONG" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="HOTEN" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DIENTHOAI" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="SOHOBD" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SOHO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SONHA" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DUONG" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PHUONG" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="QUAN" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NGAYNHAN" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LOAIKH" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="LOAIHOSO" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="TAPTHE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TINHKHOAN" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="LOAIMIENPHI" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="GHICHU" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="HOSOKHAN" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="GHICHUKHAN" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="CHUYEN_HOSO" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="BOPHANCHUYEN" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="NGUOICHUYEN_HOSO" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="NGAYCHUYEN_HOSO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TRONGAICHUYEN_HOSO" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="NOIDUNGTNCHUYEN" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CREATEBY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CREATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MODIFYBY" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="MODIFYDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MAQUAN" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TENQUAN" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MAPHUONG" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="TENPHUONG" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TENLOAI" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="USERNAME" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="NGUOILAP" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
 </Database>
