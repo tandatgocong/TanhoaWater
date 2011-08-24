@@ -32,5 +32,24 @@ namespace TanHoaWater.DAL
             ct.Fill(ds, "USERS");
             return ds;
         }
+
+        public static DataSet BC_CHUYENDON(string dotnd, string nguoilap, string nguoiduyet)
+        {
+
+            DataSet ds = new DataSet();
+            TanHoaDataContext db = new TanHoaDataContext();
+            db.Connection.Open();
+            string sql = "SELECT * FROM V_CHUYENDON ";
+            sql += " WHERE TTKMD='" + dotnd + "'";
+            sql += " AND USERNAME='" + nguoilap + "'";           
+            SqlDataAdapter dond = new SqlDataAdapter(sql, db.Connection.ConnectionString);
+            dond.Fill(ds, "V_DONKHACHHANG");
+
+            string user = "SELECT USERNAME, UPPER(FULLNAME) AS 'FULLNAME' FROM USERS WHERE USERNAME='" + nguoiduyet + "'";
+            SqlDataAdapter ct = new SqlDataAdapter(user, db.Connection.ConnectionString);
+            ct.Fill(ds, "USERS");
+            return ds;
+        }
+
     }
 }
