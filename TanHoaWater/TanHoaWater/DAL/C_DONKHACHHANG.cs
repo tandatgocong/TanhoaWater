@@ -61,7 +61,7 @@ namespace TanHoaWater.DAL
         public static DON_KHACHHANG findBySOHOSO(string sohoso)
         {
             TanHoaDataContext db = new TanHoaDataContext();
-            var data = from don in db.DON_KHACHHANGs where don.SOHOSO == sohoso select don;
+            var data = from don in db.DON_KHACHHANGs where don.SHS == sohoso select don;
             return data.SingleOrDefault();
         }
         public static void chuyenhs(string sohoso)
