@@ -196,7 +196,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                         if (detail.Rows[j].Cells[0].Value != null)
                         {
                             string sohskh = detail.Rows[j].Cells[0].Value.ToString();
-                            string shs = sohskh.Substring(5);
+                            string shs = sohskh.Substring(6);
                             TOTHIETKE ttk = new TOTHIETKE();
                             ttk.MADOT = _madot;
                             ttk.SOHOSO = sohskh;

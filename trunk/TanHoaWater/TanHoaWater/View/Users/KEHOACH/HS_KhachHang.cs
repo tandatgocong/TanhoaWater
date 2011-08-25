@@ -312,7 +312,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
             this.BC_DOTNHANDON.ValueMember = "MADOT";
             #endregion
             #region Load User
-            this.BC_NGUOIDUYET.DataSource = DAL.C_USERS.getAll();
+            this.BC_NGUOIDUYET.DataSource = DAL.C_USERS.getUserByMaPhongAndLevel("VTTH",0);
             this.BC_NGUOIDUYET.DisplayMember = "FULLNAME";
             this.BC_NGUOIDUYET.ValueMember = "USERNAME";
             #endregion
@@ -472,7 +472,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                             if (cd_detail.Rows[j].Cells[0].Value != null)
                             {
                                 string sohskh = cd_detail.Rows[j].Cells[0].Value.ToString();
-                                string shs = sohskh.Substring(5);
+                                string shs = sohskh.Substring(6);
                                 TOTHIETKE ttk = new TOTHIETKE();
                                 ttk.MADOT = _madot;
                                 ttk.SOHOSO = sohskh;
@@ -490,7 +490,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                         this.resultDGChuyen.DataSource = DAL.C_ToThietKe.DanhSachChuyen(_madot);
 
                         #region Nguoi Duyet Don
-                        this.CD_NguoiDuyetDon.DataSource = DAL.C_USERS.getAll();
+                        this.CD_NguoiDuyetDon.DataSource = DAL.C_USERS.getUserByMaPhongAndLevel("VTTH", 0);
                         this.CD_NguoiDuyetDon.DisplayMember = "FULLNAME";
                         this.CD_NguoiDuyetDon.ValueMember = "USERNAME";
 

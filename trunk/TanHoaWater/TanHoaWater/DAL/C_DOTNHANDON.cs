@@ -154,6 +154,20 @@ namespace TanHoaWater.DAL
             db.Connection.Close();
             return table;
         }
+        public static DataTable getListtMa_Dot_DaChuyen()
+        {
+            TanHoaDataContext db = new TanHoaDataContext();
+            db.Connection.Open();
+            string sql = " SELECT MADOT , (MADOT + '   '+  TENLOAI) as 'TEND'";
+            sql += " FROM DOT_NHAN_DON dot, LOAI_HOSO loai";
+            sql += " WHERE loai.MALOAI = dot.LOAIDON AND CHUYENDON = 'True'";
+            sql += " ORDER BY NGAYLAPDON DESC ";
+            SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            db.Connection.Close();
+            return table;
+        }
         public static DataTable getListChuaChuyen()
         {
             TanHoaDataContext db = new TanHoaDataContext();

@@ -12,6 +12,7 @@ using TanHoaWater.View.Users;
 using TanHoaWater.View.Administrators;
 using TanHoaWater.View.Users.HSKHACHHANG;
 using log4net;
+using TanHoaWater.View.Users.To_ThietKe;
 
 namespace TanHoaWater
 {
@@ -90,6 +91,12 @@ namespace TanHoaWater
         {
             this.PanelContent.Controls.Clear();
             this.PanelContent.Controls.Add(new HSKHACHHANG());
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            this.PanelContent.Controls.Clear();
+            this.PanelContent.Controls.Add(new uct_GiaoHS());
         }
 
         
