@@ -101,10 +101,17 @@ namespace TanHoaWater.DAL
             return false;
         }
 
-        public static List<USER> getAll() {
+        //public static List<USER> getAll() {
+        //    TanHoaDataContext db = new TanHoaDataContext();
+        //    var data = from user in db.USERs   select user;       
+        //    return data.ToList();
+        //}
+        public static List<USER> getUserByMaPhongAndLevel(string maphong, int cap) {
+
             TanHoaDataContext db = new TanHoaDataContext();
-            var data = from user in db.USERs   select user;       
+            var data = from user in db.USERs where user.MAPHONG == maphong && user.CAP == cap select user;
             return data.ToList();
+
         }
 
     }

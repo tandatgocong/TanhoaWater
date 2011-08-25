@@ -130,6 +130,34 @@ namespace TanHoaWater.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap document_into {
+            get {
+                object obj = ResourceManager.GetObject("document_into", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap document_into1 {
+            get {
+                object obj = ResourceManager.GetObject("document_into1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap document_into11 {
+            get {
+                object obj = ResourceManager.GetObject("document_into11", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap document_out {
+            get {
+                object obj = ResourceManager.GetObject("document_out", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap exits {
             get {
                 object obj = ResourceManager.GetObject("exits", resourceCulture);
