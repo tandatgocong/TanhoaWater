@@ -36,6 +36,8 @@ namespace TanHoaWater.View.Users.To_ThietKe
             this.DotNhanDon.Enabled = true;
         }
         int flag = 0;
+        CheckBox checkboxHeader1 = new CheckBox();
+        CheckBox checkboxHeader = new CheckBox();
         public void formLoad()
         {
 
@@ -90,13 +92,77 @@ namespace TanHoaWater.View.Users.To_ThietKe
                 flag = 1;
             }
         }
+        public void dagiaoviec()
+        {
+            int count = 0;
+            try
+            {
+                if (btAll.Checked == true)
+                {
+                    //#region DS Chua Giao Theo Ngay
+                    //this.DG_ChuaGiao.DataSource = DAL.C_ToThietKe.DachSachHoSoGiaoViec(null, null, null);
+                    //labelDSChuaGiao.Text = "Tổng Số " + DAL.C_ToThietKe.DachSachHoSoGiaoViec(null, null, null).Rows.Count + " Hồ Sơ Chưa Giao Sơ Đồ Viên. ";
+                    //#endregion
+                    count = DAL.C_ToThietKe.DachSachHoSoGiaoViec(null, null, this.sodovien.SelectedValue.ToString()).Rows.Count;
+                    #region DS Da Giao Theo Ngay
+                    this.DG_SDV.DataSource = DAL.C_ToThietKe.DachSachHoSoGiaoViec(null, null, this.sodovien.SelectedValue.ToString());
+                    lableGIAO_SDV.Text = this.sodovien.Text + " Có " + count + " Hồ Sơ Được Giao";
+                    #endregion
+                }
+                else if (theodot.Checked == true)
+                {
+                    //#region DS Chua Giao Theo Ngay
+                    //this.DG_ChuaGiao.DataSource = DAL.C_ToThietKe.DachSachHoSoGiaoViec(this.DotNhanDon.SelectedValue.ToString(), null, null);
+                    //labelDSChuaGiao.Text = "Tổng Số " + DAL.C_ToThietKe.DachSachHoSoGiaoViec(this.DotNhanDon.SelectedValue.ToString(), null, null).Rows.Count + " Hồ Sơ Chưa Giao Sơ Đồ Viên. ";
+                    //#endregion
+                    count = DAL.C_ToThietKe.DachSachHoSoGiaoViec(this.DotNhanDon.SelectedValue.ToString(), null, this.sodovien.SelectedValue.ToString()).Rows.Count;
+                    #region DS Da Giao Theo Ngay
+                    this.DG_SDV.DataSource = DAL.C_ToThietKe.DachSachHoSoGiaoViec(this.DotNhanDon.SelectedValue.ToString(), null, this.sodovien.SelectedValue.ToString());
+                    lableGIAO_SDV.Text = this.sodovien.Text + " Có " + count + " Hồ Sơ Được Giao";
+                    #endregion
 
+                }
+                else
+                {
+                    //#region DS Chua Giao Theo Ngay
+                    //this.DG_ChuaGiao.DataSource = DAL.C_ToThietKe.DachSachHoSoGiaoViec(null, Utilities.DateToString.NgayVN(this.dateNhanDon), null);
+                    //labelDSChuaGiao.Text = "Tổng Số " + DAL.C_ToThietKe.DachSachHoSoGiaoViec(null, Utilities.DateToString.NgayVN(this.dateNhanDon), null).Rows.Count + " Hồ Sơ Chưa Giao Sơ Đồ Viên. ";
+                    //#endregion
+                    #region DS Da Giao Theo Ngay
+                    this.DG_SDV.DataSource = DAL.C_ToThietKe.DachSachHoSoGiaoViec(null, Utilities.DateToString.NgayVN(this.dateNhanDon), this.sodovien.SelectedValue.ToString());
+                    count = DAL.C_ToThietKe.DachSachHoSoGiaoViec(null, Utilities.DateToString.NgayVN(this.dateNhanDon), this.sodovien.SelectedValue.ToString()).Rows.Count;
+                    lableGIAO_SDV.Text = this.sodovien.Text + " Có " + count + " Hồ Sơ Được Giao";
+                    #endregion
+                }
+            }
+            catch (Exception)
+            { }
+            if (count > 0)
+            {
+                resultPrint.Visible = true;
+            }
+            else
+            {
+                resultPrint.Visible = false;
+            }
+        }
         public void giaoviec()
         {
             int count = 0;
             try
             {
-                if (theodot.Checked == true)
+                if (btAll.Checked == true) {
+                    #region DS Chua Giao Theo Ngay
+                    this.DG_ChuaGiao.DataSource = DAL.C_ToThietKe.DachSachHoSoGiaoViec(null, null, null);
+                    labelDSChuaGiao.Text = "Tổng Số " + DAL.C_ToThietKe.DachSachHoSoGiaoViec(null, null, null).Rows.Count + " Hồ Sơ Chưa Giao Sơ Đồ Viên. ";
+                    #endregion
+                    count = DAL.C_ToThietKe.DachSachHoSoGiaoViec(null, null, this.sodovien.SelectedValue.ToString()).Rows.Count;
+                    #region DS Da Giao Theo Ngay
+                    this.DG_SDV.DataSource = DAL.C_ToThietKe.DachSachHoSoGiaoViec(null, null, this.sodovien.SelectedValue.ToString());
+                    lableGIAO_SDV.Text = this.sodovien.Text + " Có " + count + " Hồ Sơ Được Giao";
+                    #endregion
+                }
+                else if (theodot.Checked == true)
                 {
                     #region DS Chua Giao Theo Ngay
                     this.DG_ChuaGiao.DataSource = DAL.C_ToThietKe.DachSachHoSoGiaoViec(this.DotNhanDon.SelectedValue.ToString(), null, null);
@@ -154,7 +220,7 @@ namespace TanHoaWater.View.Users.To_ThietKe
         }
         private void sodovien_SelectedValueChanged(object sender, EventArgs e)
         {
-            giaoviec();
+            dagiaoviec();
         }
 
         private void btGiaoViec_Click(object sender, EventArgs e)
@@ -284,6 +350,13 @@ namespace TanHoaWater.View.Users.To_ThietKe
             }
             rpt_View rpt = new rpt_View(ds);
             rpt.ShowDialog();
+        }
+
+        private void btAll_CheckedChanged(object sender, EventArgs e)
+        {
+            giaoviec();
+            this.dateNhanDon.Enabled = false;
+            this.DotNhanDon.Enabled = false;
         }
     }
 }

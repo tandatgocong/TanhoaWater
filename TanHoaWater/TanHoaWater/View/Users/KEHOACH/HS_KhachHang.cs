@@ -370,10 +370,6 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                 report.ReportSource = rp;
             }
         }
-
-
-
-        int flag = 0;
         private void tabChuyenDon_Click(object sender, EventArgs e)
         {
             this.resultChuyen.Visible = false;
@@ -464,6 +460,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                     #endregion
 
                     MessageBox.Show(this, "Chuyển Đợt Nhận Đơn Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    load_cd_Grid();
                     #region Add Chuyen TTK
                     if (_madot != null)
                     {
@@ -528,6 +525,18 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
 
             rpt_DanhSachChuyen ds = new rpt_DanhSachChuyen(_madot, DAL.C_USERS._userName, CD_NguoiDuyetDon.SelectedValue.ToString());
             ds.ShowDialog();
+        }
+
+        private void soho_ValueChanged(object sender, EventArgs e)
+        {
+            if (soho.Value > 0)
+            {
+                txtDanhBo.Text = "(ĐD " + soho.Value + " Hộ)";
+            }
+            else {
+                txtDanhBo.Text = null;
+            }
+
         }
     }
 }
