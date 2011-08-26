@@ -13,6 +13,7 @@ using TanHoaWater.View.Administrators;
 using TanHoaWater.View.Users.HSKHACHHANG;
 using log4net;
 using TanHoaWater.View.Users.To_ThietKe;
+using TanHoaWater.View.Users.TinhDuToan;
 
 namespace TanHoaWater
 {
@@ -97,6 +98,12 @@ namespace TanHoaWater
         {
             this.PanelContent.Controls.Clear();
             this.PanelContent.Controls.Add(new uct_GiaoHS());
+        }
+
+        private void tínhDựToánHSKToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.PanelContent.Controls.Clear();
+            this.PanelContent.Controls.Add(new uct_TinhDuToan());
         }
 
         
