@@ -151,7 +151,8 @@ namespace TanHoaWater.View.Users.To_ThietKe
             int count = 0;
             try
             {
-                if (btAll.Checked == true) {
+                if (btAll.Checked == true)
+                {
                     #region DS Chua Giao Theo Ngay
                     this.DG_ChuaGiao.DataSource = DAL.C_ToThietKe.DachSachHoSoGiaoViec(null, null, null);
                     labelDSChuaGiao.Text = "Tổng Số " + DAL.C_ToThietKe.DachSachHoSoGiaoViec(null, null, null).Rows.Count + " Hồ Sơ Chưa Giao Sơ Đồ Viên. ";
@@ -336,14 +337,18 @@ namespace TanHoaWater.View.Users.To_ThietKe
         private void resultPrint_Click(object sender, EventArgs e)
         {
             DataSet ds = new DataSet();
-            if (theodot.Checked == true)
+            if (btAll.Checked == true)
+            {
+                ds = DAL.C_ToThietKe.BC_GIAOHS_SDV(null, null, this.sodovien.SelectedValue.ToString(), DAL.C_USERS._userName);
+
+            }else  if (theodot.Checked == true)
             {
 
                 ds = DAL.C_ToThietKe.BC_GIAOHS_SDV(this.DotNhanDon.SelectedValue.ToString(), null, this.sodovien.SelectedValue.ToString(), DAL.C_USERS._userName);
 
 
             }
-            else
+            else if (theongay.Checked == true)
             {
                 ds = DAL.C_ToThietKe.BC_GIAOHS_SDV(null, Utilities.DateToString.NgayVN(this.dateNhanDon), this.sodovien.SelectedValue.ToString(), DAL.C_USERS._userName);
 
@@ -357,6 +362,125 @@ namespace TanHoaWater.View.Users.To_ThietKe
             giaoviec();
             this.dateNhanDon.Enabled = false;
             this.DotNhanDon.Enabled = false;
+        }
+
+        private void thedoi_all_CheckedChanged(object sender, EventArgs e)
+        {
+            this.cb_TheoDot.Enabled = false;
+            this.theodoi_denngay.Enabled = false;
+            this.theodoi_tungay.Enabled = false;
+        }
+
+        private void theodoi_bydot_CheckedChanged(object sender, EventArgs e)
+        {
+            this.cb_TheoDot.Enabled = true;
+            this.theodoi_denngay.Enabled = false;
+            this.theodoi_tungay.Enabled = false;
+        }
+
+        private void theodoi_ngay_CheckedChanged(object sender, EventArgs e)
+        {
+            this.cb_TheoDot.Enabled = false;
+            this.theodoi_denngay.Enabled = true;
+            this.theodoi_tungay.Enabled = true;
+        }
+
+        private void tabItem3_Click(object sender, EventArgs e)
+        {
+            #region Load SDV
+            this.theodoi_SDV.DataSource = DAL.C_USERS.getUserByMaPhongAndLevel("TTK", 2);
+            this.theodoi_SDV.DisplayMember = "FULLNAME";
+            this.theodoi_SDV.ValueMember = "USERNAME";
+            #endregion
+            #region Loai Dot Khach Hang
+            this.cb_TheoDot.DataSource = DAL.C_DotNhanDon.getListtMa_Dot_DaChuyen();
+            this.cb_TheoDot.DisplayMember = "TEND";
+            this.cb_TheoDot.ValueMember = "MADOT";
+            #endregion
+        }
+
+        private void theodoi_Xem_Click(object sender, EventArgs e)
+        {
+            if (this.thedoi_all.Checked) { 
+            
+            } else if (this.theodoi_ngay.Checked) { 
+            
+            } else if (this.theodoi_bydot.Checked) { 
+            
+            }
+        }        
+        private void txtSHS_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            txtResult.Text = null;
+            if (e.KeyChar == 13) {
+                try
+                {
+                    string _soHoSo = this.txtSHS.Text;
+                    if (_soHoSo != null)
+                    {
+                        
+                        Database.DON_KHACHHANG donkh = DAL.C_DonKhachHang.findBySOHOSO(_soHoSo);
+                        if (donkh != null)
+                        {
+                            this.txtSHS.Text = donkh.SHS;
+                            this.txtSoHoSo.Text = donkh.SOHOSO;
+                            this.txtSoHo.Value = decimal.Parse(donkh.SOHO.ToString());
+                            this.txtHoTen.Text = donkh.HOTEN;
+                            this.txtdiachi.Text = donkh.SONHA + " " + donkh.DUONG + ", P. " + DAL.C_Phuong.finbyPhuong(donkh.QUAN, donkh.PHUONG).TENPHUONG + ", Q." + DAL.C_Quan.finByMaQuan(donkh.QUAN).TENQUAN;
+                            this.txtLoaiKH.Text = DAL.C_LoaiKhachHang.finbyMaLoai(donkh.LOAIKH).TENLOAI;
+                            this.txtLoaiHS.Text = DAL.C_LoaiHoSo.findbyMaLoai(donkh.LOAIHOSO).TENLOAI;
+                            this.txtDotND.Text = donkh.MADOT;
+                            this.txtSoDT.Text = donkh.DIENTHOAI;
+                            this.txtGhiChu.Text = donkh.GHICHU;
+                            Database.TOTHIETKE ttk = DAL.C_ToThietKe.findBySoHoSo(donkh.SOHOSO);
+                            if (ttk != null) {
+                                if (ttk.TRONGAITHIETKE == true)
+                                {
+                                    this.checkTroNgai.Checked = true;
+                                    this.txtNoiDungTN.Text = ttk.NOIDUNGTRONGAI;
+                                }
+                            }
+
+                        }
+                        else {
+                            this.txtSHS.Text = null;
+                            this.txtSoHoSo.Text = null;
+                            this.txtSoHo.Value = 0;
+                            this.txtHoTen.Text = null;
+                            this.txtdiachi.Text = null;
+                            this.txtLoaiKH.Text = null;
+                            this.txtLoaiHS.Text = null;
+                            this.txtDotND.Text = null;
+                            this.txtSoDT.Text = null;
+                            this.txtGhiChu.Text = null;
+                        }
+                    }
+
+                }
+                catch (Exception)
+                {
+                }
+            }
+        }
+
+        private void btUpdate_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string _soHoSo = this.txtSoHoSo.Text;
+                if (_soHoSo != null)
+                {
+                  bool result =  DAL.C_ToThietKe.TraHS(_soHoSo, this.txtNoiDungTN.Text);
+                  if (result) { txtResult.Text = "Trả Hồ Sơ Thành Công"; }
+                  else { txtResult.Text = "Trả Hồ Sơ Thất Bại"; }
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Error("Loi tra ho so " + ex.Message);
+                MessageBox.Show(this, "..: Thông Báo :..", "Chuyển Hồ Sơ Lỗi !", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
     }
 }

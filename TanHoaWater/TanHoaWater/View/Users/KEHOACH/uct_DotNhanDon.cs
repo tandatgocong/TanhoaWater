@@ -143,6 +143,9 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                 loadDetail(_madot);
                 this.lbSoKHNhanDon.Text = "Có " + sokh + " khách hàng đợt nhận đơn " + _madot;
                 _madot_ = _madot;
+                this.cbBOPHAN.Visible = false;
+                this.chyenTTK.Visible = false;
+                this.cbBOPHAN.DataSource = null;
             }
             catch (Exception ex){
                 log.Error(ex.Message);
