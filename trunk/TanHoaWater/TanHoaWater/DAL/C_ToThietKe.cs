@@ -107,6 +107,35 @@ namespace TanHoaWater.DAL
             ct.Fill(ds, "USERS");
             return ds;
         }
-       
+
+        public static bool TraHS(string sohoso, string noidungtrongai) {
+            try
+            {
+                TanHoaDataContext db = new TanHoaDataContext();
+                var query = from ttk in db.TOTHIETKEs where ttk.SOHOSO == sohoso select ttk;
+                TOTHIETKE totk = query.SingleOrDefault();
+                if (totk != null) {
+                    totk.TRAHS = true;
+                    totk.NGAYTRAHS = DateTime.Now;
+                    totk.TRONGAITHIETKE = true;
+                    totk.NOIDUNGTRONGAI = noidungtrongai;
+                    db.SubmitChanges();
+                    return true;
+                }
+               
+            }
+            catch (Exception ex)
+            {
+                log.Error("Loi khi chuyen hs" + ex.Message);
+                
+            }
+            return false;
+        }
+
+        public static TOTHIETKE findBySoHoSo(string sohoso) {
+            TanHoaDataContext db = new TanHoaDataContext();
+            var ttk = from query in db.TOTHIETKEs where query.SOHOSO == sohoso select query;
+            return ttk.SingleOrDefault();
+        }
     }
 }

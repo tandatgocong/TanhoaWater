@@ -71,6 +71,7 @@ namespace TanHoaWater.DAL
             DON_KHACHHANG donKH =  data.SingleOrDefault();
             if (donKH != null) {
                 donKH.CHUYEN_HOSO = true;
+                donKH.NGAYCHUYEN_HOSO = DateTime.Now;
             }
             db.SubmitChanges();
         }
@@ -94,7 +95,7 @@ namespace TanHoaWater.DAL
             SqlConnection conn = new SqlConnection(db.Connection.ConnectionString);
             conn.Open();
             string sql = " UPDATE DON_KHACHHANG SET CHUYEN_HOSO='True' ";
-            sql += ",BOPHANCHUYEN = '" + pbchuyen + "', NGUOICHUYEN_HOSO = '" + nguoichuyen + "', NGAYCHUYEN_HOSO=''";
+            sql += ",BOPHANCHUYEN = '" + pbchuyen + "', NGUOICHUYEN_HOSO = '" + nguoichuyen + "', NGAYCHUYEN_HOSO='" + DateTime.Now +"'";
             sql += " WHERE MADOT='" + sodot + "'";
             SqlCommand cmd = new SqlCommand(sql, conn);
             cmd.ExecuteNonQuery();
