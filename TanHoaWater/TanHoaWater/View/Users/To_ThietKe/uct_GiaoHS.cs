@@ -28,13 +28,14 @@ namespace TanHoaWater.View.Users.To_ThietKe
         {
             this.dateNhanDon.Enabled = true;
             this.DotNhanDon.Enabled = false;
-
+            giaoviec();
         }
 
         private void theodot_CheckedChanged(object sender, EventArgs e)
         {
             this.dateNhanDon.Enabled = false;
             this.DotNhanDon.Enabled = true;
+            giaoviec();
         }
         int flag = 0;
         CheckBox checkboxHeader1 = new CheckBox();
@@ -360,9 +361,10 @@ namespace TanHoaWater.View.Users.To_ThietKe
 
         private void btAll_CheckedChanged(object sender, EventArgs e)
         {
-            giaoviec();
+           
             this.dateNhanDon.Enabled = false;
             this.DotNhanDon.Enabled = false;
+            giaoviec();
         }
 
         private void thedoi_all_CheckedChanged(object sender, EventArgs e)
@@ -552,22 +554,21 @@ namespace TanHoaWater.View.Users.To_ThietKe
 
         private void print_Click(object sender, EventArgs e)
         {
-            DataSet ds = new DataSet();
-            int flag =0;
-            if (this.thedoi_all.Checked)
-            {}
-            else if (this.theodoi_ngay.Checked)
-            {
-                ds = DAL.C_ToThietKe.BC_TinhHinhKSTK(null, Utilities.DateToString.NgayVN(theodoi_tungay), Utilities.DateToString.NgayVN(theodoi_denngay), this.theodoi_SDV.SelectedValue.ToString(), DAL.C_USERS._userName);
-                flag = 1;       
-            }
-            else if (this.theodoi_bydot.Checked)
-            {
-                ds = DAL.C_ToThietKe.BC_TinhHinhKSTK(cb_TheoDot.SelectedValue.ToString(), null, null, this.theodoi_SDV.SelectedValue.ToString(), DAL.C_USERS._userName);
-                flag = 2;   
-            }
-            frm_TTTK rpt = new frm_TTTK(ds, flag);
-            rpt.ShowDialog();
+            //DataSet ds = new DataSet();
+            //if (this.theodoi_ngay.Checked)
+            //{
+            //    ds = DAL.C_ToThietKe.BC_TinhHinhKSTK(null, Utilities.DateToString.NgayVN(theodoi_tungay), Utilities.DateToString.NgayVN(theodoi_denngay), this.theodoi_SDV.SelectedValue.ToString(), DAL.C_USERS._userName);
+            //    flag = 1;       
+            //}
+            //else if (this.theodoi_bydot.Checked)
+            //{
+            //    ds = DAL.C_ToThietKe.BC_TinhHinhKSTK(cb_TheoDot.SelectedValue.ToString(), null, null, this.theodoi_SDV.SelectedValue.ToString(), DAL.C_USERS._userName);
+            //    flag = 2;   
+            //}
+            //frm_TTTK rpt = new frm_TTTK(ds);
+            //rpt.ShowDialog();
+            rpt_BC_TheoDoiTTTK r = new rpt_BC_TheoDoiTTTK();
+            r.ShowDialog();
         }
     }
 }
