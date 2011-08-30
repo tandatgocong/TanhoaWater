@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using log4net;
 using TanHoaWater.View.Users.To_ThietKe.Report;
+using TanHoaWater.View.Users.To_ThietKe.Report.KSTK;
 
 namespace TanHoaWater.View.Users.To_ThietKe
 {
@@ -369,6 +370,7 @@ namespace TanHoaWater.View.Users.To_ThietKe
             this.cb_TheoDot.Enabled = false;
             this.theodoi_denngay.Enabled = false;
             this.theodoi_tungay.Enabled = false;
+            theodoi();
         }
 
         private void theodoi_bydot_CheckedChanged(object sender, EventArgs e)
@@ -376,6 +378,7 @@ namespace TanHoaWater.View.Users.To_ThietKe
             this.cb_TheoDot.Enabled = true;
             this.theodoi_denngay.Enabled = false;
             this.theodoi_tungay.Enabled = false;
+            theodoi();
         }
 
         private void theodoi_ngay_CheckedChanged(object sender, EventArgs e)
@@ -383,6 +386,7 @@ namespace TanHoaWater.View.Users.To_ThietKe
             this.cb_TheoDot.Enabled = false;
             this.theodoi_denngay.Enabled = true;
             this.theodoi_tungay.Enabled = true;
+            theodoi();
         }
 
         private void tabItem3_Click(object sender, EventArgs e)
@@ -397,17 +401,51 @@ namespace TanHoaWater.View.Users.To_ThietKe
             this.cb_TheoDot.DisplayMember = "TEND";
             this.cb_TheoDot.ValueMember = "MADOT";
             #endregion
+            theodoi();
         }
 
+        public void theodoi()
+        {
+            try
+            {                   
+                DataTable tableHT = new DataTable();
+                DataTable tableChuaHT = new DataTable();
+                int countHT = 0;
+                int countChuaHT = 0;
+                if (this.thedoi_all.Checked)
+                {
+                    tableHT = DAL.C_ToThietKe.TinhHinhKSTK(null, null, null, this.theodoi_SDV.SelectedValue.ToString(), true);
+                    tableChuaHT = DAL.C_ToThietKe.TinhHinhKSTK(null, null, null, this.theodoi_SDV.SelectedValue.ToString(), false);
+                    countHT = DAL.C_ToThietKe.CountTinhHinhKSTK(null, null, null, this.theodoi_SDV.SelectedValue.ToString(), true);
+                    countChuaHT = DAL.C_ToThietKe.CountTinhHinhKSTK(null, null, null, this.theodoi_SDV.SelectedValue.ToString(), false);
+                }
+                else if (this.theodoi_ngay.Checked)
+                {
+                    tableHT = DAL.C_ToThietKe.TinhHinhKSTK(null, Utilities.DateToString.NgayVN(theodoi_tungay), Utilities.DateToString.NgayVN(theodoi_denngay), this.theodoi_SDV.SelectedValue.ToString(), true);
+                    tableChuaHT = DAL.C_ToThietKe.TinhHinhKSTK(null, Utilities.DateToString.NgayVN(theodoi_tungay), Utilities.DateToString.NgayVN(theodoi_denngay), this.theodoi_SDV.SelectedValue.ToString(), false);
+                    countHT = DAL.C_ToThietKe.CountTinhHinhKSTK(null, Utilities.DateToString.NgayVN(theodoi_tungay), Utilities.DateToString.NgayVN(theodoi_denngay), this.theodoi_SDV.SelectedValue.ToString(), true);
+                    countChuaHT = DAL.C_ToThietKe.CountTinhHinhKSTK(null, Utilities.DateToString.NgayVN(theodoi_tungay), Utilities.DateToString.NgayVN(theodoi_denngay), this.theodoi_SDV.SelectedValue.ToString(), false);
+                }
+                else if (this.theodoi_bydot.Checked)
+                {
+                    tableHT = DAL.C_ToThietKe.TinhHinhKSTK(cb_TheoDot.SelectedValue.ToString(), null, null, this.theodoi_SDV.SelectedValue.ToString(), true);
+                    tableChuaHT = DAL.C_ToThietKe.TinhHinhKSTK(cb_TheoDot.SelectedValue.ToString(), null, null, this.theodoi_SDV.SelectedValue.ToString(), false);
+                    countHT = DAL.C_ToThietKe.CountTinhHinhKSTK(cb_TheoDot.SelectedValue.ToString(), null, null, this.theodoi_SDV.SelectedValue.ToString(), true);
+                    countChuaHT = DAL.C_ToThietKe.CountTinhHinhKSTK(cb_TheoDot.SelectedValue.ToString(), null, null, this.theodoi_SDV.SelectedValue.ToString(), false);
+                }
+                gv_ChuaHoanThanh.DataSource = tableChuaHT;
+                gv_DaHoanThanh.DataSource = tableHT;
+                lb_ChuaHoanThanh.Text = "Tống Công Có " + countChuaHT + " Hồ Sơ.";
+                lb_Dahoanhthanh.Text = "Tống Công Có " + countHT + " Hồ Sơ.";               
+            }
+            catch (Exception ex)
+            {
+                log.Error("Theo Doi Tinh Hinh Thiet Ke Loi " + ex.Message);
+            }
+        }
         private void theodoi_Xem_Click(object sender, EventArgs e)
         {
-            if (this.thedoi_all.Checked) { 
-            
-            } else if (this.theodoi_ngay.Checked) { 
-            
-            } else if (this.theodoi_bydot.Checked) { 
-            
-            }
+            theodoi();
         }        
         private void txtSHS_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -438,9 +476,16 @@ namespace TanHoaWater.View.Users.To_ThietKe
                                 {
                                     this.checkTroNgai.Checked = true;
                                     this.txtNoiDungTN.Text = ttk.NOIDUNGTRONGAI;
+                                    
+                                   
+                                }
+                                Database.USER us = DAL.C_USERS.findByUserName(ttk.SODOVIEN);
+                                if (us != null)
+                                {
+                                    this.txt_sdv.Text = us.FULLNAME;
                                 }
                             }
-
+                         
                         }
                         else {
                             this.txtSHS.Text = null;
@@ -453,6 +498,7 @@ namespace TanHoaWater.View.Users.To_ThietKe
                             this.txtDotND.Text = null;
                             this.txtSoDT.Text = null;
                             this.txtGhiChu.Text = null;
+                            this.txt_sdv.Text = null;
                         }
                     }
 
@@ -481,6 +527,47 @@ namespace TanHoaWater.View.Users.To_ThietKe
                 MessageBox.Show(this, "..: Thông Báo :..", "Chuyển Hồ Sơ Lỗi !", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+        }
+
+        private void theodoi_SDV_SelectedValueChanged(object sender, EventArgs e)
+        {
+            theodoi();
+        }
+
+        private void cb_TheoDot_SelectedValueChanged(object sender, EventArgs e)
+        {
+            theodoi();
+
+        }
+
+        private void theodoi_tungay_ValueChanged(object sender, EventArgs e)
+        {
+            theodoi();
+        }
+
+        private void theodoi_denngay_ValueChanged(object sender, EventArgs e)
+        {
+            theodoi();
+        }
+
+        private void print_Click(object sender, EventArgs e)
+        {
+            DataSet ds = new DataSet();
+            int flag =0;
+            if (this.thedoi_all.Checked)
+            {}
+            else if (this.theodoi_ngay.Checked)
+            {
+                ds = DAL.C_ToThietKe.BC_TinhHinhKSTK(null, Utilities.DateToString.NgayVN(theodoi_tungay), Utilities.DateToString.NgayVN(theodoi_denngay), this.theodoi_SDV.SelectedValue.ToString(), DAL.C_USERS._userName);
+                flag = 1;       
+            }
+            else if (this.theodoi_bydot.Checked)
+            {
+                ds = DAL.C_ToThietKe.BC_TinhHinhKSTK(cb_TheoDot.SelectedValue.ToString(), null, null, this.theodoi_SDV.SelectedValue.ToString(), DAL.C_USERS._userName);
+                flag = 2;   
+            }
+            frm_TTTK rpt = new frm_TTTK(ds, flag);
+            rpt.ShowDialog();
         }
     }
 }

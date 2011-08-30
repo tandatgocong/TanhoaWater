@@ -187,6 +187,24 @@
     <Compile Include="View\Users\TinhDuToan\uct_TinhDuToan.Designer.cs">
       <DependentUpon>uct_TinhDuToan.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Users\To_ThietKe\Report\KSTK\rpt_KSTK_byNgay.cs">
+      <DependentUpon>rpt_KSTK_byNgay.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="View\Users\To_ThietKe\Report\KSTK\frm_TTTK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Users\To_ThietKe\Report\KSTK\frm_TTTK.Designer.cs">
+      <DependentUpon>frm_TTTK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Users\To_ThietKe\Report\KSTK\rpt_KSTK_byDot.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_KSTK_byDot.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="View\Users\To_ThietKe\Report\rpt_DSHS_Giao_SDV.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -266,6 +284,17 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\TinhDuToan\uct_TinhDuToan.resx">
       <DependentUpon>uct_TinhDuToan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\To_ThietKe\Report\KSTK\rpt_KSTK_byNgay.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_KSTK_byNgay.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\To_ThietKe\Report\KSTK\frm_TTTK.resx">
+      <DependentUpon>frm_TTTK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\To_ThietKe\Report\KSTK\rpt_KSTK_byDot.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_KSTK_byDot.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\To_ThietKe\Report\rpt_DSHS_Giao_SDV.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

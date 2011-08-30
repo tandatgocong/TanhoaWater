@@ -272,4 +272,32 @@
       <Association Name="USER_TOTHIETKE" Member="USER" ThisKey="SODOVIEN" OtherKey="USERNAME" Type="USER" IsForeignKey="true" />
     </Type>
   </Table>
+  <Table Name="dbo.V_BC_KSTK" Member="V_BC_KSTKs">
+    <Type Name="V_BC_KSTK">
+      <Column Name="HOTEN" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DIACHI" Type="System.String" DbType="NVarChar(209)" CanBeNull="true" />
+      <Column Name="NGAYNHANHS" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="TENLOAI" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="TENPHUONG" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TENQUAN" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DUONG" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SONHA" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MADOT" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="SOHOSO" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SHS" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="NGAYNHAN" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SODOVIEN" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="NGAYGIAOSDV" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TRAHS" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="NGAYTRAHS" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TRONGAITHIETKE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="NOIDUNGTRONGAI" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="CREATEBY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CREATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MODIFYBY" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="MODIFYDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NGAYGIAOSDV_W" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
 </Database>

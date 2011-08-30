@@ -28,7 +28,7 @@ namespace TanHoaWater.DAL
             }
             return false;
         }
-        public USER findByUserName(string username)
+        public static USER findByUserName(string username)
         {
             TanHoaDataContext db = new TanHoaDataContext();
             var data = from user in db.USERs where user.USERNAME == username select user;

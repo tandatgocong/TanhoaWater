@@ -79,7 +79,7 @@ namespace TanHoaWater.View.Administrators
                     user.ENABLED = true;
                     user.CREATEDATE = DateTime.Now;
                     DAL.C_USERS users = new DAL.C_USERS();
-                    if (users.findByUserName(user.USERNAME) == null)
+                    if (DAL.C_USERS.findByUserName(user.USERNAME) == null)
                     {
                         users.AddNew(user);
                     }
