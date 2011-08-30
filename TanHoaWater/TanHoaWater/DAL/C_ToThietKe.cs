@@ -76,7 +76,7 @@ namespace TanHoaWater.DAL
             TOTHIETKE totk = giaoviec.SingleOrDefault();
             if (totk != null) {
                 totk.SODOVIEN = sodovien;
-                totk.NGAYGIAOSDV = DateTime.Now;
+                totk.NGAYGIAOSDV = DateTime.Now.Date;
                 totk.MODIFYBY = nguoigiao;
                 totk.MODIFYDATE = DateTime.Now;
                 totk.TRAHS = false;
@@ -150,7 +150,8 @@ namespace TanHoaWater.DAL
             }
             if (tungay != null)
             {
-                sql += " AND CONVERT(VARCHAR(10),ttk.NGAYGIAOSDV,103)>='" + tungay + "' AND CONVERT(VARCHAR(10),ttk.NGAYGIAOSDV,103)<='" + denngay + "' ";
+               // sql += " AND CONVERT(VARCHAR(10),ttk.NGAYGIAOSDV,103)>='" + tungay + "' AND CONVERT(VARCHAR(10),ttk.NGAYGIAOSDV,103)<='" + denngay + "' ";
+                sql += " AND CONVERT(DATETIME,ttk.NGAYGIAOSDV,103) BETWEEN CONVERT(DATETIME,'" + tungay + "',103) AND CONVERT(DATETIME,'" + denngay + "',103) ";
             }
             if (tensdv != null)
             {
@@ -176,7 +177,8 @@ namespace TanHoaWater.DAL
             }
             if (tungay != null)
             {
-                sql += " AND CONVERT(VARCHAR(10),ttk.NGAYGIAOSDV,103)>='" + tungay + "' AND CONVERT(VARCHAR(10),ttk.NGAYGIAOSDV,103)<='" + denngay + "' ";
+                sql += " AND CONVERT(DATETIME,ttk.NGAYGIAOSDV,103) BETWEEN CONVERT(DATETIME,'" + tungay + "',103) AND CONVERT(DATETIME,'" + denngay + "',103) ";
+                //sql += " AND CONVERT(VARCHAR(10),ttk.NGAYGIAOSDV,103)>='" + tungay + "' AND CONVERT(VARCHAR(10),ttk.NGAYGIAOSDV,103)<='" + denngay + "' ";
             }
             if (tensdv != null)
             {
@@ -197,7 +199,7 @@ namespace TanHoaWater.DAL
 
             TanHoaDataContext db = new TanHoaDataContext();
             db.Connection.Open();
-            string sql = " SELECT *  ";
+            string sql = " SELECT *, NGAYBT='" + tungay + "', NGAYKT='" + denngay + "'  ";
             sql += " FROM  V_BC_KSTK ";
             sql += " WHERE SODOVIEN='" + tensdv + "'";
             if (madot != null)
@@ -206,7 +208,8 @@ namespace TanHoaWater.DAL
             }
             if (tungay != null)
             {
-                sql += " AND CONVERT(VARCHAR(10),NGAYGIAOSDV,103)>='" + tungay + "' AND CONVERT(VARCHAR(10),NGAYGIAOSDV,103)<='" + denngay + "' ";
+                //sql += " AND CONVERT(VARCHAR(10),NGAYGIAOSDV,103)>='" + tungay + "' AND CONVERT(VARCHAR(10),NGAYGIAOSDV,103)<='" + denngay + "' ";
+                sql += " AND CONVERT(DATETIME,NGAYGIAOSDV,103) BETWEEN CONVERT(DATETIME,'" + tungay + "',103) AND CONVERT(DATETIME,'" + denngay + "',103) ";
             }
             
             SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
