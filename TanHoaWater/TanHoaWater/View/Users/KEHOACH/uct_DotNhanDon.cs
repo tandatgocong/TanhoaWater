@@ -127,10 +127,6 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
             {
                 this.checkCD.Visible = false;
             }
-            else
-            {
-                this.checkCD.Visible = true;
-            }
             Utilities.DataGridV.formatRows(detail);
         }
 
@@ -139,7 +135,6 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
             try
             {
                 string _madot = mainGrid.Rows[e.RowIndex].Cells[0].Value != null ? mainGrid.Rows[e.RowIndex].Cells[0].Value.ToString() : null;
-               
                 loadDetail(_madot);
                 this.lbSoKHNhanDon.Text = "Có " + sokh + " khách hàng đợt nhận đơn " + _madot;
                 _madot_ = _madot;
