@@ -522,9 +522,17 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
 
         private void resultPrint_Click(object sender, EventArgs e)
         {
+            try
+            {
+                rpt_DanhSachChuyen ds = new rpt_DanhSachChuyen(_madot, DAL.C_USERS._userName, CD_NguoiDuyetDon.SelectedValue.ToString());
+                ds.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                log.Error("Lỗi Khi In" +  ex.Message);
+                MessageBox.Show(this, "Lỗi Khi In.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
-            rpt_DanhSachChuyen ds = new rpt_DanhSachChuyen(_madot, DAL.C_USERS._userName, CD_NguoiDuyetDon.SelectedValue.ToString());
-            ds.ShowDialog();
         }
 
         private void soho_ValueChanged(object sender, EventArgs e)
