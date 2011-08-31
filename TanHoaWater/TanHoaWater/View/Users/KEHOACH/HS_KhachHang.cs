@@ -546,5 +546,11 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
             }
 
         }
+
+        private void tabItem3_Click(object sender, EventArgs e)
+        {
+            this.panel4.Controls.Clear();
+            this.panel4.Controls.Add(new tab_DonTroNgai());
+        }
     }
 }

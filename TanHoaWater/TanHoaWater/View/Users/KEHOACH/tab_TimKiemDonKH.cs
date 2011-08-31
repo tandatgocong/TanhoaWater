@@ -187,7 +187,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                 string _soHoSo = this.dataSearCh.Rows[e.RowIndex].Cells[1].Value !=null? this.dataSearCh.Rows[e.RowIndex].Cells[1].Value.ToString() : null;
                 if (_soHoSo != null) {
                     loadAllCombox();
-                    Database.DON_KHACHHANG donkh= DAL.C_DonKhachHang.findBySOHOSO(_soHoSo);
+                    Database.DON_KHACHHANG donkh = DAL.C_DonKhachHang.findBySOHOSO_(_soHoSo);
                     if (donkh != null) {
                         this.txtSHS.Text = donkh.SHS;
                         this.txtSoHoSo.Text = donkh.SOHOSO;

@@ -281,12 +281,18 @@ namespace TanHoaWater.View.Users.To_ThietKe
 
         private void DotNhanDon_SelectedValueChanged(object sender, EventArgs e)
         {
-            giaoviec();
+            if (theodoi_bydot.Checked) {
+                giaoviec();
+            }
+           
         }
 
         private void dateNhanDon_ValueChanged(object sender, EventArgs e)
         {
-            giaoviec();
+            if (theodoi_ngay.Checked) {
+                giaoviec();
+            }
+            
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
