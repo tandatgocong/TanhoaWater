@@ -538,7 +538,6 @@
             this.btDelete.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btDelete.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btDelete.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btDelete.Image = global::TanHoaWater.Properties.Resources.imageres_dll_I0062_0409;
             this.btDelete.ImageFixedSize = new System.Drawing.Size(20, 20);
             this.btDelete.Location = new System.Drawing.Point(428, 136);
             this.btDelete.Name = "btDelete";

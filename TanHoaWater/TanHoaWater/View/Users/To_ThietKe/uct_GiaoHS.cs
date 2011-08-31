@@ -15,11 +15,35 @@ namespace TanHoaWater.View.Users.To_ThietKe
     public partial class uct_GiaoHS : UserControl
     {
         private static readonly ILog log = LogManager.GetLogger(typeof(uct_GiaoHS).Name);
-        public uct_GiaoHS()
+        public uct_GiaoHS(int tab)
         {
             InitializeComponent();
-            this.dateNhanDon.Value = DateTime.Now;
-            formLoad();
+            if (tab == 2) {
+                this.tabControl1.SelectedTabIndex = 1;
+            } else if (tab == 3) {
+                this.tabControl1.SelectedTabIndex = 2;
+                #region Load SDV
+                this.theodoi_SDV.DataSource = DAL.C_USERS.getUserByMaPhongAndLevel("TTK", 2);
+                this.theodoi_SDV.DisplayMember = "FULLNAME";
+                this.theodoi_SDV.ValueMember = "USERNAME";
+                #endregion
+                #region Loai Dot Khach Hang
+                this.cb_TheoDot.DataSource = DAL.C_DotNhanDon.getListtMa_Dot_DaChuyen();
+                this.cb_TheoDot.DisplayMember = "TEND";
+                this.cb_TheoDot.ValueMember = "MADOT";
+                #endregion
+                theodoi();
+            }
+            else if (tab == 4) {
+                this.tabControl1.SelectedTabIndex = 3;
+            }           
+            else {
+                this.dateNhanDon.Value = DateTime.Now;
+                formLoad();
+                this.tabControl1.SelectedTabIndex = 0;
+            }
+           
+            
 
 
         }
@@ -576,6 +600,17 @@ namespace TanHoaWater.View.Users.To_ThietKe
             rpt.ShowDialog();
             //rpt_BC_TheoDoiTTTK r = new rpt_BC_TheoDoiTTTK();
             //r.ShowDialog();
+        }
+
+        private void tabItem1_Click(object sender, EventArgs e)
+        {
+            this.dateNhanDon.Value = DateTime.Now;
+            formLoad();
+        }
+
+        private void tabItem2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

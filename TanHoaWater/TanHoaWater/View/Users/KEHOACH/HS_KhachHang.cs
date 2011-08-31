@@ -25,13 +25,64 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
         int rows;
 
         private static readonly ILog log = LogManager.GetLogger(typeof(HSKHACHHANG).Name);
-        public HSKHACHHANG()
+        public HSKHACHHANG(int tab)
         {
             InitializeComponent();
-            formLoad();
-            refresh();
-            this.txtSHS.Focus();            
+           if (tab == 2) {
+                tabControl1.SelectedTabIndex = 1;
+                this.resultChuyen.Visible = false;
+                this.resultDGChuyen.Visible = false;
+                this.resultPrint.Visible = false;
+                this.CD_NguoiDuyetDon.Visible = false;
+                this.nguoiduyetDon.Visible = false;
+                #region Load Bo Phan Chuyen
+                this.bophanChuyen.DataSource = DAL.C_PhongBan.getList();
+                this.bophanChuyen.DisplayMember = "TENPHONG";
+                this.bophanChuyen.ValueMember = "MAPHONG";
+                #endregion
+                load_cd_Grid();
+            }
+            else if (tab == 3) {
+                tabControl1.SelectedTabIndex = 2;
+            }
+            else if (tab == 4) {
+                tabControl1.SelectedTabIndex = 3;
+            }
+            else if (tab == 5) {
+                tabControl1.SelectedTabIndex = 4;
+            }
+            else if (tab == 6)
+            {
+                this.panel2.Controls.Clear();
+                this.panel2.Controls.Add(new tab_TimKiemDonKH());
+                tabControl1.SelectedTabIndex = 5;
+            }
+           else if (tab == 6)
+           {
+               #region Bao cao Quan
+               this.BC_QUAN.DataSource = DAL.C_Quan.getList();
+               this.BC_QUAN.DisplayMember = "TENQUAN";
+               this.BC_QUAN.ValueMember = "MAQUAN";
+               #endregion
+               #region Loai Dot Nhan Don
+               this.BC_DOTNHANDON.DataSource = DAL.C_DotNhanDon.getListtMa_Dot();
+               this.BC_DOTNHANDON.DisplayMember = "TEND";
+               this.BC_DOTNHANDON.ValueMember = "MADOT";
+               #endregion
+               #region Load User
+               this.BC_NGUOIDUYET.DataSource = DAL.C_USERS.getUserByMaPhongAndLevel("VTTH", 0);
+               this.BC_NGUOIDUYET.DisplayMember = "FULLNAME";
+               this.BC_NGUOIDUYET.ValueMember = "USERNAME";
+               #endregion
+               tabControl1.SelectedTabIndex = 6;
+           }
+           else
+           {
 
+               formLoad();
+               refresh();
+               this.txtSHS.Focus();
+           }
         }
 
         private void txtghichukhan_MouseClick(object sender, MouseEventArgs e)
@@ -297,6 +348,9 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
         private void tabItem1_Click(object sender, EventArgs e)
         {
             this.panel2.Controls.Clear();
+            formLoad();
+            refresh();
+            this.txtSHS.Focus();
         }
 
         private void tab_BaoCao_Click(object sender, EventArgs e)
