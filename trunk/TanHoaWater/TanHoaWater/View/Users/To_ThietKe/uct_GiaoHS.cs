@@ -519,7 +519,8 @@ namespace TanHoaWater.View.Users.To_ThietKe
                 if (_soHoSo != null)
                 {
                   bool result =  DAL.C_ToThietKe.TraHS(_soHoSo, this.txtNoiDungTN.Text);
-                  if (result) { txtResult.Text = "Trả Hồ Sơ Thành Công"; }
+                  bool result1 = DAL.C_DonKhachHang.TroNgaiThietKe(_soHoSo, this.txtNoiDungTN.Text, DAL.C_USERS._userName);
+                  if (result && result1) { txtResult.Text = "Trả Hồ Sơ Thành Công"; }
                   else { txtResult.Text = "Trả Hồ Sơ Thất Bại"; }
                 }
             }
@@ -554,21 +555,21 @@ namespace TanHoaWater.View.Users.To_ThietKe
 
         private void print_Click(object sender, EventArgs e)
         {
-            //DataSet ds = new DataSet();
-            //if (this.theodoi_ngay.Checked)
-            //{
-            //    ds = DAL.C_ToThietKe.BC_TinhHinhKSTK(null, Utilities.DateToString.NgayVN(theodoi_tungay), Utilities.DateToString.NgayVN(theodoi_denngay), this.theodoi_SDV.SelectedValue.ToString(), DAL.C_USERS._userName);
-            //    flag = 1;       
-            //}
-            //else if (this.theodoi_bydot.Checked)
-            //{
-            //    ds = DAL.C_ToThietKe.BC_TinhHinhKSTK(cb_TheoDot.SelectedValue.ToString(), null, null, this.theodoi_SDV.SelectedValue.ToString(), DAL.C_USERS._userName);
-            //    flag = 2;   
-            //}
-            //frm_TTTK rpt = new frm_TTTK(ds);
-            //rpt.ShowDialog();
-            rpt_BC_TheoDoiTTTK r = new rpt_BC_TheoDoiTTTK();
-            r.ShowDialog();
+            DataSet ds = new DataSet();
+            if (this.theodoi_ngay.Checked)
+            {
+                ds = DAL.C_ToThietKe.BC_TinhHinhKSTK(null, Utilities.DateToString.NgayVN(theodoi_tungay), Utilities.DateToString.NgayVN(theodoi_denngay), this.theodoi_SDV.SelectedValue.ToString(), DAL.C_USERS._userName);
+                flag = 1;
+            }
+            else if (this.theodoi_bydot.Checked)
+            {
+                ds = DAL.C_ToThietKe.BC_TinhHinhKSTK(cb_TheoDot.SelectedValue.ToString(), null, null, this.theodoi_SDV.SelectedValue.ToString(), DAL.C_USERS._userName);
+                flag = 2;
+            }
+            frm_TTTK rpt = new frm_TTTK(ds, flag);
+            rpt.ShowDialog();
+            //rpt_BC_TheoDoiTTTK r = new rpt_BC_TheoDoiTTTK();
+            //r.ShowDialog();
         }
     }
 }

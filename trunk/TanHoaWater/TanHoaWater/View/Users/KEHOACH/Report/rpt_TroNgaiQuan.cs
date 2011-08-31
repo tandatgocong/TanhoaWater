@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TanHoaWater.View.Users.To_ThietKe.Report {
+namespace TanHoaWater.View.Users.KEHOACH.Report {
     using System;
     using System.ComponentModel;
     using CrystalDecisions.Shared;
@@ -16,14 +16,14 @@ namespace TanHoaWater.View.Users.To_ThietKe.Report {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class rpt_DSHS_Giao_SDV : ReportClass {
+    public class rpt_TroNgaiQuan : ReportClass {
         
-        public rpt_DSHS_Giao_SDV() {
+        public rpt_TroNgaiQuan() {
         }
         
         public override string ResourceName {
             get {
-                return "rpt_DSHS_Giao_SDV.rpt";
+                return "rpt_TroNgaiQuan.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace TanHoaWater.View.Users.To_ThietKe.Report {
         
         public override string FullResourceName {
             get {
-                return "TanHoaWater.View.Users.To_ThietKe.Report.rpt_DSHS_Giao_SDV.rpt";
+                return "TanHoaWater.View.Users.KEHOACH.Report.rpt_TroNgaiQuan.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace TanHoaWater.View.Users.To_ThietKe.Report {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class Cachedrpt_DSHS_Giao_SDV : Component, ICachedReport {
+    public class Cachedrpt_TroNgaiQuan : Component, ICachedReport {
         
-        public Cachedrpt_DSHS_Giao_SDV() {
+        public Cachedrpt_TroNgaiQuan() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace TanHoaWater.View.Users.To_ThietKe.Report {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            rpt_DSHS_Giao_SDV rpt = new rpt_DSHS_Giao_SDV();
+            rpt_TroNgaiQuan rpt = new rpt_TroNgaiQuan();
             rpt.Site = this.Site;
             return rpt;
         }
