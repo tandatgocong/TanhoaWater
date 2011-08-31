@@ -36,23 +36,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.reflectionLabel1 = new DevComponents.DotNetBar.Controls.ReflectionLabel();
             this.tabControl1 = new DevComponents.DotNetBar.TabControl();
-            this.tabControlPanel4 = new DevComponents.DotNetBar.TabControlPanel();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.BC_NGUOIDUYET = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.BC_QUAN = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.BC_DOTNHANDON = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.BC_LOAIBC = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.dotnhanDon = new DevComponents.Editors.ComboItem();
-            this.comboItem1 = new DevComponents.Editors.ComboItem();
-            this.comboItem2 = new DevComponents.Editors.ComboItem();
-            this.comboItem3 = new DevComponents.Editors.ComboItem();
-            this.BC_XEM = new DevComponents.DotNetBar.ButtonX();
-            this.labelX4 = new DevComponents.DotNetBar.LabelX();
-            this.labelX3 = new DevComponents.DotNetBar.LabelX();
-            this.labelX2 = new DevComponents.DotNetBar.LabelX();
-            this.labelX1 = new DevComponents.DotNetBar.LabelX();
-            this.report = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
-            this.tab_BaoCao = new DevComponents.DotNetBar.TabItem(this.components);
+            this.tabControlPanel6 = new DevComponents.DotNetBar.TabControlPanel();
+            this.tabItem4 = new DevComponents.DotNetBar.TabItem(this.components);
             this.tabControlPanel3 = new DevComponents.DotNetBar.TabControlPanel();
             this.panelChuyenDon = new System.Windows.Forms.Panel();
             this.label19 = new System.Windows.Forms.Label();
@@ -84,6 +69,9 @@
             this.label21 = new System.Windows.Forms.Label();
             this.bophanChuyen = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.tabChuyenDon = new DevComponents.DotNetBar.TabItem(this.components);
+            this.tabControlPanel5 = new DevComponents.DotNetBar.TabControlPanel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.tabItem3 = new DevComponents.DotNetBar.TabItem(this.components);
             this.tabControlPanel2 = new DevComponents.DotNetBar.TabControlPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tabItem2 = new DevComponents.DotNetBar.TabItem(this.components);
@@ -142,14 +130,27 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabItem1 = new DevComponents.DotNetBar.TabItem(this.components);
+            this.tabControlPanel4 = new DevComponents.DotNetBar.TabControlPanel();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.BC_NGUOIDUYET = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.BC_QUAN = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.BC_DOTNHANDON = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.BC_LOAIBC = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.dotnhanDon = new DevComponents.Editors.ComboItem();
+            this.comboItem1 = new DevComponents.Editors.ComboItem();
+            this.comboItem2 = new DevComponents.Editors.ComboItem();
+            this.comboItem3 = new DevComponents.Editors.ComboItem();
+            this.BC_XEM = new DevComponents.DotNetBar.ButtonX();
+            this.labelX4 = new DevComponents.DotNetBar.LabelX();
+            this.labelX3 = new DevComponents.DotNetBar.LabelX();
+            this.labelX2 = new DevComponents.DotNetBar.LabelX();
+            this.labelX1 = new DevComponents.DotNetBar.LabelX();
+            this.report = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.tab_BaoCao = new DevComponents.DotNetBar.TabItem(this.components);
             this.galleryContainer1 = new DevComponents.DotNetBar.GalleryContainer();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.tabControl1)).BeginInit();
             this.tabControl1.SuspendLayout();
-            this.tabControlPanel4.SuspendLayout();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
             this.tabControlPanel3.SuspendLayout();
             this.panelChuyenDon.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.resultDGChuyen)).BeginInit();
@@ -157,6 +158,7 @@
             this.groupPanel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cd_MainGird)).BeginInit();
+            this.tabControlPanel5.SuspendLayout();
             this.tabControlPanel2.SuspendLayout();
             this.tabControlPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -165,6 +167,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataG)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.soho)).BeginInit();
+            this.tabControlPanel4.SuspendLayout();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -181,10 +187,12 @@
             // tabControl1
             // 
             this.tabControl1.CanReorderTabs = true;
-            this.tabControl1.Controls.Add(this.tabControlPanel4);
-            this.tabControl1.Controls.Add(this.tabControlPanel2);
             this.tabControl1.Controls.Add(this.tabControlPanel1);
+            this.tabControl1.Controls.Add(this.tabControlPanel6);
             this.tabControl1.Controls.Add(this.tabControlPanel3);
+            this.tabControl1.Controls.Add(this.tabControlPanel5);
+            this.tabControl1.Controls.Add(this.tabControlPanel2);
+            this.tabControl1.Controls.Add(this.tabControlPanel4);
             this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(-5, 51);
             this.tabControl1.Name = "tabControl1";
@@ -194,192 +202,36 @@
             this.tabControl1.TabIndex = 2;
             this.tabControl1.TabLayoutType = DevComponents.DotNetBar.eTabLayoutType.FixedWithNavigationBox;
             this.tabControl1.Tabs.Add(this.tabItem1);
-            this.tabControl1.Tabs.Add(this.tabItem2);
             this.tabControl1.Tabs.Add(this.tabChuyenDon);
+            this.tabControl1.Tabs.Add(this.tabItem3);
+            this.tabControl1.Tabs.Add(this.tabItem4);
+            this.tabControl1.Tabs.Add(this.tabItem2);
             this.tabControl1.Tabs.Add(this.tab_BaoCao);
             this.tabControl1.Text = "tabControl1";
             this.tabControl1.Click += new System.EventHandler(this.tabControl1_Click);
             // 
-            // tabControlPanel4
+            // tabControlPanel6
             // 
-            this.tabControlPanel4.Controls.Add(this.splitContainer1);
-            this.tabControlPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControlPanel4.Location = new System.Drawing.Point(0, 26);
-            this.tabControlPanel4.Name = "tabControlPanel4";
-            this.tabControlPanel4.Padding = new System.Windows.Forms.Padding(1);
-            this.tabControlPanel4.Size = new System.Drawing.Size(1001, 535);
-            this.tabControlPanel4.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(179)))), ((int)(((byte)(231)))));
-            this.tabControlPanel4.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(237)))), ((int)(((byte)(254)))));
-            this.tabControlPanel4.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.tabControlPanel4.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(97)))), ((int)(((byte)(156)))));
-            this.tabControlPanel4.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right)
+            this.tabControlPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControlPanel6.Location = new System.Drawing.Point(0, 26);
+            this.tabControlPanel6.Name = "tabControlPanel6";
+            this.tabControlPanel6.Padding = new System.Windows.Forms.Padding(1);
+            this.tabControlPanel6.Size = new System.Drawing.Size(1001, 535);
+            this.tabControlPanel6.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(179)))), ((int)(((byte)(231)))));
+            this.tabControlPanel6.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(237)))), ((int)(((byte)(254)))));
+            this.tabControlPanel6.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.tabControlPanel6.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(97)))), ((int)(((byte)(156)))));
+            this.tabControlPanel6.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right)
                         | DevComponents.DotNetBar.eBorderSide.Bottom)));
-            this.tabControlPanel4.Style.GradientAngle = 90;
-            this.tabControlPanel4.TabIndex = 4;
-            this.tabControlPanel4.TabItem = this.tab_BaoCao;
+            this.tabControlPanel6.Style.GradientAngle = 90;
+            this.tabControlPanel6.TabIndex = 6;
+            this.tabControlPanel6.TabItem = this.tabItem4;
             // 
-            // splitContainer1
+            // tabItem4
             // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(1, 1);
-            this.splitContainer1.Name = "splitContainer1";
-            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
-            // splitContainer1.Panel1
-            // 
-            this.splitContainer1.Panel1.Controls.Add(this.BC_NGUOIDUYET);
-            this.splitContainer1.Panel1.Controls.Add(this.BC_QUAN);
-            this.splitContainer1.Panel1.Controls.Add(this.BC_DOTNHANDON);
-            this.splitContainer1.Panel1.Controls.Add(this.BC_LOAIBC);
-            this.splitContainer1.Panel1.Controls.Add(this.BC_XEM);
-            this.splitContainer1.Panel1.Controls.Add(this.labelX4);
-            this.splitContainer1.Panel1.Controls.Add(this.labelX3);
-            this.splitContainer1.Panel1.Controls.Add(this.labelX2);
-            this.splitContainer1.Panel1.Controls.Add(this.labelX1);
-            // 
-            // splitContainer1.Panel2
-            // 
-            this.splitContainer1.Panel2.Controls.Add(this.report);
-            this.splitContainer1.Size = new System.Drawing.Size(999, 533);
-            this.splitContainer1.SplitterDistance = 67;
-            this.splitContainer1.TabIndex = 0;
-            // 
-            // BC_NGUOIDUYET
-            // 
-            this.BC_NGUOIDUYET.DisplayMember = "Text";
-            this.BC_NGUOIDUYET.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.BC_NGUOIDUYET.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.BC_NGUOIDUYET.DropDownWidth = 200;
-            this.BC_NGUOIDUYET.FormattingEnabled = true;
-            this.BC_NGUOIDUYET.ItemHeight = 16;
-            this.BC_NGUOIDUYET.Location = new System.Drawing.Point(377, 37);
-            this.BC_NGUOIDUYET.Name = "BC_NGUOIDUYET";
-            this.BC_NGUOIDUYET.Size = new System.Drawing.Size(131, 22);
-            this.BC_NGUOIDUYET.TabIndex = 8;
-            // 
-            // BC_QUAN
-            // 
-            this.BC_QUAN.DisplayMember = "Text";
-            this.BC_QUAN.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.BC_QUAN.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.BC_QUAN.Enabled = false;
-            this.BC_QUAN.FormattingEnabled = true;
-            this.BC_QUAN.ItemHeight = 16;
-            this.BC_QUAN.Location = new System.Drawing.Point(377, 9);
-            this.BC_QUAN.Name = "BC_QUAN";
-            this.BC_QUAN.Size = new System.Drawing.Size(131, 22);
-            this.BC_QUAN.TabIndex = 7;
-            // 
-            // BC_DOTNHANDON
-            // 
-            this.BC_DOTNHANDON.DisplayMember = "Text";
-            this.BC_DOTNHANDON.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.BC_DOTNHANDON.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.BC_DOTNHANDON.DropDownWidth = 300;
-            this.BC_DOTNHANDON.Enabled = false;
-            this.BC_DOTNHANDON.FormattingEnabled = true;
-            this.BC_DOTNHANDON.ItemHeight = 16;
-            this.BC_DOTNHANDON.Location = new System.Drawing.Point(107, 37);
-            this.BC_DOTNHANDON.Name = "BC_DOTNHANDON";
-            this.BC_DOTNHANDON.Size = new System.Drawing.Size(183, 22);
-            this.BC_DOTNHANDON.TabIndex = 6;
-            // 
-            // BC_LOAIBC
-            // 
-            this.BC_LOAIBC.DisplayMember = "Text";
-            this.BC_LOAIBC.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.BC_LOAIBC.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.BC_LOAIBC.DropDownWidth = 250;
-            this.BC_LOAIBC.FormattingEnabled = true;
-            this.BC_LOAIBC.ItemHeight = 16;
-            this.BC_LOAIBC.Items.AddRange(new object[] {
-            this.dotnhanDon,
-            this.comboItem1,
-            this.comboItem2,
-            this.comboItem3});
-            this.BC_LOAIBC.Location = new System.Drawing.Point(107, 9);
-            this.BC_LOAIBC.Name = "BC_LOAIBC";
-            this.BC_LOAIBC.Size = new System.Drawing.Size(183, 22);
-            this.BC_LOAIBC.TabIndex = 5;
-            this.BC_LOAIBC.SelectedIndexChanged += new System.EventHandler(this.BC_LOAIBC_SelectedIndexChanged);
-            // 
-            // dotnhanDon
-            // 
-            this.dotnhanDon.Text = "Theo Đợt Nhận Đơn";
-            // 
-            // comboItem1
-            // 
-            this.comboItem1.Text = "Theo Đợt Nhận & Quận";
-            // 
-            // comboItem2
-            // 
-            this.comboItem2.Text = "Theo Danh Sách Trở Ngại TK";
-            // 
-            // comboItem3
-            // 
-            this.comboItem3.Text = "Theo Danh Sách Trở Ngại TK & Quận";
-            // 
-            // BC_XEM
-            // 
-            this.BC_XEM.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.BC_XEM.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.BC_XEM.Location = new System.Drawing.Point(527, 9);
-            this.BC_XEM.Name = "BC_XEM";
-            this.BC_XEM.Size = new System.Drawing.Size(75, 23);
-            this.BC_XEM.TabIndex = 4;
-            this.BC_XEM.Text = "Xem";
-            this.BC_XEM.Click += new System.EventHandler(this.BC_XEM_Click);
-            // 
-            // labelX4
-            // 
-            this.labelX4.Location = new System.Drawing.Point(296, 36);
-            this.labelX4.Name = "labelX4";
-            this.labelX4.Size = new System.Drawing.Size(75, 23);
-            this.labelX4.TabIndex = 3;
-            this.labelX4.Text = "Người Duyệt";
-            // 
-            // labelX3
-            // 
-            this.labelX3.Location = new System.Drawing.Point(296, 7);
-            this.labelX3.Name = "labelX3";
-            this.labelX3.Size = new System.Drawing.Size(75, 23);
-            this.labelX3.TabIndex = 2;
-            this.labelX3.Text = "Quận";
-            // 
-            // labelX2
-            // 
-            this.labelX2.Location = new System.Drawing.Point(20, 36);
-            this.labelX2.Name = "labelX2";
-            this.labelX2.Size = new System.Drawing.Size(95, 23);
-            this.labelX2.TabIndex = 1;
-            this.labelX2.Text = "Đợt Nhận Đơn";
-            // 
-            // labelX1
-            // 
-            this.labelX1.Location = new System.Drawing.Point(20, 7);
-            this.labelX1.Name = "labelX1";
-            this.labelX1.Size = new System.Drawing.Size(85, 23);
-            this.labelX1.TabIndex = 0;
-            this.labelX1.Text = "Loại Báo Cáo";
-            // 
-            // report
-            // 
-            this.report.ActiveViewIndex = -1;
-            this.report.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.report.Cursor = System.Windows.Forms.Cursors.Default;
-            this.report.Location = new System.Drawing.Point(0, -3);
-            this.report.Name = "report";
-            this.report.ShowGroupTreeButton = false;
-            this.report.Size = new System.Drawing.Size(999, 448);
-            this.report.TabIndex = 0;
-            this.report.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
-            // 
-            // tab_BaoCao
-            // 
-            this.tab_BaoCao.AttachedControl = this.tabControlPanel4;
-            this.tab_BaoCao.Name = "tab_BaoCao";
-            this.tab_BaoCao.Text = "Báo Cáo";
-            this.tab_BaoCao.Click += new System.EventHandler(this.tab_BaoCao_Click);
+            this.tabItem4.AttachedControl = this.tabControlPanel6;
+            this.tabItem4.Name = "tabItem4";
+            this.tabItem4.Text = "Hồ Sơ Tái Xét";
             // 
             // tabControlPanel3
             // 
@@ -749,6 +601,39 @@
             this.tabChuyenDon.Name = "tabChuyenDon";
             this.tabChuyenDon.Text = "Chuyển Đơn";
             this.tabChuyenDon.Click += new System.EventHandler(this.tabChuyenDon_Click);
+            // 
+            // tabControlPanel5
+            // 
+            this.tabControlPanel5.Controls.Add(this.panel4);
+            this.tabControlPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControlPanel5.Location = new System.Drawing.Point(0, 26);
+            this.tabControlPanel5.Name = "tabControlPanel5";
+            this.tabControlPanel5.Padding = new System.Windows.Forms.Padding(1);
+            this.tabControlPanel5.Size = new System.Drawing.Size(1001, 535);
+            this.tabControlPanel5.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(179)))), ((int)(((byte)(231)))));
+            this.tabControlPanel5.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(237)))), ((int)(((byte)(254)))));
+            this.tabControlPanel5.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.tabControlPanel5.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(97)))), ((int)(((byte)(156)))));
+            this.tabControlPanel5.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right)
+                        | DevComponents.DotNetBar.eBorderSide.Bottom)));
+            this.tabControlPanel5.Style.GradientAngle = 90;
+            this.tabControlPanel5.TabIndex = 5;
+            this.tabControlPanel5.TabItem = this.tabItem3;
+            // 
+            // panel4
+            // 
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(1, 1);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(999, 533);
+            this.panel4.TabIndex = 0;
+            // 
+            // tabItem3
+            // 
+            this.tabItem3.AttachedControl = this.tabControlPanel5;
+            this.tabItem3.Name = "tabItem3";
+            this.tabItem3.Text = "Hồ Sơ Trở Ngại";
+            this.tabItem3.Click += new System.EventHandler(this.tabItem3_Click);
             // 
             // tabControlPanel2
             // 
@@ -1429,6 +1314,187 @@
             this.tabItem1.Text = "Nhận Đơn Khách Hàng";
             this.tabItem1.Click += new System.EventHandler(this.tabItem1_Click);
             // 
+            // tabControlPanel4
+            // 
+            this.tabControlPanel4.Controls.Add(this.splitContainer1);
+            this.tabControlPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControlPanel4.Location = new System.Drawing.Point(0, 26);
+            this.tabControlPanel4.Name = "tabControlPanel4";
+            this.tabControlPanel4.Padding = new System.Windows.Forms.Padding(1);
+            this.tabControlPanel4.Size = new System.Drawing.Size(1001, 535);
+            this.tabControlPanel4.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(179)))), ((int)(((byte)(231)))));
+            this.tabControlPanel4.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(237)))), ((int)(((byte)(254)))));
+            this.tabControlPanel4.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.tabControlPanel4.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(97)))), ((int)(((byte)(156)))));
+            this.tabControlPanel4.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right)
+                        | DevComponents.DotNetBar.eBorderSide.Bottom)));
+            this.tabControlPanel4.Style.GradientAngle = 90;
+            this.tabControlPanel4.TabIndex = 4;
+            this.tabControlPanel4.TabItem = this.tab_BaoCao;
+            // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Location = new System.Drawing.Point(1, 1);
+            this.splitContainer1.Name = "splitContainer1";
+            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.BC_NGUOIDUYET);
+            this.splitContainer1.Panel1.Controls.Add(this.BC_QUAN);
+            this.splitContainer1.Panel1.Controls.Add(this.BC_DOTNHANDON);
+            this.splitContainer1.Panel1.Controls.Add(this.BC_LOAIBC);
+            this.splitContainer1.Panel1.Controls.Add(this.BC_XEM);
+            this.splitContainer1.Panel1.Controls.Add(this.labelX4);
+            this.splitContainer1.Panel1.Controls.Add(this.labelX3);
+            this.splitContainer1.Panel1.Controls.Add(this.labelX2);
+            this.splitContainer1.Panel1.Controls.Add(this.labelX1);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.report);
+            this.splitContainer1.Size = new System.Drawing.Size(999, 533);
+            this.splitContainer1.SplitterDistance = 67;
+            this.splitContainer1.TabIndex = 0;
+            // 
+            // BC_NGUOIDUYET
+            // 
+            this.BC_NGUOIDUYET.DisplayMember = "Text";
+            this.BC_NGUOIDUYET.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.BC_NGUOIDUYET.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.BC_NGUOIDUYET.DropDownWidth = 200;
+            this.BC_NGUOIDUYET.FormattingEnabled = true;
+            this.BC_NGUOIDUYET.ItemHeight = 16;
+            this.BC_NGUOIDUYET.Location = new System.Drawing.Point(377, 37);
+            this.BC_NGUOIDUYET.Name = "BC_NGUOIDUYET";
+            this.BC_NGUOIDUYET.Size = new System.Drawing.Size(131, 22);
+            this.BC_NGUOIDUYET.TabIndex = 8;
+            // 
+            // BC_QUAN
+            // 
+            this.BC_QUAN.DisplayMember = "Text";
+            this.BC_QUAN.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.BC_QUAN.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.BC_QUAN.Enabled = false;
+            this.BC_QUAN.FormattingEnabled = true;
+            this.BC_QUAN.ItemHeight = 16;
+            this.BC_QUAN.Location = new System.Drawing.Point(377, 9);
+            this.BC_QUAN.Name = "BC_QUAN";
+            this.BC_QUAN.Size = new System.Drawing.Size(131, 22);
+            this.BC_QUAN.TabIndex = 7;
+            // 
+            // BC_DOTNHANDON
+            // 
+            this.BC_DOTNHANDON.DisplayMember = "Text";
+            this.BC_DOTNHANDON.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.BC_DOTNHANDON.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.BC_DOTNHANDON.DropDownWidth = 300;
+            this.BC_DOTNHANDON.Enabled = false;
+            this.BC_DOTNHANDON.FormattingEnabled = true;
+            this.BC_DOTNHANDON.ItemHeight = 16;
+            this.BC_DOTNHANDON.Location = new System.Drawing.Point(107, 37);
+            this.BC_DOTNHANDON.Name = "BC_DOTNHANDON";
+            this.BC_DOTNHANDON.Size = new System.Drawing.Size(183, 22);
+            this.BC_DOTNHANDON.TabIndex = 6;
+            // 
+            // BC_LOAIBC
+            // 
+            this.BC_LOAIBC.DisplayMember = "Text";
+            this.BC_LOAIBC.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.BC_LOAIBC.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.BC_LOAIBC.DropDownWidth = 300;
+            this.BC_LOAIBC.FormattingEnabled = true;
+            this.BC_LOAIBC.ItemHeight = 16;
+            this.BC_LOAIBC.Items.AddRange(new object[] {
+            this.dotnhanDon,
+            this.comboItem1,
+            this.comboItem2,
+            this.comboItem3});
+            this.BC_LOAIBC.Location = new System.Drawing.Point(107, 9);
+            this.BC_LOAIBC.Name = "BC_LOAIBC";
+            this.BC_LOAIBC.Size = new System.Drawing.Size(183, 22);
+            this.BC_LOAIBC.TabIndex = 5;
+            this.BC_LOAIBC.SelectedIndexChanged += new System.EventHandler(this.BC_LOAIBC_SelectedIndexChanged);
+            // 
+            // dotnhanDon
+            // 
+            this.dotnhanDon.Text = "Theo Đợt Nhận Đơn";
+            // 
+            // comboItem1
+            // 
+            this.comboItem1.Text = "Theo Đợt Nhận & Quận";
+            // 
+            // comboItem2
+            // 
+            this.comboItem2.Text = "Theo Danh Sách Trở Ngại TK Theo Đợt";
+            // 
+            // comboItem3
+            // 
+            this.comboItem3.Text = "Theo Danh Sách Trở Ngại TK Theo Đợt & Quận";
+            // 
+            // BC_XEM
+            // 
+            this.BC_XEM.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.BC_XEM.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.BC_XEM.Location = new System.Drawing.Point(527, 9);
+            this.BC_XEM.Name = "BC_XEM";
+            this.BC_XEM.Size = new System.Drawing.Size(75, 23);
+            this.BC_XEM.TabIndex = 4;
+            this.BC_XEM.Text = "Xem";
+            this.BC_XEM.Click += new System.EventHandler(this.BC_XEM_Click);
+            // 
+            // labelX4
+            // 
+            this.labelX4.Location = new System.Drawing.Point(296, 36);
+            this.labelX4.Name = "labelX4";
+            this.labelX4.Size = new System.Drawing.Size(75, 23);
+            this.labelX4.TabIndex = 3;
+            this.labelX4.Text = "Người Duyệt";
+            // 
+            // labelX3
+            // 
+            this.labelX3.Location = new System.Drawing.Point(296, 7);
+            this.labelX3.Name = "labelX3";
+            this.labelX3.Size = new System.Drawing.Size(75, 23);
+            this.labelX3.TabIndex = 2;
+            this.labelX3.Text = "Quận";
+            // 
+            // labelX2
+            // 
+            this.labelX2.Location = new System.Drawing.Point(20, 36);
+            this.labelX2.Name = "labelX2";
+            this.labelX2.Size = new System.Drawing.Size(95, 23);
+            this.labelX2.TabIndex = 1;
+            this.labelX2.Text = "Đợt Nhận Đơn";
+            // 
+            // labelX1
+            // 
+            this.labelX1.Location = new System.Drawing.Point(20, 7);
+            this.labelX1.Name = "labelX1";
+            this.labelX1.Size = new System.Drawing.Size(85, 23);
+            this.labelX1.TabIndex = 0;
+            this.labelX1.Text = "Loại Báo Cáo";
+            // 
+            // report
+            // 
+            this.report.ActiveViewIndex = -1;
+            this.report.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.report.Cursor = System.Windows.Forms.Cursors.Default;
+            this.report.Location = new System.Drawing.Point(0, -3);
+            this.report.Name = "report";
+            this.report.ShowGroupTreeButton = false;
+            this.report.Size = new System.Drawing.Size(999, 448);
+            this.report.TabIndex = 0;
+            this.report.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
+            // 
+            // tab_BaoCao
+            // 
+            this.tab_BaoCao.AttachedControl = this.tabControlPanel4;
+            this.tab_BaoCao.Name = "tab_BaoCao";
+            this.tab_BaoCao.Text = "Báo Cáo";
+            this.tab_BaoCao.Click += new System.EventHandler(this.tab_BaoCao_Click);
+            // 
             // galleryContainer1
             // 
             this.galleryContainer1.EnableGalleryPopup = false;
@@ -1452,10 +1518,6 @@
             this.Size = new System.Drawing.Size(988, 615);
             ((System.ComponentModel.ISupportInitialize)(this.tabControl1)).EndInit();
             this.tabControl1.ResumeLayout(false);
-            this.tabControlPanel4.ResumeLayout(false);
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            this.splitContainer1.ResumeLayout(false);
             this.tabControlPanel3.ResumeLayout(false);
             this.panelChuyenDon.ResumeLayout(false);
             this.panelChuyenDon.PerformLayout();
@@ -1464,6 +1526,7 @@
             this.groupPanel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cd_MainGird)).EndInit();
+            this.tabControlPanel5.ResumeLayout(false);
             this.tabControlPanel2.ResumeLayout(false);
             this.tabControlPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -1473,6 +1536,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataG)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.soho)).EndInit();
+            this.tabControlPanel4.ResumeLayout(false);
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
@@ -1590,6 +1657,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.Label label19;
+        private DevComponents.DotNetBar.TabControlPanel tabControlPanel5;
+        private DevComponents.DotNetBar.TabItem tabItem3;
+        private System.Windows.Forms.Panel panel4;
+        private DevComponents.DotNetBar.TabControlPanel tabControlPanel6;
+        private DevComponents.DotNetBar.TabItem tabItem4;
 
     }
 }

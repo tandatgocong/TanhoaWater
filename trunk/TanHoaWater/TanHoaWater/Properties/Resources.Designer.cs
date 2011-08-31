@@ -95,6 +95,13 @@ namespace TanHoaWater.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap bt_bg {
+            get {
+                object obj = ResourceManager.GetObject("bt_bg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap calendar {
             get {
                 object obj = ResourceManager.GetObject("calendar", resourceCulture);
@@ -287,6 +294,13 @@ namespace TanHoaWater.Properties {
         internal static System.Drawing.Bitmap logo1 {
             get {
                 object obj = ResourceManager.GetObject("logo1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap logocty {
+            get {
+                object obj = ResourceManager.GetObject("logocty", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -66,6 +66,12 @@ namespace TanHoaWater.DAL
             var data = from don in db.DON_KHACHHANGs where don.SHS == sohoso select don;
             return data.SingleOrDefault();
         }
+        public static DON_KHACHHANG findBySOHOSO_(string sohoso)
+        {
+            TanHoaDataContext db = new TanHoaDataContext();
+            var data = from don in db.DON_KHACHHANGs where don.SOHOSO == sohoso select don;
+            return data.SingleOrDefault();
+        }
         public static void chuyenhs(string sohoso)
         {
             TanHoaDataContext db = new TanHoaDataContext();
@@ -197,7 +203,7 @@ namespace TanHoaWater.DAL
             }
             if (!"".Equals(mahs))
             {
-                sql += " AND SOHOSO='" + mahs + "'";
+                sql += " AND SHS='" + mahs + "'";
             }
             if (!"".Equals(tenkh))
             {
@@ -232,7 +238,7 @@ namespace TanHoaWater.DAL
             }
             if (!"".Equals(mahs))
             {
-                sql += " AND SOHOSO='" + mahs + "'";
+                sql += " AND SHS='" + mahs + "'";
             }
             if (!"".Equals(tenkh))
             {
@@ -260,7 +266,7 @@ namespace TanHoaWater.DAL
             try
             {
                 TanHoaDataContext db = new TanHoaDataContext();
-                var data = from don in db.DON_KHACHHANGs where don.SHS == sohoso select don;
+                var data = from don in db.DON_KHACHHANGs where don.SOHOSO == sohoso select don;
                 DON_KHACHHANG donkh = data.SingleOrDefault();
                 if (donkh != null)
                 {

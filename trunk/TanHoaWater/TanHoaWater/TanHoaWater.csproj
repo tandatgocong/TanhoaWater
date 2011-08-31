@@ -109,6 +109,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TanHoa.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Main_Icon\Icon_KHVT.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Main_Icon\Icon_KHVT.Designer.cs">
+      <DependentUpon>Icon_KHVT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main_Icon\Icon_TOTK.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Main_Icon\Icon_TOTK.Designer.cs">
+      <DependentUpon>Icon_TOTK.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utilities\AddValueCombox.cs" />
     <Compile Include="Utilities\DataGridV.cs" />
     <Compile Include="Utilities\DateToString.cs" />
@@ -174,6 +186,12 @@
     <Compile Include="View\Users\KEHOACH\tab_TimKiemDonKH.Designer.cs">
       <DependentUpon>tab_TimKiemDonKH.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Users\KEHOACH\tab_DonTroNgai.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Users\KEHOACH\tab_DonTroNgai.Designer.cs">
+      <DependentUpon>tab_DonTroNgai.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Users\KEHOACH\uct_DotNhanDon.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -191,11 +209,6 @@
     </Compile>
     <Compile Include="View\Users\TinhDuToan\uct_TinhDuToan.Designer.cs">
       <DependentUpon>uct_TinhDuToan.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\Users\To_ThietKe\Report\DataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="View\Users\To_ThietKe\Report\KSTK\rpt_KSTK_byNgay.cs">
       <AutoGen>True</AutoGen>
@@ -253,6 +266,12 @@
     <None Include="Database\TanHoa.dbml.layout">
       <DependentUpon>TanHoa.dbml</DependentUpon>
     </None>
+    <EmbeddedResource Include="Main_Icon\Icon_KHVT.resx">
+      <DependentUpon>Icon_KHVT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main_Icon\Icon_TOTK.resx">
+      <DependentUpon>Icon_TOTK.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Users\KEHOACH\Report\rpt_TroNgaiQuan.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_TroNgaiQuan.cs</LastGenOutput>
@@ -283,6 +302,9 @@
     <EmbeddedResource Include="View\Users\KEHOACH\tab_TimKiemDonKH.resx">
       <DependentUpon>tab_TimKiemDonKH.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\KEHOACH\tab_DonTroNgai.resx">
+      <DependentUpon>tab_DonTroNgai.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\KEHOACH\uct_DotNhanDon.resx">
       <DependentUpon>uct_DotNhanDon.cs</DependentUpon>
@@ -427,17 +449,6 @@
     <None Include="View\Users\KEHOACH\Report\DataSet1.xss">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>
-    <None Include="View\Users\To_ThietKe\Report\DataSet1.xsc">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="View\Users\To_ThietKe\Report\DataSet1.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="View\Users\To_ThietKe\Report\DataSet1.xss">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\bg_head.jpg" />
@@ -514,9 +525,6 @@
     <None Include="Resources\man.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\login.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\user_add.ico" />
   </ItemGroup>
   <ItemGroup>
@@ -562,12 +570,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\hosokh.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\print.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\printer.ico" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\print.gif" />
@@ -616,6 +618,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\currency_dollar.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logocty.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bt_bg.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

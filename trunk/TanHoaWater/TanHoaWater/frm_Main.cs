@@ -14,6 +14,7 @@ using TanHoaWater.View.Users.HSKHACHHANG;
 using log4net;
 using TanHoaWater.View.Users.To_ThietKe;
 using TanHoaWater.View.Users.TinhDuToan;
+using TanHoaWater.Main_Icon;
 
 namespace TanHoaWater
 {
@@ -26,28 +27,29 @@ namespace TanHoaWater
         }
         public frm_Main()
         {
-            //  Thread th = new Thread(new ThreadStart(this.start));
-            //   th.Start();
-            //  Thread.Sleep(5000);
+            //Thread th = new Thread(new ThreadStart(this.start));
+            //th.Start();
+            //Thread.Sleep(5000);
             InitializeComponent();
             log4net.Config.XmlConfigurator.Configure();
-            //  th.Abort();
+            //th.Abort();         
+            this.menuHeThong.Select();
         }
 
         public static frm_Login dn = new frm_Login();
         public void dangnhap() {
             dn.ShowDialog();
-            if (DAL.C_USERS._roles != null && "AD".Equals(DAL.C_USERS._roles.Trim()))
-            {
-                this.PanelContent.Controls.Clear();
-                this.PanelContent.Controls.Add(new Admin_Main());
-            }
-            else if (DAL.C_USERS._roles != null && "US".Equals(DAL.C_USERS._roles.Trim()))
-            {
-                this.PanelContent.Controls.Clear();
-                this.PanelContent.Controls.Add(new Uses_Main());
+            //if (DAL.C_USERS._roles != null && "AD".Equals(DAL.C_USERS._roles.Trim()))
+            //{
+            //    this.PanelContent.Controls.Clear();
+            //    this.PanelContent.Controls.Add(new Admin_Main());
+            //}
+            //else if (DAL.C_USERS._roles != null && "US".Equals(DAL.C_USERS._roles.Trim()))
+            //{
+            //    this.PanelContent.Controls.Clear();
+            //    this.PanelContent.Controls.Add(new Uses_Main());
 
-            }          
+            //}          
             formLoad();
           
         }
@@ -104,6 +106,15 @@ namespace TanHoaWater
         {
             this.PanelContent.Controls.Clear();
             this.PanelContent.Controls.Add(new uct_TinhDuToan());
+        }
+
+        private void ribbonTabItem1_Click(object sender, EventArgs e)
+        {
+            this.PanelContent.Controls.Clear();
+            this.PanelContent.Controls.Add(PanelMain);
+            this.iconMenuPanel.Controls.Clear();
+            this.iconMenuPanel.Controls.Add(new Icon_KHVT());
+
         }
 
         
