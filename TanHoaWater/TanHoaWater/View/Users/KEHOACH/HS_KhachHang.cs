@@ -359,13 +359,13 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
             }
             if (this.BC_LOAIBC.SelectedIndex == 2)
             {
-                ReportDocument rp = new rpt_DOT_KHAN();
+                ReportDocument rp = new rpt_TroNgai ();
                 rp.SetDataSource(DAL.C_BAOCAO_VIEW.BC_DOTNHANDON_DOT(this.BC_DOTNHANDON.SelectedValue.ToString(), DAL.C_USERS._userName, this.BC_NGUOIDUYET.SelectedValue.ToString(), null, "True"));
                 report.ReportSource = rp;
             }
             if (this.BC_LOAIBC.SelectedIndex == 3)
             {
-                ReportDocument rp = new rpt_DOT_QUAN_KHAN();
+                ReportDocument rp = new rpt_TroNgaiQuan();
                 rp.SetDataSource(DAL.C_BAOCAO_VIEW.BC_DOTNHANDON_DOT(this.BC_DOTNHANDON.SelectedValue.ToString(), DAL.C_USERS._userName, this.BC_NGUOIDUYET.SelectedValue.ToString(), this.BC_QUAN.SelectedValue.ToString(), "True"));
                 report.ReportSource = rp;
             }

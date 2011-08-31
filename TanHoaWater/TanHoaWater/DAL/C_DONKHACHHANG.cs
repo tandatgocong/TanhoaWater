@@ -14,20 +14,22 @@ namespace TanHoaWater.DAL
     {
         private static readonly ILog log = LogManager.GetLogger(typeof(C_DonKhachHang).Name);
 
-        public static int TotalListByDot(string dot) {
+        public static int TotalListByDot(string dot)
+        {
             TanHoaDataContext db = new TanHoaDataContext();
             SqlConnection conn = new SqlConnection(db.Connection.ConnectionString);
             conn.Open();
             string sql = " SELECT COUNT(*) ";
             sql += " FROM DON_KHACHHANG kh,QUAN q,PHUONG p, LOAI_KHACHHANG lkh ";
             sql += " WHERE  kh.QUAN = q.MAQUAN AND q.MAQUAN=p.MAQUAN AND kh.PHUONG=p.MAPHUONG AND lkh.MALOAI=kh.LOAIKH";
-            sql += " AND MADOT='" + dot + "'";           
+            sql += " AND MADOT='" + dot + "'";
             SqlCommand cmd = new SqlCommand(sql, conn);
-            int result =  Convert.ToInt32(cmd.ExecuteScalar());
+            int result = Convert.ToInt32(cmd.ExecuteScalar());
             conn.Close();
             return result;
         }
-        public static DataTable  getListbyDot(string dot, int FirstRow, int pageSize ) {
+        public static DataTable getListbyDot(string dot, int FirstRow, int pageSize)
+        {
             TanHoaDataContext db = new TanHoaDataContext();
             db.Connection.Open();
             string sql = " SELECT SOHOSO,HOTEN, (SONHA +' '+ DUONG +', P.'+p.TENPHUONG+', Q.'+ q.TENQUAN ) as 'DIACHI',NGAYNHAN= CONVERT(VARCHAR(10),NGAYNHAN,103), lkh.TENLOAI as 'LOAIDON' ";
@@ -40,9 +42,9 @@ namespace TanHoaWater.DAL
             adapter.Fill(dataset, FirstRow, pageSize, "TABLE");
             db.Connection.Close();
             return dataset.Tables[0];
-        
+
         }
-        public static DataTable getListbyDot(string dot )
+        public static DataTable getListbyDot(string dot)
         {
             TanHoaDataContext db = new TanHoaDataContext();
             db.Connection.Open();
@@ -53,7 +55,7 @@ namespace TanHoaWater.DAL
             sql += " ORDER BY NGAYNHAN DESC ";
             SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             DataSet dataset = new DataSet();
-            adapter.Fill(dataset,"TABLE");
+            adapter.Fill(dataset, "TABLE");
             db.Connection.Close();
             return dataset.Tables[0];
 
@@ -68,8 +70,9 @@ namespace TanHoaWater.DAL
         {
             TanHoaDataContext db = new TanHoaDataContext();
             var data = from don in db.DON_KHACHHANGs where don.SOHOSO == sohoso select don;
-            DON_KHACHHANG donKH =  data.SingleOrDefault();
-            if (donKH != null) {
+            DON_KHACHHANG donKH = data.SingleOrDefault();
+            if (donKH != null)
+            {
                 donKH.CHUYEN_HOSO = true;
                 donKH.NGAYCHUYEN_HOSO = DateTime.Now;
             }
@@ -95,15 +98,16 @@ namespace TanHoaWater.DAL
             SqlConnection conn = new SqlConnection(db.Connection.ConnectionString);
             conn.Open();
             string sql = " UPDATE DON_KHACHHANG SET CHUYEN_HOSO='True' ";
-            sql += ",BOPHANCHUYEN = '" + pbchuyen + "', NGUOICHUYEN_HOSO = '" + nguoichuyen + "', NGAYCHUYEN_HOSO='" + DateTime.Now +"'";
+            sql += ",BOPHANCHUYEN = '" + pbchuyen + "', NGUOICHUYEN_HOSO = '" + nguoichuyen + "', NGAYCHUYEN_HOSO='" + DateTime.Now + "'";
             sql += " WHERE MADOT='" + sodot + "'";
             SqlCommand cmd = new SqlCommand(sql, conn);
             cmd.ExecuteNonQuery();
             conn.Close();
             db.SubmitChanges();
         }
-        
-        public static bool InsertDonHK(DON_KHACHHANG donkh) {
+
+        public static bool InsertDonHK(DON_KHACHHANG donkh)
+        {
             try
             {
                 TanHoaDataContext db = new TanHoaDataContext();
@@ -117,12 +121,12 @@ namespace TanHoaWater.DAL
             }
             return false;
         }
-        
+
         public static bool UpdateDONKH(DON_KHACHHANG donkh)
         {
             try
             {
-                TanHoaDataContext db = new TanHoaDataContext();                
+                TanHoaDataContext db = new TanHoaDataContext();
                 db.SubmitChanges();
                 return true;
             }
@@ -148,13 +152,13 @@ namespace TanHoaWater.DAL
             }
             return false;
         }
-        public static DataTable BangKeNhanDon(string madot)
+        public static DataTable BangKeNhanDon(string madot, string nguoilap)
         {
             TanHoaDataContext db = new TanHoaDataContext();
             db.Connection.Open();
             string sql = " SELECT * ";
             sql += " FROM V_DONKHACHHANG ";
-            sql += " WHERE  MADOT='" + madot + "'";      
+            sql += " WHERE  MADOT='" + madot + "' AND USERNAME='" + nguoilap + "'";
             SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             DataTable table = new DataTable();
             adapter.Fill(table);
@@ -162,23 +166,24 @@ namespace TanHoaWater.DAL
             return table;
 
         }
-        
-        public static bool findByAddressAndLoaiHS(string dot, string loaiHS,string sonha, string duong, string phuong, string quan ){
+
+        public static bool findByAddressAndLoaiHS(string dot, string loaiHS, string sonha, string duong, string phuong, string quan)
+        {
             TanHoaDataContext db = new TanHoaDataContext();
             string sql = " SELECT SONHA = replace(SONHA,' ',''), DUONG = replace(DUONG,' ',''),PHUONG,QUAN ";
             sql += " FROM DON_KHACHHANG ";
             sql += " WHERE MADOT='" + dot + "' AND LOAIHOSO='" + loaiHS + "' AND SONHA='" + sonha + "' AND DUONG='" + duong + "' AND PHUONG='" + phuong + "' AND QUAN='" + quan + "' ";
-            SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);            
+            SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             DataTable table = new DataTable();
             adapter.Fill(table);
             db.Connection.Close();
             if (table.Rows.Count > 0)
                 return true;
-                     
+
             return false;
         }
-       
-        public static DataTable search(string dotND, string mahs, string tenkh, string sonha,  string tenduong, int FirstRow, int pageSize)
+
+        public static DataTable search(string dotND, string mahs, string tenkh, string sonha, string tenduong, int FirstRow, int pageSize)
         {
             TanHoaDataContext db = new TanHoaDataContext();
             db.Connection.Open();
@@ -209,12 +214,12 @@ namespace TanHoaWater.DAL
             sql += " ORDER BY NGAYNHAN DESC ";
             SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             DataSet dataset = new DataSet();
-            adapter.Fill(dataset, FirstRow, pageSize,"TABLE");
+            adapter.Fill(dataset, FirstRow, pageSize, "TABLE");
             db.Connection.Close();
             return dataset.Tables[0];
         }
         public static int TotalPageSearch(string dotND, string mahs, string tenkh, string sonha, string tenduong)
-        { 
+        {
             TanHoaDataContext db = new TanHoaDataContext();
             db.Connection.Open();
             string sql = " SELECT MADOT,SOHOSO,HOTEN,(SONHA +' '+ DUONG +', P.'+p.TENPHUONG+', Q.'+ q.TENQUAN ) as 'DIACHI', NGAYNHAN= CONVERT(VARCHAR(10),NGAYNHAN,103), lhs.TENLOAI ";
@@ -248,7 +253,29 @@ namespace TanHoaWater.DAL
             db.Connection.Close();
             return dataset.Tables[0].Rows.Count;
         }
-       
-        
+
+        public static bool TroNgaiThietKe(string sohoso, string lydotrongai, string modifyby)
+        {
+
+            try
+            {
+                TanHoaDataContext db = new TanHoaDataContext();
+                var data = from don in db.DON_KHACHHANGs where don.SHS == sohoso select don;
+                DON_KHACHHANG donkh = data.SingleOrDefault();
+                if (donkh != null)
+                {
+                    donkh.TRONGAI = true;
+                    donkh.NOIDUNGTRONGAI = lydotrongai;
+                    donkh.MODIFYBY = DAL.C_USERS._userName;
+                    donkh.MODIFYDATE = DateTime.Now.Date;
+                }
+                db.SubmitChanges();
+                return true;
+            }
+            catch (Exception ex){
+                log.Error("Cap nhat tro ngai tk loi " + ex.Message);
+            }
+            return false;
+        }
     }
 }

@@ -121,29 +121,34 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="View\Report\prt_BangKeNhanDon.cs">
+    <Compile Include="View\Users\KEHOACH\Report\rpt_TroNgaiQuan.cs">
+      <DependentUpon>rpt_TroNgaiQuan.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="View\Users\KEHOACH\Report\DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="View\Users\KEHOACH\Report\prt_BangKeNhanDon.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>prt_BangKeNhanDon.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="View\Report\rpt_View.cs">
+    <Compile Include="View\Users\KEHOACH\Report\rpt_TroNgai.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_TroNgai.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\Users\KEHOACH\Report\rpt_View.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Report\rpt_View.Designer.cs">
+    <Compile Include="View\Users\KEHOACH\Report\rpt_View.Designer.cs">
       <DependentUpon>rpt_View.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\Users\KEHOACH\Report\rpt_DOT_KHAN.cs">
-      <DependentUpon>rpt_DOT_KHAN.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <SubType>Component</SubType>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="View\Users\KEHOACH\Report\rpt_DOT_QUAN_KHAN.cs">
-      <DependentUpon>rpt_DOT_QUAN_KHAN.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <SubType>Component</SubType>
-      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="View\Users\KEHOACH\Report\rpt_DOT_QUAN.cs">
       <DependentUpon>rpt_DOT_QUAN.rpt</DependentUpon>
@@ -187,11 +192,16 @@
     <Compile Include="View\Users\TinhDuToan\uct_TinhDuToan.Designer.cs">
       <DependentUpon>uct_TinhDuToan.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Users\To_ThietKe\Report\KSTK\rpt_KSTK_byNgay.cs">
-      <DependentUpon>rpt_KSTK_byNgay.rpt</DependentUpon>
+    <Compile Include="View\Users\To_ThietKe\Report\DataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
-      <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="View\Users\To_ThietKe\Report\KSTK\rpt_KSTK_byNgay.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_KSTK_byNgay.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="View\Users\To_ThietKe\Report\KSTK\frm_TTTK.cs">
       <SubType>Form</SubType>
@@ -243,21 +253,21 @@
     <None Include="Database\TanHoa.dbml.layout">
       <DependentUpon>TanHoa.dbml</DependentUpon>
     </None>
-    <EmbeddedResource Include="View\Report\prt_BangKeNhanDon.rpt">
+    <EmbeddedResource Include="View\Users\KEHOACH\Report\rpt_TroNgaiQuan.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_TroNgaiQuan.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\KEHOACH\Report\prt_BangKeNhanDon.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>prt_BangKeNhanDon.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Report\rpt_View.resx">
+    <EmbeddedResource Include="View\Users\KEHOACH\Report\rpt_TroNgai.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_TroNgai.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\KEHOACH\Report\rpt_View.resx">
       <DependentUpon>rpt_View.cs</DependentUpon>
       <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Users\KEHOACH\Report\rpt_DOT_KHAN.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>rpt_DOT_KHAN.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Users\KEHOACH\Report\rpt_DOT_QUAN_KHAN.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>rpt_DOT_QUAN_KHAN.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\KEHOACH\Report\rpt_DOT_QUAN.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -406,6 +416,28 @@
     <Compile Include="View\Main\frm_Login.Designer.cs">
       <DependentUpon>frm_Login.cs</DependentUpon>
     </Compile>
+    <None Include="View\Users\KEHOACH\Report\DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="View\Users\KEHOACH\Report\DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="View\Users\KEHOACH\Report\DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="View\Users\To_ThietKe\Report\DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="View\Users\To_ThietKe\Report\DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="View\Users\To_ThietKe\Report\DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\bg_head.jpg" />

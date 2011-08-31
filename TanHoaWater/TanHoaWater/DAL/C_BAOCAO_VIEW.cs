@@ -10,7 +10,7 @@ namespace TanHoaWater.DAL
 {
     public class C_BAOCAO_VIEW
     {
-        public static DataSet BC_DOTNHANDON_DOT(string dotnd, string nguoilap, string nguoiduyet, string maquan, string khan) {
+        public static DataSet BC_DOTNHANDON_DOT(string dotnd, string nguoilap, string nguoiduyet, string maquan, string trongai) {
 
             DataSet ds = new DataSet();
             TanHoaDataContext db = new TanHoaDataContext();
@@ -21,8 +21,9 @@ namespace TanHoaWater.DAL
             if (maquan != null) {
                 sql += " AND MAQUAN='" + maquan + "'";
             }
-            if (khan != null) {
-                sql += " AND HOSOKHAN='" + khan + "'";
+            if (trongai != null)
+            {
+                sql += " AND TRONGAI='" + trongai + "'";
             }
             SqlDataAdapter dond = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             dond.Fill(ds, "V_DONKHACHHANG");
