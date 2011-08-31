@@ -45,7 +45,6 @@
             // 
             // quyen
             // 
-            this.quyen.Expanded = true;
             this.quyen.Image = global::TanHoaWater.Properties.Resources.key1;
             this.quyen.Name = "quyen";
             this.quyen.Text = "Phân Quyền ";
@@ -87,10 +86,10 @@
             this.advTree1.Size = new System.Drawing.Size(234, 575);
             this.advTree1.TabIndex = 0;
             this.advTree1.Text = "advTree1";
+            this.advTree1.Click += new System.EventHandler(this.advTree1_Click);
             // 
             // node1
             // 
-            this.node1.Expanded = true;
             this.node1.Image = global::TanHoaWater.Properties.Resources.home;
             this.node1.Name = "node1";
             this.node1.Nodes.AddRange(new DevComponents.AdvTree.Node[] {

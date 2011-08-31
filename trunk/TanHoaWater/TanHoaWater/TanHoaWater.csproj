@@ -104,22 +104,23 @@
     <Compile Include="DAL\C_Role.cs" />
     <Compile Include="DAL\C_ToThietKe.cs" />
     <Compile Include="DAL\C_USERS.cs" />
+    <Compile Include="DAL\TestConection.cs" />
     <Compile Include="Database\TanHoa.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>TanHoa.dbml</DependentUpon>
     </Compile>
-    <Compile Include="Main_Icon\Icon_KHVT.cs">
+    <Compile Include="Roles\TTK.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Main_Icon\Icon_KHVT.Designer.cs">
-      <DependentUpon>Icon_KHVT.cs</DependentUpon>
+    <Compile Include="Roles\TTK.Designer.cs">
+      <DependentUpon>TTK.cs</DependentUpon>
     </Compile>
-    <Compile Include="Main_Icon\Icon_TOTK.cs">
+    <Compile Include="Roles\VTTH.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Main_Icon\Icon_TOTK.Designer.cs">
-      <DependentUpon>Icon_TOTK.cs</DependentUpon>
+    <Compile Include="Roles\VTTH.Designer.cs">
+      <DependentUpon>VTTH.cs</DependentUpon>
     </Compile>
     <Compile Include="Utilities\AddValueCombox.cs" />
     <Compile Include="Utilities\DataGridV.cs" />
@@ -266,11 +267,11 @@
     <None Include="Database\TanHoa.dbml.layout">
       <DependentUpon>TanHoa.dbml</DependentUpon>
     </None>
-    <EmbeddedResource Include="Main_Icon\Icon_KHVT.resx">
-      <DependentUpon>Icon_KHVT.cs</DependentUpon>
+    <EmbeddedResource Include="Roles\TTK.resx">
+      <DependentUpon>TTK.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Main_Icon\Icon_TOTK.resx">
-      <DependentUpon>Icon_TOTK.cs</DependentUpon>
+    <EmbeddedResource Include="Roles\VTTH.resx">
+      <DependentUpon>VTTH.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\KEHOACH\Report\rpt_TroNgaiQuan.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

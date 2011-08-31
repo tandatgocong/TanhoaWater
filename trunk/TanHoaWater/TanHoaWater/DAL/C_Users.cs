@@ -12,7 +12,8 @@ namespace TanHoaWater.DAL
     {
         public static string _fullName = null;
         public static string _userName = null;
-        public static string _roles = null;        
+        public static string _roles = null;
+        public static string _maphong = null;
         public bool AddNew(USER user)
         {
             try
@@ -96,6 +97,7 @@ namespace TanHoaWater.DAL
                 _userName = userlogin.USERNAME;
                 _fullName = userlogin.FULLNAME;
                 _roles = userlogin.ROLEID;
+                _maphong = userlogin.MAPHONG;
                 return true;
             }
             return false;

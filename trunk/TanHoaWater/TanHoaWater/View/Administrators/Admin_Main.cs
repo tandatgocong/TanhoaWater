@@ -25,5 +25,10 @@ namespace TanHoaWater.View.Administrators
             this.adminPanel.Panel2.Controls.Clear();
             this.adminPanel.Panel2.Controls.Add(new uct_Users());
         }
+
+        private void advTree1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
