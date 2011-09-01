@@ -240,7 +240,14 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                 donKH.MADOT = this.cbDotNhanDon.SelectedValue.ToString();
                 donKH.SOHOSO = this.txtSoHoSo.Text;
                 donKH.SHS = this.txtSHS.Text;
-                donKH.HOTEN = this.txtHoTen.Text;
+                if (soho.Value > 0){
+                    donKH.HOTEN = this.txtHoTen.Text + "(ĐD " + soho.Value + " Hộ)";                    
+                }
+                else
+                {
+                    donKH.HOTEN = this.txtHoTen.Text;
+                }
+                
                 donKH.DIENTHOAI = this.dienthoai.Text;
                 donKH.SOHO = int.Parse(this.soho.Value.ToString());
                 donKH.SONHA = this.sonha.Text;
