@@ -27,12 +27,12 @@ namespace TanHoaWater
         }
         public frm_Main()
         {
-            Thread th = new Thread(new ThreadStart(this.start));
-            th.Start();
-            Thread.Sleep(5000);
+            //Thread th = new Thread(new ThreadStart(this.start));
+            //th.Start();
+            //Thread.Sleep(5000);
             InitializeComponent();
             log4net.Config.XmlConfigurator.Configure();
-            th.Abort();
+            //th.Abort();
             this.menuHeThong.Select();
         }
 
