@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.SearchDotNhanDon = new System.Windows.Forms.TextBox();
             this.searchSoNha = new System.Windows.Forms.TextBox();
@@ -247,8 +247,8 @@
             // G_SodotNhanDon
             // 
             this.G_SodotNhanDon.DataPropertyName = "MADOT";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.G_SodotNhanDon.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.G_SodotNhanDon.DefaultCellStyle = dataGridViewCellStyle1;
             this.G_SodotNhanDon.HeaderText = "Số Đợt Nhận Đơn";
             this.G_SodotNhanDon.Name = "G_SodotNhanDon";
             this.G_SodotNhanDon.ReadOnly = true;
@@ -257,8 +257,8 @@
             // SOHOSO
             // 
             this.SOHOSO.DataPropertyName = "SOHOSO";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.SOHOSO.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.SOHOSO.DefaultCellStyle = dataGridViewCellStyle2;
             this.SOHOSO.HeaderText = "Số Hồ Sơ";
             this.SOHOSO.Name = "SOHOSO";
             this.SOHOSO.ReadOnly = true;
@@ -283,8 +283,8 @@
             // NGAY_NHAN
             // 
             this.NGAY_NHAN.DataPropertyName = "NGAYNHAN";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.NGAY_NHAN.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.NGAY_NHAN.DefaultCellStyle = dataGridViewCellStyle3;
             this.NGAY_NHAN.HeaderText = "Ngày Nhận";
             this.NGAY_NHAN.Name = "NGAY_NHAN";
             this.NGAY_NHAN.ReadOnly = true;
@@ -737,6 +737,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(206)))), ((int)(((byte)(236)))));
             this.Controls.Add(this.groupPanel1);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

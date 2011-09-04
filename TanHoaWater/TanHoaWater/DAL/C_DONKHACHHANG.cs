@@ -13,7 +13,6 @@ namespace TanHoaWater.DAL
     public class C_DonKhachHang
     {
         private static readonly ILog log = LogManager.GetLogger(typeof(C_DonKhachHang).Name);
-
         public static int TotalListByDot(string dot)
         {
             TanHoaDataContext db = new TanHoaDataContext();

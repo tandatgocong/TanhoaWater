@@ -171,6 +171,7 @@ namespace TanHoaWater.View.Users.To_ThietKe
             {
                 resultPrint.Visible = false;
             }
+            Utilities.DataGridV.formatRows(DG_SDV);
         }
         public void giaoviec()
         {
@@ -225,6 +226,8 @@ namespace TanHoaWater.View.Users.To_ThietKe
             {
                 resultPrint.Visible = false;
             }
+            Utilities.DataGridV.formatRows(DG_ChuaGiao);
+            Utilities.DataGridV.formatRows(DG_SDV);
         }
         private void btView_Click(object sender, EventArgs e)
         {
@@ -278,7 +281,7 @@ namespace TanHoaWater.View.Users.To_ThietKe
             {
                 log.Error("TTK Giao Viec Loi " + ex.Message);
             }
-
+           
         }
 
         private void DG_ChuaGiao_CellContentClick(object sender, DataGridViewCellEventArgs e)

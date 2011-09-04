@@ -35,7 +35,7 @@
             this.PanelMain = new System.Windows.Forms.Panel();
             this.iconMenuPanel = new System.Windows.Forms.Panel();
             this.groupTTK = new DevComponents.DotNetBar.Controls.GroupPanel();
-            this.buttonX2 = new DevComponents.DotNetBar.ButtonX();
+            this.btTinhDuToan = new DevComponents.DotNetBar.ButtonX();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btTimKiem = new DevComponents.DotNetBar.ButtonX();
             this.btGiaoHoSo = new DevComponents.DotNetBar.ButtonX();
@@ -186,7 +186,7 @@
             // 
             this.groupTTK.CanvasColor = System.Drawing.SystemColors.Control;
             this.groupTTK.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
-            this.groupTTK.Controls.Add(this.buttonX2);
+            this.groupTTK.Controls.Add(this.btTinhDuToan);
             this.groupTTK.Controls.Add(this.pictureBox2);
             this.groupTTK.Controls.Add(this.btTimKiem);
             this.groupTTK.Controls.Add(this.btGiaoHoSo);
@@ -225,17 +225,18 @@
             this.groupTTK.Text = "Tổ Khảo Sát Thiết Kế";
             this.groupTTK.Visible = false;
             // 
-            // buttonX2
+            // btTinhDuToan
             // 
-            this.buttonX2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX2.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonX2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(22)))), ((int)(((byte)(111)))));
-            this.buttonX2.Location = new System.Drawing.Point(210, 9);
-            this.buttonX2.Name = "buttonX2";
-            this.buttonX2.Size = new System.Drawing.Size(161, 26);
-            this.buttonX2.TabIndex = 15;
-            this.buttonX2.Text = "Tính Dự Toán";
+            this.btTinhDuToan.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btTinhDuToan.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btTinhDuToan.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btTinhDuToan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(22)))), ((int)(((byte)(111)))));
+            this.btTinhDuToan.Location = new System.Drawing.Point(210, 9);
+            this.btTinhDuToan.Name = "btTinhDuToan";
+            this.btTinhDuToan.Size = new System.Drawing.Size(161, 26);
+            this.btTinhDuToan.TabIndex = 15;
+            this.btTinhDuToan.Text = "Tính Dự Toán";
+            this.btTinhDuToan.Click += new System.EventHandler(this.btTinhDuToan_Click);
             // 
             // pictureBox2
             // 
@@ -1091,7 +1092,7 @@
         private System.Windows.Forms.Panel iconMenuPanel;
         private DevComponents.DotNetBar.ButtonX btChuyenDon;
         private DevComponents.DotNetBar.ButtonX timkiemDOn;
-        private DevComponents.DotNetBar.ButtonX buttonX2;
+        private DevComponents.DotNetBar.ButtonX btTinhDuToan;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox3;
