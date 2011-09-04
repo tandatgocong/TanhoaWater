@@ -411,6 +411,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(206)))), ((int)(((byte)(236)))));
             this.Controls.Add(this.txtsoDot);
             this.Controls.Add(this.cbLoaiHS);
             this.Controls.Add(this.refresh);

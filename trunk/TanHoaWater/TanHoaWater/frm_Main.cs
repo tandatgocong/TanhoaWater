@@ -103,7 +103,7 @@ namespace TanHoaWater
         private void tínhDựToánHSKToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.PanelContent.Controls.Clear();
-            this.PanelContent.Controls.Add(new uct_TinhDuToan());
+            this.PanelContent.Controls.Add(new uct_TinhDuToan(1));
         }
 
         private void ribbonTabItem1_Click(object sender, EventArgs e)
@@ -249,6 +249,14 @@ namespace TanHoaWater
             this.subDangXuat.Visible = false;
             this.subdangnhap.Visible = true;
 
+        }
+
+        private void btTinhDuToan_Click(object sender, EventArgs e)
+        {
+            this.menuToThietKe.Visible = true;
+            this.menuToThietKe.Select();
+            this.PanelContent.Controls.Clear();
+            this.PanelContent.Controls.Add(new uct_TinhDuToan(1));
         }
         
     }

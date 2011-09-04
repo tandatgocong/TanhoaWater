@@ -12,7 +12,7 @@ namespace TanHoaWater.Utilities
             for (int i = 0; i < dview.Rows.Count; i++) {
                 if (i % 2 == 0)
                 {
-                    dview.Rows[i].DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(205)))), ((int)(((byte)(220))))); ;
+                    dview.Rows[i].DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(199)))), ((int)(((byte)(147))))); ;
                      
                 }
                 else {
