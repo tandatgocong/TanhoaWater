@@ -193,24 +193,24 @@
         <classShapeMoniker Id="47fcf1ce-5c1d-4b65-a0bc-b8d94ce77563" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(8.125 : 0.81719); (7.875 : 0.81719); (7.875 : 1.375); (5.875 : 1.375); (5.875 : 2.375); (6.5859375 : 2.375); (6.5859375 : 2.75)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(8.125 : 0.81719); (7.875 : 0.81719); (7.875 : 1.375); (6.95833333333333 : 1.375 : JumpStart); (6.79166666666667 : 1.375 : JumpEnd); (5.875 : 1.375); (5.875 : 2.375); (6.5859375 : 2.375); (6.5859375 : 2.75)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/TanHoaDataContext/PHONGBANDOI/PHONGBANDOI_DON_KHACHHANG" />
       <nodes>
         <classShapeMoniker Id="8074cf18-1429-4505-a0d6-bce9192a3d65" />
         <classShapeMoniker Id="47fcf1ce-5c1d-4b65-a0bc-b8d94ce77563" />
       </nodes>
     </associationConnector>
-    <classShape Id="d10d6300-bc00-44fa-ae3e-bc4a2090b37c" isExpanded="false" absoluteBounds="6.875, 5.125, 2, 0.45">
+    <classShape Id="59e54306-0b3d-4595-af1c-c19ccb723093" isExpanded="false" absoluteBounds="7.375, 5, 2, 0.45">
       <DataClassMoniker Name="/TanHoaDataContext/DANHMUCBOVATTU" />
       <nestedChildShapes>
-        <elementListCompartment Id="5edf9928-eed6-4ef9-bb59-b38feed53bdc" absoluteBounds="6.89, 5.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="a9e876f0-9391-4a2d-a3e3-6c1f56cb8f3f" absoluteBounds="7.39, 5.46, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(5.5 : 5.225); (6.875 : 5.225)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 5.1625); (7.375 : 5.1625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/TanHoaDataContext/DANHMUCVATTU/DANHMUCVATTU_DANHMUCBOVATTU" />
       <nodes>
         <classShapeMoniker Id="2f43695d-8d53-441c-9af4-e340f719793c" />
-        <classShapeMoniker Id="d10d6300-bc00-44fa-ae3e-bc4a2090b37c" />
+        <classShapeMoniker Id="59e54306-0b3d-4595-af1c-c19ccb723093" />
       </nodes>
     </associationConnector>
   </nestedChildShapes>

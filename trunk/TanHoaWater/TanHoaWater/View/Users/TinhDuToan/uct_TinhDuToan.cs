@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using log4net;
 using TanHoaWater.Database;
+using System.Text.RegularExpressions;
 
 namespace TanHoaWater.View.Users.TinhDuToan
 {
@@ -113,6 +114,9 @@ namespace TanHoaWater.View.Users.TinhDuToan
                 this.cbNhomVT.DataSource = DAL.C_NhomVatTu.getNhomVT();
                 this.cbNhomVT.ValueMember = "Value";
                 this.cbNhomVT.DisplayMember = "Display";
+                this.cbNhomVatTu.DataSource = DAL.C_DanhMucVatTu.getListDanhMucVatCombobox();
+                this.cbNhomVatTu.DisplayMember = "TENVT";
+                this.cbNhomVatTu.ValueMember = "MAHIEU";
             }
             catch (Exception ex)
             {
@@ -187,19 +191,15 @@ namespace TanHoaWater.View.Users.TinhDuToan
         string mahieuvtDG = "";
         private void GridDanhMucVT_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //bovt_MAHIEU.DataSource = DAL.C_DonViTinh.getList();
-            //bovt_MAHIEU.DisplayMember = "DONVI";
-            //bovt_MAHIEU.ValueMember = "DONVI";
-            try
+           try
             {
                 string bovt = GridDanhMucVT.Rows[e.RowIndex].Cells[3].Value.ToString();
                 if ("Bộ".Equals(bovt))
                 {
                     groupDGVT.Visible = false;
                     groupPanelBoVT.Visible = true;
-                    mahieuvtDG = GridDanhMucVT.Rows[e.RowIndex].Cells[0].Value.ToString();
-                    this.GridDonGiaVT.DataSource = DAL.C_DonGiaVatTu.GetDonGiaVTbyMaHieu(mahieuvtDG);
-                    Utilities.DataGridV.formatRows(GridDonGiaVT);
+                    mahieuvtDG = GridDanhMucVT.Rows[e.RowIndex].Cells[0].Value.ToString();                 
+                    LoadDanhMucBoVT(mahieuvtDG);
                     groupPanelBoVT.Text = "Danh Sách Vật Tư của bộ Vật Tư : " + mahieuvtDG;
                 }
                 else
@@ -210,16 +210,7 @@ namespace TanHoaWater.View.Users.TinhDuToan
                     this.GridDonGiaVT.DataSource = DAL.C_DonGiaVatTu.GetDonGiaVTbyMaHieu(mahieuvtDG);
                     Utilities.DataGridV.formatRows(GridDonGiaVT);
                     groupDGVT.Text = "Đơn Giá Vật Tư Của Mã Hiệu Vật Tư : " + mahieuvtDG;
-                }
-                //DANHMUCVATTU dmvt = DAL.C_DanhMucVatTu.finbyMaHieu(mahieuvtDG);
-                //if (dmvt != null) {
-                //    this.txtMaHieuVT.Text = dmvt.MAHIEU;
-                //    this.txtMaHieuDG.Text = dmvt.MAHDG;
-                //    this.txtTenVT.Text = dmvt.TENVT;
-                //    this.cbDVT.Text = dmvt.DVT;
-                //    this.cbNhomVT.Text = dmvt.NHOMVT;
-                //}
-            
+                }               
             }
             catch (Exception)
             {
@@ -252,14 +243,7 @@ namespace TanHoaWater.View.Users.TinhDuToan
             {
             }
         }
-
-        private void GridDonGiaVT_UserAddedRow(object sender, DataGridViewRowEventArgs e)
-        {
-            GridDonGiaVT.Rows[GridDonGiaVT.CurrentRow.Index].Cells[5].Value = Utilities.DateToString.NgayVN(DateTime.Now);
-            GridDonGiaVT.Rows[GridDonGiaVT.CurrentRow.Index].Cells[0].Value = GridDonGiaVT.CurrentRow.Index + 1;
-            GridDonGiaVT.Rows[GridDonGiaVT.CurrentRow.Index].Cells[1].Value = mahieuvtDG;
-        }
-
+        
         private void btCapNhatDGVT_Click(object sender, EventArgs e)
         {
             try
@@ -436,46 +420,122 @@ namespace TanHoaWater.View.Users.TinhDuToan
 
         private void GridBoVT_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //try
-            //{
+            try
+            {
               
                 if (e.RowIndex < 0) return;
                 else if (e.ColumnIndex == 1)
                 {
-                    cbyy.Visible = true;
-                    cbyy.Top =   this.GridBoVT.Top + GridBoVT.GetRowDisplayRectangle(e.RowIndex, true).Top;
-                    cbyy.Left =   this.GridBoVT.Left  + GridBoVT.GetColumnDisplayRectangle(e.ColumnIndex, true).Left;
-                    cbyy.Width = GridBoVT.Columns[e.ColumnIndex].Width;
-                    cbyy.Height = GridBoVT.Rows[e.RowIndex].Height;
-                    cbyy.BringToFront();
+                    cbNhomVatTu.Visible = true;
+                    cbNhomVatTu.Top = this.GridBoVT.Top + GridBoVT.GetRowDisplayRectangle(e.RowIndex, true).Top;
+                    cbNhomVatTu.Left = this.GridBoVT.Left + GridBoVT.GetColumnDisplayRectangle(e.ColumnIndex, true).Left;
+                    cbNhomVatTu.Width = GridBoVT.Columns[e.ColumnIndex].Width;
+                    cbNhomVatTu.Height = GridBoVT.Rows[e.RowIndex].Height;
+                    cbNhomVatTu.BringToFront();
                     //  cmbTaiKhoanLuoi.SelectedValue = DatagirdThem.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
                 }
                 
-            //}
-            //catch (Exception)
-            //{
-            //}
+            }
+            catch (Exception)
+            {
+            }
         }
 
          
 
         private void GridPhuiDao_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            MessageBox.Show(this.GridPhuiDao.Top + "");
-             
-          
-                MessageBox.Show(this.GridPhuiDao.Top + "");
-                cbyy.Top = (this.GridPhuiDao.Top + GridPhuiDao.GetRowDisplayRectangle(e.RowIndex, true).Top);
-                cbyy.Left = (this.GridPhuiDao.Left + GridPhuiDao.GetColumnDisplayRectangle(e.ColumnIndex, true).Left);
-                cbyy.Width = GridPhuiDao.Columns[e.ColumnIndex].Width;
-                cbyy.Height = GridPhuiDao.Rows[e.RowIndex].Height;
-                cbyy.BringToFront();
+            cbyy.Top = this.GridPhuiDao.Top + GridPhuiDao.GetRowDisplayRectangle(e.RowIndex, true).Top;
+            cbyy.Left = this.GridPhuiDao.Left + GridPhuiDao.GetColumnDisplayRectangle(e.ColumnIndex, true).Left;
+            cbyy.Width = GridPhuiDao.Columns[e.ColumnIndex].Width;
+            cbyy.Height = GridPhuiDao.Rows[e.RowIndex].Height;
+            cbyy.BringToFront();
                 //  cmbTaiKhoanLuoi.SelectedValue = DatagirdThem.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
           
         }
 
+        public string catchuoi(string line) {           
+            string[] words = Regex.Split(line, "______");
+            return words[1];
+        }
+        DataTable table;
+        public void LoadDanhMucBoVT(string mabovt) {
+            table = DAL.C_DanhMucBoVT.getByMaBoVT(mabovt);
+            GridBoVT.DataSource = table;
+            Utilities.DataGridV.formatRows(GridBoVT);
+        }
+        private void cbNhomVatTu_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+               cbNhomVatTu.Visible = false;     
+                if (table != null)
+                {
+                    DataRow rows = table.NewRow();
+                    rows["MABOVT"] = mahieuvtDG;
+                    rows["MAHIEU"] = this.cbNhomVatTu.SelectedValue + "";
+                    rows["TENVT"] = catchuoi(this.cbNhomVatTu.Text + "");
+                    table.Rows.Add(rows);
+                }
+                else {
+                    table = new DataTable();
+                    DataRow rows = table.NewRow();
+                    rows["MABOVT"] = mahieuvtDG;
+                    rows["MAHIEU"] = this.cbNhomVatTu.SelectedValue + "";
+                    rows["TENVT"] = catchuoi(this.cbNhomVatTu.Text + "");
+                    table.Rows.Add(rows);
+                }               
+                GridBoVT.DataSource = table;
+                Utilities.DataGridV.formatRows(GridBoVT);
+            }
+            catch (Exception ex)
+            {
+                
+            }
 
-         
+        }
+
+        private void btCapNhatBoVT_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                #region Delete Truoc Khi Insert
+                DAL.C_DanhMucBoVT.deletebyMaBoVT(mahieuvtDG);
+                #endregion
+                for (int i = 0; i < GridBoVT.Rows.Count; i++)
+                {
+                    string mahieu = this.GridBoVT.Rows[i].Cells[1].Value + "";
+                    if (!"".Equals(mahieu) && DAL.C_DanhMucVatTu.finbyMaHieu(mahieu) != null && DAL.C_DanhMucBoVT.findBoVT(mahieuvtDG,mahieu)==null)
+                    {
+                        DANHMUCBOVATTU dmbovt = new DANHMUCBOVATTU();
+                        dmbovt.MABOVT = mahieuvtDG;
+                        dmbovt.MAHIEU = mahieu;
+                        dmbovt.TENVT = this.GridBoVT.Rows[i].Cells[2].Value + "";
+                        dmbovt.CREATEBY = DAL.C_USERS._userName;
+                        dmbovt.CREATEDATE = DateTime.Now.Date;
+                        DAL.C_DanhMucBoVT.InsertBoVT(dmbovt);
+
+                    }
+                }
+                MessageBox.Show(this, "Cập Nhật Danh Mục Bộ Vật Tư Thành Công.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadDanhMucBoVT(mahieuvtDG);
+            }
+            catch (Exception ex)
+            {
+                log.Error("Cap Nhat Bo Vat Tu Loi" + ex.Message);
+                MessageBox.Show(this, "Cập Nhật Danh Mục Bộ Vật Tư Không Thành Công.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
+        }
+
+        private void GridDonGiaVT_UserAddedRow(object sender, DataGridViewRowEventArgs e)
+        {
+            GridDonGiaVT.Rows[GridDonGiaVT.CurrentRow.Index].Cells[5].Value = Utilities.DateToString.NgayVN(DateTime.Now);
+            GridDonGiaVT.Rows[GridDonGiaVT.CurrentRow.Index].Cells[0].Value = GridDonGiaVT.CurrentRow.Index + 1;
+            GridDonGiaVT.Rows[GridDonGiaVT.CurrentRow.Index].Cells[1].Value = mahieuvtDG;
+        
+        }
+
         //private void GridPhuiDao_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
         //{
         //    try
