@@ -96,6 +96,7 @@
     <Compile Include="DAL\C_BaoCao_View.cs" />
     <Compile Include="DAL\C_DanhMucBoVT.cs" />
     <Compile Include="DAL\C_DanhMucVatTu.cs" />
+    <Compile Include="DAL\C_DonGiaVatTu.cs" />
     <Compile Include="DAL\C_DonKhachHang.cs" />
     <Compile Include="DAL\C_DonViTinh.cs" />
     <Compile Include="DAL\C_DotNhanDon.cs" />

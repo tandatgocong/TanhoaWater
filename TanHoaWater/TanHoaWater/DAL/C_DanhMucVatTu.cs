@@ -6,6 +6,8 @@ using TanHoaWater.Database;
 using log4net;
 using System.Data;
 using System.Data.SqlClient;
+using System.Collections;
+using TanHoaWater.Class;
 namespace TanHoaWater.DAL
 {
     class C_DanhMucVatTu
@@ -76,18 +78,13 @@ namespace TanHoaWater.DAL
             return false;
         }
       
-        public static DataTable search(string mahieu, string mhDonGia, string tenvt, string donvitinh, string nhomvt, bool bovt, int FirstRow, int pageSize)
+        public static DataTable search(string mahieu, string mhDonGia, string tenvt, string donvitinh, string nhomvt,   int FirstRow, int pageSize)
         {
             TanHoaDataContext db = new TanHoaDataContext();
             db.Connection.Open();
             string sql = " SELECT MAHIEU,MAHDG,UPPER(TENVT) AS 'TENVT',DVT,NHOMVT,BOVT";
             sql += " FROM DANHMUCVATTU ";
             sql += " WHERE TENVT IS NOT NULL ";
-            if (bovt == true)
-            {
-                sql += " AND  BOVT='" + bovt + "'";
-            }           
-
             if (!"".Equals(mahieu))
             {
                 sql += " AND MAHIEU LIKE'%" + mahieu + "%'";
@@ -102,31 +99,28 @@ namespace TanHoaWater.DAL
             }
             if (!"".Equals(donvitinh))
             {
-                sql += " AND DVT = '" + donvitinh + "'";
+                sql += " AND DVT = N'" + donvitinh + "'";
             }
             if (!"".Equals(nhomvt))
             {
-                sql += " AND NHOMVT = '" + nhomvt + "'";
+                sql += " AND NHOMVT = N'" + nhomvt + "'";
             }
-            sql += " ORDER BY MAHIEU DESC ";
+            sql += " ORDER BY MAHIEU ASC ";
             SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             DataSet dataset = new DataSet();
             adapter.Fill(dataset, FirstRow, pageSize, "TABLE");
             db.Connection.Close();
             return dataset.Tables[0];
         }
-        public static int TotalSearch(string mahieu, string mhDonGia, string tenvt, string donvitinh, string nhomvt, bool bovt, int FirstRow, int pageSize)
+       
+        public static int TotalSearch(string mahieu, string mhDonGia, string tenvt, string donvitinh, string nhomvt,  int FirstRow, int pageSize)
         {
             TanHoaDataContext db = new TanHoaDataContext();
             SqlConnection conn = new SqlConnection(db.Connection.ConnectionString);
             conn.Open();
             string sql = " SELECT COUNT(*) ";
             sql += " FROM DANHMUCVATTU ";
-            sql += " WHERE TENVT IS NOT NULL ";
-            if (bovt == true)
-            {
-                sql += " AND  BOVT='" + bovt + "'";
-            }
+            sql += " WHERE TENVT IS NOT NULL ";            
 
             if (!"".Equals(mahieu))
             {
@@ -142,17 +136,18 @@ namespace TanHoaWater.DAL
             }
             if (!"".Equals(donvitinh))
             {
-                sql += " AND DVT = '" + donvitinh + "'";
+                sql += " AND DVT = N'" + donvitinh + "'";
             }
             if (!"".Equals(nhomvt))
             {
-                sql += " AND NHOMVT = '" + nhomvt + "'";
+                sql += " AND NHOMVT = N'" + nhomvt + "'";
             }
             SqlCommand cmd = new SqlCommand(sql, conn);
             int result = Convert.ToInt32(cmd.ExecuteScalar());
             conn.Close();
             return result;
         }
-    
+
+
     }
 }

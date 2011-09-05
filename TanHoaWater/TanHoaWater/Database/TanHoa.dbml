@@ -44,13 +44,6 @@
       <Column Name="NGUOILAP" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.DANHMUCBOVATTU" Member="DANHMUCBOVATTUs">
-    <Type Name="DANHMUCBOVATTU">
-      <Column Name="MABOVT" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="MAHIEU" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Association Name="DANHMUCVATTU_DANHMUCBOVATTU" Member="DANHMUCVATTU" ThisKey="MABOVT" OtherKey="MAHIEU" Type="DANHMUCVATTU" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.USERS" Member="USERs">
     <Type Name="USER">
       <Column Name="USERNAME" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -82,8 +75,8 @@
       <Column Name="CREATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="MODIFYBY" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
       <Column Name="MODIFYDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Association Name="DANHMUCVATTU_DANHMUCBOVATTU" Member="DANHMUCBOVATTUs" ThisKey="MAHIEU" OtherKey="MABOVT" Type="DANHMUCBOVATTU" />
       <Association Name="DANHMUCVATTU_DONGIAVATTU" Member="DONGIAVATTUs" ThisKey="MAHIEU" OtherKey="MAHIEUDG" Type="DONGIAVATTU" />
+      <Association Name="DANHMUCVATTU_DANHMUCBOVATTU" Member="DANHMUCBOVATTUs" ThisKey="MAHIEU" OtherKey="MABOVT" Type="DANHMUCBOVATTU" />
     </Type>
   </Table>
   <Table Name="dbo.DONGIAVATTU" Member="DONGIAVATTUs">
@@ -354,6 +347,14 @@
       <Association Name="DOT_NHAN_DON_DON_KHACHHANG" Member="DOT_NHAN_DON" ThisKey="MADOT" OtherKey="MADOT" Type="DOT_NHAN_DON" IsForeignKey="true" />
       <Association Name="QUAN_DON_KHACHHANG" Member="QUAN1" ThisKey="QUAN" OtherKey="MAQUAN" Type="QUAN" IsForeignKey="true" />
       <Association Name="PHONGBANDOI_DON_KHACHHANG" Member="PHONGBANDOI" ThisKey="BOPHANCHUYEN" OtherKey="MAPHONG" Type="PHONGBANDOI" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DANHMUCBOVATTU" Member="DANHMUCBOVATTUs">
+    <Type Name="DANHMUCBOVATTU">
+      <Column Name="MABOVT" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MAHIEU" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TENVT" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Association Name="DANHMUCVATTU_DANHMUCBOVATTU" Member="DANHMUCVATTU" ThisKey="MABOVT" OtherKey="MAHIEU" Type="DANHMUCVATTU" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

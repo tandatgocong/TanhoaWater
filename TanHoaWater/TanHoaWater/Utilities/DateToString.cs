@@ -34,5 +34,31 @@ namespace TanHoaWater.Utilities
             kq = kq + ngay + "/" + thang + "/" + nam;
             return kq;
         }
+        public static string NgayVN(DateTime d1)
+        {
+            string kq = "";
+            string ngay;
+            string thang;
+            string nam = d1.Year.ToString();
+
+            if (d1.Day < 10)
+            {
+                ngay = "0" + d1.Day.ToString();
+            }
+            else
+            {
+                ngay = d1.Day.ToString();
+            }
+            if (d1.Month < 10)
+            {
+                thang = "0" + d1.Month.ToString();
+            }
+            else
+            {
+                thang = d1.Month.ToString();
+            }
+            kq = kq + ngay + "/" + thang + "/" + nam;
+            return kq;
+        }
     }
 }
