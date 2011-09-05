@@ -37,24 +37,27 @@ namespace TanHoaWater
         }
 
         public static frm_Login dn = new frm_Login();
-        public void dangnhap() {
+        public void dangnhap()
+        {
             dn.ShowDialog();
-             if (DAL.C_USERS._roles != null){
-                 role(DAL.C_USERS._roles);
-             }
-         
+            if (DAL.C_USERS._roles != null)
+            {
+                role(DAL.C_USERS._roles);
+            }
+
             formLoad();
-          
+
         }
         private void frm_Main_Load(object sender, EventArgs e)
         {
-            if (DAL.TestConection.testConnection() == false) {
+            if (DAL.TestConection.testConnection() == false)
+            {
                 MessageBox.Show(this, "Lỗi Kết Nối, Kiểm Tra Kết Nối Tới Server.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Application.Exit();
             }
             this.Show();
             dangnhap();
-            
+
         }
 
         private void subThoat_Click(object sender, EventArgs e)
@@ -64,11 +67,14 @@ namespace TanHoaWater
                 this.Dispose();
             }
         }
-        public void formLoad() {            
-            if (DAL.C_USERS._userName == null) {
+        public void formLoad()
+        {
+            if (DAL.C_USERS._userName == null)
+            {
                 this.subdangnhap.Visible = true;
             }
-            else if (DAL.C_USERS._userName != null) {
+            else if (DAL.C_USERS._userName != null)
+            {
                 this.subdangnhap.Visible = false;
                 this.subDangXuat.Visible = true;
                 this.subDoiMatKhau.Visible = true;
@@ -110,25 +116,27 @@ namespace TanHoaWater
         {
             this.PanelContent.Controls.Clear();
             this.PanelContent.Controls.Add(PanelMain);
-       //     this.iconMenuPanel.Controls.Clear();
-       ////     this.iconMenuPanel.Controls.Add(new Icon_KHVT());
-       //     this.iconMenuPanel.Controls.Add(new TTK());
-           
+            //     this.iconMenuPanel.Controls.Clear();
+            ////     this.iconMenuPanel.Controls.Add(new Icon_KHVT());
+            //     this.iconMenuPanel.Controls.Add(new TTK());
+
         }
-        public void role(string role) {
-            if ( "AD".Equals(DAL.C_USERS._roles.Trim()))
+        public void role(string role)
+        {
+            if ("AD".Equals(DAL.C_USERS._roles.Trim()))
             {
                 this.PanelContent.Controls.Clear();
                 this.PanelContent.Controls.Add(new Admin_Main());
             }
             else if ("US".Equals(DAL.C_USERS._roles.Trim()))
             {
-                if ("TTK".Equals(DAL.C_USERS._maphong.Trim())) {
+                if ("TTK".Equals(DAL.C_USERS._maphong.Trim()))
+                {
                     this.menuToThietKe.Visible = true;
                     this.iconMenuPanel.Controls.Clear();
                     this.iconMenuPanel.Controls.Add(groupTTK);
                     groupTTK.Visible = true;
-                    
+
                 }
                 else if ("VTTH".Equals(DAL.C_USERS._maphong.Trim()))
                 {
@@ -136,9 +144,9 @@ namespace TanHoaWater
                     this.iconMenuPanel.Controls.Clear();
                     this.iconMenuPanel.Controls.Add(group_VTTH);
                     group_VTTH.Visible = true;
-                   
+
                 }
-            }          
+            }
         }
 
         private void vtth_DotNhanDon_Click(object sender, EventArgs e)
@@ -182,7 +190,7 @@ namespace TanHoaWater
 
         private void khvt_TraCuuHS_Click(object sender, EventArgs e)
         {
-           
+
         }
         private void timkiemDOn_Click(object sender, EventArgs e)
         {
@@ -198,7 +206,7 @@ namespace TanHoaWater
             this.PanelContent.Controls.Clear();
             this.PanelContent.Controls.Add(new HSKHACHHANG(6));
         }
-        
+
         private void btGiaoHoSo_Click(object sender, EventArgs e)
         {
             this.menuToThietKe.Visible = true;
@@ -258,6 +266,14 @@ namespace TanHoaWater
             this.PanelContent.Controls.Clear();
             this.PanelContent.Controls.Add(new uct_TinhDuToan(1));
         }
-        
+
+        private void btDanhMucVT_Click(object sender, EventArgs e)
+        {
+            this.menuToThietKe.Visible = true;
+            this.menuToThietKe.Select();
+            this.PanelContent.Controls.Clear();
+            this.PanelContent.Controls.Add(new uct_TinhDuToan(2));
+        }
     }
+
 }

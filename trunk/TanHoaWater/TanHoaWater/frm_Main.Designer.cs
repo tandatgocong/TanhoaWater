@@ -105,6 +105,8 @@
             this.buttonItem12 = new DevComponents.DotNetBar.ButtonItem();
             this.buttonItem13 = new DevComponents.DotNetBar.ButtonItem();
             this.buttonItem1 = new DevComponents.DotNetBar.ButtonItem();
+            this.btDanhMucVT = new DevComponents.DotNetBar.ButtonX();
+            this.pictureBox14 = new System.Windows.Forms.PictureBox();
             this.mainLayout.SuspendLayout();
             this.PanelContent.SuspendLayout();
             this.PanelMain.SuspendLayout();
@@ -131,6 +133,7 @@
             this.menuStrip3.SuspendLayout();
             this.ribbonPanel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
             this.SuspendLayout();
             // 
             // qatCustomizeItem1
@@ -186,6 +189,8 @@
             // 
             this.groupTTK.CanvasColor = System.Drawing.SystemColors.Control;
             this.groupTTK.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.groupTTK.Controls.Add(this.btDanhMucVT);
+            this.groupTTK.Controls.Add(this.pictureBox14);
             this.groupTTK.Controls.Add(this.btTinhDuToan);
             this.groupTTK.Controls.Add(this.pictureBox2);
             this.groupTTK.Controls.Add(this.btTimKiem);
@@ -974,6 +979,28 @@
             this.buttonItem1.Name = "buttonItem1";
             this.buttonItem1.Text = "buttonItem1";
             // 
+            // btDanhMucVT
+            // 
+            this.btDanhMucVT.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btDanhMucVT.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btDanhMucVT.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btDanhMucVT.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(22)))), ((int)(((byte)(111)))));
+            this.btDanhMucVT.Location = new System.Drawing.Point(210, 49);
+            this.btDanhMucVT.Name = "btDanhMucVT";
+            this.btDanhMucVT.Size = new System.Drawing.Size(161, 26);
+            this.btDanhMucVT.TabIndex = 21;
+            this.btDanhMucVT.Text = "Danh Mục Vật Tư";
+            this.btDanhMucVT.Click += new System.EventHandler(this.btDanhMucVT_Click);
+            // 
+            // pictureBox14
+            // 
+            this.pictureBox14.Image = global::TanHoaWater.Properties.Resources.bt_bg;
+            this.pictureBox14.Location = new System.Drawing.Point(206, 45);
+            this.pictureBox14.Name = "pictureBox14";
+            this.pictureBox14.Size = new System.Drawing.Size(169, 35);
+            this.pictureBox14.TabIndex = 22;
+            this.pictureBox14.TabStop = false;
+            // 
             // frm_Main
             // 
             this.AllowDrop = true;
@@ -1024,6 +1051,7 @@
             this.ribbonPanel1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1106,6 +1134,8 @@
         private System.Windows.Forms.PictureBox pictureBox12;
         private System.Windows.Forms.PictureBox pictureBox13;
         private System.Windows.Forms.PictureBox pictureBox11;
+        private DevComponents.DotNetBar.ButtonX btDanhMucVT;
+        private System.Windows.Forms.PictureBox pictureBox14;
 
     }
 }
