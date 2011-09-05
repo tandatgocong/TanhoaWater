@@ -147,7 +147,18 @@ namespace TanHoaWater.DAL
             conn.Close();
             return result;
         }
-
+        public static DataTable getListDanhMucVatCombobox()
+        {
+            TanHoaDataContext db = new TanHoaDataContext();
+            db.Connection.Open();
+            string sql = " SELECT MAHIEU , (MAHIEU + ' ______ '+   UPPER(TENVT) ) as 'TENVT'";
+            sql += " FROM DANHMUCVATTU ";
+            SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            db.Connection.Close();
+            return table;
+        }
 
     }
 }
