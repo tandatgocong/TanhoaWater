@@ -274,6 +274,14 @@ namespace TanHoaWater
             this.PanelContent.Controls.Clear();
             this.PanelContent.Controls.Add(new uct_TinhDuToan(2));
         }
+
+        private void btTaiLapMatBang_Click(object sender, EventArgs e)
+        {
+            this.menuToThietKe.Visible = true;
+            this.menuToThietKe.Select();
+            this.PanelContent.Controls.Clear();
+            this.PanelContent.Controls.Add(new uct_TinhDuToan(3));
+        }
     }
 
 }
