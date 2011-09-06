@@ -40,7 +40,7 @@ namespace TanHoaWater.DAL
 
             TanHoaDataContext db = new TanHoaDataContext();
             db.Connection.Open();
-            string sql = " SELECT MABOVT,MAHIEU,TENVT";
+            string sql = " SELECT MABOVT,MAHIEU,TENVT, DM ";
             sql += " FROM DANHMUCBOVATTU  WHERE MABOVT='" + mabovt + "'";  
           
             SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
