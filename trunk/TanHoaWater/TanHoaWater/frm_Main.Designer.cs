@@ -35,6 +35,8 @@
             this.PanelMain = new System.Windows.Forms.Panel();
             this.iconMenuPanel = new System.Windows.Forms.Panel();
             this.groupTTK = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.btTaiLapMatBang = new DevComponents.DotNetBar.ButtonX();
+            this.pictureBox15 = new System.Windows.Forms.PictureBox();
             this.btDanhMucVT = new DevComponents.DotNetBar.ButtonX();
             this.pictureBox14 = new System.Windows.Forms.PictureBox();
             this.btTinhDuToan = new DevComponents.DotNetBar.ButtonX();
@@ -107,13 +109,12 @@
             this.buttonItem12 = new DevComponents.DotNetBar.ButtonItem();
             this.buttonItem13 = new DevComponents.DotNetBar.ButtonItem();
             this.buttonItem1 = new DevComponents.DotNetBar.ButtonItem();
-            this.btTaiLapMatBang = new DevComponents.DotNetBar.ButtonX();
-            this.pictureBox15 = new System.Windows.Forms.PictureBox();
             this.mainLayout.SuspendLayout();
             this.PanelContent.SuspendLayout();
             this.PanelMain.SuspendLayout();
             this.iconMenuPanel.SuspendLayout();
             this.groupTTK.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -136,7 +137,6 @@
             this.menuStrip3.SuspendLayout();
             this.ribbonPanel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
             this.SuspendLayout();
             // 
             // qatCustomizeItem1
@@ -234,6 +234,28 @@
             this.groupTTK.TabIndex = 12;
             this.groupTTK.Text = "Tổ Khảo Sát Thiết Kế";
             this.groupTTK.Visible = false;
+            // 
+            // btTaiLapMatBang
+            // 
+            this.btTaiLapMatBang.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btTaiLapMatBang.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btTaiLapMatBang.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btTaiLapMatBang.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(22)))), ((int)(((byte)(111)))));
+            this.btTaiLapMatBang.Location = new System.Drawing.Point(210, 88);
+            this.btTaiLapMatBang.Name = "btTaiLapMatBang";
+            this.btTaiLapMatBang.Size = new System.Drawing.Size(161, 26);
+            this.btTaiLapMatBang.TabIndex = 23;
+            this.btTaiLapMatBang.Text = "ĐG Tái Lập Mặt Bằng";
+            this.btTaiLapMatBang.Click += new System.EventHandler(this.btTaiLapMatBang_Click);
+            // 
+            // pictureBox15
+            // 
+            this.pictureBox15.Image = global::TanHoaWater.Properties.Resources.bt_bg;
+            this.pictureBox15.Location = new System.Drawing.Point(206, 84);
+            this.pictureBox15.Name = "pictureBox15";
+            this.pictureBox15.Size = new System.Drawing.Size(169, 35);
+            this.pictureBox15.TabIndex = 24;
+            this.pictureBox15.TabStop = false;
             // 
             // btDanhMucVT
             // 
@@ -1006,28 +1028,6 @@
             this.buttonItem1.Name = "buttonItem1";
             this.buttonItem1.Text = "buttonItem1";
             // 
-            // btTaiLapMatBang
-            // 
-            this.btTaiLapMatBang.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btTaiLapMatBang.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btTaiLapMatBang.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btTaiLapMatBang.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(22)))), ((int)(((byte)(111)))));
-            this.btTaiLapMatBang.Location = new System.Drawing.Point(210, 88);
-            this.btTaiLapMatBang.Name = "btTaiLapMatBang";
-            this.btTaiLapMatBang.Size = new System.Drawing.Size(161, 26);
-            this.btTaiLapMatBang.TabIndex = 23;
-            this.btTaiLapMatBang.Text = "ĐG Tái Lập Mặt Bằng";
-            this.btTaiLapMatBang.Click += new System.EventHandler(this.btTaiLapMatBang_Click);
-            // 
-            // pictureBox15
-            // 
-            this.pictureBox15.Image = global::TanHoaWater.Properties.Resources.bt_bg;
-            this.pictureBox15.Location = new System.Drawing.Point(206, 84);
-            this.pictureBox15.Name = "pictureBox15";
-            this.pictureBox15.Size = new System.Drawing.Size(169, 35);
-            this.pictureBox15.TabIndex = 24;
-            this.pictureBox15.TabStop = false;
-            // 
             // frm_Main
             // 
             this.AllowDrop = true;
@@ -1050,6 +1050,7 @@
             this.PanelMain.PerformLayout();
             this.iconMenuPanel.ResumeLayout(false);
             this.groupTTK.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -1079,7 +1080,6 @@
             this.ribbonPanel1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
             this.ResumeLayout(false);
 
         }

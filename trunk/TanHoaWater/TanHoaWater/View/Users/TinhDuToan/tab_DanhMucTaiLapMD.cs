@@ -15,7 +15,7 @@ namespace TanHoaWater.View.Users.TinhDuToan
     {
         private static readonly ILog log = LogManager.GetLogger(typeof(uct_TinhDuToan).Name);
         int currentPageIndex = 1;
-        int pageSize = 17;
+        int pageSize = 16;
         int pageNumber = 0;
         int FirstRow, LastRow;
         int rows;

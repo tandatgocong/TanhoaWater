@@ -154,7 +154,7 @@ namespace TanHoaWater.DAL
             conn.Close();
             return result;
         }
-        public static DataTable getListDanhMucVatCombobox()
+        public static DataTable getListDanhMucVatCobobox()
         {
             TanHoaDataContext db = new TanHoaDataContext();
             db.Connection.Open();
