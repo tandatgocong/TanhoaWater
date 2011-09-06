@@ -137,15 +137,24 @@ namespace TanHoaWater.DAL
         }
         public static DataTable getListDanhMucTLMD()
         {
-            TanHoaDataContext db = new TanHoaDataContext();
-            db.Connection.Open();
-            string sql = " SELECT MADANHMUC , (MADANHMUC + ' ______ '+   UPPER(TENKETCAU) ) as 'TENKETCAU'";
-            sql += " FROM DANHMUCTAILAPMATDUONG ";
-            SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
-            DataTable table = new DataTable();
-            adapter.Fill(table);
-            db.Connection.Close();
-            return table;
+            try
+            {
+                TanHoaDataContext db = new TanHoaDataContext();
+                db.Connection.Open();
+                string sql = " SELECT MADANHMUC , (MADANHMUC + ' ______ '+   UPPER(TENKETCAU) ) as 'TENKETCAU'";
+                sql += " FROM DANHMUCTAILAPMATDUONG ";
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+                db.Connection.Close();
+                return table;
+            }
+            catch (Exception ex)
+            {
+                log.Error("Load Danh Muc Tai Lap Mat Duong Loi" + ex.Message);
+            }
+
+            return null;
         }
 
     }
