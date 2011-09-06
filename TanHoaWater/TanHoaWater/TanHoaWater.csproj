@@ -95,6 +95,7 @@
   <ItemGroup>
     <Compile Include="DAL\C_BaoCao_View.cs" />
     <Compile Include="DAL\C_DanhMucBoVT.cs" />
+    <Compile Include="DAL\C_DanhMucTaiLapMD.cs" />
     <Compile Include="DAL\C_DanhMucVatTu.cs" />
     <Compile Include="DAL\C_DonGiaVatTu.cs" />
     <Compile Include="DAL\C_DonKhachHang.cs" />
@@ -130,6 +131,7 @@
     <Compile Include="Utilities\AddValueCombox.cs" />
     <Compile Include="Utilities\DataGridV.cs" />
     <Compile Include="Utilities\DateToString.cs" />
+    <Compile Include="Utilities\FormatNumber.cs" />
     <Compile Include="Utilities\LogIn.cs" />
     <Compile Include="frm_Main.cs">
       <SubType>Form</SubType>
@@ -209,6 +211,12 @@
     </Compile>
     <Compile Include="View\Users\KEHOACH\HS_KhachHang.Designer.cs">
       <DependentUpon>HS_KhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Users\TinhDuToan\tab_DanhMucTaiLapMD.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Users\TinhDuToan\tab_DanhMucTaiLapMD.Designer.cs">
+      <DependentUpon>tab_DanhMucTaiLapMD.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Users\TinhDuToan\uct_TinhDuToan.cs">
       <SubType>UserControl</SubType>
@@ -314,6 +322,9 @@
     <EmbeddedResource Include="View\Users\KEHOACH\HS_KhachHang.resx">
       <DependentUpon>HS_KhachHang.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\TinhDuToan\tab_DanhMucTaiLapMD.resx">
+      <DependentUpon>tab_DanhMucTaiLapMD.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\TinhDuToan\uct_TinhDuToan.resx">
       <DependentUpon>uct_TinhDuToan.cs</DependentUpon>

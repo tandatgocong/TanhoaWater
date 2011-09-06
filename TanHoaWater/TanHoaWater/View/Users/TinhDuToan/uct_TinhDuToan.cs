@@ -32,6 +32,12 @@ namespace TanHoaWater.View.Users.TinhDuToan
                 tabControl1.SelectedTabIndex = 1;
                 tab2select();
             }
+            if (tab == 3)
+            {
+                tabControl1.SelectedTabIndex = 2;
+                panelTaiLapMD.Controls.Clear();
+                panelTaiLapMD.Controls.Add(new tab_DanhMucTaiLapMD());
+            }
         }
         private void PageTotal()
         {
@@ -84,7 +90,7 @@ namespace TanHoaWater.View.Users.TinhDuToan
                 bool checkBovt = false;
                 if (this.checkBoVT.Checked)
                     checkBovt = true;
-                rows = DAL.C_DanhMucVatTu.TotalSearch(this.txtMaHieuVT.Text, this.txtMaHieuDG.Text, txtTenVT.Text, this.cbDVT.Text.Trim(), this.cbNhomVT.Text.Trim(),checkBovt, FirstRow, pageSize);
+                rows = DAL.C_DanhMucVatTu.TotalSearch(this.txtMaHieuVT.Text, this.txtMaHieuDG.Text, txtTenVT.Text, this.cbDVT.Text.Trim(), this.cbNhomVT.Text.Trim(),checkBovt);
                 GridDanhMucVT.DataSource = DAL.C_DanhMucVatTu.search(this.txtMaHieuVT.Text, this.txtMaHieuDG.Text, txtTenVT.Text, this.cbDVT.Text, this.cbNhomVT.Text, checkBovt,FirstRow, pageSize);
                 this.totalRecord.Text = "Tống Cộng Có " + rows + " Danh Mục Vật Tư. ";
                 Utilities.DataGridV.formatRows(GridDanhMucVT);
@@ -97,17 +103,12 @@ namespace TanHoaWater.View.Users.TinhDuToan
                 log.Error(ex);
             }
         }
-        private void tabTinhDuToan_Click(object sender, EventArgs e)
-        {
-            this.panelTinhDuToan.Visible = true;
-            this.panelDanhMucVT.Visible = false;
-
-        }
+       
         void tab2select() {
 
             try
             {
-                rows = DAL.C_DanhMucVatTu.TotalSearch("", "", "", "", "", false, FirstRow, pageSize);
+                rows = DAL.C_DanhMucVatTu.TotalSearch("", "", "", "", "", false);
                 GridDanhMucVT.DataSource = DAL.C_DanhMucVatTu.search("", "", "", "", "", false, FirstRow, pageSize);
                 this.totalRecord.Text = "Tống Cộng Có " + rows + " Danh Mục Vật Tư. ";
                 Utilities.DataGridV.formatRows(GridDanhMucVT);
@@ -170,11 +171,6 @@ namespace TanHoaWater.View.Users.TinhDuToan
         private void tabItem5_Click(object sender, EventArgs e)
         {
             visibleTab(false, false, false, false, true);
-        }
-
-        private void tabNhapPhuiDao_Click(object sender, EventArgs e)
-        {
-            visibleTab(false, false, true, false, false);
         }
 
         private void tabCacCongTac_Click(object sender, EventArgs e)
@@ -445,19 +441,6 @@ namespace TanHoaWater.View.Users.TinhDuToan
             }
         }
 
-         
-
-        private void GridPhuiDao_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            cbyy.Top = this.GridPhuiDao.Top + GridPhuiDao.GetRowDisplayRectangle(e.RowIndex, true).Top;
-            cbyy.Left = this.GridPhuiDao.Left + GridPhuiDao.GetColumnDisplayRectangle(e.ColumnIndex, true).Left;
-            cbyy.Width = GridPhuiDao.Columns[e.ColumnIndex].Width;
-            cbyy.Height = GridPhuiDao.Rows[e.RowIndex].Height;
-            cbyy.BringToFront();
-                //  cmbTaiKhoanLuoi.SelectedValue = DatagirdThem.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
-          
-        }
-
         public string catchuoi(string line) {           
             string[] words = Regex.Split(line, "______");
             return words[1];
@@ -494,7 +477,7 @@ namespace TanHoaWater.View.Users.TinhDuToan
                 GridBoVT.DataSource = table;
                 Utilities.DataGridV.formatRows(GridBoVT);
             }
-            catch (Exception ex){
+            catch (Exception ){
             }
 
         }
@@ -636,6 +619,80 @@ namespace TanHoaWater.View.Users.TinhDuToan
             }
         }
 
+        private void tabTinhDuToan_Click(object sender, EventArgs e)
+        {
+            this.panelTinhDuToan.Visible = true;
+            this.panelDanhMucVT.Visible = false;
+            this.tabControl2.SelectedTabIndex = 0;
+            this.cbNhomVatTu.DataSource = DAL.C_DanhMucVatTu.getListDanhMucVatCombobox();
+            this.cbNhomVatTu.DisplayMember = "TENVT";
+            this.cbNhomVatTu.ValueMember = "MAHIEU";
+
+        }
+        private void tabNhapPhuiDao_Click(object sender, EventArgs e)
+        {
+            visibleTab(false, false, true, false, false);
+            this.cbNhomVatTu.DataSource = DAL.C_DanhMucVatTu.getListDanhMucVatCombobox();
+            this.cbNhomVatTu.DisplayMember = "TENVT";
+            this.cbNhomVatTu.ValueMember = "MAHIEU";
+        }
+        private void GridPhuiDao_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (e.RowIndex < 0) return;
+                else if (e.ColumnIndex == 1)
+                {
+                    PhuiDaocbMaKetCau.Top = this.GridPhuiDao.Top + GridPhuiDao.GetRowDisplayRectangle(e.RowIndex, true).Top;
+                    PhuiDaocbMaKetCau.Left = this.GridPhuiDao.Left + GridPhuiDao.GetColumnDisplayRectangle(e.ColumnIndex, true).Left;
+                    PhuiDaocbMaKetCau.Width = GridPhuiDao.Columns[e.ColumnIndex].Width;
+                    PhuiDaocbMaKetCau.Height = GridPhuiDao.Rows[e.RowIndex].Height;
+                    PhuiDaocbMaKetCau.BringToFront();
+
+                }
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void PhuiDaocbMaKetCau_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                //cbNhomVatTu.Visible = false;
+                //if (table != null)
+                //{
+                //    DataRow rows = table.NewRow();
+                //    rows["MABOVT"] = mahieuvtDG;
+                //    rows["MAHIEU"] = this.cbNhomVatTu.SelectedValue + "";
+                //    rows["TENVT"] = catchuoi(this.cbNhomVatTu.Text + "");
+                //    rows["DM"] = 1;
+                //    table.Rows.Add(rows);
+                //}
+                //else
+                //{
+                //    table = new DataTable();
+                //    DataRow rows = table.NewRow();
+                //    rows["MABOVT"] = mahieuvtDG;
+                //    rows["MAHIEU"] = this.cbNhomVatTu.SelectedValue + "";
+                //    rows["TENVT"] = catchuoi(this.cbNhomVatTu.Text + "");
+                //    rows["DM"] = 1;
+                //    table.Rows.Add(rows);
+                //}
+                //GridBoVT.DataSource = table;
+                //Utilities.DataGridV.formatRows(GridBoVT);
+            }
+            catch (Exception )
+            {
+            }
+        }
+
+        private void tabTaiLapMatDuong_Click(object sender, EventArgs e)
+        {
+            panelTaiLapMD.Controls.Clear();
+            panelTaiLapMD.Controls.Add(new tab_DanhMucTaiLapMD());
+        }
         //private void GridPhuiDao_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
         //{
         //    try

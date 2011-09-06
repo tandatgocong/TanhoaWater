@@ -117,7 +117,7 @@ namespace TanHoaWater.DAL
             return dataset.Tables[0];
         }
        
-        public static int TotalSearch(string mahieu, string mhDonGia, string tenvt, string donvitinh, string nhomvt, bool checkBovt, int FirstRow, int pageSize)
+        public static int TotalSearch(string mahieu, string mhDonGia, string tenvt, string donvitinh, string nhomvt, bool checkBovt)
         {
             TanHoaDataContext db = new TanHoaDataContext();
             SqlConnection conn = new SqlConnection(db.Connection.ConnectionString);
