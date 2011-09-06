@@ -77,25 +77,29 @@ namespace TanHoaWater.DAL
             }
             return false;
         }
-      
-        public static DataTable search(string mahieu, string mhDonGia, string tenvt, string donvitinh, string nhomvt,   int FirstRow, int pageSize)
+
+        public static DataTable search(string mahieu, string mhDonGia, string tenvt, string donvitinh, string nhomvt, bool checkBovt, int FirstRow, int pageSize)
         {
             TanHoaDataContext db = new TanHoaDataContext();
             db.Connection.Open();
             string sql = " SELECT MAHIEU,MAHDG,UPPER(TENVT) AS 'TENVT',DVT,NHOMVT,BOVT";
             sql += " FROM DANHMUCVATTU ";
             sql += " WHERE TENVT IS NOT NULL ";
+            if (checkBovt == true) {
+                sql += " AND BOVT ='True'";
+            }
+           
             if (!"".Equals(mahieu))
             {
-                sql += " AND MAHIEU LIKE'%" + mahieu + "%'";
+                sql += " AND MAHIEU LIKE N'%" + mahieu + "%'";
             }
             if (!"".Equals(mhDonGia))
             {
-                sql += " AND MAHDG LIKE'%" + mhDonGia + "%'";
+                sql += " AND MAHDG LIKE N'%" + mhDonGia + "%'";
             }
             if (!"".Equals(tenvt))
             {
-                sql += " AND TENVT LIKE '%" + tenvt + "%'";
+                sql += " AND TENVT LIKE N'%" + tenvt + "%'";
             }
             if (!"".Equals(donvitinh))
             {
@@ -113,26 +117,29 @@ namespace TanHoaWater.DAL
             return dataset.Tables[0];
         }
        
-        public static int TotalSearch(string mahieu, string mhDonGia, string tenvt, string donvitinh, string nhomvt,  int FirstRow, int pageSize)
+        public static int TotalSearch(string mahieu, string mhDonGia, string tenvt, string donvitinh, string nhomvt, bool checkBovt, int FirstRow, int pageSize)
         {
             TanHoaDataContext db = new TanHoaDataContext();
             SqlConnection conn = new SqlConnection(db.Connection.ConnectionString);
             conn.Open();
             string sql = " SELECT COUNT(*) ";
             sql += " FROM DANHMUCVATTU ";
-            sql += " WHERE TENVT IS NOT NULL ";            
-
+            sql += " WHERE TENVT IS NOT NULL ";
+            if (checkBovt == true)
+            {
+                sql += " AND BOVT ='True'";
+            }
             if (!"".Equals(mahieu))
             {
-                sql += " AND MAHIEU LIKE'%" + mahieu + "%'";
+                sql += " AND MAHIEU LIKE N'%" + mahieu + "%'";
             }
             if (!"".Equals(mhDonGia))
             {
-                sql += " AND MAHDG LIKE'%" + mhDonGia + "%'";
+                sql += " AND MAHDG LIKE N'%" + mhDonGia + "%'";
             }
             if (!"".Equals(tenvt))
             {
-                sql += " AND TENVT LIKE '%" + tenvt + "%'";
+                sql += " AND TENVT LIKE N'%" + tenvt + "%'";
             }
             if (!"".Equals(donvitinh))
             {

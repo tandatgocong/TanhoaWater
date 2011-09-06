@@ -81,8 +81,11 @@ namespace TanHoaWater.View.Users.TinhDuToan
         public void loadDanhMucVatTu() {
             try
             {
-                rows = DAL.C_DanhMucVatTu.TotalSearch(this.txtMaHieuVT.Text, this.txtMaHieuDG.Text, txtTenVT.Text, this.cbDVT.Text.Trim(), this.cbNhomVT.Text.Trim(), FirstRow, pageSize);
-                GridDanhMucVT.DataSource = DAL.C_DanhMucVatTu.search(this.txtMaHieuVT.Text, this.txtMaHieuDG.Text, txtTenVT.Text, this.cbDVT.Text, this.cbNhomVT.Text, FirstRow, pageSize);
+                bool checkBovt = false;
+                if (this.checkBoVT.Checked)
+                    checkBovt = true;
+                rows = DAL.C_DanhMucVatTu.TotalSearch(this.txtMaHieuVT.Text, this.txtMaHieuDG.Text, txtTenVT.Text, this.cbDVT.Text.Trim(), this.cbNhomVT.Text.Trim(),checkBovt, FirstRow, pageSize);
+                GridDanhMucVT.DataSource = DAL.C_DanhMucVatTu.search(this.txtMaHieuVT.Text, this.txtMaHieuDG.Text, txtTenVT.Text, this.cbDVT.Text, this.cbNhomVT.Text, checkBovt,FirstRow, pageSize);
                 this.totalRecord.Text = "Tống Cộng Có " + rows + " Danh Mục Vật Tư. ";
                 Utilities.DataGridV.formatRows(GridDanhMucVT);
                 PageTotal();
@@ -104,8 +107,8 @@ namespace TanHoaWater.View.Users.TinhDuToan
 
             try
             {
-                rows = DAL.C_DanhMucVatTu.TotalSearch("", "", "", "", "", FirstRow, pageSize);
-                GridDanhMucVT.DataSource = DAL.C_DanhMucVatTu.search("", "", "", "", "", FirstRow, pageSize);
+                rows = DAL.C_DanhMucVatTu.TotalSearch("", "", "", "", "", false, FirstRow, pageSize);
+                GridDanhMucVT.DataSource = DAL.C_DanhMucVatTu.search("", "", "", "", "", false, FirstRow, pageSize);
                 this.totalRecord.Text = "Tống Cộng Có " + rows + " Danh Mục Vật Tư. ";
                 Utilities.DataGridV.formatRows(GridDanhMucVT);
                 this.cbDVT.DataSource = DAL.C_DonViTinh.getDVT();
@@ -193,8 +196,8 @@ namespace TanHoaWater.View.Users.TinhDuToan
         {
            try
             {
-                string bovt = GridDanhMucVT.Rows[e.RowIndex].Cells[3].Value.ToString();
-                if ("Bộ".Equals(bovt))
+                string bovt = GridDanhMucVT.Rows[e.RowIndex].Cells[5].Value.ToString();
+                if ("True".Equals(bovt))
                 {
                     groupDGVT.Visible = false;
                     groupPanelBoVT.Visible = true;
@@ -436,8 +439,9 @@ namespace TanHoaWater.View.Users.TinhDuToan
                 }
                 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                MessageBox.Show(ex.ToString());
             }
         }
 
@@ -475,6 +479,7 @@ namespace TanHoaWater.View.Users.TinhDuToan
                     rows["MABOVT"] = mahieuvtDG;
                     rows["MAHIEU"] = this.cbNhomVatTu.SelectedValue + "";
                     rows["TENVT"] = catchuoi(this.cbNhomVatTu.Text + "");
+                    rows["DM"] = 1;
                     table.Rows.Add(rows);
                 }
                 else {
@@ -483,14 +488,13 @@ namespace TanHoaWater.View.Users.TinhDuToan
                     rows["MABOVT"] = mahieuvtDG;
                     rows["MAHIEU"] = this.cbNhomVatTu.SelectedValue + "";
                     rows["TENVT"] = catchuoi(this.cbNhomVatTu.Text + "");
+                    rows["DM"] = 1;
                     table.Rows.Add(rows);
                 }               
                 GridBoVT.DataSource = table;
                 Utilities.DataGridV.formatRows(GridBoVT);
             }
-            catch (Exception ex)
-            {
-                
+            catch (Exception ex){
             }
 
         }
@@ -511,6 +515,7 @@ namespace TanHoaWater.View.Users.TinhDuToan
                         dmbovt.MABOVT = mahieuvtDG;
                         dmbovt.MAHIEU = mahieu;
                         dmbovt.TENVT = this.GridBoVT.Rows[i].Cells[2].Value + "";
+                        dmbovt.DM =  int.Parse(this.GridBoVT.Rows[i].Cells[3].Value+"");
                         dmbovt.CREATEBY = DAL.C_USERS._userName;
                         dmbovt.CREATEDATE = DateTime.Now.Date;
                         DAL.C_DanhMucBoVT.InsertBoVT(dmbovt);
@@ -534,6 +539,101 @@ namespace TanHoaWater.View.Users.TinhDuToan
             GridDonGiaVT.Rows[GridDonGiaVT.CurrentRow.Index].Cells[0].Value = GridDonGiaVT.CurrentRow.Index + 1;
             GridDonGiaVT.Rows[GridDonGiaVT.CurrentRow.Index].Cells[1].Value = mahieuvtDG;
         
+        }
+
+
+        private void GridBoVT_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+        {
+             try
+             {
+                 txtKeypress = e.Control;
+                 if (GridBoVT.CurrentCell.OwningColumn.Name == "bovt_dinhmuc")
+                 {
+                     txtKeypress.KeyPress -= KeyPressHandle;
+                     txtKeypress.KeyPress += KeyPressHandle;
+                 }
+                 else
+                 {
+                     txtKeypress.KeyPress -= KeyPressHandle;
+                 }
+             }
+             catch (Exception)
+             {
+             }
+        }
+
+        private void txtMaHieuVT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13) {
+                loadDanhMucVatTu();
+            }
+        }
+
+        private void txtMaHieuDG_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            try
+            {
+                if (e.KeyChar == 13)
+                {
+                    loadDanhMucVatTu();
+                }
+            }
+            catch (Exception)
+            {
+
+            }
+            
+        }
+
+        private void txtTenVT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            try
+            {
+                if (e.KeyChar == 13)
+                {
+                    loadDanhMucVatTu();
+                }
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+
+        private void cbDVT_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                 loadDanhMucVatTu();           
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+
+        private void cbNhomVT_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                loadDanhMucVatTu();               
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+
+        private void checkBoVT_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                loadDanhMucVatTu();
+            }
+            catch (Exception)
+            {
+
+            }
         }
 
         //private void GridPhuiDao_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
