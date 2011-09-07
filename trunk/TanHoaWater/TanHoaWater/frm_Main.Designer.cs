@@ -243,9 +243,11 @@
             this.btTaiLapMatBang.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(22)))), ((int)(((byte)(111)))));
             this.btTaiLapMatBang.Location = new System.Drawing.Point(210, 88);
             this.btTaiLapMatBang.Name = "btTaiLapMatBang";
+            this.btTaiLapMatBang.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.F7);
             this.btTaiLapMatBang.Size = new System.Drawing.Size(161, 26);
             this.btTaiLapMatBang.TabIndex = 23;
-            this.btTaiLapMatBang.Text = "ĐG Tái Lập Mặt Bằng";
+            this.btTaiLapMatBang.Text = " [F7] ĐG Tái Lập MB";
+            this.btTaiLapMatBang.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
             this.btTaiLapMatBang.Click += new System.EventHandler(this.btTaiLapMatBang_Click);
             // 
             // pictureBox15
@@ -265,9 +267,10 @@
             this.btDanhMucVT.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(22)))), ((int)(((byte)(111)))));
             this.btDanhMucVT.Location = new System.Drawing.Point(210, 49);
             this.btDanhMucVT.Name = "btDanhMucVT";
+            this.btDanhMucVT.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.F6);
             this.btDanhMucVT.Size = new System.Drawing.Size(161, 26);
             this.btDanhMucVT.TabIndex = 21;
-            this.btDanhMucVT.Text = "Danh Mục Vật Tư";
+            this.btDanhMucVT.Text = "[F6] Danh Mục Vật Tư ";
             this.btDanhMucVT.Click += new System.EventHandler(this.btDanhMucVT_Click);
             // 
             // pictureBox14
@@ -287,9 +290,11 @@
             this.btTinhDuToan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(22)))), ((int)(((byte)(111)))));
             this.btTinhDuToan.Location = new System.Drawing.Point(210, 9);
             this.btTinhDuToan.Name = "btTinhDuToan";
+            this.btTinhDuToan.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.F5);
             this.btTinhDuToan.Size = new System.Drawing.Size(161, 26);
             this.btTinhDuToan.TabIndex = 15;
-            this.btTinhDuToan.Text = "Tính Dự Toán";
+            this.btTinhDuToan.Text = "[F5]Tính Dự Toán ";
+            this.btTinhDuToan.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
             this.btTinhDuToan.Click += new System.EventHandler(this.btTinhDuToan_Click);
             // 
             // pictureBox2
@@ -309,9 +314,11 @@
             this.btTimKiem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(22)))), ((int)(((byte)(111)))));
             this.btTimKiem.Location = new System.Drawing.Point(23, 128);
             this.btTimKiem.Name = "btTimKiem";
+            this.btTimKiem.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.F4);
             this.btTimKiem.Size = new System.Drawing.Size(161, 26);
             this.btTimKiem.TabIndex = 3;
-            this.btTimKiem.Text = "Tìm Kiếm";
+            this.btTimKiem.Text = "[F4] Tìm Kiếm";
+            this.btTimKiem.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
             this.btTimKiem.Click += new System.EventHandler(this.btTimKiem_Click);
             // 
             // btGiaoHoSo
@@ -322,9 +329,11 @@
             this.btGiaoHoSo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(22)))), ((int)(((byte)(111)))));
             this.btGiaoHoSo.Location = new System.Drawing.Point(23, 9);
             this.btGiaoHoSo.Name = "btGiaoHoSo";
+            this.btGiaoHoSo.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.F1);
             this.btGiaoHoSo.Size = new System.Drawing.Size(161, 26);
             this.btGiaoHoSo.TabIndex = 1;
-            this.btGiaoHoSo.Text = "Giao SĐV";
+            this.btGiaoHoSo.Text = "[F1] Giao SĐV";
+            this.btGiaoHoSo.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
             this.btGiaoHoSo.Click += new System.EventHandler(this.btGiaoHoSo_Click);
             // 
             // btTheoDoiTHTK
@@ -337,7 +346,8 @@
             this.btTheoDoiTHTK.Name = "btTheoDoiTHTK";
             this.btTheoDoiTHTK.Size = new System.Drawing.Size(161, 26);
             this.btTheoDoiTHTK.TabIndex = 2;
-            this.btTheoDoiTHTK.Text = "Theo Dõi KS Thiết Kế";
+            this.btTheoDoiTHTK.Text = "[F3] Theo Dõi KS -TK";
+            this.btTheoDoiTHTK.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
             this.btTheoDoiTHTK.Click += new System.EventHandler(this.btTheoDoiTHTK_Click);
             // 
             // bt_SDVTraHS
@@ -348,9 +358,11 @@
             this.bt_SDVTraHS.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(22)))), ((int)(((byte)(111)))));
             this.bt_SDVTraHS.Location = new System.Drawing.Point(23, 49);
             this.bt_SDVTraHS.Name = "bt_SDVTraHS";
+            this.bt_SDVTraHS.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.F2);
             this.bt_SDVTraHS.Size = new System.Drawing.Size(161, 26);
             this.bt_SDVTraHS.TabIndex = 2;
-            this.bt_SDVTraHS.Text = "SĐV Trả HS";
+            this.bt_SDVTraHS.Text = "[F2] SĐV Trả HS";
+            this.bt_SDVTraHS.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
             this.bt_SDVTraHS.Click += new System.EventHandler(this.bt_SDVTraHS_Click);
             // 
             // pictureBox1
@@ -444,9 +456,11 @@
             this.timkiemDOn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(22)))), ((int)(((byte)(111)))));
             this.timkiemDOn.Location = new System.Drawing.Point(214, 46);
             this.timkiemDOn.Name = "timkiemDOn";
+            this.timkiemDOn.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.F6);
             this.timkiemDOn.Size = new System.Drawing.Size(161, 26);
             this.timkiemDOn.TabIndex = 7;
-            this.timkiemDOn.Text = "Tìm Kiếm";
+            this.timkiemDOn.Text = "[F6] Tìm Kiếm";
+            this.timkiemDOn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
             this.timkiemDOn.Click += new System.EventHandler(this.timkiemDOn_Click);
             // 
             // btChuyenDon
@@ -457,9 +471,11 @@
             this.btChuyenDon.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(22)))), ((int)(((byte)(111)))));
             this.btChuyenDon.Location = new System.Drawing.Point(22, 84);
             this.btChuyenDon.Name = "btChuyenDon";
+            this.btChuyenDon.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.F3);
             this.btChuyenDon.Size = new System.Drawing.Size(161, 26);
             this.btChuyenDon.TabIndex = 6;
-            this.btChuyenDon.Text = "Chuyển Đơn";
+            this.btChuyenDon.Text = "[F3] Chuyển Đơn";
+            this.btChuyenDon.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
             this.btChuyenDon.Click += new System.EventHandler(this.btChuyenDon_Click);
             // 
             // khvt_TraCuuHS
@@ -470,9 +486,11 @@
             this.khvt_TraCuuHS.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(22)))), ((int)(((byte)(111)))));
             this.khvt_TraCuuHS.Location = new System.Drawing.Point(214, 121);
             this.khvt_TraCuuHS.Name = "khvt_TraCuuHS";
+            this.khvt_TraCuuHS.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.F8);
             this.khvt_TraCuuHS.Size = new System.Drawing.Size(161, 26);
             this.khvt_TraCuuHS.TabIndex = 4;
-            this.khvt_TraCuuHS.Text = "Tra Cứu Đơn KH";
+            this.khvt_TraCuuHS.Text = "[F8] Tra Cứu Đơn KH";
+            this.khvt_TraCuuHS.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
             this.khvt_TraCuuHS.Click += new System.EventHandler(this.khvt_TraCuuHS_Click);
             // 
             // vtth_HoSoTaiXet
@@ -483,9 +501,11 @@
             this.vtth_HoSoTaiXet.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(22)))), ((int)(((byte)(111)))));
             this.vtth_HoSoTaiXet.Location = new System.Drawing.Point(214, 8);
             this.vtth_HoSoTaiXet.Name = "vtth_HoSoTaiXet";
+            this.vtth_HoSoTaiXet.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.F5);
             this.vtth_HoSoTaiXet.Size = new System.Drawing.Size(161, 26);
             this.vtth_HoSoTaiXet.TabIndex = 3;
-            this.vtth_HoSoTaiXet.Text = "Hồ Sơ Tái Xét";
+            this.vtth_HoSoTaiXet.Text = "[F5] Hồ Sơ Tái Xét";
+            this.vtth_HoSoTaiXet.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
             this.vtth_HoSoTaiXet.Click += new System.EventHandler(this.vtth_HoSoTaiXet_Click);
             // 
             // vtth_DotNhanDon
@@ -496,9 +516,11 @@
             this.vtth_DotNhanDon.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(22)))), ((int)(((byte)(111)))));
             this.vtth_DotNhanDon.Location = new System.Drawing.Point(22, 8);
             this.vtth_DotNhanDon.Name = "vtth_DotNhanDon";
+            this.vtth_DotNhanDon.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.F1);
             this.vtth_DotNhanDon.Size = new System.Drawing.Size(161, 26);
             this.vtth_DotNhanDon.TabIndex = 1;
-            this.vtth_DotNhanDon.Text = "Đợt Nhận Đơn";
+            this.vtth_DotNhanDon.Text = "[F1] Đợt Nhận Đơn";
+            this.vtth_DotNhanDon.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
             this.vtth_DotNhanDon.Click += new System.EventHandler(this.vtth_DotNhanDon_Click);
             // 
             // vtth_HoSoTraNgai
@@ -509,9 +531,11 @@
             this.vtth_HoSoTraNgai.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(22)))), ((int)(((byte)(111)))));
             this.vtth_HoSoTraNgai.Location = new System.Drawing.Point(22, 121);
             this.vtth_HoSoTraNgai.Name = "vtth_HoSoTraNgai";
+            this.vtth_HoSoTraNgai.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.F4);
             this.vtth_HoSoTraNgai.Size = new System.Drawing.Size(161, 26);
             this.vtth_HoSoTraNgai.TabIndex = 2;
-            this.vtth_HoSoTraNgai.Text = "Hồ Sơ Trở Ngại";
+            this.vtth_HoSoTraNgai.Text = "[F4] Hồ Sơ Trở Ngại";
+            this.vtth_HoSoTraNgai.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
             this.vtth_HoSoTraNgai.Click += new System.EventHandler(this.vtth_HoSoTraNgai_Click);
             // 
             // vtth_NhanDonKH
@@ -522,9 +546,11 @@
             this.vtth_NhanDonKH.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(22)))), ((int)(((byte)(111)))));
             this.vtth_NhanDonKH.Location = new System.Drawing.Point(22, 46);
             this.vtth_NhanDonKH.Name = "vtth_NhanDonKH";
+            this.vtth_NhanDonKH.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.F2);
             this.vtth_NhanDonKH.Size = new System.Drawing.Size(161, 26);
             this.vtth_NhanDonKH.TabIndex = 2;
-            this.vtth_NhanDonKH.Text = "Nhận Đơn KH";
+            this.vtth_NhanDonKH.Text = "[F2] Nhận Đơn KH";
+            this.vtth_NhanDonKH.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
             this.vtth_NhanDonKH.Click += new System.EventHandler(this.vtth_NhanDonKH_Click);
             // 
             // pictureBox7
@@ -589,9 +615,11 @@
             this.khvt_BaoCao.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(22)))), ((int)(((byte)(111)))));
             this.khvt_BaoCao.Location = new System.Drawing.Point(214, 84);
             this.khvt_BaoCao.Name = "khvt_BaoCao";
+            this.khvt_BaoCao.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.F7);
             this.khvt_BaoCao.Size = new System.Drawing.Size(161, 26);
             this.khvt_BaoCao.TabIndex = 5;
-            this.khvt_BaoCao.Text = "Báo Cáo";
+            this.khvt_BaoCao.Text = "[F7] Báo Cáo";
+            this.khvt_BaoCao.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
             this.khvt_BaoCao.Click += new System.EventHandler(this.khvt_BaoCao_Click);
             // 
             // pictureBox13

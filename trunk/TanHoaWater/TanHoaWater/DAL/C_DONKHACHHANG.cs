@@ -277,10 +277,27 @@ namespace TanHoaWater.DAL
                 db.SubmitChanges();
                 return true;
             }
-            catch (Exception ex){
+            catch (Exception ex)
+            {
                 log.Error("Cap nhat tro ngai tk loi " + ex.Message);
             }
             return false;
+        }
+
+        public static DataTable finbyDonKHTinhDuToan(string shs)
+        {
+            string sql = " SELECT ttk.MADOT, ttk.SHS, HOTEN, kh.DIENTHOAI,";
+            sql += " SONHA,DUONG,p.TENPHUONG,q.TENQUAN,SOHO,lkh.TENLOAI,DANHBO,lhs.TENLOAI,FULLNAME";// end 12
+            sql += " FROM TOTHIETKE ttk, DON_KHACHHANG kh,QUAN q,PHUONG p, LOAI_HOSO lhs, USERS us, LOAI_KHACHHANG lkh ";
+            sql += " WHERE kh.LOAIKH=lkh.MALOAI AND  kh.QUAN = q.MAQUAN AND q.MAQUAN=p.MAQUAN AND kh.PHUONG=p.MAPHUONG AND lhs.MALOAI=kh.LOAIHOSO AND ttk.SOHOSO=kh.SOHOSO AND us.USERNAME=ttk.SODOVIEN";
+            sql += " AND ttk.SHS ='" + shs +"'";
+            TanHoaDataContext db = new TanHoaDataContext();
+            db.Connection.Open();
+            SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            db.Connection.Close();
+            return table;
         }
     }
 }
