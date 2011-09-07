@@ -81,6 +81,9 @@ namespace TanHoaWater.Database
     partial void InsertDANHMUCTAILAPMATDUONG(DANHMUCTAILAPMATDUONG instance);
     partial void UpdateDANHMUCTAILAPMATDUONG(DANHMUCTAILAPMATDUONG instance);
     partial void DeleteDANHMUCTAILAPMATDUONG(DANHMUCTAILAPMATDUONG instance);
+    partial void InsertLOAISD(LOAISD instance);
+    partial void UpdateLOAISD(LOAISD instance);
+    partial void DeleteLOAISD(LOAISD instance);
     #endregion
 		
 		public TanHoaDataContext() : 
@@ -278,6 +281,14 @@ namespace TanHoaWater.Database
 			get
 			{
 				return this.GetTable<DANHMUCTAILAPMATDUONG>();
+			}
+		}
+		
+		public System.Data.Linq.Table<LOAISD> LOAISDs
+		{
+			get
+			{
+				return this.GetTable<LOAISD>();
 			}
 		}
 	}
@@ -7474,6 +7485,92 @@ namespace TanHoaWater.Database
 					this._MODIFYDATE = value;
 					this.SendPropertyChanged("MODIFYDATE");
 					this.OnMODIFYDATEChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.LOAISD")]
+	public partial class LOAISD : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _MALOAI;
+		
+		private string _TENLOAI;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMALOAIChanging(string value);
+    partial void OnMALOAIChanged();
+    partial void OnTENLOAIChanging(string value);
+    partial void OnTENLOAIChanged();
+    #endregion
+		
+		public LOAISD()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MALOAI", DbType="VarChar(5) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string MALOAI
+		{
+			get
+			{
+				return this._MALOAI;
+			}
+			set
+			{
+				if ((this._MALOAI != value))
+				{
+					this.OnMALOAIChanging(value);
+					this.SendPropertyChanging();
+					this._MALOAI = value;
+					this.SendPropertyChanged("MALOAI");
+					this.OnMALOAIChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENLOAI", DbType="NVarChar(250)")]
+		public string TENLOAI
+		{
+			get
+			{
+				return this._TENLOAI;
+			}
+			set
+			{
+				if ((this._TENLOAI != value))
+				{
+					this.OnTENLOAIChanging(value);
+					this.SendPropertyChanging();
+					this._TENLOAI = value;
+					this.SendPropertyChanged("TENLOAI");
+					this.OnTENLOAIChanged();
 				}
 			}
 		}

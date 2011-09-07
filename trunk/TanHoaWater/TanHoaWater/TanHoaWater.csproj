@@ -103,6 +103,7 @@
     <Compile Include="DAL\C_DotNhanDon.cs" />
     <Compile Include="DAL\C_LoaiHoSo.cs" />
     <Compile Include="DAL\C_LoaiKhachHang.cs" />
+    <Compile Include="DAL\C_LoaiSD.cs" />
     <Compile Include="DAL\C_NhomVatTu.cs" />
     <Compile Include="DAL\C_PhongBan.cs" />
     <Compile Include="DAL\C_Phuong.cs" />
@@ -115,6 +116,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>TanHoa.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Roles\TTK.cs">
       <SubType>UserControl</SubType>
@@ -275,6 +282,9 @@
     <None Include="Database\TanHoa.dbml.layout">
       <DependentUpon>TanHoa.dbml</DependentUpon>
     </None>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Roles\TTK.resx">
       <DependentUpon>TTK.cs</DependentUpon>
     </EmbeddedResource>
