@@ -61,13 +61,20 @@
       <HintPath>..\..\..\lib\DevComponents.DotNetBar2.dll</HintPath>
     </Reference>
     <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
-    <Reference Include="IrisSkin2, Version=2006.3.22.45, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="IrisSkin2, Version=2006.3.22.45, Culture=neutral, PublicKeyToken=0ed4c5f2bbf81ac0, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\IrisSkin2.dll</HintPath>
+    </Reference>
     <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\log4net.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="String_Indentity, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\String_Indentity.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -103,12 +110,14 @@
     <Compile Include="DAL\C_DotNhanDon.cs" />
     <Compile Include="DAL\C_LoaiHoSo.cs" />
     <Compile Include="DAL\C_LoaiKhachHang.cs" />
+    <Compile Include="DAL\C_LoaiNhanDon.cs" />
     <Compile Include="DAL\C_LoaiSD.cs" />
     <Compile Include="DAL\C_NhomVatTu.cs" />
     <Compile Include="DAL\C_PhongBan.cs" />
     <Compile Include="DAL\C_Phuong.cs" />
     <Compile Include="DAL\C_Quan.cs" />
     <Compile Include="DAL\C_Role.cs" />
+    <Compile Include="DAL\C_TenDuong.cs" />
     <Compile Include="DAL\C_ToThietKe.cs" />
     <Compile Include="DAL\C_USERS.cs" />
     <Compile Include="DAL\TestConection.cs" />
@@ -148,6 +157,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\Users\KEHOACH\frm_BienNhanDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Users\KEHOACH\frm_BienNhanDon.Designer.cs">
+      <DependentUpon>frm_BienNhanDon.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Users\KEHOACH\Report\rpt_TroNgaiQuan.cs">
       <DependentUpon>rpt_TroNgaiQuan.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -290,6 +305,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Roles\VTTH.resx">
       <DependentUpon>VTTH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\KEHOACH\frm_BienNhanDon.resx">
+      <DependentUpon>frm_BienNhanDon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\KEHOACH\Report\rpt_TroNgaiQuan.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

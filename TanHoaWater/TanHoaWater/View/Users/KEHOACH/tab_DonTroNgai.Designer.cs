@@ -85,10 +85,11 @@
             this.panel8.Controls.Add(this.label8);
             this.panel8.Controls.Add(this.label9);
             this.panel8.Controls.Add(this.txtSoHo);
-            this.panel8.Location = new System.Drawing.Point(4, 4);
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel8.Location = new System.Drawing.Point(0, 0);
             this.panel8.Margin = new System.Windows.Forms.Padding(4);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(592, 604);
+            this.panel8.Size = new System.Drawing.Size(1036, 695);
             this.panel8.TabIndex = 123;
             // 
             // txt_sdv

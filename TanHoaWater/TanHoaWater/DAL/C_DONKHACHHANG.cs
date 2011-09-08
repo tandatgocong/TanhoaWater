@@ -269,7 +269,7 @@ namespace TanHoaWater.DAL
                 DON_KHACHHANG donkh = data.SingleOrDefault();
                 if (donkh != null)
                 {
-                    donkh.TRONGAI = true;
+                    donkh.TRONGAITHIETKE = true;
                     donkh.NOIDUNGTRONGAI = lydotrongai;
                     donkh.MODIFYBY = DAL.C_USERS._userName;
                     donkh.MODIFYDATE = DateTime.Now.Date;
