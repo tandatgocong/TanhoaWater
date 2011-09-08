@@ -679,31 +679,33 @@ namespace TanHoaWater.View.Users.TinhDuToan
         /// <param name="sender"></param>
         /// <param name="e"></param>
 
-        private void GridPhuiDao_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (GridPhuiDao.CurrentCell.ColumnIndex == 2)
-            {
-                if ((e.KeyChar == 13 || e.KeyChar == 9) && GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells[0].Value!=null)
-                {
-                    DANHMUCTAILAPMATDUONG dmvt = DAL.C_DanhMucTaiLapMD.finbyMaDM(GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells[0].Value+"");
-                    if (dmvt != null) {
-                        GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells[1].Value =  dmvt.TENKETCAU.ToUpper();
-                    }
-                    else {
-                        MessageBox.Show(this, "Không Tìm Thấy Mã Kết Cấu.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells[0].Selected = true;
-                    }
-                  
-                }
-            }
-        }
-        
+               
         private void GridPhuiDao_UserAddedRow(object sender, DataGridViewRowEventArgs e)
         {
             GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells[6].Value = "True";
             GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells[5].Value = 1;
         }
+        private void tabNhapPhuiDao_Click(object sender, EventArgs e)
+        {
+            visibleTab(false, false, true, false, false);
+        }
 
+        private void GridPhuiDao_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 0)
+            {
+                DANHMUCTAILAPMATDUONG dmvt = DAL.C_DanhMucTaiLapMD.finbyMaDM(GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells[0].Value + "");
+                if (dmvt != null)
+                {
+                    GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells[1].Value = dmvt.TENKETCAU.ToUpper();
+                }
+                else
+                {
+                    MessageBox.Show(this, "Không Tìm Thấy Mã Kết Cấu.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells[0].Selected = true;
+                }
+            }
+        }
         private void GridPhuiDao_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
         {
 
@@ -794,76 +796,27 @@ namespace TanHoaWater.View.Users.TinhDuToan
             }
         }
 
-        private void tabNhapPhuiDao_Click(object sender, EventArgs e)
-        {
-            visibleTab(false, false, true, false, false);
-        }
 
-        private void GridCacCongTac_KeyPress(object sender, KeyPressEventArgs e)
-        {
-           
-            if (GridCacCongTac.CurrentCell.ColumnIndex == 1 || GridCacCongTac.CurrentCell.ColumnIndex == 2)
-            {
-                if ((e.KeyChar == 13 || e.KeyChar == 9 || e.KeyChar == 16 || e.KeyChar == 17 || e.KeyChar == 96 || e.KeyChar == 26 || e.KeyChar == 27 || e.KeyChar == 23) && GridCacCongTac.Rows[GridCacCongTac.CurrentRow.Index].Cells[0].Value != null)
-                {
-                    DANHMUCVATTU dmvt = DAL.C_DanhMucVatTu.finbyMaHieu(GridCacCongTac.Rows[GridCacCongTac.CurrentRow.Index].Cells[0].Value + "");
-                    if (dmvt != null)
-                    {
-                        GridCacCongTac.Rows[GridCacCongTac.CurrentRow.Index].Cells[1].Value = dmvt.TENVT.ToUpper();
-                        GridCacCongTac.Rows[GridCacCongTac.CurrentRow.Index].Cells[2].Value = dmvt.DVT;
-                    }
-                    else
-                    {
-                        MessageBox.Show(this, "Không Tìm Thấy Mã Hiệu Đơn Giá.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        GridCacCongTac.Rows[GridCacCongTac.CurrentRow.Index].Cells[0].Selected = true;
-                    }
-
-                }
-            }
-        }
-
-        private void GridPhuiDao_CellLeave(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-                if (e.ColumnIndex == 1)
-                {
-                    DANHMUCTAILAPMATDUONG dmvt = DAL.C_DanhMucTaiLapMD.finbyMaDM(GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells[0].Value + "");
-                    if (dmvt != null)
-                    {
-                        GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells[1].Value = dmvt.TENKETCAU.ToUpper();
-                    }
-                    else
-                    {
-                        MessageBox.Show(this, "Không Tìm Thấy Mã Kết Cấu.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells[0].Selected = true;
-                    }
-                }
-            }
-            catch (Exception)
-            {
-                
-                 
-            }
-            
-        }
-
-        private void GridPhuiDao_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        private void GridCacCongTac_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == 0)
             {
-                DANHMUCTAILAPMATDUONG dmvt = DAL.C_DanhMucTaiLapMD.finbyMaDM(GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells[0].Value + "");
+                DANHMUCVATTU dmvt = DAL.C_DanhMucVatTu.finbyMaHieu(GridCacCongTac.Rows[GridCacCongTac.CurrentRow.Index].Cells[0].Value + "");
                 if (dmvt != null)
                 {
-                    GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells[1].Value = dmvt.TENKETCAU.ToUpper();
+                    GridCacCongTac.Rows[GridCacCongTac.CurrentRow.Index].Cells[1].Value = dmvt.TENVT.ToUpper();
+                    GridCacCongTac.Rows[GridCacCongTac.CurrentRow.Index].Cells[2].Value = dmvt.DVT;
                 }
                 else
                 {
-                    MessageBox.Show(this, "Không Tìm Thấy Mã Kết Cấu.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells[0].Selected = true;
+                    MessageBox.Show(this, "Không Tìm Thấy Mã Hiệu Đơn Giá.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    GridCacCongTac.Rows[GridCacCongTac.CurrentRow.Index].Cells[0].Selected = true;
                 }
             }
         }
+
+
+        
 
        
 

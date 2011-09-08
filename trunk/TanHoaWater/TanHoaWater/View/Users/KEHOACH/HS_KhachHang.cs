@@ -178,6 +178,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
             {
                 sohoso = DateTime.Now.Month.ToString();
             }
+            this.txtSHS.Text = this.txtSHS.Text.ToUpper();
             this.txtSoHoSo.Text = this.cbQuan.SelectedValue + "" + this.cbPhuong.SelectedValue + sohoso + this.txtSHS.Text;
 
         }
@@ -241,7 +242,8 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                 donKH.SOHOSO = this.txtSoHoSo.Text;
                 donKH.SHS = this.txtSHS.Text;
                 if (soho.Value > 0){
-                    donKH.HOTEN = this.txtHoTen.Text + "(ĐD " + soho.Value + " Hộ)";                    
+                    donKH.HOTEN = this.txtHoTen.Text + "(ĐD " + soho.Value + " Hộ)";
+                    cbLoaiKH.Text = "Tập Thể";
                 }
                 else
                 {
@@ -251,11 +253,25 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                 donKH.DIENTHOAI = this.dienthoai.Text;
                 donKH.SOHO = int.Parse(this.soho.Value.ToString());
                 donKH.SONHA = this.sonha.Text;
+                donKH.TINHKHOAN = true;
+                if (this.sonha.Text.Contains("/") == true)
+                {
+                    donKH.LOAIMIENPHI = "Hẻm";
+                }
+                else {
+                        donKH.LOAIMIENPHI = "Mặt tiền";
+                }
                 donKH.DUONG = this.duong.Text;
                 donKH.PHUONG = this.cbPhuong.SelectedValue.ToString();
                 donKH.QUAN = int.Parse(this.cbQuan.SelectedValue.ToString());
                 donKH.NGAYNHAN = DateTime.Now;
-                donKH.LOAIKH = this.cbLoaiKH.SelectedValue.ToString();
+                string maloaikh="";
+                if(this.cbLoaiKH.SelectedValue== null || "".Equals(this.cbLoaiKH.SelectedValue.ToString())==true){
+                    maloaikh = DAL.C_LoaiKhachHang.finbyTenLoai(this.cbLoaiKH.Text).MALOAI;
+                }else{
+                     maloaikh = this.cbLoaiKH.SelectedValue.ToString();
+                }
+                donKH.LOAIKH = maloaikh;
                 donKH.LOAIHOSO = DAL.C_DotNhanDon.findByMaDot(this.cbDotNhanDon.SelectedValue.ToString()).LOAIDON;
                 donKH.GHICHU = this.ghichu.Text;
                 if (this.khan.Checked == true)
@@ -285,7 +301,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
         public void refresh()
         {
             this.txtSHS.Text = null;
-            this.txtSHS.Mask = DateTime.Now.Year.ToString().Substring(2) + "00000";
+            this.txtSHS.Mask = DateTime.Now.Year.ToString().Substring(2) + "CCCCC";
             this.txtHoTen.Text = null;
             this.dienthoai.Text = null;
             this.sonha.Text = null;
@@ -601,9 +617,11 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
             if (soho.Value > 0)
             {
                 txtDanhBo.Text = "(ĐD " + soho.Value + " Hộ)";
+                cbLoaiKH.Text = "Tập Thể";
             }
             else {
                 txtDanhBo.Text = null;
+                cbLoaiKH.Text = "Cá Nhân";
             }
 
         }

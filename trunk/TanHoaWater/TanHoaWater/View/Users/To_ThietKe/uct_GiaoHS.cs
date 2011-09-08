@@ -477,6 +477,8 @@ namespace TanHoaWater.View.Users.To_ThietKe
             {
                 log.Error("Theo Doi Tinh Hinh Thiet Ke Loi " + ex.Message);
             }
+            Utilities.DataGridV.formatRows(gv_ChuaHoanThanh);
+            Utilities.DataGridV.formatRows(gv_ChuaHoanThanh);
         }
         private void theodoi_Xem_Click(object sender, EventArgs e)
         {

@@ -15,6 +15,7 @@ using log4net;
 using TanHoaWater.View.Users.To_ThietKe;
 using TanHoaWater.View.Users.TinhDuToan;
 using TanHoaWater.Roles;
+using TanHoaWater.View.Users.KEHOACH;
 
 namespace TanHoaWater
 {
@@ -49,7 +50,7 @@ namespace TanHoaWater
 
         }
         private void frm_Main_Load(object sender, EventArgs e)
-        {
+        {         
             if (DAL.TestConection.testConnection() == false)
             {
                 MessageBox.Show(this, "Lỗi Kết Nối, Kiểm Tra Kết Nối Tới Server.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -281,6 +282,12 @@ namespace TanHoaWater
             this.menuToThietKe.Select();
             this.PanelContent.Controls.Clear();
             this.PanelContent.Controls.Add(new uct_TinhDuToan(3));
+        }
+
+        private void btBienNhan_Click(object sender, EventArgs e)
+        {
+            frm_BienNhanDon bn = new frm_BienNhanDon();
+            bn.ShowDialog();
         }
     }
 
