@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Login));
             this.bt_Login = new DevComponents.DotNetBar.ButtonX();
             this.bt_huy = new DevComponents.DotNetBar.ButtonX();
             this.ckSavePass = new DevComponents.DotNetBar.Controls.CheckBoxX();
@@ -135,10 +136,10 @@
             this.Controls.Add(this.ckSavePass);
             this.Controls.Add(this.bt_huy);
             this.Controls.Add(this.bt_Login);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frm_Login";
-            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng Nhập";
             this.Load += new System.EventHandler(this.frm_Login_Load);

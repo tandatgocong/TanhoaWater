@@ -51,7 +51,7 @@
             this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
             this.buttonX2 = new DevComponents.DotNetBar.ButtonX();
             this.textBoxX1 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.comboBoxEx1 = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.txtDuong = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.SuspendLayout();
             // 
             // reflectionLabel1
@@ -132,7 +132,7 @@
             this.checkBox1.Location = new System.Drawing.Point(171, 314);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(251, 23);
-            this.checkBox1.TabIndex = 7;
+            this.checkBox1.TabIndex = 8;
             this.checkBox1.Text = "Hộ khẩu thường trú hoặc sổ tạm trú..";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
@@ -142,7 +142,7 @@
             this.checkBox2.Location = new System.Drawing.Point(171, 343);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(326, 23);
-            this.checkBox2.TabIndex = 8;
+            this.checkBox2.TabIndex = 9;
             this.checkBox2.Text = "Giấy chủ quyền nhà/đất; hợp đồng mua bán nhà;..";
             this.checkBox2.UseVisualStyleBackColor = true;
             // 
@@ -152,7 +152,7 @@
             this.checkBox3.Location = new System.Drawing.Point(171, 372);
             this.checkBox3.Name = "checkBox3";
             this.checkBox3.Size = new System.Drawing.Size(150, 23);
-            this.checkBox3.TabIndex = 9;
+            this.checkBox3.TabIndex = 10;
             this.checkBox3.Text = "Giấy phép xây dựng";
             this.checkBox3.UseVisualStyleBackColor = true;
             // 
@@ -195,13 +195,16 @@
             // 
             this.cbPhuong.DisplayMember = "Text";
             this.cbPhuong.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbPhuong.DropDownHeight = 90;
             this.cbPhuong.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbPhuong.DropDownWidth = 100;
             this.cbPhuong.FormattingEnabled = true;
+            this.cbPhuong.IntegralHeight = false;
             this.cbPhuong.ItemHeight = 20;
             this.cbPhuong.Location = new System.Drawing.Point(171, 236);
             this.cbPhuong.Name = "cbPhuong";
             this.cbPhuong.Size = new System.Drawing.Size(136, 26);
-            this.cbPhuong.TabIndex = 5;
+            this.cbPhuong.TabIndex = 6;
             // 
             // Quan
             // 
@@ -213,7 +216,7 @@
             this.Quan.Location = new System.Drawing.Point(171, 270);
             this.Quan.Name = "Quan";
             this.Quan.Size = new System.Drawing.Size(136, 26);
-            this.Quan.TabIndex = 6;
+            this.Quan.TabIndex = 7;
             // 
             // cbLoaiBN
             // 
@@ -239,7 +242,7 @@
             this.btTinhBangGia.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.F1);
             this.btTinhBangGia.Size = new System.Drawing.Size(91, 25);
             this.btTinhBangGia.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
-            this.btTinhBangGia.TabIndex = 10;
+            this.btTinhBangGia.TabIndex = 11;
             this.btTinhBangGia.Text = "Lưu && In (F1)";
             this.btTinhBangGia.Click += new System.EventHandler(this.btTinhBangGia_Click);
             // 
@@ -254,7 +257,7 @@
             this.buttonX1.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.F5);
             this.buttonX1.Size = new System.Drawing.Size(91, 25);
             this.buttonX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
-            this.buttonX1.TabIndex = 11;
+            this.buttonX1.TabIndex = 12;
             this.buttonX1.Text = "Làm Lại (F5)";
             // 
             // buttonX2
@@ -267,7 +270,7 @@
             this.buttonX2.Name = "buttonX2";
             this.buttonX2.Size = new System.Drawing.Size(91, 25);
             this.buttonX2.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
-            this.buttonX2.TabIndex = 12;
+            this.buttonX2.TabIndex = 13;
             this.buttonX2.Text = "Thoát (ESC)";
             this.buttonX2.Click += new System.EventHandler(this.buttonX2_Click);
             // 
@@ -282,19 +285,18 @@
             this.textBoxX1.Size = new System.Drawing.Size(74, 26);
             this.textBoxX1.TabIndex = 4;
             // 
-            // comboBoxEx1
+            // txtDuong
             // 
-            this.comboBoxEx1.DisplayMember = "Text";
-            this.comboBoxEx1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comboBoxEx1.DropDownHeight = 80;
-            this.comboBoxEx1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
-            this.comboBoxEx1.FormattingEnabled = true;
-            this.comboBoxEx1.IntegralHeight = false;
-            this.comboBoxEx1.ItemHeight = 20;
-            this.comboBoxEx1.Location = new System.Drawing.Point(252, 199);
-            this.comboBoxEx1.Name = "comboBoxEx1";
-            this.comboBoxEx1.Size = new System.Drawing.Size(174, 28);
-            this.comboBoxEx1.TabIndex = 16;
+            // 
+            // 
+            // 
+            this.txtDuong.Border.Class = "TextBoxBorder";
+            this.txtDuong.Location = new System.Drawing.Point(251, 201);
+            this.txtDuong.Name = "txtDuong";
+            this.txtDuong.Size = new System.Drawing.Size(175, 26);
+            this.txtDuong.TabIndex = 5;
+            this.txtDuong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDuong_KeyPress);
+            this.txtDuong.Leave += new System.EventHandler(this.txtDuong_Leave);
             // 
             // frm_BienNhanDon
             // 
@@ -302,7 +304,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(206)))), ((int)(((byte)(236)))));
             this.ClientSize = new System.Drawing.Size(603, 472);
-            this.Controls.Add(this.comboBoxEx1);
+            this.Controls.Add(this.txtDuong);
             this.Controls.Add(this.textBoxX1);
             this.Controls.Add(this.buttonX2);
             this.Controls.Add(this.buttonX1);
@@ -363,7 +365,7 @@
         private DevComponents.DotNetBar.ButtonX buttonX1;
         private DevComponents.DotNetBar.ButtonX buttonX2;
         private DevComponents.DotNetBar.Controls.TextBoxX textBoxX1;
-        private DevComponents.DotNetBar.Controls.ComboBoxEx comboBoxEx1;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtDuong;
 
     }
 }
