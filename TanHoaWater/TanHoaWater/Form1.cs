@@ -7,7 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using TanHoaWater.Database;
-
+using CrystalDecisions.CrystalReports.Engine;
+using TanHoaWater.View.Users.KEHOACH.Report;
 namespace TanHoaWater
 {
     public partial class Form1 : Form
@@ -15,6 +16,14 @@ namespace TanHoaWater
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ReportDocument rp = new crp_BIENNHAN();
+            rp.SetDataSource(DAL.C_BienNhanDon.printBienNhan("1100000"));
+            rp.SaveAs("D:\\tmp");
+            rp.PrintToPrinter(1, false, 0, 0);
         }
     }
 }
