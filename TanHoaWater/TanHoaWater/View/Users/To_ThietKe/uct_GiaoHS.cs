@@ -155,8 +155,8 @@ namespace TanHoaWater.View.Users.To_ThietKe
                     //labelDSChuaGiao.Text = "Tổng Số " + DAL.C_ToThietKe.DachSachHoSoGiaoViec(null, Utilities.DateToString.NgayVN(this.dateNhanDon), null).Rows.Count + " Hồ Sơ Chưa Giao Sơ Đồ Viên. ";
                     //#endregion
                     #region DS Da Giao Theo Ngay
-                    this.DG_SDV.DataSource = DAL.C_ToThietKe.DachSachHoSoGiaoViec(null, Utilities.DateToString.NgayVN(this.dateNhanDon), this.sodovien.SelectedValue.ToString());
-                    count = DAL.C_ToThietKe.DachSachHoSoGiaoViec(null, Utilities.DateToString.NgayVN(this.dateNhanDon), this.sodovien.SelectedValue.ToString()).Rows.Count;
+                    this.DG_SDV.DataSource = DAL.C_ToThietKe.DachSachHoSoGiaoViec(null, DAL.DateToString.NgayVN(this.dateNhanDon), this.sodovien.SelectedValue.ToString());
+                    count = DAL.C_ToThietKe.DachSachHoSoGiaoViec(null, DAL.DateToString.NgayVN(this.dateNhanDon), this.sodovien.SelectedValue.ToString()).Rows.Count;
                     lableGIAO_SDV.Text = this.sodovien.Text + " Có " + count + " Hồ Sơ Được Giao";
                     #endregion
                 }
@@ -171,7 +171,7 @@ namespace TanHoaWater.View.Users.To_ThietKe
             {
                 resultPrint.Visible = false;
             }
-            Utilities.DataGridV.formatRows(DG_SDV);
+            DAL.DataGridV.formatRows(DG_SDV);
         }
         public void giaoviec()
         {
@@ -206,12 +206,12 @@ namespace TanHoaWater.View.Users.To_ThietKe
                 else
                 {
                     #region DS Chua Giao Theo Ngay
-                    this.DG_ChuaGiao.DataSource = DAL.C_ToThietKe.DachSachHoSoGiaoViec(null, Utilities.DateToString.NgayVN(this.dateNhanDon), null);
-                    labelDSChuaGiao.Text = "Tổng Số " + DAL.C_ToThietKe.DachSachHoSoGiaoViec(null, Utilities.DateToString.NgayVN(this.dateNhanDon), null).Rows.Count + " Hồ Sơ Chưa Giao Sơ Đồ Viên. ";
+                    this.DG_ChuaGiao.DataSource = DAL.C_ToThietKe.DachSachHoSoGiaoViec(null, DAL.DateToString.NgayVN(this.dateNhanDon), null);
+                    labelDSChuaGiao.Text = "Tổng Số " + DAL.C_ToThietKe.DachSachHoSoGiaoViec(null, DAL.DateToString.NgayVN(this.dateNhanDon), null).Rows.Count + " Hồ Sơ Chưa Giao Sơ Đồ Viên. ";
                     #endregion
                     #region DS Da Giao Theo Ngay
-                    this.DG_SDV.DataSource = DAL.C_ToThietKe.DachSachHoSoGiaoViec(null, Utilities.DateToString.NgayVN(this.dateNhanDon), this.sodovien.SelectedValue.ToString());
-                    count = DAL.C_ToThietKe.DachSachHoSoGiaoViec(null, Utilities.DateToString.NgayVN(this.dateNhanDon), this.sodovien.SelectedValue.ToString()).Rows.Count;
+                    this.DG_SDV.DataSource = DAL.C_ToThietKe.DachSachHoSoGiaoViec(null, DAL.DateToString.NgayVN(this.dateNhanDon), this.sodovien.SelectedValue.ToString());
+                    count = DAL.C_ToThietKe.DachSachHoSoGiaoViec(null, DAL.DateToString.NgayVN(this.dateNhanDon), this.sodovien.SelectedValue.ToString()).Rows.Count;
                     lableGIAO_SDV.Text = this.sodovien.Text + " Có " + count + " Hồ Sơ Được Giao";
                     #endregion
                 }
@@ -226,8 +226,8 @@ namespace TanHoaWater.View.Users.To_ThietKe
             {
                 resultPrint.Visible = false;
             }
-            Utilities.DataGridV.formatRows(DG_ChuaGiao);
-            Utilities.DataGridV.formatRows(DG_SDV);
+            DAL.DataGridV.formatRows(DG_ChuaGiao);
+            DAL.DataGridV.formatRows(DG_SDV);
         }
         private void btView_Click(object sender, EventArgs e)
         {
@@ -385,7 +385,7 @@ namespace TanHoaWater.View.Users.To_ThietKe
             }
             else if (theongay.Checked == true)
             {
-                ds = DAL.C_ToThietKe.BC_GIAOHS_SDV(null, Utilities.DateToString.NgayVN(this.dateNhanDon), this.sodovien.SelectedValue.ToString(), DAL.C_USERS._userName);
+                ds = DAL.C_ToThietKe.BC_GIAOHS_SDV(null, DAL.DateToString.NgayVN(this.dateNhanDon), this.sodovien.SelectedValue.ToString(), DAL.C_USERS._userName);
 
             }
             rpt_View rpt = new rpt_View(ds);
@@ -456,10 +456,10 @@ namespace TanHoaWater.View.Users.To_ThietKe
                 }
                 else if (this.theodoi_ngay.Checked)
                 {
-                    tableHT = DAL.C_ToThietKe.TinhHinhKSTK(null, Utilities.DateToString.NgayVN(theodoi_tungay), Utilities.DateToString.NgayVN(theodoi_denngay), this.theodoi_SDV.SelectedValue.ToString(), true);
-                    tableChuaHT = DAL.C_ToThietKe.TinhHinhKSTK(null, Utilities.DateToString.NgayVN(theodoi_tungay), Utilities.DateToString.NgayVN(theodoi_denngay), this.theodoi_SDV.SelectedValue.ToString(), false);
-                    countHT = DAL.C_ToThietKe.CountTinhHinhKSTK(null, Utilities.DateToString.NgayVN(theodoi_tungay), Utilities.DateToString.NgayVN(theodoi_denngay), this.theodoi_SDV.SelectedValue.ToString(), true);
-                    countChuaHT = DAL.C_ToThietKe.CountTinhHinhKSTK(null, Utilities.DateToString.NgayVN(theodoi_tungay), Utilities.DateToString.NgayVN(theodoi_denngay), this.theodoi_SDV.SelectedValue.ToString(), false);
+                    tableHT = DAL.C_ToThietKe.TinhHinhKSTK(null, DAL.DateToString.NgayVN(theodoi_tungay), DAL.DateToString.NgayVN(theodoi_denngay), this.theodoi_SDV.SelectedValue.ToString(), true);
+                    tableChuaHT = DAL.C_ToThietKe.TinhHinhKSTK(null, DAL.DateToString.NgayVN(theodoi_tungay), DAL.DateToString.NgayVN(theodoi_denngay), this.theodoi_SDV.SelectedValue.ToString(), false);
+                    countHT = DAL.C_ToThietKe.CountTinhHinhKSTK(null, DAL.DateToString.NgayVN(theodoi_tungay), DAL.DateToString.NgayVN(theodoi_denngay), this.theodoi_SDV.SelectedValue.ToString(), true);
+                    countChuaHT = DAL.C_ToThietKe.CountTinhHinhKSTK(null, DAL.DateToString.NgayVN(theodoi_tungay), DAL.DateToString.NgayVN(theodoi_denngay), this.theodoi_SDV.SelectedValue.ToString(), false);
                 }
                 else if (this.theodoi_bydot.Checked)
                 {
@@ -477,8 +477,8 @@ namespace TanHoaWater.View.Users.To_ThietKe
             {
                 log.Error("Theo Doi Tinh Hinh Thiet Ke Loi " + ex.Message);
             }
-            Utilities.DataGridV.formatRows(gv_ChuaHoanThanh);
-            Utilities.DataGridV.formatRows(gv_ChuaHoanThanh);
+            DAL.DataGridV.formatRows(gv_ChuaHoanThanh);
+            DAL.DataGridV.formatRows(gv_ChuaHoanThanh);
         }
         private void theodoi_Xem_Click(object sender, EventArgs e)
         {
@@ -593,7 +593,7 @@ namespace TanHoaWater.View.Users.To_ThietKe
             DataSet ds = new DataSet();
             if (this.theodoi_ngay.Checked)
             {
-                ds = DAL.C_ToThietKe.BC_TinhHinhKSTK(null, Utilities.DateToString.NgayVN(theodoi_tungay), Utilities.DateToString.NgayVN(theodoi_denngay), this.theodoi_SDV.SelectedValue.ToString(), DAL.C_USERS._userName);
+                ds = DAL.C_ToThietKe.BC_TinhHinhKSTK(null, DAL.DateToString.NgayVN(theodoi_tungay), DAL.DateToString.NgayVN(theodoi_denngay), this.theodoi_SDV.SelectedValue.ToString(), DAL.C_USERS._userName);
                 flag = 1;
             }
             else if (this.theodoi_bydot.Checked)

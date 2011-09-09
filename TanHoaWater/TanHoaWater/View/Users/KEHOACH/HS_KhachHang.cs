@@ -44,6 +44,8 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
             }
             else if (tab == 3) {
                 tabControl1.SelectedTabIndex = 2;
+                this.panel4.Controls.Clear();
+                this.panel4.Controls.Add(new tab_DonTroNgai());
             }
             else if (tab == 4) {
                 tabControl1.SelectedTabIndex = 3;
@@ -122,7 +124,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                 log.Error(ex);
             }
             PageTotal();
-            Utilities.DataGridV.formatRows(dataG);
+            DAL.DataGridV.formatRows(dataG);
         }
 
         private void PageTotal()
@@ -283,7 +285,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                 donKH.CREATEDATE = DateTime.Now;
                 DAL.C_DonKhachHang.InsertDonHK(donKH);
                 loadDataGrid();
-                Utilities.DataGridV.formatRows(dataG);
+                DAL.DataGridV.formatRows(dataG);
             }
         }
 
@@ -332,7 +334,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
             this.dataG.DataSource = DAL.C_DonKhachHang.getListbyDot(_madot, FirstRow, pageSize);
             int sokh = DAL.C_DonKhachHang.TotalListByDot(_madot);
             this.totalRecord.Text = "Tống công có " + sokh + " khách hàng đợt nhận đơn " + _madot;
-            Utilities.DataGridV.formatRows(dataG);
+            DAL.DataGridV.formatRows(dataG);
         }
 
         private void next_Click(object sender, EventArgs e)
@@ -574,7 +576,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                         this.resultChuyen.Visible = true;
                         this.resultDGChuyen.Visible = true;
                         this.resultPrint.Visible = true;
-                        Utilities.DataGridV.formatRows(resultDGChuyen);
+                        DAL.DataGridV.formatRows(resultDGChuyen);
                     }
                 }
             }
@@ -592,7 +594,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
             this.cd_detail.DataSource = DAL.C_DonKhachHang.getListbyDot(madot);
             sokh = DAL.C_DonKhachHang.getListbyDot(madot).Rows.Count;
             
-            Utilities.DataGridV.formatRows(cd_detail);
+            DAL.DataGridV.formatRows(cd_detail);
         }
 
        

@@ -30,7 +30,7 @@ namespace TanHoaWater.View.Users.TinhDuToan
             this.editcbDVT.ValueMember = "Value";
             this.editcbDVT.DisplayMember = "Display";
             search();
-            Utilities.DataGridV.formatRows(GridDanhMucTLMD);
+            DAL.DataGridV.formatRows(GridDanhMucTLMD);
         }
 
 
@@ -52,7 +52,7 @@ namespace TanHoaWater.View.Users.TinhDuToan
             rows = DAL.C_DanhMucTaiLapMD.TotalSearch(this.txtMaDM.Text.Trim(), this.txtTenKC.Text.Trim(), this.cbDVT.Text.Trim());
             GridDanhMucTLMD.DataSource = DAL.C_DanhMucTaiLapMD.search(this.txtMaDM.Text.Trim(), this.txtTenKC.Text.Trim(), this.cbDVT.Text.Trim(), FirstRow, pageSize);
             this.totalRecord.Text = "Tống Cộng Có " + rows + " Danh Mục Vật Tư. ";
-            Utilities.DataGridV.formatRows(GridDanhMucTLMD);
+            DAL.DataGridV.formatRows(GridDanhMucTLMD);
             PageTotal();
 
         }
@@ -64,7 +64,7 @@ namespace TanHoaWater.View.Users.TinhDuToan
 
         private void GridDanhMucTLMD_Sorted(object sender, EventArgs e)
         {
-            Utilities.DataGridV.formatRows(GridDanhMucTLMD);
+            DAL.DataGridV.formatRows(GridDanhMucTLMD);
         }
 
         private void next_Click(object sender, EventArgs e)
@@ -157,10 +157,10 @@ namespace TanHoaWater.View.Users.TinhDuToan
                 this.editMaDM.Text = this.GridDanhMucTLMD.Rows[e.RowIndex].Cells[0].Value + "";
                 this.editTenKetCau.Text = this.GridDanhMucTLMD.Rows[e.RowIndex].Cells[1].Value + "";
                 this.editcbDVT.Text = this.GridDanhMucTLMD.Rows[e.RowIndex].Cells[2].Value + "";
-                this.editDonGia.Text = Utilities.FormatNumber.FormatDouble(this.GridDanhMucTLMD.Rows[e.RowIndex].Cells[3].Value + "");
+                this.editDonGia.Text = DAL.FormatNumber.FormatDouble(this.GridDanhMucTLMD.Rows[e.RowIndex].Cells[3].Value + "");
                 this.editDonGiaSo.Text = this.GridDanhMucTLMD.Rows[e.RowIndex].Cells[4].Value + "";
             }
-            Utilities.DataGridV.formatRows(GridDanhMucTLMD);
+            DAL.DataGridV.formatRows(GridDanhMucTLMD);
         }
 
         private void editDonGia_KeyPress(object sender, KeyPressEventArgs e)
