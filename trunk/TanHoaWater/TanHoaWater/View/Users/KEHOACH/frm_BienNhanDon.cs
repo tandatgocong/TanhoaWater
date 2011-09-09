@@ -24,8 +24,8 @@ namespace TanHoaWater.View.Users.KEHOACH
         }
         public void load() {
            
-            //try
-            //{
+            try
+            {
                 this.cbLoaiBN.DataSource = DAL.C_LoaiNhanDon.getList();
                 this.cbLoaiBN.ValueMember = "LOAIDON";
                 this.cbLoaiBN.DisplayMember = "TENLOAI";
@@ -48,11 +48,11 @@ namespace TanHoaWater.View.Users.KEHOACH
                 Quan.DisplayMember = "TENQUAN";
                 this.cbPhuong.Text = "";
                 this.Quan.Text = "";
-            //}
-            //catch (Exception ex)
-            //{
-            //    log.Error("Load Bien Nhan Don Loi " +  ex.ToString());
-            //}
+            }
+            catch (Exception ex)
+            {
+                log.Error("Load Bien Nhan Don Loi " + ex.ToString());
+            }
             
         }
              
@@ -63,24 +63,12 @@ namespace TanHoaWater.View.Users.KEHOACH
             }
         }
 
-        private void btTinhBangGia_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("fdsa");
-        }
 
+      
         private void cbLoaiBN_SelectedValueChanged(object sender, EventArgs e)
         {
-            if("GM".Equals(this.cbLoaiBN.SelectedValue+"")){
-                this.soBienNhan.Text = "GM";
-            }
-            else if ("BT".Equals(this.cbLoaiBN.SelectedValue + ""))
-            {
-                this.soBienNhan.Text = "BT";
-            }
-            else if ("DD".Equals(this.cbLoaiBN.SelectedValue + ""))
-            {
-                this.soBienNhan.Text = "DD";
-            }
+
+            this.soBienNhan.Text = DAL.Idetity.IdentityBienNhan(this.cbLoaiBN.SelectedValue + "");
             
         }
 
@@ -109,6 +97,142 @@ namespace TanHoaWater.View.Users.KEHOACH
                     this.cbPhuong.Text = table.Rows[0][0].ToString();
                     this.Quan.Text = table.Rows[0][1].ToString();
                 }
+            }
+        }
+
+        public void reset() {
+            errorProvider1.Clear();
+            this.soBienNhan.Text = DAL.Idetity.IdentityBienNhan(this.cbLoaiBN.SelectedValue + "");
+            this.txtHoTen.Text="";
+            this.txtsonha.Text="";
+            this.txtDuong.Text="";
+            this.cbPhuong.Text="";
+            this.Quan.Text="";
+            cbPhuong.DataSource = DAL.C_Phuong.getListAll();
+            cbPhuong.ValueMember = "MAPHUONG";
+            cbPhuong.DisplayMember = "TENPHUONG";
+            Quan.DataSource = DAL.C_Quan.getList();
+            Quan.ValueMember = "MAQUAN";
+            Quan.DisplayMember = "TENQUAN";
+            this.txtHoTen.Focus();
+
+        }
+        private void btBienNhanDon_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string loaihs = cbLoaiBN.SelectedValue + "";
+                string soshs = this.soBienNhan.Text;
+                string hoten = this.txtHoTen.Text;
+                string sonha = this.txtsonha.Text;
+                string tenduong = this.txtDuong.Text;
+                string tenphuong = this.cbPhuong.Text;
+                string tenquan = this.Quan.Text;
+                QUAN quan = DAL.C_Quan.finbyTenQuan(tenquan);
+                PHUONG phuong = null;
+                if (quan != null)
+                {
+                    phuong = DAL.C_Phuong.finbyTenPhuong(quan.MAQUAN, tenphuong);
+                }
+                if ("".Equals(hoten))
+                {
+                    errorProvider1.SetError(txtHoTen, "Nhập Họ Tên.");
+                    this.txtHoTen.Focus();
+                }
+                else if ("".Equals(sonha))
+                {
+                    errorProvider1.SetError(txtsonha, "Nhập Số Nhà.");
+                    this.txtsonha.Focus();
+                }
+                else if ("".Equals(tenduong))
+                {
+                    errorProvider1.SetError(txtDuong, "Nhập Số Nhà.");
+                    this.txtDuong.Focus();
+                }
+                else if (quan == null)
+                {
+                    errorProvider1.SetError(Quan, "Chọn Quận .");
+                    this.Quan.Select();
+                }
+                else if (phuong == null)
+                {
+                    cbPhuong.DataSource = DAL.C_Phuong.getListByQuan(quan.MAQUAN);
+                    cbPhuong.ValueMember = "MAPHUONG";
+                    cbPhuong.DisplayMember = "TENPHUONG";                    
+                    errorProvider1.SetError(cbPhuong, "Chọn Phường.");
+                    this.cbPhuong.Select();
+                }
+                else
+                {
+                    errorProvider1.Clear();
+                    BIENNHANDON biennhan = new BIENNHANDON();
+                    biennhan.SHS = this.soBienNhan.Text;
+                    biennhan.LOAIDON = cbLoaiBN.SelectedValue + "";
+                    biennhan.SONHA = sonha;
+                    biennhan.DUONG = txtDuong.Text;
+                    biennhan.PHUONG = phuong.MAPHUONG;
+                    biennhan.QUAN = quan.MAQUAN;
+                    biennhan.NGAYNHAN = DateTime.Now.Date;
+
+                    if (checkHK.Checked)
+                    {
+                        biennhan.HKTK = true;
+                    }
+                    else
+                    {
+                        biennhan.HKTK = false;
+                    }
+
+                    if (checkChuQuyen.Checked)
+                    {
+                        biennhan.CHUQUYENNHA = true;
+                    }
+                    else
+                    {
+                        biennhan.CHUQUYENNHA = false;
+                    }
+
+                    if (checkGiayPhep.Checked)
+                    {
+                        biennhan.GIAYPHEPXD = true;
+                    }
+                    else
+                    {
+                        biennhan.GIAYPHEPXD = false;
+                    }
+                    biennhan.CREATEBY = DAL.C_USERS._userName;
+                    biennhan.CREATEDATE = DateTime.Now;
+                    DAL.C_BienNhanDon.InsertBienNhanDon(biennhan);
+                    reset();
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Error("Lỗi Thêm Biên Nhận " + ex.Message);
+                MessageBox.Show(this, "Thêm Biên Nhận Lỗi.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btLamLai_Click(object sender, EventArgs e)
+        {
+            reset();
+        }
+
+        private void cbPhuong_SelectedValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                List<PHUONG> phuong = DAL.C_Phuong.ListPhuongByTenPhuong(this.cbPhuong.Text);
+                if (phuong.Count > 0)
+                {
+                    PHUONG p = phuong[0];
+                    Quan.Text = p.QUAN.TENQUAN;
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
             }
         }
     }

@@ -101,6 +101,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAL\C_BaoCao_View.cs" />
+    <Compile Include="DAL\C_BienNhanDon.cs" />
     <Compile Include="DAL\C_DanhMucBoVT.cs" />
     <Compile Include="DAL\C_DanhMucTaiLapMD.cs" />
     <Compile Include="DAL\C_DanhMucVatTu.cs" />
@@ -148,6 +149,7 @@
     <Compile Include="Utilities\DataGridV.cs" />
     <Compile Include="Utilities\DateToString.cs" />
     <Compile Include="Utilities\FormatNumber.cs" />
+    <Compile Include="DAL\Idetity.cs" />
     <Compile Include="Utilities\LogIn.cs" />
     <Compile Include="frm_Main.cs">
       <SubType>Form</SubType>
@@ -168,11 +170,6 @@
       <AutoGen>True</AutoGen>
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="View\Users\KEHOACH\Report\DataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="View\Users\KEHOACH\Report\prt_BangKeNhanDon.cs">
       <AutoGen>True</AutoGen>
@@ -432,6 +429,7 @@
       <LastGenOutput>TanHoa.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
+    <None Include="Lib\user.dat" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -483,17 +481,6 @@
     <Compile Include="View\Main\frm_Login.Designer.cs">
       <DependentUpon>frm_Login.cs</DependentUpon>
     </Compile>
-    <None Include="View\Users\KEHOACH\Report\DataSet1.xsc">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="View\Users\KEHOACH\Report\DataSet1.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="View\Users\KEHOACH\Report\DataSet1.xss">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\bg_head.jpg" />
@@ -669,6 +656,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\bt_bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Lib\DevComponents.DotNetBar2.dll" />
+    <Content Include="Lib\icon.ico" />
+    <Content Include="Lib\IrisSkin2.dll" />
+    <Content Include="Lib\log4net.dll" />
+    <Content Include="Lib\String_Indentity.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

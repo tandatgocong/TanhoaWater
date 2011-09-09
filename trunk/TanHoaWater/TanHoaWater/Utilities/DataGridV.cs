@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Drawing;
-namespace TanHoaWater.Utilities
+namespace TanHoaWater.DAL
 {
     public class DataGridV
     {

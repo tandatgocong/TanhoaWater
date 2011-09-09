@@ -89,14 +89,14 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
         }
         public void loadGrid() {            
             this.mainGrid.DataSource = DAL.C_DotNhanDon.getList();
-            Utilities.DataGridV.formatRows(mainGrid);
+            DAL.DataGridV.formatRows(mainGrid);
         }
        
 
         private void SearchDot_Click(object sender, EventArgs e)
         {
             this.mainGrid.DataSource = DAL.C_DotNhanDon.Search(this.txtsoDot.Text, this.createDate.Value, this.cbLoaiHS.SelectedValue.ToString());
-            Utilities.DataGridV.formatRows(mainGrid);
+            DAL.DataGridV.formatRows(mainGrid);
         }
 
         private void refresh_Click(object sender, EventArgs e)
@@ -127,7 +127,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
             {
                 this.checkCD.Visible = false;
             }
-            Utilities.DataGridV.formatRows(detail);
+            DAL.DataGridV.formatRows(detail);
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
