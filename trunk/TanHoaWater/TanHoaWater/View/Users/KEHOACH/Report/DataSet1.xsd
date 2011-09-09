@@ -7,7 +7,7 @@
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="TANHOA_WATERConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="TANHOA_WATERConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.TanHoaWater.Properties.Settings.GlobalReference.Default.TANHOA_WATERConnectionString" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="v_BIENNHANDONTableAdapter" GeneratorDataComponentClassName="v_BIENNHANDONTableAdapter" Name="v_BIENNHANDON" UserDataComponentName="v_BIENNHANDONTableAdapter">
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="V_BIENNHANDONTableAdapter" GeneratorDataComponentClassName="V_BIENNHANDONTableAdapter" Name="V_BIENNHANDON" UserDataComponentName="V_BIENNHANDONTableAdapter">
             <MainSource>
               <DbSource ConnectionRef="TANHOA_WATERConnectionString (Settings)" DbObjectName="TANHOA_WATER.dbo.v_BIENNHANDON" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
@@ -42,7 +42,7 @@
   <xs:element name="DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet1" msprop:Generator_UserDSName="DataSet1">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="v_BIENNHANDON" msprop:Generator_TableClassName="v_BIENNHANDONDataTable" msprop:Generator_TableVarName="tablev_BIENNHANDON" msprop:Generator_TablePropName="v_BIENNHANDON" msprop:Generator_RowDeletingName="v_BIENNHANDONRowDeleting" msprop:Generator_UserTableName="v_BIENNHANDON" msprop:Generator_RowChangingName="v_BIENNHANDONRowChanging" msprop:Generator_RowEvHandlerName="v_BIENNHANDONRowChangeEventHandler" msprop:Generator_RowDeletedName="v_BIENNHANDONRowDeleted" msprop:Generator_RowEvArgName="v_BIENNHANDONRowChangeEvent" msprop:Generator_RowChangedName="v_BIENNHANDONRowChanged" msprop:Generator_RowClassName="v_BIENNHANDONRow">
+        <xs:element name="V_BIENNHANDON" msprop:Generator_TableClassName="V_BIENNHANDONDataTable" msprop:Generator_TableVarName="tableV_BIENNHANDON" msprop:Generator_TablePropName="V_BIENNHANDON" msprop:Generator_RowDeletingName="V_BIENNHANDONRowDeleting" msprop:Generator_UserTableName="V_BIENNHANDON" msprop:Generator_RowChangingName="V_BIENNHANDONRowChanging" msprop:Generator_RowEvHandlerName="V_BIENNHANDONRowChangeEventHandler" msprop:Generator_RowDeletedName="V_BIENNHANDONRowDeleted" msprop:Generator_RowEvArgName="V_BIENNHANDONRowChangeEvent" msprop:Generator_RowChangedName="V_BIENNHANDONRowChanged" msprop:Generator_RowClassName="V_BIENNHANDONRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="SHS" msprop:Generator_ColumnVarNameInTable="columnSHS" msprop:Generator_ColumnPropNameInRow="SHS" msprop:Generator_ColumnPropNameInTable="SHSColumn" msprop:Generator_UserColumnName="SHS">
@@ -99,7 +99,7 @@
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:v_BIENNHANDON" />
+      <xs:selector xpath=".//mstns:V_BIENNHANDON" />
       <xs:field xpath="mstns:SHS" />
     </xs:unique>
   </xs:element>
