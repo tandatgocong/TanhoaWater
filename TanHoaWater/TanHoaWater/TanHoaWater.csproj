@@ -165,6 +165,17 @@
     <Compile Include="View\Users\KEHOACH\frm_BienNhanDon.Designer.cs">
       <DependentUpon>frm_BienNhanDon.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Users\KEHOACH\Report\crp_BIENNHAN.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crp_BIENNHAN.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\Users\KEHOACH\Report\DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="View\Users\KEHOACH\Report\rpt_TroNgaiQuan.cs">
       <DependentUpon>rpt_TroNgaiQuan.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -305,6 +316,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\KEHOACH\frm_BienNhanDon.resx">
       <DependentUpon>frm_BienNhanDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\KEHOACH\Report\crp_BIENNHAN.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crp_BIENNHAN.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\KEHOACH\Report\rpt_TroNgaiQuan.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -481,6 +496,17 @@
     <Compile Include="View\Main\frm_Login.Designer.cs">
       <DependentUpon>frm_Login.cs</DependentUpon>
     </Compile>
+    <None Include="View\Users\KEHOACH\Report\DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="View\Users\KEHOACH\Report\DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="View\Users\KEHOACH\Report\DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\bg_head.jpg" />
