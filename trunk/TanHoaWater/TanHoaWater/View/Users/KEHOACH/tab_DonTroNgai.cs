@@ -16,6 +16,8 @@ namespace TanHoaWater.View.Users.KEHOACH
         public tab_DonTroNgai()
         {
             InitializeComponent();
+            this.txtSHS.Mask = DateTime.Now.Year.ToString().Substring(2) + "CCCCC";
+            txtSHS.Focus();
         }
 
         private void txtSHS_KeyPress(object sender, KeyPressEventArgs e)

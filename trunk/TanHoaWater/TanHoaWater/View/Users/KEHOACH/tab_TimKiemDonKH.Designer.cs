@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.SearchDotNhanDon = new System.Windows.Forms.TextBox();
             this.searchSoNha = new System.Windows.Forms.TextBox();
@@ -56,11 +56,8 @@
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.cbDotNhanDon = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.bophanChuyen = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.label17 = new System.Windows.Forms.Label();
-            this.chuyenhoso = new DevComponents.DotNetBar.Controls.CheckBoxX();
             this.label13 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.ghichuKhan = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.label14 = new System.Windows.Forms.Label();
@@ -87,6 +84,9 @@
             this.cbLoaiKH = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.cbQuan = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.cbPhuong = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.chuyenhoso = new DevComponents.DotNetBar.Controls.CheckBoxX();
+            this.label16 = new System.Windows.Forms.Label();
+            this.bophanChuyen = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.next)).BeginInit();
@@ -247,8 +247,8 @@
             // G_SodotNhanDon
             // 
             this.G_SodotNhanDon.DataPropertyName = "MADOT";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.G_SodotNhanDon.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.G_SodotNhanDon.DefaultCellStyle = dataGridViewCellStyle4;
             this.G_SodotNhanDon.HeaderText = "Số Đợt Nhận Đơn";
             this.G_SodotNhanDon.Name = "G_SodotNhanDon";
             this.G_SodotNhanDon.ReadOnly = true;
@@ -257,8 +257,8 @@
             // SOHOSO
             // 
             this.SOHOSO.DataPropertyName = "SOHOSO";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.SOHOSO.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.SOHOSO.DefaultCellStyle = dataGridViewCellStyle5;
             this.SOHOSO.HeaderText = "Số Hồ Sơ";
             this.SOHOSO.Name = "SOHOSO";
             this.SOHOSO.ReadOnly = true;
@@ -283,8 +283,8 @@
             // NGAY_NHAN
             // 
             this.NGAY_NHAN.DataPropertyName = "NGAYNHAN";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.NGAY_NHAN.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.NGAY_NHAN.DefaultCellStyle = dataGridViewCellStyle6;
             this.NGAY_NHAN.HeaderText = "Ngày Nhận";
             this.NGAY_NHAN.Name = "NGAY_NHAN";
             this.NGAY_NHAN.ReadOnly = true;
@@ -338,7 +338,7 @@
             // 
             // groupPanel1
             // 
-            this.groupPanel1.BackColor = System.Drawing.SystemColors.Control;
+            this.groupPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(206)))), ((int)(((byte)(236)))));
             this.groupPanel1.CanvasColor = System.Drawing.SystemColors.Control;
             this.groupPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2010;
             this.groupPanel1.Controls.Add(this.panel1);
@@ -371,6 +371,7 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
             this.panel1.Controls.Add(this.cbDotNhanDon);
             this.panel1.Controls.Add(this.bophanChuyen);
             this.panel1.Controls.Add(this.label17);
@@ -420,18 +421,6 @@
             this.cbDotNhanDon.Size = new System.Drawing.Size(135, 22);
             this.cbDotNhanDon.TabIndex = 114;
             // 
-            // bophanChuyen
-            // 
-            this.bophanChuyen.DisplayMember = "Text";
-            this.bophanChuyen.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.bophanChuyen.FormattingEnabled = true;
-            this.bophanChuyen.ItemHeight = 16;
-            this.bophanChuyen.Location = new System.Drawing.Point(550, 99);
-            this.bophanChuyen.Name = "bophanChuyen";
-            this.bophanChuyen.Size = new System.Drawing.Size(390, 22);
-            this.bophanChuyen.TabIndex = 113;
-            this.bophanChuyen.Visible = false;
-            // 
             // label17
             // 
             this.label17.AutoSize = true;
@@ -441,14 +430,6 @@
             this.label17.TabIndex = 111;
             this.label17.Text = "Đợt N.Đơn";
             // 
-            // chuyenhoso
-            // 
-            this.chuyenhoso.Location = new System.Drawing.Point(523, 105);
-            this.chuyenhoso.Name = "chuyenhoso";
-            this.chuyenhoso.Size = new System.Drawing.Size(21, 15);
-            this.chuyenhoso.TabIndex = 23;
-            this.chuyenhoso.CheckedChanged += new System.EventHandler(this.chuyenhoso_CheckedChanged);
-            // 
             // label13
             // 
             this.label13.AutoSize = true;
@@ -457,15 +438,6 @@
             this.label13.Size = new System.Drawing.Size(46, 16);
             this.label13.TabIndex = 85;
             this.label13.Text = "Số ĐT";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(427, 104);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(94, 16);
-            this.label16.TabIndex = 109;
-            this.label16.Text = "Chuyển Hồ Sơ";
             // 
             // label15
             // 
@@ -733,6 +705,35 @@
             this.cbPhuong.Size = new System.Drawing.Size(116, 22);
             this.cbPhuong.TabIndex = 15;
             // 
+            // chuyenhoso
+            // 
+            this.chuyenhoso.Location = new System.Drawing.Point(523, 105);
+            this.chuyenhoso.Name = "chuyenhoso";
+            this.chuyenhoso.Size = new System.Drawing.Size(21, 15);
+            this.chuyenhoso.TabIndex = 23;
+            this.chuyenhoso.CheckedChanged += new System.EventHandler(this.chuyenhoso_CheckedChanged);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(427, 104);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(94, 16);
+            this.label16.TabIndex = 109;
+            this.label16.Text = "Chuyển Hồ Sơ";
+            // 
+            // bophanChuyen
+            // 
+            this.bophanChuyen.DisplayMember = "Text";
+            this.bophanChuyen.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.bophanChuyen.FormattingEnabled = true;
+            this.bophanChuyen.ItemHeight = 16;
+            this.bophanChuyen.Location = new System.Drawing.Point(550, 99);
+            this.bophanChuyen.Name = "bophanChuyen";
+            this.bophanChuyen.Size = new System.Drawing.Size(390, 22);
+            this.bophanChuyen.TabIndex = 113;
+            this.bophanChuyen.Visible = false;
+            // 
             // tab_TimKiemDonKH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -783,9 +784,7 @@
         private System.Windows.Forms.TextBox SearchDotNhanDon;
         private DevComponents.DotNetBar.Controls.GroupPanel groupPanel1;
         private System.Windows.Forms.Panel panel1;
-        private DevComponents.DotNetBar.Controls.CheckBoxX chuyenhoso;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
         private DevComponents.DotNetBar.Controls.TextBoxX ghichuKhan;
         private System.Windows.Forms.Label label14;
@@ -813,8 +812,10 @@
         private DevComponents.DotNetBar.Controls.ComboBoxEx cbQuan;
         private DevComponents.DotNetBar.Controls.ComboBoxEx cbPhuong;
         private System.Windows.Forms.Label label17;
-        private DevComponents.DotNetBar.Controls.ComboBoxEx bophanChuyen;
         private DevComponents.DotNetBar.Controls.ComboBoxEx cbDotNhanDon;
+        private DevComponents.DotNetBar.Controls.ComboBoxEx bophanChuyen;
+        private DevComponents.DotNetBar.Controls.CheckBoxX chuyenhoso;
+        private System.Windows.Forms.Label label16;
 
     }
 }

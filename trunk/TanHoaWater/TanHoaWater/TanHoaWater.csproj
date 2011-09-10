@@ -145,6 +145,11 @@
     <Compile Include="Roles\VTTH.Designer.cs">
       <DependentUpon>VTTH.cs</DependentUpon>
     </Compile>
+    <Compile Include="TANHOA_WATERDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TANHOA_WATERDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Utilities\AddValueCombox.cs" />
     <Compile Include="Utilities\DataGridV.cs" />
     <Compile Include="Utilities\DateToString.cs" />
@@ -496,6 +501,17 @@
     <Compile Include="View\Main\frm_Login.Designer.cs">
       <DependentUpon>frm_Login.cs</DependentUpon>
     </Compile>
+    <None Include="TANHOA_WATERDataSet.xsc">
+      <DependentUpon>TANHOA_WATERDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="TANHOA_WATERDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TANHOA_WATERDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TANHOA_WATERDataSet.xss">
+      <DependentUpon>TANHOA_WATERDataSet.xsd</DependentUpon>
+    </None>
     <None Include="View\Users\KEHOACH\Report\DataSet1.xsc">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>

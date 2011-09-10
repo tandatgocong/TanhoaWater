@@ -60,5 +60,60 @@ namespace TanHoaWater.DAL
             kq = kq + ngay + "/" + thang + "/" + nam;
             return kq;
         }
+        public static string fullCurrentNgay()
+        {
+            string dateofweek="";
+            if (DateTime.Now.DayOfWeek.ToString().Trim().Contains("Mon") == true)
+            {
+                dateofweek = "Thứ 2,";
+            }
+            if (DateTime.Now.DayOfWeek.ToString().Trim().Contains("Tue") == true)
+            {
+                dateofweek = "Thứ 3,";
+            }
+            if (DateTime.Now.DayOfWeek.ToString().Trim().Contains("Wed") == true) 
+            {
+                dateofweek = "Thứ 4,";
+            }
+            if (DateTime.Now.DayOfWeek.ToString().Trim().Contains("Thu") == true)
+            {
+                dateofweek = "Thứ 5,";
+            }
+            if ("‎Friday".Equals(DateTime.Now.DayOfWeek.ToString()))
+            {
+                dateofweek = "Thứ 6,";
+            }
+            if (DateTime.Now.DayOfWeek.ToString().Trim().Contains("Satu") == true)
+            {
+                dateofweek = "Thứ 7,";
+            }
+            if (DateTime.Now.DayOfWeek.ToString().Trim().Contains("Sun") == true)
+            {
+                dateofweek = "Chủ nhật,";
+            }
+            string kq = "";
+            string ngay;
+            string thang;
+            string nam = DateTime.Now.Year.ToString();
+
+            if (DateTime.Now.Day < 10)
+            {
+                ngay = "0" + DateTime.Now.Day.ToString();
+            }
+            else
+            {
+                ngay = DateTime.Now.Day.ToString();
+            }
+            if (DateTime.Now.Month < 10)
+            {
+                thang = "0" + DateTime.Now.Month.ToString();
+            }
+            else
+            {
+                thang = DateTime.Now.Month.ToString();
+            }
+            kq = dateofweek + " Ngày " +  ngay + " tháng " + thang + " năm " + nam;
+            return kq;
+        }
     }
 }

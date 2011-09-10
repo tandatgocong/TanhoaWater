@@ -174,9 +174,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
             this.ghichu.Text = null;
             this.khan.Checked = false;
             this.ghichuKhan.Visible = false;
-            this.ghichuKhan.Text = null;
-            this.chuyenhoso.Checked = false;
-            this.bophanChuyen.Visible = false;
+            this.ghichuKhan.Text = null;   
             this.btUpdate.Enabled = true;
             this.btDelete.Enabled = true;
         }
@@ -218,22 +216,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                             this.ghichuKhan.Visible = false;
                             this.ghichuKhan.Text = null;
                         }
-                        if (donkh.CHUYEN_HOSO == true)
-                        {
-                            this.chuyenhoso.Checked = true;
-                            this.bophanChuyen.Visible = true;
-                            // load bo phan chuyen
-                            this.btUpdate.Enabled = false;
-                            this.btDelete.Enabled = false;
-                            this.bophanChuyen.Text = DAL.C_PhongBan.findbyMaPhong(donkh.BOPHANCHUYEN).TENPHONG;
-                        }
-                        else {
-                            this.chuyenhoso.Checked = false;
-                            this.bophanChuyen.Visible = false;
-                            this.btUpdate.Enabled = true;
-                            this.btDelete.Enabled = true;
-                            this.bophanChuyen.Text = null;
-                        }
+                        
                     
                     }
                 }
@@ -252,19 +235,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                 this.ghichuKhan.Visible = false;
             }
         }
-
-        private void chuyenhoso_CheckedChanged(object sender, EventArgs e)
-        {
-            this.bophanChuyen.DataSource = DAL.C_PhongBan.getList();
-            this.bophanChuyen.DisplayMember = "TENPHONG";
-            this.bophanChuyen.ValueMember = "MAPHONG";
-            if (chuyenhoso.Checked) {
-                this.bophanChuyen.Visible = true;
-            } else {
-                this.bophanChuyen.Visible = true;
-            }
-        }
-
+        
         private void cbQuan_SelectedValueChanged(object sender, EventArgs e)
         {
 
@@ -292,6 +263,11 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                 clear();
                 search();
             }      
+        }
+
+        private void chuyenhoso_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

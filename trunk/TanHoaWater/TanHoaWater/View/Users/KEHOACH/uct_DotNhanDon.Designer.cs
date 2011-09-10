@@ -32,6 +32,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(uct_DOTNHANDON));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.reflectionLabel1 = new DevComponents.DotNetBar.Controls.ReflectionLabel();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -90,9 +92,10 @@
             this.groupBox2.Controls.Add(this.chyenTTK);
             this.groupBox2.Controls.Add(this.lbSoKHNhanDon);
             this.groupBox2.Controls.Add(this.detail);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(611, 156);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(363, 450);
+            this.groupBox2.Size = new System.Drawing.Size(365, 450);
             this.groupBox2.TabIndex = 30;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh sách Khách Hàng của Đợt nhận đơn ";
@@ -104,10 +107,10 @@
             this.cbBOPHAN.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbBOPHAN.DropDownWidth = 250;
             this.cbBOPHAN.FormattingEnabled = true;
-            this.cbBOPHAN.ItemHeight = 16;
+            this.cbBOPHAN.ItemHeight = 18;
             this.cbBOPHAN.Location = new System.Drawing.Point(101, 22);
             this.cbBOPHAN.Name = "cbBOPHAN";
-            this.cbBOPHAN.Size = new System.Drawing.Size(137, 22);
+            this.cbBOPHAN.Size = new System.Drawing.Size(137, 24);
             this.cbBOPHAN.TabIndex = 25;
             this.cbBOPHAN.Visible = false;
             // 
@@ -163,13 +166,29 @@
             // 
             this.detail.AllowUserToAddRows = false;
             this.detail.AllowUserToDeleteRows = false;
-            this.detail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.detail.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.detail.ColumnHeadersHeight = 25;
             this.detail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.SOHOSO,
             this.HOTEN,
             this.DIACHI,
             this.NGAY_NHAN,
             this.loiDon});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.detail.DefaultCellStyle = dataGridViewCellStyle2;
             this.detail.Location = new System.Drawing.Point(6, 50);
             this.detail.Name = "detail";
             this.detail.ReadOnly = true;
@@ -234,8 +253,8 @@
             // DOTNHAN
             // 
             this.DOTNHAN.DataPropertyName = "MADOT";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.DOTNHAN.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.DOTNHAN.DefaultCellStyle = dataGridViewCellStyle3;
             this.DOTNHAN.HeaderText = "Đợt Nhận Đơn";
             this.DOTNHAN.Name = "DOTNHAN";
             this.DOTNHAN.ReadOnly = true;
@@ -244,8 +263,8 @@
             // NGAYNHAN
             // 
             this.NGAYNHAN.DataPropertyName = "NGAYLAPDON";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.NGAYNHAN.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.NGAYNHAN.DefaultCellStyle = dataGridViewCellStyle4;
             this.NGAYNHAN.HeaderText = "Ngày Lập Đơn";
             this.NGAYNHAN.Name = "NGAYNHAN";
             this.NGAYNHAN.ReadOnly = true;
@@ -446,7 +465,6 @@
         private DevComponents.DotNetBar.Controls.ReflectionLabel reflectionLabel1;
         private DevComponents.DotNetBar.ButtonX refresh;
         private System.Windows.Forms.ErrorProvider errorProvider1;
-        private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label lbSoKHNhanDon;
         private System.Windows.Forms.DataGridView detail;
         private System.Windows.Forms.DataGridView mainGrid;
@@ -471,5 +489,6 @@
         private DevComponents.DotNetBar.ButtonX chyenTTK;
         private DevComponents.DotNetBar.Controls.CheckBoxX checkCD;
         private DevComponents.DotNetBar.Controls.ComboBoxEx cbBOPHAN;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }

@@ -112,21 +112,21 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
 
             this.detail.DataSource = DAL.C_DonKhachHang.getListbyDot(madot);
             sokh = DAL.C_DonKhachHang.getListbyDot(madot).Rows.Count;
-            if (sokh > 0)
-            {
-                this.print.Visible = true;
-                this.checkCD.Visible = true;
+            //if (sokh > 0)
+            //{
+            //    this.print.Visible = true;
+            //    this.checkCD.Visible = true;
 
-            }
-            else
-            {
-                this.print.Visible = false;
-                this.checkCD.Visible = false;
-            }
-            if (DAL.C_DotNhanDon.findByMaDot(madot).CHUYENDON == true)
-            {
-                this.checkCD.Visible = false;
-            }
+            //}
+            //else
+            //{
+            //    this.print.Visible = false;
+            //    this.checkCD.Visible = false;
+            //}
+            //if (DAL.C_DotNhanDon.findByMaDot(madot).CHUYENDON == true)
+            //{
+            //    this.checkCD.Visible = false;
+            //}
             DAL.DataGridV.formatRows(detail);
         }
 

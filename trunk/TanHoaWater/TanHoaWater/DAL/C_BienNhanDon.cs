@@ -28,5 +28,10 @@ namespace TanHoaWater.DAL
             db.Connection.Close();
             return dataset;
         }
+        public static BIENNHANDON finbyMaBienNhan(string mabn) {
+            TanHoaDataContext db = new TanHoaDataContext();
+            var query = from biennhan in db.BIENNHANDONs where biennhan.SHS== mabn select biennhan;
+            return query.SingleOrDefault();
+        }
     }
 }
