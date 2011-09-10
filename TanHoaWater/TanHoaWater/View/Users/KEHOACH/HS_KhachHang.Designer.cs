@@ -29,13 +29,19 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.reflectionLabel1 = new DevComponents.DotNetBar.Controls.ReflectionLabel();
             this.tabControl1 = new DevComponents.DotNetBar.TabControl();
+            this.tabControlPanel6 = new DevComponents.DotNetBar.TabControlPanel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.tabItem4 = new DevComponents.DotNetBar.TabItem(this.components);
+            this.tabControlPanel5 = new DevComponents.DotNetBar.TabControlPanel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.tabItem3 = new DevComponents.DotNetBar.TabItem(this.components);
             this.tabControlPanel1 = new DevComponents.DotNetBar.TabControlPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.ghichukhan = new System.Windows.Forms.MaskedTextBox();
@@ -122,9 +128,6 @@
             this.label21 = new System.Windows.Forms.Label();
             this.bophanChuyen = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.tabChuyenDon = new DevComponents.DotNetBar.TabItem(this.components);
-            this.tabControlPanel5 = new DevComponents.DotNetBar.TabControlPanel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.tabItem3 = new DevComponents.DotNetBar.TabItem(this.components);
             this.tabControlPanel4 = new DevComponents.DotNetBar.TabControlPanel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.BC_NGUOIDUYET = new DevComponents.DotNetBar.Controls.ComboBoxEx();
@@ -145,12 +148,12 @@
             this.tabControlPanel2 = new DevComponents.DotNetBar.TabControlPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tabItem2 = new DevComponents.DotNetBar.TabItem(this.components);
-            this.tabControlPanel6 = new DevComponents.DotNetBar.TabControlPanel();
-            this.tabItem4 = new DevComponents.DotNetBar.TabItem(this.components);
             this.galleryContainer1 = new DevComponents.DotNetBar.GalleryContainer();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.tabControl1)).BeginInit();
             this.tabControl1.SuspendLayout();
+            this.tabControlPanel6.SuspendLayout();
+            this.tabControlPanel5.SuspendLayout();
             this.tabControlPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -165,7 +168,6 @@
             this.groupPanel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cd_MainGird)).BeginInit();
-            this.tabControlPanel5.SuspendLayout();
             this.tabControlPanel4.SuspendLayout();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -187,12 +189,12 @@
             // tabControl1
             // 
             this.tabControl1.CanReorderTabs = true;
-            this.tabControl1.Controls.Add(this.tabControlPanel5);
-            this.tabControl1.Controls.Add(this.tabControlPanel6);
             this.tabControl1.Controls.Add(this.tabControlPanel3);
-            this.tabControl1.Controls.Add(this.tabControlPanel1);
             this.tabControl1.Controls.Add(this.tabControlPanel4);
             this.tabControl1.Controls.Add(this.tabControlPanel2);
+            this.tabControl1.Controls.Add(this.tabControlPanel6);
+            this.tabControl1.Controls.Add(this.tabControlPanel5);
+            this.tabControl1.Controls.Add(this.tabControlPanel1);
             this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(-5, 51);
             this.tabControl1.Name = "tabControl1";
@@ -209,6 +211,71 @@
             this.tabControl1.Tabs.Add(this.tab_BaoCao);
             this.tabControl1.Text = "tabControl1";
             this.tabControl1.Click += new System.EventHandler(this.tabControl1_Click);
+            // 
+            // tabControlPanel6
+            // 
+            this.tabControlPanel6.Controls.Add(this.panel5);
+            this.tabControlPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControlPanel6.Location = new System.Drawing.Point(0, 26);
+            this.tabControlPanel6.Name = "tabControlPanel6";
+            this.tabControlPanel6.Padding = new System.Windows.Forms.Padding(1);
+            this.tabControlPanel6.Size = new System.Drawing.Size(1001, 535);
+            this.tabControlPanel6.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(179)))), ((int)(((byte)(231)))));
+            this.tabControlPanel6.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(237)))), ((int)(((byte)(254)))));
+            this.tabControlPanel6.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.tabControlPanel6.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(97)))), ((int)(((byte)(156)))));
+            this.tabControlPanel6.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right)
+                        | DevComponents.DotNetBar.eBorderSide.Bottom)));
+            this.tabControlPanel6.Style.GradientAngle = 90;
+            this.tabControlPanel6.TabIndex = 6;
+            this.tabControlPanel6.TabItem = this.tabItem4;
+            // 
+            // panel5
+            // 
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel5.Location = new System.Drawing.Point(1, 1);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(999, 533);
+            this.panel5.TabIndex = 1;
+            // 
+            // tabItem4
+            // 
+            this.tabItem4.AttachedControl = this.tabControlPanel6;
+            this.tabItem4.Name = "tabItem4";
+            this.tabItem4.Text = "Hồ Sơ Tái Xét";
+            // 
+            // tabControlPanel5
+            // 
+            this.tabControlPanel5.Controls.Add(this.panel4);
+            this.tabControlPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControlPanel5.Location = new System.Drawing.Point(0, 26);
+            this.tabControlPanel5.Name = "tabControlPanel5";
+            this.tabControlPanel5.Padding = new System.Windows.Forms.Padding(1);
+            this.tabControlPanel5.Size = new System.Drawing.Size(1001, 535);
+            this.tabControlPanel5.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(179)))), ((int)(((byte)(231)))));
+            this.tabControlPanel5.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(237)))), ((int)(((byte)(254)))));
+            this.tabControlPanel5.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.tabControlPanel5.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(97)))), ((int)(((byte)(156)))));
+            this.tabControlPanel5.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right)
+                        | DevComponents.DotNetBar.eBorderSide.Bottom)));
+            this.tabControlPanel5.Style.GradientAngle = 90;
+            this.tabControlPanel5.TabIndex = 5;
+            this.tabControlPanel5.TabItem = this.tabItem3;
+            // 
+            // panel4
+            // 
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(1, 1);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(999, 533);
+            this.panel4.TabIndex = 0;
+            // 
+            // tabItem3
+            // 
+            this.tabItem3.AttachedControl = this.tabControlPanel5;
+            this.tabItem3.Name = "tabItem3";
+            this.tabItem3.Text = "Hồ Sơ Trở Ngại";
+            this.tabItem3.Click += new System.EventHandler(this.tabItem3_Click);
             // 
             // tabControlPanel1
             // 
@@ -279,7 +346,7 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.Location = new System.Drawing.Point(1, 1);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(999, 533);
@@ -290,7 +357,7 @@
             this.ghichukhan.Location = new System.Drawing.Point(144, 205);
             this.ghichukhan.Name = "ghichukhan";
             this.ghichukhan.PromptChar = ' ';
-            this.ghichukhan.Size = new System.Drawing.Size(280, 22);
+            this.ghichukhan.Size = new System.Drawing.Size(280, 24);
             this.ghichukhan.TabIndex = 49;
             this.ghichukhan.Visible = false;
             // 
@@ -299,7 +366,7 @@
             this.lbPaing.AutoSize = true;
             this.lbPaing.Location = new System.Drawing.Point(914, 250);
             this.lbPaing.Name = "lbPaing";
-            this.lbPaing.Size = new System.Drawing.Size(40, 16);
+            this.lbPaing.Size = new System.Drawing.Size(44, 18);
             this.lbPaing.TabIndex = 48;
             this.lbPaing.Text = "20/20";
             this.lbPaing.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -380,19 +447,20 @@
             // loiDon
             // 
             this.loiDon.DataPropertyName = "LOAIDON";
-            this.loiDon.HeaderText = "Loại Đơn";
+            this.loiDon.HeaderText = "Loại Khách Hàng";
             this.loiDon.Name = "loiDon";
             this.loiDon.ReadOnly = true;
             this.loiDon.Width = 150;
             // 
             // txtSHS
             // 
-            this.txtSHS.Location = new System.Drawing.Point(117, 14);
-            this.txtSHS.Mask = "00000";
+            this.txtSHS.Location = new System.Drawing.Point(114, 14);
+            this.txtSHS.Mask = "CCCCC";
             this.txtSHS.Name = "txtSHS";
             this.txtSHS.PromptChar = ' ';
-            this.txtSHS.Size = new System.Drawing.Size(78, 22);
+            this.txtSHS.Size = new System.Drawing.Size(78, 24);
             this.txtSHS.TabIndex = 1;
+            this.txtSHS.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSHS_KeyPress);
             this.txtSHS.Leave += new System.EventHandler(this.txtSHS_Leave);
             // 
             // dienthoai
@@ -400,14 +468,14 @@
             this.dienthoai.Location = new System.Drawing.Point(308, 137);
             this.dienthoai.Name = "dienthoai";
             this.dienthoai.PromptChar = ' ';
-            this.dienthoai.Size = new System.Drawing.Size(116, 22);
+            this.dienthoai.Size = new System.Drawing.Size(116, 24);
             this.dienthoai.TabIndex = 11;
             // 
             // totalRecord
             // 
             this.totalRecord.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.totalRecord.ForeColor = System.Drawing.Color.Red;
-            this.totalRecord.Location = new System.Drawing.Point(468, 243);
+            this.totalRecord.Location = new System.Drawing.Point(467, 245);
             this.totalRecord.Name = "totalRecord";
             this.totalRecord.Size = new System.Drawing.Size(406, 23);
             this.totalRecord.TabIndex = 43;
@@ -448,9 +516,9 @@
             // 
             // 
             this.textBoxX13.Border.Class = "TextBoxBorder";
-            this.textBoxX13.Location = new System.Drawing.Point(536, 206);
+            this.textBoxX13.Location = new System.Drawing.Point(550, 208);
             this.textBoxX13.Name = "textBoxX13";
-            this.textBoxX13.Size = new System.Drawing.Size(191, 22);
+            this.textBoxX13.Size = new System.Drawing.Size(191, 24);
             this.textBoxX13.TabIndex = 39;
             // 
             // label18
@@ -458,7 +526,7 @@
             this.label18.AutoSize = true;
             this.label18.Location = new System.Drawing.Point(450, 208);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(82, 16);
+            this.label18.Size = new System.Drawing.Size(89, 18);
             this.label18.TabIndex = 38;
             this.label18.Text = "Hoàn Thành";
             // 
@@ -470,7 +538,7 @@
             this.dateTimeInput1.BackgroundStyle.Class = "DateTimeInputBackground";
             this.dateTimeInput1.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
             this.dateTimeInput1.ButtonDropDown.Visible = true;
-            this.dateTimeInput1.Location = new System.Drawing.Point(536, 169);
+            this.dateTimeInput1.Location = new System.Drawing.Point(550, 171);
             // 
             // 
             // 
@@ -501,7 +569,7 @@
             this.dateTimeInput1.MonthCalendar.TodayButtonVisible = true;
             this.dateTimeInput1.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
             this.dateTimeInput1.Name = "dateTimeInput1";
-            this.dateTimeInput1.Size = new System.Drawing.Size(92, 22);
+            this.dateTimeInput1.Size = new System.Drawing.Size(92, 24);
             this.dateTimeInput1.TabIndex = 37;
             // 
             // label17
@@ -509,7 +577,7 @@
             this.label17.AutoSize = true;
             this.label17.Location = new System.Drawing.Point(449, 175);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(76, 16);
+            this.label17.Size = new System.Drawing.Size(81, 18);
             this.label17.TabIndex = 36;
             this.label17.Text = "Ngày Nhận";
             // 
@@ -519,9 +587,9 @@
             // 
             // 
             this.textBoxX12.Border.Class = "TextBoxBorder";
-            this.textBoxX12.Location = new System.Drawing.Point(536, 141);
+            this.textBoxX12.Location = new System.Drawing.Point(550, 143);
             this.textBoxX12.Name = "textBoxX12";
-            this.textBoxX12.Size = new System.Drawing.Size(191, 22);
+            this.textBoxX12.Size = new System.Drawing.Size(191, 24);
             this.textBoxX12.TabIndex = 35;
             // 
             // label16
@@ -529,7 +597,7 @@
             this.label16.AutoSize = true;
             this.label16.Location = new System.Drawing.Point(450, 143);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(69, 16);
+            this.label16.Size = new System.Drawing.Size(76, 18);
             this.label16.TabIndex = 34;
             this.label16.Text = "Hơp Đồng";
             // 
@@ -539,9 +607,9 @@
             // 
             // 
             this.txtDanhBo.Border.Class = "TextBoxBorder";
-            this.txtDanhBo.Location = new System.Drawing.Point(536, 109);
+            this.txtDanhBo.Location = new System.Drawing.Point(550, 111);
             this.txtDanhBo.Name = "txtDanhBo";
-            this.txtDanhBo.Size = new System.Drawing.Size(191, 22);
+            this.txtDanhBo.Size = new System.Drawing.Size(191, 24);
             this.txtDanhBo.TabIndex = 33;
             // 
             // label15
@@ -549,7 +617,7 @@
             this.label15.AutoSize = true;
             this.label15.Location = new System.Drawing.Point(450, 111);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(60, 16);
+            this.label15.Size = new System.Drawing.Size(66, 18);
             this.label15.TabIndex = 32;
             this.label15.Text = "Danh Bộ";
             // 
@@ -559,9 +627,9 @@
             // 
             // 
             this.textBoxX10.Border.Class = "TextBoxBorder";
-            this.textBoxX10.Location = new System.Drawing.Point(536, 76);
+            this.textBoxX10.Location = new System.Drawing.Point(550, 78);
             this.textBoxX10.Name = "textBoxX10";
-            this.textBoxX10.Size = new System.Drawing.Size(191, 22);
+            this.textBoxX10.Size = new System.Drawing.Size(191, 24);
             this.textBoxX10.TabIndex = 31;
             // 
             // label14
@@ -569,7 +637,7 @@
             this.label14.AutoSize = true;
             this.label14.Location = new System.Drawing.Point(450, 78);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(50, 16);
+            this.label14.Size = new System.Drawing.Size(56, 18);
             this.label14.TabIndex = 30;
             this.label14.Text = "Địa Chỉ";
             // 
@@ -579,9 +647,9 @@
             // 
             // 
             this.textBoxX9.Border.Class = "TextBoxBorder";
-            this.textBoxX9.Location = new System.Drawing.Point(622, 48);
+            this.textBoxX9.Location = new System.Drawing.Point(550, 50);
             this.textBoxX9.Name = "textBoxX9";
-            this.textBoxX9.Size = new System.Drawing.Size(105, 22);
+            this.textBoxX9.Size = new System.Drawing.Size(105, 24);
             this.textBoxX9.TabIndex = 29;
             // 
             // textBoxX8
@@ -590,9 +658,9 @@
             // 
             // 
             this.textBoxX8.Border.Class = "TextBoxBorder";
-            this.textBoxX8.Location = new System.Drawing.Point(536, 48);
+            this.textBoxX8.Location = new System.Drawing.Point(661, 50);
             this.textBoxX8.Name = "textBoxX8";
-            this.textBoxX8.Size = new System.Drawing.Size(80, 22);
+            this.textBoxX8.Size = new System.Drawing.Size(80, 24);
             this.textBoxX8.TabIndex = 28;
             // 
             // label13
@@ -600,7 +668,7 @@
             this.label13.AutoSize = true;
             this.label13.Location = new System.Drawing.Point(450, 50);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(69, 16);
+            this.label13.Size = new System.Drawing.Size(79, 18);
             this.label13.TabIndex = 27;
             this.label13.Text = "Số Đợt TC";
             // 
@@ -615,9 +683,9 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(33, 206);
+            this.label12.Location = new System.Drawing.Point(32, 206);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(79, 16);
+            this.label12.Size = new System.Drawing.Size(89, 18);
             this.label12.TabIndex = 24;
             this.label12.Text = "Hồ Sơ Khẩn";
             // 
@@ -628,19 +696,19 @@
             this.cbDotNhanDon.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbDotNhanDon.DropDownWidth = 300;
             this.cbDotNhanDon.FormattingEnabled = true;
-            this.cbDotNhanDon.ItemHeight = 16;
-            this.cbDotNhanDon.Location = new System.Drawing.Point(536, 10);
+            this.cbDotNhanDon.ItemHeight = 18;
+            this.cbDotNhanDon.Location = new System.Drawing.Point(550, 16);
             this.cbDotNhanDon.Name = "cbDotNhanDon";
-            this.cbDotNhanDon.Size = new System.Drawing.Size(191, 22);
+            this.cbDotNhanDon.Size = new System.Drawing.Size(191, 24);
             this.cbDotNhanDon.TabIndex = 3;
             this.cbDotNhanDon.SelectedValueChanged += new System.EventHandler(this.cbDotNhanDon_SelectedValueChanged);
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(449, 16);
+            this.label11.Location = new System.Drawing.Point(449, 20);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(90, 16);
+            this.label11.Size = new System.Drawing.Size(103, 18);
             this.label11.TabIndex = 22;
             this.label11.Text = "Đợt Nhận Đơn";
             // 
@@ -650,17 +718,17 @@
             // 
             // 
             this.ghichu.Border.Class = "TextBoxBorder";
-            this.ghichu.Location = new System.Drawing.Point(113, 173);
+            this.ghichu.Location = new System.Drawing.Point(114, 173);
             this.ghichu.Name = "ghichu";
-            this.ghichu.Size = new System.Drawing.Size(311, 22);
+            this.ghichu.Size = new System.Drawing.Size(311, 24);
             this.ghichu.TabIndex = 12;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(31, 175);
+            this.label10.Location = new System.Drawing.Point(32, 175);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(54, 16);
+            this.label10.Size = new System.Drawing.Size(62, 18);
             this.label10.TabIndex = 20;
             this.label10.Text = "Ghi Chú";
             // 
@@ -671,19 +739,19 @@
             this.cbLoaiHS.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbLoaiHS.DropDownWidth = 250;
             this.cbLoaiHS.FormattingEnabled = true;
-            this.cbLoaiHS.ItemHeight = 16;
-            this.cbLoaiHS.Location = new System.Drawing.Point(841, 44);
+            this.cbLoaiHS.ItemHeight = 18;
+            this.cbLoaiHS.Location = new System.Drawing.Point(824, 62);
             this.cbLoaiHS.Name = "cbLoaiHS";
-            this.cbLoaiHS.Size = new System.Drawing.Size(97, 22);
+            this.cbLoaiHS.Size = new System.Drawing.Size(97, 24);
             this.cbLoaiHS.TabIndex = 10;
             this.cbLoaiHS.Visible = false;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(762, 50);
+            this.label9.Location = new System.Drawing.Point(821, 41);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(75, 16);
+            this.label9.Size = new System.Drawing.Size(83, 18);
             this.label9.TabIndex = 18;
             this.label9.Text = "Loại Hồ Sơ";
             this.label9.Visible = false;
@@ -694,10 +762,10 @@
             this.cbLoaiKH.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbLoaiKH.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbLoaiKH.FormattingEnabled = true;
-            this.cbLoaiKH.ItemHeight = 16;
-            this.cbLoaiKH.Location = new System.Drawing.Point(113, 141);
+            this.cbLoaiKH.ItemHeight = 18;
+            this.cbLoaiKH.Location = new System.Drawing.Point(114, 138);
             this.cbLoaiKH.Name = "cbLoaiKH";
-            this.cbLoaiKH.Size = new System.Drawing.Size(129, 22);
+            this.cbLoaiKH.Size = new System.Drawing.Size(129, 24);
             this.cbLoaiKH.TabIndex = 9;
             // 
             // cbPhuong
@@ -706,10 +774,10 @@
             this.cbPhuong.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbPhuong.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbPhuong.FormattingEnabled = true;
-            this.cbPhuong.ItemHeight = 16;
-            this.cbPhuong.Location = new System.Drawing.Point(308, 106);
+            this.cbPhuong.ItemHeight = 18;
+            this.cbPhuong.Location = new System.Drawing.Point(114, 108);
             this.cbPhuong.Name = "cbPhuong";
-            this.cbPhuong.Size = new System.Drawing.Size(116, 22);
+            this.cbPhuong.Size = new System.Drawing.Size(129, 24);
             this.cbPhuong.TabIndex = 8;
             this.cbPhuong.SelectedValueChanged += new System.EventHandler(this.cbPhuong_SelectedValueChanged);
             // 
@@ -719,10 +787,10 @@
             this.cbQuan.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbQuan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbQuan.FormattingEnabled = true;
-            this.cbQuan.ItemHeight = 16;
-            this.cbQuan.Location = new System.Drawing.Point(113, 106);
+            this.cbQuan.ItemHeight = 18;
+            this.cbQuan.Location = new System.Drawing.Point(296, 107);
             this.cbQuan.Name = "cbQuan";
-            this.cbQuan.Size = new System.Drawing.Size(129, 22);
+            this.cbQuan.Size = new System.Drawing.Size(129, 24);
             this.cbQuan.TabIndex = 7;
             this.cbQuan.SelectedValueChanged += new System.EventHandler(this.cbQuan_SelectedValueChanged);
             // 
@@ -730,7 +798,7 @@
             // 
             this.soho.Location = new System.Drawing.Point(376, 14);
             this.soho.Name = "soho";
-            this.soho.Size = new System.Drawing.Size(48, 22);
+            this.soho.Size = new System.Drawing.Size(48, 24);
             this.soho.TabIndex = 2;
             this.soho.ValueChanged += new System.EventHandler(this.soho_ValueChanged);
             // 
@@ -739,7 +807,7 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(324, 16);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(46, 16);
+            this.label8.Size = new System.Drawing.Size(51, 18);
             this.label8.TabIndex = 12;
             this.label8.Text = "Số Hộ";
             // 
@@ -749,9 +817,10 @@
             // 
             // 
             this.duong.Border.Class = "TextBoxBorder";
+            this.duong.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.duong.Location = new System.Drawing.Point(205, 77);
             this.duong.Name = "duong";
-            this.duong.Size = new System.Drawing.Size(219, 22);
+            this.duong.Size = new System.Drawing.Size(219, 24);
             this.duong.TabIndex = 6;
             // 
             // sonha
@@ -760,9 +829,9 @@
             // 
             // 
             this.sonha.Border.Class = "TextBoxBorder";
-            this.sonha.Location = new System.Drawing.Point(113, 77);
+            this.sonha.Location = new System.Drawing.Point(114, 77);
             this.sonha.Name = "sonha";
-            this.sonha.Size = new System.Drawing.Size(78, 22);
+            this.sonha.Size = new System.Drawing.Size(78, 24);
             this.sonha.TabIndex = 5;
             // 
             // txtHoTen
@@ -771,9 +840,9 @@
             // 
             // 
             this.txtHoTen.Border.Class = "TextBoxBorder";
-            this.txtHoTen.Location = new System.Drawing.Point(113, 44);
+            this.txtHoTen.Location = new System.Drawing.Point(114, 44);
             this.txtHoTen.Name = "txtHoTen";
-            this.txtHoTen.Size = new System.Drawing.Size(311, 22);
+            this.txtHoTen.Size = new System.Drawing.Size(311, 24);
             this.txtHoTen.TabIndex = 4;
             // 
             // txtSoHoSo
@@ -785,69 +854,68 @@
             this.txtSoHoSo.Location = new System.Drawing.Point(205, 14);
             this.txtSoHoSo.Name = "txtSoHoSo";
             this.txtSoHoSo.ReadOnly = true;
-            this.txtSoHoSo.Size = new System.Drawing.Size(113, 22);
+            this.txtSoHoSo.Size = new System.Drawing.Size(113, 24);
             this.txtSoHoSo.TabIndex = 19;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(27, 83);
+            this.label7.Location = new System.Drawing.Point(32, 83);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(50, 16);
+            this.label7.Size = new System.Drawing.Size(56, 18);
             this.label7.TabIndex = 6;
             this.label7.Text = "Địa Chỉ";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(27, 112);
+            this.label6.Location = new System.Drawing.Point(253, 110);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(40, 16);
+            this.label6.Size = new System.Drawing.Size(44, 18);
             this.label6.TabIndex = 5;
             this.label6.Text = "Quận";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(248, 112);
+            this.label5.Location = new System.Drawing.Point(32, 113);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(54, 16);
+            this.label5.Size = new System.Drawing.Size(59, 18);
             this.label5.TabIndex = 4;
             this.label5.Text = "Phường";
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(31, 147);
+            this.label4.Location = new System.Drawing.Point(32, 147);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(81, 16);
             this.label4.TabIndex = 3;
-            this.label4.Text = "Loại K.Hàng";
+            this.label4.Text = "Loại K.H";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(254, 141);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(46, 16);
+            this.label3.Size = new System.Drawing.Size(51, 18);
             this.label3.TabIndex = 2;
             this.label3.Text = "Số ĐT";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(27, 50);
+            this.label2.Location = new System.Drawing.Point(32, 50);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 16);
+            this.label2.Size = new System.Drawing.Size(66, 18);
             this.label2.TabIndex = 1;
             this.label2.Text = "Họ - Tên";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(27, 16);
+            this.label1.Location = new System.Drawing.Point(32, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 16);
+            this.label1.Size = new System.Drawing.Size(76, 18);
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã Hồ Sơ";
             // 
@@ -966,8 +1034,8 @@
             // G_SodotNhanDon
             // 
             this.G_SodotNhanDon.DataPropertyName = "MADOT";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.G_SodotNhanDon.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.G_SodotNhanDon.DefaultCellStyle = dataGridViewCellStyle8;
             this.G_SodotNhanDon.HeaderText = "Số Đợt Nhận Đơn";
             this.G_SodotNhanDon.Name = "G_SodotNhanDon";
             this.G_SodotNhanDon.ReadOnly = true;
@@ -977,8 +1045,8 @@
             // dataGridViewTextBoxColumn6
             // 
             this.dataGridViewTextBoxColumn6.DataPropertyName = "SOHOSO";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridViewTextBoxColumn6.HeaderText = "Số Hồ Sơ";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.ReadOnly = true;
@@ -1003,8 +1071,8 @@
             // dataGridViewTextBoxColumn9
             // 
             this.dataGridViewTextBoxColumn9.DataPropertyName = "NGAYNHAN";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewTextBoxColumn9.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn9.DefaultCellStyle = dataGridViewCellStyle10;
             this.dataGridViewTextBoxColumn9.HeaderText = "Ngày Nhận";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
             this.dataGridViewTextBoxColumn9.ReadOnly = true;
@@ -1117,7 +1185,7 @@
             // 
             // groupPanel2
             // 
-            this.groupPanel2.BackColor = System.Drawing.SystemColors.Control;
+            this.groupPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(206)))), ((int)(((byte)(236)))));
             this.groupPanel2.CanvasColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(206)))), ((int)(((byte)(236)))));
             this.groupPanel2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.groupPanel2.Controls.Add(this.panel3);
@@ -1150,6 +1218,7 @@
             // 
             // panel3
             // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
             this.panel3.Controls.Add(this.cd_MainGird);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 0);
@@ -1161,13 +1230,14 @@
             // 
             this.cd_MainGird.AllowUserToAddRows = false;
             this.cd_MainGird.AllowUserToDeleteRows = false;
+            this.cd_MainGird.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
             this.cd_MainGird.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cd_MainGird.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.cd_MainGird.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.DOTNHAN,
             this.NGAYNHAN,
             this.LOAIDON});
-            this.cd_MainGird.Location = new System.Drawing.Point(3, 3);
+            this.cd_MainGird.Location = new System.Drawing.Point(3, 1);
             this.cd_MainGird.Name = "cd_MainGird";
             this.cd_MainGird.RowHeadersWidth = 15;
             this.cd_MainGird.Size = new System.Drawing.Size(504, 195);
@@ -1177,8 +1247,8 @@
             // DOTNHAN
             // 
             this.DOTNHAN.DataPropertyName = "MADOT";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.DOTNHAN.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.DOTNHAN.DefaultCellStyle = dataGridViewCellStyle6;
             this.DOTNHAN.HeaderText = "Đợt Nhận Đơn";
             this.DOTNHAN.Name = "DOTNHAN";
             this.DOTNHAN.Width = 115;
@@ -1186,8 +1256,8 @@
             // NGAYNHAN
             // 
             this.NGAYNHAN.DataPropertyName = "NGAYLAPDON";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.NGAYNHAN.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.NGAYNHAN.DefaultCellStyle = dataGridViewCellStyle7;
             this.NGAYNHAN.HeaderText = "Ngày Lập Đơn";
             this.NGAYNHAN.Name = "NGAYNHAN";
             this.NGAYNHAN.Width = 120;
@@ -1227,39 +1297,6 @@
             this.tabChuyenDon.Name = "tabChuyenDon";
             this.tabChuyenDon.Text = "Chuyển Đơn";
             this.tabChuyenDon.Click += new System.EventHandler(this.tabChuyenDon_Click);
-            // 
-            // tabControlPanel5
-            // 
-            this.tabControlPanel5.Controls.Add(this.panel4);
-            this.tabControlPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControlPanel5.Location = new System.Drawing.Point(0, 26);
-            this.tabControlPanel5.Name = "tabControlPanel5";
-            this.tabControlPanel5.Padding = new System.Windows.Forms.Padding(1);
-            this.tabControlPanel5.Size = new System.Drawing.Size(1001, 535);
-            this.tabControlPanel5.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(179)))), ((int)(((byte)(231)))));
-            this.tabControlPanel5.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(237)))), ((int)(((byte)(254)))));
-            this.tabControlPanel5.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.tabControlPanel5.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(97)))), ((int)(((byte)(156)))));
-            this.tabControlPanel5.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right)
-                        | DevComponents.DotNetBar.eBorderSide.Bottom)));
-            this.tabControlPanel5.Style.GradientAngle = 90;
-            this.tabControlPanel5.TabIndex = 5;
-            this.tabControlPanel5.TabItem = this.tabItem3;
-            // 
-            // panel4
-            // 
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(1, 1);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(999, 533);
-            this.panel4.TabIndex = 0;
-            // 
-            // tabItem3
-            // 
-            this.tabItem3.AttachedControl = this.tabControlPanel5;
-            this.tabItem3.Name = "tabItem3";
-            this.tabItem3.Text = "Hồ Sơ Trở Ngại";
-            this.tabItem3.Click += new System.EventHandler(this.tabItem3_Click);
             // 
             // tabControlPanel4
             // 
@@ -1475,29 +1512,6 @@
             this.tabItem2.Text = "Tìm Kiếm Đơn Khách Hàng";
             this.tabItem2.Click += new System.EventHandler(this.tabItem2_Click);
             // 
-            // tabControlPanel6
-            // 
-            this.tabControlPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControlPanel6.Location = new System.Drawing.Point(0, 26);
-            this.tabControlPanel6.Name = "tabControlPanel6";
-            this.tabControlPanel6.Padding = new System.Windows.Forms.Padding(1);
-            this.tabControlPanel6.Size = new System.Drawing.Size(1001, 535);
-            this.tabControlPanel6.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(179)))), ((int)(((byte)(231)))));
-            this.tabControlPanel6.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(237)))), ((int)(((byte)(254)))));
-            this.tabControlPanel6.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.tabControlPanel6.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(97)))), ((int)(((byte)(156)))));
-            this.tabControlPanel6.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right)
-                        | DevComponents.DotNetBar.eBorderSide.Bottom)));
-            this.tabControlPanel6.Style.GradientAngle = 90;
-            this.tabControlPanel6.TabIndex = 6;
-            this.tabControlPanel6.TabItem = this.tabItem4;
-            // 
-            // tabItem4
-            // 
-            this.tabItem4.AttachedControl = this.tabControlPanel6;
-            this.tabItem4.Name = "tabItem4";
-            this.tabItem4.Text = "Hồ Sơ Tái Xét";
-            // 
             // galleryContainer1
             // 
             this.galleryContainer1.EnableGalleryPopup = false;
@@ -1521,6 +1535,8 @@
             this.Size = new System.Drawing.Size(988, 615);
             ((System.ComponentModel.ISupportInitialize)(this.tabControl1)).EndInit();
             this.tabControl1.ResumeLayout(false);
+            this.tabControlPanel6.ResumeLayout(false);
+            this.tabControlPanel5.ResumeLayout(false);
             this.tabControlPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -1537,7 +1553,6 @@
             this.groupPanel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cd_MainGird)).EndInit();
-            this.tabControlPanel5.ResumeLayout(false);
             this.tabControlPanel4.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
@@ -1610,11 +1625,6 @@
         private DevComponents.DotNetBar.TabItem tabChuyenDon;
         private DevComponents.DotNetBar.TabControlPanel tabControlPanel4;
         private DevComponents.DotNetBar.TabItem tab_BaoCao;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SOHOSO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn HOTEN;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DIACHI;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NGAY_NHAN;
-        private System.Windows.Forms.DataGridViewTextBoxColumn loiDon;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private CrystalDecisions.Windows.Forms.CrystalReportViewer report;
         private DevComponents.DotNetBar.LabelX labelX1;
@@ -1665,6 +1675,12 @@
         private System.Windows.Forms.Panel panel4;
         private DevComponents.DotNetBar.TabControlPanel tabControlPanel6;
         private DevComponents.DotNetBar.TabItem tabItem4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SOHOSO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HOTEN;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DIACHI;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NGAY_NHAN;
+        private System.Windows.Forms.DataGridViewTextBoxColumn loiDon;
+        private System.Windows.Forms.Panel panel5;
 
     }
 }

@@ -35,6 +35,8 @@ namespace TanHoaWater
             log4net.Config.XmlConfigurator.Configure();
             //th.Abort();
             this.menuHeThong.Select();
+
+            this.lbNgayHeThong.Text = DAL.DateToString.fullCurrentNgay()+"  ";
         }
 
         public static frm_Login dn = new frm_Login();
@@ -47,7 +49,7 @@ namespace TanHoaWater
             }
 
             formLoad();
-
+            this.Text = "Tan Hoa Water Co., ltd - Nhân Viên : " + DAL.C_USERS._fullName ;
         }
         private void frm_Main_Load(object sender, EventArgs e)
         {         

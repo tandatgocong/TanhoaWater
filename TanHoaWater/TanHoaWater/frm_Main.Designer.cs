@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Main));
             this.qatCustomizeItem1 = new DevComponents.DotNetBar.QatCustomizeItem();
             this.mainLayout = new System.Windows.Forms.Panel();
+            this.lbNgayHeThong = new DevComponents.DotNetBar.LabelX();
             this.PanelContent = new System.Windows.Forms.Panel();
             this.PanelMain = new System.Windows.Forms.Panel();
             this.iconMenuPanel = new System.Windows.Forms.Panel();
@@ -50,12 +51,16 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.group_VTTH = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.btBienNhan = new DevComponents.DotNetBar.ButtonX();
+            this.pictureBox16 = new System.Windows.Forms.PictureBox();
             this.timkiemDOn = new DevComponents.DotNetBar.ButtonX();
             this.btChuyenDon = new DevComponents.DotNetBar.ButtonX();
             this.khvt_TraCuuHS = new DevComponents.DotNetBar.ButtonX();
             this.vtth_HoSoTaiXet = new DevComponents.DotNetBar.ButtonX();
+            this.vtth_DotNhanDon = new DevComponents.DotNetBar.ButtonX();
             this.vtth_HoSoTraNgai = new DevComponents.DotNetBar.ButtonX();
             this.vtth_NhanDonKH = new DevComponents.DotNetBar.ButtonX();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
@@ -108,10 +113,6 @@
             this.buttonItem13 = new DevComponents.DotNetBar.ButtonItem();
             this.buttonItem1 = new DevComponents.DotNetBar.ButtonItem();
             this.skinCollectionItem1 = new Sunisoft.IrisSkin.SkinCollectionItem();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.vtth_DotNhanDon = new DevComponents.DotNetBar.ButtonX();
-            this.btBienNhan = new DevComponents.DotNetBar.ButtonX();
-            this.pictureBox16 = new System.Windows.Forms.PictureBox();
             this.mainLayout.SuspendLayout();
             this.PanelContent.SuspendLayout();
             this.PanelMain.SuspendLayout();
@@ -125,6 +126,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.group_VTTH.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
@@ -139,8 +142,6 @@
             this.menuStrip3.SuspendLayout();
             this.ribbonPanel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
             this.SuspendLayout();
             // 
             // qatCustomizeItem1
@@ -150,6 +151,7 @@
             // mainLayout
             // 
             this.mainLayout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(206)))), ((int)(((byte)(236)))));
+            this.mainLayout.Controls.Add(this.lbNgayHeThong);
             this.mainLayout.Controls.Add(this.PanelContent);
             this.mainLayout.Controls.Add(this.ribbonControl1);
             this.mainLayout.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -159,6 +161,18 @@
             this.mainLayout.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.mainLayout.Size = new System.Drawing.Size(988, 671);
             this.mainLayout.TabIndex = 1;
+            // 
+            // lbNgayHeThong
+            // 
+            this.lbNgayHeThong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(219)))), ((int)(((byte)(255)))));
+            this.lbNgayHeThong.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNgayHeThong.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(22)))), ((int)(((byte)(111)))));
+            this.lbNgayHeThong.Location = new System.Drawing.Point(653, 0);
+            this.lbNgayHeThong.Name = "lbNgayHeThong";
+            this.lbNgayHeThong.Size = new System.Drawing.Size(323, 23);
+            this.lbNgayHeThong.TabIndex = 2;
+            this.lbNgayHeThong.Text = "labelX2";
+            this.lbNgayHeThong.TextAlignment = System.Drawing.StringAlignment.Far;
             // 
             // PanelContent
             // 
@@ -454,6 +468,30 @@
             this.group_VTTH.Text = "Phòng Kế Hoạch Vật Tư Tổng Hợp";
             this.group_VTTH.Visible = false;
             // 
+            // btBienNhan
+            // 
+            this.btBienNhan.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btBienNhan.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btBienNhan.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btBienNhan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(22)))), ((int)(((byte)(111)))));
+            this.btBienNhan.Location = new System.Drawing.Point(23, 9);
+            this.btBienNhan.Name = "btBienNhan";
+            this.btBienNhan.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.F10);
+            this.btBienNhan.Size = new System.Drawing.Size(161, 26);
+            this.btBienNhan.TabIndex = 26;
+            this.btBienNhan.Text = "[F10] Biên Nhận Đơn";
+            this.btBienNhan.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
+            this.btBienNhan.Click += new System.EventHandler(this.btBienNhan_Click);
+            // 
+            // pictureBox16
+            // 
+            this.pictureBox16.Image = global::TanHoaWater.Properties.Resources.bt_bg;
+            this.pictureBox16.Location = new System.Drawing.Point(19, 5);
+            this.pictureBox16.Name = "pictureBox16";
+            this.pictureBox16.Size = new System.Drawing.Size(169, 35);
+            this.pictureBox16.TabIndex = 27;
+            this.pictureBox16.TabStop = false;
+            // 
             // timkiemDOn
             // 
             this.timkiemDOn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
@@ -514,6 +552,21 @@
             this.vtth_HoSoTaiXet.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
             this.vtth_HoSoTaiXet.Click += new System.EventHandler(this.vtth_HoSoTaiXet_Click);
             // 
+            // vtth_DotNhanDon
+            // 
+            this.vtth_DotNhanDon.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.vtth_DotNhanDon.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.vtth_DotNhanDon.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vtth_DotNhanDon.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(22)))), ((int)(((byte)(111)))));
+            this.vtth_DotNhanDon.Location = new System.Drawing.Point(23, 46);
+            this.vtth_DotNhanDon.Name = "vtth_DotNhanDon";
+            this.vtth_DotNhanDon.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.F1);
+            this.vtth_DotNhanDon.Size = new System.Drawing.Size(161, 26);
+            this.vtth_DotNhanDon.TabIndex = 1;
+            this.vtth_DotNhanDon.Text = "[F1] Đợt Nhận Đơn";
+            this.vtth_DotNhanDon.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
+            this.vtth_DotNhanDon.Click += new System.EventHandler(this.vtth_DotNhanDon_Click);
+            // 
             // vtth_HoSoTraNgai
             // 
             this.vtth_HoSoTraNgai.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
@@ -543,6 +596,15 @@
             this.vtth_NhanDonKH.Text = "[F2] Nhận Đơn KH";
             this.vtth_NhanDonKH.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
             this.vtth_NhanDonKH.Click += new System.EventHandler(this.vtth_NhanDonKH_Click);
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Image = global::TanHoaWater.Properties.Resources.bt_bg;
+            this.pictureBox7.Location = new System.Drawing.Point(19, 42);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(169, 35);
+            this.pictureBox7.TabIndex = 19;
+            this.pictureBox7.TabStop = false;
             // 
             // pictureBox8
             // 
@@ -665,8 +727,8 @@
             // 
             // ribbonControl1
             // 
-            this.ribbonControl1.Controls.Add(this.ribbonPanel3);
             this.ribbonControl1.Controls.Add(this.ribbonPanel2);
+            this.ribbonControl1.Controls.Add(this.ribbonPanel3);
             this.ribbonControl1.Controls.Add(this.ribbonPanel1);
             this.ribbonControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.ribbonControl1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -698,6 +760,7 @@
             this.ribbonPanel3.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.ribbonPanel3.Size = new System.Drawing.Size(988, 27);
             this.ribbonPanel3.TabIndex = 3;
+            this.ribbonPanel3.Visible = false;
             // 
             // menuStrip2
             // 
@@ -738,7 +801,6 @@
             this.ribbonPanel2.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.ribbonPanel2.Size = new System.Drawing.Size(988, 27);
             this.ribbonPanel2.TabIndex = 2;
-            this.ribbonPanel2.Visible = false;
             // 
             // menuStrip3
             // 
@@ -803,6 +865,7 @@
             this.menuStrip1.Size = new System.Drawing.Size(982, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.Visible = false;
             // 
             // subdangnhap
             // 
@@ -846,6 +909,7 @@
             // 
             // menuKHVT
             // 
+            this.menuKHVT.Checked = true;
             this.menuKHVT.Name = "menuKHVT";
             this.menuKHVT.Panel = this.ribbonPanel2;
             this.menuKHVT.Text = "Kế Hoạch VTTH";
@@ -853,7 +917,6 @@
             // 
             // menuToThietKe
             // 
-            this.menuToThietKe.Checked = true;
             this.menuToThietKe.Name = "menuToThietKe";
             this.menuToThietKe.Panel = this.ribbonPanel3;
             this.menuToThietKe.Text = "Tổ Thiết Kế";
@@ -1045,54 +1108,6 @@
             this.skinCollectionItem1.SkinPassword = null;
             this.skinCollectionItem1.SkinSteam = ((System.IO.MemoryStream)(resources.GetObject("skinCollectionItem1.SkinSteam")));
             // 
-            // pictureBox7
-            // 
-            this.pictureBox7.Image = global::TanHoaWater.Properties.Resources.bt_bg;
-            this.pictureBox7.Location = new System.Drawing.Point(19, 42);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(169, 35);
-            this.pictureBox7.TabIndex = 19;
-            this.pictureBox7.TabStop = false;
-            // 
-            // vtth_DotNhanDon
-            // 
-            this.vtth_DotNhanDon.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.vtth_DotNhanDon.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.vtth_DotNhanDon.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vtth_DotNhanDon.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(22)))), ((int)(((byte)(111)))));
-            this.vtth_DotNhanDon.Location = new System.Drawing.Point(23, 46);
-            this.vtth_DotNhanDon.Name = "vtth_DotNhanDon";
-            this.vtth_DotNhanDon.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.F1);
-            this.vtth_DotNhanDon.Size = new System.Drawing.Size(161, 26);
-            this.vtth_DotNhanDon.TabIndex = 1;
-            this.vtth_DotNhanDon.Text = "[F1] Đợt Nhận Đơn";
-            this.vtth_DotNhanDon.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
-            this.vtth_DotNhanDon.Click += new System.EventHandler(this.vtth_DotNhanDon_Click);
-            // 
-            // btBienNhan
-            // 
-            this.btBienNhan.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btBienNhan.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btBienNhan.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btBienNhan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(22)))), ((int)(((byte)(111)))));
-            this.btBienNhan.Location = new System.Drawing.Point(23, 9);
-            this.btBienNhan.Name = "btBienNhan";
-            this.btBienNhan.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.F10);
-            this.btBienNhan.Size = new System.Drawing.Size(161, 26);
-            this.btBienNhan.TabIndex = 26;
-            this.btBienNhan.Text = "[F10] Biên Nhận Đơn";
-            this.btBienNhan.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
-            this.btBienNhan.Click += new System.EventHandler(this.btBienNhan_Click);
-            // 
-            // pictureBox16
-            // 
-            this.pictureBox16.Image = global::TanHoaWater.Properties.Resources.bt_bg;
-            this.pictureBox16.Location = new System.Drawing.Point(19, 5);
-            this.pictureBox16.Name = "pictureBox16";
-            this.pictureBox16.Size = new System.Drawing.Size(169, 35);
-            this.pictureBox16.TabIndex = 27;
-            this.pictureBox16.TabStop = false;
-            // 
             // frm_Main
             // 
             this.AllowDrop = true;
@@ -1107,7 +1122,7 @@
             this.MaximizeBox = false;
             this.Name = "frm_Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Tan Hoa Water co., ltd";
+            this.Text = "Tan Hoa Water Co., ltd";
             this.Load += new System.EventHandler(this.frm_Main_Load);
             this.mainLayout.ResumeLayout(false);
             this.PanelContent.ResumeLayout(false);
@@ -1123,6 +1138,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.group_VTTH.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
@@ -1144,8 +1161,6 @@
             this.ribbonPanel1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1235,6 +1250,7 @@
         private System.Windows.Forms.PictureBox pictureBox16;
         private DevComponents.DotNetBar.ButtonX vtth_DotNhanDon;
         private System.Windows.Forms.PictureBox pictureBox7;
+        private DevComponents.DotNetBar.LabelX lbNgayHeThong;
 
     }
 }

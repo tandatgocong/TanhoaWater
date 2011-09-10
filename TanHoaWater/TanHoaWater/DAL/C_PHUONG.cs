@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using TanHoaWater.Database;
+using System.Collections;
+using TanHoaWater.Class;
 namespace TanHoaWater.DAL
 {
     public class C_Phuong
@@ -22,11 +24,17 @@ namespace TanHoaWater.DAL
             var phuong = from p in data.PHUONGs where p.MAQUAN == maquan && p.TENPHUONG == tenPhuong select p;
             return phuong.SingleOrDefault();
         }
-        public static List<PHUONG> getListAll()
+        
+        public static ArrayList getListPhuong()
         {
+            ArrayList list = new ArrayList();
             TanHoaDataContext data = new TanHoaDataContext();
             var lisPhuong = from phuong in data.PHUONGs select phuong;
-            return lisPhuong.ToList();
+            foreach (var a in lisPhuong)
+            {
+                list.Add(new AddValueCombox(a.TENPHUONG, a.MAPHUONG));
+            }
+            return list;
         }
         public static List<PHUONG> ListPhuongByTenPhuong(string tenPhuong)
         {

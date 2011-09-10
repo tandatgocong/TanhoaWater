@@ -8,6 +8,10 @@ using System.Text;
 using System.Windows.Forms;
 using log4net;
 using TanHoaWater.Database;
+using CrystalDecisions.CrystalReports.Engine;
+using CrystalDecisions.Windows.Forms;
+using TanHoaWater.View.Users.KEHOACH.Report;
+using CrystalDecisions.Shared;
 
 namespace TanHoaWater.View.Users.KEHOACH
 {
@@ -40,9 +44,14 @@ namespace TanHoaWater.View.Users.KEHOACH
                 txtDuong.AutoCompleteSource = AutoCompleteSource.CustomSource;
                 txtDuong.AutoCompleteCustomSource = namesCollection;
 
-                cbPhuong.DataSource = DAL.C_Phuong.getListAll();
-                cbPhuong.ValueMember = "MAPHUONG";
-                cbPhuong.DisplayMember = "TENPHUONG";
+                this.cbPhuong.DataSource = DAL.C_Phuong.getListPhuong();
+                this.cbPhuong.DisplayMember = "Display";
+                this.cbPhuong.ValueMember = "Value";
+                
+                //this.comboBoxEx1.DataSource = DAL.C_LoaiHoSo.getListCombobox();
+                //this.comboBoxEx1.DisplayMember = "Display";
+                //this.comboBoxEx1.ValueMember = "Value";    
+                
                 Quan.DataSource = DAL.C_Quan.getList();
                 Quan.ValueMember = "MAQUAN";
                 Quan.DisplayMember = "TENQUAN";
@@ -108,14 +117,25 @@ namespace TanHoaWater.View.Users.KEHOACH
             this.txtDuong.Text="";
             this.cbPhuong.Text="";
             this.Quan.Text="";
-            cbPhuong.DataSource = DAL.C_Phuong.getListAll();
-            cbPhuong.ValueMember = "MAPHUONG";
-            cbPhuong.DisplayMember = "TENPHUONG";
+           
+            this.cbPhuong.DataSource = DAL.C_Phuong.getListPhuong();
+            this.cbPhuong.DisplayMember = "Display";
+            this.cbPhuong.ValueMember = "Value";
+
             Quan.DataSource = DAL.C_Quan.getList();
             Quan.ValueMember = "MAQUAN";
             Quan.DisplayMember = "TENQUAN";
             this.txtHoTen.Focus();
 
+        }
+        public void printingBienNhan(string mabiennhan)
+        {
+            ReportDocument cryRpt = new crp_BIENNHAN();
+            CrystalReportViewer r = new CrystalReportViewer();
+            ReportDocument rp = new crp_BIENNHAN();
+            rp.PrintOptions.PaperSize = PaperSize.Paper11x17;
+            rp.SetDataSource(DAL.C_BienNhanDon.printBienNhan(mabiennhan));
+            r.ReportSource = rp;
         }
         private void btBienNhanDon_Click(object sender, EventArgs e)
         {
@@ -173,7 +193,7 @@ namespace TanHoaWater.View.Users.KEHOACH
                     biennhan.PHUONG = phuong.MAPHUONG;
                     biennhan.QUAN = quan.MAQUAN;
                     biennhan.NGAYNHAN = DateTime.Now.Date;
-
+                    biennhan.DIENTHOAI = txtDt.Text;
                     if (checkHK.Checked)
                     {
                         biennhan.HKTK = true;
@@ -200,10 +220,11 @@ namespace TanHoaWater.View.Users.KEHOACH
                     {
                         biennhan.GIAYPHEPXD = false;
                     }
+
                     biennhan.CREATEBY = DAL.C_USERS._userName;
                     biennhan.CREATEDATE = DateTime.Now;
                     DAL.C_BienNhanDon.InsertBienNhanDon(biennhan);
-                    reset();
+                    printingBienNhan(biennhan.SHS);
                 }
             }
             catch (Exception ex)
@@ -212,7 +233,7 @@ namespace TanHoaWater.View.Users.KEHOACH
                 MessageBox.Show(this, "Thêm Biên Nhận Lỗi.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
+        
         private void btLamLai_Click(object sender, EventArgs e)
         {
             reset();

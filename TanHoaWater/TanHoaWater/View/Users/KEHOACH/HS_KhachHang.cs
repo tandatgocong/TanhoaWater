@@ -38,7 +38,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                 #region Load Bo Phan Chuyen
                 this.bophanChuyen.DataSource = DAL.C_PhongBan.getList();
                 this.bophanChuyen.DisplayMember = "TENPHONG";
-                this.bophanChuyen.ValueMember = "MAPHONG";
+                this.bophanChuyen.ValueMember = "MAPHONG";                
                 #endregion
                 load_cd_Grid();
             }
@@ -51,14 +51,10 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                 tabControl1.SelectedTabIndex = 3;
             }
             else if (tab == 5) {
-                tabControl1.SelectedTabIndex = 4;
-            }
-            else if (tab == 6)
-            {
                 this.panel2.Controls.Clear();
                 this.panel2.Controls.Add(new tab_TimKiemDonKH());
-                tabControl1.SelectedTabIndex = 5;
-            }
+                tabControl1.SelectedTabIndex = 4;
+            }            
            else if (tab == 6)
            {
                #region Bao cao Quan
@@ -126,7 +122,8 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
             PageTotal();
             DAL.DataGridV.formatRows(dataG);
         }
-
+        int _maquan = 0;
+        string _maphuong = "";
         private void PageTotal()
         {
             try
@@ -146,6 +143,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
             try
             {
                 int maquan = int.Parse(this.cbQuan.SelectedValue.ToString());
+                _maquan = maquan;                
                 this.cbPhuong.DataSource = DAL.C_Phuong.getListByQuan(maquan);
                 this.cbPhuong.DisplayMember = "TENPHUONG";
                 this.cbPhuong.ValueMember = "MAPHUONG";
@@ -157,6 +155,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
 
         private void cbPhuong_SelectedValueChanged(object sender, EventArgs e)
         {
+            
             string sohoso = "";
             if (DateTime.Now.Month < 10)
             {
@@ -167,21 +166,79 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                 sohoso = DateTime.Now.Month.ToString();
             }
             this.txtSoHoSo.Text = this.cbQuan.SelectedValue + "" + this.cbPhuong.SelectedValue + sohoso + this.txtSHS.Text;
+            _maphuong = this.cbPhuong.SelectedValue + "";
+        }
+
+        private void txtSHS_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                BIENNHANDON biennhan = DAL.C_BienNhanDon.finbyMaBienNhan(this.txtSHS.Text);
+
+                if (biennhan != null)
+                {
+                    QUAN recordQuan = DAL.C_Quan.finByMaQuan(biennhan.QUAN);
+                    PHUONG recordPhuong = DAL.C_Phuong.finbyPhuong(recordQuan.MAQUAN, biennhan.PHUONG);
+                    string sohoso = "";
+                    if (DateTime.Now.Month < 10)
+                    {
+                        sohoso = "0" + DateTime.Now.Month.ToString();
+                    }
+                    else
+                    {
+                        sohoso = DateTime.Now.Month.ToString();
+                    }
+                    this.txtSHS.Text = this.txtSHS.Text.ToUpper();
+                    this.txtSoHoSo.Text = recordQuan.MAQUAN + "" + recordPhuong.MAPHUONG + sohoso + this.txtSHS.Text;
+                    this.txtHoTen.Text = biennhan.HOTEN;
+                    this.dienthoai.Text = biennhan.DIENTHOAI;
+                    this.sonha.Text = biennhan.SONHA;
+                    this.duong.Text = biennhan.DUONG;
+                    this.cbQuan.Text = recordQuan.TENQUAN;
+                    this.cbPhuong.Text = recordPhuong.TENPHUONG;
+                }
+                else
+                {
+                    MessageBox.Show(this, "Không Tìm Thấy Số Biên Nhận Khách Hàng !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    this.txtSHS.Clear();
+                    this.txtSHS.Focus();
+                }
+            }
         }
 
         private void txtSHS_Leave(object sender, EventArgs e)
         {
-            string sohoso = "";
-            if (DateTime.Now.Month < 10)
-            {
-                sohoso = "0" + DateTime.Now.Month.ToString();
-            }
-            else
-            {
-                sohoso = DateTime.Now.Month.ToString();
-            }
-            this.txtSHS.Text = this.txtSHS.Text.ToUpper();
-            this.txtSoHoSo.Text = this.cbQuan.SelectedValue + "" + this.cbPhuong.SelectedValue + sohoso + this.txtSHS.Text;
+            //BIENNHANDON biennhan = DAL.C_BienNhanDon.finbyMaBienNhan(this.txtSHS.Text);
+
+            //if (biennhan != null)
+            //{
+            //    _maquan = biennhan.QUAN;
+            //    _maphuong = biennhan.PHUONG;
+            //    QUAN recordQuan = DAL.C_Quan.finByMaQuan(biennhan.QUAN);
+            //    PHUONG recordPhuong = DAL.C_Phuong.finbyPhuong(recordQuan.MAQUAN, biennhan.PHUONG);
+            //    string sohoso = "";
+            //    if (DateTime.Now.Month < 10)
+            //    {
+            //        sohoso = "0" + DateTime.Now.Month.ToString();
+            //    }
+            //    else
+            //    {
+            //        sohoso = DateTime.Now.Month.ToString();
+            //    }
+            //    this.txtSHS.Text = this.txtSHS.Text.ToUpper();
+            //    this.txtSoHoSo.Text = recordQuan.MAQUAN + "" + recordPhuong.MAPHUONG + sohoso + this.txtSHS.Text;
+            //    this.txtHoTen.Text = biennhan.HOTEN;
+            //    this.dienthoai.Text = biennhan.DIENTHOAI;
+            //    this.sonha.Text = biennhan.SONHA;
+            //    this.duong.Text = biennhan.DUONG;
+            //    this.cbQuan.Text = recordQuan.TENQUAN;
+            //    this.cbPhuong.Text = recordPhuong.TENPHUONG;
+            //}
+            //else {
+            //    MessageBox.Show(this, "Không Tìm Thấy Số Biên Nhận Khách Hàng !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    this.txtSHS.Clear();
+            //    this.txtSHS.Focus();
+            //}
 
         }
 
@@ -230,7 +287,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                 this.errorProvider1.SetError(this.txtSHS, "Số Hồ Sơ Đã Tồn Tại.");
                 this.txtSHS.Focus();
             }
-            else if (DAL.C_DonKhachHang.findByAddressAndLoaiHS(this.cbDotNhanDon.SelectedValue.ToString(), this.cbLoaiHS.SelectedValue.ToString(), this.sonha.Text, this.duong.Text, this.cbPhuong.SelectedValue.ToString(), this.cbQuan.SelectedValue.ToString()))
+            else if (DAL.C_DonKhachHang.findByAddressAndLoaiHS(this.cbDotNhanDon.SelectedValue.ToString(), this.cbLoaiHS.SelectedValue.ToString(), this.sonha.Text, this.duong.Text,_maphuong,""+_maquan))
             {
                 this.errorProvider1.Clear();
                 this.errorProvider1.SetError(this.sonha, "Địa Chỉ Khách Hàng Đã Được Nhận Đơn.");
@@ -264,8 +321,8 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                         donKH.LOAIMIENPHI = "Mặt tiền";
                 }
                 donKH.DUONG = this.duong.Text;
-                donKH.PHUONG = this.cbPhuong.SelectedValue.ToString();
-                donKH.QUAN = int.Parse(this.cbQuan.SelectedValue.ToString());
+                donKH.PHUONG = _maphuong;
+                donKH.QUAN = _maquan;
                 donKH.NGAYNHAN = DateTime.Now;
                 string maloaikh="";
                 if(this.cbLoaiKH.SelectedValue== null || "".Equals(this.cbLoaiKH.SelectedValue.ToString())==true){
@@ -633,5 +690,6 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
             this.panel4.Controls.Clear();
             this.panel4.Controls.Add(new tab_DonTroNgai());
         }
+
     }
 }

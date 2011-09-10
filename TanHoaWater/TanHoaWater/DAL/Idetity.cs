@@ -28,7 +28,7 @@ namespace TanHoaWater.DAL
                     SqlDataReader dr1 = cmd.ExecuteReader();
                     while (dr1.Read())
                     {
-                        id = obj.ID(year, dr1[0].ToString().Trim(), "000000");
+                        id = obj.ID(year, dr1[0].ToString().Trim(), "00000");
                     }
                     dr1.Close();
                     db.Connection.Close();
