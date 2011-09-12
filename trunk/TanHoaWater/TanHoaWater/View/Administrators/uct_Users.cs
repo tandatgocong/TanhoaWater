@@ -8,7 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using TanHoaWater.Database;
 using TanHoaWater.DAL;
-using TanHoaWater.Class;
+using TanHoaWater.Utilities;
 
 namespace TanHoaWater.View.Administrators
 {

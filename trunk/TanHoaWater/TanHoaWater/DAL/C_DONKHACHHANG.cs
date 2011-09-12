@@ -283,6 +283,60 @@ namespace TanHoaWater.DAL
             }
             return false;
         }
+        public static bool HoSoTaiXet(string sohoso,string modifyby)
+        {
+
+            try
+            {
+                TanHoaDataContext db = new TanHoaDataContext();
+                var data = from don in db.DON_KHACHHANGs where don.SOHOSO == sohoso select don;
+                DON_KHACHHANG donkh = data.SingleOrDefault();
+                if (donkh != null)
+                {
+                    donkh.TRONGAITHIETKE = false;
+                    donkh.NOIDUNGTRONGAI = "";
+                    donkh.BOPHANCHUYEN = "TTK";
+                    donkh.NGUOICHUYEN_HOSO = DAL.C_USERS._userName;
+                    donkh.NGAYCHUYEN_HOSO = System.DateTime.Now.Date;                    
+                    donkh.MODIFYBY = DAL.C_USERS._userName;
+                    donkh.MODIFYDATE = DateTime.Now.Date;
+                    #region
+                    SqlConnection conn = new SqlConnection(db.Connection.ConnectionString);
+                    conn.Open();
+                    string sql = " INSERT INTO TMP_TAIXET VALUES('" + donkh.SOHOSO + "')";
+                    SqlCommand cmd = new SqlCommand(sql, conn);
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+                    #endregion
+                }
+                //#region CapnhatTTK
+                //var totk = from don in db.TOTHIETKEs where don.SOHOSO == sohoso select don;
+                //TOTHIETKE ttk = totk.SingleOrDefault();
+                //if (ttk != null)
+                //{
+                //    ttk.SODOVIEN = null;
+                //    ttk.NGAYNHAN = DateTime.Now.Date;
+                //    ttk.TRAHS = false;
+                //}
+                //else {
+                //    ttk = new TOTHIETKE();
+                //    ttk.MADOT = donkh.MADOT;
+                //    ttk.SOHOSO = donkh.SOHOSO;
+                //    ttk.SHS = donkh.SHS;
+                //    ttk.NGAYNHAN = donkh.NGAYNHAN;
+                //    DAL.C_ToThietKe.addNew(ttk);
+                //}
+                //#endregion
+                db.SubmitChanges();
+               
+                return true;
+            }
+            catch (Exception ex)
+            {
+                log.Error("Cap nhat tro ngai tk loi " + ex.Message);
+            }
+            return false;
+        }
 
         public static DataTable finbyDonKHTinhDuToan(string shs)
         {
@@ -299,5 +353,22 @@ namespace TanHoaWater.DAL
             db.Connection.Close();
             return table;
         }
+
+        public static DataTable getListTaiXet()
+        {
+            TanHoaDataContext db = new TanHoaDataContext();
+            db.Connection.Open();
+            string sql = " SELECT SOHOSO,HOTEN, (SONHA +' '+ DUONG +', P.'+p.TENPHUONG+', Q.'+ q.TENQUAN ) as 'DIACHI',NGAYNHAN= CONVERT(VARCHAR(10),NGAYNHAN,103), lkh.TENLOAI as 'LOAIDON' ";
+            sql += " FROM DON_KHACHHANG kh,QUAN q,PHUONG p, LOAI_KHACHHANG lkh, TMP_TAIXET taixet ";
+            sql += " WHERE  taixet.MAHOSO=kh.SOHOSO AND kh.QUAN = q.MAQUAN AND q.MAQUAN=p.MAQUAN AND kh.PHUONG=p.MAPHUONG AND lkh.MALOAI=kh.LOAIKH";            
+            sql += " ORDER BY NGAYNHAN DESC ";
+            SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
+            DataSet dataset = new DataSet();
+            adapter.Fill(dataset,  "TABLE");
+            db.Connection.Close();
+            return dataset.Tables[0];
+
+        }
+
     }
 }

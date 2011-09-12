@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace TanHoaWater.DAL
+namespace TanHoaWater.Utilities
 {
     class DateToString
     {

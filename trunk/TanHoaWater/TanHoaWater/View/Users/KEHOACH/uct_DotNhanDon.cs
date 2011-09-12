@@ -18,13 +18,13 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
         string _madot_ = null;
         public uct_DOTNHANDON()
         {
-            InitializeComponent();            
+            InitializeComponent();
+
         }
 
         private void DOTNHANDON_Load(object sender, EventArgs e)
         {
-            formLoad();
-        
+            formLoad();            
         }
 
         public void formLoad()
@@ -89,14 +89,14 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
         }
         public void loadGrid() {            
             this.mainGrid.DataSource = DAL.C_DotNhanDon.getList();
-            DAL.DataGridV.formatRows(mainGrid);
+            Utilities.DataGridV.formatRows(mainGrid);
         }
        
 
         private void SearchDot_Click(object sender, EventArgs e)
         {
             this.mainGrid.DataSource = DAL.C_DotNhanDon.Search(this.txtsoDot.Text, this.createDate.Value, this.cbLoaiHS.SelectedValue.ToString());
-            DAL.DataGridV.formatRows(mainGrid);
+            Utilities.DataGridV.formatRows(mainGrid);
         }
 
         private void refresh_Click(object sender, EventArgs e)
@@ -127,7 +127,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
             //{
             //    this.checkCD.Visible = false;
             //}
-            DAL.DataGridV.formatRows(detail);
+            Utilities.DataGridV.formatRows(detail);
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
