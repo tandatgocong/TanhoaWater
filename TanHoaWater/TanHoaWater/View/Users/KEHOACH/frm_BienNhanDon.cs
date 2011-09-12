@@ -113,6 +113,7 @@ namespace TanHoaWater.View.Users.KEHOACH
             errorProvider1.Clear();
             this.soBienNhan.Text = DAL.Idetity.IdentityBienNhan(this.cbLoaiBN.SelectedValue + "");
             this.txtHoTen.Text="";
+            this.txtDt.Text = "";
             this.txtsonha.Text="";
             this.txtDuong.Text="";
             this.cbPhuong.Text="";
@@ -128,14 +129,15 @@ namespace TanHoaWater.View.Users.KEHOACH
             this.txtHoTen.Focus();
 
         }
-        public void printingBienNhan(string mabiennhan)
+        public void printingBienNhan(string mabiennhan, string user)
         {
-            ReportDocument cryRpt = new crp_BIENNHAN();
-            CrystalReportViewer r = new CrystalReportViewer();
-            ReportDocument rp = new crp_BIENNHAN();
-            rp.PrintOptions.PaperSize = PaperSize.Paper11x17;
-            rp.SetDataSource(DAL.C_BienNhanDon.printBienNhan(mabiennhan));
-            r.ReportSource = rp;
+           CrystalReportViewer r = new CrystalReportViewer();
+           ReportDocument rp = new crp_BIENNHAN();
+           rp.PrintOptions.PaperSize = PaperSize.Paper11x17;
+           rp.SetDataSource(DAL.C_BienNhanDon.printBienNhan(mabiennhan, user));
+           r.ReportSource = rp;
+           r.PrintReport();
+
         }
         private void btBienNhanDon_Click(object sender, EventArgs e)
         {
@@ -188,6 +190,7 @@ namespace TanHoaWater.View.Users.KEHOACH
                     BIENNHANDON biennhan = new BIENNHANDON();
                     biennhan.SHS = this.soBienNhan.Text;
                     biennhan.LOAIDON = cbLoaiBN.SelectedValue + "";
+                    biennhan.HOTEN = hoten;
                     biennhan.SONHA = sonha;
                     biennhan.DUONG = txtDuong.Text;
                     biennhan.PHUONG = phuong.MAPHUONG;
@@ -224,7 +227,8 @@ namespace TanHoaWater.View.Users.KEHOACH
                     biennhan.CREATEBY = DAL.C_USERS._userName;
                     biennhan.CREATEDATE = DateTime.Now;
                     DAL.C_BienNhanDon.InsertBienNhanDon(biennhan);
-                    printingBienNhan(biennhan.SHS);
+                    printingBienNhan(biennhan.SHS, DAL.C_USERS._userName);                   
+                    reset();
                 }
             }
             catch (Exception ex)

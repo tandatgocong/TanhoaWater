@@ -145,11 +145,6 @@
     <Compile Include="Roles\VTTH.Designer.cs">
       <DependentUpon>VTTH.cs</DependentUpon>
     </Compile>
-    <Compile Include="TANHOA_WATERDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>TANHOA_WATERDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Utilities\AddValueCombox.cs" />
     <Compile Include="Utilities\DataGridV.cs" />
     <Compile Include="Utilities\DateToString.cs" />
@@ -164,6 +159,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\Users\KEHOACH\tab_DonTaiXet.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Users\KEHOACH\tab_DonTaiXet.Designer.cs">
+      <DependentUpon>tab_DonTaiXet.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Users\KEHOACH\frm_BienNhanDon.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -176,10 +177,11 @@
       <DependentUpon>crp_BIENNHAN.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="View\Users\KEHOACH\Report\DataSet1.Designer.cs">
+    <Compile Include="View\Users\KEHOACH\Report\rpt_DonTaiXet.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DataSet1.xsd</DependentUpon>
+      <DependentUpon>rpt_DonTaiXet.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="View\Users\KEHOACH\Report\rpt_TroNgaiQuan.cs">
       <DependentUpon>rpt_TroNgaiQuan.rpt</DependentUpon>
@@ -319,12 +321,19 @@
     <EmbeddedResource Include="Roles\VTTH.resx">
       <DependentUpon>VTTH.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\KEHOACH\tab_DonTaiXet.resx">
+      <DependentUpon>tab_DonTaiXet.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Users\KEHOACH\frm_BienNhanDon.resx">
       <DependentUpon>frm_BienNhanDon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\KEHOACH\Report\crp_BIENNHAN.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>crp_BIENNHAN.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\KEHOACH\Report\rpt_DonTaiXet.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_DonTaiXet.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\KEHOACH\Report\rpt_TroNgaiQuan.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -446,7 +455,6 @@
     </Compile>
     <None Include="Database\TanHoa.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>TanHoa.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
     <None Include="Lib\user.dat" />
@@ -501,28 +509,6 @@
     <Compile Include="View\Main\frm_Login.Designer.cs">
       <DependentUpon>frm_Login.cs</DependentUpon>
     </Compile>
-    <None Include="TANHOA_WATERDataSet.xsc">
-      <DependentUpon>TANHOA_WATERDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="TANHOA_WATERDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>TANHOA_WATERDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="TANHOA_WATERDataSet.xss">
-      <DependentUpon>TANHOA_WATERDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="View\Users\KEHOACH\Report\DataSet1.xsc">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="View\Users\KEHOACH\Report\DataSet1.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="View\Users\KEHOACH\Report\DataSet1.xss">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\bg_head.jpg" />

@@ -8,7 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using TanHoaWater.Database;
 using System.Collections;
-using TanHoaWater.Class;
+using TanHoaWater.Utilities;
 using System.Data.SqlClient;
 
 namespace TanHoaWater.View.QLDHN

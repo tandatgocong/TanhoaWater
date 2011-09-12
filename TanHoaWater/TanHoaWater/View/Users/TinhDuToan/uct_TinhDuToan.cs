@@ -107,7 +107,7 @@ namespace TanHoaWater.View.Users.TinhDuToan
                 rows = DAL.C_DanhMucVatTu.TotalSearch(this.txtMaHieuVT.Text, this.txtMaHieuDG.Text, txtTenVT.Text, this.cbDVT.Text.Trim(), this.cbNhomVT.Text.Trim(), checkBovt);
                 GridDanhMucVT.DataSource = DAL.C_DanhMucVatTu.search(this.txtMaHieuVT.Text, this.txtMaHieuDG.Text, txtTenVT.Text, this.cbDVT.Text, this.cbNhomVT.Text, checkBovt, FirstRow, pageSize);
                 this.totalRecord.Text = "Tống Cộng Có " + rows + " Danh Mục Vật Tư. ";
-                DAL.DataGridV.formatRows(GridDanhMucVT);
+                Utilities.DataGridV.formatRows(GridDanhMucVT);
                 PageTotal();
                 this.groupPanelBoVT.Visible = false;
                 this.groupDGVT.Visible = false;
@@ -126,7 +126,7 @@ namespace TanHoaWater.View.Users.TinhDuToan
                 rows = DAL.C_DanhMucVatTu.TotalSearch("", "", "", "", "", false);
                 GridDanhMucVT.DataSource = DAL.C_DanhMucVatTu.search("", "", "", "", "", false, FirstRow, pageSize);
                 this.totalRecord.Text = "Tống Cộng Có " + rows + " Danh Mục Vật Tư. ";
-                DAL.DataGridV.formatRows(GridDanhMucVT);
+                Utilities.DataGridV.formatRows(GridDanhMucVT);
                 this.cbDVT.DataSource = DAL.C_DonViTinh.getDVT();
                 this.cbDVT.ValueMember = "Value";
                 this.cbDVT.DisplayMember = "Display";
@@ -204,7 +204,7 @@ namespace TanHoaWater.View.Users.TinhDuToan
 
         private void GridDanhMucVT_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            DAL.DataGridV.formatRows(GridDanhMucVT);
+            Utilities.DataGridV.formatRows(GridDanhMucVT);
         }
 
         private void tabTaiLapMatDuong_Click(object sender, EventArgs e)
@@ -237,7 +237,7 @@ namespace TanHoaWater.View.Users.TinhDuToan
                     groupDGVT.Visible = true;
                     mahieuvtDG = GridDanhMucVT.Rows[e.RowIndex].Cells[0].Value.ToString();
                     this.GridDonGiaVT.DataSource = DAL.C_DonGiaVatTu.GetDonGiaVTbyMaHieu(mahieuvtDG);
-                    DAL.DataGridV.formatRows(GridDonGiaVT);
+                    Utilities.DataGridV.formatRows(GridDonGiaVT);
                     groupDGVT.Text = "Đơn Giá Vật Tư Của Mã Hiệu Vật Tư : " + mahieuvtDG;
                 }
             }
@@ -250,7 +250,7 @@ namespace TanHoaWater.View.Users.TinhDuToan
 
         private void GridDonGiaVT_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            DAL.DataGridV.formatRows(GridDonGiaVT);
+            Utilities.DataGridV.formatRows(GridDonGiaVT);
         }
 
         private void GridDonGiaVT_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
@@ -487,7 +487,7 @@ namespace TanHoaWater.View.Users.TinhDuToan
         {
             table = DAL.C_DanhMucBoVT.getByMaBoVT(mabovt);
             GridBoVT.DataSource = table;
-            DAL.DataGridV.formatRows(GridBoVT);
+            Utilities.DataGridV.formatRows(GridBoVT);
         }
         private void cbNhomVatTu_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -514,7 +514,7 @@ namespace TanHoaWater.View.Users.TinhDuToan
                     table.Rows.Add(rows);
                 }
                 GridBoVT.DataSource = table;
-                DAL.DataGridV.formatRows(GridBoVT);
+                Utilities.DataGridV.formatRows(GridBoVT);
             }
             catch (Exception)
             {
@@ -558,7 +558,7 @@ namespace TanHoaWater.View.Users.TinhDuToan
 
         private void GridDonGiaVT_UserAddedRow(object sender, DataGridViewRowEventArgs e)
         {
-            GridDonGiaVT.Rows[GridDonGiaVT.CurrentRow.Index].Cells[5].Value = DAL.DateToString.NgayVN(DateTime.Now);
+            GridDonGiaVT.Rows[GridDonGiaVT.CurrentRow.Index].Cells[5].Value = Utilities.DateToString.NgayVN(DateTime.Now);
             GridDonGiaVT.Rows[GridDonGiaVT.CurrentRow.Index].Cells[0].Value = GridDonGiaVT.CurrentRow.Index + 1;
             GridDonGiaVT.Rows[GridDonGiaVT.CurrentRow.Index].Cells[1].Value = mahieuvtDG;
 

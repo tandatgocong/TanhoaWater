@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using TanHoaWater.Database;
 using System.Collections;
-using TanHoaWater.Class;
+using TanHoaWater.Utilities;
 namespace TanHoaWater.DAL
 {
     public class C_Phuong

@@ -36,7 +36,7 @@ namespace TanHoaWater
             //th.Abort();
             this.menuHeThong.Select();
 
-            this.lbNgayHeThong.Text = DAL.DateToString.fullCurrentNgay()+"  ";
+            this.lbNgayHeThong.Text = Utilities.DateToString.fullCurrentNgay()+"  ";
         }
 
         public static frm_Login dn = new frm_Login();

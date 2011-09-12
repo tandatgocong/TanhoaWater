@@ -138,7 +138,7 @@
             this.checkHK.Location = new System.Drawing.Point(171, 325);
             this.checkHK.Name = "checkHK";
             this.checkHK.Size = new System.Drawing.Size(251, 23);
-            this.checkHK.TabIndex = 8;
+            this.checkHK.TabIndex = 9;
             this.checkHK.Text = "Hộ khẩu thường trú hoặc sổ tạm trú..";
             this.checkHK.UseVisualStyleBackColor = true;
             // 
@@ -148,7 +148,7 @@
             this.checkChuQuyen.Location = new System.Drawing.Point(171, 354);
             this.checkChuQuyen.Name = "checkChuQuyen";
             this.checkChuQuyen.Size = new System.Drawing.Size(326, 23);
-            this.checkChuQuyen.TabIndex = 9;
+            this.checkChuQuyen.TabIndex = 10;
             this.checkChuQuyen.Text = "Giấy chủ quyền nhà/đất; hợp đồng mua bán nhà;..";
             this.checkChuQuyen.UseVisualStyleBackColor = true;
             // 
@@ -158,7 +158,7 @@
             this.checkGiayPhep.Location = new System.Drawing.Point(171, 383);
             this.checkGiayPhep.Name = "checkGiayPhep";
             this.checkGiayPhep.Size = new System.Drawing.Size(150, 23);
-            this.checkGiayPhep.TabIndex = 10;
+            this.checkGiayPhep.TabIndex = 11;
             this.checkGiayPhep.Text = "Giấy phép xây dựng";
             this.checkGiayPhep.UseVisualStyleBackColor = true;
             // 
@@ -209,7 +209,7 @@
             this.cbPhuong.Location = new System.Drawing.Point(171, 247);
             this.cbPhuong.Name = "cbPhuong";
             this.cbPhuong.Size = new System.Drawing.Size(136, 26);
-            this.cbPhuong.TabIndex = 6;
+            this.cbPhuong.TabIndex = 7;
             this.cbPhuong.SelectedValueChanged += new System.EventHandler(this.cbPhuong_SelectedValueChanged);
             // 
             // Quan
@@ -222,7 +222,7 @@
             this.Quan.Location = new System.Drawing.Point(171, 281);
             this.Quan.Name = "Quan";
             this.Quan.Size = new System.Drawing.Size(136, 26);
-            this.Quan.TabIndex = 7;
+            this.Quan.TabIndex = 8;
             // 
             // cbLoaiBN
             // 
@@ -248,7 +248,7 @@
             this.btBienNhanDon.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.F1);
             this.btBienNhanDon.Size = new System.Drawing.Size(91, 25);
             this.btBienNhanDon.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
-            this.btBienNhanDon.TabIndex = 11;
+            this.btBienNhanDon.TabIndex = 12;
             this.btBienNhanDon.Text = "Lưu && In (F1)";
             this.btBienNhanDon.Click += new System.EventHandler(this.btBienNhanDon_Click);
             // 
@@ -263,7 +263,7 @@
             this.btLamLai.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.F5);
             this.btLamLai.Size = new System.Drawing.Size(91, 25);
             this.btLamLai.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
-            this.btLamLai.TabIndex = 12;
+            this.btLamLai.TabIndex = 13;
             this.btLamLai.Text = "Làm Lại (F5)";
             this.btLamLai.Click += new System.EventHandler(this.btLamLai_Click);
             // 
@@ -278,7 +278,7 @@
             this.buttonX2.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.F12);
             this.buttonX2.Size = new System.Drawing.Size(91, 25);
             this.buttonX2.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
-            this.buttonX2.TabIndex = 13;
+            this.buttonX2.TabIndex = 14;
             this.buttonX2.Text = "Thoát (F12)";
             this.buttonX2.Click += new System.EventHandler(this.buttonX2_Click);
             // 
@@ -291,7 +291,7 @@
             this.txtsonha.Location = new System.Drawing.Point(171, 212);
             this.txtsonha.Name = "txtsonha";
             this.txtsonha.Size = new System.Drawing.Size(74, 26);
-            this.txtsonha.TabIndex = 4;
+            this.txtsonha.TabIndex = 5;
             // 
             // txtDuong
             // 
@@ -302,7 +302,7 @@
             this.txtDuong.Location = new System.Drawing.Point(251, 212);
             this.txtDuong.Name = "txtDuong";
             this.txtDuong.Size = new System.Drawing.Size(175, 26);
-            this.txtDuong.TabIndex = 5;
+            this.txtDuong.TabIndex = 6;
             this.txtDuong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDuong_KeyPress);
             this.txtDuong.Leave += new System.EventHandler(this.txtDuong_Leave);
             // 
@@ -327,7 +327,7 @@
             this.txtDt.Location = new System.Drawing.Point(171, 182);
             this.txtDt.Name = "txtDt";
             this.txtDt.Size = new System.Drawing.Size(255, 26);
-            this.txtDt.TabIndex = 3;
+            this.txtDt.TabIndex = 4;
             // 
             // frm_BienNhanDon
             // 
@@ -366,7 +366,7 @@
             this.MinimizeBox = false;
             this.Name = "frm_BienNhanDon";
             this.ShowInTaskbar = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Biên Nhận Đơn";
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.frm_BienNhanDon_KeyPress);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();

@@ -7,7 +7,7 @@ using log4net;
 using System.Data;
 using System.Data.SqlClient;
 using System.Collections;
-using TanHoaWater.Class;
+using TanHoaWater.Utilities;
 namespace TanHoaWater.DAL
 {
     class C_DanhMucVatTu

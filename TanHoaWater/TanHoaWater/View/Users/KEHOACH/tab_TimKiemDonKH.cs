@@ -45,7 +45,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                 rows = DAL.C_DonKhachHang.TotalPageSearch(SearchDotNhanDon.Text, this.SearchMaHoSo.Text, this.searchHoTenKH.Text, this.searchSoNha.Text, this.searchDiaChi.Text);
                 PageTotal();
                 this.dataSearCh.DataSource = DAL.C_DonKhachHang.search(SearchDotNhanDon.Text, this.SearchMaHoSo.Text, this.searchHoTenKH.Text, this.searchSoNha.Text, this.searchDiaChi.Text, FirstRow, pageSize);
-                DAL.DataGridV.formatRows(dataSearCh);
+               Utilities.DataGridV.formatRows(dataSearCh);
 
             }
             catch (Exception ex){

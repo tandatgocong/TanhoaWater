@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using TanHoaWater.Database;
-using TanHoaWater.Class;
 using System.Collections;
 using log4net;
 using CrystalDecisions.CrystalReports.Engine;
@@ -41,6 +40,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                 this.bophanChuyen.ValueMember = "MAPHONG";                
                 #endregion
                 load_cd_Grid();
+              
             }
             else if (tab == 3) {
                 tabControl1.SelectedTabIndex = 2;
@@ -49,6 +49,8 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
             }
             else if (tab == 4) {
                 tabControl1.SelectedTabIndex = 3;
+                this.panel5.Controls.Clear();
+                this.panel5.Controls.Add(new tab_DonTaiXet());
             }
             else if (tab == 5) {
                 this.panel2.Controls.Clear();
@@ -120,7 +122,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                 log.Error(ex);
             }
             PageTotal();
-            DAL.DataGridV.formatRows(dataG);
+            Utilities.DataGridV.formatRows(dataG);
         }
         int _maquan = 0;
         string _maphuong = "";
@@ -342,7 +344,8 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                 donKH.CREATEDATE = DateTime.Now;
                 DAL.C_DonKhachHang.InsertDonHK(donKH);
                 loadDataGrid();
-                DAL.DataGridV.formatRows(dataG);
+                Utilities.DataGridV.formatRows(dataG);
+                refresh();
             }
         }
 
@@ -367,6 +370,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
             this.duong.Text = null;
             this.txtSoHoSo.Text = null;
             this.errorProvider1.Clear();
+            this.txtSHS.Focus();
         }
 
         private void buttonX2_Click(object sender, EventArgs e)
@@ -391,7 +395,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
             this.dataG.DataSource = DAL.C_DonKhachHang.getListbyDot(_madot, FirstRow, pageSize);
             int sokh = DAL.C_DonKhachHang.TotalListByDot(_madot);
             this.totalRecord.Text = "Tống công có " + sokh + " khách hàng đợt nhận đơn " + _madot;
-            DAL.DataGridV.formatRows(dataG);
+            Utilities.DataGridV.formatRows(dataG);
         }
 
         private void next_Click(object sender, EventArgs e)
@@ -540,6 +544,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
             //}
            
             load_cd_Grid();
+            Utilities.DataGridV.formatRows(cd_MainGird);   
         }
         public void load_cd_Grid()
         {
@@ -633,7 +638,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                         this.resultChuyen.Visible = true;
                         this.resultDGChuyen.Visible = true;
                         this.resultPrint.Visible = true;
-                        DAL.DataGridV.formatRows(resultDGChuyen);
+                        Utilities.DataGridV.formatRows(resultDGChuyen);
                     }
                 }
             }
@@ -651,7 +656,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
             this.cd_detail.DataSource = DAL.C_DonKhachHang.getListbyDot(madot);
             sokh = DAL.C_DonKhachHang.getListbyDot(madot).Rows.Count;
             
-            DAL.DataGridV.formatRows(cd_detail);
+            Utilities.DataGridV.formatRows(cd_detail);
         }
 
        
@@ -689,6 +694,11 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
         {
             this.panel4.Controls.Clear();
             this.panel4.Controls.Add(new tab_DonTroNgai());
+        }
+
+        private void cd_MainGird_Sorted(object sender, EventArgs e)
+        {
+            Utilities.DataGridV.formatRows(cd_MainGird);
         }
 
     }

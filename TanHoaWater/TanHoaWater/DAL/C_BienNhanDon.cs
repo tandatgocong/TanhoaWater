@@ -16,11 +16,11 @@ namespace TanHoaWater.DAL
             db.BIENNHANDONs.InsertOnSubmit(bn);
             db.SubmitChanges();
         }
-        public static DataSet printBienNhan(string soshs) {
+        public static DataSet printBienNhan(string soshs, string user) {
             TanHoaDataContext db = new TanHoaDataContext();
             db.Connection.Open();
             string sql = " SELECT * FROM V_BIENNHANDON ";
-            sql += " WHERE SHS='" + soshs + "' AND USERNAME='thanhtrung'";
+            sql += " WHERE SHS='" + soshs + "' AND USERNAME='" + user + "'";
 
             SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             DataSet dataset = new DataSet();

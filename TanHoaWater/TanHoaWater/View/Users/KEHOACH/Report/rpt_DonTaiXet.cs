@@ -16,14 +16,14 @@ namespace TanHoaWater.View.Users.KEHOACH.Report {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class crp_BIENNHAN : ReportClass {
+    public class rpt_DonTaiXet : ReportClass {
         
-        public crp_BIENNHAN() {
+        public rpt_DonTaiXet() {
         }
         
         public override string ResourceName {
             get {
-                return "crp_BIENNHAN.rpt";
+                return "rpt_DonTaiXet.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace TanHoaWater.View.Users.KEHOACH.Report {
         
         public override string FullResourceName {
             get {
-                return "TanHoaWater.View.Users.KEHOACH.Report.crp_BIENNHAN.rpt";
+                return "TanHoaWater.View.Users.KEHOACH.Report.rpt_DonTaiXet.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace TanHoaWater.View.Users.KEHOACH.Report {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class Cachedcrp_BIENNHAN : Component, ICachedReport {
+    public class Cachedrpt_DonTaiXet : Component, ICachedReport {
         
-        public Cachedcrp_BIENNHAN() {
+        public Cachedrpt_DonTaiXet() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace TanHoaWater.View.Users.KEHOACH.Report {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            crp_BIENNHAN rpt = new crp_BIENNHAN();
+            rpt_DonTaiXet rpt = new rpt_DonTaiXet();
             rpt.Site = this.Site;
             return rpt;
         }
