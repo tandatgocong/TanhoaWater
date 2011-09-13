@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using log4net;
+using CrystalDecisions.CrystalReports.Engine;
+using TanHoaWater.View.Users.KEHOACH.Report;
 
 namespace TanHoaWater.View.Users.KEHOACH
 {
@@ -18,16 +20,35 @@ namespace TanHoaWater.View.Users.KEHOACH
             InitializeComponent();           
           
             this.taix_shs.Mask = DateTime.Now.Year.ToString().Substring(2) + "CCCCC";
-            fromload();
-            Utilities.DataGridV.formatRows(dataG);
+            fromload();            
+            #region Nguoi Duyet Don
+            this.CD_NguoiDuyetDon.DataSource = DAL.C_USERS.getUserByMaPhongAndLevel("VTTH", 0);
+            this.CD_NguoiDuyetDon.DisplayMember = "FULLNAME";
+            this.CD_NguoiDuyetDon.ValueMember = "USERNAME";
+            #endregion
         }
         
         public void fromload() {
             this.dataG.DataSource = DAL.C_DonKhachHang.getListTaiXet();         
             Utilities.DataGridV.formatRows(dataG);
         }
-            
 
+        public void refesh() {
+            this.taix_shs.Text = "";
+            this.taix_sohoso.Text = "";
+            this.taix_soHo.Value = 0;
+            this.taix_hoten.Text = "";
+            this.taix_diachi.Text = "";
+            this.taix_loaikh.Text = "";
+            this.taix_loaihs.Text = "";
+            this.taix_dotnhandon.Text = "";
+            this.taix_sodt.Text = "";
+            this.taix_ghichu.Text = "";
+            this.taix_ngaydaottk.Text = "";
+            this.taix_noiduntrongai.Text = "";
+            this.taix_shs.Focus();
+            fromload();
+        }
         private void update_TaiXet_Click(object sender, EventArgs e)
         {
             try
@@ -35,15 +56,33 @@ namespace TanHoaWater.View.Users.KEHOACH
                 string _soHoSo = this.taix_sohoso.Text;
                 if (_soHoSo != null)
                 {
-                    bool result1 = DAL.C_DonKhachHang.HoSoTaiXet(_soHoSo, DAL.C_USERS._userName);
-                    if (result1)
+                    if (DAL.C_DonKhachHang.finbyDTX(_soHoSo) == null)
                     {
-                        MessageBox.Show(this, "Tái Xét Hồ Sơ Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        bool result1 = DAL.C_DonKhachHang.HoSoTaiXet(_soHoSo, DAL.C_USERS._userName);
+                        if (result1)
+                        {
+                            MessageBox.Show(this, "Tái Xét Hồ Sơ Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show(this, "Tái Xét Hồ Sơ Lỗi !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
-                    else
-                    {
-                        MessageBox.Show(this, "Tái Xét Hồ Sơ Lỗi !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    else {
+                        if (MessageBox.Show(this, "Hồ Sơ Đã Được Tái Xét rồi. Có Muốn Cập Nhât Lại ?", "..: Thông Báo :..", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) {
+                            
+                            bool result1 = DAL.C_DonKhachHang.UpdateDonTX(_soHoSo);
+                            if (result1)
+                            {
+                                MessageBox.Show(this, "Tái Xét Hồ Sơ Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            else
+                            {
+                                MessageBox.Show(this, "Tái Xét Hồ Sơ Lỗi !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
                     }
+                   
                 }
             }
             catch (Exception ex)
@@ -99,6 +138,7 @@ namespace TanHoaWater.View.Users.KEHOACH
                         }
                         else
                         {
+                            MessageBox.Show(this, "Không Tìm Thấy Đơn Khách Hàng", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             this.taix_shs.Text = null;
                             this.taix_sohoso.Text = null;
                             this.taix_soHo.Value = 0;
@@ -124,6 +164,39 @@ namespace TanHoaWater.View.Users.KEHOACH
         private void dataG_Sorted(object sender, EventArgs e)
         {
             Utilities.DataGridV.formatRows(dataG);
+        }
+
+        private void refresh_Click(object sender, EventArgs e)
+        {
+            refesh();
+        }
+
+        private void btChuyenDon_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                #region Printing
+                ReportDocument rp = new rpt_DonTaiXet();
+                rp.SetDataSource(DAL.C_DonKhachHang.In_Dontaixet(this.CD_NguoiDuyetDon.SelectedValue+""));
+                reportView rpt = new reportView(rp);
+                rpt.ShowDialog();
+                #endregion
+                for (int i = 0; i < this.dataG.Rows.Count; i++)
+                {
+                    string sohoso = dataG.Rows[i].Cells[0].Value + "";
+                    if ("".Equals(sohoso) == false)
+                    {
+                        DAL.C_DonKhachHang.ChuyenHSTaiXet(sohoso);
+                    }
+
+                }
+                refesh();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show(this, "Chuyển Hồ Sơ Tái Xét Lỗi !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
     }
 }

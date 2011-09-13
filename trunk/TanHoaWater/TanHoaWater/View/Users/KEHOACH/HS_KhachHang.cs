@@ -74,7 +74,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                this.BC_NGUOIDUYET.DisplayMember = "FULLNAME";
                this.BC_NGUOIDUYET.ValueMember = "USERNAME";
                #endregion
-               tabControl1.SelectedTabIndex = 6;
+               tabControl1.SelectedTabIndex = 5;
            }
            else
            {
@@ -631,7 +631,6 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                         this.CD_NguoiDuyetDon.DataSource = DAL.C_USERS.getUserByMaPhongAndLevel("VTTH", 0);
                         this.CD_NguoiDuyetDon.DisplayMember = "FULLNAME";
                         this.CD_NguoiDuyetDon.ValueMember = "USERNAME";
-
                         #endregion
                         this.CD_NguoiDuyetDon.Visible = true;
                         this.nguoiduyetDon.Visible = true;
@@ -699,6 +698,13 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
         private void cd_MainGird_Sorted(object sender, EventArgs e)
         {
             Utilities.DataGridV.formatRows(cd_MainGird);
+        }
+
+        private void tabItem4_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedTabIndex = 3;
+            this.panel5.Controls.Clear();
+            this.panel5.Controls.Add(new tab_DonTaiXet());
         }
 
     }

@@ -30,6 +30,17 @@
         {
             this.panel8 = new System.Windows.Forms.Panel();
             this.panelEx2 = new DevComponents.DotNetBar.PanelEx();
+            this.refresh = new DevComponents.DotNetBar.ButtonX();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.nguoiduyetDon = new System.Windows.Forms.Label();
+            this.CD_NguoiDuyetDon = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.btChuyenDon = new DevComponents.DotNetBar.ButtonX();
+            this.dataG = new System.Windows.Forms.DataGridView();
+            this.SOHOSO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HOTEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DIACHI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NGAY_NHAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.loiDon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label25 = new System.Windows.Forms.Label();
             this.taix_sohoso = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.taix_soHo = new System.Windows.Forms.NumericUpDown();
@@ -57,18 +68,11 @@
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataG = new System.Windows.Forms.DataGridView();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.SOHOSO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HOTEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DIACHI = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NGAY_NHAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.loiDon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel8.SuspendLayout();
             this.panelEx2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.taix_soHo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataG)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataG)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.taix_soHo)).BeginInit();
             this.SuspendLayout();
             // 
             // panel8
@@ -84,6 +88,7 @@
             // panelEx2
             // 
             this.panelEx2.CanvasColor = System.Drawing.SystemColors.Control;
+            this.panelEx2.Controls.Add(this.refresh);
             this.panelEx2.Controls.Add(this.groupBox1);
             this.panelEx2.Controls.Add(this.label25);
             this.panelEx2.Controls.Add(this.taix_sohoso);
@@ -112,11 +117,10 @@
             this.panelEx2.Controls.Add(this.label22);
             this.panelEx2.Controls.Add(this.label23);
             this.panelEx2.Controls.Add(this.label1);
-            this.panelEx2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelEx2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.panelEx2.Location = new System.Drawing.Point(0, 0);
             this.panelEx2.Name = "panelEx2";
-            this.panelEx2.Size = new System.Drawing.Size(1036, 695);
+            this.panelEx2.Size = new System.Drawing.Size(1036, 559);
             this.panelEx2.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx2.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
             this.panelEx2.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
@@ -125,10 +129,136 @@
             this.panelEx2.Style.GradientAngle = 90;
             this.panelEx2.TabIndex = 1;
             // 
+            // refresh
+            // 
+            this.refresh.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.refresh.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.refresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.refresh.Image = global::TanHoaWater.Properties.Resources.refresh;
+            this.refresh.ImageFixedSize = new System.Drawing.Size(20, 20);
+            this.refresh.Location = new System.Drawing.Point(250, 215);
+            this.refresh.Name = "refresh";
+            this.refresh.Size = new System.Drawing.Size(113, 28);
+            this.refresh.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
+            this.refresh.TabIndex = 133;
+            this.refresh.Text = "Làm lại    ";
+            this.refresh.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
+            this.refresh.Click += new System.EventHandler(this.refresh_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.CD_NguoiDuyetDon);
+            this.groupBox1.Controls.Add(this.nguoiduyetDon);
+            this.groupBox1.Controls.Add(this.btChuyenDon);
+            this.groupBox1.Controls.Add(this.dataG);
+            this.groupBox1.Location = new System.Drawing.Point(16, 250);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(966, 274);
+            this.groupBox1.TabIndex = 131;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Danh Sách Hồ Sơ Tái Xét Chưa Chuyển";
+            // 
+            // nguoiduyetDon
+            // 
+            this.nguoiduyetDon.AutoSize = true;
+            this.nguoiduyetDon.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nguoiduyetDon.ForeColor = System.Drawing.Color.Maroon;
+            this.nguoiduyetDon.Location = new System.Drawing.Point(591, 250);
+            this.nguoiduyetDon.Name = "nguoiduyetDon";
+            this.nguoiduyetDon.Size = new System.Drawing.Size(93, 16);
+            this.nguoiduyetDon.TabIndex = 133;
+            this.nguoiduyetDon.Text = "Người Duyệt";
+            // 
+            // CD_NguoiDuyetDon
+            // 
+            this.CD_NguoiDuyetDon.DisplayMember = "Text";
+            this.CD_NguoiDuyetDon.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.CD_NguoiDuyetDon.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CD_NguoiDuyetDon.FormattingEnabled = true;
+            this.CD_NguoiDuyetDon.ItemHeight = 16;
+            this.CD_NguoiDuyetDon.Location = new System.Drawing.Point(682, 246);
+            this.CD_NguoiDuyetDon.Name = "CD_NguoiDuyetDon";
+            this.CD_NguoiDuyetDon.Size = new System.Drawing.Size(152, 22);
+            this.CD_NguoiDuyetDon.TabIndex = 132;
+            // 
+            // btChuyenDon
+            // 
+            this.btChuyenDon.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btChuyenDon.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btChuyenDon.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btChuyenDon.ForeColor = System.Drawing.Color.Maroon;
+            this.btChuyenDon.Location = new System.Drawing.Point(840, 242);
+            this.btChuyenDon.Name = "btChuyenDon";
+            this.btChuyenDon.Size = new System.Drawing.Size(120, 26);
+            this.btChuyenDon.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
+            this.btChuyenDon.TabIndex = 131;
+            this.btChuyenDon.Text = "Chuyển Đơn && In";
+            this.btChuyenDon.Click += new System.EventHandler(this.btChuyenDon_Click);
+            // 
+            // dataG
+            // 
+            this.dataG.AllowUserToAddRows = false;
+            this.dataG.AllowUserToDeleteRows = false;
+            this.dataG.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataG.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.SOHOSO,
+            this.HOTEN,
+            this.DIACHI,
+            this.NGAY_NHAN,
+            this.loiDon});
+            this.dataG.Location = new System.Drawing.Point(7, 21);
+            this.dataG.Name = "dataG";
+            this.dataG.ReadOnly = true;
+            this.dataG.RowHeadersWidth = 10;
+            this.dataG.Size = new System.Drawing.Size(953, 215);
+            this.dataG.TabIndex = 130;
+            this.dataG.Sorted += new System.EventHandler(this.dataG_Sorted);
+            // 
+            // SOHOSO
+            // 
+            this.SOHOSO.DataPropertyName = "SOHOSO";
+            this.SOHOSO.HeaderText = "Số Hồ Sơ";
+            this.SOHOSO.Name = "SOHOSO";
+            this.SOHOSO.ReadOnly = true;
+            this.SOHOSO.Width = 120;
+            // 
+            // HOTEN
+            // 
+            this.HOTEN.DataPropertyName = "HOTEN";
+            this.HOTEN.HeaderText = "Họ Tên";
+            this.HOTEN.Name = "HOTEN";
+            this.HOTEN.ReadOnly = true;
+            this.HOTEN.Width = 200;
+            // 
+            // DIACHI
+            // 
+            this.DIACHI.DataPropertyName = "DIACHI";
+            this.DIACHI.HeaderText = "Địa Chỉ";
+            this.DIACHI.Name = "DIACHI";
+            this.DIACHI.ReadOnly = true;
+            this.DIACHI.Width = 320;
+            // 
+            // NGAY_NHAN
+            // 
+            this.NGAY_NHAN.DataPropertyName = "NGAYNHAN";
+            this.NGAY_NHAN.HeaderText = "Ngày Nhận";
+            this.NGAY_NHAN.Name = "NGAY_NHAN";
+            this.NGAY_NHAN.ReadOnly = true;
+            this.NGAY_NHAN.Width = 150;
+            // 
+            // loiDon
+            // 
+            this.loiDon.DataPropertyName = "LOAIDON";
+            this.loiDon.HeaderText = "Loại Khách Hàng";
+            this.loiDon.Name = "loiDon";
+            this.loiDon.ReadOnly = true;
+            this.loiDon.Width = 150;
+            // 
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(474, 87);
+            this.label25.Location = new System.Drawing.Point(467, 84);
             this.label25.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(75, 16);
@@ -161,7 +291,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(474, 15);
+            this.label2.Location = new System.Drawing.Point(467, 16);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(75, 16);
@@ -205,7 +335,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(474, 53);
+            this.label16.Location = new System.Drawing.Point(467, 52);
             this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(54, 16);
@@ -239,7 +369,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(474, 148);
+            this.label6.Location = new System.Drawing.Point(467, 148);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(67, 32);
@@ -323,7 +453,7 @@
             this.taix_sodt.Multiline = true;
             this.taix_sodt.Name = "taix_sodt";
             this.taix_sodt.ReadOnly = true;
-            this.taix_sodt.Size = new System.Drawing.Size(323, 25);
+            this.taix_sodt.Size = new System.Drawing.Size(325, 25);
             this.taix_sodt.TabIndex = 117;
             // 
             // update_TaiXet
@@ -333,7 +463,7 @@
             this.update_TaiXet.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.update_TaiXet.Image = global::TanHoaWater.Properties.Resources.update;
             this.update_TaiXet.ImageFixedSize = new System.Drawing.Size(20, 20);
-            this.update_TaiXet.Location = new System.Drawing.Point(426, 215);
+            this.update_TaiXet.Location = new System.Drawing.Point(110, 215);
             this.update_TaiXet.Margin = new System.Windows.Forms.Padding(4);
             this.update_TaiXet.Name = "update_TaiXet";
             this.update_TaiXet.Size = new System.Drawing.Size(133, 28);
@@ -377,7 +507,7 @@
             this.taix_loaikh.Multiline = true;
             this.taix_loaikh.Name = "taix_loaikh";
             this.taix_loaikh.ReadOnly = true;
-            this.taix_loaikh.Size = new System.Drawing.Size(321, 25);
+            this.taix_loaikh.Size = new System.Drawing.Size(325, 25);
             this.taix_loaikh.TabIndex = 115;
             // 
             // taix_shs
@@ -433,82 +563,12 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(474, 119);
+            this.label1.Location = new System.Drawing.Point(467, 118);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(102, 16);
             this.label1.TabIndex = 125;
             this.label1.Text = "Ngày Giao TTK";
-            // 
-            // dataG
-            // 
-            this.dataG.AllowUserToAddRows = false;
-            this.dataG.AllowUserToDeleteRows = false;
-            this.dataG.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataG.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.SOHOSO,
-            this.HOTEN,
-            this.DIACHI,
-            this.NGAY_NHAN,
-            this.loiDon});
-            this.dataG.Location = new System.Drawing.Point(7, 21);
-            this.dataG.Name = "dataG";
-            this.dataG.ReadOnly = true;
-            this.dataG.RowHeadersWidth = 10;
-            this.dataG.Size = new System.Drawing.Size(953, 215);
-            this.dataG.TabIndex = 130;
-            this.dataG.Sorted += new System.EventHandler(this.dataG_Sorted);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.dataG);
-            this.groupBox1.Location = new System.Drawing.Point(16, 250);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(966, 274);
-            this.groupBox1.TabIndex = 131;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Danh Sách Hồ Sơ Tái Xét Chưa Chuyển";
-            // 
-            // SOHOSO
-            // 
-            this.SOHOSO.DataPropertyName = "SOHOSO";
-            this.SOHOSO.HeaderText = "Số Hồ Sơ";
-            this.SOHOSO.Name = "SOHOSO";
-            this.SOHOSO.ReadOnly = true;
-            this.SOHOSO.Width = 120;
-            // 
-            // HOTEN
-            // 
-            this.HOTEN.DataPropertyName = "HOTEN";
-            this.HOTEN.HeaderText = "Họ Tên";
-            this.HOTEN.Name = "HOTEN";
-            this.HOTEN.ReadOnly = true;
-            this.HOTEN.Width = 200;
-            // 
-            // DIACHI
-            // 
-            this.DIACHI.DataPropertyName = "DIACHI";
-            this.DIACHI.HeaderText = "Địa Chỉ";
-            this.DIACHI.Name = "DIACHI";
-            this.DIACHI.ReadOnly = true;
-            this.DIACHI.Width = 320;
-            // 
-            // NGAY_NHAN
-            // 
-            this.NGAY_NHAN.DataPropertyName = "NGAYNHAN";
-            this.NGAY_NHAN.HeaderText = "Ngày Nhận";
-            this.NGAY_NHAN.Name = "NGAY_NHAN";
-            this.NGAY_NHAN.ReadOnly = true;
-            this.NGAY_NHAN.Width = 150;
-            // 
-            // loiDon
-            // 
-            this.loiDon.DataPropertyName = "LOAIDON";
-            this.loiDon.HeaderText = "Loại Khách Hàng";
-            this.loiDon.Name = "loiDon";
-            this.loiDon.ReadOnly = true;
-            this.loiDon.Width = 150;
             // 
             // tab_DonTaiXet
             // 
@@ -523,9 +583,10 @@
             this.panel8.ResumeLayout(false);
             this.panelEx2.ResumeLayout(false);
             this.panelEx2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.taix_soHo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataG)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataG)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.taix_soHo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -568,6 +629,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DIACHI;
         private System.Windows.Forms.DataGridViewTextBoxColumn NGAY_NHAN;
         private System.Windows.Forms.DataGridViewTextBoxColumn loiDon;
+        private DevComponents.DotNetBar.ButtonX btChuyenDon;
+        private System.Windows.Forms.Label nguoiduyetDon;
+        private DevComponents.DotNetBar.Controls.ComboBoxEx CD_NguoiDuyetDon;
+        private DevComponents.DotNetBar.ButtonX refresh;
 
     }
 }

@@ -300,40 +300,22 @@ namespace TanHoaWater.DAL
                     donkh.NGAYCHUYEN_HOSO = System.DateTime.Now.Date;                    
                     donkh.MODIFYBY = DAL.C_USERS._userName;
                     donkh.MODIFYDATE = DateTime.Now.Date;
-                    #region
-                    SqlConnection conn = new SqlConnection(db.Connection.ConnectionString);
-                    conn.Open();
-                    string sql = " INSERT INTO TMP_TAIXET VALUES('" + donkh.SOHOSO + "')";
-                    SqlCommand cmd = new SqlCommand(sql, conn);
-                    cmd.ExecuteNonQuery();
-                    conn.Close();
+                    #region Insert Tai Xet
+                    TMP_TAIXET tx = new TMP_TAIXET();
+                    tx.MAHOSO = donkh.SOHOSO;
+                    tx.CHUYEN = false;
+                    tx.CREATEDATE = DateTime.Now.Date;
+                    db.TMP_TAIXETs.InsertOnSubmit(tx);
                     #endregion
                 }
-                //#region CapnhatTTK
-                //var totk = from don in db.TOTHIETKEs where don.SOHOSO == sohoso select don;
-                //TOTHIETKE ttk = totk.SingleOrDefault();
-                //if (ttk != null)
-                //{
-                //    ttk.SODOVIEN = null;
-                //    ttk.NGAYNHAN = DateTime.Now.Date;
-                //    ttk.TRAHS = false;
-                //}
-                //else {
-                //    ttk = new TOTHIETKE();
-                //    ttk.MADOT = donkh.MADOT;
-                //    ttk.SOHOSO = donkh.SOHOSO;
-                //    ttk.SHS = donkh.SHS;
-                //    ttk.NGAYNHAN = donkh.NGAYNHAN;
-                //    DAL.C_ToThietKe.addNew(ttk);
-                //}
-                //#endregion
+                
                 db.SubmitChanges();
                
                 return true;
             }
             catch (Exception ex)
             {
-                log.Error("Cap nhat tro ngai tk loi " + ex.Message);
+                log.Error("Cap nhat don tai xet loi " + ex.Message);
             }
             return false;
         }
@@ -353,6 +335,7 @@ namespace TanHoaWater.DAL
             db.Connection.Close();
             return table;
         }
+       
 
         public static DataTable getListTaiXet()
         {
@@ -360,7 +343,7 @@ namespace TanHoaWater.DAL
             db.Connection.Open();
             string sql = " SELECT SOHOSO,HOTEN, (SONHA +' '+ DUONG +', P.'+p.TENPHUONG+', Q.'+ q.TENQUAN ) as 'DIACHI',NGAYNHAN= CONVERT(VARCHAR(10),NGAYNHAN,103), lkh.TENLOAI as 'LOAIDON' ";
             sql += " FROM DON_KHACHHANG kh,QUAN q,PHUONG p, LOAI_KHACHHANG lkh, TMP_TAIXET taixet ";
-            sql += " WHERE  taixet.MAHOSO=kh.SOHOSO AND kh.QUAN = q.MAQUAN AND q.MAQUAN=p.MAQUAN AND kh.PHUONG=p.MAPHUONG AND lkh.MALOAI=kh.LOAIKH";            
+            sql += " WHERE  taixet.MAHOSO=kh.SOHOSO AND taixet.CHUYEN='False' AND kh.QUAN = q.MAQUAN AND q.MAQUAN=p.MAQUAN AND kh.PHUONG=p.MAPHUONG AND lkh.MALOAI=kh.LOAIKH";            
             sql += " ORDER BY NGAYNHAN DESC ";
             SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             DataSet dataset = new DataSet();
@@ -368,6 +351,91 @@ namespace TanHoaWater.DAL
             db.Connection.Close();
             return dataset.Tables[0];
 
+        }
+        public static TMP_TAIXET finbyDTX(string mahoso) {
+            TanHoaDataContext db = new TanHoaDataContext();
+            var query = from taixet in db.TMP_TAIXETs where taixet.MAHOSO == mahoso select taixet;
+            return query.SingleOrDefault();
+        }
+
+        public static bool UpdateDonTX(string mahoso) {
+            try
+            {
+                TanHoaDataContext db = new TanHoaDataContext();
+                var data = from don in db.TMP_TAIXETs where don.MAHOSO == mahoso select don;
+                TMP_TAIXET tx = data.SingleOrDefault();
+                if (tx != null)
+                {
+                    tx.CHUYEN = false;
+                }
+                db.SubmitChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                log.Error("Cap nhat don tai xet loi " + ex.Message);
+            }
+            return false;
+
+        }
+        public static void ChuyenHSTaiXet(string mahoso){
+
+            TanHoaDataContext db = new TanHoaDataContext();
+            var data = from don in db.DON_KHACHHANGs where don.SOHOSO == mahoso select don;
+            DON_KHACHHANG donkh = data.SingleOrDefault();
+            if (donkh != null)
+            {
+                #region Cap Nhat TMP_TRONGAI
+                var taixet = from don in db.TMP_TAIXETs where don.MAHOSO == mahoso select don;
+                TMP_TAIXET donTaiXet = taixet.SingleOrDefault();
+                if (donTaiXet != null)
+                {
+                    donTaiXet.CHUYEN = true;
+                    donTaiXet.NGUOICHUYEN = DAL.C_USERS._userName;
+                    donTaiXet.NGAYCHUYEN = DateTime.Now.Date;
+
+                    #region CapnhatTTK
+                    var totk = from don in db.TOTHIETKEs where don.SOHOSO == mahoso select don;
+                    TOTHIETKE ttk = totk.SingleOrDefault();
+                    if (ttk != null)
+                    {
+                        ttk.SODOVIEN = null;
+                        ttk.NGAYNHAN = DateTime.Now.Date;
+                        ttk.TRAHS = false;
+                        ttk.TRONGAITHIETKE = false;
+                    }
+                    else
+                    {
+                        ttk = new TOTHIETKE();
+                        ttk.MADOT = donkh.MADOT;
+                        ttk.SOHOSO = donkh.SOHOSO;
+                        ttk.SHS = donkh.SHS;
+                        ttk.NGAYNHAN = DateTime.Now.Date;
+                        DAL.C_ToThietKe.addNew(ttk);
+                    }
+                    #endregion
+                }
+                #endregion
+
+                db.SubmitChanges();  
+            }
+        
+        }
+
+        public static DataSet In_Dontaixet(string nguoiduyet)
+        {
+
+            DataSet ds = new DataSet();
+            TanHoaDataContext db = new TanHoaDataContext();
+            db.Connection.Open();
+            string sql = "SELECT * FROM V_DONTAIXET WHERE  USERNAME='" + DAL.C_USERS._userName + "'";    
+            SqlDataAdapter dond = new SqlDataAdapter(sql, db.Connection.ConnectionString);
+            dond.Fill(ds, "V_DONTAIXET");
+
+            string user = "SELECT USERNAME, UPPER(FULLNAME) AS 'FULLNAME' FROM USERS WHERE USERNAME='" + nguoiduyet + "'";
+            SqlDataAdapter ct = new SqlDataAdapter(user, db.Connection.ConnectionString);
+            ct.Fill(ds, "USERS");
+            return ds;
         }
 
     }

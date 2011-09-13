@@ -216,6 +216,17 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                             this.ghichuKhan.Visible = false;
                             this.ghichuKhan.Text = null;
                         }
+                        if (donkh.CHUYEN_HOSO == true)
+                        {
+                            this.chuyenhoso.Checked = true;
+                            this.btDelete.Enabled = false;
+                          
+                        }
+                        else
+                        {
+                            this.chuyenhoso.Checked = false;
+                            this.btDelete.Enabled = true;
+                        }
                         
                     
                     }
@@ -268,6 +279,11 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
         private void chuyenhoso_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void dataSearCh_Sorted(object sender, EventArgs e)
+        {
+            Utilities.DataGridV.formatRows(dataSearCh);
         }
     }
 }
