@@ -24,6 +24,7 @@ namespace TanHoaWater.View.Users.KEHOACH
             InitializeComponent();
             this.cbLoaiBN.Select();
             load();
+            this.tabControl1.SelectedTabIndex = 0;
 
         }
         public void load() {
@@ -259,6 +260,33 @@ namespace TanHoaWater.View.Users.KEHOACH
             {
                 MessageBox.Show(ex.ToString());
             }
+        }
+        //public void baocao() {
+        //    this.dataGridViewDC.DataSource = DAL.C_BienNhanDon.BaoCaoTinhHinhNhanDon(Utilities.DateToString.NgayVN(tungay), Utilities.DateToString.NgayVN(denngay));
+        //    this.lbTotalNhanDon.Text = "Tổng số có " + DAL.C_BienNhanDon.totalDon(Utilities.DateToString.NgayVN(tungay), Utilities.DateToString.NgayVN(denngay)) + " biên nhận đơn. Trong đó:";
+        //    Utilities.DataGridV.formatRows(dataGridViewDC);
+        //}
+
+        private void tabItem2_Click(object sender, EventArgs e)
+        {
+            inreview();
+        }
+
+        public void inreview() {
+            ReportDocument rp = new rpt_BaoCaoTinhHinhNhanDon();
+            rp.SetDataSource(DAL.C_BienNhanDon.ViewBaoCao(Utilities.DateToString.NgayVN(tungay), Utilities.DateToString.NgayVN(denngay)));
+            crystalReportViewer1.ReportSource = rp;
+            this.lbTotalNhanDon.Text = "Tổng số có " + DAL.C_BienNhanDon.totalDon(Utilities.DateToString.NgayVN(tungay), Utilities.DateToString.NgayVN(denngay)) + " biên nhận đơn. Trong đó:";
+        }
+        private void buttonX1_Click(object sender, EventArgs e)
+        {
+          //  baocao();
+            inreview();
+        }
+
+        private void dataGridViewDC_Sorted(object sender, EventArgs e)
+        {
+           // Utilities.DataGridV.formatRows(dataGridViewDC);
         }
     }
 }

@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.SearchDotNhanDon = new System.Windows.Forms.TextBox();
             this.searchSoNha = new System.Windows.Forms.TextBox();
@@ -57,7 +57,9 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.cbDotNhanDon = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.label17 = new System.Windows.Forms.Label();
+            this.chuyenhoso = new DevComponents.DotNetBar.Controls.CheckBoxX();
             this.label13 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.ghichuKhan = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.label14 = new System.Windows.Forms.Label();
@@ -84,9 +86,6 @@
             this.cbLoaiKH = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.cbQuan = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.cbPhuong = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.chuyenhoso = new DevComponents.DotNetBar.Controls.CheckBoxX();
-            this.label16 = new System.Windows.Forms.Label();
-            this.bophanChuyen = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.next)).BeginInit();
@@ -243,12 +242,13 @@
             this.dataSearCh.Size = new System.Drawing.Size(945, 206);
             this.dataSearCh.TabIndex = 45;
             this.dataSearCh.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataSearCh_CellClick);
+            this.dataSearCh.Sorted += new System.EventHandler(this.dataSearCh_Sorted);
             // 
             // G_SodotNhanDon
             // 
             this.G_SodotNhanDon.DataPropertyName = "MADOT";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.G_SodotNhanDon.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.G_SodotNhanDon.DefaultCellStyle = dataGridViewCellStyle19;
             this.G_SodotNhanDon.HeaderText = "Số Đợt Nhận Đơn";
             this.G_SodotNhanDon.Name = "G_SodotNhanDon";
             this.G_SodotNhanDon.ReadOnly = true;
@@ -257,8 +257,8 @@
             // SOHOSO
             // 
             this.SOHOSO.DataPropertyName = "SOHOSO";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.SOHOSO.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.SOHOSO.DefaultCellStyle = dataGridViewCellStyle20;
             this.SOHOSO.HeaderText = "Số Hồ Sơ";
             this.SOHOSO.Name = "SOHOSO";
             this.SOHOSO.ReadOnly = true;
@@ -283,8 +283,8 @@
             // NGAY_NHAN
             // 
             this.NGAY_NHAN.DataPropertyName = "NGAYNHAN";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.NGAY_NHAN.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.NGAY_NHAN.DefaultCellStyle = dataGridViewCellStyle21;
             this.NGAY_NHAN.HeaderText = "Ngày Nhận";
             this.NGAY_NHAN.Name = "NGAY_NHAN";
             this.NGAY_NHAN.ReadOnly = true;
@@ -373,7 +373,6 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
             this.panel1.Controls.Add(this.cbDotNhanDon);
-            this.panel1.Controls.Add(this.bophanChuyen);
             this.panel1.Controls.Add(this.label17);
             this.panel1.Controls.Add(this.chuyenhoso);
             this.panel1.Controls.Add(this.label13);
@@ -430,6 +429,14 @@
             this.label17.TabIndex = 111;
             this.label17.Text = "Đợt N.Đơn";
             // 
+            // chuyenhoso
+            // 
+            this.chuyenhoso.Location = new System.Drawing.Point(523, 105);
+            this.chuyenhoso.Name = "chuyenhoso";
+            this.chuyenhoso.Size = new System.Drawing.Size(21, 15);
+            this.chuyenhoso.TabIndex = 23;
+            this.chuyenhoso.CheckedChanged += new System.EventHandler(this.chuyenhoso_CheckedChanged);
+            // 
             // label13
             // 
             this.label13.AutoSize = true;
@@ -438,6 +445,15 @@
             this.label13.Size = new System.Drawing.Size(46, 16);
             this.label13.TabIndex = 85;
             this.label13.Text = "Số ĐT";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(427, 104);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(94, 16);
+            this.label16.TabIndex = 109;
+            this.label16.Text = "Chuyển Hồ Sơ";
             // 
             // label15
             // 
@@ -455,8 +471,9 @@
             // 
             this.ghichuKhan.Border.Class = "TextBoxBorder";
             this.ghichuKhan.Location = new System.Drawing.Point(766, 69);
+            this.ghichuKhan.Multiline = true;
             this.ghichuKhan.Name = "ghichuKhan";
-            this.ghichuKhan.Size = new System.Drawing.Size(174, 22);
+            this.ghichuKhan.Size = new System.Drawing.Size(174, 25);
             this.ghichuKhan.TabIndex = 22;
             this.ghichuKhan.Visible = false;
             // 
@@ -566,6 +583,7 @@
             // 
             this.txtSoHoSo.Border.Class = "TextBoxBorder";
             this.txtSoHoSo.Location = new System.Drawing.Point(176, 9);
+            this.txtSoHoSo.Multiline = true;
             this.txtSoHoSo.Name = "txtSoHoSo";
             this.txtSoHoSo.ReadOnly = true;
             this.txtSoHoSo.Size = new System.Drawing.Size(130, 22);
@@ -586,9 +604,10 @@
             // 
             // 
             this.txtHoTen.Border.Class = "TextBoxBorder";
-            this.txtHoTen.Location = new System.Drawing.Point(92, 41);
+            this.txtHoTen.Location = new System.Drawing.Point(92, 38);
+            this.txtHoTen.Multiline = true;
             this.txtHoTen.Name = "txtHoTen";
-            this.txtHoTen.Size = new System.Drawing.Size(320, 22);
+            this.txtHoTen.Size = new System.Drawing.Size(320, 25);
             this.txtHoTen.TabIndex = 11;
             // 
             // ghichu
@@ -598,8 +617,9 @@
             // 
             this.ghichu.Border.Class = "TextBoxBorder";
             this.ghichu.Location = new System.Drawing.Point(766, 41);
+            this.ghichu.Multiline = true;
             this.ghichu.Name = "ghichu";
-            this.ghichu.Size = new System.Drawing.Size(174, 22);
+            this.ghichu.Size = new System.Drawing.Size(174, 25);
             this.ghichu.TabIndex = 19;
             // 
             // sonha
@@ -608,9 +628,10 @@
             // 
             // 
             this.sonha.Border.Class = "TextBoxBorder";
-            this.sonha.Location = new System.Drawing.Point(92, 71);
+            this.sonha.Location = new System.Drawing.Point(92, 68);
+            this.sonha.Multiline = true;
             this.sonha.Name = "sonha";
-            this.sonha.Size = new System.Drawing.Size(78, 22);
+            this.sonha.Size = new System.Drawing.Size(78, 25);
             this.sonha.TabIndex = 12;
             // 
             // label10
@@ -628,9 +649,10 @@
             // 
             // 
             this.duong.Border.Class = "TextBoxBorder";
-            this.duong.Location = new System.Drawing.Point(193, 71);
+            this.duong.Location = new System.Drawing.Point(193, 68);
+            this.duong.Multiline = true;
             this.duong.Name = "duong";
-            this.duong.Size = new System.Drawing.Size(219, 22);
+            this.duong.Size = new System.Drawing.Size(219, 25);
             this.duong.TabIndex = 13;
             // 
             // cbLoaiHS
@@ -704,35 +726,6 @@
             this.cbPhuong.Name = "cbPhuong";
             this.cbPhuong.Size = new System.Drawing.Size(116, 22);
             this.cbPhuong.TabIndex = 15;
-            // 
-            // chuyenhoso
-            // 
-            this.chuyenhoso.Location = new System.Drawing.Point(523, 105);
-            this.chuyenhoso.Name = "chuyenhoso";
-            this.chuyenhoso.Size = new System.Drawing.Size(21, 15);
-            this.chuyenhoso.TabIndex = 23;
-            this.chuyenhoso.CheckedChanged += new System.EventHandler(this.chuyenhoso_CheckedChanged);
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(427, 104);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(94, 16);
-            this.label16.TabIndex = 109;
-            this.label16.Text = "Chuyển Hồ Sơ";
-            // 
-            // bophanChuyen
-            // 
-            this.bophanChuyen.DisplayMember = "Text";
-            this.bophanChuyen.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.bophanChuyen.FormattingEnabled = true;
-            this.bophanChuyen.ItemHeight = 16;
-            this.bophanChuyen.Location = new System.Drawing.Point(550, 99);
-            this.bophanChuyen.Name = "bophanChuyen";
-            this.bophanChuyen.Size = new System.Drawing.Size(390, 22);
-            this.bophanChuyen.TabIndex = 113;
-            this.bophanChuyen.Visible = false;
             // 
             // tab_TimKiemDonKH
             // 
@@ -813,7 +806,6 @@
         private DevComponents.DotNetBar.Controls.ComboBoxEx cbPhuong;
         private System.Windows.Forms.Label label17;
         private DevComponents.DotNetBar.Controls.ComboBoxEx cbDotNhanDon;
-        private DevComponents.DotNetBar.Controls.ComboBoxEx bophanChuyen;
         private DevComponents.DotNetBar.Controls.CheckBoxX chuyenhoso;
         private System.Windows.Forms.Label label16;
 

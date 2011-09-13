@@ -23,7 +23,7 @@ namespace TanHoaWater.DAL
             }
             if (trongai != null)
             {
-                sql += " AND TRONGAI='" + trongai + "'";
+                sql += " AND TRONGAITHIETKE='" + trongai + "'";
             }
             SqlDataAdapter dond = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             dond.Fill(ds, "V_DONKHACHHANG");

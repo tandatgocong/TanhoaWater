@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet1" targetNamespace="http://tempuri.org/DataSet1.xsd" xmlns:mstns="http://tempuri.org/DataSet1.xsd" xmlns="http://tempuri.org/DataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="TANHOA_WATERConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="TANHOA_WATERConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.TanHoaWater.Properties.Settings.GlobalReference.Default.TANHOA_WATERConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="V_BAOCAO_NHANDONTableAdapter" GeneratorDataComponentClassName="V_BAOCAO_NHANDONTableAdapter" Name="V_BAOCAO_NHANDON" UserDataComponentName="V_BAOCAO_NHANDONTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TANHOA_WATERConnectionString (Settings)" DbObjectName="TANHOA_WATER.dbo.V_BAOCAO_NHANDON" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT TENQUAN, TENLOAI, SOHS FROM dbo.V_BAOCAO_NHANDON</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="TENQUAN" DataSetColumn="TENQUAN" />
+              <Mapping SourceColumn="TENLOAI" DataSetColumn="TENLOAI" />
+              <Mapping SourceColumn="SOHS" DataSetColumn="SOHS" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet1" msprop:Generator_UserDSName="DataSet1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="V_BAOCAO_NHANDON" msprop:Generator_TableClassName="V_BAOCAO_NHANDONDataTable" msprop:Generator_TableVarName="tableV_BAOCAO_NHANDON" msprop:Generator_TablePropName="V_BAOCAO_NHANDON" msprop:Generator_RowDeletingName="V_BAOCAO_NHANDONRowDeleting" msprop:Generator_UserTableName="V_BAOCAO_NHANDON" msprop:Generator_RowChangingName="V_BAOCAO_NHANDONRowChanging" msprop:Generator_RowEvHandlerName="V_BAOCAO_NHANDONRowChangeEventHandler" msprop:Generator_RowDeletedName="V_BAOCAO_NHANDONRowDeleted" msprop:Generator_RowEvArgName="V_BAOCAO_NHANDONRowChangeEvent" msprop:Generator_RowChangedName="V_BAOCAO_NHANDONRowChanged" msprop:Generator_RowClassName="V_BAOCAO_NHANDONRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TENQUAN" msprop:Generator_ColumnVarNameInTable="columnTENQUAN" msprop:Generator_ColumnPropNameInRow="TENQUAN" msprop:Generator_ColumnPropNameInTable="TENQUANColumn" msprop:Generator_UserColumnName="TENQUAN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TENLOAI" msprop:Generator_ColumnVarNameInTable="columnTENLOAI" msprop:Generator_ColumnPropNameInRow="TENLOAI" msprop:Generator_ColumnPropNameInTable="TENLOAIColumn" msprop:Generator_UserColumnName="TENLOAI" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SOHS" msprop:Generator_ColumnVarNameInTable="columnSOHS" msprop:Generator_ColumnPropNameInRow="SOHS" msprop:Generator_ColumnPropNameInTable="SOHSColumn" msprop:Generator_UserColumnName="SOHS" type="xs:int" minOccurs="0" />
+              <xs:element name="TUNGAY" msprop:Generator_ColumnVarNameInTable="columnTUNGAY" msprop:Generator_ColumnPropNameInRow="TUNGAY" msprop:Generator_ColumnPropNameInTable="TUNGAYColumn" msprop:Generator_UserColumnName="TUNGAY" type="xs:string" minOccurs="0" />
+              <xs:element name="DENNGAY" msprop:Generator_ColumnVarNameInTable="columnDENNGAY" msprop:Generator_ColumnPropNameInRow="DENNGAY" msprop:Generator_ColumnPropNameInTable="DENNGAYColumn" msprop:Generator_UserColumnName="DENNGAY" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
