@@ -30,5 +30,11 @@ namespace TanHoaWater.View.Administrators
         {
 
         }
+
+        private void node2_NodeClick(object sender, EventArgs e)
+        {
+            this.adminPanel.Panel2.Controls.Clear();
+            this.adminPanel.Panel2.Controls.Add(new ut_HeThongDuong());
+        }
     }
 }

@@ -64,10 +64,9 @@ namespace TanHoaWater.DAL
         {
             TanHoaDataContext db = new TanHoaDataContext();
             db.Connection.Open();
-            string sql = "SELECT  USERNAME AS 'Tên Đăng Nhập',FULLNAME as 'Tên Đầy Đủ',ROLENAME as 'Quyền' ";
-            sql +=" FROM USERS, ROLES ";
-            sql +=" WHERE USERS.ROLEID = ROLES.ROLEID  ";
-           
+            string sql = " SELECT  USERNAME ,FULLNAME ,TENPHONG,ROLENAME, CASE WHEN CAP='0' THEN N'Phó Phòng'  WHEN CAP='1' THEN N'Tổ Trưởng' ELSE N'Nhân Viên' END as 'CHUCVU',  CASE WHEN ENABLED='True' THEN N'Kích Hoạt' ELSE N'Chưa Kích Hoạt' END as 'TINHTRANG'  ";
+            sql +="  FROM USERS u, ROLES  r, PHONGBANDOI p ";
+            sql +=" WHERE u.ROLEID = r.ROLEID AND u.MAPHONG=p.MAPHONG ";
             if(username!= null && !"".Equals(username)){
                 sql += " AND USERNAME LIKE '%"+ username +"%'";
             }
