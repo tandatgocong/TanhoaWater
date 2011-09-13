@@ -28,30 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.quyen = new DevComponents.AdvTree.Node();
             this.adminPanel = new System.Windows.Forms.SplitContainer();
             this.advTree1 = new DevComponents.AdvTree.AdvTree();
-            this.node1 = new DevComponents.AdvTree.Node();
-            this.users = new DevComponents.AdvTree.Node();
             this.nodeConnector1 = new DevComponents.AdvTree.NodeConnector();
             this.elementStyle1 = new DevComponents.DotNetBar.ElementStyle();
             this.elementStyle4 = new DevComponents.DotNetBar.ElementStyle();
             this.elementStyle3 = new DevComponents.DotNetBar.ElementStyle();
             this.elementStyle2 = new DevComponents.DotNetBar.ElementStyle();
+            this.node1 = new DevComponents.AdvTree.Node();
+            this.quyen = new DevComponents.AdvTree.Node();
+            this.users = new DevComponents.AdvTree.Node();
+            this.node2 = new DevComponents.AdvTree.Node();
             this.adminPanel.Panel1.SuspendLayout();
             this.adminPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.advTree1)).BeginInit();
             this.SuspendLayout();
             // 
-            // quyen
-            // 
-            this.quyen.Image = global::TanHoaWater.Properties.Resources.key1;
-            this.quyen.Name = "quyen";
-            this.quyen.Text = "Phân Quyền ";
-            // 
             // adminPanel
             // 
-            this.adminPanel.Location = new System.Drawing.Point(3, 3);
+            this.adminPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
+            this.adminPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.adminPanel.Location = new System.Drawing.Point(0, 0);
             this.adminPanel.Name = "adminPanel";
             // 
             // adminPanel.Panel1
@@ -61,16 +58,17 @@
             // 
             // adminPanel.Panel2
             // 
+            this.adminPanel.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
             this.adminPanel.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.adminPanel.Size = new System.Drawing.Size(982, 596);
-            this.adminPanel.SplitterDistance = 234;
+            this.adminPanel.Size = new System.Drawing.Size(988, 615);
+            this.adminPanel.SplitterDistance = 235;
             this.adminPanel.TabIndex = 2;
             // 
             // advTree1
             // 
             this.advTree1.AccessibleRole = System.Windows.Forms.AccessibleRole.Outline;
             this.advTree1.AllowDrop = true;
-            this.advTree1.BackColor = System.Drawing.SystemColors.Window;
+            this.advTree1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
             // 
             // 
             // 
@@ -87,23 +85,6 @@
             this.advTree1.TabIndex = 0;
             this.advTree1.Text = "advTree1";
             this.advTree1.Click += new System.EventHandler(this.advTree1_Click);
-            // 
-            // node1
-            // 
-            this.node1.Image = global::TanHoaWater.Properties.Resources.home;
-            this.node1.Name = "node1";
-            this.node1.Nodes.AddRange(new DevComponents.AdvTree.Node[] {
-            this.quyen,
-            this.users});
-            this.node1.Text = "QUẢN TRỊ                        ";
-            // 
-            // users
-            // 
-            this.users.Expanded = true;
-            this.users.Image = global::TanHoaWater.Properties.Resources.users1;
-            this.users.Name = "users";
-            this.users.Text = "Người Dùng   ";
-            this.users.NodeClick += new System.EventHandler(this.users_NodeClick_1);
             // 
             // nodeConnector1
             // 
@@ -183,6 +164,39 @@
             this.elementStyle2.PaddingTop = 1;
             this.elementStyle2.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(84)))), ((int)(((byte)(115)))));
             // 
+            // node1
+            // 
+            this.node1.Expanded = true;
+            this.node1.Image = global::TanHoaWater.Properties.Resources.home;
+            this.node1.Name = "node1";
+            this.node1.Nodes.AddRange(new DevComponents.AdvTree.Node[] {
+            this.quyen,
+            this.users,
+            this.node2});
+            this.node1.Text = "QUẢN TRỊ                        ";
+            // 
+            // quyen
+            // 
+            this.quyen.Image = global::TanHoaWater.Properties.Resources.key1;
+            this.quyen.Name = "quyen";
+            this.quyen.Text = "Phân Quyền                 ";
+            // 
+            // users
+            // 
+            this.users.Expanded = true;
+            this.users.Image = global::TanHoaWater.Properties.Resources.users1;
+            this.users.Name = "users";
+            this.users.Text = "Người Dùng                 ";
+            this.users.NodeClick += new System.EventHandler(this.users_NodeClick_1);
+            // 
+            // node2
+            // 
+            this.node2.Expanded = true;
+            this.node2.Image = global::TanHoaWater.Properties.Resources.Icon_maps;
+            this.node2.Name = "node2";
+            this.node2.Text = "Hệ Thống Tên Đường";
+            this.node2.NodeClick += new System.EventHandler(this.node2_NodeClick);
+            // 
             // Admin_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -209,6 +223,7 @@
         private DevComponents.DotNetBar.ElementStyle elementStyle4;
         private DevComponents.DotNetBar.ElementStyle elementStyle3;
         private DevComponents.DotNetBar.ElementStyle elementStyle2;
+        private DevComponents.AdvTree.Node node2;
 
 
     }

@@ -159,6 +159,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\Administrators\ut_HeThongDuong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Administrators\ut_HeThongDuong.Designer.cs">
+      <DependentUpon>ut_HeThongDuong.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Users\KEHOACH\reportView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -337,6 +343,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Roles\VTTH.resx">
       <DependentUpon>VTTH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Administrators\ut_HeThongDuong.resx">
+      <DependentUpon>ut_HeThongDuong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\KEHOACH\reportView.resx">
       <DependentUpon>reportView.cs</DependentUpon>
@@ -727,6 +736,7 @@
     <Content Include="Lib\IrisSkin2.dll" />
     <Content Include="Lib\log4net.dll" />
     <Content Include="Lib\String_Indentity.dll" />
+    <None Include="Resources\Icon_maps.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
