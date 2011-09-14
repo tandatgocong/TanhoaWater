@@ -55,6 +55,12 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
         }
         private void searchTimKiem_Click(object sender, EventArgs e)
         {
+             currentPageIndex = 1;
+             pageSize = 7;
+             pageNumber = 0;
+             FirstRow = 0;
+            LastRow=0;
+            
             search();
         }
 
