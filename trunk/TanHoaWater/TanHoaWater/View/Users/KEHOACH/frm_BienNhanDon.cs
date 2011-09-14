@@ -256,9 +256,9 @@ namespace TanHoaWater.View.Users.KEHOACH
 
                 }
             }
-            catch (Exception ex)
+            catch (Exception )
             {
-                MessageBox.Show(ex.ToString());
+               
             }
         }
         //public void baocao() {

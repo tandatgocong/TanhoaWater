@@ -65,7 +65,7 @@ namespace TanHoaWater.DAL
         {
             TanHoaDataContext db = new TanHoaDataContext();
             db.Connection.Open();
-            string sql = "  SELECT DUONG, TENPHUONG, TENQUAN ";
+            string sql = "  SELECT STT, DUONG, TENPHUONG, TENQUAN ";
             sql += " FROM QUAN q, PHUONG p, TENDUONG d ";
             sql += " WHERE d.MAPHUONG=p.MAPHUONG AND p.MAQUAN=q.MAQUAN  AND d.MAQUAN=q.MAQUAN";
             if ("".Equals(tenduong) == false) {
@@ -80,6 +80,7 @@ namespace TanHoaWater.DAL
             {
                 sql += " AND q.MAQUAN = '" + maquan.Trim() + "'";
             }
+            sql += " ORDER BY TENPHUONG ASC ";
 
             SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             DataSet dataset = new DataSet();
@@ -127,7 +128,7 @@ namespace TanHoaWater.DAL
                 TanHoaDataContext db = new TanHoaDataContext();
                 db.TENDUONGs.InsertOnSubmit(duong);
                 db.SubmitChanges();
-                return false;
+                return true;
             }
             catch (Exception ex)
             {
@@ -148,6 +149,7 @@ namespace TanHoaWater.DAL
                     tDuong.MAPHUONG = maphuong;
                     tDuong.MAQUAN = maquan;
                     db.SubmitChanges();
+                    return true;
                 }
                 catch (Exception ex)
                 {
@@ -167,6 +169,7 @@ namespace TanHoaWater.DAL
                 {
                     db.TENDUONGs.DeleteOnSubmit(tDuong);
                     db.SubmitChanges();
+                    return true;
                 }
                 catch (Exception ex)
                 {
