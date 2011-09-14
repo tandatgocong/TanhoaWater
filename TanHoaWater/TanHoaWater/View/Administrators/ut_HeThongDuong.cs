@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using log4net;
+using TanHoaWater.Database;
 
 namespace TanHoaWater.View.Administrators
 {
@@ -22,8 +23,8 @@ namespace TanHoaWater.View.Administrators
         {
             InitializeComponent();
             fromLoad();
-         
-            
+
+
         }
         private void PageTotal()
         {
@@ -70,7 +71,8 @@ namespace TanHoaWater.View.Administrators
             }
 
         }
-        public void fromLoad() {
+        public void fromLoad()
+        {
             this.cbPhuong.DataSource = DAL.C_TenDuong.getPhuong();
             this.cbPhuong.DisplayMember = "Display";
             this.cbPhuong.ValueMember = "Display";
@@ -78,16 +80,17 @@ namespace TanHoaWater.View.Administrators
             this.cbQuan.DisplayMember = "Display";
             this.cbQuan.ValueMember = "Value";
 
-            this.cbPhuong.DataSource = DAL.C_Phuong.getListPhuong();
-            this.cbPhuong.DisplayMember = "TENPHUONG";
-            this.cbPhuong.ValueMember = "MAPHUONG";
-            this.cbQuan.DataSource = DAL.C_Quan.getList();
-            this.cbQuan.DisplayMember = "TENQUAN";
-            this.cbQuan.ValueMember = "MAQUAN";
+            this.addPhuong.DataSource = DAL.C_Phuong.getListPhuongAdmin();
+            this.addPhuong.DisplayMember = "TENPHUONG";
+            this.addPhuong.ValueMember = "MAQUAN";
+            this.add_Quan.DataSource = DAL.C_Quan.getList();
+            this.add_Quan.DisplayMember = "TENQUAN";
+            this.add_Quan.ValueMember = "MAQUAN";
             search();
-            
+
         }
-        public void search() {
+        public void search()
+        {
             string phuong = this.cbPhuong.SelectedValue + "";
             if ("  Chọn Phường  ".Equals(this.cbPhuong.SelectedValue))
             {
@@ -102,23 +105,174 @@ namespace TanHoaWater.View.Administrators
                 log.Error(ex);
             }
             PageTotal();
-            this.dataGridViewX1.DataSource = DAL.C_TenDuong.getListDuong(this.txtTenDuong.Text, phuong,this.cbQuan.SelectedValue+"", FirstRow, pageSize);
-             
+            this.dataGridViewX1.DataSource = DAL.C_TenDuong.getListDuong(this.txtTenDuong.Text, phuong, this.cbQuan.SelectedValue + "", FirstRow, pageSize);
+
         }
         private void btTimKiem_Click(object sender, EventArgs e)
         {
-             currentPageIndex = 1;
-             pageSize = 23;
-             pageNumber = 0;
-             FirstRow = 0;
-             LastRow = 0;
+            currentPageIndex = 1;
+            pageSize = 23;
+            pageNumber = 0;
+            FirstRow = 0;
+            LastRow = 0;
             search();
         }
 
-        private void ut_HeThongDuong_Load(object sender, EventArgs e)
+        private void addPhuong_SelectedValueChanged(object sender, EventArgs e)
         {
+            try
+            {
+                this.add_Quan.Text = DAL.C_Quan.finByMaQuan(int.Parse(this.addPhuong.SelectedValue + "")).TENQUAN;
+            }
+            catch (Exception)
+            {
 
+            }
         }
-             
+        string _id = "";
+        private void dataGridViewX1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                _id = dataGridViewX1.Rows[dataGridViewX1.CurrentRow.Index].Cells[0].Value + "";
+                string _tenduong = dataGridViewX1.Rows[dataGridViewX1.CurrentRow.Index].Cells[1].Value + "";
+                string _phuong = dataGridViewX1.Rows[dataGridViewX1.CurrentRow.Index].Cells[2].Value + "";
+                string _quan = dataGridViewX1.Rows[dataGridViewX1.CurrentRow.Index].Cells[3].Value + "";
+                this.add_tenduong.Text = _tenduong;
+                this.addPhuong.Text = _phuong;
+                this.add_Quan.Text = _quan;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        private void btThem_Click(object sender, EventArgs e)
+        {
+            QUAN quan = DAL.C_Quan.finbyTenQuan(this.add_Quan.Text);
+            PHUONG phuong = null;
+            if (quan != null)
+            {
+                phuong = DAL.C_Phuong.finbyTenPhuong(quan.MAQUAN, this.addPhuong.Text);
+                if (phuong != null)
+                {
+                    try
+                    {
+                        TENDUONG _duong = new TENDUONG();
+                        _duong.DUONG = this.add_tenduong.Text;
+                        _duong.MAPHUONG =  phuong.MAPHUONG;
+                        _duong.MAQUAN = phuong.MAQUAN;
+
+                        if (DAL.C_TenDuong.InsertDuong( _duong))
+                        {
+                            MessageBox.Show(this, "Thêm Tên Đường Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            search();
+                        }
+                        else
+                        {
+                            MessageBox.Show(this, "Thêm Tên Đường Lỗi !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show(this, "Thêm Tên Đường Lỗi  !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show(this, "Thêm Tên Đường Lỗi  !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show(this, "Thêm Tên Đường Lỗi  !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btCapNhat_Click(object sender, EventArgs e)
+        {
+            if ("".Equals(_id) == false)
+            {
+                QUAN quan = DAL.C_Quan.finbyTenQuan(this.add_Quan.Text);
+                PHUONG phuong = null;
+                if (quan != null)
+                {
+                    phuong = DAL.C_Phuong.finbyTenPhuong(quan.MAQUAN, this.addPhuong.Text);
+                    if (phuong != null)
+                    {
+                        try
+                        {
+                            if (DAL.C_TenDuong.UpdateDuong(int.Parse(_id), this.add_tenduong.Text, phuong.MAPHUONG, phuong.MAQUAN))
+                            {
+                                MessageBox.Show(this, "Cập Nhật Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                search();
+                            }
+                            else
+                            {
+                                MessageBox.Show(this, "Lỗi Dữ Liệu Khi Cập Nhật !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                        catch (Exception)
+                        {
+                            MessageBox.Show(this, "Cập Nhật Tên Đường Bị Lỗi  !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show(this, "Lỗi Dữ Liệu Khi Cập Nhật !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show(this, "Lỗi Dữ Liệu Khi Cập Nhật !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
+            else
+            {
+                MessageBox.Show(this, "Không Tìm Thấy Dữ Liệu Để Cập Nhật !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        public void refesh() {
+            this.add_tenduong.Text = "";
+            this.addPhuong.Text = "";
+            this.add_Quan.Text = "";
+        }
+        private void btXoa_Click(object sender, EventArgs e)
+        {
+            if ("".Equals(_id) == false)
+            {
+                try
+                {
+                    string tenduong = "Có Muốn Xóa Đường " + this.add_tenduong.Text + " ?";
+
+                    if(MessageBox.Show(this,tenduong,"..: Thông Báo :..", MessageBoxButtons.YesNo, MessageBoxIcon.Question)== DialogResult.Yes){
+                    if (DAL.C_TenDuong.Delete(int.Parse(_id)))
+                    {
+                        MessageBox.Show(this, "Xóa Tên Đường Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        search();
+                        refesh();
+                    }
+                    else
+                    {
+                        MessageBox.Show(this, "Lỗi Khi Xóa Tên Đường !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    }
+                    
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show(this, "Lỗi Khi Xóa Tên Đường !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show(this, "Không Tìm Thấy Dữ Liệu Để Xóa !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
+        }
     }
 }

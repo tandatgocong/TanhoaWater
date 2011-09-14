@@ -14,6 +14,12 @@ namespace TanHoaWater.DAL
             var lisPhuong = from phuong in data.PHUONGs where phuong.MAQUAN == maquan select phuong;
             return lisPhuong.ToList();
         }
+        public static List<PHUONG> getListPhuongAdmin()
+        {
+            TanHoaDataContext data = new TanHoaDataContext();
+            var lisPhuong = from phuong in data.PHUONGs  select phuong;
+            return lisPhuong.ToList();
+        }
         public static PHUONG finbyPhuong(int maquan, string maphuong) {
             TanHoaDataContext data = new TanHoaDataContext();
             var phuong = from p in data.PHUONGs where p.MAQUAN == maquan && p.MAPHUONG == maphuong select p;

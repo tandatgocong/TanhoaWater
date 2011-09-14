@@ -38,23 +38,24 @@
             this.cbQuan = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.btTimKiem = new DevComponents.DotNetBar.ButtonX();
             this.dataGridViewX1 = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenduong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenphuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenquan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lbPaing = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.next = new System.Windows.Forms.PictureBox();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.labelX1 = new DevComponents.DotNetBar.LabelX();
-            this.labelX2 = new DevComponents.DotNetBar.LabelX();
+            this.btXoa = new DevComponents.DotNetBar.ButtonX();
+            this.btCapNhat = new DevComponents.DotNetBar.ButtonX();
+            this.btThem = new DevComponents.DotNetBar.ButtonX();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
+            this.labelX2 = new DevComponents.DotNetBar.LabelX();
+            this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.add_tenduong = new System.Windows.Forms.TextBox();
             this.addPhuong = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.add_Quan = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.btThem = new DevComponents.DotNetBar.ButtonX();
-            this.btCapNhat = new DevComponents.DotNetBar.ButtonX();
-            this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
-            this.tenduong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tenphuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tenquan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewX1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.next)).BeginInit();
@@ -136,6 +137,7 @@
             this.dataGridViewX1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewX1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewX1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.STT,
             this.tenduong,
             this.tenphuong,
             this.tenquan});
@@ -155,6 +157,43 @@
             this.dataGridViewX1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridViewX1.Size = new System.Drawing.Size(503, 563);
             this.dataGridViewX1.TabIndex = 29;
+            this.dataGridViewX1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewX1_CellClick);
+            // 
+            // STT
+            // 
+            this.STT.DataPropertyName = "STT";
+            this.STT.HeaderText = "STT";
+            this.STT.Name = "STT";
+            this.STT.ReadOnly = true;
+            this.STT.Visible = false;
+            // 
+            // tenduong
+            // 
+            this.tenduong.DataPropertyName = "DUONG";
+            this.tenduong.HeaderText = "Tên Đường";
+            this.tenduong.Name = "tenduong";
+            this.tenduong.ReadOnly = true;
+            this.tenduong.Width = 200;
+            // 
+            // tenphuong
+            // 
+            this.tenphuong.DataPropertyName = "TENPHUONG";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.tenphuong.DefaultCellStyle = dataGridViewCellStyle2;
+            this.tenphuong.HeaderText = "Phường";
+            this.tenphuong.Name = "tenphuong";
+            this.tenphuong.ReadOnly = true;
+            this.tenphuong.Width = 150;
+            // 
+            // tenquan
+            // 
+            this.tenquan.DataPropertyName = "TENQUAN";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.tenquan.DefaultCellStyle = dataGridViewCellStyle3;
+            this.tenquan.HeaderText = "Quận";
+            this.tenquan.Name = "tenquan";
+            this.tenquan.ReadOnly = true;
+            this.tenquan.Width = 120;
             // 
             // lbPaing
             // 
@@ -221,7 +260,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
-            this.panel1.Controls.Add(this.buttonX1);
+            this.panel1.Controls.Add(this.btXoa);
             this.panel1.Controls.Add(this.btCapNhat);
             this.panel1.Controls.Add(this.btThem);
             this.panel1.Controls.Add(this.labelX3);
@@ -236,13 +275,46 @@
             this.panel1.Size = new System.Drawing.Size(220, 135);
             this.panel1.TabIndex = 0;
             // 
-            // labelX1
+            // btXoa
             // 
-            this.labelX1.Location = new System.Drawing.Point(6, 13);
-            this.labelX1.Name = "labelX1";
-            this.labelX1.Size = new System.Drawing.Size(51, 23);
-            this.labelX1.TabIndex = 0;
-            this.labelX1.Text = "Đường";
+            this.btXoa.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btXoa.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btXoa.Location = new System.Drawing.Point(152, 104);
+            this.btXoa.Name = "btXoa";
+            this.btXoa.Size = new System.Drawing.Size(63, 23);
+            this.btXoa.TabIndex = 54;
+            this.btXoa.Text = "Xóa";
+            this.btXoa.Click += new System.EventHandler(this.btXoa_Click);
+            // 
+            // btCapNhat
+            // 
+            this.btCapNhat.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btCapNhat.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btCapNhat.Location = new System.Drawing.Point(75, 104);
+            this.btCapNhat.Name = "btCapNhat";
+            this.btCapNhat.Size = new System.Drawing.Size(73, 23);
+            this.btCapNhat.TabIndex = 25;
+            this.btCapNhat.Text = "Cập Nhật";
+            this.btCapNhat.Click += new System.EventHandler(this.btCapNhat_Click);
+            // 
+            // btThem
+            // 
+            this.btThem.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btThem.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btThem.Location = new System.Drawing.Point(6, 104);
+            this.btThem.Name = "btThem";
+            this.btThem.Size = new System.Drawing.Size(63, 23);
+            this.btThem.TabIndex = 25;
+            this.btThem.Text = "Thêm";
+            this.btThem.Click += new System.EventHandler(this.btThem_Click);
+            // 
+            // labelX3
+            // 
+            this.labelX3.Location = new System.Drawing.Point(6, 71);
+            this.labelX3.Name = "labelX3";
+            this.labelX3.Size = new System.Drawing.Size(51, 23);
+            this.labelX3.TabIndex = 2;
+            this.labelX3.Text = "Quận";
             // 
             // labelX2
             // 
@@ -252,13 +324,13 @@
             this.labelX2.TabIndex = 1;
             this.labelX2.Text = "Phường";
             // 
-            // labelX3
+            // labelX1
             // 
-            this.labelX3.Location = new System.Drawing.Point(6, 71);
-            this.labelX3.Name = "labelX3";
-            this.labelX3.Size = new System.Drawing.Size(51, 23);
-            this.labelX3.TabIndex = 2;
-            this.labelX3.Text = "Quận";
+            this.labelX1.Location = new System.Drawing.Point(6, 13);
+            this.labelX1.Name = "labelX1";
+            this.labelX1.Size = new System.Drawing.Size(51, 23);
+            this.labelX1.TabIndex = 0;
+            this.labelX1.Text = "Đường";
             // 
             // add_tenduong
             // 
@@ -280,6 +352,7 @@
             this.addPhuong.Name = "addPhuong";
             this.addPhuong.Size = new System.Drawing.Size(159, 22);
             this.addPhuong.TabIndex = 23;
+            this.addPhuong.SelectedValueChanged += new System.EventHandler(this.addPhuong_SelectedValueChanged);
             // 
             // add_Quan
             // 
@@ -293,64 +366,6 @@
             this.add_Quan.Name = "add_Quan";
             this.add_Quan.Size = new System.Drawing.Size(159, 22);
             this.add_Quan.TabIndex = 24;
-            // 
-            // btThem
-            // 
-            this.btThem.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btThem.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btThem.Location = new System.Drawing.Point(6, 104);
-            this.btThem.Name = "btThem";
-            this.btThem.Size = new System.Drawing.Size(63, 23);
-            this.btThem.TabIndex = 25;
-            this.btThem.Text = "Thêm";
-            // 
-            // btCapNhat
-            // 
-            this.btCapNhat.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btCapNhat.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btCapNhat.Location = new System.Drawing.Point(75, 104);
-            this.btCapNhat.Name = "btCapNhat";
-            this.btCapNhat.Size = new System.Drawing.Size(73, 23);
-            this.btCapNhat.TabIndex = 25;
-            this.btCapNhat.Text = "Cập Nhật";
-            // 
-            // buttonX1
-            // 
-            this.buttonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX1.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX1.Location = new System.Drawing.Point(152, 104);
-            this.buttonX1.Name = "buttonX1";
-            this.buttonX1.Size = new System.Drawing.Size(63, 23);
-            this.buttonX1.TabIndex = 54;
-            this.buttonX1.Text = "Thêm";
-            // 
-            // tenduong
-            // 
-            this.tenduong.DataPropertyName = "DUONG";
-            this.tenduong.HeaderText = "Tên Đường";
-            this.tenduong.Name = "tenduong";
-            this.tenduong.ReadOnly = true;
-            this.tenduong.Width = 200;
-            // 
-            // tenphuong
-            // 
-            this.tenphuong.DataPropertyName = "TENPHUONG";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.tenphuong.DefaultCellStyle = dataGridViewCellStyle2;
-            this.tenphuong.HeaderText = "Phường";
-            this.tenphuong.Name = "tenphuong";
-            this.tenphuong.ReadOnly = true;
-            this.tenphuong.Width = 150;
-            // 
-            // tenquan
-            // 
-            this.tenquan.DataPropertyName = "TENQUAN";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.tenquan.DefaultCellStyle = dataGridViewCellStyle3;
-            this.tenquan.HeaderText = "Quận";
-            this.tenquan.Name = "tenquan";
-            this.tenquan.ReadOnly = true;
-            this.tenquan.Width = 120;
             // 
             // ut_HeThongDuong
             // 
@@ -370,7 +385,6 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ut_HeThongDuong";
             this.Size = new System.Drawing.Size(752, 677);
-            this.Load += new System.EventHandler(this.ut_HeThongDuong_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewX1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.next)).EndInit();
@@ -403,7 +417,8 @@
         private DevComponents.DotNetBar.Controls.ComboBoxEx add_Quan;
         private DevComponents.DotNetBar.ButtonX btCapNhat;
         private DevComponents.DotNetBar.ButtonX btThem;
-        private DevComponents.DotNetBar.ButtonX buttonX1;
+        private DevComponents.DotNetBar.ButtonX btXoa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn STT;
         private System.Windows.Forms.DataGridViewTextBoxColumn tenduong;
         private System.Windows.Forms.DataGridViewTextBoxColumn tenphuong;
         private System.Windows.Forms.DataGridViewTextBoxColumn tenquan;
