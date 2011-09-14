@@ -235,5 +235,10 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
             this.txtsoDot.Text = this.txtsoDot.Text.ToUpper();
 
         }
+
+        private void mainGrid_Sorted(object sender, EventArgs e)
+        {
+            Utilities.DataGridV.formatRows(mainGrid);
+        }
     }
 }

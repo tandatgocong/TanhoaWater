@@ -33,6 +33,8 @@
             this.tabControl1 = new DevComponents.DotNetBar.TabControl();
             this.tabControlPanel2 = new DevComponents.DotNetBar.TabControlPanel();
             this.panelEx2 = new DevComponents.DotNetBar.PanelEx();
+            this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.lbTotalNhanDon = new DevComponents.DotNetBar.LabelX();
             this.denngay = new System.Windows.Forms.DateTimePicker();
             this.tungay = new System.Windows.Forms.DateTimePicker();
             this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
@@ -69,8 +71,6 @@
             this.SOHS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TENLOAI = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TENQUAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
-            this.lbTotalNhanDon = new DevComponents.DotNetBar.LabelX();
             ((System.ComponentModel.ISupportInitialize)(this.tabControl1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabControlPanel2.SuspendLayout();
@@ -136,6 +136,26 @@
             this.panelEx2.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemText;
             this.panelEx2.Style.GradientAngle = 90;
             this.panelEx2.TabIndex = 0;
+            // 
+            // crystalReportViewer1
+            // 
+            this.crystalReportViewer1.ActiveViewIndex = -1;
+            this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.crystalReportViewer1.Location = new System.Drawing.Point(2, 83);
+            this.crystalReportViewer1.Name = "crystalReportViewer1";
+            this.crystalReportViewer1.Size = new System.Drawing.Size(645, 387);
+            this.crystalReportViewer1.TabIndex = 46;
+            this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
+            // 
+            // lbTotalNhanDon
+            // 
+            this.lbTotalNhanDon.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTotalNhanDon.ForeColor = System.Drawing.Color.Brown;
+            this.lbTotalNhanDon.Location = new System.Drawing.Point(3, 54);
+            this.lbTotalNhanDon.Name = "lbTotalNhanDon";
+            this.lbTotalNhanDon.Size = new System.Drawing.Size(535, 23);
+            this.lbTotalNhanDon.TabIndex = 45;
             // 
             // denngay
             // 
@@ -519,26 +539,6 @@
             this.TENQUAN.DataPropertyName = "TENQUAN";
             this.TENQUAN.HeaderText = "Quận";
             this.TENQUAN.Name = "TENQUAN";
-            // 
-            // crystalReportViewer1
-            // 
-            this.crystalReportViewer1.ActiveViewIndex = -1;
-            this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.crystalReportViewer1.Location = new System.Drawing.Point(2, 83);
-            this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.Size = new System.Drawing.Size(645, 387);
-            this.crystalReportViewer1.TabIndex = 46;
-            this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
-            // 
-            // lbTotalNhanDon
-            // 
-            this.lbTotalNhanDon.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTotalNhanDon.ForeColor = System.Drawing.Color.Brown;
-            this.lbTotalNhanDon.Location = new System.Drawing.Point(3, 54);
-            this.lbTotalNhanDon.Name = "lbTotalNhanDon";
-            this.lbTotalNhanDon.Size = new System.Drawing.Size(535, 23);
-            this.lbTotalNhanDon.TabIndex = 45;
             // 
             // frm_BienNhanDon
             // 

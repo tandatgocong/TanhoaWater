@@ -269,7 +269,7 @@ namespace TanHoaWater.View.Users.KEHOACH
 
         private void tabItem2_Click(object sender, EventArgs e)
         {
-            inreview();
+            
         }
 
         public void inreview() {
