@@ -238,12 +238,12 @@ namespace TanHoaWater.View.Administrators
 
         public void refesh() {
             this.add_tenduong.Text = "";
-            this.addPhuong.Text = "";
-            this.add_Quan.Text = "";
+            this.addPhuong.Text = null;
+            this.add_Quan.Text = null;
         }
         private void btXoa_Click(object sender, EventArgs e)
         {
-            if ("".Equals(_id) == false)
+            if ("".Equals(_id) == false && "".Equals(this.add_tenduong.Text)== false)
             {
                 try
                 {
@@ -270,7 +270,7 @@ namespace TanHoaWater.View.Administrators
             }
             else
             {
-                MessageBox.Show(this, "Không Tìm Thấy Dữ Liệu Để Xóa !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(this, "Không Tìm Thấy Dữ Liệu Để Xóa !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             
         }

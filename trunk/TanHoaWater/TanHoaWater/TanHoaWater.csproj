@@ -165,6 +165,12 @@
     <Compile Include="View\Administrators\ut_HeThongDuong.Designer.cs">
       <DependentUpon>ut_HeThongDuong.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Report\rpt_Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Report\rpt_Main.Designer.cs">
+      <DependentUpon>rpt_Main.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Users\KEHOACH\reportView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -346,6 +352,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Administrators\ut_HeThongDuong.resx">
       <DependentUpon>ut_HeThongDuong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Report\rpt_Main.resx">
+      <DependentUpon>rpt_Main.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\KEHOACH\reportView.resx">
       <DependentUpon>reportView.cs</DependentUpon>
