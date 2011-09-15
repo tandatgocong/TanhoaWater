@@ -91,9 +91,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabItem1 = new DevComponents.DotNetBar.TabItem(this.components);
-            this.tabControlPanel6 = new DevComponents.DotNetBar.TabControlPanel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.tabItem4 = new DevComponents.DotNetBar.TabItem(this.components);
             this.tabControlPanel5 = new DevComponents.DotNetBar.TabControlPanel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.tabItem3 = new DevComponents.DotNetBar.TabItem(this.components);
@@ -128,6 +125,9 @@
             this.label21 = new System.Windows.Forms.Label();
             this.bophanChuyen = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.tabChuyenDon = new DevComponents.DotNetBar.TabItem(this.components);
+            this.tabControlPanel6 = new DevComponents.DotNetBar.TabControlPanel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.tabItem4 = new DevComponents.DotNetBar.TabItem(this.components);
             this.tabControlPanel2 = new DevComponents.DotNetBar.TabControlPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tabItem2 = new DevComponents.DotNetBar.TabItem(this.components);
@@ -159,7 +159,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataG)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.soho)).BeginInit();
-            this.tabControlPanel6.SuspendLayout();
             this.tabControlPanel5.SuspendLayout();
             this.tabControlPanel3.SuspendLayout();
             this.panelChuyenDon.SuspendLayout();
@@ -168,6 +167,7 @@
             this.groupPanel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cd_MainGird)).BeginInit();
+            this.tabControlPanel6.SuspendLayout();
             this.tabControlPanel2.SuspendLayout();
             this.tabControlPanel4.SuspendLayout();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -189,8 +189,8 @@
             // tabControl1
             // 
             this.tabControl1.CanReorderTabs = true;
-            this.tabControl1.Controls.Add(this.tabControlPanel1);
             this.tabControl1.Controls.Add(this.tabControlPanel5);
+            this.tabControl1.Controls.Add(this.tabControlPanel1);
             this.tabControl1.Controls.Add(this.tabControlPanel3);
             this.tabControl1.Controls.Add(this.tabControlPanel6);
             this.tabControl1.Controls.Add(this.tabControlPanel2);
@@ -861,39 +861,6 @@
             this.tabItem1.Text = "Nhận Đơn Khách Hàng";
             this.tabItem1.Click += new System.EventHandler(this.tabItem1_Click);
             // 
-            // tabControlPanel6
-            // 
-            this.tabControlPanel6.Controls.Add(this.panel5);
-            this.tabControlPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControlPanel6.Location = new System.Drawing.Point(0, 26);
-            this.tabControlPanel6.Name = "tabControlPanel6";
-            this.tabControlPanel6.Padding = new System.Windows.Forms.Padding(1);
-            this.tabControlPanel6.Size = new System.Drawing.Size(1001, 535);
-            this.tabControlPanel6.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(179)))), ((int)(((byte)(231)))));
-            this.tabControlPanel6.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(237)))), ((int)(((byte)(254)))));
-            this.tabControlPanel6.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.tabControlPanel6.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(97)))), ((int)(((byte)(156)))));
-            this.tabControlPanel6.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right)
-                        | DevComponents.DotNetBar.eBorderSide.Bottom)));
-            this.tabControlPanel6.Style.GradientAngle = 90;
-            this.tabControlPanel6.TabIndex = 6;
-            this.tabControlPanel6.TabItem = this.tabItem4;
-            // 
-            // panel5
-            // 
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(1, 1);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(999, 533);
-            this.panel5.TabIndex = 1;
-            // 
-            // tabItem4
-            // 
-            this.tabItem4.AttachedControl = this.tabControlPanel6;
-            this.tabItem4.Name = "tabItem4";
-            this.tabItem4.Text = "Hồ Sơ Tái Xét";
-            this.tabItem4.Click += new System.EventHandler(this.tabItem4_Click);
-            // 
             // tabControlPanel5
             // 
             this.tabControlPanel5.Controls.Add(this.panel4);
@@ -1300,6 +1267,39 @@
             this.tabChuyenDon.Text = "Chuyển Đơn";
             this.tabChuyenDon.Click += new System.EventHandler(this.tabChuyenDon_Click);
             // 
+            // tabControlPanel6
+            // 
+            this.tabControlPanel6.Controls.Add(this.panel5);
+            this.tabControlPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControlPanel6.Location = new System.Drawing.Point(0, 26);
+            this.tabControlPanel6.Name = "tabControlPanel6";
+            this.tabControlPanel6.Padding = new System.Windows.Forms.Padding(1);
+            this.tabControlPanel6.Size = new System.Drawing.Size(1001, 535);
+            this.tabControlPanel6.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(179)))), ((int)(((byte)(231)))));
+            this.tabControlPanel6.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(237)))), ((int)(((byte)(254)))));
+            this.tabControlPanel6.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.tabControlPanel6.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(97)))), ((int)(((byte)(156)))));
+            this.tabControlPanel6.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right)
+                        | DevComponents.DotNetBar.eBorderSide.Bottom)));
+            this.tabControlPanel6.Style.GradientAngle = 90;
+            this.tabControlPanel6.TabIndex = 6;
+            this.tabControlPanel6.TabItem = this.tabItem4;
+            // 
+            // panel5
+            // 
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel5.Location = new System.Drawing.Point(1, 1);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(999, 533);
+            this.panel5.TabIndex = 1;
+            // 
+            // tabItem4
+            // 
+            this.tabItem4.AttachedControl = this.tabControlPanel6;
+            this.tabItem4.Name = "tabItem4";
+            this.tabItem4.Text = "Hồ Sơ Tái Xét";
+            this.tabItem4.Click += new System.EventHandler(this.tabItem4_Click);
+            // 
             // tabControlPanel2
             // 
             this.tabControlPanel2.Controls.Add(this.panel2);
@@ -1545,7 +1545,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataG)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.soho)).EndInit();
-            this.tabControlPanel6.ResumeLayout(false);
             this.tabControlPanel5.ResumeLayout(false);
             this.tabControlPanel3.ResumeLayout(false);
             this.panelChuyenDon.ResumeLayout(false);
@@ -1555,6 +1554,7 @@
             this.groupPanel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cd_MainGird)).EndInit();
+            this.tabControlPanel6.ResumeLayout(false);
             this.tabControlPanel2.ResumeLayout(false);
             this.tabControlPanel4.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);

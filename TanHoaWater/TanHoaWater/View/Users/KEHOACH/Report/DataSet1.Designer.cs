@@ -24,7 +24,7 @@ namespace TanHoaWater.View.Users.KEHOACH.Report {
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
     public partial class DataSet1 : global::System.Data.DataSet {
         
-        private V_BAOCAO_NHANDONDataTable tableV_BAOCAO_NHANDON;
+        private INBIENNHANDataTable tableINBIENNHAN;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -54,8 +54,8 @@ namespace TanHoaWater.View.Users.KEHOACH.Report {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["V_BAOCAO_NHANDON"] != null)) {
-                    base.Tables.Add(new V_BAOCAO_NHANDONDataTable(ds.Tables["V_BAOCAO_NHANDON"]));
+                if ((ds.Tables["INBIENNHAN"] != null)) {
+                    base.Tables.Add(new INBIENNHANDataTable(ds.Tables["INBIENNHAN"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace TanHoaWater.View.Users.KEHOACH.Report {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public V_BAOCAO_NHANDONDataTable V_BAOCAO_NHANDON {
+        public INBIENNHANDataTable INBIENNHAN {
             get {
-                return this.tableV_BAOCAO_NHANDON;
+                return this.tableINBIENNHAN;
             }
         }
         
@@ -152,8 +152,8 @@ namespace TanHoaWater.View.Users.KEHOACH.Report {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["V_BAOCAO_NHANDON"] != null)) {
-                    base.Tables.Add(new V_BAOCAO_NHANDONDataTable(ds.Tables["V_BAOCAO_NHANDON"]));
+                if ((ds.Tables["INBIENNHAN"] != null)) {
+                    base.Tables.Add(new INBIENNHANDataTable(ds.Tables["INBIENNHAN"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace TanHoaWater.View.Users.KEHOACH.Report {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableV_BAOCAO_NHANDON = ((V_BAOCAO_NHANDONDataTable)(base.Tables["V_BAOCAO_NHANDON"]));
+            this.tableINBIENNHAN = ((INBIENNHANDataTable)(base.Tables["INBIENNHAN"]));
             if ((initTable == true)) {
-                if ((this.tableV_BAOCAO_NHANDON != null)) {
-                    this.tableV_BAOCAO_NHANDON.InitVars();
+                if ((this.tableINBIENNHAN != null)) {
+                    this.tableINBIENNHAN.InitVars();
                 }
             }
         }
@@ -204,13 +204,13 @@ namespace TanHoaWater.View.Users.KEHOACH.Report {
             this.Namespace = "http://tempuri.org/DataSet1.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableV_BAOCAO_NHANDON = new V_BAOCAO_NHANDONDataTable();
-            base.Tables.Add(this.tableV_BAOCAO_NHANDON);
+            this.tableINBIENNHAN = new INBIENNHANDataTable();
+            base.Tables.Add(this.tableINBIENNHAN);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeV_BAOCAO_NHANDON() {
+        private bool ShouldSerializeINBIENNHAN() {
             return false;
         }
         
@@ -270,29 +270,37 @@ namespace TanHoaWater.View.Users.KEHOACH.Report {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void V_BAOCAO_NHANDONRowChangeEventHandler(object sender, V_BAOCAO_NHANDONRowChangeEvent e);
+        public delegate void INBIENNHANRowChangeEventHandler(object sender, INBIENNHANRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class V_BAOCAO_NHANDONDataTable : global::System.Data.TypedTableBase<V_BAOCAO_NHANDONRow> {
+        public partial class INBIENNHANDataTable : global::System.Data.TypedTableBase<INBIENNHANRow> {
             
-            private global::System.Data.DataColumn columnTENQUAN;
+            private global::System.Data.DataColumn columnSHS;
+            
+            private global::System.Data.DataColumn columnHOTEN;
+            
+            private global::System.Data.DataColumn columnDIENTHOAI;
+            
+            private global::System.Data.DataColumn columnDUONG;
+            
+            private global::System.Data.DataColumn columnNGAYNHAN;
             
             private global::System.Data.DataColumn columnTENLOAI;
             
-            private global::System.Data.DataColumn columnSOHS;
+            private global::System.Data.DataColumn columnFULLNAME;
             
             private global::System.Data.DataColumn columnTUNGAY;
             
-            private global::System.Data.DataColumn columnDENNGAY;
+            private global::System.Data.DataColumn columnDENGAY;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public V_BAOCAO_NHANDONDataTable() {
-                this.TableName = "V_BAOCAO_NHANDON";
+            public INBIENNHANDataTable() {
+                this.TableName = "INBIENNHAN";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -300,7 +308,7 @@ namespace TanHoaWater.View.Users.KEHOACH.Report {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal V_BAOCAO_NHANDONDataTable(global::System.Data.DataTable table) {
+            internal INBIENNHANDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -317,16 +325,48 @@ namespace TanHoaWater.View.Users.KEHOACH.Report {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected V_BAOCAO_NHANDONDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected INBIENNHANDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn TENQUANColumn {
+            public global::System.Data.DataColumn SHSColumn {
                 get {
-                    return this.columnTENQUAN;
+                    return this.columnSHS;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn HOTENColumn {
+                get {
+                    return this.columnHOTEN;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DIENTHOAIColumn {
+                get {
+                    return this.columnDIENTHOAI;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DUONGColumn {
+                get {
+                    return this.columnDUONG;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn NGAYNHANColumn {
+                get {
+                    return this.columnNGAYNHAN;
                 }
             }
             
@@ -340,9 +380,9 @@ namespace TanHoaWater.View.Users.KEHOACH.Report {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn SOHSColumn {
+            public global::System.Data.DataColumn FULLNAMEColumn {
                 get {
-                    return this.columnSOHS;
+                    return this.columnFULLNAME;
                 }
             }
             
@@ -356,9 +396,9 @@ namespace TanHoaWater.View.Users.KEHOACH.Report {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn DENNGAYColumn {
+            public global::System.Data.DataColumn DENGAYColumn {
                 get {
-                    return this.columnDENNGAY;
+                    return this.columnDENGAY;
                 }
             }
             
@@ -373,49 +413,60 @@ namespace TanHoaWater.View.Users.KEHOACH.Report {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public V_BAOCAO_NHANDONRow this[int index] {
+            public INBIENNHANRow this[int index] {
                 get {
-                    return ((V_BAOCAO_NHANDONRow)(this.Rows[index]));
+                    return ((INBIENNHANRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event V_BAOCAO_NHANDONRowChangeEventHandler V_BAOCAO_NHANDONRowChanging;
+            public event INBIENNHANRowChangeEventHandler INBIENNHANRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event V_BAOCAO_NHANDONRowChangeEventHandler V_BAOCAO_NHANDONRowChanged;
+            public event INBIENNHANRowChangeEventHandler INBIENNHANRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event V_BAOCAO_NHANDONRowChangeEventHandler V_BAOCAO_NHANDONRowDeleting;
+            public event INBIENNHANRowChangeEventHandler INBIENNHANRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event V_BAOCAO_NHANDONRowChangeEventHandler V_BAOCAO_NHANDONRowDeleted;
+            public event INBIENNHANRowChangeEventHandler INBIENNHANRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddV_BAOCAO_NHANDONRow(V_BAOCAO_NHANDONRow row) {
+            public void AddINBIENNHANRow(INBIENNHANRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public V_BAOCAO_NHANDONRow AddV_BAOCAO_NHANDONRow(string TENQUAN, string TENLOAI, int SOHS, string TUNGAY, string DENNGAY) {
-                V_BAOCAO_NHANDONRow rowV_BAOCAO_NHANDONRow = ((V_BAOCAO_NHANDONRow)(this.NewRow()));
+            public INBIENNHANRow AddINBIENNHANRow(string SHS, string HOTEN, string DIENTHOAI, string DUONG, string NGAYNHAN, string TENLOAI, string FULLNAME, string TUNGAY, string DENGAY) {
+                INBIENNHANRow rowINBIENNHANRow = ((INBIENNHANRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        TENQUAN,
+                        SHS,
+                        HOTEN,
+                        DIENTHOAI,
+                        DUONG,
+                        NGAYNHAN,
                         TENLOAI,
-                        SOHS,
+                        FULLNAME,
                         TUNGAY,
-                        DENNGAY};
-                rowV_BAOCAO_NHANDONRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowV_BAOCAO_NHANDONRow);
-                return rowV_BAOCAO_NHANDONRow;
+                        DENGAY};
+                rowINBIENNHANRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowINBIENNHANRow);
+                return rowINBIENNHANRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public INBIENNHANRow FindBySHS(string SHS) {
+                return ((INBIENNHANRow)(this.Rows.Find(new object[] {
+                            SHS})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                V_BAOCAO_NHANDONDataTable cln = ((V_BAOCAO_NHANDONDataTable)(base.Clone()));
+                INBIENNHANDataTable cln = ((INBIENNHANDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -423,60 +474,84 @@ namespace TanHoaWater.View.Users.KEHOACH.Report {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new V_BAOCAO_NHANDONDataTable();
+                return new INBIENNHANDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
-                this.columnTENQUAN = base.Columns["TENQUAN"];
+                this.columnSHS = base.Columns["SHS"];
+                this.columnHOTEN = base.Columns["HOTEN"];
+                this.columnDIENTHOAI = base.Columns["DIENTHOAI"];
+                this.columnDUONG = base.Columns["DUONG"];
+                this.columnNGAYNHAN = base.Columns["NGAYNHAN"];
                 this.columnTENLOAI = base.Columns["TENLOAI"];
-                this.columnSOHS = base.Columns["SOHS"];
+                this.columnFULLNAME = base.Columns["FULLNAME"];
                 this.columnTUNGAY = base.Columns["TUNGAY"];
-                this.columnDENNGAY = base.Columns["DENNGAY"];
+                this.columnDENGAY = base.Columns["DENGAY"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this.columnTENQUAN = new global::System.Data.DataColumn("TENQUAN", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTENQUAN);
+                this.columnSHS = new global::System.Data.DataColumn("SHS", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSHS);
+                this.columnHOTEN = new global::System.Data.DataColumn("HOTEN", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnHOTEN);
+                this.columnDIENTHOAI = new global::System.Data.DataColumn("DIENTHOAI", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDIENTHOAI);
+                this.columnDUONG = new global::System.Data.DataColumn("DUONG", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDUONG);
+                this.columnNGAYNHAN = new global::System.Data.DataColumn("NGAYNHAN", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNGAYNHAN);
                 this.columnTENLOAI = new global::System.Data.DataColumn("TENLOAI", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTENLOAI);
-                this.columnSOHS = new global::System.Data.DataColumn("SOHS", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSOHS);
+                this.columnFULLNAME = new global::System.Data.DataColumn("FULLNAME", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFULLNAME);
                 this.columnTUNGAY = new global::System.Data.DataColumn("TUNGAY", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTUNGAY);
-                this.columnDENNGAY = new global::System.Data.DataColumn("DENNGAY", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDENNGAY);
-                this.columnTENQUAN.MaxLength = 50;
+                this.columnDENGAY = new global::System.Data.DataColumn("DENGAY", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDENGAY);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnSHS}, true));
+                this.columnSHS.AllowDBNull = false;
+                this.columnSHS.Unique = true;
+                this.columnSHS.MaxLength = 50;
+                this.columnHOTEN.MaxLength = 250;
+                this.columnDIENTHOAI.MaxLength = 20;
+                this.columnDUONG.ReadOnly = true;
+                this.columnDUONG.MaxLength = 211;
+                this.columnNGAYNHAN.ReadOnly = true;
+                this.columnNGAYNHAN.MaxLength = 20;
+                this.columnTENLOAI.ReadOnly = true;
                 this.columnTENLOAI.MaxLength = 100;
+                this.columnFULLNAME.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public V_BAOCAO_NHANDONRow NewV_BAOCAO_NHANDONRow() {
-                return ((V_BAOCAO_NHANDONRow)(this.NewRow()));
+            public INBIENNHANRow NewINBIENNHANRow() {
+                return ((INBIENNHANRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new V_BAOCAO_NHANDONRow(builder);
+                return new INBIENNHANRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(V_BAOCAO_NHANDONRow);
+                return typeof(INBIENNHANRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.V_BAOCAO_NHANDONRowChanged != null)) {
-                    this.V_BAOCAO_NHANDONRowChanged(this, new V_BAOCAO_NHANDONRowChangeEvent(((V_BAOCAO_NHANDONRow)(e.Row)), e.Action));
+                if ((this.INBIENNHANRowChanged != null)) {
+                    this.INBIENNHANRowChanged(this, new INBIENNHANRowChangeEvent(((INBIENNHANRow)(e.Row)), e.Action));
                 }
             }
             
@@ -484,8 +559,8 @@ namespace TanHoaWater.View.Users.KEHOACH.Report {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.V_BAOCAO_NHANDONRowChanging != null)) {
-                    this.V_BAOCAO_NHANDONRowChanging(this, new V_BAOCAO_NHANDONRowChangeEvent(((V_BAOCAO_NHANDONRow)(e.Row)), e.Action));
+                if ((this.INBIENNHANRowChanging != null)) {
+                    this.INBIENNHANRowChanging(this, new INBIENNHANRowChangeEvent(((INBIENNHANRow)(e.Row)), e.Action));
                 }
             }
             
@@ -493,8 +568,8 @@ namespace TanHoaWater.View.Users.KEHOACH.Report {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.V_BAOCAO_NHANDONRowDeleted != null)) {
-                    this.V_BAOCAO_NHANDONRowDeleted(this, new V_BAOCAO_NHANDONRowChangeEvent(((V_BAOCAO_NHANDONRow)(e.Row)), e.Action));
+                if ((this.INBIENNHANRowDeleted != null)) {
+                    this.INBIENNHANRowDeleted(this, new INBIENNHANRowChangeEvent(((INBIENNHANRow)(e.Row)), e.Action));
                 }
             }
             
@@ -502,14 +577,14 @@ namespace TanHoaWater.View.Users.KEHOACH.Report {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.V_BAOCAO_NHANDONRowDeleting != null)) {
-                    this.V_BAOCAO_NHANDONRowDeleting(this, new V_BAOCAO_NHANDONRowChangeEvent(((V_BAOCAO_NHANDONRow)(e.Row)), e.Action));
+                if ((this.INBIENNHANRowDeleting != null)) {
+                    this.INBIENNHANRowDeleting(this, new INBIENNHANRowChangeEvent(((INBIENNHANRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveV_BAOCAO_NHANDONRow(V_BAOCAO_NHANDONRow row) {
+            public void RemoveINBIENNHANRow(INBIENNHANRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -536,7 +611,7 @@ namespace TanHoaWater.View.Users.KEHOACH.Report {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "V_BAOCAO_NHANDONDataTable";
+                attribute2.FixedValue = "INBIENNHANDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -580,30 +655,89 @@ namespace TanHoaWater.View.Users.KEHOACH.Report {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class V_BAOCAO_NHANDONRow : global::System.Data.DataRow {
+        public partial class INBIENNHANRow : global::System.Data.DataRow {
             
-            private V_BAOCAO_NHANDONDataTable tableV_BAOCAO_NHANDON;
+            private INBIENNHANDataTable tableINBIENNHAN;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal V_BAOCAO_NHANDONRow(global::System.Data.DataRowBuilder rb) : 
+            internal INBIENNHANRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableV_BAOCAO_NHANDON = ((V_BAOCAO_NHANDONDataTable)(this.Table));
+                this.tableINBIENNHAN = ((INBIENNHANDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string TENQUAN {
+            public string SHS {
+                get {
+                    return ((string)(this[this.tableINBIENNHAN.SHSColumn]));
+                }
+                set {
+                    this[this.tableINBIENNHAN.SHSColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string HOTEN {
                 get {
                     try {
-                        return ((string)(this[this.tableV_BAOCAO_NHANDON.TENQUANColumn]));
+                        return ((string)(this[this.tableINBIENNHAN.HOTENColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'TENQUAN\' in table \'V_BAOCAO_NHANDON\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'HOTEN\' in table \'INBIENNHAN\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableV_BAOCAO_NHANDON.TENQUANColumn] = value;
+                    this[this.tableINBIENNHAN.HOTENColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DIENTHOAI {
+                get {
+                    try {
+                        return ((string)(this[this.tableINBIENNHAN.DIENTHOAIColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DIENTHOAI\' in table \'INBIENNHAN\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableINBIENNHAN.DIENTHOAIColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DUONG {
+                get {
+                    try {
+                        return ((string)(this[this.tableINBIENNHAN.DUONGColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DUONG\' in table \'INBIENNHAN\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableINBIENNHAN.DUONGColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string NGAYNHAN {
+                get {
+                    try {
+                        return ((string)(this[this.tableINBIENNHAN.NGAYNHANColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NGAYNHAN\' in table \'INBIENNHAN\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableINBIENNHAN.NGAYNHANColumn] = value;
                 }
             }
             
@@ -612,30 +746,30 @@ namespace TanHoaWater.View.Users.KEHOACH.Report {
             public string TENLOAI {
                 get {
                     try {
-                        return ((string)(this[this.tableV_BAOCAO_NHANDON.TENLOAIColumn]));
+                        return ((string)(this[this.tableINBIENNHAN.TENLOAIColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'TENLOAI\' in table \'V_BAOCAO_NHANDON\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'TENLOAI\' in table \'INBIENNHAN\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableV_BAOCAO_NHANDON.TENLOAIColumn] = value;
+                    this[this.tableINBIENNHAN.TENLOAIColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int SOHS {
+            public string FULLNAME {
                 get {
                     try {
-                        return ((int)(this[this.tableV_BAOCAO_NHANDON.SOHSColumn]));
+                        return ((string)(this[this.tableINBIENNHAN.FULLNAMEColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'SOHS\' in table \'V_BAOCAO_NHANDON\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'FULLNAME\' in table \'INBIENNHAN\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableV_BAOCAO_NHANDON.SOHSColumn] = value;
+                    this[this.tableINBIENNHAN.FULLNAMEColumn] = value;
                 }
             }
             
@@ -644,91 +778,127 @@ namespace TanHoaWater.View.Users.KEHOACH.Report {
             public string TUNGAY {
                 get {
                     try {
-                        return ((string)(this[this.tableV_BAOCAO_NHANDON.TUNGAYColumn]));
+                        return ((string)(this[this.tableINBIENNHAN.TUNGAYColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'TUNGAY\' in table \'V_BAOCAO_NHANDON\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'TUNGAY\' in table \'INBIENNHAN\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableV_BAOCAO_NHANDON.TUNGAYColumn] = value;
+                    this[this.tableINBIENNHAN.TUNGAYColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string DENNGAY {
+            public string DENGAY {
                 get {
                     try {
-                        return ((string)(this[this.tableV_BAOCAO_NHANDON.DENNGAYColumn]));
+                        return ((string)(this[this.tableINBIENNHAN.DENGAYColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'DENNGAY\' in table \'V_BAOCAO_NHANDON\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'DENGAY\' in table \'INBIENNHAN\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableV_BAOCAO_NHANDON.DENNGAYColumn] = value;
+                    this[this.tableINBIENNHAN.DENGAYColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsTENQUANNull() {
-                return this.IsNull(this.tableV_BAOCAO_NHANDON.TENQUANColumn);
+            public bool IsHOTENNull() {
+                return this.IsNull(this.tableINBIENNHAN.HOTENColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetTENQUANNull() {
-                this[this.tableV_BAOCAO_NHANDON.TENQUANColumn] = global::System.Convert.DBNull;
+            public void SetHOTENNull() {
+                this[this.tableINBIENNHAN.HOTENColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDIENTHOAINull() {
+                return this.IsNull(this.tableINBIENNHAN.DIENTHOAIColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDIENTHOAINull() {
+                this[this.tableINBIENNHAN.DIENTHOAIColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDUONGNull() {
+                return this.IsNull(this.tableINBIENNHAN.DUONGColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDUONGNull() {
+                this[this.tableINBIENNHAN.DUONGColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsNGAYNHANNull() {
+                return this.IsNull(this.tableINBIENNHAN.NGAYNHANColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetNGAYNHANNull() {
+                this[this.tableINBIENNHAN.NGAYNHANColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsTENLOAINull() {
-                return this.IsNull(this.tableV_BAOCAO_NHANDON.TENLOAIColumn);
+                return this.IsNull(this.tableINBIENNHAN.TENLOAIColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetTENLOAINull() {
-                this[this.tableV_BAOCAO_NHANDON.TENLOAIColumn] = global::System.Convert.DBNull;
+                this[this.tableINBIENNHAN.TENLOAIColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsSOHSNull() {
-                return this.IsNull(this.tableV_BAOCAO_NHANDON.SOHSColumn);
+            public bool IsFULLNAMENull() {
+                return this.IsNull(this.tableINBIENNHAN.FULLNAMEColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetSOHSNull() {
-                this[this.tableV_BAOCAO_NHANDON.SOHSColumn] = global::System.Convert.DBNull;
+            public void SetFULLNAMENull() {
+                this[this.tableINBIENNHAN.FULLNAMEColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsTUNGAYNull() {
-                return this.IsNull(this.tableV_BAOCAO_NHANDON.TUNGAYColumn);
+                return this.IsNull(this.tableINBIENNHAN.TUNGAYColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetTUNGAYNull() {
-                this[this.tableV_BAOCAO_NHANDON.TUNGAYColumn] = global::System.Convert.DBNull;
+                this[this.tableINBIENNHAN.TUNGAYColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsDENNGAYNull() {
-                return this.IsNull(this.tableV_BAOCAO_NHANDON.DENNGAYColumn);
+            public bool IsDENGAYNull() {
+                return this.IsNull(this.tableINBIENNHAN.DENGAYColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetDENNGAYNull() {
-                this[this.tableV_BAOCAO_NHANDON.DENNGAYColumn] = global::System.Convert.DBNull;
+            public void SetDENGAYNull() {
+                this[this.tableINBIENNHAN.DENGAYColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -736,22 +906,22 @@ namespace TanHoaWater.View.Users.KEHOACH.Report {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class V_BAOCAO_NHANDONRowChangeEvent : global::System.EventArgs {
+        public class INBIENNHANRowChangeEvent : global::System.EventArgs {
             
-            private V_BAOCAO_NHANDONRow eventRow;
+            private INBIENNHANRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public V_BAOCAO_NHANDONRowChangeEvent(V_BAOCAO_NHANDONRow row, global::System.Data.DataRowAction action) {
+            public INBIENNHANRowChangeEvent(INBIENNHANRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public V_BAOCAO_NHANDONRow Row {
+            public INBIENNHANRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -779,7 +949,7 @@ namespace TanHoaWater.View.Users.KEHOACH.Report.DataSet1TableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class V_BAOCAO_NHANDONTableAdapter : global::System.ComponentModel.Component {
+    public partial class INBIENNHANTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -793,7 +963,7 @@ namespace TanHoaWater.View.Users.KEHOACH.Report.DataSet1TableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public V_BAOCAO_NHANDONTableAdapter() {
+        public INBIENNHANTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -890,10 +1060,14 @@ namespace TanHoaWater.View.Users.KEHOACH.Report.DataSet1TableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "V_BAOCAO_NHANDON";
-            tableMapping.ColumnMappings.Add("TENQUAN", "TENQUAN");
+            tableMapping.DataSetTable = "INBIENNHAN";
+            tableMapping.ColumnMappings.Add("SHS", "SHS");
+            tableMapping.ColumnMappings.Add("HOTEN", "HOTEN");
+            tableMapping.ColumnMappings.Add("DIENTHOAI", "DIENTHOAI");
+            tableMapping.ColumnMappings.Add("DUONG", "DUONG");
+            tableMapping.ColumnMappings.Add("NGAYNHAN", "NGAYNHAN");
             tableMapping.ColumnMappings.Add("TENLOAI", "TENLOAI");
-            tableMapping.ColumnMappings.Add("SOHS", "SOHS");
+            tableMapping.ColumnMappings.Add("FULLNAME", "FULLNAME");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -910,7 +1084,8 @@ namespace TanHoaWater.View.Users.KEHOACH.Report.DataSet1TableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT TENQUAN, TENLOAI, SOHS FROM dbo.V_BAOCAO_NHANDON";
+            this._commandCollection[0].CommandText = "SELECT SHS, HOTEN, DIENTHOAI, DUONG, NGAYNHAN, TENLOAI, FULLNAME FROM dbo.INBIENN" +
+                "HAN";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -918,7 +1093,7 @@ namespace TanHoaWater.View.Users.KEHOACH.Report.DataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DataSet1.V_BAOCAO_NHANDONDataTable dataTable) {
+        public virtual int Fill(DataSet1.INBIENNHANDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -931,9 +1106,9 @@ namespace TanHoaWater.View.Users.KEHOACH.Report.DataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DataSet1.V_BAOCAO_NHANDONDataTable GetData() {
+        public virtual DataSet1.INBIENNHANDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DataSet1.V_BAOCAO_NHANDONDataTable dataTable = new DataSet1.V_BAOCAO_NHANDONDataTable();
+            DataSet1.INBIENNHANDataTable dataTable = new DataSet1.INBIENNHANDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
