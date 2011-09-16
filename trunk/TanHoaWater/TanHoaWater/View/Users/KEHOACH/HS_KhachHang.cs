@@ -18,7 +18,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
     public partial class HSKHACHHANG : UserControl
     {
         int currentPageIndex = 1;
-        int pageSize = 8;
+        int pageSize = 11;
         int pageNumber = 0;
         int FirstRow, LastRow;
         int rows;
@@ -204,6 +204,8 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                     MessageBox.Show(this, "Không Tìm Thấy Số Biên Nhận Khách Hàng !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     this.txtSHS.Clear();
                     this.txtSHS.Focus();
+                    refresh();
+
                 }
             }
         }
@@ -257,8 +259,8 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
 
             }
         }
-        private void btInsert_Click(object sender, EventArgs e)
-        {
+        public void add() {
+          
             if (this.txtSHS.Text.Length < 7)
             {
                 this.errorProvider1.Clear();
@@ -289,7 +291,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                 this.errorProvider1.SetError(this.txtSHS, "Số Hồ Sơ Đã Tồn Tại.");
                 this.txtSHS.Focus();
             }
-            else if (DAL.C_DonKhachHang.findByAddressAndLoaiHS(this.cbDotNhanDon.SelectedValue.ToString(), this.cbLoaiHS.SelectedValue.ToString(), this.sonha.Text, this.duong.Text,_maphuong,""+_maquan))
+            else if (DAL.C_DonKhachHang.findByAddressAndLoaiHS(this.cbDotNhanDon.SelectedValue.ToString(), this.cbLoaiHS.SelectedValue.ToString(), this.sonha.Text, this.duong.Text, _maphuong, "" + _maquan))
             {
                 this.errorProvider1.Clear();
                 this.errorProvider1.SetError(this.sonha, "Địa Chỉ Khách Hàng Đã Được Nhận Đơn.");
@@ -302,7 +304,8 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                 donKH.MADOT = this.cbDotNhanDon.SelectedValue.ToString();
                 donKH.SOHOSO = this.txtSoHoSo.Text;
                 donKH.SHS = this.txtSHS.Text;
-                if (soho.Value > 0){
+                if (soho.Value > 0)
+                {
                     donKH.HOTEN = this.txtHoTen.Text + "(ĐD " + soho.Value + " Hộ)";
                     cbLoaiKH.Text = "Tập Thể";
                 }
@@ -310,7 +313,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                 {
                     donKH.HOTEN = this.txtHoTen.Text;
                 }
-                
+
                 donKH.DIENTHOAI = this.dienthoai.Text;
                 donKH.SOHO = int.Parse(this.soho.Value.ToString());
                 donKH.SONHA = this.sonha.Text;
@@ -319,18 +322,22 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                 {
                     donKH.LOAIMIENPHI = "Hẻm";
                 }
-                else {
-                        donKH.LOAIMIENPHI = "Mặt tiền";
+                else
+                {
+                    donKH.LOAIMIENPHI = "Mặt tiền";
                 }
                 donKH.DUONG = this.duong.Text;
                 donKH.PHUONG = _maphuong;
                 donKH.QUAN = _maquan;
                 donKH.NGAYNHAN = DateTime.Now;
-                string maloaikh="";
-                if(this.cbLoaiKH.SelectedValue== null || "".Equals(this.cbLoaiKH.SelectedValue.ToString())==true){
+                string maloaikh = "";
+                if (this.cbLoaiKH.SelectedValue == null || "".Equals(this.cbLoaiKH.SelectedValue.ToString()) == true)
+                {
                     maloaikh = DAL.C_LoaiKhachHang.finbyTenLoai(this.cbLoaiKH.Text).MALOAI;
-                }else{
-                     maloaikh = this.cbLoaiKH.SelectedValue.ToString();
+                }
+                else
+                {
+                    maloaikh = this.cbLoaiKH.SelectedValue.ToString();
                 }
                 donKH.LOAIKH = maloaikh;
                 donKH.LOAIHOSO = DAL.C_DotNhanDon.findByMaDot(this.cbDotNhanDon.SelectedValue.ToString()).LOAIDON;
@@ -347,6 +354,10 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                 Utilities.DataGridV.formatRows(dataG);
                 refresh();
             }
+        }
+        private void btInsert_Click(object sender, EventArgs e)
+        {
+            add();
         }
 
         private void khan_CheckedChanged(object sender, EventArgs e)
@@ -371,6 +382,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
             this.txtSoHoSo.Text = null;
             this.errorProvider1.Clear();
             this.txtSHS.Focus();
+            this.errorProvider1.Clear();
         }
 
         private void buttonX2_Click(object sender, EventArgs e)
@@ -392,8 +404,18 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
         public void loadDataGrid()
         {
             string _madot = this.cbDotNhanDon.SelectedValue.ToString();
-            this.dataG.DataSource = DAL.C_DonKhachHang.getListbyDot(_madot, FirstRow, pageSize);
+
+            try
+            {
+                rows = DAL.C_DonKhachHang.TotalListByDot(this.cbDotNhanDon.SelectedValue.ToString());
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex);
+            }
+            PageTotal();
             int sokh = DAL.C_DonKhachHang.TotalListByDot(_madot);
+            this.dataG.DataSource = DAL.C_DonKhachHang.getListbyDot(_madot, FirstRow, pageSize);            
             this.totalRecord.Text = "Tống công có " + sokh + " khách hàng đợt nhận đơn " + _madot;
             Utilities.DataGridV.formatRows(dataG);
         }
@@ -705,6 +727,23 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
             tabControl1.SelectedTabIndex = 3;
             this.panel5.Controls.Clear();
             this.panel5.Controls.Add(new tab_DonTaiXet());
+        }
+
+        private void dataG_Sorted(object sender, EventArgs e)
+        {
+            Utilities.DataGridV.formatRows(dataG);
+        }
+
+        private void ghichu_Leave(object sender, EventArgs e)
+        {
+            add();
+        }
+
+        private void ghichu_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //if (e.KeyChar == 13) {
+            //    add();
+            //}
         }
 
     }

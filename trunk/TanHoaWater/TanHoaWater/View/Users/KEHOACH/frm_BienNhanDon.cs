@@ -447,7 +447,15 @@ namespace TanHoaWater.View.Users.KEHOACH
 
                         biennhan.MODIFYBY = DAL.C_USERS._userName;
                         biennhan.MODIFYDATE = DateTime.Now;
-                        if (DAL.C_BienNhanDon.UpdateDonKH()) {
+                        DON_KHACHHANG donkh=  DAL.C_DonKhachHang.findBySOHOSO(biennhan.SHS);
+                        bool flag = true;
+                        if (donkh != null)
+                        {
+                            flag = DAL.C_DonKhachHang.updateDoninBienNhan(biennhan.SHS, biennhan.HOTEN, biennhan.DIENTHOAI, biennhan.SONHA, biennhan.DUONG, biennhan.PHUONG, biennhan.QUAN);
+                        }
+                        if (flag  == true && DAL.C_BienNhanDon.UpdateDonKH())
+                        {
+                            
                             MessageBox.Show(this, "Cập Nhật Biên Nhận Thành Công!", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             //printingBienNhan(biennhan.SHS, DAL.C_USERS._userName);
                             resetedit();

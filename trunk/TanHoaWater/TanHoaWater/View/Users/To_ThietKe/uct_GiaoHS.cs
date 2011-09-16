@@ -617,5 +617,10 @@ namespace TanHoaWater.View.Users.To_ThietKe
         {
 
         }
+
+        private void tabItem4_Click(object sender, EventArgs e)
+        {
+            this.txtSHS.Mask = DateTime.Now.Year.ToString().Substring(2) + "CCCCC";
+        }
     }
 }

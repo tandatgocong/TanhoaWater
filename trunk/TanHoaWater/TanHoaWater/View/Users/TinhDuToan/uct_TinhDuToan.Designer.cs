@@ -68,7 +68,6 @@
             this.txtSoDoVien = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.txtQuan = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.txtPhuong = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.txtSHS = new System.Windows.Forms.TextBox();
             this.tabControl2 = new DevComponents.DotNetBar.TabControl();
             this.tabControlPanel3 = new DevComponents.DotNetBar.TabControlPanel();
             this.panelNhapPhuiDao = new System.Windows.Forms.Panel();
@@ -327,6 +326,7 @@
             this.tabTaiLapMatDuong = new DevComponents.DotNetBar.TabItem(this.components);
             this.tabItem1 = new DevComponents.DotNetBar.TabItem(this.components);
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.txtSHS = new System.Windows.Forms.MaskedTextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabControl1)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -505,13 +505,13 @@
             // panelTinhDuToan
             // 
             this.panelTinhDuToan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(206)))), ((int)(((byte)(236)))));
+            this.panelTinhDuToan.Controls.Add(this.txtSHS);
             this.panelTinhDuToan.Controls.Add(this.txtTenBangThietKe);
             this.panelTinhDuToan.Controls.Add(this.txtLoaiKhoan);
             this.panelTinhDuToan.Controls.Add(this.txtLoaiKH);
             this.panelTinhDuToan.Controls.Add(this.txtSoDoVien);
             this.panelTinhDuToan.Controls.Add(this.txtQuan);
             this.panelTinhDuToan.Controls.Add(this.txtPhuong);
-            this.panelTinhDuToan.Controls.Add(this.txtSHS);
             this.panelTinhDuToan.Controls.Add(this.tabControl2);
             this.panelTinhDuToan.Controls.Add(this.txtSoHo);
             this.panelTinhDuToan.Controls.Add(this.btLapHoSoMoi);
@@ -607,14 +607,6 @@
             this.txtPhuong.Name = "txtPhuong";
             this.txtPhuong.Size = new System.Drawing.Size(145, 22);
             this.txtPhuong.TabIndex = 36;
-            // 
-            // txtSHS
-            // 
-            this.txtSHS.Location = new System.Drawing.Point(9, 22);
-            this.txtSHS.Name = "txtSHS";
-            this.txtSHS.Size = new System.Drawing.Size(134, 22);
-            this.txtSHS.TabIndex = 1;
-            this.txtSHS.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSHS_KeyPress);
             // 
             // tabControl2
             // 
@@ -2536,9 +2528,10 @@
             // 
             this.txtDanhBo.Border.Class = "TextBoxBorder";
             this.txtDanhBo.Location = new System.Drawing.Point(350, 65);
+            this.txtDanhBo.Multiline = true;
             this.txtDanhBo.Name = "txtDanhBo";
             this.txtDanhBo.ReadOnly = true;
-            this.txtDanhBo.Size = new System.Drawing.Size(145, 22);
+            this.txtDanhBo.Size = new System.Drawing.Size(145, 25);
             this.txtDanhBo.TabIndex = 11;
             // 
             // labelX28
@@ -2589,9 +2582,10 @@
             // 
             this.txtDuong.Border.Class = "TextBoxBorder";
             this.txtDuong.Location = new System.Drawing.Point(466, 23);
+            this.txtDuong.Multiline = true;
             this.txtDuong.Name = "txtDuong";
             this.txtDuong.ReadOnly = true;
-            this.txtDuong.Size = new System.Drawing.Size(170, 22);
+            this.txtDuong.Size = new System.Drawing.Size(170, 25);
             this.txtDuong.TabIndex = 4;
             // 
             // txtSoNha
@@ -2601,9 +2595,10 @@
             // 
             this.txtSoNha.Border.Class = "TextBoxBorder";
             this.txtSoNha.Location = new System.Drawing.Point(370, 23);
+            this.txtSoNha.Multiline = true;
             this.txtSoNha.Name = "txtSoNha";
             this.txtSoNha.ReadOnly = true;
-            this.txtSoNha.Size = new System.Drawing.Size(90, 22);
+            this.txtSoNha.Size = new System.Drawing.Size(90, 25);
             this.txtSoNha.TabIndex = 3;
             // 
             // txtHoTen
@@ -2613,9 +2608,10 @@
             // 
             this.txtHoTen.Border.Class = "TextBoxBorder";
             this.txtHoTen.Location = new System.Drawing.Point(149, 23);
+            this.txtHoTen.Multiline = true;
             this.txtHoTen.Name = "txtHoTen";
             this.txtHoTen.ReadOnly = true;
-            this.txtHoTen.Size = new System.Drawing.Size(215, 22);
+            this.txtHoTen.Size = new System.Drawing.Size(215, 25);
             this.txtHoTen.TabIndex = 2;
             // 
             // labelX22
@@ -3803,6 +3799,13 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // txtSHS
+            // 
+            this.txtSHS.Location = new System.Drawing.Point(10, 24);
+            this.txtSHS.Name = "txtSHS";
+            this.txtSHS.Size = new System.Drawing.Size(133, 22);
+            this.txtSHS.TabIndex = 37;
+            // 
             // uct_TinhDuToan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -4146,7 +4149,6 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn phidao_cotll;
         private DevComponents.DotNetBar.Controls.DataGridViewX GridCacCongTac;
         private DevComponents.DotNetBar.Controls.ComboBoxEx cbLoaiSD;
-        private System.Windows.Forms.TextBox txtSHS;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.DataGridViewComboBoxColumn congtac_mahieu;
         private System.Windows.Forms.DataGridViewTextBoxColumn congtac_hanmuc;
@@ -4159,5 +4161,6 @@
         private DevComponents.DotNetBar.Controls.ComboBoxEx txtTenBangThietKe;
         private DevComponents.DotNetBar.Controls.ComboBoxEx txtLoaiKH;
         private DevComponents.DotNetBar.Controls.ComboBoxEx txtLoaiKhoan;
+        private System.Windows.Forms.MaskedTextBox txtSHS;
     }
 }

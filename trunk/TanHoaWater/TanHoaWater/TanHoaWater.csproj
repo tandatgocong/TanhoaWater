@@ -171,6 +171,12 @@
     <Compile Include="View\Report\rpt_Main.Designer.cs">
       <DependentUpon>rpt_Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Tool\webBrowser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Tool\webBrowser.Designer.cs">
+      <DependentUpon>webBrowser.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Users\KEHOACH\reportView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -355,6 +361,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Report\rpt_Main.resx">
       <DependentUpon>rpt_Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Tool\webBrowser.resx">
+      <DependentUpon>webBrowser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\KEHOACH\reportView.resx">
       <DependentUpon>reportView.cs</DependentUpon>
@@ -745,6 +754,11 @@
     <Content Include="Lib\IrisSkin2.dll" />
     <Content Include="Lib\log4net.dll" />
     <Content Include="Lib\String_Indentity.dll" />
+    <None Include="Resources\ie.ico" />
+    <None Include="Resources\calc.ico" />
+    <None Include="Resources\WINWORD.ico" />
+    <None Include="Resources\Excel.ico" />
+    <None Include="Resources\MSACCESS.ico" />
     <None Include="Resources\Icon_maps.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

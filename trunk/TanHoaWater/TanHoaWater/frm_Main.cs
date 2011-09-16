@@ -16,6 +16,7 @@ using TanHoaWater.View.Users.To_ThietKe;
 using TanHoaWater.View.Users.TinhDuToan;
 using TanHoaWater.Roles;
 using TanHoaWater.View.Users.KEHOACH;
+using TanHoaWater.View.Tool;
 
 namespace TanHoaWater
 {
@@ -290,6 +291,38 @@ namespace TanHoaWater
         {
             frm_BienNhanDon bn = new frm_BienNhanDon();
             bn.ShowDialog();
+        }
+
+        private void caculator_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("calc.exe");
+        }
+
+        private void microsoftWord_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("WINWORD.EXE");
+        }
+
+        private void microsoftAccess_Click(object sender, EventArgs e)
+        {
+             System.Diagnostics.Process.Start("MSACCESS.EXE");
+        }
+
+        private void microsoftExcel_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("EXCEL.EXE");
+        }
+
+        private void webBrowserTool_Click(object sender, EventArgs e)
+        {
+            this.PanelContent.Controls.Clear();
+            this.PanelContent.Controls.Add(new webBrowser());
+        }
+
+        private void menuTiemKiem_Click(object sender, EventArgs e)
+        {
+            
+
         }
     }
 
