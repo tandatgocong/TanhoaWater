@@ -141,6 +141,35 @@ namespace TanHoaWater.DAL
             }
             return false;
         }
+        public static bool updateDoninBienNhan(string shs, string hoten, string dienthoai, string sonha, string tenduong, string maphuong, int maquan) {
+            TanHoaDataContext db = new TanHoaDataContext();
+            var bb = from aa in db.DON_KHACHHANGs where aa.SHS == shs select aa;
+            DON_KHACHHANG donkh = bb.SingleOrDefault();
+            if (donkh != null) {
+                try
+                {
+                    donkh.HOTEN = hoten;
+                    donkh.DIENTHOAI = dienthoai;
+                    donkh.SONHA = sonha;
+                    donkh.DUONG = tenduong;
+                    donkh.PHUONG = maphuong;
+                    donkh.QUAN = maquan;
+                    donkh.MODIFYBY = DAL.C_USERS._userName;
+                    donkh.MODIFYDATE = DateTime.Now;
+                    db.SubmitChanges();
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    log.Error("" + ex.Message);
+                    return false;
+                }
+                
+
+            }
+            return false;
+        }
+         
         public static bool DeleteDonKH(string donkh)
         {
             try
@@ -210,11 +239,11 @@ namespace TanHoaWater.DAL
             }
             if (!"".Equals(sonha))
             {
-                sql += " AND SONHA = '" + sonha + "'";
+                sql += " AND SONHA LIKE '%" + sonha + "%'"; 
             }
             if (!"".Equals(tenduong))
             {
-                sql += " AND DUONG = '" + tenduong + "'";
+                sql += " AND DUONG LIKE '%" + tenduong + "%'";  
             }
             sql += " ORDER BY NGAYNHAN DESC ";
             SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
@@ -242,14 +271,14 @@ namespace TanHoaWater.DAL
             if (!"".Equals(tenkh))
             {
                 sql += " AND HOTEN LIKE '%" + tenkh + "%'";
-            }
+            }           
             if (!"".Equals(sonha))
             {
-                sql += " AND SONHA = '" + sonha + "'";
+                sql += " AND SONHA LIKE '%" + sonha + "%'";
             }
             if (!"".Equals(tenduong))
             {
-                sql += " AND DUONG = '" + tenduong + "'";
+                sql += " AND DUONG LIKE '%" + tenduong + "%'";
             }
             sql += " ORDER BY NGAYNHAN DESC ";
             SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);

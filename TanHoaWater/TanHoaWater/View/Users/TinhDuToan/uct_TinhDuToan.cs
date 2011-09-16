@@ -22,6 +22,7 @@ namespace TanHoaWater.View.Users.TinhDuToan
         int rows;
         private void uct_TinhDuToan_Load(object sender, EventArgs e)
         {
+            this.txtSHS.Mask = DateTime.Now.Year.ToString().Substring(2) + "CCCCC";
             this.txtSHS.Focus();
         }
         public void loadComboboxPhuiDao()

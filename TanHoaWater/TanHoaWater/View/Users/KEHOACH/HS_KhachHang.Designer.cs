@@ -34,6 +34,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.reflectionLabel1 = new DevComponents.DotNetBar.Controls.ReflectionLabel();
             this.tabControl1 = new DevComponents.DotNetBar.TabControl();
             this.tabControlPanel1 = new DevComponents.DotNetBar.TabControlPanel();
@@ -43,11 +44,6 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.next = new System.Windows.Forms.PictureBox();
             this.dataG = new System.Windows.Forms.DataGridView();
-            this.SOHOSO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HOTEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DIACHI = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NGAY_NHAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.loiDon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtSHS = new System.Windows.Forms.MaskedTextBox();
             this.dienthoai = new System.Windows.Forms.MaskedTextBox();
             this.totalRecord = new DevComponents.DotNetBar.LabelX();
@@ -55,8 +51,6 @@
             this.btInsert = new DevComponents.DotNetBar.ButtonX();
             this.textBoxX13 = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.label18 = new System.Windows.Forms.Label();
-            this.dateTimeInput1 = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
-            this.label17 = new System.Windows.Forms.Label();
             this.textBoxX12 = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.label16 = new System.Windows.Forms.Label();
             this.txtDanhBo = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -150,6 +144,11 @@
             this.tab_BaoCao = new DevComponents.DotNetBar.TabItem(this.components);
             this.galleryContainer1 = new DevComponents.DotNetBar.GalleryContainer();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.SOHOSO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HOTEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DIACHI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NGAY_NHAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.loiDon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.tabControl1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabControlPanel1.SuspendLayout();
@@ -157,7 +156,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.next)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataG)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.soho)).BeginInit();
             this.tabControlPanel5.SuspendLayout();
             this.tabControlPanel3.SuspendLayout();
@@ -189,8 +187,8 @@
             // tabControl1
             // 
             this.tabControl1.CanReorderTabs = true;
-            this.tabControl1.Controls.Add(this.tabControlPanel5);
             this.tabControl1.Controls.Add(this.tabControlPanel1);
+            this.tabControl1.Controls.Add(this.tabControlPanel5);
             this.tabControl1.Controls.Add(this.tabControlPanel3);
             this.tabControl1.Controls.Add(this.tabControlPanel6);
             this.tabControl1.Controls.Add(this.tabControlPanel2);
@@ -245,8 +243,6 @@
             this.panel1.Controls.Add(this.btInsert);
             this.panel1.Controls.Add(this.textBoxX13);
             this.panel1.Controls.Add(this.label18);
-            this.panel1.Controls.Add(this.dateTimeInput1);
-            this.panel1.Controls.Add(this.label17);
             this.panel1.Controls.Add(this.textBoxX12);
             this.panel1.Controls.Add(this.label16);
             this.panel1.Controls.Add(this.txtDanhBo);
@@ -289,17 +285,17 @@
             // 
             // ghichukhan
             // 
-            this.ghichukhan.Location = new System.Drawing.Point(135, 205);
+            this.ghichukhan.Location = new System.Drawing.Point(773, 143);
             this.ghichukhan.Name = "ghichukhan";
             this.ghichukhan.PromptChar = ' ';
-            this.ghichukhan.Size = new System.Drawing.Size(280, 24);
+            this.ghichukhan.Size = new System.Drawing.Size(165, 24);
             this.ghichukhan.TabIndex = 49;
             this.ghichukhan.Visible = false;
             // 
             // lbPaing
             // 
             this.lbPaing.AutoSize = true;
-            this.lbPaing.Location = new System.Drawing.Point(914, 250);
+            this.lbPaing.Location = new System.Drawing.Point(914, 210);
             this.lbPaing.Name = "lbPaing";
             this.lbPaing.Size = new System.Drawing.Size(44, 18);
             this.lbPaing.TabIndex = 48;
@@ -310,7 +306,7 @@
             // 
             this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox2.Image = global::TanHoaWater.Properties.Resources.Previous;
-            this.pictureBox2.Location = new System.Drawing.Point(892, 250);
+            this.pictureBox2.Location = new System.Drawing.Point(892, 210);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(19, 16);
             this.pictureBox2.TabIndex = 47;
@@ -321,7 +317,7 @@
             // 
             this.next.Cursor = System.Windows.Forms.Cursors.Hand;
             this.next.Image = global::TanHoaWater.Properties.Resources.Next;
-            this.next.Location = new System.Drawing.Point(951, 250);
+            this.next.Location = new System.Drawing.Point(951, 210);
             this.next.Name = "next";
             this.next.Size = new System.Drawing.Size(19, 16);
             this.next.TabIndex = 46;
@@ -333,6 +329,14 @@
             this.dataG.AllowUserToAddRows = false;
             this.dataG.AllowUserToDeleteRows = false;
             this.dataG.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataG.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataG.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.SOHOSO,
@@ -340,52 +344,14 @@
             this.DIACHI,
             this.NGAY_NHAN,
             this.loiDon});
-            this.dataG.Location = new System.Drawing.Point(20, 272);
+            this.dataG.Location = new System.Drawing.Point(20, 234);
             this.dataG.Name = "dataG";
             this.dataG.ReadOnly = true;
             this.dataG.RowHeadersWidth = 10;
-            this.dataG.Size = new System.Drawing.Size(952, 215);
+            this.dataG.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dataG.Size = new System.Drawing.Size(952, 270);
             this.dataG.TabIndex = 44;
-            // 
-            // SOHOSO
-            // 
-            this.SOHOSO.DataPropertyName = "SOHOSO";
-            this.SOHOSO.HeaderText = "Số Hồ Sơ";
-            this.SOHOSO.Name = "SOHOSO";
-            this.SOHOSO.ReadOnly = true;
-            this.SOHOSO.Width = 120;
-            // 
-            // HOTEN
-            // 
-            this.HOTEN.DataPropertyName = "HOTEN";
-            this.HOTEN.HeaderText = "Họ Tên";
-            this.HOTEN.Name = "HOTEN";
-            this.HOTEN.ReadOnly = true;
-            this.HOTEN.Width = 200;
-            // 
-            // DIACHI
-            // 
-            this.DIACHI.DataPropertyName = "DIACHI";
-            this.DIACHI.HeaderText = "Địa Chỉ";
-            this.DIACHI.Name = "DIACHI";
-            this.DIACHI.ReadOnly = true;
-            this.DIACHI.Width = 300;
-            // 
-            // NGAY_NHAN
-            // 
-            this.NGAY_NHAN.DataPropertyName = "NGAYNHAN";
-            this.NGAY_NHAN.HeaderText = "Ngày Nhận";
-            this.NGAY_NHAN.Name = "NGAY_NHAN";
-            this.NGAY_NHAN.ReadOnly = true;
-            this.NGAY_NHAN.Width = 150;
-            // 
-            // loiDon
-            // 
-            this.loiDon.DataPropertyName = "LOAIDON";
-            this.loiDon.HeaderText = "Loại Khách Hàng";
-            this.loiDon.Name = "loiDon";
-            this.loiDon.ReadOnly = true;
-            this.loiDon.Width = 150;
+            this.dataG.Sorted += new System.EventHandler(this.dataG_Sorted);
             // 
             // txtSHS
             // 
@@ -424,7 +390,7 @@
             this.buttonX2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonX2.Image = global::TanHoaWater.Properties.Resources.refresh;
             this.buttonX2.ImageFixedSize = new System.Drawing.Size(20, 20);
-            this.buttonX2.Location = new System.Drawing.Point(149, 240);
+            this.buttonX2.Location = new System.Drawing.Point(150, 205);
             this.buttonX2.Name = "buttonX2";
             this.buttonX2.Size = new System.Drawing.Size(93, 23);
             this.buttonX2.TabIndex = 16;
@@ -438,7 +404,7 @@
             this.btInsert.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btInsert.Image = global::TanHoaWater.Properties.Resources.add;
             this.btInsert.ImageFixedSize = new System.Drawing.Size(20, 20);
-            this.btInsert.Location = new System.Drawing.Point(25, 240);
+            this.btInsert.Location = new System.Drawing.Point(26, 205);
             this.btInsert.Name = "btInsert";
             this.btInsert.Size = new System.Drawing.Size(104, 23);
             this.btInsert.TabIndex = 15;
@@ -451,7 +417,7 @@
             // 
             // 
             this.textBoxX13.Border.Class = "TextBoxBorder";
-            this.textBoxX13.Location = new System.Drawing.Point(550, 208);
+            this.textBoxX13.Location = new System.Drawing.Point(550, 175);
             this.textBoxX13.Name = "textBoxX13";
             this.textBoxX13.Size = new System.Drawing.Size(191, 24);
             this.textBoxX13.TabIndex = 39;
@@ -459,62 +425,11 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(450, 208);
+            this.label18.Location = new System.Drawing.Point(450, 175);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(89, 18);
             this.label18.TabIndex = 38;
             this.label18.Text = "Hoàn Thành";
-            // 
-            // dateTimeInput1
-            // 
-            // 
-            // 
-            // 
-            this.dateTimeInput1.BackgroundStyle.Class = "DateTimeInputBackground";
-            this.dateTimeInput1.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
-            this.dateTimeInput1.ButtonDropDown.Visible = true;
-            this.dateTimeInput1.Location = new System.Drawing.Point(550, 171);
-            // 
-            // 
-            // 
-            this.dateTimeInput1.MonthCalendar.AnnuallyMarkedDates = new System.DateTime[0];
-            // 
-            // 
-            // 
-            this.dateTimeInput1.MonthCalendar.BackgroundStyle.BackColor = System.Drawing.SystemColors.Window;
-            this.dateTimeInput1.MonthCalendar.ClearButtonVisible = true;
-            // 
-            // 
-            // 
-            this.dateTimeInput1.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
-            this.dateTimeInput1.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90;
-            this.dateTimeInput1.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
-            this.dateTimeInput1.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.dateTimeInput1.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
-            this.dateTimeInput1.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1;
-            this.dateTimeInput1.MonthCalendar.DisplayMonth = new System.DateTime(2011, 8, 1, 0, 0, 0, 0);
-            this.dateTimeInput1.MonthCalendar.MarkedDates = new System.DateTime[0];
-            this.dateTimeInput1.MonthCalendar.MonthlyMarkedDates = new System.DateTime[0];
-            // 
-            // 
-            // 
-            this.dateTimeInput1.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.dateTimeInput1.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90;
-            this.dateTimeInput1.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.dateTimeInput1.MonthCalendar.TodayButtonVisible = true;
-            this.dateTimeInput1.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
-            this.dateTimeInput1.Name = "dateTimeInput1";
-            this.dateTimeInput1.Size = new System.Drawing.Size(92, 24);
-            this.dateTimeInput1.TabIndex = 37;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(449, 175);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(81, 18);
-            this.label17.TabIndex = 36;
-            this.label17.Text = "Ngày Nhận";
             // 
             // textBoxX12
             // 
@@ -609,20 +524,22 @@
             // 
             // khan
             // 
-            this.khan.Location = new System.Drawing.Point(108, 207);
+            this.khan.Location = new System.Drawing.Point(917, 92);
             this.khan.Name = "khan";
             this.khan.Size = new System.Drawing.Size(21, 15);
             this.khan.TabIndex = 13;
+            this.khan.Visible = false;
             this.khan.CheckedChanged += new System.EventHandler(this.khan_CheckedChanged);
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(23, 206);
+            this.label12.Location = new System.Drawing.Point(832, 91);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(89, 18);
             this.label12.TabIndex = 24;
             this.label12.Text = "Hồ Sơ Khẩn";
+            this.label12.Visible = false;
             // 
             // cbDotNhanDon
             // 
@@ -654,9 +571,12 @@
             // 
             this.ghichu.Border.Class = "TextBoxBorder";
             this.ghichu.Location = new System.Drawing.Point(105, 173);
+            this.ghichu.Multiline = true;
             this.ghichu.Name = "ghichu";
-            this.ghichu.Size = new System.Drawing.Size(311, 24);
+            this.ghichu.Size = new System.Drawing.Size(311, 26);
             this.ghichu.TabIndex = 12;
+            this.ghichu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ghichu_KeyPress);
+            this.ghichu.Leave += new System.EventHandler(this.ghichu_Leave);
             // 
             // label10
             // 
@@ -753,9 +673,10 @@
             // 
             this.duong.Border.Class = "TextBoxBorder";
             this.duong.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.duong.Location = new System.Drawing.Point(196, 77);
+            this.duong.Location = new System.Drawing.Point(196, 75);
+            this.duong.Multiline = true;
             this.duong.Name = "duong";
-            this.duong.Size = new System.Drawing.Size(219, 24);
+            this.duong.Size = new System.Drawing.Size(219, 25);
             this.duong.TabIndex = 6;
             // 
             // sonha
@@ -764,9 +685,10 @@
             // 
             // 
             this.sonha.Border.Class = "TextBoxBorder";
-            this.sonha.Location = new System.Drawing.Point(105, 77);
+            this.sonha.Location = new System.Drawing.Point(105, 75);
+            this.sonha.Multiline = true;
             this.sonha.Name = "sonha";
-            this.sonha.Size = new System.Drawing.Size(78, 24);
+            this.sonha.Size = new System.Drawing.Size(78, 25);
             this.sonha.TabIndex = 5;
             // 
             // txtHoTen
@@ -776,8 +698,9 @@
             // 
             this.txtHoTen.Border.Class = "TextBoxBorder";
             this.txtHoTen.Location = new System.Drawing.Point(105, 44);
+            this.txtHoTen.Multiline = true;
             this.txtHoTen.Name = "txtHoTen";
-            this.txtHoTen.Size = new System.Drawing.Size(311, 24);
+            this.txtHoTen.Size = new System.Drawing.Size(311, 25);
             this.txtHoTen.TabIndex = 4;
             // 
             // txtSoHoSo
@@ -795,7 +718,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(23, 83);
+            this.label7.Location = new System.Drawing.Point(23, 78);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(56, 18);
             this.label7.TabIndex = 6;
@@ -1002,8 +925,8 @@
             // G_SodotNhanDon
             // 
             this.G_SodotNhanDon.DataPropertyName = "MADOT";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.G_SodotNhanDon.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.G_SodotNhanDon.DefaultCellStyle = dataGridViewCellStyle2;
             this.G_SodotNhanDon.HeaderText = "Số Đợt Nhận Đơn";
             this.G_SodotNhanDon.Name = "G_SodotNhanDon";
             this.G_SodotNhanDon.ReadOnly = true;
@@ -1013,8 +936,8 @@
             // dataGridViewTextBoxColumn6
             // 
             this.dataGridViewTextBoxColumn6.DataPropertyName = "SOHOSO";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewTextBoxColumn6.HeaderText = "Số Hồ Sơ";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.ReadOnly = true;
@@ -1039,8 +962,8 @@
             // dataGridViewTextBoxColumn9
             // 
             this.dataGridViewTextBoxColumn9.DataPropertyName = "NGAYNHAN";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewTextBoxColumn9.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn9.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewTextBoxColumn9.HeaderText = "Ngày Nhận";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
             this.dataGridViewTextBoxColumn9.ReadOnly = true;
@@ -1216,8 +1139,8 @@
             // DOTNHAN
             // 
             this.DOTNHAN.DataPropertyName = "MADOT";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.DOTNHAN.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.DOTNHAN.DefaultCellStyle = dataGridViewCellStyle5;
             this.DOTNHAN.HeaderText = "Đợt Nhận Đơn";
             this.DOTNHAN.Name = "DOTNHAN";
             this.DOTNHAN.Width = 115;
@@ -1225,8 +1148,8 @@
             // NGAYNHAN
             // 
             this.NGAYNHAN.DataPropertyName = "NGAYLAPDON";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.NGAYNHAN.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.NGAYNHAN.DefaultCellStyle = dataGridViewCellStyle6;
             this.NGAYNHAN.HeaderText = "Ngày Lập Đơn";
             this.NGAYNHAN.Name = "NGAYNHAN";
             this.NGAYNHAN.Width = 120;
@@ -1527,6 +1450,46 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // SOHOSO
+            // 
+            this.SOHOSO.DataPropertyName = "SOHOSO";
+            this.SOHOSO.HeaderText = "Số Hồ Sơ";
+            this.SOHOSO.Name = "SOHOSO";
+            this.SOHOSO.ReadOnly = true;
+            this.SOHOSO.Width = 120;
+            // 
+            // HOTEN
+            // 
+            this.HOTEN.DataPropertyName = "HOTEN";
+            this.HOTEN.HeaderText = "Họ Tên";
+            this.HOTEN.Name = "HOTEN";
+            this.HOTEN.ReadOnly = true;
+            this.HOTEN.Width = 200;
+            // 
+            // DIACHI
+            // 
+            this.DIACHI.DataPropertyName = "DIACHI";
+            this.DIACHI.HeaderText = "Địa Chỉ";
+            this.DIACHI.Name = "DIACHI";
+            this.DIACHI.ReadOnly = true;
+            this.DIACHI.Width = 325;
+            // 
+            // NGAY_NHAN
+            // 
+            this.NGAY_NHAN.DataPropertyName = "NGAYNHAN";
+            this.NGAY_NHAN.HeaderText = "Ngày Nhận";
+            this.NGAY_NHAN.Name = "NGAY_NHAN";
+            this.NGAY_NHAN.ReadOnly = true;
+            this.NGAY_NHAN.Width = 150;
+            // 
+            // loiDon
+            // 
+            this.loiDon.DataPropertyName = "LOAIDON";
+            this.loiDon.HeaderText = "Loại Khách Hàng";
+            this.loiDon.Name = "loiDon";
+            this.loiDon.ReadOnly = true;
+            this.loiDon.Width = 150;
+            // 
             // HSKHACHHANG
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1543,7 +1506,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.next)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataG)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.soho)).EndInit();
             this.tabControlPanel5.ResumeLayout(false);
             this.tabControlPanel3.ResumeLayout(false);
@@ -1607,10 +1569,8 @@
         private System.Windows.Forms.Label label16;
         private DevComponents.DotNetBar.Controls.TextBoxX txtDanhBo;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label17;
         private DevComponents.DotNetBar.Controls.TextBoxX textBoxX13;
         private System.Windows.Forms.Label label18;
-        private DevComponents.Editors.DateTimeAdv.DateTimeInput dateTimeInput1;
         private DevComponents.DotNetBar.ButtonX buttonX2;
         private DevComponents.DotNetBar.ButtonX btInsert;
         private DevComponents.DotNetBar.GalleryContainer galleryContainer1;
@@ -1675,14 +1635,14 @@
         private DevComponents.DotNetBar.TabControlPanel tabControlPanel5;
         private DevComponents.DotNetBar.TabItem tabItem3;
         private System.Windows.Forms.Panel panel4;
+        private DevComponents.DotNetBar.TabControlPanel tabControlPanel6;
+        private System.Windows.Forms.Panel panel5;
+        private DevComponents.DotNetBar.TabItem tabItem4;
         private System.Windows.Forms.DataGridViewTextBoxColumn SOHOSO;
         private System.Windows.Forms.DataGridViewTextBoxColumn HOTEN;
         private System.Windows.Forms.DataGridViewTextBoxColumn DIACHI;
         private System.Windows.Forms.DataGridViewTextBoxColumn NGAY_NHAN;
         private System.Windows.Forms.DataGridViewTextBoxColumn loiDon;
-        private DevComponents.DotNetBar.TabControlPanel tabControlPanel6;
-        private System.Windows.Forms.Panel panel5;
-        private DevComponents.DotNetBar.TabItem tabItem4;
 
     }
 }

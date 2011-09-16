@@ -51,7 +51,6 @@
             this.G_LoaiHS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.searchHoTenKH = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.SearchMaHoSo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -86,6 +85,7 @@
             this.cbLoaiKH = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.cbQuan = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.cbPhuong = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.SearchMaHoSo = new System.Windows.Forms.MaskedTextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.next)).BeginInit();
@@ -97,6 +97,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.SearchMaHoSo);
             this.groupBox1.Controls.Add(this.SearchDotNhanDon);
             this.groupBox1.Controls.Add(this.searchSoNha);
             this.groupBox1.Controls.Add(this.lbPaing);
@@ -110,7 +111,6 @@
             this.groupBox1.Controls.Add(this.dataSearCh);
             this.groupBox1.Controls.Add(this.searchHoTenKH);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.SearchMaHoSo);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(11, 16);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
@@ -175,9 +175,9 @@
             // 
             this.searchLamLai.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.searchLamLai.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.searchLamLai.Location = new System.Drawing.Point(590, 50);
+            this.searchLamLai.Location = new System.Drawing.Point(578, 50);
             this.searchLamLai.Name = "searchLamLai";
-            this.searchLamLai.Size = new System.Drawing.Size(75, 23);
+            this.searchLamLai.Size = new System.Drawing.Size(87, 23);
             this.searchLamLai.TabIndex = 7;
             this.searchLamLai.Text = "Làm Lại";
             this.searchLamLai.Click += new System.EventHandler(this.searchLamLai_Click);
@@ -186,9 +186,9 @@
             // 
             this.searchTimKiem.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.searchTimKiem.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.searchTimKiem.Location = new System.Drawing.Point(590, 16);
+            this.searchTimKiem.Location = new System.Drawing.Point(578, 16);
             this.searchTimKiem.Name = "searchTimKiem";
-            this.searchTimKiem.Size = new System.Drawing.Size(75, 23);
+            this.searchTimKiem.Size = new System.Drawing.Size(87, 26);
             this.searchTimKiem.TabIndex = 6;
             this.searchTimKiem.Text = "Tìm Kiếm";
             this.searchTimKiem.Click += new System.EventHandler(this.searchTimKiem_Click);
@@ -316,15 +316,6 @@
             this.label2.Size = new System.Drawing.Size(74, 16);
             this.label2.TabIndex = 2;
             this.label2.Text = "Họ Tên KH";
-            // 
-            // SearchMaHoSo
-            // 
-            this.SearchMaHoSo.Location = new System.Drawing.Point(89, 53);
-            this.SearchMaHoSo.Margin = new System.Windows.Forms.Padding(4);
-            this.SearchMaHoSo.Name = "SearchMaHoSo";
-            this.SearchMaHoSo.Size = new System.Drawing.Size(121, 22);
-            this.SearchMaHoSo.TabIndex = 2;
-            this.SearchMaHoSo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SearchMaHoSo_KeyPress);
             // 
             // label1
             // 
@@ -726,6 +717,14 @@
             this.cbPhuong.Size = new System.Drawing.Size(116, 22);
             this.cbPhuong.TabIndex = 15;
             // 
+            // SearchMaHoSo
+            // 
+            this.SearchMaHoSo.Location = new System.Drawing.Point(89, 54);
+            this.SearchMaHoSo.Name = "SearchMaHoSo";
+            this.SearchMaHoSo.PromptChar = ' ';
+            this.SearchMaHoSo.Size = new System.Drawing.Size(121, 22);
+            this.SearchMaHoSo.TabIndex = 54;
+            // 
             // tab_TimKiemDonKH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -754,7 +753,6 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox SearchMaHoSo;
         private System.Windows.Forms.TextBox searchHoTenKH;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -807,6 +805,7 @@
         private DevComponents.DotNetBar.Controls.ComboBoxEx cbDotNhanDon;
         private DevComponents.DotNetBar.Controls.CheckBoxX chuyenhoso;
         private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.MaskedTextBox SearchMaHoSo;
 
     }
 }
