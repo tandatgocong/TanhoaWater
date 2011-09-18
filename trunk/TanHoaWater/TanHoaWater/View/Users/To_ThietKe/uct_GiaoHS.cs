@@ -18,10 +18,14 @@ namespace TanHoaWater.View.Users.To_ThietKe
         public uct_GiaoHS(int tab)
         {
             InitializeComponent();
-            if (tab == 2) {
-                this.tabControl1.SelectedTabIndex = 1;
+             if (tab == 2) {
+                 this.panelGhepHs.Controls.Clear();
+                 this.panelGhepHs.Controls.Add(new tab_GhepHoSo());
+                 this.tabControl1.SelectedTabIndex = 1;
             } else if (tab == 3) {
                 this.tabControl1.SelectedTabIndex = 2;
+            } else if (tab == 4) {
+                this.tabControl1.SelectedTabIndex = 3;
                 #region Load SDV
                 this.theodoi_SDV.DataSource = DAL.C_USERS.getUserByMaPhongAndLevel("TTK", 2);
                 this.theodoi_SDV.DisplayMember = "FULLNAME";
@@ -34,8 +38,8 @@ namespace TanHoaWater.View.Users.To_ThietKe
                 #endregion
                 theodoi();
             }
-            else if (tab == 4) {
-                this.tabControl1.SelectedTabIndex = 3;
+            else if (tab == 5) {
+                this.tabControl1.SelectedTabIndex = 4;
             }           
             else {
                 this.dateNhanDon.Value = DateTime.Now;
@@ -308,7 +312,8 @@ namespace TanHoaWater.View.Users.To_ThietKe
 
         private void DotNhanDon_SelectedValueChanged(object sender, EventArgs e)
         {
-            if (theodoi_bydot.Checked) {
+            if (theodot.Checked)
+            {
                 giaoviec();
             }
            
@@ -621,6 +626,12 @@ namespace TanHoaWater.View.Users.To_ThietKe
         private void tabItem4_Click(object sender, EventArgs e)
         {
             this.txtSHS.Mask = DateTime.Now.Year.ToString().Substring(2) + "CCCCC";
+        }
+
+        private void tabItem2_Click_1(object sender, EventArgs e)
+        {
+            this.panelGhepHs.Controls.Clear();
+            this.panelGhepHs.Controls.Add(new tab_GhepHoSo());
         }
     }
 }
