@@ -218,16 +218,14 @@ namespace TanHoaWater
             this.PanelContent.Controls.Clear();
             this.PanelContent.Controls.Add(new uct_GiaoHS(1));
         }
-
-        private void bt_SDVTraHS_Click(object sender, EventArgs e)
+        private void btGhepHoSo_Click(object sender, EventArgs e)
         {
             this.menuToThietKe.Visible = true;
             this.menuToThietKe.Select();
             this.PanelContent.Controls.Clear();
             this.PanelContent.Controls.Add(new uct_GiaoHS(2));
         }
-
-        private void btTheoDoiTHTK_Click(object sender, EventArgs e)
+        private void bt_SDVTraHS_Click(object sender, EventArgs e)
         {
             this.menuToThietKe.Visible = true;
             this.menuToThietKe.Select();
@@ -235,12 +233,20 @@ namespace TanHoaWater
             this.PanelContent.Controls.Add(new uct_GiaoHS(3));
         }
 
-        private void btTimKiem_Click(object sender, EventArgs e)
+        private void btTheoDoiTHTK_Click(object sender, EventArgs e)
         {
             this.menuToThietKe.Visible = true;
             this.menuToThietKe.Select();
             this.PanelContent.Controls.Clear();
             this.PanelContent.Controls.Add(new uct_GiaoHS(4));
+        }
+
+        private void btTimKiem_Click(object sender, EventArgs e)
+        {
+            this.menuToThietKe.Visible = true;
+            this.menuToThietKe.Select();
+            this.PanelContent.Controls.Clear();
+            this.PanelContent.Controls.Add(new uct_GiaoHS(5));
         }
 
         private void buttonX1_Click(object sender, EventArgs e)
@@ -321,9 +327,17 @@ namespace TanHoaWater
 
         private void menuTiemKiem_Click(object sender, EventArgs e)
         {
-            
-
+            this.PanelContent.Controls.Clear();
+            this.PanelContent.Controls.Add(new uc_TimKiemDonKH()); 
         }
+
+        private void biennhan_Click(object sender, EventArgs e)
+        {
+            frm_BienNhanDon bn = new frm_BienNhanDon();
+            bn.ShowDialog();
+        }
+
+      
     }
 
 }

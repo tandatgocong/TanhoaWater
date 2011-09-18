@@ -590,6 +590,10 @@ namespace TanHoaWater.View.Users.TinhDuToan
         {
             if (e.KeyChar == 13)
             {
+                currentPageIndex = 1;
+                pageNumber = 0;
+                FirstRow = 0;
+                LastRow = 0;
                 loadDanhMucVatTu();
             }
         }
@@ -600,6 +604,10 @@ namespace TanHoaWater.View.Users.TinhDuToan
             {
                 if (e.KeyChar == 13)
                 {
+                    currentPageIndex = 1;
+                    pageNumber = 0;
+                    FirstRow = 0;
+                    LastRow = 0;
                     loadDanhMucVatTu();
                 }
             }
@@ -616,6 +624,10 @@ namespace TanHoaWater.View.Users.TinhDuToan
             {
                 if (e.KeyChar == 13)
                 {
+                    currentPageIndex = 1;
+                    pageNumber = 0;
+                    FirstRow = 0;
+                    LastRow = 0;
                     loadDanhMucVatTu();
                 }
             }
@@ -629,6 +641,10 @@ namespace TanHoaWater.View.Users.TinhDuToan
         {
             try
             {
+                currentPageIndex = 1;
+                pageNumber = 0;
+                FirstRow = 0;
+                LastRow = 0;
                 loadDanhMucVatTu();
             }
             catch (Exception)
@@ -641,6 +657,10 @@ namespace TanHoaWater.View.Users.TinhDuToan
         {
             try
             {
+                currentPageIndex = 1;
+                pageNumber = 0;
+                FirstRow = 0;
+                LastRow = 0;
                 loadDanhMucVatTu();
             }
             catch (Exception)
@@ -653,6 +673,10 @@ namespace TanHoaWater.View.Users.TinhDuToan
         {
             try
             {
+                currentPageIndex = 1;
+                pageNumber = 0;
+                FirstRow = 0;
+                LastRow = 0;
                 loadDanhMucVatTu();
             }
             catch (Exception)

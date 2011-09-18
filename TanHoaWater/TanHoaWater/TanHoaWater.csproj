@@ -171,6 +171,12 @@
     <Compile Include="View\Report\rpt_Main.Designer.cs">
       <DependentUpon>rpt_Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Tool\uc_TimKiemDonKH.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Tool\uc_TimKiemDonKH.Designer.cs">
+      <DependentUpon>uc_TimKiemDonKH.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Tool\webBrowser.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -332,17 +338,17 @@
     <Compile Include="View\Users\To_ThietKe\tabTimKiem.Designer.cs">
       <DependentUpon>tabTimKiem.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Users\To_ThietKe\tab_GhepHoSo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Users\To_ThietKe\tab_GhepHoSo.Designer.cs">
+      <DependentUpon>tab_GhepHoSo.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Users\To_ThietKe\uct_GiaoHS.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="View\Users\To_ThietKe\uct_GiaoHS.Designer.cs">
       <DependentUpon>uct_GiaoHS.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\Users\Uses_Main.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="View\Users\Uses_Main.Designer.cs">
-      <DependentUpon>Uses_Main.cs</DependentUpon>
     </Compile>
     <None Include="Database\TanHoa.dbml.layout">
       <DependentUpon>TanHoa.dbml</DependentUpon>
@@ -361,6 +367,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Report\rpt_Main.resx">
       <DependentUpon>rpt_Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Tool\uc_TimKiemDonKH.resx">
+      <DependentUpon>uc_TimKiemDonKH.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Tool\webBrowser.resx">
       <DependentUpon>webBrowser.cs</DependentUpon>
@@ -455,12 +464,11 @@
     <EmbeddedResource Include="View\Users\To_ThietKe\tabTimKiem.resx">
       <DependentUpon>tabTimKiem.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\To_ThietKe\tab_GhepHoSo.resx">
+      <DependentUpon>tab_GhepHoSo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Users\To_ThietKe\uct_GiaoHS.resx">
       <DependentUpon>uct_GiaoHS.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Users\Uses_Main.resx">
-      <DependentUpon>Uses_Main.cs</DependentUpon>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Main.resx">
       <DependentUpon>frm_Main.cs</DependentUpon>

@@ -36,20 +36,20 @@
             this.PanelMain = new System.Windows.Forms.Panel();
             this.iconMenuPanel = new System.Windows.Forms.Panel();
             this.groupTTK = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.btGhepHoSo = new DevComponents.DotNetBar.ButtonX();
+            this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.btTaiLapMatBang = new DevComponents.DotNetBar.ButtonX();
             this.pictureBox15 = new System.Windows.Forms.PictureBox();
             this.btDanhMucVT = new DevComponents.DotNetBar.ButtonX();
             this.pictureBox14 = new System.Windows.Forms.PictureBox();
             this.btTinhDuToan = new DevComponents.DotNetBar.ButtonX();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.btTimKiem = new DevComponents.DotNetBar.ButtonX();
             this.btGiaoHoSo = new DevComponents.DotNetBar.ButtonX();
             this.btTheoDoiTHTK = new DevComponents.DotNetBar.ButtonX();
             this.bt_SDVTraHS = new DevComponents.DotNetBar.ButtonX();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.group_VTTH = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.vtth_HoSoTaiXet = new DevComponents.DotNetBar.ButtonX();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
@@ -57,7 +57,6 @@
             this.pictureBox16 = new System.Windows.Forms.PictureBox();
             this.timkiemDOn = new DevComponents.DotNetBar.ButtonX();
             this.btChuyenDon = new DevComponents.DotNetBar.ButtonX();
-            this.khvt_TraCuuHS = new DevComponents.DotNetBar.ButtonX();
             this.vtth_DotNhanDon = new DevComponents.DotNetBar.ButtonX();
             this.vtth_HoSoTraNgai = new DevComponents.DotNetBar.ButtonX();
             this.vtth_NhanDonKH = new DevComponents.DotNetBar.ButtonX();
@@ -68,12 +67,12 @@
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.khvt_BaoCao = new DevComponents.DotNetBar.ButtonX();
             this.pictureBox13 = new System.Windows.Forms.PictureBox();
-            this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.reflectionImage1 = new DevComponents.DotNetBar.Controls.ReflectionImage();
             this.label1 = new System.Windows.Forms.Label();
             this.reflectionLabel1 = new DevComponents.DotNetBar.Controls.ReflectionLabel();
             this.ribbonControl1 = new DevComponents.DotNetBar.RibbonControl();
+            this.ribbonPanel5 = new DevComponents.DotNetBar.RibbonPanel();
             this.ribbonPanel4 = new DevComponents.DotNetBar.RibbonPanel();
             this.menuStrip4 = new System.Windows.Forms.MenuStrip();
             this.caculator = new System.Windows.Forms.ToolStripMenuItem();
@@ -81,15 +80,16 @@
             this.microsoftExcel = new System.Windows.Forms.ToolStripMenuItem();
             this.microsoftAccess = new System.Windows.Forms.ToolStripMenuItem();
             this.webBrowserTool = new System.Windows.Forms.ToolStripMenuItem();
-            this.ribbonPanel2 = new DevComponents.DotNetBar.RibbonPanel();
-            this.menuStrip3 = new System.Windows.Forms.MenuStrip();
-            this.đợtNhậnĐơnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.đơnKháchHàngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tìmKiếmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ribbonPanel3 = new DevComponents.DotNetBar.RibbonPanel();
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.tínhDựToánHSKToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ribbonPanel2 = new DevComponents.DotNetBar.RibbonPanel();
+            this.menuStrip3 = new System.Windows.Forms.MenuStrip();
+            this.biennhan = new System.Windows.Forms.ToolStripMenuItem();
+            this.đợtNhậnĐơnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.đơnKháchHàngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tìmKiếmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ribbonPanel1 = new DevComponents.DotNetBar.RibbonPanel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.subdangnhap = new System.Windows.Forms.ToolStripMenuItem();
@@ -100,6 +100,7 @@
             this.menuKHVT = new DevComponents.DotNetBar.RibbonTabItem();
             this.menuToThietKe = new DevComponents.DotNetBar.RibbonTabItem();
             this.congcu = new DevComponents.DotNetBar.RibbonTabItem();
+            this.menuTiemKiem = new DevComponents.DotNetBar.RibbonTabItem();
             this.office2007StartButton1 = new DevComponents.DotNetBar.Office2007StartButton();
             this.itemContainer1 = new DevComponents.DotNetBar.ItemContainer();
             this.itemContainer2 = new DevComponents.DotNetBar.ItemContainer();
@@ -121,20 +122,18 @@
             this.buttonItem13 = new DevComponents.DotNetBar.ButtonItem();
             this.buttonItem1 = new DevComponents.DotNetBar.ButtonItem();
             this.skinCollectionItem1 = new Sunisoft.IrisSkin.SkinCollectionItem();
-            this.menuTiemKiem = new DevComponents.DotNetBar.RibbonTabItem();
-            this.ribbonPanel5 = new DevComponents.DotNetBar.RibbonPanel();
             this.mainLayout.SuspendLayout();
             this.PanelContent.SuspendLayout();
             this.PanelMain.SuspendLayout();
             this.iconMenuPanel.SuspendLayout();
             this.groupTTK.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.group_VTTH.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
@@ -144,14 +143,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             this.ribbonControl1.SuspendLayout();
             this.ribbonPanel4.SuspendLayout();
             this.menuStrip4.SuspendLayout();
-            this.ribbonPanel2.SuspendLayout();
-            this.menuStrip3.SuspendLayout();
             this.ribbonPanel3.SuspendLayout();
             this.menuStrip2.SuspendLayout();
+            this.ribbonPanel2.SuspendLayout();
+            this.menuStrip3.SuspendLayout();
             this.ribbonPanel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -222,20 +220,20 @@
             // 
             this.groupTTK.CanvasColor = System.Drawing.SystemColors.Control;
             this.groupTTK.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.groupTTK.Controls.Add(this.btGhepHoSo);
+            this.groupTTK.Controls.Add(this.pictureBox11);
             this.groupTTK.Controls.Add(this.btTaiLapMatBang);
             this.groupTTK.Controls.Add(this.pictureBox15);
             this.groupTTK.Controls.Add(this.btDanhMucVT);
             this.groupTTK.Controls.Add(this.pictureBox14);
             this.groupTTK.Controls.Add(this.btTinhDuToan);
             this.groupTTK.Controls.Add(this.pictureBox2);
-            this.groupTTK.Controls.Add(this.btTimKiem);
             this.groupTTK.Controls.Add(this.btGiaoHoSo);
             this.groupTTK.Controls.Add(this.btTheoDoiTHTK);
             this.groupTTK.Controls.Add(this.bt_SDVTraHS);
             this.groupTTK.Controls.Add(this.pictureBox1);
             this.groupTTK.Controls.Add(this.pictureBox3);
             this.groupTTK.Controls.Add(this.pictureBox4);
-            this.groupTTK.Controls.Add(this.pictureBox5);
             this.groupTTK.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupTTK.Location = new System.Drawing.Point(6, 3);
             this.groupTTK.Name = "groupTTK";
@@ -265,25 +263,49 @@
             this.groupTTK.Text = "Tổ Khảo Sát Thiết Kế";
             this.groupTTK.Visible = false;
             // 
+            // btGhepHoSo
+            // 
+            this.btGhepHoSo.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btGhepHoSo.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btGhepHoSo.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btGhepHoSo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(22)))), ((int)(((byte)(111)))));
+            this.btGhepHoSo.Location = new System.Drawing.Point(23, 47);
+            this.btGhepHoSo.Name = "btGhepHoSo";
+            this.btGhepHoSo.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.F5);
+            this.btGhepHoSo.Size = new System.Drawing.Size(161, 26);
+            this.btGhepHoSo.TabIndex = 25;
+            this.btGhepHoSo.Text = "  Ghép Hồ Sơ";
+            this.btGhepHoSo.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
+            this.btGhepHoSo.Click += new System.EventHandler(this.btGhepHoSo_Click);
+            // 
+            // pictureBox11
+            // 
+            this.pictureBox11.Image = global::TanHoaWater.Properties.Resources.bt_bg;
+            this.pictureBox11.Location = new System.Drawing.Point(19, 43);
+            this.pictureBox11.Name = "pictureBox11";
+            this.pictureBox11.Size = new System.Drawing.Size(169, 35);
+            this.pictureBox11.TabIndex = 26;
+            this.pictureBox11.TabStop = false;
+            // 
             // btTaiLapMatBang
             // 
             this.btTaiLapMatBang.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btTaiLapMatBang.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btTaiLapMatBang.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btTaiLapMatBang.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(22)))), ((int)(((byte)(111)))));
-            this.btTaiLapMatBang.Location = new System.Drawing.Point(210, 88);
+            this.btTaiLapMatBang.Location = new System.Drawing.Point(222, 85);
             this.btTaiLapMatBang.Name = "btTaiLapMatBang";
             this.btTaiLapMatBang.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.F7);
             this.btTaiLapMatBang.Size = new System.Drawing.Size(161, 26);
             this.btTaiLapMatBang.TabIndex = 23;
-            this.btTaiLapMatBang.Text = " [F7] ĐG Tái Lập MB";
+            this.btTaiLapMatBang.Text = "  ĐG Tái Lập MB";
             this.btTaiLapMatBang.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
             this.btTaiLapMatBang.Click += new System.EventHandler(this.btTaiLapMatBang_Click);
             // 
             // pictureBox15
             // 
             this.pictureBox15.Image = global::TanHoaWater.Properties.Resources.bt_bg;
-            this.pictureBox15.Location = new System.Drawing.Point(206, 84);
+            this.pictureBox15.Location = new System.Drawing.Point(218, 81);
             this.pictureBox15.Name = "pictureBox15";
             this.pictureBox15.Size = new System.Drawing.Size(169, 35);
             this.pictureBox15.TabIndex = 24;
@@ -295,18 +317,19 @@
             this.btDanhMucVT.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btDanhMucVT.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btDanhMucVT.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(22)))), ((int)(((byte)(111)))));
-            this.btDanhMucVT.Location = new System.Drawing.Point(210, 49);
+            this.btDanhMucVT.Location = new System.Drawing.Point(222, 47);
             this.btDanhMucVT.Name = "btDanhMucVT";
             this.btDanhMucVT.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.F6);
             this.btDanhMucVT.Size = new System.Drawing.Size(161, 26);
             this.btDanhMucVT.TabIndex = 21;
-            this.btDanhMucVT.Text = "[F6] Danh Mục Vật Tư ";
+            this.btDanhMucVT.Text = "  Danh Mục Vật Tư";
+            this.btDanhMucVT.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
             this.btDanhMucVT.Click += new System.EventHandler(this.btDanhMucVT_Click);
             // 
             // pictureBox14
             // 
             this.pictureBox14.Image = global::TanHoaWater.Properties.Resources.bt_bg;
-            this.pictureBox14.Location = new System.Drawing.Point(206, 45);
+            this.pictureBox14.Location = new System.Drawing.Point(218, 43);
             this.pictureBox14.Name = "pictureBox14";
             this.pictureBox14.Size = new System.Drawing.Size(169, 35);
             this.pictureBox14.TabIndex = 22;
@@ -318,38 +341,23 @@
             this.btTinhDuToan.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btTinhDuToan.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btTinhDuToan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(22)))), ((int)(((byte)(111)))));
-            this.btTinhDuToan.Location = new System.Drawing.Point(210, 9);
+            this.btTinhDuToan.Location = new System.Drawing.Point(222, 9);
             this.btTinhDuToan.Name = "btTinhDuToan";
             this.btTinhDuToan.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.F5);
             this.btTinhDuToan.Size = new System.Drawing.Size(161, 26);
             this.btTinhDuToan.TabIndex = 15;
-            this.btTinhDuToan.Text = "[F5]Tính Dự Toán ";
+            this.btTinhDuToan.Text = "  Tính Dự Toán ";
             this.btTinhDuToan.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
             this.btTinhDuToan.Click += new System.EventHandler(this.btTinhDuToan_Click);
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::TanHoaWater.Properties.Resources.bt_bg;
-            this.pictureBox2.Location = new System.Drawing.Point(206, 5);
+            this.pictureBox2.Location = new System.Drawing.Point(218, 5);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(169, 35);
             this.pictureBox2.TabIndex = 16;
             this.pictureBox2.TabStop = false;
-            // 
-            // btTimKiem
-            // 
-            this.btTimKiem.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btTimKiem.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btTimKiem.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btTimKiem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(22)))), ((int)(((byte)(111)))));
-            this.btTimKiem.Location = new System.Drawing.Point(23, 128);
-            this.btTimKiem.Name = "btTimKiem";
-            this.btTimKiem.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.F4);
-            this.btTimKiem.Size = new System.Drawing.Size(161, 26);
-            this.btTimKiem.TabIndex = 3;
-            this.btTimKiem.Text = "[F4] Tìm Kiếm";
-            this.btTimKiem.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
-            this.btTimKiem.Click += new System.EventHandler(this.btTimKiem_Click);
             // 
             // btGiaoHoSo
             // 
@@ -362,7 +370,7 @@
             this.btGiaoHoSo.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.F1);
             this.btGiaoHoSo.Size = new System.Drawing.Size(161, 26);
             this.btGiaoHoSo.TabIndex = 1;
-            this.btGiaoHoSo.Text = "[F1] Giao SĐV";
+            this.btGiaoHoSo.Text = " Giao SĐV";
             this.btGiaoHoSo.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
             this.btGiaoHoSo.Click += new System.EventHandler(this.btGiaoHoSo_Click);
             // 
@@ -372,11 +380,11 @@
             this.btTheoDoiTHTK.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btTheoDoiTHTK.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btTheoDoiTHTK.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(22)))), ((int)(((byte)(111)))));
-            this.btTheoDoiTHTK.Location = new System.Drawing.Point(24, 88);
+            this.btTheoDoiTHTK.Location = new System.Drawing.Point(23, 123);
             this.btTheoDoiTHTK.Name = "btTheoDoiTHTK";
             this.btTheoDoiTHTK.Size = new System.Drawing.Size(161, 26);
             this.btTheoDoiTHTK.TabIndex = 2;
-            this.btTheoDoiTHTK.Text = "[F3] Theo Dõi KS -TK";
+            this.btTheoDoiTHTK.Text = "  Theo Dõi KS -TK";
             this.btTheoDoiTHTK.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
             this.btTheoDoiTHTK.Click += new System.EventHandler(this.btTheoDoiTHTK_Click);
             // 
@@ -386,12 +394,12 @@
             this.bt_SDVTraHS.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.bt_SDVTraHS.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_SDVTraHS.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(22)))), ((int)(((byte)(111)))));
-            this.bt_SDVTraHS.Location = new System.Drawing.Point(23, 49);
+            this.bt_SDVTraHS.Location = new System.Drawing.Point(23, 85);
             this.bt_SDVTraHS.Name = "bt_SDVTraHS";
             this.bt_SDVTraHS.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.F2);
             this.bt_SDVTraHS.Size = new System.Drawing.Size(161, 26);
             this.bt_SDVTraHS.TabIndex = 2;
-            this.bt_SDVTraHS.Text = "[F2] SĐV Trả HS";
+            this.bt_SDVTraHS.Text = "  SĐV Trả HS";
             this.bt_SDVTraHS.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
             this.bt_SDVTraHS.Click += new System.EventHandler(this.bt_SDVTraHS_Click);
             // 
@@ -407,7 +415,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = global::TanHoaWater.Properties.Resources.bt_bg;
-            this.pictureBox3.Location = new System.Drawing.Point(19, 45);
+            this.pictureBox3.Location = new System.Drawing.Point(19, 81);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(169, 35);
             this.pictureBox3.TabIndex = 18;
@@ -416,20 +424,11 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = global::TanHoaWater.Properties.Resources.bt_bg;
-            this.pictureBox4.Location = new System.Drawing.Point(20, 84);
+            this.pictureBox4.Location = new System.Drawing.Point(19, 119);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(169, 35);
             this.pictureBox4.TabIndex = 19;
             this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = global::TanHoaWater.Properties.Resources.bt_bg;
-            this.pictureBox5.Location = new System.Drawing.Point(18, 123);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(169, 35);
-            this.pictureBox5.TabIndex = 20;
-            this.pictureBox5.TabStop = false;
             // 
             // group_VTTH
             // 
@@ -441,7 +440,6 @@
             this.group_VTTH.Controls.Add(this.pictureBox16);
             this.group_VTTH.Controls.Add(this.timkiemDOn);
             this.group_VTTH.Controls.Add(this.btChuyenDon);
-            this.group_VTTH.Controls.Add(this.khvt_TraCuuHS);
             this.group_VTTH.Controls.Add(this.vtth_DotNhanDon);
             this.group_VTTH.Controls.Add(this.vtth_HoSoTraNgai);
             this.group_VTTH.Controls.Add(this.vtth_NhanDonKH);
@@ -452,7 +450,6 @@
             this.group_VTTH.Controls.Add(this.pictureBox12);
             this.group_VTTH.Controls.Add(this.khvt_BaoCao);
             this.group_VTTH.Controls.Add(this.pictureBox13);
-            this.group_VTTH.Controls.Add(this.pictureBox11);
             this.group_VTTH.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.group_VTTH.Location = new System.Drawing.Point(10, 4);
             this.group_VTTH.Name = "group_VTTH";
@@ -491,7 +488,7 @@
             this.vtth_HoSoTaiXet.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.F5);
             this.vtth_HoSoTaiXet.Size = new System.Drawing.Size(161, 26);
             this.vtth_HoSoTaiXet.TabIndex = 28;
-            this.vtth_HoSoTaiXet.Text = "[F5] Hồ Sơ Tái Xét";
+            this.vtth_HoSoTaiXet.Text = "  Hồ Sơ Tái Xét";
             this.vtth_HoSoTaiXet.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
             this.vtth_HoSoTaiXet.Click += new System.EventHandler(this.vtth_HoSoTaiXet_Click);
             // 
@@ -515,7 +512,7 @@
             this.btBienNhan.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.F10);
             this.btBienNhan.Size = new System.Drawing.Size(161, 26);
             this.btBienNhan.TabIndex = 26;
-            this.btBienNhan.Text = "[F10] Biên Nhận Đơn";
+            this.btBienNhan.Text = " Biên Nhận Đơn";
             this.btBienNhan.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
             this.btBienNhan.Click += new System.EventHandler(this.btBienNhan_Click);
             // 
@@ -539,7 +536,7 @@
             this.timkiemDOn.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.F6);
             this.timkiemDOn.Size = new System.Drawing.Size(161, 26);
             this.timkiemDOn.TabIndex = 7;
-            this.timkiemDOn.Text = "[F6] Tìm Kiếm";
+            this.timkiemDOn.Text = "  Tìm Kiếm";
             this.timkiemDOn.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
             this.timkiemDOn.Click += new System.EventHandler(this.timkiemDOn_Click);
             // 
@@ -554,24 +551,9 @@
             this.btChuyenDon.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.F3);
             this.btChuyenDon.Size = new System.Drawing.Size(161, 26);
             this.btChuyenDon.TabIndex = 6;
-            this.btChuyenDon.Text = "[F3] Chuyển Đơn";
+            this.btChuyenDon.Text = "  Chuyển Đơn";
             this.btChuyenDon.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
             this.btChuyenDon.Click += new System.EventHandler(this.btChuyenDon_Click);
-            // 
-            // khvt_TraCuuHS
-            // 
-            this.khvt_TraCuuHS.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.khvt_TraCuuHS.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.khvt_TraCuuHS.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.khvt_TraCuuHS.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(22)))), ((int)(((byte)(111)))));
-            this.khvt_TraCuuHS.Location = new System.Drawing.Point(387, 9);
-            this.khvt_TraCuuHS.Name = "khvt_TraCuuHS";
-            this.khvt_TraCuuHS.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.F8);
-            this.khvt_TraCuuHS.Size = new System.Drawing.Size(161, 26);
-            this.khvt_TraCuuHS.TabIndex = 4;
-            this.khvt_TraCuuHS.Text = "[F8] Tra Cứu Đơn KH";
-            this.khvt_TraCuuHS.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
-            this.khvt_TraCuuHS.Click += new System.EventHandler(this.khvt_TraCuuHS_Click);
             // 
             // vtth_DotNhanDon
             // 
@@ -584,7 +566,7 @@
             this.vtth_DotNhanDon.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.F1);
             this.vtth_DotNhanDon.Size = new System.Drawing.Size(161, 26);
             this.vtth_DotNhanDon.TabIndex = 1;
-            this.vtth_DotNhanDon.Text = "[F1] Đợt Nhận Đơn";
+            this.vtth_DotNhanDon.Text = "  Đợt Nhận Đơn";
             this.vtth_DotNhanDon.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
             this.vtth_DotNhanDon.Click += new System.EventHandler(this.vtth_DotNhanDon_Click);
             // 
@@ -599,7 +581,7 @@
             this.vtth_HoSoTraNgai.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.F4);
             this.vtth_HoSoTraNgai.Size = new System.Drawing.Size(161, 26);
             this.vtth_HoSoTraNgai.TabIndex = 2;
-            this.vtth_HoSoTraNgai.Text = "[F4] Hồ Sơ Trở Ngại";
+            this.vtth_HoSoTraNgai.Text = "  Hồ Sơ Trở Ngại";
             this.vtth_HoSoTraNgai.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
             this.vtth_HoSoTraNgai.Click += new System.EventHandler(this.vtth_HoSoTraNgai_Click);
             // 
@@ -614,7 +596,7 @@
             this.vtth_NhanDonKH.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.F2);
             this.vtth_NhanDonKH.Size = new System.Drawing.Size(161, 26);
             this.vtth_NhanDonKH.TabIndex = 2;
-            this.vtth_NhanDonKH.Text = "[F2] Nhận Đơn KH";
+            this.vtth_NhanDonKH.Text = "  Nhận Đơn KH";
             this.vtth_NhanDonKH.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
             this.vtth_NhanDonKH.Click += new System.EventHandler(this.vtth_NhanDonKH_Click);
             // 
@@ -674,7 +656,7 @@
             this.khvt_BaoCao.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.F7);
             this.khvt_BaoCao.Size = new System.Drawing.Size(161, 26);
             this.khvt_BaoCao.TabIndex = 5;
-            this.khvt_BaoCao.Text = "[F7] Báo Cáo";
+            this.khvt_BaoCao.Text = "  Báo Cáo";
             this.khvt_BaoCao.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
             this.khvt_BaoCao.Click += new System.EventHandler(this.khvt_BaoCao_Click);
             // 
@@ -686,15 +668,6 @@
             this.pictureBox13.Size = new System.Drawing.Size(169, 35);
             this.pictureBox13.TabIndex = 25;
             this.pictureBox13.TabStop = false;
-            // 
-            // pictureBox11
-            // 
-            this.pictureBox11.Image = global::TanHoaWater.Properties.Resources.bt_bg;
-            this.pictureBox11.Location = new System.Drawing.Point(383, 5);
-            this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(169, 35);
-            this.pictureBox11.TabIndex = 23;
-            this.pictureBox11.TabStop = false;
             // 
             // labelX1
             // 
@@ -766,6 +739,16 @@
             this.ribbonControl1.TabIndex = 0;
             this.ribbonControl1.Text = "menu";
             // 
+            // ribbonPanel5
+            // 
+            this.ribbonPanel5.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.ribbonPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ribbonPanel5.Location = new System.Drawing.Point(0, 27);
+            this.ribbonPanel5.Name = "ribbonPanel5";
+            this.ribbonPanel5.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
+            this.ribbonPanel5.Size = new System.Drawing.Size(988, 27);
+            this.ribbonPanel5.TabIndex = 5;
+            // 
             // ribbonPanel4
             // 
             this.ribbonPanel4.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
@@ -836,55 +819,6 @@
             this.webBrowserTool.Text = "Portl Office";
             this.webBrowserTool.Click += new System.EventHandler(this.webBrowserTool_Click);
             // 
-            // ribbonPanel2
-            // 
-            this.ribbonPanel2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
-            this.ribbonPanel2.Controls.Add(this.menuStrip3);
-            this.ribbonPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ribbonPanel2.Location = new System.Drawing.Point(0, 27);
-            this.ribbonPanel2.Name = "ribbonPanel2";
-            this.ribbonPanel2.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.ribbonPanel2.Size = new System.Drawing.Size(988, 27);
-            this.ribbonPanel2.TabIndex = 2;
-            this.ribbonPanel2.Visible = false;
-            // 
-            // menuStrip3
-            // 
-            this.menuStrip3.BackColor = System.Drawing.Color.Transparent;
-            this.menuStrip3.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.menuStrip3.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.đợtNhậnĐơnToolStripMenuItem,
-            this.đơnKháchHàngToolStripMenuItem,
-            this.tìmKiếmToolStripMenuItem});
-            this.menuStrip3.Location = new System.Drawing.Point(3, 0);
-            this.menuStrip3.Name = "menuStrip3";
-            this.menuStrip3.Size = new System.Drawing.Size(982, 24);
-            this.menuStrip3.TabIndex = 0;
-            this.menuStrip3.Text = "menuStrip3";
-            // 
-            // đợtNhậnĐơnToolStripMenuItem
-            // 
-            this.đợtNhậnĐơnToolStripMenuItem.Image = global::TanHoaWater.Properties.Resources.hosokh;
-            this.đợtNhậnĐơnToolStripMenuItem.Name = "đợtNhậnĐơnToolStripMenuItem";
-            this.đợtNhậnĐơnToolStripMenuItem.Size = new System.Drawing.Size(113, 20);
-            this.đợtNhậnĐơnToolStripMenuItem.Text = "Đợt Nhận Đơn";
-            this.đợtNhậnĐơnToolStripMenuItem.Click += new System.EventHandler(this.btDotNhanDon_Click);
-            // 
-            // đơnKháchHàngToolStripMenuItem
-            // 
-            this.đơnKháchHàngToolStripMenuItem.Image = global::TanHoaWater.Properties.Resources.note_add;
-            this.đơnKháchHàngToolStripMenuItem.Name = "đơnKháchHàngToolStripMenuItem";
-            this.đơnKháchHàngToolStripMenuItem.Size = new System.Drawing.Size(128, 20);
-            this.đơnKháchHàngToolStripMenuItem.Text = "Đơn Khách Hàng";
-            this.đơnKháchHàngToolStripMenuItem.Click += new System.EventHandler(this.menuNhanDon_Click);
-            // 
-            // tìmKiếmToolStripMenuItem
-            // 
-            this.tìmKiếmToolStripMenuItem.Image = global::TanHoaWater.Properties.Resources.view;
-            this.tìmKiếmToolStripMenuItem.Name = "tìmKiếmToolStripMenuItem";
-            this.tìmKiếmToolStripMenuItem.Size = new System.Drawing.Size(177, 20);
-            this.tìmKiếmToolStripMenuItem.Text = "Tra Cứu Đơn Khách Hàng";
-            // 
             // ribbonPanel3
             // 
             this.ribbonPanel3.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
@@ -925,6 +859,64 @@
             this.tínhDựToánHSKToolStripMenuItem.Size = new System.Drawing.Size(113, 20);
             this.tínhDựToánHSKToolStripMenuItem.Text = "Tính Dự Toán ";
             this.tínhDựToánHSKToolStripMenuItem.Click += new System.EventHandler(this.tínhDựToánHSKToolStripMenuItem_Click);
+            // 
+            // ribbonPanel2
+            // 
+            this.ribbonPanel2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.ribbonPanel2.Controls.Add(this.menuStrip3);
+            this.ribbonPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ribbonPanel2.Location = new System.Drawing.Point(0, 27);
+            this.ribbonPanel2.Name = "ribbonPanel2";
+            this.ribbonPanel2.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
+            this.ribbonPanel2.Size = new System.Drawing.Size(988, 27);
+            this.ribbonPanel2.TabIndex = 2;
+            this.ribbonPanel2.Visible = false;
+            // 
+            // menuStrip3
+            // 
+            this.menuStrip3.BackColor = System.Drawing.Color.Transparent;
+            this.menuStrip3.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuStrip3.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.biennhan,
+            this.đợtNhậnĐơnToolStripMenuItem,
+            this.đơnKháchHàngToolStripMenuItem,
+            this.tìmKiếmToolStripMenuItem});
+            this.menuStrip3.Location = new System.Drawing.Point(3, 0);
+            this.menuStrip3.Name = "menuStrip3";
+            this.menuStrip3.Size = new System.Drawing.Size(982, 24);
+            this.menuStrip3.TabIndex = 0;
+            this.menuStrip3.Text = "menuStrip3";
+            // 
+            // biennhan
+            // 
+            this.biennhan.Image = global::TanHoaWater.Properties.Resources.note_edit;
+            this.biennhan.Name = "biennhan";
+            this.biennhan.Size = new System.Drawing.Size(93, 20);
+            this.biennhan.Text = "Biên Nhận";
+            this.biennhan.Click += new System.EventHandler(this.biennhan_Click);
+            // 
+            // đợtNhậnĐơnToolStripMenuItem
+            // 
+            this.đợtNhậnĐơnToolStripMenuItem.Image = global::TanHoaWater.Properties.Resources.hosokh;
+            this.đợtNhậnĐơnToolStripMenuItem.Name = "đợtNhậnĐơnToolStripMenuItem";
+            this.đợtNhậnĐơnToolStripMenuItem.Size = new System.Drawing.Size(113, 20);
+            this.đợtNhậnĐơnToolStripMenuItem.Text = "Đợt Nhận Đơn";
+            this.đợtNhậnĐơnToolStripMenuItem.Click += new System.EventHandler(this.btDotNhanDon_Click);
+            // 
+            // đơnKháchHàngToolStripMenuItem
+            // 
+            this.đơnKháchHàngToolStripMenuItem.Image = global::TanHoaWater.Properties.Resources.note_add;
+            this.đơnKháchHàngToolStripMenuItem.Name = "đơnKháchHàngToolStripMenuItem";
+            this.đơnKháchHàngToolStripMenuItem.Size = new System.Drawing.Size(128, 20);
+            this.đơnKháchHàngToolStripMenuItem.Text = "Đơn Khách Hàng";
+            this.đơnKháchHàngToolStripMenuItem.Click += new System.EventHandler(this.menuNhanDon_Click);
+            // 
+            // tìmKiếmToolStripMenuItem
+            // 
+            this.tìmKiếmToolStripMenuItem.Image = global::TanHoaWater.Properties.Resources.view;
+            this.tìmKiếmToolStripMenuItem.Name = "tìmKiếmToolStripMenuItem";
+            this.tìmKiếmToolStripMenuItem.Size = new System.Drawing.Size(177, 20);
+            this.tìmKiếmToolStripMenuItem.Text = "Tra Cứu Đơn Khách Hàng";
             // 
             // ribbonPanel1
             // 
@@ -1012,6 +1004,14 @@
             this.congcu.Name = "congcu";
             this.congcu.Panel = this.ribbonPanel4;
             this.congcu.Text = "Công Cụ";
+            // 
+            // menuTiemKiem
+            // 
+            this.menuTiemKiem.Checked = true;
+            this.menuTiemKiem.Name = "menuTiemKiem";
+            this.menuTiemKiem.Panel = this.ribbonPanel5;
+            this.menuTiemKiem.Text = "Tra Cứu Đơn KH";
+            this.menuTiemKiem.Click += new System.EventHandler(this.menuTiemKiem_Click);
             // 
             // office2007StartButton1
             // 
@@ -1199,24 +1199,6 @@
             this.skinCollectionItem1.SkinPassword = null;
             this.skinCollectionItem1.SkinSteam = ((System.IO.MemoryStream)(resources.GetObject("skinCollectionItem1.SkinSteam")));
             // 
-            // menuTiemKiem
-            // 
-            this.menuTiemKiem.Checked = true;
-            this.menuTiemKiem.Name = "menuTiemKiem";
-            this.menuTiemKiem.Panel = this.ribbonPanel5;
-            this.menuTiemKiem.Text = "Tra Cứu Đơn KH";
-            this.menuTiemKiem.Click += new System.EventHandler(this.menuTiemKiem_Click);
-            // 
-            // ribbonPanel5
-            // 
-            this.ribbonPanel5.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
-            this.ribbonPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ribbonPanel5.Location = new System.Drawing.Point(0, 27);
-            this.ribbonPanel5.Name = "ribbonPanel5";
-            this.ribbonPanel5.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.ribbonPanel5.Size = new System.Drawing.Size(988, 27);
-            this.ribbonPanel5.TabIndex = 5;
-            // 
             // frm_Main
             // 
             this.AllowDrop = true;
@@ -1229,6 +1211,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip4;
+            this.MaximizeBox = false;
             this.Name = "frm_Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tan Hoa Water Co., ltd";
@@ -1239,13 +1222,13 @@
             this.PanelMain.PerformLayout();
             this.iconMenuPanel.ResumeLayout(false);
             this.groupTTK.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.group_VTTH.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
@@ -1255,21 +1238,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             this.ribbonControl1.ResumeLayout(false);
             this.ribbonControl1.PerformLayout();
             this.ribbonPanel4.ResumeLayout(false);
             this.ribbonPanel4.PerformLayout();
             this.menuStrip4.ResumeLayout(false);
             this.menuStrip4.PerformLayout();
-            this.ribbonPanel2.ResumeLayout(false);
-            this.ribbonPanel2.PerformLayout();
-            this.menuStrip3.ResumeLayout(false);
-            this.menuStrip3.PerformLayout();
             this.ribbonPanel3.ResumeLayout(false);
             this.ribbonPanel3.PerformLayout();
             this.menuStrip2.ResumeLayout(false);
             this.menuStrip2.PerformLayout();
+            this.ribbonPanel2.ResumeLayout(false);
+            this.ribbonPanel2.PerformLayout();
+            this.menuStrip3.ResumeLayout(false);
+            this.menuStrip3.PerformLayout();
             this.ribbonPanel1.ResumeLayout(false);
             this.ribbonPanel1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
@@ -1328,12 +1310,10 @@
         private System.Windows.Forms.Label label1;
         private DevComponents.DotNetBar.Controls.ReflectionLabel reflectionLabel1;
         private DevComponents.DotNetBar.Controls.GroupPanel groupTTK;
-        private DevComponents.DotNetBar.ButtonX btTimKiem;
         private DevComponents.DotNetBar.ButtonX btTheoDoiTHTK;
         private DevComponents.DotNetBar.ButtonX bt_SDVTraHS;
         private DevComponents.DotNetBar.ButtonX btGiaoHoSo;
         private DevComponents.DotNetBar.Controls.GroupPanel group_VTTH;
-        private DevComponents.DotNetBar.ButtonX khvt_TraCuuHS;
         private DevComponents.DotNetBar.ButtonX vtth_HoSoTraNgai;
         private DevComponents.DotNetBar.ButtonX vtth_NhanDonKH;
         private DevComponents.DotNetBar.ButtonX khvt_BaoCao;
@@ -1345,13 +1325,11 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.PictureBox pictureBox9;
         private System.Windows.Forms.PictureBox pictureBox10;
         private System.Windows.Forms.PictureBox pictureBox12;
         private System.Windows.Forms.PictureBox pictureBox13;
-        private System.Windows.Forms.PictureBox pictureBox11;
         private DevComponents.DotNetBar.ButtonX btDanhMucVT;
         private System.Windows.Forms.PictureBox pictureBox14;
         private DevComponents.DotNetBar.ButtonX btTaiLapMatBang;
@@ -1374,6 +1352,9 @@
         private System.Windows.Forms.ToolStripMenuItem webBrowserTool;
         private DevComponents.DotNetBar.RibbonPanel ribbonPanel5;
         private DevComponents.DotNetBar.RibbonTabItem menuTiemKiem;
+        private System.Windows.Forms.ToolStripMenuItem biennhan;
+        private DevComponents.DotNetBar.ButtonX btGhepHoSo;
+        private System.Windows.Forms.PictureBox pictureBox11;
 
     }
 }

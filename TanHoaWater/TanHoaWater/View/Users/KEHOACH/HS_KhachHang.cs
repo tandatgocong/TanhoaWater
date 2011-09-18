@@ -170,7 +170,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
             this.txtSoHoSo.Text = this.cbQuan.SelectedValue + "" + this.cbPhuong.SelectedValue + sohoso + this.txtSHS.Text;
             _maphuong = this.cbPhuong.SelectedValue + "";
         }
-
+        DateTime ngaynhan = DateTime.Now;
         private void txtSHS_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 13)
@@ -198,6 +198,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                     this.duong.Text = biennhan.DUONG;
                     this.cbQuan.Text = recordQuan.TENQUAN;
                     this.cbPhuong.Text = recordPhuong.TENPHUONG;
+                    ngaynhan = biennhan.NGAYNHAN.Value;
                 }
                 else
                 {
@@ -329,7 +330,6 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                 donKH.DUONG = this.duong.Text;
                 donKH.PHUONG = _maphuong;
                 donKH.QUAN = _maquan;
-                donKH.NGAYNHAN = DateTime.Now;
                 string maloaikh = "";
                 if (this.cbLoaiKH.SelectedValue == null || "".Equals(this.cbLoaiKH.SelectedValue.ToString()) == true)
                 {
@@ -347,6 +347,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                     donKH.HOSOKHAN = true;
                     donKH.GHICHUKHAN = this.ghichukhan.Text;
                 }
+                donKH.NGAYNHAN = ngaynhan;
                 donKH.CREATEBY = DAL.C_USERS._userName;
                 donKH.CREATEDATE = DateTime.Now;
                 DAL.C_DonKhachHang.InsertDonHK(donKH);
@@ -539,6 +540,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
             this.resultPrint.Visible = false;
             this.CD_NguoiDuyetDon.Visible = false;
             this.nguoiduyetDon.Visible = false;
+            this.cd_detail.Visible = false;
             #region Load Bo Phan Chuyen
                 this.bophanChuyen.DataSource = DAL.C_PhongBan.getList();
                 this.bophanChuyen.DisplayMember = "TENPHONG";
