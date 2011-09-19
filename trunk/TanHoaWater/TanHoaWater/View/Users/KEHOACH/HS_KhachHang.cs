@@ -540,7 +540,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
             this.resultPrint.Visible = false;
             this.CD_NguoiDuyetDon.Visible = false;
             this.nguoiduyetDon.Visible = false;
-            this.cd_detail.Visible = false;
+            this.cd_detail.Visible = true;
             #region Load Bo Phan Chuyen
                 this.bophanChuyen.DataSource = DAL.C_PhongBan.getList();
                 this.bophanChuyen.DisplayMember = "TENPHONG";

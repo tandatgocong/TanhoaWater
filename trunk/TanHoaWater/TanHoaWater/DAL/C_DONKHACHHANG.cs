@@ -532,21 +532,21 @@ namespace TanHoaWater.DAL
             return false;
         }
 
-        public DataTable TimKiemDonKhachHang(string shs, string hoten, string diachi)
+        public static DataTable TimKiemDonKhachHang(string shs, string hoten, string diachi)
         {
 
             string sql = "SELECT ttk.MADOT, ttk.SHS,ttk.SOHOSO,kh.HOSOCHA, ";
             sql += " HOTEN, kh.DIENTHOAI,( SONHA +'  '+DUONG+',  P.'+ p.TENPHUONG+',  Q.'+q.TENQUAN) as 'DIACHI',SOHO, ";
-            sql += " lkh.TENLOAI as 'LOAIKH',lhs.TENLOAI as 'LOAIHS',, CONVERT(VARCHAR(20),kh.NGAYNHAN,103) AS 'NGAYNHAN', ";
-            sql += " CONVERT(VARCHAR(20),ttk.NGAYNHAN,103) AS 'NGAYGIAOTTK', FULLNAME, ttk.NGAYTKGD, ttk.NGAYTRAHS ";
+            sql += " lkh.TENLOAI as 'LOAIKH',lhs.TENLOAI as 'LOAIHS', CONVERT(VARCHAR(20),kh.NGAYNHAN,103) AS 'NGAYNHAN', ";
+            sql += " CONVERT(VARCHAR(20),ttk.NGAYNHAN,103) AS 'NGAYGIAOTTK_', SODOVIEN,CONVERT(VARCHAR(20),ttk.NGAYTKGD,103) as 'NGAYTKGD' , ttk.NGAYTRAHS,kh.TRONGAITHIETKE,kh.NOIDUNGTRONGAI ";
             sql += " FROM TOTHIETKE ttk, DON_KHACHHANG kh,QUAN q,PHUONG p ";
-            sql += " , LOAI_HOSO lhs, USERS us, LOAI_KHACHHANG lkh  ";
+            sql += " , LOAI_HOSO lhs, LOAI_KHACHHANG lkh  ";
             sql += " WHERE kh.LOAIKH=lkh.MALOAI AND  kh.QUAN = q.MAQUAN AND q.MAQUAN=p.MAQUAN  ";
             sql += " AND kh.PHUONG=p.MAPHUONG AND lhs.MALOAI=kh.LOAIHOSO ";
-            sql += " AND ttk.SOHOSO=kh.SOHOSO AND us.USERNAME=ttk.SODOVIEN ";
+            sql += " AND ttk.SOHOSO=kh.SOHOSO  ";
            
             if (!"".Equals(shs)) {
-                sql += " AND ttk.SHS = '" +shs + "'";
+                sql += " AND (ttk.SHS = '" + shs + "' OR kh.HOSOCHA = '" + shs + "' )";
             }
             if (!"".Equals(hoten))
             {

@@ -47,10 +47,13 @@
             // 
             this.bt_Login.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.bt_Login.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.bt_Login.Location = new System.Drawing.Point(139, 183);
+            this.bt_Login.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_Login.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(22)))), ((int)(((byte)(111)))));
+            this.bt_Login.Location = new System.Drawing.Point(120, 179);
             this.bt_Login.Margin = new System.Windows.Forms.Padding(4);
             this.bt_Login.Name = "bt_Login";
-            this.bt_Login.Size = new System.Drawing.Size(100, 30);
+            this.bt_Login.Size = new System.Drawing.Size(91, 25);
+            this.bt_Login.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
             this.bt_Login.TabIndex = 0;
             this.bt_Login.Text = "Đăng Nhập";
             this.bt_Login.Click += new System.EventHandler(this.bt_Login_Click);
@@ -59,17 +62,20 @@
             // 
             this.bt_huy.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.bt_huy.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.bt_huy.Location = new System.Drawing.Point(279, 183);
+            this.bt_huy.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_huy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(22)))), ((int)(((byte)(111)))));
+            this.bt_huy.Location = new System.Drawing.Point(229, 179);
             this.bt_huy.Margin = new System.Windows.Forms.Padding(4);
             this.bt_huy.Name = "bt_huy";
-            this.bt_huy.Size = new System.Drawing.Size(100, 30);
+            this.bt_huy.Size = new System.Drawing.Size(91, 25);
+            this.bt_huy.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
             this.bt_huy.TabIndex = 1;
             this.bt_huy.Text = "Hủy";
             this.bt_huy.Click += new System.EventHandler(this.bt_huy_Click);
             // 
             // ckSavePass
             // 
-            this.ckSavePass.Location = new System.Drawing.Point(139, 149);
+            this.ckSavePass.Location = new System.Drawing.Point(120, 145);
             this.ckSavePass.Margin = new System.Windows.Forms.Padding(4);
             this.ckSavePass.Name = "ckSavePass";
             this.ckSavePass.Size = new System.Drawing.Size(267, 30);
@@ -78,7 +84,7 @@
             // 
             // txtuserName
             // 
-            this.txtuserName.Location = new System.Drawing.Point(139, 77);
+            this.txtuserName.Location = new System.Drawing.Point(120, 74);
             this.txtuserName.Margin = new System.Windows.Forms.Padding(4);
             this.txtuserName.Name = "txtuserName";
             this.txtuserName.Size = new System.Drawing.Size(239, 25);
@@ -87,7 +93,7 @@
             // 
             // txtPass
             // 
-            this.txtPass.Location = new System.Drawing.Point(139, 116);
+            this.txtPass.Location = new System.Drawing.Point(120, 113);
             this.txtPass.Margin = new System.Windows.Forms.Padding(4);
             this.txtPass.Name = "txtPass";
             this.txtPass.PasswordChar = '*';
@@ -113,7 +119,7 @@
             // 
             // labelX1
             // 
-            this.labelX1.Location = new System.Drawing.Point(36, 77);
+            this.labelX1.Location = new System.Drawing.Point(17, 74);
             this.labelX1.Name = "labelX1";
             this.labelX1.Size = new System.Drawing.Size(96, 23);
             this.labelX1.TabIndex = 8;
@@ -121,7 +127,7 @@
             // 
             // labelX2
             // 
-            this.labelX2.Location = new System.Drawing.Point(36, 116);
+            this.labelX2.Location = new System.Drawing.Point(17, 113);
             this.labelX2.Name = "labelX2";
             this.labelX2.Size = new System.Drawing.Size(83, 23);
             this.labelX2.TabIndex = 9;
@@ -132,7 +138,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(22)))), ((int)(((byte)(111)))));
-            this.label1.Location = new System.Drawing.Point(50, 17);
+            this.label1.Location = new System.Drawing.Point(26, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(348, 32);
             this.label1.TabIndex = 11;
@@ -143,7 +149,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(458, 255);
+            this.ClientSize = new System.Drawing.Size(405, 255);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.labelX2);
             this.Controls.Add(this.labelX1);
