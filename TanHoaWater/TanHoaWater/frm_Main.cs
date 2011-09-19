@@ -337,6 +337,18 @@ namespace TanHoaWater
             bn.ShowDialog();
         }
 
+        private void hoantatThietKe_Click(object sender, EventArgs e)
+        {
+            this.PanelContent.Controls.Clear();
+            this.PanelContent.Controls.Add(new tab_HoanTatTK()); 
+        }
+
+        private void btHoanTatTK_Click(object sender, EventArgs e)
+        {
+            this.PanelContent.Controls.Clear();
+            this.PanelContent.Controls.Add(new tab_HoanTatTK()); 
+        }
+
       
     }
 

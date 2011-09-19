@@ -223,5 +223,19 @@ namespace TanHoaWater.DAL
             db.Connection.Close();
             return dataset;
         }
+               
+        public static DataTable  DANHSACHDOTNHANDON() { 
+        
+            TanHoaDataContext db = new TanHoaDataContext();
+            db.Connection.Open();
+            string sql = "  SELECT DISTINCT MADOT FROM TOTHIETKE ";            
+            SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
+            DataSet dataset = new DataSet();
+            adapter.Fill(dataset, "TABLE");
+            db.Connection.Close();
+            return dataset.Tables[0];        
+        }
+
+       
     }
 }

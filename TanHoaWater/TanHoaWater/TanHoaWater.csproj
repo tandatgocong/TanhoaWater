@@ -344,6 +344,12 @@
     <Compile Include="View\Users\To_ThietKe\tab_GhepHoSo.Designer.cs">
       <DependentUpon>tab_GhepHoSo.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Users\To_ThietKe\tab_HoanTatTK.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Users\To_ThietKe\tab_HoanTatTK.Designer.cs">
+      <DependentUpon>tab_HoanTatTK.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Users\To_ThietKe\uct_GiaoHS.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -466,6 +472,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\To_ThietKe\tab_GhepHoSo.resx">
       <DependentUpon>tab_GhepHoSo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\To_ThietKe\tab_HoanTatTK.resx">
+      <DependentUpon>tab_HoanTatTK.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\To_ThietKe\uct_GiaoHS.resx">
       <DependentUpon>uct_GiaoHS.cs</DependentUpon>
