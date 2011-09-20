@@ -236,6 +236,75 @@ namespace TanHoaWater.DAL
             return dataset.Tables[0];        
         }
 
-       
+        public static DataTable GetDotToTK(string ttkMaDot)
+        {
+            TanHoaDataContext db = new TanHoaDataContext();
+            db.Connection.Open();
+            string sql = "  SELECT DISTINCT nd.MADOT, CONVERT(VARCHAR(20),nd.NGAYLAPDON,103) ,loai.TENLOAI, COUNT(*) as 'SOHS', COUNT(TRONGAITHIETKE) as 'TRONGAI'";
+            sql+=" FROM DOT_NHAN_DON AS nd ,LOAI_HOSO AS loai, TOTHIETKE AS ttk";
+            sql+="  WHERE nd.LOAIDON=loai.MALOAI AND ttk.MADOT=nd.MADOT ";
+            sql += " AND ttk.MADOT='"+ ttkMaDot +"'";
+            sql += " GROUP BY nd.MADOT,nd.NGAYLAPDON,loai.TENLOAI ";
+            SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
+            DataSet dataset = new DataSet();
+            adapter.Fill(dataset, "TABLE");
+            db.Connection.Close();
+            return dataset.Tables[0];
+        }
+
+        public static DataTable ListHoanTatTK(string ttkMaDot) {             
+            TanHoaDataContext db = new TanHoaDataContext();
+            db.Connection.Open();
+            string sql = "SELECT ttk.SHS,HOTEN,(SONHA +' '+ DUONG +', P.'+p.TENPHUONG+', Q.'+ q.TENQUAN ) as 'DIACHI',  ";
+			sql+="  NGAYNHAN= CONVERT(VARCHAR(10),kh.NGAYNHAN,103), NGAYHTTK=CONVERT(VARCHAR(10),ttk.NGAYTRAHS,103), ";
+            sql += "  CASE WHEN kh.TRONGAITHIETKE='True' THEN N'Trở Ngại' ELSE N'Hoàn Tất'   END as 'TINHTRANGSVD' ";
+            sql+="  FROM TOTHIETKE ttk, DON_KHACHHANG kh,QUAN q,PHUONG p";
+            sql+="  WHERE  kh.QUAN = q.MAQUAN AND q.MAQUAN=p.MAQUAN AND kh.PHUONG=p.MAPHUONG  AND ttk.SOHOSO=kh.SOHOSO ";
+            sql += " AND ttk.MADOT='" + ttkMaDot + "'";
+            sql+= " ORDER BY TINHTRANGSVD";
+            SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
+            DataSet dataset = new DataSet();
+            adapter.Fill(dataset, "TABLE");
+            db.Connection.Close();
+            return dataset.Tables[0];
+        }
+        public static bool chuyenhs(string shs, string bp) {
+            try
+            {
+                TanHoaDataContext db = new TanHoaDataContext();
+                var query = from ttk in db.TOTHIETKEs where ttk.SHS == shs select ttk;
+                TOTHIETKE toTK = query.SingleOrDefault();
+                if (toTK != null) {
+                    toTK.NGAYCHUYENHS = DateTime.Now.Date;
+                    toTK.BOPHANCHUYEN = bp;
+                }
+                db.SubmitChanges();
+                return true;  
+            }
+            catch (Exception ex)
+            {
+                log.Error("TTK chuyen ho so loi :"+ ex.Message);
+            }
+            return false;
+        }
+
+        public static DataSet BC_CHUYENDON_TTK(string dotnd, string nguoilap)
+        {
+
+            DataSet ds = new DataSet();
+            TanHoaDataContext db = new TanHoaDataContext();
+            db.Connection.Open();
+            string sql = "SELECT * FROM V_CHUYENDON_TTK ";
+            sql += " WHERE TTKMD='" + dotnd + "'";
+            sql += " AND USERNAME='" + nguoilap + "'";
+            SqlDataAdapter dond = new SqlDataAdapter(sql, db.Connection.ConnectionString);
+            dond.Fill(ds, "V_CHUYENDON_TTK");
+
+            //string user = "SELECT USERNAME, UPPER(FULLNAME) AS 'FULLNAME' FROM USERS WHERE USERNAME='" + nguoiduyet + "'";
+            //SqlDataAdapter ct = new SqlDataAdapter(user, db.Connection.ConnectionString);
+            //ct.Fill(ds, "USERS");
+            return ds;
+        }
+    
     }
 }

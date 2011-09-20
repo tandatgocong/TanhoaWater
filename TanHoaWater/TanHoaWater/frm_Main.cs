@@ -340,13 +340,15 @@ namespace TanHoaWater
         private void hoantatThietKe_Click(object sender, EventArgs e)
         {
             this.PanelContent.Controls.Clear();
-            this.PanelContent.Controls.Add(new tab_HoanTatTK()); 
+            this.PanelContent.Controls.Add(new tab_HoanTatTK());
+            this.menuToThietKe.Select();
         }
 
         private void btHoanTatTK_Click(object sender, EventArgs e)
         {
             this.PanelContent.Controls.Clear();
-            this.PanelContent.Controls.Add(new tab_HoanTatTK()); 
+            this.PanelContent.Controls.Add(new tab_HoanTatTK());
+            this.menuToThietKe.Select();
         }
 
       

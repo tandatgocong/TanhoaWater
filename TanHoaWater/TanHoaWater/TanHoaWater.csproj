@@ -189,11 +189,6 @@
     <Compile Include="View\Users\KEHOACH\reportView.Designer.cs">
       <DependentUpon>reportView.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Users\KEHOACH\Report\DataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSet1.xsd</DependentUpon>
-    </Compile>
     <Compile Include="View\Users\KEHOACH\Report\rpt_BaoCaoTinhHinhNhanDon.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -302,6 +297,11 @@
     <Compile Include="View\Users\TinhDuToan\uct_TinhDuToan.Designer.cs">
       <DependentUpon>uct_TinhDuToan.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Users\To_ThietKe\DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="View\Users\To_ThietKe\Report\KSTK\rpt_KSTK_byNgay.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -318,6 +318,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>rpt_KSTK_byDot.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\Users\To_ThietKe\Report\rpt_CHUYENHS.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_CHUYENHS.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="View\Users\To_ThietKe\Report\rpt_DSHS_Giao_SDV.cs">
@@ -460,6 +466,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_KSTK_byDot.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\To_ThietKe\Report\rpt_CHUYENHS.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_CHUYENHS.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Users\To_ThietKe\Report\rpt_DSHS_Giao_SDV.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_DSHS_Giao_SDV.cs</LastGenOutput>
@@ -578,15 +588,15 @@
     <Compile Include="View\Main\frm_Login.Designer.cs">
       <DependentUpon>frm_Login.cs</DependentUpon>
     </Compile>
-    <None Include="View\Users\KEHOACH\Report\DataSet1.xsc">
+    <None Include="View\Users\To_ThietKe\DataSet1.xsc">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>
-    <None Include="View\Users\KEHOACH\Report\DataSet1.xsd">
+    <None Include="View\Users\To_ThietKe\DataSet1.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
     </None>
-    <None Include="View\Users\KEHOACH\Report\DataSet1.xss">
+    <None Include="View\Users\To_ThietKe\DataSet1.xss">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>
   </ItemGroup>
