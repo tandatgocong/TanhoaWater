@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using log4net;
+using TanHoaWater.View.Users.Report;
+using CrystalDecisions.CrystalReports.Engine;
+using TanHoaWater.View.Users.To_ThietKe.Report;
 
 namespace TanHoaWater.View.Users.To_ThietKe
 {
@@ -26,7 +29,7 @@ namespace TanHoaWater.View.Users.To_ThietKe
             #endregion
 
         }
-
+        string _madot = "";
         private void bt_XemBC_Click(object sender, EventArgs e)
         {
             DataTable table = DAL.C_ToThietKe.GetDotToTK(this.cbDotNhanDon.Text);
@@ -38,6 +41,7 @@ namespace TanHoaWater.View.Users.To_ThietKe
             else {
                 groupPanel1.Visible = true;
                 string madot = table.Rows[0][0].ToString();
+                _madot = madot;
                 string ngay = table.Rows[0][1].ToString();
                 string tendot = table.Rows[0][2].ToString();
                 int tonghs = int.Parse(table.Rows[0][3].ToString());
@@ -72,6 +76,13 @@ namespace TanHoaWater.View.Users.To_ThietKe
             //{
             //    log.Error("Chuyen Hoan Tat Ho So Loi : " + ex.ToString());
             //}
+            if(!"".Equals(_madot)){
+                 ReportDocument rp = new rpt_CHUYENHS();
+                rp.SetDataSource(DAL.C_ToThietKe.BC_CHUYENDON_TTK(_madot,DAL.C_USERS._userName));
+                rpt_Main main = new rpt_Main(rp);
+                main.ShowDialog();
+            }
+           
         }
     }
 }

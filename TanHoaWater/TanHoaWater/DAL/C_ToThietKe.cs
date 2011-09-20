@@ -62,7 +62,7 @@ namespace TanHoaWater.DAL
             {
                 sql += " AND ttk.SODOVIEN IS NULL ";
             }
-            sql += " AND BOPHANCHUYEN='TTK'";
+            sql += " AND kh.BOPHANCHUYEN='TTK'";
             sql += " ORDER BY q.TENQUAN,p.TENPHUONG,DUONG,SONHA DESC ";
             SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             DataSet dataset = new DataSet();
