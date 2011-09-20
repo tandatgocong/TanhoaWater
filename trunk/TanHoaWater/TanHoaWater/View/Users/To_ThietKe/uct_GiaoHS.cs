@@ -560,14 +560,21 @@ namespace TanHoaWater.View.Users.To_ThietKe
                 {
                   bool result =  DAL.C_ToThietKe.TraHS(_soHoSo, this.txtNoiDungTN.Text);
                   bool result1 = DAL.C_DonKhachHang.TroNgaiThietKe(_soHoSo, this.txtNoiDungTN.Text, DAL.C_USERS._userName);
-                  if (result && result1) { txtResult.Text = "Trả Hồ Sơ Thành Công"; }
-                  else { txtResult.Text = "Trả Hồ Sơ Thất Bại"; }
+                  if (result && result1) {
+                      MessageBox.Show(this,"Trả Hồ Sơ Thành Công !" , "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                  
+                      //txtResult.Text = "Trả Hồ Sơ Thành Công";
+                  }
+                  else { 
+                      MessageBox.Show(this, "Trả Hồ Sơ Thất Bại !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                      //txtResult.Text = "Trả Hồ Sơ Thất Bại"; 
+                  }
                 }
             }
             catch (Exception ex)
             {
                 log.Error("Loi tra ho so " + ex.Message);
-                MessageBox.Show(this, "..: Thông Báo :..", "Chuyển Hồ Sơ Lỗi !", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(this,  "Chuyển Hồ Sơ Lỗi !","..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
@@ -623,9 +630,23 @@ namespace TanHoaWater.View.Users.To_ThietKe
 
         }
 
+        public void refesh() {
+            this.txtSoHoSo.Text = null;
+            this.txtSoHo.Value = 0;
+            this.txtHoTen.Text = null;
+            this.txtdiachi.Text = null;
+            this.txtLoaiKH.Text = null;
+            this.txtLoaiHS.Text = null;
+            this.txtDotND.Text = null;
+            this.txtSoDT.Text = null;
+            this.txtGhiChu.Text = null;
+            this.txt_sdv.Text = null;
+            this.txtSHS.Mask = DateTime.Now.Year.ToString().Substring(2) + "CCCCC";
+        }
         private void tabItem4_Click(object sender, EventArgs e)
         {
             this.txtSHS.Mask = DateTime.Now.Year.ToString().Substring(2) + "CCCCC";
+            refesh();
         }
 
         private void tabItem2_Click_1(object sender, EventArgs e)
