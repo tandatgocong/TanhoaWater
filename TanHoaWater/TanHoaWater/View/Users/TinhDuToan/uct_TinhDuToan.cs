@@ -590,11 +590,20 @@ namespace TanHoaWater.View.Users.TinhDuToan
         {
             if (e.KeyChar == 13)
             {
-                currentPageIndex = 1;
-                pageNumber = 0;
-                FirstRow = 0;
-                LastRow = 0;
-                loadDanhMucVatTu();
+                DANHMUCVATTU dmvt = DAL.C_DanhMucVatTu.finbyMaHieu(txtMaHieuVT.Text);
+                if (dmvt != null) {
+                    this.txtMaHieuDG.Text = dmvt.MAHDG;
+                    this.txtTenVT.Text = dmvt.TENVT;
+                    this.cbDVT.Text = dmvt.DVT;
+                    this.cbNhomVT.Text = dmvt.NHOMVT;
+                    if (dmvt.BOVT == true)
+                        this.checkBoVT.Checked = true;
+                    else
+                        this.checkBoVT.Checked = false;
+                }
+                else {
+                    MessageBox.Show(this, "Không Tìm Thấy Mã Hiệu Vật Tư.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 

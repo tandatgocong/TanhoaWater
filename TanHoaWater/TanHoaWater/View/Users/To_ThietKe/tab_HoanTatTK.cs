@@ -77,10 +77,10 @@ namespace TanHoaWater.View.Users.To_ThietKe
             //    log.Error("Chuyen Hoan Tat Ho So Loi : " + ex.ToString());
             //}
             if(!"".Equals(_madot)){
-                 ReportDocument rp = new rpt_CHUYENHS();
-                rp.SetDataSource(DAL.C_ToThietKe.BC_CHUYENDON_TTK(_madot,DAL.C_USERS._userName));
-                rpt_Main main = new rpt_Main(rp);
-                main.ShowDialog();
+                ReportDocument rp = new rpt_CHUYENHS();
+                rp.SetDataSource(DAL.C_ToThietKe.BC_CHUYENDON_TTK(_madot, DAL.C_USERS._userName));
+                rpt_Main aaa = new rpt_Main(rp);
+                aaa.ShowDialog();
             }
            
         }
