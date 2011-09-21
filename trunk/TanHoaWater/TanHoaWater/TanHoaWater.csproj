@@ -291,6 +291,12 @@
     <Compile Include="View\Users\TinhDuToan\tab_DanhMucTaiLapMD.Designer.cs">
       <DependentUpon>tab_DanhMucTaiLapMD.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Users\TinhDuToan\tab_TinhDuToan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Users\TinhDuToan\tab_TinhDuToan.Designer.cs">
+      <DependentUpon>tab_TinhDuToan.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Users\TinhDuToan\uct_TinhDuToan.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -446,6 +452,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\TinhDuToan\tab_DanhMucTaiLapMD.resx">
       <DependentUpon>tab_DanhMucTaiLapMD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\TinhDuToan\tab_TinhDuToan.resx">
+      <DependentUpon>tab_TinhDuToan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\TinhDuToan\uct_TinhDuToan.resx">
       <DependentUpon>uct_TinhDuToan.cs</DependentUpon>
