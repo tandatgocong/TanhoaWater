@@ -13,7 +13,7 @@ namespace TanHoaWater.View.Users.TinhDuToan
 {
     public partial class tab_DanhMucTaiLapMD : UserControl
     {
-        private static readonly ILog log = LogManager.GetLogger(typeof(uct_TinhDuToan).Name);
+        private static readonly ILog log = LogManager.GetLogger(typeof(tab_DanhMucVT).Name);
         int currentPageIndex = 1;
         int pageSize = 16;
         int pageNumber = 0;

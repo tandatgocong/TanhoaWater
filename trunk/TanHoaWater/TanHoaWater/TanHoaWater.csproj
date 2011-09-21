@@ -297,11 +297,11 @@
     <Compile Include="View\Users\TinhDuToan\tab_TinhDuToan.Designer.cs">
       <DependentUpon>tab_TinhDuToan.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Users\TinhDuToan\uct_TinhDuToan.cs">
+    <Compile Include="View\Users\TinhDuToan\tab_DanhMucVT.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\Users\TinhDuToan\uct_TinhDuToan.Designer.cs">
-      <DependentUpon>uct_TinhDuToan.cs</DependentUpon>
+    <Compile Include="View\Users\TinhDuToan\tab_DanhMucVT.Designer.cs">
+      <DependentUpon>tab_DanhMucVT.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Users\To_ThietKe\Report\KSTK\rpt_KSTK_byNgay.cs">
       <AutoGen>True</AutoGen>
@@ -456,8 +456,8 @@
     <EmbeddedResource Include="View\Users\TinhDuToan\tab_TinhDuToan.resx">
       <DependentUpon>tab_TinhDuToan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Users\TinhDuToan\uct_TinhDuToan.resx">
-      <DependentUpon>uct_TinhDuToan.cs</DependentUpon>
+    <EmbeddedResource Include="View\Users\TinhDuToan\tab_DanhMucVT.resx">
+      <DependentUpon>tab_DanhMucVT.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\To_ThietKe\Report\KSTK\rpt_KSTK_byNgay.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
