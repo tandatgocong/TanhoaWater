@@ -22,15 +22,18 @@ namespace TanHoaWater.View.Users.TinhDuToan
         int rows;
         private void uct_TinhDuToan_Load(object sender, EventArgs e)
         {
-            this.txtSHS.Mask = DateTime.Now.Year.ToString().Substring(2) + "CCCCC";
-            this.txtSHS.Focus();
+            //this.txtSHS.Mask = DateTime.Now.Year.ToString().Substring(2) + "CCCCC";
+            //this.txtSHS.Focus();
+            //this.txtLoaiKH.DataSource = DAL.C_LoaiKhachHang.getList();
+            //this.txtLoaiKH.DisplayMember = "TENLOAI";
+            //this.txtLoaiKH.ValueMember = "MALOAI";
         }
         public void loadComboboxPhuiDao()
         {
-            this.pd_MaKetCau.DataSource = DAL.C_DanhMucTaiLapMD.getListDanhMucTLMD();
-            this.pd_MaKetCau.ValueMember = "MADANHMUC";
-            this.pd_MaKetCau.DisplayMember = "TENKETCAU";
-            this.pd_MaKetCau.DropDownWidth = 300;
+            //this.pd_MaKetCau.DataSource = DAL.C_DanhMucTaiLapMD.getListDanhMucTLMD();
+            //this.pd_MaKetCau.ValueMember = "MADANHMUC";
+            //this.pd_MaKetCau.DisplayMember = "TENKETCAU";
+            //this.pd_MaKetCau.DropDownWidth = 300;
         }
         public uct_TinhDuToan(int tab)
         {
@@ -38,8 +41,9 @@ namespace TanHoaWater.View.Users.TinhDuToan
             if (tab == 1)
             {
                 tabControl1.SelectedTabIndex = 0;
-                loadComboboxPhuiDao();
-                this.txtSHS.Focus();
+                this.tabControlPanel1.Visible = true;
+                tabControlPanel1.Controls.Clear();
+                tabControlPanel1.Controls.Add(new tab_TinhDuToan());
             }
             if (tab == 2)
             {
@@ -143,7 +147,7 @@ namespace TanHoaWater.View.Users.TinhDuToan
                 log.Error(ex);
             }
             PageTotal();
-            this.panelTinhDuToan.Visible = false;
+            //this.panelTinhDuToan.Visible = false;
             this.panelDanhMucVT.Visible = true;
             this.groupDGVT.Visible = false;
             this.groupPanelBoVT.Visible = false;
@@ -170,10 +174,10 @@ namespace TanHoaWater.View.Users.TinhDuToan
         {
 
             PanelThamSo.Visible = tabThamSo;
-            panelBoiThuong.Visible = tabBoiThuong;
-            panelNhapPhuiDao.Visible = tabNhapPhuidao;
-            splitContainer1.Panel2.Visible = tabCacCongTac;
-            panelKhoanCong.Visible = tabItem5;
+            //panelBoiThuong.Visible = tabBoiThuong;
+            //panelNhapPhuiDao.Visible = tabNhapPhuidao;
+            //splitContainer1.Panel2.Visible = tabCacCongTac;
+            //panelKhoanCong.Visible = tabItem5;
         }
         private void tabThamSo_Click(object sender, EventArgs e)
         {
@@ -193,14 +197,14 @@ namespace TanHoaWater.View.Users.TinhDuToan
         private void tabCacCongTac_Click(object sender, EventArgs e)
         {
             visibleTab(false, false, false, true, false);
-            congtac_mahieu.DataSource = DAL.C_DanhMucVatTu.getListDanhMucVatCobobox();
-            this.congtac_mahieu.DisplayMember = "TENVT";
-            this.congtac_mahieu.ValueMember = "MAHIEU";
-            congtac_mahieu.DropDownWidth = 300;
-            congtac_mahieu.MaxDropDownItems = 5;
-            this.cbLoaiSD.DataSource = DAL.C_LoaiSD.getList();
-            this.cbLoaiSD.DisplayMember = "MALOAI";
-            this.cbLoaiSD.ValueMember = "MALOAI";
+            //congtac_mahieu.DataSource = DAL.C_DanhMucVatTu.getListDanhMucVatCobobox();
+            //this.congtac_mahieu.DisplayMember = "TENVT";
+            //this.congtac_mahieu.ValueMember = "MAHIEU";
+            //congtac_mahieu.DropDownWidth = 300;
+            //congtac_mahieu.MaxDropDownItems = 5;
+            //this.cbLoaiSD.DataSource = DAL.C_LoaiSD.getList();
+            //this.cbLoaiSD.DisplayMember = "MALOAI";
+            //this.cbLoaiSD.ValueMember = "MALOAI";
         }
 
         private void GridDanhMucVT_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -696,16 +700,31 @@ namespace TanHoaWater.View.Users.TinhDuToan
 
         private void tabTinhDuToan_Click(object sender, EventArgs e)
         {
-            this.panelTinhDuToan.Visible = true;
-            this.panelDanhMucVT.Visible = false;
-            this.tabControl2.SelectedTabIndex = 0;
-            this.cbNhomVatTu.DataSource = DAL.C_DanhMucVatTu.getListDanhMucVatCobobox();
-            this.cbNhomVatTu.DisplayMember = "TENVT";
-            this.cbNhomVatTu.ValueMember = "MAHIEU";
-            loadComboboxPhuiDao();
-            this.txtSHS.Focus();
-
+            this.tabControlPanel1.Visible = true;
+            tabControlPanel1.Controls.Clear();
+            tabControlPanel1.Controls.Add(new tab_TinhDuToan());
+            this.panelDanhMucVT.Visible = false;            
+            //this.cbNhomVatTu.DataSource = DAL.C_DanhMucVatTu.getListDanhMucVatCobobox();
+            //this.cbNhomVatTu.DisplayMember = "TENVT";
+            //this.cbNhomVatTu.ValueMember = "MAHIEU";
+            //loadComboboxPhuiDao();
+ 
         }
+
+        //private void tabTinhDuToan_Click(object sender, EventArgs e)
+        //{
+        //    //this.panelTinhDuToan.Visible = true;
+        //    //panelTinhDuToan.Controls.Clear();
+        //    //panelTinhDuToan.Controls.Add(new tab_TinhDuToan());
+        //    this.panelDanhMucVT.Visible = false;
+        //    this.tabControl2.SelectedTabIndex = 0;
+        //    this.cbNhomVatTu.DataSource = DAL.C_DanhMucVatTu.getListDanhMucVatCobobox();
+        //    this.cbNhomVatTu.DisplayMember = "TENVT";
+        //    this.cbNhomVatTu.ValueMember = "MAHIEU";
+        //    loadComboboxPhuiDao();
+        //    this.txtSHS.Focus();
+
+        //}
 
         /// <summary>
         /// Phui Dao
@@ -714,140 +733,140 @@ namespace TanHoaWater.View.Users.TinhDuToan
         /// <param name="e"></param>
 
                
-        private void GridPhuiDao_UserAddedRow(object sender, DataGridViewRowEventArgs e)
-        {
-            GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells[6].Value = "True";
-            GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells[5].Value = 1;
-        }
-        private void tabNhapPhuiDao_Click(object sender, EventArgs e)
-        {
-            visibleTab(false, false, true, false, false);
-        }
+        //private void GridPhuiDao_UserAddedRow(object sender, DataGridViewRowEventArgs e)
+        //{
+        //    GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells[6].Value = "True";
+        //    GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells[5].Value = 1;
+        //}
+        //private void tabNhapPhuiDao_Click(object sender, EventArgs e)
+        //{
+        //    visibleTab(false, false, true, false, false);
+        //}
 
-        private void GridPhuiDao_CellEndEdit(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.ColumnIndex == 0)
-            {
-                DANHMUCTAILAPMATDUONG dmvt = DAL.C_DanhMucTaiLapMD.finbyMaDM(GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells[0].Value + "");
-                if (dmvt != null)
-                {
-                    GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells[1].Value = dmvt.TENKETCAU.ToUpper();
-                }
-                else
-                {
-                    MessageBox.Show(this, "Không Tìm Thấy Mã Kết Cấu.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells[0].Selected = true;
-                }
-            }
-        }
-        private void GridPhuiDao_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
-        {
+        //private void GridPhuiDao_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        //{
+        //    if (e.ColumnIndex == 0)
+        //    {
+        //        DANHMUCTAILAPMATDUONG dmvt = DAL.C_DanhMucTaiLapMD.finbyMaDM(GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells[0].Value + "");
+        //        if (dmvt != null)
+        //        {
+        //            GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells[1].Value = dmvt.TENKETCAU.ToUpper();
+        //        }
+        //        else
+        //        {
+        //            MessageBox.Show(this, "Không Tìm Thấy Mã Kết Cấu.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //            GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells[0].Selected = true;
+        //        }
+        //    }
+        //}
+        //private void GridPhuiDao_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+        //{
 
-            try
-            {
-                txtKeypress = e.Control;
-                if (GridPhuiDao.CurrentCell.OwningColumn.Name == "phuidao_Daii" | GridPhuiDao.CurrentCell.OwningColumn.Name == "phuidao_rongg" | GridPhuiDao.CurrentCell.OwningColumn.Name == "phuidao_sauu" | GridPhuiDao.CurrentCell.OwningColumn.Name == "phuidao_sll")
-                {
-                    txtKeypress.KeyPress -= KeyPressHandle;
-                    txtKeypress.KeyPress += KeyPressHandle;
-                }
-                else
-                {
-                    txtKeypress.KeyPress -= KeyPressHandle;
-                }
-            }
-            catch (Exception)
-            {
-            }
-        }
-        /// <summary>
-        /// Cac Cong tac
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void GridCacCongTac_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-             try
-                    {
-                        if (e.RowIndex < 0) return;
-                        else if (e.ColumnIndex == 4)
-                        {
-                            //GridPhuiDao.Columns["phudao_MaKetCau"].Width = 300;
-                            //GridPhuiDao.Columns["pd_KetCauMD"].Width = 200;
-                            cbLoaiSD.Visible = true;
-                            cbLoaiSD.Top = this.GridCacCongTac.Top + GridCacCongTac.GetRowDisplayRectangle(e.RowIndex, true).Top;
-                            cbLoaiSD.Left = this.GridCacCongTac.Left + GridCacCongTac.GetColumnDisplayRectangle(e.ColumnIndex, true).Left;
-                            cbLoaiSD.Width = GridCacCongTac.Columns[e.ColumnIndex].Width;
-                            cbLoaiSD.Height = GridCacCongTac.Rows[e.RowIndex].Height;
-                            cbLoaiSD.BringToFront();
+        //    try
+        //    {
+        //        txtKeypress = e.Control;
+        //        if (GridPhuiDao.CurrentCell.OwningColumn.Name == "phuidao_Daii" | GridPhuiDao.CurrentCell.OwningColumn.Name == "phuidao_rongg" | GridPhuiDao.CurrentCell.OwningColumn.Name == "phuidao_sauu" | GridPhuiDao.CurrentCell.OwningColumn.Name == "phuidao_sll")
+        //        {
+        //            txtKeypress.KeyPress -= KeyPressHandle;
+        //            txtKeypress.KeyPress += KeyPressHandle;
+        //        }
+        //        else
+        //        {
+        //            txtKeypress.KeyPress -= KeyPressHandle;
+        //        }
+        //    }
+        //    catch (Exception)
+        //    {
+        //    }
+        //}
+        ///// <summary>
+        ///// Cac Cong tac
+        ///// </summary>
+        ///// <param name="sender"></param>
+        ///// <param name="e"></param>
+        //private void GridCacCongTac_CellClick(object sender, DataGridViewCellEventArgs e)
+        //{
+        //     try
+        //            {
+        //                if (e.RowIndex < 0) return;
+        //                else if (e.ColumnIndex == 4)
+        //                {
+        //                    //GridPhuiDao.Columns["phudao_MaKetCau"].Width = 300;
+        //                    //GridPhuiDao.Columns["pd_KetCauMD"].Width = 200;
+        //                    cbLoaiSD.Visible = true;
+        //                    cbLoaiSD.Top = this.GridCacCongTac.Top + GridCacCongTac.GetRowDisplayRectangle(e.RowIndex, true).Top;
+        //                    cbLoaiSD.Left = this.GridCacCongTac.Left + GridCacCongTac.GetColumnDisplayRectangle(e.ColumnIndex, true).Left;
+        //                    cbLoaiSD.Width = GridCacCongTac.Columns[e.ColumnIndex].Width;
+        //                    cbLoaiSD.Height = GridCacCongTac.Rows[e.RowIndex].Height;
+        //                    cbLoaiSD.BringToFront();
 
-                        }
-                    }
-                    catch (Exception)
-                    {
-                    }
-        }
+        //                }
+        //            }
+        //            catch (Exception)
+        //            {
+        //            }
+        //}
 
-        private void GridCacCongTac_UserAddedRow(object sender, DataGridViewRowEventArgs e)
-        {
-            GridCacCongTac.Rows[GridCacCongTac.CurrentRow.Index].Cells[4].Value = "CM";
-        }
+        //private void GridCacCongTac_UserAddedRow(object sender, DataGridViewRowEventArgs e)
+        //{
+        //    GridCacCongTac.Rows[GridCacCongTac.CurrentRow.Index].Cells[4].Value = "CM";
+        //}
 
-        private void cbLoaiSD_SelectedValueChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                GridCacCongTac.Rows[GridCacCongTac.CurrentRow.Index].Cells[4].Value = cbLoaiSD.SelectedValue + "";
-                cbLoaiSD.Visible = false;
-            }
-            catch (Exception)
-            {
+        //private void cbLoaiSD_SelectedValueChanged(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        GridCacCongTac.Rows[GridCacCongTac.CurrentRow.Index].Cells[4].Value = cbLoaiSD.SelectedValue + "";
+        //        cbLoaiSD.Visible = false;
+        //    }
+        //    catch (Exception)
+        //    {
                 
-            }
-        }
+        //    }
+        //}
 
-        private void txtSHS_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == 13) {
-                DataTable table = DAL.C_DonKhachHang.finbyDonKHTinhDuToan(this.txtSHS.Text);
-                if (table.Rows.Count <=0) {
-                    MessageBox.Show(this, "Không Tìm Thấy Đơn Khách Hàng.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    this.txtSHS.Text = "";
-                    this.txtSHS.Focus();
-                }else{
-                    this.txtHoTen.Text = table.Rows[0][2].ToString();
-                    this.txtSoNha.Text = table.Rows[0][4].ToString();
-                    this.txtDuong.Text = table.Rows[0][5].ToString();
-                    this.txtPhuong.Text = table.Rows[0][6].ToString();
-                    this.txtQuan.Text = table.Rows[0][7].ToString();
-                    this.txtSoHo.Value = int.Parse(table.Rows[0][8].ToString());
-                    this.txtLoaiKH.Text = table.Rows[0][9].ToString();
-                    this.txtDanhBo.Text = table.Rows[0][10].ToString();
-                    this.txtTenBangThietKe.Text = table.Rows[0][11].ToString();
-                    this.txtSoDoVien.Text = table.Rows[0][12].ToString();
+        //private void txtSHS_KeyPress(object sender, KeyPressEventArgs e)
+        //{
+        //    if (e.KeyChar == 13) {
+        //        DataTable table = DAL.C_DonKhachHang.finbyDonKHTinhDuToan(this.txtSHS.Text);
+        //        if (table.Rows.Count <=0) {
+        //            MessageBox.Show(this, "Không Tìm Thấy Đơn Khách Hàng.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //            this.txtSHS.Text = "";
+        //            this.txtSHS.Focus();
+        //        }else{
+        //            this.txtHoTen.Text = table.Rows[0][2].ToString();
+        //            this.txtSoNha.Text = table.Rows[0][4].ToString();
+        //            this.txtDuong.Text = table.Rows[0][5].ToString();
+        //            this.txtPhuong.Text = table.Rows[0][6].ToString();
+        //            this.txtQuan.Text = table.Rows[0][7].ToString();
+        //            this.txtSoHo.Value = int.Parse(table.Rows[0][8].ToString());
+        //            this.txtLoaiKH.Text = table.Rows[0][9].ToString();
+        //            this.txtDanhBo.Text = table.Rows[0][10].ToString();
+        //            this.txtTenBangThietKe.Text = table.Rows[0][11].ToString();
+        //            this.txtSoDoVien.Text = table.Rows[0][12].ToString();
 
-                }
-            }
-        }
+        //        }
+        //    }
+        //}
 
 
-        private void GridCacCongTac_CellEndEdit(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.ColumnIndex == 0)
-            {
-                DANHMUCVATTU dmvt = DAL.C_DanhMucVatTu.finbyMaHieu(GridCacCongTac.Rows[GridCacCongTac.CurrentRow.Index].Cells[0].Value + "");
-                if (dmvt != null)
-                {
-                    GridCacCongTac.Rows[GridCacCongTac.CurrentRow.Index].Cells[1].Value = dmvt.TENVT.ToUpper();
-                    GridCacCongTac.Rows[GridCacCongTac.CurrentRow.Index].Cells[2].Value = dmvt.DVT;
-                }
-                else
-                {
-                    MessageBox.Show(this, "Không Tìm Thấy Mã Hiệu Đơn Giá.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    GridCacCongTac.Rows[GridCacCongTac.CurrentRow.Index].Cells[0].Selected = true;
-                }
-            }
-        }
+        //private void GridCacCongTac_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        //{
+        //    if (e.ColumnIndex == 0)
+        //    {
+        //        DANHMUCVATTU dmvt = DAL.C_DanhMucVatTu.finbyMaHieu(GridCacCongTac.Rows[GridCacCongTac.CurrentRow.Index].Cells[0].Value + "");
+        //        if (dmvt != null)
+        //        {
+        //            GridCacCongTac.Rows[GridCacCongTac.CurrentRow.Index].Cells[1].Value = dmvt.TENVT.ToUpper();
+        //            GridCacCongTac.Rows[GridCacCongTac.CurrentRow.Index].Cells[2].Value = dmvt.DVT;
+        //        }
+        //        else
+        //        {
+        //            MessageBox.Show(this, "Không Tìm Thấy Mã Hiệu Đơn Giá.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //            GridCacCongTac.Rows[GridCacCongTac.CurrentRow.Index].Cells[0].Selected = true;
+        //        }
+        //    }
+        //}
 
 
         
