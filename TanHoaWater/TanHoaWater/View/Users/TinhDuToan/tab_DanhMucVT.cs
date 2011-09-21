@@ -12,9 +12,9 @@ using System.Text.RegularExpressions;
 
 namespace TanHoaWater.View.Users.TinhDuToan
 {
-    public partial class uct_TinhDuToan : UserControl
+    public partial class tab_DanhMucVT : UserControl
     {
-        private static readonly ILog log = LogManager.GetLogger(typeof(uct_TinhDuToan).Name);
+        private static readonly ILog log = LogManager.GetLogger(typeof(tab_DanhMucVT).Name);
         int currentPageIndex = 1;
         int pageSize = 17;
         int pageNumber = 0;
@@ -35,7 +35,7 @@ namespace TanHoaWater.View.Users.TinhDuToan
             //this.pd_MaKetCau.DisplayMember = "TENKETCAU";
             //this.pd_MaKetCau.DropDownWidth = 300;
         }
-        public uct_TinhDuToan(int tab)
+        public tab_DanhMucVT(int tab)
         {
             InitializeComponent();
             if (tab == 1)

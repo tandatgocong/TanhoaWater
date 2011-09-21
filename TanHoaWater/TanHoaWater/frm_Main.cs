@@ -113,7 +113,7 @@ namespace TanHoaWater
         private void tínhDựToánHSKToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.PanelContent.Controls.Clear();
-            this.PanelContent.Controls.Add(new uct_TinhDuToan(1));
+            this.PanelContent.Controls.Add(new tab_DanhMucVT(1));
         }
 
         private void ribbonTabItem1_Click(object sender, EventArgs e)
@@ -274,7 +274,7 @@ namespace TanHoaWater
             this.menuToThietKe.Visible = true;
             this.menuToThietKe.Select();
             this.PanelContent.Controls.Clear();
-            this.PanelContent.Controls.Add(new uct_TinhDuToan(1));
+            this.PanelContent.Controls.Add(new tab_DanhMucVT(1));
         }
 
         private void btDanhMucVT_Click(object sender, EventArgs e)
@@ -282,7 +282,7 @@ namespace TanHoaWater
             this.menuToThietKe.Visible = true;
             this.menuToThietKe.Select();
             this.PanelContent.Controls.Clear();
-            this.PanelContent.Controls.Add(new uct_TinhDuToan(2));
+            this.PanelContent.Controls.Add(new tab_DanhMucVT(2));
         }
 
         private void btTaiLapMatBang_Click(object sender, EventArgs e)
@@ -290,7 +290,7 @@ namespace TanHoaWater
             this.menuToThietKe.Visible = true;
             this.menuToThietKe.Select();
             this.PanelContent.Controls.Clear();
-            this.PanelContent.Controls.Add(new uct_TinhDuToan(3));
+            this.PanelContent.Controls.Add(new tab_DanhMucVT(3));
         }
 
         private void btBienNhan_Click(object sender, EventArgs e)

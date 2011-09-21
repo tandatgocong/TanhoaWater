@@ -1,6 +1,6 @@
 ﻿namespace TanHoaWater.View.Users.TinhDuToan
 {
-    partial class uct_TinhDuToan
+    partial class tab_DanhMucVT
     {
         /// <summary> 
         /// Required designer variable.
