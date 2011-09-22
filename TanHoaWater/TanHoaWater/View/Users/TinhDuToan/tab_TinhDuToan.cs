@@ -18,6 +18,7 @@ namespace TanHoaWater.View.Users.TinhDuToan
             loadComboboxPhuiDao();
             this.txtSHS.Mask = DateTime.Now.Year.ToString().Substring(2) + "CCCCC";
             this.txtSHS.Focus();
+            pd_MaKetCau.AutoComplete = true;
         }
         public void loadComboboxPhuiDao()
         {
@@ -112,6 +113,11 @@ namespace TanHoaWater.View.Users.TinhDuToan
                 if (dmvt != null)
                 {
                     GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells[1].Value = dmvt.TENKETCAU.ToUpper();
+                    GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells[7].Value = dmvt.DONGIA;
+                    string dai = GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells[2].Value + "";
+                    string rong = GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells[3].Value + "";
+                    string sau = GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells[4].Value + "";
+                    MessageBox.Show(this, dai + rong + sau);
                 }
                 else
                 {
@@ -260,6 +266,52 @@ namespace TanHoaWater.View.Users.TinhDuToan
             catch (Exception)
             {
             }
+        }       
+        private void GridPhuiDao_CellLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            //                If [Dai] >= 0 And [Rong] >= 0 And [SoLuong] >= 1 And [DoSau] > 0 Then
+            //    [Khoilg] = [Dai] * [Rong] * [SoLuong]
+            //     If [Rong] > 0.3 Then
+            //         [chuvi] = ([Dai] + [Rong]) * 2 * [SoLuong]
+            //     Else
+            //         [chuvi] = [Dai] * 2 * [SoLuong]
+            //     End If
+            //    [thetich] = [Dai] * [Rong] * [DoSau] * [SoLuong]
+            //Else
+            //    [Khoilg] = 0
+            //    [chuvi] = 0
+            //    [thetich] = 0
+            //End If
+            try
+            {
+                if (e.ColumnIndex >= 5)
+                {
+                    double dai = double.Parse(GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells[2].Value + "");
+                    double rong = double.Parse(GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells[3].Value + "");
+                    double sau = double.Parse(GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells[4].Value + "");
+                    int soluong = int.Parse(GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells[5].Value + "");
+                    double khoiluong = 0.0;
+                    double chuvi = 0.0;
+                    double thetich = 0.0;
+                    if (dai >= 0 && rong >= 0 && soluong >= 1 && sau > 0)
+                    {
+                        khoiluong = dai * rong * soluong;
+                        if (rong > 0.3)
+                            chuvi = (dai + rong) * 2 * soluong;
+                        else
+                            chuvi = dai * 2 * khoiluong;
+                        thetich = dai * rong * sau * soluong;
+                    }
+                    GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells[8].Value = khoiluong;
+                    GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells[9].Value = chuvi;
+                    GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells[10].Value = thetich;
+                }
+            }
+            catch (Exception)
+            {
+                
+            }
+            
         }
 
 
