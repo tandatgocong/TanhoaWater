@@ -109,6 +109,8 @@
     <Compile Include="DAL\C_DonKhachHang.cs" />
     <Compile Include="DAL\C_DonViTinh.cs" />
     <Compile Include="DAL\C_DotNhanDon.cs" />
+    <Compile Include="DAL\C_KhoiLuongXDCB.cs" />
+    <Compile Include="DAL\C_KichThuocPhuiDao.cs" />
     <Compile Include="DAL\C_LoaiHoSo.cs" />
     <Compile Include="DAL\C_LoaiKhachHang.cs" />
     <Compile Include="DAL\C_LoaiNhanDon.cs" />

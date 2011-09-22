@@ -63,6 +63,7 @@
       <Column Name="CREATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="MODIFYBY" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
       <Column Name="MODIFYDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="DANHMUCTAILAPMATDUONG_KICHTHUOCPHUIDAO" Member="KICHTHUOCPHUIDAOs" ThisKey="MADANHMUC" OtherKey="MADANHMUC" Type="KICHTHUOCPHUIDAO" />
     </Type>
   </Table>
   <Table Name="dbo.DANHMUCVATTU" Member="DANHMUCVATTUs">
@@ -123,6 +124,8 @@
       <Column Name="MODIFYDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="MODIFYLOG" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
       <Association Name="DON_KHACHHANG_TOTHIETKE" Member="TOTHIETKE" ThisKey="SOHOSO" OtherKey="SOHOSO" Type="TOTHIETKE" Cardinality="One" />
+      <Association Name="DON_KHACHHANG_KHOILUONGXDCB" Member="KHOILUONGXDCB" ThisKey="SHS" OtherKey="SHS" Type="KHOILUONGXDCB" Cardinality="One" />
+      <Association Name="DON_KHACHHANG_KICHTHUOCPHUIDAO" Member="KICHTHUOCPHUIDAOs" ThisKey="SHS" OtherKey="SHS" Type="KICHTHUOCPHUIDAO" />
       <Association Name="DOT_NHAN_DON_DON_KHACHHANG" Member="DOT_NHAN_DON" ThisKey="MADOT" OtherKey="MADOT" Type="DOT_NHAN_DON" IsForeignKey="true" />
       <Association Name="LOAI_HOSO_DON_KHACHHANG" Member="LOAI_HOSO" ThisKey="LOAIHOSO" OtherKey="MALOAI" Type="LOAI_HOSO" IsForeignKey="true" />
       <Association Name="LOAI_KHACHHANG_DON_KHACHHANG" Member="LOAI_KHACHHANG" ThisKey="LOAIKH" OtherKey="MALOAI" Type="LOAI_KHACHHANG" IsForeignKey="true" />
@@ -515,6 +518,50 @@
       <Column Name="MODIFYLOG" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
       <Association Name="DON_KHACHHANG_TOTHIETKE" Member="DON_KHACHHANG" ThisKey="SOHOSO" OtherKey="SOHOSO" Type="DON_KHACHHANG" IsForeignKey="true" />
       <Association Name="USER_TOTHIETKE" Member="USER" ThisKey="SODOVIEN" OtherKey="USERNAME" Type="USER" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.KHOILUONGXDCB" Member="KHOILUONGXDCBs">
+    <Type Name="KHOILUONGXDCB">
+      <Column Name="SHS" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CATNHUA" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="BOCNHUA" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CATBTXM" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="BOCBTXM" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="DATCAP4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="DATCAP3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CAT" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="DA04" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="XUCDAT" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CPVATTU" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CPNHANCONG" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CPMAYTHICONG" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CPCABA" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CHIPHICHUNG" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CONG1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="THUE55" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CONG3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="THUEGTGT" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TONGIATRI" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Association Name="DON_KHACHHANG_KHOILUONGXDCB" Member="DON_KHACHHANG" ThisKey="SHS" OtherKey="SHS" Type="DON_KHACHHANG" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.KICHTHUOCPHUIDAO" Member="KICHTHUOCPHUIDAOs">
+    <Type Name="KICHTHUOCPHUIDAO">
+      <Column Name="STT" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SHS" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MADANHMUC" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="TENKETCAU" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="DVT" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="DAI" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="RONG" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="DOSAU" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="SOLUONG" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CHUVI" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="THETICH" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="COTINHTL" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DONGIA" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Association Name="DON_KHACHHANG_KICHTHUOCPHUIDAO" Member="DON_KHACHHANG" ThisKey="SHS" OtherKey="SHS" Type="DON_KHACHHANG" IsForeignKey="true" />
+      <Association Name="DANHMUCTAILAPMATDUONG_KICHTHUOCPHUIDAO" Member="DANHMUCTAILAPMATDUONG" ThisKey="MADANHMUC" OtherKey="MADANHMUC" Type="DANHMUCTAILAPMATDUONG" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>
