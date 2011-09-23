@@ -113,11 +113,7 @@ namespace TanHoaWater.View.Users.TinhDuToan
                 if (dmvt != null)
                 {
                     GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells[1].Value = dmvt.TENKETCAU.ToUpper();
-                    GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells[7].Value = dmvt.DONGIA;
-                    string dai = GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells[2].Value + "";
-                    string rong = GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells[3].Value + "";
-                    string sau = GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells[4].Value + "";
-                    MessageBox.Show(this, dai + rong + sau);
+                    GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells[7].Value = dmvt.DONGIA; 
                 }
                 else
                 {
@@ -299,7 +295,7 @@ namespace TanHoaWater.View.Users.TinhDuToan
                         if (rong > 0.3)
                             chuvi = (dai + rong) * 2 * soluong;
                         else
-                            chuvi = dai * 2 * khoiluong;
+                            chuvi = dai * 2 * soluong;
                         thetich = dai * rong * sau * soluong;
                     }
                     GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells[8].Value = khoiluong;
