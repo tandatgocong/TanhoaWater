@@ -37,7 +37,13 @@ namespace TanHoaWater
             //th.Abort();
             this.menuHeThong.Select();
 
-            this.lbNgayHeThong.Text = Utilities.DateToString.fullCurrentNgay()+"  ";
+            this.lbNgayHeThong.Text = Utilities.DateToString.fullCurrentNgay() + "  ";
+
+            PanelMain.Location = new Point(
+    this.ClientSize.Width / 2 - PanelMain.Size.Width / 2,
+    this.ClientSize.Height / 2 - PanelMain.Size.Height / 2);
+            PanelMain.Anchor = AnchorStyles.None;
+
         }
 
         public static frm_Login dn = new frm_Login();
@@ -50,10 +56,10 @@ namespace TanHoaWater
             }
 
             formLoad();
-            this.Text = "Tan Hoa Water Co., ltd - Nhân Viên : " + DAL.C_USERS._fullName ;
+            this.Text = "Tan Hoa Water Co., ltd - Nhân Viên : " + DAL.C_USERS._fullName;
         }
         private void frm_Main_Load(object sender, EventArgs e)
-        {         
+        {
             if (DAL.TestConection.testConnection() == false)
             {
                 MessageBox.Show(this, "Lỗi Kết Nối, Kiểm Tra Kết Nối Tới Server.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -311,7 +317,7 @@ namespace TanHoaWater
 
         private void microsoftAccess_Click(object sender, EventArgs e)
         {
-             System.Diagnostics.Process.Start("MSACCESS.EXE");
+            System.Diagnostics.Process.Start("MSACCESS.EXE");
         }
 
         private void microsoftExcel_Click(object sender, EventArgs e)
@@ -328,7 +334,7 @@ namespace TanHoaWater
         private void menuTiemKiem_Click(object sender, EventArgs e)
         {
             this.PanelContent.Controls.Clear();
-            this.PanelContent.Controls.Add(new uc_TimKiemDonKH()); 
+            this.PanelContent.Controls.Add(new uc_TimKiemDonKH());
         }
 
         private void biennhan_Click(object sender, EventArgs e)
@@ -351,7 +357,21 @@ namespace TanHoaWater
             this.menuToThietKe.Select();
         }
 
-      
-    }
+        private void frm_Main_SizeChanged(object sender, EventArgs e)
+        {
 
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                PanelContent.Location = new Point(
+    this.ClientSize.Width / 2 - PanelMain.Size.Width / 2,
+    this.ClientSize.Height / 2 - PanelMain.Size.Height / 2 +3);
+                PanelContent.Anchor = AnchorStyles.None;
+                this.lbNgayHeThong.Location = new System.Drawing.Point(800, 0);
+            }
+            else {
+                this.lbNgayHeThong.Location = new System.Drawing.Point(653, 0);
+                this.PanelContent.Location = new System.Drawing.Point(0, 54);
+            }
+        }
+    }
 }
