@@ -31,6 +31,7 @@
             this.panel8 = new System.Windows.Forms.Panel();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
+            this.refresh = new DevComponents.DotNetBar.ButtonX();
             this.txtnoidungtrongai = new System.Windows.Forms.RichTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtSoHoSo = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -56,7 +57,6 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.refresh = new DevComponents.DotNetBar.ButtonX();
             this.panel8.SuspendLayout();
             this.groupPanel1.SuspendLayout();
             this.panelEx1.SuspendLayout();
@@ -145,6 +145,22 @@
             this.panelEx1.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemText;
             this.panelEx1.Style.GradientAngle = 90;
             this.panelEx1.TabIndex = 0;
+            // 
+            // refresh
+            // 
+            this.refresh.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.refresh.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.refresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.refresh.Image = global::TanHoaWater.Properties.Resources.refresh;
+            this.refresh.ImageFixedSize = new System.Drawing.Size(20, 20);
+            this.refresh.Location = new System.Drawing.Point(263, 440);
+            this.refresh.Name = "refresh";
+            this.refresh.Size = new System.Drawing.Size(113, 28);
+            this.refresh.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
+            this.refresh.TabIndex = 129;
+            this.refresh.Text = "Làm lại    ";
+            this.refresh.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
+            this.refresh.Click += new System.EventHandler(this.refresh_Click);
             // 
             // txtnoidungtrongai
             // 
@@ -436,22 +452,6 @@
             this.label15.Size = new System.Drawing.Size(68, 16);
             this.label15.TabIndex = 82;
             this.label15.Text = "Mã Hồ Sơ";
-            // 
-            // refresh
-            // 
-            this.refresh.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.refresh.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.refresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.refresh.Image = global::TanHoaWater.Properties.Resources.refresh;
-            this.refresh.ImageFixedSize = new System.Drawing.Size(20, 20);
-            this.refresh.Location = new System.Drawing.Point(263, 440);
-            this.refresh.Name = "refresh";
-            this.refresh.Size = new System.Drawing.Size(113, 28);
-            this.refresh.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
-            this.refresh.TabIndex = 129;
-            this.refresh.Text = "Làm lại    ";
-            this.refresh.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
-            this.refresh.Click += new System.EventHandler(this.refresh_Click);
             // 
             // tab_DonTroNgai
             // 

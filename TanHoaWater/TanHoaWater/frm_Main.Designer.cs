@@ -190,12 +190,12 @@
             // 
             // PanelContent
             // 
-            this.PanelContent.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.PanelContent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PanelContent.Controls.Add(this.PanelMain);
             this.PanelContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PanelContent.Location = new System.Drawing.Point(0, 56);
+            this.PanelContent.Location = new System.Drawing.Point(0, 54);
             this.PanelContent.Name = "PanelContent";
-            this.PanelContent.Size = new System.Drawing.Size(988, 615);
+            this.PanelContent.Size = new System.Drawing.Size(988, 617);
             this.PanelContent.TabIndex = 1;
             // 
             // PanelMain
@@ -209,7 +209,7 @@
             this.PanelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelMain.Location = new System.Drawing.Point(0, 0);
             this.PanelMain.Name = "PanelMain";
-            this.PanelMain.Size = new System.Drawing.Size(984, 611);
+            this.PanelMain.Size = new System.Drawing.Size(986, 615);
             this.PanelMain.TabIndex = 0;
             // 
             // iconMenuPanel
@@ -742,6 +742,7 @@
             // 
             // ribbonControl1
             // 
+            this.ribbonControl1.AutoScroll = true;
             this.ribbonControl1.Controls.Add(this.ribbonPanel3);
             this.ribbonControl1.Controls.Add(this.ribbonPanel4);
             this.ribbonControl1.Controls.Add(this.ribbonPanel2);
@@ -763,7 +764,7 @@
             this.office2007StartButton1,
             this.buttonItem1,
             this.qatCustomizeItem1});
-            this.ribbonControl1.Size = new System.Drawing.Size(988, 56);
+            this.ribbonControl1.Size = new System.Drawing.Size(988, 54);
             this.ribbonControl1.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.ribbonControl1.TabGroupHeight = 14;
             this.ribbonControl1.TabIndex = 0;
@@ -777,7 +778,7 @@
             this.ribbonPanel3.Location = new System.Drawing.Point(0, 27);
             this.ribbonPanel3.Name = "ribbonPanel3";
             this.ribbonPanel3.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.ribbonPanel3.Size = new System.Drawing.Size(988, 27);
+            this.ribbonPanel3.Size = new System.Drawing.Size(988, 25);
             this.ribbonPanel3.TabIndex = 3;
             // 
             // menuStrip2
@@ -1250,11 +1251,11 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip4;
-            this.MaximizeBox = false;
             this.Name = "frm_Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tan Hoa Water Co., ltd";
             this.Load += new System.EventHandler(this.frm_Main_Load);
+            this.SizeChanged += new System.EventHandler(this.frm_Main_SizeChanged);
             this.mainLayout.ResumeLayout(false);
             this.PanelContent.ResumeLayout(false);
             this.PanelMain.ResumeLayout(false);
