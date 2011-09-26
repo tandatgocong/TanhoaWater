@@ -112,6 +112,7 @@ namespace TanHoaWater.View.Users.TinhDuToan
                 DANHMUCTAILAPMATDUONG dmvt = DAL.C_DanhMucTaiLapMD.finbyMaDM(GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells[0].Value + "");
                 if (dmvt != null)
                 {
+                    mahieuvt = dmvt.MADANHMUC;
                     GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells[1].Value = dmvt.TENKETCAU.ToUpper();
                     GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells[7].Value = dmvt.DONGIA; 
                 }
@@ -224,7 +225,7 @@ namespace TanHoaWater.View.Users.TinhDuToan
             }
         }
 
-
+        string mahieuvt = "";
         private void GridCacCongTac_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == 0)
@@ -232,6 +233,7 @@ namespace TanHoaWater.View.Users.TinhDuToan
                 DANHMUCVATTU dmvt = DAL.C_DanhMucVatTu.finbyMaHieu(GridCacCongTac.Rows[GridCacCongTac.CurrentRow.Index].Cells[0].Value + "");
                 if (dmvt != null)
                 {
+                    
                     GridCacCongTac.Rows[GridCacCongTac.CurrentRow.Index].Cells[1].Value = dmvt.TENVT.ToUpper();
                     GridCacCongTac.Rows[GridCacCongTac.CurrentRow.Index].Cells[2].Value = dmvt.DVT;
                     GridCacCongTac.Rows[GridCacCongTac.CurrentRow.Index].Cells[4].Value = "CM";
@@ -280,7 +282,7 @@ namespace TanHoaWater.View.Users.TinhDuToan
             //End If
             try
             {
-                if (e.ColumnIndex >= 5)
+                if (e.ColumnIndex >= 4)
                 {
                     double dai = double.Parse(GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells[2].Value + "");
                     double rong = double.Parse(GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells[3].Value + "");
@@ -301,11 +303,73 @@ namespace TanHoaWater.View.Users.TinhDuToan
                     GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells[8].Value = khoiluong;
                     GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells[9].Value = chuvi;
                     GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells[10].Value = thetich;
+                    mahieuvt = "";
+                    double sumChuViNhua = 0.0, sumkhoiluongNhua = 0.0;
+                    double sumChuViBT = 0.0, sumkhoiluongBT = 0.0;
+                    double sumDatC4 = 0.0, sumDatC3 = 0.0, sumxutDat = 0.0;
+                    double sumTheTich=0.0;
+                    double sumKLDa4=0.0;
+                    double sumKLCat = 0.0;
+                    double SODHN=0.0;
+
+                    for (int i = 0; i < GridPhuiDao.Rows.Count-1; i++) {
+                        mahieuvt = GridPhuiDao.Rows[i].Cells[0].Value+"";
+                       if (!"".Equals(mahieuvt) && ("N12B".Equals(mahieuvt) || "N12C".Equals(mahieuvt)))
+                        {
+                            sumChuViNhua += double.Parse(GridPhuiDao.Rows[i].Cells[9].Value + "");
+                            sumkhoiluongNhua += double.Parse(GridPhuiDao.Rows[i].Cells[8].Value + "")*0.12;
+                            sumDatC4 += double.Parse(GridPhuiDao.Rows[i].Cells[8].Value + "") * 0.4;                           
+                        }else  if (!"".Equals(mahieuvt) && ("NHUA10".Equals(mahieuvt) || "NHUA10-C3".Equals(mahieuvt)))
+                        {
+                            sumChuViNhua += double.Parse(GridPhuiDao.Rows[i].Cells[9].Value + "");
+                            sumkhoiluongNhua += double.Parse(GridPhuiDao.Rows[i].Cells[8].Value + "") * 0.1;
+                            sumDatC4 += double.Parse(GridPhuiDao.Rows[i].Cells[8].Value + "") * 0.3;                           
+                        }else  if (!"".Equals(mahieuvt) && ("BT10".Contains(mahieuvt) )){
+                            sumChuViBT += double.Parse(GridPhuiDao.Rows[i].Cells[9].Value + "");
+                            sumkhoiluongBT += double.Parse(GridPhuiDao.Rows[i].Cells[8].Value + "") * 0.1;
+                            sumDatC4 += double.Parse(GridPhuiDao.Rows[i].Cells[8].Value + "") * 0.3;         
+                        }
+                       else if (!"".Equals(mahieuvt) && ("DXANH".Equals(mahieuvt) )){
+                            sumDatC4 += double.Parse(GridPhuiDao.Rows[i].Cells[8].Value + "") * 0.25;   
+                        }
+                       else if (!"".Equals(mahieuvt) && ("DDO".Equals(mahieuvt) )){
+                            sumDatC4 += double.Parse(GridPhuiDao.Rows[i].Cells[8].Value + "") * 0.25;   
+                        }
+                       else if (!"".Equals(mahieuvt) && ("TNHA".Equals(mahieuvt) )){
+                            //sumDatC4 += double.Parse(GridPhuiDao.Rows[i].Cells[8].Value + "")  ; 
+                           SODHN += double.Parse(GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells[2].Value + "");
+                        }
+                       else{
+                           sumChuViBT += double.Parse(GridPhuiDao.Rows[i].Cells[9].Value + "");
+                           sumkhoiluongBT += double.Parse(GridPhuiDao.Rows[i].Cells[8].Value + "") * 0.05;
+                           sumDatC4 += double.Parse(GridPhuiDao.Rows[i].Cells[8].Value + "") * 0.1;   
+                        }
+                       sumTheTich += double.Parse(GridPhuiDao.Rows[i].Cells[10].Value + "");
+                       if (!"".Equals(mahieuvt) && !("TNHA".Equals(mahieuvt))) {
+                           sumKLDa4 += double.Parse(GridPhuiDao.Rows[i].Cells[8].Value + "") * 0.1;  
+                       }
+                        //If TLAP!Loai <> "TNHA" Then
+                        //        sumKLDa += 4 + (TLAP!DT * 0.1) double.Parse(GridPhuiDao.Rows[i].Cells[8].Value + "") * 0.1;  
+                        //   End If
+                    }
+                    sumKLCat = sumTheTich - sumKLDa4 - SODHN * 0.18;
+                    sumDatC3 = sumTheTich - (sumkhoiluongNhua + sumkhoiluongBT + sumDatC4k)
+                    this.txtKhoiLuongCatNhua.Text = sumkhoiluongNhua+"";
+                    this.txtChuViCatNhua.Text = sumChuViNhua+"";
+                    this.txtKhoiLuongBT.Text = sumkhoiluongBT + "";
+                    this.txtChuViBT.Text = sumChuViBT + "";
+                    this.txtDatCap4.Text = sumDatC4+"";
+                    this.txtDatCap3.Text = sumDatC3 + "";
+                    this.txtXucDatThua.Text = sumxutDat + "";
+                    this.txtKLDa.Text = sumKLDa4 + "";
+                    this.txtKLCat.Text = sumKLCat + "";
+                  
+                    
                 }
             }
             catch (Exception)
             {
-                
+
             }
             
         }
