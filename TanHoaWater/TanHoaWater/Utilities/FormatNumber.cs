@@ -65,5 +65,13 @@ namespace TanHoaWater.Utilities
         {
             return ThucHien(ChuoiDao(chuoi));
         }
+
+        public static double DoubleRounding(double d, int decimalPlaces)
+        {
+            d = d * Math.Pow(10, decimalPlaces);
+            d = Math.Truncate(d);
+            d = d / Math.Pow(10, decimalPlaces);
+            return d;
+        }
     }
 }
