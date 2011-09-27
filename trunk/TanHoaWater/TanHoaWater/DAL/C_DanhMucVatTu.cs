@@ -166,6 +166,20 @@ namespace TanHoaWater.DAL
             db.Connection.Close();
             return table;
         }
+        public static DataTable getDMVT(string selectin)
+        {
+            TanHoaDataContext db = new TanHoaDataContext();
+            db.Connection.Open();
+            string sql = " SELECT MAHIEU,UPPER(TENVT) AS 'TENVT',DVT";
+            sql += " FROM DANHMUCVATTU ";
+            sql += " WHERE MAHIEU IN (" + selectin + ") ";
+            sql += " ORDER BY CREATEDATE ASC ";
+            SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
+            DataSet dataset = new DataSet();
+            adapter.Fill(dataset,   "TABLE");
+            db.Connection.Close();
+            return dataset.Tables[0];
+        }
 
     }
 }

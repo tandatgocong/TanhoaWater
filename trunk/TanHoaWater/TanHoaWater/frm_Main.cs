@@ -59,7 +59,7 @@ namespace TanHoaWater
             this.Text = "Tan Hoa Water Co., ltd - Nhân Viên : " + DAL.C_USERS._fullName;
         }
         private void frm_Main_Load(object sender, EventArgs e)
-        {
+        {           
             if (DAL.TestConection.testConnection() == false)
             {
                 MessageBox.Show(this, "Lỗi Kết Nối, Kiểm Tra Kết Nối Tới Server.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
