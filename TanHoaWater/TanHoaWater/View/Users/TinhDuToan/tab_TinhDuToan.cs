@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using TanHoaWater.Database;
+using log4net;
 
 namespace TanHoaWater.View.Users.TinhDuToan
 {
+
     public partial class tab_TinhDuToan : UserControl
     {
+        private static readonly ILog log = LogManager.GetLogger(typeof(tab_TinhDuToan).Name);
         public tab_TinhDuToan()
         {
             InitializeComponent();
@@ -416,6 +419,7 @@ namespace TanHoaWater.View.Users.TinhDuToan
                     {
                         GridCacCongTac.Rows[i].Cells["congtac_khoiluong"].Value = double.Parse(DA04) * 1000;
                     }
+                    GridCacCongTac.Rows[i].Cells["contac_loaisd"].Value = "CM";
                 }
 
                 // }
@@ -432,7 +436,7 @@ namespace TanHoaWater.View.Users.TinhDuToan
             try
             {
                 if (e.RowIndex < 0) return;
-                else if (e.ColumnIndex == 4)
+                else if (e.ColumnIndex == 1)
                 {
                     //GridPhuiDao.Columns["phudao_MaKetCau"].Width = 300;
                     //GridPhuiDao.Columns["pd_KetCauMD"].Width = 200;
@@ -443,6 +447,30 @@ namespace TanHoaWater.View.Users.TinhDuToan
                     cbLoaiSD.Height = GridCacCongTac.Rows[e.RowIndex].Height;
                     cbLoaiSD.BringToFront();
 
+                }
+                else
+                {
+                    try
+                    {
+                        string _mahieuvt = GridCacCongTac.Rows[e.RowIndex].Cells["congtac_mahieu"].Value+"";
+                        if (_mahieuvt != null && !"".Equals(_mahieuvt)) {
+                            DONGIAVATTU dongiavt = DAL.C_DonGiaVatTu.finbyDonGiaVTbyMahieu(_mahieuvt);
+                            if (dongiavt != null)
+                            {
+                                this.txtDonGiaVatLieu.Text = String.Format("{0:0,0.00}", dongiavt.DGVATLIEU);
+                                this.TxtDonGiaNhanCong.Text = String.Format("{0:0,0.00}", dongiavt.DGNHANCONG);
+                                this.txtDonGiaMayThiCong.Text = String.Format("{0:0,0.00}", dongiavt.DGMAYTHICONG);
+                            }
+                            else {
+                                MessageBox.Show(this, "Không Tìm Thế Đơn Giá Mã Hiệu.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        log.Error(ex.Message);  
+                    }
+                    
                 }
             }
             catch (Exception)
@@ -459,7 +487,7 @@ namespace TanHoaWater.View.Users.TinhDuToan
         {
             try
             {
-                GridCacCongTac.Rows[GridCacCongTac.CurrentRow.Index].Cells[4].Value = cbLoaiSD.SelectedValue + "";
+                GridCacCongTac.Rows[GridCacCongTac.CurrentRow.Index].Cells["contac_loaisd"].Value = cbLoaiSD.SelectedValue + "";
                 cbLoaiSD.Visible = false;
             }
             catch (Exception)
