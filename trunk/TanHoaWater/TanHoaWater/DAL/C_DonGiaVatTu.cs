@@ -14,7 +14,7 @@ namespace TanHoaWater.DAL
         public static DataTable GetDonGiaVTbyMaHieu(string mahieu )        {
             
             db.Connection.Open();
-            string sql = "SELECT STT,MAHIEUDG, DGVATLIEU,DGNHANCONG,DGXIMANG,NGAYHIEULUC= CONVERT(VARCHAR(10),NGAYHIEULUC,103),CHON";
+            string sql = "SELECT STT,MAHIEUDG, DGVATLIEU,DGNHANCONG,DGMAYTHICONG,NGAYHIEULUC= CONVERT(VARCHAR(10),NGAYHIEULUC,103),CHON";
             sql += " FROM DONGIAVATTU ";
             sql += " WHERE MAHIEUDG ='" + mahieu + "'";
             sql += " ORDER BY STT ASC ";  
@@ -28,7 +28,11 @@ namespace TanHoaWater.DAL
             var query = from dg in db.DONGIAVATTUs where dg.STT == stt && dg.MAHIEUDG == mahieudg select dg;
             return query.SingleOrDefault();
         }
-
+        public static DONGIAVATTU finbyDonGiaVTbyMahieu(string mahieudg)
+        {
+            var query = from dg in db.DONGIAVATTUs where dg.CHON == true && dg.MAHIEUDG == mahieudg select dg;
+            return query.SingleOrDefault();
+        }
         public static void UpdateDGVT(DONGIAVATTU dgvt){
             db.SubmitChanges();
         }

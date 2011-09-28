@@ -263,7 +263,7 @@ namespace TanHoaWater.View.Users.TinhDuToan
             try
             {
                 txtKeypress = e.Control;
-                if (GridDonGiaVT.CurrentCell.OwningColumn.Name == "dg_vatlieu" | GridDonGiaVT.CurrentCell.OwningColumn.Name == "dg_nhanCong" | GridDonGiaVT.CurrentCell.OwningColumn.Name == "dgXiMang" | GridDonGiaVT.CurrentCell.OwningColumn.Name == "phuidao_sl" | GridDonGiaVT.CurrentCell.OwningColumn.Name == "phuidao_cotyle")
+                if (GridDonGiaVT.CurrentCell.OwningColumn.Name == "dg_vatlieu" | GridDonGiaVT.CurrentCell.OwningColumn.Name == "dg_nhanCong" | GridDonGiaVT.CurrentCell.OwningColumn.Name == "DGMAYTHICONG" | GridDonGiaVT.CurrentCell.OwningColumn.Name == "phuidao_sl" | GridDonGiaVT.CurrentCell.OwningColumn.Name == "phuidao_cotyle")
                 {
                     txtKeypress.KeyPress -= KeyPressHandle;
                     txtKeypress.KeyPress += KeyPressHandle;
@@ -305,7 +305,7 @@ namespace TanHoaWater.View.Users.TinhDuToan
                         double nc = double.Parse(GridDonGiaVT.Rows[i].Cells[3].Value + "");
                         dgvt.DGNHANCONG = nc;
                         double xm = double.Parse(GridDonGiaVT.Rows[i].Cells[3].Value + "");
-                        dgvt.DGXIMANG = xm;
+                        dgvt.DGMAYTHICONG = xm;
                         dgvt.NGAYHIEULUC = DateTime.Now.Date;
                         dgvt.CHON = bool.Parse(check);
                         dgvt.CREATEBY = DAL.C_USERS._userName;
