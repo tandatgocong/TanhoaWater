@@ -287,6 +287,12 @@
     <Compile Include="View\Users\KEHOACH\HS_KhachHang.Designer.cs">
       <DependentUpon>HS_KhachHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Users\TinhDuToan\frm_ChonLaiDG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Users\TinhDuToan\frm_ChonLaiDG.Designer.cs">
+      <DependentUpon>frm_ChonLaiDG.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Users\TinhDuToan\tab_DanhMucTaiLapMD.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -451,6 +457,9 @@
     <EmbeddedResource Include="View\Users\KEHOACH\HS_KhachHang.resx">
       <DependentUpon>HS_KhachHang.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\TinhDuToan\frm_ChonLaiDG.resx">
+      <DependentUpon>frm_ChonLaiDG.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\TinhDuToan\tab_DanhMucTaiLapMD.resx">
       <DependentUpon>tab_DanhMucTaiLapMD.cs</DependentUpon>

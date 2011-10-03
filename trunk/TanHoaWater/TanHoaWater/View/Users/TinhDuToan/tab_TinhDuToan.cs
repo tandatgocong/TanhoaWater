@@ -65,7 +65,7 @@ namespace TanHoaWater.View.Users.TinhDuToan
         private void tabItem5_Click(object sender, EventArgs e)
         {
             visibleTab(false, false, false, false, true);
-        }        
+        }
         private void tabTinhDuToan_Click(object sender, EventArgs e)
         {
             this.panelTinhDuToan.Visible = true;
@@ -104,14 +104,16 @@ namespace TanHoaWater.View.Users.TinhDuToan
                 {
                     mahieuvt = dmvt.MADANHMUC;
                     GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells[1].Value = dmvt.TENKETCAU.ToUpper();
-                    GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells[7].Value = dmvt.DONGIA; 
+                    GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells[7].Value = dmvt.DONGIA;
                 }
                 else
                 {
                     MessageBox.Show(this, "Không Tìm Thấy Mã Kết Cấu.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells[0].Selected = true;
                 }
+                Utilities.DataGridV.formatRows(GridPhuiDao);
             }
+
         }
         private void GridPhuiDao_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
         {
@@ -307,7 +309,7 @@ namespace TanHoaWater.View.Users.TinhDuToan
                 }
             }
             catch (Exception)
-            {}
+            { }
         }
 
         /// <summary>
@@ -342,91 +344,95 @@ namespace TanHoaWater.View.Users.TinhDuToan
                 string DA04 = this.txtKLDa.Text;
                 string selectin = "";
                 // GridCacCongTac   
-                //// if (cacongtac) {
-                if (!"".Equals(CNHUA) && double.Parse(CNHUA) > 0.0)
+                if (cacongtac)
                 {
-                    selectin += "'CNHUA',";
-                }
-                if (!"".Equals(BOCNHUA) && double.Parse(BOCNHUA) > 0.0)
-                {
-                    selectin += "'BNHUA',";
-                }
-                if (!"".Equals(CMBTXM) && double.Parse(CMBTXM) > 0.0)
-                {
-                    selectin += "'CMBTXM',";
-                }
-                if (!"".Equals(BMBTXM) && double.Parse(BMBTXM) > 0.0)
-                {
-                    selectin += "'BMBTXM',";
-                }
-                if (!"".Equals(DP4) && double.Parse(DP4) > 0.0)
-                {
-                    selectin += "'DP4',";
-                }
-                if (!"".Equals(DP3) && double.Parse(DP3) > 0.0)
-                {
-                    selectin += "'DP3',";
-                }
-                if (!"".Equals(XUCDAT) && double.Parse(XUCDAT) > 0.0)
-                {
-                    selectin += "'XUCDAT',";
-                }
-                if (!"".Equals(CAT) && double.Parse(CAT) > 0.0)
-                {
-                    selectin += "'CAT',";
-                }
-                if (!"".Equals(DA04) && double.Parse(DA04) > 0.0)
-                {
-                    selectin += "'DA04',";
-                }
-                //MessageBox.Show(this, selectin.Remove(selectin.Length-1,1));
-                GridCacCongTac.DataSource = DAL.C_DanhMucVatTu.getDMVT(selectin.Remove(selectin.Length - 1, 1));
-                for (int i = 0; i < GridCacCongTac.Rows.Count; i++) {
+                    cacongtac = false;
+                    if (!"".Equals(CNHUA) && double.Parse(CNHUA) > 0.0)
+                    {
+                        selectin += "'CNHUA',";
+                    }
+                    if (!"".Equals(BOCNHUA) && double.Parse(BOCNHUA) > 0.0)
+                    {
+                        selectin += "'BNHUA',";
+                    }
+                    if (!"".Equals(CMBTXM) && double.Parse(CMBTXM) > 0.0)
+                    {
+                        selectin += "'CMBTXM',";
+                    }
+                    if (!"".Equals(BMBTXM) && double.Parse(BMBTXM) > 0.0)
+                    {
+                        selectin += "'BMBTXM',";
+                    }
+                    if (!"".Equals(DP4) && double.Parse(DP4) > 0.0)
+                    {
+                        selectin += "'DP4',";
+                    }
+                    if (!"".Equals(DP3) && double.Parse(DP3) > 0.0)
+                    {
+                        selectin += "'DP3',";
+                    }
+                    if (!"".Equals(XUCDAT) && double.Parse(XUCDAT) > 0.0)
+                    {
+                        selectin += "'XUCDAT',";
+                    }
+                    if (!"".Equals(CAT) && double.Parse(CAT) > 0.0)
+                    {
+                        selectin += "'CAT',";
+                    }
+                    if (!"".Equals(DA04) && double.Parse(DA04) > 0.0)
+                    {
+                        selectin += "'DA04',";
+                    }
+                    //MessageBox.Show(this, selectin.Remove(selectin.Length-1,1));
+                    GridCacCongTac.DataSource = DAL.C_DanhMucVatTu.getDMVT(selectin.Remove(selectin.Length - 1, 1));
+                    for (int i = 0; i < GridCacCongTac.Rows.Count; i++)
+                    {
 
-                    if ("CNHUA".Equals(GridCacCongTac.Rows[i].Cells["congtac_mahieu"].Value) && double.Parse(CNHUA) > 0.0)
-                    {
-                        GridCacCongTac.Rows[i].Cells["congtac_khoiluong"].Value = double.Parse(CNHUA) * 1000;
+                        if ("CNHUA".Equals(GridCacCongTac.Rows[i].Cells["congtac_mahieu"].Value) && double.Parse(CNHUA) > 0.0)
+                        {
+                            GridCacCongTac.Rows[i].Cells["congtac_khoiluong"].Value = double.Parse(CNHUA) * 1000;
+                        }
+                        if ("BNHUA".Equals(GridCacCongTac.Rows[i].Cells["congtac_mahieu"].Value) && double.Parse(BOCNHUA) > 0.0)
+                        {
+                            GridCacCongTac.Rows[i].Cells["congtac_khoiluong"].Value = double.Parse(BOCNHUA) * 1000;
+                        }
+                        if ("CMBTXM".Equals(GridCacCongTac.Rows[i].Cells["congtac_mahieu"].Value) && double.Parse(CMBTXM) > 0.0)
+                        {
+                            GridCacCongTac.Rows[i].Cells["congtac_khoiluong"].Value = double.Parse(CMBTXM) * 1000;
+                        }
+                        if ("BMBTXM".Equals(GridCacCongTac.Rows[i].Cells["congtac_mahieu"].Value) && double.Parse(BMBTXM) > 0.0)
+                        {
+                            GridCacCongTac.Rows[i].Cells["congtac_khoiluong"].Value = double.Parse(BMBTXM) * 1000;
+                        }
+                        if ("DP4".Equals(GridCacCongTac.Rows[i].Cells["congtac_mahieu"].Value) && double.Parse(DP4) > 0.0)
+                        {
+                            GridCacCongTac.Rows[i].Cells["congtac_khoiluong"].Value = double.Parse(DP4) * 1000;
+                        }
+                        if ("DP3".Equals(GridCacCongTac.Rows[i].Cells["congtac_mahieu"].Value) && double.Parse(DP3) > 0.0)
+                        {
+                            GridCacCongTac.Rows[i].Cells["congtac_khoiluong"].Value = double.Parse(DP3) * 1000;
+                        }
+                        if ("XUCDAT".Equals(GridCacCongTac.Rows[i].Cells["congtac_mahieu"].Value) && double.Parse(XUCDAT) > 0.0)
+                        {
+                            GridCacCongTac.Rows[i].Cells["congtac_khoiluong"].Value = double.Parse(XUCDAT) * 1000;
+                        }
+                        if ("CAT".Equals(GridCacCongTac.Rows[i].Cells["congtac_mahieu"].Value) && double.Parse(CAT) > 0.0)
+                        {
+                            GridCacCongTac.Rows[i].Cells["congtac_khoiluong"].Value = double.Parse(CAT) * 1000;
+                        }
+                        if ("DA04".Equals(GridCacCongTac.Rows[i].Cells["congtac_mahieu"].Value) && double.Parse(DA04) > 0.0)
+                        {
+                            GridCacCongTac.Rows[i].Cells["congtac_khoiluong"].Value = double.Parse(DA04) * 1000;
+                        }
+                        GridCacCongTac.Rows[i].Cells["contac_loaisd"].Value = "CM";
                     }
-                    if ("BNHUA".Equals(GridCacCongTac.Rows[i].Cells["congtac_mahieu"].Value) && double.Parse(BOCNHUA) > 0.0)
-                    {
-                        GridCacCongTac.Rows[i].Cells["congtac_khoiluong"].Value = double.Parse(BOCNHUA) * 1000;
-                    }
-                    if ("CMBTXM".Equals(GridCacCongTac.Rows[i].Cells["congtac_mahieu"].Value) && double.Parse(CMBTXM) > 0.0)
-                    {
-                        GridCacCongTac.Rows[i].Cells["congtac_khoiluong"].Value = double.Parse(CMBTXM) * 1000;
-                    }
-                    if ("BMBTXM".Equals(GridCacCongTac.Rows[i].Cells["congtac_mahieu"].Value) && double.Parse(BMBTXM) > 0.0)
-                    {
-                        GridCacCongTac.Rows[i].Cells["congtac_khoiluong"].Value = double.Parse(BMBTXM) * 1000;
-                    }
-                    if ("DP4".Equals(GridCacCongTac.Rows[i].Cells["congtac_mahieu"].Value) && double.Parse(DP4) > 0.0)
-                    {
-                        GridCacCongTac.Rows[i].Cells["congtac_khoiluong"].Value = double.Parse(DP4) * 1000;
-                    }
-                    if ("DP3".Equals(GridCacCongTac.Rows[i].Cells["congtac_mahieu"].Value) && double.Parse(DP3) > 0.0)
-                    {
-                        GridCacCongTac.Rows[i].Cells["congtac_khoiluong"].Value = double.Parse(DP3) * 1000;
-                    }
-                    if ("XUCDAT".Equals(GridCacCongTac.Rows[i].Cells["congtac_mahieu"].Value) && double.Parse(XUCDAT) > 0.0)
-                    {
-                        GridCacCongTac.Rows[i].Cells["congtac_khoiluong"].Value = double.Parse(XUCDAT) * 1000;
-                    }
-                    if ("CAT".Equals(GridCacCongTac.Rows[i].Cells["congtac_mahieu"].Value) && double.Parse(CAT) > 0.0)
-                    {
-                        GridCacCongTac.Rows[i].Cells["congtac_khoiluong"].Value = double.Parse(CAT) * 1000;
-                    }
-                    if ("DA04".Equals(GridCacCongTac.Rows[i].Cells["congtac_mahieu"].Value) && double.Parse(DA04) > 0.0)
-                    {
-                        GridCacCongTac.Rows[i].Cells["congtac_khoiluong"].Value = double.Parse(DA04) * 1000;
-                    }
-                    GridCacCongTac.Rows[i].Cells["contac_loaisd"].Value = "CM";
-                }
+                    Utilities.DataGridV.formatRows(GridCacCongTac);
 
-                // }
+                }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show(this, ex.Message);
+                //MessageBox.Show(this, ex.Message);
             }
 
 
@@ -436,7 +442,7 @@ namespace TanHoaWater.View.Users.TinhDuToan
             try
             {
                 if (e.RowIndex < 0) return;
-                else if (e.ColumnIndex == 1)
+                else if (e.ColumnIndex == 4)
                 {
                     //GridPhuiDao.Columns["phudao_MaKetCau"].Width = 300;
                     //GridPhuiDao.Columns["pd_KetCauMD"].Width = 200;
@@ -452,8 +458,9 @@ namespace TanHoaWater.View.Users.TinhDuToan
                 {
                     try
                     {
-                        string _mahieuvt = GridCacCongTac.Rows[e.RowIndex].Cells["congtac_mahieu"].Value+"";
-                        if (_mahieuvt != null && !"".Equals(_mahieuvt)) {
+                        string _mahieuvt = GridCacCongTac.Rows[e.RowIndex].Cells["congtac_mahieu"].Value + "";
+                        if (_mahieuvt != null && !"".Equals(_mahieuvt))
+                        {
                             DONGIAVATTU dongiavt = DAL.C_DonGiaVatTu.finbyDonGiaVTbyMahieu(_mahieuvt);
                             if (dongiavt != null)
                             {
@@ -461,20 +468,28 @@ namespace TanHoaWater.View.Users.TinhDuToan
                                 this.TxtDonGiaNhanCong.Text = String.Format("{0:0,0.00}", dongiavt.DGNHANCONG);
                                 this.txtDonGiaMayThiCong.Text = String.Format("{0:0,0.00}", dongiavt.DGMAYTHICONG);
                             }
-                            else {
+                            else
+                            {
                                 MessageBox.Show(this, "Không Tìm Thế Đơn Giá Mã Hiệu.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
+                        }
+                        else {
+                            this.txtDonGiaVatLieu.Text = "0.00";
+                            this.TxtDonGiaNhanCong.Text = "0.00";
+                            this.txtDonGiaMayThiCong.Text = "0.00";
                         }
                     }
                     catch (Exception ex)
                     {
-                        log.Error(ex.Message);  
+                        MessageBox.Show(this, ex.Message);
+                        log.Error(ex.Message);
                     }
-                    
+
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                MessageBox.Show(this, ex.Message);
             }
         }
 
@@ -519,11 +534,14 @@ namespace TanHoaWater.View.Users.TinhDuToan
                     this.txtDanhBo.Text = table.Rows[0][10].ToString();
                     this.txtTenBangThietKe.Text = table.Rows[0][11].ToString();
                     this.txtSoDoVien.Text = table.Rows[0][12].ToString();
-                    if ("True".Equals(table.Rows[0][13].ToString())) {
+                    if ("True".Equals(table.Rows[0][13].ToString()))
+                    {
                         checkKhoan.Checked = true;
                         txtLoaiKhoan.Text = table.Rows[0][14].ToString();
-                        
-                    } else {
+
+                    }
+                    else
+                    {
                         checkKhoan.Checked = false;
                         txtLoaiKhoan.Text = table.Rows[0][14].ToString();
                     }
@@ -534,8 +552,8 @@ namespace TanHoaWater.View.Users.TinhDuToan
 
         string mahieuvt = "";
         private void GridCacCongTac_CellEndEdit(object sender, DataGridViewCellEventArgs e)
-        { 
-            if (e.ColumnIndex == 2)
+        {
+            if (e.ColumnIndex == 0)
             {
                 DANHMUCVATTU dmvt = DAL.C_DanhMucVatTu.finbyMaHieu(GridCacCongTac.Rows[GridCacCongTac.CurrentRow.Index].Cells["congtac_mahieu"].Value + "");
                 if (dmvt != null)
@@ -575,169 +593,31 @@ namespace TanHoaWater.View.Users.TinhDuToan
 
         private void GridCacCongTac_CellValidated(object sender, DataGridViewCellEventArgs e)
         {
+             try
+            {
+                if (e.RowIndex < GridCacCongTac.RowCount - 1)
+                {
+                    //  MessageBox.Show(this,"Dữ Liệu Không Được trống và lớn hơn 0 !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if ("".Equals(this.GridCacCongTac.Rows[e.RowIndex].Cells["congtac_khoiluong"].Value) || this.GridCacCongTac.Rows[e.RowIndex].Cells["congtac_khoiluong"].Value == null || Convert.ToDouble(this.GridCacCongTac.Rows[e.RowIndex].Cells["phuidao_Daii"].Value.ToString()) <= 0)
+                    {
+                        this.GridCacCongTac.Rows[e.RowIndex].Cells["congtac_khoiluong"].ErrorText = "Dữ Liệu Không Được trống và lớn hơn 0 !";
 
+                    }
+                    else
+                    {
+                        this.GridCacCongTac.Rows[e.RowIndex].Cells["congtac_khoiluong"].ErrorText = null;
+                    }
+                }
+            }
+            catch (Exception)
+            { }            
         }
 
-        
-       
-        //        private void tabNhapPhuiDao_Click(object sender, EventArgs e)
-        //        {
-        //            visibleTab(false, false, true, false, false);
-        //            loadComboboxPhuiDao();
-        //        }
-        //        private void GridPhuiDao_CellClick(object sender, DataGridViewCellEventArgs e)
-        //        {
-        //            try
-        //            {
-        //                if (e.RowIndex < 0) return;
-        //                else if (e.ColumnIndex == 0)
-        //                {
-        //                    //GridPhuiDao.Columns["phudao_MaKetCau"].Width = 300;
-        //                    //GridPhuiDao.Columns["pd_KetCauMD"].Width = 200;
-        //                    PhuiDaocbMaKetCau.Visible = true;                    
-        //                    PhuiDaocbMaKetCau.Top = this.GridPhuiDao.Top + GridPhuiDao.GetRowDisplayRectangle(e.RowIndex, true).Top;
-        //                    PhuiDaocbMaKetCau.Left = this.GridPhuiDao.Left + GridPhuiDao.GetColumnDisplayRectangle(e.ColumnIndex, true).Left;
-        //                    PhuiDaocbMaKetCau.Width = GridPhuiDao.Columns[e.ColumnIndex].Width;
-        //                    PhuiDaocbMaKetCau.Height = GridPhuiDao.Rows[e.RowIndex].Height;
-        //                    PhuiDaocbMaKetCau.BringToFront();
+        private void btChonLaiDonGia_Click(object sender, EventArgs e)
+        {
+            //frm_ChonLaiDG from = new frm_ChonLaiDG();
+            //from.ShowDialog();
 
-        //                }
-        //            }
-        //            catch (Exception)
-        //            {
-        //            }
-        //        }        
-        //        DataTable phuidao = null;
-
-        //        private void tabTaiLapMatDuong_Click(object sender, EventArgs e)
-        //        {
-        //            panelTaiLapMD.Controls.Clear();
-        //            panelTaiLapMD.Controls.Add(new tab_DanhMucTaiLapMD());
-        //        }
-        //        private void GridPhuiDao_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
-        //        {
-        //        }
-        //        void PhuiDao() {
-        //            //if (phuidao != null)
-        //            //{
-        //            //    DataRow rows = phuidao.NewRow();
-        //            //    rows["MAKETCAU"] = this.PhuiDaocbMaKetCau.SelectedValue + "";
-        //            //    rows["KETCAUMD"] = catchuoi(this.PhuiDaocbMaKetCau.Text + "");
-        //            //    rows["DAI"] = 0.0;
-        //            //    rows["RONG"] = 0.0;
-        //            //    rows["SAU"] = 0.6;
-        //            //    rows["SL"] = 1;
-        //            //    rows["COTL"] = true;
-        //            //    phuidao.Rows.Add(rows);
-        //            //}
-        //            //else
-        //            //{
-        //            //    phuidao = new DataTable();
-        //            //    phuidao.Columns.Add("MAKETCAU", typeof(string));
-        //            //    phuidao.Columns.Add("KETCAUMD", typeof(string));
-        //            //    phuidao.Columns.Add("DAI", typeof(double));
-        //            //    phuidao.Columns.Add("RONG", typeof(double));
-        //            //    phuidao.Columns.Add("SAU", typeof(double));
-        //            //    phuidao.Columns.Add("SL", typeof(int));
-        //            //    phuidao.Columns.Add("COTL", typeof(bool));
-
-        //            //    DataRow rows = phuidao.NewRow();
-        //            //    rows["MAKETCAU"] = this.PhuiDaocbMaKetCau.SelectedValue + "";
-        //            //    rows["KETCAUMD"] = catchuoi(this.PhuiDaocbMaKetCau.Text + "");
-        //            //    rows["DAI"] = 0.0;
-        //            //    rows["RONG"] = 0.0;
-        //            //    rows["SAU"] = 0.6;
-        //            //    rows["SL"] = 1;
-        //            //    rows["COTL"] = true;
-        //            //    phuidao.Rows.Add(rows);
-        //            //}
-        //            //GridPhuiDao.DataSource = phuidao;
-
-        //            GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells[0].Value = this.PhuiDaocbMaKetCau.SelectedValue + "";
-        //            GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells[1].Value = catchuoi(this.PhuiDaocbMaKetCau.Text + "");
-        //            //GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells[0].Selected = false;
-        //            //GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells[2].Selected = true;
-        //            GridPhuiDao.Columns[GridPhuiDao.CurrentCell.RowIndex].Width = 95;           
-        //            Utilities.DataGridV.formatRows(GridPhuiDao);
-        //            PhuiDaocbMaKetCau.Visible = false;
-        //            GridPhuiDao.Columns["phudao_MaKetCau"].Width = 95;
-        //            GridPhuiDao.Columns["pd_KetCauMD"].Width = 200;  
-        //        }
-
-        //        private void PhuiDaocbMaKetCau_SelectedValueChanged(object sender, EventArgs e)
-        //        {
-        //            try
-        //            {
-        //                PhuiDao();
-        //            }
-        //            catch (Exception ex)
-        //            {
-
-        //            }
-        //        }
-
-        //        private void PhuiDaocbMaKetCau_KeyUp(object sender, KeyEventArgs e)
-        //        {
-        //            PhuiDaocbMaKetCau.DroppedDown = true;
-        //        }
-
-        //        private void GridPhuiDao_UserAddedRow(object sender, DataGridViewRowEventArgs e)
-        //        {
-        //            GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells[3].Value = 0;
-        //            GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells[4].Value = 0;
-        //            GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells[5].Value = 0.6;
-        //            GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells[6].Value = true;           
-        //        }
-
-
-        //        /// <summary>
-        //        /// Cac Cong Tac
-        //        /// </summary>
-        //        /// <param name="sender"></param>
-        //        /// <param name="e"></param>
-
-        //        private void GridCacCongTac_CellClick(object sender, DataGridViewCellEventArgs e)
-        //        {
-        //            try
-        //            {
-        //                if (e.RowIndex < 0) return;
-        //                else if (e.ColumnIndex == 0)
-        //                {
-
-        //                    CCT_cbMaHieu.Visible = true;
-        //                    CCT_cbMaHieu.Top = this.GridCacCongTac.Top + GridCacCongTac.GetRowDisplayRectangle(e.RowIndex, true).Top;
-        //                    CCT_cbMaHieu.Left = this.GridCacCongTac.Left + GridCacCongTac.GetColumnDisplayRectangle(e.ColumnIndex, true).Left;
-        //                    CCT_cbMaHieu.Width = GridCacCongTac.Columns[e.ColumnIndex].Width;
-        //                    CCT_cbMaHieu.Height = GridCacCongTac.Rows[e.RowIndex].Height;
-        //                    CCT_cbMaHieu.BringToFront();
-
-        //                }
-        //            }
-        //            catch (Exception)
-        //            {
-        //            }
-        //        }
-
-        //        private void GridCacCongTac_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
-        //        {
-        //            try
-        //            {
-        //                txtKeypress = e.Control;
-        //                if (GridCacCongTac.CurrentCell.OwningColumn.Name == "cct_KhoiLuong")
-        //                {
-        //                    txtKeypress.KeyPress -= KeyPressHandle;
-        //                    txtKeypress.KeyPress += KeyPressHandle;
-        //                }
-        //                else
-        //                {
-        //                    txtKeypress.KeyPress -= KeyPressHandle;
-        //                }
-        //            }
-        //            catch (Exception)
-        //            {
-        //            }
-        //        }
-        //    }
-        //}
+        }
     }
 }

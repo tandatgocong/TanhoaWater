@@ -215,9 +215,9 @@
             // iconMenuPanel
             // 
             this.iconMenuPanel.Controls.Add(this.groupTTK);
-            this.iconMenuPanel.Location = new System.Drawing.Point(71, 377);
+            this.iconMenuPanel.Location = new System.Drawing.Point(69, 352);
             this.iconMenuPanel.Name = "iconMenuPanel";
-            this.iconMenuPanel.Size = new System.Drawing.Size(828, 201);
+            this.iconMenuPanel.Size = new System.Drawing.Size(839, 201);
             this.iconMenuPanel.TabIndex = 14;
             // 
             // groupTTK
@@ -241,7 +241,7 @@
             this.groupTTK.Controls.Add(this.pictureBox3);
             this.groupTTK.Controls.Add(this.pictureBox4);
             this.groupTTK.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupTTK.Location = new System.Drawing.Point(6, 3);
+            this.groupTTK.Location = new System.Drawing.Point(6, 4);
             this.groupTTK.Name = "groupTTK";
             this.groupTTK.Size = new System.Drawing.Size(819, 190);
             // 
@@ -481,7 +481,7 @@
             this.group_VTTH.Controls.Add(this.khvt_BaoCao);
             this.group_VTTH.Controls.Add(this.pictureBox13);
             this.group_VTTH.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.group_VTTH.Location = new System.Drawing.Point(10, 4);
+            this.group_VTTH.Location = new System.Drawing.Point(11, 8);
             this.group_VTTH.Name = "group_VTTH";
             this.group_VTTH.Size = new System.Drawing.Size(828, 186);
             // 
@@ -702,7 +702,7 @@
             // labelX1
             // 
             this.labelX1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX1.Location = new System.Drawing.Point(380, 584);
+            this.labelX1.Location = new System.Drawing.Point(380, 558);
             this.labelX1.Name = "labelX1";
             this.labelX1.Size = new System.Drawing.Size(597, 23);
             this.labelX1.TabIndex = 11;
@@ -712,7 +712,7 @@
             // reflectionImage1
             // 
             this.reflectionImage1.Image = global::TanHoaWater.Properties.Resources.logocty;
-            this.reflectionImage1.Location = new System.Drawing.Point(375, 127);
+            this.reflectionImage1.Location = new System.Drawing.Point(375, 102);
             this.reflectionImage1.Name = "reflectionImage1";
             this.reflectionImage1.ReflectionEnabled = false;
             this.reflectionImage1.Size = new System.Drawing.Size(203, 200);
@@ -723,7 +723,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(22)))), ((int)(((byte)(111)))));
-            this.label1.Location = new System.Drawing.Point(83, 330);
+            this.label1.Location = new System.Drawing.Point(83, 310);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(814, 40);
             this.label1.TabIndex = 10;
@@ -732,7 +732,7 @@
             // reflectionLabel1
             // 
             this.reflectionLabel1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.reflectionLabel1.Location = new System.Drawing.Point(167, 22);
+            this.reflectionLabel1.Location = new System.Drawing.Point(167, 8);
             this.reflectionLabel1.Name = "reflectionLabel1";
             this.reflectionLabel1.Size = new System.Drawing.Size(637, 99);
             this.reflectionLabel1.TabIndex = 8;
