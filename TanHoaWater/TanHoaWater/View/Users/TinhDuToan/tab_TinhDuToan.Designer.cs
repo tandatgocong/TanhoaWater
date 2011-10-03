@@ -382,6 +382,9 @@
             // 
             // GridCacCongTac
             // 
+            this.GridCacCongTac.AllowUserToOrderColumns = true;
+            this.GridCacCongTac.AllowUserToResizeColumns = false;
+            this.GridCacCongTac.AllowUserToResizeRows = false;
             this.GridCacCongTac.BackgroundColor = System.Drawing.SystemColors.Control;
             this.GridCacCongTac.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -432,9 +435,10 @@
             this.congtac_mahieu.DataPropertyName = "MAHIEU";
             this.congtac_mahieu.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
             this.congtac_mahieu.DisplayStyleForCurrentCellOnly = true;
-            this.congtac_mahieu.DropDownWidth = 250;
+            this.congtac_mahieu.DropDownWidth = 100;
             this.congtac_mahieu.FillWeight = 80F;
             this.congtac_mahieu.HeaderText = "Mã Hiệu ĐG";
+            this.congtac_mahieu.MaxDropDownItems = 20;
             this.congtac_mahieu.Name = "congtac_mahieu";
             // 
             // congtac_hanmuc
@@ -510,6 +514,8 @@
             this.btChonLaiDonGia.TabIndex = 19;
             this.btChonLaiDonGia.Text = "Chọn Lại Đơn Giá";
             this.btChonLaiDonGia.UseVisualStyleBackColor = true;
+            this.btChonLaiDonGia.Visible = false;
+            this.btChonLaiDonGia.Click += new System.EventHandler(this.btChonLaiDonGia_Click);
             // 
             // txtDonGiaMayThiCong
             // 
