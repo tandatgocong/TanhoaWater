@@ -119,7 +119,7 @@ namespace TanHoaWater.DAL
                     totk.TRAHS = true;
                     totk.NGAYTRAHS = DateTime.Now;
                     totk.TRONGAITHIETKE = true;
-                    totk.NOIDUNGTRONGAI = noidungtrongai;
+                    totk.NOIDUNGTRONGAI = noidungtrongai;                    
                     db.SubmitChanges();
                     return true;
                 }
@@ -136,6 +136,12 @@ namespace TanHoaWater.DAL
         public static TOTHIETKE findBySoHoSo(string sohoso) {
             TanHoaDataContext db = new TanHoaDataContext();
             var ttk = from query in db.TOTHIETKEs where query.SOHOSO == sohoso select query;
+            return ttk.SingleOrDefault();
+        }
+        public static TOTHIETKE findBySHS(string shs)
+        {
+            TanHoaDataContext db = new TanHoaDataContext();
+            var ttk = from query in db.TOTHIETKEs where query.SHS == shs select query;
             return ttk.SingleOrDefault();
         }
         public static DataTable TinhHinhKSTK(string madot, string tungay, string denngay, string tensdv, bool tinhtrang) { 
@@ -240,7 +246,7 @@ namespace TanHoaWater.DAL
         {
             TanHoaDataContext db = new TanHoaDataContext();
             db.Connection.Open();
-            string sql = "  SELECT DISTINCT nd.MADOT, CONVERT(VARCHAR(20),nd.NGAYLAPDON,103) ,loai.TENLOAI, COUNT(*) as 'SOHS', COUNT(TRONGAITHIETKE) as 'TRONGAI'";
+            string sql = "  SELECT DISTINCT nd.MADOT, CONVERT(VARCHAR(20),nd.NGAYLAPDON,103) ,loai.TENLOAI, COUNT(*) as 'SOHS', COUNT(TRONGAITHIETKE) as 'TRONGAI', COUNT(HOANTATTK) as 'HOANTHANH'";
             sql+=" FROM DOT_NHAN_DON AS nd ,LOAI_HOSO AS loai, TOTHIETKE AS ttk";
             sql+="  WHERE nd.LOAIDON=loai.MALOAI AND ttk.MADOT=nd.MADOT ";
             sql += " AND ttk.MADOT='"+ ttkMaDot +"'";
@@ -276,6 +282,7 @@ namespace TanHoaWater.DAL
                 TOTHIETKE toTK = query.SingleOrDefault();
                 if (toTK != null) {
                     toTK.NGAYCHUYENHS = DateTime.Now.Date;
+                    toTK.HOANTATTK = true;
                     toTK.BOPHANCHUYEN = bp;
                 }
                 db.SubmitChanges();
@@ -304,6 +311,31 @@ namespace TanHoaWater.DAL
             //SqlDataAdapter ct = new SqlDataAdapter(user, db.Connection.ConnectionString);
             //ct.Fill(ds, "USERS");
             return ds;
+        }
+
+        public static bool HoaTatTK(string shs)
+        {
+            try
+            {
+                TanHoaDataContext db = new TanHoaDataContext();
+                var query = from ttk in db.TOTHIETKEs where ttk.SHS == shs select ttk;
+                TOTHIETKE totk = query.SingleOrDefault();
+                if (totk != null)
+                {
+                    totk.TRAHS = true;
+                    totk.HOANTATTK = true;
+                    totk.NGAYTRAHS = DateTime.Now.Date;
+                    db.SubmitChanges();
+                    return true;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                log.Error("Loi khi chuyen hs" + ex.Message);
+
+            }
+            return false;
         }
     
     }
