@@ -384,6 +384,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
             this.errorProvider1.Clear();
             this.txtSHS.Focus();
             this.errorProvider1.Clear();
+            this.soho.Value = 0;
         }
 
         private void buttonX2_Click(object sender, EventArgs e)
