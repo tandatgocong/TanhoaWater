@@ -314,6 +314,7 @@
             this.sodovien.DisplayMember = "Text";
             this.sodovien.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.sodovien.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.sodovien.DropDownWidth = 150;
             this.sodovien.FormattingEnabled = true;
             this.sodovien.ItemHeight = 16;
             this.sodovien.Location = new System.Drawing.Point(440, 199);

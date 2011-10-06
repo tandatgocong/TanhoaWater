@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -42,6 +41,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.reflectionLabel1 = new DevComponents.DotNetBar.Controls.ReflectionLabel();
             this.tabControl1 = new DevComponents.DotNetBar.TabControl();
@@ -50,13 +50,8 @@
             this.checkBoVT = new System.Windows.Forms.CheckBox();
             this.groupPanelBoVT = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.panelEx9 = new DevComponents.DotNetBar.PanelEx();
-            this.cbNhomVatTu = new System.Windows.Forms.ComboBox();
             this.btCapNhatBoVT = new DevComponents.DotNetBar.ButtonX();
             this.GridBoVT = new System.Windows.Forms.DataGridView();
-            this.bovt_MABOVT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bovt_MAHIEU = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bovt_TENVT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bovt_dinhmuc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelX61 = new DevComponents.DotNetBar.LabelX();
             this.btLamLai = new DevComponents.DotNetBar.ButtonX();
             this.groupDGVT = new DevComponents.DotNetBar.Controls.GroupPanel();
@@ -97,11 +92,11 @@
             this.labelX57 = new DevComponents.DotNetBar.LabelX();
             this.labelX56 = new DevComponents.DotNetBar.LabelX();
             this.tabDanhMucVatTu = new DevComponents.DotNetBar.TabItem(this.components);
+            this.tabControlPanel1 = new DevComponents.DotNetBar.TabControlPanel();
+            this.tabTinhDuToan = new DevComponents.DotNetBar.TabItem(this.components);
             this.tabControlPanel5 = new DevComponents.DotNetBar.TabControlPanel();
             this.panelTaiLapMD = new DevComponents.DotNetBar.PanelEx();
             this.tabTaiLapMatDuong = new DevComponents.DotNetBar.TabItem(this.components);
-            this.tabControlPanel1 = new DevComponents.DotNetBar.TabControlPanel();
-            this.tabTinhDuToan = new DevComponents.DotNetBar.TabItem(this.components);
             this.PanelThamSo = new DevComponents.DotNetBar.TabControlPanel();
             this.groupPanel6 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.panelEx4 = new DevComponents.DotNetBar.PanelEx();
@@ -148,6 +143,10 @@
             this.checkHSCoXinPhepDaoDuong = new System.Windows.Forms.CheckBox();
             this.tabItem1 = new DevComponents.DotNetBar.TabItem(this.components);
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.bovt_MABOVT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bovt_MAHIEU = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.bovt_TENVT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bovt_dinhmuc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabControl1)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -204,8 +203,8 @@
             // 
             this.tabControl1.CanReorderTabs = true;
             this.tabControl1.Controls.Add(this.tabControlPanel2);
-            this.tabControl1.Controls.Add(this.tabControlPanel1);
             this.tabControl1.Controls.Add(this.tabControlPanel5);
+            this.tabControl1.Controls.Add(this.tabControlPanel1);
             this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(1, 37);
             this.tabControl1.Name = "tabControl1";
@@ -316,7 +315,6 @@
             // panelEx9
             // 
             this.panelEx9.CanvasColor = System.Drawing.SystemColors.Control;
-            this.panelEx9.Controls.Add(this.cbNhomVatTu);
             this.panelEx9.Controls.Add(this.btCapNhatBoVT);
             this.panelEx9.Controls.Add(this.GridBoVT);
             this.panelEx9.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -331,29 +329,6 @@
             this.panelEx9.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemText;
             this.panelEx9.Style.GradientAngle = 90;
             this.panelEx9.TabIndex = 0;
-            // 
-            // cbNhomVatTu
-            // 
-            this.cbNhomVatTu.DropDownHeight = 150;
-            this.cbNhomVatTu.DropDownWidth = 300;
-            this.cbNhomVatTu.FormattingEnabled = true;
-            this.cbNhomVatTu.IntegralHeight = false;
-            this.cbNhomVatTu.Items.AddRange(new object[] {
-            "fsdafdsa",
-            "fafd",
-            "safda",
-            "fdaf",
-            "dsafds",
-            "afdsafds",
-            "fdsaf",
-            "dfdsaf",
-            "fdasfd"});
-            this.cbNhomVatTu.Location = new System.Drawing.Point(172, 87);
-            this.cbNhomVatTu.Name = "cbNhomVatTu";
-            this.cbNhomVatTu.Size = new System.Drawing.Size(121, 23);
-            this.cbNhomVatTu.TabIndex = 100;
-            this.cbNhomVatTu.Visible = false;
-            this.cbNhomVatTu.SelectedIndexChanged += new System.EventHandler(this.cbNhomVatTu_SelectedIndexChanged);
             // 
             // btCapNhatBoVT
             // 
@@ -403,37 +378,8 @@
             this.GridBoVT.Size = new System.Drawing.Size(413, 366);
             this.GridBoVT.TabIndex = 101;
             this.GridBoVT.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridBoVT_CellClick);
+            this.GridBoVT.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridBoVT_CellEndEdit);
             this.GridBoVT.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.GridBoVT_EditingControlShowing);
-            // 
-            // bovt_MABOVT
-            // 
-            this.bovt_MABOVT.DataPropertyName = "MABOVT";
-            this.bovt_MABOVT.HeaderText = "MABOVT";
-            this.bovt_MABOVT.Name = "bovt_MABOVT";
-            this.bovt_MABOVT.Visible = false;
-            // 
-            // bovt_MAHIEU
-            // 
-            this.bovt_MAHIEU.DataPropertyName = "MAHIEU";
-            this.bovt_MAHIEU.HeaderText = "Mã Hiệu ";
-            this.bovt_MAHIEU.Name = "bovt_MAHIEU";
-            this.bovt_MAHIEU.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // bovt_TENVT
-            // 
-            this.bovt_TENVT.DataPropertyName = "TENVT";
-            this.bovt_TENVT.HeaderText = "Tên Vật Tư";
-            this.bovt_TENVT.Name = "bovt_TENVT";
-            this.bovt_TENVT.Width = 230;
-            // 
-            // bovt_dinhmuc
-            // 
-            this.bovt_dinhmuc.DataPropertyName = "DM";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.bovt_dinhmuc.DefaultCellStyle = dataGridViewCellStyle2;
-            this.bovt_dinhmuc.HeaderText = "ĐM";
-            this.bovt_dinhmuc.Name = "bovt_dinhmuc";
-            this.bovt_dinhmuc.Width = 50;
             // 
             // labelX61
             // 
@@ -710,7 +656,6 @@
             // 
             this.GridDanhMucVT.AllowUserToAddRows = false;
             this.GridDanhMucVT.AllowUserToDeleteRows = false;
-            this.GridDanhMucVT.AllowUserToResizeColumns = false;
             this.GridDanhMucVT.AllowUserToResizeRows = false;
             this.GridDanhMucVT.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -936,6 +881,30 @@
             this.tabDanhMucVatTu.Text = "Danh Mục Vật Tư";
             this.tabDanhMucVatTu.Click += new System.EventHandler(this.tabDanhMucVatTu_Click);
             // 
+            // tabControlPanel1
+            // 
+            this.tabControlPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControlPanel1.Location = new System.Drawing.Point(0, 26);
+            this.tabControlPanel1.Name = "tabControlPanel1";
+            this.tabControlPanel1.Padding = new System.Windows.Forms.Padding(1);
+            this.tabControlPanel1.Size = new System.Drawing.Size(991, 509);
+            this.tabControlPanel1.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(179)))), ((int)(((byte)(231)))));
+            this.tabControlPanel1.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(237)))), ((int)(((byte)(254)))));
+            this.tabControlPanel1.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.tabControlPanel1.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(97)))), ((int)(((byte)(156)))));
+            this.tabControlPanel1.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right)
+                        | DevComponents.DotNetBar.eBorderSide.Bottom)));
+            this.tabControlPanel1.Style.GradientAngle = 90;
+            this.tabControlPanel1.TabIndex = 1;
+            this.tabControlPanel1.TabItem = this.tabTinhDuToan;
+            // 
+            // tabTinhDuToan
+            // 
+            this.tabTinhDuToan.AttachedControl = this.tabControlPanel1;
+            this.tabTinhDuToan.Name = "tabTinhDuToan";
+            this.tabTinhDuToan.Text = "Tính Dự Toán";
+            this.tabTinhDuToan.Click += new System.EventHandler(this.tabTinhDuToan_Click);
+            // 
             // tabControlPanel5
             // 
             this.tabControlPanel5.Controls.Add(this.panelTaiLapMD);
@@ -976,30 +945,6 @@
             this.tabTaiLapMatDuong.Name = "tabTaiLapMatDuong";
             this.tabTaiLapMatDuong.Text = "ĐG Tái Lập Mặt Đường";
             this.tabTaiLapMatDuong.Click += new System.EventHandler(this.tabTaiLapMatDuong_Click);
-            // 
-            // tabControlPanel1
-            // 
-            this.tabControlPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControlPanel1.Location = new System.Drawing.Point(0, 26);
-            this.tabControlPanel1.Name = "tabControlPanel1";
-            this.tabControlPanel1.Padding = new System.Windows.Forms.Padding(1);
-            this.tabControlPanel1.Size = new System.Drawing.Size(991, 509);
-            this.tabControlPanel1.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(179)))), ((int)(((byte)(231)))));
-            this.tabControlPanel1.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(237)))), ((int)(((byte)(254)))));
-            this.tabControlPanel1.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.tabControlPanel1.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(97)))), ((int)(((byte)(156)))));
-            this.tabControlPanel1.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right)
-                        | DevComponents.DotNetBar.eBorderSide.Bottom)));
-            this.tabControlPanel1.Style.GradientAngle = 90;
-            this.tabControlPanel1.TabIndex = 1;
-            this.tabControlPanel1.TabItem = this.tabTinhDuToan;
-            // 
-            // tabTinhDuToan
-            // 
-            this.tabTinhDuToan.AttachedControl = this.tabControlPanel1;
-            this.tabTinhDuToan.Name = "tabTinhDuToan";
-            this.tabTinhDuToan.Text = "Tính Dự Toán";
-            this.tabTinhDuToan.Click += new System.EventHandler(this.tabTinhDuToan_Click);
             // 
             // PanelThamSo
             // 
@@ -1640,6 +1585,40 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // bovt_MABOVT
+            // 
+            this.bovt_MABOVT.DataPropertyName = "MABOVT";
+            this.bovt_MABOVT.HeaderText = "MABOVT";
+            this.bovt_MABOVT.Name = "bovt_MABOVT";
+            this.bovt_MABOVT.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.bovt_MABOVT.Visible = false;
+            // 
+            // bovt_MAHIEU
+            // 
+            this.bovt_MAHIEU.DataPropertyName = "MAHIEU";
+            this.bovt_MAHIEU.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
+            this.bovt_MAHIEU.DropDownWidth = 250;
+            this.bovt_MAHIEU.HeaderText = "Mã Hiệu ";
+            this.bovt_MAHIEU.MaxDropDownItems = 25;
+            this.bovt_MAHIEU.Name = "bovt_MAHIEU";
+            this.bovt_MAHIEU.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // bovt_TENVT
+            // 
+            this.bovt_TENVT.DataPropertyName = "TENVT";
+            this.bovt_TENVT.HeaderText = "Tên Vật Tư";
+            this.bovt_TENVT.Name = "bovt_TENVT";
+            this.bovt_TENVT.Width = 230;
+            // 
+            // bovt_dinhmuc
+            // 
+            this.bovt_dinhmuc.DataPropertyName = "DM";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.bovt_dinhmuc.DefaultCellStyle = dataGridViewCellStyle2;
+            this.bovt_dinhmuc.HeaderText = "ĐM";
+            this.bovt_dinhmuc.Name = "bovt_dinhmuc";
+            this.bovt_dinhmuc.Width = 50;
+            // 
             // tab_DanhMucVT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1781,13 +1760,8 @@
         private System.Windows.Forms.DataGridView GridBoVT;
         private DevComponents.DotNetBar.ButtonX btLamLai;
         private System.Windows.Forms.ErrorProvider errorProvider1;
-        private System.Windows.Forms.ComboBox cbNhomVatTu;
         private DevComponents.DotNetBar.LabelX labelX61;
         private System.Windows.Forms.CheckBox checkBoVT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn bovt_MABOVT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn bovt_MAHIEU;
-        private System.Windows.Forms.DataGridViewTextBoxColumn bovt_TENVT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn bovt_dinhmuc;
         private DevComponents.DotNetBar.TabControlPanel tabControlPanel5;
         private DevComponents.DotNetBar.TabItem tabTaiLapMatDuong;
         private DevComponents.DotNetBar.PanelEx panelTaiLapMD;
@@ -1798,5 +1772,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dgXiMang;
         private System.Windows.Forms.DataGridViewTextBoxColumn dg_ngay;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dg_Chon;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bovt_MABOVT;
+        private System.Windows.Forms.DataGridViewComboBoxColumn bovt_MAHIEU;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bovt_TENVT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bovt_dinhmuc;
     }
 }

@@ -28,7 +28,14 @@ namespace TanHoaWater.DAL
                     SqlDataReader dr1 = cmd.ExecuteReader();
                     while (dr1.Read())
                     {
-                        id = obj.ID(year, dr1[0].ToString().Trim(), "00000");
+                        if (dr1[0].ToString().Trim().Substring(0, 2).Equals(year))
+                        {
+                            id = obj.ID(year, dr1[0].ToString().Trim(), "00000");
+                        }
+                        else {
+                            id = obj.ID(year, year+"00000", "00000");
+                        }
+                        
                     }
                     dr1.Close();
                     db.Connection.Close();
@@ -40,7 +47,15 @@ namespace TanHoaWater.DAL
                     SqlDataReader dr1 = cmd.ExecuteReader();
                     while (dr1.Read())
                     {
-                        id = obj.ID(kytumacdinh, dr1[0].ToString().Trim(), "000");
+                        
+                        if (dr1[0].ToString().Trim().Substring(0, 2).Equals(year))
+                        {
+                            id = obj.ID(kytumacdinh, dr1[0].ToString().Trim(), "000");
+                        }
+                        else
+                        {
+                            id = obj.ID(year + loaihs, year +loaihs+ "000", "000");
+                        }
                     }
                     dr1.Close();
                     db.Connection.Close();
