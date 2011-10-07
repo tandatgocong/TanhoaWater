@@ -170,7 +170,7 @@ namespace TanHoaWater.DAL
         {
             TanHoaDataContext db = new TanHoaDataContext();
             db.Connection.Open();
-            string sql = " SELECT MAHIEU,UPPER(TENVT) AS 'TENVT',DVT";
+            string sql = " SELECT MAHIEU,UPPER(TENVT) AS 'TENVT',DVT,MAHDG,NHOMVT";
             sql += " FROM DANHMUCVATTU ";
             sql += " WHERE MAHIEU IN (" + selectin + ") ";
             sql += " ORDER BY CREATEDATE ASC ";

@@ -102,6 +102,7 @@
   <ItemGroup>
     <Compile Include="DAL\C_BaoCao_View.cs" />
     <Compile Include="DAL\C_BienNhanDon.cs" />
+    <Compile Include="DAL\C_CongTacBangGia.cs" />
     <Compile Include="DAL\C_DanhMucBoVT.cs" />
     <Compile Include="DAL\C_DanhMucTaiLapMD.cs" />
     <Compile Include="DAL\C_DanhMucVatTu.cs" />

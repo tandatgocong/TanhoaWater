@@ -105,13 +105,14 @@ namespace TanHoaWater.View.Users.TinhDuToan
                     mahieuvt = dmvt.MADANHMUC;
                     GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells[1].Value = dmvt.TENKETCAU.ToUpper();
                     GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells[7].Value = dmvt.DONGIA;
+                    GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells["phuidao_dvt"].Value = dmvt.DVT;
                 }
                 else
                 {
                     MessageBox.Show(this, "Không Tìm Thấy Mã Kết Cấu.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells[0].Selected = true;
                 }
-                Utilities.DataGridV.formatRows(GridPhuiDao);
+                //Utilities.DataGridV.formatRows(GridPhuiDao);
             }
 
         }
@@ -246,6 +247,39 @@ namespace TanHoaWater.View.Users.TinhDuToan
 
             }
 
+        }
+        private void GridPhuiDao_CellStateChanged(object sender, DataGridViewCellStateChangedEventArgs e)
+        {
+            try
+            {  
+                    double dai = double.Parse(GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells[2].Value + "");
+                    double rong = double.Parse(GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells[3].Value + "");
+                    double sau = double.Parse(GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells[4].Value + "");
+                    int soluong = int.Parse(GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells[5].Value + "");
+                    double khoiluong = 0.0;
+                    double chuvi = 0.0;
+                    double thetich = 0.0;
+                    if (dai >= 0 && rong >= 0 && soluong >= 1 && sau > 0)
+                    {
+                        khoiluong = dai * rong * soluong;
+                        if (rong > 0.3)
+                            chuvi = (dai + rong) * 2 * soluong;
+                        else
+                            chuvi = dai * 2 * soluong;
+                        thetich = dai * rong * sau * soluong;
+                    }
+                    GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells[8].Value = Math.Round(khoiluong, 3);
+                    GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells[9].Value = Math.Round(chuvi, 3);
+                    GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells[10].Value = Math.Round(thetich, 3);
+
+                    DuToan();
+               
+             
+            }
+            catch (Exception)
+            {
+
+            }
         }
 
         private void GridPhuiDao_UserDeletedRow(object sender, DataGridViewRowEventArgs e)
@@ -425,8 +459,29 @@ namespace TanHoaWater.View.Users.TinhDuToan
                             GridCacCongTac.Rows[i].Cells["congtac_khoiluong"].Value = double.Parse(DA04) * 1000;
                         }
                         GridCacCongTac.Rows[i].Cells["contac_loaisd"].Value = "CM";
+                        DANHMUCVATTU dmvt = DAL.C_DanhMucVatTu.finbyMaHieu(GridCacCongTac.Rows[i].Cells["congtac_mahieu"].Value + "");
+                        if (dmvt!=null && dmvt.BOVT == true)
+                        {
+                            DataTable dongiavt = DAL.C_DonGiaVatTu.getDonGiaBoVT(dmvt.MAHIEU);
+                            if (dongiavt != null)
+                            {
+                                GridCacCongTac.Rows[i].Cells["congtac_VL"].Value = dongiavt.Rows[0][0].ToString();
+                                GridCacCongTac.Rows[i].Cells["congtac_NC"].Value = dongiavt.Rows[0][1].ToString();
+                                GridCacCongTac.Rows[i].Cells["congtac_MTC"].Value = dongiavt.Rows[0][2].ToString();
+                            }
+                        }
+                        else if (dmvt != null)
+                        {
+                            DONGIAVATTU dongiavt = DAL.C_DonGiaVatTu.getDonGia(dmvt.MAHIEU);
+                            if (dongiavt != null)
+                            {
+                                GridCacCongTac.Rows[i].Cells["congtac_VL"].Value = dongiavt.DGVATLIEU;
+                                GridCacCongTac.Rows[i].Cells["congtac_NC"].Value = dongiavt.DGNHANCONG;
+                                GridCacCongTac.Rows[i].Cells["congtac_MTC"].Value = dongiavt.DGMAYTHICONG;
+                            }
+                        }
                     }
-                    Utilities.DataGridV.formatRows(GridCacCongTac);
+                    //Utilities.DataGridV.formatRows(GridCacCongTac);
 
                 }
             }
@@ -442,7 +497,7 @@ namespace TanHoaWater.View.Users.TinhDuToan
             try
             {
                 if (e.RowIndex < 0) return;
-                else if (e.ColumnIndex == 4)
+                else if (GridCacCongTac.CurrentCell.OwningColumn.Name == "contac_loaisd")
                 {
                     //GridPhuiDao.Columns["phudao_MaKetCau"].Width = 300;
                     //GridPhuiDao.Columns["pd_KetCauMD"].Width = 200;
@@ -510,7 +565,7 @@ namespace TanHoaWater.View.Users.TinhDuToan
 
             }
         }
-
+        string _shs = "";
         private void txtSHS_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 13)
@@ -524,6 +579,7 @@ namespace TanHoaWater.View.Users.TinhDuToan
                 }
                 else
                 {
+                    _shs = table.Rows[0][1].ToString();
                     this.txtHoTen.Text = table.Rows[0][2].ToString();
                     this.txtSoNha.Text = table.Rows[0][4].ToString();
                     this.txtDuong.Text = table.Rows[0][5].ToString();
@@ -553,7 +609,7 @@ namespace TanHoaWater.View.Users.TinhDuToan
         string mahieuvt = "";
         private void GridCacCongTac_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 0)
+            if (GridCacCongTac.CurrentCell.OwningColumn.Name == "congtac_mahieu")
             {
                 DANHMUCVATTU dmvt = DAL.C_DanhMucVatTu.finbyMaHieu(GridCacCongTac.Rows[GridCacCongTac.CurrentRow.Index].Cells["congtac_mahieu"].Value + "");
                 if (dmvt != null)
@@ -562,6 +618,28 @@ namespace TanHoaWater.View.Users.TinhDuToan
                     GridCacCongTac.Rows[GridCacCongTac.CurrentRow.Index].Cells["congtac_hanmuc"].Value = dmvt.TENVT.ToUpper();
                     GridCacCongTac.Rows[GridCacCongTac.CurrentRow.Index].Cells["congtac_dvt"].Value = dmvt.DVT;
                     GridCacCongTac.Rows[GridCacCongTac.CurrentRow.Index].Cells["contac_loaisd"].Value = "CM";
+                    GridCacCongTac.Rows[GridCacCongTac.CurrentRow.Index].Cells["congtacMahieuDG"].Value = dmvt.MAHDG;
+                    GridCacCongTac.Rows[GridCacCongTac.CurrentRow.Index].Cells["congTacNhom"].Value = dmvt.NHOMVT;
+
+                    if (dmvt.BOVT == true)
+                    {
+                        DataTable dongiavt = DAL.C_DonGiaVatTu.getDonGiaBoVT(dmvt.MAHIEU);
+                        if (dongiavt != null)
+                        {
+                            GridCacCongTac.Rows[GridCacCongTac.CurrentRow.Index].Cells["congtac_VL"].Value = dongiavt.Rows[0][0].ToString();
+                            GridCacCongTac.Rows[GridCacCongTac.CurrentRow.Index].Cells["congtac_NC"].Value = dongiavt.Rows[0][1].ToString();
+                            GridCacCongTac.Rows[GridCacCongTac.CurrentRow.Index].Cells["congtac_MTC"].Value = dongiavt.Rows[0][2].ToString();
+                        }
+                    }
+                    else {
+                        DONGIAVATTU dongiavt = DAL.C_DonGiaVatTu.getDonGia(dmvt.MAHIEU);
+                        if (dongiavt != null) {
+                            GridCacCongTac.Rows[GridCacCongTac.CurrentRow.Index].Cells["congtac_VL"].Value = dongiavt.DGVATLIEU;
+                            GridCacCongTac.Rows[GridCacCongTac.CurrentRow.Index].Cells["congtac_NC"].Value = dongiavt.DGNHANCONG;
+                            GridCacCongTac.Rows[GridCacCongTac.CurrentRow.Index].Cells["congtac_MTC"].Value = dongiavt.DGMAYTHICONG;
+                        }
+                    }
+                    
                 }
                 else
                 {
@@ -612,6 +690,7 @@ namespace TanHoaWater.View.Users.TinhDuToan
             catch (Exception)
             { }            
         }
+        
 
         private void btChonLaiDonGia_Click(object sender, EventArgs e)
         {
@@ -619,5 +698,111 @@ namespace TanHoaWater.View.Users.TinhDuToan
             //from.ShowDialog();
 
         }
+        public void InsertBG_KICHTHUOCPHUIDAO()
+        {
+            try
+            {
+                for (int i = 0; i < this.GridPhuiDao.Rows.Count; i++)
+                {
+                    string maketcau = this.GridPhuiDao.Rows[i].Cells["pd_MaKetCau"].Value + "";
+                    if (!"".Equals(maketcau) && !"".Equals(_shs))
+                    {
+                        BG_KICHTHUOCPHUIDAO phuidao = new BG_KICHTHUOCPHUIDAO();
+                        phuidao.SHS = _shs;
+                        phuidao.MADANHMUC = this.GridPhuiDao.Rows[i].Cells["pd_MaKetCau"].Value + "";
+                        phuidao.TENKETCAU = this.GridPhuiDao.Rows[i].Cells["phuidao_tenketcau"].Value + "";
+                        phuidao.DVT = this.GridPhuiDao.Rows[i].Cells["phuidao_dvt"].Value + "";
+                        phuidao.DAI = double.Parse(this.GridPhuiDao.Rows[i].Cells["phuidao_Daii"].Value + "");
+                        phuidao.RONG = double.Parse(this.GridPhuiDao.Rows[i].Cells["phuidao_rongg"].Value + "");
+                        phuidao.DOSAU = double.Parse(this.GridPhuiDao.Rows[i].Cells["phuidao_sauu"].Value + "");
+                        phuidao.SOLUONG = double.Parse(this.GridPhuiDao.Rows[i].Cells["phuidao_sll"].Value + "");
+                        phuidao.KHOILUONG = double.Parse(this.GridPhuiDao.Rows[i].Cells["phui_khoiluong"].Value + "");
+                        phuidao.CHUVI = double.Parse(this.GridPhuiDao.Rows[i].Cells["phuidao_chuvi"].Value + "");
+                        phuidao.THETICH = double.Parse(this.GridPhuiDao.Rows[i].Cells["phuidao_thetich"].Value + "");
+                        phuidao.COTINHTL = bool.Parse(this.GridPhuiDao.Rows[i].Cells["phidao_cotll"].Value + "");
+                        phuidao.CREATEBY = DAL.C_USERS._userName;
+                        phuidao.CREATEDATE = DateTime.Now;
+                        DAL.C_BG_KICHTHUOCPHUIDAO.InsertKTPD(phuidao);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Error("Loi Insert Kich Thuoc Phui Dao " + ex.Message);
+            }
+            
+        }
+        public void InsertCONGTACBANGGIA()
+        {
+            try
+            {
+                for (int i = 0; i < this.GridCacCongTac.Rows.Count; i++)
+                {
+                    string maketcau = this.GridCacCongTac.Rows[i].Cells["congtac_mahieu"].Value + "";
+                    if (!"".Equals(maketcau) && !"".Equals(_shs))
+                    {
+                        BG_CONGTACBANGIA congtacbg = new BG_CONGTACBANGIA();
+                        congtacbg.SHS = _shs;
+                        congtacbg.MAHIEU = this.GridCacCongTac.Rows[i].Cells["congtac_mahieu"].Value + "";
+                        congtacbg.MAHDG = this.GridCacCongTac.Rows[i].Cells["congtacMahieuDG"].Value + "";
+                        congtacbg.TENVT = this.GridCacCongTac.Rows[i].Cells["congtac_hanmuc"].Value + "";
+                        congtacbg.DVT = this.GridCacCongTac.Rows[i].Cells["congtac_dvt"].Value + "";
+                        congtacbg.NHOM = this.GridCacCongTac.Rows[i].Cells["congTacNhom"].Value + "";
+                        congtacbg.LOAISN = this.GridCacCongTac.Rows[i].Cells["contac_loaisd"].Value + "";
+                        congtacbg.KHOILUONG = double.Parse(this.GridCacCongTac.Rows[i].Cells["congtac_khoiluong"].Value + "");
+                        congtacbg.DONGIAVL = double.Parse(this.GridCacCongTac.Rows[i].Cells["congtac_VL"].Value + "");
+                        congtacbg.DONGIANC = double.Parse(this.GridCacCongTac.Rows[i].Cells["congtac_NC"].Value + "");
+                        congtacbg.DONGIAMTC = double.Parse(this.GridCacCongTac.Rows[i].Cells["congtac_MTC"].Value + "");
+                        congtacbg.CREATEBY = DAL.C_USERS._userName;
+                        congtacbg.CREATEDATE = DateTime.Now;
+                        DAL.C_CongTacBangGia.InsertCongTacBG(congtacbg);
+
+                        //DAL.C_BG_KICHTHUOCPHUIDAO.InsertKTPD(phuidao);
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Error("Loi Insert Cong Tac Bang Gia " + ex.Message);
+            }
+            
+
+        }
+        private void btTinhBangGia_Click(object sender, EventArgs e)
+        {
+            if(!"".Equals(_shs)){
+                InsertBG_KICHTHUOCPHUIDAO();
+                InsertCONGTACBANGGIA();
+            }else{
+                MessageBox.Show(this, "Nhập Số Hồ Sơ Tính Dự Toán.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.txtSHS.Focus();
+                this.txtSHS.BackColor = Color.Red;
+
+            }
+        }
+
+        private void GridCacCongTac_CellLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (GridCacCongTac.CurrentCell.OwningColumn.Name == "contac_loaisd")
+                {
+                    if (double.Parse(this.GridCacCongTac.Rows[e.RowIndex].Cells["congtac_khoiluong"].Value + "") > 10)
+                    {
+                        this.GridCacCongTac.Rows[e.RowIndex].Cells["congtac_khoiluong"].Value = String.Format("{0:0,0.00}", double.Parse(this.GridCacCongTac.Rows[e.RowIndex].Cells["congtac_khoiluong"].Value + "")); ;
+                    }
+                    else {
+                        this.GridCacCongTac.Rows[e.RowIndex].Cells["congtac_khoiluong"].Value = String.Format("{0:0.00}", double.Parse(this.GridCacCongTac.Rows[e.RowIndex].Cells["congtac_khoiluong"].Value + "")); ;
+                    }
+                }
+            }
+            catch (Exception)
+            {}
+            
+        }
+
+        
+
     }
 }
