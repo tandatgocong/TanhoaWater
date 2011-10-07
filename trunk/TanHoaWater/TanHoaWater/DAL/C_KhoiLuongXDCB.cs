@@ -7,31 +7,31 @@ using TanHoaWater.Database;
 
 namespace TanHoaWater.DAL
 {
-    class C_KhoiLuongXDCB
+    class C_BG_KHOILUONGXDCB
     {
-        private static readonly ILog log = LogManager.GetLogger(typeof(C_KhoiLuongXDCB).Name);
+        private static readonly ILog log = LogManager.GetLogger(typeof(C_BG_KHOILUONGXDCB).Name);
         static TanHoaDataContext db = new TanHoaDataContext();
-        public static void InsertKTPD(KHOILUONGXDCB klxd)
+        public static void InsertKTPD(BG_KHOILUONGXDCB klxd)
         {
-            db.KHOILUONGXDCBs.InsertOnSubmit(klxd);
+            db.BG_KHOILUONGXDCBs.InsertOnSubmit(klxd);
             db.SubmitChanges();
         }
-        public static KHOILUONGXDCB findBySHS(string shs)
+        public static BG_KHOILUONGXDCB findBySHS(string shs)
         {
-            var query = from kt in db.KHOILUONGXDCBs where kt.SHS == shs select kt;
+            var query = from kt in db.BG_KHOILUONGXDCBs where kt.SHS == shs select kt;
             return query.SingleOrDefault();
         }
        
-        public void DeleteByKTPD(KICHTHUOCPHUIDAO kt)
+        public void DeleteByKTPD(BG_KICHTHUOCPHUIDAO kt)
         {
-            db.KICHTHUOCPHUIDAOs.DeleteOnSubmit(kt);
+            db.BG_KICHTHUOCPHUIDAOs.DeleteOnSubmit(kt);
             db.SubmitChanges();
         }
         //public void DeleteBySHS(string shs)
         //{
         //    SqlConnection conn = new SqlConnection(db.Connection.ConnectionString);
         //    conn.Open();
-        //    string sql = " DELETE KICHTHUOCPHUIDAO WHERE SHS='" + shs + "' ";
+        //    string sql = " DELETE BG_KICHTHUOCPHUIDAO WHERE SHS='" + shs + "' ";
         //    SqlCommand cmd = new SqlCommand(sql, conn);
         //    cmd.ExecuteNonQuery();
         //    conn.Close();

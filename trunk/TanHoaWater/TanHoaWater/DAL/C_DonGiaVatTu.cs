@@ -51,9 +51,9 @@ namespace TanHoaWater.DAL
         }
         public static DataTable getDonGiaBoVT(string mahieudg)
         {
-            string sql = "select SUM(DGVATLIEU*DM),SUM(DGNHA NCONG*DM),SUM(DGMAYTHICONG*DM) ";
+            string sql = "select SUM(DGVATLIEU*DM),SUM(DGNHANCONG*DM),SUM(DGMAYTHICONG*DM) ";
             sql += " FROM DANHMUCVATTU dmvt,DONGIAVATTU dg,DANHMUCBOVATTU bovt  ";
-            sql += " WHERE dmvt.MAHIEU= bovt.MAHIEU AND dmvt.MAHIEU=dg.MAHIEUDG AND dg.CHON='True' AND dmvt.MAHIEU='" + mahieudg + "'";
+            sql += " WHERE dmvt.MAHIEU= bovt.MAHIEU AND dmvt.MAHIEU=dg.MAHIEUDG AND dg.CHON='True' AND bovt.MABOVT='" + mahieudg + "'";
             TanHoaDataContext db = new TanHoaDataContext();
             SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             DataTable table = new DataTable();

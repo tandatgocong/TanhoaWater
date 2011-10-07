@@ -305,7 +305,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                 donKH.MADOT = this.cbDotNhanDon.SelectedValue.ToString();
                 donKH.SOHOSO = this.txtSoHoSo.Text;
                 donKH.SHS = this.txtSHS.Text;
-                if (soho.Value > 0)
+                if (soho.Value > 1)
                 {
                     donKH.HOTEN = this.txtHoTen.Text + "(ĐD " + soho.Value + " Hộ)";
                     cbLoaiKH.Text = "Tập Thể";
