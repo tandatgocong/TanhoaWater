@@ -122,7 +122,10 @@ namespace TanHoaWater.View.Users.TinhDuToan
             try
             {
                 txtKeypress = e.Control;
-                if (GridPhuiDao.CurrentCell.OwningColumn.Name == "phuidao_Daii" | GridPhuiDao.CurrentCell.OwningColumn.Name == "phuidao_rongg" | GridPhuiDao.CurrentCell.OwningColumn.Name == "phuidao_sauu" | GridPhuiDao.CurrentCell.OwningColumn.Name == "phuidao_sll")
+                if (GridPhuiDao.CurrentCell.OwningColumn.Name == "phuidao_Daii" 
+                    | GridPhuiDao.CurrentCell.OwningColumn.Name == "phuidao_rongg" 
+                    | GridPhuiDao.CurrentCell.OwningColumn.Name == "phuidao_sauu" 
+                    | GridPhuiDao.CurrentCell.OwningColumn.Name == "phuidao_sll")
                 {
                     txtKeypress.KeyPress -= KeyPressHandle;
                     txtKeypress.KeyPress += KeyPressHandle;
@@ -152,45 +155,45 @@ namespace TanHoaWater.View.Users.TinhDuToan
                 mahieuvt = GridPhuiDao.Rows[i].Cells[0].Value + "";
                 if (!"".Equals(mahieuvt) && ("N12B".Equals(mahieuvt) || "N12C".Equals(mahieuvt)))
                 {
-                    sumChuViNhua += double.Parse(GridPhuiDao.Rows[i].Cells[9].Value + "");
-                    sumkhoiluongNhua += double.Parse(GridPhuiDao.Rows[i].Cells[8].Value + "") * 0.12;
-                    sumDatC4 += double.Parse(GridPhuiDao.Rows[i].Cells[8].Value + "") * 0.4;
+                    sumChuViNhua += double.Parse(GridPhuiDao.Rows[i].Cells["phuidao_chuvi"].Value + "");
+                    sumkhoiluongNhua += double.Parse(GridPhuiDao.Rows[i].Cells["phui_khoiluong"].Value + "") * 0.12;
+                    sumDatC4 += double.Parse(GridPhuiDao.Rows[i].Cells["phui_khoiluong"].Value + "") * 0.4;
                 }
                 else if (!"".Equals(mahieuvt) && ("NHUA10".Equals(mahieuvt) || "NHUA10-C3".Equals(mahieuvt)))
                 {
-                    sumChuViNhua += double.Parse(GridPhuiDao.Rows[i].Cells[9].Value + "");
-                    sumkhoiluongNhua += double.Parse(GridPhuiDao.Rows[i].Cells[8].Value + "") * 0.1;
-                    sumDatC4 += double.Parse(GridPhuiDao.Rows[i].Cells[8].Value + "") * 0.3;
+                    sumChuViNhua += double.Parse(GridPhuiDao.Rows[i].Cells["phuidao_chuvi"].Value + "");
+                    sumkhoiluongNhua += double.Parse(GridPhuiDao.Rows[i].Cells["phui_khoiluong"].Value + "") * 0.1;
+                    sumDatC4 += double.Parse(GridPhuiDao.Rows[i].Cells["phui_khoiluong"].Value + "") * 0.3;
                 }
                 else if (!"".Equals(mahieuvt) && ("BT10".Contains(mahieuvt)))
                 {
-                    sumChuViBT += double.Parse(GridPhuiDao.Rows[i].Cells[9].Value + "");
-                    sumkhoiluongBT += double.Parse(GridPhuiDao.Rows[i].Cells[8].Value + "") * 0.1;
-                    sumDatC4 += double.Parse(GridPhuiDao.Rows[i].Cells[8].Value + "") * 0.3;
+                    sumChuViBT += double.Parse(GridPhuiDao.Rows[i].Cells["phuidao_chuvi"].Value + "");
+                    sumkhoiluongBT += double.Parse(GridPhuiDao.Rows[i].Cells["phui_khoiluong"].Value + "") * 0.1;
+                    sumDatC4 += double.Parse(GridPhuiDao.Rows[i].Cells["phui_khoiluong"].Value + "") * 0.3;
                 }
                 else if (!"".Equals(mahieuvt) && ("DXANH".Equals(mahieuvt)))
                 {
-                    sumDatC4 += double.Parse(GridPhuiDao.Rows[i].Cells[8].Value + "") * 0.25;
+                    sumDatC4 += double.Parse(GridPhuiDao.Rows[i].Cells["phui_khoiluong"].Value + "") * 0.25;
                 }
                 else if (!"".Equals(mahieuvt) && ("DDO".Equals(mahieuvt)))
                 {
-                    sumDatC4 += double.Parse(GridPhuiDao.Rows[i].Cells[8].Value + "") * 0.25;
+                    sumDatC4 += double.Parse(GridPhuiDao.Rows[i].Cells["phui_khoiluong"].Value + "") * 0.25;
                 }
                 else if (!"".Equals(mahieuvt) && ("TNHA".Equals(mahieuvt)))
                 {
                     //sumDatC4 += double.Parse(GridPhuiDao.Rows[i].Cells[8].Value + "")  ; 
-                    SODHN += double.Parse(GridPhuiDao.Rows[i].Cells[2].Value + "");
+                    SODHN += double.Parse(GridPhuiDao.Rows[i].Cells["phuidao_sll"].Value + "");
                 }
                 else
                 {
-                    sumChuViBT += double.Parse(GridPhuiDao.Rows[i].Cells[9].Value + "");
-                    sumkhoiluongBT += double.Parse(GridPhuiDao.Rows[i].Cells[8].Value + "") * 0.05;
-                    sumDatC4 += double.Parse(GridPhuiDao.Rows[i].Cells[8].Value + "") * 0.1;
+                    sumChuViBT += double.Parse(GridPhuiDao.Rows[i].Cells["phuidao_chuvi"].Value + "");
+                    sumkhoiluongBT += double.Parse(GridPhuiDao.Rows[i].Cells["phui_khoiluong"].Value + "") * 0.05;
+                    sumDatC4 += double.Parse(GridPhuiDao.Rows[i].Cells["phui_khoiluong"].Value + "") * 0.1;
                 }
-                sumTheTich += double.Parse(GridPhuiDao.Rows[i].Cells[10].Value + "");
+                sumTheTich += double.Parse(GridPhuiDao.Rows[i].Cells["phuidao_thetich"].Value + "");
                 if (!"".Equals(mahieuvt) && !("TNHA".Equals(mahieuvt)))
                 {
-                    sumKLDa4 += double.Parse(GridPhuiDao.Rows[i].Cells[8].Value + "") * 0.1;
+                    sumKLDa4 += double.Parse(GridPhuiDao.Rows[i].Cells["phui_khoiluong"].Value + "") * 0.1;
                 }
                 //If TLAP!Loai <> "TNHA" Then
                 //        sumKLDa += 4 + (TLAP!DT * 0.1) double.Parse(GridPhuiDao.Rows[i].Cells[8].Value + "") * 0.1;  
@@ -200,7 +203,14 @@ namespace TanHoaWater.View.Users.TinhDuToan
                 //sumDatC3 = sumTheTich - (sumkhoiluongNhua + sumkhoiluongBT + sumDatC4);
             }
             sumxutDat = sumTheTich;
-            sumKLCat = sumTheTich - sumKLDa4 - SODHN * 0.18;
+            if (_shs.Contains("DD"))
+            {
+                sumKLCat = sumTheTich - sumKLDa4;// - SODHN * 0.18;
+            }
+            else {
+                sumKLCat = sumTheTich - sumKLDa4 - SODHN * 0.18;
+            }
+           
             sumDatC3 = Math.Round(sumTheTich, 2) - (Math.Round(sumkhoiluongNhua, 2) + Math.Round(sumkhoiluongBT, 2) + Math.Round(sumDatC4, 2));
             this.txtKhoiLuongCatNhua.Text = String.Format("{0:0.00}", sumkhoiluongNhua);
             this.txtChuViCatNhua.Text = String.Format("{0:0.00}", sumChuViNhua);
@@ -362,9 +372,9 @@ namespace TanHoaWater.View.Users.TinhDuToan
 
             congtac_mahieu.DropDownWidth = 300;
             congtac_mahieu.MaxDropDownItems = 5;
-            this.cbLoaiSD.DataSource = DAL.C_LoaiSD.getList();
-            this.cbLoaiSD.DisplayMember = "MALOAI";
-            this.cbLoaiSD.ValueMember = "MALOAI";
+            this.contac_loaisd.DataSource = DAL.C_LoaiSD.getList();
+            this.contac_loaisd.DisplayMember = "MALOAI";
+            this.contac_loaisd.ValueMember = "MALOAI";
             try
             {
                 string CNHUA = this.txtChuViCatNhua.Text;
@@ -485,9 +495,9 @@ namespace TanHoaWater.View.Users.TinhDuToan
 
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                //MessageBox.Show(this, ex.Message);
+                log.Error("Loi cap Nhat Don Gia" + ex.Message);
             }
 
 
@@ -501,12 +511,12 @@ namespace TanHoaWater.View.Users.TinhDuToan
                 {
                     //GridPhuiDao.Columns["phudao_MaKetCau"].Width = 300;
                     //GridPhuiDao.Columns["pd_KetCauMD"].Width = 200;
-                    cbLoaiSD.Visible = true;
-                    cbLoaiSD.Top = this.GridCacCongTac.Top + GridCacCongTac.GetRowDisplayRectangle(e.RowIndex, true).Top;
-                    cbLoaiSD.Left = this.GridCacCongTac.Left + GridCacCongTac.GetColumnDisplayRectangle(e.ColumnIndex, true).Left;
-                    cbLoaiSD.Width = GridCacCongTac.Columns[e.ColumnIndex].Width;
-                    cbLoaiSD.Height = GridCacCongTac.Rows[e.RowIndex].Height;
-                    cbLoaiSD.BringToFront();
+                    //cbLoaiSD.Visible = true;
+                    //cbLoaiSD.Top = this.GridCacCongTac.Top + GridCacCongTac.GetRowDisplayRectangle(e.RowIndex, true).Top;
+                    //cbLoaiSD.Left = this.GridCacCongTac.Left + GridCacCongTac.GetColumnDisplayRectangle(e.ColumnIndex, true).Left;
+                    //cbLoaiSD.Width = GridCacCongTac.Columns[e.ColumnIndex].Width;
+                    //cbLoaiSD.Height = GridCacCongTac.Rows[e.RowIndex].Height;
+                    //cbLoaiSD.BringToFront();
 
                 }
                 else
@@ -617,6 +627,7 @@ namespace TanHoaWater.View.Users.TinhDuToan
 
                     GridCacCongTac.Rows[GridCacCongTac.CurrentRow.Index].Cells["congtac_hanmuc"].Value = dmvt.TENVT.ToUpper();
                     GridCacCongTac.Rows[GridCacCongTac.CurrentRow.Index].Cells["congtac_dvt"].Value = dmvt.DVT;
+                    GridCacCongTac.Rows[GridCacCongTac.CurrentRow.Index].Cells["congtac_khoiluong"].Value = "0.00";
                     GridCacCongTac.Rows[GridCacCongTac.CurrentRow.Index].Cells["contac_loaisd"].Value = "CM";
                     GridCacCongTac.Rows[GridCacCongTac.CurrentRow.Index].Cells["congtacMahieuDG"].Value = dmvt.MAHDG;
                     GridCacCongTac.Rows[GridCacCongTac.CurrentRow.Index].Cells["congTacNhom"].Value = dmvt.NHOMVT;
@@ -629,6 +640,9 @@ namespace TanHoaWater.View.Users.TinhDuToan
                             GridCacCongTac.Rows[GridCacCongTac.CurrentRow.Index].Cells["congtac_VL"].Value = dongiavt.Rows[0][0].ToString();
                             GridCacCongTac.Rows[GridCacCongTac.CurrentRow.Index].Cells["congtac_NC"].Value = dongiavt.Rows[0][1].ToString();
                             GridCacCongTac.Rows[GridCacCongTac.CurrentRow.Index].Cells["congtac_MTC"].Value = dongiavt.Rows[0][2].ToString();
+                        }
+                        else { 
+                        
                         }
                     }
                     else {
@@ -698,6 +712,7 @@ namespace TanHoaWater.View.Users.TinhDuToan
             //from.ShowDialog();
 
         }
+    
         public void InsertBG_KICHTHUOCPHUIDAO()
         {
             try
@@ -778,78 +793,104 @@ namespace TanHoaWater.View.Users.TinhDuToan
         }
 
         public void InsertKHOILUONGXDCB() {
-            string CNHUA = this.txtChuViCatNhua.Text;
-            string BOCNHUA = this.txtKhoiLuongCatNhua.Text;
-            string CMBTXM = this.txtChuViBT.Text;
-            string BMBTXM = this.txtKhoiLuongBT.Text;
-            string DC4 = this.txtDatCap4.Text;
-            string DC3 = this.txtDatCap3.Text;
-            string XUCDAT = this.txtXucDatThua.Text;
-            string CAT = this.txtKLCat.Text;
-            string DA04 = this.txtKLDa.Text;
-           
-            double d_CNHUA = 0.0;
-            if (!"".Equals(CNHUA) && double.Parse(CNHUA) > 0.0)
+            try
             {
-                d_CNHUA = double.Parse(CNHUA);
-            }
-            double d_BOCNHUA = 0.0;
-            if (!"".Equals(BOCNHUA) && double.Parse(BOCNHUA) > 0.0)
-            {
-                d_BOCNHUA = double.Parse(BOCNHUA);
-            }
-            double d_CMBTXM = 0.0;
-            if (!"".Equals(CMBTXM) && double.Parse(CMBTXM) > 0.0)
-            {
-                d_CMBTXM = double.Parse(CMBTXM);
-            }
-            double d_BMBTXM = 0.0;
-            if (!"".Equals(BMBTXM) && double.Parse(BMBTXM) > 0.0)
-            {
-                d_BMBTXM = double.Parse(BMBTXM);
-            }
-            double d_DC4 = 0.0;
-            if (!"".Equals(DC4) && double.Parse(DC4) > 0.0)
-            {
-                d_DC4 = double.Parse(DC4);
-            }
-            double d_DC3 = 0.0;
-            if (!"".Equals(DC3) && double.Parse(DC3) > 0.0)
-            {
-                d_DC3 = double.Parse(DC3);
-            }
-            double d_XUCDAT = 0.0;
-            if (!"".Equals(XUCDAT) && double.Parse(XUCDAT) > 0.0)
-            {
-                d_XUCDAT = double.Parse(XUCDAT);
-            }
-            double d_CAT = 0.0;
-            if (!"".Equals(CAT) && double.Parse(CAT) > 0.0)
-            {
-                d_CAT = double.Parse(CAT);
-            }
-            double d_DA04 = 0.0;
-            if (!"".Equals(DA04) && double.Parse(DA04) > 0.0)
-            {
-                d_DA04 = double.Parse(DA04);
-            }
-            BG_KHOILUONGXDCB klxdcb = new BG_KHOILUONGXDCB();
-            klxdcb.SHS = _shs;
-            klxdcb.CATNHUA = d_CNHUA;
-            klxdcb.BOCNHUA = d_BOCNHUA;
-            klxdcb.CATBTXM = d_CMBTXM;
-            klxdcb.BOCBTXM = d_BMBTXM;
-            klxdcb.DATCAP4 = d_DC4;
-            klxdcb.DATCAP3 = d_DC3;
-            klxdcb.CAT = d_CAT;
-            klxdcb.XUCDAT = d_XUCDAT;
+                string CNHUA = this.txtChuViCatNhua.Text;
+                string BOCNHUA = this.txtKhoiLuongCatNhua.Text;
+                string CMBTXM = this.txtChuViBT.Text;
+                string BMBTXM = this.txtKhoiLuongBT.Text;
+                string DC4 = this.txtDatCap4.Text;
+                string DC3 = this.txtDatCap3.Text;
+                string XUCDAT = this.txtXucDatThua.Text;
+                string CAT = this.txtKLCat.Text;
+                string DA04 = this.txtKLDa.Text;
 
+                double d_CNHUA = 0.0;
+                if (!"".Equals(CNHUA) && double.Parse(CNHUA) > 0.0)
+                {
+                    d_CNHUA = double.Parse(CNHUA);
+                }
+                double d_BOCNHUA = 0.0;
+                if (!"".Equals(BOCNHUA) && double.Parse(BOCNHUA) > 0.0)
+                {
+                    d_BOCNHUA = double.Parse(BOCNHUA);
+                }
+                double d_CMBTXM = 0.0;
+                if (!"".Equals(CMBTXM) && double.Parse(CMBTXM) > 0.0)
+                {
+                    d_CMBTXM = double.Parse(CMBTXM);
+                }
+                double d_BMBTXM = 0.0;
+                if (!"".Equals(BMBTXM) && double.Parse(BMBTXM) > 0.0)
+                {
+                    d_BMBTXM = double.Parse(BMBTXM);
+                }
+                double d_DC4 = 0.0;
+                if (!"".Equals(DC4) && double.Parse(DC4) > 0.0)
+                {
+                    d_DC4 = double.Parse(DC4);
+                }
+                double d_DC3 = 0.0;
+                if (!"".Equals(DC3) && double.Parse(DC3) > 0.0)
+                {
+                    d_DC3 = double.Parse(DC3);
+                }
+                double d_XUCDAT = 0.0;
+                if (!"".Equals(XUCDAT) && double.Parse(XUCDAT) > 0.0)
+                {
+                    d_XUCDAT = double.Parse(XUCDAT);
+                }
+                double d_CAT = 0.0;
+                if (!"".Equals(CAT) && double.Parse(CAT) > 0.0)
+                {
+                    d_CAT = double.Parse(CAT);
+                }
+                double d_DA04 = 0.0;
+                if (!"".Equals(DA04) && double.Parse(DA04) > 0.0)
+                {
+                    d_DA04 = double.Parse(DA04);
+                }
+                BG_KHOILUONGXDCB klxdcb = new BG_KHOILUONGXDCB();
+                klxdcb.SHS = _shs;
+                klxdcb.CATNHUA = d_CNHUA;
+                klxdcb.BOCNHUA = d_BOCNHUA;
+                klxdcb.CATBTXM = d_CMBTXM;
+                klxdcb.BOCBTXM = d_BMBTXM;
+                klxdcb.DATCAP4 = d_DC4;
+                klxdcb.DATCAP3 = d_DC3;
+                klxdcb.CAT = d_CAT;
+                klxdcb.XUCDAT = d_XUCDAT;
+                DAL.C_CongTacBangGia.TongKetChiPhi(_shs);
+                klxdcb.CPVATTU = DAL.C_CongTacBangGia.CPVATLIEU;
+                klxdcb.CPNHANCONG = DAL.C_CongTacBangGia.CPNHANCONG;
+                klxdcb.CPMAYTHICONG = DAL.C_CongTacBangGia.CPMAYTHICONG;
+                if (checkCoTinhPhiCaBa.Checked)
+                {
+                    klxdcb.CPCABA = DAL.C_CongTacBangGia.CPCABA;
+                }
+                else {
+                    klxdcb.CPCABA = 0.0;
+                }
+               klxdcb.THUE55 = DAL.C_CongTacBangGia.THUE55;
+               klxdcb.CONG3 = DAL.C_CongTacBangGia.TONGTRUOCTHUE;
+               klxdcb.THUEGTGT = DAL.C_CongTacBangGia.VAT;
+               klxdcb.TONGIATRI = DAL.C_CongTacBangGia.TONG;
+                DAL.C_BG_KHOILUONGXDCB.InsertKTPD(klxdcb);
+            }
+            catch (Exception ex)
+            {
+                log.Error("Loi Insert Khoi Luong XDCB " + ex.Message);
+            }
+           
         }
+      
         private void btTinhBangGia_Click(object sender, EventArgs e)
         {
             if(!"".Equals(_shs)){
                 InsertBG_KICHTHUOCPHUIDAO();
                 InsertCONGTACBANGGIA();
+                InsertKHOILUONGXDCB();
+                MessageBox.Show(this, "Thành Công", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }else{
                 MessageBox.Show(this, "Nhập Số Hồ Sơ Tính Dự Toán.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.txtSHS.Focus();
@@ -882,8 +923,7 @@ namespace TanHoaWater.View.Users.TinhDuToan
         {
             try
             {
-                if (GridCacCongTac.CurrentCell.OwningColumn.Name == "contac_loaisd")
-                {
+               
                     if (double.Parse(this.GridCacCongTac.Rows[GridCacCongTac.CurrentRow.Index].Cells["congtac_khoiluong"].Value + "") > 10)
                     {
                         this.GridCacCongTac.Rows[GridCacCongTac.CurrentRow.Index].Cells["congtac_khoiluong"].Value = String.Format("{0:0,0.00}", double.Parse(this.GridCacCongTac.Rows[GridCacCongTac.CurrentRow.Index].Cells["congtac_khoiluong"].Value + "")); ;
@@ -892,7 +932,7 @@ namespace TanHoaWater.View.Users.TinhDuToan
                     {
                         this.GridCacCongTac.Rows[GridCacCongTac.CurrentRow.Index].Cells["congtac_khoiluong"].Value = String.Format("{0:0.00}", double.Parse(this.GridCacCongTac.Rows[GridCacCongTac.CurrentRow.Index].Cells["congtac_khoiluong"].Value + "")); ;
                     }
-                }
+              
             }
             catch (Exception)
             { }

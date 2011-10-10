@@ -34,8 +34,11 @@ namespace TanHoaWater.DAL
         public static double CPNHANCONG = 0.0;//@B FLOAT OUTPUT,
         public static double CPMAYTHICONG = 0.0;///@C FLOAT OUTPUT,
 	    public static double CPCABA=0.0;//@CHIPHICABA FLOAT OUTPUT,	
+        public static double THUE55 = 0.0;///@VAT FLOAT OUTPUT,
+        public static double TONGTRUOCTHUE = 0.0;///@VAT FLOAT OUTPUT,
+        public static double VAT = 0.0;///@VAT FLOAT OUTPUT,
 	    public static double TONG=0.0;//@TOTAL FLOAT OUTPUT,
-	    public static double VAT=0.0;///@VAT FLOAT OUTPUT,
+	    
         
         public static void TongKetChiPhi(string shs) {
             TanHoaDataContext db = new TanHoaDataContext();
@@ -106,9 +109,11 @@ namespace TanHoaWater.DAL
             cmd.ExecuteNonQuery();
 
             CPVATLIEU = double.Parse(cmd.Parameters["@A"].Value + "");
-            CPNHANCONG = double.Parse(cmd.Parameters["@B"].Value + "");
-            CPMAYTHICONG = double.Parse(cmd.Parameters["@C"].Value + "");
+            CPNHANCONG = double.Parse(cmd.Parameters["@B1"].Value + "");
+            CPMAYTHICONG = double.Parse(cmd.Parameters["@C1"].Value + "");
             CPCABA = double.Parse(cmd.Parameters["@CPCABA"].Value + "");
+            THUE55 =  double.Parse(cmd.Parameters["@G"].Value + "");
+            TONGTRUOCTHUE = double.Parse(cmd.Parameters["@H"].Value + "");
             TONG = double.Parse(cmd.Parameters["@TOTAL"].Value + "");
             VAT = double.Parse(cmd.Parameters["@VAT"].Value + "");
             conn.Close();
