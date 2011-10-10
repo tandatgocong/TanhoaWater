@@ -641,8 +641,9 @@ namespace TanHoaWater.View.Users.TinhDuToan
                             GridCacCongTac.Rows[GridCacCongTac.CurrentRow.Index].Cells["congtac_NC"].Value = dongiavt.Rows[0][1].ToString();
                             GridCacCongTac.Rows[GridCacCongTac.CurrentRow.Index].Cells["congtac_MTC"].Value = dongiavt.Rows[0][2].ToString();
                         }
-                        else { 
-                        
+                        else {
+                            MessageBox.Show(this, "Không Tìm Thấy Mã Hiệu Đơn Giá.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            GridCacCongTac.Rows[GridCacCongTac.CurrentRow.Index].Cells[2].Selected = true;
                         }
                     }
                     else {
@@ -651,6 +652,11 @@ namespace TanHoaWater.View.Users.TinhDuToan
                             GridCacCongTac.Rows[GridCacCongTac.CurrentRow.Index].Cells["congtac_VL"].Value = dongiavt.DGVATLIEU;
                             GridCacCongTac.Rows[GridCacCongTac.CurrentRow.Index].Cells["congtac_NC"].Value = dongiavt.DGNHANCONG;
                             GridCacCongTac.Rows[GridCacCongTac.CurrentRow.Index].Cells["congtac_MTC"].Value = dongiavt.DGMAYTHICONG;
+                        }
+                        else
+                        {
+                            MessageBox.Show(this, "Không Tìm Thấy Mã Hiệu Đơn Giá.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            GridCacCongTac.Rows[GridCacCongTac.CurrentRow.Index].Cells[2].Selected = true;
                         }
                     }
                     
