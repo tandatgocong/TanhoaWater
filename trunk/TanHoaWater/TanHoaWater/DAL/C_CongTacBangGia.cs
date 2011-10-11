@@ -48,7 +48,7 @@ namespace TanHoaWater.DAL
             SqlCommand cmd = new SqlCommand("TONGKETCHIPHI", conn);
             cmd.CommandType = CommandType.StoredProcedure;
 
-            SqlParameter inparm = cmd.Parameters.Add("@shs", SqlDbType.Float);
+            SqlParameter inparm = cmd.Parameters.Add("@shs", SqlDbType.VarChar);
             inparm.Direction = ParameterDirection.Input;
             inparm.Value = shs;
 

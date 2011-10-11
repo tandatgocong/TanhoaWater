@@ -768,19 +768,77 @@ namespace TanHoaWater.View.Users.TinhDuToan
                         congtacbg.MAHIEU = this.GridCacCongTac.Rows[i].Cells["congtac_mahieu"].Value + "";
                         congtacbg.MAHDG = this.GridCacCongTac.Rows[i].Cells["congtacMahieuDG"].Value + "";
                         congtacbg.TENVT = this.GridCacCongTac.Rows[i].Cells["congtac_hanmuc"].Value + "";
-                        congtacbg.DVT = this.GridCacCongTac.Rows[i].Cells["congtac_dvt"].Value + "";
-                        congtacbg.LOAISN = this.GridCacCongTac.Rows[i].Cells["contac_loaisd"].Value + "";
+                        congtacbg.DVT = this.GridCacCongTac.Rows[i].Cells["congtac_dvt"].Value + "";                                        
+                        string nhom= this.GridCacCongTac.Rows[i].Cells["congTacNhom"].Value + "";
+                        string loaisd = this.GridCacCongTac.Rows[i].Cells["contac_loaisd"].Value + "";
                         congtacbg.NHOM = this.GridCacCongTac.Rows[i].Cells["congTacNhom"].Value + "";
-                        if ("XDCB".Equals(this.GridCacCongTac.Rows[i].Cells["congTacNhom"].Value))
+                        congtacbg.LOAISN =loaisd;
+                        if ("XDCB".Equals(nhom))
                         {
                             congtacbg.KHOILUONG = double.Parse(this.GridCacCongTac.Rows[i].Cells["congtac_khoiluong"].Value + "")/1000;
                         }
                         else {
                             congtacbg.KHOILUONG = double.Parse(this.GridCacCongTac.Rows[i].Cells["congtac_khoiluong"].Value + "");
-                        }   
-                        congtacbg.DONGIAVL = double.Parse(this.GridCacCongTac.Rows[i].Cells["congtac_VL"].Value + "");
-                        congtacbg.DONGIANC = double.Parse(this.GridCacCongTac.Rows[i].Cells["congtac_NC"].Value + "");
-                        congtacbg.DONGIAMTC = double.Parse(this.GridCacCongTac.Rows[i].Cells["congtac_MTC"].Value + "");
+                        }
+                        double vatlieu=double.Parse(this.GridCacCongTac.Rows[i].Cells["congtac_VL"].Value + "");
+                        double nhancong=double.Parse(this.GridCacCongTac.Rows[i].Cells["congtac_NC"].Value + "");
+                        double maythicong=double.Parse(this.GridCacCongTac.Rows[i].Cells["congtac_MTC"].Value + "");
+
+                        switch (loaisd)
+	                    {
+                            case "SDL":
+                                if (!"XDCB".Equals(nhom))
+                                {
+                                    congtacbg.TENVT = "SỬ DỤNG LẠI " + this.GridCacCongTac.Rows[i].Cells["congtac_hanmuc"].Value + "";
+                                    congtacbg.DONGIAVL = 0;
+                                    congtacbg.DONGIANC = nhancong* 1.6;
+                                    congtacbg.DONGIAMTC = maythicong* 1.6;
+                                }else{
+                                    congtacbg.DONGIAVL = vatlieu;
+                                    congtacbg.DONGIANC = nhancong;
+                                    congtacbg.DONGIAMTC = maythicong;
+                                }
+                                break;
+                            case "AP":
+                                congtacbg.TENVT = this.GridCacCongTac.Rows[i].Cells["congtac_hanmuc"].Value + "" + " (THỬ ÁP)";
+                                congtacbg.DONGIAVL = vatlieu;
+                                congtacbg.DONGIANC = nhancong;
+                                congtacbg.DONGIAMTC = maythicong;                                
+                                break;
+                            case "HHTH":
+                                if (!"XDCB".Equals(nhom))
+                                { 
+                                    congtacbg.TENVT = "CÔNG GỞ "+ this.GridCacCongTac.Rows[i].Cells["congtac_hanmuc"].Value + " (VẬT TƯ CŨ)";
+                                    congtacbg.DONGIAVL = 0;
+                                    congtacbg.DONGIANC = nhancong * 0.6;
+                                    congtacbg.DONGIAMTC = maythicong * 0.6;
+                                }else{
+                                    congtacbg.DONGIAVL = vatlieu;
+                                    congtacbg.DONGIANC = nhancong;
+                                    congtacbg.DONGIAMTC = maythicong;
+                                }
+                               
+                                break;
+                            case "CMTH":
+                                //if (!"XDCB".Equals(nhom))
+                                //{
+                                //    congtacbg.TENVT = "CÔNG GỞ " + this.GridCacCongTac.Rows[i].Cells["congtac_hanmuc"].Value + " (VẬT TƯ CŨ)";
+                                //    congtacbg.DONGIAVL = 0;
+                                //    congtacbg.DONGIANC = nhancong * 0.6;
+                                //    congtacbg.DONGIAMTC = maythicong * 0.6;
+                                //}
+                                //else
+                                //{
+                                //    congtacbg.DONGIAVL = vatlieu;
+                                //    congtacbg.DONGIANC = nhancong;
+                                //    congtacbg.DONGIAMTC = maythicong;
+                                //}
+
+                                break;
+		                    default:
+
+                                break;
+	                    }                        
                         congtacbg.CREATEBY = DAL.C_USERS._userName;
                         congtacbg.CREATEDATE = DateTime.Now;
                         DAL.C_CongTacBangGia.InsertCongTacBG(congtacbg);
@@ -892,12 +950,16 @@ namespace TanHoaWater.View.Users.TinhDuToan
       
         private void btTinhBangGia_Click(object sender, EventArgs e)
         {
-            if(!"".Equals(_shs)){
+
+            if (!"".Equals(_shs))
+            {
                 InsertBG_KICHTHUOCPHUIDAO();
                 InsertCONGTACBANGGIA();
                 InsertKHOILUONGXDCB();
                 MessageBox.Show(this, "Thành Công", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }else{
+            }
+            else
+            {
                 MessageBox.Show(this, "Nhập Số Hồ Sơ Tính Dự Toán.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.txtSHS.Focus();
                 this.txtSHS.BackColor = Color.Red;
