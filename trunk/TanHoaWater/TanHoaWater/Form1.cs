@@ -12,6 +12,7 @@ using CrystalDecisions.CrystalReports.Engine;
 using CrystalDecisions.Shared;
 using CrystalDecisions.Windows.Forms;
 using TanHoaWater.View.Users.KEHOACH.Report;
+using TanHoaWater.View.Users.TinhDuToan.report;
 namespace TanHoaWater
 {
     public partial class Form1 : Form
@@ -19,12 +20,10 @@ namespace TanHoaWater
         public Form1()
         {
             InitializeComponent();
+            TanHoaDataContext db = new TanHoaDataContext();
             CrystalReportViewer r = new CrystalReportViewer();
-            ReportDocument rp = new crp_BIENNHAN();
-            rp.PrintOptions.PaperSize = PaperSize.Paper11x17;
-           rp.SetDataSource(DAL.C_BienNhanDon.printBienNhan("1100007","thanhtrung"));
-            r.ReportSource = rp;
-            crystalReportViewer1.ReportSource = rp;
+            ReportDocument rp = new CrystalReport1();           
+                       crystalReportViewer1.ReportSource = rp;
          }
 
         private void button1_Click(object sender, EventArgs e)

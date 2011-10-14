@@ -205,7 +205,7 @@
             this.chuyenDot.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chuyenDot.Image = global::TanHoaWater.Properties.Resources.login;
             this.chuyenDot.ImageFixedSize = new System.Drawing.Size(20, 20);
-            this.chuyenDot.Location = new System.Drawing.Point(870, 72);
+            this.chuyenDot.Location = new System.Drawing.Point(869, 72);
             this.chuyenDot.Name = "chuyenDot";
             this.chuyenDot.Size = new System.Drawing.Size(91, 23);
             this.chuyenDot.TabIndex = 119;
@@ -567,7 +567,7 @@
             this.btCapNhat.Size = new System.Drawing.Size(109, 25);
             this.btCapNhat.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
             this.btCapNhat.TabIndex = 6;
-            this.btCapNhat.Text = "Xem Báo Cáo";
+            this.btCapNhat.Text = "Cập Nhật";
             this.btCapNhat.Click += new System.EventHandler(this.btCapNhat_Click);
             // 
             // labelX6

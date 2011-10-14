@@ -68,8 +68,6 @@
             this.txtNgayNhanHS = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtHoTen = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.label10 = new System.Windows.Forms.Label();
-            this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
-            this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.MADOT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.g_SoHoSo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SOHOSO = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -236,8 +234,7 @@
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.txtNgayNhanHS);
             this.panel1.Controls.Add(this.txtHoTen);
-            this.panel1.Controls.Add(this.label10);
-            this.panel1.Controls.Add(this.shapeContainer1);
+            this.panel1.Controls.Add(this.label10);          
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -615,23 +612,8 @@
             // 
             // shapeContainer1
             // 
-            this.shapeContainer1.Location = new System.Drawing.Point(0, 0);
-            this.shapeContainer1.Margin = new System.Windows.Forms.Padding(0);
-            this.shapeContainer1.Name = "shapeContainer1";
-            this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
-            this.lineShape1});
-            this.shapeContainer1.Size = new System.Drawing.Size(960, 535);
-            this.shapeContainer1.TabIndex = 168;
-            this.shapeContainer1.TabStop = false;
-            // 
-            // lineShape1
-            // 
-            this.lineShape1.Name = "lineShape1";
-            this.lineShape1.X1 = 576;
-            this.lineShape1.X2 = 577;
-            this.lineShape1.Y1 = 0;
-            this.lineShape1.Y2 = 524;
-            // 
+          
+           
             // MADOT
             // 
             this.MADOT.DataPropertyName = "MADOT";
@@ -825,9 +807,7 @@
         private System.Windows.Forms.Label label7;
         private DevComponents.DotNetBar.Controls.TextBoxX txtNgayNhanHS;
         private DevComponents.DotNetBar.Controls.TextBoxX txtHoTen;
-        private System.Windows.Forms.Label label10;
-        private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
-        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
+        private System.Windows.Forms.Label label10; 
         private System.Windows.Forms.DataGridView dataGridView1;
         private DevComponents.DotNetBar.Controls.TextBoxX txtLoaiKH;
         private DevComponents.DotNetBar.Controls.TextBoxX txtLoaiHS;

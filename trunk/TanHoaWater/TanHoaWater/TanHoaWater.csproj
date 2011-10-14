@@ -70,7 +70,6 @@
       <HintPath>bin\Debug\log4net.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
-    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="String_Indentity, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\String_Indentity.dll</HintPath>
@@ -106,10 +105,12 @@
     <Compile Include="DAL\C_DanhMucBoVT.cs" />
     <Compile Include="DAL\C_DanhMucTaiLapMD.cs" />
     <Compile Include="DAL\C_DanhMucVatTu.cs" />
+    <Compile Include="DAL\C_DonGiaTaiLapMatDuong.cs" />
     <Compile Include="DAL\C_DonGiaVatTu.cs" />
     <Compile Include="DAL\C_DonKhachHang.cs" />
     <Compile Include="DAL\C_DonViTinh.cs" />
     <Compile Include="DAL\C_DotNhanDon.cs" />
+    <Compile Include="DAL\C_HeSo.cs" />
     <Compile Include="DAL\C_KhoiLuongXDCB.cs" />
     <Compile Include="DAL\C_KichThuocPhuiDao.cs" />
     <Compile Include="DAL\C_LoaiHoSo.cs" />
@@ -294,6 +295,17 @@
     <Compile Include="View\Users\TinhDuToan\frm_ChonLaiDG.Designer.cs">
       <DependentUpon>frm_ChonLaiDG.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Users\TinhDuToan\report\CrystalReport1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\Users\TinhDuToan\report\DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="View\Users\TinhDuToan\tab_DanhMucTaiLapMD.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -462,6 +474,10 @@
     <EmbeddedResource Include="View\Users\TinhDuToan\frm_ChonLaiDG.resx">
       <DependentUpon>frm_ChonLaiDG.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\TinhDuToan\report\CrystalReport1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Users\TinhDuToan\tab_DanhMucTaiLapMD.resx">
       <DependentUpon>tab_DanhMucTaiLapMD.cs</DependentUpon>
     </EmbeddedResource>
@@ -604,6 +620,17 @@
     <Compile Include="View\Main\frm_Login.Designer.cs">
       <DependentUpon>frm_Login.cs</DependentUpon>
     </Compile>
+    <None Include="View\Users\TinhDuToan\report\DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="View\Users\TinhDuToan\report\DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="View\Users\TinhDuToan\report\DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\bg_head.jpg" />
