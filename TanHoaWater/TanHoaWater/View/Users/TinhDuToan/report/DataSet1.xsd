@@ -1,0 +1,411 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet1" targetNamespace="http://tempuri.org/DataSet1.xsd" xmlns:mstns="http://tempuri.org/DataSet1.xsd" xmlns="http://tempuri.org/DataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" GeneratorFunctionsComponentClassName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" UserFunctionsComponentName="QueriesTableAdapter" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="TANHOA_WATERConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="TANHOA_WATERConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.TanHoaWater.Properties.Settings.GlobalReference.Default.TANHOA_WATERConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="BG_THONGTINKHACHANGTableAdapter" GeneratorDataComponentClassName="BG_THONGTINKHACHANGTableAdapter" Name="BG_THONGTINKHACHANG" UserDataComponentName="BG_THONGTINKHACHANGTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TANHOA_WATERConnectionString (Settings)" DbObjectName="TANHOA_WATER.dbo.BG_THONGTINKHACHANG" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT SHS, HOTEN, DIACHI FROM dbo.BG_THONGTINKHACHANG</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="SHS" DataSetColumn="SHS" />
+              <Mapping SourceColumn="HOTEN" DataSetColumn="HOTEN" />
+              <Mapping SourceColumn="DIACHI" DataSetColumn="DIACHI" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="BG_TAILAPMATDUONGTableAdapter" GeneratorDataComponentClassName="BG_TAILAPMATDUONGTableAdapter" Name="BG_TAILAPMATDUONG" UserDataComponentName="BG_TAILAPMATDUONGTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TANHOA_WATERConnectionString (Settings)" DbObjectName="TANHOA_WATER.dbo.BG_TAILAPMATDUONG" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT MADANHMUC, TENKETCAU, KHOILUONG, DONGIA, THANHTIEN FROM dbo.BG_TAILAPMATDUONG</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="MADANHMUC" DataSetColumn="MADANHMUC" />
+              <Mapping SourceColumn="TENKETCAU" DataSetColumn="TENKETCAU" />
+              <Mapping SourceColumn="KHOILUONG" DataSetColumn="KHOILUONG" />
+              <Mapping SourceColumn="DONGIA" DataSetColumn="DONGIA" />
+              <Mapping SourceColumn="THANHTIEN" DataSetColumn="THANHTIEN" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="BG_CHITIETBG_XDCBTableAdapter" GeneratorDataComponentClassName="BG_CHITIETBG_XDCBTableAdapter" Name="BG_CHITIETBG_XDCB" UserDataComponentName="BG_CHITIETBG_XDCBTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TANHOA_WATERConnectionString (Settings)" DbObjectName="TANHOA_WATER.dbo.BG_CHITIETBG_XDCB" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT SHS, MAHIEU, MAHDG, TENVT, DVT, NHOM, LOAISN, KHOILUONG, DONGIAVL, DONGIANC, DONGIAMTC, TT_VL, TT_NC, TT_MTC FROM dbo.BG_CHITIETBG_XDCB</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="SHS" DataSetColumn="SHS" />
+              <Mapping SourceColumn="MAHIEU" DataSetColumn="MAHIEU" />
+              <Mapping SourceColumn="MAHDG" DataSetColumn="MAHDG" />
+              <Mapping SourceColumn="TENVT" DataSetColumn="TENVT" />
+              <Mapping SourceColumn="DVT" DataSetColumn="DVT" />
+              <Mapping SourceColumn="NHOM" DataSetColumn="NHOM" />
+              <Mapping SourceColumn="LOAISN" DataSetColumn="LOAISN" />
+              <Mapping SourceColumn="KHOILUONG" DataSetColumn="KHOILUONG" />
+              <Mapping SourceColumn="DONGIAVL" DataSetColumn="DONGIAVL" />
+              <Mapping SourceColumn="DONGIANC" DataSetColumn="DONGIANC" />
+              <Mapping SourceColumn="DONGIAMTC" DataSetColumn="DONGIAMTC" />
+              <Mapping SourceColumn="TT_VL" DataSetColumn="TT_VL" />
+              <Mapping SourceColumn="TT_NC" DataSetColumn="TT_NC" />
+              <Mapping SourceColumn="TT_MTC" DataSetColumn="TT_MTC" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="BG_REPORTTableAdapter" GeneratorDataComponentClassName="BG_REPORTTableAdapter" Name="BG_REPORT" UserDataComponentName="BG_REPORTTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TANHOA_WATERConnectionString (Settings)" DbObjectName="TANHOA_WATER.dbo.BG_REPORT" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[BG_REPORT] WHERE (([STT] = @Original_STT) AND ((@IsNull_PGDKTCN = 1 AND [PGDKTCN] IS NULL) OR ([PGDKTCN] = @Original_PGDKTCN)) AND ((@IsNull_PKTCN = 1 AND [PKTCN] IS NULL) OR ([PKTCN] = @Original_PKTCN)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_STT" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="STT" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_PGDKTCN" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="PGDKTCN" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_PGDKTCN" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="PGDKTCN" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_PKTCN" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="PKTCN" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_PKTCN" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="PKTCN" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[BG_REPORT] ([HEARDER_GANMOI], [DETAIL_GANMOI], [HEARDER_DIDOI], [DETAIL_DIDUONG], [PGDKTCN], [PKTCN]) VALUES (@HEARDER_GANMOI, @DETAIL_GANMOI, @HEARDER_DIDOI, @DETAIL_DIDUONG, @PGDKTCN, @PKTCN);
+SELECT STT, HEARDER_GANMOI, DETAIL_GANMOI, HEARDER_DIDOI, DETAIL_DIDUONG, PGDKTCN, PKTCN FROM BG_REPORT WHERE (STT = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@HEARDER_GANMOI" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="HEARDER_GANMOI" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@DETAIL_GANMOI" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="DETAIL_GANMOI" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@HEARDER_DIDOI" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="HEARDER_DIDOI" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@DETAIL_DIDUONG" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="DETAIL_DIDUONG" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@PGDKTCN" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="PGDKTCN" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@PKTCN" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="PKTCN" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT STT, HEARDER_GANMOI, DETAIL_GANMOI, HEARDER_DIDOI, DETAIL_DIDUONG, PGDKTCN, PKTCN FROM dbo.BG_REPORT</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[BG_REPORT] SET [HEARDER_GANMOI] = @HEARDER_GANMOI, [DETAIL_GANMOI] = @DETAIL_GANMOI, [HEARDER_DIDOI] = @HEARDER_DIDOI, [DETAIL_DIDUONG] = @DETAIL_DIDUONG, [PGDKTCN] = @PGDKTCN, [PKTCN] = @PKTCN WHERE (([STT] = @Original_STT) AND ((@IsNull_PGDKTCN = 1 AND [PGDKTCN] IS NULL) OR ([PGDKTCN] = @Original_PGDKTCN)) AND ((@IsNull_PKTCN = 1 AND [PKTCN] IS NULL) OR ([PKTCN] = @Original_PKTCN)));
+SELECT STT, HEARDER_GANMOI, DETAIL_GANMOI, HEARDER_DIDOI, DETAIL_DIDUONG, PGDKTCN, PKTCN FROM BG_REPORT WHERE (STT = @STT)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@HEARDER_GANMOI" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="HEARDER_GANMOI" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@DETAIL_GANMOI" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="DETAIL_GANMOI" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@HEARDER_DIDOI" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="HEARDER_DIDOI" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@DETAIL_DIDUONG" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="DETAIL_DIDUONG" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@PGDKTCN" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="PGDKTCN" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@PKTCN" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="PKTCN" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_STT" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="STT" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_PGDKTCN" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="PGDKTCN" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_PGDKTCN" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="PGDKTCN" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_PKTCN" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="PKTCN" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_PKTCN" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="PKTCN" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="STT" ColumnName="STT" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@STT" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="STT" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="STT" DataSetColumn="STT" />
+              <Mapping SourceColumn="HEARDER_GANMOI" DataSetColumn="HEARDER_GANMOI" />
+              <Mapping SourceColumn="DETAIL_GANMOI" DataSetColumn="DETAIL_GANMOI" />
+              <Mapping SourceColumn="HEARDER_DIDOI" DataSetColumn="HEARDER_DIDOI" />
+              <Mapping SourceColumn="DETAIL_DIDUONG" DataSetColumn="DETAIL_DIDUONG" />
+              <Mapping SourceColumn="PGDKTCN" DataSetColumn="PGDKTCN" />
+              <Mapping SourceColumn="PKTCN" DataSetColumn="PKTCN" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet1" msprop:Generator_UserDSName="DataSet1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="BG_THONGTINKHACHANG" msprop:Generator_TableClassName="BG_THONGTINKHACHANGDataTable" msprop:Generator_TableVarName="tableBG_THONGTINKHACHANG" msprop:Generator_TablePropName="BG_THONGTINKHACHANG" msprop:Generator_RowDeletingName="BG_THONGTINKHACHANGRowDeleting" msprop:Generator_UserTableName="BG_THONGTINKHACHANG" msprop:Generator_RowChangingName="BG_THONGTINKHACHANGRowChanging" msprop:Generator_RowEvHandlerName="BG_THONGTINKHACHANGRowChangeEventHandler" msprop:Generator_RowDeletedName="BG_THONGTINKHACHANGRowDeleted" msprop:Generator_RowEvArgName="BG_THONGTINKHACHANGRowChangeEvent" msprop:Generator_RowChangedName="BG_THONGTINKHACHANGRowChanged" msprop:Generator_RowClassName="BG_THONGTINKHACHANGRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SHS" msprop:Generator_ColumnVarNameInTable="columnSHS" msprop:Generator_ColumnPropNameInRow="SHS" msprop:Generator_ColumnPropNameInTable="SHSColumn" msprop:Generator_UserColumnName="SHS">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="HOTEN" msprop:Generator_ColumnVarNameInTable="columnHOTEN" msprop:Generator_ColumnPropNameInRow="HOTEN" msprop:Generator_ColumnPropNameInTable="HOTENColumn" msprop:Generator_UserColumnName="HOTEN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DIACHI" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDIACHI" msprop:Generator_ColumnPropNameInRow="DIACHI" msprop:Generator_ColumnPropNameInTable="DIACHIColumn" msprop:Generator_UserColumnName="DIACHI" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="216" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TONGKETKINHPHI" msprop:Generator_TableClassName="TONGKETKINHPHIDataTable" msprop:Generator_TableVarName="tableTONGKETKINHPHI" msprop:Generator_TablePropName="TONGKETKINHPHI" msprop:Generator_RowDeletingName="TONGKETKINHPHIRowDeleting" msprop:Generator_UserTableName="TONGKETKINHPHI" msprop:Generator_RowChangingName="TONGKETKINHPHIRowChanging" msprop:Generator_RowEvHandlerName="TONGKETKINHPHIRowChangeEventHandler" msprop:Generator_RowDeletedName="TONGKETKINHPHIRowDeleted" msprop:Generator_RowEvArgName="TONGKETKINHPHIRowChangeEvent" msprop:Generator_RowChangedName="TONGKETKINHPHIRowChanged" msprop:Generator_RowClassName="TONGKETKINHPHIRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SHS" msprop:Generator_ColumnVarNameInTable="columnSHS" msprop:Generator_ColumnPropNameInRow="SHS" msprop:Generator_ColumnPropNameInTable="SHSColumn" msprop:Generator_UserColumnName="SHS" type="xs:string" minOccurs="0" />
+              <xs:element name="A" msprop:Generator_ColumnVarNameInTable="columnA" msprop:Generator_ColumnPropNameInRow="A" msprop:Generator_ColumnPropNameInTable="AColumn" msprop:Generator_UserColumnName="A" type="xs:string" minOccurs="0" />
+              <xs:element name="B" msprop:Generator_ColumnVarNameInTable="columnB" msprop:Generator_ColumnPropNameInRow="B" msprop:Generator_ColumnPropNameInTable="BColumn" msprop:Generator_UserColumnName="B" type="xs:string" minOccurs="0" />
+              <xs:element name="C" msprop:Generator_ColumnVarNameInTable="columnC" msprop:Generator_ColumnPropNameInRow="C" msprop:Generator_ColumnPropNameInTable="CColumn" msprop:Generator_UserColumnName="C" type="xs:string" minOccurs="0" />
+              <xs:element name="CPCABA" msprop:Generator_ColumnVarNameInTable="columnCPCABA" msprop:Generator_ColumnPropNameInRow="CPCABA" msprop:Generator_ColumnPropNameInTable="CPCABAColumn" msprop:Generator_UserColumnName="CPCABA" type="xs:string" minOccurs="0" />
+              <xs:element name="TOTAL" msprop:Generator_ColumnVarNameInTable="columnTOTAL" msprop:Generator_ColumnPropNameInRow="TOTAL" msprop:Generator_ColumnPropNameInTable="TOTALColumn" msprop:Generator_UserColumnName="TOTAL" type="xs:string" minOccurs="0" />
+              <xs:element name="VAT" msprop:Generator_ColumnVarNameInTable="columnVAT" msprop:Generator_ColumnPropNameInRow="VAT" msprop:Generator_ColumnPropNameInTable="VATColumn" msprop:Generator_UserColumnName="VAT" type="xs:string" minOccurs="0" />
+              <xs:element name="B1" msprop:Generator_ColumnVarNameInTable="columnB1" msprop:Generator_ColumnPropNameInRow="B1" msprop:Generator_ColumnPropNameInTable="B1Column" msprop:Generator_UserColumnName="B1" type="xs:string" minOccurs="0" />
+              <xs:element name="C1" msprop:Generator_ColumnVarNameInTable="columnC1" msprop:Generator_ColumnPropNameInRow="C1" msprop:Generator_ColumnPropNameInTable="C1Column" msprop:Generator_UserColumnName="C1" type="xs:string" minOccurs="0" />
+              <xs:element name="C2" msprop:Generator_ColumnVarNameInTable="columnC2" msprop:Generator_ColumnPropNameInRow="C2" msprop:Generator_ColumnPropNameInTable="C2Column" msprop:Generator_UserColumnName="C2" type="xs:string" minOccurs="0" />
+              <xs:element name="D" msprop:Generator_ColumnVarNameInTable="columnD" msprop:Generator_ColumnPropNameInRow="D" msprop:Generator_ColumnPropNameInTable="DColumn" msprop:Generator_UserColumnName="D" type="xs:string" minOccurs="0" />
+              <xs:element name="E" msprop:Generator_ColumnVarNameInTable="columnE" msprop:Generator_ColumnPropNameInRow="E" msprop:Generator_ColumnPropNameInTable="EColumn" msprop:Generator_UserColumnName="E" type="xs:string" minOccurs="0" />
+              <xs:element name="F" msprop:Generator_ColumnVarNameInTable="columnF" msprop:Generator_ColumnPropNameInRow="F" msprop:Generator_ColumnPropNameInTable="FColumn" msprop:Generator_UserColumnName="F" type="xs:string" minOccurs="0" />
+              <xs:element name="G" msprop:Generator_ColumnVarNameInTable="columnG" msprop:Generator_ColumnPropNameInRow="G" msprop:Generator_ColumnPropNameInTable="GColumn" msprop:Generator_UserColumnName="G" type="xs:string" minOccurs="0" />
+              <xs:element name="H" msprop:Generator_ColumnVarNameInTable="columnH" msprop:Generator_ColumnPropNameInRow="H" msprop:Generator_ColumnPropNameInTable="HColumn" msprop:Generator_UserColumnName="H" type="xs:string" minOccurs="0" />
+              <xs:element name="I" msprop:Generator_ColumnVarNameInTable="columnI" msprop:Generator_ColumnPropNameInRow="I" msprop:Generator_ColumnPropNameInTable="IColumn" msprop:Generator_UserColumnName="I" type="xs:string" minOccurs="0" />
+              <xs:element name="K" msprop:Generator_ColumnVarNameInTable="columnK" msprop:Generator_ColumnPropNameInRow="K" msprop:Generator_ColumnPropNameInTable="KColumn" msprop:Generator_UserColumnName="K" type="xs:string" minOccurs="0" />
+              <xs:element name="L" msprop:Generator_ColumnVarNameInTable="columnL" msprop:Generator_ColumnPropNameInRow="L" msprop:Generator_ColumnPropNameInTable="LColumn" msprop:Generator_UserColumnName="L" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="BG_TAILAPMATDUONG" msprop:Generator_TableClassName="BG_TAILAPMATDUONGDataTable" msprop:Generator_TableVarName="tableBG_TAILAPMATDUONG" msprop:Generator_TablePropName="BG_TAILAPMATDUONG" msprop:Generator_RowDeletingName="BG_TAILAPMATDUONGRowDeleting" msprop:Generator_UserTableName="BG_TAILAPMATDUONG" msprop:Generator_RowChangingName="BG_TAILAPMATDUONGRowChanging" msprop:Generator_RowEvHandlerName="BG_TAILAPMATDUONGRowChangeEventHandler" msprop:Generator_RowDeletedName="BG_TAILAPMATDUONGRowDeleted" msprop:Generator_RowEvArgName="BG_TAILAPMATDUONGRowChangeEvent" msprop:Generator_RowChangedName="BG_TAILAPMATDUONGRowChanged" msprop:Generator_RowClassName="BG_TAILAPMATDUONGRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MADANHMUC" msprop:Generator_ColumnVarNameInTable="columnMADANHMUC" msprop:Generator_ColumnPropNameInRow="MADANHMUC" msprop:Generator_ColumnPropNameInTable="MADANHMUCColumn" msprop:Generator_UserColumnName="MADANHMUC">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TENKETCAU" msprop:Generator_ColumnVarNameInTable="columnTENKETCAU" msprop:Generator_ColumnPropNameInRow="TENKETCAU" msprop:Generator_ColumnPropNameInTable="TENKETCAUColumn" msprop:Generator_UserColumnName="TENKETCAU" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="KHOILUONG" msprop:Generator_ColumnVarNameInTable="columnKHOILUONG" msprop:Generator_ColumnPropNameInRow="KHOILUONG" msprop:Generator_ColumnPropNameInTable="KHOILUONGColumn" msprop:Generator_UserColumnName="KHOILUONG" type="xs:double" minOccurs="0" />
+              <xs:element name="DONGIA" msprop:Generator_ColumnVarNameInTable="columnDONGIA" msprop:Generator_ColumnPropNameInRow="DONGIA" msprop:Generator_ColumnPropNameInTable="DONGIAColumn" msprop:Generator_UserColumnName="DONGIA" type="xs:double" minOccurs="0" />
+              <xs:element name="THANHTIEN" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTHANHTIEN" msprop:Generator_ColumnPropNameInRow="THANHTIEN" msprop:Generator_ColumnPropNameInTable="THANHTIENColumn" msprop:Generator_UserColumnName="THANHTIEN" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="BG_CHITIETBG_PHUTUNG" msprop:Generator_TableClassName="BG_CHITIETBG_PHUTUNGDataTable" msprop:Generator_TableVarName="tableBG_CHITIETBG_PHUTUNG" msprop:Generator_TablePropName="BG_CHITIETBG_PHUTUNG" msprop:Generator_RowDeletingName="BG_CHITIETBG_PHUTUNGRowDeleting" msprop:Generator_UserTableName="BG_CHITIETBG_PHUTUNG" msprop:Generator_RowChangingName="BG_CHITIETBG_PHUTUNGRowChanging" msprop:Generator_RowEvHandlerName="BG_CHITIETBG_PHUTUNGRowChangeEventHandler" msprop:Generator_RowDeletedName="BG_CHITIETBG_PHUTUNGRowDeleted" msprop:Generator_RowEvArgName="BG_CHITIETBG_PHUTUNGRowChangeEvent" msprop:Generator_RowChangedName="BG_CHITIETBG_PHUTUNGRowChanged" msprop:Generator_RowClassName="BG_CHITIETBG_PHUTUNGRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SHS" msprop:Generator_ColumnVarNameInTable="columnSHS" msprop:Generator_ColumnPropNameInRow="SHS" msprop:Generator_ColumnPropNameInTable="SHSColumn" msprop:Generator_UserColumnName="SHS" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MAHIEU" msprop:Generator_ColumnVarNameInTable="columnMAHIEU" msprop:Generator_ColumnPropNameInRow="MAHIEU" msprop:Generator_ColumnPropNameInTable="MAHIEUColumn" msprop:Generator_UserColumnName="MAHIEU" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MAHDG" msprop:Generator_ColumnVarNameInTable="columnMAHDG" msprop:Generator_ColumnPropNameInRow="MAHDG" msprop:Generator_ColumnPropNameInTable="MAHDGColumn" msprop:Generator_UserColumnName="MAHDG" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TENVT" msprop:Generator_ColumnVarNameInTable="columnTENVT" msprop:Generator_ColumnPropNameInRow="TENVT" msprop:Generator_ColumnPropNameInTable="TENVTColumn" msprop:Generator_UserColumnName="TENVT" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DVT" msprop:Generator_ColumnVarNameInTable="columnDVT" msprop:Generator_ColumnPropNameInRow="DVT" msprop:Generator_ColumnPropNameInTable="DVTColumn" msprop:Generator_UserColumnName="DVT" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NHOM" msprop:Generator_ColumnVarNameInTable="columnNHOM" msprop:Generator_ColumnPropNameInRow="NHOM" msprop:Generator_ColumnPropNameInTable="NHOMColumn" msprop:Generator_UserColumnName="NHOM" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LOAISN" msprop:Generator_ColumnVarNameInTable="columnLOAISN" msprop:Generator_ColumnPropNameInRow="LOAISN" msprop:Generator_ColumnPropNameInTable="LOAISNColumn" msprop:Generator_UserColumnName="LOAISN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="KHOILUONG" msprop:Generator_ColumnVarNameInTable="columnKHOILUONG" msprop:Generator_ColumnPropNameInRow="KHOILUONG" msprop:Generator_ColumnPropNameInTable="KHOILUONGColumn" msprop:Generator_UserColumnName="KHOILUONG" type="xs:double" minOccurs="0" />
+              <xs:element name="DONGIAVL" msprop:Generator_ColumnVarNameInTable="columnDONGIAVL" msprop:Generator_ColumnPropNameInRow="DONGIAVL" msprop:Generator_ColumnPropNameInTable="DONGIAVLColumn" msprop:Generator_UserColumnName="DONGIAVL" type="xs:double" minOccurs="0" />
+              <xs:element name="DONGIANC" msprop:Generator_ColumnVarNameInTable="columnDONGIANC" msprop:Generator_ColumnPropNameInRow="DONGIANC" msprop:Generator_ColumnPropNameInTable="DONGIANCColumn" msprop:Generator_UserColumnName="DONGIANC" type="xs:double" minOccurs="0" />
+              <xs:element name="DONGIAMTC" msprop:Generator_ColumnVarNameInTable="columnDONGIAMTC" msprop:Generator_ColumnPropNameInRow="DONGIAMTC" msprop:Generator_ColumnPropNameInTable="DONGIAMTCColumn" msprop:Generator_UserColumnName="DONGIAMTC" type="xs:double" minOccurs="0" />
+              <xs:element name="TT_VL" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTT_VL" msprop:Generator_ColumnPropNameInRow="TT_VL" msprop:Generator_ColumnPropNameInTable="TT_VLColumn" msprop:Generator_UserColumnName="TT_VL" type="xs:double" minOccurs="0" />
+              <xs:element name="TT_NC" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTT_NC" msprop:Generator_ColumnPropNameInRow="TT_NC" msprop:Generator_ColumnPropNameInTable="TT_NCColumn" msprop:Generator_UserColumnName="TT_NC" type="xs:double" minOccurs="0" />
+              <xs:element name="TT_MTC" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTT_MTC" msprop:Generator_ColumnPropNameInRow="TT_MTC" msprop:Generator_ColumnPropNameInTable="TT_MTCColumn" msprop:Generator_UserColumnName="TT_MTC" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="BG_CHITIETBG_XDCB" msprop:Generator_TableClassName="BG_CHITIETBG_XDCBDataTable" msprop:Generator_TableVarName="tableBG_CHITIETBG_XDCB" msprop:Generator_TablePropName="BG_CHITIETBG_XDCB" msprop:Generator_RowDeletingName="BG_CHITIETBG_XDCBRowDeleting" msprop:Generator_UserTableName="BG_CHITIETBG_XDCB" msprop:Generator_RowChangingName="BG_CHITIETBG_XDCBRowChanging" msprop:Generator_RowEvHandlerName="BG_CHITIETBG_XDCBRowChangeEventHandler" msprop:Generator_RowDeletedName="BG_CHITIETBG_XDCBRowDeleted" msprop:Generator_RowEvArgName="BG_CHITIETBG_XDCBRowChangeEvent" msprop:Generator_RowChangedName="BG_CHITIETBG_XDCBRowChanged" msprop:Generator_RowClassName="BG_CHITIETBG_XDCBRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SHS" msprop:Generator_ColumnVarNameInTable="columnSHS" msprop:Generator_ColumnPropNameInRow="SHS" msprop:Generator_ColumnPropNameInTable="SHSColumn" msprop:Generator_UserColumnName="SHS" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MAHIEU" msprop:Generator_ColumnVarNameInTable="columnMAHIEU" msprop:Generator_ColumnPropNameInRow="MAHIEU" msprop:Generator_ColumnPropNameInTable="MAHIEUColumn" msprop:Generator_UserColumnName="MAHIEU" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MAHDG" msprop:Generator_ColumnVarNameInTable="columnMAHDG" msprop:Generator_ColumnPropNameInRow="MAHDG" msprop:Generator_ColumnPropNameInTable="MAHDGColumn" msprop:Generator_UserColumnName="MAHDG" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TENVT" msprop:Generator_ColumnVarNameInTable="columnTENVT" msprop:Generator_ColumnPropNameInRow="TENVT" msprop:Generator_ColumnPropNameInTable="TENVTColumn" msprop:Generator_UserColumnName="TENVT" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DVT" msprop:Generator_ColumnVarNameInTable="columnDVT" msprop:Generator_ColumnPropNameInRow="DVT" msprop:Generator_ColumnPropNameInTable="DVTColumn" msprop:Generator_UserColumnName="DVT" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NHOM" msprop:Generator_ColumnVarNameInTable="columnNHOM" msprop:Generator_ColumnPropNameInRow="NHOM" msprop:Generator_ColumnPropNameInTable="NHOMColumn" msprop:Generator_UserColumnName="NHOM" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LOAISN" msprop:Generator_ColumnVarNameInTable="columnLOAISN" msprop:Generator_ColumnPropNameInRow="LOAISN" msprop:Generator_ColumnPropNameInTable="LOAISNColumn" msprop:Generator_UserColumnName="LOAISN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="KHOILUONG" msprop:Generator_ColumnVarNameInTable="columnKHOILUONG" msprop:Generator_ColumnPropNameInRow="KHOILUONG" msprop:Generator_ColumnPropNameInTable="KHOILUONGColumn" msprop:Generator_UserColumnName="KHOILUONG" type="xs:double" minOccurs="0" />
+              <xs:element name="DONGIAVL" msprop:Generator_ColumnVarNameInTable="columnDONGIAVL" msprop:Generator_ColumnPropNameInRow="DONGIAVL" msprop:Generator_ColumnPropNameInTable="DONGIAVLColumn" msprop:Generator_UserColumnName="DONGIAVL" type="xs:double" minOccurs="0" />
+              <xs:element name="DONGIANC" msprop:Generator_ColumnVarNameInTable="columnDONGIANC" msprop:Generator_ColumnPropNameInRow="DONGIANC" msprop:Generator_ColumnPropNameInTable="DONGIANCColumn" msprop:Generator_UserColumnName="DONGIANC" type="xs:double" minOccurs="0" />
+              <xs:element name="DONGIAMTC" msprop:Generator_ColumnVarNameInTable="columnDONGIAMTC" msprop:Generator_ColumnPropNameInRow="DONGIAMTC" msprop:Generator_ColumnPropNameInTable="DONGIAMTCColumn" msprop:Generator_UserColumnName="DONGIAMTC" type="xs:double" minOccurs="0" />
+              <xs:element name="TT_VL" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTT_VL" msprop:Generator_ColumnPropNameInRow="TT_VL" msprop:Generator_ColumnPropNameInTable="TT_VLColumn" msprop:Generator_UserColumnName="TT_VL" type="xs:double" minOccurs="0" />
+              <xs:element name="TT_NC" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTT_NC" msprop:Generator_ColumnPropNameInRow="TT_NC" msprop:Generator_ColumnPropNameInTable="TT_NCColumn" msprop:Generator_UserColumnName="TT_NC" type="xs:double" minOccurs="0" />
+              <xs:element name="TT_MTC" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTT_MTC" msprop:Generator_ColumnPropNameInRow="TT_MTC" msprop:Generator_ColumnPropNameInTable="TT_MTCColumn" msprop:Generator_UserColumnName="TT_MTC" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="BG_REPORT" msprop:Generator_TableClassName="BG_REPORTDataTable" msprop:Generator_TableVarName="tableBG_REPORT" msprop:Generator_TablePropName="BG_REPORT" msprop:Generator_RowDeletingName="BG_REPORTRowDeleting" msprop:Generator_UserTableName="BG_REPORT" msprop:Generator_RowChangingName="BG_REPORTRowChanging" msprop:Generator_RowEvHandlerName="BG_REPORTRowChangeEventHandler" msprop:Generator_RowDeletedName="BG_REPORTRowDeleted" msprop:Generator_RowEvArgName="BG_REPORTRowChangeEvent" msprop:Generator_RowChangedName="BG_REPORTRowChanged" msprop:Generator_RowClassName="BG_REPORTRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="STT" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnSTT" msprop:Generator_ColumnPropNameInRow="STT" msprop:Generator_ColumnPropNameInTable="STTColumn" msprop:Generator_UserColumnName="STT" type="xs:int" />
+              <xs:element name="HEARDER_GANMOI" msprop:Generator_ColumnVarNameInTable="columnHEARDER_GANMOI" msprop:Generator_ColumnPropNameInRow="HEARDER_GANMOI" msprop:Generator_ColumnPropNameInTable="HEARDER_GANMOIColumn" msprop:Generator_UserColumnName="HEARDER_GANMOI" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DETAIL_GANMOI" msprop:Generator_ColumnVarNameInTable="columnDETAIL_GANMOI" msprop:Generator_ColumnPropNameInRow="DETAIL_GANMOI" msprop:Generator_ColumnPropNameInTable="DETAIL_GANMOIColumn" msprop:Generator_UserColumnName="DETAIL_GANMOI" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="HEARDER_DIDOI" msprop:Generator_ColumnVarNameInTable="columnHEARDER_DIDOI" msprop:Generator_ColumnPropNameInRow="HEARDER_DIDOI" msprop:Generator_ColumnPropNameInTable="HEARDER_DIDOIColumn" msprop:Generator_UserColumnName="HEARDER_DIDOI" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DETAIL_DIDUONG" msprop:Generator_ColumnVarNameInTable="columnDETAIL_DIDUONG" msprop:Generator_ColumnPropNameInRow="DETAIL_DIDUONG" msprop:Generator_ColumnPropNameInTable="DETAIL_DIDUONGColumn" msprop:Generator_UserColumnName="DETAIL_DIDUONG" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PGDKTCN" msprop:Generator_ColumnVarNameInTable="columnPGDKTCN" msprop:Generator_ColumnPropNameInRow="PGDKTCN" msprop:Generator_ColumnPropNameInTable="PGDKTCNColumn" msprop:Generator_UserColumnName="PGDKTCN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PKTCN" msprop:Generator_ColumnVarNameInTable="columnPKTCN" msprop:Generator_ColumnPropNameInRow="PKTCN" msprop:Generator_ColumnPropNameInTable="PKTCNColumn" msprop:Generator_UserColumnName="PKTCN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:BG_THONGTINKHACHANG" />
+      <xs:field xpath="mstns:SHS" />
+    </xs:unique>
+    <xs:unique name="BG_REPORT_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:BG_REPORT" />
+      <xs:field xpath="mstns:STT" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

@@ -2616,6 +2616,7 @@
             this.congtac_dvt.DefaultCellStyle = dataGridViewCellStyle2;
             this.congtac_dvt.HeaderText = "ĐVT";
             this.congtac_dvt.Name = "congtac_dvt";
+            this.congtac_dvt.ReadOnly = true;
             // 
             // congtac_khoiluong
             // 

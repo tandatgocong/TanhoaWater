@@ -52,13 +52,16 @@ namespace TanHoaWater.View.Users.TinhDuToan
             rows = DAL.C_DanhMucTaiLapMD.TotalSearch(this.txtMaDM.Text.Trim(), this.txtTenKC.Text.Trim(), this.cbDVT.Text.Trim());
             GridDanhMucTLMD.DataSource = DAL.C_DanhMucTaiLapMD.search(this.txtMaDM.Text.Trim(), this.txtTenKC.Text.Trim(), this.cbDVT.Text.Trim(), FirstRow, pageSize);
             this.totalRecord.Text = "Tống Cộng Có " + rows + " Danh Mục Vật Tư. ";
-           Utilities.DataGridV.formatRows(GridDanhMucTLMD);
+            Utilities.DataGridV.formatRows(GridDanhMucTLMD);
             PageTotal();
 
         }
 
         private void btSearch_Click(object sender, EventArgs e)
         {
+             currentPageIndex = 1;
+             pageSize = 16;
+             pageNumber = 0;
             search();
         }
 
@@ -104,6 +107,9 @@ namespace TanHoaWater.View.Users.TinhDuToan
             this.txtMaDM.Text = "";
             this.txtTenKC.Text = "";
             this.cbDVT.Text = "";
+            currentPageIndex = 1;
+            pageSize = 16;
+            pageNumber = 0;
             search();
         }
 
@@ -148,17 +154,19 @@ namespace TanHoaWater.View.Users.TinhDuToan
 
             }
         }
-
+        string _mahieuvtDG = "";
         private void GridDanhMucTLMD_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0) return;
             else
             {
+                _mahieuvtDG = this.GridDanhMucTLMD.Rows[e.RowIndex].Cells[0].Value + "";
                 this.editMaDM.Text = this.GridDanhMucTLMD.Rows[e.RowIndex].Cells[0].Value + "";
                 this.editTenKetCau.Text = this.GridDanhMucTLMD.Rows[e.RowIndex].Cells[1].Value + "";
                 this.editcbDVT.Text = this.GridDanhMucTLMD.Rows[e.RowIndex].Cells[2].Value + "";
-                this.editDonGia.Text = Utilities.FormatNumber.FormatDouble(this.GridDanhMucTLMD.Rows[e.RowIndex].Cells[3].Value + "");
-                this.editDonGiaSo.Text = this.GridDanhMucTLMD.Rows[e.RowIndex].Cells[4].Value + "";
+                string madanhmuc = this.GridDanhMucTLMD.Rows[e.RowIndex].Cells[0].Value + "";
+                this.GridDonGiaVT.DataSource = DAL.C_DonGiaTaiLapMatDuong.getListByMADANHMUC(madanhmuc);
+                Utilities.DataGridV.formatRows(GridDonGiaVT);
             }
            Utilities.DataGridV.formatRows(GridDanhMucTLMD);
         }
@@ -198,8 +206,6 @@ namespace TanHoaWater.View.Users.TinhDuToan
                 string maketcau = this.editMaDM.Text;
                 string tenketcau = this.editTenKetCau.Text;
                 string dvt = this.editcbDVT.Text;
-                string dongia = this.editDonGia.Text;
-                string dongiaso = this.editDonGiaSo.Text;
                 if ("".Equals(maketcau))
                 {
                     errorProvider1.Clear();
@@ -217,19 +223,7 @@ namespace TanHoaWater.View.Users.TinhDuToan
                     errorProvider1.Clear();
                     errorProvider1.SetError(this.editcbDVT, "Chọn Đơn Vị Tính.");
                     this.editcbDVT.Focus();
-                }
-                else if ("".Equals(dongia))
-                {
-                    errorProvider1.Clear();
-                    errorProvider1.SetError(this.editDonGia, "Nhập Đơn Giá.");
-                    this.editDonGia.Focus();
-                }
-                else if (DAL.C_DanhMucTaiLapMD.finbyMaDM(maketcau) != null)
-                {
-                    errorProvider1.Clear();
-                    errorProvider1.SetError(this.editMaDM, "Mã Kế Cấu Đã Tồn Tại.");
-                    this.editDonGia.Focus();
-                }
+                }              
                 else
                 {
                     errorProvider1.Clear();
@@ -237,8 +231,6 @@ namespace TanHoaWater.View.Users.TinhDuToan
                     dmtlmd.MADANHMUC = maketcau;
                     dmtlmd.TENKETCAU = tenketcau;
                     dmtlmd.DVT = dvt;
-                    dmtlmd.DONGIA = double.Parse(dongia);
-                    dmtlmd.DONGIASO = int.Parse(dongiaso);
                     dmtlmd.CREATEBY = DAL.C_USERS._userName;
                     dmtlmd.CREATEDATE = DateTime.Now.Date;
                     DAL.C_DanhMucTaiLapMD.InsertDanhMucTLMD(dmtlmd);
@@ -280,8 +272,6 @@ namespace TanHoaWater.View.Users.TinhDuToan
             this.editMaDM.Text = "";
             this.editTenKetCau.Text = ""; 
             this.editcbDVT.Text = ""; 
-            this.editDonGia.Text = ""; 
-            this.editDonGiaSo.Text = null; 
         }
         private void btmLamLai_Click(object sender, EventArgs e)
         {
@@ -296,8 +286,6 @@ namespace TanHoaWater.View.Users.TinhDuToan
                 string maketcau = this.editMaDM.Text;
                 string tenketcau = this.editTenKetCau.Text;
                 string dvt = this.editcbDVT.Text;
-                string dongia = this.editDonGia.Text;
-                string dongiaso = this.editDonGiaSo.Text;
                 if ("".Equals(maketcau))
                 {
                     errorProvider1.Clear();
@@ -310,25 +298,13 @@ namespace TanHoaWater.View.Users.TinhDuToan
                     errorProvider1.SetError(this.editTenKetCau, "Nhâp Tên Kết Cấu.");
                     this.editTenKetCau.Focus();
                 }
-                else if ("".Equals(dvt))
-                {
-                    errorProvider1.Clear();
-                    errorProvider1.SetError(this.editcbDVT, "Chọn Đơn Vị Tính.");
-                    this.editcbDVT.Focus();
-                }
-                else if ("".Equals(dongia))
-                {
-                    errorProvider1.Clear();
-                    errorProvider1.SetError(this.editDonGia, "Nhập Đơn Giá.");
-                    this.editDonGia.Focus();
-                }                
                 else
                 {
                     errorProvider1.Clear();
                     DANHMUCTAILAPMATDUONG dmtlmd = DAL.C_DanhMucTaiLapMD.finbyMaDM(maketcau);
                     if (dmtlmd != null)
                     {                     
-                        bool result=   DAL.C_DanhMucTaiLapMD.UpdateDanhMucTLMD(maketcau, tenketcau, dvt, double.Parse(dongia), int.Parse(dongiaso), DAL.C_USERS._userName);
+                        bool result=   DAL.C_DanhMucTaiLapMD.UpdateDanhMucTLMD(maketcau, tenketcau, dvt, DAL.C_USERS._userName);
                         if (result)
                         {
                             MessageBox.Show(this, "Cập Nhật Danh Mục Đơn Giá Tái Lập Mặt Đường Thành Công.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -351,5 +327,134 @@ namespace TanHoaWater.View.Users.TinhDuToan
                 MessageBox.Show(this, "Cập Nhật Mới Danh Mục Đơn Giá Tái Lập Mặt Đường Thất Bại.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }    
         }
+
+        private Control txtKeypress;
+        private void KeyPressHandle(object sender, System.Windows.Forms.KeyPressEventArgs e)
+        {
+            if (!Char.IsControl(e.KeyChar) && !Char.IsNumber(e.KeyChar))
+            {
+                if ((e.KeyChar) != 8 && (e.KeyChar) != 46 && (e.KeyChar) != 37 && (e.KeyChar) != 39 && (e.KeyChar) != 188)
+                {
+                    e.Handled = true;
+                    return;
+                }
+                e.Handled = false;
+            }
+        }
+        private void GridDonGiaVT_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+        {
+            try
+            {
+                txtKeypress = e.Control;
+                if (GridDonGiaVT.CurrentCell.OwningColumn.Name == "dg_dg" |  GridDonGiaVT.CurrentCell.OwningColumn.Name == "dg_vatlieu" | GridDonGiaVT.CurrentCell.OwningColumn.Name == "dg_nhanCong" | GridDonGiaVT.CurrentCell.OwningColumn.Name == "dgXiMang")
+                {
+                    txtKeypress.KeyPress -= KeyPressHandle;
+                    txtKeypress.KeyPress += KeyPressHandle;
+                }
+                else
+                {
+                    txtKeypress.KeyPress -= KeyPressHandle;
+                }
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void btCapNhatDGVT_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                for (int i = 0; i < GridDonGiaVT.Rows.Count - 1; i++)
+                {
+                    int stt = int.Parse(GridDonGiaVT.Rows[i].Cells["dg_ID"].Value + "");
+                    string mahieudg = GridDonGiaVT.Rows[i].Cells["dg_mahieudg"].Value + "";
+                    string check = GridDonGiaVT.Rows[i].Cells["dg_Chon"].Value + "";
+                    DONGIATAILAPMATDUONG dgvt = DAL.C_DonGiaTaiLapMatDuong.finbyDonGiaTLMD(stt, mahieudg);
+                    if (dgvt != null)
+                    {
+                        dgvt.CHON = bool.Parse(check);
+                        double dongia = double.Parse(GridDonGiaVT.Rows[i].Cells["dg_dg"].Value + "");
+                        dgvt.DONGIA = dongia;
+                        double vt = double.Parse(GridDonGiaVT.Rows[i].Cells["dg_vatlieu"].Value + "");
+                        dgvt.DGVATLIEU = vt;
+                        double nc = double.Parse(GridDonGiaVT.Rows[i].Cells["dg_nhanCong"].Value + "");
+                        dgvt.DGNHANCONG = nc;
+                        double xm = double.Parse(GridDonGiaVT.Rows[i].Cells["dgXiMang"].Value + "");
+                        dgvt.MODIFYBY = DAL.C_USERS._userName;
+                        dgvt.MODIFYDATE = DateTime.Now.Date;
+                        DAL.C_DonGiaTaiLapMatDuong.UpdateDGTL(dgvt);
+                    }
+                    else
+                    {
+                        dgvt = new DONGIATAILAPMATDUONG();
+                        dgvt.STT = stt;
+                        dgvt.MADANHMUC = mahieudg;
+                        double dongia = double.Parse(GridDonGiaVT.Rows[i].Cells["dg_dg"].Value + "");
+                        dgvt.DONGIA = dongia;
+                        double vt = double.Parse(GridDonGiaVT.Rows[i].Cells["dg_vatlieu"].Value + "");
+                        dgvt.DGVATLIEU = vt;
+                        double nc = double.Parse(GridDonGiaVT.Rows[i].Cells["dg_nhanCong"].Value + "");
+                        dgvt.DGNHANCONG = nc;
+                        double xm = double.Parse(GridDonGiaVT.Rows[i].Cells["dgXiMang"].Value + "");
+                        dgvt.DGMAYTHICONG = xm;
+                        dgvt.NGAYHIEULUC = DateTime.Now.Date;
+                        dgvt.CHON = bool.Parse(check);
+                        dgvt.CREATEBY = DAL.C_USERS._userName;
+                        dgvt.CREATEDATE = DateTime.Now.Date;
+                        dgvt.CREATEBY = DAL.C_USERS._userName;
+                        dgvt.CREATEDATE = DateTime.Now.Date;
+                        DAL.C_DonGiaTaiLapMatDuong.InsertDGTL(dgvt);
+                    }
+                }
+                MessageBox.Show(this, "Cập Nhật Đơn Giá Tái Lập Mặt Đường Thành Công.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                log.Error("Loi Khi Cap Nhat Don Gia Tai Lap Mat Duong " + ex.Message);
+                MessageBox.Show(this, "Cập Nhật Đơn Giá Đơn Giá Tái Lập Mặt Đường Thất Bại.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
+        private void GridDonGiaVT_Sorted(object sender, EventArgs e)
+        {
+            Utilities.DataGridV.formatRows(GridDonGiaVT);
+        }
+
+        private void GridDonGiaVT_UserAddedRow(object sender, DataGridViewRowEventArgs e)
+        {
+            GridDonGiaVT.Rows[GridDonGiaVT.CurrentRow.Index].Cells["dg_ngay"].Value = Utilities.DateToString.NgayVN(DateTime.Now);
+            GridDonGiaVT.Rows[GridDonGiaVT.CurrentRow.Index].Cells["dg_ID"].Value = GridDonGiaVT.CurrentRow.Index + 1;
+            GridDonGiaVT.Rows[GridDonGiaVT.CurrentRow.Index].Cells["dg_mahieudg"].Value = _mahieuvtDG;
+        }
+
+        private void GridDonGiaVT_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (e.ColumnIndex == 7)
+                {
+                    //if ("False".Equals(this.dataGridView1.Rows[e.RowIndex].Cells[5].Value + ""))
+                    //{
+
+                    //}
+                    //else {
+                    //    this.dataGridView1.Rows[e.RowIndex].Cells[5].Value = "True";
+                    //}
+                    for (int i = 0; i < GridDonGiaVT.Rows.Count; i++)
+                    {
+                        this.GridDonGiaVT.Rows[i].Cells["dg_Chon"].Value = "False";
+                    }
+                    this.GridDonGiaVT.Rows[e.RowIndex].Cells["dg_Chon"].Value = "True";
+
+                }
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+    
     }
 }

@@ -39,7 +39,7 @@ namespace TanHoaWater.DAL
             }
             return false;
         }
-        public static bool UpdateDanhMucTLMD(string madanhmuc, string tenketcau, string dvt, double dongia, int sodongia, string modibyBy)
+        public static bool UpdateDanhMucTLMD(string madanhmuc, string tenketcau, string dvt,string modibyBy)
         {
             try
             {
@@ -49,9 +49,7 @@ namespace TanHoaWater.DAL
                 if (dmvt != null)
                 {
                     dmvt.TENKETCAU = tenketcau;
-                    dmvt.DVT = dvt;
-                    dmvt.DONGIA = dongia;
-                    dmvt.DONGIASO = sodongia;
+                    dmvt.DVT = dvt; 
                     dmvt.MODIFYBY = modibyBy;
                     dmvt.MODIFYDATE = DateTime.Now.Date;
                     db.SubmitChanges();
@@ -91,7 +89,7 @@ namespace TanHoaWater.DAL
 
             if (!"".Equals(madanhmuc))
             {
-                sql += " AND MADANHMUC = N'%" + madanhmuc + "%'";
+                sql += " AND MADANHMUC = '" + madanhmuc + "'";
             }
             if (!"".Equals(tenketcau))
             {

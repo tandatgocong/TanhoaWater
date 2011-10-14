@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -41,7 +42,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.reflectionLabel1 = new DevComponents.DotNetBar.Controls.ReflectionLabel();
             this.tabControl1 = new DevComponents.DotNetBar.TabControl();
@@ -52,6 +52,10 @@
             this.panelEx9 = new DevComponents.DotNetBar.PanelEx();
             this.btCapNhatBoVT = new DevComponents.DotNetBar.ButtonX();
             this.GridBoVT = new System.Windows.Forms.DataGridView();
+            this.bovt_MABOVT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bovt_MAHIEU = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.bovt_TENVT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bovt_dinhmuc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelX61 = new DevComponents.DotNetBar.LabelX();
             this.btLamLai = new DevComponents.DotNetBar.ButtonX();
             this.groupDGVT = new DevComponents.DotNetBar.Controls.GroupPanel();
@@ -143,10 +147,6 @@
             this.checkHSCoXinPhepDaoDuong = new System.Windows.Forms.CheckBox();
             this.tabItem1 = new DevComponents.DotNetBar.TabItem(this.components);
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.bovt_MABOVT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bovt_MAHIEU = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.bovt_TENVT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bovt_dinhmuc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabControl1)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -203,8 +203,8 @@
             // 
             this.tabControl1.CanReorderTabs = true;
             this.tabControl1.Controls.Add(this.tabControlPanel2);
-            this.tabControl1.Controls.Add(this.tabControlPanel5);
             this.tabControl1.Controls.Add(this.tabControlPanel1);
+            this.tabControl1.Controls.Add(this.tabControlPanel5);
             this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(1, 37);
             this.tabControl1.Name = "tabControl1";
@@ -287,7 +287,7 @@
             this.groupPanelBoVT.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.groupPanelBoVT.Controls.Add(this.panelEx9);
             this.groupPanelBoVT.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupPanelBoVT.Location = new System.Drawing.Point(568, 100);
+            this.groupPanelBoVT.Location = new System.Drawing.Point(567, 98);
             this.groupPanelBoVT.Name = "groupPanelBoVT";
             this.groupPanelBoVT.Size = new System.Drawing.Size(419, 389);
             // 
@@ -380,6 +380,40 @@
             this.GridBoVT.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridBoVT_CellClick);
             this.GridBoVT.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridBoVT_CellEndEdit);
             this.GridBoVT.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.GridBoVT_EditingControlShowing);
+            // 
+            // bovt_MABOVT
+            // 
+            this.bovt_MABOVT.DataPropertyName = "MABOVT";
+            this.bovt_MABOVT.HeaderText = "MABOVT";
+            this.bovt_MABOVT.Name = "bovt_MABOVT";
+            this.bovt_MABOVT.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.bovt_MABOVT.Visible = false;
+            // 
+            // bovt_MAHIEU
+            // 
+            this.bovt_MAHIEU.DataPropertyName = "MAHIEU";
+            this.bovt_MAHIEU.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
+            this.bovt_MAHIEU.DropDownWidth = 250;
+            this.bovt_MAHIEU.HeaderText = "Mã Hiệu ";
+            this.bovt_MAHIEU.MaxDropDownItems = 25;
+            this.bovt_MAHIEU.Name = "bovt_MAHIEU";
+            this.bovt_MAHIEU.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // bovt_TENVT
+            // 
+            this.bovt_TENVT.DataPropertyName = "TENVT";
+            this.bovt_TENVT.HeaderText = "Tên Vật Tư";
+            this.bovt_TENVT.Name = "bovt_TENVT";
+            this.bovt_TENVT.Width = 230;
+            // 
+            // bovt_dinhmuc
+            // 
+            this.bovt_dinhmuc.DataPropertyName = "DM";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.bovt_dinhmuc.DefaultCellStyle = dataGridViewCellStyle2;
+            this.bovt_dinhmuc.HeaderText = "ĐM";
+            this.bovt_dinhmuc.Name = "bovt_dinhmuc";
+            this.bovt_dinhmuc.Width = 50;
             // 
             // labelX61
             // 
@@ -501,6 +535,7 @@
             this.GridDonGiaVT.RowHeadersWidth = 30;
             this.GridDonGiaVT.Size = new System.Drawing.Size(410, 342);
             this.GridDonGiaVT.TabIndex = 0;
+            this.GridDonGiaVT.CellStateChanged += new System.Windows.Forms.DataGridViewCellStateChangedEventHandler(this.GridDonGiaVT_CellStateChanged);
             this.GridDonGiaVT.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.GridDonGiaVT_ColumnHeaderMouseClick);
             this.GridDonGiaVT.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.GridDonGiaVT_EditingControlShowing);
             this.GridDonGiaVT.UserAddedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.GridDonGiaVT_UserAddedRow);
@@ -524,6 +559,7 @@
             // 
             this.dg_vatlieu.DataPropertyName = "DGVATLIEU";
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle5.NullValue = null;
             this.dg_vatlieu.DefaultCellStyle = dataGridViewCellStyle5;
             this.dg_vatlieu.HeaderText = "VL";
             this.dg_vatlieu.Name = "dg_vatlieu";
@@ -1585,40 +1621,6 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // bovt_MABOVT
-            // 
-            this.bovt_MABOVT.DataPropertyName = "MABOVT";
-            this.bovt_MABOVT.HeaderText = "MABOVT";
-            this.bovt_MABOVT.Name = "bovt_MABOVT";
-            this.bovt_MABOVT.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.bovt_MABOVT.Visible = false;
-            // 
-            // bovt_MAHIEU
-            // 
-            this.bovt_MAHIEU.DataPropertyName = "MAHIEU";
-            this.bovt_MAHIEU.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
-            this.bovt_MAHIEU.DropDownWidth = 250;
-            this.bovt_MAHIEU.HeaderText = "Mã Hiệu ";
-            this.bovt_MAHIEU.MaxDropDownItems = 25;
-            this.bovt_MAHIEU.Name = "bovt_MAHIEU";
-            this.bovt_MAHIEU.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // bovt_TENVT
-            // 
-            this.bovt_TENVT.DataPropertyName = "TENVT";
-            this.bovt_TENVT.HeaderText = "Tên Vật Tư";
-            this.bovt_TENVT.Name = "bovt_TENVT";
-            this.bovt_TENVT.Width = 230;
-            // 
-            // bovt_dinhmuc
-            // 
-            this.bovt_dinhmuc.DataPropertyName = "DM";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.bovt_dinhmuc.DefaultCellStyle = dataGridViewCellStyle2;
-            this.bovt_dinhmuc.HeaderText = "ĐM";
-            this.bovt_dinhmuc.Name = "bovt_dinhmuc";
-            this.bovt_dinhmuc.Width = 50;
-            // 
             // tab_DanhMucVT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1765,6 +1767,10 @@
         private DevComponents.DotNetBar.TabControlPanel tabControlPanel5;
         private DevComponents.DotNetBar.TabItem tabTaiLapMatDuong;
         private DevComponents.DotNetBar.PanelEx panelTaiLapMD;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bovt_MABOVT;
+        private System.Windows.Forms.DataGridViewComboBoxColumn bovt_MAHIEU;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bovt_TENVT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bovt_dinhmuc;
         private System.Windows.Forms.DataGridViewTextBoxColumn dg_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn MAHIEUDG;
         private System.Windows.Forms.DataGridViewTextBoxColumn dg_vatlieu;
@@ -1772,9 +1778,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dgXiMang;
         private System.Windows.Forms.DataGridViewTextBoxColumn dg_ngay;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dg_Chon;
-        private System.Windows.Forms.DataGridViewTextBoxColumn bovt_MABOVT;
-        private System.Windows.Forms.DataGridViewComboBoxColumn bovt_MAHIEU;
-        private System.Windows.Forms.DataGridViewTextBoxColumn bovt_TENVT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn bovt_dinhmuc;
     }
 }
