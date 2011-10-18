@@ -26,13 +26,13 @@ namespace TanHoaWater
             TanHoaDataContext db = new TanHoaDataContext();
             db.Connection.Open();
 
-            string sql = "SELECT * FROM BG_CHITIETBG  WHERE SHS='1100001'";
+            string sql = "SELECT * FROM BG_CHITIETBG  WHERE SHS='11DD001'";
            
             SqlDataAdapter dond = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             dond.Fill(ds, "BG_CHITIETBG");
 
 
-            string user = "SELECT * FROM BG_TAILAPMATDUONG  WHERE SHS='1100001'";
+            string user = "SELECT * FROM BG_TAILAPMATDUONG  WHERE SHS='11DD001'";
             SqlDataAdapter ct = new SqlDataAdapter(user, db.Connection.ConnectionString);
             ct.Fill(ds, "BG_TAILAPMATDUONG");
 
@@ -41,11 +41,11 @@ namespace TanHoaWater
              ct.Fill(ds, "BG_HESOBANGGIA");
 
 
-            user = "SELECT * FROM BG_THONGTINKHACHANG  WHERE SHS='1100001'";
+            user = "SELECT * FROM BG_THONGTINKHACHANG  WHERE SHS='11DD001'";
             ct = new SqlDataAdapter(user, db.Connection.ConnectionString);
             ct.Fill(ds, "BG_THONGTINKHACHANG");
 
-            user = "SELECT * FROM BG_SUMTAILAPMATDUONG  WHERE SHS='1100001'";
+            user = "SELECT * FROM BG_SUMTAILAPMATDUONG  WHERE SHS='11DD001'";
             ct = new SqlDataAdapter(user, db.Connection.ConnectionString);
             ct.Fill(ds, "BG_SUMTAILAPMATDUONG");
 
@@ -57,15 +57,17 @@ namespace TanHoaWater
             ct = new SqlDataAdapter(user, db.Connection.ConnectionString);
             ct.Fill(ds, "USERS");
                       
-            ds.Tables.Add(TongKetChiPhi("1100001"));
+            ds.Tables.Add(TongKetChiPhi("11DD001"));
             
             double TongThanhTien = total + double.Parse(ds.Tables["BG_SUMTAILAPMATDUONG"].Rows[0][1].ToString());           
             CrystalReportViewer r = new CrystalReportViewer();
             ReportDocument rp = new CrystalReport1();
-            ReportDocument rp1 = new subReport();
+
+            //rp.Subreports["Subreport1"].SetParameterValue("Tienchu", Utilities.Doctien.ReadMoney(String.Format("{0:0}", TongThanhTien)));
             rp.SetDataSource(ds);
             rp.SetParameterValue("Tienchu", Utilities.Doctien.ReadMoney(String.Format("{0:0}", TongThanhTien)));
-            rp.SetParameterValue("Tienchu", Utilities.Doctien.ReadMoney(String.Format("{0:0}", TongThanhTien)));
+            rp.SetParameterValue("subTienchu", Utilities.Doctien.ReadMoney(String.Format("{0:0}", TongThanhTien)));
+            
             crystalReportViewer1.ReportSource = rp;
          }
 
