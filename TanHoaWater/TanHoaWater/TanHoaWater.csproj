@@ -69,6 +69,8 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\log4net.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="String_Indentity, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -149,9 +151,20 @@
     <Compile Include="Roles\VTTH.Designer.cs">
       <DependentUpon>VTTH.cs</DependentUpon>
     </Compile>
+    <Compile Include="TANHOA_WATERDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TANHOA_WATERDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TANHOA_WATERDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TANHOA_WATERDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Utilities\AddValueCombox.cs" />
     <Compile Include="Utilities\DataGridV.cs" />
     <Compile Include="Utilities\DateToString.cs" />
+    <Compile Include="Utilities\Doctien.cs" />
     <Compile Include="Utilities\FormatNumber.cs" />
     <Compile Include="DAL\Idetity.cs" />
     <Compile Include="Utilities\LogIn.cs" />
@@ -299,12 +312,27 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CrystalReport1.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="View\Users\TinhDuToan\report\CrystalReport2.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport2.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\Users\TinhDuToan\report\DataSet1.cs">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="View\Users\TinhDuToan\report\DataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="View\Users\TinhDuToan\report\subReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>subReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="View\Users\TinhDuToan\tab_DanhMucTaiLapMD.cs">
       <SubType>UserControl</SubType>
@@ -390,6 +418,7 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report3.rdlc" />
     <EmbeddedResource Include="Roles\TTK.resx">
       <DependentUpon>TTK.cs</DependentUpon>
     </EmbeddedResource>
@@ -477,6 +506,16 @@
     <EmbeddedResource Include="View\Users\TinhDuToan\report\CrystalReport1.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReport1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\TinhDuToan\report\CrystalReport2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport2.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\TinhDuToan\report\Report1.rdlc" />
+    <EmbeddedResource Include="View\Users\TinhDuToan\report\Report2.rdlc" />
+    <EmbeddedResource Include="View\Users\TinhDuToan\report\subReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>subReport.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\TinhDuToan\tab_DanhMucTaiLapMD.resx">
       <DependentUpon>tab_DanhMucTaiLapMD.cs</DependentUpon>
@@ -620,6 +659,28 @@
     <Compile Include="View\Main\frm_Login.Designer.cs">
       <DependentUpon>frm_Login.cs</DependentUpon>
     </Compile>
+    <None Include="TANHOA_WATERDataSet.xsc">
+      <DependentUpon>TANHOA_WATERDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="TANHOA_WATERDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TANHOA_WATERDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TANHOA_WATERDataSet.xss">
+      <DependentUpon>TANHOA_WATERDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="TANHOA_WATERDataSet1.xsc">
+      <DependentUpon>TANHOA_WATERDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="TANHOA_WATERDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TANHOA_WATERDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TANHOA_WATERDataSet1.xss">
+      <DependentUpon>TANHOA_WATERDataSet1.xsd</DependentUpon>
+    </None>
     <None Include="View\Users\TinhDuToan\report\DataSet1.xsc">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>

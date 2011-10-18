@@ -178,7 +178,7 @@
         <classShapeMoniker Id="d8d21cbe-fd0e-40f8-a593-5b1fc89687a7" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(8.5 : 23.0873527018229); (8.97916666666667 : 23.0873527018229 : JumpStart); (9.14583333333333 : 23.0873527018229 : JumpEnd); (9.25 : 23.0873527018229)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(8.5 : 23.0873527018229); (9.25 : 23.0873527018229)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/TanHoaDataContext/DANHMUCVATTU/DANHMUCVATTU_DANHMUCBOVATTU" />
       <nodes>
         <classShapeMoniker Id="df188e0c-7d96-49d2-86af-5f0caef65136" />
@@ -234,7 +234,7 @@
         <classShapeMoniker Id="857a0bd8-f340-4fb2-b8b4-ea5a981c136c" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.75 : 10.9719962565104); (6.22916666666667 : 10.9719962565104 : JumpStart); (6.39583333333333 : 10.9719962565104 : JumpEnd); (6.5 : 10.9719962565104)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(5.75 : 10.9719962565104); (6.5 : 10.9719962565104)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/TanHoaDataContext/LOAI_KHACHHANG/LOAI_KHACHHANG_DON_KHACHHANG" />
       <nodes>
         <classShapeMoniker Id="7039ec79-e2c0-4ee6-bfd8-91eeacc85dfc" />
@@ -262,7 +262,7 @@
         <classShapeMoniker Id="00aa863a-bdb2-4cff-bd18-a18ac49e9460" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 14.5997587076823); (2.82291666666667 : 14.5997587076823 : JumpStart); (2.98958333333333 : 14.5997587076823 : JumpEnd); (6.5 : 14.5997587076823)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(2.75 : 14.5997587076823); (6.5 : 14.5997587076823)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/TanHoaDataContext/QUAN/QUAN_DON_KHACHHANG" />
       <nodes>
         <classShapeMoniker Id="0d49655c-86c4-4125-b6a5-30f1f3bfd068" />
