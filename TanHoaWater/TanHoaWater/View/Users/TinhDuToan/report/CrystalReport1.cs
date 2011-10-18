@@ -114,7 +114,7 @@ namespace TanHoaWater.View.Users.TinhDuToan.report {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_subReportrpt_Tienchu {
+        public CrystalDecisions.Shared.IParameterField Parameter_subReportrpt_subTienchu {
             get {
                 return this.DataDefinition.ParameterFields[1];
             }
