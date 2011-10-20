@@ -298,16 +298,22 @@
     <Compile Include="View\Users\TinhDuToan\frm_ChonLaiDG.Designer.cs">
       <DependentUpon>frm_ChonLaiDG.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Users\TinhDuToan\report\CrystalReport1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CrystalReport1.rpt</DependentUpon>
-      <SubType>Component</SubType>
+    <Compile Include="View\Users\TinhDuToan\frm_LogBG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Users\TinhDuToan\frm_LogBG.Designer.cs">
+      <DependentUpon>frm_LogBG.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Users\TinhDuToan\report\CrystalReport2.cs">
+      <DependentUpon>CrystalReport2.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="View\Users\TinhDuToan\report\rptBangGia.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CrystalReport2.rpt</DependentUpon>
+      <DependentUpon>rptBangGia.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="View\Users\TinhDuToan\report\DataSet1.cs">
@@ -493,13 +499,16 @@
     <EmbeddedResource Include="View\Users\TinhDuToan\frm_ChonLaiDG.resx">
       <DependentUpon>frm_ChonLaiDG.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Users\TinhDuToan\report\CrystalReport1.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
+    <EmbeddedResource Include="View\Users\TinhDuToan\frm_LogBG.resx">
+      <DependentUpon>frm_LogBG.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\TinhDuToan\report\CrystalReport2.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReport2.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\TinhDuToan\report\rptBangGia.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptBangGia.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\TinhDuToan\report\subReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

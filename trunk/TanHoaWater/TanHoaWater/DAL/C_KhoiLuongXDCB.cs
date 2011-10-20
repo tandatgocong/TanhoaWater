@@ -7,9 +7,9 @@ using TanHoaWater.Database;
 
 namespace TanHoaWater.DAL
 {
-    class C_BG_KHOILUONGXDCB
+    class C_KhoiLuongXDCB
     {
-        private static readonly ILog log = LogManager.GetLogger(typeof(C_BG_KHOILUONGXDCB).Name);
+        private static readonly ILog log = LogManager.GetLogger(typeof(C_KhoiLuongXDCB).Name);
         static TanHoaDataContext db = new TanHoaDataContext();
         public static void InsertKTPD(BG_KHOILUONGXDCB klxd)
         {

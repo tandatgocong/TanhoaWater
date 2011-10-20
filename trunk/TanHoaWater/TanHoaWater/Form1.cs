@@ -22,17 +22,18 @@ namespace TanHoaWater
         public Form1()
         {
             InitializeComponent();
+            
             DataSet ds = new DataSet();
             TanHoaDataContext db = new TanHoaDataContext();
             db.Connection.Open();
 
-            string sql = "SELECT * FROM BG_CHITIETBG  WHERE SHS='11DD001'";
+            string sql = "SELECT * FROM BG_CHITIETBG  WHERE SHS='1100001'";
            
             SqlDataAdapter dond = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             dond.Fill(ds, "BG_CHITIETBG");
 
 
-            string user = "SELECT * FROM BG_TAILAPMATDUONG  WHERE SHS='11DD001'";
+            string user = "SELECT * FROM BG_TAILAPMATDUONG  WHERE SHS='1100001'";
             SqlDataAdapter ct = new SqlDataAdapter(user, db.Connection.ConnectionString);
             ct.Fill(ds, "BG_TAILAPMATDUONG");
 
@@ -41,11 +42,11 @@ namespace TanHoaWater
              ct.Fill(ds, "BG_HESOBANGGIA");
 
 
-            user = "SELECT * FROM BG_THONGTINKHACHANG  WHERE SHS='11DD001'";
+            user = "SELECT * FROM BG_THONGTINKHACHANG  WHERE SHS='1100001'";
             ct = new SqlDataAdapter(user, db.Connection.ConnectionString);
             ct.Fill(ds, "BG_THONGTINKHACHANG");
 
-            user = "SELECT * FROM BG_SUMTAILAPMATDUONG  WHERE SHS='11DD001'";
+            user = "SELECT * FROM BG_SUMTAILAPMATDUONG  WHERE SHS='1100001'";
             ct = new SqlDataAdapter(user, db.Connection.ConnectionString);
             ct.Fill(ds, "BG_SUMTAILAPMATDUONG");
 
@@ -57,11 +58,11 @@ namespace TanHoaWater
             ct = new SqlDataAdapter(user, db.Connection.ConnectionString);
             ct.Fill(ds, "USERS");
                       
-            ds.Tables.Add(TongKetChiPhi("11DD001"));
+            ds.Tables.Add(TongKetChiPhi("1100001"));
             
             double TongThanhTien = total + double.Parse(ds.Tables["BG_SUMTAILAPMATDUONG"].Rows[0][1].ToString());           
             CrystalReportViewer r = new CrystalReportViewer();
-            ReportDocument rp = new CrystalReport1();
+            ReportDocument rp = new rptBangGia();
 
             //rp.Subreports["Subreport1"].SetParameterValue("Tienchu", Utilities.Doctien.ReadMoney(String.Format("{0:0}", TongThanhTien)));
             rp.SetDataSource(ds);
@@ -84,6 +85,19 @@ namespace TanHoaWater
             SqlParameter inparm = cmd.Parameters.Add("@shs", SqlDbType.VarChar);
             inparm.Direction = ParameterDirection.Input;
             inparm.Value = shs;
+
+            SqlParameter PHIC3 = cmd.Parameters.Add("@PHIC3", SqlDbType.Bit);
+            PHIC3.Direction = ParameterDirection.Input;
+            PHIC3.Value = true;
+
+            SqlParameter PHIGS = cmd.Parameters.Add("@PHIGS", SqlDbType.Bit);
+            PHIGS.Direction = ParameterDirection.Input;
+            PHIGS.Value = true;
+
+            SqlParameter PHIQL = cmd.Parameters.Add("@PHIQL", SqlDbType.Bit);
+            PHIQL.Direction = ParameterDirection.Input;
+            PHIQL.Value = true;
+
 
             SqlParameter _A = cmd.Parameters.Add("@A", SqlDbType.Float);
             _A.Direction = ParameterDirection.Output;
@@ -163,16 +177,16 @@ namespace TanHoaWater
             table.Columns.Add("L", typeof(double));
 
             DataRow myDataRow = table.NewRow();
-            total = double.Parse(cmd.Parameters["@TOTAL"].Value + ""); 
-            myDataRow["SHS"]=shs;
-            myDataRow["A"]=double.Parse(cmd.Parameters["@A"].Value + "");
-            myDataRow["B"] = double.Parse(cmd.Parameters["@B"].Value + ""); 
-            myDataRow["C"] = double.Parse(cmd.Parameters["@C"].Value + ""); 
+            total = double.Parse(cmd.Parameters["@TOTAL"].Value + "");
+            myDataRow["SHS"] = shs;
+            myDataRow["A"] = double.Parse(cmd.Parameters["@A"].Value + "");
+            myDataRow["B"] = double.Parse(cmd.Parameters["@B"].Value + "");
+            myDataRow["C"] = double.Parse(cmd.Parameters["@C"].Value + "");
             myDataRow["CPCABA"] = double.Parse(cmd.Parameters["@CPCABA"].Value + "");
             myDataRow["TOTAL"] = total;
-            myDataRow["VAT"] = double.Parse(cmd.Parameters["@VAT"].Value + ""); 
-            myDataRow["B1"] = double.Parse(cmd.Parameters["@B1"].Value + ""); 
-            myDataRow["C1"] = double.Parse(cmd.Parameters["@C1"].Value + ""); 
+            myDataRow["VAT"] = double.Parse(cmd.Parameters["@VAT"].Value + "");
+            myDataRow["B1"] = double.Parse(cmd.Parameters["@B1"].Value + "");
+            myDataRow["C1"] = double.Parse(cmd.Parameters["@C1"].Value + "");
             myDataRow["C2"] = double.Parse(cmd.Parameters["@C2"].Value + "");
             myDataRow["D"] = double.Parse(cmd.Parameters["@D"].Value + ""); ;
             myDataRow["E"] = double.Parse(cmd.Parameters["@E"].Value + ""); ;
@@ -180,9 +194,9 @@ namespace TanHoaWater
             myDataRow["G"] = double.Parse(cmd.Parameters["@G"].Value + ""); ;
             myDataRow["H"] = double.Parse(cmd.Parameters["@H"].Value + ""); ;
             myDataRow["I"] = double.Parse(cmd.Parameters["@I"].Value + ""); ;
-            myDataRow["J"]=double.Parse(cmd.Parameters["@J"].Value + "");
-            myDataRow["K"]=double.Parse(cmd.Parameters["@K"].Value + "");
-            myDataRow["L"]=double.Parse(cmd.Parameters["@L"].Value + "");
+            myDataRow["J"] = double.Parse(cmd.Parameters["@J"].Value + "");
+            myDataRow["K"] = double.Parse(cmd.Parameters["@K"].Value + "");
+            myDataRow["L"] = double.Parse(cmd.Parameters["@L"].Value + "");
             table.Rows.Add(myDataRow);
             conn.Close();
             return table;

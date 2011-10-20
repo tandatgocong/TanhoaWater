@@ -384,7 +384,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
             this.errorProvider1.Clear();
             this.txtSHS.Focus();
             this.errorProvider1.Clear();
-            this.soho.Value = 0;
+            this.soho.Value = 1;
         }
 
         private void buttonX2_Click(object sender, EventArgs e)
@@ -702,7 +702,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
 
         private void soho_ValueChanged(object sender, EventArgs e)
         {
-            if (soho.Value > 0)
+            if (soho.Value > 1)
             {
                 txtDanhBo.Text = "(ĐD " + soho.Value + " Hộ)";
                 cbLoaiKH.Text = "Tập Thể";
