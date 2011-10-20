@@ -5,11 +5,12 @@ using System.Text;
 using TanHoaWater.Database;
 using System.Data.SqlClient;
 using log4net;
+using System.Data;
 namespace TanHoaWater.DAL
 {
-    class C_BG_KICHTHUOCPHUIDAO
+    class C_BG_KichThuocPhuiDao
     {
-        private static readonly ILog log = LogManager.GetLogger(typeof(C_BG_KICHTHUOCPHUIDAO).Name);
+        private static readonly ILog log = LogManager.GetLogger(typeof(C_BG_KichThuocPhuiDao).Name);
         static TanHoaDataContext db = new TanHoaDataContext();
         public static void InsertKTPD(BG_KICHTHUOCPHUIDAO ktpd) {          
             db.BG_KICHTHUOCPHUIDAOs.InsertOnSubmit(ktpd);
@@ -19,10 +20,25 @@ namespace TanHoaWater.DAL
             var query = from kt in db.BG_KICHTHUOCPHUIDAOs where kt.STT == stt select kt;
             return query.SingleOrDefault();
         }
-        public static List<BG_KICHTHUOCPHUIDAO> getListBySHS(string shs) {
-            var query = from kt in db.BG_KICHTHUOCPHUIDAOs where kt.SHS == shs select kt;
-            return query.ToList();
+        //public static List<BG_KICHTHUOCPHUIDAO> getListBySHS(string shs) {
+        //    var query = from kt in db.BG_KICHTHUOCPHUIDAOs where kt.SHS == shs select kt;
+        //    return query.ToList();
+        //}
+        public static DataTable getListBySHS(string shs)
+        {
+            TanHoaDataContext db = new TanHoaDataContext();
+            db.Connection.Open();
+            string sql = " SELECT MADANHMUC, TENKETCAU, DVT, DAI, RONG, DOSAU, SOLUONG, KHOILUONG, CHUVI, THETICH, COTINHTL ";
+            sql += " FROM BG_KICHTHUOCPHUIDAO ";
+            sql += " WHERE  SHS='" + shs + "' ";
+            SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
+            DataSet dataset = new DataSet();
+            adapter.Fill(dataset, "TABLE");
+            db.Connection.Close();
+            return dataset.Tables[0];
+
         }
+
         public void DeleteByKTPD(BG_KICHTHUOCPHUIDAO kt) {
             db.BG_KICHTHUOCPHUIDAOs.DeleteOnSubmit(kt);
             db.SubmitChanges();        

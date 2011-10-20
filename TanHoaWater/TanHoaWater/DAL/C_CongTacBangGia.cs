@@ -30,6 +30,29 @@ namespace TanHoaWater.DAL
             }
             return false;
         }
+        //public static List<BG_CONGTACBANGIA> getListBySHS(string shs)
+        //{
+        //    TanHoaDataContext db = new TanHoaDataContext();
+        //    var query = from kt in db.BG_CONGTACBANGIAs where kt.SHS == shs select kt;
+        //    return query.ToList();
+        //}
+
+        public static DataTable getListBySHS(string shs)
+        {
+            TanHoaDataContext db = new TanHoaDataContext();
+            db.Connection.Open();
+            string sql = " SELECT MAHIEU, MAHDG, TENVT, DVT, NHOM as 'NHOMVT', LOAISN,CASE WHEN NHOM='XDCB' THEN KHOILUONG*1000 ELSE KHOILUONG END as 'KHOILUONG' , DONGIAVL, DONGIANC, DONGIAMTC ";
+            sql += " FROM BG_CONGTACBANGIA ";
+            sql += " WHERE  SHS='" + shs + "' ";
+            SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
+            DataSet dataset = new DataSet();
+            adapter.Fill(dataset, "TABLE");
+            db.Connection.Close();
+            return dataset.Tables[0];
+
+        }
+        
+
         public static double CPVATLIEU = 0.0;//@A FLOAT OUTPUT,
         public static double CPNHANCONG = 0.0;//@B FLOAT OUTPUT,
         public static double CPMAYTHICONG = 0.0;///@C FLOAT OUTPUT,
@@ -119,5 +142,50 @@ namespace TanHoaWater.DAL
             conn.Close();
         }
 
+        public static void deleteData(string shs) {
+            TanHoaDataContext db = new TanHoaDataContext();
+            SqlConnection conn = new SqlConnection(db.Connection.ConnectionString);
+
+            conn.Open();
+            SqlCommand cmd = new SqlCommand("DELETEDATABG", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            SqlParameter inparm = cmd.Parameters.Add("@shs", SqlDbType.VarChar);
+            inparm.Direction = ParameterDirection.Input;
+            inparm.Value = shs;
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
+        public static void updateghide(string shs,string note){
+            try
+            {
+                TanHoaDataContext db = new TanHoaDataContext();
+                var hs = from dm in db.BG_KHOILUONGXDCBs where dm.SHS== shs select dm;
+                BG_KHOILUONGXDCB xdcb = hs.SingleOrDefault();
+                if (xdcb != null)
+                {
+                    xdcb.BGLOG = xdcb.BGLOG + note;
+                }
+                db.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+
+            }
+           
+        }
+        public static string logBG(string shs )
+        {
+             
+                TanHoaDataContext db = new TanHoaDataContext();
+                var hs = from dm in db.BG_KHOILUONGXDCBs where dm.SHS == shs select dm;
+                BG_KHOILUONGXDCB xdcb = hs.SingleOrDefault();
+                if (xdcb != null)
+                {
+                     return xdcb.BGLOG;
+                }
+             return "";
+        }
     }
 }
