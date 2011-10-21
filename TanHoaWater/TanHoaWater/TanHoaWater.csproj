@@ -113,6 +113,7 @@
     <Compile Include="DAL\C_DonViTinh.cs" />
     <Compile Include="DAL\C_DotNhanDon.cs" />
     <Compile Include="DAL\C_HeSo.cs" />
+    <Compile Include="DAL\C_HeSoBangGia.cs" />
     <Compile Include="DAL\C_KhoiLuongXDCB.cs" />
     <Compile Include="DAL\C_KichThuocPhuiDao.cs" />
     <Compile Include="DAL\C_LoaiHoSo.cs" />
@@ -331,6 +332,12 @@
       <DependentUpon>subReport.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="View\Users\TinhDuToan\tabThongSoBG.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Users\TinhDuToan\tabThongSoBG.Designer.cs">
+      <DependentUpon>tabThongSoBG.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Users\TinhDuToan\tab_DanhMucTaiLapMD.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -513,6 +520,9 @@
     <EmbeddedResource Include="View\Users\TinhDuToan\report\subReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>subReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\TinhDuToan\tabThongSoBG.resx">
+      <DependentUpon>tabThongSoBG.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\TinhDuToan\tab_DanhMucTaiLapMD.resx">
       <DependentUpon>tab_DanhMucTaiLapMD.cs</DependentUpon>

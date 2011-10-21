@@ -41,7 +41,8 @@ namespace TanHoaWater.DAL
         {
             TanHoaDataContext db = new TanHoaDataContext();
             db.Connection.Open();
-            string sql = " SELECT MAHIEU, MAHDG, TENVT, DVT, NHOM as 'NHOMVT', LOAISN,CASE WHEN NHOM='XDCB' THEN KHOILUONG*1000 ELSE KHOILUONG END as 'KHOILUONG' , DONGIAVL, DONGIANC, DONGIAMTC ";
+            //string sql = " SELECT MAHIEU, MAHDG, TENVT, DVT, NHOM as 'NHOMVT', LOAISN,CASE WHEN NHOM='XDCB' THEN KHOILUONG*1000 ELSE KHOILUONG END as 'KHOILUONG' , DONGIAVL, DONGIANC, DONGIAMTC ";
+            string sql = " SELECT MAHIEU, MAHDG, TENVT, DVT, NHOM as 'NHOMVT', LOAISN, KHOILUONG , DONGIAVL, DONGIANC, DONGIAMTC ";
             sql += " FROM BG_CONGTACBANGIA ";
             sql += " WHERE  SHS='" + shs + "' ";
             SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
@@ -63,9 +64,9 @@ namespace TanHoaWater.DAL
 	    public static double TONG=0.0;//@TOTAL FLOAT OUTPUT,
 	    
         
-        public static void TongKetChiPhi(string shs) {
+        public static void TongKetChiPhi(string shs, bool _PHIC3,  bool _PHIGS,  bool _PHIQL ) {
             TanHoaDataContext db = new TanHoaDataContext();
-            SqlConnection conn = new SqlConnection(db.Connection.ConnectionString);          
+            SqlConnection conn = new SqlConnection(db.Connection.ConnectionString);
 
             conn.Open();
             SqlCommand cmd = new SqlCommand("TONGKETCHIPHI", conn);
@@ -74,6 +75,19 @@ namespace TanHoaWater.DAL
             SqlParameter inparm = cmd.Parameters.Add("@shs", SqlDbType.VarChar);
             inparm.Direction = ParameterDirection.Input;
             inparm.Value = shs;
+
+            SqlParameter PHIC3 = cmd.Parameters.Add("@PHIC3", SqlDbType.Bit);
+            PHIC3.Direction = ParameterDirection.Input;
+            PHIC3.Value = _PHIC3;
+
+            SqlParameter PHIGS = cmd.Parameters.Add("@PHIGS", SqlDbType.Bit);
+            PHIGS.Direction = ParameterDirection.Input;
+            PHIGS.Value = _PHIGS;
+
+            SqlParameter PHIQL = cmd.Parameters.Add("@PHIQL", SqlDbType.Bit);
+            PHIQL.Direction = ParameterDirection.Input;
+            PHIQL.Value = _PHIQL;
+
 
             SqlParameter _A = cmd.Parameters.Add("@A", SqlDbType.Float);
             _A.Direction = ParameterDirection.Output;
@@ -89,7 +103,7 @@ namespace TanHoaWater.DAL
 
             SqlParameter _TONG = cmd.Parameters.Add("@TOTAL", SqlDbType.Float);
             _TONG.Direction = ParameterDirection.Output;
-            
+
             SqlParameter _VAT = cmd.Parameters.Add("@VAT", SqlDbType.Float);
             _VAT.Direction = ParameterDirection.Output;
 
@@ -101,25 +115,25 @@ namespace TanHoaWater.DAL
 
             SqlParameter C2 = cmd.Parameters.Add("@C2", SqlDbType.Float);
             C2.Direction = ParameterDirection.Output;
-	
+
             SqlParameter D = cmd.Parameters.Add("@D", SqlDbType.Float);
             D.Direction = ParameterDirection.Output;
-		
+
             SqlParameter E = cmd.Parameters.Add("@E", SqlDbType.Float);
             E.Direction = ParameterDirection.Output;
-		
+
             SqlParameter F = cmd.Parameters.Add("@F", SqlDbType.Float);
             F.Direction = ParameterDirection.Output;
-		
+
             SqlParameter G = cmd.Parameters.Add("@G", SqlDbType.Float);
             G.Direction = ParameterDirection.Output;
-		
+
             SqlParameter H = cmd.Parameters.Add("@H", SqlDbType.Float);
             H.Direction = ParameterDirection.Output;
-		
+
             SqlParameter I = cmd.Parameters.Add("@I", SqlDbType.Float);
             I.Direction = ParameterDirection.Output;
-            
+
             SqlParameter J = cmd.Parameters.Add("@J", SqlDbType.Float);
             J.Direction = ParameterDirection.Output;
 

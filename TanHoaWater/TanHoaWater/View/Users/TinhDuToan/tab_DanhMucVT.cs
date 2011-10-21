@@ -746,6 +746,13 @@ namespace TanHoaWater.View.Users.TinhDuToan
          
         }
 
+        private void tabItem2_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedTabIndex = 4;
+            panelThongSoBG.Controls.Clear();
+            panelThongSoBG.Controls.Add(new tabThongSoBG());
+        }
+
         
     }
 }

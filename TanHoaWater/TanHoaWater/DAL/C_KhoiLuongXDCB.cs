@@ -18,8 +18,16 @@ namespace TanHoaWater.DAL
         }
         public static BG_KHOILUONGXDCB findBySHS(string shs)
         {
-            var query = from kt in db.BG_KHOILUONGXDCBs where kt.SHS == shs select kt;
-            return query.SingleOrDefault();
+            try
+            {
+                var query = from kt in db.BG_KHOILUONGXDCBs where kt.SHS == shs select kt;
+                return query.SingleOrDefault();
+            }
+            catch (Exception ex)
+            {
+                log.Error("Loi " + ex.Message);
+            }
+            return null;
         }
        
         public void DeleteByKTPD(BG_KICHTHUOCPHUIDAO kt)
