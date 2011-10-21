@@ -70,11 +70,9 @@
             this.dg_ngay = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dg_Chon = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.groupPanel11 = new DevComponents.DotNetBar.Controls.GroupPanel();
-            this.pren = new System.Windows.Forms.PictureBox();
             this.labelX62 = new DevComponents.DotNetBar.LabelX();
             this.totalRecord = new DevComponents.DotNetBar.LabelX();
             this.lbPaing = new System.Windows.Forms.Label();
-            this.next = new System.Windows.Forms.PictureBox();
             this.GridDanhMucVT = new System.Windows.Forms.DataGridView();
             this.mhVt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mhDg = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -147,6 +145,11 @@
             this.checkHSCoXinPhepDaoDuong = new System.Windows.Forms.CheckBox();
             this.tabItem1 = new DevComponents.DotNetBar.TabItem(this.components);
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.tabItem2 = new DevComponents.DotNetBar.TabItem(this.components);
+            this.tabControlPanel3 = new DevComponents.DotNetBar.TabControlPanel();
+            this.panelThongSoBG = new DevComponents.DotNetBar.PanelEx();
+            this.pren = new System.Windows.Forms.PictureBox();
+            this.next = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabControl1)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -159,8 +162,6 @@
             this.panelDonGia.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridDonGiaVT)).BeginInit();
             this.groupPanel11.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pren)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.next)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridDanhMucVT)).BeginInit();
             this.tabControlPanel5.SuspendLayout();
             this.PanelThamSo.SuspendLayout();
@@ -177,6 +178,9 @@
             this.groupPanel1.SuspendLayout();
             this.panelEx1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            this.tabControlPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pren)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.next)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -202,9 +206,10 @@
             // tabControl1
             // 
             this.tabControl1.CanReorderTabs = true;
-            this.tabControl1.Controls.Add(this.tabControlPanel2);
+            this.tabControl1.Controls.Add(this.tabControlPanel3);
             this.tabControl1.Controls.Add(this.tabControlPanel1);
             this.tabControl1.Controls.Add(this.tabControlPanel5);
+            this.tabControl1.Controls.Add(this.tabControlPanel2);
             this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(1, 37);
             this.tabControl1.Name = "tabControl1";
@@ -216,6 +221,7 @@
             this.tabControl1.Tabs.Add(this.tabTinhDuToan);
             this.tabControl1.Tabs.Add(this.tabDanhMucVatTu);
             this.tabControl1.Tabs.Add(this.tabTaiLapMatDuong);
+            this.tabControl1.Tabs.Add(this.tabItem2);
             this.tabControl1.Text = "tabControl1";
             // 
             // tabControlPanel2
@@ -636,17 +642,6 @@
             this.groupPanel11.TabIndex = 15;
             this.groupPanel11.Text = "Danh Sách Danh Mục Vật Tư";
             // 
-            // pren
-            // 
-            this.pren.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pren.Image = global::TanHoaWater.Properties.Resources.Previous;
-            this.pren.Location = new System.Drawing.Point(458, 7);
-            this.pren.Name = "pren";
-            this.pren.Size = new System.Drawing.Size(19, 16);
-            this.pren.TabIndex = 50;
-            this.pren.TabStop = false;
-            this.pren.Click += new System.EventHandler(this.pren_Click);
-            // 
             // labelX62
             // 
             this.labelX62.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -676,17 +671,6 @@
             this.lbPaing.TabIndex = 51;
             this.lbPaing.Text = "20/20";
             this.lbPaing.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // next
-            // 
-            this.next.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.next.Image = global::TanHoaWater.Properties.Resources.Next;
-            this.next.Location = new System.Drawing.Point(517, 7);
-            this.next.Name = "next";
-            this.next.Size = new System.Drawing.Size(19, 16);
-            this.next.TabIndex = 49;
-            this.next.TabStop = false;
-            this.next.Click += new System.EventHandler(this.next_Click);
             // 
             // GridDanhMucVT
             // 
@@ -1621,6 +1605,68 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // tabItem2
+            // 
+            this.tabItem2.AttachedControl = this.tabControlPanel3;
+            this.tabItem2.Name = "tabItem2";
+            this.tabItem2.Text = "Thông Số Bảng Giá";
+            this.tabItem2.Click += new System.EventHandler(this.tabItem2_Click);
+            // 
+            // tabControlPanel3
+            // 
+            this.tabControlPanel3.Controls.Add(this.panelThongSoBG);
+            this.tabControlPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControlPanel3.Location = new System.Drawing.Point(0, 26);
+            this.tabControlPanel3.Name = "tabControlPanel3";
+            this.tabControlPanel3.Padding = new System.Windows.Forms.Padding(1);
+            this.tabControlPanel3.Size = new System.Drawing.Size(991, 509);
+            this.tabControlPanel3.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(179)))), ((int)(((byte)(231)))));
+            this.tabControlPanel3.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(237)))), ((int)(((byte)(254)))));
+            this.tabControlPanel3.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.tabControlPanel3.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(97)))), ((int)(((byte)(156)))));
+            this.tabControlPanel3.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right)
+                        | DevComponents.DotNetBar.eBorderSide.Bottom)));
+            this.tabControlPanel3.Style.GradientAngle = 90;
+            this.tabControlPanel3.TabIndex = 4;
+            this.tabControlPanel3.TabItem = this.tabItem2;
+            // 
+            // panelThongSoBG
+            // 
+            this.panelThongSoBG.CanvasColor = System.Drawing.SystemColors.Control;
+            this.panelThongSoBG.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelThongSoBG.Location = new System.Drawing.Point(1, 1);
+            this.panelThongSoBG.Name = "panelThongSoBG";
+            this.panelThongSoBG.Size = new System.Drawing.Size(989, 507);
+            this.panelThongSoBG.Style.Alignment = System.Drawing.StringAlignment.Center;
+            this.panelThongSoBG.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
+            this.panelThongSoBG.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
+            this.panelThongSoBG.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
+            this.panelThongSoBG.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemText;
+            this.panelThongSoBG.Style.GradientAngle = 90;
+            this.panelThongSoBG.TabIndex = 2;
+            // 
+            // pren
+            // 
+            this.pren.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pren.Image = global::TanHoaWater.Properties.Resources.Previous;
+            this.pren.Location = new System.Drawing.Point(458, 7);
+            this.pren.Name = "pren";
+            this.pren.Size = new System.Drawing.Size(19, 16);
+            this.pren.TabIndex = 50;
+            this.pren.TabStop = false;
+            this.pren.Click += new System.EventHandler(this.pren_Click);
+            // 
+            // next
+            // 
+            this.next.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.next.Image = global::TanHoaWater.Properties.Resources.Next;
+            this.next.Location = new System.Drawing.Point(517, 7);
+            this.next.Name = "next";
+            this.next.Size = new System.Drawing.Size(19, 16);
+            this.next.TabIndex = 49;
+            this.next.TabStop = false;
+            this.next.Click += new System.EventHandler(this.next_Click);
+            // 
             // tab_DanhMucVT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1643,8 +1689,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.GridDonGiaVT)).EndInit();
             this.groupPanel11.ResumeLayout(false);
             this.groupPanel11.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pren)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.next)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridDanhMucVT)).EndInit();
             this.tabControlPanel5.ResumeLayout(false);
             this.PanelThamSo.ResumeLayout(false);
@@ -1667,6 +1711,9 @@
             this.panelEx1.ResumeLayout(false);
             this.panelEx1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            this.tabControlPanel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pren)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.next)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1778,5 +1825,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dgXiMang;
         private System.Windows.Forms.DataGridViewTextBoxColumn dg_ngay;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dg_Chon;
+        private DevComponents.DotNetBar.TabControlPanel tabControlPanel3;
+        private DevComponents.DotNetBar.PanelEx panelThongSoBG;
+        private DevComponents.DotNetBar.TabItem tabItem2;
     }
 }
