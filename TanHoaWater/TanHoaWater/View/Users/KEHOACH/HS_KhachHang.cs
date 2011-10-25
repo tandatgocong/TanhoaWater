@@ -308,6 +308,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                 if (soho.Value > 1)
                 {
                     donKH.HOTEN = this.txtHoTen.Text + "(ĐD " + soho.Value + " Hộ)";
+                    donKH.TAPTHE = true;
                     cbLoaiKH.Text = "Tập Thể";
                 }
                 else

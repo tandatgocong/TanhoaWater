@@ -247,7 +247,7 @@
       <Column Name="NGAYNHAN" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="LOAIKH" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
       <Column Name="LOAIHOSO" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="TAPTHE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TAPTHE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Column Name="TINHKHOAN" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Column Name="LOAIMIENPHI" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="GHICHU" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
@@ -273,6 +273,7 @@
       <Association Name="DON_KHACHHANG_BG_KHOILUONGXDCB" Member="BG_KHOILUONGXDCBs" ThisKey="SHS" OtherKey="SHS" Type="BG_KHOILUONGXDCB" />
       <Association Name="DON_KHACHHANG_BG_KICHTHUOCPHUIDAO" Member="BG_KICHTHUOCPHUIDAOs" ThisKey="SHS" OtherKey="SHS" Type="BG_KICHTHUOCPHUIDAO" />
       <Association Name="DON_KHACHHANG_TOTHIETKE" Member="TOTHIETKEs" ThisKey="SHS" OtherKey="SHS" Type="TOTHIETKE" />
+      <Association Name="DON_KHACHHANG_KH_HOSOKHACHHANG" Member="KH_HOSOKHACHHANGs" ThisKey="SHS" OtherKey="SHS" Type="KH_HOSOKHACHHANG" />
       <Association Name="DOT_NHAN_DON_DON_KHACHHANG" Member="DOT_NHAN_DON" ThisKey="MADOT" OtherKey="MADOT" Type="DOT_NHAN_DON" IsForeignKey="true" />
       <Association Name="LOAI_HOSO_DON_KHACHHANG" Member="LOAI_HOSO" ThisKey="LOAIHOSO" OtherKey="MALOAI" Type="LOAI_HOSO" IsForeignKey="true" />
       <Association Name="LOAI_KHACHHANG_DON_KHACHHANG" Member="LOAI_KHACHHANG" ThisKey="LOAIKH" OtherKey="MALOAI" Type="LOAI_KHACHHANG" IsForeignKey="true" />
@@ -334,6 +335,33 @@
     <Type Name="DVT">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="DONVI" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.KH_NOICAPPHEP" Member="KH_NOICAPPHEPs">
+    <Type Name="KH_NOICAPPHEP">
+      <Column Name="MACAPPHEP" Type="System.String" DbType="VarChar(30) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NOICAPPHEP" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="CREATEBY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CREATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MODIFYBY" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="MODIFYDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="KH_NOICAPPHEP_KH_XINPHEPDAODUONG" Member="KH_XINPHEPDAODUONGs" ThisKey="MACAPPHEP" OtherKey="NOICAPPHEP" Type="KH_XINPHEPDAODUONG" />
+    </Type>
+  </Table>
+  <Table Name="dbo.KH_XINPHEPDAODUONG" Member="KH_XINPHEPDAODUONGs">
+    <Type Name="KH_XINPHEPDAODUONG">
+      <Column Name="MADOT" Type="System.String" DbType="VarChar(250) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NOICAPPHEP" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="NGAYLAP" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MAQUANLY" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="NGAYCOPHEP" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="GHICHU" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="CREATEBY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CREATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MODIFYBY" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="MODIFYDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="KH_XINPHEPDAODUONG_KH_HOSOKHACHHANG" Member="KH_HOSOKHACHHANGs" ThisKey="MADOT" OtherKey="MADOTDD" Type="KH_HOSOKHACHHANG" />
+      <Association Name="KH_NOICAPPHEP_KH_XINPHEPDAODUONG" Member="KH_NOICAPPHEP" ThisKey="NOICAPPHEP" OtherKey="MACAPPHEP" Type="KH_NOICAPPHEP" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.LICHDOCSO" Member="LICHDOCSOs">
@@ -854,6 +882,37 @@
       <Column Name="NGUOILAP" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.KH_HOSOKHACHHANG" Member="KH_HOSOKHACHHANGs">
+    <Type Name="KH_HOSOKHACHHANG">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MADOT" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="SOHOSO" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SHS" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="NGAYNHAN" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MADOTDD" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="CHOPHEP" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="MADOTTC" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="TRONGAI" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="NOIDUNGTN" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="GHICHU" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CREATEBY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CREATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MODIFYBY" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="MODIFYDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MODIFYLOG" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="KH_XINPHEPDAODUONG_KH_HOSOKHACHHANG" Member="KH_XINPHEPDAODUONG" ThisKey="MADOTDD" OtherKey="MADOT" Type="KH_XINPHEPDAODUONG" IsForeignKey="true" />
+      <Association Name="DON_KHACHHANG_KH_HOSOKHACHHANG" Member="DON_KHACHHANG" ThisKey="SHS" OtherKey="SHS" Type="DON_KHACHHANG" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.KH_BAOCAOPHUIDAO" Member="KH_BAOCAOPHUIDAOs">
+    <Type Name="KH_BAOCAOPHUIDAO">
+      <Column Name="STT" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SHS" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MADANHMUC" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="TENKETCAU" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="KICHTHUOC" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
   <Function Name="dbo.TONGKETCHIPHI" Method="TONGKETCHIPHI">
     <Parameter Name="SHS" Parameter="sHS" Type="System.String" DbType="VarChar(50)" />
     <Parameter Name="A" Parameter="a" Type="System.Double" DbType="Float" Direction="InOut" />
@@ -932,6 +991,64 @@
     <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.TONGKETCHIPHI" Method="TONGKETCHIPHI3">
+    <Parameter Name="SHS" Parameter="sHS" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="PHIC3" Parameter="pHIC3" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="PHIGS" Parameter="pHIGS" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="PHIQL" Parameter="pHIQL" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="A" Parameter="a" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="B" Parameter="b" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="C" Parameter="c" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="CPCABA" Parameter="cPCABA" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="TOTAL" Parameter="tOTAL" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="VAT" Parameter="vAT" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="B1" Parameter="b1" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="C1" Parameter="c1" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="C2" Parameter="c2" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="D" Parameter="d" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="E" Parameter="e" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="F" Parameter="f" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="G" Parameter="g" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="H" Parameter="h" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="I" Parameter="i" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="J" Parameter="j" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="K" Parameter="k" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="L" Parameter="l" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.DELETEDATABG" Method="DELETEDATABG2">
+    <Parameter Name="SHS" Parameter="sHS" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.TONGKETCHIPHI" Method="TONGKETCHIPHI4">
+    <Parameter Name="SHS" Parameter="sHS" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="PHIC3" Parameter="pHIC3" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="PHIGS" Parameter="pHIGS" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="PHIQL" Parameter="pHIQL" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="A" Parameter="a" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="B" Parameter="b" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="C" Parameter="c" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="CPCABA" Parameter="cPCABA" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="TOTAL" Parameter="tOTAL" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="VAT" Parameter="vAT" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="B1" Parameter="b1" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="C1" Parameter="c1" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="C2" Parameter="c2" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="D" Parameter="d" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="E" Parameter="e" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="F" Parameter="f" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="G" Parameter="g" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="H" Parameter="h" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="I" Parameter="i" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="J" Parameter="j" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="K" Parameter="k" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="L" Parameter="l" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.DELETEDATABG" Method="DELETEDATABG3">
+    <Parameter Name="SHS" Parameter="sHS" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.TONGKETCHIPHI" Method="TONGKETCHIPHI5">
     <Parameter Name="SHS" Parameter="sHS" Type="System.String" DbType="VarChar(50)" />
     <Parameter Name="PHIC3" Parameter="pHIC3" Type="System.Boolean" DbType="Bit" />
     <Parameter Name="PHIGS" Parameter="pHIGS" Type="System.Boolean" DbType="Bit" />

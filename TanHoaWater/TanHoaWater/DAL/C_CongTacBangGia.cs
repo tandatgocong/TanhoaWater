@@ -201,5 +201,23 @@ namespace TanHoaWater.DAL
                 }
              return "";
         }
+        public static void CapNhatHoanTatTK(string shs) {
+            try
+            {
+                TanHoaDataContext db = new TanHoaDataContext();
+                var ttk = from query in db.TOTHIETKEs where query.SHS == shs select query;
+                TOTHIETKE totk = ttk.SingleOrDefault();
+                if (totk != null) {
+                    totk.HOANTATTK = true;
+                    totk.NGAYTKGD = DateTime.Now.Date;
+                }
+                db.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+                log.Error("Cap Nhat Hoan Tat Thiet Ke" + ex.Message);
+            }
+            
+        }
     }
 }

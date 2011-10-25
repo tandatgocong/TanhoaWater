@@ -115,6 +115,8 @@
     <Compile Include="DAL\C_HeSo.cs" />
     <Compile Include="DAL\C_HeSoBangGia.cs" />
     <Compile Include="DAL\C_KhoiLuongXDCB.cs" />
+    <Compile Include="DAL\C_KH_HoSoKhachHang.cs" />
+    <Compile Include="DAL\C_KH_XinPhepDD.cs" />
     <Compile Include="DAL\C_KichThuocPhuiDao.cs" />
     <Compile Include="DAL\C_LoaiHoSo.cs" />
     <Compile Include="DAL\C_LoaiKhachHang.cs" />
@@ -167,6 +169,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\Strings.cs" />
     <Compile Include="View\Administrators\ut_HeThongDuong.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -292,6 +295,30 @@
     </Compile>
     <Compile Include="View\Users\KEHOACH\HS_KhachHang.Designer.cs">
       <DependentUpon>HS_KhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Users\KEHOACH\UCT_XinPheoDD.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Users\KEHOACH\UCT_XinPheoDD.Designer.cs">
+      <DependentUpon>UCT_XinPheoDD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Users\KEHOACH\XINPHEPDD\tab_CapNhatTheoDot.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Users\KEHOACH\XINPHEPDD\tab_CapNhatTheoDot.Designer.cs">
+      <DependentUpon>tab_CapNhatTheoDot.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Users\KEHOACH\XINPHEPDD\tab_DanhSach.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Users\KEHOACH\XINPHEPDD\tab_DanhSach.Designer.cs">
+      <DependentUpon>tab_DanhSach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Users\KEHOACH\XINPHEPDD\UCT_XINPHEPDD.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Users\KEHOACH\XINPHEPDD\UCT_XINPHEPDD.Designer.cs">
+      <DependentUpon>UCT_XINPHEPDD.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Users\TinhDuToan\frm_ChonLaiDG.cs">
       <SubType>Form</SubType>
@@ -502,6 +529,18 @@
     <EmbeddedResource Include="View\Users\KEHOACH\HS_KhachHang.resx">
       <DependentUpon>HS_KhachHang.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\KEHOACH\UCT_XinPheoDD.resx">
+      <DependentUpon>UCT_XinPheoDD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\KEHOACH\XINPHEPDD\tab_CapNhatTheoDot.resx">
+      <DependentUpon>tab_CapNhatTheoDot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\KEHOACH\XINPHEPDD\tab_DanhSach.resx">
+      <DependentUpon>tab_DanhSach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\KEHOACH\XINPHEPDD\UCT_XINPHEPDD.resx">
+      <DependentUpon>UCT_XINPHEPDD.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\TinhDuToan\frm_ChonLaiDG.resx">
       <DependentUpon>frm_ChonLaiDG.cs</DependentUpon>
@@ -859,6 +898,7 @@
     <Content Include="Lib\IrisSkin2.dll" />
     <Content Include="Lib\log4net.dll" />
     <Content Include="Lib\String_Indentity.dll" />
+    <None Include="Resources\InkWatson.exe_I012c_0409.ico" />
     <None Include="Resources\ie.ico" />
     <None Include="Resources\calc.ico" />
     <None Include="Resources\WINWORD.ico" />

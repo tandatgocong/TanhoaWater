@@ -337,6 +337,29 @@ namespace TanHoaWater.DAL
             }
             return false;
         }
+
+        public static void HoaTatTKbyDot(string madot)
+        {
+            try
+            {
+                TanHoaDataContext db = new TanHoaDataContext();
+                var query = from ttk in db.TOTHIETKEs where ttk.MADOT == madot select ttk;
+                foreach (var item in query.ToList())
+                {
+                    if (item.TRONGAITHIETKE != true) {
+                        HoaTatTK(item.SHS);
+                    }
+                }
+                 
+
+            }
+            catch (Exception ex)
+            {
+                log.Error("Loi khi chuyen hs" + ex.Message);
+
+            }
+             
+        }
     
     }
 }
