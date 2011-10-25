@@ -1387,6 +1387,8 @@ namespace TanHoaWater.View.Users.TinhDuToan
                 rp.SetParameterValue("Tienchu", Utilities.Doctien.ReadMoney(String.Format("{0:0}", TongThanhTien)));
                 rp.SetParameterValue("subTienchu", Utilities.Doctien.ReadMoney(String.Format("{0:0}", TongThanhTien)));
 
+                DAL.C_CongTacBangGia.CapNhatHoanTatTK(_shs);
+
                 rpt_Main bc = new rpt_Main(rp);
                 bc.ShowDialog();
                 // crystalReportViewer1.ReportSource = rp;

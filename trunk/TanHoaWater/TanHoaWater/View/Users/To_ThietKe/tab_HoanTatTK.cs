@@ -32,8 +32,10 @@ namespace TanHoaWater.View.Users.To_ThietKe
 
         }
         string _madot = "";
+       
         private void bt_XemBC_Click(object sender, EventArgs e)
         {
+            DAL.C_ToThietKe.HoaTatTKbyDot(this.cbDotNhanDon.Text);
             DataTable table = DAL.C_ToThietKe.GetDotToTK(this.cbDotNhanDon.Text);
             if (table.Rows.Count <= 0)
             {

@@ -17,6 +17,7 @@ using TanHoaWater.View.Users.TinhDuToan;
 using TanHoaWater.Roles;
 using TanHoaWater.View.Users.KEHOACH;
 using TanHoaWater.View.Tool;
+using TanHoaWater.View.Users.KEHOACH.XINPHEPDD;
 
 namespace TanHoaWater
 {
@@ -32,6 +33,8 @@ namespace TanHoaWater
             //Thread th = new Thread(new ThreadStart(this.start));
             //th.Start();
             //Thread.Sleep(5000);
+          
+            
             InitializeComponent();
             log4net.Config.XmlConfigurator.Configure();
             //th.Abort();
@@ -372,6 +375,14 @@ namespace TanHoaWater
                 this.lbNgayHeThong.Location = new System.Drawing.Point(653, 0);
                 this.PanelContent.Location = new System.Drawing.Point(0, 54);
             }
+        }
+
+        private void xinphepDaoDuong_Click(object sender, EventArgs e)
+        {
+           
+            this.PanelContent.Controls.Clear();
+            this.PanelContent.Controls.Add(new UCT_XINPHEPDD());
+            this.menuKHVT.Select();
         }
     }
 }
