@@ -74,6 +74,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.reflectionLabel1 = new DevComponents.DotNetBar.Controls.ReflectionLabel();
             this.ribbonControl1 = new DevComponents.DotNetBar.RibbonControl();
+            this.ribbonPanel1 = new DevComponents.DotNetBar.RibbonPanel();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.subdangnhap = new System.Windows.Forms.ToolStripMenuItem();
+            this.subDoiMatKhau = new System.Windows.Forms.ToolStripMenuItem();
+            this.subDangXuat = new System.Windows.Forms.ToolStripMenuItem();
+            this.subThoat = new System.Windows.Forms.ToolStripMenuItem();
             this.ribbonPanel4 = new DevComponents.DotNetBar.RibbonPanel();
             this.menuStrip4 = new System.Windows.Forms.MenuStrip();
             this.caculator = new System.Windows.Forms.ToolStripMenuItem();
@@ -93,12 +99,6 @@
             this.tínhDựToánHSKToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hoantatThietKe = new System.Windows.Forms.ToolStripMenuItem();
             this.ribbonPanel5 = new DevComponents.DotNetBar.RibbonPanel();
-            this.ribbonPanel1 = new DevComponents.DotNetBar.RibbonPanel();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.subdangnhap = new System.Windows.Forms.ToolStripMenuItem();
-            this.subDoiMatKhau = new System.Windows.Forms.ToolStripMenuItem();
-            this.subDangXuat = new System.Windows.Forms.ToolStripMenuItem();
-            this.subThoat = new System.Windows.Forms.ToolStripMenuItem();
             this.menuHeThong = new DevComponents.DotNetBar.RibbonTabItem();
             this.menuKHVT = new DevComponents.DotNetBar.RibbonTabItem();
             this.menuToThietKe = new DevComponents.DotNetBar.RibbonTabItem();
@@ -148,14 +148,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
             this.ribbonControl1.SuspendLayout();
+            this.ribbonPanel1.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.ribbonPanel4.SuspendLayout();
             this.menuStrip4.SuspendLayout();
             this.ribbonPanel2.SuspendLayout();
             this.menuStrip3.SuspendLayout();
             this.ribbonPanel3.SuspendLayout();
             this.menuStrip2.SuspendLayout();
-            this.ribbonPanel1.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // qatCustomizeItem1
@@ -743,11 +743,11 @@
             // ribbonControl1
             // 
             this.ribbonControl1.AutoScroll = true;
+            this.ribbonControl1.Controls.Add(this.ribbonPanel1);
             this.ribbonControl1.Controls.Add(this.ribbonPanel4);
             this.ribbonControl1.Controls.Add(this.ribbonPanel2);
             this.ribbonControl1.Controls.Add(this.ribbonPanel3);
             this.ribbonControl1.Controls.Add(this.ribbonPanel5);
-            this.ribbonControl1.Controls.Add(this.ribbonPanel1);
             this.ribbonControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.ribbonControl1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ribbonControl1.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
@@ -770,6 +770,65 @@
             this.ribbonControl1.TabIndex = 0;
             this.ribbonControl1.Text = "menu";
             // 
+            // ribbonPanel1
+            // 
+            this.ribbonPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.ribbonPanel1.Controls.Add(this.menuStrip1);
+            this.ribbonPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ribbonPanel1.Location = new System.Drawing.Point(0, 27);
+            this.ribbonPanel1.Name = "ribbonPanel1";
+            this.ribbonPanel1.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
+            this.ribbonPanel1.Size = new System.Drawing.Size(988, 25);
+            this.ribbonPanel1.TabIndex = 1;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.BackColor = System.Drawing.Color.Transparent;
+            this.menuStrip1.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.subdangnhap,
+            this.subDoiMatKhau,
+            this.subDangXuat,
+            this.subThoat});
+            this.menuStrip1.Location = new System.Drawing.Point(3, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(982, 24);
+            this.menuStrip1.TabIndex = 0;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // subdangnhap
+            // 
+            this.subdangnhap.Image = global::TanHoaWater.Properties.Resources.key11;
+            this.subdangnhap.Name = "subdangnhap";
+            this.subdangnhap.Size = new System.Drawing.Size(94, 20);
+            this.subdangnhap.Text = "Đăng Nhập";
+            this.subdangnhap.Click += new System.EventHandler(this.subdangnhap_Click);
+            // 
+            // subDoiMatKhau
+            // 
+            this.subDoiMatKhau.Image = global::TanHoaWater.Properties.Resources.key;
+            this.subDoiMatKhau.Name = "subDoiMatKhau";
+            this.subDoiMatKhau.Size = new System.Drawing.Size(107, 20);
+            this.subDoiMatKhau.Text = "Đổi mật khẩu";
+            this.subDoiMatKhau.Visible = false;
+            // 
+            // subDangXuat
+            // 
+            this.subDangXuat.Image = global::TanHoaWater.Properties.Resources.lock2;
+            this.subDangXuat.Name = "subDangXuat";
+            this.subDangXuat.Size = new System.Drawing.Size(89, 20);
+            this.subDangXuat.Text = "Đăng xuất";
+            this.subDangXuat.Visible = false;
+            this.subDangXuat.Click += new System.EventHandler(this.subDangXuat_Click);
+            // 
+            // subThoat
+            // 
+            this.subThoat.Image = global::TanHoaWater.Properties.Resources.x;
+            this.subThoat.Name = "subThoat";
+            this.subThoat.Size = new System.Drawing.Size(66, 20);
+            this.subThoat.Text = "Thoát";
+            this.subThoat.Click += new System.EventHandler(this.subThoat_Click);
+            // 
             // ribbonPanel4
             // 
             this.ribbonPanel4.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
@@ -780,6 +839,7 @@
             this.ribbonPanel4.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.ribbonPanel4.Size = new System.Drawing.Size(988, 25);
             this.ribbonPanel4.TabIndex = 4;
+            this.ribbonPanel4.Visible = false;
             // 
             // menuStrip4
             // 
@@ -959,68 +1019,9 @@
             this.ribbonPanel5.TabIndex = 5;
             this.ribbonPanel5.Visible = false;
             // 
-            // ribbonPanel1
-            // 
-            this.ribbonPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
-            this.ribbonPanel1.Controls.Add(this.menuStrip1);
-            this.ribbonPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ribbonPanel1.Location = new System.Drawing.Point(0, 27);
-            this.ribbonPanel1.Name = "ribbonPanel1";
-            this.ribbonPanel1.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.ribbonPanel1.Size = new System.Drawing.Size(988, 27);
-            this.ribbonPanel1.TabIndex = 1;
-            this.ribbonPanel1.Visible = false;
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.BackColor = System.Drawing.Color.Transparent;
-            this.menuStrip1.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.subdangnhap,
-            this.subDoiMatKhau,
-            this.subDangXuat,
-            this.subThoat});
-            this.menuStrip1.Location = new System.Drawing.Point(3, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(982, 24);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // subdangnhap
-            // 
-            this.subdangnhap.Image = global::TanHoaWater.Properties.Resources.key11;
-            this.subdangnhap.Name = "subdangnhap";
-            this.subdangnhap.Size = new System.Drawing.Size(94, 20);
-            this.subdangnhap.Text = "Đăng Nhập";
-            this.subdangnhap.Click += new System.EventHandler(this.subdangnhap_Click);
-            // 
-            // subDoiMatKhau
-            // 
-            this.subDoiMatKhau.Image = global::TanHoaWater.Properties.Resources.key;
-            this.subDoiMatKhau.Name = "subDoiMatKhau";
-            this.subDoiMatKhau.Size = new System.Drawing.Size(107, 20);
-            this.subDoiMatKhau.Text = "Đổi mật khẩu";
-            this.subDoiMatKhau.Visible = false;
-            // 
-            // subDangXuat
-            // 
-            this.subDangXuat.Image = global::TanHoaWater.Properties.Resources.lock2;
-            this.subDangXuat.Name = "subDangXuat";
-            this.subDangXuat.Size = new System.Drawing.Size(89, 20);
-            this.subDangXuat.Text = "Đăng xuất";
-            this.subDangXuat.Visible = false;
-            this.subDangXuat.Click += new System.EventHandler(this.subDangXuat_Click);
-            // 
-            // subThoat
-            // 
-            this.subThoat.Image = global::TanHoaWater.Properties.Resources.x;
-            this.subThoat.Name = "subThoat";
-            this.subThoat.Size = new System.Drawing.Size(66, 20);
-            this.subThoat.Text = "Thoát";
-            this.subThoat.Click += new System.EventHandler(this.subThoat_Click);
-            // 
             // menuHeThong
             // 
+            this.menuHeThong.Checked = true;
             this.menuHeThong.Name = "menuHeThong";
             this.menuHeThong.Panel = this.ribbonPanel1;
             this.menuHeThong.Text = "Trang Chủ";
@@ -1042,7 +1043,6 @@
             // 
             // congcu
             // 
-            this.congcu.Checked = true;
             this.congcu.Name = "congcu";
             this.congcu.Panel = this.ribbonPanel4;
             this.congcu.Text = "Công Cụ";
@@ -1255,6 +1255,7 @@
             this.Name = "frm_Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tan Hoa Water Co., ltd";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_Main_FormClosing);
             this.Load += new System.EventHandler(this.frm_Main_Load);
             this.SizeChanged += new System.EventHandler(this.frm_Main_SizeChanged);
             this.mainLayout.ResumeLayout(false);
@@ -1282,6 +1283,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
             this.ribbonControl1.ResumeLayout(false);
             this.ribbonControl1.PerformLayout();
+            this.ribbonPanel1.ResumeLayout(false);
+            this.ribbonPanel1.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ribbonPanel4.ResumeLayout(false);
             this.ribbonPanel4.PerformLayout();
             this.menuStrip4.ResumeLayout(false);
@@ -1294,10 +1299,6 @@
             this.ribbonPanel3.PerformLayout();
             this.menuStrip2.ResumeLayout(false);
             this.menuStrip2.PerformLayout();
-            this.ribbonPanel1.ResumeLayout(false);
-            this.ribbonPanel1.PerformLayout();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
 
         }
