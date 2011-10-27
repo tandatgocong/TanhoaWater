@@ -38,7 +38,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.reflectionLabel1 = new DevComponents.DotNetBar.Controls.ReflectionLabel();
             this.tabControl1 = new DevComponents.DotNetBar.TabControl();
+            this.tabCapNhatDS = new DevComponents.DotNetBar.TabControlPanel();
+            this.tabItem2 = new DevComponents.DotNetBar.TabItem(this.components);
             this.tabDanhSachDot = new DevComponents.DotNetBar.TabControlPanel();
+            this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
             this.dataDanhSachDaoDuong = new DevComponents.DotNetBar.Controls.DataGridViewX();
             this.gridSoDot = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gridNoiCapPhep = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,9 +56,9 @@
             this.radioNgayLap = new System.Windows.Forms.RadioButton();
             this.radioSoDot = new System.Windows.Forms.RadioButton();
             this.txtSearchSoDot = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.buttonX4 = new DevComponents.DotNetBar.ButtonX();
-            this.buttonX3 = new DevComponents.DotNetBar.ButtonX();
-            this.xemDSXinPhepDD = new DevComponents.DotNetBar.ButtonX();
+            this.btInDanhSachMienPhep = new DevComponents.DotNetBar.ButtonX();
+            this.inDanhSachCoPhep = new DevComponents.DotNetBar.ButtonX();
+            this.huyDotXP = new DevComponents.DotNetBar.ButtonX();
             this.capnhatDSChoDot = new DevComponents.DotNetBar.ButtonX();
             this.btThemMoi = new DevComponents.DotNetBar.ButtonX();
             this.dateNgayLap = new System.Windows.Forms.DateTimePicker();
@@ -65,23 +68,19 @@
             this.labelX4 = new DevComponents.DotNetBar.LabelX();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
-            this.tabItem1 = new DevComponents.DotNetBar.TabItem(this.components);
-            this.tabDanhSachXinPhep = new DevComponents.DotNetBar.TabControlPanel();
-            this.tabItem3 = new DevComponents.DotNetBar.TabItem(this.components);
-            this.tabCapNhatDS = new DevComponents.DotNetBar.TabControlPanel();
-            this.tabItem2 = new DevComponents.DotNetBar.TabItem(this.components);
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.next = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.tabItem1 = new DevComponents.DotNetBar.TabItem(this.components);
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.tabControl1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabDanhSachDot.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataDanhSachDaoDuong)).BeginInit();
             this.groupPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dateTimeSearch)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.next)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // reflectionLabel1
@@ -117,7 +116,6 @@
             this.tabControl1.ColorScheme.TabItemSelectedText = System.Drawing.Color.Red;
             this.tabControl1.Controls.Add(this.tabDanhSachDot);
             this.tabControl1.Controls.Add(this.tabCapNhatDS);
-            this.tabControl1.Controls.Add(this.tabDanhSachXinPhep);
             this.tabControl1.Location = new System.Drawing.Point(3, 36);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedTabFont = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -128,19 +126,43 @@
             this.tabControl1.TabLayoutType = DevComponents.DotNetBar.eTabLayoutType.FixedWithNavigationBox;
             this.tabControl1.Tabs.Add(this.tabItem1);
             this.tabControl1.Tabs.Add(this.tabItem2);
-            this.tabControl1.Tabs.Add(this.tabItem3);
             this.tabControl1.Text = "tabControl1";
+            // 
+            // tabCapNhatDS
+            // 
+            this.tabCapNhatDS.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabCapNhatDS.Location = new System.Drawing.Point(0, 27);
+            this.tabCapNhatDS.Name = "tabCapNhatDS";
+            this.tabCapNhatDS.Padding = new System.Windows.Forms.Padding(1);
+            this.tabCapNhatDS.Size = new System.Drawing.Size(982, 560);
+            this.tabCapNhatDS.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(254)))));
+            this.tabCapNhatDS.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(188)))), ((int)(((byte)(227)))));
+            this.tabCapNhatDS.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.tabCapNhatDS.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(165)))), ((int)(((byte)(199)))));
+            this.tabCapNhatDS.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right)
+                        | DevComponents.DotNetBar.eBorderSide.Bottom)));
+            this.tabCapNhatDS.Style.GradientAngle = 90;
+            this.tabCapNhatDS.TabIndex = 2;
+            this.tabCapNhatDS.TabItem = this.tabItem2;
+            // 
+            // tabItem2
+            // 
+            this.tabItem2.AttachedControl = this.tabCapNhatDS;
+            this.tabItem2.Name = "tabItem2";
+            this.tabItem2.Text = "Cập Nhật Danh Sách Theo Đợt";
+            this.tabItem2.Click += new System.EventHandler(this.tabItem2_Click);
             // 
             // tabDanhSachDot
             // 
+            this.tabDanhSachDot.Controls.Add(this.buttonX1);
             this.tabDanhSachDot.Controls.Add(this.dataDanhSachDaoDuong);
             this.tabDanhSachDot.Controls.Add(this.reflectionLabel2);
             this.tabDanhSachDot.Controls.Add(this.lbPaing);
             this.tabDanhSachDot.Controls.Add(this.cbNoiCap);
             this.tabDanhSachDot.Controls.Add(this.groupPanel1);
-            this.tabDanhSachDot.Controls.Add(this.buttonX4);
-            this.tabDanhSachDot.Controls.Add(this.buttonX3);
-            this.tabDanhSachDot.Controls.Add(this.xemDSXinPhepDD);
+            this.tabDanhSachDot.Controls.Add(this.btInDanhSachMienPhep);
+            this.tabDanhSachDot.Controls.Add(this.inDanhSachCoPhep);
+            this.tabDanhSachDot.Controls.Add(this.huyDotXP);
             this.tabDanhSachDot.Controls.Add(this.capnhatDSChoDot);
             this.tabDanhSachDot.Controls.Add(this.btThemMoi);
             this.tabDanhSachDot.Controls.Add(this.dateNgayLap);
@@ -167,6 +189,20 @@
             this.tabDanhSachDot.Style.GradientAngle = 90;
             this.tabDanhSachDot.TabIndex = 1;
             this.tabDanhSachDot.TabItem = this.tabItem1;
+            // 
+            // buttonX1
+            // 
+            this.buttonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonX1.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.buttonX1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonX1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.buttonX1.Location = new System.Drawing.Point(747, 297);
+            this.buttonX1.Name = "buttonX1";
+            this.buttonX1.Size = new System.Drawing.Size(175, 26);
+            this.buttonX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
+            this.buttonX1.TabIndex = 706;
+            this.buttonX1.Text = "Thư Mời Đóng Tiền";
+            this.buttonX1.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
             // 
             // dataDanhSachDaoDuong
             // 
@@ -331,7 +367,7 @@
             this.dateTimeSearch.ButtonDropDown.Visible = true;
             this.dateTimeSearch.CustomFormat = "dd/MM/yyyy";
             this.dateTimeSearch.Format = DevComponents.Editors.eDateTimePickerFormat.Custom;
-            this.dateTimeSearch.Location = new System.Drawing.Point(3, 30);
+            this.dateTimeSearch.Location = new System.Drawing.Point(4, 31);
             // 
             // 
             // 
@@ -365,6 +401,7 @@
             this.dateTimeSearch.Size = new System.Drawing.Size(159, 26);
             this.dateTimeSearch.TabIndex = 55;
             this.dateTimeSearch.Visible = false;
+            this.dateTimeSearch.ValueChanged += new System.EventHandler(this.dateTimeSearch_ValueChanged);
             // 
             // radioNgayLap
             // 
@@ -378,6 +415,7 @@
             this.radioNgayLap.TabStop = true;
             this.radioNgayLap.Text = "Ngày Lập";
             this.radioNgayLap.UseVisualStyleBackColor = false;
+            this.radioNgayLap.CheckedChanged += new System.EventHandler(this.radioNgayLap_CheckedChanged);
             // 
             // radioSoDot
             // 
@@ -390,6 +428,7 @@
             this.radioSoDot.TabIndex = 0;
             this.radioSoDot.Text = "Số Đợt";
             this.radioSoDot.UseVisualStyleBackColor = false;
+            this.radioSoDot.CheckedChanged += new System.EventHandler(this.radioSoDot_CheckedChanged);
             // 
             // txtSearchSoDot
             // 
@@ -402,45 +441,51 @@
             this.txtSearchSoDot.Name = "txtSearchSoDot";
             this.txtSearchSoDot.Size = new System.Drawing.Size(159, 26);
             this.txtSearchSoDot.TabIndex = 2;
+            this.txtSearchSoDot.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearchSoDot_KeyPress);
             // 
-            // buttonX4
+            // btInDanhSachMienPhep
             // 
-            this.buttonX4.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX4.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonX4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.buttonX4.Location = new System.Drawing.Point(747, 293);
-            this.buttonX4.Name = "buttonX4";
-            this.buttonX4.Size = new System.Drawing.Size(132, 26);
-            this.buttonX4.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
-            this.buttonX4.TabIndex = 705;
-            this.buttonX4.Text = "Lập Đợt Mới";
+            this.btInDanhSachMienPhep.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btInDanhSachMienPhep.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btInDanhSachMienPhep.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btInDanhSachMienPhep.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btInDanhSachMienPhep.Location = new System.Drawing.Point(747, 265);
+            this.btInDanhSachMienPhep.Name = "btInDanhSachMienPhep";
+            this.btInDanhSachMienPhep.Size = new System.Drawing.Size(175, 26);
+            this.btInDanhSachMienPhep.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
+            this.btInDanhSachMienPhep.TabIndex = 705;
+            this.btInDanhSachMienPhep.Text = "In Danh Sách Miễn Phép";
+            this.btInDanhSachMienPhep.Click += new System.EventHandler(this.btInDanhSachMienPhep_Click);
             // 
-            // buttonX3
+            // inDanhSachCoPhep
             // 
-            this.buttonX3.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX3.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonX3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.buttonX3.Location = new System.Drawing.Point(747, 261);
-            this.buttonX3.Name = "buttonX3";
-            this.buttonX3.Size = new System.Drawing.Size(132, 26);
-            this.buttonX3.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
-            this.buttonX3.TabIndex = 697;
-            this.buttonX3.Text = "Lập Đợt Mới";
+            this.inDanhSachCoPhep.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.inDanhSachCoPhep.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.inDanhSachCoPhep.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inDanhSachCoPhep.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.inDanhSachCoPhep.Location = new System.Drawing.Point(747, 232);
+            this.inDanhSachCoPhep.Name = "inDanhSachCoPhep";
+            this.inDanhSachCoPhep.Size = new System.Drawing.Size(175, 26);
+            this.inDanhSachCoPhep.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
+            this.inDanhSachCoPhep.TabIndex = 697;
+            this.inDanhSachCoPhep.Text = "In Danh Sách XPĐĐ";
+            this.inDanhSachCoPhep.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
+            this.inDanhSachCoPhep.Click += new System.EventHandler(this.inDanhSachCoPhep_Click);
             // 
-            // xemDSXinPhepDD
+            // huyDotXP
             // 
-            this.xemDSXinPhepDD.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.xemDSXinPhepDD.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.xemDSXinPhepDD.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xemDSXinPhepDD.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.xemDSXinPhepDD.Location = new System.Drawing.Point(747, 229);
-            this.xemDSXinPhepDD.Name = "xemDSXinPhepDD";
-            this.xemDSXinPhepDD.Size = new System.Drawing.Size(216, 26);
-            this.xemDSXinPhepDD.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
-            this.xemDSXinPhepDD.TabIndex = 698;
-            this.xemDSXinPhepDD.Text = "Xem Danh Sách Xin Phép ĐĐ";
+            this.huyDotXP.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.huyDotXP.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.huyDotXP.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.huyDotXP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.huyDotXP.Location = new System.Drawing.Point(747, 329);
+            this.huyDotXP.Name = "huyDotXP";
+            this.huyDotXP.Size = new System.Drawing.Size(175, 26);
+            this.huyDotXP.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
+            this.huyDotXP.TabIndex = 698;
+            this.huyDotXP.Text = "Hủy Đợt Xin Phép";
+            this.huyDotXP.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
+            this.huyDotXP.Click += new System.EventHandler(this.huyDotXP_Click);
             // 
             // capnhatDSChoDot
             // 
@@ -448,12 +493,13 @@
             this.capnhatDSChoDot.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.capnhatDSChoDot.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.capnhatDSChoDot.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.capnhatDSChoDot.Location = new System.Drawing.Point(747, 197);
+            this.capnhatDSChoDot.Location = new System.Drawing.Point(747, 199);
             this.capnhatDSChoDot.Name = "capnhatDSChoDot";
-            this.capnhatDSChoDot.Size = new System.Drawing.Size(216, 26);
+            this.capnhatDSChoDot.Size = new System.Drawing.Size(175, 26);
             this.capnhatDSChoDot.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
             this.capnhatDSChoDot.TabIndex = 699;
-            this.capnhatDSChoDot.Text = "Cập Nhật Danh Sách Cho Đợt";
+            this.capnhatDSChoDot.Text = "Cập Nhật DS Theo Đợt";
+            this.capnhatDSChoDot.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
             this.capnhatDSChoDot.Click += new System.EventHandler(this.capnhatDSChoDot_Click_1);
             // 
             // btThemMoi
@@ -468,6 +514,7 @@
             this.btThemMoi.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
             this.btThemMoi.TabIndex = 691;
             this.btThemMoi.Text = "Lập Đợt Mới";
+            this.btThemMoi.Click += new System.EventHandler(this.btThemMoi_Click);
             // 
             // dateNgayLap
             // 
@@ -489,6 +536,7 @@
             this.txtMaQuanLy.Name = "txtMaQuanLy";
             this.txtMaQuanLy.Size = new System.Drawing.Size(279, 26);
             this.txtMaQuanLy.TabIndex = 690;
+            this.txtMaQuanLy.Leave += new System.EventHandler(this.txtMaQuanLy_Leave);
             // 
             // txtSoDot
             // 
@@ -502,6 +550,7 @@
             this.txtSoDot.Name = "txtSoDot";
             this.txtSoDot.Size = new System.Drawing.Size(162, 26);
             this.txtSoDot.TabIndex = 687;
+            this.txtSoDot.Leave += new System.EventHandler(this.txtSoDot_Leave);
             // 
             // labelX3
             // 
@@ -546,63 +595,6 @@
             this.labelX1.Text = "Số Đợt XPĐĐ";
             this.labelX1.TextAlignment = System.Drawing.StringAlignment.Center;
             // 
-            // tabItem1
-            // 
-            this.tabItem1.AttachedControl = this.tabDanhSachDot;
-            this.tabItem1.Name = "tabItem1";
-            this.tabItem1.Text = "Danh Sách Xin Phép ĐĐ";
-            // 
-            // tabDanhSachXinPhep
-            // 
-            this.tabDanhSachXinPhep.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabDanhSachXinPhep.Location = new System.Drawing.Point(0, 27);
-            this.tabDanhSachXinPhep.Name = "tabDanhSachXinPhep";
-            this.tabDanhSachXinPhep.Padding = new System.Windows.Forms.Padding(1);
-            this.tabDanhSachXinPhep.Size = new System.Drawing.Size(982, 560);
-            this.tabDanhSachXinPhep.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(254)))));
-            this.tabDanhSachXinPhep.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(188)))), ((int)(((byte)(227)))));
-            this.tabDanhSachXinPhep.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.tabDanhSachXinPhep.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(165)))), ((int)(((byte)(199)))));
-            this.tabDanhSachXinPhep.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right)
-                        | DevComponents.DotNetBar.eBorderSide.Bottom)));
-            this.tabDanhSachXinPhep.Style.GradientAngle = 90;
-            this.tabDanhSachXinPhep.TabIndex = 3;
-            this.tabDanhSachXinPhep.TabItem = this.tabItem3;
-            // 
-            // tabItem3
-            // 
-            this.tabItem3.AttachedControl = this.tabDanhSachXinPhep;
-            this.tabItem3.Name = "tabItem3";
-            this.tabItem3.Text = "Xem Danh Sách Xin Phép ĐĐ";
-            // 
-            // tabCapNhatDS
-            // 
-            this.tabCapNhatDS.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabCapNhatDS.Location = new System.Drawing.Point(0, 27);
-            this.tabCapNhatDS.Name = "tabCapNhatDS";
-            this.tabCapNhatDS.Padding = new System.Windows.Forms.Padding(1);
-            this.tabCapNhatDS.Size = new System.Drawing.Size(982, 560);
-            this.tabCapNhatDS.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(254)))));
-            this.tabCapNhatDS.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(188)))), ((int)(((byte)(227)))));
-            this.tabCapNhatDS.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.tabCapNhatDS.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(165)))), ((int)(((byte)(199)))));
-            this.tabCapNhatDS.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right)
-                        | DevComponents.DotNetBar.eBorderSide.Bottom)));
-            this.tabCapNhatDS.Style.GradientAngle = 90;
-            this.tabCapNhatDS.TabIndex = 2;
-            this.tabCapNhatDS.TabItem = this.tabItem2;
-            // 
-            // tabItem2
-            // 
-            this.tabItem2.AttachedControl = this.tabCapNhatDS;
-            this.tabItem2.Name = "tabItem2";
-            this.tabItem2.Text = "Cập Nhật Danh Sách Theo Đợt";
-            this.tabItem2.Click += new System.EventHandler(this.tabItem2_Click);
-            // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
-            // 
             // next
             // 
             this.next.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -612,6 +604,7 @@
             this.next.Size = new System.Drawing.Size(19, 16);
             this.next.TabIndex = 700;
             this.next.TabStop = false;
+            this.next.Click += new System.EventHandler(this.next_Click);
             // 
             // pictureBox2
             // 
@@ -622,6 +615,17 @@
             this.pictureBox2.Size = new System.Drawing.Size(19, 16);
             this.pictureBox2.TabIndex = 701;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pre);
+            // 
+            // tabItem1
+            // 
+            this.tabItem1.AttachedControl = this.tabDanhSachDot;
+            this.tabItem1.Name = "tabItem1";
+            this.tabItem1.Text = "Danh Sách Xin Phép ĐĐ";
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // UCT_XINPHEPDD
             // 
@@ -640,9 +644,9 @@
             this.groupPanel1.ResumeLayout(false);
             this.groupPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dateTimeSearch)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.next)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -655,8 +659,6 @@
         private DevComponents.DotNetBar.TabItem tabItem1;
         private DevComponents.DotNetBar.TabControlPanel tabCapNhatDS;
         private DevComponents.DotNetBar.TabItem tabItem2;
-        private DevComponents.DotNetBar.TabControlPanel tabDanhSachXinPhep;
-        private DevComponents.DotNetBar.TabItem tabItem3;
         private DevComponents.DotNetBar.Controls.DataGridViewX dataDanhSachDaoDuong;
         private System.Windows.Forms.DataGridViewTextBoxColumn gridSoDot;
         private System.Windows.Forms.DataGridViewTextBoxColumn gridNoiCapPhep;
@@ -673,9 +675,9 @@
         private System.Windows.Forms.RadioButton radioNgayLap;
         private System.Windows.Forms.RadioButton radioSoDot;
         private DevComponents.DotNetBar.Controls.TextBoxX txtSearchSoDot;
-        private DevComponents.DotNetBar.ButtonX buttonX4;
-        private DevComponents.DotNetBar.ButtonX buttonX3;
-        private DevComponents.DotNetBar.ButtonX xemDSXinPhepDD;
+        private DevComponents.DotNetBar.ButtonX btInDanhSachMienPhep;
+        private DevComponents.DotNetBar.ButtonX inDanhSachCoPhep;
+        private DevComponents.DotNetBar.ButtonX huyDotXP;
         private DevComponents.DotNetBar.ButtonX capnhatDSChoDot;
         private DevComponents.DotNetBar.ButtonX btThemMoi;
         private System.Windows.Forms.DateTimePicker dateNgayLap;
@@ -686,5 +688,6 @@
         private DevComponents.DotNetBar.LabelX labelX2;
         private DevComponents.DotNetBar.LabelX labelX1;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private DevComponents.DotNetBar.ButtonX buttonX1;
     }
 }

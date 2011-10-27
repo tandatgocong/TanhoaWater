@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using log4net;
+using TanHoaWater.View.Users.Report;
+using CrystalDecisions.CrystalReports.Engine;
+using TanHoaWater.View.Users.KEHOACH.XINPHEPDD.BC;
 
 namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
 {
@@ -102,8 +105,7 @@ namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
 
 
         }
-        private void btThemMoi_Click(object sender, EventArgs e)
-        {
+        public void add() {
             refesh();
             try
             {
@@ -156,6 +158,10 @@ namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
             {
                 log.Error("Them Xin Phep Dao Duong Loi. " + ex.Message);
             }
+        }
+        private void btThemMoi_Click(object sender, EventArgs e)
+        {
+            add();
 
         }
 
@@ -235,10 +241,19 @@ namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
 
         private void tabItem2_Click(object sender, EventArgs e)
         {
-           
-            tabCapNhatDS.Controls.Clear();
-            tabCapNhatDS.Controls.Add(new tab_CapNhatTheoDot(""));
-            this.tabControl1.SelectedTabIndex = 1;
+             string madot = "";
+            try
+            {
+                madot = dataDanhSachDaoDuong.Rows[dataDanhSachDaoDuong.CurrentRow.Index].Cells["gridSoDot"].Value + "";
+
+            }
+            catch (Exception)
+            {
+            }
+           tabCapNhatDS.Controls.Clear();
+           tabCapNhatDS.Controls.Add(new tab_CapNhatTheoDot(madot));
+           this.tabControl1.SelectedTabIndex = 1;
+          
         }
 
         private void capnhatDSChoDot_Click_1(object sender, EventArgs e)
@@ -262,6 +277,77 @@ namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
             {
                 MessageBox.Show(this, "Cần Chọn Mã Đợt Để Xin Phép Đào Đường !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void txtMaQuanLy_Leave(object sender, EventArgs e)
+        {
+            add();
+        }
+
+        private void inDanhSachCoPhep_Click(object sender, EventArgs e)
+        {
+            string madot = "";
+            try
+            {
+                madot = dataDanhSachDaoDuong.Rows[dataDanhSachDaoDuong.CurrentRow.Index].Cells["gridSoDot"].Value + "";
+
+            }
+            catch (Exception)
+            {
+            }
+            ReportDocument rp = new rpt_XinPhep();
+            rp.SetDataSource(DAL.C_KH_XinPhepDD.ReportxinPhepDD(madot,"","","",""));
+
+            rpt_Main mainreport = new rpt_Main(rp);
+            mainreport.ShowDialog();
+        }
+
+        private void btInDanhSachMienPhep_Click(object sender, EventArgs e)
+        {
+            string madot = "";
+            try
+            {
+                madot = dataDanhSachDaoDuong.Rows[dataDanhSachDaoDuong.CurrentRow.Index].Cells["gridSoDot"].Value + "";
+
+            }
+            catch (Exception)
+            {
+            }
+            frmDialogPrintting frm = new frmDialogPrintting(madot);
+            frm.ShowDialog();
+        }
+
+        private void huyDotXP_Click(object sender, EventArgs e)
+        {
+            string madot = "";
+            try
+            {
+                madot = dataDanhSachDaoDuong.Rows[dataDanhSachDaoDuong.CurrentRow.Index].Cells["gridSoDot"].Value + "";
+
+            }
+            catch (Exception)
+            {
+            }
+            if (DAL.C_KH_HoSoKhachHang.getListHSbyDot(madot).Rows.Count > 0)
+            {
+                MessageBox.Show(this, "Đợt Xin Phép Đợt " + madot + " Đã Có Hồ Sơ, Không Thể Hủy Đợt  " + madot + " !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Question);
+            }
+            else
+            {
+                if (MessageBox.Show(this, "Có Muốn Hủy Đợt Xin Phép " + madot + " Không ?", "..: Thông Báo :..", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+                {
+                    if (DAL.C_KH_XinPhepDD.Delete(madot) == true)
+                    {
+                        search();
+                    }
+                    else
+                    {
+                        MessageBox.Show(this, "Lỗi Hủy Đợt Xin Phép " + madot + " lỗi. ", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            
+            }
+           
         }
     }
 }

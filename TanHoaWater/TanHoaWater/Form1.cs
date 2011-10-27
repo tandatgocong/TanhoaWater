@@ -14,6 +14,7 @@ using CrystalDecisions.Windows.Forms;
 using TanHoaWater.View.Users.KEHOACH.Report;
 using TanHoaWater.View.Users.TinhDuToan.report;
 using System.Data.SqlClient;
+using TanHoaWater.View.Users.KEHOACH.XINPHEPDD.BC;
 namespace TanHoaWater
 {
     public partial class Form1 : Form
@@ -22,52 +23,59 @@ namespace TanHoaWater
         public Form1()
         {
             InitializeComponent();
-            
+
             DataSet ds = new DataSet();
             TanHoaDataContext db = new TanHoaDataContext();
             db.Connection.Open();
+            string TUNGAY="20/10/2011";
+            string DENNGAY = "21/10/2011";
+            string NGAYKHOICONGDAO = "22/10/2011";
+            string NGAYHOANTATTL = "28/10/2011";
+            string sql = "SELECT *,TUNGAY='" + TUNGAY + "',DENNGAY='" + DENNGAY + "',NGAYKHOICONGDAO='" + NGAYKHOICONGDAO + "',NGAYHOANTATTL='" + NGAYHOANTATTL + "' FROM V_XINPHEPDAODUONG  WHERE MADOTDD='HUYNHGA1'";
 
-            string sql = "SELECT * FROM BG_CHITIETBG  WHERE SHS='1100001'";
-           
             SqlDataAdapter dond = new SqlDataAdapter(sql, db.Connection.ConnectionString);
-            dond.Fill(ds, "BG_CHITIETBG");
+            dond.Fill(ds, "V_XINPHEPDAODUONG");
+
+            sql = "SELECT * FROM KH_BC_XINPHEPDD ";
+            dond = new SqlDataAdapter(sql, db.Connection.ConnectionString);
+            dond.Fill(ds, "KH_BC_XINPHEPDD");
 
 
-            string user = "SELECT * FROM BG_TAILAPMATDUONG  WHERE SHS='1100001'";
-            SqlDataAdapter ct = new SqlDataAdapter(user, db.Connection.ConnectionString);
-            ct.Fill(ds, "BG_TAILAPMATDUONG");
+            //string user = "SELECT * FROM BG_TAILAPMATDUONG  WHERE SHS='1100001'";
+            //SqlDataAdapter ct = new SqlDataAdapter(user, db.Connection.ConnectionString);
+            //ct.Fill(ds, "BG_TAILAPMATDUONG");
 
-            user = "SELECT * FROM W_HS ";
-             ct = new SqlDataAdapter(user, db.Connection.ConnectionString);
-             ct.Fill(ds, "BG_HESOBANGGIA");
+            //user = "SELECT * FROM W_HS ";
+            // ct = new SqlDataAdapter(user, db.Connection.ConnectionString);
+            // ct.Fill(ds, "BG_HESOBANGGIA");
 
 
-            user = "SELECT * FROM BG_THONGTINKHACHANG  WHERE SHS='1100001'";
-            ct = new SqlDataAdapter(user, db.Connection.ConnectionString);
-            ct.Fill(ds, "BG_THONGTINKHACHANG");
+            //user = "SELECT * FROM BG_THONGTINKHACHANG  WHERE SHS='1100001'";
+            //ct = new SqlDataAdapter(user, db.Connection.ConnectionString);
+            //ct.Fill(ds, "BG_THONGTINKHACHANG");
 
-            user = "SELECT * FROM BG_SUMTAILAPMATDUONG  WHERE SHS='1100001'";
-            ct = new SqlDataAdapter(user, db.Connection.ConnectionString);
-            ct.Fill(ds, "BG_SUMTAILAPMATDUONG");
+            //user = "SELECT * FROM BG_SUMTAILAPMATDUONG  WHERE SHS='1100001'";
+            //ct = new SqlDataAdapter(user, db.Connection.ConnectionString);
+            //ct.Fill(ds, "BG_SUMTAILAPMATDUONG");
 
-            user = "SELECT * FROM BG_REPORT ";
-            ct = new SqlDataAdapter(user, db.Connection.ConnectionString);
-            ct.Fill(ds, "BG_REPORT");
+            //user = "SELECT * FROM BG_REPORT ";
+            //ct = new SqlDataAdapter(user, db.Connection.ConnectionString);
+            //ct.Fill(ds, "BG_REPORT");
 
-            user = "SELECT * FROM USERS  WHERE USERNAME='"+ "thanhtrung" +"'";
-            ct = new SqlDataAdapter(user, db.Connection.ConnectionString);
-            ct.Fill(ds, "USERS");
+            //user = "SELECT * FROM USERS  WHERE USERNAME='"+ "thanhtrung" +"'";
+            //ct = new SqlDataAdapter(user, db.Connection.ConnectionString);
+            //ct.Fill(ds, "USERS");
                       
-            ds.Tables.Add(TongKetChiPhi("1100001"));
+            //ds.Tables.Add(TongKetChiPhi("1100001"));
             
-            double TongThanhTien = total + double.Parse(ds.Tables["BG_SUMTAILAPMATDUONG"].Rows[0][1].ToString());           
-            CrystalReportViewer r = new CrystalReportViewer();
-            ReportDocument rp = new rptBangGia();
+            //double TongThanhTien = total + double.Parse(ds.Tables["BG_SUMTAILAPMATDUONG"].Rows[0][1].ToString());           
+            //CrystalReportViewer r = new CrystalReportViewer();
+            ReportDocument rp = new rpt_XinPhep();
 
             //rp.Subreports["Subreport1"].SetParameterValue("Tienchu", Utilities.Doctien.ReadMoney(String.Format("{0:0}", TongThanhTien)));
             rp.SetDataSource(ds);
-            rp.SetParameterValue("Tienchu", Utilities.Doctien.ReadMoney(String.Format("{0:0}", TongThanhTien)));
-            rp.SetParameterValue("subTienchu", Utilities.Doctien.ReadMoney(String.Format("{0:0}", TongThanhTien)));
+            //rp.SetParameterValue("Tienchu", Utilities.Doctien.ReadMoney(String.Format("{0:0}", TongThanhTien)));
+            //rp.SetParameterValue("subTienchu", Utilities.Doctien.ReadMoney(String.Format("{0:0}", TongThanhTien)));
             
             crystalReportViewer1.ReportSource = rp;
          }

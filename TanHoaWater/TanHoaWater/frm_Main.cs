@@ -77,7 +77,7 @@ namespace TanHoaWater
         {
             if (MessageBox.Show(this, "Thoát Chương Trình ?", "..: Thông Báo :..", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
             {
-                this.Dispose();
+                Application.Exit();
             }
         }
         public void formLoad()
@@ -383,6 +383,14 @@ namespace TanHoaWater
             this.PanelContent.Controls.Clear();
             this.PanelContent.Controls.Add(new UCT_XINPHEPDD());
             this.menuKHVT.Select();
+        } 
+        private void frm_Main_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show(this, "Thoát Chương Trình ?", "..: Thông Báo :..", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+            
         }
     }
 }

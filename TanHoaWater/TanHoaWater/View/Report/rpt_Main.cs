@@ -14,7 +14,8 @@ namespace TanHoaWater.View.Users.Report
     {
         public rpt_Main(ReportDocument rp)
         {
-            InitializeComponent();          
+            InitializeComponent();
+            this.WindowState = FormWindowState.Maximized;
             crystalReportViewer.ReportSource = rp;
         }
     }

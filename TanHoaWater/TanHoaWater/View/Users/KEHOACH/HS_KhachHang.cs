@@ -200,14 +200,14 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                     this.cbPhuong.Text = recordPhuong.TENPHUONG;
                     ngaynhan = biennhan.NGAYNHAN.Value;
                 }
-                else
-                {
-                    MessageBox.Show(this, "Không Tìm Thấy Số Biên Nhận Khách Hàng !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    this.txtSHS.Clear();
-                    this.txtSHS.Focus();
-                    refresh();
+                //else
+                //{
+                //    MessageBox.Show(this, "Không Tìm Thấy Số Biên Nhận Khách Hàng !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //    this.txtSHS.Clear();
+                //    this.txtSHS.Focus();
+                //    refresh();
 
-                }
+                //}
             }
         }
 
