@@ -16,7 +16,8 @@ namespace TanHoaWater.View.Users.KEHOACH
         public rpt_DanhSachChuyen(string dotnd, string nguoilap, string nguoiduyet)
         {
             InitializeComponent();
-            ReportDocument rp = new rpt_DOT();
+            this.WindowState = FormWindowState.Maximized;
+            ReportDocument rp = new rpt_DOT_QUAN();
             rp.SetDataSource(DAL.C_BAOCAO_VIEW.BC_CHUYENDON(dotnd,nguoilap,nguoiduyet));
             crystalReportViewer.ReportSource = rp;
         }

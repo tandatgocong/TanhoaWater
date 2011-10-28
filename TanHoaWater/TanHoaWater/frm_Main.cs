@@ -18,6 +18,7 @@ using TanHoaWater.Roles;
 using TanHoaWater.View.Users.KEHOACH;
 using TanHoaWater.View.Tool;
 using TanHoaWater.View.Users.KEHOACH.XINPHEPDD;
+using TanHoaWater.View.Users.KEHOACH.DOTTHICONG;
 
 namespace TanHoaWater
 {
@@ -391,6 +392,13 @@ namespace TanHoaWater
                 e.Cancel = true;
             }
             
+        }
+
+        private void Kh_DotThiCong_Click(object sender, EventArgs e)
+        {
+            this.PanelContent.Controls.Clear();
+            this.PanelContent.Controls.Add(new UCT_DOTTHICONG());
+            this.menuKHVT.Select();
         }
     }
 }

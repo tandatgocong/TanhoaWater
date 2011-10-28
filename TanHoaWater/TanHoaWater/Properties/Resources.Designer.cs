@@ -137,6 +137,27 @@ namespace TanHoaWater.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap daoduong {
+            get {
+                object obj = ResourceManager.GetObject("daoduong", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap daoduong1 {
+            get {
+                object obj = ResourceManager.GetObject("daoduong1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap daoduong2 {
+            get {
+                object obj = ResourceManager.GetObject("daoduong2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap delete {
             get {
                 object obj = ResourceManager.GetObject("delete", resourceCulture);
@@ -179,6 +200,41 @@ namespace TanHoaWater.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap doimk {
+            get {
+                object obj = ResourceManager.GetObject("doimk", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap donkh {
+            get {
+                object obj = ResourceManager.GetObject("donkh", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap donkh1 {
+            get {
+                object obj = ResourceManager.GetObject("donkh1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap dotnhandon {
+            get {
+                object obj = ResourceManager.GetObject("dotnhandon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap dutoan {
+            get {
+                object obj = ResourceManager.GetObject("dutoan", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap Excel {
             get {
                 object obj = ResourceManager.GetObject("Excel", resourceCulture);
@@ -210,6 +266,13 @@ namespace TanHoaWater.Properties {
         internal static System.Drawing.Bitmap flash1 {
             get {
                 object obj = ResourceManager.GetObject("flash1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap giaohoso {
+            get {
+                object obj = ResourceManager.GetObject("giaohoso", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -298,6 +361,13 @@ namespace TanHoaWater.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap Lock {
+            get {
+                object obj = ResourceManager.GetObject("Lock", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap lock2 {
             get {
                 object obj = ResourceManager.GetObject("lock2", resourceCulture);
@@ -333,6 +403,20 @@ namespace TanHoaWater.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap Man {
+            get {
+                object obj = ResourceManager.GetObject("Man", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap mokhoa {
+            get {
+                object obj = ResourceManager.GetObject("mokhoa", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap MSACCESS {
             get {
                 object obj = ResourceManager.GetObject("MSACCESS", resourceCulture);
@@ -361,6 +445,13 @@ namespace TanHoaWater.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap Ok {
+            get {
+                object obj = ResourceManager.GetObject("Ok", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap Previous {
             get {
                 object obj = ResourceManager.GetObject("Previous", resourceCulture);
@@ -378,6 +469,13 @@ namespace TanHoaWater.Properties {
         internal static System.Drawing.Bitmap print1 {
             get {
                 object obj = ResourceManager.GetObject("print1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap ReFFlective__10_ {
+            get {
+                object obj = ResourceManager.GetObject("ReFFlective (10)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -420,6 +518,13 @@ namespace TanHoaWater.Properties {
         internal static System.Drawing.Bitmap stop {
             get {
                 object obj = ResourceManager.GetObject("stop", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap thoat {
+            get {
+                object obj = ResourceManager.GetObject("thoat", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -476,6 +581,13 @@ namespace TanHoaWater.Properties {
         internal static System.Drawing.Bitmap WINWORD {
             get {
                 object obj = ResourceManager.GetObject("WINWORD", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Write2 {
+            get {
+                object obj = ResourceManager.GetObject("Write2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
