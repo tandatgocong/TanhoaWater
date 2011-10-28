@@ -15,7 +15,7 @@ namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
 {
     public partial class UCT_XINPHEPDD : UserControl
     {
-        private static readonly ILog log = LogManager.GetLogger(typeof(tab_DDXinPheoDD).Name);
+        private static readonly ILog log = LogManager.GetLogger(typeof(UCT_XINPHEPDD).Name);
         int currentPageIndex = 1;
         int pageSize = 19;
         int pageNumber = 0;
