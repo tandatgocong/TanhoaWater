@@ -744,11 +744,11 @@
             // ribbonControl1
             // 
             this.ribbonControl1.AutoScroll = true;
-            this.ribbonControl1.Controls.Add(this.ribbonPanel1);
-            this.ribbonControl1.Controls.Add(this.ribbonPanel2);
+            this.ribbonControl1.Controls.Add(this.ribbonPanel5);
             this.ribbonControl1.Controls.Add(this.ribbonPanel4);
             this.ribbonControl1.Controls.Add(this.ribbonPanel3);
-            this.ribbonControl1.Controls.Add(this.ribbonPanel5);
+            this.ribbonControl1.Controls.Add(this.ribbonPanel2);
+            this.ribbonControl1.Controls.Add(this.ribbonPanel1);
             this.ribbonControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.ribbonControl1.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ribbonControl1.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
@@ -781,11 +781,12 @@
             this.ribbonPanel1.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.ribbonPanel1.Size = new System.Drawing.Size(988, 24);
             this.ribbonPanel1.TabIndex = 1;
+            this.ribbonPanel1.Visible = false;
             // 
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.Color.Transparent;
-            this.menuStrip1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.menuStrip1.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.subdangnhap,
             this.subDoiMatKhau,
@@ -793,40 +794,44 @@
             this.subThoat});
             this.menuStrip1.Location = new System.Drawing.Point(3, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(982, 27);
+            this.menuStrip1.Size = new System.Drawing.Size(982, 25);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // subdangnhap
             // 
+            this.subdangnhap.ForeColor = System.Drawing.Color.RoyalBlue;
             this.subdangnhap.Image = global::TanHoaWater.Properties.Resources.mokhoa;
             this.subdangnhap.Name = "subdangnhap";
-            this.subdangnhap.Size = new System.Drawing.Size(113, 23);
+            this.subdangnhap.Size = new System.Drawing.Size(108, 21);
             this.subdangnhap.Text = "Đăng Nhập";
             this.subdangnhap.Click += new System.EventHandler(this.subdangnhap_Click);
             // 
             // subDoiMatKhau
             // 
+            this.subDoiMatKhau.ForeColor = System.Drawing.Color.RoyalBlue;
             this.subDoiMatKhau.Image = global::TanHoaWater.Properties.Resources.doimk;
             this.subDoiMatKhau.Name = "subDoiMatKhau";
-            this.subDoiMatKhau.Size = new System.Drawing.Size(127, 23);
+            this.subDoiMatKhau.Size = new System.Drawing.Size(123, 21);
             this.subDoiMatKhau.Text = "Đổi mật khẩu";
             this.subDoiMatKhau.Visible = false;
             // 
             // subDangXuat
             // 
+            this.subDangXuat.ForeColor = System.Drawing.Color.RoyalBlue;
             this.subDangXuat.Image = global::TanHoaWater.Properties.Resources.Lock;
             this.subDangXuat.Name = "subDangXuat";
-            this.subDangXuat.Size = new System.Drawing.Size(106, 23);
+            this.subDangXuat.Size = new System.Drawing.Size(102, 21);
             this.subDangXuat.Text = "Đăng xuất";
             this.subDangXuat.Visible = false;
             this.subDangXuat.Click += new System.EventHandler(this.subDangXuat_Click);
             // 
             // subThoat
             // 
+            this.subThoat.ForeColor = System.Drawing.Color.RoyalBlue;
             this.subThoat.Image = global::TanHoaWater.Properties.Resources.thoat;
             this.subThoat.Name = "subThoat";
-            this.subThoat.Size = new System.Drawing.Size(76, 23);
+            this.subThoat.Size = new System.Drawing.Size(74, 21);
             this.subThoat.Text = "Thoát";
             this.subThoat.Click += new System.EventHandler(this.subThoat_Click);
             // 
@@ -840,11 +845,12 @@
             this.ribbonPanel2.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.ribbonPanel2.Size = new System.Drawing.Size(988, 24);
             this.ribbonPanel2.TabIndex = 2;
+            this.ribbonPanel2.Visible = false;
             // 
             // menuStrip3
             // 
             this.menuStrip3.BackColor = System.Drawing.Color.Transparent;
-            this.menuStrip3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuStrip3.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold);
             this.menuStrip3.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.biennhan,
             this.đợtNhậnĐơnToolStripMenuItem,
@@ -853,47 +859,52 @@
             this.Kh_DotThiCong});
             this.menuStrip3.Location = new System.Drawing.Point(3, 0);
             this.menuStrip3.Name = "menuStrip3";
-            this.menuStrip3.Size = new System.Drawing.Size(982, 27);
+            this.menuStrip3.Size = new System.Drawing.Size(982, 25);
             this.menuStrip3.TabIndex = 0;
             this.menuStrip3.Text = "menuStrip3";
             // 
             // biennhan
             // 
+            this.biennhan.ForeColor = System.Drawing.Color.RoyalBlue;
             this.biennhan.Image = global::TanHoaWater.Properties.Resources.Write2;
             this.biennhan.Name = "biennhan";
-            this.biennhan.Size = new System.Drawing.Size(108, 23);
+            this.biennhan.Size = new System.Drawing.Size(105, 21);
             this.biennhan.Text = "Biên Nhận";
             this.biennhan.Click += new System.EventHandler(this.biennhan_Click);
             // 
             // đợtNhậnĐơnToolStripMenuItem
             // 
+            this.đợtNhậnĐơnToolStripMenuItem.ForeColor = System.Drawing.Color.RoyalBlue;
             this.đợtNhậnĐơnToolStripMenuItem.Image = global::TanHoaWater.Properties.Resources.dotnhandon;
             this.đợtNhậnĐơnToolStripMenuItem.Name = "đợtNhậnĐơnToolStripMenuItem";
-            this.đợtNhậnĐơnToolStripMenuItem.Size = new System.Drawing.Size(136, 23);
+            this.đợtNhậnĐơnToolStripMenuItem.Size = new System.Drawing.Size(129, 21);
             this.đợtNhậnĐơnToolStripMenuItem.Text = "Đợt Nhận Đơn";
             this.đợtNhậnĐơnToolStripMenuItem.Click += new System.EventHandler(this.btDotNhanDon_Click);
             // 
             // đơnKháchHàngToolStripMenuItem
             // 
+            this.đơnKháchHàngToolStripMenuItem.ForeColor = System.Drawing.Color.RoyalBlue;
             this.đơnKháchHàngToolStripMenuItem.Image = global::TanHoaWater.Properties.Resources.donkh;
             this.đơnKháchHàngToolStripMenuItem.Name = "đơnKháchHàngToolStripMenuItem";
-            this.đơnKháchHàngToolStripMenuItem.Size = new System.Drawing.Size(153, 23);
+            this.đơnKháchHàngToolStripMenuItem.Size = new System.Drawing.Size(148, 21);
             this.đơnKháchHàngToolStripMenuItem.Text = "Đơn Khách Hàng";
             this.đơnKháchHàngToolStripMenuItem.Click += new System.EventHandler(this.menuNhanDon_Click);
             // 
             // xinphepDaoDuong
             // 
+            this.xinphepDaoDuong.ForeColor = System.Drawing.Color.RoyalBlue;
             this.xinphepDaoDuong.Image = global::TanHoaWater.Properties.Resources.daoduong2;
             this.xinphepDaoDuong.Name = "xinphepDaoDuong";
-            this.xinphepDaoDuong.Size = new System.Drawing.Size(180, 23);
+            this.xinphepDaoDuong.Size = new System.Drawing.Size(173, 21);
             this.xinphepDaoDuong.Text = "Xin Phép Đào Đường";
             this.xinphepDaoDuong.Click += new System.EventHandler(this.xinphepDaoDuong_Click);
             // 
             // Kh_DotThiCong
             // 
+            this.Kh_DotThiCong.ForeColor = System.Drawing.Color.RoyalBlue;
             this.Kh_DotThiCong.Image = global::TanHoaWater.Properties.Resources.Man;
             this.Kh_DotThiCong.Name = "Kh_DotThiCong";
-            this.Kh_DotThiCong.Size = new System.Drawing.Size(128, 23);
+            this.Kh_DotThiCong.Size = new System.Drawing.Size(125, 21);
             this.Kh_DotThiCong.Text = "Đợt Thi Công";
             this.Kh_DotThiCong.Click += new System.EventHandler(this.Kh_DotThiCong_Click);
             // 
@@ -912,7 +923,7 @@
             // menuStrip4
             // 
             this.menuStrip4.BackColor = System.Drawing.Color.Transparent;
-            this.menuStrip4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.menuStrip4.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold);
             this.menuStrip4.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.caculator,
             this.microsoftWord,
@@ -921,49 +932,54 @@
             this.webBrowserTool});
             this.menuStrip4.Location = new System.Drawing.Point(3, 0);
             this.menuStrip4.Name = "menuStrip4";
-            this.menuStrip4.Size = new System.Drawing.Size(982, 27);
+            this.menuStrip4.Size = new System.Drawing.Size(982, 25);
             this.menuStrip4.TabIndex = 0;
             this.menuStrip4.Text = "menuStrip4";
             // 
             // caculator
             // 
             this.caculator.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.caculator.ForeColor = System.Drawing.Color.RoyalBlue;
             this.caculator.Image = global::TanHoaWater.Properties.Resources.calc;
             this.caculator.Name = "caculator";
             this.caculator.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.C)));
-            this.caculator.Size = new System.Drawing.Size(93, 23);
+            this.caculator.Size = new System.Drawing.Size(93, 21);
             this.caculator.Text = "Calculator";
             this.caculator.Click += new System.EventHandler(this.caculator_Click);
             // 
             // microsoftWord
             // 
+            this.microsoftWord.ForeColor = System.Drawing.Color.RoyalBlue;
             this.microsoftWord.Image = global::TanHoaWater.Properties.Resources.WINWORD;
             this.microsoftWord.Name = "microsoftWord";
-            this.microsoftWord.Size = new System.Drawing.Size(147, 23);
+            this.microsoftWord.Size = new System.Drawing.Size(143, 21);
             this.microsoftWord.Text = "Microsoft Word ";
             this.microsoftWord.Click += new System.EventHandler(this.microsoftWord_Click);
             // 
             // microsoftExcel
             // 
+            this.microsoftExcel.ForeColor = System.Drawing.Color.RoyalBlue;
             this.microsoftExcel.Image = global::TanHoaWater.Properties.Resources.Excel;
             this.microsoftExcel.Name = "microsoftExcel";
-            this.microsoftExcel.Size = new System.Drawing.Size(144, 23);
+            this.microsoftExcel.Size = new System.Drawing.Size(141, 21);
             this.microsoftExcel.Text = "Microsoft Excel";
             this.microsoftExcel.Click += new System.EventHandler(this.microsoftExcel_Click);
             // 
             // microsoftAccess
             // 
+            this.microsoftAccess.ForeColor = System.Drawing.Color.RoyalBlue;
             this.microsoftAccess.Image = global::TanHoaWater.Properties.Resources.MSACCESS;
             this.microsoftAccess.Name = "microsoftAccess";
-            this.microsoftAccess.Size = new System.Drawing.Size(153, 23);
+            this.microsoftAccess.Size = new System.Drawing.Size(150, 21);
             this.microsoftAccess.Text = "Microsoft Access";
             this.microsoftAccess.Click += new System.EventHandler(this.microsoftAccess_Click);
             // 
             // webBrowserTool
             // 
+            this.webBrowserTool.ForeColor = System.Drawing.Color.RoyalBlue;
             this.webBrowserTool.Image = global::TanHoaWater.Properties.Resources.ie;
             this.webBrowserTool.Name = "webBrowserTool";
-            this.webBrowserTool.Size = new System.Drawing.Size(114, 23);
+            this.webBrowserTool.Size = new System.Drawing.Size(111, 21);
             this.webBrowserTool.Text = "Portl Office";
             this.webBrowserTool.Click += new System.EventHandler(this.webBrowserTool_Click);
             // 
@@ -982,38 +998,41 @@
             // menuStrip2
             // 
             this.menuStrip2.BackColor = System.Drawing.Color.Transparent;
-            this.menuStrip2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.menuStrip2.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold);
             this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem1,
             this.tínhDựToánHSKToolStripMenuItem,
             this.hoantatThietKe});
             this.menuStrip2.Location = new System.Drawing.Point(3, 0);
             this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(982, 27);
+            this.menuStrip2.Size = new System.Drawing.Size(982, 25);
             this.menuStrip2.TabIndex = 1;
             this.menuStrip2.Text = "menuStrip2";
             // 
             // toolStripMenuItem1
             // 
+            this.toolStripMenuItem1.ForeColor = System.Drawing.Color.RoyalBlue;
             this.toolStripMenuItem1.Image = global::TanHoaWater.Properties.Resources.giaohoso;
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(123, 23);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(118, 21);
             this.toolStripMenuItem1.Text = "Nhận  Hồ Sơ";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // tínhDựToánHSKToolStripMenuItem
             // 
+            this.tínhDựToánHSKToolStripMenuItem.ForeColor = System.Drawing.Color.RoyalBlue;
             this.tínhDựToánHSKToolStripMenuItem.Image = global::TanHoaWater.Properties.Resources.dutoan;
             this.tínhDựToánHSKToolStripMenuItem.Name = "tínhDựToánHSKToolStripMenuItem";
-            this.tínhDựToánHSKToolStripMenuItem.Size = new System.Drawing.Size(134, 23);
+            this.tínhDựToánHSKToolStripMenuItem.Size = new System.Drawing.Size(130, 21);
             this.tínhDựToánHSKToolStripMenuItem.Text = "Tính Dự Toán ";
             this.tínhDựToánHSKToolStripMenuItem.Click += new System.EventHandler(this.tínhDựToánHSKToolStripMenuItem_Click);
             // 
             // hoantatThietKe
             // 
+            this.hoantatThietKe.ForeColor = System.Drawing.Color.RoyalBlue;
             this.hoantatThietKe.Image = global::TanHoaWater.Properties.Resources.Ok;
             this.hoantatThietKe.Name = "hoantatThietKe";
-            this.hoantatThietKe.Size = new System.Drawing.Size(163, 23);
+            this.hoantatThietKe.Size = new System.Drawing.Size(160, 21);
             this.hoantatThietKe.Text = "Hoàn Tất Thiết Kế";
             this.hoantatThietKe.Click += new System.EventHandler(this.hoantatThietKe_Click);
             // 
@@ -1021,16 +1040,14 @@
             // 
             this.ribbonPanel5.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.ribbonPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ribbonPanel5.Location = new System.Drawing.Point(0, 0);
+            this.ribbonPanel5.Location = new System.Drawing.Point(0, 28);
             this.ribbonPanel5.Name = "ribbonPanel5";
             this.ribbonPanel5.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.ribbonPanel5.Size = new System.Drawing.Size(988, 52);
+            this.ribbonPanel5.Size = new System.Drawing.Size(988, 24);
             this.ribbonPanel5.TabIndex = 5;
-            this.ribbonPanel5.Visible = false;
             // 
             // menuHeThong
             // 
-            this.menuHeThong.Checked = true;
             this.menuHeThong.Name = "menuHeThong";
             this.menuHeThong.Panel = this.ribbonPanel1;
             this.menuHeThong.Text = "Trang Chủ";
@@ -1058,6 +1075,7 @@
             // 
             // menuTiemKiem
             // 
+            this.menuTiemKiem.Checked = true;
             this.menuTiemKiem.Name = "menuTiemKiem";
             this.menuTiemKiem.Panel = this.ribbonPanel5;
             this.menuTiemKiem.Text = "Tra Cứu Đơn KH";
