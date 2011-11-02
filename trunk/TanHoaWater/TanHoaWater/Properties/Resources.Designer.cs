@@ -60,13 +60,6 @@ namespace TanHoaWater.Properties {
             }
         }
         
-        internal static System.Drawing.Bitmap A093 {
-            get {
-                object obj = ResourceManager.GetObject("A093", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
         internal static System.Drawing.Bitmap add {
             get {
                 object obj = ResourceManager.GetObject("add", resourceCulture);
@@ -133,20 +126,6 @@ namespace TanHoaWater.Properties {
         internal static System.Drawing.Bitmap currency_dollar {
             get {
                 object obj = ResourceManager.GetObject("currency_dollar", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap daoduong {
-            get {
-                object obj = ResourceManager.GetObject("daoduong", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap daoduong1 {
-            get {
-                object obj = ResourceManager.GetObject("daoduong1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -322,13 +301,6 @@ namespace TanHoaWater.Properties {
         internal static System.Drawing.Bitmap ie {
             get {
                 object obj = ResourceManager.GetObject("ie", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap InkWatson_exe_I012c_0409 {
-            get {
-                object obj = ResourceManager.GetObject("InkWatson.exe_I012c_0409", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -72,6 +72,7 @@
     <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="String_Indentity, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\String_Indentity.dll</HintPath>
@@ -115,6 +116,8 @@
     <Compile Include="DAL\C_HeSo.cs" />
     <Compile Include="DAL\C_HeSoBangGia.cs" />
     <Compile Include="DAL\C_KhoiLuongXDCB.cs" />
+    <Compile Include="DAL\C_KH_DonViTC.cs" />
+    <Compile Include="DAL\C_KH_DotThiCong.cs" />
     <Compile Include="DAL\C_KH_HoSoKhachHang.cs" />
     <Compile Include="DAL\C_KH_XinPhepDD.cs" />
     <Compile Include="DAL\C_KichThuocPhuiDao.cs" />

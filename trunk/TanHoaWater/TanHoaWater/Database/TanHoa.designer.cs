@@ -81,12 +81,24 @@ namespace TanHoaWater.Database
     partial void InsertKH_BAOCAOPHUIDAO(KH_BAOCAOPHUIDAO instance);
     partial void UpdateKH_BAOCAOPHUIDAO(KH_BAOCAOPHUIDAO instance);
     partial void DeleteKH_BAOCAOPHUIDAO(KH_BAOCAOPHUIDAO instance);
+    partial void InsertKH_BC_XINPHEPDD(KH_BC_XINPHEPDD instance);
+    partial void UpdateKH_BC_XINPHEPDD(KH_BC_XINPHEPDD instance);
+    partial void DeleteKH_BC_XINPHEPDD(KH_BC_XINPHEPDD instance);
+    partial void InsertKH_DONVITAILAP(KH_DONVITAILAP instance);
+    partial void UpdateKH_DONVITAILAP(KH_DONVITAILAP instance);
+    partial void DeleteKH_DONVITAILAP(KH_DONVITAILAP instance);
+    partial void InsertKH_DONVITHICONG(KH_DONVITHICONG instance);
+    partial void UpdateKH_DONVITHICONG(KH_DONVITHICONG instance);
+    partial void DeleteKH_DONVITHICONG(KH_DONVITHICONG instance);
     partial void InsertKH_DOTTHICONG(KH_DOTTHICONG instance);
     partial void UpdateKH_DOTTHICONG(KH_DOTTHICONG instance);
     partial void DeleteKH_DOTTHICONG(KH_DOTTHICONG instance);
     partial void InsertKH_HOSOKHACHHANG(KH_HOSOKHACHHANG instance);
     partial void UpdateKH_HOSOKHACHHANG(KH_HOSOKHACHHANG instance);
     partial void DeleteKH_HOSOKHACHHANG(KH_HOSOKHACHHANG instance);
+    partial void InsertKH_LOAIBANGKE(KH_LOAIBANGKE instance);
+    partial void UpdateKH_LOAIBANGKE(KH_LOAIBANGKE instance);
+    partial void DeleteKH_LOAIBANGKE(KH_LOAIBANGKE instance);
     partial void InsertKH_NOICAPPHEP(KH_NOICAPPHEP instance);
     partial void UpdateKH_NOICAPPHEP(KH_NOICAPPHEP instance);
     partial void DeleteKH_NOICAPPHEP(KH_NOICAPPHEP instance);
@@ -162,134 +174,6 @@ namespace TanHoaWater.Database
 				base(connection, mappingSource)
 		{
 			OnCreated();
-		}
-		
-		public System.Data.Linq.Table<BG_CHITIETBG> BG_CHITIETBGs
-		{
-			get
-			{
-				return this.GetTable<BG_CHITIETBG>();
-			}
-		}
-		
-		public System.Data.Linq.Table<W_H> W_Hs
-		{
-			get
-			{
-				return this.GetTable<W_H>();
-			}
-		}
-		
-		public System.Data.Linq.Table<BG_CHITIETBG_VT> BG_CHITIETBG_VTs
-		{
-			get
-			{
-				return this.GetTable<BG_CHITIETBG_VT>();
-			}
-		}
-		
-		public System.Data.Linq.Table<BG_CHITIETBG_XDCB> BG_CHITIETBG_XDCBs
-		{
-			get
-			{
-				return this.GetTable<BG_CHITIETBG_XDCB>();
-			}
-		}
-		
-		public System.Data.Linq.Table<BG_SUMTAILAPMATDUONG> BG_SUMTAILAPMATDUONGs
-		{
-			get
-			{
-				return this.GetTable<BG_SUMTAILAPMATDUONG>();
-			}
-		}
-		
-		public System.Data.Linq.Table<BG_TAILAPMATDUONG> BG_TAILAPMATDUONGs
-		{
-			get
-			{
-				return this.GetTable<BG_TAILAPMATDUONG>();
-			}
-		}
-		
-		public System.Data.Linq.Table<BG_THONGTINKHACHANG> BG_THONGTINKHACHANGs
-		{
-			get
-			{
-				return this.GetTable<BG_THONGTINKHACHANG>();
-			}
-		}
-		
-		public System.Data.Linq.Table<V_BAOCAO_NHANDON> V_BAOCAO_NHANDONs
-		{
-			get
-			{
-				return this.GetTable<V_BAOCAO_NHANDON>();
-			}
-		}
-		
-		public System.Data.Linq.Table<V_BC_KSTK> V_BC_KSTKs
-		{
-			get
-			{
-				return this.GetTable<V_BC_KSTK>();
-			}
-		}
-		
-		public System.Data.Linq.Table<V_BIENNHANDON> V_BIENNHANDONs
-		{
-			get
-			{
-				return this.GetTable<V_BIENNHANDON>();
-			}
-		}
-		
-		public System.Data.Linq.Table<V_CHUYENDON> V_CHUYENDONs
-		{
-			get
-			{
-				return this.GetTable<V_CHUYENDON>();
-			}
-		}
-		
-		public System.Data.Linq.Table<V_CHUYENDON_TTK> V_CHUYENDON_TTKs
-		{
-			get
-			{
-				return this.GetTable<V_CHUYENDON_TTK>();
-			}
-		}
-		
-		public System.Data.Linq.Table<V_DANHSACH_HS_SDV> V_DANHSACH_HS_SDVs
-		{
-			get
-			{
-				return this.GetTable<V_DANHSACH_HS_SDV>();
-			}
-		}
-		
-		public System.Data.Linq.Table<V_DONKHACHHANG> V_DONKHACHHANGs
-		{
-			get
-			{
-				return this.GetTable<V_DONKHACHHANG>();
-			}
-		}
-		
-		public System.Data.Linq.Table<V_DONTAIXET> V_DONTAIXETs
-		{
-			get
-			{
-				return this.GetTable<V_DONTAIXET>();
-			}
-		}
-		
-		public System.Data.Linq.Table<V_XINPHEPDAODUONG> V_XINPHEPDAODUONGs
-		{
-			get
-			{
-				return this.GetTable<V_XINPHEPDAODUONG>();
-			}
 		}
 		
 		public System.Data.Linq.Table<BG_CONGTACBANGIA> BG_CONGTACBANGIAs
@@ -428,6 +312,30 @@ namespace TanHoaWater.Database
 			}
 		}
 		
+		public System.Data.Linq.Table<KH_BC_XINPHEPDD> KH_BC_XINPHEPDDs
+		{
+			get
+			{
+				return this.GetTable<KH_BC_XINPHEPDD>();
+			}
+		}
+		
+		public System.Data.Linq.Table<KH_DONVITAILAP> KH_DONVITAILAPs
+		{
+			get
+			{
+				return this.GetTable<KH_DONVITAILAP>();
+			}
+		}
+		
+		public System.Data.Linq.Table<KH_DONVITHICONG> KH_DONVITHICONGs
+		{
+			get
+			{
+				return this.GetTable<KH_DONVITHICONG>();
+			}
+		}
+		
 		public System.Data.Linq.Table<KH_DOTTHICONG> KH_DOTTHICONGs
 		{
 			get
@@ -441,6 +349,14 @@ namespace TanHoaWater.Database
 			get
 			{
 				return this.GetTable<KH_HOSOKHACHHANG>();
+			}
+		}
+		
+		public System.Data.Linq.Table<KH_LOAIBANGKE> KH_LOAIBANGKEs
+		{
+			get
+			{
+				return this.GetTable<KH_LOAIBANGKE>();
 			}
 		}
 		
@@ -561,6 +477,134 @@ namespace TanHoaWater.Database
 			get
 			{
 				return this.GetTable<TOTHIETKE>();
+			}
+		}
+		
+		public System.Data.Linq.Table<BG_CHITIETBG> BG_CHITIETBGs
+		{
+			get
+			{
+				return this.GetTable<BG_CHITIETBG>();
+			}
+		}
+		
+		public System.Data.Linq.Table<W_H> W_Hs
+		{
+			get
+			{
+				return this.GetTable<W_H>();
+			}
+		}
+		
+		public System.Data.Linq.Table<BG_CHITIETBG_VT> BG_CHITIETBG_VTs
+		{
+			get
+			{
+				return this.GetTable<BG_CHITIETBG_VT>();
+			}
+		}
+		
+		public System.Data.Linq.Table<BG_CHITIETBG_XDCB> BG_CHITIETBG_XDCBs
+		{
+			get
+			{
+				return this.GetTable<BG_CHITIETBG_XDCB>();
+			}
+		}
+		
+		public System.Data.Linq.Table<BG_SUMTAILAPMATDUONG> BG_SUMTAILAPMATDUONGs
+		{
+			get
+			{
+				return this.GetTable<BG_SUMTAILAPMATDUONG>();
+			}
+		}
+		
+		public System.Data.Linq.Table<BG_TAILAPMATDUONG> BG_TAILAPMATDUONGs
+		{
+			get
+			{
+				return this.GetTable<BG_TAILAPMATDUONG>();
+			}
+		}
+		
+		public System.Data.Linq.Table<BG_THONGTINKHACHANG> BG_THONGTINKHACHANGs
+		{
+			get
+			{
+				return this.GetTable<BG_THONGTINKHACHANG>();
+			}
+		}
+		
+		public System.Data.Linq.Table<V_BAOCAO_NHANDON> V_BAOCAO_NHANDONs
+		{
+			get
+			{
+				return this.GetTable<V_BAOCAO_NHANDON>();
+			}
+		}
+		
+		public System.Data.Linq.Table<V_BC_KSTK> V_BC_KSTKs
+		{
+			get
+			{
+				return this.GetTable<V_BC_KSTK>();
+			}
+		}
+		
+		public System.Data.Linq.Table<V_BIENNHANDON> V_BIENNHANDONs
+		{
+			get
+			{
+				return this.GetTable<V_BIENNHANDON>();
+			}
+		}
+		
+		public System.Data.Linq.Table<V_CHUYENDON> V_CHUYENDONs
+		{
+			get
+			{
+				return this.GetTable<V_CHUYENDON>();
+			}
+		}
+		
+		public System.Data.Linq.Table<V_CHUYENDON_TTK> V_CHUYENDON_TTKs
+		{
+			get
+			{
+				return this.GetTable<V_CHUYENDON_TTK>();
+			}
+		}
+		
+		public System.Data.Linq.Table<V_DANHSACH_HS_SDV> V_DANHSACH_HS_SDVs
+		{
+			get
+			{
+				return this.GetTable<V_DANHSACH_HS_SDV>();
+			}
+		}
+		
+		public System.Data.Linq.Table<V_DONKHACHHANG> V_DONKHACHHANGs
+		{
+			get
+			{
+				return this.GetTable<V_DONKHACHHANG>();
+			}
+		}
+		
+		public System.Data.Linq.Table<V_DONTAIXET> V_DONTAIXETs
+		{
+			get
+			{
+				return this.GetTable<V_DONTAIXET>();
+			}
+		}
+		
+		public System.Data.Linq.Table<V_XINPHEPDAODUONG> V_XINPHEPDAODUONGs
+		{
+			get
+			{
+				return this.GetTable<V_XINPHEPDAODUONG>();
 			}
 		}
 		
@@ -1050,6233 +1094,66 @@ namespace TanHoaWater.Database
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), sHS);
 			return ((int)(result.ReturnValue));
 		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.BG_CHITIETBG")]
-	public partial class BG_CHITIETBG
-	{
 		
-		private string _SHS;
-		
-		private string _MAHIEU;
-		
-		private string _MAHDG;
-		
-		private string _TENVT;
-		
-		private string _DVT;
-		
-		private string _NHOM;
-		
-		private string _LOAISN;
-		
-		private System.Nullable<double> _KHOILUONG;
-		
-		private System.Nullable<double> _DONGIAVL;
-		
-		private System.Nullable<double> _DONGIANC;
-		
-		private System.Nullable<double> _DONGIAMTC;
-		
-		private System.Nullable<double> _TT_VL;
-		
-		private System.Nullable<double> _TT_NC;
-		
-		private System.Nullable<double> _TT_MTC;
-		
-		private string _NHOMVT;
-		
-		public BG_CHITIETBG()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SHS", DbType="VarChar(50)")]
-		public string SHS
-		{
-			get
-			{
-				return this._SHS;
-			}
-			set
-			{
-				if ((this._SHS != value))
-				{
-					this._SHS = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MAHIEU", DbType="VarChar(20)")]
-		public string MAHIEU
-		{
-			get
-			{
-				return this._MAHIEU;
-			}
-			set
-			{
-				if ((this._MAHIEU != value))
-				{
-					this._MAHIEU = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MAHDG", DbType="VarChar(20)")]
-		public string MAHDG
-		{
-			get
-			{
-				return this._MAHDG;
-			}
-			set
-			{
-				if ((this._MAHDG != value))
-				{
-					this._MAHDG = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENVT", DbType="NVarChar(250)")]
-		public string TENVT
-		{
-			get
-			{
-				return this._TENVT;
-			}
-			set
-			{
-				if ((this._TENVT != value))
-				{
-					this._TENVT = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DVT", DbType="NVarChar(20)")]
-		public string DVT
-		{
-			get
-			{
-				return this._DVT;
-			}
-			set
-			{
-				if ((this._DVT != value))
-				{
-					this._DVT = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NHOM", DbType="NVarChar(20)")]
-		public string NHOM
-		{
-			get
-			{
-				return this._NHOM;
-			}
-			set
-			{
-				if ((this._NHOM != value))
-				{
-					this._NHOM = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LOAISN", DbType="VarChar(20)")]
-		public string LOAISN
-		{
-			get
-			{
-				return this._LOAISN;
-			}
-			set
-			{
-				if ((this._LOAISN != value))
-				{
-					this._LOAISN = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KHOILUONG", DbType="Float")]
-		public System.Nullable<double> KHOILUONG
-		{
-			get
-			{
-				return this._KHOILUONG;
-			}
-			set
-			{
-				if ((this._KHOILUONG != value))
-				{
-					this._KHOILUONG = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DONGIAVL", DbType="Float")]
-		public System.Nullable<double> DONGIAVL
-		{
-			get
-			{
-				return this._DONGIAVL;
-			}
-			set
-			{
-				if ((this._DONGIAVL != value))
-				{
-					this._DONGIAVL = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DONGIANC", DbType="Float")]
-		public System.Nullable<double> DONGIANC
-		{
-			get
-			{
-				return this._DONGIANC;
-			}
-			set
-			{
-				if ((this._DONGIANC != value))
-				{
-					this._DONGIANC = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DONGIAMTC", DbType="Float")]
-		public System.Nullable<double> DONGIAMTC
-		{
-			get
-			{
-				return this._DONGIAMTC;
-			}
-			set
-			{
-				if ((this._DONGIAMTC != value))
-				{
-					this._DONGIAMTC = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TT_VL", DbType="Float")]
-		public System.Nullable<double> TT_VL
-		{
-			get
-			{
-				return this._TT_VL;
-			}
-			set
-			{
-				if ((this._TT_VL != value))
-				{
-					this._TT_VL = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TT_NC", DbType="Float")]
-		public System.Nullable<double> TT_NC
-		{
-			get
-			{
-				return this._TT_NC;
-			}
-			set
-			{
-				if ((this._TT_NC != value))
-				{
-					this._TT_NC = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TT_MTC", DbType="Float")]
-		public System.Nullable<double> TT_MTC
-		{
-			get
-			{
-				return this._TT_MTC;
-			}
-			set
-			{
-				if ((this._TT_MTC != value))
-				{
-					this._TT_MTC = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NHOMVT", DbType="NVarChar(1) NOT NULL", CanBeNull=false)]
-		public string NHOMVT
-		{
-			get
-			{
-				return this._NHOMVT;
-			}
-			set
-			{
-				if ((this._NHOMVT != value))
-				{
-					this._NHOMVT = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.W_HS")]
-	public partial class W_H
-	{
-		
-		private System.Nullable<double> _NC;
-		
-		private string _MTC;
-		
-		private string _CABA;
-		
-		private string _PHIKHAC;
-		
-		private string _PHICHUNG;
-		
-		private string _TRUOCTHUE;
-		
-		private string _PHIKSTK;
-		
-		private string _HSKSTK;
-		
-		private string _PHIGIAMSAT;
-		
-		private string _CHIPHIQL;
-		
-		private string _VAT;
-		
-		private string _HSSDL;
-		
-		private string _HSTH;
-		
-		private System.Nullable<bool> _CHON;
-		
-		private string _CREATEBY;
-		
-		private System.Nullable<System.DateTime> _CREATEDATE;
-		
-		private string _MODIFYBY;
-		
-		private System.Nullable<System.DateTime> _MODIFYDATE;
-		
-		public W_H()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NC", DbType="Float")]
-		public System.Nullable<double> NC
-		{
-			get
-			{
-				return this._NC;
-			}
-			set
-			{
-				if ((this._NC != value))
-				{
-					this._NC = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MTC", DbType="VarChar(20)")]
-		public string MTC
-		{
-			get
-			{
-				return this._MTC;
-			}
-			set
-			{
-				if ((this._MTC != value))
-				{
-					this._MTC = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CABA", DbType="VarChar(21)")]
-		public string CABA
-		{
-			get
-			{
-				return this._CABA;
-			}
-			set
-			{
-				if ((this._CABA != value))
-				{
-					this._CABA = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PHIKHAC", DbType="VarChar(21)")]
-		public string PHIKHAC
-		{
-			get
-			{
-				return this._PHIKHAC;
-			}
-			set
-			{
-				if ((this._PHIKHAC != value))
-				{
-					this._PHIKHAC = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PHICHUNG", DbType="VarChar(21)")]
-		public string PHICHUNG
-		{
-			get
-			{
-				return this._PHICHUNG;
-			}
-			set
-			{
-				if ((this._PHICHUNG != value))
-				{
-					this._PHICHUNG = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TRUOCTHUE", DbType="VarChar(21)")]
-		public string TRUOCTHUE
-		{
-			get
-			{
-				return this._TRUOCTHUE;
-			}
-			set
-			{
-				if ((this._TRUOCTHUE != value))
-				{
-					this._TRUOCTHUE = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PHIKSTK", DbType="VarChar(21)")]
-		public string PHIKSTK
-		{
-			get
-			{
-				return this._PHIKSTK;
-			}
-			set
-			{
-				if ((this._PHIKSTK != value))
-				{
-					this._PHIKSTK = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HSKSTK", DbType="VarChar(20)")]
-		public string HSKSTK
-		{
-			get
-			{
-				return this._HSKSTK;
-			}
-			set
-			{
-				if ((this._HSKSTK != value))
-				{
-					this._HSKSTK = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PHIGIAMSAT", DbType="VarChar(21)")]
-		public string PHIGIAMSAT
-		{
-			get
-			{
-				return this._PHIGIAMSAT;
-			}
-			set
-			{
-				if ((this._PHIGIAMSAT != value))
-				{
-					this._PHIGIAMSAT = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CHIPHIQL", DbType="VarChar(21)")]
-		public string CHIPHIQL
-		{
-			get
-			{
-				return this._CHIPHIQL;
-			}
-			set
-			{
-				if ((this._CHIPHIQL != value))
-				{
-					this._CHIPHIQL = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VAT", DbType="VarChar(21)")]
-		public string VAT
-		{
-			get
-			{
-				return this._VAT;
-			}
-			set
-			{
-				if ((this._VAT != value))
-				{
-					this._VAT = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HSSDL", DbType="VarChar(20)")]
-		public string HSSDL
-		{
-			get
-			{
-				return this._HSSDL;
-			}
-			set
-			{
-				if ((this._HSSDL != value))
-				{
-					this._HSSDL = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HSTH", DbType="VarChar(20)")]
-		public string HSTH
-		{
-			get
-			{
-				return this._HSTH;
-			}
-			set
-			{
-				if ((this._HSTH != value))
-				{
-					this._HSTH = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CHON", DbType="Bit")]
-		public System.Nullable<bool> CHON
-		{
-			get
-			{
-				return this._CHON;
-			}
-			set
-			{
-				if ((this._CHON != value))
-				{
-					this._CHON = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CREATEBY", DbType="VarChar(50)")]
-		public string CREATEBY
-		{
-			get
-			{
-				return this._CREATEBY;
-			}
-			set
-			{
-				if ((this._CREATEBY != value))
-				{
-					this._CREATEBY = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CREATEDATE", DbType="DateTime")]
-		public System.Nullable<System.DateTime> CREATEDATE
-		{
-			get
-			{
-				return this._CREATEDATE;
-			}
-			set
-			{
-				if ((this._CREATEDATE != value))
-				{
-					this._CREATEDATE = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MODIFYBY", DbType="VarChar(20)")]
-		public string MODIFYBY
-		{
-			get
-			{
-				return this._MODIFYBY;
-			}
-			set
-			{
-				if ((this._MODIFYBY != value))
-				{
-					this._MODIFYBY = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MODIFYDATE", DbType="DateTime")]
-		public System.Nullable<System.DateTime> MODIFYDATE
-		{
-			get
-			{
-				return this._MODIFYDATE;
-			}
-			set
-			{
-				if ((this._MODIFYDATE != value))
-				{
-					this._MODIFYDATE = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.BG_CHITIETBG_VT")]
-	public partial class BG_CHITIETBG_VT
-	{
-		
-		private string _SHS;
-		
-		private string _MAHIEU;
-		
-		private string _MAHDG;
-		
-		private string _TENVT;
-		
-		private string _DVT;
-		
-		private string _NHOM;
-		
-		private string _LOAISN;
-		
-		private System.Nullable<double> _KHOILUONG;
-		
-		private System.Nullable<double> _DONGIAVL;
-		
-		private System.Nullable<double> _DONGIANC;
-		
-		private System.Nullable<double> _DONGIAMTC;
-		
-		private System.Nullable<double> _TT_VL;
-		
-		private System.Nullable<double> _TT_NC;
-		
-		private System.Nullable<double> _TT_MTC;
-		
-		private string _GROUPVT;
-		
-		public BG_CHITIETBG_VT()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SHS", DbType="VarChar(50)")]
-		public string SHS
-		{
-			get
-			{
-				return this._SHS;
-			}
-			set
-			{
-				if ((this._SHS != value))
-				{
-					this._SHS = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MAHIEU", DbType="VarChar(20)")]
-		public string MAHIEU
-		{
-			get
-			{
-				return this._MAHIEU;
-			}
-			set
-			{
-				if ((this._MAHIEU != value))
-				{
-					this._MAHIEU = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MAHDG", DbType="VarChar(20)")]
-		public string MAHDG
-		{
-			get
-			{
-				return this._MAHDG;
-			}
-			set
-			{
-				if ((this._MAHDG != value))
-				{
-					this._MAHDG = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENVT", DbType="NVarChar(250)")]
-		public string TENVT
-		{
-			get
-			{
-				return this._TENVT;
-			}
-			set
-			{
-				if ((this._TENVT != value))
-				{
-					this._TENVT = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DVT", DbType="NVarChar(20)")]
-		public string DVT
-		{
-			get
-			{
-				return this._DVT;
-			}
-			set
-			{
-				if ((this._DVT != value))
-				{
-					this._DVT = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NHOM", DbType="NVarChar(20)")]
-		public string NHOM
-		{
-			get
-			{
-				return this._NHOM;
-			}
-			set
-			{
-				if ((this._NHOM != value))
-				{
-					this._NHOM = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LOAISN", DbType="VarChar(20)")]
-		public string LOAISN
-		{
-			get
-			{
-				return this._LOAISN;
-			}
-			set
-			{
-				if ((this._LOAISN != value))
-				{
-					this._LOAISN = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KHOILUONG", DbType="Float")]
-		public System.Nullable<double> KHOILUONG
-		{
-			get
-			{
-				return this._KHOILUONG;
-			}
-			set
-			{
-				if ((this._KHOILUONG != value))
-				{
-					this._KHOILUONG = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DONGIAVL", DbType="Float")]
-		public System.Nullable<double> DONGIAVL
-		{
-			get
-			{
-				return this._DONGIAVL;
-			}
-			set
-			{
-				if ((this._DONGIAVL != value))
-				{
-					this._DONGIAVL = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DONGIANC", DbType="Float")]
-		public System.Nullable<double> DONGIANC
-		{
-			get
-			{
-				return this._DONGIANC;
-			}
-			set
-			{
-				if ((this._DONGIANC != value))
-				{
-					this._DONGIANC = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DONGIAMTC", DbType="Float")]
-		public System.Nullable<double> DONGIAMTC
-		{
-			get
-			{
-				return this._DONGIAMTC;
-			}
-			set
-			{
-				if ((this._DONGIAMTC != value))
-				{
-					this._DONGIAMTC = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TT_VL", DbType="Float")]
-		public System.Nullable<double> TT_VL
-		{
-			get
-			{
-				return this._TT_VL;
-			}
-			set
-			{
-				if ((this._TT_VL != value))
-				{
-					this._TT_VL = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TT_NC", DbType="Float")]
-		public System.Nullable<double> TT_NC
-		{
-			get
-			{
-				return this._TT_NC;
-			}
-			set
-			{
-				if ((this._TT_NC != value))
-				{
-					this._TT_NC = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TT_MTC", DbType="Float")]
-		public System.Nullable<double> TT_MTC
-		{
-			get
-			{
-				return this._TT_MTC;
-			}
-			set
-			{
-				if ((this._TT_MTC != value))
-				{
-					this._TT_MTC = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GROUPVT", DbType="VarChar(2) NOT NULL", CanBeNull=false)]
-		public string GROUPVT
-		{
-			get
-			{
-				return this._GROUPVT;
-			}
-			set
-			{
-				if ((this._GROUPVT != value))
-				{
-					this._GROUPVT = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.BG_CHITIETBG_XDCB")]
-	public partial class BG_CHITIETBG_XDCB
-	{
-		
-		private string _SHS;
-		
-		private string _MAHIEU;
-		
-		private string _MAHDG;
-		
-		private string _TENVT;
-		
-		private string _DVT;
-		
-		private string _NHOM;
-		
-		private string _LOAISN;
-		
-		private System.Nullable<double> _KHOILUONG;
-		
-		private System.Nullable<double> _DONGIAVL;
-		
-		private System.Nullable<double> _DONGIANC;
-		
-		private System.Nullable<double> _DONGIAMTC;
-		
-		private System.Nullable<double> _TT_VL;
-		
-		private System.Nullable<double> _TT_NC;
-		
-		private System.Nullable<double> _TT_MTC;
-		
-		public BG_CHITIETBG_XDCB()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SHS", DbType="VarChar(50)")]
-		public string SHS
-		{
-			get
-			{
-				return this._SHS;
-			}
-			set
-			{
-				if ((this._SHS != value))
-				{
-					this._SHS = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MAHIEU", DbType="VarChar(20)")]
-		public string MAHIEU
-		{
-			get
-			{
-				return this._MAHIEU;
-			}
-			set
-			{
-				if ((this._MAHIEU != value))
-				{
-					this._MAHIEU = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MAHDG", DbType="VarChar(20)")]
-		public string MAHDG
-		{
-			get
-			{
-				return this._MAHDG;
-			}
-			set
-			{
-				if ((this._MAHDG != value))
-				{
-					this._MAHDG = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENVT", DbType="NVarChar(250)")]
-		public string TENVT
-		{
-			get
-			{
-				return this._TENVT;
-			}
-			set
-			{
-				if ((this._TENVT != value))
-				{
-					this._TENVT = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DVT", DbType="NVarChar(20)")]
-		public string DVT
-		{
-			get
-			{
-				return this._DVT;
-			}
-			set
-			{
-				if ((this._DVT != value))
-				{
-					this._DVT = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NHOM", DbType="NVarChar(20)")]
-		public string NHOM
-		{
-			get
-			{
-				return this._NHOM;
-			}
-			set
-			{
-				if ((this._NHOM != value))
-				{
-					this._NHOM = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LOAISN", DbType="VarChar(20)")]
-		public string LOAISN
-		{
-			get
-			{
-				return this._LOAISN;
-			}
-			set
-			{
-				if ((this._LOAISN != value))
-				{
-					this._LOAISN = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KHOILUONG", DbType="Float")]
-		public System.Nullable<double> KHOILUONG
-		{
-			get
-			{
-				return this._KHOILUONG;
-			}
-			set
-			{
-				if ((this._KHOILUONG != value))
-				{
-					this._KHOILUONG = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DONGIAVL", DbType="Float")]
-		public System.Nullable<double> DONGIAVL
-		{
-			get
-			{
-				return this._DONGIAVL;
-			}
-			set
-			{
-				if ((this._DONGIAVL != value))
-				{
-					this._DONGIAVL = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DONGIANC", DbType="Float")]
-		public System.Nullable<double> DONGIANC
-		{
-			get
-			{
-				return this._DONGIANC;
-			}
-			set
-			{
-				if ((this._DONGIANC != value))
-				{
-					this._DONGIANC = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DONGIAMTC", DbType="Float")]
-		public System.Nullable<double> DONGIAMTC
-		{
-			get
-			{
-				return this._DONGIAMTC;
-			}
-			set
-			{
-				if ((this._DONGIAMTC != value))
-				{
-					this._DONGIAMTC = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TT_VL", DbType="Float")]
-		public System.Nullable<double> TT_VL
-		{
-			get
-			{
-				return this._TT_VL;
-			}
-			set
-			{
-				if ((this._TT_VL != value))
-				{
-					this._TT_VL = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TT_NC", DbType="Float")]
-		public System.Nullable<double> TT_NC
-		{
-			get
-			{
-				return this._TT_NC;
-			}
-			set
-			{
-				if ((this._TT_NC != value))
-				{
-					this._TT_NC = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TT_MTC", DbType="Float")]
-		public System.Nullable<double> TT_MTC
-		{
-			get
-			{
-				return this._TT_MTC;
-			}
-			set
-			{
-				if ((this._TT_MTC != value))
-				{
-					this._TT_MTC = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.BG_SUMTAILAPMATDUONG")]
-	public partial class BG_SUMTAILAPMATDUONG
-	{
-		
-		private string _SHS;
-		
-		private System.Nullable<double> _SAUTHUE;
-		
-		private System.Nullable<double> _TRUOCTHUE;
-		
-		private System.Nullable<double> _THUEGTGT;
-		
-		public BG_SUMTAILAPMATDUONG()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SHS", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string SHS
-		{
-			get
-			{
-				return this._SHS;
-			}
-			set
-			{
-				if ((this._SHS != value))
-				{
-					this._SHS = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SAUTHUE", DbType="Float")]
-		public System.Nullable<double> SAUTHUE
-		{
-			get
-			{
-				return this._SAUTHUE;
-			}
-			set
-			{
-				if ((this._SAUTHUE != value))
-				{
-					this._SAUTHUE = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TRUOCTHUE", DbType="Float")]
-		public System.Nullable<double> TRUOCTHUE
-		{
-			get
-			{
-				return this._TRUOCTHUE;
-			}
-			set
-			{
-				if ((this._TRUOCTHUE != value))
-				{
-					this._TRUOCTHUE = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_THUEGTGT", DbType="Float")]
-		public System.Nullable<double> THUEGTGT
-		{
-			get
-			{
-				return this._THUEGTGT;
-			}
-			set
-			{
-				if ((this._THUEGTGT != value))
-				{
-					this._THUEGTGT = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.BG_TAILAPMATDUONG")]
-	public partial class BG_TAILAPMATDUONG
-	{
-		
-		private string _SHS;
-		
-		private string _MADANHMUC;
-		
-		private string _TENKETCAU;
-		
-		private System.Nullable<double> _KHOILUONG;
-		
-		private System.Nullable<double> _DONGIA;
-		
-		private System.Nullable<double> _THANHTIEN;
-		
-		public BG_TAILAPMATDUONG()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SHS", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string SHS
-		{
-			get
-			{
-				return this._SHS;
-			}
-			set
-			{
-				if ((this._SHS != value))
-				{
-					this._SHS = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MADANHMUC", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
-		public string MADANHMUC
-		{
-			get
-			{
-				return this._MADANHMUC;
-			}
-			set
-			{
-				if ((this._MADANHMUC != value))
-				{
-					this._MADANHMUC = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENKETCAU", DbType="NVarChar(250)")]
-		public string TENKETCAU
-		{
-			get
-			{
-				return this._TENKETCAU;
-			}
-			set
-			{
-				if ((this._TENKETCAU != value))
-				{
-					this._TENKETCAU = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KHOILUONG", DbType="Float")]
-		public System.Nullable<double> KHOILUONG
-		{
-			get
-			{
-				return this._KHOILUONG;
-			}
-			set
-			{
-				if ((this._KHOILUONG != value))
-				{
-					this._KHOILUONG = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DONGIA", DbType="Float")]
-		public System.Nullable<double> DONGIA
-		{
-			get
-			{
-				return this._DONGIA;
-			}
-			set
-			{
-				if ((this._DONGIA != value))
-				{
-					this._DONGIA = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_THANHTIEN", DbType="Float")]
-		public System.Nullable<double> THANHTIEN
-		{
-			get
-			{
-				return this._THANHTIEN;
-			}
-			set
-			{
-				if ((this._THANHTIEN != value))
-				{
-					this._THANHTIEN = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.BG_THONGTINKHACHANG")]
-	public partial class BG_THONGTINKHACHANG
-	{
-		
-		private string _SHS;
-		
-		private string _HOTEN;
-		
-		private string _DIACHI;
-		
-		private string _DANHBO;
-		
-		private string _LOAIHOSO;
-		
-		public BG_THONGTINKHACHANG()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SHS", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string SHS
-		{
-			get
-			{
-				return this._SHS;
-			}
-			set
-			{
-				if ((this._SHS != value))
-				{
-					this._SHS = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HOTEN", DbType="NVarChar(50)")]
-		public string HOTEN
-		{
-			get
-			{
-				return this._HOTEN;
-			}
-			set
-			{
-				if ((this._HOTEN != value))
-				{
-					this._HOTEN = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DIACHI", DbType="NVarChar(216)")]
-		public string DIACHI
-		{
-			get
-			{
-				return this._DIACHI;
-			}
-			set
-			{
-				if ((this._DIACHI != value))
-				{
-					this._DIACHI = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DANHBO", DbType="VarChar(50)")]
-		public string DANHBO
-		{
-			get
-			{
-				return this._DANHBO;
-			}
-			set
-			{
-				if ((this._DANHBO != value))
-				{
-					this._DANHBO = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LOAIHOSO", DbType="VarChar(10)")]
-		public string LOAIHOSO
-		{
-			get
-			{
-				return this._LOAIHOSO;
-			}
-			set
-			{
-				if ((this._LOAIHOSO != value))
-				{
-					this._LOAIHOSO = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.V_BAOCAO_NHANDON")]
-	public partial class V_BAOCAO_NHANDON
-	{
-		
-		private string _TENQUAN;
-		
-		private string _TENLOAI;
-		
-		private System.Nullable<int> _SOHS;
-		
-		public V_BAOCAO_NHANDON()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENQUAN", DbType="NVarChar(50)")]
-		public string TENQUAN
-		{
-			get
-			{
-				return this._TENQUAN;
-			}
-			set
-			{
-				if ((this._TENQUAN != value))
-				{
-					this._TENQUAN = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENLOAI", DbType="NVarChar(100)")]
-		public string TENLOAI
-		{
-			get
-			{
-				return this._TENLOAI;
-			}
-			set
-			{
-				if ((this._TENLOAI != value))
-				{
-					this._TENLOAI = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SOHS", DbType="Int")]
-		public System.Nullable<int> SOHS
-		{
-			get
-			{
-				return this._SOHS;
-			}
-			set
-			{
-				if ((this._SOHS != value))
-				{
-					this._SOHS = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.V_BC_KSTK")]
-	public partial class V_BC_KSTK
-	{
-		
-		private string _HOTEN;
-		
-		private string _DIACHI;
-		
-		private string _NGAYNHANHS;
-		
-		private string _TENLOAI;
-		
-		private string _TENPHUONG;
-		
-		private string _TENQUAN;
-		
-		private string _DUONG;
-		
-		private string _SONHA;
-		
-		private int _ID;
-		
-		private string _MADOT;
-		
-		private string _SOHOSO;
-		
-		private string _SHS;
-		
-		private System.Nullable<System.DateTime> _NGAYNHAN;
-		
-		private string _SODOVIEN;
-		
-		private System.Nullable<System.DateTime> _NGAYGIAOSDV;
-		
-		private System.Nullable<bool> _TRAHS;
-		
-		private System.Nullable<System.DateTime> _NGAYTRAHS;
-		
-		private System.Nullable<System.DateTime> _NGAYCHUYENHS;
-		
-		private string _BOPHANCHUYEN;
-		
-		private System.Nullable<bool> _TRONGAITHIETKE;
-		
-		private string _NOIDUNGTRONGAI;
-		
-		private System.Nullable<System.DateTime> _NGAYTKGD;
-		
-		private System.Nullable<bool> _HOANTATTK;
-		
-		private string _CREATEBY;
-		
-		private System.Nullable<System.DateTime> _CREATEDATE;
-		
-		private string _MODIFYBY;
-		
-		private System.Nullable<System.DateTime> _MODIFYDATE;
-		
-		private string _MODIFYLOG;
-		
-		private string _NGAYGIAOSDV_W;
-		
-		private string _FULLNAME;
-		
-		private string _TINHTRANGSVD;
-		
-		public V_BC_KSTK()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HOTEN", DbType="NVarChar(50)")]
-		public string HOTEN
-		{
-			get
-			{
-				return this._HOTEN;
-			}
-			set
-			{
-				if ((this._HOTEN != value))
-				{
-					this._HOTEN = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DIACHI", DbType="NVarChar(209)")]
-		public string DIACHI
-		{
-			get
-			{
-				return this._DIACHI;
-			}
-			set
-			{
-				if ((this._DIACHI != value))
-				{
-					this._DIACHI = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAYNHANHS", DbType="VarChar(10)")]
-		public string NGAYNHANHS
-		{
-			get
-			{
-				return this._NGAYNHANHS;
-			}
-			set
-			{
-				if ((this._NGAYNHANHS != value))
-				{
-					this._NGAYNHANHS = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENLOAI", DbType="NVarChar(250) NOT NULL", CanBeNull=false)]
-		public string TENLOAI
-		{
-			get
-			{
-				return this._TENLOAI;
-			}
-			set
-			{
-				if ((this._TENLOAI != value))
-				{
-					this._TENLOAI = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENPHUONG", DbType="NVarChar(50)")]
-		public string TENPHUONG
-		{
-			get
-			{
-				return this._TENPHUONG;
-			}
-			set
-			{
-				if ((this._TENPHUONG != value))
-				{
-					this._TENPHUONG = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENQUAN", DbType="NVarChar(50)")]
-		public string TENQUAN
-		{
-			get
-			{
-				return this._TENQUAN;
-			}
-			set
-			{
-				if ((this._TENQUAN != value))
-				{
-					this._TENQUAN = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DUONG", DbType="NVarChar(50)")]
-		public string DUONG
-		{
-			get
-			{
-				return this._DUONG;
-			}
-			set
-			{
-				if ((this._DUONG != value))
-				{
-					this._DUONG = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SONHA", DbType="VarChar(50)")]
-		public string SONHA
-		{
-			get
-			{
-				return this._SONHA;
-			}
-			set
-			{
-				if ((this._SONHA != value))
-				{
-					this._SONHA = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL")]
-		public int ID
-		{
-			get
-			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this._ID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MADOT", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
-		public string MADOT
-		{
-			get
-			{
-				return this._MADOT;
-			}
-			set
-			{
-				if ((this._MADOT != value))
-				{
-					this._MADOT = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SOHOSO", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string SOHOSO
-		{
-			get
-			{
-				return this._SOHOSO;
-			}
-			set
-			{
-				if ((this._SOHOSO != value))
-				{
-					this._SOHOSO = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SHS", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string SHS
-		{
-			get
-			{
-				return this._SHS;
-			}
-			set
-			{
-				if ((this._SHS != value))
-				{
-					this._SHS = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAYNHAN", DbType="DateTime")]
-		public System.Nullable<System.DateTime> NGAYNHAN
-		{
-			get
-			{
-				return this._NGAYNHAN;
-			}
-			set
-			{
-				if ((this._NGAYNHAN != value))
-				{
-					this._NGAYNHAN = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SODOVIEN", DbType="VarChar(20)")]
-		public string SODOVIEN
-		{
-			get
-			{
-				return this._SODOVIEN;
-			}
-			set
-			{
-				if ((this._SODOVIEN != value))
-				{
-					this._SODOVIEN = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAYGIAOSDV", DbType="DateTime")]
-		public System.Nullable<System.DateTime> NGAYGIAOSDV
-		{
-			get
-			{
-				return this._NGAYGIAOSDV;
-			}
-			set
-			{
-				if ((this._NGAYGIAOSDV != value))
-				{
-					this._NGAYGIAOSDV = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TRAHS", DbType="Bit")]
-		public System.Nullable<bool> TRAHS
-		{
-			get
-			{
-				return this._TRAHS;
-			}
-			set
-			{
-				if ((this._TRAHS != value))
-				{
-					this._TRAHS = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAYTRAHS", DbType="DateTime")]
-		public System.Nullable<System.DateTime> NGAYTRAHS
-		{
-			get
-			{
-				return this._NGAYTRAHS;
-			}
-			set
-			{
-				if ((this._NGAYTRAHS != value))
-				{
-					this._NGAYTRAHS = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAYCHUYENHS", DbType="DateTime")]
-		public System.Nullable<System.DateTime> NGAYCHUYENHS
-		{
-			get
-			{
-				return this._NGAYCHUYENHS;
-			}
-			set
-			{
-				if ((this._NGAYCHUYENHS != value))
-				{
-					this._NGAYCHUYENHS = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BOPHANCHUYEN", DbType="VarChar(20)")]
-		public string BOPHANCHUYEN
-		{
-			get
-			{
-				return this._BOPHANCHUYEN;
-			}
-			set
-			{
-				if ((this._BOPHANCHUYEN != value))
-				{
-					this._BOPHANCHUYEN = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TRONGAITHIETKE", DbType="Bit")]
-		public System.Nullable<bool> TRONGAITHIETKE
-		{
-			get
-			{
-				return this._TRONGAITHIETKE;
-			}
-			set
-			{
-				if ((this._TRONGAITHIETKE != value))
-				{
-					this._TRONGAITHIETKE = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NOIDUNGTRONGAI", DbType="NVarChar(250)")]
-		public string NOIDUNGTRONGAI
-		{
-			get
-			{
-				return this._NOIDUNGTRONGAI;
-			}
-			set
-			{
-				if ((this._NOIDUNGTRONGAI != value))
-				{
-					this._NOIDUNGTRONGAI = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAYTKGD", DbType="DateTime")]
-		public System.Nullable<System.DateTime> NGAYTKGD
-		{
-			get
-			{
-				return this._NGAYTKGD;
-			}
-			set
-			{
-				if ((this._NGAYTKGD != value))
-				{
-					this._NGAYTKGD = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HOANTATTK", DbType="Bit")]
-		public System.Nullable<bool> HOANTATTK
-		{
-			get
-			{
-				return this._HOANTATTK;
-			}
-			set
-			{
-				if ((this._HOANTATTK != value))
-				{
-					this._HOANTATTK = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CREATEBY", DbType="VarChar(50)")]
-		public string CREATEBY
-		{
-			get
-			{
-				return this._CREATEBY;
-			}
-			set
-			{
-				if ((this._CREATEBY != value))
-				{
-					this._CREATEBY = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CREATEDATE", DbType="DateTime")]
-		public System.Nullable<System.DateTime> CREATEDATE
-		{
-			get
-			{
-				return this._CREATEDATE;
-			}
-			set
-			{
-				if ((this._CREATEDATE != value))
-				{
-					this._CREATEDATE = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MODIFYBY", DbType="VarChar(20)")]
-		public string MODIFYBY
-		{
-			get
-			{
-				return this._MODIFYBY;
-			}
-			set
-			{
-				if ((this._MODIFYBY != value))
-				{
-					this._MODIFYBY = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MODIFYDATE", DbType="DateTime")]
-		public System.Nullable<System.DateTime> MODIFYDATE
-		{
-			get
-			{
-				return this._MODIFYDATE;
-			}
-			set
-			{
-				if ((this._MODIFYDATE != value))
-				{
-					this._MODIFYDATE = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MODIFYLOG", DbType="NText", UpdateCheck=UpdateCheck.Never)]
-		public string MODIFYLOG
-		{
-			get
-			{
-				return this._MODIFYLOG;
-			}
-			set
-			{
-				if ((this._MODIFYLOG != value))
-				{
-					this._MODIFYLOG = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAYGIAOSDV_W", DbType="VarChar(10)")]
-		public string NGAYGIAOSDV_W
-		{
-			get
-			{
-				return this._NGAYGIAOSDV_W;
-			}
-			set
-			{
-				if ((this._NGAYGIAOSDV_W != value))
-				{
-					this._NGAYGIAOSDV_W = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FULLNAME", DbType="NVarChar(50)")]
-		public string FULLNAME
-		{
-			get
-			{
-				return this._FULLNAME;
-			}
-			set
-			{
-				if ((this._FULLNAME != value))
-				{
-					this._FULLNAME = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TINHTRANGSVD", DbType="NVarChar(15) NOT NULL", CanBeNull=false)]
-		public string TINHTRANGSVD
-		{
-			get
-			{
-				return this._TINHTRANGSVD;
-			}
-			set
-			{
-				if ((this._TINHTRANGSVD != value))
-				{
-					this._TINHTRANGSVD = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.V_BIENNHANDON")]
-	public partial class V_BIENNHANDON
-	{
-		
-		private string _SHS;
-		
-		private string _HOTEN;
-		
-		private string _TENDUONG;
-		
-		private string _TENPHUONG;
-		
-		private string _TENQUAN;
-		
-		private System.Nullable<bool> _HKTK;
-		
-		private System.Nullable<bool> _CHUQUYENNHA;
-		
-		private System.Nullable<bool> _GIAYPHEPXD;
-		
-		private string _USERNAME;
-		
-		private string _FULLNAME;
-		
-		private System.Nullable<int> _NAM;
-		
-		private System.Nullable<int> _THANG;
-		
-		private System.Nullable<int> _NGAY;
-		
-		private string _TENLOAI;
-		
-		public V_BIENNHANDON()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SHS", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string SHS
-		{
-			get
-			{
-				return this._SHS;
-			}
-			set
-			{
-				if ((this._SHS != value))
-				{
-					this._SHS = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HOTEN", DbType="NVarChar(250)")]
-		public string HOTEN
-		{
-			get
-			{
-				return this._HOTEN;
-			}
-			set
-			{
-				if ((this._HOTEN != value))
-				{
-					this._HOTEN = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENDUONG", DbType="NVarChar(101)")]
-		public string TENDUONG
-		{
-			get
-			{
-				return this._TENDUONG;
-			}
-			set
-			{
-				if ((this._TENDUONG != value))
-				{
-					this._TENDUONG = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENPHUONG", DbType="NVarChar(50)")]
-		public string TENPHUONG
-		{
-			get
-			{
-				return this._TENPHUONG;
-			}
-			set
-			{
-				if ((this._TENPHUONG != value))
-				{
-					this._TENPHUONG = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENQUAN", DbType="NVarChar(50)")]
-		public string TENQUAN
-		{
-			get
-			{
-				return this._TENQUAN;
-			}
-			set
-			{
-				if ((this._TENQUAN != value))
-				{
-					this._TENQUAN = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HKTK", DbType="Bit")]
-		public System.Nullable<bool> HKTK
-		{
-			get
-			{
-				return this._HKTK;
-			}
-			set
-			{
-				if ((this._HKTK != value))
-				{
-					this._HKTK = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CHUQUYENNHA", DbType="Bit")]
-		public System.Nullable<bool> CHUQUYENNHA
-		{
-			get
-			{
-				return this._CHUQUYENNHA;
-			}
-			set
-			{
-				if ((this._CHUQUYENNHA != value))
-				{
-					this._CHUQUYENNHA = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GIAYPHEPXD", DbType="Bit")]
-		public System.Nullable<bool> GIAYPHEPXD
-		{
-			get
-			{
-				return this._GIAYPHEPXD;
-			}
-			set
-			{
-				if ((this._GIAYPHEPXD != value))
-				{
-					this._GIAYPHEPXD = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_USERNAME", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
-		public string USERNAME
-		{
-			get
-			{
-				return this._USERNAME;
-			}
-			set
-			{
-				if ((this._USERNAME != value))
-				{
-					this._USERNAME = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FULLNAME", DbType="NVarChar(50)")]
-		public string FULLNAME
-		{
-			get
-			{
-				return this._FULLNAME;
-			}
-			set
-			{
-				if ((this._FULLNAME != value))
-				{
-					this._FULLNAME = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NAM", DbType="Int")]
-		public System.Nullable<int> NAM
-		{
-			get
-			{
-				return this._NAM;
-			}
-			set
-			{
-				if ((this._NAM != value))
-				{
-					this._NAM = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_THANG", DbType="Int")]
-		public System.Nullable<int> THANG
-		{
-			get
-			{
-				return this._THANG;
-			}
-			set
-			{
-				if ((this._THANG != value))
-				{
-					this._THANG = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAY", DbType="Int")]
-		public System.Nullable<int> NGAY
-		{
-			get
-			{
-				return this._NGAY;
-			}
-			set
-			{
-				if ((this._NGAY != value))
-				{
-					this._NGAY = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENLOAI", DbType="NVarChar(100)")]
-		public string TENLOAI
-		{
-			get
-			{
-				return this._TENLOAI;
-			}
-			set
-			{
-				if ((this._TENLOAI != value))
-				{
-					this._TENLOAI = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.V_CHUYENDON")]
-	public partial class V_CHUYENDON
-	{
-		
-		private string _TTKMD;
-		
-		private string _TTKSOHOSO;
-		
-		private int _ID;
-		
-		private string _MADOT;
-		
-		private string _SOHOSO;
-		
-		private string _SHS;
-		
-		private string _DANHBO;
-		
-		private string _HOPDONG;
-		
-		private string _HOTEN;
-		
-		private string _DIENTHOAI;
-		
-		private System.Nullable<int> _SOHOBD;
-		
-		private System.Nullable<int> _SOHO;
-		
-		private string _SONHA;
-		
-		private string _SONHA_TTK;
-		
-		private string _DUONG;
-		
-		private string _PHUONG;
-		
-		private int _QUAN;
-		
-		private System.Nullable<System.DateTime> _NGAYNHAN;
-		
-		private string _LOAIKH;
-		
-		private string _LOAIHOSO;
-		
-		private System.Nullable<int> _TAPTHE;
-		
-		private System.Nullable<bool> _TINHKHOAN;
-		
-		private string _LOAIMIENPHI;
-		
-		private string _GHICHU;
-		
-		private System.Nullable<bool> _HOSOKHAN;
-		
-		private string _GHICHUKHAN;
-		
-		private System.Nullable<bool> _CHUYEN_HOSO;
-		
-		private string _BOPHANCHUYEN;
-		
-		private string _NGUOICHUYEN_HOSO;
-		
-		private System.Nullable<System.DateTime> _NGAYCHUYEN_HOSO;
-		
-		private System.Nullable<bool> _TRONGAICHUYEN_HOSO;
-		
-		private string _NOIDUNGTNCHUYEN;
-		
-		private System.Nullable<bool> _TRONGAITHIETKE;
-		
-		private string _NOIDUNGTRONGAI;
-		
-		private string _HOSOCHA;
-		
-		private System.Nullable<bool> _XINPHEPDAODUONG;
-		
-		private System.Nullable<bool> _TRINHKYBGD;
-		
-		private string _CREATEBY;
-		
-		private System.Nullable<System.DateTime> _CREATEDATE;
-		
-		private string _MODIFYBY;
-		
-		private System.Nullable<System.DateTime> _MODIFYDATE;
-		
-		private string _MODIFYLOG;
-		
-		private int _MAQUAN;
-		
-		private string _TENQUAN;
-		
-		private string _MAPHUONG;
-		
-		private string _TENPHUONG;
-		
-		private string _TENLOAI;
-		
-		private string _USERNAME;
-		
-		private string _NGUOILAP;
-		
-		public V_CHUYENDON()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TTKMD", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
-		public string TTKMD
-		{
-			get
-			{
-				return this._TTKMD;
-			}
-			set
-			{
-				if ((this._TTKMD != value))
-				{
-					this._TTKMD = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TTKSOHOSO", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string TTKSOHOSO
-		{
-			get
-			{
-				return this._TTKSOHOSO;
-			}
-			set
-			{
-				if ((this._TTKSOHOSO != value))
-				{
-					this._TTKSOHOSO = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL")]
-		public int ID
-		{
-			get
-			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this._ID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MADOT", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
-		public string MADOT
-		{
-			get
-			{
-				return this._MADOT;
-			}
-			set
-			{
-				if ((this._MADOT != value))
-				{
-					this._MADOT = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SOHOSO", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string SOHOSO
-		{
-			get
-			{
-				return this._SOHOSO;
-			}
-			set
-			{
-				if ((this._SOHOSO != value))
-				{
-					this._SOHOSO = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SHS", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string SHS
-		{
-			get
-			{
-				return this._SHS;
-			}
-			set
-			{
-				if ((this._SHS != value))
-				{
-					this._SHS = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DANHBO", DbType="VarChar(50)")]
-		public string DANHBO
-		{
-			get
-			{
-				return this._DANHBO;
-			}
-			set
-			{
-				if ((this._DANHBO != value))
-				{
-					this._DANHBO = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HOPDONG", DbType="VarChar(50)")]
-		public string HOPDONG
-		{
-			get
-			{
-				return this._HOPDONG;
-			}
-			set
-			{
-				if ((this._HOPDONG != value))
-				{
-					this._HOPDONG = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HOTEN", DbType="NVarChar(50)")]
-		public string HOTEN
-		{
-			get
-			{
-				return this._HOTEN;
-			}
-			set
-			{
-				if ((this._HOTEN != value))
-				{
-					this._HOTEN = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DIENTHOAI", DbType="NVarChar(20)")]
-		public string DIENTHOAI
-		{
-			get
-			{
-				return this._DIENTHOAI;
-			}
-			set
-			{
-				if ((this._DIENTHOAI != value))
-				{
-					this._DIENTHOAI = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SOHOBD", DbType="Int")]
-		public System.Nullable<int> SOHOBD
-		{
-			get
-			{
-				return this._SOHOBD;
-			}
-			set
-			{
-				if ((this._SOHOBD != value))
-				{
-					this._SOHOBD = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SOHO", DbType="Int")]
-		public System.Nullable<int> SOHO
-		{
-			get
-			{
-				return this._SOHO;
-			}
-			set
-			{
-				if ((this._SOHO != value))
-				{
-					this._SOHO = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SONHA", DbType="VarChar(50)")]
-		public string SONHA
-		{
-			get
-			{
-				return this._SONHA;
-			}
-			set
-			{
-				if ((this._SONHA != value))
-				{
-					this._SONHA = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SONHA_TTK", DbType="VarChar(50)")]
-		public string SONHA_TTK
-		{
-			get
-			{
-				return this._SONHA_TTK;
-			}
-			set
-			{
-				if ((this._SONHA_TTK != value))
-				{
-					this._SONHA_TTK = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DUONG", DbType="NVarChar(50)")]
-		public string DUONG
-		{
-			get
-			{
-				return this._DUONG;
-			}
-			set
-			{
-				if ((this._DUONG != value))
-				{
-					this._DUONG = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PHUONG", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
-		public string PHUONG
-		{
-			get
-			{
-				return this._PHUONG;
-			}
-			set
-			{
-				if ((this._PHUONG != value))
-				{
-					this._PHUONG = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_QUAN", DbType="Int NOT NULL")]
-		public int QUAN
-		{
-			get
-			{
-				return this._QUAN;
-			}
-			set
-			{
-				if ((this._QUAN != value))
-				{
-					this._QUAN = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAYNHAN", DbType="DateTime")]
-		public System.Nullable<System.DateTime> NGAYNHAN
-		{
-			get
-			{
-				return this._NGAYNHAN;
-			}
-			set
-			{
-				if ((this._NGAYNHAN != value))
-				{
-					this._NGAYNHAN = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LOAIKH", DbType="VarChar(10)")]
-		public string LOAIKH
-		{
-			get
-			{
-				return this._LOAIKH;
-			}
-			set
-			{
-				if ((this._LOAIKH != value))
-				{
-					this._LOAIKH = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LOAIHOSO", DbType="VarChar(10)")]
-		public string LOAIHOSO
-		{
-			get
-			{
-				return this._LOAIHOSO;
-			}
-			set
-			{
-				if ((this._LOAIHOSO != value))
-				{
-					this._LOAIHOSO = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TAPTHE", DbType="Int")]
-		public System.Nullable<int> TAPTHE
-		{
-			get
-			{
-				return this._TAPTHE;
-			}
-			set
-			{
-				if ((this._TAPTHE != value))
-				{
-					this._TAPTHE = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TINHKHOAN", DbType="Bit")]
-		public System.Nullable<bool> TINHKHOAN
-		{
-			get
-			{
-				return this._TINHKHOAN;
-			}
-			set
-			{
-				if ((this._TINHKHOAN != value))
-				{
-					this._TINHKHOAN = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LOAIMIENPHI", DbType="NVarChar(50)")]
-		public string LOAIMIENPHI
-		{
-			get
-			{
-				return this._LOAIMIENPHI;
-			}
-			set
-			{
-				if ((this._LOAIMIENPHI != value))
-				{
-					this._LOAIMIENPHI = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GHICHU", DbType="NVarChar(250)")]
-		public string GHICHU
-		{
-			get
-			{
-				return this._GHICHU;
-			}
-			set
-			{
-				if ((this._GHICHU != value))
-				{
-					this._GHICHU = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HOSOKHAN", DbType="Bit")]
-		public System.Nullable<bool> HOSOKHAN
-		{
-			get
-			{
-				return this._HOSOKHAN;
-			}
-			set
-			{
-				if ((this._HOSOKHAN != value))
-				{
-					this._HOSOKHAN = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GHICHUKHAN", DbType="NVarChar(250)")]
-		public string GHICHUKHAN
-		{
-			get
-			{
-				return this._GHICHUKHAN;
-			}
-			set
-			{
-				if ((this._GHICHUKHAN != value))
-				{
-					this._GHICHUKHAN = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CHUYEN_HOSO", DbType="Bit")]
-		public System.Nullable<bool> CHUYEN_HOSO
-		{
-			get
-			{
-				return this._CHUYEN_HOSO;
-			}
-			set
-			{
-				if ((this._CHUYEN_HOSO != value))
-				{
-					this._CHUYEN_HOSO = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BOPHANCHUYEN", DbType="VarChar(20)")]
-		public string BOPHANCHUYEN
-		{
-			get
-			{
-				return this._BOPHANCHUYEN;
-			}
-			set
-			{
-				if ((this._BOPHANCHUYEN != value))
-				{
-					this._BOPHANCHUYEN = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGUOICHUYEN_HOSO", DbType="VarChar(20)")]
-		public string NGUOICHUYEN_HOSO
-		{
-			get
-			{
-				return this._NGUOICHUYEN_HOSO;
-			}
-			set
-			{
-				if ((this._NGUOICHUYEN_HOSO != value))
-				{
-					this._NGUOICHUYEN_HOSO = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAYCHUYEN_HOSO", DbType="DateTime")]
-		public System.Nullable<System.DateTime> NGAYCHUYEN_HOSO
-		{
-			get
-			{
-				return this._NGAYCHUYEN_HOSO;
-			}
-			set
-			{
-				if ((this._NGAYCHUYEN_HOSO != value))
-				{
-					this._NGAYCHUYEN_HOSO = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TRONGAICHUYEN_HOSO", DbType="Bit")]
-		public System.Nullable<bool> TRONGAICHUYEN_HOSO
-		{
-			get
-			{
-				return this._TRONGAICHUYEN_HOSO;
-			}
-			set
-			{
-				if ((this._TRONGAICHUYEN_HOSO != value))
-				{
-					this._TRONGAICHUYEN_HOSO = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NOIDUNGTNCHUYEN", DbType="NVarChar(50)")]
-		public string NOIDUNGTNCHUYEN
-		{
-			get
-			{
-				return this._NOIDUNGTNCHUYEN;
-			}
-			set
-			{
-				if ((this._NOIDUNGTNCHUYEN != value))
-				{
-					this._NOIDUNGTNCHUYEN = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TRONGAITHIETKE", DbType="Bit")]
-		public System.Nullable<bool> TRONGAITHIETKE
-		{
-			get
-			{
-				return this._TRONGAITHIETKE;
-			}
-			set
-			{
-				if ((this._TRONGAITHIETKE != value))
-				{
-					this._TRONGAITHIETKE = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NOIDUNGTRONGAI", DbType="NVarChar(250)")]
-		public string NOIDUNGTRONGAI
-		{
-			get
-			{
-				return this._NOIDUNGTRONGAI;
-			}
-			set
-			{
-				if ((this._NOIDUNGTRONGAI != value))
-				{
-					this._NOIDUNGTRONGAI = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HOSOCHA", DbType="VarChar(30)")]
-		public string HOSOCHA
-		{
-			get
-			{
-				return this._HOSOCHA;
-			}
-			set
-			{
-				if ((this._HOSOCHA != value))
-				{
-					this._HOSOCHA = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_XINPHEPDAODUONG", DbType="Bit")]
-		public System.Nullable<bool> XINPHEPDAODUONG
-		{
-			get
-			{
-				return this._XINPHEPDAODUONG;
-			}
-			set
-			{
-				if ((this._XINPHEPDAODUONG != value))
-				{
-					this._XINPHEPDAODUONG = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TRINHKYBGD", DbType="Bit")]
-		public System.Nullable<bool> TRINHKYBGD
-		{
-			get
-			{
-				return this._TRINHKYBGD;
-			}
-			set
-			{
-				if ((this._TRINHKYBGD != value))
-				{
-					this._TRINHKYBGD = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CREATEBY", DbType="VarChar(50)")]
-		public string CREATEBY
-		{
-			get
-			{
-				return this._CREATEBY;
-			}
-			set
-			{
-				if ((this._CREATEBY != value))
-				{
-					this._CREATEBY = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CREATEDATE", DbType="DateTime")]
-		public System.Nullable<System.DateTime> CREATEDATE
-		{
-			get
-			{
-				return this._CREATEDATE;
-			}
-			set
-			{
-				if ((this._CREATEDATE != value))
-				{
-					this._CREATEDATE = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MODIFYBY", DbType="VarChar(20)")]
-		public string MODIFYBY
-		{
-			get
-			{
-				return this._MODIFYBY;
-			}
-			set
-			{
-				if ((this._MODIFYBY != value))
-				{
-					this._MODIFYBY = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MODIFYDATE", DbType="DateTime")]
-		public System.Nullable<System.DateTime> MODIFYDATE
-		{
-			get
-			{
-				return this._MODIFYDATE;
-			}
-			set
-			{
-				if ((this._MODIFYDATE != value))
-				{
-					this._MODIFYDATE = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MODIFYLOG", DbType="NText", UpdateCheck=UpdateCheck.Never)]
-		public string MODIFYLOG
-		{
-			get
-			{
-				return this._MODIFYLOG;
-			}
-			set
-			{
-				if ((this._MODIFYLOG != value))
-				{
-					this._MODIFYLOG = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MAQUAN", DbType="Int NOT NULL")]
-		public int MAQUAN
-		{
-			get
-			{
-				return this._MAQUAN;
-			}
-			set
-			{
-				if ((this._MAQUAN != value))
-				{
-					this._MAQUAN = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENQUAN", DbType="NVarChar(50)")]
-		public string TENQUAN
-		{
-			get
-			{
-				return this._TENQUAN;
-			}
-			set
-			{
-				if ((this._TENQUAN != value))
-				{
-					this._TENQUAN = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MAPHUONG", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
-		public string MAPHUONG
-		{
-			get
-			{
-				return this._MAPHUONG;
-			}
-			set
-			{
-				if ((this._MAPHUONG != value))
-				{
-					this._MAPHUONG = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENPHUONG", DbType="NVarChar(50)")]
-		public string TENPHUONG
-		{
-			get
-			{
-				return this._TENPHUONG;
-			}
-			set
-			{
-				if ((this._TENPHUONG != value))
-				{
-					this._TENPHUONG = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENLOAI", DbType="NVarChar(250)")]
-		public string TENLOAI
-		{
-			get
-			{
-				return this._TENLOAI;
-			}
-			set
-			{
-				if ((this._TENLOAI != value))
-				{
-					this._TENLOAI = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_USERNAME", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
-		public string USERNAME
-		{
-			get
-			{
-				return this._USERNAME;
-			}
-			set
-			{
-				if ((this._USERNAME != value))
-				{
-					this._USERNAME = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGUOILAP", DbType="NVarChar(50)")]
-		public string NGUOILAP
-		{
-			get
-			{
-				return this._NGUOILAP;
-			}
-			set
-			{
-				if ((this._NGUOILAP != value))
-				{
-					this._NGUOILAP = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.V_CHUYENDON_TTK")]
-	public partial class V_CHUYENDON_TTK
-	{
-		
-		private string _TTKMD;
-		
-		private string _TTKSOHOSO;
-		
-		private int _ID;
-		
-		private string _MADOT;
-		
-		private string _SOHOSO;
-		
-		private string _SHS;
-		
-		private string _DANHBO;
-		
-		private string _HOPDONG;
-		
-		private string _HOTEN;
-		
-		private string _DIENTHOAI;
-		
-		private System.Nullable<int> _SOHOBD;
-		
-		private System.Nullable<int> _SOHO;
-		
-		private string _SONHA;
-		
-		private string _SONHA_TTK;
-		
-		private string _DUONG;
-		
-		private string _PHUONG;
-		
-		private int _QUAN;
-		
-		private System.Nullable<System.DateTime> _NGAYNHAN;
-		
-		private string _LOAIKH;
-		
-		private string _LOAIHOSO;
-		
-		private System.Nullable<int> _TAPTHE;
-		
-		private System.Nullable<bool> _TINHKHOAN;
-		
-		private string _LOAIMIENPHI;
-		
-		private string _GHICHU;
-		
-		private System.Nullable<bool> _HOSOKHAN;
-		
-		private string _GHICHUKHAN;
-		
-		private System.Nullable<bool> _CHUYEN_HOSO;
-		
-		private string _BOPHANCHUYEN;
-		
-		private string _NGUOICHUYEN_HOSO;
-		
-		private System.Nullable<System.DateTime> _NGAYCHUYEN_HOSO;
-		
-		private System.Nullable<bool> _TRONGAICHUYEN_HOSO;
-		
-		private string _NOIDUNGTNCHUYEN;
-		
-		private System.Nullable<bool> _TRONGAITHIETKE;
-		
-		private string _NOIDUNGTRONGAI;
-		
-		private string _HOSOCHA;
-		
-		private System.Nullable<bool> _XINPHEPDAODUONG;
-		
-		private System.Nullable<bool> _TRINHKYBGD;
-		
-		private string _CREATEBY;
-		
-		private System.Nullable<System.DateTime> _CREATEDATE;
-		
-		private string _MODIFYBY;
-		
-		private System.Nullable<System.DateTime> _MODIFYDATE;
-		
-		private string _MODIFYLOG;
-		
-		private int _MAQUAN;
-		
-		private string _TENQUAN;
-		
-		private string _MAPHUONG;
-		
-		private string _TENPHUONG;
-		
-		private string _TENLOAI;
-		
-		private string _USERNAME;
-		
-		private string _NGUOILAP;
-		
-		private string _TINHTRANGSVD;
-		
-		public V_CHUYENDON_TTK()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TTKMD", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
-		public string TTKMD
-		{
-			get
-			{
-				return this._TTKMD;
-			}
-			set
-			{
-				if ((this._TTKMD != value))
-				{
-					this._TTKMD = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TTKSOHOSO", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string TTKSOHOSO
-		{
-			get
-			{
-				return this._TTKSOHOSO;
-			}
-			set
-			{
-				if ((this._TTKSOHOSO != value))
-				{
-					this._TTKSOHOSO = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL")]
-		public int ID
-		{
-			get
-			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this._ID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MADOT", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
-		public string MADOT
-		{
-			get
-			{
-				return this._MADOT;
-			}
-			set
-			{
-				if ((this._MADOT != value))
-				{
-					this._MADOT = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SOHOSO", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string SOHOSO
-		{
-			get
-			{
-				return this._SOHOSO;
-			}
-			set
-			{
-				if ((this._SOHOSO != value))
-				{
-					this._SOHOSO = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SHS", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string SHS
-		{
-			get
-			{
-				return this._SHS;
-			}
-			set
-			{
-				if ((this._SHS != value))
-				{
-					this._SHS = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DANHBO", DbType="VarChar(50)")]
-		public string DANHBO
-		{
-			get
-			{
-				return this._DANHBO;
-			}
-			set
-			{
-				if ((this._DANHBO != value))
-				{
-					this._DANHBO = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HOPDONG", DbType="VarChar(50)")]
-		public string HOPDONG
-		{
-			get
-			{
-				return this._HOPDONG;
-			}
-			set
-			{
-				if ((this._HOPDONG != value))
-				{
-					this._HOPDONG = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HOTEN", DbType="NVarChar(50)")]
-		public string HOTEN
-		{
-			get
-			{
-				return this._HOTEN;
-			}
-			set
-			{
-				if ((this._HOTEN != value))
-				{
-					this._HOTEN = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DIENTHOAI", DbType="NVarChar(20)")]
-		public string DIENTHOAI
-		{
-			get
-			{
-				return this._DIENTHOAI;
-			}
-			set
-			{
-				if ((this._DIENTHOAI != value))
-				{
-					this._DIENTHOAI = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SOHOBD", DbType="Int")]
-		public System.Nullable<int> SOHOBD
-		{
-			get
-			{
-				return this._SOHOBD;
-			}
-			set
-			{
-				if ((this._SOHOBD != value))
-				{
-					this._SOHOBD = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SOHO", DbType="Int")]
-		public System.Nullable<int> SOHO
-		{
-			get
-			{
-				return this._SOHO;
-			}
-			set
-			{
-				if ((this._SOHO != value))
-				{
-					this._SOHO = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SONHA", DbType="VarChar(50)")]
-		public string SONHA
-		{
-			get
-			{
-				return this._SONHA;
-			}
-			set
-			{
-				if ((this._SONHA != value))
-				{
-					this._SONHA = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SONHA_TTK", DbType="VarChar(50)")]
-		public string SONHA_TTK
-		{
-			get
-			{
-				return this._SONHA_TTK;
-			}
-			set
-			{
-				if ((this._SONHA_TTK != value))
-				{
-					this._SONHA_TTK = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DUONG", DbType="NVarChar(50)")]
-		public string DUONG
-		{
-			get
-			{
-				return this._DUONG;
-			}
-			set
-			{
-				if ((this._DUONG != value))
-				{
-					this._DUONG = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PHUONG", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
-		public string PHUONG
-		{
-			get
-			{
-				return this._PHUONG;
-			}
-			set
-			{
-				if ((this._PHUONG != value))
-				{
-					this._PHUONG = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_QUAN", DbType="Int NOT NULL")]
-		public int QUAN
-		{
-			get
-			{
-				return this._QUAN;
-			}
-			set
-			{
-				if ((this._QUAN != value))
-				{
-					this._QUAN = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAYNHAN", DbType="DateTime")]
-		public System.Nullable<System.DateTime> NGAYNHAN
-		{
-			get
-			{
-				return this._NGAYNHAN;
-			}
-			set
-			{
-				if ((this._NGAYNHAN != value))
-				{
-					this._NGAYNHAN = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LOAIKH", DbType="VarChar(10)")]
-		public string LOAIKH
-		{
-			get
-			{
-				return this._LOAIKH;
-			}
-			set
-			{
-				if ((this._LOAIKH != value))
-				{
-					this._LOAIKH = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LOAIHOSO", DbType="VarChar(10)")]
-		public string LOAIHOSO
-		{
-			get
-			{
-				return this._LOAIHOSO;
-			}
-			set
-			{
-				if ((this._LOAIHOSO != value))
-				{
-					this._LOAIHOSO = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TAPTHE", DbType="Int")]
-		public System.Nullable<int> TAPTHE
-		{
-			get
-			{
-				return this._TAPTHE;
-			}
-			set
-			{
-				if ((this._TAPTHE != value))
-				{
-					this._TAPTHE = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TINHKHOAN", DbType="Bit")]
-		public System.Nullable<bool> TINHKHOAN
-		{
-			get
-			{
-				return this._TINHKHOAN;
-			}
-			set
-			{
-				if ((this._TINHKHOAN != value))
-				{
-					this._TINHKHOAN = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LOAIMIENPHI", DbType="NVarChar(50)")]
-		public string LOAIMIENPHI
-		{
-			get
-			{
-				return this._LOAIMIENPHI;
-			}
-			set
-			{
-				if ((this._LOAIMIENPHI != value))
-				{
-					this._LOAIMIENPHI = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GHICHU", DbType="NVarChar(250)")]
-		public string GHICHU
-		{
-			get
-			{
-				return this._GHICHU;
-			}
-			set
-			{
-				if ((this._GHICHU != value))
-				{
-					this._GHICHU = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HOSOKHAN", DbType="Bit")]
-		public System.Nullable<bool> HOSOKHAN
-		{
-			get
-			{
-				return this._HOSOKHAN;
-			}
-			set
-			{
-				if ((this._HOSOKHAN != value))
-				{
-					this._HOSOKHAN = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GHICHUKHAN", DbType="NVarChar(250)")]
-		public string GHICHUKHAN
-		{
-			get
-			{
-				return this._GHICHUKHAN;
-			}
-			set
-			{
-				if ((this._GHICHUKHAN != value))
-				{
-					this._GHICHUKHAN = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CHUYEN_HOSO", DbType="Bit")]
-		public System.Nullable<bool> CHUYEN_HOSO
-		{
-			get
-			{
-				return this._CHUYEN_HOSO;
-			}
-			set
-			{
-				if ((this._CHUYEN_HOSO != value))
-				{
-					this._CHUYEN_HOSO = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BOPHANCHUYEN", DbType="VarChar(20)")]
-		public string BOPHANCHUYEN
-		{
-			get
-			{
-				return this._BOPHANCHUYEN;
-			}
-			set
-			{
-				if ((this._BOPHANCHUYEN != value))
-				{
-					this._BOPHANCHUYEN = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGUOICHUYEN_HOSO", DbType="VarChar(20)")]
-		public string NGUOICHUYEN_HOSO
-		{
-			get
-			{
-				return this._NGUOICHUYEN_HOSO;
-			}
-			set
-			{
-				if ((this._NGUOICHUYEN_HOSO != value))
-				{
-					this._NGUOICHUYEN_HOSO = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAYCHUYEN_HOSO", DbType="DateTime")]
-		public System.Nullable<System.DateTime> NGAYCHUYEN_HOSO
-		{
-			get
-			{
-				return this._NGAYCHUYEN_HOSO;
-			}
-			set
-			{
-				if ((this._NGAYCHUYEN_HOSO != value))
-				{
-					this._NGAYCHUYEN_HOSO = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TRONGAICHUYEN_HOSO", DbType="Bit")]
-		public System.Nullable<bool> TRONGAICHUYEN_HOSO
-		{
-			get
-			{
-				return this._TRONGAICHUYEN_HOSO;
-			}
-			set
-			{
-				if ((this._TRONGAICHUYEN_HOSO != value))
-				{
-					this._TRONGAICHUYEN_HOSO = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NOIDUNGTNCHUYEN", DbType="NVarChar(50)")]
-		public string NOIDUNGTNCHUYEN
-		{
-			get
-			{
-				return this._NOIDUNGTNCHUYEN;
-			}
-			set
-			{
-				if ((this._NOIDUNGTNCHUYEN != value))
-				{
-					this._NOIDUNGTNCHUYEN = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TRONGAITHIETKE", DbType="Bit")]
-		public System.Nullable<bool> TRONGAITHIETKE
-		{
-			get
-			{
-				return this._TRONGAITHIETKE;
-			}
-			set
-			{
-				if ((this._TRONGAITHIETKE != value))
-				{
-					this._TRONGAITHIETKE = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NOIDUNGTRONGAI", DbType="NVarChar(250)")]
-		public string NOIDUNGTRONGAI
-		{
-			get
-			{
-				return this._NOIDUNGTRONGAI;
-			}
-			set
-			{
-				if ((this._NOIDUNGTRONGAI != value))
-				{
-					this._NOIDUNGTRONGAI = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HOSOCHA", DbType="VarChar(30)")]
-		public string HOSOCHA
-		{
-			get
-			{
-				return this._HOSOCHA;
-			}
-			set
-			{
-				if ((this._HOSOCHA != value))
-				{
-					this._HOSOCHA = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_XINPHEPDAODUONG", DbType="Bit")]
-		public System.Nullable<bool> XINPHEPDAODUONG
-		{
-			get
-			{
-				return this._XINPHEPDAODUONG;
-			}
-			set
-			{
-				if ((this._XINPHEPDAODUONG != value))
-				{
-					this._XINPHEPDAODUONG = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TRINHKYBGD", DbType="Bit")]
-		public System.Nullable<bool> TRINHKYBGD
-		{
-			get
-			{
-				return this._TRINHKYBGD;
-			}
-			set
-			{
-				if ((this._TRINHKYBGD != value))
-				{
-					this._TRINHKYBGD = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CREATEBY", DbType="VarChar(50)")]
-		public string CREATEBY
-		{
-			get
-			{
-				return this._CREATEBY;
-			}
-			set
-			{
-				if ((this._CREATEBY != value))
-				{
-					this._CREATEBY = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CREATEDATE", DbType="DateTime")]
-		public System.Nullable<System.DateTime> CREATEDATE
-		{
-			get
-			{
-				return this._CREATEDATE;
-			}
-			set
-			{
-				if ((this._CREATEDATE != value))
-				{
-					this._CREATEDATE = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MODIFYBY", DbType="VarChar(20)")]
-		public string MODIFYBY
-		{
-			get
-			{
-				return this._MODIFYBY;
-			}
-			set
-			{
-				if ((this._MODIFYBY != value))
-				{
-					this._MODIFYBY = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MODIFYDATE", DbType="DateTime")]
-		public System.Nullable<System.DateTime> MODIFYDATE
-		{
-			get
-			{
-				return this._MODIFYDATE;
-			}
-			set
-			{
-				if ((this._MODIFYDATE != value))
-				{
-					this._MODIFYDATE = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MODIFYLOG", DbType="NText", UpdateCheck=UpdateCheck.Never)]
-		public string MODIFYLOG
-		{
-			get
-			{
-				return this._MODIFYLOG;
-			}
-			set
-			{
-				if ((this._MODIFYLOG != value))
-				{
-					this._MODIFYLOG = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MAQUAN", DbType="Int NOT NULL")]
-		public int MAQUAN
-		{
-			get
-			{
-				return this._MAQUAN;
-			}
-			set
-			{
-				if ((this._MAQUAN != value))
-				{
-					this._MAQUAN = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENQUAN", DbType="NVarChar(50)")]
-		public string TENQUAN
-		{
-			get
-			{
-				return this._TENQUAN;
-			}
-			set
-			{
-				if ((this._TENQUAN != value))
-				{
-					this._TENQUAN = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MAPHUONG", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
-		public string MAPHUONG
-		{
-			get
-			{
-				return this._MAPHUONG;
-			}
-			set
-			{
-				if ((this._MAPHUONG != value))
-				{
-					this._MAPHUONG = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENPHUONG", DbType="NVarChar(50)")]
-		public string TENPHUONG
-		{
-			get
-			{
-				return this._TENPHUONG;
-			}
-			set
-			{
-				if ((this._TENPHUONG != value))
-				{
-					this._TENPHUONG = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENLOAI", DbType="NVarChar(250)")]
-		public string TENLOAI
-		{
-			get
-			{
-				return this._TENLOAI;
-			}
-			set
-			{
-				if ((this._TENLOAI != value))
-				{
-					this._TENLOAI = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_USERNAME", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
-		public string USERNAME
-		{
-			get
-			{
-				return this._USERNAME;
-			}
-			set
-			{
-				if ((this._USERNAME != value))
-				{
-					this._USERNAME = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGUOILAP", DbType="NVarChar(50)")]
-		public string NGUOILAP
-		{
-			get
-			{
-				return this._NGUOILAP;
-			}
-			set
-			{
-				if ((this._NGUOILAP != value))
-				{
-					this._NGUOILAP = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TINHTRANGSVD", DbType="NVarChar(8) NOT NULL", CanBeNull=false)]
-		public string TINHTRANGSVD
-		{
-			get
-			{
-				return this._TINHTRANGSVD;
-			}
-			set
-			{
-				if ((this._TINHTRANGSVD != value))
-				{
-					this._TINHTRANGSVD = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.V_DANHSACH_HS_SDV")]
-	public partial class V_DANHSACH_HS_SDV
-	{
-		
-		private string _MADOT;
-		
-		private string _SHS;
-		
-		private string _HOTEN;
-		
-		private string _DIENTHOAI;
-		
-		private string _DIACHI;
-		
-		private string _NGAYNHAN;
-		
-		private string _TENLOAI;
-		
-		private string _PHUONG;
-		
-		private int _QUAN;
-		
-		private string _DUONG;
-		
-		private string _SONHA;
-		
-		private string _SODOVIEN;
-		
-		private string _FULLNAME;
-		
-		public V_DANHSACH_HS_SDV()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MADOT", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
-		public string MADOT
-		{
-			get
-			{
-				return this._MADOT;
-			}
-			set
-			{
-				if ((this._MADOT != value))
-				{
-					this._MADOT = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SHS", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string SHS
-		{
-			get
-			{
-				return this._SHS;
-			}
-			set
-			{
-				if ((this._SHS != value))
-				{
-					this._SHS = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HOTEN", DbType="NVarChar(50)")]
-		public string HOTEN
-		{
-			get
-			{
-				return this._HOTEN;
-			}
-			set
-			{
-				if ((this._HOTEN != value))
-				{
-					this._HOTEN = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DIENTHOAI", DbType="NVarChar(20)")]
-		public string DIENTHOAI
-		{
-			get
-			{
-				return this._DIENTHOAI;
-			}
-			set
-			{
-				if ((this._DIENTHOAI != value))
-				{
-					this._DIENTHOAI = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DIACHI", DbType="NVarChar(209)")]
-		public string DIACHI
-		{
-			get
-			{
-				return this._DIACHI;
-			}
-			set
-			{
-				if ((this._DIACHI != value))
-				{
-					this._DIACHI = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAYNHAN", DbType="VarChar(10)")]
-		public string NGAYNHAN
-		{
-			get
-			{
-				return this._NGAYNHAN;
-			}
-			set
-			{
-				if ((this._NGAYNHAN != value))
-				{
-					this._NGAYNHAN = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENLOAI", DbType="NVarChar(250) NOT NULL", CanBeNull=false)]
-		public string TENLOAI
-		{
-			get
-			{
-				return this._TENLOAI;
-			}
-			set
-			{
-				if ((this._TENLOAI != value))
-				{
-					this._TENLOAI = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PHUONG", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
-		public string PHUONG
-		{
-			get
-			{
-				return this._PHUONG;
-			}
-			set
-			{
-				if ((this._PHUONG != value))
-				{
-					this._PHUONG = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_QUAN", DbType="Int NOT NULL")]
-		public int QUAN
-		{
-			get
-			{
-				return this._QUAN;
-			}
-			set
-			{
-				if ((this._QUAN != value))
-				{
-					this._QUAN = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DUONG", DbType="NVarChar(50)")]
-		public string DUONG
-		{
-			get
-			{
-				return this._DUONG;
-			}
-			set
-			{
-				if ((this._DUONG != value))
-				{
-					this._DUONG = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SONHA", DbType="VarChar(50)")]
-		public string SONHA
-		{
-			get
-			{
-				return this._SONHA;
-			}
-			set
-			{
-				if ((this._SONHA != value))
-				{
-					this._SONHA = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SODOVIEN", DbType="VarChar(20)")]
-		public string SODOVIEN
-		{
-			get
-			{
-				return this._SODOVIEN;
-			}
-			set
-			{
-				if ((this._SODOVIEN != value))
-				{
-					this._SODOVIEN = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FULLNAME", DbType="NVarChar(50)")]
-		public string FULLNAME
-		{
-			get
-			{
-				return this._FULLNAME;
-			}
-			set
-			{
-				if ((this._FULLNAME != value))
-				{
-					this._FULLNAME = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.V_DONKHACHHANG")]
-	public partial class V_DONKHACHHANG
-	{
-		
-		private int _ID;
-		
-		private string _MADOT;
-		
-		private string _SOHOSO;
-		
-		private string _SHS;
-		
-		private string _DANHBO;
-		
-		private string _HOPDONG;
-		
-		private string _HOTEN;
-		
-		private string _DIENTHOAI;
-		
-		private System.Nullable<int> _SOHOBD;
-		
-		private System.Nullable<int> _SOHO;
-		
-		private string _SONHA;
-		
-		private string _SONHA_TTK;
-		
-		private string _DUONG;
-		
-		private string _PHUONG;
-		
-		private int _QUAN;
-		
-		private System.Nullable<System.DateTime> _NGAYNHAN;
-		
-		private string _LOAIKH;
-		
-		private string _LOAIHOSO;
-		
-		private System.Nullable<int> _TAPTHE;
-		
-		private System.Nullable<bool> _TINHKHOAN;
-		
-		private string _LOAIMIENPHI;
-		
-		private string _GHICHU;
-		
-		private System.Nullable<bool> _HOSOKHAN;
-		
-		private string _GHICHUKHAN;
-		
-		private System.Nullable<bool> _CHUYEN_HOSO;
-		
-		private string _BOPHANCHUYEN;
-		
-		private string _NGUOICHUYEN_HOSO;
-		
-		private System.Nullable<System.DateTime> _NGAYCHUYEN_HOSO;
-		
-		private System.Nullable<bool> _TRONGAICHUYEN_HOSO;
-		
-		private string _NOIDUNGTNCHUYEN;
-		
-		private System.Nullable<bool> _TRONGAITHIETKE;
-		
-		private string _NOIDUNGTRONGAI;
-		
-		private string _HOSOCHA;
-		
-		private System.Nullable<bool> _XINPHEPDAODUONG;
-		
-		private System.Nullable<bool> _TRINHKYBGD;
-		
-		private string _CREATEBY;
-		
-		private System.Nullable<System.DateTime> _CREATEDATE;
-		
-		private string _MODIFYBY;
-		
-		private System.Nullable<System.DateTime> _MODIFYDATE;
-		
-		private string _MODIFYLOG;
-		
-		private int _MAQUAN;
-		
-		private string _TENQUAN;
-		
-		private string _MAPHUONG;
-		
-		private string _TENPHUONG;
-		
-		private string _TENLOAI;
-		
-		private string _USERNAME;
-		
-		private string _NGUOILAP;
-		
-		public V_DONKHACHHANG()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL")]
-		public int ID
-		{
-			get
-			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this._ID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MADOT", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
-		public string MADOT
-		{
-			get
-			{
-				return this._MADOT;
-			}
-			set
-			{
-				if ((this._MADOT != value))
-				{
-					this._MADOT = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SOHOSO", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string SOHOSO
-		{
-			get
-			{
-				return this._SOHOSO;
-			}
-			set
-			{
-				if ((this._SOHOSO != value))
-				{
-					this._SOHOSO = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SHS", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string SHS
-		{
-			get
-			{
-				return this._SHS;
-			}
-			set
-			{
-				if ((this._SHS != value))
-				{
-					this._SHS = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DANHBO", DbType="VarChar(50)")]
-		public string DANHBO
-		{
-			get
-			{
-				return this._DANHBO;
-			}
-			set
-			{
-				if ((this._DANHBO != value))
-				{
-					this._DANHBO = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HOPDONG", DbType="VarChar(50)")]
-		public string HOPDONG
-		{
-			get
-			{
-				return this._HOPDONG;
-			}
-			set
-			{
-				if ((this._HOPDONG != value))
-				{
-					this._HOPDONG = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HOTEN", DbType="NVarChar(50)")]
-		public string HOTEN
-		{
-			get
-			{
-				return this._HOTEN;
-			}
-			set
-			{
-				if ((this._HOTEN != value))
-				{
-					this._HOTEN = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DIENTHOAI", DbType="NVarChar(20)")]
-		public string DIENTHOAI
-		{
-			get
-			{
-				return this._DIENTHOAI;
-			}
-			set
-			{
-				if ((this._DIENTHOAI != value))
-				{
-					this._DIENTHOAI = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SOHOBD", DbType="Int")]
-		public System.Nullable<int> SOHOBD
-		{
-			get
-			{
-				return this._SOHOBD;
-			}
-			set
-			{
-				if ((this._SOHOBD != value))
-				{
-					this._SOHOBD = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SOHO", DbType="Int")]
-		public System.Nullable<int> SOHO
-		{
-			get
-			{
-				return this._SOHO;
-			}
-			set
-			{
-				if ((this._SOHO != value))
-				{
-					this._SOHO = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SONHA", DbType="VarChar(50)")]
-		public string SONHA
-		{
-			get
-			{
-				return this._SONHA;
-			}
-			set
-			{
-				if ((this._SONHA != value))
-				{
-					this._SONHA = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SONHA_TTK", DbType="VarChar(50)")]
-		public string SONHA_TTK
-		{
-			get
-			{
-				return this._SONHA_TTK;
-			}
-			set
-			{
-				if ((this._SONHA_TTK != value))
-				{
-					this._SONHA_TTK = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DUONG", DbType="NVarChar(50)")]
-		public string DUONG
-		{
-			get
-			{
-				return this._DUONG;
-			}
-			set
-			{
-				if ((this._DUONG != value))
-				{
-					this._DUONG = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PHUONG", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
-		public string PHUONG
-		{
-			get
-			{
-				return this._PHUONG;
-			}
-			set
-			{
-				if ((this._PHUONG != value))
-				{
-					this._PHUONG = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_QUAN", DbType="Int NOT NULL")]
-		public int QUAN
-		{
-			get
-			{
-				return this._QUAN;
-			}
-			set
-			{
-				if ((this._QUAN != value))
-				{
-					this._QUAN = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAYNHAN", DbType="DateTime")]
-		public System.Nullable<System.DateTime> NGAYNHAN
-		{
-			get
-			{
-				return this._NGAYNHAN;
-			}
-			set
-			{
-				if ((this._NGAYNHAN != value))
-				{
-					this._NGAYNHAN = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LOAIKH", DbType="VarChar(10)")]
-		public string LOAIKH
-		{
-			get
-			{
-				return this._LOAIKH;
-			}
-			set
-			{
-				if ((this._LOAIKH != value))
-				{
-					this._LOAIKH = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LOAIHOSO", DbType="VarChar(10)")]
-		public string LOAIHOSO
-		{
-			get
-			{
-				return this._LOAIHOSO;
-			}
-			set
-			{
-				if ((this._LOAIHOSO != value))
-				{
-					this._LOAIHOSO = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TAPTHE", DbType="Int")]
-		public System.Nullable<int> TAPTHE
-		{
-			get
-			{
-				return this._TAPTHE;
-			}
-			set
-			{
-				if ((this._TAPTHE != value))
-				{
-					this._TAPTHE = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TINHKHOAN", DbType="Bit")]
-		public System.Nullable<bool> TINHKHOAN
-		{
-			get
-			{
-				return this._TINHKHOAN;
-			}
-			set
-			{
-				if ((this._TINHKHOAN != value))
-				{
-					this._TINHKHOAN = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LOAIMIENPHI", DbType="NVarChar(50)")]
-		public string LOAIMIENPHI
-		{
-			get
-			{
-				return this._LOAIMIENPHI;
-			}
-			set
-			{
-				if ((this._LOAIMIENPHI != value))
-				{
-					this._LOAIMIENPHI = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GHICHU", DbType="NVarChar(250)")]
-		public string GHICHU
-		{
-			get
-			{
-				return this._GHICHU;
-			}
-			set
-			{
-				if ((this._GHICHU != value))
-				{
-					this._GHICHU = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HOSOKHAN", DbType="Bit")]
-		public System.Nullable<bool> HOSOKHAN
-		{
-			get
-			{
-				return this._HOSOKHAN;
-			}
-			set
-			{
-				if ((this._HOSOKHAN != value))
-				{
-					this._HOSOKHAN = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GHICHUKHAN", DbType="NVarChar(250)")]
-		public string GHICHUKHAN
-		{
-			get
-			{
-				return this._GHICHUKHAN;
-			}
-			set
-			{
-				if ((this._GHICHUKHAN != value))
-				{
-					this._GHICHUKHAN = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CHUYEN_HOSO", DbType="Bit")]
-		public System.Nullable<bool> CHUYEN_HOSO
-		{
-			get
-			{
-				return this._CHUYEN_HOSO;
-			}
-			set
-			{
-				if ((this._CHUYEN_HOSO != value))
-				{
-					this._CHUYEN_HOSO = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BOPHANCHUYEN", DbType="VarChar(20)")]
-		public string BOPHANCHUYEN
-		{
-			get
-			{
-				return this._BOPHANCHUYEN;
-			}
-			set
-			{
-				if ((this._BOPHANCHUYEN != value))
-				{
-					this._BOPHANCHUYEN = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGUOICHUYEN_HOSO", DbType="VarChar(20)")]
-		public string NGUOICHUYEN_HOSO
-		{
-			get
-			{
-				return this._NGUOICHUYEN_HOSO;
-			}
-			set
-			{
-				if ((this._NGUOICHUYEN_HOSO != value))
-				{
-					this._NGUOICHUYEN_HOSO = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAYCHUYEN_HOSO", DbType="DateTime")]
-		public System.Nullable<System.DateTime> NGAYCHUYEN_HOSO
-		{
-			get
-			{
-				return this._NGAYCHUYEN_HOSO;
-			}
-			set
-			{
-				if ((this._NGAYCHUYEN_HOSO != value))
-				{
-					this._NGAYCHUYEN_HOSO = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TRONGAICHUYEN_HOSO", DbType="Bit")]
-		public System.Nullable<bool> TRONGAICHUYEN_HOSO
-		{
-			get
-			{
-				return this._TRONGAICHUYEN_HOSO;
-			}
-			set
-			{
-				if ((this._TRONGAICHUYEN_HOSO != value))
-				{
-					this._TRONGAICHUYEN_HOSO = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NOIDUNGTNCHUYEN", DbType="NVarChar(50)")]
-		public string NOIDUNGTNCHUYEN
-		{
-			get
-			{
-				return this._NOIDUNGTNCHUYEN;
-			}
-			set
-			{
-				if ((this._NOIDUNGTNCHUYEN != value))
-				{
-					this._NOIDUNGTNCHUYEN = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TRONGAITHIETKE", DbType="Bit")]
-		public System.Nullable<bool> TRONGAITHIETKE
-		{
-			get
-			{
-				return this._TRONGAITHIETKE;
-			}
-			set
-			{
-				if ((this._TRONGAITHIETKE != value))
-				{
-					this._TRONGAITHIETKE = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NOIDUNGTRONGAI", DbType="NVarChar(250)")]
-		public string NOIDUNGTRONGAI
-		{
-			get
-			{
-				return this._NOIDUNGTRONGAI;
-			}
-			set
-			{
-				if ((this._NOIDUNGTRONGAI != value))
-				{
-					this._NOIDUNGTRONGAI = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HOSOCHA", DbType="VarChar(30)")]
-		public string HOSOCHA
-		{
-			get
-			{
-				return this._HOSOCHA;
-			}
-			set
-			{
-				if ((this._HOSOCHA != value))
-				{
-					this._HOSOCHA = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_XINPHEPDAODUONG", DbType="Bit")]
-		public System.Nullable<bool> XINPHEPDAODUONG
-		{
-			get
-			{
-				return this._XINPHEPDAODUONG;
-			}
-			set
-			{
-				if ((this._XINPHEPDAODUONG != value))
-				{
-					this._XINPHEPDAODUONG = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TRINHKYBGD", DbType="Bit")]
-		public System.Nullable<bool> TRINHKYBGD
-		{
-			get
-			{
-				return this._TRINHKYBGD;
-			}
-			set
-			{
-				if ((this._TRINHKYBGD != value))
-				{
-					this._TRINHKYBGD = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CREATEBY", DbType="VarChar(50)")]
-		public string CREATEBY
-		{
-			get
-			{
-				return this._CREATEBY;
-			}
-			set
-			{
-				if ((this._CREATEBY != value))
-				{
-					this._CREATEBY = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CREATEDATE", DbType="DateTime")]
-		public System.Nullable<System.DateTime> CREATEDATE
-		{
-			get
-			{
-				return this._CREATEDATE;
-			}
-			set
-			{
-				if ((this._CREATEDATE != value))
-				{
-					this._CREATEDATE = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MODIFYBY", DbType="VarChar(20)")]
-		public string MODIFYBY
-		{
-			get
-			{
-				return this._MODIFYBY;
-			}
-			set
-			{
-				if ((this._MODIFYBY != value))
-				{
-					this._MODIFYBY = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MODIFYDATE", DbType="DateTime")]
-		public System.Nullable<System.DateTime> MODIFYDATE
-		{
-			get
-			{
-				return this._MODIFYDATE;
-			}
-			set
-			{
-				if ((this._MODIFYDATE != value))
-				{
-					this._MODIFYDATE = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MODIFYLOG", DbType="NText", UpdateCheck=UpdateCheck.Never)]
-		public string MODIFYLOG
-		{
-			get
-			{
-				return this._MODIFYLOG;
-			}
-			set
-			{
-				if ((this._MODIFYLOG != value))
-				{
-					this._MODIFYLOG = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MAQUAN", DbType="Int NOT NULL")]
-		public int MAQUAN
-		{
-			get
-			{
-				return this._MAQUAN;
-			}
-			set
-			{
-				if ((this._MAQUAN != value))
-				{
-					this._MAQUAN = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENQUAN", DbType="NVarChar(50)")]
-		public string TENQUAN
-		{
-			get
-			{
-				return this._TENQUAN;
-			}
-			set
-			{
-				if ((this._TENQUAN != value))
-				{
-					this._TENQUAN = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MAPHUONG", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
-		public string MAPHUONG
-		{
-			get
-			{
-				return this._MAPHUONG;
-			}
-			set
-			{
-				if ((this._MAPHUONG != value))
-				{
-					this._MAPHUONG = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENPHUONG", DbType="NVarChar(50)")]
-		public string TENPHUONG
-		{
-			get
-			{
-				return this._TENPHUONG;
-			}
-			set
-			{
-				if ((this._TENPHUONG != value))
-				{
-					this._TENPHUONG = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENLOAI", DbType="NVarChar(250)")]
-		public string TENLOAI
-		{
-			get
-			{
-				return this._TENLOAI;
-			}
-			set
-			{
-				if ((this._TENLOAI != value))
-				{
-					this._TENLOAI = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_USERNAME", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
-		public string USERNAME
-		{
-			get
-			{
-				return this._USERNAME;
-			}
-			set
-			{
-				if ((this._USERNAME != value))
-				{
-					this._USERNAME = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGUOILAP", DbType="NVarChar(50)")]
-		public string NGUOILAP
-		{
-			get
-			{
-				return this._NGUOILAP;
-			}
-			set
-			{
-				if ((this._NGUOILAP != value))
-				{
-					this._NGUOILAP = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.V_DONTAIXET")]
-	public partial class V_DONTAIXET
-	{
-		
-		private int _ID;
-		
-		private string _MADOT;
-		
-		private string _SOHOSO;
-		
-		private string _SHS;
-		
-		private string _DANHBO;
-		
-		private string _HOPDONG;
-		
-		private string _HOTEN;
-		
-		private string _DIENTHOAI;
-		
-		private System.Nullable<int> _SOHOBD;
-		
-		private System.Nullable<int> _SOHO;
-		
-		private string _SONHA;
-		
-		private string _SONHA_TTK;
-		
-		private string _DUONG;
-		
-		private string _PHUONG;
-		
-		private int _QUAN;
-		
-		private System.Nullable<System.DateTime> _NGAYNHAN;
-		
-		private string _LOAIKH;
-		
-		private string _LOAIHOSO;
-		
-		private System.Nullable<int> _TAPTHE;
-		
-		private System.Nullable<bool> _TINHKHOAN;
-		
-		private string _LOAIMIENPHI;
-		
-		private string _GHICHU;
-		
-		private System.Nullable<bool> _HOSOKHAN;
-		
-		private string _GHICHUKHAN;
-		
-		private System.Nullable<bool> _CHUYEN_HOSO;
-		
-		private string _BOPHANCHUYEN;
-		
-		private string _NGUOICHUYEN_HOSO;
-		
-		private System.Nullable<System.DateTime> _NGAYCHUYEN_HOSO;
-		
-		private System.Nullable<bool> _TRONGAICHUYEN_HOSO;
-		
-		private string _NOIDUNGTNCHUYEN;
-		
-		private System.Nullable<bool> _TRONGAITHIETKE;
-		
-		private string _NOIDUNGTRONGAI;
-		
-		private string _HOSOCHA;
-		
-		private System.Nullable<bool> _XINPHEPDAODUONG;
-		
-		private System.Nullable<bool> _TRINHKYBGD;
-		
-		private string _CREATEBY;
-		
-		private System.Nullable<System.DateTime> _CREATEDATE;
-		
-		private string _MODIFYBY;
-		
-		private System.Nullable<System.DateTime> _MODIFYDATE;
-		
-		private string _MODIFYLOG;
-		
-		private string _DIACHI;
-		
-		private string _LOAIDON;
-		
-		private string _USERNAME;
-		
-		private string _NGUOILAP;
-		
-		public V_DONTAIXET()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL")]
-		public int ID
-		{
-			get
-			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this._ID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MADOT", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
-		public string MADOT
-		{
-			get
-			{
-				return this._MADOT;
-			}
-			set
-			{
-				if ((this._MADOT != value))
-				{
-					this._MADOT = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SOHOSO", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string SOHOSO
-		{
-			get
-			{
-				return this._SOHOSO;
-			}
-			set
-			{
-				if ((this._SOHOSO != value))
-				{
-					this._SOHOSO = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SHS", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string SHS
-		{
-			get
-			{
-				return this._SHS;
-			}
-			set
-			{
-				if ((this._SHS != value))
-				{
-					this._SHS = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DANHBO", DbType="VarChar(50)")]
-		public string DANHBO
-		{
-			get
-			{
-				return this._DANHBO;
-			}
-			set
-			{
-				if ((this._DANHBO != value))
-				{
-					this._DANHBO = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HOPDONG", DbType="VarChar(50)")]
-		public string HOPDONG
-		{
-			get
-			{
-				return this._HOPDONG;
-			}
-			set
-			{
-				if ((this._HOPDONG != value))
-				{
-					this._HOPDONG = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HOTEN", DbType="NVarChar(50)")]
-		public string HOTEN
-		{
-			get
-			{
-				return this._HOTEN;
-			}
-			set
-			{
-				if ((this._HOTEN != value))
-				{
-					this._HOTEN = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DIENTHOAI", DbType="NVarChar(20)")]
-		public string DIENTHOAI
-		{
-			get
-			{
-				return this._DIENTHOAI;
-			}
-			set
-			{
-				if ((this._DIENTHOAI != value))
-				{
-					this._DIENTHOAI = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SOHOBD", DbType="Int")]
-		public System.Nullable<int> SOHOBD
-		{
-			get
-			{
-				return this._SOHOBD;
-			}
-			set
-			{
-				if ((this._SOHOBD != value))
-				{
-					this._SOHOBD = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SOHO", DbType="Int")]
-		public System.Nullable<int> SOHO
-		{
-			get
-			{
-				return this._SOHO;
-			}
-			set
-			{
-				if ((this._SOHO != value))
-				{
-					this._SOHO = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SONHA", DbType="VarChar(50)")]
-		public string SONHA
-		{
-			get
-			{
-				return this._SONHA;
-			}
-			set
-			{
-				if ((this._SONHA != value))
-				{
-					this._SONHA = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SONHA_TTK", DbType="VarChar(50)")]
-		public string SONHA_TTK
-		{
-			get
-			{
-				return this._SONHA_TTK;
-			}
-			set
-			{
-				if ((this._SONHA_TTK != value))
-				{
-					this._SONHA_TTK = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DUONG", DbType="NVarChar(50)")]
-		public string DUONG
-		{
-			get
-			{
-				return this._DUONG;
-			}
-			set
-			{
-				if ((this._DUONG != value))
-				{
-					this._DUONG = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PHUONG", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
-		public string PHUONG
-		{
-			get
-			{
-				return this._PHUONG;
-			}
-			set
-			{
-				if ((this._PHUONG != value))
-				{
-					this._PHUONG = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_QUAN", DbType="Int NOT NULL")]
-		public int QUAN
-		{
-			get
-			{
-				return this._QUAN;
-			}
-			set
-			{
-				if ((this._QUAN != value))
-				{
-					this._QUAN = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAYNHAN", DbType="DateTime")]
-		public System.Nullable<System.DateTime> NGAYNHAN
-		{
-			get
-			{
-				return this._NGAYNHAN;
-			}
-			set
-			{
-				if ((this._NGAYNHAN != value))
-				{
-					this._NGAYNHAN = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LOAIKH", DbType="VarChar(10)")]
-		public string LOAIKH
-		{
-			get
-			{
-				return this._LOAIKH;
-			}
-			set
-			{
-				if ((this._LOAIKH != value))
-				{
-					this._LOAIKH = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LOAIHOSO", DbType="VarChar(10)")]
-		public string LOAIHOSO
-		{
-			get
-			{
-				return this._LOAIHOSO;
-			}
-			set
-			{
-				if ((this._LOAIHOSO != value))
-				{
-					this._LOAIHOSO = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TAPTHE", DbType="Int")]
-		public System.Nullable<int> TAPTHE
-		{
-			get
-			{
-				return this._TAPTHE;
-			}
-			set
-			{
-				if ((this._TAPTHE != value))
-				{
-					this._TAPTHE = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TINHKHOAN", DbType="Bit")]
-		public System.Nullable<bool> TINHKHOAN
-		{
-			get
-			{
-				return this._TINHKHOAN;
-			}
-			set
-			{
-				if ((this._TINHKHOAN != value))
-				{
-					this._TINHKHOAN = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LOAIMIENPHI", DbType="NVarChar(50)")]
-		public string LOAIMIENPHI
-		{
-			get
-			{
-				return this._LOAIMIENPHI;
-			}
-			set
-			{
-				if ((this._LOAIMIENPHI != value))
-				{
-					this._LOAIMIENPHI = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GHICHU", DbType="NVarChar(250)")]
-		public string GHICHU
-		{
-			get
-			{
-				return this._GHICHU;
-			}
-			set
-			{
-				if ((this._GHICHU != value))
-				{
-					this._GHICHU = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HOSOKHAN", DbType="Bit")]
-		public System.Nullable<bool> HOSOKHAN
-		{
-			get
-			{
-				return this._HOSOKHAN;
-			}
-			set
-			{
-				if ((this._HOSOKHAN != value))
-				{
-					this._HOSOKHAN = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GHICHUKHAN", DbType="NVarChar(250)")]
-		public string GHICHUKHAN
-		{
-			get
-			{
-				return this._GHICHUKHAN;
-			}
-			set
-			{
-				if ((this._GHICHUKHAN != value))
-				{
-					this._GHICHUKHAN = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CHUYEN_HOSO", DbType="Bit")]
-		public System.Nullable<bool> CHUYEN_HOSO
-		{
-			get
-			{
-				return this._CHUYEN_HOSO;
-			}
-			set
-			{
-				if ((this._CHUYEN_HOSO != value))
-				{
-					this._CHUYEN_HOSO = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BOPHANCHUYEN", DbType="VarChar(20)")]
-		public string BOPHANCHUYEN
-		{
-			get
-			{
-				return this._BOPHANCHUYEN;
-			}
-			set
-			{
-				if ((this._BOPHANCHUYEN != value))
-				{
-					this._BOPHANCHUYEN = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGUOICHUYEN_HOSO", DbType="VarChar(20)")]
-		public string NGUOICHUYEN_HOSO
-		{
-			get
-			{
-				return this._NGUOICHUYEN_HOSO;
-			}
-			set
-			{
-				if ((this._NGUOICHUYEN_HOSO != value))
-				{
-					this._NGUOICHUYEN_HOSO = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAYCHUYEN_HOSO", DbType="DateTime")]
-		public System.Nullable<System.DateTime> NGAYCHUYEN_HOSO
-		{
-			get
-			{
-				return this._NGAYCHUYEN_HOSO;
-			}
-			set
-			{
-				if ((this._NGAYCHUYEN_HOSO != value))
-				{
-					this._NGAYCHUYEN_HOSO = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TRONGAICHUYEN_HOSO", DbType="Bit")]
-		public System.Nullable<bool> TRONGAICHUYEN_HOSO
-		{
-			get
-			{
-				return this._TRONGAICHUYEN_HOSO;
-			}
-			set
-			{
-				if ((this._TRONGAICHUYEN_HOSO != value))
-				{
-					this._TRONGAICHUYEN_HOSO = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NOIDUNGTNCHUYEN", DbType="NVarChar(50)")]
-		public string NOIDUNGTNCHUYEN
-		{
-			get
-			{
-				return this._NOIDUNGTNCHUYEN;
-			}
-			set
-			{
-				if ((this._NOIDUNGTNCHUYEN != value))
-				{
-					this._NOIDUNGTNCHUYEN = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TRONGAITHIETKE", DbType="Bit")]
-		public System.Nullable<bool> TRONGAITHIETKE
-		{
-			get
-			{
-				return this._TRONGAITHIETKE;
-			}
-			set
-			{
-				if ((this._TRONGAITHIETKE != value))
-				{
-					this._TRONGAITHIETKE = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NOIDUNGTRONGAI", DbType="NVarChar(250)")]
-		public string NOIDUNGTRONGAI
-		{
-			get
-			{
-				return this._NOIDUNGTRONGAI;
-			}
-			set
-			{
-				if ((this._NOIDUNGTRONGAI != value))
-				{
-					this._NOIDUNGTRONGAI = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HOSOCHA", DbType="VarChar(30)")]
-		public string HOSOCHA
-		{
-			get
-			{
-				return this._HOSOCHA;
-			}
-			set
-			{
-				if ((this._HOSOCHA != value))
-				{
-					this._HOSOCHA = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_XINPHEPDAODUONG", DbType="Bit")]
-		public System.Nullable<bool> XINPHEPDAODUONG
-		{
-			get
-			{
-				return this._XINPHEPDAODUONG;
-			}
-			set
-			{
-				if ((this._XINPHEPDAODUONG != value))
-				{
-					this._XINPHEPDAODUONG = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TRINHKYBGD", DbType="Bit")]
-		public System.Nullable<bool> TRINHKYBGD
-		{
-			get
-			{
-				return this._TRINHKYBGD;
-			}
-			set
-			{
-				if ((this._TRINHKYBGD != value))
-				{
-					this._TRINHKYBGD = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CREATEBY", DbType="VarChar(50)")]
-		public string CREATEBY
-		{
-			get
-			{
-				return this._CREATEBY;
-			}
-			set
-			{
-				if ((this._CREATEBY != value))
-				{
-					this._CREATEBY = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CREATEDATE", DbType="DateTime")]
-		public System.Nullable<System.DateTime> CREATEDATE
-		{
-			get
-			{
-				return this._CREATEDATE;
-			}
-			set
-			{
-				if ((this._CREATEDATE != value))
-				{
-					this._CREATEDATE = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MODIFYBY", DbType="VarChar(20)")]
-		public string MODIFYBY
-		{
-			get
-			{
-				return this._MODIFYBY;
-			}
-			set
-			{
-				if ((this._MODIFYBY != value))
-				{
-					this._MODIFYBY = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MODIFYDATE", DbType="DateTime")]
-		public System.Nullable<System.DateTime> MODIFYDATE
-		{
-			get
-			{
-				return this._MODIFYDATE;
-			}
-			set
-			{
-				if ((this._MODIFYDATE != value))
-				{
-					this._MODIFYDATE = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MODIFYLOG", DbType="NText", UpdateCheck=UpdateCheck.Never)]
-		public string MODIFYLOG
-		{
-			get
-			{
-				return this._MODIFYLOG;
-			}
-			set
-			{
-				if ((this._MODIFYLOG != value))
-				{
-					this._MODIFYLOG = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DIACHI", DbType="NVarChar(209)")]
-		public string DIACHI
-		{
-			get
-			{
-				return this._DIACHI;
-			}
-			set
-			{
-				if ((this._DIACHI != value))
-				{
-					this._DIACHI = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LOAIDON", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string LOAIDON
-		{
-			get
-			{
-				return this._LOAIDON;
-			}
-			set
-			{
-				if ((this._LOAIDON != value))
-				{
-					this._LOAIDON = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_USERNAME", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
-		public string USERNAME
-		{
-			get
-			{
-				return this._USERNAME;
-			}
-			set
-			{
-				if ((this._USERNAME != value))
-				{
-					this._USERNAME = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGUOILAP", DbType="NVarChar(50)")]
-		public string NGUOILAP
-		{
-			get
-			{
-				return this._NGUOILAP;
-			}
-			set
-			{
-				if ((this._NGUOILAP != value))
-				{
-					this._NGUOILAP = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.V_XINPHEPDAODUONG")]
-	public partial class V_XINPHEPDAODUONG
-	{
-		
-		private string _MADOTDD;
-		
-		private string _SHS;
-		
-		private string _HOTEN;
-		
-		private string _DIACHI;
-		
-		private string _TENPHUONG;
-		
-		private string _GHICHU;
-		
-		private string _MADANHMUC;
-		
-		private string _TENKETCAU;
-		
-		private string _KICHTHUOC;
-		
-		private string _MADOTTC;
-		
-		public V_XINPHEPDAODUONG()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MADOTDD", DbType="VarChar(250)")]
-		public string MADOTDD
-		{
-			get
-			{
-				return this._MADOTDD;
-			}
-			set
-			{
-				if ((this._MADOTDD != value))
-				{
-					this._MADOTDD = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SHS", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string SHS
-		{
-			get
-			{
-				return this._SHS;
-			}
-			set
-			{
-				if ((this._SHS != value))
-				{
-					this._SHS = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HOTEN", DbType="NVarChar(50)")]
-		public string HOTEN
-		{
-			get
-			{
-				return this._HOTEN;
-			}
-			set
-			{
-				if ((this._HOTEN != value))
-				{
-					this._HOTEN = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DIACHI", DbType="NVarChar(101)")]
-		public string DIACHI
-		{
-			get
-			{
-				return this._DIACHI;
-			}
-			set
-			{
-				if ((this._DIACHI != value))
-				{
-					this._DIACHI = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENPHUONG", DbType="NVarChar(50)")]
-		public string TENPHUONG
-		{
-			get
-			{
-				return this._TENPHUONG;
-			}
-			set
-			{
-				if ((this._TENPHUONG != value))
-				{
-					this._TENPHUONG = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GHICHU", DbType="NVarChar(MAX)")]
-		public string GHICHU
-		{
-			get
-			{
-				return this._GHICHU;
-			}
-			set
-			{
-				if ((this._GHICHU != value))
-				{
-					this._GHICHU = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MADANHMUC", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
-		public string MADANHMUC
-		{
-			get
-			{
-				return this._MADANHMUC;
-			}
-			set
-			{
-				if ((this._MADANHMUC != value))
-				{
-					this._MADANHMUC = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENKETCAU", DbType="NVarChar(MAX)")]
-		public string TENKETCAU
-		{
-			get
-			{
-				return this._TENKETCAU;
-			}
-			set
-			{
-				if ((this._TENKETCAU != value))
-				{
-					this._TENKETCAU = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KICHTHUOC", DbType="NVarChar(MAX)")]
-		public string KICHTHUOC
-		{
-			get
-			{
-				return this._KICHTHUOC;
-			}
-			set
-			{
-				if ((this._KICHTHUOC != value))
-				{
-					this._KICHTHUOC = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MADOTTC", DbType="VarChar(250)")]
-		public string MADOTTC
-		{
-			get
-			{
-				return this._MADOTTC;
-			}
-			set
-			{
-				if ((this._MADOTTC != value))
-				{
-					this._MADOTTC = value;
-				}
-			}
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.DELETEDATABG")]
+		public int DELETEDATABG7([global::System.Data.Linq.Mapping.ParameterAttribute(Name="SHS", DbType="VarChar(50)")] string sHS)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), sHS);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.TONGKETPHUIDAO")]
+		public int TONGKETPHUIDAO3([global::System.Data.Linq.Mapping.ParameterAttribute(Name="SHS", DbType="VarChar(50)")] string sHS)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), sHS);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.TONGKETCHIPHI")]
+		public int TONGKETCHIPHI9(
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="SHS", DbType="VarChar(50)")] string sHS, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="PHIC3", DbType="Bit")] System.Nullable<bool> pHIC3, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="PHIGS", DbType="Bit")] System.Nullable<bool> pHIGS, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="PHIQL", DbType="Bit")] System.Nullable<bool> pHIQL, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="A", DbType="Float")] ref System.Nullable<double> a, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="B", DbType="Float")] ref System.Nullable<double> b, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="C", DbType="Float")] ref System.Nullable<double> c, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="CPCABA", DbType="Float")] ref System.Nullable<double> cPCABA, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="TOTAL", DbType="Float")] ref System.Nullable<double> tOTAL, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="VAT", DbType="Float")] ref System.Nullable<double> vAT, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="B1", DbType="Float")] ref System.Nullable<double> b1, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="C1", DbType="Float")] ref System.Nullable<double> c1, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="C2", DbType="Float")] ref System.Nullable<double> c2, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="D", DbType="Float")] ref System.Nullable<double> d, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="E", DbType="Float")] ref System.Nullable<double> e, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="F", DbType="Float")] ref System.Nullable<double> f, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="G", DbType="Float")] ref System.Nullable<double> g, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="H", DbType="Float")] ref System.Nullable<double> h, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="I", DbType="Float")] ref System.Nullable<double> i, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="J", DbType="Float")] ref System.Nullable<double> j, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="K", DbType="Float")] ref System.Nullable<double> k, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="L", DbType="Float")] ref System.Nullable<double> l)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), sHS, pHIC3, pHIGS, pHIQL, a, b, c, cPCABA, tOTAL, vAT, b1, c1, c2, d, e, f, g, h, i, j, k, l);
+			a = ((System.Nullable<double>)(result.GetParameterValue(4)));
+			b = ((System.Nullable<double>)(result.GetParameterValue(5)));
+			c = ((System.Nullable<double>)(result.GetParameterValue(6)));
+			cPCABA = ((System.Nullable<double>)(result.GetParameterValue(7)));
+			tOTAL = ((System.Nullable<double>)(result.GetParameterValue(8)));
+			vAT = ((System.Nullable<double>)(result.GetParameterValue(9)));
+			b1 = ((System.Nullable<double>)(result.GetParameterValue(10)));
+			c1 = ((System.Nullable<double>)(result.GetParameterValue(11)));
+			c2 = ((System.Nullable<double>)(result.GetParameterValue(12)));
+			d = ((System.Nullable<double>)(result.GetParameterValue(13)));
+			e = ((System.Nullable<double>)(result.GetParameterValue(14)));
+			f = ((System.Nullable<double>)(result.GetParameterValue(15)));
+			g = ((System.Nullable<double>)(result.GetParameterValue(16)));
+			h = ((System.Nullable<double>)(result.GetParameterValue(17)));
+			i = ((System.Nullable<double>)(result.GetParameterValue(18)));
+			j = ((System.Nullable<double>)(result.GetParameterValue(19)));
+			k = ((System.Nullable<double>)(result.GetParameterValue(20)));
+			l = ((System.Nullable<double>)(result.GetParameterValue(21)));
+			return ((int)(result.ReturnValue));
 		}
 	}
 	
@@ -14939,6 +8816,720 @@ namespace TanHoaWater.Database
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.KH_BC_XINPHEPDD")]
+	public partial class KH_BC_XINPHEPDD : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _STT;
+		
+		private string _CANCU_MP;
+		
+		private string _CANCUCOPHEP1;
+		
+		private string _CANCUCOPHEP2;
+		
+		private string _CANCUFOOTER1;
+		
+		private string _CANCUFOOTER2;
+		
+		private string _CANCUFOOTER3;
+		
+		private string _CHUCVU;
+		
+		private string _NGUOIDUYET;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnSTTChanging(int value);
+    partial void OnSTTChanged();
+    partial void OnCANCU_MPChanging(string value);
+    partial void OnCANCU_MPChanged();
+    partial void OnCANCUCOPHEP1Changing(string value);
+    partial void OnCANCUCOPHEP1Changed();
+    partial void OnCANCUCOPHEP2Changing(string value);
+    partial void OnCANCUCOPHEP2Changed();
+    partial void OnCANCUFOOTER1Changing(string value);
+    partial void OnCANCUFOOTER1Changed();
+    partial void OnCANCUFOOTER2Changing(string value);
+    partial void OnCANCUFOOTER2Changed();
+    partial void OnCANCUFOOTER3Changing(string value);
+    partial void OnCANCUFOOTER3Changed();
+    partial void OnCHUCVUChanging(string value);
+    partial void OnCHUCVUChanged();
+    partial void OnNGUOIDUYETChanging(string value);
+    partial void OnNGUOIDUYETChanged();
+    #endregion
+		
+		public KH_BC_XINPHEPDD()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_STT", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int STT
+		{
+			get
+			{
+				return this._STT;
+			}
+			set
+			{
+				if ((this._STT != value))
+				{
+					this.OnSTTChanging(value);
+					this.SendPropertyChanging();
+					this._STT = value;
+					this.SendPropertyChanged("STT");
+					this.OnSTTChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CANCU_MP", DbType="NVarChar(MAX)")]
+		public string CANCU_MP
+		{
+			get
+			{
+				return this._CANCU_MP;
+			}
+			set
+			{
+				if ((this._CANCU_MP != value))
+				{
+					this.OnCANCU_MPChanging(value);
+					this.SendPropertyChanging();
+					this._CANCU_MP = value;
+					this.SendPropertyChanged("CANCU_MP");
+					this.OnCANCU_MPChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CANCUCOPHEP1", DbType="NVarChar(MAX)")]
+		public string CANCUCOPHEP1
+		{
+			get
+			{
+				return this._CANCUCOPHEP1;
+			}
+			set
+			{
+				if ((this._CANCUCOPHEP1 != value))
+				{
+					this.OnCANCUCOPHEP1Changing(value);
+					this.SendPropertyChanging();
+					this._CANCUCOPHEP1 = value;
+					this.SendPropertyChanged("CANCUCOPHEP1");
+					this.OnCANCUCOPHEP1Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CANCUCOPHEP2", DbType="NVarChar(MAX)")]
+		public string CANCUCOPHEP2
+		{
+			get
+			{
+				return this._CANCUCOPHEP2;
+			}
+			set
+			{
+				if ((this._CANCUCOPHEP2 != value))
+				{
+					this.OnCANCUCOPHEP2Changing(value);
+					this.SendPropertyChanging();
+					this._CANCUCOPHEP2 = value;
+					this.SendPropertyChanged("CANCUCOPHEP2");
+					this.OnCANCUCOPHEP2Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CANCUFOOTER1", DbType="NVarChar(MAX)")]
+		public string CANCUFOOTER1
+		{
+			get
+			{
+				return this._CANCUFOOTER1;
+			}
+			set
+			{
+				if ((this._CANCUFOOTER1 != value))
+				{
+					this.OnCANCUFOOTER1Changing(value);
+					this.SendPropertyChanging();
+					this._CANCUFOOTER1 = value;
+					this.SendPropertyChanged("CANCUFOOTER1");
+					this.OnCANCUFOOTER1Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CANCUFOOTER2", DbType="NVarChar(MAX)")]
+		public string CANCUFOOTER2
+		{
+			get
+			{
+				return this._CANCUFOOTER2;
+			}
+			set
+			{
+				if ((this._CANCUFOOTER2 != value))
+				{
+					this.OnCANCUFOOTER2Changing(value);
+					this.SendPropertyChanging();
+					this._CANCUFOOTER2 = value;
+					this.SendPropertyChanged("CANCUFOOTER2");
+					this.OnCANCUFOOTER2Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CANCUFOOTER3", DbType="NVarChar(MAX)")]
+		public string CANCUFOOTER3
+		{
+			get
+			{
+				return this._CANCUFOOTER3;
+			}
+			set
+			{
+				if ((this._CANCUFOOTER3 != value))
+				{
+					this.OnCANCUFOOTER3Changing(value);
+					this.SendPropertyChanging();
+					this._CANCUFOOTER3 = value;
+					this.SendPropertyChanged("CANCUFOOTER3");
+					this.OnCANCUFOOTER3Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CHUCVU", DbType="NVarChar(MAX)")]
+		public string CHUCVU
+		{
+			get
+			{
+				return this._CHUCVU;
+			}
+			set
+			{
+				if ((this._CHUCVU != value))
+				{
+					this.OnCHUCVUChanging(value);
+					this.SendPropertyChanging();
+					this._CHUCVU = value;
+					this.SendPropertyChanged("CHUCVU");
+					this.OnCHUCVUChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGUOIDUYET", DbType="NVarChar(MAX)")]
+		public string NGUOIDUYET
+		{
+			get
+			{
+				return this._NGUOIDUYET;
+			}
+			set
+			{
+				if ((this._NGUOIDUYET != value))
+				{
+					this.OnNGUOIDUYETChanging(value);
+					this.SendPropertyChanging();
+					this._NGUOIDUYET = value;
+					this.SendPropertyChanged("NGUOIDUYET");
+					this.OnNGUOIDUYETChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.KH_DONVITAILAP")]
+	public partial class KH_DONVITAILAP : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private string _TENCONGTY;
+		
+		private string _SOHOPDONG;
+		
+		private System.Nullable<System.DateTime> _NGAYKYHD;
+		
+		private string _CREATEBY;
+		
+		private System.Nullable<System.DateTime> _CREATEDATE;
+		
+		private string _MODIFYBY;
+		
+		private System.Nullable<System.DateTime> _MODIFYDATE;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnTENCONGTYChanging(string value);
+    partial void OnTENCONGTYChanged();
+    partial void OnSOHOPDONGChanging(string value);
+    partial void OnSOHOPDONGChanged();
+    partial void OnNGAYKYHDChanging(System.Nullable<System.DateTime> value);
+    partial void OnNGAYKYHDChanged();
+    partial void OnCREATEBYChanging(string value);
+    partial void OnCREATEBYChanged();
+    partial void OnCREATEDATEChanging(System.Nullable<System.DateTime> value);
+    partial void OnCREATEDATEChanged();
+    partial void OnMODIFYBYChanging(string value);
+    partial void OnMODIFYBYChanged();
+    partial void OnMODIFYDATEChanging(System.Nullable<System.DateTime> value);
+    partial void OnMODIFYDATEChanged();
+    #endregion
+		
+		public KH_DONVITAILAP()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENCONGTY", DbType="NVarChar(MAX)")]
+		public string TENCONGTY
+		{
+			get
+			{
+				return this._TENCONGTY;
+			}
+			set
+			{
+				if ((this._TENCONGTY != value))
+				{
+					this.OnTENCONGTYChanging(value);
+					this.SendPropertyChanging();
+					this._TENCONGTY = value;
+					this.SendPropertyChanged("TENCONGTY");
+					this.OnTENCONGTYChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SOHOPDONG", DbType="NVarChar(MAX)")]
+		public string SOHOPDONG
+		{
+			get
+			{
+				return this._SOHOPDONG;
+			}
+			set
+			{
+				if ((this._SOHOPDONG != value))
+				{
+					this.OnSOHOPDONGChanging(value);
+					this.SendPropertyChanging();
+					this._SOHOPDONG = value;
+					this.SendPropertyChanged("SOHOPDONG");
+					this.OnSOHOPDONGChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAYKYHD", DbType="DateTime")]
+		public System.Nullable<System.DateTime> NGAYKYHD
+		{
+			get
+			{
+				return this._NGAYKYHD;
+			}
+			set
+			{
+				if ((this._NGAYKYHD != value))
+				{
+					this.OnNGAYKYHDChanging(value);
+					this.SendPropertyChanging();
+					this._NGAYKYHD = value;
+					this.SendPropertyChanged("NGAYKYHD");
+					this.OnNGAYKYHDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CREATEBY", DbType="VarChar(50)")]
+		public string CREATEBY
+		{
+			get
+			{
+				return this._CREATEBY;
+			}
+			set
+			{
+				if ((this._CREATEBY != value))
+				{
+					this.OnCREATEBYChanging(value);
+					this.SendPropertyChanging();
+					this._CREATEBY = value;
+					this.SendPropertyChanged("CREATEBY");
+					this.OnCREATEBYChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CREATEDATE", DbType="DateTime")]
+		public System.Nullable<System.DateTime> CREATEDATE
+		{
+			get
+			{
+				return this._CREATEDATE;
+			}
+			set
+			{
+				if ((this._CREATEDATE != value))
+				{
+					this.OnCREATEDATEChanging(value);
+					this.SendPropertyChanging();
+					this._CREATEDATE = value;
+					this.SendPropertyChanged("CREATEDATE");
+					this.OnCREATEDATEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MODIFYBY", DbType="VarChar(20)")]
+		public string MODIFYBY
+		{
+			get
+			{
+				return this._MODIFYBY;
+			}
+			set
+			{
+				if ((this._MODIFYBY != value))
+				{
+					this.OnMODIFYBYChanging(value);
+					this.SendPropertyChanging();
+					this._MODIFYBY = value;
+					this.SendPropertyChanged("MODIFYBY");
+					this.OnMODIFYBYChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MODIFYDATE", DbType="DateTime")]
+		public System.Nullable<System.DateTime> MODIFYDATE
+		{
+			get
+			{
+				return this._MODIFYDATE;
+			}
+			set
+			{
+				if ((this._MODIFYDATE != value))
+				{
+					this.OnMODIFYDATEChanging(value);
+					this.SendPropertyChanging();
+					this._MODIFYDATE = value;
+					this.SendPropertyChanged("MODIFYDATE");
+					this.OnMODIFYDATEChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.KH_DONVITHICONG")]
+	public partial class KH_DONVITHICONG : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private string _TENCONGTY;
+		
+		private string _SOHOPDONG;
+		
+		private System.Nullable<System.DateTime> _NGAYKYHD;
+		
+		private string _CREATEBY;
+		
+		private System.Nullable<System.DateTime> _CREATEDATE;
+		
+		private string _MODIFYBY;
+		
+		private System.Nullable<System.DateTime> _MODIFYDATE;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnTENCONGTYChanging(string value);
+    partial void OnTENCONGTYChanged();
+    partial void OnSOHOPDONGChanging(string value);
+    partial void OnSOHOPDONGChanged();
+    partial void OnNGAYKYHDChanging(System.Nullable<System.DateTime> value);
+    partial void OnNGAYKYHDChanged();
+    partial void OnCREATEBYChanging(string value);
+    partial void OnCREATEBYChanged();
+    partial void OnCREATEDATEChanging(System.Nullable<System.DateTime> value);
+    partial void OnCREATEDATEChanged();
+    partial void OnMODIFYBYChanging(string value);
+    partial void OnMODIFYBYChanged();
+    partial void OnMODIFYDATEChanging(System.Nullable<System.DateTime> value);
+    partial void OnMODIFYDATEChanged();
+    #endregion
+		
+		public KH_DONVITHICONG()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENCONGTY", DbType="NVarChar(MAX)")]
+		public string TENCONGTY
+		{
+			get
+			{
+				return this._TENCONGTY;
+			}
+			set
+			{
+				if ((this._TENCONGTY != value))
+				{
+					this.OnTENCONGTYChanging(value);
+					this.SendPropertyChanging();
+					this._TENCONGTY = value;
+					this.SendPropertyChanged("TENCONGTY");
+					this.OnTENCONGTYChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SOHOPDONG", DbType="NVarChar(MAX)")]
+		public string SOHOPDONG
+		{
+			get
+			{
+				return this._SOHOPDONG;
+			}
+			set
+			{
+				if ((this._SOHOPDONG != value))
+				{
+					this.OnSOHOPDONGChanging(value);
+					this.SendPropertyChanging();
+					this._SOHOPDONG = value;
+					this.SendPropertyChanged("SOHOPDONG");
+					this.OnSOHOPDONGChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAYKYHD", DbType="DateTime")]
+		public System.Nullable<System.DateTime> NGAYKYHD
+		{
+			get
+			{
+				return this._NGAYKYHD;
+			}
+			set
+			{
+				if ((this._NGAYKYHD != value))
+				{
+					this.OnNGAYKYHDChanging(value);
+					this.SendPropertyChanging();
+					this._NGAYKYHD = value;
+					this.SendPropertyChanged("NGAYKYHD");
+					this.OnNGAYKYHDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CREATEBY", DbType="VarChar(50)")]
+		public string CREATEBY
+		{
+			get
+			{
+				return this._CREATEBY;
+			}
+			set
+			{
+				if ((this._CREATEBY != value))
+				{
+					this.OnCREATEBYChanging(value);
+					this.SendPropertyChanging();
+					this._CREATEBY = value;
+					this.SendPropertyChanged("CREATEBY");
+					this.OnCREATEBYChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CREATEDATE", DbType="DateTime")]
+		public System.Nullable<System.DateTime> CREATEDATE
+		{
+			get
+			{
+				return this._CREATEDATE;
+			}
+			set
+			{
+				if ((this._CREATEDATE != value))
+				{
+					this.OnCREATEDATEChanging(value);
+					this.SendPropertyChanging();
+					this._CREATEDATE = value;
+					this.SendPropertyChanged("CREATEDATE");
+					this.OnCREATEDATEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MODIFYBY", DbType="VarChar(20)")]
+		public string MODIFYBY
+		{
+			get
+			{
+				return this._MODIFYBY;
+			}
+			set
+			{
+				if ((this._MODIFYBY != value))
+				{
+					this.OnMODIFYBYChanging(value);
+					this.SendPropertyChanging();
+					this._MODIFYBY = value;
+					this.SendPropertyChanged("MODIFYBY");
+					this.OnMODIFYBYChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MODIFYDATE", DbType="DateTime")]
+		public System.Nullable<System.DateTime> MODIFYDATE
+		{
+			get
+			{
+				return this._MODIFYDATE;
+			}
+			set
+			{
+				if ((this._MODIFYDATE != value))
+				{
+					this.OnMODIFYDATEChanging(value);
+					this.SendPropertyChanging();
+					this._MODIFYDATE = value;
+					this.SendPropertyChanged("MODIFYDATE");
+					this.OnMODIFYDATEChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.KH_DOTTHICONG")]
 	public partial class KH_DOTTHICONG : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -14946,6 +9537,48 @@ namespace TanHoaWater.Database
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private string _MADOTTC;
+		
+		private System.Nullable<System.DateTime> _NGAYLAP;
+		
+		private System.Nullable<int> _SOLUONGTLK;
+		
+		private string _DONVITHICONG;
+		
+		private string _DONVITAILAP;
+		
+		private System.Nullable<System.DateTime> _NGAYCHUYENDVTC;
+		
+		private System.Nullable<System.DateTime> _CHUYENBUHANMUC;
+		
+		private string _BANGKE;
+		
+		private string _LOAIBANGKE;
+		
+		private System.Nullable<System.DateTime> _NGAYCHUYENHC;
+		
+		private System.Nullable<bool> _CHUYENHOANCONG;
+		
+		private System.Nullable<System.DateTime> _NGAYHC;
+		
+		private string _GHICHUHC;
+		
+		private System.Nullable<int> _SOLUONG_HCTLK;
+		
+		private System.Nullable<int> _CONLAI_TLK;
+		
+		private System.Nullable<bool> _QUYETTOAN;
+		
+		private System.Nullable<System.DateTime> _NGAYCHUYENKT;
+		
+		private System.Nullable<System.DateTime> _NGAYTHANHTOAN;
+		
+		private string _CREATEBY;
+		
+		private System.Nullable<System.DateTime> _CREATEDATE;
+		
+		private string _MODIFYBY;
+		
+		private System.Nullable<System.DateTime> _MODIFYDATE;
 		
 		private EntitySet<KH_HOSOKHACHHANG> _KH_HOSOKHACHHANGs;
 		
@@ -14955,6 +9588,48 @@ namespace TanHoaWater.Database
     partial void OnCreated();
     partial void OnMADOTTCChanging(string value);
     partial void OnMADOTTCChanged();
+    partial void OnNGAYLAPChanging(System.Nullable<System.DateTime> value);
+    partial void OnNGAYLAPChanged();
+    partial void OnSOLUONGTLKChanging(System.Nullable<int> value);
+    partial void OnSOLUONGTLKChanged();
+    partial void OnDONVITHICONGChanging(string value);
+    partial void OnDONVITHICONGChanged();
+    partial void OnDONVITAILAPChanging(string value);
+    partial void OnDONVITAILAPChanged();
+    partial void OnNGAYCHUYENDVTCChanging(System.Nullable<System.DateTime> value);
+    partial void OnNGAYCHUYENDVTCChanged();
+    partial void OnCHUYENBUHANMUCChanging(System.Nullable<System.DateTime> value);
+    partial void OnCHUYENBUHANMUCChanged();
+    partial void OnBANGKEChanging(string value);
+    partial void OnBANGKEChanged();
+    partial void OnLOAIBANGKEChanging(string value);
+    partial void OnLOAIBANGKEChanged();
+    partial void OnNGAYCHUYENHCChanging(System.Nullable<System.DateTime> value);
+    partial void OnNGAYCHUYENHCChanged();
+    partial void OnCHUYENHOANCONGChanging(System.Nullable<bool> value);
+    partial void OnCHUYENHOANCONGChanged();
+    partial void OnNGAYHCChanging(System.Nullable<System.DateTime> value);
+    partial void OnNGAYHCChanged();
+    partial void OnGHICHUHCChanging(string value);
+    partial void OnGHICHUHCChanged();
+    partial void OnSOLUONG_HCTLKChanging(System.Nullable<int> value);
+    partial void OnSOLUONG_HCTLKChanged();
+    partial void OnCONLAI_TLKChanging(System.Nullable<int> value);
+    partial void OnCONLAI_TLKChanged();
+    partial void OnQUYETTOANChanging(System.Nullable<bool> value);
+    partial void OnQUYETTOANChanged();
+    partial void OnNGAYCHUYENKTChanging(System.Nullable<System.DateTime> value);
+    partial void OnNGAYCHUYENKTChanged();
+    partial void OnNGAYTHANHTOANChanging(System.Nullable<System.DateTime> value);
+    partial void OnNGAYTHANHTOANChanged();
+    partial void OnCREATEBYChanging(string value);
+    partial void OnCREATEBYChanged();
+    partial void OnCREATEDATEChanging(System.Nullable<System.DateTime> value);
+    partial void OnCREATEDATEChanged();
+    partial void OnMODIFYBYChanging(string value);
+    partial void OnMODIFYBYChanged();
+    partial void OnMODIFYDATEChanging(System.Nullable<System.DateTime> value);
+    partial void OnMODIFYDATEChanged();
     #endregion
 		
 		public KH_DOTTHICONG()
@@ -14979,6 +9654,426 @@ namespace TanHoaWater.Database
 					this._MADOTTC = value;
 					this.SendPropertyChanged("MADOTTC");
 					this.OnMADOTTCChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAYLAP", DbType="DateTime")]
+		public System.Nullable<System.DateTime> NGAYLAP
+		{
+			get
+			{
+				return this._NGAYLAP;
+			}
+			set
+			{
+				if ((this._NGAYLAP != value))
+				{
+					this.OnNGAYLAPChanging(value);
+					this.SendPropertyChanging();
+					this._NGAYLAP = value;
+					this.SendPropertyChanged("NGAYLAP");
+					this.OnNGAYLAPChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SOLUONGTLK", DbType="Int")]
+		public System.Nullable<int> SOLUONGTLK
+		{
+			get
+			{
+				return this._SOLUONGTLK;
+			}
+			set
+			{
+				if ((this._SOLUONGTLK != value))
+				{
+					this.OnSOLUONGTLKChanging(value);
+					this.SendPropertyChanging();
+					this._SOLUONGTLK = value;
+					this.SendPropertyChanged("SOLUONGTLK");
+					this.OnSOLUONGTLKChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DONVITHICONG", DbType="NVarChar(MAX)")]
+		public string DONVITHICONG
+		{
+			get
+			{
+				return this._DONVITHICONG;
+			}
+			set
+			{
+				if ((this._DONVITHICONG != value))
+				{
+					this.OnDONVITHICONGChanging(value);
+					this.SendPropertyChanging();
+					this._DONVITHICONG = value;
+					this.SendPropertyChanged("DONVITHICONG");
+					this.OnDONVITHICONGChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DONVITAILAP", DbType="NVarChar(MAX)")]
+		public string DONVITAILAP
+		{
+			get
+			{
+				return this._DONVITAILAP;
+			}
+			set
+			{
+				if ((this._DONVITAILAP != value))
+				{
+					this.OnDONVITAILAPChanging(value);
+					this.SendPropertyChanging();
+					this._DONVITAILAP = value;
+					this.SendPropertyChanged("DONVITAILAP");
+					this.OnDONVITAILAPChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAYCHUYENDVTC", DbType="DateTime")]
+		public System.Nullable<System.DateTime> NGAYCHUYENDVTC
+		{
+			get
+			{
+				return this._NGAYCHUYENDVTC;
+			}
+			set
+			{
+				if ((this._NGAYCHUYENDVTC != value))
+				{
+					this.OnNGAYCHUYENDVTCChanging(value);
+					this.SendPropertyChanging();
+					this._NGAYCHUYENDVTC = value;
+					this.SendPropertyChanged("NGAYCHUYENDVTC");
+					this.OnNGAYCHUYENDVTCChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CHUYENBUHANMUC", DbType="DateTime")]
+		public System.Nullable<System.DateTime> CHUYENBUHANMUC
+		{
+			get
+			{
+				return this._CHUYENBUHANMUC;
+			}
+			set
+			{
+				if ((this._CHUYENBUHANMUC != value))
+				{
+					this.OnCHUYENBUHANMUCChanging(value);
+					this.SendPropertyChanging();
+					this._CHUYENBUHANMUC = value;
+					this.SendPropertyChanged("CHUYENBUHANMUC");
+					this.OnCHUYENBUHANMUCChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BANGKE", DbType="NVarChar(MAX)")]
+		public string BANGKE
+		{
+			get
+			{
+				return this._BANGKE;
+			}
+			set
+			{
+				if ((this._BANGKE != value))
+				{
+					this.OnBANGKEChanging(value);
+					this.SendPropertyChanging();
+					this._BANGKE = value;
+					this.SendPropertyChanged("BANGKE");
+					this.OnBANGKEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LOAIBANGKE", DbType="NVarChar(MAX)")]
+		public string LOAIBANGKE
+		{
+			get
+			{
+				return this._LOAIBANGKE;
+			}
+			set
+			{
+				if ((this._LOAIBANGKE != value))
+				{
+					this.OnLOAIBANGKEChanging(value);
+					this.SendPropertyChanging();
+					this._LOAIBANGKE = value;
+					this.SendPropertyChanged("LOAIBANGKE");
+					this.OnLOAIBANGKEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAYCHUYENHC", DbType="DateTime")]
+		public System.Nullable<System.DateTime> NGAYCHUYENHC
+		{
+			get
+			{
+				return this._NGAYCHUYENHC;
+			}
+			set
+			{
+				if ((this._NGAYCHUYENHC != value))
+				{
+					this.OnNGAYCHUYENHCChanging(value);
+					this.SendPropertyChanging();
+					this._NGAYCHUYENHC = value;
+					this.SendPropertyChanged("NGAYCHUYENHC");
+					this.OnNGAYCHUYENHCChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CHUYENHOANCONG", DbType="Bit")]
+		public System.Nullable<bool> CHUYENHOANCONG
+		{
+			get
+			{
+				return this._CHUYENHOANCONG;
+			}
+			set
+			{
+				if ((this._CHUYENHOANCONG != value))
+				{
+					this.OnCHUYENHOANCONGChanging(value);
+					this.SendPropertyChanging();
+					this._CHUYENHOANCONG = value;
+					this.SendPropertyChanged("CHUYENHOANCONG");
+					this.OnCHUYENHOANCONGChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAYHC", DbType="DateTime")]
+		public System.Nullable<System.DateTime> NGAYHC
+		{
+			get
+			{
+				return this._NGAYHC;
+			}
+			set
+			{
+				if ((this._NGAYHC != value))
+				{
+					this.OnNGAYHCChanging(value);
+					this.SendPropertyChanging();
+					this._NGAYHC = value;
+					this.SendPropertyChanged("NGAYHC");
+					this.OnNGAYHCChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GHICHUHC", DbType="NVarChar(MAX)")]
+		public string GHICHUHC
+		{
+			get
+			{
+				return this._GHICHUHC;
+			}
+			set
+			{
+				if ((this._GHICHUHC != value))
+				{
+					this.OnGHICHUHCChanging(value);
+					this.SendPropertyChanging();
+					this._GHICHUHC = value;
+					this.SendPropertyChanged("GHICHUHC");
+					this.OnGHICHUHCChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SOLUONG_HCTLK", DbType="Int")]
+		public System.Nullable<int> SOLUONG_HCTLK
+		{
+			get
+			{
+				return this._SOLUONG_HCTLK;
+			}
+			set
+			{
+				if ((this._SOLUONG_HCTLK != value))
+				{
+					this.OnSOLUONG_HCTLKChanging(value);
+					this.SendPropertyChanging();
+					this._SOLUONG_HCTLK = value;
+					this.SendPropertyChanged("SOLUONG_HCTLK");
+					this.OnSOLUONG_HCTLKChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CONLAI_TLK", DbType="Int")]
+		public System.Nullable<int> CONLAI_TLK
+		{
+			get
+			{
+				return this._CONLAI_TLK;
+			}
+			set
+			{
+				if ((this._CONLAI_TLK != value))
+				{
+					this.OnCONLAI_TLKChanging(value);
+					this.SendPropertyChanging();
+					this._CONLAI_TLK = value;
+					this.SendPropertyChanged("CONLAI_TLK");
+					this.OnCONLAI_TLKChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_QUYETTOAN", DbType="Bit")]
+		public System.Nullable<bool> QUYETTOAN
+		{
+			get
+			{
+				return this._QUYETTOAN;
+			}
+			set
+			{
+				if ((this._QUYETTOAN != value))
+				{
+					this.OnQUYETTOANChanging(value);
+					this.SendPropertyChanging();
+					this._QUYETTOAN = value;
+					this.SendPropertyChanged("QUYETTOAN");
+					this.OnQUYETTOANChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAYCHUYENKT", DbType="DateTime")]
+		public System.Nullable<System.DateTime> NGAYCHUYENKT
+		{
+			get
+			{
+				return this._NGAYCHUYENKT;
+			}
+			set
+			{
+				if ((this._NGAYCHUYENKT != value))
+				{
+					this.OnNGAYCHUYENKTChanging(value);
+					this.SendPropertyChanging();
+					this._NGAYCHUYENKT = value;
+					this.SendPropertyChanged("NGAYCHUYENKT");
+					this.OnNGAYCHUYENKTChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAYTHANHTOAN", DbType="DateTime")]
+		public System.Nullable<System.DateTime> NGAYTHANHTOAN
+		{
+			get
+			{
+				return this._NGAYTHANHTOAN;
+			}
+			set
+			{
+				if ((this._NGAYTHANHTOAN != value))
+				{
+					this.OnNGAYTHANHTOANChanging(value);
+					this.SendPropertyChanging();
+					this._NGAYTHANHTOAN = value;
+					this.SendPropertyChanged("NGAYTHANHTOAN");
+					this.OnNGAYTHANHTOANChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CREATEBY", DbType="VarChar(50)")]
+		public string CREATEBY
+		{
+			get
+			{
+				return this._CREATEBY;
+			}
+			set
+			{
+				if ((this._CREATEBY != value))
+				{
+					this.OnCREATEBYChanging(value);
+					this.SendPropertyChanging();
+					this._CREATEBY = value;
+					this.SendPropertyChanged("CREATEBY");
+					this.OnCREATEBYChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CREATEDATE", DbType="DateTime")]
+		public System.Nullable<System.DateTime> CREATEDATE
+		{
+			get
+			{
+				return this._CREATEDATE;
+			}
+			set
+			{
+				if ((this._CREATEDATE != value))
+				{
+					this.OnCREATEDATEChanging(value);
+					this.SendPropertyChanging();
+					this._CREATEDATE = value;
+					this.SendPropertyChanged("CREATEDATE");
+					this.OnCREATEDATEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MODIFYBY", DbType="VarChar(20)")]
+		public string MODIFYBY
+		{
+			get
+			{
+				return this._MODIFYBY;
+			}
+			set
+			{
+				if ((this._MODIFYBY != value))
+				{
+					this.OnMODIFYBYChanging(value);
+					this.SendPropertyChanging();
+					this._MODIFYBY = value;
+					this.SendPropertyChanged("MODIFYBY");
+					this.OnMODIFYBYChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MODIFYDATE", DbType="DateTime")]
+		public System.Nullable<System.DateTime> MODIFYDATE
+		{
+			get
+			{
+				return this._MODIFYDATE;
+			}
+			set
+			{
+				if ((this._MODIFYDATE != value))
+				{
+					this.OnMODIFYDATEChanging(value);
+					this.SendPropertyChanging();
+					this._MODIFYDATE = value;
+					this.SendPropertyChanged("MODIFYDATE");
+					this.OnMODIFYDATEChanged();
 				}
 			}
 		}
@@ -15550,6 +10645,188 @@ namespace TanHoaWater.Database
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.KH_LOAIBANGKE")]
+	public partial class KH_LOAIBANGKE : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private string _TENBANGKE;
+		
+		private string _CREATEBY;
+		
+		private System.Nullable<System.DateTime> _CREATEDATE;
+		
+		private string _MODIFYBY;
+		
+		private System.Nullable<System.DateTime> _MODIFYDATE;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnTENBANGKEChanging(string value);
+    partial void OnTENBANGKEChanged();
+    partial void OnCREATEBYChanging(string value);
+    partial void OnCREATEBYChanged();
+    partial void OnCREATEDATEChanging(System.Nullable<System.DateTime> value);
+    partial void OnCREATEDATEChanged();
+    partial void OnMODIFYBYChanging(string value);
+    partial void OnMODIFYBYChanged();
+    partial void OnMODIFYDATEChanging(System.Nullable<System.DateTime> value);
+    partial void OnMODIFYDATEChanged();
+    #endregion
+		
+		public KH_LOAIBANGKE()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENBANGKE", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string TENBANGKE
+		{
+			get
+			{
+				return this._TENBANGKE;
+			}
+			set
+			{
+				if ((this._TENBANGKE != value))
+				{
+					this.OnTENBANGKEChanging(value);
+					this.SendPropertyChanging();
+					this._TENBANGKE = value;
+					this.SendPropertyChanged("TENBANGKE");
+					this.OnTENBANGKEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CREATEBY", DbType="VarChar(50)")]
+		public string CREATEBY
+		{
+			get
+			{
+				return this._CREATEBY;
+			}
+			set
+			{
+				if ((this._CREATEBY != value))
+				{
+					this.OnCREATEBYChanging(value);
+					this.SendPropertyChanging();
+					this._CREATEBY = value;
+					this.SendPropertyChanged("CREATEBY");
+					this.OnCREATEBYChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CREATEDATE", DbType="DateTime")]
+		public System.Nullable<System.DateTime> CREATEDATE
+		{
+			get
+			{
+				return this._CREATEDATE;
+			}
+			set
+			{
+				if ((this._CREATEDATE != value))
+				{
+					this.OnCREATEDATEChanging(value);
+					this.SendPropertyChanging();
+					this._CREATEDATE = value;
+					this.SendPropertyChanged("CREATEDATE");
+					this.OnCREATEDATEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MODIFYBY", DbType="VarChar(20)")]
+		public string MODIFYBY
+		{
+			get
+			{
+				return this._MODIFYBY;
+			}
+			set
+			{
+				if ((this._MODIFYBY != value))
+				{
+					this.OnMODIFYBYChanging(value);
+					this.SendPropertyChanging();
+					this._MODIFYBY = value;
+					this.SendPropertyChanged("MODIFYBY");
+					this.OnMODIFYBYChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MODIFYDATE", DbType="DateTime")]
+		public System.Nullable<System.DateTime> MODIFYDATE
+		{
+			get
+			{
+				return this._MODIFYDATE;
+			}
+			set
+			{
+				if ((this._MODIFYDATE != value))
+				{
+					this.OnMODIFYDATEChanging(value);
+					this.SendPropertyChanging();
+					this._MODIFYDATE = value;
+					this.SendPropertyChanged("MODIFYDATE");
+					this.OnMODIFYDATEChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.KH_NOICAPPHEP")]
 	public partial class KH_NOICAPPHEP : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -15774,6 +11051,8 @@ namespace TanHoaWater.Database
 		
 		private string _MAQUANLY;
 		
+		private System.Nullable<bool> _COPHEP;
+		
 		private System.Nullable<System.DateTime> _NGAYCOPHEP;
 		
 		private string _GHICHU;
@@ -15802,6 +11081,8 @@ namespace TanHoaWater.Database
     partial void OnNGAYLAPChanged();
     partial void OnMAQUANLYChanging(string value);
     partial void OnMAQUANLYChanged();
+    partial void OnCOPHEPChanging(System.Nullable<bool> value);
+    partial void OnCOPHEPChanged();
     partial void OnNGAYCOPHEPChanging(System.Nullable<System.DateTime> value);
     partial void OnNGAYCOPHEPChanged();
     partial void OnGHICHUChanging(string value);
@@ -15903,6 +11184,26 @@ namespace TanHoaWater.Database
 					this._MAQUANLY = value;
 					this.SendPropertyChanged("MAQUANLY");
 					this.OnMAQUANLYChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_COPHEP", DbType="Bit")]
+		public System.Nullable<bool> COPHEP
+		{
+			get
+			{
+				return this._COPHEP;
+			}
+			set
+			{
+				if ((this._COPHEP != value))
+				{
+					this.OnCOPHEPChanging(value);
+					this.SendPropertyChanging();
+					this._COPHEP = value;
+					this.SendPropertyChanged("COPHEP");
+					this.OnCOPHEPChanged();
 				}
 			}
 		}
@@ -18577,6 +13878,6270 @@ namespace TanHoaWater.Database
 			if ((this.PropertyChanged != null))
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.BG_CHITIETBG")]
+	public partial class BG_CHITIETBG
+	{
+		
+		private string _SHS;
+		
+		private string _MAHIEU;
+		
+		private string _MAHDG;
+		
+		private string _TENVT;
+		
+		private string _DVT;
+		
+		private string _NHOM;
+		
+		private string _LOAISN;
+		
+		private System.Nullable<double> _KHOILUONG;
+		
+		private System.Nullable<double> _DONGIAVL;
+		
+		private System.Nullable<double> _DONGIANC;
+		
+		private System.Nullable<double> _DONGIAMTC;
+		
+		private System.Nullable<double> _TT_VL;
+		
+		private System.Nullable<double> _TT_NC;
+		
+		private System.Nullable<double> _TT_MTC;
+		
+		private string _NHOMVT;
+		
+		public BG_CHITIETBG()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SHS", DbType="VarChar(50)")]
+		public string SHS
+		{
+			get
+			{
+				return this._SHS;
+			}
+			set
+			{
+				if ((this._SHS != value))
+				{
+					this._SHS = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MAHIEU", DbType="VarChar(20)")]
+		public string MAHIEU
+		{
+			get
+			{
+				return this._MAHIEU;
+			}
+			set
+			{
+				if ((this._MAHIEU != value))
+				{
+					this._MAHIEU = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MAHDG", DbType="VarChar(20)")]
+		public string MAHDG
+		{
+			get
+			{
+				return this._MAHDG;
+			}
+			set
+			{
+				if ((this._MAHDG != value))
+				{
+					this._MAHDG = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENVT", DbType="NVarChar(250)")]
+		public string TENVT
+		{
+			get
+			{
+				return this._TENVT;
+			}
+			set
+			{
+				if ((this._TENVT != value))
+				{
+					this._TENVT = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DVT", DbType="NVarChar(20)")]
+		public string DVT
+		{
+			get
+			{
+				return this._DVT;
+			}
+			set
+			{
+				if ((this._DVT != value))
+				{
+					this._DVT = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NHOM", DbType="NVarChar(20)")]
+		public string NHOM
+		{
+			get
+			{
+				return this._NHOM;
+			}
+			set
+			{
+				if ((this._NHOM != value))
+				{
+					this._NHOM = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LOAISN", DbType="VarChar(20)")]
+		public string LOAISN
+		{
+			get
+			{
+				return this._LOAISN;
+			}
+			set
+			{
+				if ((this._LOAISN != value))
+				{
+					this._LOAISN = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KHOILUONG", DbType="Float")]
+		public System.Nullable<double> KHOILUONG
+		{
+			get
+			{
+				return this._KHOILUONG;
+			}
+			set
+			{
+				if ((this._KHOILUONG != value))
+				{
+					this._KHOILUONG = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DONGIAVL", DbType="Float")]
+		public System.Nullable<double> DONGIAVL
+		{
+			get
+			{
+				return this._DONGIAVL;
+			}
+			set
+			{
+				if ((this._DONGIAVL != value))
+				{
+					this._DONGIAVL = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DONGIANC", DbType="Float")]
+		public System.Nullable<double> DONGIANC
+		{
+			get
+			{
+				return this._DONGIANC;
+			}
+			set
+			{
+				if ((this._DONGIANC != value))
+				{
+					this._DONGIANC = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DONGIAMTC", DbType="Float")]
+		public System.Nullable<double> DONGIAMTC
+		{
+			get
+			{
+				return this._DONGIAMTC;
+			}
+			set
+			{
+				if ((this._DONGIAMTC != value))
+				{
+					this._DONGIAMTC = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TT_VL", DbType="Float")]
+		public System.Nullable<double> TT_VL
+		{
+			get
+			{
+				return this._TT_VL;
+			}
+			set
+			{
+				if ((this._TT_VL != value))
+				{
+					this._TT_VL = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TT_NC", DbType="Float")]
+		public System.Nullable<double> TT_NC
+		{
+			get
+			{
+				return this._TT_NC;
+			}
+			set
+			{
+				if ((this._TT_NC != value))
+				{
+					this._TT_NC = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TT_MTC", DbType="Float")]
+		public System.Nullable<double> TT_MTC
+		{
+			get
+			{
+				return this._TT_MTC;
+			}
+			set
+			{
+				if ((this._TT_MTC != value))
+				{
+					this._TT_MTC = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NHOMVT", DbType="NVarChar(1) NOT NULL", CanBeNull=false)]
+		public string NHOMVT
+		{
+			get
+			{
+				return this._NHOMVT;
+			}
+			set
+			{
+				if ((this._NHOMVT != value))
+				{
+					this._NHOMVT = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.W_HS")]
+	public partial class W_H
+	{
+		
+		private System.Nullable<double> _NC;
+		
+		private string _MTC;
+		
+		private string _CABA;
+		
+		private string _PHIKHAC;
+		
+		private string _PHICHUNG;
+		
+		private string _TRUOCTHUE;
+		
+		private string _PHIKSTK;
+		
+		private string _HSKSTK;
+		
+		private string _PHIGIAMSAT;
+		
+		private string _CHIPHIQL;
+		
+		private string _VAT;
+		
+		private string _HSSDL;
+		
+		private string _HSTH;
+		
+		private System.Nullable<bool> _CHON;
+		
+		private string _CREATEBY;
+		
+		private System.Nullable<System.DateTime> _CREATEDATE;
+		
+		private string _MODIFYBY;
+		
+		private System.Nullable<System.DateTime> _MODIFYDATE;
+		
+		public W_H()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NC", DbType="Float")]
+		public System.Nullable<double> NC
+		{
+			get
+			{
+				return this._NC;
+			}
+			set
+			{
+				if ((this._NC != value))
+				{
+					this._NC = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MTC", DbType="VarChar(20)")]
+		public string MTC
+		{
+			get
+			{
+				return this._MTC;
+			}
+			set
+			{
+				if ((this._MTC != value))
+				{
+					this._MTC = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CABA", DbType="VarChar(21)")]
+		public string CABA
+		{
+			get
+			{
+				return this._CABA;
+			}
+			set
+			{
+				if ((this._CABA != value))
+				{
+					this._CABA = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PHIKHAC", DbType="VarChar(21)")]
+		public string PHIKHAC
+		{
+			get
+			{
+				return this._PHIKHAC;
+			}
+			set
+			{
+				if ((this._PHIKHAC != value))
+				{
+					this._PHIKHAC = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PHICHUNG", DbType="VarChar(21)")]
+		public string PHICHUNG
+		{
+			get
+			{
+				return this._PHICHUNG;
+			}
+			set
+			{
+				if ((this._PHICHUNG != value))
+				{
+					this._PHICHUNG = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TRUOCTHUE", DbType="VarChar(21)")]
+		public string TRUOCTHUE
+		{
+			get
+			{
+				return this._TRUOCTHUE;
+			}
+			set
+			{
+				if ((this._TRUOCTHUE != value))
+				{
+					this._TRUOCTHUE = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PHIKSTK", DbType="VarChar(21)")]
+		public string PHIKSTK
+		{
+			get
+			{
+				return this._PHIKSTK;
+			}
+			set
+			{
+				if ((this._PHIKSTK != value))
+				{
+					this._PHIKSTK = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HSKSTK", DbType="VarChar(20)")]
+		public string HSKSTK
+		{
+			get
+			{
+				return this._HSKSTK;
+			}
+			set
+			{
+				if ((this._HSKSTK != value))
+				{
+					this._HSKSTK = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PHIGIAMSAT", DbType="VarChar(21)")]
+		public string PHIGIAMSAT
+		{
+			get
+			{
+				return this._PHIGIAMSAT;
+			}
+			set
+			{
+				if ((this._PHIGIAMSAT != value))
+				{
+					this._PHIGIAMSAT = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CHIPHIQL", DbType="VarChar(21)")]
+		public string CHIPHIQL
+		{
+			get
+			{
+				return this._CHIPHIQL;
+			}
+			set
+			{
+				if ((this._CHIPHIQL != value))
+				{
+					this._CHIPHIQL = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VAT", DbType="VarChar(21)")]
+		public string VAT
+		{
+			get
+			{
+				return this._VAT;
+			}
+			set
+			{
+				if ((this._VAT != value))
+				{
+					this._VAT = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HSSDL", DbType="VarChar(20)")]
+		public string HSSDL
+		{
+			get
+			{
+				return this._HSSDL;
+			}
+			set
+			{
+				if ((this._HSSDL != value))
+				{
+					this._HSSDL = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HSTH", DbType="VarChar(20)")]
+		public string HSTH
+		{
+			get
+			{
+				return this._HSTH;
+			}
+			set
+			{
+				if ((this._HSTH != value))
+				{
+					this._HSTH = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CHON", DbType="Bit")]
+		public System.Nullable<bool> CHON
+		{
+			get
+			{
+				return this._CHON;
+			}
+			set
+			{
+				if ((this._CHON != value))
+				{
+					this._CHON = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CREATEBY", DbType="VarChar(50)")]
+		public string CREATEBY
+		{
+			get
+			{
+				return this._CREATEBY;
+			}
+			set
+			{
+				if ((this._CREATEBY != value))
+				{
+					this._CREATEBY = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CREATEDATE", DbType="DateTime")]
+		public System.Nullable<System.DateTime> CREATEDATE
+		{
+			get
+			{
+				return this._CREATEDATE;
+			}
+			set
+			{
+				if ((this._CREATEDATE != value))
+				{
+					this._CREATEDATE = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MODIFYBY", DbType="VarChar(20)")]
+		public string MODIFYBY
+		{
+			get
+			{
+				return this._MODIFYBY;
+			}
+			set
+			{
+				if ((this._MODIFYBY != value))
+				{
+					this._MODIFYBY = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MODIFYDATE", DbType="DateTime")]
+		public System.Nullable<System.DateTime> MODIFYDATE
+		{
+			get
+			{
+				return this._MODIFYDATE;
+			}
+			set
+			{
+				if ((this._MODIFYDATE != value))
+				{
+					this._MODIFYDATE = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.BG_CHITIETBG_VT")]
+	public partial class BG_CHITIETBG_VT
+	{
+		
+		private string _SHS;
+		
+		private string _MAHIEU;
+		
+		private string _MAHDG;
+		
+		private string _TENVT;
+		
+		private string _DVT;
+		
+		private string _NHOM;
+		
+		private string _LOAISN;
+		
+		private System.Nullable<double> _KHOILUONG;
+		
+		private System.Nullable<double> _DONGIAVL;
+		
+		private System.Nullable<double> _DONGIANC;
+		
+		private System.Nullable<double> _DONGIAMTC;
+		
+		private System.Nullable<double> _TT_VL;
+		
+		private System.Nullable<double> _TT_NC;
+		
+		private System.Nullable<double> _TT_MTC;
+		
+		private string _GROUPVT;
+		
+		public BG_CHITIETBG_VT()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SHS", DbType="VarChar(50)")]
+		public string SHS
+		{
+			get
+			{
+				return this._SHS;
+			}
+			set
+			{
+				if ((this._SHS != value))
+				{
+					this._SHS = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MAHIEU", DbType="VarChar(20)")]
+		public string MAHIEU
+		{
+			get
+			{
+				return this._MAHIEU;
+			}
+			set
+			{
+				if ((this._MAHIEU != value))
+				{
+					this._MAHIEU = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MAHDG", DbType="VarChar(20)")]
+		public string MAHDG
+		{
+			get
+			{
+				return this._MAHDG;
+			}
+			set
+			{
+				if ((this._MAHDG != value))
+				{
+					this._MAHDG = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENVT", DbType="NVarChar(250)")]
+		public string TENVT
+		{
+			get
+			{
+				return this._TENVT;
+			}
+			set
+			{
+				if ((this._TENVT != value))
+				{
+					this._TENVT = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DVT", DbType="NVarChar(20)")]
+		public string DVT
+		{
+			get
+			{
+				return this._DVT;
+			}
+			set
+			{
+				if ((this._DVT != value))
+				{
+					this._DVT = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NHOM", DbType="NVarChar(20)")]
+		public string NHOM
+		{
+			get
+			{
+				return this._NHOM;
+			}
+			set
+			{
+				if ((this._NHOM != value))
+				{
+					this._NHOM = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LOAISN", DbType="VarChar(20)")]
+		public string LOAISN
+		{
+			get
+			{
+				return this._LOAISN;
+			}
+			set
+			{
+				if ((this._LOAISN != value))
+				{
+					this._LOAISN = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KHOILUONG", DbType="Float")]
+		public System.Nullable<double> KHOILUONG
+		{
+			get
+			{
+				return this._KHOILUONG;
+			}
+			set
+			{
+				if ((this._KHOILUONG != value))
+				{
+					this._KHOILUONG = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DONGIAVL", DbType="Float")]
+		public System.Nullable<double> DONGIAVL
+		{
+			get
+			{
+				return this._DONGIAVL;
+			}
+			set
+			{
+				if ((this._DONGIAVL != value))
+				{
+					this._DONGIAVL = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DONGIANC", DbType="Float")]
+		public System.Nullable<double> DONGIANC
+		{
+			get
+			{
+				return this._DONGIANC;
+			}
+			set
+			{
+				if ((this._DONGIANC != value))
+				{
+					this._DONGIANC = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DONGIAMTC", DbType="Float")]
+		public System.Nullable<double> DONGIAMTC
+		{
+			get
+			{
+				return this._DONGIAMTC;
+			}
+			set
+			{
+				if ((this._DONGIAMTC != value))
+				{
+					this._DONGIAMTC = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TT_VL", DbType="Float")]
+		public System.Nullable<double> TT_VL
+		{
+			get
+			{
+				return this._TT_VL;
+			}
+			set
+			{
+				if ((this._TT_VL != value))
+				{
+					this._TT_VL = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TT_NC", DbType="Float")]
+		public System.Nullable<double> TT_NC
+		{
+			get
+			{
+				return this._TT_NC;
+			}
+			set
+			{
+				if ((this._TT_NC != value))
+				{
+					this._TT_NC = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TT_MTC", DbType="Float")]
+		public System.Nullable<double> TT_MTC
+		{
+			get
+			{
+				return this._TT_MTC;
+			}
+			set
+			{
+				if ((this._TT_MTC != value))
+				{
+					this._TT_MTC = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GROUPVT", DbType="VarChar(2) NOT NULL", CanBeNull=false)]
+		public string GROUPVT
+		{
+			get
+			{
+				return this._GROUPVT;
+			}
+			set
+			{
+				if ((this._GROUPVT != value))
+				{
+					this._GROUPVT = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.BG_CHITIETBG_XDCB")]
+	public partial class BG_CHITIETBG_XDCB
+	{
+		
+		private string _SHS;
+		
+		private string _MAHIEU;
+		
+		private string _MAHDG;
+		
+		private string _TENVT;
+		
+		private string _DVT;
+		
+		private string _NHOM;
+		
+		private string _LOAISN;
+		
+		private System.Nullable<double> _KHOILUONG;
+		
+		private System.Nullable<double> _DONGIAVL;
+		
+		private System.Nullable<double> _DONGIANC;
+		
+		private System.Nullable<double> _DONGIAMTC;
+		
+		private System.Nullable<double> _TT_VL;
+		
+		private System.Nullable<double> _TT_NC;
+		
+		private System.Nullable<double> _TT_MTC;
+		
+		public BG_CHITIETBG_XDCB()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SHS", DbType="VarChar(50)")]
+		public string SHS
+		{
+			get
+			{
+				return this._SHS;
+			}
+			set
+			{
+				if ((this._SHS != value))
+				{
+					this._SHS = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MAHIEU", DbType="VarChar(20)")]
+		public string MAHIEU
+		{
+			get
+			{
+				return this._MAHIEU;
+			}
+			set
+			{
+				if ((this._MAHIEU != value))
+				{
+					this._MAHIEU = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MAHDG", DbType="VarChar(20)")]
+		public string MAHDG
+		{
+			get
+			{
+				return this._MAHDG;
+			}
+			set
+			{
+				if ((this._MAHDG != value))
+				{
+					this._MAHDG = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENVT", DbType="NVarChar(250)")]
+		public string TENVT
+		{
+			get
+			{
+				return this._TENVT;
+			}
+			set
+			{
+				if ((this._TENVT != value))
+				{
+					this._TENVT = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DVT", DbType="NVarChar(20)")]
+		public string DVT
+		{
+			get
+			{
+				return this._DVT;
+			}
+			set
+			{
+				if ((this._DVT != value))
+				{
+					this._DVT = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NHOM", DbType="NVarChar(20)")]
+		public string NHOM
+		{
+			get
+			{
+				return this._NHOM;
+			}
+			set
+			{
+				if ((this._NHOM != value))
+				{
+					this._NHOM = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LOAISN", DbType="VarChar(20)")]
+		public string LOAISN
+		{
+			get
+			{
+				return this._LOAISN;
+			}
+			set
+			{
+				if ((this._LOAISN != value))
+				{
+					this._LOAISN = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KHOILUONG", DbType="Float")]
+		public System.Nullable<double> KHOILUONG
+		{
+			get
+			{
+				return this._KHOILUONG;
+			}
+			set
+			{
+				if ((this._KHOILUONG != value))
+				{
+					this._KHOILUONG = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DONGIAVL", DbType="Float")]
+		public System.Nullable<double> DONGIAVL
+		{
+			get
+			{
+				return this._DONGIAVL;
+			}
+			set
+			{
+				if ((this._DONGIAVL != value))
+				{
+					this._DONGIAVL = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DONGIANC", DbType="Float")]
+		public System.Nullable<double> DONGIANC
+		{
+			get
+			{
+				return this._DONGIANC;
+			}
+			set
+			{
+				if ((this._DONGIANC != value))
+				{
+					this._DONGIANC = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DONGIAMTC", DbType="Float")]
+		public System.Nullable<double> DONGIAMTC
+		{
+			get
+			{
+				return this._DONGIAMTC;
+			}
+			set
+			{
+				if ((this._DONGIAMTC != value))
+				{
+					this._DONGIAMTC = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TT_VL", DbType="Float")]
+		public System.Nullable<double> TT_VL
+		{
+			get
+			{
+				return this._TT_VL;
+			}
+			set
+			{
+				if ((this._TT_VL != value))
+				{
+					this._TT_VL = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TT_NC", DbType="Float")]
+		public System.Nullable<double> TT_NC
+		{
+			get
+			{
+				return this._TT_NC;
+			}
+			set
+			{
+				if ((this._TT_NC != value))
+				{
+					this._TT_NC = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TT_MTC", DbType="Float")]
+		public System.Nullable<double> TT_MTC
+		{
+			get
+			{
+				return this._TT_MTC;
+			}
+			set
+			{
+				if ((this._TT_MTC != value))
+				{
+					this._TT_MTC = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.BG_SUMTAILAPMATDUONG")]
+	public partial class BG_SUMTAILAPMATDUONG
+	{
+		
+		private string _SHS;
+		
+		private System.Nullable<double> _SAUTHUE;
+		
+		private System.Nullable<double> _TRUOCTHUE;
+		
+		private System.Nullable<double> _THUEGTGT;
+		
+		public BG_SUMTAILAPMATDUONG()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SHS", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string SHS
+		{
+			get
+			{
+				return this._SHS;
+			}
+			set
+			{
+				if ((this._SHS != value))
+				{
+					this._SHS = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SAUTHUE", DbType="Float")]
+		public System.Nullable<double> SAUTHUE
+		{
+			get
+			{
+				return this._SAUTHUE;
+			}
+			set
+			{
+				if ((this._SAUTHUE != value))
+				{
+					this._SAUTHUE = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TRUOCTHUE", DbType="Float")]
+		public System.Nullable<double> TRUOCTHUE
+		{
+			get
+			{
+				return this._TRUOCTHUE;
+			}
+			set
+			{
+				if ((this._TRUOCTHUE != value))
+				{
+					this._TRUOCTHUE = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_THUEGTGT", DbType="Float")]
+		public System.Nullable<double> THUEGTGT
+		{
+			get
+			{
+				return this._THUEGTGT;
+			}
+			set
+			{
+				if ((this._THUEGTGT != value))
+				{
+					this._THUEGTGT = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.BG_TAILAPMATDUONG")]
+	public partial class BG_TAILAPMATDUONG
+	{
+		
+		private string _SHS;
+		
+		private string _MADANHMUC;
+		
+		private string _TENKETCAU;
+		
+		private System.Nullable<double> _KHOILUONG;
+		
+		private System.Nullable<double> _DONGIA;
+		
+		private System.Nullable<double> _THANHTIEN;
+		
+		public BG_TAILAPMATDUONG()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SHS", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string SHS
+		{
+			get
+			{
+				return this._SHS;
+			}
+			set
+			{
+				if ((this._SHS != value))
+				{
+					this._SHS = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MADANHMUC", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string MADANHMUC
+		{
+			get
+			{
+				return this._MADANHMUC;
+			}
+			set
+			{
+				if ((this._MADANHMUC != value))
+				{
+					this._MADANHMUC = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENKETCAU", DbType="NVarChar(250)")]
+		public string TENKETCAU
+		{
+			get
+			{
+				return this._TENKETCAU;
+			}
+			set
+			{
+				if ((this._TENKETCAU != value))
+				{
+					this._TENKETCAU = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KHOILUONG", DbType="Float")]
+		public System.Nullable<double> KHOILUONG
+		{
+			get
+			{
+				return this._KHOILUONG;
+			}
+			set
+			{
+				if ((this._KHOILUONG != value))
+				{
+					this._KHOILUONG = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DONGIA", DbType="Float")]
+		public System.Nullable<double> DONGIA
+		{
+			get
+			{
+				return this._DONGIA;
+			}
+			set
+			{
+				if ((this._DONGIA != value))
+				{
+					this._DONGIA = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_THANHTIEN", DbType="Float")]
+		public System.Nullable<double> THANHTIEN
+		{
+			get
+			{
+				return this._THANHTIEN;
+			}
+			set
+			{
+				if ((this._THANHTIEN != value))
+				{
+					this._THANHTIEN = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.BG_THONGTINKHACHANG")]
+	public partial class BG_THONGTINKHACHANG
+	{
+		
+		private string _SHS;
+		
+		private string _HOTEN;
+		
+		private string _DIACHI;
+		
+		private string _DANHBO;
+		
+		private string _LOAIHOSO;
+		
+		public BG_THONGTINKHACHANG()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SHS", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string SHS
+		{
+			get
+			{
+				return this._SHS;
+			}
+			set
+			{
+				if ((this._SHS != value))
+				{
+					this._SHS = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HOTEN", DbType="NVarChar(50)")]
+		public string HOTEN
+		{
+			get
+			{
+				return this._HOTEN;
+			}
+			set
+			{
+				if ((this._HOTEN != value))
+				{
+					this._HOTEN = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DIACHI", DbType="NVarChar(216)")]
+		public string DIACHI
+		{
+			get
+			{
+				return this._DIACHI;
+			}
+			set
+			{
+				if ((this._DIACHI != value))
+				{
+					this._DIACHI = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DANHBO", DbType="VarChar(50)")]
+		public string DANHBO
+		{
+			get
+			{
+				return this._DANHBO;
+			}
+			set
+			{
+				if ((this._DANHBO != value))
+				{
+					this._DANHBO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LOAIHOSO", DbType="VarChar(10)")]
+		public string LOAIHOSO
+		{
+			get
+			{
+				return this._LOAIHOSO;
+			}
+			set
+			{
+				if ((this._LOAIHOSO != value))
+				{
+					this._LOAIHOSO = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.V_BAOCAO_NHANDON")]
+	public partial class V_BAOCAO_NHANDON
+	{
+		
+		private string _TENQUAN;
+		
+		private string _TENLOAI;
+		
+		private System.Nullable<int> _SOHS;
+		
+		public V_BAOCAO_NHANDON()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENQUAN", DbType="NVarChar(50)")]
+		public string TENQUAN
+		{
+			get
+			{
+				return this._TENQUAN;
+			}
+			set
+			{
+				if ((this._TENQUAN != value))
+				{
+					this._TENQUAN = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENLOAI", DbType="NVarChar(100)")]
+		public string TENLOAI
+		{
+			get
+			{
+				return this._TENLOAI;
+			}
+			set
+			{
+				if ((this._TENLOAI != value))
+				{
+					this._TENLOAI = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SOHS", DbType="Int")]
+		public System.Nullable<int> SOHS
+		{
+			get
+			{
+				return this._SOHS;
+			}
+			set
+			{
+				if ((this._SOHS != value))
+				{
+					this._SOHS = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.V_BC_KSTK")]
+	public partial class V_BC_KSTK
+	{
+		
+		private string _HOTEN;
+		
+		private string _DIACHI;
+		
+		private string _NGAYNHANHS;
+		
+		private string _TENLOAI;
+		
+		private string _TENPHUONG;
+		
+		private string _TENQUAN;
+		
+		private string _DUONG;
+		
+		private string _SONHA;
+		
+		private int _ID;
+		
+		private string _MADOT;
+		
+		private string _SOHOSO;
+		
+		private string _SHS;
+		
+		private System.Nullable<System.DateTime> _NGAYNHAN;
+		
+		private string _SODOVIEN;
+		
+		private System.Nullable<System.DateTime> _NGAYGIAOSDV;
+		
+		private System.Nullable<bool> _TRAHS;
+		
+		private System.Nullable<System.DateTime> _NGAYTRAHS;
+		
+		private System.Nullable<System.DateTime> _NGAYCHUYENHS;
+		
+		private string _BOPHANCHUYEN;
+		
+		private System.Nullable<bool> _TRONGAITHIETKE;
+		
+		private string _NOIDUNGTRONGAI;
+		
+		private System.Nullable<System.DateTime> _NGAYTKGD;
+		
+		private System.Nullable<bool> _HOANTATTK;
+		
+		private string _CREATEBY;
+		
+		private System.Nullable<System.DateTime> _CREATEDATE;
+		
+		private string _MODIFYBY;
+		
+		private System.Nullable<System.DateTime> _MODIFYDATE;
+		
+		private string _MODIFYLOG;
+		
+		private string _NGAYGIAOSDV_W;
+		
+		private string _FULLNAME;
+		
+		private string _TINHTRANGSVD;
+		
+		public V_BC_KSTK()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HOTEN", DbType="NVarChar(50)")]
+		public string HOTEN
+		{
+			get
+			{
+				return this._HOTEN;
+			}
+			set
+			{
+				if ((this._HOTEN != value))
+				{
+					this._HOTEN = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DIACHI", DbType="NVarChar(209)")]
+		public string DIACHI
+		{
+			get
+			{
+				return this._DIACHI;
+			}
+			set
+			{
+				if ((this._DIACHI != value))
+				{
+					this._DIACHI = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAYNHANHS", DbType="VarChar(10)")]
+		public string NGAYNHANHS
+		{
+			get
+			{
+				return this._NGAYNHANHS;
+			}
+			set
+			{
+				if ((this._NGAYNHANHS != value))
+				{
+					this._NGAYNHANHS = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENLOAI", DbType="NVarChar(250) NOT NULL", CanBeNull=false)]
+		public string TENLOAI
+		{
+			get
+			{
+				return this._TENLOAI;
+			}
+			set
+			{
+				if ((this._TENLOAI != value))
+				{
+					this._TENLOAI = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENPHUONG", DbType="NVarChar(50)")]
+		public string TENPHUONG
+		{
+			get
+			{
+				return this._TENPHUONG;
+			}
+			set
+			{
+				if ((this._TENPHUONG != value))
+				{
+					this._TENPHUONG = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENQUAN", DbType="NVarChar(50)")]
+		public string TENQUAN
+		{
+			get
+			{
+				return this._TENQUAN;
+			}
+			set
+			{
+				if ((this._TENQUAN != value))
+				{
+					this._TENQUAN = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DUONG", DbType="NVarChar(50)")]
+		public string DUONG
+		{
+			get
+			{
+				return this._DUONG;
+			}
+			set
+			{
+				if ((this._DUONG != value))
+				{
+					this._DUONG = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SONHA", DbType="VarChar(50)")]
+		public string SONHA
+		{
+			get
+			{
+				return this._SONHA;
+			}
+			set
+			{
+				if ((this._SONHA != value))
+				{
+					this._SONHA = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL")]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this._ID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MADOT", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string MADOT
+		{
+			get
+			{
+				return this._MADOT;
+			}
+			set
+			{
+				if ((this._MADOT != value))
+				{
+					this._MADOT = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SOHOSO", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string SOHOSO
+		{
+			get
+			{
+				return this._SOHOSO;
+			}
+			set
+			{
+				if ((this._SOHOSO != value))
+				{
+					this._SOHOSO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SHS", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string SHS
+		{
+			get
+			{
+				return this._SHS;
+			}
+			set
+			{
+				if ((this._SHS != value))
+				{
+					this._SHS = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAYNHAN", DbType="DateTime")]
+		public System.Nullable<System.DateTime> NGAYNHAN
+		{
+			get
+			{
+				return this._NGAYNHAN;
+			}
+			set
+			{
+				if ((this._NGAYNHAN != value))
+				{
+					this._NGAYNHAN = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SODOVIEN", DbType="VarChar(20)")]
+		public string SODOVIEN
+		{
+			get
+			{
+				return this._SODOVIEN;
+			}
+			set
+			{
+				if ((this._SODOVIEN != value))
+				{
+					this._SODOVIEN = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAYGIAOSDV", DbType="DateTime")]
+		public System.Nullable<System.DateTime> NGAYGIAOSDV
+		{
+			get
+			{
+				return this._NGAYGIAOSDV;
+			}
+			set
+			{
+				if ((this._NGAYGIAOSDV != value))
+				{
+					this._NGAYGIAOSDV = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TRAHS", DbType="Bit")]
+		public System.Nullable<bool> TRAHS
+		{
+			get
+			{
+				return this._TRAHS;
+			}
+			set
+			{
+				if ((this._TRAHS != value))
+				{
+					this._TRAHS = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAYTRAHS", DbType="DateTime")]
+		public System.Nullable<System.DateTime> NGAYTRAHS
+		{
+			get
+			{
+				return this._NGAYTRAHS;
+			}
+			set
+			{
+				if ((this._NGAYTRAHS != value))
+				{
+					this._NGAYTRAHS = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAYCHUYENHS", DbType="DateTime")]
+		public System.Nullable<System.DateTime> NGAYCHUYENHS
+		{
+			get
+			{
+				return this._NGAYCHUYENHS;
+			}
+			set
+			{
+				if ((this._NGAYCHUYENHS != value))
+				{
+					this._NGAYCHUYENHS = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BOPHANCHUYEN", DbType="VarChar(20)")]
+		public string BOPHANCHUYEN
+		{
+			get
+			{
+				return this._BOPHANCHUYEN;
+			}
+			set
+			{
+				if ((this._BOPHANCHUYEN != value))
+				{
+					this._BOPHANCHUYEN = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TRONGAITHIETKE", DbType="Bit")]
+		public System.Nullable<bool> TRONGAITHIETKE
+		{
+			get
+			{
+				return this._TRONGAITHIETKE;
+			}
+			set
+			{
+				if ((this._TRONGAITHIETKE != value))
+				{
+					this._TRONGAITHIETKE = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NOIDUNGTRONGAI", DbType="NVarChar(250)")]
+		public string NOIDUNGTRONGAI
+		{
+			get
+			{
+				return this._NOIDUNGTRONGAI;
+			}
+			set
+			{
+				if ((this._NOIDUNGTRONGAI != value))
+				{
+					this._NOIDUNGTRONGAI = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAYTKGD", DbType="DateTime")]
+		public System.Nullable<System.DateTime> NGAYTKGD
+		{
+			get
+			{
+				return this._NGAYTKGD;
+			}
+			set
+			{
+				if ((this._NGAYTKGD != value))
+				{
+					this._NGAYTKGD = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HOANTATTK", DbType="Bit")]
+		public System.Nullable<bool> HOANTATTK
+		{
+			get
+			{
+				return this._HOANTATTK;
+			}
+			set
+			{
+				if ((this._HOANTATTK != value))
+				{
+					this._HOANTATTK = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CREATEBY", DbType="VarChar(50)")]
+		public string CREATEBY
+		{
+			get
+			{
+				return this._CREATEBY;
+			}
+			set
+			{
+				if ((this._CREATEBY != value))
+				{
+					this._CREATEBY = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CREATEDATE", DbType="DateTime")]
+		public System.Nullable<System.DateTime> CREATEDATE
+		{
+			get
+			{
+				return this._CREATEDATE;
+			}
+			set
+			{
+				if ((this._CREATEDATE != value))
+				{
+					this._CREATEDATE = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MODIFYBY", DbType="VarChar(20)")]
+		public string MODIFYBY
+		{
+			get
+			{
+				return this._MODIFYBY;
+			}
+			set
+			{
+				if ((this._MODIFYBY != value))
+				{
+					this._MODIFYBY = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MODIFYDATE", DbType="DateTime")]
+		public System.Nullable<System.DateTime> MODIFYDATE
+		{
+			get
+			{
+				return this._MODIFYDATE;
+			}
+			set
+			{
+				if ((this._MODIFYDATE != value))
+				{
+					this._MODIFYDATE = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MODIFYLOG", DbType="NText", UpdateCheck=UpdateCheck.Never)]
+		public string MODIFYLOG
+		{
+			get
+			{
+				return this._MODIFYLOG;
+			}
+			set
+			{
+				if ((this._MODIFYLOG != value))
+				{
+					this._MODIFYLOG = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAYGIAOSDV_W", DbType="VarChar(10)")]
+		public string NGAYGIAOSDV_W
+		{
+			get
+			{
+				return this._NGAYGIAOSDV_W;
+			}
+			set
+			{
+				if ((this._NGAYGIAOSDV_W != value))
+				{
+					this._NGAYGIAOSDV_W = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FULLNAME", DbType="NVarChar(50)")]
+		public string FULLNAME
+		{
+			get
+			{
+				return this._FULLNAME;
+			}
+			set
+			{
+				if ((this._FULLNAME != value))
+				{
+					this._FULLNAME = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TINHTRANGSVD", DbType="NVarChar(15) NOT NULL", CanBeNull=false)]
+		public string TINHTRANGSVD
+		{
+			get
+			{
+				return this._TINHTRANGSVD;
+			}
+			set
+			{
+				if ((this._TINHTRANGSVD != value))
+				{
+					this._TINHTRANGSVD = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.V_BIENNHANDON")]
+	public partial class V_BIENNHANDON
+	{
+		
+		private string _SHS;
+		
+		private string _HOTEN;
+		
+		private string _TENDUONG;
+		
+		private string _TENPHUONG;
+		
+		private string _TENQUAN;
+		
+		private System.Nullable<bool> _HKTK;
+		
+		private System.Nullable<bool> _CHUQUYENNHA;
+		
+		private System.Nullable<bool> _GIAYPHEPXD;
+		
+		private string _USERNAME;
+		
+		private string _FULLNAME;
+		
+		private System.Nullable<int> _NAM;
+		
+		private System.Nullable<int> _THANG;
+		
+		private System.Nullable<int> _NGAY;
+		
+		private string _TENLOAI;
+		
+		public V_BIENNHANDON()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SHS", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string SHS
+		{
+			get
+			{
+				return this._SHS;
+			}
+			set
+			{
+				if ((this._SHS != value))
+				{
+					this._SHS = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HOTEN", DbType="NVarChar(250)")]
+		public string HOTEN
+		{
+			get
+			{
+				return this._HOTEN;
+			}
+			set
+			{
+				if ((this._HOTEN != value))
+				{
+					this._HOTEN = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENDUONG", DbType="NVarChar(101)")]
+		public string TENDUONG
+		{
+			get
+			{
+				return this._TENDUONG;
+			}
+			set
+			{
+				if ((this._TENDUONG != value))
+				{
+					this._TENDUONG = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENPHUONG", DbType="NVarChar(50)")]
+		public string TENPHUONG
+		{
+			get
+			{
+				return this._TENPHUONG;
+			}
+			set
+			{
+				if ((this._TENPHUONG != value))
+				{
+					this._TENPHUONG = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENQUAN", DbType="NVarChar(50)")]
+		public string TENQUAN
+		{
+			get
+			{
+				return this._TENQUAN;
+			}
+			set
+			{
+				if ((this._TENQUAN != value))
+				{
+					this._TENQUAN = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HKTK", DbType="Bit")]
+		public System.Nullable<bool> HKTK
+		{
+			get
+			{
+				return this._HKTK;
+			}
+			set
+			{
+				if ((this._HKTK != value))
+				{
+					this._HKTK = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CHUQUYENNHA", DbType="Bit")]
+		public System.Nullable<bool> CHUQUYENNHA
+		{
+			get
+			{
+				return this._CHUQUYENNHA;
+			}
+			set
+			{
+				if ((this._CHUQUYENNHA != value))
+				{
+					this._CHUQUYENNHA = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GIAYPHEPXD", DbType="Bit")]
+		public System.Nullable<bool> GIAYPHEPXD
+		{
+			get
+			{
+				return this._GIAYPHEPXD;
+			}
+			set
+			{
+				if ((this._GIAYPHEPXD != value))
+				{
+					this._GIAYPHEPXD = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_USERNAME", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string USERNAME
+		{
+			get
+			{
+				return this._USERNAME;
+			}
+			set
+			{
+				if ((this._USERNAME != value))
+				{
+					this._USERNAME = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FULLNAME", DbType="NVarChar(50)")]
+		public string FULLNAME
+		{
+			get
+			{
+				return this._FULLNAME;
+			}
+			set
+			{
+				if ((this._FULLNAME != value))
+				{
+					this._FULLNAME = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NAM", DbType="Int")]
+		public System.Nullable<int> NAM
+		{
+			get
+			{
+				return this._NAM;
+			}
+			set
+			{
+				if ((this._NAM != value))
+				{
+					this._NAM = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_THANG", DbType="Int")]
+		public System.Nullable<int> THANG
+		{
+			get
+			{
+				return this._THANG;
+			}
+			set
+			{
+				if ((this._THANG != value))
+				{
+					this._THANG = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAY", DbType="Int")]
+		public System.Nullable<int> NGAY
+		{
+			get
+			{
+				return this._NGAY;
+			}
+			set
+			{
+				if ((this._NGAY != value))
+				{
+					this._NGAY = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENLOAI", DbType="NVarChar(100)")]
+		public string TENLOAI
+		{
+			get
+			{
+				return this._TENLOAI;
+			}
+			set
+			{
+				if ((this._TENLOAI != value))
+				{
+					this._TENLOAI = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.V_CHUYENDON")]
+	public partial class V_CHUYENDON
+	{
+		
+		private string _TTKMD;
+		
+		private string _TTKSOHOSO;
+		
+		private int _ID;
+		
+		private string _MADOT;
+		
+		private string _SOHOSO;
+		
+		private string _SHS;
+		
+		private string _DANHBO;
+		
+		private string _HOPDONG;
+		
+		private string _HOTEN;
+		
+		private string _DIENTHOAI;
+		
+		private System.Nullable<int> _SOHOBD;
+		
+		private System.Nullable<int> _SOHO;
+		
+		private string _SONHA;
+		
+		private string _SONHA_TTK;
+		
+		private string _DUONG;
+		
+		private string _PHUONG;
+		
+		private int _QUAN;
+		
+		private System.Nullable<System.DateTime> _NGAYNHAN;
+		
+		private string _LOAIKH;
+		
+		private string _LOAIHOSO;
+		
+		private System.Nullable<int> _TAPTHE;
+		
+		private System.Nullable<bool> _TINHKHOAN;
+		
+		private string _LOAIMIENPHI;
+		
+		private string _GHICHU;
+		
+		private System.Nullable<bool> _HOSOKHAN;
+		
+		private string _GHICHUKHAN;
+		
+		private System.Nullable<bool> _CHUYEN_HOSO;
+		
+		private string _BOPHANCHUYEN;
+		
+		private string _NGUOICHUYEN_HOSO;
+		
+		private System.Nullable<System.DateTime> _NGAYCHUYEN_HOSO;
+		
+		private System.Nullable<bool> _TRONGAICHUYEN_HOSO;
+		
+		private string _NOIDUNGTNCHUYEN;
+		
+		private System.Nullable<bool> _TRONGAITHIETKE;
+		
+		private string _NOIDUNGTRONGAI;
+		
+		private string _HOSOCHA;
+		
+		private System.Nullable<bool> _XINPHEPDAODUONG;
+		
+		private System.Nullable<bool> _TRINHKYBGD;
+		
+		private string _CREATEBY;
+		
+		private System.Nullable<System.DateTime> _CREATEDATE;
+		
+		private string _MODIFYBY;
+		
+		private System.Nullable<System.DateTime> _MODIFYDATE;
+		
+		private string _MODIFYLOG;
+		
+		private int _MAQUAN;
+		
+		private string _TENQUAN;
+		
+		private string _MAPHUONG;
+		
+		private string _TENPHUONG;
+		
+		private string _TENLOAI;
+		
+		private string _USERNAME;
+		
+		private string _NGUOILAP;
+		
+		public V_CHUYENDON()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TTKMD", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string TTKMD
+		{
+			get
+			{
+				return this._TTKMD;
+			}
+			set
+			{
+				if ((this._TTKMD != value))
+				{
+					this._TTKMD = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TTKSOHOSO", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string TTKSOHOSO
+		{
+			get
+			{
+				return this._TTKSOHOSO;
+			}
+			set
+			{
+				if ((this._TTKSOHOSO != value))
+				{
+					this._TTKSOHOSO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL")]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this._ID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MADOT", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string MADOT
+		{
+			get
+			{
+				return this._MADOT;
+			}
+			set
+			{
+				if ((this._MADOT != value))
+				{
+					this._MADOT = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SOHOSO", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string SOHOSO
+		{
+			get
+			{
+				return this._SOHOSO;
+			}
+			set
+			{
+				if ((this._SOHOSO != value))
+				{
+					this._SOHOSO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SHS", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string SHS
+		{
+			get
+			{
+				return this._SHS;
+			}
+			set
+			{
+				if ((this._SHS != value))
+				{
+					this._SHS = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DANHBO", DbType="VarChar(50)")]
+		public string DANHBO
+		{
+			get
+			{
+				return this._DANHBO;
+			}
+			set
+			{
+				if ((this._DANHBO != value))
+				{
+					this._DANHBO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HOPDONG", DbType="VarChar(50)")]
+		public string HOPDONG
+		{
+			get
+			{
+				return this._HOPDONG;
+			}
+			set
+			{
+				if ((this._HOPDONG != value))
+				{
+					this._HOPDONG = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HOTEN", DbType="NVarChar(50)")]
+		public string HOTEN
+		{
+			get
+			{
+				return this._HOTEN;
+			}
+			set
+			{
+				if ((this._HOTEN != value))
+				{
+					this._HOTEN = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DIENTHOAI", DbType="NVarChar(20)")]
+		public string DIENTHOAI
+		{
+			get
+			{
+				return this._DIENTHOAI;
+			}
+			set
+			{
+				if ((this._DIENTHOAI != value))
+				{
+					this._DIENTHOAI = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SOHOBD", DbType="Int")]
+		public System.Nullable<int> SOHOBD
+		{
+			get
+			{
+				return this._SOHOBD;
+			}
+			set
+			{
+				if ((this._SOHOBD != value))
+				{
+					this._SOHOBD = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SOHO", DbType="Int")]
+		public System.Nullable<int> SOHO
+		{
+			get
+			{
+				return this._SOHO;
+			}
+			set
+			{
+				if ((this._SOHO != value))
+				{
+					this._SOHO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SONHA", DbType="VarChar(50)")]
+		public string SONHA
+		{
+			get
+			{
+				return this._SONHA;
+			}
+			set
+			{
+				if ((this._SONHA != value))
+				{
+					this._SONHA = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SONHA_TTK", DbType="VarChar(50)")]
+		public string SONHA_TTK
+		{
+			get
+			{
+				return this._SONHA_TTK;
+			}
+			set
+			{
+				if ((this._SONHA_TTK != value))
+				{
+					this._SONHA_TTK = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DUONG", DbType="NVarChar(50)")]
+		public string DUONG
+		{
+			get
+			{
+				return this._DUONG;
+			}
+			set
+			{
+				if ((this._DUONG != value))
+				{
+					this._DUONG = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PHUONG", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
+		public string PHUONG
+		{
+			get
+			{
+				return this._PHUONG;
+			}
+			set
+			{
+				if ((this._PHUONG != value))
+				{
+					this._PHUONG = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_QUAN", DbType="Int NOT NULL")]
+		public int QUAN
+		{
+			get
+			{
+				return this._QUAN;
+			}
+			set
+			{
+				if ((this._QUAN != value))
+				{
+					this._QUAN = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAYNHAN", DbType="DateTime")]
+		public System.Nullable<System.DateTime> NGAYNHAN
+		{
+			get
+			{
+				return this._NGAYNHAN;
+			}
+			set
+			{
+				if ((this._NGAYNHAN != value))
+				{
+					this._NGAYNHAN = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LOAIKH", DbType="VarChar(10)")]
+		public string LOAIKH
+		{
+			get
+			{
+				return this._LOAIKH;
+			}
+			set
+			{
+				if ((this._LOAIKH != value))
+				{
+					this._LOAIKH = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LOAIHOSO", DbType="VarChar(10)")]
+		public string LOAIHOSO
+		{
+			get
+			{
+				return this._LOAIHOSO;
+			}
+			set
+			{
+				if ((this._LOAIHOSO != value))
+				{
+					this._LOAIHOSO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TAPTHE", DbType="Int")]
+		public System.Nullable<int> TAPTHE
+		{
+			get
+			{
+				return this._TAPTHE;
+			}
+			set
+			{
+				if ((this._TAPTHE != value))
+				{
+					this._TAPTHE = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TINHKHOAN", DbType="Bit")]
+		public System.Nullable<bool> TINHKHOAN
+		{
+			get
+			{
+				return this._TINHKHOAN;
+			}
+			set
+			{
+				if ((this._TINHKHOAN != value))
+				{
+					this._TINHKHOAN = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LOAIMIENPHI", DbType="NVarChar(50)")]
+		public string LOAIMIENPHI
+		{
+			get
+			{
+				return this._LOAIMIENPHI;
+			}
+			set
+			{
+				if ((this._LOAIMIENPHI != value))
+				{
+					this._LOAIMIENPHI = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GHICHU", DbType="NVarChar(250)")]
+		public string GHICHU
+		{
+			get
+			{
+				return this._GHICHU;
+			}
+			set
+			{
+				if ((this._GHICHU != value))
+				{
+					this._GHICHU = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HOSOKHAN", DbType="Bit")]
+		public System.Nullable<bool> HOSOKHAN
+		{
+			get
+			{
+				return this._HOSOKHAN;
+			}
+			set
+			{
+				if ((this._HOSOKHAN != value))
+				{
+					this._HOSOKHAN = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GHICHUKHAN", DbType="NVarChar(250)")]
+		public string GHICHUKHAN
+		{
+			get
+			{
+				return this._GHICHUKHAN;
+			}
+			set
+			{
+				if ((this._GHICHUKHAN != value))
+				{
+					this._GHICHUKHAN = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CHUYEN_HOSO", DbType="Bit")]
+		public System.Nullable<bool> CHUYEN_HOSO
+		{
+			get
+			{
+				return this._CHUYEN_HOSO;
+			}
+			set
+			{
+				if ((this._CHUYEN_HOSO != value))
+				{
+					this._CHUYEN_HOSO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BOPHANCHUYEN", DbType="VarChar(20)")]
+		public string BOPHANCHUYEN
+		{
+			get
+			{
+				return this._BOPHANCHUYEN;
+			}
+			set
+			{
+				if ((this._BOPHANCHUYEN != value))
+				{
+					this._BOPHANCHUYEN = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGUOICHUYEN_HOSO", DbType="VarChar(20)")]
+		public string NGUOICHUYEN_HOSO
+		{
+			get
+			{
+				return this._NGUOICHUYEN_HOSO;
+			}
+			set
+			{
+				if ((this._NGUOICHUYEN_HOSO != value))
+				{
+					this._NGUOICHUYEN_HOSO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAYCHUYEN_HOSO", DbType="DateTime")]
+		public System.Nullable<System.DateTime> NGAYCHUYEN_HOSO
+		{
+			get
+			{
+				return this._NGAYCHUYEN_HOSO;
+			}
+			set
+			{
+				if ((this._NGAYCHUYEN_HOSO != value))
+				{
+					this._NGAYCHUYEN_HOSO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TRONGAICHUYEN_HOSO", DbType="Bit")]
+		public System.Nullable<bool> TRONGAICHUYEN_HOSO
+		{
+			get
+			{
+				return this._TRONGAICHUYEN_HOSO;
+			}
+			set
+			{
+				if ((this._TRONGAICHUYEN_HOSO != value))
+				{
+					this._TRONGAICHUYEN_HOSO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NOIDUNGTNCHUYEN", DbType="NVarChar(50)")]
+		public string NOIDUNGTNCHUYEN
+		{
+			get
+			{
+				return this._NOIDUNGTNCHUYEN;
+			}
+			set
+			{
+				if ((this._NOIDUNGTNCHUYEN != value))
+				{
+					this._NOIDUNGTNCHUYEN = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TRONGAITHIETKE", DbType="Bit")]
+		public System.Nullable<bool> TRONGAITHIETKE
+		{
+			get
+			{
+				return this._TRONGAITHIETKE;
+			}
+			set
+			{
+				if ((this._TRONGAITHIETKE != value))
+				{
+					this._TRONGAITHIETKE = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NOIDUNGTRONGAI", DbType="NVarChar(250)")]
+		public string NOIDUNGTRONGAI
+		{
+			get
+			{
+				return this._NOIDUNGTRONGAI;
+			}
+			set
+			{
+				if ((this._NOIDUNGTRONGAI != value))
+				{
+					this._NOIDUNGTRONGAI = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HOSOCHA", DbType="VarChar(30)")]
+		public string HOSOCHA
+		{
+			get
+			{
+				return this._HOSOCHA;
+			}
+			set
+			{
+				if ((this._HOSOCHA != value))
+				{
+					this._HOSOCHA = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_XINPHEPDAODUONG", DbType="Bit")]
+		public System.Nullable<bool> XINPHEPDAODUONG
+		{
+			get
+			{
+				return this._XINPHEPDAODUONG;
+			}
+			set
+			{
+				if ((this._XINPHEPDAODUONG != value))
+				{
+					this._XINPHEPDAODUONG = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TRINHKYBGD", DbType="Bit")]
+		public System.Nullable<bool> TRINHKYBGD
+		{
+			get
+			{
+				return this._TRINHKYBGD;
+			}
+			set
+			{
+				if ((this._TRINHKYBGD != value))
+				{
+					this._TRINHKYBGD = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CREATEBY", DbType="VarChar(50)")]
+		public string CREATEBY
+		{
+			get
+			{
+				return this._CREATEBY;
+			}
+			set
+			{
+				if ((this._CREATEBY != value))
+				{
+					this._CREATEBY = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CREATEDATE", DbType="DateTime")]
+		public System.Nullable<System.DateTime> CREATEDATE
+		{
+			get
+			{
+				return this._CREATEDATE;
+			}
+			set
+			{
+				if ((this._CREATEDATE != value))
+				{
+					this._CREATEDATE = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MODIFYBY", DbType="VarChar(20)")]
+		public string MODIFYBY
+		{
+			get
+			{
+				return this._MODIFYBY;
+			}
+			set
+			{
+				if ((this._MODIFYBY != value))
+				{
+					this._MODIFYBY = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MODIFYDATE", DbType="DateTime")]
+		public System.Nullable<System.DateTime> MODIFYDATE
+		{
+			get
+			{
+				return this._MODIFYDATE;
+			}
+			set
+			{
+				if ((this._MODIFYDATE != value))
+				{
+					this._MODIFYDATE = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MODIFYLOG", DbType="NText", UpdateCheck=UpdateCheck.Never)]
+		public string MODIFYLOG
+		{
+			get
+			{
+				return this._MODIFYLOG;
+			}
+			set
+			{
+				if ((this._MODIFYLOG != value))
+				{
+					this._MODIFYLOG = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MAQUAN", DbType="Int NOT NULL")]
+		public int MAQUAN
+		{
+			get
+			{
+				return this._MAQUAN;
+			}
+			set
+			{
+				if ((this._MAQUAN != value))
+				{
+					this._MAQUAN = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENQUAN", DbType="NVarChar(50)")]
+		public string TENQUAN
+		{
+			get
+			{
+				return this._TENQUAN;
+			}
+			set
+			{
+				if ((this._TENQUAN != value))
+				{
+					this._TENQUAN = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MAPHUONG", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
+		public string MAPHUONG
+		{
+			get
+			{
+				return this._MAPHUONG;
+			}
+			set
+			{
+				if ((this._MAPHUONG != value))
+				{
+					this._MAPHUONG = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENPHUONG", DbType="NVarChar(50)")]
+		public string TENPHUONG
+		{
+			get
+			{
+				return this._TENPHUONG;
+			}
+			set
+			{
+				if ((this._TENPHUONG != value))
+				{
+					this._TENPHUONG = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENLOAI", DbType="NVarChar(250)")]
+		public string TENLOAI
+		{
+			get
+			{
+				return this._TENLOAI;
+			}
+			set
+			{
+				if ((this._TENLOAI != value))
+				{
+					this._TENLOAI = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_USERNAME", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string USERNAME
+		{
+			get
+			{
+				return this._USERNAME;
+			}
+			set
+			{
+				if ((this._USERNAME != value))
+				{
+					this._USERNAME = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGUOILAP", DbType="NVarChar(50)")]
+		public string NGUOILAP
+		{
+			get
+			{
+				return this._NGUOILAP;
+			}
+			set
+			{
+				if ((this._NGUOILAP != value))
+				{
+					this._NGUOILAP = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.V_CHUYENDON_TTK")]
+	public partial class V_CHUYENDON_TTK
+	{
+		
+		private string _TTKMD;
+		
+		private string _TTKSOHOSO;
+		
+		private int _ID;
+		
+		private string _MADOT;
+		
+		private string _SOHOSO;
+		
+		private string _SHS;
+		
+		private string _DANHBO;
+		
+		private string _HOPDONG;
+		
+		private string _HOTEN;
+		
+		private string _DIENTHOAI;
+		
+		private System.Nullable<int> _SOHOBD;
+		
+		private System.Nullable<int> _SOHO;
+		
+		private string _SONHA;
+		
+		private string _SONHA_TTK;
+		
+		private string _DUONG;
+		
+		private string _PHUONG;
+		
+		private int _QUAN;
+		
+		private System.Nullable<System.DateTime> _NGAYNHAN;
+		
+		private string _LOAIKH;
+		
+		private string _LOAIHOSO;
+		
+		private System.Nullable<int> _TAPTHE;
+		
+		private System.Nullable<bool> _TINHKHOAN;
+		
+		private string _LOAIMIENPHI;
+		
+		private string _GHICHU;
+		
+		private System.Nullable<bool> _HOSOKHAN;
+		
+		private string _GHICHUKHAN;
+		
+		private System.Nullable<bool> _CHUYEN_HOSO;
+		
+		private string _BOPHANCHUYEN;
+		
+		private string _NGUOICHUYEN_HOSO;
+		
+		private System.Nullable<System.DateTime> _NGAYCHUYEN_HOSO;
+		
+		private System.Nullable<bool> _TRONGAICHUYEN_HOSO;
+		
+		private string _NOIDUNGTNCHUYEN;
+		
+		private System.Nullable<bool> _TRONGAITHIETKE;
+		
+		private string _NOIDUNGTRONGAI;
+		
+		private string _HOSOCHA;
+		
+		private System.Nullable<bool> _XINPHEPDAODUONG;
+		
+		private System.Nullable<bool> _TRINHKYBGD;
+		
+		private string _CREATEBY;
+		
+		private System.Nullable<System.DateTime> _CREATEDATE;
+		
+		private string _MODIFYBY;
+		
+		private System.Nullable<System.DateTime> _MODIFYDATE;
+		
+		private string _MODIFYLOG;
+		
+		private int _MAQUAN;
+		
+		private string _TENQUAN;
+		
+		private string _MAPHUONG;
+		
+		private string _TENPHUONG;
+		
+		private string _TENLOAI;
+		
+		private string _USERNAME;
+		
+		private string _NGUOILAP;
+		
+		private string _TINHTRANGSVD;
+		
+		public V_CHUYENDON_TTK()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TTKMD", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string TTKMD
+		{
+			get
+			{
+				return this._TTKMD;
+			}
+			set
+			{
+				if ((this._TTKMD != value))
+				{
+					this._TTKMD = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TTKSOHOSO", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string TTKSOHOSO
+		{
+			get
+			{
+				return this._TTKSOHOSO;
+			}
+			set
+			{
+				if ((this._TTKSOHOSO != value))
+				{
+					this._TTKSOHOSO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL")]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this._ID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MADOT", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string MADOT
+		{
+			get
+			{
+				return this._MADOT;
+			}
+			set
+			{
+				if ((this._MADOT != value))
+				{
+					this._MADOT = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SOHOSO", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string SOHOSO
+		{
+			get
+			{
+				return this._SOHOSO;
+			}
+			set
+			{
+				if ((this._SOHOSO != value))
+				{
+					this._SOHOSO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SHS", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string SHS
+		{
+			get
+			{
+				return this._SHS;
+			}
+			set
+			{
+				if ((this._SHS != value))
+				{
+					this._SHS = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DANHBO", DbType="VarChar(50)")]
+		public string DANHBO
+		{
+			get
+			{
+				return this._DANHBO;
+			}
+			set
+			{
+				if ((this._DANHBO != value))
+				{
+					this._DANHBO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HOPDONG", DbType="VarChar(50)")]
+		public string HOPDONG
+		{
+			get
+			{
+				return this._HOPDONG;
+			}
+			set
+			{
+				if ((this._HOPDONG != value))
+				{
+					this._HOPDONG = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HOTEN", DbType="NVarChar(50)")]
+		public string HOTEN
+		{
+			get
+			{
+				return this._HOTEN;
+			}
+			set
+			{
+				if ((this._HOTEN != value))
+				{
+					this._HOTEN = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DIENTHOAI", DbType="NVarChar(20)")]
+		public string DIENTHOAI
+		{
+			get
+			{
+				return this._DIENTHOAI;
+			}
+			set
+			{
+				if ((this._DIENTHOAI != value))
+				{
+					this._DIENTHOAI = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SOHOBD", DbType="Int")]
+		public System.Nullable<int> SOHOBD
+		{
+			get
+			{
+				return this._SOHOBD;
+			}
+			set
+			{
+				if ((this._SOHOBD != value))
+				{
+					this._SOHOBD = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SOHO", DbType="Int")]
+		public System.Nullable<int> SOHO
+		{
+			get
+			{
+				return this._SOHO;
+			}
+			set
+			{
+				if ((this._SOHO != value))
+				{
+					this._SOHO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SONHA", DbType="VarChar(50)")]
+		public string SONHA
+		{
+			get
+			{
+				return this._SONHA;
+			}
+			set
+			{
+				if ((this._SONHA != value))
+				{
+					this._SONHA = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SONHA_TTK", DbType="VarChar(50)")]
+		public string SONHA_TTK
+		{
+			get
+			{
+				return this._SONHA_TTK;
+			}
+			set
+			{
+				if ((this._SONHA_TTK != value))
+				{
+					this._SONHA_TTK = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DUONG", DbType="NVarChar(50)")]
+		public string DUONG
+		{
+			get
+			{
+				return this._DUONG;
+			}
+			set
+			{
+				if ((this._DUONG != value))
+				{
+					this._DUONG = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PHUONG", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
+		public string PHUONG
+		{
+			get
+			{
+				return this._PHUONG;
+			}
+			set
+			{
+				if ((this._PHUONG != value))
+				{
+					this._PHUONG = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_QUAN", DbType="Int NOT NULL")]
+		public int QUAN
+		{
+			get
+			{
+				return this._QUAN;
+			}
+			set
+			{
+				if ((this._QUAN != value))
+				{
+					this._QUAN = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAYNHAN", DbType="DateTime")]
+		public System.Nullable<System.DateTime> NGAYNHAN
+		{
+			get
+			{
+				return this._NGAYNHAN;
+			}
+			set
+			{
+				if ((this._NGAYNHAN != value))
+				{
+					this._NGAYNHAN = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LOAIKH", DbType="VarChar(10)")]
+		public string LOAIKH
+		{
+			get
+			{
+				return this._LOAIKH;
+			}
+			set
+			{
+				if ((this._LOAIKH != value))
+				{
+					this._LOAIKH = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LOAIHOSO", DbType="VarChar(10)")]
+		public string LOAIHOSO
+		{
+			get
+			{
+				return this._LOAIHOSO;
+			}
+			set
+			{
+				if ((this._LOAIHOSO != value))
+				{
+					this._LOAIHOSO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TAPTHE", DbType="Int")]
+		public System.Nullable<int> TAPTHE
+		{
+			get
+			{
+				return this._TAPTHE;
+			}
+			set
+			{
+				if ((this._TAPTHE != value))
+				{
+					this._TAPTHE = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TINHKHOAN", DbType="Bit")]
+		public System.Nullable<bool> TINHKHOAN
+		{
+			get
+			{
+				return this._TINHKHOAN;
+			}
+			set
+			{
+				if ((this._TINHKHOAN != value))
+				{
+					this._TINHKHOAN = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LOAIMIENPHI", DbType="NVarChar(50)")]
+		public string LOAIMIENPHI
+		{
+			get
+			{
+				return this._LOAIMIENPHI;
+			}
+			set
+			{
+				if ((this._LOAIMIENPHI != value))
+				{
+					this._LOAIMIENPHI = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GHICHU", DbType="NVarChar(250)")]
+		public string GHICHU
+		{
+			get
+			{
+				return this._GHICHU;
+			}
+			set
+			{
+				if ((this._GHICHU != value))
+				{
+					this._GHICHU = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HOSOKHAN", DbType="Bit")]
+		public System.Nullable<bool> HOSOKHAN
+		{
+			get
+			{
+				return this._HOSOKHAN;
+			}
+			set
+			{
+				if ((this._HOSOKHAN != value))
+				{
+					this._HOSOKHAN = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GHICHUKHAN", DbType="NVarChar(250)")]
+		public string GHICHUKHAN
+		{
+			get
+			{
+				return this._GHICHUKHAN;
+			}
+			set
+			{
+				if ((this._GHICHUKHAN != value))
+				{
+					this._GHICHUKHAN = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CHUYEN_HOSO", DbType="Bit")]
+		public System.Nullable<bool> CHUYEN_HOSO
+		{
+			get
+			{
+				return this._CHUYEN_HOSO;
+			}
+			set
+			{
+				if ((this._CHUYEN_HOSO != value))
+				{
+					this._CHUYEN_HOSO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BOPHANCHUYEN", DbType="VarChar(20)")]
+		public string BOPHANCHUYEN
+		{
+			get
+			{
+				return this._BOPHANCHUYEN;
+			}
+			set
+			{
+				if ((this._BOPHANCHUYEN != value))
+				{
+					this._BOPHANCHUYEN = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGUOICHUYEN_HOSO", DbType="VarChar(20)")]
+		public string NGUOICHUYEN_HOSO
+		{
+			get
+			{
+				return this._NGUOICHUYEN_HOSO;
+			}
+			set
+			{
+				if ((this._NGUOICHUYEN_HOSO != value))
+				{
+					this._NGUOICHUYEN_HOSO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAYCHUYEN_HOSO", DbType="DateTime")]
+		public System.Nullable<System.DateTime> NGAYCHUYEN_HOSO
+		{
+			get
+			{
+				return this._NGAYCHUYEN_HOSO;
+			}
+			set
+			{
+				if ((this._NGAYCHUYEN_HOSO != value))
+				{
+					this._NGAYCHUYEN_HOSO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TRONGAICHUYEN_HOSO", DbType="Bit")]
+		public System.Nullable<bool> TRONGAICHUYEN_HOSO
+		{
+			get
+			{
+				return this._TRONGAICHUYEN_HOSO;
+			}
+			set
+			{
+				if ((this._TRONGAICHUYEN_HOSO != value))
+				{
+					this._TRONGAICHUYEN_HOSO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NOIDUNGTNCHUYEN", DbType="NVarChar(50)")]
+		public string NOIDUNGTNCHUYEN
+		{
+			get
+			{
+				return this._NOIDUNGTNCHUYEN;
+			}
+			set
+			{
+				if ((this._NOIDUNGTNCHUYEN != value))
+				{
+					this._NOIDUNGTNCHUYEN = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TRONGAITHIETKE", DbType="Bit")]
+		public System.Nullable<bool> TRONGAITHIETKE
+		{
+			get
+			{
+				return this._TRONGAITHIETKE;
+			}
+			set
+			{
+				if ((this._TRONGAITHIETKE != value))
+				{
+					this._TRONGAITHIETKE = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NOIDUNGTRONGAI", DbType="NVarChar(250)")]
+		public string NOIDUNGTRONGAI
+		{
+			get
+			{
+				return this._NOIDUNGTRONGAI;
+			}
+			set
+			{
+				if ((this._NOIDUNGTRONGAI != value))
+				{
+					this._NOIDUNGTRONGAI = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HOSOCHA", DbType="VarChar(30)")]
+		public string HOSOCHA
+		{
+			get
+			{
+				return this._HOSOCHA;
+			}
+			set
+			{
+				if ((this._HOSOCHA != value))
+				{
+					this._HOSOCHA = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_XINPHEPDAODUONG", DbType="Bit")]
+		public System.Nullable<bool> XINPHEPDAODUONG
+		{
+			get
+			{
+				return this._XINPHEPDAODUONG;
+			}
+			set
+			{
+				if ((this._XINPHEPDAODUONG != value))
+				{
+					this._XINPHEPDAODUONG = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TRINHKYBGD", DbType="Bit")]
+		public System.Nullable<bool> TRINHKYBGD
+		{
+			get
+			{
+				return this._TRINHKYBGD;
+			}
+			set
+			{
+				if ((this._TRINHKYBGD != value))
+				{
+					this._TRINHKYBGD = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CREATEBY", DbType="VarChar(50)")]
+		public string CREATEBY
+		{
+			get
+			{
+				return this._CREATEBY;
+			}
+			set
+			{
+				if ((this._CREATEBY != value))
+				{
+					this._CREATEBY = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CREATEDATE", DbType="DateTime")]
+		public System.Nullable<System.DateTime> CREATEDATE
+		{
+			get
+			{
+				return this._CREATEDATE;
+			}
+			set
+			{
+				if ((this._CREATEDATE != value))
+				{
+					this._CREATEDATE = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MODIFYBY", DbType="VarChar(20)")]
+		public string MODIFYBY
+		{
+			get
+			{
+				return this._MODIFYBY;
+			}
+			set
+			{
+				if ((this._MODIFYBY != value))
+				{
+					this._MODIFYBY = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MODIFYDATE", DbType="DateTime")]
+		public System.Nullable<System.DateTime> MODIFYDATE
+		{
+			get
+			{
+				return this._MODIFYDATE;
+			}
+			set
+			{
+				if ((this._MODIFYDATE != value))
+				{
+					this._MODIFYDATE = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MODIFYLOG", DbType="NText", UpdateCheck=UpdateCheck.Never)]
+		public string MODIFYLOG
+		{
+			get
+			{
+				return this._MODIFYLOG;
+			}
+			set
+			{
+				if ((this._MODIFYLOG != value))
+				{
+					this._MODIFYLOG = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MAQUAN", DbType="Int NOT NULL")]
+		public int MAQUAN
+		{
+			get
+			{
+				return this._MAQUAN;
+			}
+			set
+			{
+				if ((this._MAQUAN != value))
+				{
+					this._MAQUAN = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENQUAN", DbType="NVarChar(50)")]
+		public string TENQUAN
+		{
+			get
+			{
+				return this._TENQUAN;
+			}
+			set
+			{
+				if ((this._TENQUAN != value))
+				{
+					this._TENQUAN = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MAPHUONG", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
+		public string MAPHUONG
+		{
+			get
+			{
+				return this._MAPHUONG;
+			}
+			set
+			{
+				if ((this._MAPHUONG != value))
+				{
+					this._MAPHUONG = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENPHUONG", DbType="NVarChar(50)")]
+		public string TENPHUONG
+		{
+			get
+			{
+				return this._TENPHUONG;
+			}
+			set
+			{
+				if ((this._TENPHUONG != value))
+				{
+					this._TENPHUONG = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENLOAI", DbType="NVarChar(250)")]
+		public string TENLOAI
+		{
+			get
+			{
+				return this._TENLOAI;
+			}
+			set
+			{
+				if ((this._TENLOAI != value))
+				{
+					this._TENLOAI = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_USERNAME", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string USERNAME
+		{
+			get
+			{
+				return this._USERNAME;
+			}
+			set
+			{
+				if ((this._USERNAME != value))
+				{
+					this._USERNAME = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGUOILAP", DbType="NVarChar(50)")]
+		public string NGUOILAP
+		{
+			get
+			{
+				return this._NGUOILAP;
+			}
+			set
+			{
+				if ((this._NGUOILAP != value))
+				{
+					this._NGUOILAP = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TINHTRANGSVD", DbType="NVarChar(8) NOT NULL", CanBeNull=false)]
+		public string TINHTRANGSVD
+		{
+			get
+			{
+				return this._TINHTRANGSVD;
+			}
+			set
+			{
+				if ((this._TINHTRANGSVD != value))
+				{
+					this._TINHTRANGSVD = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.V_DANHSACH_HS_SDV")]
+	public partial class V_DANHSACH_HS_SDV
+	{
+		
+		private string _MADOT;
+		
+		private string _SHS;
+		
+		private string _HOTEN;
+		
+		private string _DIENTHOAI;
+		
+		private string _DIACHI;
+		
+		private string _NGAYNHAN;
+		
+		private string _TENLOAI;
+		
+		private string _PHUONG;
+		
+		private int _QUAN;
+		
+		private string _DUONG;
+		
+		private string _SONHA;
+		
+		private string _SODOVIEN;
+		
+		private string _FULLNAME;
+		
+		public V_DANHSACH_HS_SDV()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MADOT", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string MADOT
+		{
+			get
+			{
+				return this._MADOT;
+			}
+			set
+			{
+				if ((this._MADOT != value))
+				{
+					this._MADOT = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SHS", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string SHS
+		{
+			get
+			{
+				return this._SHS;
+			}
+			set
+			{
+				if ((this._SHS != value))
+				{
+					this._SHS = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HOTEN", DbType="NVarChar(50)")]
+		public string HOTEN
+		{
+			get
+			{
+				return this._HOTEN;
+			}
+			set
+			{
+				if ((this._HOTEN != value))
+				{
+					this._HOTEN = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DIENTHOAI", DbType="NVarChar(20)")]
+		public string DIENTHOAI
+		{
+			get
+			{
+				return this._DIENTHOAI;
+			}
+			set
+			{
+				if ((this._DIENTHOAI != value))
+				{
+					this._DIENTHOAI = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DIACHI", DbType="NVarChar(209)")]
+		public string DIACHI
+		{
+			get
+			{
+				return this._DIACHI;
+			}
+			set
+			{
+				if ((this._DIACHI != value))
+				{
+					this._DIACHI = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAYNHAN", DbType="VarChar(10)")]
+		public string NGAYNHAN
+		{
+			get
+			{
+				return this._NGAYNHAN;
+			}
+			set
+			{
+				if ((this._NGAYNHAN != value))
+				{
+					this._NGAYNHAN = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENLOAI", DbType="NVarChar(250) NOT NULL", CanBeNull=false)]
+		public string TENLOAI
+		{
+			get
+			{
+				return this._TENLOAI;
+			}
+			set
+			{
+				if ((this._TENLOAI != value))
+				{
+					this._TENLOAI = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PHUONG", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
+		public string PHUONG
+		{
+			get
+			{
+				return this._PHUONG;
+			}
+			set
+			{
+				if ((this._PHUONG != value))
+				{
+					this._PHUONG = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_QUAN", DbType="Int NOT NULL")]
+		public int QUAN
+		{
+			get
+			{
+				return this._QUAN;
+			}
+			set
+			{
+				if ((this._QUAN != value))
+				{
+					this._QUAN = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DUONG", DbType="NVarChar(50)")]
+		public string DUONG
+		{
+			get
+			{
+				return this._DUONG;
+			}
+			set
+			{
+				if ((this._DUONG != value))
+				{
+					this._DUONG = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SONHA", DbType="VarChar(50)")]
+		public string SONHA
+		{
+			get
+			{
+				return this._SONHA;
+			}
+			set
+			{
+				if ((this._SONHA != value))
+				{
+					this._SONHA = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SODOVIEN", DbType="VarChar(20)")]
+		public string SODOVIEN
+		{
+			get
+			{
+				return this._SODOVIEN;
+			}
+			set
+			{
+				if ((this._SODOVIEN != value))
+				{
+					this._SODOVIEN = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FULLNAME", DbType="NVarChar(50)")]
+		public string FULLNAME
+		{
+			get
+			{
+				return this._FULLNAME;
+			}
+			set
+			{
+				if ((this._FULLNAME != value))
+				{
+					this._FULLNAME = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.V_DONKHACHHANG")]
+	public partial class V_DONKHACHHANG
+	{
+		
+		private int _ID;
+		
+		private string _MADOT;
+		
+		private string _SOHOSO;
+		
+		private string _SHS;
+		
+		private string _DANHBO;
+		
+		private string _HOPDONG;
+		
+		private string _HOTEN;
+		
+		private string _DIENTHOAI;
+		
+		private System.Nullable<int> _SOHOBD;
+		
+		private System.Nullable<int> _SOHO;
+		
+		private string _SONHA;
+		
+		private string _SONHA_TTK;
+		
+		private string _DUONG;
+		
+		private string _PHUONG;
+		
+		private int _QUAN;
+		
+		private System.Nullable<System.DateTime> _NGAYNHAN;
+		
+		private string _LOAIKH;
+		
+		private string _LOAIHOSO;
+		
+		private System.Nullable<int> _TAPTHE;
+		
+		private System.Nullable<bool> _TINHKHOAN;
+		
+		private string _LOAIMIENPHI;
+		
+		private string _GHICHU;
+		
+		private System.Nullable<bool> _HOSOKHAN;
+		
+		private string _GHICHUKHAN;
+		
+		private System.Nullable<bool> _CHUYEN_HOSO;
+		
+		private string _BOPHANCHUYEN;
+		
+		private string _NGUOICHUYEN_HOSO;
+		
+		private System.Nullable<System.DateTime> _NGAYCHUYEN_HOSO;
+		
+		private System.Nullable<bool> _TRONGAICHUYEN_HOSO;
+		
+		private string _NOIDUNGTNCHUYEN;
+		
+		private System.Nullable<bool> _TRONGAITHIETKE;
+		
+		private string _NOIDUNGTRONGAI;
+		
+		private string _HOSOCHA;
+		
+		private System.Nullable<bool> _XINPHEPDAODUONG;
+		
+		private System.Nullable<bool> _TRINHKYBGD;
+		
+		private string _CREATEBY;
+		
+		private System.Nullable<System.DateTime> _CREATEDATE;
+		
+		private string _MODIFYBY;
+		
+		private System.Nullable<System.DateTime> _MODIFYDATE;
+		
+		private string _MODIFYLOG;
+		
+		private int _MAQUAN;
+		
+		private string _TENQUAN;
+		
+		private string _MAPHUONG;
+		
+		private string _TENPHUONG;
+		
+		private string _TENLOAI;
+		
+		private string _USERNAME;
+		
+		private string _NGUOILAP;
+		
+		public V_DONKHACHHANG()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL")]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this._ID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MADOT", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string MADOT
+		{
+			get
+			{
+				return this._MADOT;
+			}
+			set
+			{
+				if ((this._MADOT != value))
+				{
+					this._MADOT = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SOHOSO", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string SOHOSO
+		{
+			get
+			{
+				return this._SOHOSO;
+			}
+			set
+			{
+				if ((this._SOHOSO != value))
+				{
+					this._SOHOSO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SHS", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string SHS
+		{
+			get
+			{
+				return this._SHS;
+			}
+			set
+			{
+				if ((this._SHS != value))
+				{
+					this._SHS = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DANHBO", DbType="VarChar(50)")]
+		public string DANHBO
+		{
+			get
+			{
+				return this._DANHBO;
+			}
+			set
+			{
+				if ((this._DANHBO != value))
+				{
+					this._DANHBO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HOPDONG", DbType="VarChar(50)")]
+		public string HOPDONG
+		{
+			get
+			{
+				return this._HOPDONG;
+			}
+			set
+			{
+				if ((this._HOPDONG != value))
+				{
+					this._HOPDONG = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HOTEN", DbType="NVarChar(50)")]
+		public string HOTEN
+		{
+			get
+			{
+				return this._HOTEN;
+			}
+			set
+			{
+				if ((this._HOTEN != value))
+				{
+					this._HOTEN = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DIENTHOAI", DbType="NVarChar(20)")]
+		public string DIENTHOAI
+		{
+			get
+			{
+				return this._DIENTHOAI;
+			}
+			set
+			{
+				if ((this._DIENTHOAI != value))
+				{
+					this._DIENTHOAI = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SOHOBD", DbType="Int")]
+		public System.Nullable<int> SOHOBD
+		{
+			get
+			{
+				return this._SOHOBD;
+			}
+			set
+			{
+				if ((this._SOHOBD != value))
+				{
+					this._SOHOBD = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SOHO", DbType="Int")]
+		public System.Nullable<int> SOHO
+		{
+			get
+			{
+				return this._SOHO;
+			}
+			set
+			{
+				if ((this._SOHO != value))
+				{
+					this._SOHO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SONHA", DbType="VarChar(50)")]
+		public string SONHA
+		{
+			get
+			{
+				return this._SONHA;
+			}
+			set
+			{
+				if ((this._SONHA != value))
+				{
+					this._SONHA = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SONHA_TTK", DbType="VarChar(50)")]
+		public string SONHA_TTK
+		{
+			get
+			{
+				return this._SONHA_TTK;
+			}
+			set
+			{
+				if ((this._SONHA_TTK != value))
+				{
+					this._SONHA_TTK = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DUONG", DbType="NVarChar(50)")]
+		public string DUONG
+		{
+			get
+			{
+				return this._DUONG;
+			}
+			set
+			{
+				if ((this._DUONG != value))
+				{
+					this._DUONG = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PHUONG", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
+		public string PHUONG
+		{
+			get
+			{
+				return this._PHUONG;
+			}
+			set
+			{
+				if ((this._PHUONG != value))
+				{
+					this._PHUONG = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_QUAN", DbType="Int NOT NULL")]
+		public int QUAN
+		{
+			get
+			{
+				return this._QUAN;
+			}
+			set
+			{
+				if ((this._QUAN != value))
+				{
+					this._QUAN = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAYNHAN", DbType="DateTime")]
+		public System.Nullable<System.DateTime> NGAYNHAN
+		{
+			get
+			{
+				return this._NGAYNHAN;
+			}
+			set
+			{
+				if ((this._NGAYNHAN != value))
+				{
+					this._NGAYNHAN = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LOAIKH", DbType="VarChar(10)")]
+		public string LOAIKH
+		{
+			get
+			{
+				return this._LOAIKH;
+			}
+			set
+			{
+				if ((this._LOAIKH != value))
+				{
+					this._LOAIKH = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LOAIHOSO", DbType="VarChar(10)")]
+		public string LOAIHOSO
+		{
+			get
+			{
+				return this._LOAIHOSO;
+			}
+			set
+			{
+				if ((this._LOAIHOSO != value))
+				{
+					this._LOAIHOSO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TAPTHE", DbType="Int")]
+		public System.Nullable<int> TAPTHE
+		{
+			get
+			{
+				return this._TAPTHE;
+			}
+			set
+			{
+				if ((this._TAPTHE != value))
+				{
+					this._TAPTHE = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TINHKHOAN", DbType="Bit")]
+		public System.Nullable<bool> TINHKHOAN
+		{
+			get
+			{
+				return this._TINHKHOAN;
+			}
+			set
+			{
+				if ((this._TINHKHOAN != value))
+				{
+					this._TINHKHOAN = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LOAIMIENPHI", DbType="NVarChar(50)")]
+		public string LOAIMIENPHI
+		{
+			get
+			{
+				return this._LOAIMIENPHI;
+			}
+			set
+			{
+				if ((this._LOAIMIENPHI != value))
+				{
+					this._LOAIMIENPHI = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GHICHU", DbType="NVarChar(250)")]
+		public string GHICHU
+		{
+			get
+			{
+				return this._GHICHU;
+			}
+			set
+			{
+				if ((this._GHICHU != value))
+				{
+					this._GHICHU = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HOSOKHAN", DbType="Bit")]
+		public System.Nullable<bool> HOSOKHAN
+		{
+			get
+			{
+				return this._HOSOKHAN;
+			}
+			set
+			{
+				if ((this._HOSOKHAN != value))
+				{
+					this._HOSOKHAN = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GHICHUKHAN", DbType="NVarChar(250)")]
+		public string GHICHUKHAN
+		{
+			get
+			{
+				return this._GHICHUKHAN;
+			}
+			set
+			{
+				if ((this._GHICHUKHAN != value))
+				{
+					this._GHICHUKHAN = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CHUYEN_HOSO", DbType="Bit")]
+		public System.Nullable<bool> CHUYEN_HOSO
+		{
+			get
+			{
+				return this._CHUYEN_HOSO;
+			}
+			set
+			{
+				if ((this._CHUYEN_HOSO != value))
+				{
+					this._CHUYEN_HOSO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BOPHANCHUYEN", DbType="VarChar(20)")]
+		public string BOPHANCHUYEN
+		{
+			get
+			{
+				return this._BOPHANCHUYEN;
+			}
+			set
+			{
+				if ((this._BOPHANCHUYEN != value))
+				{
+					this._BOPHANCHUYEN = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGUOICHUYEN_HOSO", DbType="VarChar(20)")]
+		public string NGUOICHUYEN_HOSO
+		{
+			get
+			{
+				return this._NGUOICHUYEN_HOSO;
+			}
+			set
+			{
+				if ((this._NGUOICHUYEN_HOSO != value))
+				{
+					this._NGUOICHUYEN_HOSO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAYCHUYEN_HOSO", DbType="DateTime")]
+		public System.Nullable<System.DateTime> NGAYCHUYEN_HOSO
+		{
+			get
+			{
+				return this._NGAYCHUYEN_HOSO;
+			}
+			set
+			{
+				if ((this._NGAYCHUYEN_HOSO != value))
+				{
+					this._NGAYCHUYEN_HOSO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TRONGAICHUYEN_HOSO", DbType="Bit")]
+		public System.Nullable<bool> TRONGAICHUYEN_HOSO
+		{
+			get
+			{
+				return this._TRONGAICHUYEN_HOSO;
+			}
+			set
+			{
+				if ((this._TRONGAICHUYEN_HOSO != value))
+				{
+					this._TRONGAICHUYEN_HOSO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NOIDUNGTNCHUYEN", DbType="NVarChar(50)")]
+		public string NOIDUNGTNCHUYEN
+		{
+			get
+			{
+				return this._NOIDUNGTNCHUYEN;
+			}
+			set
+			{
+				if ((this._NOIDUNGTNCHUYEN != value))
+				{
+					this._NOIDUNGTNCHUYEN = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TRONGAITHIETKE", DbType="Bit")]
+		public System.Nullable<bool> TRONGAITHIETKE
+		{
+			get
+			{
+				return this._TRONGAITHIETKE;
+			}
+			set
+			{
+				if ((this._TRONGAITHIETKE != value))
+				{
+					this._TRONGAITHIETKE = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NOIDUNGTRONGAI", DbType="NVarChar(250)")]
+		public string NOIDUNGTRONGAI
+		{
+			get
+			{
+				return this._NOIDUNGTRONGAI;
+			}
+			set
+			{
+				if ((this._NOIDUNGTRONGAI != value))
+				{
+					this._NOIDUNGTRONGAI = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HOSOCHA", DbType="VarChar(30)")]
+		public string HOSOCHA
+		{
+			get
+			{
+				return this._HOSOCHA;
+			}
+			set
+			{
+				if ((this._HOSOCHA != value))
+				{
+					this._HOSOCHA = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_XINPHEPDAODUONG", DbType="Bit")]
+		public System.Nullable<bool> XINPHEPDAODUONG
+		{
+			get
+			{
+				return this._XINPHEPDAODUONG;
+			}
+			set
+			{
+				if ((this._XINPHEPDAODUONG != value))
+				{
+					this._XINPHEPDAODUONG = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TRINHKYBGD", DbType="Bit")]
+		public System.Nullable<bool> TRINHKYBGD
+		{
+			get
+			{
+				return this._TRINHKYBGD;
+			}
+			set
+			{
+				if ((this._TRINHKYBGD != value))
+				{
+					this._TRINHKYBGD = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CREATEBY", DbType="VarChar(50)")]
+		public string CREATEBY
+		{
+			get
+			{
+				return this._CREATEBY;
+			}
+			set
+			{
+				if ((this._CREATEBY != value))
+				{
+					this._CREATEBY = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CREATEDATE", DbType="DateTime")]
+		public System.Nullable<System.DateTime> CREATEDATE
+		{
+			get
+			{
+				return this._CREATEDATE;
+			}
+			set
+			{
+				if ((this._CREATEDATE != value))
+				{
+					this._CREATEDATE = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MODIFYBY", DbType="VarChar(20)")]
+		public string MODIFYBY
+		{
+			get
+			{
+				return this._MODIFYBY;
+			}
+			set
+			{
+				if ((this._MODIFYBY != value))
+				{
+					this._MODIFYBY = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MODIFYDATE", DbType="DateTime")]
+		public System.Nullable<System.DateTime> MODIFYDATE
+		{
+			get
+			{
+				return this._MODIFYDATE;
+			}
+			set
+			{
+				if ((this._MODIFYDATE != value))
+				{
+					this._MODIFYDATE = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MODIFYLOG", DbType="NText", UpdateCheck=UpdateCheck.Never)]
+		public string MODIFYLOG
+		{
+			get
+			{
+				return this._MODIFYLOG;
+			}
+			set
+			{
+				if ((this._MODIFYLOG != value))
+				{
+					this._MODIFYLOG = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MAQUAN", DbType="Int NOT NULL")]
+		public int MAQUAN
+		{
+			get
+			{
+				return this._MAQUAN;
+			}
+			set
+			{
+				if ((this._MAQUAN != value))
+				{
+					this._MAQUAN = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENQUAN", DbType="NVarChar(50)")]
+		public string TENQUAN
+		{
+			get
+			{
+				return this._TENQUAN;
+			}
+			set
+			{
+				if ((this._TENQUAN != value))
+				{
+					this._TENQUAN = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MAPHUONG", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
+		public string MAPHUONG
+		{
+			get
+			{
+				return this._MAPHUONG;
+			}
+			set
+			{
+				if ((this._MAPHUONG != value))
+				{
+					this._MAPHUONG = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENPHUONG", DbType="NVarChar(50)")]
+		public string TENPHUONG
+		{
+			get
+			{
+				return this._TENPHUONG;
+			}
+			set
+			{
+				if ((this._TENPHUONG != value))
+				{
+					this._TENPHUONG = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENLOAI", DbType="NVarChar(250)")]
+		public string TENLOAI
+		{
+			get
+			{
+				return this._TENLOAI;
+			}
+			set
+			{
+				if ((this._TENLOAI != value))
+				{
+					this._TENLOAI = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_USERNAME", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string USERNAME
+		{
+			get
+			{
+				return this._USERNAME;
+			}
+			set
+			{
+				if ((this._USERNAME != value))
+				{
+					this._USERNAME = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGUOILAP", DbType="NVarChar(50)")]
+		public string NGUOILAP
+		{
+			get
+			{
+				return this._NGUOILAP;
+			}
+			set
+			{
+				if ((this._NGUOILAP != value))
+				{
+					this._NGUOILAP = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.V_DONTAIXET")]
+	public partial class V_DONTAIXET
+	{
+		
+		private int _ID;
+		
+		private string _MADOT;
+		
+		private string _SOHOSO;
+		
+		private string _SHS;
+		
+		private string _DANHBO;
+		
+		private string _HOPDONG;
+		
+		private string _HOTEN;
+		
+		private string _DIENTHOAI;
+		
+		private System.Nullable<int> _SOHOBD;
+		
+		private System.Nullable<int> _SOHO;
+		
+		private string _SONHA;
+		
+		private string _SONHA_TTK;
+		
+		private string _DUONG;
+		
+		private string _PHUONG;
+		
+		private int _QUAN;
+		
+		private System.Nullable<System.DateTime> _NGAYNHAN;
+		
+		private string _LOAIKH;
+		
+		private string _LOAIHOSO;
+		
+		private System.Nullable<int> _TAPTHE;
+		
+		private System.Nullable<bool> _TINHKHOAN;
+		
+		private string _LOAIMIENPHI;
+		
+		private string _GHICHU;
+		
+		private System.Nullable<bool> _HOSOKHAN;
+		
+		private string _GHICHUKHAN;
+		
+		private System.Nullable<bool> _CHUYEN_HOSO;
+		
+		private string _BOPHANCHUYEN;
+		
+		private string _NGUOICHUYEN_HOSO;
+		
+		private System.Nullable<System.DateTime> _NGAYCHUYEN_HOSO;
+		
+		private System.Nullable<bool> _TRONGAICHUYEN_HOSO;
+		
+		private string _NOIDUNGTNCHUYEN;
+		
+		private System.Nullable<bool> _TRONGAITHIETKE;
+		
+		private string _NOIDUNGTRONGAI;
+		
+		private string _HOSOCHA;
+		
+		private System.Nullable<bool> _XINPHEPDAODUONG;
+		
+		private System.Nullable<bool> _TRINHKYBGD;
+		
+		private string _CREATEBY;
+		
+		private System.Nullable<System.DateTime> _CREATEDATE;
+		
+		private string _MODIFYBY;
+		
+		private System.Nullable<System.DateTime> _MODIFYDATE;
+		
+		private string _MODIFYLOG;
+		
+		private string _DIACHI;
+		
+		private string _LOAIDON;
+		
+		private string _USERNAME;
+		
+		private string _NGUOILAP;
+		
+		public V_DONTAIXET()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL")]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this._ID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MADOT", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string MADOT
+		{
+			get
+			{
+				return this._MADOT;
+			}
+			set
+			{
+				if ((this._MADOT != value))
+				{
+					this._MADOT = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SOHOSO", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string SOHOSO
+		{
+			get
+			{
+				return this._SOHOSO;
+			}
+			set
+			{
+				if ((this._SOHOSO != value))
+				{
+					this._SOHOSO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SHS", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string SHS
+		{
+			get
+			{
+				return this._SHS;
+			}
+			set
+			{
+				if ((this._SHS != value))
+				{
+					this._SHS = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DANHBO", DbType="VarChar(50)")]
+		public string DANHBO
+		{
+			get
+			{
+				return this._DANHBO;
+			}
+			set
+			{
+				if ((this._DANHBO != value))
+				{
+					this._DANHBO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HOPDONG", DbType="VarChar(50)")]
+		public string HOPDONG
+		{
+			get
+			{
+				return this._HOPDONG;
+			}
+			set
+			{
+				if ((this._HOPDONG != value))
+				{
+					this._HOPDONG = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HOTEN", DbType="NVarChar(50)")]
+		public string HOTEN
+		{
+			get
+			{
+				return this._HOTEN;
+			}
+			set
+			{
+				if ((this._HOTEN != value))
+				{
+					this._HOTEN = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DIENTHOAI", DbType="NVarChar(20)")]
+		public string DIENTHOAI
+		{
+			get
+			{
+				return this._DIENTHOAI;
+			}
+			set
+			{
+				if ((this._DIENTHOAI != value))
+				{
+					this._DIENTHOAI = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SOHOBD", DbType="Int")]
+		public System.Nullable<int> SOHOBD
+		{
+			get
+			{
+				return this._SOHOBD;
+			}
+			set
+			{
+				if ((this._SOHOBD != value))
+				{
+					this._SOHOBD = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SOHO", DbType="Int")]
+		public System.Nullable<int> SOHO
+		{
+			get
+			{
+				return this._SOHO;
+			}
+			set
+			{
+				if ((this._SOHO != value))
+				{
+					this._SOHO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SONHA", DbType="VarChar(50)")]
+		public string SONHA
+		{
+			get
+			{
+				return this._SONHA;
+			}
+			set
+			{
+				if ((this._SONHA != value))
+				{
+					this._SONHA = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SONHA_TTK", DbType="VarChar(50)")]
+		public string SONHA_TTK
+		{
+			get
+			{
+				return this._SONHA_TTK;
+			}
+			set
+			{
+				if ((this._SONHA_TTK != value))
+				{
+					this._SONHA_TTK = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DUONG", DbType="NVarChar(50)")]
+		public string DUONG
+		{
+			get
+			{
+				return this._DUONG;
+			}
+			set
+			{
+				if ((this._DUONG != value))
+				{
+					this._DUONG = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PHUONG", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
+		public string PHUONG
+		{
+			get
+			{
+				return this._PHUONG;
+			}
+			set
+			{
+				if ((this._PHUONG != value))
+				{
+					this._PHUONG = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_QUAN", DbType="Int NOT NULL")]
+		public int QUAN
+		{
+			get
+			{
+				return this._QUAN;
+			}
+			set
+			{
+				if ((this._QUAN != value))
+				{
+					this._QUAN = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAYNHAN", DbType="DateTime")]
+		public System.Nullable<System.DateTime> NGAYNHAN
+		{
+			get
+			{
+				return this._NGAYNHAN;
+			}
+			set
+			{
+				if ((this._NGAYNHAN != value))
+				{
+					this._NGAYNHAN = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LOAIKH", DbType="VarChar(10)")]
+		public string LOAIKH
+		{
+			get
+			{
+				return this._LOAIKH;
+			}
+			set
+			{
+				if ((this._LOAIKH != value))
+				{
+					this._LOAIKH = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LOAIHOSO", DbType="VarChar(10)")]
+		public string LOAIHOSO
+		{
+			get
+			{
+				return this._LOAIHOSO;
+			}
+			set
+			{
+				if ((this._LOAIHOSO != value))
+				{
+					this._LOAIHOSO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TAPTHE", DbType="Int")]
+		public System.Nullable<int> TAPTHE
+		{
+			get
+			{
+				return this._TAPTHE;
+			}
+			set
+			{
+				if ((this._TAPTHE != value))
+				{
+					this._TAPTHE = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TINHKHOAN", DbType="Bit")]
+		public System.Nullable<bool> TINHKHOAN
+		{
+			get
+			{
+				return this._TINHKHOAN;
+			}
+			set
+			{
+				if ((this._TINHKHOAN != value))
+				{
+					this._TINHKHOAN = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LOAIMIENPHI", DbType="NVarChar(50)")]
+		public string LOAIMIENPHI
+		{
+			get
+			{
+				return this._LOAIMIENPHI;
+			}
+			set
+			{
+				if ((this._LOAIMIENPHI != value))
+				{
+					this._LOAIMIENPHI = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GHICHU", DbType="NVarChar(250)")]
+		public string GHICHU
+		{
+			get
+			{
+				return this._GHICHU;
+			}
+			set
+			{
+				if ((this._GHICHU != value))
+				{
+					this._GHICHU = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HOSOKHAN", DbType="Bit")]
+		public System.Nullable<bool> HOSOKHAN
+		{
+			get
+			{
+				return this._HOSOKHAN;
+			}
+			set
+			{
+				if ((this._HOSOKHAN != value))
+				{
+					this._HOSOKHAN = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GHICHUKHAN", DbType="NVarChar(250)")]
+		public string GHICHUKHAN
+		{
+			get
+			{
+				return this._GHICHUKHAN;
+			}
+			set
+			{
+				if ((this._GHICHUKHAN != value))
+				{
+					this._GHICHUKHAN = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CHUYEN_HOSO", DbType="Bit")]
+		public System.Nullable<bool> CHUYEN_HOSO
+		{
+			get
+			{
+				return this._CHUYEN_HOSO;
+			}
+			set
+			{
+				if ((this._CHUYEN_HOSO != value))
+				{
+					this._CHUYEN_HOSO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BOPHANCHUYEN", DbType="VarChar(20)")]
+		public string BOPHANCHUYEN
+		{
+			get
+			{
+				return this._BOPHANCHUYEN;
+			}
+			set
+			{
+				if ((this._BOPHANCHUYEN != value))
+				{
+					this._BOPHANCHUYEN = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGUOICHUYEN_HOSO", DbType="VarChar(20)")]
+		public string NGUOICHUYEN_HOSO
+		{
+			get
+			{
+				return this._NGUOICHUYEN_HOSO;
+			}
+			set
+			{
+				if ((this._NGUOICHUYEN_HOSO != value))
+				{
+					this._NGUOICHUYEN_HOSO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAYCHUYEN_HOSO", DbType="DateTime")]
+		public System.Nullable<System.DateTime> NGAYCHUYEN_HOSO
+		{
+			get
+			{
+				return this._NGAYCHUYEN_HOSO;
+			}
+			set
+			{
+				if ((this._NGAYCHUYEN_HOSO != value))
+				{
+					this._NGAYCHUYEN_HOSO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TRONGAICHUYEN_HOSO", DbType="Bit")]
+		public System.Nullable<bool> TRONGAICHUYEN_HOSO
+		{
+			get
+			{
+				return this._TRONGAICHUYEN_HOSO;
+			}
+			set
+			{
+				if ((this._TRONGAICHUYEN_HOSO != value))
+				{
+					this._TRONGAICHUYEN_HOSO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NOIDUNGTNCHUYEN", DbType="NVarChar(50)")]
+		public string NOIDUNGTNCHUYEN
+		{
+			get
+			{
+				return this._NOIDUNGTNCHUYEN;
+			}
+			set
+			{
+				if ((this._NOIDUNGTNCHUYEN != value))
+				{
+					this._NOIDUNGTNCHUYEN = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TRONGAITHIETKE", DbType="Bit")]
+		public System.Nullable<bool> TRONGAITHIETKE
+		{
+			get
+			{
+				return this._TRONGAITHIETKE;
+			}
+			set
+			{
+				if ((this._TRONGAITHIETKE != value))
+				{
+					this._TRONGAITHIETKE = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NOIDUNGTRONGAI", DbType="NVarChar(250)")]
+		public string NOIDUNGTRONGAI
+		{
+			get
+			{
+				return this._NOIDUNGTRONGAI;
+			}
+			set
+			{
+				if ((this._NOIDUNGTRONGAI != value))
+				{
+					this._NOIDUNGTRONGAI = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HOSOCHA", DbType="VarChar(30)")]
+		public string HOSOCHA
+		{
+			get
+			{
+				return this._HOSOCHA;
+			}
+			set
+			{
+				if ((this._HOSOCHA != value))
+				{
+					this._HOSOCHA = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_XINPHEPDAODUONG", DbType="Bit")]
+		public System.Nullable<bool> XINPHEPDAODUONG
+		{
+			get
+			{
+				return this._XINPHEPDAODUONG;
+			}
+			set
+			{
+				if ((this._XINPHEPDAODUONG != value))
+				{
+					this._XINPHEPDAODUONG = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TRINHKYBGD", DbType="Bit")]
+		public System.Nullable<bool> TRINHKYBGD
+		{
+			get
+			{
+				return this._TRINHKYBGD;
+			}
+			set
+			{
+				if ((this._TRINHKYBGD != value))
+				{
+					this._TRINHKYBGD = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CREATEBY", DbType="VarChar(50)")]
+		public string CREATEBY
+		{
+			get
+			{
+				return this._CREATEBY;
+			}
+			set
+			{
+				if ((this._CREATEBY != value))
+				{
+					this._CREATEBY = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CREATEDATE", DbType="DateTime")]
+		public System.Nullable<System.DateTime> CREATEDATE
+		{
+			get
+			{
+				return this._CREATEDATE;
+			}
+			set
+			{
+				if ((this._CREATEDATE != value))
+				{
+					this._CREATEDATE = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MODIFYBY", DbType="VarChar(20)")]
+		public string MODIFYBY
+		{
+			get
+			{
+				return this._MODIFYBY;
+			}
+			set
+			{
+				if ((this._MODIFYBY != value))
+				{
+					this._MODIFYBY = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MODIFYDATE", DbType="DateTime")]
+		public System.Nullable<System.DateTime> MODIFYDATE
+		{
+			get
+			{
+				return this._MODIFYDATE;
+			}
+			set
+			{
+				if ((this._MODIFYDATE != value))
+				{
+					this._MODIFYDATE = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MODIFYLOG", DbType="NText", UpdateCheck=UpdateCheck.Never)]
+		public string MODIFYLOG
+		{
+			get
+			{
+				return this._MODIFYLOG;
+			}
+			set
+			{
+				if ((this._MODIFYLOG != value))
+				{
+					this._MODIFYLOG = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DIACHI", DbType="NVarChar(209)")]
+		public string DIACHI
+		{
+			get
+			{
+				return this._DIACHI;
+			}
+			set
+			{
+				if ((this._DIACHI != value))
+				{
+					this._DIACHI = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LOAIDON", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string LOAIDON
+		{
+			get
+			{
+				return this._LOAIDON;
+			}
+			set
+			{
+				if ((this._LOAIDON != value))
+				{
+					this._LOAIDON = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_USERNAME", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string USERNAME
+		{
+			get
+			{
+				return this._USERNAME;
+			}
+			set
+			{
+				if ((this._USERNAME != value))
+				{
+					this._USERNAME = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGUOILAP", DbType="NVarChar(50)")]
+		public string NGUOILAP
+		{
+			get
+			{
+				return this._NGUOILAP;
+			}
+			set
+			{
+				if ((this._NGUOILAP != value))
+				{
+					this._NGUOILAP = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.V_XINPHEPDAODUONG")]
+	public partial class V_XINPHEPDAODUONG
+	{
+		
+		private string _MADOTDD;
+		
+		private string _SHS;
+		
+		private string _HOTEN;
+		
+		private string _DIACHI;
+		
+		private string _TENPHUONG;
+		
+		private string _GHICHU;
+		
+		private string _MADANHMUC;
+		
+		private string _TENKETCAU;
+		
+		private string _KICHTHUOC;
+		
+		private string _MADOTTC;
+		
+		private string _MACAPPHEP;
+		
+		private string _NOICAPPHEP;
+		
+		public V_XINPHEPDAODUONG()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MADOTDD", DbType="VarChar(250)")]
+		public string MADOTDD
+		{
+			get
+			{
+				return this._MADOTDD;
+			}
+			set
+			{
+				if ((this._MADOTDD != value))
+				{
+					this._MADOTDD = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SHS", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string SHS
+		{
+			get
+			{
+				return this._SHS;
+			}
+			set
+			{
+				if ((this._SHS != value))
+				{
+					this._SHS = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HOTEN", DbType="NVarChar(50)")]
+		public string HOTEN
+		{
+			get
+			{
+				return this._HOTEN;
+			}
+			set
+			{
+				if ((this._HOTEN != value))
+				{
+					this._HOTEN = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DIACHI", DbType="NVarChar(101)")]
+		public string DIACHI
+		{
+			get
+			{
+				return this._DIACHI;
+			}
+			set
+			{
+				if ((this._DIACHI != value))
+				{
+					this._DIACHI = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENPHUONG", DbType="NVarChar(50)")]
+		public string TENPHUONG
+		{
+			get
+			{
+				return this._TENPHUONG;
+			}
+			set
+			{
+				if ((this._TENPHUONG != value))
+				{
+					this._TENPHUONG = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GHICHU", DbType="NVarChar(MAX)")]
+		public string GHICHU
+		{
+			get
+			{
+				return this._GHICHU;
+			}
+			set
+			{
+				if ((this._GHICHU != value))
+				{
+					this._GHICHU = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MADANHMUC", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string MADANHMUC
+		{
+			get
+			{
+				return this._MADANHMUC;
+			}
+			set
+			{
+				if ((this._MADANHMUC != value))
+				{
+					this._MADANHMUC = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENKETCAU", DbType="NVarChar(MAX)")]
+		public string TENKETCAU
+		{
+			get
+			{
+				return this._TENKETCAU;
+			}
+			set
+			{
+				if ((this._TENKETCAU != value))
+				{
+					this._TENKETCAU = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KICHTHUOC", DbType="NVarChar(MAX)")]
+		public string KICHTHUOC
+		{
+			get
+			{
+				return this._KICHTHUOC;
+			}
+			set
+			{
+				if ((this._KICHTHUOC != value))
+				{
+					this._KICHTHUOC = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MADOTTC", DbType="VarChar(250)")]
+		public string MADOTTC
+		{
+			get
+			{
+				return this._MADOTTC;
+			}
+			set
+			{
+				if ((this._MADOTTC != value))
+				{
+					this._MADOTTC = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MACAPPHEP", DbType="VarChar(30) NOT NULL", CanBeNull=false)]
+		public string MACAPPHEP
+		{
+			get
+			{
+				return this._MACAPPHEP;
+			}
+			set
+			{
+				if ((this._MACAPPHEP != value))
+				{
+					this._MACAPPHEP = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NOICAPPHEP", DbType="NVarChar(250)")]
+		public string NOICAPPHEP
+		{
+			get
+			{
+				return this._NOICAPPHEP;
+			}
+			set
+			{
+				if ((this._NOICAPPHEP != value))
+				{
+					this._NOICAPPHEP = value;
+				}
 			}
 		}
 	}
