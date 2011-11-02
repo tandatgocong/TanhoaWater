@@ -144,6 +144,8 @@ namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
                     xinphep.NOICAPPHEP = this.cbNoiCap.Text;
                     xinphep.NGAYLAP = this.dateNgayLap.Value;
                     xinphep.MAQUANLY = this.txtMaQuanLy.Text.ToUpper();
+                    xinphep.CREATEBY = DAL.C_USERS._userName;
+                    xinphep.CREATEDATE = DateTime.Now;
                     if (DAL.C_KH_XinPhepDD.Insert(xinphep) == false)
                     {
                         MessageBox.Show(this, "Lỗi Thêm Xin Phép Đào Đường !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
