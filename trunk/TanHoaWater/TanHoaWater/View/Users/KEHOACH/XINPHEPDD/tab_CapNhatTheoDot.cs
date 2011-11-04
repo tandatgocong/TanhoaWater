@@ -15,7 +15,8 @@ namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
 {
     public partial class tab_CapNhatTheoDot : UserControl
     {
-        public tab_CapNhatTheoDot(string madot)
+        DateTime _ngaylap = DateTime.Now.Date;
+        public tab_CapNhatTheoDot(string madot,DateTime ngaylap)
         {
             InitializeComponent();
             this.cbMaDot.DataSource = DAL.C_KH_XinPhepDD.ListAllXinPhepDD();
@@ -23,6 +24,7 @@ namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
             this.cbMaDot.DisplayMember = "MADOT";
             cbMaDot.Text = madot;
             loadDataGrid(madot);
+            _ngaylap = ngaylap;
         }
 
         private void checkLayBangGia_CheckedChanged(object sender, EventArgs e)
@@ -93,16 +95,28 @@ namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
             }
             else
             {
-                KH_HOSOKHACHHANG kh_sh = new KH_HOSOKHACHHANG();
-                kh_sh.SHS = this.txtMaSHS.Text;
-                kh_sh.MADOTDD = this.cbMaDot.Text;
-                kh_sh.NGAYNHAN = DateTime.Now.Date;
-                kh_sh.GHICHU = this.txtGhiChu.Text;
-                kh_sh.CREATEBY = DAL.C_USERS._userName;
-                kh_sh.CREATEDATE = DateTime.Now.Date;
-                if (DAL.C_KH_HoSoKhachHang.Insert(kh_sh) == false) {
-                    MessageBox.Show(this, "Thêm Hồ Sơ Xin Phép Bị lỗi, Hoặc Đã Xin Phép Rồi !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    this.txtMaSHS.Focus();
+                
+                KH_HOSOKHACHHANG kh_sh = DAL.C_KH_HoSoKhachHang.findBySHS(this.txtMaSHS.Text);
+                if (kh_sh == null)
+                {
+                    kh_sh = new KH_HOSOKHACHHANG();
+                    kh_sh.SHS = this.txtMaSHS.Text;
+                    kh_sh.MADOTDD = this.cbMaDot.Text;
+                    kh_sh.NGAYNHAN = _ngaylap;
+                    kh_sh.GHICHU = this.txtGhiChu.Text;
+                    kh_sh.CREATEBY = DAL.C_USERS._userName;
+                    kh_sh.CREATEDATE = DateTime.Now.Date;
+                    if (DAL.C_KH_HoSoKhachHang.Insert(kh_sh) == false)
+                    {// co roi do len dot thi cong truoc
+                        MessageBox.Show(this, "Thêm Hồ Sơ Xin Phép Bị lỗi, Hoặc Đã Xin Phép Rồi !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        this.txtMaSHS.Focus();
+                    }
+                }
+                else
+                {
+                    kh_sh.MADOTDD = this.cbMaDot.Text;
+                    kh_sh.NGAYNHAN = _ngaylap;
+                    DAL.C_KH_HoSoKhachHang.Update();
                 }
                 loadDataGrid(this.cbMaDot.Text);
             }
