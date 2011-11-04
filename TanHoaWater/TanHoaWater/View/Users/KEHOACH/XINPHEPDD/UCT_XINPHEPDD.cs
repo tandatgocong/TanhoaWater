@@ -244,16 +244,18 @@ namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
         private void tabItem2_Click(object sender, EventArgs e)
         {
              string madot = "";
+             DateTime ngaylap = DateTime.Now.Date;
             try
             {
                 madot = dataDanhSachDaoDuong.Rows[dataDanhSachDaoDuong.CurrentRow.Index].Cells["gridSoDot"].Value + "";
-
+                ngaylap = DateTime.Parse(dataDanhSachDaoDuong.Rows[dataDanhSachDaoDuong.CurrentRow.Index].Cells["gridNgayLap"].Value + "");
+                
             }
             catch (Exception)
             {
             }
            tabCapNhatDS.Controls.Clear();
-           tabCapNhatDS.Controls.Add(new tab_CapNhatTheoDot(madot));
+           tabCapNhatDS.Controls.Add(new tab_CapNhatTheoDot(madot, ngaylap));
            this.tabControl1.SelectedTabIndex = 1;
           
         }
@@ -261,9 +263,11 @@ namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
         private void capnhatDSChoDot_Click_1(object sender, EventArgs e)
         {
             string madot = "";
+            DateTime ngaylap = DateTime.Now.Date;
             try
             {
                 madot = dataDanhSachDaoDuong.Rows[dataDanhSachDaoDuong.CurrentRow.Index].Cells["gridSoDot"].Value + "";
+                ngaylap = DateTime.Parse(dataDanhSachDaoDuong.Rows[dataDanhSachDaoDuong.CurrentRow.Index].Cells["gridNgayLap"].Value + "");
 
             }
             catch (Exception)
@@ -272,7 +276,7 @@ namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
             if (!"".Equals(madot))
             {
                 tabCapNhatDS.Controls.Clear();
-                tabCapNhatDS.Controls.Add(new tab_CapNhatTheoDot(madot));
+                tabCapNhatDS.Controls.Add(new tab_CapNhatTheoDot(madot, ngaylap));
                 this.tabControl1.SelectedTabIndex = 1;
             }
             else
