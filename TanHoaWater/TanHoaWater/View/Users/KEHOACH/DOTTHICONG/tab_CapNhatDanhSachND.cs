@@ -149,5 +149,16 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
             this.txtSHS.Focus();
             
         }
+
+        private void btThemMoiHoSo_Click(object sender, EventArgs e)
+        {
+            refesh();
+        }
+
+        private void btLuuHoSo_Click(object sender, EventArgs e)
+        {
+            add();
+            this.txtSHS.Focus();
+        }
     }
 }

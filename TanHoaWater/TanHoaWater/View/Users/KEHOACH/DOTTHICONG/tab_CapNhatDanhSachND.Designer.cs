@@ -296,6 +296,7 @@
             this.btLuuHoSo.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
             this.btLuuHoSo.TabIndex = 9;
             this.btLuuHoSo.Text = "Lưu Hồ Sơ";
+            this.btLuuHoSo.Click += new System.EventHandler(this.btLuuHoSo_Click);
             // 
             // progressBar1
             // 
@@ -315,6 +316,7 @@
             this.btThemMoiHoSo.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
             this.btThemMoiHoSo.TabIndex = 10;
             this.btThemMoiHoSo.Text = "Thêm Mới Hồ Sơ";
+            this.btThemMoiHoSo.Click += new System.EventHandler(this.btThemMoiHoSo_Click);
             // 
             // lbTongHoSo
             // 

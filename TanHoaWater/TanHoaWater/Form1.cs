@@ -18,8 +18,8 @@ namespace TanHoaWater
         {
             InitializeComponent();
 
-            ReportDocument rp = new rpt_QuyetDinhTC();
-            rp.SetDataSource(DAL.C_KH_DotThiCong.BC_QuyetDinhThiCong("FSDAFDSAFDSA", "CONG TY A", "10/01/2011 ", "20/02/2011"));
+            ReportDocument rp = new rpt_DanhSachHSTC();
+            rp.SetDataSource(DAL.C_KH_DotThiCong.BC_DanhSachDotThiCong("QTP-TTT-/111"));
             crystalReportViewer1.ReportSource = rp;
 
         }

@@ -212,6 +212,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="View\Users\KEHOACH\DOTTHICONG\DataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="View\Users\KEHOACH\DOTTHICONG\rpt_DanhSachHSTC.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_DanhSachHSTC.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="View\Users\KEHOACH\DOTTHICONG\rpt_QuyetDinhTC.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -363,6 +374,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>rpt_KhongPhep.rpt</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\Users\KEHOACH\DOTTHICONG\frmDialogPrintting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Users\KEHOACH\DOTTHICONG\frmDialogPrintting.Designer.cs">
+      <DependentUpon>frmDialogPrintting.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Users\KEHOACH\XINPHEPDD\frmDialogPrintting.cs">
       <SubType>Form</SubType>
@@ -530,6 +547,10 @@
     <EmbeddedResource Include="View\Tool\webBrowser.resx">
       <DependentUpon>webBrowser.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\KEHOACH\DOTTHICONG\rpt_DanhSachHSTC.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_DanhSachHSTC.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Users\KEHOACH\DOTTHICONG\rpt_QuyetDinhTC.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_QuyetDinhTC.cs</LastGenOutput>
@@ -613,6 +634,9 @@
     <EmbeddedResource Include="View\Users\KEHOACH\XINPHEPDD\BC\rpt_KhongPhep.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_KhongPhep.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\KEHOACH\DOTTHICONG\frmDialogPrintting.resx">
+      <DependentUpon>frmDialogPrintting.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\KEHOACH\XINPHEPDD\frmDialogPrintting.resx">
       <DependentUpon>frmDialogPrintting.cs</DependentUpon>
@@ -799,6 +823,17 @@
     </None>
     <None Include="View\Users\KEHOACH\DOTTHICONG\DataSet1.xss">
       <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="View\Users\KEHOACH\DOTTHICONG\DataSet2.xsc">
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="View\Users\KEHOACH\DOTTHICONG\DataSet2.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet2.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="View\Users\KEHOACH\DOTTHICONG\DataSet2.xss">
+      <DependentUpon>DataSet2.xsd</DependentUpon>
     </None>
     <None Include="View\Users\KEHOACH\HOANCONG\DataSet1.xsc">
       <DependentUpon>DataSet1.xsd</DependentUpon>
