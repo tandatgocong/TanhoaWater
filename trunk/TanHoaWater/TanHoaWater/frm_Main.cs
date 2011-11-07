@@ -19,6 +19,7 @@ using TanHoaWater.View.Users.KEHOACH;
 using TanHoaWater.View.Tool;
 using TanHoaWater.View.Users.KEHOACH.XINPHEPDD;
 using TanHoaWater.View.Users.KEHOACH.DOTTHICONG;
+using TanHoaWater.View.Users.KEHOACH.HOANCONG;
 
 namespace TanHoaWater
 {
@@ -398,6 +399,13 @@ namespace TanHoaWater
         {
             this.PanelContent.Controls.Clear();
             this.PanelContent.Controls.Add(new UCT_DOTTHICONG());
+            this.menuKHVT.Select();
+        }
+
+        private void menuHoanCong_Click(object sender, EventArgs e)
+        {
+            this.PanelContent.Controls.Clear();
+            this.PanelContent.Controls.Add(new UCT_HOANCONG());
             this.menuKHVT.Select();
         }
     }

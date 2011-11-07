@@ -92,5 +92,70 @@ namespace TanHoaWater.DAL
             db.Connection.Close();
             return dataset.Tables[0];
         }
+        public static List<KH_DOTTHICONG> AutoCompleteDotNhanDon() {
+
+            try
+            {
+                var query = from dottc in db.KH_DOTTHICONGs orderby dottc.NGAYLAP descending select dottc;
+                return query.ToList();
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+            }
+            return null;   
+        }
+
+        public static DataTable findByHSHT(string shs)
+        {
+
+            TanHoaDataContext db = new TanHoaDataContext();
+            db.Connection.Open();
+            string sql = " SELECT donkh.SHS,donkh.SOHOSO,HOTEN, SONHA + ' ' + DUONG,TENPHUONG,TENQUAN, NGAYDONGTIEN,SOHOADON ";
+            sql += " FROM DON_KHACHHANG donkh, PHUONG p, QUAN q ";
+            sql += " WHERE donkh.QUAN = q.MAQUAN AND q.MAQUAN=p.MAQUAN AND donkh.PHUONG=p.MAPHUONG ";
+            sql += " AND donkh.SHS='" + shs + "'";
+
+            SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
+            DataSet dataset = new DataSet();
+            adapter.Fill(dataset, "TABLE");
+            db.Connection.Close();
+            return dataset.Tables[0];
+
+
+        }
+
+        public static DataTable getListDotThiCong(string madottc) { 
+         TanHoaDataContext db = new TanHoaDataContext();
+            db.Connection.Open();
+            string sql = " SELECT donkh.SHS,donkh.SOHOSO,donkh.MADOT,HOTEN,DIENTHOAI, SONHA, DUONG,TENPHUONG,hosokh.MADOTDD,hosokh.NGAYNHAN, NGAYDONGTIEN,SOHOADON,TONGIATRI,TAILAPMATDUONG,TONGIATRI+TAILAPMATDUONG as 'TONGTIEN'  ";
+            sql += "  FROM DON_KHACHHANG donkh, PHUONG p, QUAN q, KH_HOSOKHACHHANG hosokh ";
+            sql += " WHERE donkh.QUAN = q.MAQUAN AND q.MAQUAN=p.MAQUAN AND donkh.PHUONG=p.MAPHUONG and donkh.SHS = hosokh.SHS ";
+            sql += " AND hosokh.MADOTTC='" + madottc + "'";
+            sql += " ORDER BY hosokh.MODIFYDATE ";
+
+            SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
+            DataSet dataset = new DataSet();
+            adapter.Fill(dataset, "TABLE");
+            db.Connection.Close();
+            return dataset.Tables[0];        
+        }
+
+        public static DataSet BC_QuyetDinhThiCong(string madot, string donvigiamsat, string ngaykhoicong, string ngayhoantat)
+        {
+            TanHoaDataContext db = new TanHoaDataContext();
+            db.Connection.Open();
+            DataSet dataset = new DataSet();
+            string sql = " SELECT * FROM KH_TC_BAOCAO ";
+            SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
+            adapter.Fill(dataset, "KH_TC_BAOCAO");
+
+            sql = " SELECT *, DONVIGIAMSAT='" + donvigiamsat + "',NGAYKHOICONG='" + ngaykhoicong + "',NGAYHOANTAT='" + ngayhoantat + "' FROM V_QUYETDINHTHICONG WHERE MADOTTC='" + madot + "'";
+            adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
+            adapter.Fill(dataset, "V_QUYETDINHTHICONG");
+
+            db.Connection.Close();
+            return dataset;
+        }
     }
 }

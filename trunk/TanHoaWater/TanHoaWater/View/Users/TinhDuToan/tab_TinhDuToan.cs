@@ -1183,10 +1183,14 @@ namespace TanHoaWater.View.Users.TinhDuToan
                 {
                     klxdcb.CPCABA = 0.0;
                 }
-                klxdcb.THUE55 = DAL.C_CongTacBangGia.THUE55;
-                klxdcb.CONG3 = DAL.C_CongTacBangGia.TONGTRUOCTHUE;
-                klxdcb.THUEGTGT = DAL.C_CongTacBangGia.VAT;
-                klxdcb.TONGIATRI = DAL.C_CongTacBangGia.TONG;
+               klxdcb.THUE55 = DAL.C_CongTacBangGia.THUE55;
+               klxdcb.CONG3 = DAL.C_CongTacBangGia.TONGTRUOCTHUE;
+               klxdcb.THUEGTGT = DAL.C_CongTacBangGia.VAT;
+               klxdcb.TONGIATRI = DAL.C_CongTacBangGia.TONG;
+               klxdcb.TLMDTRUOCTHUE = DAL.C_CongTacBangGia.TLMDTRUOCTHUE;
+               klxdcb.TAILAPMATDUONG = DAL.C_CongTacBangGia.TAILAPMATDUONG;
+               klxdcb.CHIPHITRUCTIEP = DAL.C_CongTacBangGia.CHIPHITRUCTIEP;
+               klxdcb.CHIPHICHUNG = DAL.C_CongTacBangGia.CHIPHICHUNG;
                klxdcb.CREATEBY = DAL.C_USERS._userName;
                klxdcb.CREATEDATE = DateTime.Now;
                DAL.C_KhoiLuongXDCB.InsertKTPD(klxdcb);
