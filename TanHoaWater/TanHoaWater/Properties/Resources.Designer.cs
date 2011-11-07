@@ -375,6 +375,13 @@ namespace TanHoaWater.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap Loop {
+            get {
+                object obj = ResourceManager.GetObject("Loop", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap Man {
             get {
                 object obj = ResourceManager.GetObject("Man", resourceCulture);

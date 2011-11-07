@@ -42,9 +42,11 @@ namespace TanHoaWater.DAL
             db.Connection.Close();
             return dataset.Tables[0];
         }
-        public static KH_HOSOKHACHHANG findBySHS(string shs) {
-            TanHoaDataContext db = new TanHoaDataContext();
-            var obj = from dd in db.KH_HOSOKHACHHANGs where dd.MADOT == shs select dd;
+        static  TanHoaDataContext db = new TanHoaDataContext();
+        public static KH_HOSOKHACHHANG findBySHS(string shs)
+        {
+            
+            var obj = from dd in db.KH_HOSOKHACHHANGs where dd.SHS == shs select dd;
             return obj.SingleOrDefault();
         }
         public static bool Delete(string shs) {
@@ -69,6 +71,21 @@ namespace TanHoaWater.DAL
                 TanHoaDataContext db = new TanHoaDataContext();
                 db.KH_HOSOKHACHHANGs.InsertOnSubmit(hs_kh);
                 db.SubmitChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                log.Error("Loi Them Ke Hoach Ho So Khach Hang " + ex.Message);
+
+            }
+            return false;
+        }
+
+        public static bool Update()
+        {
+            try
+            {
+               db.SubmitChanges();
                 return true;
             }
             catch (Exception ex)

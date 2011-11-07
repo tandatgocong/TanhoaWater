@@ -103,7 +103,10 @@
       <Column Name="CPNHANCONG" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="CPMAYTHICONG" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="CPCABA" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CHIPHITRUCTIEP" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="CHIPHICHUNG" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TAILAPMATDUONG" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TLMDTRUOCTHUE" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="CONG1" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="THUE55" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="CONG3" Type="System.Double" DbType="Float" CanBeNull="true" />
@@ -264,6 +267,8 @@
       <Column Name="HOSOCHA" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
       <Column Name="XINPHEPDAODUONG" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Column Name="TRINHKYBGD" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="NGAYDONGTIEN" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SOHOADON" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="CREATEBY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="CREATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="MODIFYBY" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
@@ -359,6 +364,12 @@
       <Column Name="NGUOIDUYET" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.KH_DONVIGIAMSAT" Member="KH_DONVIGIAMSATs">
+    <Type Name="KH_DONVIGIAMSAT">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TENDONVI" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.KH_DONVITAILAP" Member="KH_DONVITAILAPs">
     <Type Name="KH_DONVITAILAP">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -369,6 +380,7 @@
       <Column Name="CREATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="MODIFYBY" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
       <Column Name="MODIFYDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="KH_DONVITAILAP_KH_DOTTHICONG" Member="KH_DOTTHICONGs" ThisKey="ID" OtherKey="DONVITAILAP" Type="KH_DOTTHICONG" />
     </Type>
   </Table>
   <Table Name="dbo.KH_DONVITHICONG" Member="KH_DONVITHICONGs">
@@ -381,6 +393,7 @@
       <Column Name="CREATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="MODIFYBY" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
       <Column Name="MODIFYDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="KH_DONVITHICONG_KH_DOTTHICONG" Member="KH_DOTTHICONGs" ThisKey="ID" OtherKey="DONVITHICONG" Type="KH_DOTTHICONG" />
     </Type>
   </Table>
   <Table Name="dbo.KH_DOTTHICONG" Member="KH_DOTTHICONGs">
@@ -388,8 +401,8 @@
       <Column Name="MADOTTC" Type="System.String" DbType="VarChar(250) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="NGAYLAP" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="SOLUONGTLK" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="DONVITHICONG" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="DONVITAILAP" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DONVITHICONG" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DONVITAILAP" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="NGAYCHUYENDVTC" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="CHUYENBUHANMUC" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="BANGKE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
@@ -403,11 +416,14 @@
       <Column Name="QUYETTOAN" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Column Name="NGAYCHUYENKT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="NGAYTHANHTOAN" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TRONGAITC" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="CREATEBY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="CREATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="MODIFYBY" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
       <Column Name="MODIFYDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Association Name="KH_DOTTHICONG_KH_HOSOKHACHHANG" Member="KH_HOSOKHACHHANGs" ThisKey="MADOTTC" OtherKey="MADOTTC" Type="KH_HOSOKHACHHANG" />
+      <Association Name="KH_DONVITHICONG_KH_DOTTHICONG" Member="KH_DONVITHICONG" ThisKey="DONVITHICONG" OtherKey="ID" Type="KH_DONVITHICONG" IsForeignKey="true" />
+      <Association Name="KH_DONVITAILAP_KH_DOTTHICONG" Member="KH_DONVITAILAP" ThisKey="DONVITAILAP" OtherKey="ID" Type="KH_DONVITAILAP" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.KH_HOSOKHACHHANG" Member="KH_HOSOKHACHHANGs">
@@ -418,10 +434,25 @@
       <Column Name="NGAYNHAN" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="MADOTDD" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
       <Column Name="CHOPHEP" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="NGAYCOPHEP" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="MADOTTC" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
       <Column Name="TRONGAI" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Column Name="NOIDUNGTN" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="GHICHU" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="COTLK" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CPVATTU" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CPNHANCONG" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CPMAYTHICONG" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CPCABA" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CHIPHITRUCTIEP" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CHIPHICHUNG" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TAILAPMATDUONG" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TLMDTRUOCTHUE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CONG1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="THUE55" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CONG3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="THUEGTGT" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TONGIATRI" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="CREATEBY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="CREATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="MODIFYBY" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
@@ -451,6 +482,15 @@
       <Column Name="MODIFYBY" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
       <Column Name="MODIFYDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Association Name="KH_NOICAPPHEP_KH_XINPHEPDAODUONG" Member="KH_XINPHEPDAODUONGs" ThisKey="MACAPPHEP" OtherKey="NOICAPPHEP" Type="KH_XINPHEPDAODUONG" />
+    </Type>
+  </Table>
+  <Table Name="dbo.KH_TC_BAOCAO" Member="KH_TC_BAOCAOs">
+    <Type Name="KH_TC_BAOCAO">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CVDUYET" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NGUOIDUYET" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CVKEHOACH" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NGUOITL" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.KH_XINPHEPDAODUONG" Member="KH_XINPHEPDAODUONGs">
@@ -988,6 +1028,18 @@
       <Column Name="NGUOILAP" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.V_QUYETDINHTHICONG" Member="V_QUYETDINHTHICONGs">
+    <Type Name="V_QUYETDINHTHICONG">
+      <Column Name="MADOTTC" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="NGAYLAP" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CTYTHICONG" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="TCSHD" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="TCNGAYKYHD" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CTYTAILAP" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="TLSHD" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="TLNGAYKYHD" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.V_XINPHEPDAODUONG" Member="V_XINPHEPDAODUONGs">
     <Type Name="V_XINPHEPDAODUONG">
       <Column Name="MADOTDD" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
@@ -1294,6 +1346,78 @@
     <Parameter Name="J" Parameter="j" Type="System.Double" DbType="Float" Direction="InOut" />
     <Parameter Name="K" Parameter="k" Type="System.Double" DbType="Float" Direction="InOut" />
     <Parameter Name="L" Parameter="l" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.DELETEDATABG" Method="DELETEDATABG8">
+    <Parameter Name="SHS" Parameter="sHS" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.DELETEDATABG" Method="DELETEDATABG9">
+    <Parameter Name="SHS" Parameter="sHS" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.TONGKETPHUIDAO" Method="TONGKETPHUIDAO4">
+    <Parameter Name="SHS" Parameter="sHS" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.TONGKETCHIPHI" Method="TONGKETCHIPHI10">
+    <Parameter Name="SHS" Parameter="sHS" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="PHIC3" Parameter="pHIC3" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="PHIGS" Parameter="pHIGS" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="PHIQL" Parameter="pHIQL" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="A" Parameter="a" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="B" Parameter="b" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="C" Parameter="c" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="CPCABA" Parameter="cPCABA" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="TOTAL" Parameter="tOTAL" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="VAT" Parameter="vAT" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="B1" Parameter="b1" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="C1" Parameter="c1" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="C2" Parameter="c2" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="D" Parameter="d" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="E" Parameter="e" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="F" Parameter="f" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="G" Parameter="g" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="H" Parameter="h" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="I" Parameter="i" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="J" Parameter="j" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="K" Parameter="k" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="L" Parameter="l" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.DELETEDATABG" Method="DELETEDATABG10">
+    <Parameter Name="SHS" Parameter="sHS" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.TONGKETPHUIDAO" Method="TONGKETPHUIDAO5">
+    <Parameter Name="SHS" Parameter="sHS" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.TONGKETCHIPHI" Method="TONGKETCHIPHI11">
+    <Parameter Name="SHS" Parameter="sHS" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="PHIC3" Parameter="pHIC3" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="PHIGS" Parameter="pHIGS" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="PHIQL" Parameter="pHIQL" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="A" Parameter="a" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="B" Parameter="b" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="C" Parameter="c" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="CPCABA" Parameter="cPCABA" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="TOTAL" Parameter="tOTAL" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="VAT" Parameter="vAT" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="B1" Parameter="b1" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="C1" Parameter="c1" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="C2" Parameter="c2" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="D" Parameter="d" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="E" Parameter="e" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="F" Parameter="f" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="G" Parameter="g" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="H" Parameter="h" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="I" Parameter="i" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="J" Parameter="j" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="K" Parameter="k" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="L" Parameter="l" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="TAILAPMATDUONG" Parameter="tAILAPMATDUONG" Type="System.Double" DbType="Float" />
+    <Parameter Name="TLMDTRUOCTHUE" Parameter="tLMDTRUOCTHUE" Type="System.Double" DbType="Float" />
     <Return Type="System.Int32" />
   </Function>
 </Database>
