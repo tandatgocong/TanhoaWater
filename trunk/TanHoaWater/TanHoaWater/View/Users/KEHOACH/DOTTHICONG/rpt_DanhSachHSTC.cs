@@ -16,14 +16,14 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class rpt_QuyetDinhTC : ReportClass {
+    public class rpt_DanhSachHSTC : ReportClass {
         
-        public rpt_QuyetDinhTC() {
+        public rpt_DanhSachHSTC() {
         }
         
         public override string ResourceName {
             get {
-                return "rpt_QuyetDinhTC.rpt";
+                return "rpt_DanhSachHSTC.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG {
         
         public override string FullResourceName {
             get {
-                return "TanHoaWater.View.Users.KEHOACH.DOTTHICONG.rpt_QuyetDinhTC.rpt";
+                return "TanHoaWater.View.Users.KEHOACH.DOTTHICONG.rpt_DanhSachHSTC.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class Cachedrpt_QuyetDinhTC : Component, ICachedReport {
+    public class Cachedrpt_DanhSachHSTC : Component, ICachedReport {
         
-        public Cachedrpt_QuyetDinhTC() {
+        public Cachedrpt_DanhSachHSTC() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            rpt_QuyetDinhTC rpt = new rpt_QuyetDinhTC();
+            rpt_DanhSachHSTC rpt = new rpt_DanhSachHSTC();
             rpt.Site = this.Site;
             return rpt;
         }

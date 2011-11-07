@@ -106,6 +106,21 @@ namespace TanHoaWater.DAL
             return null;   
         }
 
+        public static List<KH_DONVIGIAMSAT> DonViGiamSat()
+        {
+
+            try
+            {
+                var query = from dottc in db.KH_DONVIGIAMSATs  select dottc;
+                return query.ToList();
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+            }
+            return null;
+        }
+
         public static DataTable findByHSHT(string shs)
         {
 
@@ -153,6 +168,22 @@ namespace TanHoaWater.DAL
             sql = " SELECT *, DONVIGIAMSAT='" + donvigiamsat + "',NGAYKHOICONG='" + ngaykhoicong + "',NGAYHOANTAT='" + ngayhoantat + "' FROM V_QUYETDINHTHICONG WHERE MADOTTC='" + madot + "'";
             adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             adapter.Fill(dataset, "V_QUYETDINHTHICONG");
+
+            db.Connection.Close();
+            return dataset;
+        }
+        public static DataSet BC_DanhSachDotThiCong(string madot)
+        {
+            TanHoaDataContext db = new TanHoaDataContext();
+            db.Connection.Open();
+            DataSet dataset = new DataSet();
+            string sql = " SELECT * FROM KH_TC_BAOCAO ";
+            SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
+            adapter.Fill(dataset, "KH_TC_BAOCAO");
+
+            sql = " SELECT *  FROM V_DANHSACHTHICONG WHERE MADOTTC='" + madot + "' ORDER BY MODIFYDATE";
+            adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
+            adapter.Fill(dataset, "V_DANHSACHTHICONG");
 
             db.Connection.Close();
             return dataset;

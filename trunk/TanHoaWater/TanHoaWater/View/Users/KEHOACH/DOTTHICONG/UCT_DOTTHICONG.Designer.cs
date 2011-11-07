@@ -53,6 +53,7 @@
             this.btCapNhatBoiTuong = new DevComponents.DotNetBar.ButtonX();
             this.btInDanhSachBt = new DevComponents.DotNetBar.ButtonX();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btQuyetDinh = new DevComponents.DotNetBar.ButtonX();
             this.btCapNhatGanMoiDoi = new DevComponents.DotNetBar.ButtonX();
             this.btInDanhSachGanMoi = new DevComponents.DotNetBar.ButtonX();
             this.gridDotThiCong = new DevComponents.DotNetBar.Controls.DataGridViewX();
@@ -90,7 +91,6 @@
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.tabControl1 = new DevComponents.DotNetBar.TabControl();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.btQuyetDinh = new DevComponents.DotNetBar.ButtonX();
             this.tabDanhSachDot.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -548,6 +548,20 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Hồ Sơ Gắn Mới - Dời";
             // 
+            // btQuyetDinh
+            // 
+            this.btQuyetDinh.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btQuyetDinh.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btQuyetDinh.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btQuyetDinh.ForeColor = System.Drawing.Color.Maroon;
+            this.btQuyetDinh.Location = new System.Drawing.Point(9, 63);
+            this.btQuyetDinh.Name = "btQuyetDinh";
+            this.btQuyetDinh.Size = new System.Drawing.Size(205, 23);
+            this.btQuyetDinh.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
+            this.btQuyetDinh.TabIndex = 705;
+            this.btQuyetDinh.Text = "Quyết Định Giao Thi Công";
+            this.btQuyetDinh.Click += new System.EventHandler(this.btQuyetDinh_Click);
+            // 
             // btCapNhatGanMoiDoi
             // 
             this.btCapNhatGanMoiDoi.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
@@ -976,19 +990,6 @@
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
-            // 
-            // btQuyetDinh
-            // 
-            this.btQuyetDinh.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btQuyetDinh.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btQuyetDinh.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btQuyetDinh.ForeColor = System.Drawing.Color.Maroon;
-            this.btQuyetDinh.Location = new System.Drawing.Point(9, 63);
-            this.btQuyetDinh.Name = "btQuyetDinh";
-            this.btQuyetDinh.Size = new System.Drawing.Size(205, 23);
-            this.btQuyetDinh.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
-            this.btQuyetDinh.TabIndex = 705;
-            this.btQuyetDinh.Text = "Quyết Định Giao Thi Công";
             // 
             // UCT_DOTTHICONG
             // 

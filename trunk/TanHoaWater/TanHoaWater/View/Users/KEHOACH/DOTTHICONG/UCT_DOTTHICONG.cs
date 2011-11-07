@@ -8,6 +8,8 @@ using System.Text;
 using System.Windows.Forms;
 using TanHoaWater.Database;
 using log4net;
+using CrystalDecisions.CrystalReports.Engine;
+using TanHoaWater.View.Users.Report;
 
 namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
 {
@@ -507,6 +509,28 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
         private void btCapNhatBoiTuong_Click(object sender, EventArgs e)
         {
             tabClick();
+        }
+
+        private void btQuyetDinh_Click(object sender, EventArgs e)
+        {
+            string madot = "";
+            try
+            {
+                madot = gridDotThiCong.Rows[gridDotThiCong.CurrentRow.Index].Cells["gridSoDot"].Value + "";
+
+            }
+            catch (Exception)
+            {
+            }
+            if (!"".Equals(madot))
+            {
+                frmDialogPrintting obj = new frmDialogPrintting(madot);
+                obj.ShowDialog(); 
+            }
+            else
+            {
+                MessageBox.Show(this, "Cần Chọn Mã Đợt Để Xin Phép Đào Đường !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
         
     }
