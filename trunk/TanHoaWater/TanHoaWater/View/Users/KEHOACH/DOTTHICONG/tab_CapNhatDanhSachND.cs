@@ -7,12 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using TanHoaWater.Database;
+using CrystalDecisions.CrystalReports.Engine;
+using TanHoaWater.View.Users.Report;
+using TanHoaWater.View.Users.KEHOACH.DOTTHICONG.BC;
 
 namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
 {
     public partial class tab_CapNhatDanhSachND : UserControl
     {
-        string _madot;
+        string _madot="";
         public tab_CapNhatDanhSachND(string madot)
         {
             InitializeComponent();
@@ -120,7 +123,6 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
      }
         private void txtSHS_KeyPress(object sender, KeyPressEventArgs e)
         {
-
             if (e.KeyChar == 13)
             {
                 DataTable table = DAL.C_KH_DotThiCong.findByHSHT(this.txtSHS.Text);
@@ -159,6 +161,14 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
         {
             add();
             this.txtSHS.Focus();
+        }
+
+        private void btPrint_Click(object sender, EventArgs e)
+        {
+            ReportDocument rp = new rpt_DanhSachHSTC();
+            rp.SetDataSource(DAL.C_KH_DotThiCong.BC_DanhSachDotThiCong(_madot));
+            rpt_Main prM = new rpt_Main(rp);
+            prM.ShowDialog();
         }
     }
 }

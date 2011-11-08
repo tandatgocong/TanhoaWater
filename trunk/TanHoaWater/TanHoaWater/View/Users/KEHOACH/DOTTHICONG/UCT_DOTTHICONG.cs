@@ -10,6 +10,7 @@ using TanHoaWater.Database;
 using log4net;
 using CrystalDecisions.CrystalReports.Engine;
 using TanHoaWater.View.Users.Report;
+using TanHoaWater.View.Users.KEHOACH.DOTTHICONG.BC;
 
 namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
 {
@@ -487,7 +488,8 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
             if (!"".Equals(madot))
             {
                 this.tabCapNhatDS.Controls.Clear();
-                this.tabCapNhatDS.Controls.Add(new tab_CapNhatDanhSachND(madot));
+                this.tabCapNhatDS.Controls.Add(new tab_CapNhatDSBoiThuong(madot));
+              //  this.tabCapNhatDS.Controls.Add(new tab_CapNhatDanhSachND(madot));
                 this.tabControl1.SelectedTabIndex = 1;
             }
             else
@@ -531,6 +533,31 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
             {
                 MessageBox.Show(this, "Cần Chọn Mã Đợt Để Xin Phép Đào Đường !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void btInDanhSachGanMoi_Click(object sender, EventArgs e)
+        {
+            string madot = "";
+            try
+            {
+                madot = gridDotThiCong.Rows[gridDotThiCong.CurrentRow.Index].Cells["gridSoDot"].Value + "";
+
+            }
+            catch (Exception)
+            {
+            }
+            if (!"".Equals(madot))
+            {
+                ReportDocument rp = new rpt_DanhSachHSTC();
+                rp.SetDataSource(DAL.C_KH_DotThiCong.BC_DanhSachDotThiCong(madot));
+                rpt_Main prM = new rpt_Main(rp);
+                prM.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show(this, "Cần Chọn Mã Đợt Để Xin Phép Đào Đường !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            
         }
         
     }

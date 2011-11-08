@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using CrystalDecisions.CrystalReports.Engine;
+using TanHoaWater.View.Users.KEHOACH.DOTTHICONG.BC;
 
 namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
 {
