@@ -588,6 +588,7 @@
             this.btInDanhSachGanMoi.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
             this.btInDanhSachGanMoi.TabIndex = 704;
             this.btInDanhSachGanMoi.Text = "In Danh Sách Đợt TC";
+            this.btInDanhSachGanMoi.Click += new System.EventHandler(this.btInDanhSachGanMoi_Click);
             // 
             // gridDotThiCong
             // 

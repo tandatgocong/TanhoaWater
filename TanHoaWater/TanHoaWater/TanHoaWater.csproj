@@ -169,6 +169,7 @@
     <Compile Include="Utilities\Doctien.cs" />
     <Compile Include="Utilities\FormatNumber.cs" />
     <Compile Include="DAL\Idetity.cs" />
+    <Compile Include="Utilities\FormatSoHoSoDanhBo.cs" />
     <Compile Include="Utilities\LogIn.cs" />
     <Compile Include="frm_Main.cs">
       <SubType>Form</SubType>
@@ -203,27 +204,38 @@
     <Compile Include="View\Tool\webBrowser.Designer.cs">
       <DependentUpon>webBrowser.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Users\KEHOACH\DOTTHICONG\DataSet1.cs">
+    <Compile Include="View\Users\KEHOACH\DOTTHICONG\BC\DataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="View\Users\KEHOACH\DOTTHICONG\BC\rpt_DanhSachHSTC_BT.cs">
+      <DependentUpon>rpt_DanhSachHSTC_BT.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="View\Users\KEHOACH\DOTTHICONG\BC\DataSet1.cs">
       <DependentUpon>DataSet1.xsd</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="View\Users\KEHOACH\DOTTHICONG\DataSet1.Designer.cs">
+    <Compile Include="View\Users\KEHOACH\DOTTHICONG\BC\DataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
-    <Compile Include="View\Users\KEHOACH\DOTTHICONG\DataSet2.Designer.cs">
+    <Compile Include="View\Users\KEHOACH\DOTTHICONG\BC\DataSet2.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet2.xsd</DependentUpon>
     </Compile>
-    <Compile Include="View\Users\KEHOACH\DOTTHICONG\rpt_DanhSachHSTC.cs">
+    <Compile Include="View\Users\KEHOACH\DOTTHICONG\BC\rpt_DanhSachHSTC.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>rpt_DanhSachHSTC.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="View\Users\KEHOACH\DOTTHICONG\rpt_QuyetDinhTC.cs">
+    <Compile Include="View\Users\KEHOACH\DOTTHICONG\BC\rpt_QuyetDinhTC.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>rpt_QuyetDinhTC.rpt</DependentUpon>
@@ -234,6 +246,12 @@
     </Compile>
     <Compile Include="View\Users\KEHOACH\DOTTHICONG\tab_CapNhatDanhSachND.Designer.cs">
       <DependentUpon>tab_CapNhatDanhSachND.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Users\KEHOACH\DOTTHICONG\tab_CapNhatDSBoiThuong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Users\KEHOACH\DOTTHICONG\tab_CapNhatDSBoiThuong.Designer.cs">
+      <DependentUpon>tab_CapNhatDSBoiThuong.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Users\KEHOACH\DOTTHICONG\UCT_DOTTHICONG.cs">
       <SubType>UserControl</SubType>
@@ -547,16 +565,23 @@
     <EmbeddedResource Include="View\Tool\webBrowser.resx">
       <DependentUpon>webBrowser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Users\KEHOACH\DOTTHICONG\rpt_DanhSachHSTC.rpt">
+    <EmbeddedResource Include="View\Users\KEHOACH\DOTTHICONG\BC\rpt_DanhSachHSTC_BT.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_DanhSachHSTC_BT.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\KEHOACH\DOTTHICONG\BC\rpt_DanhSachHSTC.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_DanhSachHSTC.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Users\KEHOACH\DOTTHICONG\rpt_QuyetDinhTC.rpt">
+    <EmbeddedResource Include="View\Users\KEHOACH\DOTTHICONG\BC\rpt_QuyetDinhTC.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_QuyetDinhTC.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\KEHOACH\DOTTHICONG\tab_CapNhatDanhSachND.resx">
       <DependentUpon>tab_CapNhatDanhSachND.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\KEHOACH\DOTTHICONG\tab_CapNhatDSBoiThuong.resx">
+      <DependentUpon>tab_CapNhatDSBoiThuong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\KEHOACH\DOTTHICONG\UCT_DOTTHICONG.resx">
       <DependentUpon>UCT_DOTTHICONG.cs</DependentUpon>
@@ -813,27 +838,38 @@
     <Compile Include="View\Main\frm_Login.Designer.cs">
       <DependentUpon>frm_Login.cs</DependentUpon>
     </Compile>
-    <None Include="View\Users\KEHOACH\DOTTHICONG\DataSet1.xsc">
+    <None Include="View\Users\KEHOACH\DOTTHICONG\BC\DataSet1.xsc">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>
-    <None Include="View\Users\KEHOACH\DOTTHICONG\DataSet1.xsd">
+    <None Include="View\Users\KEHOACH\DOTTHICONG\BC\DataSet1.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
     </None>
-    <None Include="View\Users\KEHOACH\DOTTHICONG\DataSet1.xss">
+    <None Include="View\Users\KEHOACH\DOTTHICONG\BC\DataSet1.xss">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>
-    <None Include="View\Users\KEHOACH\DOTTHICONG\DataSet2.xsc">
+    <None Include="View\Users\KEHOACH\DOTTHICONG\BC\DataSet2.xsc">
       <DependentUpon>DataSet2.xsd</DependentUpon>
     </None>
-    <None Include="View\Users\KEHOACH\DOTTHICONG\DataSet2.xsd">
+    <None Include="View\Users\KEHOACH\DOTTHICONG\BC\DataSet2.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>DataSet2.Designer.cs</LastGenOutput>
     </None>
-    <None Include="View\Users\KEHOACH\DOTTHICONG\DataSet2.xss">
+    <None Include="View\Users\KEHOACH\DOTTHICONG\BC\DataSet2.xss">
       <DependentUpon>DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="View\Users\KEHOACH\DOTTHICONG\BC\DataSet3.xsc">
+      <DependentUpon>DataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="View\Users\KEHOACH\DOTTHICONG\BC\DataSet3.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet3.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="View\Users\KEHOACH\DOTTHICONG\BC\DataSet3.xss">
+      <DependentUpon>DataSet3.xsd</DependentUpon>
     </None>
     <None Include="View\Users\KEHOACH\HOANCONG\DataSet1.xsc">
       <DependentUpon>DataSet1.xsd</DependentUpon>

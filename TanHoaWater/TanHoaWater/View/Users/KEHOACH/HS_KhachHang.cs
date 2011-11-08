@@ -149,26 +149,55 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                 this.cbPhuong.DataSource = DAL.C_Phuong.getListByQuan(maquan);
                 this.cbPhuong.DisplayMember = "TENPHUONG";
                 this.cbPhuong.ValueMember = "MAPHUONG";
+                _soshoso();
             }
             catch (Exception)
             {
             }
         }
 
+        public void _soshoso()
+        {
+            try
+            {
+                string sohoso = "";
+                if (DateTime.Now.Month < 10)
+                {
+                    sohoso = "0" + DateTime.Now.Month.ToString();
+                }
+                else
+                {
+                    sohoso = DateTime.Now.Month.ToString();
+                }
+                this.txtSoHoSo.Text = this.cbQuan.SelectedValue + "" + this.cbPhuong.SelectedValue + sohoso + this.txtSHS.Text;
+            }
+            catch (Exception)
+            { 
+            }
+           
+        }
         private void cbPhuong_SelectedValueChanged(object sender, EventArgs e)
         {
+            try
+            {
+                string sohoso = "";
+                if (DateTime.Now.Month < 10)
+                {
+                    sohoso = "0" + DateTime.Now.Month.ToString();
+                }
+                else
+                {
+                    sohoso = DateTime.Now.Month.ToString();
+                }
+                this.txtSoHoSo.Text = this.cbQuan.SelectedValue + "" + this.cbPhuong.SelectedValue + sohoso + this.txtSHS.Text;
+                _maphuong = this.cbPhuong.SelectedValue + "";
+            }
+            catch (Exception)
+            {
+                 
+            }
             
-            string sohoso = "";
-            if (DateTime.Now.Month < 10)
-            {
-                sohoso = "0" + DateTime.Now.Month.ToString();
-            }
-            else
-            {
-                sohoso = DateTime.Now.Month.ToString();
-            }
-            this.txtSoHoSo.Text = this.cbQuan.SelectedValue + "" + this.cbPhuong.SelectedValue + sohoso + this.txtSHS.Text;
-            _maphuong = this.cbPhuong.SelectedValue + "";
+            _soshoso();
         }
         DateTime ngaynhan = DateTime.Now;
         private void txtSHS_KeyPress(object sender, KeyPressEventArgs e)
@@ -200,14 +229,15 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                     this.cbPhuong.Text = recordPhuong.TENPHUONG;
                     ngaynhan = biennhan.NGAYNHAN.Value;
                 }
-                //else
-                //{
-                //    MessageBox.Show(this, "Không Tìm Thấy Số Biên Nhận Khách Hàng !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //    this.txtSHS.Clear();
-                //    this.txtSHS.Focus();
-                //    refresh();
+                else
+                {
+                    _soshoso();
+                    //MessageBox.Show(this, "Không Tìm Thấy Số Biên Nhận Khách Hàng !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    //this.txtSHS.Clear();
+                    //this.txtSHS.Focus();
+                    //refresh();
 
-                //}
+                }
             }
         }
 
@@ -244,7 +274,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
             //    this.txtSHS.Clear();
             //    this.txtSHS.Focus();
             //}
-
+            _soshoso();
         }
 
         private void cbDotNhanDon_SelectedValueChanged(object sender, EventArgs e)
@@ -261,8 +291,12 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
             }
         }
         public void add() {
-          
-            if (this.txtSHS.Text.Length < 7)
+
+            if (this.cbDotNhanDon.SelectedValue == null) {
+                this.errorProvider1.Clear();
+                this.errorProvider1.SetError(this.cbDotNhanDon, "Cần Chọn Đợt Nhận Đơn.");
+                this.cbDotNhanDon.Focus();
+            }else if (this.txtSHS.Text.Length < 7)
             {
                 this.errorProvider1.Clear();
                 this.errorProvider1.SetError(this.txtSHS, "Số Hồ Sơ Không Hợp Lệ.");
@@ -349,6 +383,8 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                     donKH.GHICHUKHAN = this.ghichukhan.Text;
                 }
                 donKH.NGAYNHAN = ngaynhan;
+                donKH.DANHBO = this.txtDanhBo.Text;
+                donKH.HOPDONG = this.txtHopDong.Text;
                 donKH.CREATEBY = DAL.C_USERS._userName;
                 donKH.CREATEDATE = DateTime.Now;
                 DAL.C_DonKhachHang.InsertDonHK(donKH);
@@ -748,6 +784,11 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
             //if (e.KeyChar == 13) {
             //    add();
             //}
+        }
+
+        private void txtDanhBo_Leave(object sender, EventArgs e)
+        {
+            this.txtDanhBo.Text = Utilities.FormatSoHoSoDanhBo.sodanhbo(this.txtDanhBo.Text);
         }
 
     }

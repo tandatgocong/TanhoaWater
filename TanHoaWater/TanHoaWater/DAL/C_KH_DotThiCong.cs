@@ -126,7 +126,7 @@ namespace TanHoaWater.DAL
 
             TanHoaDataContext db = new TanHoaDataContext();
             db.Connection.Open();
-            string sql = " SELECT donkh.SHS,donkh.SOHOSO,HOTEN, SONHA + ' ' + DUONG,TENPHUONG,TENQUAN, NGAYDONGTIEN,SOHOADON ";
+            string sql = " SELECT donkh.SHS,donkh.SOHOSO,HOTEN, SONHA + ' ' + DUONG,TENPHUONG,TENQUAN, NGAYDONGTIEN,SOHOADON,DANHBO,GHICHU ";
             sql += " FROM DON_KHACHHANG donkh, PHUONG p, QUAN q ";
             sql += " WHERE donkh.QUAN = q.MAQUAN AND q.MAQUAN=p.MAQUAN AND donkh.PHUONG=p.MAPHUONG ";
             sql += " AND donkh.SHS='" + shs + "'";
@@ -136,8 +136,7 @@ namespace TanHoaWater.DAL
             adapter.Fill(dataset, "TABLE");
             db.Connection.Close();
             return dataset.Tables[0];
-
-
+         
         }
 
         public static DataTable getListDotThiCong(string madottc) { 
@@ -184,6 +183,39 @@ namespace TanHoaWater.DAL
             sql = " SELECT *  FROM V_DANHSACHTHICONG WHERE MADOTTC='" + madot + "' ORDER BY MODIFYDATE";
             adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             adapter.Fill(dataset, "V_DANHSACHTHICONG");
+
+            db.Connection.Close();
+            return dataset;
+        }
+
+        public static DataTable getListDotThiCongBT(string madottc)
+        {
+            TanHoaDataContext db = new TanHoaDataContext();
+            db.Connection.Open();
+            string sql = " SELECT donkh.SOHOSO,HOTEN,DIENTHOAI, (SONHA + '' + DUONG + ', P.' +TENPHUONG+ ', Q.'+ q.TENQUAN) as 'DIACHI',NGAYDONGTIEN,SOHOADON,donkh.SOTIEN,donkh.DANHBO,donkh.GHICHU,COTLK,donkh.SHS";
+            sql += " FROM DON_KHACHHANG donkh, PHUONG p, QUAN q, KH_HOSOKHACHHANG hosokh ";
+            sql += " WHERE donkh.QUAN = q.MAQUAN AND q.MAQUAN=p.MAQUAN AND donkh.PHUONG=p.MAPHUONG and donkh.SHS = hosokh.SHS ";
+            sql += " AND hosokh.MADOTTC='" + madottc + "'";
+            sql += " ORDER BY hosokh.MODIFYDATE ";
+
+            SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
+            DataSet dataset = new DataSet();
+            adapter.Fill(dataset, "TABLE");
+            db.Connection.Close();
+            return dataset.Tables[0];
+        }
+        public static DataSet BC_DanhSachDotThiCong_BT(string madot)
+        {
+            TanHoaDataContext db = new TanHoaDataContext();
+            db.Connection.Open();
+            DataSet dataset = new DataSet();
+            string sql = " SELECT * FROM KH_TC_BAOCAO ";
+            SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
+            adapter.Fill(dataset, "KH_TC_BAOCAO");
+
+            sql = " SELECT *  FROM V_DANHSACHTHICONG_BT WHERE MADOTTC='" + madot + "' ORDER BY MODIFYDATE";
+            adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
+            adapter.Fill(dataset, "V_DANHSACHTHICONG_BT");
 
             db.Connection.Close();
             return dataset;

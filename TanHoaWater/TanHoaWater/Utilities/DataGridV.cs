@@ -22,8 +22,16 @@ namespace TanHoaWater.Utilities
             }
         }
         public static string sohoso(string _sohoso) {
-            _sohoso = _sohoso.Insert(4, ".");
-            _sohoso = _sohoso.Insert(9, ".");
+            try
+            {
+                _sohoso = _sohoso.Insert(4, ".");
+                _sohoso = _sohoso.Insert(9, ".");
+            }
+            catch (Exception)
+            {
+                
+            }
+            
             return _sohoso;
         }
         public static void formatSoHoSo(DataGridView dview) {
@@ -37,6 +45,22 @@ namespace TanHoaWater.Utilities
             for (int i = 0; i < dview.Rows.Count; i++)
             {
                 dview.Rows[i].Cells["G_SOHOSO"].Value = sohoso(dview.Rows[i].Cells["G_SOHOSO"].Value + ""); ;
+            }
+        }
+        public static void formatSoHoSoDanhBo(DataGridView dview)
+        {
+            for (int i = 0; i < dview.Rows.Count; i++)
+            {
+                dview.Rows[i].Cells["G_SOHOSO"].Value = sohoso(dview.Rows[i].Cells["G_SOHOSO"].Value + "");
+                dview.Rows[i].Cells["G_DANHBO"].Value = dview.Rows[i].Cells["G_DANHBO"].Value != null ? Utilities.FormatSoHoSoDanhBo.sodanhbo(dview.Rows[i].Cells["G_DANHBO"].Value + "") : dview.Rows[i].Cells["G_DANHBO"].Value;
+            }
+        }
+        public static void formatSoHoSoDanhBo(DataGridViewX dview)
+        {
+            for (int i = 0; i < dview.Rows.Count; i++)
+            {
+                dview.Rows[i].Cells["G_SOHOSO"].Value = sohoso(dview.Rows[i].Cells["G_SOHOSO"].Value + "");
+                dview.Rows[i].Cells["G_DANHBO"].Value = dview.Rows[i].Cells["G_DANHBO"].Value != null ? Utilities.FormatSoHoSoDanhBo.sodanhbo(dview.Rows[i].Cells["G_DANHBO"].Value + "") : dview.Rows[i].Cells["G_DANHBO"].Value;
             }
         }
         

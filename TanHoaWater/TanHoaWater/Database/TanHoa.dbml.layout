@@ -2,535 +2,547 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 30, 49.875" name="TanHoa">
   <DataContextMoniker Name="/TanHoaDataContext" />
   <nestedChildShapes>
-    <classShape Id="870002f4-e95e-4c6f-90ce-a33fe5e3224f" absoluteBounds="9.25, 17.625, 2, 4.0785139973958309">
+    <classShape Id="d9a58ef2-f4ec-4d9e-bdb9-bf5ec6cc8f59" absoluteBounds="9.25, 17.625, 2, 4.0785139973958309">
       <DataClassMoniker Name="/TanHoaDataContext/BG_CONGTACBANGIA" />
       <nestedChildShapes>
-        <elementListCompartment Id="a659480b-5f8f-4068-b7aa-9f0a901b6639" absoluteBounds="9.265, 18.085, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="1bc3d64e-56b7-4a5e-9d54-8ba63c061ac8" absoluteBounds="9.265, 18.085, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="45a3826d-85cc-4812-ac30-2ff4ed746e98" absoluteBounds="6.5, 10.125, 2, 2.9247054036458309">
+    <classShape Id="05ee9065-dd64-4ae7-b3f3-cf7778106ff8" absoluteBounds="6.5, 10.125, 2, 2.9247054036458309">
       <DataClassMoniker Name="/TanHoaDataContext/USER" />
       <nestedChildShapes>
-        <elementListCompartment Id="edee8315-e69f-4498-b681-f398fb6ad933" absoluteBounds="6.515, 10.585, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="377c1b79-e58b-4871-86d4-32e2b0f12266" absoluteBounds="6.515, 10.585, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="84d5f402-4126-4adb-a45b-e696fe78fe28" absoluteBounds="0.75, 5.75, 2, 4.4631168619791666">
+    <classShape Id="c49e0380-5436-486d-a87e-892fe0a81600" absoluteBounds="0.75, 5.75, 2, 4.4631168619791666">
       <DataClassMoniker Name="/TanHoaDataContext/BG_HESOBANGGIA" />
       <nestedChildShapes>
-        <elementListCompartment Id="1f6a07ce-f6ee-4c96-818f-ee605f14cf9d" absoluteBounds="0.765, 6.21, 1.9700000000000002, 3.903116861979167" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="d4f07c6b-2fd9-4651-b57a-6c26d4d664fe" absoluteBounds="0.765, 6.21, 1.9700000000000002, 3.903116861979167" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="136bb57f-1581-46d2-8a06-2c27c55ba66b" absoluteBounds="6.75, 0.75, 2, 4.2708154296875">
+    <classShape Id="93d96cc7-77a8-4f35-936e-a7ab788d4903" absoluteBounds="6.75, 0.75, 2, 4.2708154296875">
       <DataClassMoniker Name="/TanHoaDataContext/BG_HESOPHUIDAO" />
       <nestedChildShapes>
-        <elementListCompartment Id="1a385975-fbd3-48f9-b90b-1861acf71b1b" absoluteBounds="6.765, 1.21, 1.9700000000000002, 3.7108154296875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="e23236b3-7ee6-493c-9526-6e38becf2304" absoluteBounds="6.765, 1.21, 1.9700000000000002, 3.7108154296875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="cde148fb-8c5e-46df-bb32-f0cd578d1d33" absoluteBounds="9.25, 38.625, 2, 7.1553369140625023">
+    <classShape Id="1e81cb5b-1904-479d-b694-a7afa0466fa9" absoluteBounds="9.25, 38.625, 2, 7.1553369140625023">
       <DataClassMoniker Name="/TanHoaDataContext/BG_KHOILUONGXDCB" />
       <nestedChildShapes>
-        <elementListCompartment Id="3c2f0101-4d5b-4ff6-950d-f8ed45addadf" absoluteBounds="9.265, 39.085, 1.9700000000000002, 6.5953369140625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="f6de50a4-7bcc-4bbd-84bd-a687b822bc6d" absoluteBounds="9.265, 39.085, 1.9700000000000002, 6.5953369140625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="4401d8bd-c817-4562-b2ca-6e9f82153f76" absoluteBounds="12.25, 17.5, 2, 4.2708154296875023">
+    <classShape Id="12109a4d-1d15-4301-8d60-2bc95e5d567b" absoluteBounds="12.25, 17.5, 2, 4.2708154296875023">
       <DataClassMoniker Name="/TanHoaDataContext/BG_KICHTHUOCPHUIDAO" />
       <nestedChildShapes>
-        <elementListCompartment Id="53762928-04d8-4027-882c-87025925e715" absoluteBounds="12.265, 17.96, 1.9700000000000002, 3.7108154296875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="b1fe6fa4-0c51-480e-84d6-ce22c454858c" absoluteBounds="12.265, 17.96, 1.9700000000000002, 3.7108154296875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="65e6912d-de60-49ea-936a-31fe459fa941" absoluteBounds="9.75, 0.75, 2, 2.9247054036458326">
+    <classShape Id="42552a67-293f-48de-93ba-c429dee8d99c" absoluteBounds="9.75, 0.75, 2, 2.9247054036458326">
       <DataClassMoniker Name="/TanHoaDataContext/BG_REPORT" />
       <nestedChildShapes>
-        <elementListCompartment Id="48684934-fd92-4374-bc95-b4334baf1cfc" absoluteBounds="9.765, 1.21, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="1373be31-34c0-4b1a-901f-867444566864" absoluteBounds="9.765, 1.21, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="e30bf349-3763-49eb-97a8-2a264f4a6da4" absoluteBounds="3.5, 1, 2, 3.8862125651041666">
+    <classShape Id="fd34e024-0309-46c9-8129-71524b2f9b4e" absoluteBounds="3.5, 1, 2, 3.8862125651041666">
       <DataClassMoniker Name="/TanHoaDataContext/BIENNHANDON" />
       <nestedChildShapes>
-        <elementListCompartment Id="0f59b730-0778-4a37-acf2-cd3f1ffe2753" absoluteBounds="3.515, 1.46, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="2bfd45d9-2982-4f4f-9870-bdbebefe2a53" absoluteBounds="3.515, 1.46, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="e414a165-6c9b-461e-a2ca-783874ee2284" absoluteBounds="9.25, 33.625, 2, 2.3478011067708309">
+    <classShape Id="f8c059b6-a5e3-4ecb-98c5-d06375a373ca" absoluteBounds="9.25, 33.625, 2, 2.3478011067708309">
       <DataClassMoniker Name="/TanHoaDataContext/DANHMUCBOVATTU" />
       <nestedChildShapes>
-        <elementListCompartment Id="436a7dc7-e7e2-46dd-b6cc-05ee51fc1e61" absoluteBounds="9.265, 34.085, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="080d488c-4e57-4d17-8067-3c2e03265328" absoluteBounds="9.265, 34.085, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="c014faa0-2177-43b2-8714-a831ed59c3c4" absoluteBounds="9.5, 23.375, 2, 2.5401025390625023">
+    <classShape Id="3019cec1-7ed5-43ef-b909-17eb54a40f57" absoluteBounds="9.5, 23.375, 2, 2.5401025390625023">
       <DataClassMoniker Name="/TanHoaDataContext/DANHMUCTAILAPMATDUONG" />
       <nestedChildShapes>
-        <elementListCompartment Id="da182cb2-c0ca-439e-b114-ae25990c1d2f" absoluteBounds="9.515, 23.835, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="e28b4d56-dfd3-41ff-babc-d44a13b9c647" absoluteBounds="9.515, 23.835, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="6aac3c34-e21d-45b6-a209-e3986d64bf4a" absoluteBounds="6.5, 25.125, 2, 2.9247054036458309">
+    <classShape Id="920492aa-6bc9-4130-8cfa-3c2865c06dac" absoluteBounds="6.5, 25.125, 2, 2.9247054036458309">
       <DataClassMoniker Name="/TanHoaDataContext/DANHMUCVATTU" />
       <nestedChildShapes>
-        <elementListCompartment Id="3f7fe1d9-ed36-41bd-8ac1-58a706c8e6c6" absoluteBounds="6.515, 25.585, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="4be3c8a2-d2fe-49c9-bfba-b4e19aca742d" absoluteBounds="6.515, 25.585, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="47b28b78-ee4a-4938-b200-ab3cc3f34158" absoluteBounds="6.5, 15.25, 2, 8.8860498046875023">
+    <classShape Id="412ccfde-3dfa-4850-a6c8-0613c8bf6449" absoluteBounds="6.5, 15.125, 2, 9.0783512369791666">
       <DataClassMoniker Name="/TanHoaDataContext/DON_KHACHHANG" />
       <nestedChildShapes>
-        <elementListCompartment Id="c6c35247-add7-4e35-ba17-cdb7b144fc57" absoluteBounds="6.515, 15.71, 1.9700000000000002, 8.3260498046875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="a1e61786-651e-4a7b-9469-628497193eb2" absoluteBounds="6.515, 15.585, 1.9700000000000002, 8.5183512369791661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="4c5f85d0-b8c7-45b9-a769-3c62ffb36b70" absoluteBounds="12.25, 33.125, 2, 3.1170068359375023">
+    <classShape Id="f4811c0f-3fa5-4e95-be46-27368cf07a7f" absoluteBounds="12.25, 33.125, 2, 3.1170068359375023">
       <DataClassMoniker Name="/TanHoaDataContext/DONGIATAILAPMATDUONG" />
       <nestedChildShapes>
-        <elementListCompartment Id="19cc7aac-6be2-418b-bf8b-d24ae89fc8b4" absoluteBounds="12.265, 33.585, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="7920c4df-3a26-440b-8371-88dfdcd38a6b" absoluteBounds="12.265, 33.585, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="75e6aa1b-afb0-41ce-8ebf-383f6e148880" absoluteBounds="9.25, 46.75, 2, 2.9247054036458309">
+    <classShape Id="f485bd7e-5f3e-4f58-ac9b-2c0846581ae7" absoluteBounds="9.25, 46.75, 2, 2.9247054036458309">
       <DataClassMoniker Name="/TanHoaDataContext/DONGIAVATTU" />
       <nestedChildShapes>
-        <elementListCompartment Id="fcd75309-2520-4514-96c7-6cd623bd4bb8" absoluteBounds="9.265, 47.21, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="e94bca8a-1d02-494f-b3a8-6200556d91d8" absoluteBounds="9.265, 47.21, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="a1d4a44c-e089-4efe-a358-1cdb399e20f5" absoluteBounds="3.75, 25.5, 2, 2.9247054036458309">
+    <classShape Id="5d2b786e-0b83-4c9e-b318-e6fabd6b2b73" absoluteBounds="3.75, 25.5, 2, 2.9247054036458309">
       <DataClassMoniker Name="/TanHoaDataContext/DOT_NHAN_DON" />
       <nestedChildShapes>
-        <elementListCompartment Id="05072604-07c3-4dae-b1a2-6d0bd5b5f592" absoluteBounds="3.765, 25.96, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="0c4e3d7c-7a42-43c2-b3ec-8f33dcf93f3d" absoluteBounds="3.765, 25.96, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="97134652-857e-4170-b8d0-d642d55cb2dc" absoluteBounds="3.75, 6.75, 2, 1.1939925130208344">
+    <classShape Id="6fb8eb20-8724-442b-b377-b204b084bb8a" absoluteBounds="3.75, 6.75, 2, 1.1939925130208344">
       <DataClassMoniker Name="/TanHoaDataContext/DVT" />
       <nestedChildShapes>
-        <elementListCompartment Id="40fcbbd2-81dc-4bef-8edf-9865c14951e5" absoluteBounds="3.765, 7.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="fe0e0a25-d20f-4ff3-9a08-0cbbf36a3ebd" absoluteBounds="3.765, 7.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="0cda6798-f3fa-4296-b4da-126a3c88c804" absoluteBounds="11.75, 11.75, 2, 1.7708968098958344">
+    <classShape Id="20002b3c-d5ea-405d-b36b-267b0a025e06" absoluteBounds="11.75, 11.75, 2, 1.7708968098958344">
       <DataClassMoniker Name="/TanHoaDataContext/KH_BAOCAOPHUIDAO" />
       <nestedChildShapes>
-        <elementListCompartment Id="3208e09c-7957-4a89-8046-cf734a851546" absoluteBounds="11.765, 12.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="0280cdfc-517c-459e-8fd5-6005a161bb9f" absoluteBounds="11.765, 12.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="79a3d059-743b-4bd4-b04c-562222bd3d2c" absoluteBounds="12.75, 0.75, 2, 2.5401025390625005">
+    <classShape Id="b497566c-1375-4f92-ba5d-55cccee33003" absoluteBounds="12.75, 0.75, 2, 2.5401025390625005">
       <DataClassMoniker Name="/TanHoaDataContext/KH_BC_XINPHEPDD" />
       <nestedChildShapes>
-        <elementListCompartment Id="a82b4583-3e1b-4064-895e-85604ae06342" absoluteBounds="12.765, 1.21, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="23b2b7a3-a5d7-4791-a758-ef4fb3f07c5a" absoluteBounds="12.765, 1.21, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="fdfacffb-f669-4472-88e5-7b1376eb3dac" absoluteBounds="9.75, 4.75, 2, 1.1939925130208344">
+    <classShape Id="ec6e0416-52ff-4635-b4e4-6447d50e2378" absoluteBounds="9.75, 4.75, 2, 1.1939925130208344">
       <DataClassMoniker Name="/TanHoaDataContext/KH_DONVIGIAMSAT" />
       <nestedChildShapes>
-        <elementListCompartment Id="eb49f8f9-42d6-42c3-bdf8-d480f6bb7337" absoluteBounds="9.765, 5.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="e30ec069-c015-469f-b71b-08127b3c8835" absoluteBounds="9.765, 5.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="852c137a-7248-442c-8136-957de89b56d0" absoluteBounds="9.75, 29.875, 2, 2.3478011067708344">
+    <classShape Id="011aaf2d-6842-44ef-92c6-f6fc6590fd56" absoluteBounds="9.75, 29.875, 2, 2.3478011067708344">
       <DataClassMoniker Name="/TanHoaDataContext/KH_DONVITAILAP" />
       <nestedChildShapes>
-        <elementListCompartment Id="b56e8b9b-7db8-4352-8eb3-2030b153cbd9" absoluteBounds="9.765, 30.335, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="23171020-e07c-4ec6-a61a-c51629e9ebaa" absoluteBounds="9.765, 30.335, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="61df738d-2630-48f0-9260-01338cedec16" absoluteBounds="9.75, 26.75, 2, 2.3478011067708309">
+    <classShape Id="9287220a-c442-491f-ab34-e94b08ded101" absoluteBounds="9.75, 26.75, 2, 2.3478011067708309">
       <DataClassMoniker Name="/TanHoaDataContext/KH_DONVITHICONG" />
       <nestedChildShapes>
-        <elementListCompartment Id="f9899e5b-4e0d-427a-bb3d-15358b7e8186" absoluteBounds="9.765, 27.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="5b791e80-1db5-4cc6-a8be-1bc14f140100" absoluteBounds="9.765, 27.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="c13b00bc-9a61-4ae3-b248-161559fa8ce7" absoluteBounds="12.5, 26.875, 2, 5.2323225911458344">
+    <classShape Id="d446728e-9b7c-4a29-88c1-15cd0177dda0" absoluteBounds="12.5, 26.875, 2, 5.2323225911458344">
       <DataClassMoniker Name="/TanHoaDataContext/KH_DOTTHICONG" />
       <nestedChildShapes>
-        <elementListCompartment Id="979547c7-cdb8-4cf7-a864-55d68d3fb0cc" absoluteBounds="12.515, 27.335, 1.9700000000000002, 4.672322591145833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="b6f0ab78-1574-4f62-8f8b-98a78abafb71" absoluteBounds="12.515, 27.335, 1.9700000000000002, 4.672322591145833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="505bccca-33b1-4f45-85e9-7e0ad1caa697" absoluteBounds="15.25, 16.375, 2, 6.5784326171875023">
+    <classShape Id="5dd6b09c-4fa8-44ae-8c51-80ad60050970" absoluteBounds="15.25, 16.375, 2, 6.5784326171875023">
       <DataClassMoniker Name="/TanHoaDataContext/KH_HOSOKHACHHANG" />
       <nestedChildShapes>
-        <elementListCompartment Id="96ce6cce-bec0-4d5b-8206-e2932104ba31" absoluteBounds="15.265, 16.835, 1.9700000000000002, 6.0184326171875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="63c826a5-6a7f-4489-9b2a-2a6fd4954e56" absoluteBounds="15.265, 16.835, 1.9700000000000002, 6.0184326171875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="4f3c35f6-8afe-4336-934c-980a0d94ba06" absoluteBounds="14.75, 11.75, 2, 1.9631982421874987">
+    <classShape Id="9e99ba58-a250-46b1-9057-2256707e8e0e" absoluteBounds="14.75, 11.75, 2, 1.9631982421874987">
       <DataClassMoniker Name="/TanHoaDataContext/KH_LOAIBANGKE" />
       <nestedChildShapes>
-        <elementListCompartment Id="e4b3e55d-4bec-404b-b8bb-52369b7b69ad" absoluteBounds="14.765, 12.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="3576d553-325e-4da0-b020-4a6918f1a370" absoluteBounds="14.765, 12.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="598b0661-a5e8-4d12-8d53-b02df765a415" absoluteBounds="9.75, 7.5, 2, 1.9631982421874996">
+    <classShape Id="1e1fa365-9fe4-4347-b110-f97e7e3876eb" absoluteBounds="9.75, 7.5, 2, 1.9631982421874996">
       <DataClassMoniker Name="/TanHoaDataContext/KH_NOICAPPHEP" />
       <nestedChildShapes>
-        <elementListCompartment Id="d8695b03-ff81-4285-a4a8-ab58a4f82d64" absoluteBounds="9.765, 7.96, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="2bd402a5-8a3f-4e2a-b22d-923e88be0a8d" absoluteBounds="9.765, 7.96, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="c14db614-03e9-4b77-a740-d490ef4469cd" absoluteBounds="11.75, 14.75, 2, 1.7708968098958344">
+    <classShape Id="e6abb082-7bf5-4ac8-bde9-9a66032f85d8" absoluteBounds="11.75, 14.75, 2, 1.7708968098958344">
       <DataClassMoniker Name="/TanHoaDataContext/KH_TC_BAOCAO" />
       <nestedChildShapes>
-        <elementListCompartment Id="d4f9c5ef-b07b-47e2-a8b7-ff0251e6ae57" absoluteBounds="11.765, 15.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="cc152626-2048-42b1-bbb1-f3e48aa3165d" absoluteBounds="11.765, 15.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="4c51624c-27d3-443f-a708-625a0eb4b956" absoluteBounds="12.5, 7.125, 2, 2.9247054036458318">
+    <classShape Id="54e863ec-7fe8-4fee-a568-0c21bf4813ad" absoluteBounds="12.5, 7.125, 2, 2.9247054036458318">
       <DataClassMoniker Name="/TanHoaDataContext/KH_XINPHEPDAODUONG" />
       <nestedChildShapes>
-        <elementListCompartment Id="5022bb54-0ec4-4d62-b32f-c31ea1d0d7ec" absoluteBounds="12.515, 7.585, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="060d79b7-792e-455b-ba5f-0fa6238b7a58" absoluteBounds="12.515, 7.585, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="f63b8204-bb98-4071-9b80-87aac825469f" absoluteBounds="15.75, 0.75, 2, 2.3478011067708335">
+    <classShape Id="10c80e5b-4568-451c-959e-3c54c2a1e868" absoluteBounds="15.75, 0.75, 2, 2.3478011067708335">
       <DataClassMoniker Name="/TanHoaDataContext/LICHDOCSO" />
       <nestedChildShapes>
-        <elementListCompartment Id="ce925a9c-21bc-4f83-9686-b6766ee3b9aa" absoluteBounds="15.765, 1.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="193bc9f2-fa7a-40f9-af26-fafebbded63b" absoluteBounds="15.765, 1.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="60b45b62-cffd-4109-90f4-efbe91e5eb94" absoluteBounds="1, 26, 2, 1.9631982421875023">
+    <classShape Id="5c41c208-a4c3-470a-8a9f-62317fb580db" absoluteBounds="1, 26, 2, 1.9631982421875023">
       <DataClassMoniker Name="/TanHoaDataContext/LOAI_HOSO" />
       <nestedChildShapes>
-        <elementListCompartment Id="c732b17b-f0f8-4a20-993b-42721ac39438" absoluteBounds="1.0150000000000001, 26.46, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="bac8674b-c4ae-405d-8892-e2ece2ce37d6" absoluteBounds="1.0150000000000001, 26.46, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="80100f14-7662-4abf-b043-f3e85ecaf28f" absoluteBounds="3.75, 14.875, 2, 1.1939925130208327">
+    <classShape Id="a8ad7664-4f07-4731-bd70-1639537fdf93" absoluteBounds="3.75, 14.875, 2, 1.1939925130208327">
       <DataClassMoniker Name="/TanHoaDataContext/LOAI_KHACHHANG" />
       <nestedChildShapes>
-        <elementListCompartment Id="0515ae6a-2447-43ba-af8b-b0b7880dae6e" absoluteBounds="3.765, 15.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="c1d43997-310d-4b98-b44f-1e4d6b9c86af" absoluteBounds="3.765, 15.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="d61b6df2-4ae5-41d4-91ad-d9bbc97a4324" absoluteBounds="0.75, 2.375, 2, 1.1939925130208335">
+    <classShape Id="3bb0b6d3-f02a-4ac2-ab11-ebb4f9550589" absoluteBounds="0.75, 2.375, 2, 1.1939925130208335">
       <DataClassMoniker Name="/TanHoaDataContext/LOAI_NHANDON" />
       <nestedChildShapes>
-        <elementListCompartment Id="8ccf904d-83a4-4bd5-93d3-34d79bd70895" absoluteBounds="0.765, 2.835, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="cdf59499-96cb-4afb-b81f-bc356a815d4e" absoluteBounds="0.765, 2.835, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="cc37b262-c82d-4eca-b489-a964d7cc58bd" absoluteBounds="12.75, 4.75, 2, 1.1939925130208344">
+    <classShape Id="0c93e40d-5ee8-426c-87b3-2f8abe69058a" absoluteBounds="12.75, 4.75, 2, 1.1939925130208344">
       <DataClassMoniker Name="/TanHoaDataContext/LOAISD" />
       <nestedChildShapes>
-        <elementListCompartment Id="78912d6a-5802-4a4e-86e8-137890eb7e38" absoluteBounds="12.765, 5.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="0c20fc77-873b-43ae-9b42-ac574b6b0d81" absoluteBounds="12.765, 5.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="6f5e8f54-1624-4c18-aae0-9dc74c518d4f" absoluteBounds="15.75, 4.75, 2, 1.1939925130208344">
+    <classShape Id="399aae68-00db-442f-b84b-b1610ea83ce3" absoluteBounds="15.75, 4.75, 2, 1.1939925130208344">
       <DataClassMoniker Name="/TanHoaDataContext/NHOMVATTU" />
       <nestedChildShapes>
-        <elementListCompartment Id="585f46bf-c548-4138-a844-08dd4a2d35cf" absoluteBounds="15.765, 5.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="f79f0b97-dd1d-4e3d-b579-a168053e825e" absoluteBounds="15.765, 5.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="389d0809-6a33-4201-bd73-591ae2daf641" absoluteBounds="3.75, 22.75, 2, 1.9631982421875023">
+    <classShape Id="5152ef49-eac8-454d-ad82-bfbd4f166c10" absoluteBounds="3.75, 22.75, 2, 1.9631982421875023">
       <DataClassMoniker Name="/TanHoaDataContext/PHONGBANDOI" />
       <nestedChildShapes>
-        <elementListCompartment Id="7039b4c5-390b-47ff-9479-06177e826272" absoluteBounds="3.765, 23.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="ef3e13c4-c1bb-4a39-8325-f6d88f3b9045" absoluteBounds="3.765, 23.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="905f74d3-f4cf-4756-ac2e-e5c56448dbbd" absoluteBounds="3.5, 17.75, 2, 1.3862939453125023">
+    <classShape Id="98591f85-eb17-470a-bdf1-823ba868f2f6" absoluteBounds="3.5, 17.75, 2, 1.3862939453125023">
       <DataClassMoniker Name="/TanHoaDataContext/PHUONG" />
       <nestedChildShapes>
-        <elementListCompartment Id="37c6fd59-0afa-406f-9eb6-e4a69dba7693" absoluteBounds="3.515, 18.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="5164f49c-e2f0-44de-8cfa-74910105a21d" absoluteBounds="3.515, 18.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="7f00e359-10a2-4bea-a83c-7ac58750de2b" absoluteBounds="0.75, 19, 2, 1.1939925130208309">
+    <classShape Id="9b6a36e9-6e4e-4820-b751-90225e2f038d" absoluteBounds="0.75, 19, 2, 1.1939925130208309">
       <DataClassMoniker Name="/TanHoaDataContext/QUAN" />
       <nestedChildShapes>
-        <elementListCompartment Id="012f88cb-d12d-491a-af7f-40f6498c6ada" absoluteBounds="0.765, 19.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="43e9cb86-b2b4-49a0-b567-150476a78e80" absoluteBounds="0.765, 19.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="7fafb8cc-29f7-47f7-afc8-7c3eb4534290" absoluteBounds="3.75, 11, 2, 1.1939925130208344">
+    <classShape Id="f9c6c654-3a8a-432c-b69d-a740cabf56ce" absoluteBounds="3.75, 11, 2, 1.1939925130208344">
       <DataClassMoniker Name="/TanHoaDataContext/ROLE" />
       <nestedChildShapes>
-        <elementListCompartment Id="46cb9572-b7f2-40be-bb37-7db311c7bc45" absoluteBounds="3.765, 11.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="0835f9eb-2292-4ddd-a9a5-fb08b7626cca" absoluteBounds="3.765, 11.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="296ba0d0-4e9b-411b-b3cb-b4334dea4695" absoluteBounds="3.5, 19.875, 2, 1.5785953776041666">
+    <classShape Id="867ed425-f083-4604-8683-573dff897e53" absoluteBounds="3.5, 19.875, 2, 1.5785953776041666">
       <DataClassMoniker Name="/TanHoaDataContext/TENDUONG" />
       <nestedChildShapes>
-        <elementListCompartment Id="5f42d8f7-c8ff-4aa9-8706-d27b399e66a3" absoluteBounds="3.515, 20.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="407b00c7-6df1-4648-afc7-c5066bad6e63" absoluteBounds="3.515, 20.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="66c7d86c-700a-42b2-abd8-62e929b8407f" absoluteBounds="15.75, 6.75, 2, 1.7708968098958335">
+    <classShape Id="40488bb2-1322-4024-bcab-cfe1941b9fe0" absoluteBounds="15.75, 6.75, 2, 1.7708968098958335">
       <DataClassMoniker Name="/TanHoaDataContext/TMP_TAIXET" />
       <nestedChildShapes>
-        <elementListCompartment Id="7cfeb7f3-b6bf-4315-a9bc-255c06113b45" absoluteBounds="15.765, 7.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="47292f2f-bb8b-4a07-855b-d5bf98d84c6b" absoluteBounds="15.765, 7.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="2601595f-4b23-4b3d-8c29-75dff500c463" absoluteBounds="9.25, 11.25, 2, 4.6554182942708309">
+    <classShape Id="e0ff4c86-f609-46f1-9eba-a8bfc90474dc" absoluteBounds="9.25, 11.25, 2, 4.6554182942708309">
       <DataClassMoniker Name="/TanHoaDataContext/TOTHIETKE" />
       <nestedChildShapes>
-        <elementListCompartment Id="2e0ad6ea-b48d-4aae-9880-5de37776ec7a" absoluteBounds="9.265, 11.71, 1.9700000000000002, 4.095418294270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="39ed1163-f6e4-439e-b847-e494fa6715a0" absoluteBounds="9.265, 11.71, 1.9700000000000002, 4.095418294270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
     <associationConnector edgePoints="[(11.40625 : 23.375); (11.40625 : 17.53125); (12.25 : 17.53125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/TanHoaDataContext/DANHMUCTAILAPMATDUONG/DANHMUCTAILAPMATDUONG_BG_KICHTHUOCPHUIDAO" />
       <nodes>
-        <classShapeMoniker Id="c014faa0-2177-43b2-8714-a831ed59c3c4" />
-        <classShapeMoniker Id="4401d8bd-c817-4562-b2ca-6e9f82153f76" />
+        <classShapeMoniker Id="3019cec1-7ed5-43ef-b909-17eb54a40f57" />
+        <classShapeMoniker Id="12109a4d-1d15-4301-8d60-2bc95e5d567b" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(8.5 : 26.3325512695313); (8.79166666666667 : 26.3325512695313 : JumpStart); (8.95833333333333 : 26.3325512695313 : JumpEnd); (9.34375 : 26.3325512695313); (9.34375 : 21.7035139973958)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/TanHoaDataContext/DANHMUCVATTU/DANHMUCVATTU_BG_CONGTACBANGIA" />
       <nodes>
-        <classShapeMoniker Id="6aac3c34-e21d-45b6-a209-e3986d64bf4a" />
-        <classShapeMoniker Id="870002f4-e95e-4c6f-90ce-a33fe5e3224f" />
+        <classShapeMoniker Id="920492aa-6bc9-4130-8cfa-3c2865c06dac" />
+        <classShapeMoniker Id="d9a58ef2-f4ec-4d9e-bdb9-bf5ec6cc8f59" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(7.5 : 28.0497054036458); (7.5 : 34.7989005533854); (7.94791916666667 : 34.7989005533854 : JumpStart); (8.11458583333333 : 34.7989005533854 : JumpEnd); (8.79166666666667 : 34.7989005533854 : JumpStart); (8.95833333333333 : 34.7989005533854 : JumpEnd); (9.25 : 34.7989005533854)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/TanHoaDataContext/DANHMUCVATTU/DANHMUCVATTU_DANHMUCBOVATTU" />
       <nodes>
-        <classShapeMoniker Id="6aac3c34-e21d-45b6-a209-e3986d64bf4a" />
-        <classShapeMoniker Id="e414a165-6c9b-461e-a2ca-783874ee2284" />
+        <classShapeMoniker Id="920492aa-6bc9-4130-8cfa-3c2865c06dac" />
+        <classShapeMoniker Id="f8c059b6-a5e3-4ecb-98c5-d06375a373ca" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(8.5 : 19.6642569986979); (9.25 : 19.6642569986979)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/TanHoaDataContext/DON_KHACHHANG/DON_KHACHHANG_BG_CONGTACBANGIA" />
       <nodes>
-        <classShapeMoniker Id="47b28b78-ee4a-4938-b200-ab3cc3f34158" />
-        <classShapeMoniker Id="870002f4-e95e-4c6f-90ce-a33fe5e3224f" />
+        <classShapeMoniker Id="412ccfde-3dfa-4850-a6c8-0613c8bf6449" />
+        <classShapeMoniker Id="d9a58ef2-f4ec-4d9e-bdb9-bf5ec6cc8f59" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(8.5 : 24.134510343149); (8.875 : 24.509510343149); (8.875 : 42.2026684570313); (9.25 : 42.2026684570313)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(8.5 : 24.2018117754407); (8.875 : 24.5768117754407); (8.875 : 42.2026684570313); (9.25 : 42.2026684570313)]" fixedFrom="NotFixed" fixedTo="Algorithm">
       <AssociationMoniker Name="/TanHoaDataContext/DON_KHACHHANG/DON_KHACHHANG_BG_KHOILUONGXDCB" />
       <nodes>
-        <classShapeMoniker Id="47b28b78-ee4a-4938-b200-ab3cc3f34158" />
-        <classShapeMoniker Id="cde148fb-8c5e-46df-bb32-f0cd578d1d33" />
+        <classShapeMoniker Id="412ccfde-3dfa-4850-a6c8-0613c8bf6449" />
+        <classShapeMoniker Id="1e81cb5b-1904-479d-b694-a7afa0466fa9" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(8.5 : 22.5416582148438); (9.26041666666667 : 22.5416582148438 : JumpStart); (9.42708333333333 : 22.5416582148438 : JumpEnd); (11.3229166666667 : 22.5416582148438 : JumpStart); (11.4895833333333 : 22.5416582148438 : JumpEnd); (13.25 : 22.5416582148438); (13.25 : 21.7708154296875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/TanHoaDataContext/DON_KHACHHANG/DON_KHACHHANG_BG_KICHTHUOCPHUIDAO" />
       <nodes>
-        <classShapeMoniker Id="47b28b78-ee4a-4938-b200-ab3cc3f34158" />
-        <classShapeMoniker Id="4401d8bd-c817-4562-b2ca-6e9f82153f76" />
+        <classShapeMoniker Id="412ccfde-3dfa-4850-a6c8-0613c8bf6449" />
+        <classShapeMoniker Id="12109a4d-1d15-4301-8d60-2bc95e5d567b" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(11.5 : 24.6450512695313); (12.34375 : 24.6450512695313); (12.34375 : 33.125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/TanHoaDataContext/DANHMUCTAILAPMATDUONG/DANHMUCTAILAPMATDUONG_DONGIATAILAPMATDUONG" />
       <nodes>
-        <classShapeMoniker Id="c014faa0-2177-43b2-8714-a831ed59c3c4" />
-        <classShapeMoniker Id="4c5f85d0-b8c7-45b9-a769-3c62ffb36b70" />
+        <classShapeMoniker Id="3019cec1-7ed5-43ef-b909-17eb54a40f57" />
+        <classShapeMoniker Id="f4811c0f-3fa5-4e95-be46-27368cf07a7f" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(8.0312525 : 28.0497054036458); (8.0312525 : 48.2123527018229); (9.25 : 48.2123527018229)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/TanHoaDataContext/DANHMUCVATTU/DANHMUCVATTU_DONGIAVATTU" />
       <nodes>
-        <classShapeMoniker Id="6aac3c34-e21d-45b6-a209-e3986d64bf4a" />
-        <classShapeMoniker Id="75e6aa1b-afb0-41ce-8ebf-383f6e148880" />
+        <classShapeMoniker Id="920492aa-6bc9-4130-8cfa-3c2865c06dac" />
+        <classShapeMoniker Id="f485bd7e-5f3e-4f58-ac9b-2c0846581ae7" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.75 : 25.5); (6.125 : 25.125); (6.125 : 19.6930249023438); (6.22916666666667 : 19.6930249023438 : JumpStart); (6.39583333333333 : 19.6930249023438 : JumpEnd); (6.5 : 19.6930249023438)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.75 : 25.5); (6.125 : 25.125); (6.125 : 19.6641756184896); (6.22916666666667 : 19.6641756184896 : JumpStart); (6.39583333333333 : 19.6641756184896 : JumpEnd); (6.5 : 19.6641756184896)]" fixedFrom="NotFixed" fixedTo="Algorithm">
       <AssociationMoniker Name="/TanHoaDataContext/DOT_NHAN_DON/DOT_NHAN_DON_DON_KHACHHANG" />
       <nodes>
-        <classShapeMoniker Id="a1d4a44c-e089-4efe-a358-1cdb399e20f5" />
-        <classShapeMoniker Id="47b28b78-ee4a-4938-b200-ab3cc3f34158" />
+        <classShapeMoniker Id="5d2b786e-0b83-4c9e-b318-e6fabd6b2b73" />
+        <classShapeMoniker Id="412ccfde-3dfa-4850-a6c8-0613c8bf6449" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(11.75 : 27.9864005533854); (12.2604166666667 : 27.9864005533854 : JumpStart); (12.4270833333333 : 27.9864005533854 : JumpEnd); (12.5 : 27.9864005533854)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/TanHoaDataContext/KH_DONVITHICONG/KH_DONVITHICONG_KH_DOTTHICONG" />
       <nodes>
-        <classShapeMoniker Id="61df738d-2630-48f0-9260-01338cedec16" />
-        <classShapeMoniker Id="c13b00bc-9a61-4ae3-b248-161559fa8ce7" />
+        <classShapeMoniker Id="9287220a-c442-491f-ab34-e94b08ded101" />
+        <classShapeMoniker Id="d446728e-9b7c-4a29-88c1-15cd0177dda0" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(11.75 : 30.9911612955729); (12.2604166666667 : 30.9911612955729 : JumpStart); (12.4270833333333 : 30.9911612955729 : JumpEnd); (12.5 : 30.9911612955729)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/TanHoaDataContext/KH_DONVITAILAP/KH_DONVITAILAP_KH_DOTTHICONG" />
       <nodes>
-        <classShapeMoniker Id="852c137a-7248-442c-8136-957de89b56d0" />
-        <classShapeMoniker Id="c13b00bc-9a61-4ae3-b248-161559fa8ce7" />
+        <classShapeMoniker Id="011aaf2d-6842-44ef-92c6-f6fc6590fd56" />
+        <classShapeMoniker Id="d446728e-9b7c-4a29-88c1-15cd0177dda0" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(8.5 : 16.9948234049479); (14.3697916666667 : 16.9948234049479 : JumpStart); (14.5364583333333 : 16.9948234049479 : JumpEnd); (15.25 : 16.9948234049479)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/TanHoaDataContext/DON_KHACHHANG/DON_KHACHHANG_KH_HOSOKHACHHANG" />
       <nodes>
-        <classShapeMoniker Id="47b28b78-ee4a-4938-b200-ab3cc3f34158" />
-        <classShapeMoniker Id="505bccca-33b1-4f45-85e9-7e0ad1caa697" />
+        <classShapeMoniker Id="412ccfde-3dfa-4850-a6c8-0613c8bf6449" />
+        <classShapeMoniker Id="5dd6b09c-4fa8-44ae-8c51-80ad60050970" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(14.40625 : 26.875); (14.40625 : 22.1874868222656); (15.25 : 22.1874868222656)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/TanHoaDataContext/KH_DOTTHICONG/KH_DOTTHICONG_KH_HOSOKHACHHANG" />
       <nodes>
-        <classShapeMoniker Id="c13b00bc-9a61-4ae3-b248-161559fa8ce7" />
-        <classShapeMoniker Id="505bccca-33b1-4f45-85e9-7e0ad1caa697" />
+        <classShapeMoniker Id="d446728e-9b7c-4a29-88c1-15cd0177dda0" />
+        <classShapeMoniker Id="5dd6b09c-4fa8-44ae-8c51-80ad60050970" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(14.453125 : 10.0497054036458); (14.453125 : 22.7475454160156); (15.25 : 22.7475454160156)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/TanHoaDataContext/KH_XINPHEPDAODUONG/KH_XINPHEPDAODUONG_KH_HOSOKHACHHANG" />
       <nodes>
-        <classShapeMoniker Id="4c51624c-27d3-443f-a708-625a0eb4b956" />
-        <classShapeMoniker Id="505bccca-33b1-4f45-85e9-7e0ad1caa697" />
+        <classShapeMoniker Id="54e863ec-7fe8-4fee-a568-0c21bf4813ad" />
+        <classShapeMoniker Id="5dd6b09c-4fa8-44ae-8c51-80ad60050970" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(11.75 : 8.48159912109375); (12.5 : 8.48159912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/TanHoaDataContext/KH_NOICAPPHEP/KH_NOICAPPHEP_KH_XINPHEPDAODUONG" />
       <nodes>
-        <classShapeMoniker Id="598b0661-a5e8-4d12-8d53-b02df765a415" />
-        <classShapeMoniker Id="4c51624c-27d3-443f-a708-625a0eb4b956" />
+        <classShapeMoniker Id="1e1fa365-9fe4-4347-b110-f97e7e3876eb" />
+        <classShapeMoniker Id="54e863ec-7fe8-4fee-a568-0c21bf4813ad" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(2.90625 : 26); (2.90625 : 16.9094962565104); (6.22916666666667 : 16.9094962565104 : JumpStart); (6.39583333333333 : 16.9094962565104 : JumpEnd); (6.5 : 16.9094962565104)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/TanHoaDataContext/LOAI_HOSO/LOAI_HOSO_DON_KHACHHANG" />
       <nodes>
-        <classShapeMoniker Id="60b45b62-cffd-4109-90f4-efbe91e5eb94" />
-        <classShapeMoniker Id="47b28b78-ee4a-4938-b200-ab3cc3f34158" />
+        <classShapeMoniker Id="5c41c208-a4c3-470a-8a9f-62317fb580db" />
+        <classShapeMoniker Id="412ccfde-3dfa-4850-a6c8-0613c8bf6449" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(3 : 26.9815991210938); (3.75 : 26.9815991210938)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/TanHoaDataContext/LOAI_HOSO/LOAI_HOSO_DOT_NHAN_DON" />
       <nodes>
-        <classShapeMoniker Id="60b45b62-cffd-4109-90f4-efbe91e5eb94" />
-        <classShapeMoniker Id="a1d4a44c-e089-4efe-a358-1cdb399e20f5" />
+        <classShapeMoniker Id="5c41c208-a4c3-470a-8a9f-62317fb580db" />
+        <classShapeMoniker Id="5d2b786e-0b83-4c9e-b318-e6fabd6b2b73" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.75 : 15.6594962565104); (6.22916666666667 : 15.6594962565104 : JumpStart); (6.39583333333333 : 15.6594962565104 : JumpEnd); (6.5 : 15.6594962565104)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.75 : 15.5969962565104); (6.22916666666667 : 15.5969962565104 : JumpStart); (6.39583333333333 : 15.5969962565104 : JumpEnd); (6.5 : 15.5969962565104)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/TanHoaDataContext/LOAI_KHACHHANG/LOAI_KHACHHANG_DON_KHACHHANG" />
       <nodes>
-        <classShapeMoniker Id="80100f14-7662-4abf-b043-f3e85ecaf28f" />
-        <classShapeMoniker Id="47b28b78-ee4a-4938-b200-ab3cc3f34158" />
+        <classShapeMoniker Id="a8ad7664-4f07-4731-bd70-1639537fdf93" />
+        <classShapeMoniker Id="412ccfde-3dfa-4850-a6c8-0613c8bf6449" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(2.75 : 2.97199625651042); (3.5 : 2.97199625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/TanHoaDataContext/LOAI_NHANDON/LOAI_NHANDON_BIENNHANDON" />
       <nodes>
-        <classShapeMoniker Id="d61b6df2-4ae5-41d4-91ad-d9bbc97a4324" />
-        <classShapeMoniker Id="e30bf349-3763-49eb-97a8-2a264f4a6da4" />
+        <classShapeMoniker Id="3bb0b6d3-f02a-4ac2-ab11-ebb4f9550589" />
+        <classShapeMoniker Id="fd34e024-0309-46c9-8129-71524b2f9b4e" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(5.75 : 22.8134254047476); (6.06607443490112 : 22.4973509698465 : JumpStart); (6.18392556509888 : 22.3794998396487 : JumpEnd); (6.3125 : 22.2509254047476); (6.3125 : 11.5873527018229); (6.5 : 11.5873527018229)]" fixedFrom="NotFixed" fixedTo="Algorithm">
       <AssociationMoniker Name="/TanHoaDataContext/PHONGBANDOI/PHONGBANDOI_USER" />
       <nodes>
-        <classShapeMoniker Id="389d0809-6a33-4201-bd73-591ae2daf641" />
-        <classShapeMoniker Id="45a3826d-85cc-4812-ac30-2ff4ed746e98" />
+        <classShapeMoniker Id="5152ef49-eac8-454d-ad82-bfbd4f166c10" />
+        <classShapeMoniker Id="05ee9065-dd64-4ae7-b3f3-cf7778106ff8" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.75 : 23.5059901047175); (6.04166666666667 : 23.5059901047175 : JumpStart); (6.20833333333333 : 23.5059901047175 : JumpEnd); (6.5 : 23.5059901047175)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.75 : 23.5396408208634); (6.04166666666667 : 23.5396408208634 : JumpStart); (6.20833333333333 : 23.5396408208634 : JumpEnd); (6.5 : 23.5396408208634)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/TanHoaDataContext/PHONGBANDOI/PHONGBANDOI_DON_KHACHHANG" />
       <nodes>
-        <classShapeMoniker Id="389d0809-6a33-4201-bd73-591ae2daf641" />
-        <classShapeMoniker Id="47b28b78-ee4a-4938-b200-ab3cc3f34158" />
+        <classShapeMoniker Id="5152ef49-eac8-454d-ad82-bfbd4f166c10" />
+        <classShapeMoniker Id="412ccfde-3dfa-4850-a6c8-0613c8bf6449" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 19.3834094238281); (2.82291666666667 : 19.3834094238281 : JumpStart); (2.98958333333333 : 19.3834094238281 : JumpEnd); (6.22916666666667 : 19.3834094238281 : JumpStart); (6.39583333333333 : 19.3834094238281 : JumpEnd); (6.5 : 19.3834094238281)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 19.368984781901); (2.82291666666667 : 19.368984781901 : JumpStart); (2.98958333333333 : 19.368984781901 : JumpEnd); (6.22916666666667 : 19.368984781901 : JumpStart); (6.39583333333333 : 19.368984781901 : JumpEnd); (6.5 : 19.368984781901)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/TanHoaDataContext/QUAN/QUAN_DON_KHACHHANG" />
       <nodes>
-        <classShapeMoniker Id="7f00e359-10a2-4bea-a83c-7ac58750de2b" />
-        <classShapeMoniker Id="47b28b78-ee4a-4938-b200-ab3cc3f34158" />
+        <classShapeMoniker Id="9b6a36e9-6e4e-4820-b751-90225e2f038d" />
+        <classShapeMoniker Id="412ccfde-3dfa-4850-a6c8-0613c8bf6449" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(1.75 : 19); (1.75 : 18.3749995); (2.82291666666667 : 18.3749995 : JumpStart); (2.98958333333333 : 18.3749995 : JumpEnd); (3.5 : 18.3749995)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/TanHoaDataContext/QUAN/QUAN_PHUONG" />
       <nodes>
-        <classShapeMoniker Id="7f00e359-10a2-4bea-a83c-7ac58750de2b" />
-        <classShapeMoniker Id="905f74d3-f4cf-4756-ac2e-e5c56448dbbd" />
+        <classShapeMoniker Id="9b6a36e9-6e4e-4820-b751-90225e2f038d" />
+        <classShapeMoniker Id="98591f85-eb17-470a-bdf1-823ba868f2f6" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(5.75 : 11.9531726074219); (6.22916666666667 : 11.9531726074219 : JumpStart); (6.39583333333333 : 11.9531726074219 : JumpEnd); (6.5 : 11.9531726074219)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/TanHoaDataContext/ROLE/ROLE_USER" />
       <nodes>
-        <classShapeMoniker Id="7fafb8cc-29f7-47f7-afc8-7c3eb4534290" />
-        <classShapeMoniker Id="45a3826d-85cc-4812-ac30-2ff4ed746e98" />
+        <classShapeMoniker Id="f9c6c654-3a8a-432c-b69d-a740cabf56ce" />
+        <classShapeMoniker Id="05ee9065-dd64-4ae7-b3f3-cf7778106ff8" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(2.75 : 20.0344962565104); (2.82291666666667 : 20.0344962565104 : JumpStart); (2.98958333333333 : 20.0344962565104 : JumpEnd); (3.5 : 20.0344962565104)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/TanHoaDataContext/QUAN/QUAN_TENDUONG" />
       <nodes>
-        <classShapeMoniker Id="7f00e359-10a2-4bea-a83c-7ac58750de2b" />
-        <classShapeMoniker Id="296ba0d0-4e9b-411b-b3cb-b4334dea4695" />
+        <classShapeMoniker Id="9b6a36e9-6e4e-4820-b751-90225e2f038d" />
+        <classShapeMoniker Id="867ed425-f083-4604-8683-573dff897e53" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(8.5 : 15.5777091471354); (9.25 : 15.5777091471354)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(8.5 : 15.5152091471354); (9.25 : 15.5152091471354)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/TanHoaDataContext/DON_KHACHHANG/DON_KHACHHANG_TOTHIETKE" />
       <nodes>
-        <classShapeMoniker Id="47b28b78-ee4a-4938-b200-ab3cc3f34158" />
-        <classShapeMoniker Id="2601595f-4b23-4b3d-8c29-75dff500c463" />
+        <classShapeMoniker Id="412ccfde-3dfa-4850-a6c8-0613c8bf6449" />
+        <classShapeMoniker Id="e0ff4c86-f609-46f1-9eba-a8bfc90474dc" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(8.5 : 12.1498527018229); (9.25 : 12.1498527018229)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/TanHoaDataContext/USER/USER_TOTHIETKE" />
       <nodes>
-        <classShapeMoniker Id="45a3826d-85cc-4812-ac30-2ff4ed746e98" />
-        <classShapeMoniker Id="2601595f-4b23-4b3d-8c29-75dff500c463" />
+        <classShapeMoniker Id="05ee9065-dd64-4ae7-b3f3-cf7778106ff8" />
+        <classShapeMoniker Id="e0ff4c86-f609-46f1-9eba-a8bfc90474dc" />
       </nodes>
     </associationConnector>
-    <classShape Id="5d5f0689-becd-4e2d-aa61-87395cd0b68f" absoluteBounds="0.75, 11.75, 2, 3.6939111328124987">
+    <classShape Id="e3ef4a00-efe6-4798-9158-1fa34768abb2" absoluteBounds="0.75, 11.75, 2, 3.6939111328124987">
       <DataClassMoniker Name="/TanHoaDataContext/BG_CHITIETBG" />
       <nestedChildShapes>
-        <elementListCompartment Id="b5ddb6fc-f5be-4475-af12-f41b4978c01d" absoluteBounds="0.765, 12.21, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="5004d024-ff1d-46a5-8260-f2872c589d41" absoluteBounds="0.765, 12.21, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="3988ad67-a01b-4775-9fe3-a08f187c40ff" absoluteBounds="17.75, 9.75, 2, 4.2708154296874987">
+    <classShape Id="817bc38d-7afe-46f7-9b1e-052ebdf90cef" absoluteBounds="17.75, 9.75, 2, 4.2708154296874987">
       <DataClassMoniker Name="/TanHoaDataContext/W_H" />
       <nestedChildShapes>
-        <elementListCompartment Id="d4d6e7eb-97d9-449c-9298-1fc1ad9b67f9" absoluteBounds="17.765, 10.21, 1.9700000000000002, 3.7108154296875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="b1ded012-5664-4b16-98c4-cdf1d40cc3ea" absoluteBounds="17.765, 10.21, 1.9700000000000002, 3.7108154296875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="d21ddaf9-223e-4d09-869f-5d2822dce19a" absoluteBounds="18.75, 0.75, 2, 3.6939111328124992">
+    <classShape Id="c8dd62d7-9f31-488c-ad26-ebb500df2ed9" absoluteBounds="18.75, 0.75, 2, 3.6939111328124992">
       <DataClassMoniker Name="/TanHoaDataContext/BG_CHITIETBG_VT" />
       <nestedChildShapes>
-        <elementListCompartment Id="923064cf-e146-43e7-97af-61fbfd62efab" absoluteBounds="18.765, 1.21, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="39f92c96-080f-4322-8ae4-1a38fc763129" absoluteBounds="18.765, 1.21, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="72db7f24-a07d-4a93-80c2-bcebbbc031a7" absoluteBounds="18.75, 15.75, 2, 3.5016097005208309">
+    <classShape Id="c46d3ad2-9d01-419a-a069-dc9eb083546a" absoluteBounds="18.75, 15.75, 2, 3.5016097005208309">
       <DataClassMoniker Name="/TanHoaDataContext/BG_CHITIETBG_XDCB" />
       <nestedChildShapes>
-        <elementListCompartment Id="9f738e71-6348-4a02-91e8-205594868b1f" absoluteBounds="18.765, 16.21, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="edd3ea85-50ef-4a0e-af25-7b47ecfbd411" absoluteBounds="18.765, 16.21, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="b874ab0c-1567-4a75-9005-518fa0944432" absoluteBounds="6.75, 6.75, 2, 1.5785953776041666">
+    <classShape Id="38bfebab-751a-43c7-a8e2-ea1b5e37c5bb" absoluteBounds="6.75, 6.75, 2, 1.5785953776041666">
       <DataClassMoniker Name="/TanHoaDataContext/BG_SUMTAILAPMATDUONG" />
       <nestedChildShapes>
-        <elementListCompartment Id="7d03d4af-c123-4988-9425-3f776b3da3cc" absoluteBounds="6.765, 7.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="5429797c-2190-4257-a901-db98779aad1f" absoluteBounds="6.765, 7.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="382b3c87-fded-4ae2-91bd-1b2402180a91" absoluteBounds="18.75, 5.75, 2, 1.9631982421875005">
+    <classShape Id="50d4a99b-bccc-4ebb-b016-138ad54c98be" absoluteBounds="18.75, 5.75, 2, 1.9631982421875005">
       <DataClassMoniker Name="/TanHoaDataContext/BG_TAILAPMATDUONG" />
       <nestedChildShapes>
-        <elementListCompartment Id="0a6bee0d-fc06-482c-b8d2-1d7c721ccff4" absoluteBounds="18.765, 6.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="a7a2e0a3-fc59-4440-a6f5-c128fe2c4d93" absoluteBounds="18.765, 6.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="d71e5b6e-10a7-4c8b-ba6d-2ae0cd8cb35e" absoluteBounds="20.75, 8.75, 2, 1.7708968098958344">
+    <classShape Id="15edac4d-3c5b-4991-869c-e346cc34743e" absoluteBounds="20.75, 8.75, 2, 1.7708968098958344">
       <DataClassMoniker Name="/TanHoaDataContext/BG_THONGTINKHACHANG" />
       <nestedChildShapes>
-        <elementListCompartment Id="0283768c-8300-4a7f-b6b3-da5d14e09d4a" absoluteBounds="20.765, 9.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="4c153f76-f45b-4211-9dc6-8a4e8600ed56" absoluteBounds="20.765, 9.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="411e88ce-21d4-42ae-8a8e-50d55439f28b" absoluteBounds="20.75, 11.75, 2, 1.3862939453124987">
+    <classShape Id="64f11710-6858-4c63-abc9-fae5a9d164e1" absoluteBounds="20.75, 11.75, 2, 1.3862939453124987">
       <DataClassMoniker Name="/TanHoaDataContext/V_BAOCAO_NHANDON" />
       <nestedChildShapes>
-        <elementListCompartment Id="4a089507-1464-4eb4-a60b-95fd18a42ddd" absoluteBounds="20.765, 12.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="331eaf8e-d65b-4f0e-8f66-63eaad8d5627" absoluteBounds="20.765, 12.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="2c2c7c6d-5b04-43f0-b0fb-a8da65a7e62b" absoluteBounds="18.75, 20.75, 2, 6.7707340494791666">
+    <classShape Id="7f72c3ab-50ef-4714-aa8f-991312bf9323" absoluteBounds="18.75, 20.75, 2, 6.7707340494791666">
       <DataClassMoniker Name="/TanHoaDataContext/V_BC_KSTK" />
       <nestedChildShapes>
-        <elementListCompartment Id="bfe2ec6c-344c-4b22-8cde-7ed11f60e05d" absoluteBounds="18.765, 21.21, 1.9700000000000002, 6.2107340494791661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="b6c5d4fa-3ecc-416a-af1c-0d0f4dbf30ca" absoluteBounds="18.765, 21.21, 1.9700000000000002, 6.2107340494791661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="9ee863d4-17c6-42a5-8fea-45929779a044" absoluteBounds="21.75, 0.75, 2, 3.5016097005208326">
+    <classShape Id="dcd30c89-80dc-45b1-8d22-2fb1051cc167" absoluteBounds="21.75, 0.75, 2, 3.5016097005208326">
       <DataClassMoniker Name="/TanHoaDataContext/V_BIENNHANDON" />
       <nestedChildShapes>
-        <elementListCompartment Id="a0599e57-9b98-44c0-8cf9-4c4a29afaaf2" absoluteBounds="21.765, 1.21, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="3402be24-997b-4cad-82ea-2b5faaf294b6" absoluteBounds="21.765, 1.21, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="ebeaaf1b-656d-4923-9df3-1fa887bbf907" absoluteBounds="21.75, 14.75, 2, 10.232159830729167">
+    <classShape Id="c994e6bb-5adf-45d1-961c-9fbe8a9dc828" absoluteBounds="21.75, 14.75, 2, 10.232159830729167">
       <DataClassMoniker Name="/TanHoaDataContext/V_CHUYENDON" />
       <nestedChildShapes>
-        <elementListCompartment Id="7304e7ec-29d9-49ca-bc3c-bef1aaa0ea3f" absoluteBounds="21.765, 15.21, 1.9700000000000002, 9.6721598307291661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="e472d9e0-65e3-4040-9959-84fcbc7d7f6c" absoluteBounds="21.765, 15.21, 1.9700000000000002, 9.6721598307291661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="ad36ee5c-6046-4120-b2bf-fa0d8d4c6eba" absoluteBounds="24.75, 0.75, 2, 10.424461263020831">
+    <classShape Id="6565ad05-0a1c-4214-81f5-5568692ed29e" absoluteBounds="24.75, 0.75, 2, 10.424461263020831">
       <DataClassMoniker Name="/TanHoaDataContext/V_CHUYENDON_TTK" />
       <nestedChildShapes>
-        <elementListCompartment Id="2aae9fd5-56dc-4d31-9c56-46cb03658c0b" absoluteBounds="24.765, 1.21, 1.9700000000000002, 9.8644612630208321" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="42c6e058-fedb-49a7-b5a3-29a15a92339c" absoluteBounds="24.765, 1.21, 1.9700000000000002, 9.8644612630208321" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="2d029721-b893-4c4f-bf12-91d860ffe036" absoluteBounds="24.75, 12.75, 2, 3.3093082682291666">
+    <classShape Id="8726fe12-d428-424e-affc-dbe008511a3e" absoluteBounds="24.75, 12.75, 2, 3.3093082682291666">
       <DataClassMoniker Name="/TanHoaDataContext/V_DANHSACH_HS_SDV" />
       <nestedChildShapes>
-        <elementListCompartment Id="ba3b7496-758c-4d16-a0b9-372dd0539c44" absoluteBounds="24.765, 13.21, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="55ab76f1-9fea-4ae2-97b9-bcb7955b995b" absoluteBounds="24.765, 13.21, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="968caee3-55bc-445b-848b-f07406c45c06" absoluteBounds="24.75, 17.75, 2, 9.84755696614583">
+    <classShape Id="8c5cc30f-899d-4846-be0c-8d74c92d80e4" absoluteBounds="24.75, 17.75, 2, 11.001365559895831">
+      <DataClassMoniker Name="/TanHoaDataContext/V_DANHSACHTHICONG" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ae692fb1-789f-490f-9693-9901e17d75da" absoluteBounds="24.765, 18.21, 1.9700000000000002, 10.441365559895832" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c5661957-caa3-46b7-a34e-ea23dd734886" absoluteBounds="27.75, 0.75, 2, 11.578269856770831">
+      <DataClassMoniker Name="/TanHoaDataContext/V_DANHSACHTHICONG_BT" />
+      <nestedChildShapes>
+        <elementListCompartment Id="468fce8f-7592-4bca-8c6b-24c151ca3f08" absoluteBounds="27.765, 1.21, 1.9700000000000002, 11.018269856770832" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b81267f4-51f4-4b12-bbf7-c38961f68ebf" absoluteBounds="27.75, 13.75, 2, 9.84755696614583">
       <DataClassMoniker Name="/TanHoaDataContext/V_DONKHACHHANG" />
       <nestedChildShapes>
-        <elementListCompartment Id="429fbb1f-4b62-42f4-978f-9c25d7dd0a98" absoluteBounds="24.765, 18.21, 1.9700000000000002, 9.2875569661458321" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="34b671b5-9226-4870-bb8b-3f32b4b98faa" absoluteBounds="27.765, 14.21, 1.9700000000000002, 9.2875569661458321" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="f5d43b10-c435-4576-8562-deb988ac2f3f" absoluteBounds="27.75, 0.75, 2, 9.27065266927083">
+    <classShape Id="fa755f7e-47bb-40c2-83a6-fbe1bb569957" absoluteBounds="27.75, 24.75, 2, 9.27065266927083">
       <DataClassMoniker Name="/TanHoaDataContext/V_DONTAIXET" />
       <nestedChildShapes>
-        <elementListCompartment Id="bf4dbbc0-fcfc-4f28-85d9-92d62d672bef" absoluteBounds="27.765, 1.21, 1.9700000000000002, 8.7106526692708321" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="63b03eae-331d-4adb-b38c-5f4479712e7d" absoluteBounds="27.765, 25.21, 1.9700000000000002, 8.7106526692708321" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="25a5d088-a672-4f67-af70-fc1173417ab1" absoluteBounds="0.75, 22.75, 2, 2.3478011067708309">
+    <classShape Id="f67582c8-d772-4502-a63d-d7fb1f21a2cc" absoluteBounds="0.75, 22.75, 2, 2.3478011067708309">
       <DataClassMoniker Name="/TanHoaDataContext/V_QUYETDINHTHICONG" />
       <nestedChildShapes>
-        <elementListCompartment Id="325adafc-d37a-4cae-a6f1-cb96d90b4a60" absoluteBounds="0.765, 23.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="fb361807-ab51-4b07-9e58-3195ad7321fa" absoluteBounds="0.765, 23.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="7a3a4db7-58cd-4a41-879b-c71024a08e22" absoluteBounds="27.75, 11.75, 2, 3.1170068359375023">
+    <classShape Id="4abcbeb7-5e59-406e-9929-63afb32748da" absoluteBounds="0.75, 28.75, 2, 3.1170068359375023">
       <DataClassMoniker Name="/TanHoaDataContext/V_XINPHEPDAODUONG" />
       <nestedChildShapes>
-        <elementListCompartment Id="1bd33d22-b31d-4524-9a05-9571c59d6458" absoluteBounds="27.765, 12.21, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="069d3279-820a-4ca4-9e4b-2f565bea2094" absoluteBounds="0.765, 29.21, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

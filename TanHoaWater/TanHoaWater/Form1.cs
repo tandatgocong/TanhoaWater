@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using CrystalDecisions.CrystalReports.Engine;
 using TanHoaWater.View.Users.KEHOACH.Report;
 using TanHoaWater.View.Users.KEHOACH.DOTTHICONG;
+using TanHoaWater.View.Users.KEHOACH.DOTTHICONG.BC;
 
 namespace TanHoaWater
 {
@@ -18,9 +19,10 @@ namespace TanHoaWater
         {
             InitializeComponent();
 
-            ReportDocument rp = new rpt_DanhSachHSTC();
-            rp.SetDataSource(DAL.C_KH_DotThiCong.BC_DanhSachDotThiCong("QTP-TTT-/111"));
+            ReportDocument rp = new rpt_DanhSachHSTC_BT();
+            rp.SetDataSource(DAL.C_KH_DotThiCong.BC_DanhSachDotThiCong_BT("QTP-TTT-/111"));
             crystalReportViewer1.ReportSource = rp;
+            this.labelX1.Text = Utilities.FormatSoHoSoDanhBo.sodanhbo("13132104137");
 
         }
     }
