@@ -204,6 +204,18 @@
     <Compile Include="View\Tool\webBrowser.Designer.cs">
       <DependentUpon>webBrowser.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Users\KEHOACH\DOTTHICONG\BC\reportValues.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Users\KEHOACH\DOTTHICONG\BC\reportValues.Designer.cs">
+      <DependentUpon>reportValues.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Users\KEHOACH\DOTTHICONG\BC\rpt_DanhSachHSTC_DOIMP.cs">
+      <DependentUpon>rpt_DanhSachHSTC_DOIMP.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="View\Users\KEHOACH\DOTTHICONG\BC\rpt_DanhSachHSTC_BT_DOI.cs">
       <DependentUpon>rpt_DanhSachHSTC_BT_DOI.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -591,6 +603,13 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Tool\webBrowser.resx">
       <DependentUpon>webBrowser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\KEHOACH\DOTTHICONG\BC\reportValues.resx">
+      <DependentUpon>reportValues.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\KEHOACH\DOTTHICONG\BC\rpt_DanhSachHSTC_DOIMP.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_DanhSachHSTC_DOIMP.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\KEHOACH\DOTTHICONG\BC\rpt_DanhSachHSTC_BT_DOI.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

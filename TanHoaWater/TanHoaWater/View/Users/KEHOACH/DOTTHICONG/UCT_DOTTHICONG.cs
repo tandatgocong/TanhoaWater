@@ -477,20 +477,31 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
         public void tabClick() {
 
             string madot = "";
+            string tendot = "";
             try
             {
                 madot = gridDotThiCong.Rows[gridDotThiCong.CurrentRow.Index].Cells["gridSoDot"].Value + "";
-
+                tendot = gridDotThiCong.Rows[gridDotThiCong.CurrentRow.Index].Cells["girdLoaiDot"].Value + "";
             }
             catch (Exception)
             {
             }
             if (!"".Equals(madot))
             {
-                this.tabCapNhatDS.Controls.Clear();
-                this.tabCapNhatDS.Controls.Add(new tab_CapNhatDSBoiThuong(madot));
-              //  this.tabCapNhatDS.Controls.Add(new tab_CapNhatDanhSachND(madot));
-                this.tabControl1.SelectedTabIndex = 1;
+                if (tendot.Equals("Bồi Thường"))
+                {
+                    this.tabCapNhatDS.Controls.Clear();
+                    this.tabCapNhatDS.Controls.Add(new tab_CapNhatDSBoiThuong(madot));
+                    //  this.tabCapNhatDS.Controls.Add(new tab_CapNhatDanhSachND(madot));
+                    this.tabControl1.SelectedTabIndex = 1;
+                }
+                else
+                {
+                    this.tabCapNhatDS.Controls.Clear();
+                    //this.tabCapNhatDS.Controls.Add(new tab_CapNhatDSBoiThuong(madot));
+                    this.tabCapNhatDS.Controls.Add(new tab_CapNhatDanhSachND(madot));
+                    this.tabControl1.SelectedTabIndex = 1;
+                }
             }
             else
             {
@@ -538,20 +549,55 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
         private void btInDanhSachGanMoi_Click(object sender, EventArgs e)
         {
             string madot = "";
+            string tendot = "";
             try
             {
                 madot = gridDotThiCong.Rows[gridDotThiCong.CurrentRow.Index].Cells["gridSoDot"].Value + "";
-
+                tendot = gridDotThiCong.Rows[gridDotThiCong.CurrentRow.Index].Cells["girdLoaiDot"].Value + "";
             }
             catch (Exception)
             {
             }
-            if (!"".Equals(madot))
+            if (!"".Equals(madot) && !"".Equals(tendot))
             {
-                ReportDocument rp = new rpt_DanhSachHSTC_GM();
-                rp.SetDataSource(DAL.C_KH_DotThiCong.BC_DanhSachDotThiCong(madot));
-                rpt_Main prM = new rpt_Main(rp);
-                prM.ShowDialog();
+                if (tendot.Equals("Gắn Mới(NĐ117)"))
+                {
+                    ReportDocument rp = new rpt_DanhSachHSTC_GM();
+                    rp.SetDataSource(DAL.C_KH_DotThiCong.BC_DanhSachDotThiCong(madot));
+                    rpt_Main mainReport = new rpt_Main(rp);
+                    mainReport.ShowDialog();
+                }
+                else if (tendot.Equals("Ống Cái") || tendot.Equals("Gắn Mới"))
+                { 
+                    ReportDocument rp = new rpt_DanhSachHSTC_OC();
+                    rp.SetDataSource(DAL.C_KH_DotThiCong.BC_DanhSachDotThiCong_OC(madot));
+                    rpt_Main mainReport = new rpt_Main(rp);
+                    mainReport.ShowDialog();
+                }
+                else if (tendot.Equals("Bồi Thường"))
+                {
+                    ReportDocument rp = new rpt_DanhSachHSTC_BT();
+                    rp.SetDataSource(DAL.C_KH_DotThiCong.BC_DanhSachDotThiCong_BT(madot));
+                    rpt_Main mainReport = new rpt_Main(rp);
+                    mainReport.ShowDialog();
+                }
+                else if (tendot.Equals("Dời-BT"))
+                {
+                    reportValues rpt = new reportValues(2, madot);
+                    rpt.ShowDialog();
+                }
+                else if (tendot.Equals("Dời"))
+                {
+                    ReportDocument rp = new rpt_DanhSachHSTC_DOI();
+                    rp.SetDataSource(DAL.C_KH_DotThiCong.BC_DanhSachDotThiCong_OC(madot));
+                    rpt_Main mainReport = new rpt_Main(rp);
+                    mainReport.ShowDialog();
+                }
+                else  
+                {
+                    reportValues rpt = new reportValues(1, madot);
+                    rpt.ShowDialog();
+                }  
             }
             else
             {

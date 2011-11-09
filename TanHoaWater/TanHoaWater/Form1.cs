@@ -19,9 +19,9 @@ namespace TanHoaWater
         {
             InitializeComponent();
 
-            ReportDocument rp = new rpt_DanhSachHSTC_BT_DOI();
+            ReportDocument rp = new rpt_DanhSachHSTC_DOIMP();
             rp.SetDataSource(DAL.C_KH_DotThiCong.BC_DanhSachDotThiCong_OC("QTP-TTT-/111"));
-            rp.SetParameterValue("KETHOP", "toi va anh");
+            rp.SetParameterValue("MaCT", "toi va anh");
             crystalReportViewer1.ReportSource = rp;
             //this.labelX1.Text = Utilities.FormatSoHoSoDanhBo.sodanhbo("13132104137");
 

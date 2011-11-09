@@ -28,13 +28,13 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
 
         private void btPrint_Click(object sender, EventArgs e)
         {
-            panel1.Visible = false;
-            this.WindowState = FormWindowState.Maximized;
+            panel1.Visible = false;           
             ReportDocument rp = new rpt_QuyetDinhTC();  
             string NGAYKHOICONGDAO = Utilities.DateToString.NgayVN(ngaykhoicong);
             string NGAYHOANTATTL = Utilities.DateToString.NgayVN(ngaytailap);
             rp.SetDataSource(DAL.C_KH_DotThiCong.BC_QuyetDinhThiCong(_madot, this.cbDonViGiamSat.Text, NGAYKHOICONGDAO, NGAYHOANTATTL));
             crystalReportViewer1.ReportSource = rp;
+            this.WindowState = FormWindowState.Maximized;
         }
 
         private void btExit_Click(object sender, EventArgs e)
