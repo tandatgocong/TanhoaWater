@@ -66,7 +66,7 @@ SELECT ID, CVDUYET, NGUOIDUYET, CVKEHOACH, NGUOITL FROM KH_TC_BAOCAO WHERE (ID =
               <DbSource ConnectionRef="TANHOA_WATERConnectionString (Settings)" DbObjectName="TANHOA_WATER.dbo.V_DANHSACHTHICONG_OC" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT SHS, SOHOSO, DANHBO, MADOT, HOTEN, DIENTHOAI, GHICHU, NGAYDONGTIEN, SOHOADON, SOTIEN, SONHA, DUONG, TENPHUONG, MADOTDD, CHOPHEP, NGAYCOPHEP, MADOTTC, TRONGAI, NOIDUNGTN, COTLK, CPVATTU, CPNHANCONG, CPMAYTHICONG, CPCABA, CHIPHITRUCTIEP, CHIPHICHUNG, TAILAPMATDUONG, TLMDTRUOCTHUE, CONG1, THUE55, CONG3, THUEGTGT, TONGIATRI, CREATEBY, CREATEDATE, MODIFYBY, MODIFYDATE, MODIFYLOG, TONGTIEN, NGAYLAP, SOLUONGTLK, DONVITHICONG, DONVITAILAP, NGAYCHUYENDVTC, CHUYENBUHANMUC, BANGKE, LOAIBANGKE, NGAYCHUYENHC, CHUYENHOANCONG, NGAYHC, GHICHUHC, SOLUONG_HCTLK, CONLAI_TLK, QUYETTOAN, NGAYCHUYENKT, NGAYTHANHTOAN, TRONGAITC FROM dbo.V_DANHSACHTHICONG_OC</CommandText>
+                    <CommandText>SELECT SHS, SOHOSO, DANHBO, MADOT, HOTEN, DIENTHOAI, GHICHU, NGAYDONGTIEN, SOHOADON, SOTIEN, SONHA, DUONG, TENPHUONG, TENQUAN, MADOTDD, CHOPHEP, NGAYCOPHEP, MADOTTC, TRONGAI, NOIDUNGTN, COTLK, CPVATTU, CPNHANCONG, CPMAYTHICONG, CPCABA, CHIPHITRUCTIEP, CHIPHICHUNG, TAILAPMATDUONG, TLMDTRUOCTHUE, CONG1, THUE55, CONG3, THUEGTGT, TONGIATRI, CREATEBY, CREATEDATE, MODIFYBY, MODIFYDATE, MODIFYLOG, TONGTIEN, NGAYLAP, SOLUONGTLK, DONVITHICONG, DONVITAILAP, NGAYCHUYENDVTC, CHUYENBUHANMUC, BANGKE, LOAIBANGKE, NGAYCHUYENHC, CHUYENHOANCONG, NGAYHC, GHICHUHC, SOLUONG_HCTLK, CONLAI_TLK, QUYETTOAN, NGAYCHUYENKT, NGAYTHANHTOAN, TRONGAITC FROM dbo.V_DANHSACHTHICONG_OC</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -86,6 +86,7 @@ SELECT ID, CVDUYET, NGUOIDUYET, CVKEHOACH, NGUOITL FROM KH_TC_BAOCAO WHERE (ID =
               <Mapping SourceColumn="SONHA" DataSetColumn="SONHA" />
               <Mapping SourceColumn="DUONG" DataSetColumn="DUONG" />
               <Mapping SourceColumn="TENPHUONG" DataSetColumn="TENPHUONG" />
+              <Mapping SourceColumn="TENQUAN" DataSetColumn="TENQUAN" />
               <Mapping SourceColumn="MADOTDD" DataSetColumn="MADOTDD" />
               <Mapping SourceColumn="CHOPHEP" DataSetColumn="CHOPHEP" />
               <Mapping SourceColumn="NGAYCOPHEP" DataSetColumn="NGAYCOPHEP" />
@@ -258,6 +259,13 @@ SELECT ID, CVDUYET, NGUOIDUYET, CVKEHOACH, NGUOITL FROM KH_TC_BAOCAO WHERE (ID =
                 </xs:simpleType>
               </xs:element>
               <xs:element name="TENPHUONG" msprop:Generator_ColumnVarNameInTable="columnTENPHUONG" msprop:Generator_ColumnPropNameInRow="TENPHUONG" msprop:Generator_ColumnPropNameInTable="TENPHUONGColumn" msprop:Generator_UserColumnName="TENPHUONG" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TENQUAN" msprop:Generator_ColumnVarNameInTable="columnTENQUAN" msprop:Generator_ColumnPropNameInRow="TENQUAN" msprop:Generator_ColumnPropNameInTable="TENQUANColumn" msprop:Generator_UserColumnName="TENQUAN" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />

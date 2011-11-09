@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using TanHoaWater.Database;
+using CrystalDecisions.CrystalReports.Engine;
+using TanHoaWater.View.Users.Report;
+using TanHoaWater.View.Users.KEHOACH.DOTTHICONG.BC;
 
 namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
 {
@@ -165,6 +168,14 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
         private void btThemMoiHoSo_Click(object sender, EventArgs e)
         {
             refesh();
+        }
+
+        private void btPrint_Click(object sender, EventArgs e)
+        {
+            ReportDocument rp = new rpt_DanhSachHSTC_BT();
+            rp.SetDataSource(DAL.C_KH_DotThiCong.BC_DanhSachDotThiCong_BT(_madot));
+            rpt_Main mainReport = new rpt_Main(rp);
+            mainReport.ShowDialog();
         }
     }
 }

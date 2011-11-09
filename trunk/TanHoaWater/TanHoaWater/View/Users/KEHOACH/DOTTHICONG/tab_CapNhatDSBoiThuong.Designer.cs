@@ -86,6 +86,7 @@
             this.btPrint.Size = new System.Drawing.Size(32, 22);
             this.btPrint.TabIndex = 742;
             this.btPrint.TabStop = false;
+            this.btPrint.Click += new System.EventHandler(this.btPrint_Click);
             // 
             // progressBar1
             // 
@@ -399,7 +400,7 @@
             this.dataGridViewX1.Name = "dataGridViewX1";
             this.dataGridViewX1.RowHeadersWidth = 30;
             this.dataGridViewX1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewX1.Size = new System.Drawing.Size(980, 405);
+            this.dataGridViewX1.Size = new System.Drawing.Size(980, 400);
             this.dataGridViewX1.TabIndex = 743;
             // 
             // G_SOHOSO

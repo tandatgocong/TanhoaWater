@@ -10,6 +10,7 @@ using TanHoaWater.Database;
 using CrystalDecisions.CrystalReports.Engine;
 using TanHoaWater.View.Users.Report;
 using TanHoaWater.View.Users.KEHOACH.DOTTHICONG.BC;
+using log4net;
 
 namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
 {
@@ -162,13 +163,57 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
             add();
             this.txtSHS.Focus();
         }
-
+        private static readonly ILog log = LogManager.GetLogger(typeof(tab_CapNhatDanhSachND).Name);
         private void btPrint_Click(object sender, EventArgs e)
         {
-            ReportDocument rp = new rpt_DanhSachHSTC_GM();
-            rp.SetDataSource(DAL.C_KH_DotThiCong.BC_DanhSachDotThiCong(_madot));
-            rpt_Main prM = new rpt_Main(rp);
-            prM.ShowDialog();
+            try
+            {
+                string tendot = DAL.C_KH_DotThiCong.findByMadot(_madot).LOAIBANGKE;
+                if (tendot.Equals("Gắn Mới(NĐ117)"))
+                {
+                    ReportDocument rp = new rpt_DanhSachHSTC_GM();
+                    rp.SetDataSource(DAL.C_KH_DotThiCong.BC_DanhSachDotThiCong(_madot));
+                    rpt_Main mainReport = new rpt_Main(rp);
+                    mainReport.ShowDialog();
+                }
+                else if (tendot.Equals("Ống Cái") || tendot.Equals("Gắn Mới"))
+                {
+                    ReportDocument rp = new rpt_DanhSachHSTC_OC();
+                    rp.SetDataSource(DAL.C_KH_DotThiCong.BC_DanhSachDotThiCong_OC(_madot));
+                    rpt_Main mainReport = new rpt_Main(rp);
+                    mainReport.ShowDialog();
+                }
+                else if (tendot.Equals("Bồi Thường"))
+                {
+                    ReportDocument rp = new rpt_DanhSachHSTC_BT();
+                    rp.SetDataSource(DAL.C_KH_DotThiCong.BC_DanhSachDotThiCong_BT(_madot));
+                    rpt_Main mainReport = new rpt_Main(rp);
+                    mainReport.ShowDialog();
+                }
+                else if (tendot.Equals("Dời-BT"))
+                {
+                    reportValues rpt = new reportValues(2, _madot);
+                    rpt.ShowDialog();
+                }
+                else if (tendot.Equals("Dời"))
+                {
+                    ReportDocument rp = new rpt_DanhSachHSTC_DOI();
+                    rp.SetDataSource(DAL.C_KH_DotThiCong.BC_DanhSachDotThiCong_OC(_madot));
+                    rpt_Main mainReport = new rpt_Main(rp);
+                    mainReport.ShowDialog();
+                }
+                else
+                {
+                    reportValues rpt = new reportValues(1, _madot);
+                    rpt.ShowDialog();
+                }  
+            }
+            catch (Exception ex)
+            {
+                log.Error("In danh sach dot thi cong " + ex.Message);
+            }
+            
+            
         }
     }
 }
