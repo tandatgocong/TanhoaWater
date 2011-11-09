@@ -220,5 +220,22 @@ namespace TanHoaWater.DAL
             db.Connection.Close();
             return dataset;
         }
+        public static DataSet BC_DanhSachDotThiCong_OC(string madot)
+        {
+            TanHoaDataContext db = new TanHoaDataContext();
+            db.Connection.Open();
+            DataSet dataset = new DataSet();
+            string sql = " SELECT * FROM KH_TC_BAOCAO ";
+            SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
+            adapter.Fill(dataset, "KH_TC_BAOCAO");
+
+            sql = " SELECT *  FROM V_DANHSACHTHICONG_OC WHERE MADOTTC='" + madot + "' ORDER BY MODIFYDATE";
+            adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
+            adapter.Fill(dataset, "V_DANHSACHTHICONG_OC");
+
+            db.Connection.Close();
+            return dataset;
+        }
+        
     }
 }

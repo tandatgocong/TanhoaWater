@@ -548,7 +548,7 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
             }
             if (!"".Equals(madot))
             {
-                ReportDocument rp = new rpt_DanhSachHSTC();
+                ReportDocument rp = new rpt_DanhSachHSTC_GM();
                 rp.SetDataSource(DAL.C_KH_DotThiCong.BC_DanhSachDotThiCong(madot));
                 rpt_Main prM = new rpt_Main(rp);
                 prM.ShowDialog();
