@@ -19,10 +19,11 @@ namespace TanHoaWater
         {
             InitializeComponent();
 
-            ReportDocument rp = new rpt_DanhSachHSTC_BT();
-            rp.SetDataSource(DAL.C_KH_DotThiCong.BC_DanhSachDotThiCong_BT("QTP-TTT-/111"));
+            ReportDocument rp = new rpt_DanhSachHSTC_BT_DOI();
+            rp.SetDataSource(DAL.C_KH_DotThiCong.BC_DanhSachDotThiCong_OC("QTP-TTT-/111"));
+            rp.SetParameterValue("KETHOP", "toi va anh");
             crystalReportViewer1.ReportSource = rp;
-            this.labelX1.Text = Utilities.FormatSoHoSoDanhBo.sodanhbo("13132104137");
+            //this.labelX1.Text = Utilities.FormatSoHoSoDanhBo.sodanhbo("13132104137");
 
         }
     }

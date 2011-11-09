@@ -204,6 +204,33 @@
     <Compile Include="View\Tool\webBrowser.Designer.cs">
       <DependentUpon>webBrowser.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Users\KEHOACH\DOTTHICONG\BC\rpt_DanhSachHSTC_BT_DOI.cs">
+      <DependentUpon>rpt_DanhSachHSTC_BT_DOI.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="View\Users\KEHOACH\DOTTHICONG\BC\rpt_DanhSachHSTC_DOI.cs">
+      <DependentUpon>rpt_DanhSachHSTC_DOI.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="View\Users\KEHOACH\DOTTHICONG\BC\OC.cs">
+      <DependentUpon>OC.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\Users\KEHOACH\DOTTHICONG\BC\OC.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OC.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="View\Users\KEHOACH\DOTTHICONG\BC\rpt_DanhSachHSTC_OC.cs">
+      <DependentUpon>rpt_DanhSachHSTC_OC.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="View\Users\KEHOACH\DOTTHICONG\BC\DataSet3.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -229,10 +256,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet2.xsd</DependentUpon>
     </Compile>
-    <Compile Include="View\Users\KEHOACH\DOTTHICONG\BC\rpt_DanhSachHSTC.cs">
+    <Compile Include="View\Users\KEHOACH\DOTTHICONG\BC\rpt_DanhSachHSTC_GM.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>rpt_DanhSachHSTC.rpt</DependentUpon>
+      <DependentUpon>rpt_DanhSachHSTC_GM.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="View\Users\KEHOACH\DOTTHICONG\BC\rpt_QuyetDinhTC.cs">
@@ -565,13 +592,25 @@
     <EmbeddedResource Include="View\Tool\webBrowser.resx">
       <DependentUpon>webBrowser.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\KEHOACH\DOTTHICONG\BC\rpt_DanhSachHSTC_BT_DOI.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_DanhSachHSTC_BT_DOI.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\KEHOACH\DOTTHICONG\BC\rpt_DanhSachHSTC_DOI.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_DanhSachHSTC_DOI.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\KEHOACH\DOTTHICONG\BC\rpt_DanhSachHSTC_OC.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_DanhSachHSTC_OC.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Users\KEHOACH\DOTTHICONG\BC\rpt_DanhSachHSTC_BT.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_DanhSachHSTC_BT.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Users\KEHOACH\DOTTHICONG\BC\rpt_DanhSachHSTC.rpt">
+    <EmbeddedResource Include="View\Users\KEHOACH\DOTTHICONG\BC\rpt_DanhSachHSTC_GM.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>rpt_DanhSachHSTC.cs</LastGenOutput>
+      <LastGenOutput>rpt_DanhSachHSTC_GM.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\KEHOACH\DOTTHICONG\BC\rpt_QuyetDinhTC.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -870,6 +909,17 @@
     </None>
     <None Include="View\Users\KEHOACH\DOTTHICONG\BC\DataSet3.xss">
       <DependentUpon>DataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="View\Users\KEHOACH\DOTTHICONG\BC\OC.xsc">
+      <DependentUpon>OC.xsd</DependentUpon>
+    </None>
+    <None Include="View\Users\KEHOACH\DOTTHICONG\BC\OC.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OC.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="View\Users\KEHOACH\DOTTHICONG\BC\OC.xss">
+      <DependentUpon>OC.xsd</DependentUpon>
     </None>
     <None Include="View\Users\KEHOACH\HOANCONG\DataSet1.xsc">
       <DependentUpon>DataSet1.xsd</DependentUpon>
