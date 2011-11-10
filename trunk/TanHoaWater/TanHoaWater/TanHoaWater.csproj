@@ -292,6 +292,12 @@
     <Compile Include="View\Users\KEHOACH\DOTTHICONG\tab_CapNhatDSBoiThuong.Designer.cs">
       <DependentUpon>tab_CapNhatDSBoiThuong.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Users\KEHOACH\DOTTHICONG\tab_DonViTCTLMD.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Users\KEHOACH\DOTTHICONG\tab_DonViTCTLMD.Designer.cs">
+      <DependentUpon>tab_DonViTCTLMD.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Users\KEHOACH\DOTTHICONG\UCT_DOTTHICONG.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -640,6 +646,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\KEHOACH\DOTTHICONG\tab_CapNhatDSBoiThuong.resx">
       <DependentUpon>tab_CapNhatDSBoiThuong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\KEHOACH\DOTTHICONG\tab_DonViTCTLMD.resx">
+      <DependentUpon>tab_DonViTCTLMD.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\KEHOACH\DOTTHICONG\UCT_DOTTHICONG.resx">
       <DependentUpon>UCT_DOTTHICONG.cs</DependentUpon>

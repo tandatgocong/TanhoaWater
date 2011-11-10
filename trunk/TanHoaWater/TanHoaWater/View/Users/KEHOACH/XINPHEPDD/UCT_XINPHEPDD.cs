@@ -355,5 +355,43 @@ namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
             }
            
         }
+
+        private void btCapNhatCoPhep_Click(object sender, EventArgs e)
+        {
+            string madot = "";
+            try
+            {
+                madot = dataDanhSachDaoDuong.Rows[dataDanhSachDaoDuong.CurrentRow.Index].Cells["gridSoDot"].Value + "";
+
+            }
+            catch (Exception)
+            {
+            }
+            if (!"".Equals(madot))
+            {
+                if ("1/1/0001".Equals(dateNgayCoPhep.Value.ToShortDateString()))
+                {
+                    this.errorProvider1.SetError(dateNgayCoPhep, "Chọn Ngày Lập Đợt Xin Phép Đào Đường !");
+                    this.dateNgayCoPhep.Select();
+                }
+                else {
+                    errorProvider1.Clear();
+                    if (DAL.C_KH_XinPhepDD.UpdateCoPhep(madot, this.dateNgayCoPhep.Value.Date) == false) {
+                        MessageBox.Show(this, "Cập Nhật Ngày Có Phép Đào Đường Lỗi !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    } else {
+                        search();
+                    }                   
+                }
+            }
+            else
+            {
+                MessageBox.Show(this, "Cần Chọn Mã Đợt Để Xin Phép Đào Đường !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void tabItem1_Click(object sender, EventArgs e)
+        {
+            errorProvider1.Clear();
+        }
     }
 }

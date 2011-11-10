@@ -111,7 +111,7 @@ namespace TanHoaWater.DAL
 
             try
             {
-                var query = from dottc in db.KH_DONVIGIAMSATs  select dottc;
+                var query = from dottc in db.KH_DONVIGIAMSATs orderby dottc.ID descending select dottc;
                 return query.ToList();
             }
             catch (Exception ex)

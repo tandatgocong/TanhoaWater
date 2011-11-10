@@ -88,11 +88,6 @@ namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
                 MessageBox.Show(this, "Nhập Số Số Hồ Sơ ! ", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.txtMaSHS.Focus();
             }
-            else if (DAL.C_KH_HoSoKhachHang.findBySHS(this.txtMaSHS.Text) != null)
-            {
-                MessageBox.Show(this, "Số Hồ Sơ Đã Xin Phép Đào Đường !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                this.txtMaSHS.Focus();
-            }
             else
             {
                 

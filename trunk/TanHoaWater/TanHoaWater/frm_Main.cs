@@ -77,10 +77,8 @@ namespace TanHoaWater
 
         private void subThoat_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show(this, "Thoát Chương Trình ?", "..: Thông Báo :..", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
-            {
+            
                 Application.Exit();
-            }
         }
         public void formLoad()
         {
