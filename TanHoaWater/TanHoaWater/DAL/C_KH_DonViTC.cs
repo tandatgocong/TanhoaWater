@@ -16,14 +16,16 @@ namespace TanHoaWater.DAL
 
         public static List<KH_DONVITHICONG> getDonViThiCong() {
             TanHoaDataContext data = new TanHoaDataContext();
-            var list = from query in data.KH_DONVITHICONGs orderby query.ID ascending select query;
+            var list = from query in data.KH_DONVITHICONGs where query.XOA != true orderby query.ID descending select query;
             return list.ToList();
         }
-        public static KH_DONVITHICONG findDVTCbyID(int id) {
-            TanHoaDataContext data = new TanHoaDataContext();
+
+        static TanHoaDataContext data = new TanHoaDataContext();
+        public static KH_DONVITHICONG findDVTCbyID(int id) {           
             var list = from query in data.KH_DONVITHICONGs where query.ID == id select query;
             return list.SingleOrDefault();
         }
+        
         public static KH_DONVITHICONG findDVTCbyTENCTY(string name)
         {
             TanHoaDataContext data = new TanHoaDataContext();
@@ -33,15 +35,16 @@ namespace TanHoaWater.DAL
         public static List<KH_DONVITAILAP> getDonViTaiLap()
         {
             TanHoaDataContext data = new TanHoaDataContext();
-            var list = from query in data.KH_DONVITAILAPs orderby query.ID ascending select query;
+            var list = from query in data.KH_DONVITAILAPs where query.XOA != true orderby query.ID descending select query;
             return list.ToList();
         }
+       
         public static KH_DONVITAILAP findDVTLbyID(int id)
-        {
-            TanHoaDataContext data = new TanHoaDataContext();
+        { 
             var list = from query in data.KH_DONVITAILAPs  where query.ID == id select query;
             return list.SingleOrDefault();
         }
+        
         public static KH_DONVITAILAP findDVTLbyTENCTY(string name)
         {
             TanHoaDataContext data = new TanHoaDataContext();
@@ -55,5 +58,25 @@ namespace TanHoaWater.DAL
             return list.ToList();
         }
 
+        public static void AddDonViTC(KH_DONVITHICONG dvtc) {
+            data.KH_DONVITHICONGs.InsertOnSubmit(dvtc);
+            data.SubmitChanges();
+        }
+
+        public static void AddDonViGiamSat(KH_DONVIGIAMSAT dvtc)
+        {
+            data.KH_DONVIGIAMSATs.InsertOnSubmit(dvtc);
+            data.SubmitChanges();
+        }
+
+        public static void AddDonViTLMD(KH_DONVITAILAP dvtl)
+        {
+            data.KH_DONVITAILAPs.InsertOnSubmit(dvtl);
+            data.SubmitChanges();
+        }
+        public static void Update()
+        {
+            data.SubmitChanges();
+        }
     }
 }

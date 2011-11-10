@@ -60,7 +60,7 @@ namespace TanHoaWater.DAL
         {
             TanHoaDataContext db = new TanHoaDataContext();
             db.Connection.Open();
-            string sql = " SELECT MADOT,NOICAPPHEP,NGAYLAP,MAQUANLY";
+            string sql = " SELECT MADOT,NOICAPPHEP,NGAYLAP,MAQUANLY,NGAYCOPHEP";
             sql += " FROM KH_XINPHEPDAODUONG WHERE MADOT IS NOT NULL";
             if (!"".Equals(sodot))
             {
@@ -234,6 +234,28 @@ namespace TanHoaWater.DAL
                 log.Error(ex.Message);
             }
             return null;
+        }
+
+        public static bool UpdateCoPhep(string madot, DateTime ngaycophep)
+        {
+            try
+            {
+                TanHoaDataContext db = new TanHoaDataContext();
+                var obj = from dd in db.KH_XINPHEPDAODUONGs where dd.MADOT == madot select dd;
+                if (obj.SingleOrDefault() != null)
+                {
+                    obj.SingleOrDefault().COPHEP = true;
+                    obj.SingleOrDefault().NGAYCOPHEP = ngaycophep;
+                    db.SubmitChanges();
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+            }
+            
+            return false;
         }
     }
 }

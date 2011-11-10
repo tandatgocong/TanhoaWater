@@ -29,16 +29,18 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
             this.reflectionLabel1 = new DevComponents.DotNetBar.Controls.ReflectionLabel();
             this.tabControl1 = new DevComponents.DotNetBar.TabControl();
             this.tabDanhSachDot = new DevComponents.DotNetBar.TabControlPanel();
+            this.dateNgayLap = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
+            this.btCapNhat = new DevComponents.DotNetBar.ButtonX();
             this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
             this.dataDanhSachDaoDuong = new DevComponents.DotNetBar.Controls.DataGridViewX();
             this.gridSoDot = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,24 +67,26 @@
             this.labelX4 = new DevComponents.DotNetBar.LabelX();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
-            this.next = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tabItem1 = new DevComponents.DotNetBar.TabItem(this.components);
             this.tabCapNhatDS = new DevComponents.DotNetBar.TabControlPanel();
             this.tabItem2 = new DevComponents.DotNetBar.TabItem(this.components);
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.btCapNhat = new DevComponents.DotNetBar.ButtonX();
-            this.dateNgayLap = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
+            this.btCapNhatCoPhep = new DevComponents.DotNetBar.ButtonX();
+            this.next = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.labelX5 = new DevComponents.DotNetBar.LabelX();
+            this.dateNgayCoPhep = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             ((System.ComponentModel.ISupportInitialize)(this.tabControl1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabDanhSachDot.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dateNgayLap)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataDanhSachDaoDuong)).BeginInit();
             this.groupPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dateTimeSearch)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.next)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateNgayLap)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateNgayCoPhep)).BeginInit();
             this.SuspendLayout();
             // 
             // reflectionLabel1
@@ -132,6 +136,8 @@
             // 
             // tabDanhSachDot
             // 
+            this.tabDanhSachDot.Controls.Add(this.btCapNhatCoPhep);
+            this.tabDanhSachDot.Controls.Add(this.dateNgayCoPhep);
             this.tabDanhSachDot.Controls.Add(this.dateNgayLap);
             this.tabDanhSachDot.Controls.Add(this.btCapNhat);
             this.tabDanhSachDot.Controls.Add(this.buttonX1);
@@ -147,6 +153,7 @@
             this.tabDanhSachDot.Controls.Add(this.btThemMoi);
             this.tabDanhSachDot.Controls.Add(this.txtMaQuanLy);
             this.tabDanhSachDot.Controls.Add(this.txtSoDot);
+            this.tabDanhSachDot.Controls.Add(this.labelX5);
             this.tabDanhSachDot.Controls.Add(this.labelX3);
             this.tabDanhSachDot.Controls.Add(this.labelX4);
             this.tabDanhSachDot.Controls.Add(this.labelX2);
@@ -169,13 +176,71 @@
             this.tabDanhSachDot.TabIndex = 1;
             this.tabDanhSachDot.TabItem = this.tabItem1;
             // 
+            // dateNgayLap
+            // 
+            // 
+            // 
+            // 
+            this.dateNgayLap.BackgroundStyle.Class = "DateTimeInputBackground";
+            this.dateNgayLap.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
+            this.dateNgayLap.ButtonDropDown.Visible = true;
+            this.dateNgayLap.CustomFormat = "dd/MM/yyyy";
+            this.dateNgayLap.Format = DevComponents.Editors.eDateTimePickerFormat.Custom;
+            this.dateNgayLap.Location = new System.Drawing.Point(308, 27);
+            // 
+            // 
+            // 
+            this.dateNgayLap.MonthCalendar.AnnuallyMarkedDates = new System.DateTime[0];
+            // 
+            // 
+            // 
+            this.dateNgayLap.MonthCalendar.BackgroundStyle.BackColor = System.Drawing.SystemColors.Window;
+            this.dateNgayLap.MonthCalendar.ClearButtonVisible = true;
+            // 
+            // 
+            // 
+            this.dateNgayLap.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
+            this.dateNgayLap.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90;
+            this.dateNgayLap.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
+            this.dateNgayLap.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.dateNgayLap.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
+            this.dateNgayLap.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1;
+            this.dateNgayLap.MonthCalendar.DisplayMonth = new System.DateTime(2011, 11, 1, 0, 0, 0, 0);
+            this.dateNgayLap.MonthCalendar.MarkedDates = new System.DateTime[0];
+            this.dateNgayLap.MonthCalendar.MonthlyMarkedDates = new System.DateTime[0];
+            // 
+            // 
+            // 
+            this.dateNgayLap.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.dateNgayLap.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90;
+            this.dateNgayLap.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.dateNgayLap.MonthCalendar.TodayButtonVisible = true;
+            this.dateNgayLap.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
+            this.dateNgayLap.Name = "dateNgayLap";
+            this.dateNgayLap.Size = new System.Drawing.Size(144, 26);
+            this.dateNgayLap.TabIndex = 708;
+            // 
+            // btCapNhat
+            // 
+            this.btCapNhat.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btCapNhat.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btCapNhat.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btCapNhat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btCapNhat.Location = new System.Drawing.Point(856, 26);
+            this.btCapNhat.Name = "btCapNhat";
+            this.btCapNhat.Size = new System.Drawing.Size(103, 26);
+            this.btCapNhat.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
+            this.btCapNhat.TabIndex = 707;
+            this.btCapNhat.Text = "Cập Nhật";
+            this.btCapNhat.Visible = false;
+            // 
             // buttonX1
             // 
             this.buttonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.buttonX1.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.buttonX1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonX1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.buttonX1.Location = new System.Drawing.Point(747, 297);
+            this.buttonX1.Location = new System.Drawing.Point(756, 379);
             this.buttonX1.Name = "buttonX1";
             this.buttonX1.Size = new System.Drawing.Size(175, 26);
             this.buttonX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
@@ -190,14 +255,14 @@
             this.dataDanhSachDaoDuong.AllowUserToOrderColumns = true;
             this.dataDanhSachDaoDuong.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
             this.dataDanhSachDaoDuong.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Times New Roman", 12F);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataDanhSachDaoDuong.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Times New Roman", 12F);
+            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataDanhSachDaoDuong.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
             this.dataDanhSachDaoDuong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataDanhSachDaoDuong.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.gridSoDot,
@@ -205,26 +270,26 @@
             this.gridNgayLap,
             this.gridMaQuanLy,
             this.gridNgayCoPhep});
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Times New Roman", 12F);
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataDanhSachDaoDuong.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Times New Roman", 12F);
+            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataDanhSachDaoDuong.DefaultCellStyle = dataGridViewCellStyle20;
             this.dataDanhSachDaoDuong.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dataDanhSachDaoDuong.Location = new System.Drawing.Point(16, 82);
             this.dataDanhSachDaoDuong.MultiSelect = false;
             this.dataDanhSachDaoDuong.Name = "dataDanhSachDaoDuong";
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Times New Roman", 12F);
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataDanhSachDaoDuong.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Times New Roman", 12F);
+            dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataDanhSachDaoDuong.RowHeadersDefaultCellStyle = dataGridViewCellStyle21;
             this.dataDanhSachDaoDuong.RowHeadersWidth = 25;
             this.dataDanhSachDaoDuong.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataDanhSachDaoDuong.Size = new System.Drawing.Size(722, 459);
@@ -233,8 +298,8 @@
             // gridSoDot
             // 
             this.gridSoDot.DataPropertyName = "MADOT";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.gridSoDot.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.gridSoDot.DefaultCellStyle = dataGridViewCellStyle16;
             this.gridSoDot.HeaderText = "Số Đợt";
             this.gridSoDot.Name = "gridSoDot";
             this.gridSoDot.Width = 120;
@@ -242,8 +307,8 @@
             // gridNoiCapPhep
             // 
             this.gridNoiCapPhep.DataPropertyName = "NOICAPPHEP";
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.gridNoiCapPhep.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.gridNoiCapPhep.DefaultCellStyle = dataGridViewCellStyle17;
             this.gridNoiCapPhep.HeaderText = "Nơi C.P";
             this.gridNoiCapPhep.Name = "gridNoiCapPhep";
             this.gridNoiCapPhep.Width = 125;
@@ -251,9 +316,9 @@
             // gridNgayLap
             // 
             this.gridNgayLap.DataPropertyName = "NGAYLAP";
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.Format = "dd/MM/yyyy";
-            this.gridNgayLap.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle18.Format = "dd/MM/yyyy";
+            this.gridNgayLap.DefaultCellStyle = dataGridViewCellStyle18;
             this.gridNgayLap.HeaderText = "Ngày Lập";
             this.gridNgayLap.Name = "gridNgayLap";
             // 
@@ -267,9 +332,9 @@
             // gridNgayCoPhep
             // 
             this.gridNgayCoPhep.DataPropertyName = "NGAYCOPHEP";
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.Format = "dd/MM/yyyy";
-            this.gridNgayCoPhep.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle19.Format = "dd/MM/yyyy";
+            this.gridNgayCoPhep.DefaultCellStyle = dataGridViewCellStyle19;
             this.gridNgayCoPhep.HeaderText = "Ngày Có Phép";
             this.gridNgayCoPhep.Name = "gridNgayCoPhep";
             this.gridNgayCoPhep.Width = 125;
@@ -428,7 +493,7 @@
             this.btInDanhSachMienPhep.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btInDanhSachMienPhep.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btInDanhSachMienPhep.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btInDanhSachMienPhep.Location = new System.Drawing.Point(747, 265);
+            this.btInDanhSachMienPhep.Location = new System.Drawing.Point(756, 347);
             this.btInDanhSachMienPhep.Name = "btInDanhSachMienPhep";
             this.btInDanhSachMienPhep.Size = new System.Drawing.Size(175, 26);
             this.btInDanhSachMienPhep.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
@@ -442,7 +507,7 @@
             this.inDanhSachCoPhep.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.inDanhSachCoPhep.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.inDanhSachCoPhep.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.inDanhSachCoPhep.Location = new System.Drawing.Point(747, 232);
+            this.inDanhSachCoPhep.Location = new System.Drawing.Point(756, 314);
             this.inDanhSachCoPhep.Name = "inDanhSachCoPhep";
             this.inDanhSachCoPhep.Size = new System.Drawing.Size(175, 26);
             this.inDanhSachCoPhep.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
@@ -457,7 +522,7 @@
             this.huyDotXP.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.huyDotXP.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.huyDotXP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.huyDotXP.Location = new System.Drawing.Point(747, 329);
+            this.huyDotXP.Location = new System.Drawing.Point(756, 411);
             this.huyDotXP.Name = "huyDotXP";
             this.huyDotXP.Size = new System.Drawing.Size(175, 26);
             this.huyDotXP.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
@@ -472,7 +537,7 @@
             this.capnhatDSChoDot.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.capnhatDSChoDot.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.capnhatDSChoDot.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.capnhatDSChoDot.Location = new System.Drawing.Point(747, 199);
+            this.capnhatDSChoDot.Location = new System.Drawing.Point(756, 282);
             this.capnhatDSChoDot.Name = "capnhatDSChoDot";
             this.capnhatDSChoDot.Size = new System.Drawing.Size(175, 26);
             this.capnhatDSChoDot.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
@@ -487,9 +552,9 @@
             this.btThemMoi.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btThemMoi.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btThemMoi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btThemMoi.Location = new System.Drawing.Point(747, 26);
+            this.btThemMoi.Location = new System.Drawing.Point(747, 27);
             this.btThemMoi.Name = "btThemMoi";
-            this.btThemMoi.Size = new System.Drawing.Size(103, 26);
+            this.btThemMoi.Size = new System.Drawing.Size(103, 25);
             this.btThemMoi.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
             this.btThemMoi.TabIndex = 691;
             this.btThemMoi.Text = "Lập Đợt Mới";
@@ -565,33 +630,12 @@
             this.labelX1.Text = "Số Đợt XPĐĐ";
             this.labelX1.TextAlignment = System.Drawing.StringAlignment.Center;
             // 
-            // next
-            // 
-            this.next.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.next.Image = global::TanHoaWater.Properties.Resources.Next;
-            this.next.Location = new System.Drawing.Point(705, 64);
-            this.next.Name = "next";
-            this.next.Size = new System.Drawing.Size(19, 16);
-            this.next.TabIndex = 700;
-            this.next.TabStop = false;
-            this.next.Click += new System.EventHandler(this.next_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox2.Image = global::TanHoaWater.Properties.Resources.Previous;
-            this.pictureBox2.Location = new System.Drawing.Point(637, 64);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(19, 16);
-            this.pictureBox2.TabIndex = 701;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pre);
-            // 
             // tabItem1
             // 
             this.tabItem1.AttachedControl = this.tabDanhSachDot;
             this.tabItem1.Name = "tabItem1";
             this.tabItem1.Text = "Danh Sách Xin Phép ĐĐ";
+            this.tabItem1.Click += new System.EventHandler(this.tabItem1_Click);
             // 
             // tabCapNhatDS
             // 
@@ -621,61 +665,96 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // btCapNhat
+            // btCapNhatCoPhep
             // 
-            this.btCapNhat.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btCapNhat.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btCapNhat.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btCapNhat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btCapNhat.Location = new System.Drawing.Point(856, 26);
-            this.btCapNhat.Name = "btCapNhat";
-            this.btCapNhat.Size = new System.Drawing.Size(103, 26);
-            this.btCapNhat.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
-            this.btCapNhat.TabIndex = 707;
-            this.btCapNhat.Text = "Cập Nhật";
-            this.btCapNhat.Visible = false;
+            this.btCapNhatCoPhep.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btCapNhatCoPhep.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btCapNhatCoPhep.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btCapNhatCoPhep.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btCapNhatCoPhep.Location = new System.Drawing.Point(756, 237);
+            this.btCapNhatCoPhep.Name = "btCapNhatCoPhep";
+            this.btCapNhatCoPhep.Size = new System.Drawing.Size(175, 26);
+            this.btCapNhatCoPhep.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
+            this.btCapNhatCoPhep.TabIndex = 709;
+            this.btCapNhatCoPhep.Text = "Cập Nhật Có Phép";
+            this.btCapNhatCoPhep.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
+            this.btCapNhatCoPhep.Click += new System.EventHandler(this.btCapNhatCoPhep_Click);
             // 
-            // dateNgayLap
+            // next
+            // 
+            this.next.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.next.Image = global::TanHoaWater.Properties.Resources.Next;
+            this.next.Location = new System.Drawing.Point(705, 64);
+            this.next.Name = "next";
+            this.next.Size = new System.Drawing.Size(19, 16);
+            this.next.TabIndex = 700;
+            this.next.TabStop = false;
+            this.next.Click += new System.EventHandler(this.next_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox2.Image = global::TanHoaWater.Properties.Resources.Previous;
+            this.pictureBox2.Location = new System.Drawing.Point(637, 64);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(19, 16);
+            this.pictureBox2.TabIndex = 701;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pre);
+            // 
+            // labelX5
+            // 
+            this.labelX5.BackColor = System.Drawing.Color.Transparent;
+            this.labelX5.Location = new System.Drawing.Point(754, 186);
+            this.labelX5.Margin = new System.Windows.Forms.Padding(4);
+            this.labelX5.Name = "labelX5";
+            this.labelX5.Size = new System.Drawing.Size(136, 22);
+            this.labelX5.TabIndex = 693;
+            this.labelX5.Text = "Ngày Có Phép";
+            // 
+            // dateNgayCoPhep
             // 
             // 
             // 
             // 
-            this.dateNgayLap.BackgroundStyle.Class = "DateTimeInputBackground";
-            this.dateNgayLap.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
-            this.dateNgayLap.ButtonDropDown.Visible = true;
-            this.dateNgayLap.Location = new System.Drawing.Point(308, 27);
+            this.dateNgayCoPhep.BackgroundStyle.Class = "DateTimeInputBackground";
+            this.dateNgayCoPhep.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
+            this.dateNgayCoPhep.ButtonDropDown.Visible = true;
+            this.dateNgayCoPhep.CustomFormat = "dd/MM/yyyy";
+            this.dateNgayCoPhep.Format = DevComponents.Editors.eDateTimePickerFormat.Custom;
+            this.dateNgayCoPhep.Location = new System.Drawing.Point(754, 208);
             // 
             // 
             // 
-            this.dateNgayLap.MonthCalendar.AnnuallyMarkedDates = new System.DateTime[0];
+            this.dateNgayCoPhep.MonthCalendar.AnnuallyMarkedDates = new System.DateTime[0];
             // 
             // 
             // 
-            this.dateNgayLap.MonthCalendar.BackgroundStyle.BackColor = System.Drawing.SystemColors.Window;
-            this.dateNgayLap.MonthCalendar.ClearButtonVisible = true;
+            this.dateNgayCoPhep.MonthCalendar.BackgroundStyle.BackColor = System.Drawing.SystemColors.Window;
+            this.dateNgayCoPhep.MonthCalendar.ClearButtonVisible = true;
             // 
             // 
             // 
-            this.dateNgayLap.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
-            this.dateNgayLap.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90;
-            this.dateNgayLap.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
-            this.dateNgayLap.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.dateNgayLap.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
-            this.dateNgayLap.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1;
-            this.dateNgayLap.MonthCalendar.DisplayMonth = new System.DateTime(2011, 11, 1, 0, 0, 0, 0);
-            this.dateNgayLap.MonthCalendar.MarkedDates = new System.DateTime[0];
-            this.dateNgayLap.MonthCalendar.MonthlyMarkedDates = new System.DateTime[0];
+            this.dateNgayCoPhep.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
+            this.dateNgayCoPhep.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90;
+            this.dateNgayCoPhep.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
+            this.dateNgayCoPhep.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.dateNgayCoPhep.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
+            this.dateNgayCoPhep.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1;
+            this.dateNgayCoPhep.MonthCalendar.DisplayMonth = new System.DateTime(2011, 11, 1, 0, 0, 0, 0);
+            this.dateNgayCoPhep.MonthCalendar.MarkedDates = new System.DateTime[0];
+            this.dateNgayCoPhep.MonthCalendar.MonthlyMarkedDates = new System.DateTime[0];
             // 
             // 
             // 
-            this.dateNgayLap.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.dateNgayLap.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90;
-            this.dateNgayLap.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.dateNgayLap.MonthCalendar.TodayButtonVisible = true;
-            this.dateNgayLap.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
-            this.dateNgayLap.Name = "dateNgayLap";
-            this.dateNgayLap.Size = new System.Drawing.Size(144, 26);
-            this.dateNgayLap.TabIndex = 708;
+            this.dateNgayCoPhep.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.dateNgayCoPhep.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90;
+            this.dateNgayCoPhep.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.dateNgayCoPhep.MonthCalendar.TodayButtonVisible = true;
+            this.dateNgayCoPhep.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
+            this.dateNgayCoPhep.Name = "dateNgayCoPhep";
+            this.dateNgayCoPhep.Size = new System.Drawing.Size(149, 26);
+            this.dateNgayCoPhep.TabIndex = 708;
             // 
             // UCT_XINPHEPDD
             // 
@@ -690,14 +769,15 @@
             this.tabControl1.ResumeLayout(false);
             this.tabDanhSachDot.ResumeLayout(false);
             this.tabDanhSachDot.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dateNgayLap)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataDanhSachDaoDuong)).EndInit();
             this.groupPanel1.ResumeLayout(false);
             this.groupPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dateTimeSearch)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.next)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateNgayLap)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateNgayCoPhep)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -741,5 +821,8 @@
         private DevComponents.DotNetBar.ButtonX buttonX1;
         private DevComponents.DotNetBar.ButtonX btCapNhat;
         private DevComponents.Editors.DateTimeAdv.DateTimeInput dateNgayLap;
+        private DevComponents.DotNetBar.ButtonX btCapNhatCoPhep;
+        private DevComponents.Editors.DateTimeAdv.DateTimeInput dateNgayCoPhep;
+        private DevComponents.DotNetBar.LabelX labelX5;
     }
 }

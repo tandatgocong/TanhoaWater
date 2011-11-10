@@ -605,6 +605,14 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
             }
             
         }
+
+        private void tabItem3_Click(object sender, EventArgs e)
+        {
+            this.tabThamSo.Controls.Clear();
+            this.tabThamSo.Controls.Add(new tab_DonViTCTLMD());
+            //  this.tabCapNhatDS.Controls.Add(new tab_CapNhatDanhSachND(madot));
+            this.tabControl1.SelectedTabIndex = 2;
+        }
         
     }
 }
