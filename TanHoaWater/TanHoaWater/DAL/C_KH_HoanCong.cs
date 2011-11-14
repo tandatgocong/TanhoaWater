@@ -80,7 +80,7 @@ namespace TanHoaWater.DAL
             db.Connection.Close();
             return dataset.Tables[0];
         }
-        public static void HoanCong(string shs, DateTime ngaytc, int chiso, string sotlk) {
+        public static void HoanCong(string shs, DateTime ngaytc, int chiso, string sotlk, bool hoancong) {
             try
             {
                 var query = from q in db.KH_HOSOKHACHHANGs where q.SHS == shs select q;
@@ -90,6 +90,12 @@ namespace TanHoaWater.DAL
                     hosokh.NGAYTHICONG = ngaytc;
                     hosokh.CHISO = chiso;
                     hosokh.SOTHANTLK = sotlk;
+                    if (hoancong == true)
+                    {
+                        hosokh.HOANCONG = true;
+                        hosokh.NGAYHOANCONG = DateTime.Now.Date;
+                    }
+                    db.SubmitChanges();
                 }
             }
             catch (Exception ex)

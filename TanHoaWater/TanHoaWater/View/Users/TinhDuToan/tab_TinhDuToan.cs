@@ -1190,6 +1190,8 @@ namespace TanHoaWater.View.Users.TinhDuToan
                klxdcb.TAILAPMATDUONG = DAL.C_CongTacBangGia.TAILAPMATDUONG;
                klxdcb.CHIPHITRUCTIEP = DAL.C_CongTacBangGia.CHIPHITRUCTIEP;
                klxdcb.CHIPHICHUNG = DAL.C_CongTacBangGia.CHIPHICHUNG;
+               klxdcb.CPGAN = DAL.C_CongTacBangGia.CPGAN;
+               klxdcb.CPNHUA = DAL.C_CongTacBangGia.CPNHUA;
                klxdcb.CREATEBY = DAL.C_USERS._userName;
                klxdcb.CREATEDATE = DateTime.Now;
                DAL.C_KhoiLuongXDCB.InsertKTPD(klxdcb);

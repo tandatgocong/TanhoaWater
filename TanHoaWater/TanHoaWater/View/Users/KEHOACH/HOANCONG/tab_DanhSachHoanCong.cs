@@ -154,6 +154,7 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
             if (gridHoanCong.CurrentCell.OwningColumn.Name == "hc_SoTLK")
             {
                 btInBangKe.Enabled = false;
+                btHoanTat.Enabled = true;
             }
             txtKeypress = e.Control;
             if (gridHoanCong.CurrentCell.OwningColumn.Name == "hc_ChiSo")
@@ -169,63 +170,83 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
 
         private void gridHoanCong_CellValidated(object sender, DataGridViewCellEventArgs e)
         {
-            try
-            {
-                if (gridHoanCong.CurrentCell.OwningColumn.Name == "hc_NgayTC")
-                {
-                    if (Utilities.DateToString.checkDate(this.gridHoanCong.Rows[e.RowIndex].Cells["hc_NgayTC"].Value + "") == false)
-                    {
-                        this.gridHoanCong.Rows[e.RowIndex].Cells["hc_NgayTC"].ErrorText = "Ngày Không Hợp Lệ.";
+            //try
+            //{
+            //    if (gridHoanCong.CurrentCell.OwningColumn.Name == "hc_NgayTC")
+            //    {
+            //        if (Utilities.DateToString.checkDate(this.gridHoanCong.Rows[e.RowIndex].Cells["hc_NgayTC"].Value + "") == false)
+            //        {
+            //            this.gridHoanCong.Rows[e.RowIndex].Cells["hc_NgayTC"].ErrorText = "Ngày Không Hợp Lệ.";
 
-                    }
-                    else
-                        this.gridHoanCong.Rows[e.RowIndex].Cells["hc_NgayTC"].ErrorText = null;
-                }
-            }
-            catch (Exception)
-            { }
+            //        }
+            //        else
+            //            this.gridHoanCong.Rows[e.RowIndex].Cells["hc_NgayTC"].ErrorText = null;
+            //    }
+            //}
+            //catch (Exception)
+            //{ }
         }
 
         bool flag = true;
         void updateDulieu() {
-            for (int i = 0; i < gridHoanCong.Rows.Count; i++)
+            try
             {
-                string ngaytc = "";
-                string chiso = "";
-                string shs = this.gridHoanCong.Rows[i].Cells["hc_SHS"].Value + "";
-                string sothanTLK = this.gridHoanCong.Rows[i].Cells["hc_SoTLK"].Value + "";
-                if (this.gridHoanCong.Rows[i].Cells["hc_SoTLK"].Value != null && "".Equals(this.gridHoanCong.Rows[i].Cells["hc_NgayTC"].Value + ""))
+                for (int i = 0; i < gridHoanCong.Rows.Count; i++)
                 {
-                    if (this.gridHoanCong.Rows[i].Cells["hc_NgayTC"].Value != null && "".Equals(this.gridHoanCong.Rows[i].Cells["hc_NgayTC"].Value + ""))
+                    string ngaytc = "";
+                    string chiso = "";
+                    string shs = this.gridHoanCong.Rows[i].Cells["hc_SHS"].Value + "";
+                    string sothanTLK = this.gridHoanCong.Rows[i].Cells["hc_SoTLK"].Value + "";
+                    string hc = this.gridHoanCong.Rows[i].Cells["hc_DHN"].Value + "";
+                    bool HoanCong = false;
+                    try
                     {
-                        this.gridHoanCong.Rows[i].Cells["hc_NgayTC"].ErrorText = "Ngày Thi Công Không Được Trống";
-                        return;
+                        HoanCong = bool.Parse(hc);
                     }
-                    else
+                    catch (Exception)
                     {
-                        this.gridHoanCong.Rows[i].Cells["hc_NgayTC"].ErrorText = null;
-                        ngaytc = this.gridHoanCong.Rows[i].Cells["hc_NgayTC"].Value + "";
+                    }
+                    if (this.gridHoanCong.Rows[i].Cells["hc_SoTLK"].Value != null && !"".Equals(this.gridHoanCong.Rows[i].Cells["hc_SoTLK"].Value + ""))
+                    {
+                        if (this.gridHoanCong.Rows[i].Cells["hc_NgayTC"].Value != null && "".Equals(this.gridHoanCong.Rows[i].Cells["hc_NgayTC"].Value + ""))
+                        {
+                            this.gridHoanCong.Rows[i].Cells["hc_NgayTC"].ErrorText = "Ngày Thi Công Không Được Trống";
+                            break;
+                        }
+                        else
+                        {
+                            this.gridHoanCong.Rows[i].Cells["hc_NgayTC"].ErrorText = null;
+                            ngaytc = this.gridHoanCong.Rows[i].Cells["hc_NgayTC"].Value + "";
+                        }
+
+                        if (this.gridHoanCong.Rows[i].Cells["hc_ChiSo"].Value != null && "".Equals(this.gridHoanCong.Rows[i].Cells["hc_ChiSo"].Value + ""))
+                        {
+                            this.gridHoanCong.Rows[i].Cells["hc_ChiSo"].ErrorText = "Chi Số Ko Được Trống";
+                            break;
+                        }
+                        else
+                        {
+                            this.gridHoanCong.Rows[i].Cells["hc_ChiSo"].ErrorText = null;
+                            chiso = this.gridHoanCong.Rows[i].Cells["hc_ChiSo"].Value + "";
+                        }
+                        DAL.C_KH_HoanCong.HoanCong(shs, DateTime.ParseExact(ngaytc, "dd/MM/yyyy", null), int.Parse(chiso), sothanTLK, HoanCong);
                     }
 
-                    if (this.gridHoanCong.Rows[i].Cells["hc_ChiSo"].Value != null && "".Equals(this.gridHoanCong.Rows[i].Cells["hc_ChiSo"].Value + ""))
-                    {
-                        this.gridHoanCong.Rows[i].Cells["hc_ChiSo"].ErrorText = "Chi Số Ko Được Trống";
-                        return;
-                    }
-                    else
-                    {
-                        this.gridHoanCong.Rows[i].Cells["hc_ChiSo"].ErrorText = null;
-                        chiso = this.gridHoanCong.Rows[i].Cells["hc_ChiSo"].Value + "";
-                    }
                 }
-                DAL.C_KH_HoanCong.HoanCong(shs, DateTime.ParseExact(ngaytc,"dd/MM/yyyy",null), int.Parse(chiso), sothanTLK);
+                //DAL.C_KH_HoanCong.CapNhat();
             }
-            DAL.C_KH_HoanCong.CapNhat();
+            catch (Exception ex)
+            {
+                log.Error("Loi Hoan Tat Hoan Cong" + ex.Message);
+            }
+            
         }
 
         private void btHoanTat_Click(object sender, EventArgs e)
         {
-
+            updateDulieu();
+           
+          
         }
     }
 }

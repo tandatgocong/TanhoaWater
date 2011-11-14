@@ -66,7 +66,9 @@ namespace TanHoaWater.DAL
         public static double TAILAPMATDUONG = 0.0;
 	    public static double  CHIPHITRUCTIEP= 0.0;
 	    public static double CHIPHICHUNG= 0.0;
-        
+        public static double CPGAN = 0.0;
+        public static double CPNHUA = 0.0;
+
         public static void TongKetChiPhi(string shs, bool _PHIC3,  bool _PHIGS,  bool _PHIQL ) {
             TanHoaDataContext db = new TanHoaDataContext();
             SqlConnection conn = new SqlConnection(db.Connection.ConnectionString);
@@ -152,6 +154,12 @@ namespace TanHoaWater.DAL
             SqlParameter _TLMDTRUOCTHUE = cmd.Parameters.Add("@TLMDTRUOCTHUE", SqlDbType.Float);
             _TLMDTRUOCTHUE.Direction = ParameterDirection.Output;
 
+            SqlParameter _CPGAN = cmd.Parameters.Add("@CPGAN", SqlDbType.Float);
+            _CPGAN.Direction = ParameterDirection.Output;
+
+            SqlParameter _CPNHUA = cmd.Parameters.Add("@CPNHUA", SqlDbType.Float);
+            _CPNHUA.Direction = ParameterDirection.Output;
+
             cmd.ExecuteNonQuery();
 
             CPVATLIEU = double.Parse(cmd.Parameters["@A"].Value + "");
@@ -166,6 +174,8 @@ namespace TanHoaWater.DAL
             TAILAPMATDUONG = double.Parse(cmd.Parameters["@TAILAPMATDUONG"].Value + "");
             CHIPHITRUCTIEP=double.Parse(cmd.Parameters["@D"].Value + "");
             CHIPHICHUNG = double.Parse(cmd.Parameters["@E"].Value + "");
+            CPGAN = double.Parse(cmd.Parameters["@CPGAN"].Value + "");
+            CPNHUA = double.Parse(cmd.Parameters["@CPNHUA"].Value + "");
 
             conn.Close();
         }
