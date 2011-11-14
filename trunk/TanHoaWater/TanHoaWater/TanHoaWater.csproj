@@ -311,6 +311,21 @@
     <Compile Include="View\Users\KEHOACH\DOTTHICONG\UCT_DOTTHICONG.Designer.cs">
       <DependentUpon>UCT_DOTTHICONG.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Users\KEHOACH\HOANCONG\BC\DataSet1.cs">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\Users\KEHOACH\HOANCONG\BC\DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="View\Users\KEHOACH\HOANCONG\BC\rpt_ChiPhiGanNhua.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_ChiPhiGanNhua.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="View\Users\KEHOACH\HOANCONG\tab_DanhSachHoanCong.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -664,6 +679,10 @@
     <EmbeddedResource Include="View\Users\KEHOACH\DOTTHICONG\UCT_DOTTHICONG.resx">
       <DependentUpon>UCT_DOTTHICONG.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\KEHOACH\HOANCONG\BC\rpt_ChiPhiGanNhua.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_ChiPhiGanNhua.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Users\KEHOACH\HOANCONG\tab_DanhSachHoanCong.resx">
       <DependentUpon>tab_DanhSachHoanCong.cs</DependentUpon>
     </EmbeddedResource>
@@ -962,6 +981,17 @@
     </None>
     <None Include="View\Users\KEHOACH\DOTTHICONG\BC\OC.xss">
       <DependentUpon>OC.xsd</DependentUpon>
+    </None>
+    <None Include="View\Users\KEHOACH\HOANCONG\BC\DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="View\Users\KEHOACH\HOANCONG\BC\DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="View\Users\KEHOACH\HOANCONG\BC\DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>
     <None Include="View\Users\KEHOACH\XINPHEPDD\BC\DataSet1.xsc">
       <DependentUpon>DataSet1.xsd</DependentUpon>
