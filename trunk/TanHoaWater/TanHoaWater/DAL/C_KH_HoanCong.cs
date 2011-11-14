@@ -80,6 +80,30 @@ namespace TanHoaWater.DAL
             db.Connection.Close();
             return dataset.Tables[0];
         }
+        public static DataTable getListHoanCongTroNgai(string dottc, int flag)
+        {
+            string sql = "SELECT  donkh.SHS,HOTEN,(SONHA +' '+ DUONG+', P.'+TENPHUONG +', Q.'+TENQUAN) AS 'DIACHI', hosokh.TRONGAI,hosokh.NOIDUNGTN ";
+            sql += " FROM DON_KHACHHANG donkh, PHUONG p, QUAN q, KH_HOSOKHACHHANG hosokh ";
+            sql += " WHERE donkh.QUAN = q.MAQUAN AND q.MAQUAN=p.MAQUAN AND donkh.PHUONG=p.MAPHUONG  ";
+            sql += "  AND donkh.SHS = hosokh.SHS AND hosokh.CHUYENHOANCONG='True' AND hosokh.MADOTTC='" + dottc + "'";
+
+            // flag = -1: chua hoan cong
+            // flag = 1: da hoan cong
+            // flag = 0: ta ca
+
+            if (flag == -1)
+                sql += " AND (hosokh.HOANCONG IS NULL OR hosokh.HOANCONG='False') ";
+            else if (flag == 1)
+                sql += " AND hosokh.HOANCONG='True'";
+
+            db.Connection.Open();
+            sql += " ORDER BY hosokh.MODIFYDATE";
+            SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
+            DataSet dataset = new DataSet();
+            adapter.Fill(dataset, "TABLE");
+            db.Connection.Close();
+            return dataset.Tables[0];
+        }
         public static void HoanCong(string shs, DateTime ngaytc, int chiso, string sotlk, bool hoancong) {
             try
             {
@@ -95,6 +119,10 @@ namespace TanHoaWater.DAL
                         hosokh.HOANCONG = true;
                         hosokh.NGAYHOANCONG = DateTime.Now.Date;
                     }
+                    else {
+                        hosokh.HOANCONG = false;
+                        hosokh.NGAYHOANCONG = null;
+                    }
                     db.SubmitChanges();
                 }
             }
@@ -103,6 +131,34 @@ namespace TanHoaWater.DAL
                 log.Error("Chuyen Hoan Cong :" + ex.Message);
             }
         }
+
+        public static void TroNgai(string shs,bool trongai, string noidungtrongai)
+        {
+            try
+            {
+                var query = from q in db.KH_HOSOKHACHHANGs where q.SHS == shs select q;
+                KH_HOSOKHACHHANG hosokh = query.SingleOrDefault();
+                if (hosokh != null)
+                {
+                    if (trongai == true)
+                    {
+                        hosokh.TRONGAI = true;
+                        hosokh.NOIDUNGTN = noidungtrongai;
+                    }
+                    else
+                    {
+                        hosokh.TRONGAI = false;
+                        hosokh.NOIDUNGTN = null;
+                    }
+                    db.SubmitChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Error("Chuyen Hoan Cong :" + ex.Message);
+            }
+        }
+
         public static void CapNhat()
         {
             try
@@ -113,6 +169,42 @@ namespace TanHoaWater.DAL
             {
                 log.Error("Chuyen Hoan Cong :" + ex.Message);
             }
+        }
+        public static DataSet BC_TACHPHIGANNHUA(string query)
+        {
+            TanHoaDataContext db = new TanHoaDataContext();
+            db.Connection.Open();
+            DataSet dataset = new DataSet();
+            string sql = " SELECT * FROM KH_TC_BAOCAO ";
+            SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
+            adapter.Fill(dataset, "KH_TC_BAOCAO");
+            sql = "SELECT * FROM V_TACHPHIGANNHUA WHERE SHS IN (" + query + ") ORDER BY MODIFYDATE";
+            adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
+            adapter.Fill(dataset, "V_TACHPHIGANNHUA");
+
+            db.Connection.Close();
+            return dataset;
+        }
+
+        public static DataSet BC_HOANCONG(string madot)
+        {
+            TanHoaDataContext db = new TanHoaDataContext();
+            db.Connection.Open();
+            DataSet dataset = new DataSet();
+            string sql = " SELECT * FROM KH_TC_BAOCAO ";
+            SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
+            adapter.Fill(dataset, "KH_TC_BAOCAO");
+
+            sql = "SELECT * FROM V_HOANCONG WHERE MADOTTC='" + madot + "' ORDER BY MODIFYDATE";
+            adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
+            adapter.Fill(dataset, "V_HOANCONG");
+
+            sql = "SELECT * FROM V_HOANCONG_TRONGAI WHERE MADOTTC='" + madot + "' ORDER BY MODIFYDATE";
+            adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
+            adapter.Fill(dataset, "V_HOANCONG_TRONGAI");
+
+            db.Connection.Close();
+            return dataset;
         }
         
     }

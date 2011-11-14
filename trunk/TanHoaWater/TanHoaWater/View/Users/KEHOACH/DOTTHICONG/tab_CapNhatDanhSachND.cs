@@ -110,6 +110,8 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
                         kh_sh.CONG3 = xdcb.CONG3;
                         kh_sh.THUEGTGT = xdcb.THUEGTGT;
                         kh_sh.TONGIATRI = xdcb.TONGIATRI;
+                        kh_sh.CPGAN = xdcb.CPGAN;
+                        kh_sh.CPNHUA = xdcb.CPNHUA;
                     }
                     //  kh_sh
                     DAL.C_KH_HoSoKhachHang.Update();

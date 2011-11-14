@@ -44,9 +44,7 @@ namespace TanHoaWater
 
             this.lbNgayHeThong.Text = Utilities.DateToString.fullCurrentNgay() + "  ";
 
-            PanelMain.Location = new Point(
-    this.ClientSize.Width / 2 - PanelMain.Size.Width / 2,
-    this.ClientSize.Height / 2 - PanelMain.Size.Height / 2);
+            PanelMain.Location = new Point(this.ClientSize.Width / 2 - PanelMain.Size.Width / 2, this.ClientSize.Height / 2 - PanelMain.Size.Height / 2);
             PanelMain.Anchor = AnchorStyles.None;
 
         }

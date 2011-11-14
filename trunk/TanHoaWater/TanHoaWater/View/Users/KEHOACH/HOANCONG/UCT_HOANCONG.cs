@@ -61,5 +61,12 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
                 
             }
         }
+
+        private void tabItem3_Click(object sender, EventArgs e)
+        {
+            this.tabControlPanel1.Controls.Clear();
+            this.tabControlPanel1.Controls.Add(new tab_TroNgaiHoanCong(this.cbDotHoanCong.Text));
+            this.tabControl1.SelectedTabIndex = 2;
+        }
     }
 }

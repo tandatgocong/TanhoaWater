@@ -74,7 +74,7 @@
             // 
             // reflectionLabel6
             // 
-            this.reflectionLabel6.Location = new System.Drawing.Point(256, 6);
+            this.reflectionLabel6.Location = new System.Drawing.Point(242, 6);
             this.reflectionLabel6.Name = "reflectionLabel6";
             this.reflectionLabel6.ReflectionEnabled = false;
             this.reflectionLabel6.Size = new System.Drawing.Size(204, 25);
@@ -120,7 +120,7 @@
             dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.gridHoanCong.DefaultCellStyle = dataGridViewCellStyle13;
             this.gridHoanCong.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
-            this.gridHoanCong.Location = new System.Drawing.Point(22, 69);
+            this.gridHoanCong.Location = new System.Drawing.Point(8, 69);
             this.gridHoanCong.Name = "gridHoanCong";
             dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle14.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -131,7 +131,7 @@
             this.gridHoanCong.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.gridHoanCong.RowHeadersWidth = 10;
             this.gridHoanCong.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.gridHoanCong.Size = new System.Drawing.Size(974, 516);
+            this.gridHoanCong.Size = new System.Drawing.Size(969, 516);
             this.gridHoanCong.TabIndex = 2;
             this.gridHoanCong.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridHoanCong_CellClick);
             this.gridHoanCong.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridHoanCong_CellLeave);
@@ -290,7 +290,7 @@
             this.cbDotHoanCong.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbDotHoanCong.FormattingEnabled = true;
             this.cbDotHoanCong.ItemHeight = 23;
-            this.cbDotHoanCong.Location = new System.Drawing.Point(446, 6);
+            this.cbDotHoanCong.Location = new System.Drawing.Point(432, 6);
             this.cbDotHoanCong.Name = "cbDotHoanCong";
             this.cbDotHoanCong.Size = new System.Drawing.Size(270, 29);
             this.cbDotHoanCong.TabIndex = 4;
@@ -301,12 +301,13 @@
             this.btInBangKe.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btInBangKe.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btInBangKe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btInBangKe.Location = new System.Drawing.Point(6, 35);
+            this.btInBangKe.Location = new System.Drawing.Point(9, 35);
             this.btInBangKe.Name = "btInBangKe";
             this.btInBangKe.Size = new System.Drawing.Size(121, 23);
             this.btInBangKe.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
             this.btInBangKe.TabIndex = 5;
             this.btInBangKe.Text = "In Bảng Kê";
+            this.btInBangKe.Click += new System.EventHandler(this.btInBangKe_Click);
             // 
             // panel2
             // 
@@ -331,7 +332,7 @@
             // 
             this.dateThiCong.CustomFormat = "dd/MM/yyyy";
             this.dateThiCong.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateThiCong.Location = new System.Drawing.Point(119, 246);
+            this.dateThiCong.Location = new System.Drawing.Point(105, 246);
             this.dateThiCong.Name = "dateThiCong";
             this.dateThiCong.Size = new System.Drawing.Size(137, 26);
             this.dateThiCong.TabIndex = 9;
@@ -343,7 +344,7 @@
             // 
             this.checkChuaHoanCong.AutoSize = true;
             this.checkChuaHoanCong.Checked = true;
-            this.checkChuaHoanCong.Location = new System.Drawing.Point(636, 37);
+            this.checkChuaHoanCong.Location = new System.Drawing.Point(622, 37);
             this.checkChuaHoanCong.Name = "checkChuaHoanCong";
             this.checkChuaHoanCong.Size = new System.Drawing.Size(135, 23);
             this.checkChuaHoanCong.TabIndex = 8;
@@ -355,7 +356,7 @@
             // chekDaHoanCong
             // 
             this.chekDaHoanCong.AutoSize = true;
-            this.chekDaHoanCong.Location = new System.Drawing.Point(516, 37);
+            this.chekDaHoanCong.Location = new System.Drawing.Point(502, 37);
             this.chekDaHoanCong.Name = "chekDaHoanCong";
             this.chekDaHoanCong.Size = new System.Drawing.Size(119, 23);
             this.chekDaHoanCong.TabIndex = 8;
@@ -366,7 +367,7 @@
             // checkALl
             // 
             this.checkALl.AutoSize = true;
-            this.checkALl.Location = new System.Drawing.Point(445, 37);
+            this.checkALl.Location = new System.Drawing.Point(431, 37);
             this.checkALl.Name = "checkALl";
             this.checkALl.Size = new System.Drawing.Size(69, 23);
             this.checkALl.TabIndex = 8;
@@ -379,19 +380,20 @@
             this.btTachChiPhi.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btTachChiPhi.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btTachChiPhi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btTachChiPhi.Location = new System.Drawing.Point(133, 35);
+            this.btTachChiPhi.Location = new System.Drawing.Point(136, 35);
             this.btTachChiPhi.Name = "btTachChiPhi";
             this.btTachChiPhi.Size = new System.Drawing.Size(160, 23);
             this.btTachChiPhi.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
             this.btTachChiPhi.TabIndex = 5;
             this.btTachChiPhi.Text = "Tách Chi Phí Gan-Nhựa";
+            this.btTachChiPhi.Click += new System.EventHandler(this.btTachChiPhi_Click);
             // 
             // btHoanTat
             // 
             this.btHoanTat.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btHoanTat.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btHoanTat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btHoanTat.Location = new System.Drawing.Point(871, 35);
+            this.btHoanTat.Location = new System.Drawing.Point(868, 35);
             this.btHoanTat.Name = "btHoanTat";
             this.btHoanTat.Size = new System.Drawing.Size(109, 23);
             this.btHoanTat.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
