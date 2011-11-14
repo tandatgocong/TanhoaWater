@@ -280,7 +280,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = global::TanHoaWater.Properties.Resources.document_into1;
+            this.pictureBox1.Image = global::TanHoaWater.Properties.Resources.Arrow2_Left;
             this.pictureBox1.Location = new System.Drawing.Point(473, 289);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(48, 50);
@@ -301,10 +301,10 @@
             // btGiaoViec
             // 
             this.btGiaoViec.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btGiaoViec.Image = global::TanHoaWater.Properties.Resources.document_into11;
+            this.btGiaoViec.Image = global::TanHoaWater.Properties.Resources.Arrow2_Right;
             this.btGiaoViec.Location = new System.Drawing.Point(473, 228);
             this.btGiaoViec.Name = "btGiaoViec";
-            this.btGiaoViec.Size = new System.Drawing.Size(48, 55);
+            this.btGiaoViec.Size = new System.Drawing.Size(48, 50);
             this.btGiaoViec.TabIndex = 19;
             this.btGiaoViec.TabStop = false;
             this.btGiaoViec.Click += new System.EventHandler(this.btGiaoViec_Click);

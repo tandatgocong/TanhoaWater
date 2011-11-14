@@ -53,7 +53,6 @@
             this.MinimizeBox = false;
             this.Name = "rpt_Main";
             this.ShowIcon = false;
-            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.ResumeLayout(false);
 

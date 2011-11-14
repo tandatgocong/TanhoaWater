@@ -614,15 +614,14 @@ namespace TanHoaWater.View.Users.TinhDuToan
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show(this, ex.Message);
+                     //  MessageBox.Show(this, ex.Message);
                         log.Error(ex.Message);
                     }
 
                 }
             }
-            catch (Exception ex)
+            catch (Exception )
             {
-                MessageBox.Show(this, ex.Message);
             }
         }
 

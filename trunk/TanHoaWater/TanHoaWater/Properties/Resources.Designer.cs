@@ -67,6 +67,20 @@ namespace TanHoaWater.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap Arrow2_Left {
+            get {
+                object obj = ResourceManager.GetObject("Arrow2 Left", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Arrow2_Right {
+            get {
+                object obj = ResourceManager.GetObject("Arrow2 Right", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap bg {
             get {
                 object obj = ResourceManager.GetObject("bg", resourceCulture);

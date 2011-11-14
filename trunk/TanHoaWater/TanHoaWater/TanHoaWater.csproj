@@ -121,6 +121,7 @@
     <Compile Include="DAL\C_DotNhanDon.cs" />
     <Compile Include="DAL\C_HeSo.cs" />
     <Compile Include="DAL\C_HeSoBangGia.cs" />
+    <Compile Include="DAL\C_KH_HoanCong.cs" />
     <Compile Include="DAL\C_KhoiLuongXDCB.cs" />
     <Compile Include="DAL\C_KH_DonViTC.cs" />
     <Compile Include="DAL\C_KH_DotThiCong.cs" />
@@ -203,6 +204,12 @@
     </Compile>
     <Compile Include="View\Tool\webBrowser.Designer.cs">
       <DependentUpon>webBrowser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Users\DONGHONUOC\UCT-CapDanhBo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Users\DONGHONUOC\UCT-CapDanhBo.Designer.cs">
+      <DependentUpon>UCT-CapDanhBo.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Users\KEHOACH\DOTTHICONG\BC\reportValues.cs">
       <SubType>Form</SubType>
@@ -304,10 +311,11 @@
     <Compile Include="View\Users\KEHOACH\DOTTHICONG\UCT_DOTTHICONG.Designer.cs">
       <DependentUpon>UCT_DOTTHICONG.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Users\KEHOACH\HOANCONG\DataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSet1.xsd</DependentUpon>
+    <Compile Include="View\Users\KEHOACH\HOANCONG\tab_DanhSachHoanCong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Users\KEHOACH\HOANCONG\tab_DanhSachHoanCong.Designer.cs">
+      <DependentUpon>tab_DanhSachHoanCong.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Users\KEHOACH\HOANCONG\UCT_HOANCONG.cs">
       <SubType>UserControl</SubType>
@@ -610,6 +618,9 @@
     <EmbeddedResource Include="View\Tool\webBrowser.resx">
       <DependentUpon>webBrowser.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\DONGHONUOC\UCT-CapDanhBo.resx">
+      <DependentUpon>UCT-CapDanhBo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Users\KEHOACH\DOTTHICONG\BC\reportValues.resx">
       <DependentUpon>reportValues.cs</DependentUpon>
     </EmbeddedResource>
@@ -652,6 +663,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\KEHOACH\DOTTHICONG\UCT_DOTTHICONG.resx">
       <DependentUpon>UCT_DOTTHICONG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\KEHOACH\HOANCONG\tab_DanhSachHoanCong.resx">
+      <DependentUpon>tab_DanhSachHoanCong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\KEHOACH\HOANCONG\UCT_HOANCONG.resx">
       <DependentUpon>UCT_HOANCONG.cs</DependentUpon>
@@ -949,17 +963,6 @@
     <None Include="View\Users\KEHOACH\DOTTHICONG\BC\OC.xss">
       <DependentUpon>OC.xsd</DependentUpon>
     </None>
-    <None Include="View\Users\KEHOACH\HOANCONG\DataSet1.xsc">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="View\Users\KEHOACH\HOANCONG\DataSet1.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="View\Users\KEHOACH\HOANCONG\DataSet1.xss">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
-    </None>
     <None Include="View\Users\KEHOACH\XINPHEPDD\BC\DataSet1.xsc">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>
@@ -1153,6 +1156,8 @@
     <Content Include="Lib\IrisSkin2.dll" />
     <Content Include="Lib\log4net.dll" />
     <Content Include="Lib\String_Indentity.dll" />
+    <None Include="Resources\Arrow2 Left.png" />
+    <None Include="Resources\Arrow2 Right.png" />
     <None Include="Resources\Loop.png" />
     <None Include="Resources\Ok.png" />
     <None Include="Resources\dutoan.png" />

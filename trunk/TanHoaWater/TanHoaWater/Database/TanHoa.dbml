@@ -456,6 +456,13 @@
       <Column Name="CONG3" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="THUEGTGT" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="TONGIATRI" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CHUYENHOANCONG" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="NGAYCHUYENHC" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="HOANCONG" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="NGAYHOANCONG" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NGAYTHICONG" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CHISO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SOTHANTLK" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
       <Column Name="CREATEBY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="CREATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="MODIFYBY" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
@@ -644,25 +651,6 @@
       <Association Name="USER_TOTHIETKE" Member="USER" ThisKey="SODOVIEN" OtherKey="USERNAME" Type="USER" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.BG_CHITIETBG" Member="BG_CHITIETBGs">
-    <Type Name="BG_CHITIETBG">
-      <Column Name="SHS" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="MAHIEU" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="MAHDG" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="TENVT" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
-      <Column Name="DVT" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
-      <Column Name="NHOM" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
-      <Column Name="LOAISN" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="KHOILUONG" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="DONGIAVL" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="DONGIANC" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="DONGIAMTC" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="TT_VL" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="TT_NC" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="TT_MTC" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="NHOMVT" Type="System.String" DbType="NVarChar(1) NOT NULL" CanBeNull="false" />
-    </Type>
-  </Table>
   <Table Name="dbo.W_HS" Member="W_Hs">
     <Type Name="W_H">
       <Column Name="NC" Type="System.Double" DbType="Float" CanBeNull="true" />
@@ -683,6 +671,25 @@
       <Column Name="CREATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="MODIFYBY" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
       <Column Name="MODIFYDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BG_CHITIETBG" Member="BG_CHITIETBGs">
+    <Type Name="BG_CHITIETBG">
+      <Column Name="SHS" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MAHIEU" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="MAHDG" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="TENVT" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="DVT" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="NHOM" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="LOAISN" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="KHOILUONG" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="DONGIAVL" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="DONGIANC" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="DONGIAMTC" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TT_VL" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TT_NC" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TT_MTC" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="NHOMVT" Type="System.String" DbType="NVarChar(1) NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
   <Table Name="dbo.BG_CHITIETBG_VT" Member="BG_CHITIETBG_VTs">
@@ -943,6 +950,7 @@
       <Column Name="SONHA" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="DUONG" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="TENPHUONG" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TENQUAN" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="MADOTDD" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
       <Column Name="CHOPHEP" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Column Name="NGAYCOPHEP" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />

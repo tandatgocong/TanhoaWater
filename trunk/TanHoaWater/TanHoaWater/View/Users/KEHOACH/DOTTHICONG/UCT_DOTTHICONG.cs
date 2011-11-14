@@ -235,7 +235,7 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
                 dottc.BANGKE = this.txtBangKe.Text;
                 dottc.LOAIBANGKE = this.cbLoaiBangKe.Text;
                 dottc.CREATEBY = DAL.C_USERS._userName;
-                dottc.CREATEDATE = DateTime.Now.Date;
+                dottc.CREATEDATE = DateTime.Now;
 
                 if (DAL.C_KH_DotThiCong.InsertDotTC(dottc) == false) {
                     MessageBox.Show(this, "Lỗi Thêm Đợt Thi Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
