@@ -7,6 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using log4net;
+using TanHoaWater.View.Users.HOANCONG.BC;
+using CrystalDecisions.CrystalReports.Engine;
+using TanHoaWater.View.Users.KEHOACH.HOANCONG.BC;
+using TanHoaWater.View.Users.Report;
 
 namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
 {
@@ -247,6 +251,44 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
             updateDulieu();
            
           
+        }
+
+        public string getSHS() {
+            string result="";
+            for (int i = 0; i < gridHoanCong.Rows.Count; i++)
+            {
+                string shs = this.gridHoanCong.Rows[i].Cells["hc_SHS"].Value + "";
+                string chonin = this.gridHoanCong.Rows[i].Cells["hc_ChonIn"].Value + "";
+                if ("True".Equals(chonin))
+                    result += "'" + shs + "',";
+            }
+            if (result.Length > 0)
+                result = result.Substring(0, result.Length - 1);
+            return result;
+        }
+        private void btTachChiPhi_Click(object sender, EventArgs e)
+        {
+            if (getSHS().Equals(""))
+                MessageBox.Show(this, "Cần Chọn Hồ Sơ In", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else
+            {
+                frmDialogPrintting frm = new frmDialogPrintting(getSHS());
+                frm.ShowDialog();
+            }
+        }
+
+        private void btInBangKe_Click(object sender, EventArgs e)
+        {
+            if (getSHS().Equals(""))
+                MessageBox.Show(this, "Cần Chọn Hồ Sơ In", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else
+            {
+                ReportDocument rp = new rpt_HoanCong();
+                rp.SetDataSource(DAL.C_KH_HoanCong.BC_HOANCONG(this.cbDotHoanCong.Text));
+                rpt_Main rpt = new rpt_Main(rp);
+                rpt.ShowDialog();
+            }
+           
         }
     }
 }
