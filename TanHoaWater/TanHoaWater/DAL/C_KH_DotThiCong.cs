@@ -29,6 +29,20 @@ namespace TanHoaWater.DAL
             }
             return null;   
         }
+        public static List<KH_DOTTHICONG> getListDTC()
+        {
+            try
+            {
+                var query = from dottc in db.KH_DOTTHICONGs  orderby dottc.CREATEDATE descending  select dottc;
+                return query.ToList();
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+            }
+            return null;
+        }
+        
         
         public static bool InsertDotTC(KH_DOTTHICONG dottc) {
             try

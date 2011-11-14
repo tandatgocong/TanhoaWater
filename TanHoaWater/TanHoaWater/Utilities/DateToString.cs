@@ -115,5 +115,19 @@ namespace TanHoaWater.Utilities
             kq = dateofweek + " Ngày " +  ngay + " tháng " + thang + " năm " + nam;
             return kq;
         }
+
+        public static bool checkDate(string date) {
+
+            try
+            {
+                DateTime.ParseExact(date.Trim(), "dd/MM/yyyy", null);
+                return true;
+            }
+            catch (Exception)
+            {
+                
+            }
+            return false;
+        }
     }
 }
