@@ -40,15 +40,16 @@
             this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.Size = new System.Drawing.Size(760, 453);
+            this.crystalReportViewer1.Size = new System.Drawing.Size(1225, 453);
             this.crystalReportViewer1.TabIndex = 0;
             this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
             // labelX1
             // 
-            this.labelX1.Location = new System.Drawing.Point(630, 98);
+            this.labelX1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX1.Location = new System.Drawing.Point(56, 98);
             this.labelX1.Name = "labelX1";
-            this.labelX1.Size = new System.Drawing.Size(106, 23);
+            this.labelX1.Size = new System.Drawing.Size(1157, 58);
             this.labelX1.TabIndex = 1;
             this.labelX1.Text = "labelX1";
             // 
@@ -56,7 +57,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(760, 453);
+            this.ClientSize = new System.Drawing.Size(1225, 453);
             this.Controls.Add(this.labelX1);
             this.Controls.Add(this.crystalReportViewer1);
             this.Name = "Form1";

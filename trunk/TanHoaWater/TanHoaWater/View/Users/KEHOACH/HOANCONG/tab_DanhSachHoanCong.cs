@@ -223,6 +223,18 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
                             ngaytc = this.gridHoanCong.Rows[i].Cells["hc_NgayTC"].Value + "";
                         }
 
+
+                        if (Utilities.DateToString.checkDate(Utilities.DateToString.convartddMMyyyy(this.gridHoanCong.Rows[i].Cells["hc_NgayTC"].Value+""))==false)
+                        {
+                            this.gridHoanCong.Rows[i].Cells["hc_NgayTC"].ErrorText = "Ngày Thi Công Không Hợp Lệ";
+                            break;
+                        }
+                        else
+                        {
+                            this.gridHoanCong.Rows[i].Cells["hc_NgayTC"].ErrorText = null;
+                            ngaytc = Utilities.DateToString.convartddMMyyyy(this.gridHoanCong.Rows[i].Cells["hc_NgayTC"].Value + "");
+                        }
+
                         if (this.gridHoanCong.Rows[i].Cells["hc_ChiSo"].Value != null && "".Equals(this.gridHoanCong.Rows[i].Cells["hc_ChiSo"].Value + ""))
                         {
                             this.gridHoanCong.Rows[i].Cells["hc_ChiSo"].ErrorText = "Chi Số Ko Được Trống";
@@ -235,7 +247,8 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
                         }
                         DAL.C_KH_HoanCong.HoanCong(shs, DateTime.ParseExact(ngaytc, "dd/MM/yyyy", null), int.Parse(chiso), sothanTLK, HoanCong);
                     }
-
+                    this.btInBangKe.Enabled = true;
+                        
                 }
                 //DAL.C_KH_HoanCong.CapNhat();
             }

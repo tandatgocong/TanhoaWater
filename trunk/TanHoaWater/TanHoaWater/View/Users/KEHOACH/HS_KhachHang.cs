@@ -739,15 +739,15 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
 
         private void soho_ValueChanged(object sender, EventArgs e)
         {
-            if (soho.Value > 1)
-            {
-                txtDanhBo.Text = "(ĐD " + soho.Value + " Hộ)";
-                cbLoaiKH.Text = "Tập Thể";
-            }
-            else {
-                txtDanhBo.Text = null;
-                cbLoaiKH.Text = "Cá Nhân";
-            }
+            //if (soho.Value > 1)
+            //{
+            //    txtDanhBo.Text = "(ĐD " + soho.Value + " Hộ)";
+            //    cbLoaiKH.Text = "Tập Thể";
+            //}
+            //else {
+            //    txtDanhBo.Text = null;
+            //    cbLoaiKH.Text = "Cá Nhân";
+            //}
 
         }
 

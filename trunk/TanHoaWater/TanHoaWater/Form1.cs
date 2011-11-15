@@ -19,11 +19,11 @@ namespace TanHoaWater
         {
             InitializeComponent();
 
-            ReportDocument rp = new rpt_DanhSachHSTC_DOIMP();
-            rp.SetDataSource(DAL.C_KH_DotThiCong.BC_DanhSachDotThiCong_OC("QTP-TTT-/111"));
-            rp.SetParameterValue("MaCT", "toi va anh");
-            crystalReportViewer1.ReportSource = rp;
-            //this.labelX1.Text = Utilities.FormatSoHoSoDanhBo.sodanhbo("13132104137");
+            //ReportDocument rp = new rpt_DanhSachHSTC_DOIMP();
+            //rp.SetDataSource(DAL.C_KH_DotThiCong.BC_DanhSachDotThiCong_OC("QTP-TTT-/111"));
+            //rp.SetParameterValue("MaCT", "toi va anh");
+            //crystalReportViewer1.ReportSource = rp;
+            //this.labelX1.Text = Utilities.Strings.convertToUnSign("Nguyễn Bình Lâm Thanh An, Bình, Quân, Hương, Việt, Nguyễn Bá Tuyển(c29), Nguyễn Trọng Tuyển");
 
         }
     }

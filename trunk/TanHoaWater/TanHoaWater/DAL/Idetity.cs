@@ -66,9 +66,17 @@ namespace TanHoaWater.DAL
                  
             }
             
-
             return id;
 
+        }
+        public static string IdentitySoHopDong(string sohodong) {
+            if (sohodong.Length == 7)
+            {
+                String_Indentity.String_Indentity obj = new String_Indentity.String_Indentity();
+                sohodong = obj.ID(sohodong.Substring(0, 2), sohodong.Substring(2, 5), "00000");
+            }
+            return sohodong;
+       
         }
     }
 }

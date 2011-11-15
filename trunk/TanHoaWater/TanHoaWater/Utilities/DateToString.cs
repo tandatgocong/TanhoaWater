@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace TanHoaWater.Utilities
 {
@@ -128,6 +129,36 @@ namespace TanHoaWater.Utilities
                 
             }
             return false;
+        }
+
+        //string line = String.Format("{0:0.0}", number);
+        //    string[] words = Regex.Split(line, "\\.");
+        //    if (words.Length == 2)
+        //    {
+        //        return words[0] + "m" + words[1];
+        //    }
+        //    return words[0] + "m";
+
+        public static string convartddMMyyyy(string dateString)
+        {
+            string[] words = Regex.Split(dateString, "\\/");
+            string kq = "";
+            string ngay=words[0];
+            string thang=words[1];
+            string nam=words[2];
+
+            if (int.Parse(ngay) < 10)
+            {
+                ngay = "0" + ngay;
+            }
+
+            if (int.Parse(ngay) < 10)
+            {
+                thang = "0" + thang;
+            }
+             
+            kq = kq + ngay + "/" + thang + "/" + nam;
+            return kq;
         }
     }
 }
