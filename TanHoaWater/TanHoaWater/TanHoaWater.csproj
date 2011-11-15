@@ -102,18 +102,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CrystalReport1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CrystalReport1.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="DAL\C_BaoCao_View.cs" />
     <Compile Include="DAL\C_BienNhanDon.cs" />
     <Compile Include="DAL\C_CongTacBangGia.cs" />
     <Compile Include="DAL\C_DanhMucBoVT.cs" />
     <Compile Include="DAL\C_DanhMucTaiLapMD.cs" />
     <Compile Include="DAL\C_DanhMucVatTu.cs" />
+    <Compile Include="DAL\C_DHN_ChoDanhBo.cs" />
     <Compile Include="DAL\C_DonGiaTaiLapMatDuong.cs" />
     <Compile Include="DAL\C_DonGiaVatTu.cs" />
     <Compile Include="DAL\C_DonKhachHang.cs" />
@@ -205,11 +200,11 @@
     <Compile Include="View\Tool\webBrowser.Designer.cs">
       <DependentUpon>webBrowser.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Users\DONGHONUOC\UCT-CapDanhBo.cs">
+    <Compile Include="View\Users\DONGHONUOC\uct_CapDanhBo.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\Users\DONGHONUOC\UCT-CapDanhBo.Designer.cs">
-      <DependentUpon>UCT-CapDanhBo.cs</DependentUpon>
+    <Compile Include="View\Users\DONGHONUOC\uct_CapDanhBo.Designer.cs">
+      <DependentUpon>uct_CapDanhBo.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Users\KEHOACH\DOTTHICONG\BC\reportValues.cs">
       <SubType>Form</SubType>
@@ -631,10 +626,6 @@
     <None Include="Database\TanHoa.dbml.layout">
       <DependentUpon>TanHoa.dbml</DependentUpon>
     </None>
-    <EmbeddedResource Include="CrystalReport1.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -656,8 +647,8 @@
     <EmbeddedResource Include="View\Tool\webBrowser.resx">
       <DependentUpon>webBrowser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Users\DONGHONUOC\UCT-CapDanhBo.resx">
-      <DependentUpon>UCT-CapDanhBo.cs</DependentUpon>
+    <EmbeddedResource Include="View\Users\DONGHONUOC\uct_CapDanhBo.resx">
+      <DependentUpon>uct_CapDanhBo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\KEHOACH\DOTTHICONG\BC\reportValues.resx">
       <DependentUpon>reportValues.cs</DependentUpon>

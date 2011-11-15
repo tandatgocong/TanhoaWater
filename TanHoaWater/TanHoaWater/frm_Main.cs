@@ -20,6 +20,7 @@ using TanHoaWater.View.Tool;
 using TanHoaWater.View.Users.KEHOACH.XINPHEPDD;
 using TanHoaWater.View.Users.KEHOACH.DOTTHICONG;
 using TanHoaWater.View.Users.KEHOACH.HOANCONG;
+using TanHoaWater.View.Users.DONGHONUOC;
 
 namespace TanHoaWater
 {
@@ -35,8 +36,7 @@ namespace TanHoaWater
             //Thread th = new Thread(new ThreadStart(this.start));
             //th.Start();
             //Thread.Sleep(5000);
-          
-            
+              
             InitializeComponent();
             log4net.Config.XmlConfigurator.Configure();
             //th.Abort();
@@ -403,6 +403,13 @@ namespace TanHoaWater
             this.PanelContent.Controls.Clear();
             this.PanelContent.Controls.Add(new UCT_HOANCONG());
             this.menuKHVT.Select();
+        }
+
+        private void menuNhapDanhBo_Click(object sender, EventArgs e)
+        {
+            this.PanelContent.Controls.Clear();
+            this.PanelContent.Controls.Add(new UCT_CapDanhBo());
+            this.menuQLDHNuoc.Select();
         }
     }
 }

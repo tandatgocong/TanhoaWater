@@ -47,77 +47,106 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
         }
        public void add()
         {
-            if ("".Equals(this.txtSHS.Text))
+            try
             {
-                MessageBox.Show(this, "Số Hồ Sơ Không Được Trống", "", MessageBoxButtons.OK, MessageBoxIcon.Error);               
-                this.txtSHS.Focus();
-            }
-            else
-            {
-                KH_HOSOKHACHHANG kh_sh = DAL.C_KH_HoSoKhachHang.findBySHS(this.txtSHS.Text.Trim());
-                BG_KHOILUONGXDCB xdcb = DAL.C_KhoiLuongXDCB.findBySHS(this.txtSHS.Text.Trim());
-                if (kh_sh == null)
+                if ("".Equals(this.txtSHS.Text))
                 {
-                    kh_sh = new KH_HOSOKHACHHANG();
-                    kh_sh.SHS = this.txtSHS.Text;
-                    kh_sh.MADOTTC = _madot;
-                    kh_sh.COTLK = int.Parse(this.cbCoTLK.Text);
-                    if (xdcb != null) {
-                        kh_sh.CPVATTU = xdcb.CPVATTU;
-                        kh_sh.CPNHANCONG = xdcb.CPNHANCONG;
-                        kh_sh.CPMAYTHICONG = xdcb.CPMAYTHICONG;
-                        kh_sh.CPCABA =xdcb.CPCABA;
-                        kh_sh.CHIPHITRUCTIEP =xdcb.CHIPHITRUCTIEP;
-                        kh_sh.CHIPHICHUNG = xdcb.CHIPHICHUNG;
-                        kh_sh.TAILAPMATDUONG = xdcb.TAILAPMATDUONG;
-                        kh_sh.TLMDTRUOCTHUE =xdcb.TLMDTRUOCTHUE;
-                        kh_sh.CONG1 = xdcb.CONG1;
-                        kh_sh.THUE55 =xdcb.THUE55;
-                        kh_sh.CONG3 = xdcb.CONG3;
-                        kh_sh.THUEGTGT = xdcb.THUEGTGT;
-                        kh_sh.TONGIATRI = xdcb.TONGIATRI;
-                        kh_sh.CPGAN = xdcb.CPGAN;
-                        kh_sh.CPNHUA = xdcb.CPNHUA;
-                    }
-                    kh_sh.MODIFYDATE = DateTime.Now;
-                    kh_sh.CREATEBY = DAL.C_USERS._userName;
-                    kh_sh.CREATEDATE = DateTime.Now.Date;
-                    if (DAL.C_KH_HoSoKhachHang.Insert(kh_sh) == false)
-                    {// co roi do len dot thi cong truoc
-                        MessageBox.Show(this, "Thêm Hồ Sơ Xin Phép Bị lỗi !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        this.txtSHS.Focus();
-                        refesh();
-                    }
+                    MessageBox.Show(this, "Số Hồ Sơ Không Được Trống", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    this.txtSHS.Focus();
                 }
                 else
                 {
-                    kh_sh.MADOTTC = _madot;
-                    kh_sh.COTLK = int.Parse(this.cbCoTLK.Text);
-                    kh_sh.MODIFYBY = DAL.C_USERS._userName;
-                    kh_sh.MODIFYDATE = DateTime.Now;
-                    if (xdcb != null)
+                    KH_HOSOKHACHHANG kh_sh = DAL.C_KH_HoSoKhachHang.findBySHS(this.txtSHS.Text.Trim());
+                    DON_KHACHHANG donkh = DAL.C_DonKhachHang.findBySOHOSO(this.txtSHS.Text.Trim());
+                    BG_KHOILUONGXDCB xdcb = DAL.C_KhoiLuongXDCB.findBySHS(this.txtSHS.Text.Trim());
+                    if (kh_sh == null)
                     {
-                        kh_sh.CPVATTU = xdcb.CPVATTU;
-                        kh_sh.CPNHANCONG = xdcb.CPNHANCONG;
-                        kh_sh.CPMAYTHICONG = xdcb.CPMAYTHICONG;
-                        kh_sh.CPCABA = xdcb.CPCABA;
-                        kh_sh.CHIPHITRUCTIEP = xdcb.CHIPHITRUCTIEP;
-                        kh_sh.CHIPHICHUNG = xdcb.CHIPHICHUNG;
-                        kh_sh.TAILAPMATDUONG = xdcb.TAILAPMATDUONG;
-                        kh_sh.TLMDTRUOCTHUE = xdcb.TLMDTRUOCTHUE;
-                        kh_sh.CONG1 = xdcb.CONG1;
-                        kh_sh.THUE55 = xdcb.THUE55;
-                        kh_sh.CONG3 = xdcb.CONG3;
-                        kh_sh.THUEGTGT = xdcb.THUEGTGT;
-                        kh_sh.TONGIATRI = xdcb.TONGIATRI;
-                        kh_sh.CPGAN = xdcb.CPGAN;
-                        kh_sh.CPNHUA = xdcb.CPNHUA;
+                        kh_sh = new KH_HOSOKHACHHANG();
+                        kh_sh.SHS = this.txtSHS.Text;
+                        kh_sh.MADOTTC = _madot;
+                        kh_sh.COTLK = int.Parse(this.cbCoTLK.Text);
+                        if (xdcb != null)
+                        {
+                            kh_sh.CPVATTU = xdcb.CPVATTU;
+                            kh_sh.CPNHANCONG = xdcb.CPNHANCONG;
+                            kh_sh.CPMAYTHICONG = xdcb.CPMAYTHICONG;
+                            kh_sh.CPCABA = xdcb.CPCABA;
+                            kh_sh.CHIPHITRUCTIEP = xdcb.CHIPHITRUCTIEP;
+                            kh_sh.CHIPHICHUNG = xdcb.CHIPHICHUNG;
+                            kh_sh.TAILAPMATDUONG = xdcb.TAILAPMATDUONG;
+                            kh_sh.TLMDTRUOCTHUE = xdcb.TLMDTRUOCTHUE;
+                            kh_sh.CONG1 = xdcb.CONG1;
+                            kh_sh.THUE55 = xdcb.THUE55;
+                            kh_sh.CONG3 = xdcb.CONG3;
+                            kh_sh.THUEGTGT = xdcb.THUEGTGT;
+                            kh_sh.TONGIATRI = xdcb.TONGIATRI;
+                            kh_sh.CPGAN = xdcb.CPGAN;
+                            kh_sh.CPNHUA = xdcb.CPNHUA;
+                        }
+                        if (donkh != null)
+                        {
+                            kh_sh.DHN_HOTEN = Utilities.Strings.convertToUnSign(donkh.HOTEN.Replace("(ĐD " + donkh.SOHO + " Hộ)", ""));
+                            kh_sh.DHN_SONHA = Utilities.Strings.convertToUnSign(donkh.SONHA);
+                            kh_sh.DHN_DIACHI = Utilities.Strings.convertToUnSign(donkh.DUONG);
+                            kh_sh.DHN_MAQUANPHUONG = donkh.QUAN + "" + donkh.PHUONG;
+                        }
+                        kh_sh.DHN_GIABIEU = 11;
+                        kh_sh.DHN_DMGOC = 0;
+                        kh_sh.DHN_DMCAPBU = 0;
+                        kh_sh.DHN_SOHO = 0;
+                        kh_sh.DHN_SONHANKHAU = 0;
+                        kh_sh.MODIFYDATE = DateTime.Now;
+                        kh_sh.CREATEBY = DAL.C_USERS._userName;
+                        kh_sh.CREATEDATE = DateTime.Now.Date;
+                        if (DAL.C_KH_HoSoKhachHang.Insert(kh_sh) == false)
+                        {// co roi do len dot thi cong truoc
+                            MessageBox.Show(this, "Thêm Hồ Sơ Xin Phép Bị lỗi !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            this.txtSHS.Focus();
+                            refesh();
+                        }
                     }
-                    //  kh_sh
-                    DAL.C_KH_HoSoKhachHang.Update();
+                    else
+                    {
+                        kh_sh.MADOTTC = _madot;
+                        kh_sh.COTLK = int.Parse(this.cbCoTLK.Text);
+                        kh_sh.MODIFYBY = DAL.C_USERS._userName;
+                        kh_sh.MODIFYDATE = DateTime.Now;
+                        if (xdcb != null)
+                        {
+                            kh_sh.CPVATTU = xdcb.CPVATTU;
+                            kh_sh.CPNHANCONG = xdcb.CPNHANCONG;
+                            kh_sh.CPMAYTHICONG = xdcb.CPMAYTHICONG;
+                            kh_sh.CPCABA = xdcb.CPCABA;
+                            kh_sh.CHIPHITRUCTIEP = xdcb.CHIPHITRUCTIEP;
+                            kh_sh.CHIPHICHUNG = xdcb.CHIPHICHUNG;
+                            kh_sh.TAILAPMATDUONG = xdcb.TAILAPMATDUONG;
+                            kh_sh.TLMDTRUOCTHUE = xdcb.TLMDTRUOCTHUE;
+                            kh_sh.CONG1 = xdcb.CONG1;
+                            kh_sh.THUE55 = xdcb.THUE55;
+                            kh_sh.CONG3 = xdcb.CONG3;
+                            kh_sh.THUEGTGT = xdcb.THUEGTGT;
+                            kh_sh.TONGIATRI = xdcb.TONGIATRI;
+                            kh_sh.CPGAN = xdcb.CPGAN;
+                            kh_sh.CPNHUA = xdcb.CPNHUA;
+                        }
+                        if (donkh != null)
+                        {
+                            kh_sh.DHN_HOTEN = Utilities.Strings.convertToUnSign(donkh.HOTEN.Replace("(ĐD " + donkh.SOHO + " Hộ)", ""));
+                            kh_sh.DHN_SONHA = Utilities.Strings.convertToUnSign(donkh.SONHA);
+                            kh_sh.DHN_DIACHI = Utilities.Strings.convertToUnSign(donkh.DUONG);
+                            kh_sh.DHN_MAQUANPHUONG = donkh.QUAN + "" + donkh.PHUONG;
+                        }
+                        //  kh_sh
+                        DAL.C_KH_HoSoKhachHang.Update();
+                    }
                 }
-            }
       
+            }
+            catch (Exception ex)
+            {
+                log.Error("add ho so kh -> ke hoach khLoi" + ex.Message);
+            }
+            
             loadDataGrid();
         }
      public void loadDataGrid()

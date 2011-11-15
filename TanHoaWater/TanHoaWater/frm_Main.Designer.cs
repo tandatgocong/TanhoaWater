@@ -74,12 +74,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.reflectionLabel1 = new DevComponents.DotNetBar.Controls.ReflectionLabel();
             this.ribbonControl1 = new DevComponents.DotNetBar.RibbonControl();
-            this.ribbonPanel1 = new DevComponents.DotNetBar.RibbonPanel();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.subdangnhap = new System.Windows.Forms.ToolStripMenuItem();
-            this.subDoiMatKhau = new System.Windows.Forms.ToolStripMenuItem();
-            this.subDangXuat = new System.Windows.Forms.ToolStripMenuItem();
-            this.subThoat = new System.Windows.Forms.ToolStripMenuItem();
+            this.ribbonPanel6 = new DevComponents.DotNetBar.RibbonPanel();
+            this.menuStrip5 = new System.Windows.Forms.MenuStrip();
+            this.menuNhapDanhBo = new System.Windows.Forms.ToolStripMenuItem();
             this.ribbonPanel3 = new DevComponents.DotNetBar.RibbonPanel();
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -93,11 +90,12 @@
             this.xinphepDaoDuong = new System.Windows.Forms.ToolStripMenuItem();
             this.Kh_DotThiCong = new System.Windows.Forms.ToolStripMenuItem();
             this.menuHoanCong = new System.Windows.Forms.ToolStripMenuItem();
-            this.ribbonPanel6 = new DevComponents.DotNetBar.RibbonPanel();
-            this.menuStrip5 = new System.Windows.Forms.MenuStrip();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.ribbonPanel1 = new DevComponents.DotNetBar.RibbonPanel();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.subdangnhap = new System.Windows.Forms.ToolStripMenuItem();
+            this.subDoiMatKhau = new System.Windows.Forms.ToolStripMenuItem();
+            this.subDangXuat = new System.Windows.Forms.ToolStripMenuItem();
+            this.subThoat = new System.Windows.Forms.ToolStripMenuItem();
             this.ribbonPanel4 = new DevComponents.DotNetBar.RibbonPanel();
             this.menuStrip4 = new System.Windows.Forms.MenuStrip();
             this.caculator = new System.Windows.Forms.ToolStripMenuItem();
@@ -156,14 +154,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
             this.ribbonControl1.SuspendLayout();
-            this.ribbonPanel1.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
+            this.ribbonPanel6.SuspendLayout();
+            this.menuStrip5.SuspendLayout();
             this.ribbonPanel3.SuspendLayout();
             this.menuStrip2.SuspendLayout();
             this.ribbonPanel2.SuspendLayout();
             this.menuStrip3.SuspendLayout();
-            this.ribbonPanel6.SuspendLayout();
-            this.menuStrip5.SuspendLayout();
+            this.ribbonPanel1.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.ribbonPanel4.SuspendLayout();
             this.menuStrip4.SuspendLayout();
             this.SuspendLayout();
@@ -754,10 +752,10 @@
             // ribbonControl1
             // 
             this.ribbonControl1.AutoScroll = true;
-            this.ribbonControl1.Controls.Add(this.ribbonPanel1);
+            this.ribbonControl1.Controls.Add(this.ribbonPanel6);
             this.ribbonControl1.Controls.Add(this.ribbonPanel3);
             this.ribbonControl1.Controls.Add(this.ribbonPanel2);
-            this.ribbonControl1.Controls.Add(this.ribbonPanel6);
+            this.ribbonControl1.Controls.Add(this.ribbonPanel1);
             this.ribbonControl1.Controls.Add(this.ribbonPanel4);
             this.ribbonControl1.Controls.Add(this.ribbonPanel5);
             this.ribbonControl1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -783,68 +781,37 @@
             this.ribbonControl1.TabIndex = 0;
             this.ribbonControl1.Text = "menu";
             // 
-            // ribbonPanel1
+            // ribbonPanel6
             // 
-            this.ribbonPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
-            this.ribbonPanel1.Controls.Add(this.menuStrip1);
-            this.ribbonPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ribbonPanel1.Location = new System.Drawing.Point(0, 28);
-            this.ribbonPanel1.Name = "ribbonPanel1";
-            this.ribbonPanel1.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.ribbonPanel1.Size = new System.Drawing.Size(988, 24);
-            this.ribbonPanel1.TabIndex = 1;
+            this.ribbonPanel6.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.ribbonPanel6.Controls.Add(this.menuStrip5);
+            this.ribbonPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ribbonPanel6.Location = new System.Drawing.Point(0, 28);
+            this.ribbonPanel6.Name = "ribbonPanel6";
+            this.ribbonPanel6.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
+            this.ribbonPanel6.Size = new System.Drawing.Size(988, 24);
+            this.ribbonPanel6.TabIndex = 6;
             // 
-            // menuStrip1
+            // menuStrip5
             // 
-            this.menuStrip1.BackColor = System.Drawing.Color.Transparent;
-            this.menuStrip1.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.subdangnhap,
-            this.subDoiMatKhau,
-            this.subDangXuat,
-            this.subThoat});
-            this.menuStrip1.Location = new System.Drawing.Point(3, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(982, 25);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip5.BackColor = System.Drawing.Color.Transparent;
+            this.menuStrip5.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold);
+            this.menuStrip5.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuNhapDanhBo});
+            this.menuStrip5.Location = new System.Drawing.Point(3, 0);
+            this.menuStrip5.Name = "menuStrip5";
+            this.menuStrip5.Size = new System.Drawing.Size(982, 25);
+            this.menuStrip5.TabIndex = 2;
+            this.menuStrip5.Text = "menuStrip5";
             // 
-            // subdangnhap
+            // menuNhapDanhBo
             // 
-            this.subdangnhap.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.subdangnhap.Image = global::TanHoaWater.Properties.Resources.mokhoa;
-            this.subdangnhap.Name = "subdangnhap";
-            this.subdangnhap.Size = new System.Drawing.Size(108, 21);
-            this.subdangnhap.Text = "Đăng Nhập";
-            this.subdangnhap.Click += new System.EventHandler(this.subdangnhap_Click);
-            // 
-            // subDoiMatKhau
-            // 
-            this.subDoiMatKhau.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.subDoiMatKhau.Image = global::TanHoaWater.Properties.Resources.doimk;
-            this.subDoiMatKhau.Name = "subDoiMatKhau";
-            this.subDoiMatKhau.Size = new System.Drawing.Size(123, 21);
-            this.subDoiMatKhau.Text = "Đổi mật khẩu";
-            this.subDoiMatKhau.Visible = false;
-            // 
-            // subDangXuat
-            // 
-            this.subDangXuat.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.subDangXuat.Image = global::TanHoaWater.Properties.Resources.Lock;
-            this.subDangXuat.Name = "subDangXuat";
-            this.subDangXuat.Size = new System.Drawing.Size(102, 21);
-            this.subDangXuat.Text = "Đăng xuất";
-            this.subDangXuat.Visible = false;
-            this.subDangXuat.Click += new System.EventHandler(this.subDangXuat_Click);
-            // 
-            // subThoat
-            // 
-            this.subThoat.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.subThoat.Image = global::TanHoaWater.Properties.Resources.thoat;
-            this.subThoat.Name = "subThoat";
-            this.subThoat.Size = new System.Drawing.Size(74, 21);
-            this.subThoat.Text = "Thoát";
-            this.subThoat.Click += new System.EventHandler(this.subThoat_Click);
+            this.menuNhapDanhBo.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.menuNhapDanhBo.Image = global::TanHoaWater.Properties.Resources.giaohoso;
+            this.menuNhapDanhBo.Name = "menuNhapDanhBo";
+            this.menuNhapDanhBo.Size = new System.Drawing.Size(239, 21);
+            this.menuNhapDanhBo.Text = "Nhập Danh Bộ && Số Hợp Đồng";
+            this.menuNhapDanhBo.Click += new System.EventHandler(this.menuNhapDanhBo_Click);
             // 
             // ribbonPanel3
             // 
@@ -982,55 +949,69 @@
             this.menuHoanCong.Text = "Hoàn Công";
             this.menuHoanCong.Click += new System.EventHandler(this.menuHoanCong_Click);
             // 
-            // ribbonPanel6
+            // ribbonPanel1
             // 
-            this.ribbonPanel6.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
-            this.ribbonPanel6.Controls.Add(this.menuStrip5);
-            this.ribbonPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ribbonPanel6.Location = new System.Drawing.Point(0, 28);
-            this.ribbonPanel6.Name = "ribbonPanel6";
-            this.ribbonPanel6.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.ribbonPanel6.Size = new System.Drawing.Size(988, 24);
-            this.ribbonPanel6.TabIndex = 6;
-            this.ribbonPanel6.Visible = false;
+            this.ribbonPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.ribbonPanel1.Controls.Add(this.menuStrip1);
+            this.ribbonPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ribbonPanel1.Location = new System.Drawing.Point(0, 28);
+            this.ribbonPanel1.Name = "ribbonPanel1";
+            this.ribbonPanel1.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
+            this.ribbonPanel1.Size = new System.Drawing.Size(988, 24);
+            this.ribbonPanel1.TabIndex = 1;
+            this.ribbonPanel1.Visible = false;
             // 
-            // menuStrip5
+            // menuStrip1
             // 
-            this.menuStrip5.BackColor = System.Drawing.Color.Transparent;
-            this.menuStrip5.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold);
-            this.menuStrip5.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem2,
-            this.toolStripMenuItem3,
-            this.toolStripMenuItem4});
-            this.menuStrip5.Location = new System.Drawing.Point(3, 0);
-            this.menuStrip5.Name = "menuStrip5";
-            this.menuStrip5.Size = new System.Drawing.Size(982, 25);
-            this.menuStrip5.TabIndex = 2;
-            this.menuStrip5.Text = "menuStrip5";
+            this.menuStrip1.BackColor = System.Drawing.Color.Transparent;
+            this.menuStrip1.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.subdangnhap,
+            this.subDoiMatKhau,
+            this.subDangXuat,
+            this.subThoat});
+            this.menuStrip1.Location = new System.Drawing.Point(3, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(982, 25);
+            this.menuStrip1.TabIndex = 0;
+            this.menuStrip1.Text = "menuStrip1";
             // 
-            // toolStripMenuItem2
+            // subdangnhap
             // 
-            this.toolStripMenuItem2.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.toolStripMenuItem2.Image = global::TanHoaWater.Properties.Resources.giaohoso;
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(118, 21);
-            this.toolStripMenuItem2.Text = "Nhận  Hồ Sơ";
+            this.subdangnhap.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.subdangnhap.Image = global::TanHoaWater.Properties.Resources.mokhoa;
+            this.subdangnhap.Name = "subdangnhap";
+            this.subdangnhap.Size = new System.Drawing.Size(108, 21);
+            this.subdangnhap.Text = "Đăng Nhập";
+            this.subdangnhap.Click += new System.EventHandler(this.subdangnhap_Click);
             // 
-            // toolStripMenuItem3
+            // subDoiMatKhau
             // 
-            this.toolStripMenuItem3.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.toolStripMenuItem3.Image = global::TanHoaWater.Properties.Resources.dutoan;
-            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(130, 21);
-            this.toolStripMenuItem3.Text = "Tính Dự Toán ";
+            this.subDoiMatKhau.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.subDoiMatKhau.Image = global::TanHoaWater.Properties.Resources.doimk;
+            this.subDoiMatKhau.Name = "subDoiMatKhau";
+            this.subDoiMatKhau.Size = new System.Drawing.Size(123, 21);
+            this.subDoiMatKhau.Text = "Đổi mật khẩu";
+            this.subDoiMatKhau.Visible = false;
             // 
-            // toolStripMenuItem4
+            // subDangXuat
             // 
-            this.toolStripMenuItem4.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.toolStripMenuItem4.Image = global::TanHoaWater.Properties.Resources.Ok;
-            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(160, 21);
-            this.toolStripMenuItem4.Text = "Hoàn Tất Thiết Kế";
+            this.subDangXuat.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.subDangXuat.Image = global::TanHoaWater.Properties.Resources.Lock;
+            this.subDangXuat.Name = "subDangXuat";
+            this.subDangXuat.Size = new System.Drawing.Size(102, 21);
+            this.subDangXuat.Text = "Đăng xuất";
+            this.subDangXuat.Visible = false;
+            this.subDangXuat.Click += new System.EventHandler(this.subDangXuat_Click);
+            // 
+            // subThoat
+            // 
+            this.subThoat.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.subThoat.Image = global::TanHoaWater.Properties.Resources.thoat;
+            this.subThoat.Name = "subThoat";
+            this.subThoat.Size = new System.Drawing.Size(74, 21);
+            this.subThoat.Text = "Thoát";
+            this.subThoat.Click += new System.EventHandler(this.subThoat_Click);
             // 
             // ribbonPanel4
             // 
@@ -1120,7 +1101,6 @@
             // 
             // menuHeThong
             // 
-            this.menuHeThong.Checked = true;
             this.menuHeThong.Name = "menuHeThong";
             this.menuHeThong.Panel = this.ribbonPanel1;
             this.menuHeThong.Text = "Trang Chủ";
@@ -1142,6 +1122,7 @@
             // 
             // menuQLDHNuoc
             // 
+            this.menuQLDHNuoc.Checked = true;
             this.menuQLDHNuoc.Name = "menuQLDHNuoc";
             this.menuQLDHNuoc.Panel = this.ribbonPanel6;
             this.menuQLDHNuoc.Text = "Đội Quản Lý ĐHN";
@@ -1388,10 +1369,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
             this.ribbonControl1.ResumeLayout(false);
             this.ribbonControl1.PerformLayout();
-            this.ribbonPanel1.ResumeLayout(false);
-            this.ribbonPanel1.PerformLayout();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.ribbonPanel6.ResumeLayout(false);
+            this.ribbonPanel6.PerformLayout();
+            this.menuStrip5.ResumeLayout(false);
+            this.menuStrip5.PerformLayout();
             this.ribbonPanel3.ResumeLayout(false);
             this.ribbonPanel3.PerformLayout();
             this.menuStrip2.ResumeLayout(false);
@@ -1400,10 +1381,10 @@
             this.ribbonPanel2.PerformLayout();
             this.menuStrip3.ResumeLayout(false);
             this.menuStrip3.PerformLayout();
-            this.ribbonPanel6.ResumeLayout(false);
-            this.ribbonPanel6.PerformLayout();
-            this.menuStrip5.ResumeLayout(false);
-            this.menuStrip5.PerformLayout();
+            this.ribbonPanel1.ResumeLayout(false);
+            this.ribbonPanel1.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ribbonPanel4.ResumeLayout(false);
             this.ribbonPanel4.PerformLayout();
             this.menuStrip4.ResumeLayout(false);
@@ -1515,9 +1496,7 @@
         private DevComponents.DotNetBar.RibbonPanel ribbonPanel6;
         private DevComponents.DotNetBar.RibbonTabItem menuQLDHNuoc;
         private System.Windows.Forms.MenuStrip menuStrip5;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
+        private System.Windows.Forms.ToolStripMenuItem menuNhapDanhBo;
 
     }
 }
