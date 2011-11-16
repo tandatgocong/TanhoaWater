@@ -108,6 +108,7 @@
     <Compile Include="DAL\C_DanhMucBoVT.cs" />
     <Compile Include="DAL\C_DanhMucTaiLapMD.cs" />
     <Compile Include="DAL\C_DanhMucVatTu.cs" />
+    <Compile Include="DAL\C_DHN_HoKhau.cs" />
     <Compile Include="DAL\C_DHN_ChoDanhBo.cs" />
     <Compile Include="DAL\C_DonGiaTaiLapMatDuong.cs" />
     <Compile Include="DAL\C_DonGiaVatTu.cs" />
@@ -199,6 +200,12 @@
     </Compile>
     <Compile Include="View\Tool\webBrowser.Designer.cs">
       <DependentUpon>webBrowser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Users\DONGHONUOC\frm_NhapSoHoKhau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Users\DONGHONUOC\frm_NhapSoHoKhau.Designer.cs">
+      <DependentUpon>frm_NhapSoHoKhau.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Users\DONGHONUOC\uct_CapDanhBo.cs">
       <SubType>UserControl</SubType>
@@ -646,6 +653,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Tool\webBrowser.resx">
       <DependentUpon>webBrowser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\DONGHONUOC\frm_NhapSoHoKhau.resx">
+      <DependentUpon>frm_NhapSoHoKhau.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\DONGHONUOC\uct_CapDanhBo.resx">
       <DependentUpon>uct_CapDanhBo.cs</DependentUpon>

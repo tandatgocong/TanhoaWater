@@ -65,6 +65,7 @@
             // 
             // panel8
             // 
+            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
             this.panel8.Controls.Add(this.groupPanel1);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel8.Location = new System.Drawing.Point(0, 0);

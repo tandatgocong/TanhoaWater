@@ -72,23 +72,25 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
 
             }
         }
-
-        private void cbDotHoanCong_SelectedIndexChanged(object sender, EventArgs e)
-        {
+        public void hoantat() {
             try
             {
-               if(checkALl.Checked)
-                   gridHoanCong.DataSource = DAL.C_KH_HoanCong.getListHoanCong(this.cbDotHoanCong.Text, 0);
-               else if(checkChuaHoanCong.Checked)
-                   gridHoanCong.DataSource = DAL.C_KH_HoanCong.getListHoanCong(this.cbDotHoanCong.Text, -1);
-               else if (chekDaHoanCong.Checked)
-                   gridHoanCong.DataSource = DAL.C_KH_HoanCong.getListHoanCong(this.cbDotHoanCong.Text, 1);
+                if (checkALl.Checked)
+                    gridHoanCong.DataSource = DAL.C_KH_HoanCong.getListHoanCong(this.cbDotHoanCong.Text, 0);
+                else if (checkChuaHoanCong.Checked)
+                    gridHoanCong.DataSource = DAL.C_KH_HoanCong.getListHoanCong(this.cbDotHoanCong.Text, -1);
+                else if (chekDaHoanCong.Checked)
+                    gridHoanCong.DataSource = DAL.C_KH_HoanCong.getListHoanCong(this.cbDotHoanCong.Text, 1);
 
             }
             catch (Exception)
             {
 
             }
+        }
+        private void cbDotHoanCong_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            hoantat();
         }
 
         private void gridHoanCong_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -247,10 +249,11 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
                         }
                         DAL.C_KH_HoanCong.HoanCong(shs, DateTime.ParseExact(ngaytc, "dd/MM/yyyy", null), int.Parse(chiso), sothanTLK, HoanCong);
                     }
-                    this.btInBangKe.Enabled = true;
-                        
+                   
                 }
-                //DAL.C_KH_HoanCong.CapNhat();
+                MessageBox.Show(this, "Hoàn Tất.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.btInBangKe.Enabled = true;
+                hoantat();
             }
             catch (Exception ex)
             {
@@ -302,6 +305,11 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
                 rpt.ShowDialog();
             }
            
+        }
+
+        private void gridHoanCong_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+
         }
     }
 }

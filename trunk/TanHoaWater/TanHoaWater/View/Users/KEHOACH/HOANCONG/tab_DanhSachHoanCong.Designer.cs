@@ -136,6 +136,7 @@
             this.gridHoanCong.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridHoanCong_CellClick);
             this.gridHoanCong.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridHoanCong_CellLeave);
             this.gridHoanCong.CellValidated += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridHoanCong_CellValidated);
+            this.gridHoanCong.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.gridHoanCong_DataError);
             this.gridHoanCong.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.gridHoanCong_EditingControlShowing);
             // 
             // hc_SHS
