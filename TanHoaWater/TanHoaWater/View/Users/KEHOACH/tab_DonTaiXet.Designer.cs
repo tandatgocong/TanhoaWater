@@ -32,8 +32,8 @@
             this.panelEx2 = new DevComponents.DotNetBar.PanelEx();
             this.refresh = new DevComponents.DotNetBar.ButtonX();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.nguoiduyetDon = new System.Windows.Forms.Label();
             this.CD_NguoiDuyetDon = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.nguoiduyetDon = new System.Windows.Forms.Label();
             this.btChuyenDon = new DevComponents.DotNetBar.ButtonX();
             this.dataG = new System.Windows.Forms.DataGridView();
             this.SOHOSO = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -158,17 +158,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Danh Sách Hồ Sơ Tái Xét Chưa Chuyển";
             // 
-            // nguoiduyetDon
-            // 
-            this.nguoiduyetDon.AutoSize = true;
-            this.nguoiduyetDon.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nguoiduyetDon.ForeColor = System.Drawing.Color.Maroon;
-            this.nguoiduyetDon.Location = new System.Drawing.Point(591, 250);
-            this.nguoiduyetDon.Name = "nguoiduyetDon";
-            this.nguoiduyetDon.Size = new System.Drawing.Size(93, 16);
-            this.nguoiduyetDon.TabIndex = 133;
-            this.nguoiduyetDon.Text = "Người Duyệt";
-            // 
             // CD_NguoiDuyetDon
             // 
             this.CD_NguoiDuyetDon.DisplayMember = "Text";
@@ -180,6 +169,17 @@
             this.CD_NguoiDuyetDon.Name = "CD_NguoiDuyetDon";
             this.CD_NguoiDuyetDon.Size = new System.Drawing.Size(152, 22);
             this.CD_NguoiDuyetDon.TabIndex = 132;
+            // 
+            // nguoiduyetDon
+            // 
+            this.nguoiduyetDon.AutoSize = true;
+            this.nguoiduyetDon.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nguoiduyetDon.ForeColor = System.Drawing.Color.Maroon;
+            this.nguoiduyetDon.Location = new System.Drawing.Point(591, 250);
+            this.nguoiduyetDon.Name = "nguoiduyetDon";
+            this.nguoiduyetDon.Size = new System.Drawing.Size(93, 16);
+            this.nguoiduyetDon.TabIndex = 133;
+            this.nguoiduyetDon.Text = "Người Duyệt";
             // 
             // btChuyenDon
             // 
