@@ -172,7 +172,7 @@
             // 
             // mainLayout
             // 
-            this.mainLayout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
+            this.mainLayout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(206)))), ((int)(((byte)(236)))));
             this.mainLayout.Controls.Add(this.PanelContent);
             this.mainLayout.Controls.Add(this.ribbonControl1);
             this.mainLayout.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -185,7 +185,6 @@
             // 
             // PanelContent
             // 
-            this.PanelContent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
             this.PanelContent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PanelContent.Controls.Add(this.PanelMain);
             this.PanelContent.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -196,7 +195,6 @@
             // 
             // PanelMain
             // 
-            this.PanelMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
             this.PanelMain.Controls.Add(this.lbNgayHeThong);
             this.PanelMain.Controls.Add(this.iconMenuPanel);
             this.PanelMain.Controls.Add(this.group_VTTH);
@@ -1334,7 +1332,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(988, 671);
             this.Controls.Add(this.mainLayout);
             this.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
