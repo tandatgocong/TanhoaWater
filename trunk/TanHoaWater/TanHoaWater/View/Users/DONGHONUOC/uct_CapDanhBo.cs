@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
 using log4net;
+using TanHoaWater.Database;
 
 namespace TanHoaWater.View.Users.DONGHONUOC
 {
@@ -198,29 +199,33 @@ namespace TanHoaWater.View.Users.DONGHONUOC
                 {
                     if (gridHoanCong.Rows[gridHoanCong.CurrentCell.RowIndex].Cells["hc_ngaythicong"].Value != null && !"".Equals(gridHoanCong.Rows[gridHoanCong.CurrentCell.RowIndex].Cells["hc_ngaythicong"].Value + "") && gridHoanCong.Rows[gridHoanCong.CurrentCell.RowIndex].Cells["hc_hieuLuc"].Value != null && !"".Equals(gridHoanCong.Rows[gridHoanCong.CurrentCell.RowIndex].Cells["hc_hieuLuc"].Value + ""))
                     {
-                        string[] ngaytc = Regex.Split(gridHoanCong.Rows[gridHoanCong.CurrentCell.RowIndex].Cells["hc_ngaythicong"].Value + "", "\\/");
-                        string[] ngayhl = Regex.Split(gridHoanCong.Rows[gridHoanCong.CurrentCell.RowIndex].Cells["hc_hieuLuc"].Value + "", "\\/");
-                        int namhl = int.Parse(ngayhl[1]);
-                        int namtc = int.Parse(ngaytc[2]);
-                        int thanghl = int.Parse(ngayhl[0]);
-                        int thangtc = int.Parse(ngaytc[1]);
-
-                        if (namhl==namtc && thanghl >= thangtc)
+                        if (int.Parse(gridHoanCong.Rows[gridHoanCong.CurrentCell.RowIndex].Cells["hc_DMucGoc"].Value + "") > 0)
                         {
-                            int dmcapnu = int.Parse(gridHoanCong.Rows[gridHoanCong.CurrentCell.RowIndex].Cells["hc_DMucGoc"].Value + "") * (int.Parse(ngayhl[0]) - int.Parse(ngaytc[1]));
-                            gridHoanCong.Rows[gridHoanCong.CurrentCell.RowIndex].Cells["hc_DMCapBu"].Value = dmcapnu;
-                        }
-                        else if (namhl==namtc && thanghl < thangtc)
-                        {
-                            MessageBox.Show(this, "Ngày Hiệu Lực Kỳ Nhỏ Hơn Ngày Thi Công", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                        else if (namhl > namtc) {
-                            gridHoanCong.Rows[gridHoanCong.CurrentCell.RowIndex].Cells["hc_DMCapBu"].Value = int.Parse(gridHoanCong.Rows[gridHoanCong.CurrentCell.RowIndex].Cells["hc_DMucGoc"].Value + "") *( (namhl - namtc) * 12 + (thanghl - thangtc));
-                        }
-                        else if (namhl < namtc) {
-                            MessageBox.Show(this, "Ngày Hiệu Lực Kỳ Nhỏ Hơn Ngày Thi Công", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
+                            string[] ngaytc = Regex.Split(gridHoanCong.Rows[gridHoanCong.CurrentCell.RowIndex].Cells["hc_ngaythicong"].Value + "", "\\/");
+                            string[] ngayhl = Regex.Split(gridHoanCong.Rows[gridHoanCong.CurrentCell.RowIndex].Cells["hc_hieuLuc"].Value + "", "\\/");
+                            int namhl = int.Parse(ngayhl[1]);
+                            int namtc = int.Parse(ngaytc[2]);
+                            int thanghl = int.Parse(ngayhl[0]);
+                            int thangtc = int.Parse(ngaytc[1]);
 
+                            if (namhl == namtc && thanghl >= thangtc)
+                            {
+                                int dmcapnu = int.Parse(gridHoanCong.Rows[gridHoanCong.CurrentCell.RowIndex].Cells["hc_DMucGoc"].Value + "") * (int.Parse(ngayhl[0]) - int.Parse(ngaytc[1]));
+                                gridHoanCong.Rows[gridHoanCong.CurrentCell.RowIndex].Cells["hc_DMCapBu"].Value = dmcapnu;
+                            }
+                            else if (namhl == namtc && thanghl < thangtc)
+                            {
+                                MessageBox.Show(this, "Ngày Hiệu Lực Kỳ Nhỏ Hơn Ngày Thi Công", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                            else if (namhl > namtc)
+                            {
+                                gridHoanCong.Rows[gridHoanCong.CurrentCell.RowIndex].Cells["hc_DMCapBu"].Value = int.Parse(gridHoanCong.Rows[gridHoanCong.CurrentCell.RowIndex].Cells["hc_DMucGoc"].Value + "") * ((namhl - namtc) * 12 + (thanghl - thangtc));
+                            }
+                            else if (namhl < namtc)
+                            {
+                                MessageBox.Show(this, "Ngày Hiệu Lực Kỳ Nhỏ Hơn Ngày Thi Công", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
                         
                     }
                 }
@@ -337,12 +342,12 @@ namespace TanHoaWater.View.Users.DONGHONUOC
                     if (hc_SoDanhBo.Replace(".", "").Length == 11)
                     {
                         gridHoanCong.Rows[i].Cells["hc_SoDanhBo"].ErrorText = null;
-                        string shs = this.gridHoanCong.Rows[i].Cells["hc_hieuLuc"].Value + "";
+                        string shs = this.gridHoanCong.Rows[i].Cells["hc_shs"].Value + "";
+                        string hc_hopdong = this.gridHoanCong.Rows[i].Cells["hc_hopdong"].Value + "";
                         string hc_hieuLuc = this.gridHoanCong.Rows[i].Cells["hc_hieuLuc"].Value + "";
                         string hc_GiaBieu = this.gridHoanCong.Rows[i].Cells["hc_GiaBieu"].Value + "";
                         string hc_DMucGoc = this.gridHoanCong.Rows[i].Cells["hc_DMucGoc"].Value + "";
                         string hc_DMCapBu = this.gridHoanCong.Rows[i].Cells["hc_DMCapBu"].Value + "";
-                        string hc_hopdong = this.gridHoanCong.Rows[i].Cells["hc_hopdong"].Value + "";
                         string hc_MaDMA = this.gridHoanCong.Rows[i].Cells["hc_MaDMA"].Value + "";
                         string hc_HsCty = this.gridHoanCong.Rows[i].Cells["hc_DHN"].Value + "";
                         string hc_MasothueCT = this.gridHoanCong.Rows[i].Cells["hc_DHN"].Value + "";
@@ -407,7 +412,33 @@ namespace TanHoaWater.View.Users.DONGHONUOC
                         else
                             this.gridHoanCong.Rows[i].Cells["hc_SoNhanKhau"].ErrorText = null;
                         ////////////////////
-
+                        try
+                        {
+                            KH_HOSOKHACHHANG hskh = DAL.C_DHN_ChoDanhBo.findbySHS(shs);
+                            if (hskh != null)
+                            {
+	                             hskh.DHN_SOHOPDONG = hc_hopdong;
+	                             hskh.DHN_GIABIEU = int.Parse(hc_GiaBieu);
+	                             hskh.DHN_DMGOC= int.Parse(hc_DMucGoc);
+	                             hskh.DHN_DMCAPBU=int.Parse(hc_DMCapBu);
+	                             hskh.DHN_SODANHBO=hc_SoDanhBo;
+	                             hskh.DHN_MADMA =hc_MaDMA;
+	                             hskh.DHN_HIEULUC =hc_hieuLuc;
+	                             hskh.DHN_HSCONGTY =hc_HsCty;
+	                             hskh.DHN_MASOTHUE =hc_MasothueCT;
+	                             hskh.DHN_SOHO= int.Parse(hc_SoHo);
+	                             hskh.DHN_SONHANKHAU =int.Parse(hc_SoNhanKhau);
+	                             hskh.DHN_SODOT =this.txtDotBangKe.Text;
+	                             hskh.DHN_CHODB=true;
+                                 hskh.DHN_NGAYCHOSODB = DateTime.Now;
+                                 DAL.C_DHN_ChoDanhBo.UpdateDB();
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            log.Error("Cap Danh Bo Loi" + ex.Message);
+                        }
+                        
 
                     }
                     else if (!"".Equals(hc_SoDanhBo) && hc_SoDanhBo.Replace(".", "").Length != 11)

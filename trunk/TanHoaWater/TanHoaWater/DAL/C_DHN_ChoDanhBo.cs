@@ -38,5 +38,29 @@ namespace TanHoaWater.DAL
             db.Connection.Close();
             return dataset.Tables[0];
         }
+        public static KH_HOSOKHACHHANG findbySHS(string shs) {
+            try
+            {
+                var query = from q in db.KH_HOSOKHACHHANGs where q.SHS == shs select q;
+                return query.SingleOrDefault();
+            }
+            catch (Exception ex)
+            {
+                log.Error("" + ex.Message);
+            }
+            return null;
+        }
+        public static bool UpdateDB() {
+            try
+            {
+                db.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+                log.Error("Cho So Danh Bo Bi Loi :" + ex.Message);
+            }
+            return false;
+        }
+
     }
 }
