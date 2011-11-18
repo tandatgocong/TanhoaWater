@@ -210,6 +210,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>chodanhbo.xsd</DependentUpon>
     </Compile>
+    <Compile Include="View\Users\DONGHONUOC\BC\rpt_DIEUCHINH.cs">
+      <DependentUpon>rpt_DIEUCHINH.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="View\Users\DONGHONUOC\BC\rpt_DANHBO.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -668,6 +674,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Tool\webBrowser.resx">
       <DependentUpon>webBrowser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\DONGHONUOC\BC\rpt_DIEUCHINH.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_DIEUCHINH.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\DONGHONUOC\BC\rpt_DANHBO.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

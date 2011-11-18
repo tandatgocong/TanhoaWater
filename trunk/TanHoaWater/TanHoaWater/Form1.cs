@@ -20,8 +20,8 @@ namespace TanHoaWater
         {
             InitializeComponent();
 
-            ReportDocument rp = new rpt_DANHBO();
-            rp.SetDataSource(DAL.C_DHN_ChoDanhBo.BC_CHODANHBO("TH001"));
+            ReportDocument rp = new rpt_DIEUCHINH();
+            //rp.SetDataSource(DAL.C_DHN_ChoDanhBo.BC_DIEUCHINH("TH001"));
             crystalReportViewer1.ReportSource = rp;
             //this.labelX1.Text = Utilities.Strings.convertToUnSign("Nguyễn Bình Lâm Thanh An, Bình, Quân, Hương, Việt, Nguyễn Bá Tuyển(c29), Nguyễn Trọng Tuyển");
 
