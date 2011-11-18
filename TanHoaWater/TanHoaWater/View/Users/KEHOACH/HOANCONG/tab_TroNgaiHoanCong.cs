@@ -111,8 +111,6 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
             {
                 for (int i = 0; i < gridHoanCong.Rows.Count; i++)
                 {
-                    string ngaytc = "";
-                    string chiso = "";
                     string shs = this.gridHoanCong.Rows[i].Cells["hc_SHS"].Value + "";
                     string tn = this.gridHoanCong.Rows[i].Cells["hc_trongai"].Value + "";
                     string noidung = this.gridHoanCong.Rows[i].Cells["hc_noidungtrongai"].Value + "";
