@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
-            this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.SuspendLayout();
             // 
             // crystalReportViewer1
@@ -43,22 +42,13 @@
             this.crystalReportViewer1.Size = new System.Drawing.Size(1225, 453);
             this.crystalReportViewer1.TabIndex = 0;
             this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
-            // 
-            // labelX1
-            // 
-            this.labelX1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX1.Location = new System.Drawing.Point(56, 98);
-            this.labelX1.Name = "labelX1";
-            this.labelX1.Size = new System.Drawing.Size(1157, 58);
-            this.labelX1.TabIndex = 1;
-            this.labelX1.Text = "labelX1";
+            this.crystalReportViewer1.Load += new System.EventHandler(this.crystalReportViewer1_Load);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1225, 453);
-            this.Controls.Add(this.labelX1);
             this.Controls.Add(this.crystalReportViewer1);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -70,6 +60,5 @@
         #endregion
 
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
-        private DevComponents.DotNetBar.LabelX labelX1;
     }
 }

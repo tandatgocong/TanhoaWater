@@ -24,6 +24,7 @@ namespace TanHoaWater.View.Users.DONGHONUOC
             try
             {
                 gridHoanCong.DataSource = DAL.C_DHN_ChoDanhBo.getListHoanCong(cbDotHoanCong.Text,-1);
+                
             }
             catch (Exception)
             {
@@ -36,6 +37,7 @@ namespace TanHoaWater.View.Users.DONGHONUOC
             try
             {
                 gridHoanCong.DataSource = DAL.C_DHN_ChoDanhBo.getListHoanCong(this.cbDotHoanCong.Text, -1);
+                gridHoanCong.Columns["hc_SoDot"].Visible = false;
             }
             catch (Exception)
             {
@@ -48,6 +50,7 @@ namespace TanHoaWater.View.Users.DONGHONUOC
             try
             {
                 gridHoanCong.DataSource = DAL.C_DHN_ChoDanhBo.getListHoanCong(this.cbDotHoanCong.Text, 1);
+                gridHoanCong.Columns["hc_SoDot"].Visible = true;
             }
             catch (Exception)
             {
@@ -60,6 +63,7 @@ namespace TanHoaWater.View.Users.DONGHONUOC
             try
             {
                 gridHoanCong.DataSource = DAL.C_DHN_ChoDanhBo.getListHoanCong(this.cbDotHoanCong.Text, 0);
+                gridHoanCong.Columns["hc_SoDot"].Visible = true;
             }
             catch (Exception)
             {
@@ -71,11 +75,11 @@ namespace TanHoaWater.View.Users.DONGHONUOC
             try
             {
                 if (checkALl.Checked)
-                    gridHoanCong.DataSource = DAL.C_DHN_ChoDanhBo.getListHoanCong(this.cbDotHoanCong.Text, 0);
+                { gridHoanCong.DataSource = DAL.C_DHN_ChoDanhBo.getListHoanCong(this.cbDotHoanCong.Text, 0); gridHoanCong.Columns["hc_SoDot"].Visible = true; }
                 else if (checkChuaHoanCong.Checked)
-                    gridHoanCong.DataSource = DAL.C_DHN_ChoDanhBo.getListHoanCong(this.cbDotHoanCong.Text, -1);
+                { gridHoanCong.DataSource = DAL.C_DHN_ChoDanhBo.getListHoanCong(this.cbDotHoanCong.Text, -1); gridHoanCong.Columns["hc_SoDot"].Visible = false; }
                 else if (chekDaHoanCong.Checked)
-                    gridHoanCong.DataSource = DAL.C_DHN_ChoDanhBo.getListHoanCong(this.cbDotHoanCong.Text, 1);
+                { gridHoanCong.DataSource = DAL.C_DHN_ChoDanhBo.getListHoanCong(this.cbDotHoanCong.Text, 1); gridHoanCong.Columns["hc_SoDot"].Visible = true; }
 
             }
             catch (Exception)
@@ -103,7 +107,8 @@ namespace TanHoaWater.View.Users.DONGHONUOC
 
         string _sohopdong = "";
         string _sodanhbo = "";
-
+        string _maDMA = "";
+        string _hieuluc = "";
         string formatDanhBo(string db) {
             db = db.Insert(4, ".");
             db = db.Insert(8, ".");
@@ -138,6 +143,7 @@ namespace TanHoaWater.View.Users.DONGHONUOC
             {
             }
         }
+     
         private void gridHoanCong_CellStateChanged(object sender, DataGridViewCellStateChangedEventArgs e)
         {
             try
@@ -171,6 +177,9 @@ namespace TanHoaWater.View.Users.DONGHONUOC
                 if (gridHoanCong.CurrentCell.OwningColumn.Name == "hc_hopdong")
                 {
                     _sohopdong = gridHoanCong.Rows[gridHoanCong.CurrentCell.RowIndex].Cells["hc_hopdong"].Value + "";
+                    gridHoanCong.Rows[gridHoanCong.CurrentCell.RowIndex].Cells["hc_MaDMA"].Value = _maDMA;
+                    gridHoanCong.Rows[gridHoanCong.CurrentCell.RowIndex].Cells["hc_hieuLuc"].Value = _hieuluc;
+
                 }
             }
             catch (Exception)
@@ -204,13 +213,13 @@ namespace TanHoaWater.View.Users.DONGHONUOC
                             string[] ngaytc = Regex.Split(gridHoanCong.Rows[gridHoanCong.CurrentCell.RowIndex].Cells["hc_ngaythicong"].Value + "", "\\/");
                             string[] ngayhl = Regex.Split(gridHoanCong.Rows[gridHoanCong.CurrentCell.RowIndex].Cells["hc_hieuLuc"].Value + "", "\\/");
                             int namhl = int.Parse(ngayhl[1]);
-                            int namtc = int.Parse(ngaytc[2]);
+                            int namtc = int.Parse(ngaytc[2].Substring(2,2));
                             int thanghl = int.Parse(ngayhl[0]);
                             int thangtc = int.Parse(ngaytc[1]);
 
                             if (namhl == namtc && thanghl >= thangtc)
                             {
-                                int dmcapnu = int.Parse(gridHoanCong.Rows[gridHoanCong.CurrentCell.RowIndex].Cells["hc_DMucGoc"].Value + "") * (int.Parse(ngayhl[0]) - int.Parse(ngaytc[1]));
+                                int dmcapnu = int.Parse(gridHoanCong.Rows[gridHoanCong.CurrentCell.RowIndex].Cells["hc_DMucGoc"].Value + "") * (int.Parse(ngayhl[0]) - int.Parse(ngaytc[1]) + 1);
                                 gridHoanCong.Rows[gridHoanCong.CurrentCell.RowIndex].Cells["hc_DMCapBu"].Value = dmcapnu;
                             }
                             else if (namhl == namtc && thanghl < thangtc)
@@ -219,7 +228,7 @@ namespace TanHoaWater.View.Users.DONGHONUOC
                             }
                             else if (namhl > namtc)
                             {
-                                gridHoanCong.Rows[gridHoanCong.CurrentCell.RowIndex].Cells["hc_DMCapBu"].Value = int.Parse(gridHoanCong.Rows[gridHoanCong.CurrentCell.RowIndex].Cells["hc_DMucGoc"].Value + "") * ((namhl - namtc) * 12 + (thanghl - thangtc));
+                                gridHoanCong.Rows[gridHoanCong.CurrentCell.RowIndex].Cells["hc_DMCapBu"].Value = int.Parse(gridHoanCong.Rows[gridHoanCong.CurrentCell.RowIndex].Cells["hc_DMucGoc"].Value + "") * ((namhl - namtc) * 12 + (thanghl - thangtc) + 1);
                             }
                             else if (namhl < namtc)
                             {
@@ -255,6 +264,15 @@ namespace TanHoaWater.View.Users.DONGHONUOC
                 {
                     gridHoanCong.Rows[gridHoanCong.CurrentCell.RowIndex].Cells["hc_hopdong"].Value = gridHoanCong.Rows[gridHoanCong.CurrentCell.RowIndex].Cells["hc_hopdong"].Value.ToString().ToUpper();
                 }
+                if (gridHoanCong.CurrentCell.OwningColumn.Name == "hc_MaDMA")
+                {
+                    _maDMA = gridHoanCong.Rows[gridHoanCong.CurrentCell.RowIndex].Cells["hc_MaDMA"].Value.ToString().ToUpper();
+                }
+                if (gridHoanCong.CurrentCell.OwningColumn.Name == "hc_hieuLuc")
+                {
+                    _hieuluc = gridHoanCong.Rows[gridHoanCong.CurrentCell.RowIndex].Cells["hc_hieuLuc"].Value.ToString();
+                }
+                
                 if (gridHoanCong.CurrentCell.OwningColumn.Name == "hc_SoHo")
                 {
                     int soho = int.Parse(gridHoanCong.Rows[gridHoanCong.CurrentCell.RowIndex].Cells["hc_SoHo"].Value + "");
@@ -349,10 +367,10 @@ namespace TanHoaWater.View.Users.DONGHONUOC
                         string hc_DMucGoc = this.gridHoanCong.Rows[i].Cells["hc_DMucGoc"].Value + "";
                         string hc_DMCapBu = this.gridHoanCong.Rows[i].Cells["hc_DMCapBu"].Value + "";
                         string hc_MaDMA = this.gridHoanCong.Rows[i].Cells["hc_MaDMA"].Value + "";
-                        string hc_HsCty = this.gridHoanCong.Rows[i].Cells["hc_DHN"].Value + "";
-                        string hc_MasothueCT = this.gridHoanCong.Rows[i].Cells["hc_DHN"].Value + "";
-                        string hc_SoHo = this.gridHoanCong.Rows[i].Cells["hc_DHN"].Value + "";
-                        string hc_SoNhanKhau = this.gridHoanCong.Rows[i].Cells["hc_DHN"].Value + "";
+                        string hc_HsCty = this.gridHoanCong.Rows[i].Cells["hc_HsCty"].Value + "";
+                        string hc_MasothueCT = this.gridHoanCong.Rows[i].Cells["hc_MasothueCT"].Value + "";
+                        string hc_SoHo = this.gridHoanCong.Rows[i].Cells["hc_SoHo"].Value + "";
+                        string hc_SoNhanKhau = this.gridHoanCong.Rows[i].Cells["hc_SoNhanKhau"].Value + "";
 
                         if ("".Equals(hc_hopdong))
                         {
@@ -421,7 +439,7 @@ namespace TanHoaWater.View.Users.DONGHONUOC
 	                             hskh.DHN_GIABIEU = int.Parse(hc_GiaBieu);
 	                             hskh.DHN_DMGOC= int.Parse(hc_DMucGoc);
 	                             hskh.DHN_DMCAPBU=int.Parse(hc_DMCapBu);
-	                             hskh.DHN_SODANHBO=hc_SoDanhBo;
+	                             hskh.DHN_SODANHBO=hc_SoDanhBo.Replace(".","");
 	                             hskh.DHN_MADMA =hc_MaDMA;
 	                             hskh.DHN_HIEULUC =hc_hieuLuc;
 	                             hskh.DHN_HSCONGTY =hc_HsCty;
@@ -487,7 +505,8 @@ namespace TanHoaWater.View.Users.DONGHONUOC
                 }
                 this.btInBangKe.Enabled = true;
                 this.btTachChiPhi.Enabled = true;
-                //DAL.C_KH_HoanCong.CapNhat();
+                MessageBox.Show(this, "Hoàn Tất.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                hoantat();
             }
             catch (Exception ex)
             {
@@ -504,6 +523,7 @@ namespace TanHoaWater.View.Users.DONGHONUOC
                 this.txtDotBangKe.BackColor = Color.PeachPuff;
             } else {
                 updateDulieu();
+              
             }
         }
 
@@ -534,6 +554,18 @@ namespace TanHoaWater.View.Users.DONGHONUOC
             catch (Exception)
             {
             }
+        }
+
+        private void btTimKiemDotBangKe_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                chekDaHoanCong.Checked = true;
+                gridHoanCong.DataSource = DAL.C_DHN_ChoDanhBo.findByDotBangKe(this.txtDotBangKe.Text);
+            }
+            catch (Exception)
+            {
+            }        
         }
 
     }

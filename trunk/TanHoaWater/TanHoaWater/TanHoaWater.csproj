@@ -201,6 +201,21 @@
     <Compile Include="View\Tool\webBrowser.Designer.cs">
       <DependentUpon>webBrowser.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Users\DONGHONUOC\BC\chodanhbo.cs">
+      <DependentUpon>chodanhbo.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\Users\DONGHONUOC\BC\chodanhbo.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>chodanhbo.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="View\Users\DONGHONUOC\BC\rpt_DANHBO.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_DANHBO.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="View\Users\DONGHONUOC\frm_NhapSoHoKhau.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -654,6 +669,10 @@
     <EmbeddedResource Include="View\Tool\webBrowser.resx">
       <DependentUpon>webBrowser.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\DONGHONUOC\BC\rpt_DANHBO.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_DANHBO.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Users\DONGHONUOC\frm_NhapSoHoKhau.resx">
       <DependentUpon>frm_NhapSoHoKhau.cs</DependentUpon>
     </EmbeddedResource>
@@ -972,6 +991,17 @@
     <Compile Include="View\Main\frm_Login.Designer.cs">
       <DependentUpon>frm_Login.cs</DependentUpon>
     </Compile>
+    <None Include="View\Users\DONGHONUOC\BC\chodanhbo.xsc">
+      <DependentUpon>chodanhbo.xsd</DependentUpon>
+    </None>
+    <None Include="View\Users\DONGHONUOC\BC\chodanhbo.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>chodanhbo.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="View\Users\DONGHONUOC\BC\chodanhbo.xss">
+      <DependentUpon>chodanhbo.xsd</DependentUpon>
+    </None>
     <None Include="View\Users\KEHOACH\DOTTHICONG\BC\DataSet1.xsc">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>
