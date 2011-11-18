@@ -9,6 +9,9 @@ using System.Windows.Forms;
 using System.Text.RegularExpressions;
 using log4net;
 using TanHoaWater.Database;
+using CrystalDecisions.CrystalReports.Engine;
+using TanHoaWater.View.Users.DONGHONUOC.BC;
+using TanHoaWater.View.Users.Report;
 
 namespace TanHoaWater.View.Users.DONGHONUOC
 {
@@ -258,7 +261,7 @@ namespace TanHoaWater.View.Users.DONGHONUOC
                         gridHoanCong.Rows[gridHoanCong.CurrentCell.RowIndex].Cells["hc_SoDanhBo"].Selected = true;
                     }
                     this.btInBangKe.Enabled = false;
-                    this.btTachChiPhi.Enabled = false;
+                    this.btInBangDC.Enabled = false;
                 }
                 if (gridHoanCong.CurrentCell.OwningColumn.Name == "hc_hopdong")
                 {
@@ -504,7 +507,7 @@ namespace TanHoaWater.View.Users.DONGHONUOC
 
                 }
                 this.btInBangKe.Enabled = true;
-                this.btTachChiPhi.Enabled = true;
+                this.btInBangDC.Enabled = true;
                 MessageBox.Show(this, "Hoàn Tất.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 hoantat();
             }
@@ -566,6 +569,59 @@ namespace TanHoaWater.View.Users.DONGHONUOC
             catch (Exception)
             {
             }        
+        }
+
+        private void btInBangKe_Click(object sender, EventArgs e)
+        {
+            string bangke = this.txtDotBangKe.Text + ""; ;
+            if ("".Equals(bangke))
+            {
+                MessageBox.Show(this, "Nhập Bảng Kê Của Đợt.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.txtDotBangKe.Focus();
+                this.txtDotBangKe.BackColor = Color.PeachPuff;
+            }
+            else
+            {
+                ReportDocument rp = new rpt_DANHBO();
+                rp.SetDataSource(DAL.C_DHN_ChoDanhBo.BC_CHODANHBO(bangke,getSHS()));
+                rpt_Main rpt = new rpt_Main(rp);
+                rpt.ShowDialog();
+
+            }
+        }
+
+        public string getSHS()
+        {
+            string result = "";
+            for (int i = 0; i < gridHoanCong.Rows.Count; i++)
+            {
+                string shs = this.gridHoanCong.Rows[i].Cells["hc_SHS"].Value + "";
+                string chonin = this.gridHoanCong.Rows[i].Cells["hc_chonin"].Value + "";
+                if ("True".Equals(chonin))
+                    result += "'" + shs + "',";
+            }
+            if (result.Length > 0)
+                result = result.Substring(0, result.Length - 1);
+            return result;
+        }
+
+        private void btInBangDC_Click(object sender, EventArgs e)
+        {
+            string bangke = this.txtDotBangKe.Text + ""; ;
+            if ("".Equals(bangke))
+            {
+                MessageBox.Show(this, "Nhập Bảng Kê Của Đợt.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.txtDotBangKe.Focus();
+                this.txtDotBangKe.BackColor = Color.PeachPuff;
+            }
+            else
+            {
+                ReportDocument rp = new rpt_DIEUCHINH();
+                rp.SetDataSource(DAL.C_DHN_ChoDanhBo.BC_DIEUCHINH(bangke, getSHS()));
+                rpt_Main rpt = new rpt_Main(rp);
+                rpt.ShowDialog();
+
+            }
         }
 
     }

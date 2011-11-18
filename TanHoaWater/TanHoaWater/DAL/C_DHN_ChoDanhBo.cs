@@ -79,7 +79,7 @@ namespace TanHoaWater.DAL
             return false;
         }
 
-        public static DataSet BC_CHODANHBO(string mabangke)
+        public static DataSet BC_CHODANHBO(string mabangke, string query)
         {
             TanHoaDataContext db = new TanHoaDataContext();
             db.Connection.Open();
@@ -88,14 +88,30 @@ namespace TanHoaWater.DAL
             SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             adapter.Fill(dataset, "DHN_BAOCAO");
 
-            sql = "SELECT * FROM V_CHOSODANHBO WHERE DHN_SODOT='" + mabangke + "' ORDER BY MODIFYDATE";
+            sql = "SELECT * FROM V_CHOSODANHBO WHERE DHN_SODOT='" + mabangke + "'  AND SHS IN (" + query + ") ORDER BY MODIFYDATE";
             adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             adapter.Fill(dataset, "V_CHOSODANHBO");
 
-            sql = "SELECT * FROM V_DHN_MST WHERE DHN_SODOT='" + mabangke + "' ORDER BY DHN_HSCONGTY";
+            sql = "SELECT * FROM V_DHN_MST WHERE DHN_SODOT='" + mabangke + "' ORDER BY MODIFYDATE";
             adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             adapter.Fill(dataset, "V_DHN_MST");
 
+            db.Connection.Close();
+            return dataset;
+        }
+        public static DataSet BC_DIEUCHINH(string mabangke, string query)
+        {
+            TanHoaDataContext db = new TanHoaDataContext();
+            db.Connection.Open();
+            DataSet dataset = new DataSet();
+            string sql = " SELECT * FROM DHN_BAOCAO ";
+            SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
+            adapter.Fill(dataset, "DHN_BAOCAO");
+
+            sql = "SELECT * FROM V_CHOSODANHBO WHERE DHN_SODOT='" + mabangke + "' AND SHS IN (" + query + ")  AND DHN_DMGOC>0 ORDER BY MODIFYDATE";
+            adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
+            adapter.Fill(dataset, "V_CHOSODANHBO");
+            
             db.Connection.Close();
             return dataset;
         }

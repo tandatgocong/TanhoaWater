@@ -300,7 +300,7 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
             else
             {
                 ReportDocument rp = new rpt_HoanCong();
-                rp.SetDataSource(DAL.C_KH_HoanCong.BC_HOANCONG(this.cbDotHoanCong.Text));
+                rp.SetDataSource(DAL.C_KH_HoanCong.BC_HOANCONG(this.cbDotHoanCong.Text, getSHS()));
                 rpt_Main rpt = new rpt_Main(rp);
                 rpt.ShowDialog();
             }

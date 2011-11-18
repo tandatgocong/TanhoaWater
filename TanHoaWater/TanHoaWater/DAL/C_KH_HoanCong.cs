@@ -186,7 +186,7 @@ namespace TanHoaWater.DAL
             return dataset;
         }
 
-        public static DataSet BC_HOANCONG(string madot)
+        public static DataSet BC_HOANCONG(string madot,string query)
         {
             TanHoaDataContext db = new TanHoaDataContext();
             db.Connection.Open();
@@ -195,7 +195,7 @@ namespace TanHoaWater.DAL
             SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             adapter.Fill(dataset, "KH_TC_BAOCAO");
 
-            sql = "SELECT * FROM V_HOANCONG WHERE MADOTTC='" + madot + "' ORDER BY MODIFYDATE";
+            sql = "SELECT * FROM V_HOANCONG WHERE MADOTTC='" + madot + "' AND SHS IN (" + query + ") ORDER BY MODIFYDATE";
             adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             adapter.Fill(dataset, "V_HOANCONG");
 
