@@ -216,6 +216,7 @@ namespace TanHoaWater.View.Users.KEHOACH
                     biennhan.PHUONG = phuong.MAPHUONG;
                     biennhan.QUAN = quan.MAQUAN;
                     biennhan.NGAYNHAN = DateTime.Now.Date;
+                    biennhan.SOHO = int.Parse(this.numericUpDown1.Value + "");
                     biennhan.DIENTHOAI = txtDt.Text;
                     if (checkHK.Checked)
                     {
@@ -495,6 +496,14 @@ namespace TanHoaWater.View.Users.KEHOACH
                 string maquan = dataGridViewDC.Rows[e.RowIndex].Cells[2].Value + "";
                 string maloai = dataGridViewDC.Rows[e.RowIndex].Cells[3].Value + "";
                 inreview(maquan, maloai);
+            }
+        }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+            if (numericUpDown1.Value > 1)
+            {
+                txtHoTen.Text = txtHoTen.Text  +" (ĐD " + numericUpDown1.Value + " Hộ)";
             }
         }
     }

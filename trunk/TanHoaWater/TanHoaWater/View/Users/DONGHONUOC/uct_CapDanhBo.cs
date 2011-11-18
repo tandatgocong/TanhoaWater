@@ -579,7 +579,8 @@ namespace TanHoaWater.View.Users.DONGHONUOC
                 MessageBox.Show(this, "Nhập Bảng Kê Của Đợt.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.txtDotBangKe.Focus();
                 this.txtDotBangKe.BackColor = Color.PeachPuff;
-            }
+            }else if (getSHS().Equals(""))
+                MessageBox.Show(this, "Cần Chọn Hồ Sơ In", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
             {
                 ReportDocument rp = new rpt_DANHBO();
@@ -614,6 +615,9 @@ namespace TanHoaWater.View.Users.DONGHONUOC
                 this.txtDotBangKe.Focus();
                 this.txtDotBangKe.BackColor = Color.PeachPuff;
             }
+            else if (getSHS().Equals(""))
+                MessageBox.Show(this, "Cần Chọn Hồ Sơ In", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            
             else
             {
                 ReportDocument rp = new rpt_DIEUCHINH();
