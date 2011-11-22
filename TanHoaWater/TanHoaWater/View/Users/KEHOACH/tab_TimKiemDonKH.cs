@@ -22,7 +22,6 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
         public tab_TimKiemDonKH()
         {
             InitializeComponent();
-            SearchMaHoSo.Mask  =  "CCCCCCC";
            
         }
 

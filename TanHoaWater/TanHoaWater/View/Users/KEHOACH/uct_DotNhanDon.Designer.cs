@@ -29,9 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(uct_DOTNHANDON));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.reflectionLabel1 = new DevComponents.DotNetBar.Controls.ReflectionLabel();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -76,7 +75,7 @@
             this.reflectionLabel1.Size = new System.Drawing.Size(691, 65);
             this.reflectionLabel1.TabIndex = 0;
             this.reflectionLabel1.Text = "<font color=\"#ED1C24\"><b><font size=\"+6\">DANH SÁCH CÁC ĐỢT NHẬN ĐƠN KHÁCH HÀNG</f" +
-                "ont></b></font>";
+    "ont></b></font>";
             // 
             // errorProvider1
             // 
@@ -125,13 +124,12 @@
             // print
             // 
             this.print.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.print.Image = ((System.Drawing.Image)(resources.GetObject("print.Image")));
-            this.print.Location = new System.Drawing.Point(328, 30);
+            this.print.Image = global::TanHoaWater.Properties.Resources.print1;
+            this.print.Location = new System.Drawing.Point(324, 22);
             this.print.Name = "print";
-            this.print.Size = new System.Drawing.Size(19, 14);
+            this.print.Size = new System.Drawing.Size(27, 22);
             this.print.TabIndex = 22;
             this.print.TabStop = false;
-            this.print.Visible = false;
             this.print.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // chyenTTK
@@ -238,8 +236,8 @@
             // DOTNHAN
             // 
             this.DOTNHAN.DataPropertyName = "MADOT";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.DOTNHAN.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.DOTNHAN.DefaultCellStyle = dataGridViewCellStyle3;
             this.DOTNHAN.HeaderText = "Đợt Nhận Đơn";
             this.DOTNHAN.Name = "DOTNHAN";
             this.DOTNHAN.ReadOnly = true;
@@ -248,8 +246,8 @@
             // NGAYNHAN
             // 
             this.NGAYNHAN.DataPropertyName = "NGAYLAPDON";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.NGAYNHAN.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.NGAYNHAN.DefaultCellStyle = dataGridViewCellStyle4;
             this.NGAYNHAN.HeaderText = "Ngày Lập Đơn";
             this.NGAYNHAN.Name = "NGAYNHAN";
             this.NGAYNHAN.ReadOnly = true;
@@ -272,11 +270,12 @@
             // 
             // txtsoDot
             // 
+            this.txtsoDot.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtsoDot.Location = new System.Drawing.Point(25, 86);
             this.txtsoDot.Margin = new System.Windows.Forms.Padding(4);
             this.txtsoDot.Mask = "&&&&/&&&&";
             this.txtsoDot.Name = "txtsoDot";
-            this.txtsoDot.Size = new System.Drawing.Size(106, 22);
+            this.txtsoDot.Size = new System.Drawing.Size(106, 26);
             this.txtsoDot.TabIndex = 1;
             // 
             // createDate
@@ -287,6 +286,7 @@
             this.createDate.BackgroundStyle.Class = "DateTimeInputBackground";
             this.createDate.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
             this.createDate.ButtonDropDown.Visible = true;
+            this.createDate.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.createDate.Location = new System.Drawing.Point(172, 87);
             this.createDate.Margin = new System.Windows.Forms.Padding(4);
             // 
@@ -319,36 +319,39 @@
             this.createDate.MonthCalendar.TodayButtonVisible = true;
             this.createDate.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
             this.createDate.Name = "createDate";
-            this.createDate.Size = new System.Drawing.Size(89, 22);
+            this.createDate.Size = new System.Drawing.Size(89, 26);
             this.createDate.TabIndex = 2;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(303, 67);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(96, 16);
+            this.label3.Size = new System.Drawing.Size(103, 19);
             this.label3.TabIndex = 22;
             this.label3.Text = "Loại Đơn Nhận";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(169, 63);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 16);
+            this.label2.Size = new System.Drawing.Size(70, 19);
             this.label2.TabIndex = 21;
             this.label2.Text = "Ngày Tạo";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(21, 63);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(110, 16);
+            this.label1.Size = new System.Drawing.Size(120, 19);
             this.label1.TabIndex = 20;
             this.label1.Text = "Số Đợt Nhận Đơn";
             // 
@@ -357,11 +360,12 @@
             this.cbLoaiHS.DisplayMember = "Text";
             this.cbLoaiHS.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbLoaiHS.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbLoaiHS.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbLoaiHS.FormattingEnabled = true;
-            this.cbLoaiHS.ItemHeight = 16;
+            this.cbLoaiHS.ItemHeight = 20;
             this.cbLoaiHS.Location = new System.Drawing.Point(306, 86);
             this.cbLoaiHS.Name = "cbLoaiHS";
-            this.cbLoaiHS.Size = new System.Drawing.Size(295, 22);
+            this.cbLoaiHS.Size = new System.Drawing.Size(295, 26);
             this.cbLoaiHS.TabIndex = 3;
             // 
             // refresh
@@ -373,7 +377,7 @@
             this.refresh.ImageFixedSize = new System.Drawing.Size(20, 20);
             this.refresh.Location = new System.Drawing.Point(526, 118);
             this.refresh.Name = "refresh";
-            this.refresh.Size = new System.Drawing.Size(75, 23);
+            this.refresh.Size = new System.Drawing.Size(75, 22);
             this.refresh.TabIndex = 6;
             this.refresh.Text = "Làm lại    ";
             this.refresh.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
@@ -386,10 +390,10 @@
             this.addNewDot.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addNewDot.Image = global::TanHoaWater.Properties.Resources.note_add;
             this.addNewDot.ImageFixedSize = new System.Drawing.Size(20, 20);
-            this.addNewDot.Location = new System.Drawing.Point(322, 118);
+            this.addNewDot.Location = new System.Drawing.Point(335, 119);
             this.addNewDot.Margin = new System.Windows.Forms.Padding(4);
             this.addNewDot.Name = "addNewDot";
-            this.addNewDot.Size = new System.Drawing.Size(89, 22);
+            this.addNewDot.Size = new System.Drawing.Size(89, 21);
             this.addNewDot.TabIndex = 4;
             this.addNewDot.Text = "Thêm Mới    ";
             this.addNewDot.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
@@ -402,10 +406,10 @@
             this.SearchDot.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SearchDot.Image = global::TanHoaWater.Properties.Resources.search2;
             this.SearchDot.ImageFixedSize = new System.Drawing.Size(20, 20);
-            this.SearchDot.Location = new System.Drawing.Point(419, 119);
+            this.SearchDot.Location = new System.Drawing.Point(432, 119);
             this.SearchDot.Margin = new System.Windows.Forms.Padding(4);
             this.SearchDot.Name = "SearchDot";
-            this.SearchDot.Size = new System.Drawing.Size(87, 22);
+            this.SearchDot.Size = new System.Drawing.Size(87, 21);
             this.SearchDot.TabIndex = 5;
             this.SearchDot.Text = "Tìm Kiếm   ";
             this.SearchDot.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
@@ -415,7 +419,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(206)))), ((int)(((byte)(236)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
             this.Controls.Add(this.txtsoDot);
             this.Controls.Add(this.cbLoaiHS);
             this.Controls.Add(this.refresh);
@@ -431,7 +435,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "uct_DOTNHANDON";
-            this.Size = new System.Drawing.Size(988, 615);
+            this.Size = new System.Drawing.Size(988, 614);
             this.Load += new System.EventHandler(this.DOTNHANDON_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.groupBox2.ResumeLayout(false);

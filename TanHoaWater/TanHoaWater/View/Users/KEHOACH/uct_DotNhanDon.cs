@@ -9,6 +9,10 @@ using System.Windows.Forms;
 using TanHoaWater.Database;
 using TanHoaWater.View.Report;
 using log4net;
+using TanHoaWater.View.Users.KEHOACH;
+using CrystalDecisions.CrystalReports.Engine;
+using TanHoaWater.View.Users.KEHOACH.Report;
+using TanHoaWater.View.Users.Report;
 
 namespace TanHoaWater.View.Users.HSKHACHHANG
 {
@@ -150,15 +154,20 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            try
-            {
-                rpt_View rpt = new rpt_View(_madot_);
-                rpt.ShowDialog();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(this, "..: Thông Báo :..", "Lỗi Khi In !", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                log.Error("In Loi " + ex.Message); }
+            //try
+            //{
+            //    rpt_View rpt = new rpt_View(_madot_);
+            //    rpt.ShowDialog();
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(this, "..: Thông Báo :..", "Lỗi Khi In !", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    log.Error("In Loi " + ex.Message);
+            //}
+            ReportDocument rp = new rpt_DOT_QUAN();
+            rp.SetDataSource(DAL.C_BAOCAO_VIEW.BC_DOTNHANDON_DOT(_madot_, DAL.C_USERS._userName, DAL.C_USERS.KHVTDuyet(), null, null));
+            rpt_Main main = new rpt_Main(rp);
+            main.ShowDialog();
 
         }
 
