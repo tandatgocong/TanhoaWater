@@ -24,10 +24,15 @@ namespace TanHoaWater.View.Users.TinhDuToan
         {
             InitializeComponent();
             loadComboboxPhuiDao();
-            this.txtSHS.Mask = DateTime.Now.Year.ToString().Substring(2) + "CCCCC";
+            this.txtSHS.Mask = "CCCCCCCC";
             this.txtSHS.Focus();
             pd_MaKetCau.AutoComplete = true;
             txtNguoiLapBG.Text = DAL.C_USERS._fullName;
+            #region Load SDV
+            this.txtSoDoVien.DataSource = DAL.C_USERS.getUserByMaPhongAndLevel("TTK", 2);
+            this.txtSoDoVien.DisplayMember = "FULLNAME";
+            this.txtSoDoVien.ValueMember = "USERNAME";
+            #endregion
         }
         public void loadComboboxPhuiDao()
         {
@@ -660,6 +665,7 @@ namespace TanHoaWater.View.Users.TinhDuToan
             if (bgKL != null)
             {
                 banggiadaco = true;
+                 loadcongtac = false;
                 radioGhiDe.Checked = true;
                 view = false;
                 this.txtKhoiLuongCatNhua.Text = String.Format("{0:0.00}", bgKL.BOCNHUA);
@@ -1286,6 +1292,19 @@ namespace TanHoaWater.View.Users.TinhDuToan
             SqlParameter L = cmd.Parameters.Add("@L", SqlDbType.Float);
             L.Direction = ParameterDirection.Output;
 
+
+            SqlParameter _TAILAPMATDUONG = cmd.Parameters.Add("@TAILAPMATDUONG", SqlDbType.Float);
+            _TAILAPMATDUONG.Direction = ParameterDirection.Output;
+
+            SqlParameter _TLMDTRUOCTHUE = cmd.Parameters.Add("@TLMDTRUOCTHUE", SqlDbType.Float);
+            _TLMDTRUOCTHUE.Direction = ParameterDirection.Output;
+
+            SqlParameter _CPGAN = cmd.Parameters.Add("@CPGAN", SqlDbType.Float);
+            _CPGAN.Direction = ParameterDirection.Output;
+
+            SqlParameter _CPNHUA = cmd.Parameters.Add("@CPNHUA", SqlDbType.Float);
+            _CPNHUA.Direction = ParameterDirection.Output;
+
             cmd.ExecuteNonQuery();
 
             DataTable table = new DataTable("TONGKETKINHPHI");
@@ -1309,6 +1328,11 @@ namespace TanHoaWater.View.Users.TinhDuToan
             table.Columns.Add("K", typeof(double));
             table.Columns.Add("L", typeof(double));
 
+            table.Columns.Add("TAILAPMATDUONG", typeof(double));
+            table.Columns.Add("TLMDTRUOCTHUE", typeof(double));
+            table.Columns.Add("CPGAN", typeof(double));
+            table.Columns.Add("CPNHUA", typeof(double));
+
             DataRow myDataRow = table.NewRow();
             total = double.Parse(cmd.Parameters["@TOTAL"].Value + "");
             myDataRow["SHS"] = shs;
@@ -1330,6 +1354,12 @@ namespace TanHoaWater.View.Users.TinhDuToan
             myDataRow["J"] = double.Parse(cmd.Parameters["@J"].Value + "");
             myDataRow["K"] = double.Parse(cmd.Parameters["@K"].Value + "");
             myDataRow["L"] = double.Parse(cmd.Parameters["@L"].Value + "");
+
+            myDataRow["TAILAPMATDUONG"] = double.Parse(cmd.Parameters["@TAILAPMATDUONG"].Value + "");
+            myDataRow["TLMDTRUOCTHUE"] = double.Parse(cmd.Parameters["@TLMDTRUOCTHUE"].Value + "");
+            myDataRow["CPGAN"] = double.Parse(cmd.Parameters["@CPGAN"].Value + "");
+            myDataRow["CPNHUA"] = double.Parse(cmd.Parameters["@CPNHUA"].Value + "");
+           
             table.Rows.Add(myDataRow);
             conn.Close();
             return table;
@@ -1412,8 +1442,18 @@ namespace TanHoaWater.View.Users.TinhDuToan
             //    log.Error("Loi Tao Bang Gia " + ex.Message);
             //}
             
-        } 
-        
+        }
+        public void updateSDV()
+        {
+            try
+            {
+                DAL.C_ToThietKe.updateSoDoVien(_shs, this.txtSoDoVien.Text);
+            }
+            catch (Exception ex)
+            {
+                log.Error("Cap Nhat SDV LOI" + ex.Message);
+            }
+        }
         private void btTinhBangGia_Click(object sender, EventArgs e)
         {
           

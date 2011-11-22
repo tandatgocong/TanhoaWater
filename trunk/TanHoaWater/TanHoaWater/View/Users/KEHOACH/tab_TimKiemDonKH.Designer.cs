@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.SearchDotNhanDon = new System.Windows.Forms.TextBox();
+            this.SearchMaHoSo = new System.Windows.Forms.TextBox();
             this.searchSoNha = new System.Windows.Forms.TextBox();
             this.lbPaing = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -75,7 +77,7 @@
             this.label12 = new System.Windows.Forms.Label();
             this.txtHoTen = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.ghichu = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.sonha = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtsonha = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.label10 = new System.Windows.Forms.Label();
             this.duong = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.cbLoaiHS = new DevComponents.DotNetBar.Controls.ComboBoxEx();
@@ -85,7 +87,7 @@
             this.cbLoaiKH = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.cbQuan = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.cbPhuong = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.SearchMaHoSo = new System.Windows.Forms.TextBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.next)).BeginInit();
@@ -93,6 +95,7 @@
             this.groupPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtSoHo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -129,6 +132,15 @@
             this.SearchDotNhanDon.Size = new System.Drawing.Size(121, 22);
             this.SearchDotNhanDon.TabIndex = 1;
             this.SearchDotNhanDon.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDotNhanDon_KeyPress);
+            // 
+            // SearchMaHoSo
+            // 
+            this.SearchMaHoSo.Location = new System.Drawing.Point(89, 50);
+            this.SearchMaHoSo.Margin = new System.Windows.Forms.Padding(4);
+            this.SearchMaHoSo.Name = "SearchMaHoSo";
+            this.SearchMaHoSo.Size = new System.Drawing.Size(121, 22);
+            this.SearchMaHoSo.TabIndex = 4;
+            this.SearchMaHoSo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.searchSoNha_KeyPress);
             // 
             // searchSoNha
             // 
@@ -248,8 +260,8 @@
             // G_SodotNhanDon
             // 
             this.G_SodotNhanDon.DataPropertyName = "MADOT";
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.G_SodotNhanDon.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.G_SodotNhanDon.DefaultCellStyle = dataGridViewCellStyle10;
             this.G_SodotNhanDon.HeaderText = "Số Đợt Nhận Đơn";
             this.G_SodotNhanDon.Name = "G_SodotNhanDon";
             this.G_SodotNhanDon.ReadOnly = true;
@@ -258,8 +270,8 @@
             // SOHOSO
             // 
             this.SOHOSO.DataPropertyName = "SOHOSO";
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.SOHOSO.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.SOHOSO.DefaultCellStyle = dataGridViewCellStyle11;
             this.SOHOSO.HeaderText = "Số Hồ Sơ";
             this.SOHOSO.Name = "SOHOSO";
             this.SOHOSO.ReadOnly = true;
@@ -284,8 +296,8 @@
             // NGAY_NHAN
             // 
             this.NGAY_NHAN.DataPropertyName = "NGAYNHAN";
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.NGAY_NHAN.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.NGAY_NHAN.DefaultCellStyle = dataGridViewCellStyle12;
             this.NGAY_NHAN.HeaderText = "Ngày Nhận";
             this.NGAY_NHAN.Name = "NGAY_NHAN";
             this.NGAY_NHAN.ReadOnly = true;
@@ -385,7 +397,7 @@
             this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.txtHoTen);
             this.panel1.Controls.Add(this.ghichu);
-            this.panel1.Controls.Add(this.sonha);
+            this.panel1.Controls.Add(this.txtsonha);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.duong);
             this.panel1.Controls.Add(this.cbLoaiHS);
@@ -423,6 +435,7 @@
             // 
             // chuyenhoso
             // 
+            this.chuyenhoso.Enabled = false;
             this.chuyenhoso.Location = new System.Drawing.Point(767, 76);
             this.chuyenhoso.Name = "chuyenhoso";
             this.chuyenhoso.Size = new System.Drawing.Size(21, 15);
@@ -467,6 +480,7 @@
             this.ghichuKhan.Name = "ghichuKhan";
             this.ghichuKhan.Size = new System.Drawing.Size(174, 25);
             this.ghichuKhan.TabIndex = 22;
+            this.ghichuKhan.Visible = false;
             // 
             // label14
             // 
@@ -613,17 +627,17 @@
             this.ghichu.Size = new System.Drawing.Size(174, 25);
             this.ghichu.TabIndex = 19;
             // 
-            // sonha
+            // txtsonha
             // 
             // 
             // 
             // 
-            this.sonha.Border.Class = "TextBoxBorder";
-            this.sonha.Location = new System.Drawing.Point(92, 68);
-            this.sonha.Multiline = true;
-            this.sonha.Name = "sonha";
-            this.sonha.Size = new System.Drawing.Size(78, 25);
-            this.sonha.TabIndex = 12;
+            this.txtsonha.Border.Class = "TextBoxBorder";
+            this.txtsonha.Location = new System.Drawing.Point(92, 68);
+            this.txtsonha.Multiline = true;
+            this.txtsonha.Name = "txtsonha";
+            this.txtsonha.Size = new System.Drawing.Size(78, 25);
+            this.txtsonha.TabIndex = 12;
             // 
             // label10
             // 
@@ -650,6 +664,7 @@
             // 
             this.cbLoaiHS.DisplayMember = "Text";
             this.cbLoaiHS.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbLoaiHS.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbLoaiHS.DropDownWidth = 250;
             this.cbLoaiHS.FormattingEnabled = true;
             this.cbLoaiHS.ItemHeight = 16;
@@ -687,6 +702,7 @@
             // 
             this.cbLoaiKH.DisplayMember = "Text";
             this.cbLoaiKH.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbLoaiKH.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbLoaiKH.FormattingEnabled = true;
             this.cbLoaiKH.ItemHeight = 16;
             this.cbLoaiKH.Location = new System.Drawing.Point(508, 9);
@@ -718,14 +734,9 @@
             this.cbPhuong.Size = new System.Drawing.Size(116, 22);
             this.cbPhuong.TabIndex = 15;
             // 
-            // SearchMaHoSo
+            // errorProvider1
             // 
-            this.SearchMaHoSo.Location = new System.Drawing.Point(89, 50);
-            this.SearchMaHoSo.Margin = new System.Windows.Forms.Padding(4);
-            this.SearchMaHoSo.Name = "SearchMaHoSo";
-            this.SearchMaHoSo.Size = new System.Drawing.Size(121, 22);
-            this.SearchMaHoSo.TabIndex = 4;
-            this.SearchMaHoSo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.searchSoNha_KeyPress);
+            this.errorProvider1.ContainerControl = this;
             // 
             // tab_TimKiemDonKH
             // 
@@ -747,6 +758,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtSoHo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -793,7 +805,7 @@
         private System.Windows.Forms.Label label12;
         private DevComponents.DotNetBar.Controls.TextBoxX txtHoTen;
         private DevComponents.DotNetBar.Controls.TextBoxX ghichu;
-        private DevComponents.DotNetBar.Controls.TextBoxX sonha;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtsonha;
         private System.Windows.Forms.Label label10;
         private DevComponents.DotNetBar.Controls.TextBoxX duong;
         private DevComponents.DotNetBar.Controls.ComboBoxEx cbLoaiHS;
@@ -808,6 +820,7 @@
         private DevComponents.DotNetBar.Controls.CheckBoxX chuyenhoso;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox SearchMaHoSo;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
 
     }
 }

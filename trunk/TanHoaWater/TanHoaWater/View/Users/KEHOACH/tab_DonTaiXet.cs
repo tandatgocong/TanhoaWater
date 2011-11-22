@@ -17,9 +17,9 @@ namespace TanHoaWater.View.Users.KEHOACH
         private static readonly ILog log = LogManager.GetLogger(typeof(tab_DonTroNgai).Name);
         public tab_DonTaiXet()
         {
-            InitializeComponent();           
-          
-            this.taix_shs.Mask = DateTime.Now.Year.ToString().Substring(2) + "CCCCC";
+            InitializeComponent();
+
+            this.taix_shs.Mask = "CCCCCCCC";
             fromload();            
             #region Nguoi Duyet Don
             this.CD_NguoiDuyetDon.DataSource = DAL.C_USERS.getUserByMaPhongAndLevel("VTTH", 0);
@@ -117,7 +117,13 @@ namespace TanHoaWater.View.Users.KEHOACH
                             this.taix_dotnhandon.Text = donkh.MADOT;
                             this.taix_sodt.Text = donkh.DIENTHOAI;
                             this.taix_ghichu.Text = donkh.GHICHU;
-                            this.taix_ngaydaottk.Text = Utilities.DateToString.NgayVN(donkh.NGAYCHUYEN_HOSO.Value);
+                            try
+                            {
+                                this.taix_ngaydaottk.Text = Utilities.DateToString.NgayVNVN(donkh.NGAYCHUYEN_HOSO.Value);
+                            }
+                            catch (Exception)
+                            {
+                            }
                             this.taix_noiduntrongai.Text = donkh.NOIDUNGTRONGAI;
                             Database.TOTHIETKE ttk = DAL.C_ToThietKe.findBySoHoSo(donkh.SOHOSO);
                             if (ttk != null)

@@ -561,6 +561,11 @@
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="View\Users\TinhDuToan\report\DataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="View\Users\TinhDuToan\report\rptBangGia.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1097,6 +1102,17 @@
     </None>
     <None Include="View\Users\KEHOACH\XINPHEPDD\BC\DataSet1.xss">
       <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="View\Users\TinhDuToan\report\DataSet2.xsc">
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="View\Users\TinhDuToan\report\DataSet2.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet2.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="View\Users\TinhDuToan\report\DataSet2.xss">
+      <DependentUpon>DataSet2.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

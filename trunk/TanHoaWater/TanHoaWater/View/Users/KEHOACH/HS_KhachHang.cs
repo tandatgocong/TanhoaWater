@@ -427,7 +427,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
         public void refresh()
         {
             this.txtSHS.Text = null;
-            this.txtSHS.Mask = DateTime.Now.Year.ToString().Substring(2) + "CCCCCC";
+            this.txtSHS.Mask = "CCCCCCCC";
             this.txtHoTen.Text = null;
             this.dienthoai.Text = null;
             this.sonha.Text = null;
