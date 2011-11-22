@@ -225,6 +225,8 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                     this.dienthoai.Text = biennhan.DIENTHOAI;
                     this.sonha.Text = biennhan.SONHA;
                     this.duong.Text = biennhan.DUONG;
+                    this.soho.Value = int.Parse(biennhan.SOHO + ""); ;
+                    this.dienthoai.Text = biennhan.DIENTHOAI;
                     this.cbQuan.Text = recordQuan.TENQUAN;
                     this.cbPhuong.Text = recordPhuong.TENPHUONG;
                     ngaynhan = biennhan.NGAYNHAN.Value;
@@ -341,15 +343,19 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                 donKH.SHS = this.txtSHS.Text;
                 if (soho.Value > 1)
                 {
-                    donKH.HOTEN = this.txtHoTen.Text + "(ĐD " + soho.Value + " Hộ)";
                     donKH.TAPTHE = true;
                     cbLoaiKH.Text = "Tập Thể";
                 }
                 else
                 {
-                    donKH.HOTEN = this.txtHoTen.Text;
+                    donKH.TAPTHE = false;
+                    cbLoaiKH.Text = "Cá Nhân";
                 }
-
+                //else
+                //{
+                //    donKH.HOTEN = this.txtHoTen.Text;
+                //}
+                donKH.HOTEN = this.txtHoTen.Text;
                 donKH.DIENTHOAI = this.dienthoai.Text;
                 donKH.SOHO = int.Parse(this.soho.Value.ToString());
                 donKH.SONHA = this.sonha.Text;
@@ -391,6 +397,15 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                 loadDataGrid();
                 Utilities.DataGridV.formatRows(dataG);
                 refresh();
+                try 
+	            {
+                    this.txtSHS.Text = (int.Parse(donKH.SHS) + 1) + "";
+		
+	            }
+	            catch (Exception)
+	            {
+		
+	            }
             }
         }
         private void btInsert_Click(object sender, EventArgs e)
@@ -412,7 +427,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
         public void refresh()
         {
             this.txtSHS.Text = null;
-            this.txtSHS.Mask = DateTime.Now.Year.ToString().Substring(2) + "CCCCC";
+            this.txtSHS.Mask = DateTime.Now.Year.ToString().Substring(2) + "CCCCCC";
             this.txtHoTen.Text = null;
             this.dienthoai.Text = null;
             this.sonha.Text = null;

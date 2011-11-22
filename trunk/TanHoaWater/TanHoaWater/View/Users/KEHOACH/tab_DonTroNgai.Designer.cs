@@ -406,11 +406,12 @@
             // 
             // txtSHS
             // 
+            this.txtSHS.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSHS.Location = new System.Drawing.Point(117, 10);
             this.txtSHS.Margin = new System.Windows.Forms.Padding(4);
             this.txtSHS.Name = "txtSHS";
             this.txtSHS.PromptChar = ' ';
-            this.txtSHS.Size = new System.Drawing.Size(86, 22);
+            this.txtSHS.Size = new System.Drawing.Size(86, 24);
             this.txtSHS.TabIndex = 8;
             this.txtSHS.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSHS_KeyPress);
             // 

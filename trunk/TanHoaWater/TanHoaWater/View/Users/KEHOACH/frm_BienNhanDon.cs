@@ -151,12 +151,14 @@ namespace TanHoaWater.View.Users.KEHOACH
         }
         public void printingBienNhan(string mabiennhan, string user)
         {
-           CrystalReportViewer r = new CrystalReportViewer();
+          // CrystalReportViewer r = new CrystalReportViewer();
            ReportDocument rp = new crp_BIENNHAN();
            rp.PrintOptions.PaperSize = PaperSize.Paper11x17;
            rp.SetDataSource(DAL.C_BienNhanDon.printBienNhan(mabiennhan, user));
-           r.ReportSource = rp;
-           r.PrintReport();
+            rpt_InBienNhan  inp = new rpt_InBienNhan(rp);
+            inp.ShowDialog();
+          // r.ReportSource = rp; 
+         // r.PrintReport();
 
         }
         private void btBienNhanDon_Click(object sender, EventArgs e)
@@ -353,7 +355,7 @@ namespace TanHoaWater.View.Users.KEHOACH
 
         private void tabItem3_Click(object sender, EventArgs e)
         {
-            this.editSoBN.Mask = DateTime.Now.Year.ToString().Substring(2) + "CCCCC";
+            this.editSoBN.Mask = DateTime.Now.Year.ToString().Substring(2) + "CCCCCC";
             editSoBN.Focus();
         }
 

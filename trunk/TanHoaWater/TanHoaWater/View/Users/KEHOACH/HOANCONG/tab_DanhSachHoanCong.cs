@@ -112,7 +112,7 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
                 }
                
             }
-            catch (Exception ex)
+            catch (Exception)
             {
             }
         }

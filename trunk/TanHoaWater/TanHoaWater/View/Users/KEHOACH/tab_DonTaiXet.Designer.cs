@@ -512,11 +512,12 @@
             // 
             // taix_shs
             // 
+            this.taix_shs.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.taix_shs.Location = new System.Drawing.Point(110, 10);
             this.taix_shs.Margin = new System.Windows.Forms.Padding(4);
             this.taix_shs.Name = "taix_shs";
             this.taix_shs.PromptChar = ' ';
-            this.taix_shs.Size = new System.Drawing.Size(86, 22);
+            this.taix_shs.Size = new System.Drawing.Size(86, 24);
             this.taix_shs.TabIndex = 8;
             this.taix_shs.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.taix_shs_KeyPress);
             // 
