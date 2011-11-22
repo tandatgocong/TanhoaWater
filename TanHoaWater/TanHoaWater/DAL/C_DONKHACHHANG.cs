@@ -587,8 +587,38 @@ namespace TanHoaWater.DAL
             {
                 log.Error(ex.Message);
             }
-           
-            
+        }
+      
+        
+        public static DON_KHACHHANG findBySHSEdit(string sohoso)
+        {
+            TanHoaDataContext db = new TanHoaDataContext();
+            var data = from don in db.DON_KHACHHANGs where don.SHS == sohoso select don;
+            return data.SingleOrDefault();
+        }
+        public static void SHSupdate(DON_KHACHHANG donkh)
+        {
+            TanHoaDataContext db = new TanHoaDataContext();
+            SqlConnection conn = new SqlConnection(db.Connection.ConnectionString);
+            conn.Open();
+            string sql = " UPDATE DON_KHACHHANG SET ";
+            sql += " HOTEN = N'" + donkh.HOTEN + "'";
+            sql += ", SOHO = N'" + donkh.SOHO + "'";
+            sql += ", SONHA = N'" + donkh.SONHA + "'";
+            sql += ", DUONG = N'" + donkh.DUONG + "'";
+            sql += ", PHUONG = '" + donkh.PHUONG + "'";
+            sql += ", QUAN = '" + donkh.QUAN + "'";
+            sql += ", LOAIKH = '" + donkh.LOAIKH + "'";
+            sql += ", DIENTHOAI = '" + donkh.DIENTHOAI + "'";
+            sql += ", GHICHU = '" + donkh.GHICHU + "'";
+            sql += ", MADOT = '" + donkh.MADOT + "'";
+            sql += ", MODIFYBY = '" + donkh.MODIFYBY + "'";
+            sql += ", MODIFYDATE = '" + donkh.MODIFYDATE + "'";
+            sql += ", MODIFYLOG = N'" + donkh.MODIFYLOG + "'";
+            sql += " WHERE SHS='" + donkh.SHS + "'";
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            int result = Convert.ToInt32(cmd.ExecuteScalar());
+            conn.Close();
         }
     }
 }

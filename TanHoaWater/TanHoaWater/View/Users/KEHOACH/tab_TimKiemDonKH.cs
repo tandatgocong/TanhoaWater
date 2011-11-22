@@ -8,13 +8,14 @@ using System.Text;
 using System.Windows.Forms;
 using log4net;
 using System.Collections;
+using TanHoaWater.Database;
 
 namespace TanHoaWater.View.Users.HSKHACHHANG
 {
     public partial class tab_TimKiemDonKH : UserControl
     {
         int currentPageIndex = 1;
-        int pageSize = 7;
+        int pageSize = 9;
         int pageNumber = 0;
         int FirstRow, LastRow;
         int rows;
@@ -56,7 +57,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
         private void searchTimKiem_Click(object sender, EventArgs e)
         {
              currentPageIndex = 1;
-             pageSize = 7;
+             pageSize = 9;
              pageNumber = 0;
              FirstRow = 0;
             LastRow=0;
@@ -169,7 +170,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
             this.txtSoHoSo.Text = null;
             this.txtSoHo.Value = 0;
             this.txtHoTen.Text = null;
-            this.sonha.Text = null;
+            this.txtsonha.Text = null;
             this.duong.Text = null;
             cbQuan.Text = null;
             cbPhuong.Text = null;
@@ -194,10 +195,10 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                     Database.DON_KHACHHANG donkh = DAL.C_DonKhachHang.findBySOHOSO_(_soHoSo);
                     if (donkh != null) {
                         this.txtSHS.Text = donkh.SHS;
-                        this.txtSoHoSo.Text = donkh.SOHOSO;
+                        this.txtSoHoSo.Text = Utilities.FormatSoHoSoDanhBo.sohoso(donkh.SOHOSO);
                         this.txtSoHo.Value = decimal.Parse(donkh.SOHO.ToString());
                         this.txtHoTen.Text = donkh.HOTEN;
-                        this.sonha.Text = donkh.SONHA;
+                        this.txtsonha.Text = donkh.SONHA;
                         this.duong.Text = donkh.DUONG;
                         // select Quan
                         cbQuan.Text = DAL.C_Quan.finByMaQuan(donkh.QUAN).TENQUAN;
@@ -270,7 +271,88 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
 
         private void btUpdate_Click(object sender, EventArgs e)
         {
+            try
+            {
+                string soshs = this.txtSHS.Text;
+                string hoten = this.txtHoTen.Text;
+                string sonha = this.txtsonha.Text;
+                string tenduong = this.duong.Text;
+                string tenphuong = this.cbPhuong.Text;
+                string tenquan = this.cbQuan.Text;
+                QUAN quan = DAL.C_Quan.finbyTenQuan(tenquan);
+                PHUONG phuong = null;
+                if (quan != null)
+                {
+                    phuong = DAL.C_Phuong.finbyTenPhuong(quan.MAQUAN, tenphuong);
+                }
+                if ("".Equals(hoten))
+                {
+                    errorProvider1.SetError(txtHoTen, "Nhập Họ Tên.");
+                    this.txtHoTen.Focus();
+                }
+                else if ("".Equals(sonha))
+                {
+                    errorProvider1.SetError(txtsonha, "Nhập Số Nhà.");
+                    this.txtsonha.Focus();
+                }
+                else if ("".Equals(tenduong))
+                {
+                    errorProvider1.SetError(duong, "Nhập Tên Đường");
+                    this.duong.Focus();
+                }
+                else if (quan == null)
+                {
+                    errorProvider1.SetError(cbQuan, "Chọn Quận .");
+                    this.cbQuan.Select();
+                }
+                else if (phuong == null)
+                {
+                    cbPhuong.DataSource = DAL.C_Phuong.getListByQuan(quan.MAQUAN);
+                    cbPhuong.ValueMember = "MAPHUONG";
+                    cbPhuong.DisplayMember = "TENPHUONG";
+                    errorProvider1.SetError(cbPhuong, "Chọn Phường.");
+                    this.cbPhuong.Select();
+                }
+                else
+                {
 
+                    DON_KHACHHANG donkh = DAL.C_DonKhachHang.findBySHSEdit(soshs);
+                    if (donkh != null)
+                    {
+                        donkh.HOTEN = hoten;
+                        donkh.SOHO = int.Parse(txtSoHo.Value + "");
+                        donkh.SONHA = sonha;
+                        donkh.DUONG = tenduong;
+                        donkh.PHUONG = phuong.MAPHUONG;
+                        donkh.QUAN = quan.MAQUAN;
+                        donkh.LOAIKH = DAL.C_LoaiKhachHang.finbyTenLoai(this.cbLoaiKH.Text).MALOAI;
+                        donkh.DIENTHOAI = this.dienthoai.Text;
+                        donkh.GHICHU = this.ghichu.Text;
+                        if (chuyenhoso.Checked==false ){
+                            donkh.MADOT = this.cbDotNhanDon.Text;
+                        }
+                        donkh.MODIFYBY = DAL.C_USERS._userName;
+                        donkh.MODIFYDATE = DateTime.Now;
+                        donkh.MODIFYLOG = donkh.MODIFYLOG + " | " + DAL.C_USERS._userName + " Đã chỉnh sửa thông tin ngày " + DateTime.Now;
+                        try
+                        {
+                            DAL.C_DonKhachHang.SHSupdate(donkh);
+                            MessageBox.Show(this, "Cập Nhật Hồ Sơ Thành Công!", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            search();
+                        }
+                        catch (Exception ex)
+                        {
+                            log.Error("Sua Thong Tin Khach Hang Loi " + ex.Message);
+                            MessageBox.Show(this, "Cập Nhật Hồ Sơ Thất Bại !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Error("Lỗi Edit Biên Nhận " + ex.Message);
+                MessageBox.Show(this, "Cập Nhật Biên Nhận Lỗi.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btDelete_Click(object sender, EventArgs e)    {

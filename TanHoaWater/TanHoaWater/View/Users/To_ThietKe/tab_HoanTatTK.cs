@@ -28,7 +28,7 @@ namespace TanHoaWater.View.Users.To_ThietKe
             this.bophanChuyen.DisplayMember = "TENPHONG";
             this.bophanChuyen.ValueMember = "MAPHONG";
             #endregion
-            this.txtSHS.Mask = DateTime.Now.Year.ToString().Substring(2) + "CCCCC";
+            this.txtSHS.Mask = "CCCCCCCC";
 
         }
         string _madot = "";

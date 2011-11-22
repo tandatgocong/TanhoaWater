@@ -42,6 +42,13 @@ namespace TanHoaWater.DAL
             USER us = data.SingleOrDefault();     
             return us;
         }
+        public static USER findByFullName(string fullName)
+        {
+            TanHoaDataContext db = new TanHoaDataContext();
+            var data = from user in db.USERs where user.FULLNAME == fullName select user;
+            USER us = data.SingleOrDefault();
+            return us;
+        }
         public  bool UpdateUser(USER user)
         {
             try

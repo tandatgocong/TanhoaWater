@@ -45,7 +45,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.txtDotND = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtHoTen = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.txtGhiChu = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.label7 = new System.Windows.Forms.Label();
             this.txtSoDT = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.btUpdate = new DevComponents.DotNetBar.ButtonX();
@@ -57,6 +56,7 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
+            this.txtGhiChu = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.panel8.SuspendLayout();
             this.groupPanel1.SuspendLayout();
             this.panelEx1.SuspendLayout();
@@ -168,9 +168,8 @@
             this.txtnoidungtrongai.Location = new System.Drawing.Point(117, 367);
             this.txtnoidungtrongai.Margin = new System.Windows.Forms.Padding(4);
             this.txtnoidungtrongai.Name = "txtnoidungtrongai";
-            this.txtnoidungtrongai.ReadOnly = true;
             this.txtnoidungtrongai.Size = new System.Drawing.Size(321, 65);
-            this.txtnoidungtrongai.TabIndex = 128;
+            this.txtnoidungtrongai.TabIndex = 120;
             this.txtnoidungtrongai.Text = "";
             // 
             // label5
@@ -209,7 +208,7 @@
             this.txt_sdv.Name = "txt_sdv";
             this.txt_sdv.ReadOnly = true;
             this.txt_sdv.Size = new System.Drawing.Size(323, 25);
-            this.txt_sdv.TabIndex = 126;
+            this.txt_sdv.TabIndex = 119;
             // 
             // txtSoHo
             // 
@@ -312,20 +311,6 @@
             this.txtHoTen.Size = new System.Drawing.Size(323, 25);
             this.txtHoTen.TabIndex = 11;
             // 
-            // txtGhiChu
-            // 
-            // 
-            // 
-            // 
-            this.txtGhiChu.Border.Class = "TextBoxBorder";
-            this.txtGhiChu.Location = new System.Drawing.Point(117, 291);
-            this.txtGhiChu.Margin = new System.Windows.Forms.Padding(4);
-            this.txtGhiChu.Multiline = true;
-            this.txtGhiChu.Name = "txtGhiChu";
-            this.txtGhiChu.ReadOnly = true;
-            this.txtGhiChu.Size = new System.Drawing.Size(323, 25);
-            this.txtGhiChu.TabIndex = 118;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -362,7 +347,7 @@
             this.btUpdate.Name = "btUpdate";
             this.btUpdate.Size = new System.Drawing.Size(139, 28);
             this.btUpdate.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
-            this.btUpdate.TabIndex = 25;
+            this.btUpdate.TabIndex = 121;
             this.btUpdate.Text = "Cập Nhật Trở Ngại";
             this.btUpdate.Click += new System.EventHandler(this.btUpdate_Click);
             // 
@@ -455,6 +440,20 @@
             this.label15.TabIndex = 82;
             this.label15.Text = "Mã Hồ Sơ";
             // 
+            // txtGhiChu
+            // 
+            // 
+            // 
+            // 
+            this.txtGhiChu.Border.Class = "TextBoxBorder";
+            this.txtGhiChu.Location = new System.Drawing.Point(117, 291);
+            this.txtGhiChu.Margin = new System.Windows.Forms.Padding(4);
+            this.txtGhiChu.Multiline = true;
+            this.txtGhiChu.Name = "txtGhiChu";
+            this.txtGhiChu.ReadOnly = true;
+            this.txtGhiChu.Size = new System.Drawing.Size(323, 25);
+            this.txtGhiChu.TabIndex = 118;
+            // 
             // tab_DonTroNgai
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -481,7 +480,6 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label txtResult;
         private DevComponents.DotNetBar.Controls.TextBoxX txtDotND;
-        private DevComponents.DotNetBar.Controls.TextBoxX txtGhiChu;
         private DevComponents.DotNetBar.Controls.TextBoxX txtSoDT;
         private DevComponents.DotNetBar.Controls.TextBoxX txtLoaiHS;
         private DevComponents.DotNetBar.Controls.TextBoxX txtLoaiKH;
@@ -505,6 +503,7 @@
         private System.Windows.Forms.RichTextBox txtnoidungtrongai;
         private System.Windows.Forms.Label label5;
         private DevComponents.DotNetBar.ButtonX refresh;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtGhiChu;
 
     }
 }

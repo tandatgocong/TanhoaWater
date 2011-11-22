@@ -641,11 +641,11 @@ namespace TanHoaWater.View.Users.To_ThietKe
             this.txtSoDT.Text = null;
             this.txtGhiChu.Text = null;
             this.txt_sdv.Text = null;
-            this.txtSHS.Mask = DateTime.Now.Year.ToString().Substring(2) + "CCCCC";
+            this.txtSHS.Mask = "CCCCCCCC";
         }
         private void tabItem4_Click(object sender, EventArgs e)
         {
-            this.txtSHS.Mask = DateTime.Now.Year.ToString().Substring(2) + "CCCCC";
+            this.txtSHS.Mask = "CCCCCCCC";
             refesh();
         }
 

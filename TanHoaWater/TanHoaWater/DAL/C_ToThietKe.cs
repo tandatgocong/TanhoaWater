@@ -360,6 +360,16 @@ namespace TanHoaWater.DAL
             }
              
         }
+        public static void updateSoDoVien(string shs, string sodovien) {
+            TanHoaDataContext db = new TanHoaDataContext();
+            var query = from ttk in db.TOTHIETKEs where ttk.SHS == shs select ttk;
+            TOTHIETKE totk = query.SingleOrDefault();
+            if (totk != null)
+            {
+                totk.SODOVIEN = DAL.C_USERS.findByFullName(sodovien).USERNAME;
+                db.SubmitChanges();
+            }
+        }
     
     }
 }
