@@ -1214,98 +1214,98 @@ namespace TanHoaWater.View.Users.TinhDuToan
      
         public static DataTable TongKetChiPhi(string shs, bool _PHIC3, bool _PHIGS, bool _PHIQL)
         {
-            TanHoaDataContext db = new TanHoaDataContext();
-            SqlConnection conn = new SqlConnection(db.Connection.ConnectionString);
+            //TanHoaDataContext db = new TanHoaDataContext();
+            //SqlConnection conn = new SqlConnection(db.Connection.ConnectionString);
 
-            conn.Open();
-            SqlCommand cmd = new SqlCommand("TONGKETCHIPHI", conn);
-            cmd.CommandType = CommandType.StoredProcedure;
+            //conn.Open();
+            //SqlCommand cmd = new SqlCommand("TONGKETCHIPHI", conn);
+            //cmd.CommandType = CommandType.StoredProcedure;
 
-            SqlParameter inparm = cmd.Parameters.Add("@shs", SqlDbType.VarChar);
-            inparm.Direction = ParameterDirection.Input;
-            inparm.Value = shs;
+            //SqlParameter inparm = cmd.Parameters.Add("@shs", SqlDbType.VarChar);
+            //inparm.Direction = ParameterDirection.Input;
+            //inparm.Value = shs;
 
-            SqlParameter PHIC3 = cmd.Parameters.Add("@PHIC3", SqlDbType.Bit);
-            PHIC3.Direction = ParameterDirection.Input;
-            PHIC3.Value = _PHIC3;
+            //SqlParameter PHIC3 = cmd.Parameters.Add("@PHIC3", SqlDbType.Bit);
+            //PHIC3.Direction = ParameterDirection.Input;
+            //PHIC3.Value = _PHIC3;
 
-            SqlParameter PHIGS = cmd.Parameters.Add("@PHIGS", SqlDbType.Bit);
-            PHIGS.Direction = ParameterDirection.Input;
-            PHIGS.Value = _PHIGS;
+            //SqlParameter PHIGS = cmd.Parameters.Add("@PHIGS", SqlDbType.Bit);
+            //PHIGS.Direction = ParameterDirection.Input;
+            //PHIGS.Value = _PHIGS;
 
-            SqlParameter PHIQL = cmd.Parameters.Add("@PHIQL", SqlDbType.Bit);
-            PHIQL.Direction = ParameterDirection.Input;
-            PHIQL.Value = _PHIQL;
+            //SqlParameter PHIQL = cmd.Parameters.Add("@PHIQL", SqlDbType.Bit);
+            //PHIQL.Direction = ParameterDirection.Input;
+            //PHIQL.Value = _PHIQL;
             
 
-            SqlParameter _A = cmd.Parameters.Add("@A", SqlDbType.Float);
-            _A.Direction = ParameterDirection.Output;
+            //SqlParameter _A = cmd.Parameters.Add("@A", SqlDbType.Float);
+            //_A.Direction = ParameterDirection.Output;
 
-            SqlParameter _B = cmd.Parameters.Add("@B", SqlDbType.Float);
-            _B.Direction = ParameterDirection.Output;
+            //SqlParameter _B = cmd.Parameters.Add("@B", SqlDbType.Float);
+            //_B.Direction = ParameterDirection.Output;
 
-            SqlParameter _C = cmd.Parameters.Add("@C", SqlDbType.Float);
-            _C.Direction = ParameterDirection.Output;
+            //SqlParameter _C = cmd.Parameters.Add("@C", SqlDbType.Float);
+            //_C.Direction = ParameterDirection.Output;
 
-            SqlParameter _CHIPHICABA = cmd.Parameters.Add("@CPCABA", SqlDbType.Float);
-            _CHIPHICABA.Direction = ParameterDirection.Output;
+            //SqlParameter _CHIPHICABA = cmd.Parameters.Add("@CPCABA", SqlDbType.Float);
+            //_CHIPHICABA.Direction = ParameterDirection.Output;
 
-            SqlParameter _TONG = cmd.Parameters.Add("@TOTAL", SqlDbType.Float);
-            _TONG.Direction = ParameterDirection.Output;
+            //SqlParameter _TONG = cmd.Parameters.Add("@TOTAL", SqlDbType.Float);
+            //_TONG.Direction = ParameterDirection.Output;
 
-            SqlParameter _VAT = cmd.Parameters.Add("@VAT", SqlDbType.Float);
-            _VAT.Direction = ParameterDirection.Output;
+            //SqlParameter _VAT = cmd.Parameters.Add("@VAT", SqlDbType.Float);
+            //_VAT.Direction = ParameterDirection.Output;
 
-            SqlParameter B1 = cmd.Parameters.Add("@B1", SqlDbType.Float);
-            B1.Direction = ParameterDirection.Output;
+            //SqlParameter B1 = cmd.Parameters.Add("@B1", SqlDbType.Float);
+            //B1.Direction = ParameterDirection.Output;
 
-            SqlParameter C1 = cmd.Parameters.Add("@C1", SqlDbType.Float);
-            C1.Direction = ParameterDirection.Output;
+            //SqlParameter C1 = cmd.Parameters.Add("@C1", SqlDbType.Float);
+            //C1.Direction = ParameterDirection.Output;
 
-            SqlParameter C2 = cmd.Parameters.Add("@C2", SqlDbType.Float);
-            C2.Direction = ParameterDirection.Output;
+            //SqlParameter C2 = cmd.Parameters.Add("@C2", SqlDbType.Float);
+            //C2.Direction = ParameterDirection.Output;
 
-            SqlParameter D = cmd.Parameters.Add("@D", SqlDbType.Float);
-            D.Direction = ParameterDirection.Output;
+            //SqlParameter D = cmd.Parameters.Add("@D", SqlDbType.Float);
+            //D.Direction = ParameterDirection.Output;
 
-            SqlParameter E = cmd.Parameters.Add("@E", SqlDbType.Float);
-            E.Direction = ParameterDirection.Output;
+            //SqlParameter E = cmd.Parameters.Add("@E", SqlDbType.Float);
+            //E.Direction = ParameterDirection.Output;
 
-            SqlParameter F = cmd.Parameters.Add("@F", SqlDbType.Float);
-            F.Direction = ParameterDirection.Output;
+            //SqlParameter F = cmd.Parameters.Add("@F", SqlDbType.Float);
+            //F.Direction = ParameterDirection.Output;
 
-            SqlParameter G = cmd.Parameters.Add("@G", SqlDbType.Float);
-            G.Direction = ParameterDirection.Output;
+            //SqlParameter G = cmd.Parameters.Add("@G", SqlDbType.Float);
+            //G.Direction = ParameterDirection.Output;
 
-            SqlParameter H = cmd.Parameters.Add("@H", SqlDbType.Float);
-            H.Direction = ParameterDirection.Output;
+            //SqlParameter H = cmd.Parameters.Add("@H", SqlDbType.Float);
+            //H.Direction = ParameterDirection.Output;
 
-            SqlParameter I = cmd.Parameters.Add("@I", SqlDbType.Float);
-            I.Direction = ParameterDirection.Output;
+            //SqlParameter I = cmd.Parameters.Add("@I", SqlDbType.Float);
+            //I.Direction = ParameterDirection.Output;
 
-            SqlParameter J = cmd.Parameters.Add("@J", SqlDbType.Float);
-            J.Direction = ParameterDirection.Output;
+            //SqlParameter J = cmd.Parameters.Add("@J", SqlDbType.Float);
+            //J.Direction = ParameterDirection.Output;
 
-            SqlParameter K = cmd.Parameters.Add("@K", SqlDbType.Float);
-            K.Direction = ParameterDirection.Output;
+            //SqlParameter K = cmd.Parameters.Add("@K", SqlDbType.Float);
+            //K.Direction = ParameterDirection.Output;
 
-            SqlParameter L = cmd.Parameters.Add("@L", SqlDbType.Float);
-            L.Direction = ParameterDirection.Output;
+            //SqlParameter L = cmd.Parameters.Add("@L", SqlDbType.Float);
+            //L.Direction = ParameterDirection.Output;
 
 
-            SqlParameter _TAILAPMATDUONG = cmd.Parameters.Add("@TAILAPMATDUONG", SqlDbType.Float);
-            _TAILAPMATDUONG.Direction = ParameterDirection.Output;
+            //SqlParameter _TAILAPMATDUONG = cmd.Parameters.Add("@TAILAPMATDUONG", SqlDbType.Float);
+            //_TAILAPMATDUONG.Direction = ParameterDirection.Output;
 
-            SqlParameter _TLMDTRUOCTHUE = cmd.Parameters.Add("@TLMDTRUOCTHUE", SqlDbType.Float);
-            _TLMDTRUOCTHUE.Direction = ParameterDirection.Output;
+            //SqlParameter _TLMDTRUOCTHUE = cmd.Parameters.Add("@TLMDTRUOCTHUE", SqlDbType.Float);
+            //_TLMDTRUOCTHUE.Direction = ParameterDirection.Output;
 
-            SqlParameter _CPGAN = cmd.Parameters.Add("@CPGAN", SqlDbType.Float);
-            _CPGAN.Direction = ParameterDirection.Output;
+            //SqlParameter _CPGAN = cmd.Parameters.Add("@CPGAN", SqlDbType.Float);
+            //_CPGAN.Direction = ParameterDirection.Output;
 
-            SqlParameter _CPNHUA = cmd.Parameters.Add("@CPNHUA", SqlDbType.Float);
-            _CPNHUA.Direction = ParameterDirection.Output;
+            //SqlParameter _CPNHUA = cmd.Parameters.Add("@CPNHUA", SqlDbType.Float);
+            //_CPNHUA.Direction = ParameterDirection.Output;
 
-            cmd.ExecuteNonQuery();
+            //cmd.ExecuteNonQuery();
 
             DataTable table = new DataTable("TONGKETKINHPHI");
             table.Columns.Add("SHS", typeof(string));
@@ -1327,41 +1327,40 @@ namespace TanHoaWater.View.Users.TinhDuToan
             table.Columns.Add("J", typeof(double));
             table.Columns.Add("K", typeof(double));
             table.Columns.Add("L", typeof(double));
-
             table.Columns.Add("TAILAPMATDUONG", typeof(double));
             table.Columns.Add("TLMDTRUOCTHUE", typeof(double));
             table.Columns.Add("CPGAN", typeof(double));
             table.Columns.Add("CPNHUA", typeof(double));
 
             DataRow myDataRow = table.NewRow();
-            total = double.Parse(cmd.Parameters["@TOTAL"].Value + "");
+            total = DAL.C_CongTacBangGia.TONG;
             myDataRow["SHS"] = shs;
-            myDataRow["A"] = double.Parse(cmd.Parameters["@A"].Value + "");
-            myDataRow["B"] = double.Parse(cmd.Parameters["@B"].Value + "");
-            myDataRow["C"] = double.Parse(cmd.Parameters["@C"].Value + "");
-            myDataRow["CPCABA"] = double.Parse(cmd.Parameters["@CPCABA"].Value + "");
+            myDataRow["A"] = DAL.C_CongTacBangGia.CPVATLIEU;
+            myDataRow["B"] = DAL.C_CongTacBangGia.B;
+            myDataRow["C"] = DAL.C_CongTacBangGia.C;
+            myDataRow["CPCABA"] = DAL.C_CongTacBangGia.CPCABA;
             myDataRow["TOTAL"] = total;
-            myDataRow["VAT"] = double.Parse(cmd.Parameters["@VAT"].Value + "");
-            myDataRow["B1"] = double.Parse(cmd.Parameters["@B1"].Value + "");
-            myDataRow["C1"] = double.Parse(cmd.Parameters["@C1"].Value + "");
-            myDataRow["C2"] = double.Parse(cmd.Parameters["@C2"].Value + "");
-            myDataRow["D"] = double.Parse(cmd.Parameters["@D"].Value + ""); ;
-            myDataRow["E"] = double.Parse(cmd.Parameters["@E"].Value + ""); ;
-            myDataRow["F"] = double.Parse(cmd.Parameters["@F"].Value + ""); ;
-            myDataRow["G"] = double.Parse(cmd.Parameters["@G"].Value + ""); ;
-            myDataRow["H"] = double.Parse(cmd.Parameters["@H"].Value + ""); ;
-            myDataRow["I"] = double.Parse(cmd.Parameters["@I"].Value + ""); ;
-            myDataRow["J"] = double.Parse(cmd.Parameters["@J"].Value + "");
-            myDataRow["K"] = double.Parse(cmd.Parameters["@K"].Value + "");
-            myDataRow["L"] = double.Parse(cmd.Parameters["@L"].Value + "");
+            myDataRow["VAT"] = DAL.C_CongTacBangGia.VAT;
+            myDataRow["B1"] = DAL.C_CongTacBangGia.CPNHANCONG;
+            myDataRow["C1"] = DAL.C_CongTacBangGia.CPMAYTHICONG;
+            myDataRow["C2"] = DAL.C_CongTacBangGia.C2;
+            myDataRow["D"] = DAL.C_CongTacBangGia.D;
+            myDataRow["E"] = DAL.C_CongTacBangGia.E;
+            myDataRow["F"] = DAL.C_CongTacBangGia.F;
+            myDataRow["G"] = DAL.C_CongTacBangGia.G;
+            myDataRow["H"] = DAL.C_CongTacBangGia.H;
+            myDataRow["I"] = DAL.C_CongTacBangGia.I;
+            myDataRow["J"] = DAL.C_CongTacBangGia.J;
+            myDataRow["K"] = DAL.C_CongTacBangGia.K;
+            myDataRow["L"] = DAL.C_CongTacBangGia.L;
 
-            myDataRow["TAILAPMATDUONG"] = double.Parse(cmd.Parameters["@TAILAPMATDUONG"].Value + "");
-            myDataRow["TLMDTRUOCTHUE"] = double.Parse(cmd.Parameters["@TLMDTRUOCTHUE"].Value + "");
-            myDataRow["CPGAN"] = double.Parse(cmd.Parameters["@CPGAN"].Value + "");
-            myDataRow["CPNHUA"] = double.Parse(cmd.Parameters["@CPNHUA"].Value + "");
+            myDataRow["TAILAPMATDUONG"] = DAL.C_CongTacBangGia.TAILAPMATDUONG;
+            myDataRow["TLMDTRUOCTHUE"] = DAL.C_CongTacBangGia.TLMDTRUOCTHUE;
+            myDataRow["CPGAN"] = DAL.C_CongTacBangGia.CPGAN;
+            myDataRow["CPNHUA"] = DAL.C_CongTacBangGia.CPNHUA;
            
             table.Rows.Add(myDataRow);
-            conn.Close();
+            //conn.Close();
             return table;
         }
         

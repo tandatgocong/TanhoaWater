@@ -57,7 +57,7 @@ namespace TanHoaWater.DAL
         public static double CPVATLIEU = 0.0;//@A FLOAT OUTPUT,
         public static double CPNHANCONG = 0.0;//@B FLOAT OUTPUT,
         public static double CPMAYTHICONG = 0.0;///@C FLOAT OUTPUT,
-	    public static double CPCABA=0.0;//@CHIPHICABA FLOAT OUTPUT,	
+  	    public static double CPCABA=0.0;//@CHIPHICABA FLOAT OUTPUT,	
         public static double THUE55 = 0.0;///@VAT FLOAT OUTPUT,
         public static double TONGTRUOCTHUE = 0.0;///@VAT FLOAT OUTPUT,
         public static double VAT = 0.0;///@VAT FLOAT OUTPUT,
@@ -68,6 +68,21 @@ namespace TanHoaWater.DAL
 	    public static double CHIPHICHUNG= 0.0;
         public static double CPGAN = 0.0;
         public static double CPNHUA = 0.0;
+        public static double CPCABAG= 0.0;
+        public static double TOTAL= 0.0;
+        public static double B = 0.0;  
+        public static double B1 = 0.0;    
+        public static double C= 0.0;
+        public static double C2= 0.0;
+        public static double D= 0.0;
+        public static double E= 0.0;
+        public static double F= 0.0;
+        public static double G= 0.0;
+        public static double H= 0.0;
+        public static double I= 0.0;
+        public static double J= 0.0;
+        public static double K= 0.0;
+        public static double L= 0.0;
 
         public static void TongKetChiPhi(string shs, bool _PHIC3,  bool _PHIGS,  bool _PHIQL ) {
             TanHoaDataContext db = new TanHoaDataContext();
@@ -112,41 +127,41 @@ namespace TanHoaWater.DAL
             SqlParameter _VAT = cmd.Parameters.Add("@VAT", SqlDbType.Float);
             _VAT.Direction = ParameterDirection.Output;
 
-            SqlParameter B1 = cmd.Parameters.Add("@B1", SqlDbType.Float);
-            B1.Direction = ParameterDirection.Output;
+            SqlParameter _B1 = cmd.Parameters.Add("@B1", SqlDbType.Float);
+            _B1.Direction = ParameterDirection.Output;
 
-            SqlParameter C1 = cmd.Parameters.Add("@C1", SqlDbType.Float);
-            C1.Direction = ParameterDirection.Output;
+            SqlParameter _C1 = cmd.Parameters.Add("@C1", SqlDbType.Float);
+            _C1.Direction = ParameterDirection.Output;
 
-            SqlParameter C2 = cmd.Parameters.Add("@C2", SqlDbType.Float);
-            C2.Direction = ParameterDirection.Output;
+            SqlParameter _C2 = cmd.Parameters.Add("@C2", SqlDbType.Float);
+            _C2.Direction = ParameterDirection.Output;
 
-            SqlParameter D = cmd.Parameters.Add("@D", SqlDbType.Float);
-            D.Direction = ParameterDirection.Output;
+            SqlParameter _D = cmd.Parameters.Add("@D", SqlDbType.Float);
+            _D.Direction = ParameterDirection.Output;
 
-            SqlParameter E = cmd.Parameters.Add("@E", SqlDbType.Float);
-            E.Direction = ParameterDirection.Output;
+            SqlParameter _E = cmd.Parameters.Add("@E", SqlDbType.Float);
+           _E.Direction = ParameterDirection.Output;
 
-            SqlParameter F = cmd.Parameters.Add("@F", SqlDbType.Float);
-            F.Direction = ParameterDirection.Output;
+            SqlParameter _F = cmd.Parameters.Add("@F", SqlDbType.Float);
+            _F.Direction = ParameterDirection.Output;
 
-            SqlParameter G = cmd.Parameters.Add("@G", SqlDbType.Float);
-            G.Direction = ParameterDirection.Output;
+            SqlParameter _G = cmd.Parameters.Add("@G", SqlDbType.Float);
+            _G.Direction = ParameterDirection.Output;
 
-            SqlParameter H = cmd.Parameters.Add("@H", SqlDbType.Float);
-            H.Direction = ParameterDirection.Output;
+            SqlParameter _H = cmd.Parameters.Add("@H", SqlDbType.Float);
+            _H.Direction = ParameterDirection.Output;
 
-            SqlParameter I = cmd.Parameters.Add("@I", SqlDbType.Float);
-            I.Direction = ParameterDirection.Output;
+            SqlParameter _I = cmd.Parameters.Add("@I", SqlDbType.Float);
+            _I.Direction = ParameterDirection.Output;
 
-            SqlParameter J = cmd.Parameters.Add("@J", SqlDbType.Float);
-            J.Direction = ParameterDirection.Output;
+            SqlParameter _J = cmd.Parameters.Add("@J", SqlDbType.Float);
+            _J.Direction = ParameterDirection.Output;
 
-            SqlParameter K = cmd.Parameters.Add("@K", SqlDbType.Float);
-            K.Direction = ParameterDirection.Output;
+            SqlParameter _K = cmd.Parameters.Add("@K", SqlDbType.Float);
+            _K.Direction = ParameterDirection.Output;
 
-            SqlParameter L = cmd.Parameters.Add("@L", SqlDbType.Float);
-            L.Direction = ParameterDirection.Output;
+            SqlParameter _L = cmd.Parameters.Add("@L", SqlDbType.Float);
+            _L.Direction = ParameterDirection.Output;
 
             SqlParameter _TAILAPMATDUONG = cmd.Parameters.Add("@TAILAPMATDUONG", SqlDbType.Float);
             _TAILAPMATDUONG.Direction = ParameterDirection.Output;
@@ -165,6 +180,19 @@ namespace TanHoaWater.DAL
             CPVATLIEU = double.Parse(cmd.Parameters["@A"].Value + "");
             CPNHANCONG = double.Parse(cmd.Parameters["@B1"].Value + "");
             CPMAYTHICONG = double.Parse(cmd.Parameters["@C1"].Value + "");
+            B = double.Parse(cmd.Parameters["@B"].Value + "");
+            C = double.Parse(cmd.Parameters["@C"].Value + "");
+            C2 = double.Parse(cmd.Parameters["@C2"].Value + "");
+            D = double.Parse(cmd.Parameters["@D"].Value + "");
+            E = double.Parse(cmd.Parameters["@E"].Value + "");
+            F = double.Parse(cmd.Parameters["@F"].Value + "");
+            G = double.Parse(cmd.Parameters["@G"].Value + "");
+            H = double.Parse(cmd.Parameters["@H"].Value + "");
+            I = double.Parse(cmd.Parameters["@I"].Value + "");
+            J = double.Parse(cmd.Parameters["@J"].Value + "");
+            K = double.Parse(cmd.Parameters["@K"].Value + "");
+            L = double.Parse(cmd.Parameters["@L"].Value + "");
+
             CPCABA = double.Parse(cmd.Parameters["@CPCABA"].Value + "");
             THUE55 =  double.Parse(cmd.Parameters["@G"].Value + "");
             TONGTRUOCTHUE = double.Parse(cmd.Parameters["@H"].Value + "");
