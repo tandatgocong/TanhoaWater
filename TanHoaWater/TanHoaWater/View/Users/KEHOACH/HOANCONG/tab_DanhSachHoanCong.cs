@@ -226,7 +226,7 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
                         }
 
 
-                        if (Utilities.DateToString.checkDate(Utilities.DateToString.convartddMMyyyy(this.gridHoanCong.Rows[i].Cells["hc_NgayTC"].Value+""))==false)
+                        if (Utilities.DateToString.checkDate(Utilities.DateToString.convartddMMyyyy(this.gridHoanCong.Rows[i].Cells["hc_NgayTC"].Value + "").Trim()) == false)
                         {
                             this.gridHoanCong.Rows[i].Cells["hc_NgayTC"].ErrorText = "Ngày Thi Công Không Hợp Lệ";
                             break;
@@ -234,7 +234,7 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
                         else
                         {
                             this.gridHoanCong.Rows[i].Cells["hc_NgayTC"].ErrorText = null;
-                            ngaytc = Utilities.DateToString.convartddMMyyyy(this.gridHoanCong.Rows[i].Cells["hc_NgayTC"].Value + "");
+                            ngaytc = Utilities.DateToString.convartddMMyyyy((this.gridHoanCong.Rows[i].Cells["hc_NgayTC"].Value + "").Trim());
                         }
 
                         if (this.gridHoanCong.Rows[i].Cells["hc_ChiSo"].Value != null && "".Equals(this.gridHoanCong.Rows[i].Cells["hc_ChiSo"].Value + ""))
@@ -247,13 +247,14 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
                             this.gridHoanCong.Rows[i].Cells["hc_ChiSo"].ErrorText = null;
                             chiso = this.gridHoanCong.Rows[i].Cells["hc_ChiSo"].Value + "";
                         }
+
                         DAL.C_KH_HoanCong.HoanCong(shs, DateTime.ParseExact(ngaytc, "dd/MM/yyyy", null), int.Parse(chiso), sothanTLK, HoanCong);
                     }
                    
                 }
                 MessageBox.Show(this, "Hoàn Tất.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.btInBangKe.Enabled = true;
-                hoantat();
+                //hoantat();
             }
             catch (Exception ex)
             {

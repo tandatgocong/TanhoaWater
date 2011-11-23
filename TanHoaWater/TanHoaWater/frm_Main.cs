@@ -157,6 +157,22 @@ namespace TanHoaWater
                     group_VTTH.Visible = true;
 
                 }
+                else if ("DHN".Equals(DAL.C_USERS._maphong.Trim()))
+                {
+                    this.menuQLDHNuoc.Visible = true;
+                    this.iconMenuPanel.Controls.Clear();
+                    this.iconMenuPanel.Controls.Add(group_DoiDHN);
+                    group_DoiDHN.Visible = true;
+
+                }
+            }
+            else if ("QT".Equals(DAL.C_USERS._roles.Trim()))
+            {
+                 
+                    this.menuToThietKe.Visible = true;
+                    this.iconMenuPanel.Controls.Clear();
+                    this.menuKHVT.Visible = true;
+                    this.menuQLDHNuoc.Visible = true;
             }
         }
 
@@ -181,14 +197,14 @@ namespace TanHoaWater
             this.menuKHVT.Visible = true;
             this.menuKHVT.Select();
             this.PanelContent.Controls.Clear();
-            this.PanelContent.Controls.Add(new HSKHACHHANG(2));
+            this.PanelContent.Controls.Add(new UCT_XINPHEPDD());
         }
         private void vtth_HoSoTraNgai_Click(object sender, EventArgs e)
         {
             this.menuKHVT.Visible = true;
             this.menuKHVT.Select();
             this.PanelContent.Controls.Clear();
-            this.PanelContent.Controls.Add(new HSKHACHHANG(3));
+            this.PanelContent.Controls.Add(new UCT_DOTTHICONG());
         }
 
         private void vtth_HoSoTaiXet_Click(object sender, EventArgs e)
@@ -196,7 +212,7 @@ namespace TanHoaWater
             this.menuKHVT.Visible = true;
             this.menuKHVT.Select();
             this.PanelContent.Controls.Clear();
-            this.PanelContent.Controls.Add(new HSKHACHHANG(4));
+            this.PanelContent.Controls.Add(new UCT_HOANCONG());
         }
 
         private void khvt_TraCuuHS_Click(object sender, EventArgs e)
@@ -208,7 +224,7 @@ namespace TanHoaWater
             this.menuKHVT.Visible = true;
             this.menuKHVT.Select();
             this.PanelContent.Controls.Clear();
-            this.PanelContent.Controls.Add(new HSKHACHHANG(5));
+            //this.PanelContent.Controls.Add(new HSKHACHHANG(5));
         }
         private void khvt_BaoCao_Click(object sender, EventArgs e)
         {
@@ -256,15 +272,10 @@ namespace TanHoaWater
             this.PanelContent.Controls.Add(new uct_GiaoHS(5));
         }
 
-        private void buttonX1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
         private void subDangXuat_Click(object sender, EventArgs e)
         {
             this.menuToThietKe.Visible = false;
+            this.menuQLDHNuoc.Visible = false;
             this.menuKHVT.Visible = false;
             iconMenuPanel.Controls.Clear();
             DAL.C_USERS._fullName = null;
@@ -410,6 +421,18 @@ namespace TanHoaWater
             this.PanelContent.Controls.Clear();
             this.PanelContent.Controls.Add(new UCT_CapDanhBo());
             this.menuQLDHNuoc.Select();
+        }
+
+        private void dhn_NhapDanhBo_Click(object sender, EventArgs e)
+        {
+            this.PanelContent.Controls.Clear();
+            this.PanelContent.Controls.Add(new UCT_CapDanhBo());
+            this.menuQLDHNuoc.Select();
+        }
+
+        private void dhn_BaoCao_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

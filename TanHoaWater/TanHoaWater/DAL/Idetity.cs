@@ -28,7 +28,7 @@ namespace TanHoaWater.DAL
         {
             string year = DateTime.Now.Year.ToString().Substring(2);
             string kytumacdinh = year + loaihs;
-            string id = kytumacdinh+"999";
+            string id = kytumacdinh + "999";
             try
             {
 
@@ -56,10 +56,11 @@ namespace TanHoaWater.DAL
                             id = obj.ID(year, year + "000000", "000000") + "";
                         }
                     }
-                    else {
+                    else
+                    {
                         id = obj.ID(year, year + "000000", "000000") + "";
                     }
-                    
+
                     db.Connection.Close();
                 }
                 else
@@ -71,7 +72,7 @@ namespace TanHoaWater.DAL
                     SqlDataReader dr1 = cmd.ExecuteReader();
                     while (dr1.Read())
                     {
-                        
+
                         if (dr1[0].ToString().Trim().Substring(0, 2).Equals(year))
                         {
                             id = obj.ID(kytumacdinh, dr1[0].ToString().Trim(), "0000") + "";
@@ -87,20 +88,23 @@ namespace TanHoaWater.DAL
             }
             catch (Exception)
             {
-                 
+
             }
-            
+
             return id;
 
         }
-        public static string IdentitySoHopDong(string sohodong) {
-            if (sohodong.Length == 7)
+        public static string IdentitySoHopDong(string sohodong)
+        {
+            try
             {
                 String_Indentity.String_Indentity obj = new String_Indentity.String_Indentity();
-                sohodong = obj.ID(sohodong.Substring(0, 2), sohodong, "00000")+"";
+                sohodong = obj.ID(sohodong.Substring(0, 2), sohodong, "00000") + "";
+            }
+            catch (Exception)
+            {
             }
             return sohodong;
-       
         }
     }
 }

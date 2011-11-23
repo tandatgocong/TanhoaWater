@@ -266,10 +266,12 @@ namespace TanHoaWater.View.Users.DONGHONUOC
                 if (gridHoanCong.CurrentCell.OwningColumn.Name == "hc_hopdong")
                 {
                     gridHoanCong.Rows[gridHoanCong.CurrentCell.RowIndex].Cells["hc_hopdong"].Value = gridHoanCong.Rows[gridHoanCong.CurrentCell.RowIndex].Cells["hc_hopdong"].Value.ToString().ToUpper();
+                    _sohopdong= gridHoanCong.Rows[gridHoanCong.CurrentCell.RowIndex].Cells["hc_hopdong"].Value.ToString().ToUpper();
                 }
                 if (gridHoanCong.CurrentCell.OwningColumn.Name == "hc_MaDMA")
                 {
                     _maDMA = gridHoanCong.Rows[gridHoanCong.CurrentCell.RowIndex].Cells["hc_MaDMA"].Value.ToString().ToUpper();
+                    gridHoanCong.Rows[gridHoanCong.CurrentCell.RowIndex].Cells["hc_MaDMA"].Value = gridHoanCong.Rows[gridHoanCong.CurrentCell.RowIndex].Cells["hc_MaDMA"].Value.ToString().ToUpper();
                 }
                 if (gridHoanCong.CurrentCell.OwningColumn.Name == "hc_hieuLuc")
                 {
@@ -509,7 +511,7 @@ namespace TanHoaWater.View.Users.DONGHONUOC
                 this.btInBangKe.Enabled = true;
                 this.btInBangDC.Enabled = true;
                 MessageBox.Show(this, "Hoàn Tất.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                hoantat();
+              //  hoantat();
             }
             catch (Exception ex)
             {
