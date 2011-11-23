@@ -656,6 +656,7 @@ namespace TanHoaWater.View.Users.TinhDuToan
             banggiadaco = false;
             radioGhiMoi.Checked = false;
             radioGhiDe.Checked = false;
+            loadcongtac = true;
             view = true;
 
             #region LoadGird
@@ -665,7 +666,7 @@ namespace TanHoaWater.View.Users.TinhDuToan
             if (bgKL != null)
             {
                 banggiadaco = true;
-                 loadcongtac = false;
+                loadcongtac = false;
                 radioGhiDe.Checked = true;
                 view = false;
                 this.txtKhoiLuongCatNhua.Text = String.Format("{0:0.00}", bgKL.BOCNHUA);
@@ -690,6 +691,9 @@ namespace TanHoaWater.View.Users.TinhDuToan
                 radioGhiMoi.Checked = true;
                 radioGhiDe.Checked = false;
                 radioNone.Checked = false;
+                banggiadaco = false;
+                
+                view = true;
             }
 
 
@@ -756,6 +760,7 @@ namespace TanHoaWater.View.Users.TinhDuToan
         {
             if (e.KeyChar == 13)
             {
+                tabControl2.SelectedTabIndex = 0;
                 DataTable table = DAL.C_DonKhachHang.finbyDonKHTinhDuToan(this.txtSHS.Text);
                 if (table.Rows.Count <= 0)
                 {
@@ -1498,32 +1503,32 @@ namespace TanHoaWater.View.Users.TinhDuToan
             table.Columns.Add("CPNHUA", typeof(double));
 
             DataRow myDataRow = table.NewRow();
-            total = double.Parse(cmd.Parameters["@TOTAL"].Value + "");
+            total = double.Parse(("" + cmd.Parameters["@TOTAL"].Value).Equals("") != true ? cmd.Parameters["@TOTAL"].Value + "" : "0.0");
             myDataRow["SHS"] = shs;
-            myDataRow["A"] = double.Parse(cmd.Parameters["@A"].Value + "");
-            myDataRow["B"] = double.Parse(cmd.Parameters["@B"].Value + "");
-            myDataRow["C"] = double.Parse(cmd.Parameters["@C"].Value + "");
-            myDataRow["CPCABA"] = double.Parse(cmd.Parameters["@CPCABA"].Value + "");
+            myDataRow["A"] = double.Parse(("" + cmd.Parameters["@A"].Value).Equals("") != true ? cmd.Parameters["@A"].Value + "" : "0.0");
+            myDataRow["B"] = double.Parse(("" + cmd.Parameters["@B"].Value).Equals("") != true ? cmd.Parameters["@B"].Value + "" : "0.0");
+            myDataRow["C"] = double.Parse(("" + cmd.Parameters["@C"].Value).Equals("") != true ? cmd.Parameters["@C"].Value + "" : "0.0");
+            myDataRow["CPCABA"] = double.Parse(("" + cmd.Parameters["@CPCABA"].Value).Equals("") != true ? cmd.Parameters["@CPCABA"].Value + "" : "0.0");
             myDataRow["TOTAL"] = total;
-            myDataRow["VAT"] = double.Parse(cmd.Parameters["@VAT"].Value + "");
-            myDataRow["B1"] = double.Parse(cmd.Parameters["@B1"].Value + "");
-            myDataRow["C1"] = double.Parse(cmd.Parameters["@C1"].Value + "");
-            myDataRow["C2"] = double.Parse(cmd.Parameters["@C2"].Value + "");
-            myDataRow["D"] = double.Parse(cmd.Parameters["@D"].Value + ""); ;
-            myDataRow["E"] = double.Parse(cmd.Parameters["@E"].Value + ""); ;
-            myDataRow["F"] = double.Parse(cmd.Parameters["@F"].Value + ""); ;
-            myDataRow["G"] = double.Parse(cmd.Parameters["@G"].Value + ""); ;
-            myDataRow["H"] = double.Parse(cmd.Parameters["@H"].Value + ""); ;
-            myDataRow["I"] = double.Parse(cmd.Parameters["@I"].Value + ""); ;
-            myDataRow["J"] = double.Parse(cmd.Parameters["@J"].Value + "");
-            myDataRow["K"] = double.Parse(cmd.Parameters["@K"].Value + "");
-            myDataRow["L"] = double.Parse(cmd.Parameters["@L"].Value + "");
+            myDataRow["VAT"] = double.Parse(("" + cmd.Parameters["@VAT"].Value).Equals("") != true ? cmd.Parameters["@VAT"].Value + "" : "0.0");
+            myDataRow["B1"] = double.Parse(("" + cmd.Parameters["@B1"].Value).Equals("") != true ? cmd.Parameters["@B1"].Value + "" : "0.0");
+            myDataRow["C1"] = double.Parse(("" + cmd.Parameters["@C1"].Value).Equals("") != true ? cmd.Parameters["@C1"].Value + "" : "0.0");
+            myDataRow["C2"] = double.Parse(("" + cmd.Parameters["@C2"].Value).Equals("") != true ? cmd.Parameters["@C2"].Value + "" : "0.0");
+            myDataRow["D"] = double.Parse(("" + cmd.Parameters["@D"].Value).Equals("") != true ? cmd.Parameters["@D"].Value + "" : "0.0");
+            myDataRow["E"] = double.Parse(("" + cmd.Parameters["@E"].Value).Equals("") != true ? cmd.Parameters["@E"].Value + "" : "0.0");
+            myDataRow["F"] = double.Parse(("" + cmd.Parameters["@F"].Value).Equals("") != true ? cmd.Parameters["@F"].Value + "" : "0.0");
+            myDataRow["G"] = double.Parse(("" + cmd.Parameters["@G"].Value).Equals("") != true ? cmd.Parameters["@G"].Value + "" : "0.0");
+            myDataRow["H"] = double.Parse(("" + cmd.Parameters["@H"].Value).Equals("") != true ? cmd.Parameters["@H"].Value + "" : "0.0");
+            myDataRow["I"] = double.Parse(("" + cmd.Parameters["@I"].Value).Equals("") != true ? cmd.Parameters["@I"].Value + "" : "0.0");
+            myDataRow["J"] = double.Parse(("" + cmd.Parameters["@J"].Value).Equals("") != true ? cmd.Parameters["@J"].Value + "" : "0.0");
+            myDataRow["K"] = double.Parse(("" + cmd.Parameters["@K"].Value).Equals("") != true ? cmd.Parameters["@K"].Value + "" : "0.0");
+            myDataRow["L"] = double.Parse(("" + cmd.Parameters["@L"].Value).Equals("") != true ? cmd.Parameters["@L"].Value + "" : "0.0");
 
-            myDataRow["TAILAPMATDUONG"] = double.Parse(cmd.Parameters["@TAILAPMATDUONG"].Value + "");
-            myDataRow["TLMDTRUOCTHUE"] = double.Parse(cmd.Parameters["@TLMDTRUOCTHUE"].Value + "");
-          
-            _tongketgan = double.Parse(cmd.Parameters["@CPGAN"].Value + "");
-            _tongketnhua = double.Parse(cmd.Parameters["@CPNHUA"].Value + "");
+            myDataRow["TAILAPMATDUONG"] = double.Parse(("" + cmd.Parameters["@TAILAPMATDUONG"].Value).Equals("") != true ? cmd.Parameters["@TAILAPMATDUONG"].Value + "" : "0.0");
+            myDataRow["TLMDTRUOCTHUE"] = double.Parse(("" + cmd.Parameters["@TLMDTRUOCTHUE"].Value).Equals("") != true ? cmd.Parameters["@TLMDTRUOCTHUE"].Value + "" : "0.0");
+
+            _tongketgan = double.Parse(("" + cmd.Parameters["@CPGAN"].Value).Equals("") != true ? cmd.Parameters["@CPGAN"].Value + "" : "0.0");
+            _tongketnhua = double.Parse(("" + cmd.Parameters["@CPNHUA"].Value).Equals("") != true ? cmd.Parameters["@CPNHUA"].Value + "" : "0.0");
             myDataRow["CPGAN"] = _tongketgan;
             myDataRow["CPNHUA"] =_tongketnhua;
             table.Rows.Add(myDataRow);
@@ -1762,6 +1767,18 @@ namespace TanHoaWater.View.Users.TinhDuToan
         private void GridPhuiDao_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
 
+        }
+
+        private void txtSoDoVien_SelectedValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                DAL.C_CongTacBangGia.updateSDVKS(_shs, this.txtSoDoVien.SelectedValue+"");
+            }
+            catch (Exception ex)
+            {
+                log.Error("Cap Nhat So Do Vien loi" + ex.Message);               
+            }
         }
 
         

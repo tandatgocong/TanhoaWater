@@ -20,7 +20,7 @@ namespace TanHoaWater.DAL
             string sql = " SELECT  donkh.SHS,HOTEN,(SONHA +' '+ DUONG+', P.'+TENPHUONG +', Q.'+TENQUAN) AS 'DIACHI' ";
 	        sql += " FROM DON_KHACHHANG donkh, PHUONG p, QUAN q, KH_HOSOKHACHHANG hosokh";
             sql += " WHERE donkh.QUAN = q.MAQUAN AND q.MAQUAN=p.MAQUAN AND donkh.PHUONG=p.MAPHUONG  ";
-            sql += " AND donkh.SHS = hosokh.SHS AND hosokh.MADOTTC='" + dottc + "' ";
+            sql += " AND donkh.SHS = hosokh.SHS AND hosokh.MADOTTC=N'" + dottc + "' ";
           
             if(chuyehoancong==false)
 			    sql += " AND (hosokh.CHUYENHOANCONG IS NULL OR hosokh.CHUYENHOANCONG='False') ";
@@ -61,7 +61,7 @@ namespace TanHoaWater.DAL
             string sql = "SELECT  donkh.SHS,HOTEN,(SONHA +' '+ DUONG+', P.'+TENPHUONG +', Q.'+TENQUAN) AS 'DIACHI',hosokh.COTLK,donkh.SOHOADON,donkh.NGAYDONGTIEN, CONVERT(varchar(50), hosokh.NGAYTHICONG,103) as 'NGAYTHICONG', hosokh.CHISO, hosokh.SOTHANTLK,hosokh.HOANCONG, hosokh.CPVATTU, hosokh.CPNHANCONG, hosokh.CPMAYTHICONG,hosokh.TAILAPMATDUONG  ";
              sql += " FROM DON_KHACHHANG donkh, PHUONG p, QUAN q, KH_HOSOKHACHHANG hosokh ";
              sql += " WHERE donkh.QUAN = q.MAQUAN AND q.MAQUAN=p.MAQUAN AND donkh.PHUONG=p.MAPHUONG  ";
-             sql += "  AND donkh.SHS = hosokh.SHS AND hosokh.CHUYENHOANCONG='True' AND hosokh.MADOTTC='" + dottc + "'";
+             sql += "  AND donkh.SHS = hosokh.SHS AND hosokh.CHUYENHOANCONG='True' AND hosokh.MADOTTC=N'" + dottc + "'";
              
             // flag = -1: chua hoan cong
             // flag = 1: da hoan cong
@@ -85,7 +85,7 @@ namespace TanHoaWater.DAL
             string sql = "SELECT  donkh.SHS,HOTEN,(SONHA +' '+ DUONG+', P.'+TENPHUONG +', Q.'+TENQUAN) AS 'DIACHI', hosokh.TRONGAI,hosokh.NOIDUNGTN ";
             sql += " FROM DON_KHACHHANG donkh, PHUONG p, QUAN q, KH_HOSOKHACHHANG hosokh ";
             sql += " WHERE donkh.QUAN = q.MAQUAN AND q.MAQUAN=p.MAQUAN AND donkh.PHUONG=p.MAPHUONG  ";
-            sql += "  AND donkh.SHS = hosokh.SHS AND hosokh.CHUYENHOANCONG='True' AND hosokh.MADOTTC='" + dottc + "'";
+            sql += "  AND donkh.SHS = hosokh.SHS AND hosokh.CHUYENHOANCONG='True' AND hosokh.MADOTTC=N'" + dottc + "'";
 
             // flag = -1: chua hoan cong
             // flag = 1: da hoan cong
@@ -195,11 +195,11 @@ namespace TanHoaWater.DAL
             SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             adapter.Fill(dataset, "KH_TC_BAOCAO");
 
-            sql = "SELECT * FROM V_HOANCONG WHERE MADOTTC='" + madot + "' AND SHS IN (" + query + ") ORDER BY MODIFYDATE";
+            sql = "SELECT * FROM V_HOANCONG WHERE MADOTTC=N'" + madot + "' AND SHS IN (" + query + ") ORDER BY MODIFYDATE";
             adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             adapter.Fill(dataset, "V_HOANCONG");
 
-            sql = "SELECT * FROM V_HOANCONG_TRONGAI WHERE MADOTTC='" + madot + "' ORDER BY MODIFYDATE";
+            sql = "SELECT * FROM V_HOANCONG_TRONGAI WHERE MADOTTC=N'" + madot + "' ORDER BY MODIFYDATE";
             adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             adapter.Fill(dataset, "V_HOANCONG_TRONGAI");
 

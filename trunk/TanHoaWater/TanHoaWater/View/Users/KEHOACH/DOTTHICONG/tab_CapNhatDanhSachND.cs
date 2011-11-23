@@ -56,6 +56,7 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
                 }
                 else
                 {
+                    DongTien();
                     KH_HOSOKHACHHANG kh_sh = DAL.C_KH_HoSoKhachHang.findBySHS(this.txtSHS.Text.Trim());
                     DON_KHACHHANG donkh = DAL.C_DonKhachHang.findBySOHOSO(this.txtSHS.Text.Trim());
                     BG_KHOILUONGXDCB xdcb = DAL.C_KhoiLuongXDCB.findBySHS(this.txtSHS.Text.Trim());
@@ -136,6 +137,11 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
                             kh_sh.DHN_DIACHI = Utilities.Strings.convertToUnSign(donkh.DUONG);
                             kh_sh.DHN_MAQUANPHUONG = donkh.QUAN + "" + donkh.PHUONG;
                         }
+                        kh_sh.DHN_GIABIEU = 11;
+                        kh_sh.DHN_DMGOC = 0;
+                        kh_sh.DHN_DMCAPBU = 0;
+                        kh_sh.DHN_SOHO = 0;
+                        kh_sh.DHN_SONHANKHAU = 0;
                         //  kh_sh
                         DAL.C_KH_HoSoKhachHang.Update();
                     }
