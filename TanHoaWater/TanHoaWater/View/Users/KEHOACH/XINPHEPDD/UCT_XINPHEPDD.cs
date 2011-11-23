@@ -393,5 +393,12 @@ namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
         {
             errorProvider1.Clear();
         }
+
+        private void cbNoiCap_Leave(object sender, EventArgs e)
+        {
+            this.txtSoDot.Text = this.txtSoDot.Text.ToUpper();
+            this.txtMaQuanLy.Text = this.txtSoDot.Text + "-" + this.cbNoiCap.Text;
+            this.txtMaQuanLy.Text = this.txtMaQuanLy.Text.ToUpper();
+        }
     }
 }

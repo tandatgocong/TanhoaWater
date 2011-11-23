@@ -1296,6 +1296,7 @@
     <Content Include="Lib\IrisSkin2.dll" />
     <Content Include="Lib\log4net.dll" />
     <Content Include="Lib\String_Indentity.dll" />
+    <None Include="Resources\Clipboard Paste.png" />
     <None Include="Resources\Arrow2 Left.png" />
     <None Include="Resources\Arrow2 Right.png" />
     <None Include="Resources\Loop.png" />

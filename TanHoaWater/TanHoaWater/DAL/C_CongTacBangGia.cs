@@ -177,33 +177,32 @@ namespace TanHoaWater.DAL
 
             cmd.ExecuteNonQuery();
 
-            CPVATLIEU = double.Parse(cmd.Parameters["@A"].Value + "");
-            CPNHANCONG = double.Parse(cmd.Parameters["@B1"].Value + "");
-            CPMAYTHICONG = double.Parse(cmd.Parameters["@C1"].Value + "");
-            B = double.Parse(cmd.Parameters["@B"].Value + "");
-            C = double.Parse(cmd.Parameters["@C"].Value + "");
-            C2 = double.Parse(cmd.Parameters["@C2"].Value + "");
-            D = double.Parse(cmd.Parameters["@D"].Value + "");
-            E = double.Parse(cmd.Parameters["@E"].Value + "");
-            F = double.Parse(cmd.Parameters["@F"].Value + "");
-            G = double.Parse(cmd.Parameters["@G"].Value + "");
-            H = double.Parse(cmd.Parameters["@H"].Value + "");
-            I = double.Parse(cmd.Parameters["@I"].Value + "");
-            J = double.Parse(cmd.Parameters["@J"].Value + "");
-            K = double.Parse(cmd.Parameters["@K"].Value + "");
-            L = double.Parse(cmd.Parameters["@L"].Value + "");
-
-            CPCABA = double.Parse(cmd.Parameters["@CPCABA"].Value + "");
-            THUE55 =  double.Parse(cmd.Parameters["@G"].Value + "");
-            TONGTRUOCTHUE = double.Parse(cmd.Parameters["@H"].Value + "");
-            TONG = double.Parse(cmd.Parameters["@TOTAL"].Value + "");
-            VAT = double.Parse(cmd.Parameters["@VAT"].Value + "");
-            TLMDTRUOCTHUE = double.Parse(cmd.Parameters["@TLMDTRUOCTHUE"].Value + "");
-            TAILAPMATDUONG = double.Parse(cmd.Parameters["@TAILAPMATDUONG"].Value + "");
-            CHIPHITRUCTIEP=double.Parse(cmd.Parameters["@D"].Value + "");
-            CHIPHICHUNG = double.Parse(cmd.Parameters["@E"].Value + "");
-            CPGAN = double.Parse(cmd.Parameters["@CPGAN"].Value + "");
-            CPNHUA = double.Parse(cmd.Parameters["@CPNHUA"].Value + "");
+            CPVATLIEU = double.Parse(("" + cmd.Parameters["@A"].Value).Equals("") != true ? cmd.Parameters["@A"].Value + "" : "0.0");
+            CPNHANCONG = double.Parse(("" + cmd.Parameters["@B1"].Value).Equals("") != true ? cmd.Parameters["@B1"].Value + "" : "0.0");
+            CPMAYTHICONG = double.Parse(("" + cmd.Parameters["@C1"].Value).Equals("") != true ? cmd.Parameters["@C1"].Value + "" : "0.0");
+            B = double.Parse(("" + cmd.Parameters["@B"].Value).Equals("") != true ? cmd.Parameters["@B"].Value + "" : "0.0");
+            C = double.Parse(("" + cmd.Parameters["@C"].Value).Equals("") != true ? cmd.Parameters["@C"].Value + "" : "0.0");
+            C2 = double.Parse(("" + cmd.Parameters["@C2"].Value).Equals("") != true ? cmd.Parameters["@C2"].Value + "" : "0.0");
+            D = double.Parse(("" + cmd.Parameters["@D"].Value).Equals("") != true ? cmd.Parameters["@D"].Value + "" : "0.0");
+            E = double.Parse(("" + cmd.Parameters["@E"].Value).Equals("") != true ? cmd.Parameters["@E"].Value + "" : "0.0");
+            F = double.Parse(("" + cmd.Parameters["@F"].Value).Equals("") != true ? cmd.Parameters["@F"].Value + "" : "0.0");
+            G = double.Parse(("" + cmd.Parameters["@G"].Value).Equals("") != true ? cmd.Parameters["@G"].Value + "" : "0.0");
+            H = double.Parse(("" + cmd.Parameters["@H"].Value).Equals("") != true ? cmd.Parameters["@H"].Value + "" : "0.0");
+            I = double.Parse(("" + cmd.Parameters["@I"].Value).Equals("") != true ? cmd.Parameters["@I"].Value + "" : "0.0");
+            J = double.Parse(("" + cmd.Parameters["@J"].Value).Equals("") != true ? cmd.Parameters["@J"].Value + "" : "0.0");
+            K = double.Parse(("" + cmd.Parameters["@K"].Value).Equals("") != true ? cmd.Parameters["@K"].Value + "" : "0.0");
+            L = double.Parse(("" + cmd.Parameters["@L"].Value).Equals("") != true ? cmd.Parameters["@L"].Value + "" : "0.0");
+            CPCABA = double.Parse(("" + cmd.Parameters["@CPCABA"].Value).Equals("") != true ? cmd.Parameters["@CPCABA"].Value + "" : "0.0");
+            THUE55 = double.Parse(("" + cmd.Parameters["@G"].Value).Equals("") != true ? cmd.Parameters["@G"].Value + "" : "0.0");
+            TONGTRUOCTHUE = double.Parse(("" + cmd.Parameters["@H"].Value).Equals("") != true ? cmd.Parameters["@H"].Value + "" : "0.0");
+            TONG = double.Parse(("" + cmd.Parameters["@TOTAL"].Value).Equals("") != true ? cmd.Parameters["@TOTAL"].Value + "" : "0.0");
+            VAT = double.Parse(("" + cmd.Parameters["@VAT"].Value).Equals("") != true ? cmd.Parameters["@VAT"].Value + "" : "0.0");
+            TLMDTRUOCTHUE = double.Parse(("" + cmd.Parameters["@TLMDTRUOCTHUE"].Value).Equals("") != true ? cmd.Parameters["@TLMDTRUOCTHUE"].Value + "" : "0.0");
+            TAILAPMATDUONG = double.Parse(("" + cmd.Parameters["@TAILAPMATDUONG"].Value).Equals("") != true ? cmd.Parameters["@TAILAPMATDUONG"].Value + "" : "0.0");
+            CHIPHITRUCTIEP = double.Parse(("" + cmd.Parameters["@D"].Value).Equals("") != true ? cmd.Parameters["@D"].Value + "" : "0.0");
+            CHIPHICHUNG = double.Parse(("" + cmd.Parameters["@E"].Value).Equals("") != true ? cmd.Parameters["@E"].Value + "" : "0.0");
+            CPGAN = double.Parse(("" + cmd.Parameters["@CPGAN"].Value).Equals("") != true ? cmd.Parameters["@CPGAN"].Value + "" : "0.0");
+            CPNHUA = double.Parse(("" + cmd.Parameters["@CPNHUA"].Value).Equals("") != true ? cmd.Parameters["@CPNHUA"].Value + "" : "0.0");
 
             conn.Close();
         }
@@ -230,7 +229,7 @@ namespace TanHoaWater.DAL
                 BG_KHOILUONGXDCB xdcb = hs.SingleOrDefault();
                 if (xdcb != null)
                 {
-                    xdcb.BGLOG = xdcb.BGLOG + note;
+                    xdcb.BGLOG = note;
                 }
                 db.SubmitChanges();
             }
@@ -268,8 +267,27 @@ namespace TanHoaWater.DAL
             catch (Exception ex)
             {
                 log.Error("Cap Nhat Hoan Tat Thiet Ke" + ex.Message);
+            }   
+        }
+       
+        public static void updateSDVKS(string shs, string sdv)
+        {
+            try
+            {
+                TanHoaDataContext db = new TanHoaDataContext();
+                var ttk = from query in db.TOTHIETKEs where query.SHS == shs select query;
+                TOTHIETKE totk = ttk.SingleOrDefault();
+                if (totk != null)
+                {
+                    totk.SODOVIEN = sdv;
+                }
+                db.SubmitChanges();
             }
-            
+            catch (Exception ex)
+            {
+                log.Error("Cap Nhat Hoan Tat Thiet Ke" + ex.Message);
+            }
+
         }
     }
 }

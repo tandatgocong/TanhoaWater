@@ -19,7 +19,7 @@ namespace TanHoaWater.DAL
             string sql = "SELECT  DHN_SODOT,donkh.SHS,REPLACE(HOTEN,N'(ĐD '+CONVERT(VARCHAR(10),SOHO)+N' Hộ)',' ') AS 'HOTEN',(SONHA +' '+ DUONG+', P.'+TENPHUONG +', Q.'+TENQUAN) AS 'DIACHI',hosokh.COTLK,CONVERT(varchar(50), hosokh.NGAYTHICONG,103) as 'NGAYTHICONG', hosokh.CHISO, hosokh.SOTHANTLK,hosokh.HOANCONG,hosokh.DHN_SOHOPDONG,hosokh.DHN_GIABIEU,hosokh.DHN_DMGOC,hosokh.DHN_DMCAPBU,hosokh.DHN_SODANHBO,hosokh.DHN_MADMA,hosokh.DHN_HIEULUC,hosokh.DHN_MAQUANPHUONG,hosokh.DHN_HSCONGTY,hosokh.DHN_MASOTHUE,hosokh.DHN_SOHO,hosokh.DHN_SONHANKHAU";
             sql += " FROM DON_KHACHHANG donkh, PHUONG p, QUAN q, KH_HOSOKHACHHANG hosokh ";
             sql += " WHERE donkh.QUAN = q.MAQUAN AND q.MAQUAN=p.MAQUAN AND donkh.PHUONG=p.MAPHUONG  ";
-            sql += "  AND donkh.SHS = hosokh.SHS AND hosokh.HOANCONG='True' AND hosokh.MADOTTC='" + dottc + "'";
+            sql += "  AND donkh.SHS = hosokh.SHS AND hosokh.HOANCONG='True' AND hosokh.MADOTTC=N'" + dottc + "'";
 
             // flag = -1: chua hoan cong
             // flag = 1: da hoan cong
@@ -45,7 +45,7 @@ namespace TanHoaWater.DAL
             string sql = "SELECT  DHN_SODOT,donkh.SHS,REPLACE(HOTEN,N'(ĐD '+CONVERT(VARCHAR(10),SOHO)+N' Hộ)',' ') AS 'HOTEN',(SONHA +' '+ DUONG+', P.'+TENPHUONG +', Q.'+TENQUAN) AS 'DIACHI',hosokh.COTLK,CONVERT(varchar(50), hosokh.NGAYTHICONG,103) as 'NGAYTHICONG', hosokh.CHISO, hosokh.SOTHANTLK,hosokh.HOANCONG,hosokh.DHN_SOHOPDONG,hosokh.DHN_GIABIEU,hosokh.DHN_DMGOC,hosokh.DHN_DMCAPBU,hosokh.DHN_SODANHBO,hosokh.DHN_MADMA,hosokh.DHN_HIEULUC,hosokh.DHN_MAQUANPHUONG,hosokh.DHN_HSCONGTY,hosokh.DHN_MASOTHUE,hosokh.DHN_SOHO,hosokh.DHN_SONHANKHAU";
             sql += " FROM DON_KHACHHANG donkh, PHUONG p, QUAN q, KH_HOSOKHACHHANG hosokh ";
             sql += " WHERE donkh.QUAN = q.MAQUAN AND q.MAQUAN=p.MAQUAN AND donkh.PHUONG=p.MAPHUONG  ";
-            sql += "  AND donkh.SHS = hosokh.SHS AND hosokh.DHN_SODOT='" + dotbangke + "'";
+            sql += "  AND donkh.SHS = hosokh.SHS AND hosokh.DHN_SODOT=N'" + dotbangke + "'";
             db.Connection.Open();
             sql += " ORDER BY hosokh.MODIFYDATE";
             SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
@@ -88,7 +88,7 @@ namespace TanHoaWater.DAL
             SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             adapter.Fill(dataset, "DHN_BAOCAO");
 
-            sql = "SELECT * FROM V_CHOSODANHBO WHERE DHN_SODOT='" + mabangke + "'  AND SHS IN (" + query + ") ORDER BY MODIFYDATE";
+            sql = "SELECT * FROM V_CHOSODANHBO WHERE DHN_SODOT=N'" + mabangke + "'  AND SHS IN (" + query + ") ORDER BY MODIFYDATE";
             adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             adapter.Fill(dataset, "V_CHOSODANHBO");
 
@@ -108,7 +108,7 @@ namespace TanHoaWater.DAL
             SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             adapter.Fill(dataset, "DHN_BAOCAO");
 
-            sql = "SELECT * FROM V_CHOSODANHBO WHERE DHN_SODOT='" + mabangke + "' AND SHS IN (" + query + ")  AND DHN_DMGOC>0 ORDER BY MODIFYDATE";
+            sql = "SELECT * FROM V_CHOSODANHBO WHERE DHN_SODOT=N'" + mabangke + "' AND SHS IN (" + query + ")  AND DHN_DMGOC>0 ORDER BY MODIFYDATE";
             adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             adapter.Fill(dataset, "V_CHOSODANHBO");
             

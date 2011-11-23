@@ -14,7 +14,7 @@ namespace TanHoaWater.View.Tool
         public uc_TimKiemDonKH()
         {
             InitializeComponent();
-            this.SearchMaHoSo.Mask =  "CCCCCCC";
+            this.SearchMaHoSo.Mask =  "CCCCCCCC";
         }
 
         private void uc_TimKiemDonKH_Load(object sender, EventArgs e)

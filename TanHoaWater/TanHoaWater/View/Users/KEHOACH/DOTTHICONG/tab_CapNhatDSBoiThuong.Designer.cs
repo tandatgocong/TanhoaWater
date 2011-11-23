@@ -152,6 +152,8 @@
             this.dateNgayDongTien.BackgroundStyle.Class = "DateTimeInputBackground";
             this.dateNgayDongTien.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
             this.dateNgayDongTien.ButtonDropDown.Visible = true;
+            this.dateNgayDongTien.CustomFormat = "dd/MM/yyyy";
+            this.dateNgayDongTien.Format = DevComponents.Editors.eDateTimePickerFormat.Custom;
             this.dateNgayDongTien.Location = new System.Drawing.Point(95, 129);
             // 
             // 

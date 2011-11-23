@@ -159,7 +159,7 @@ namespace TanHoaWater.DAL
             string sql = " SELECT donkh.SHS,donkh.SOHOSO,donkh.MADOT,HOTEN,DIENTHOAI, SONHA, DUONG,TENPHUONG,hosokh.MADOTDD,hosokh.NGAYNHAN, NGAYDONGTIEN,SOHOADON,TONGIATRI,TAILAPMATDUONG,TONGIATRI+TAILAPMATDUONG as 'TONGTIEN'  ";
             sql += "  FROM DON_KHACHHANG donkh, PHUONG p, QUAN q, KH_HOSOKHACHHANG hosokh ";
             sql += " WHERE donkh.QUAN = q.MAQUAN AND q.MAQUAN=p.MAQUAN AND donkh.PHUONG=p.MAPHUONG and donkh.SHS = hosokh.SHS ";
-            sql += " AND hosokh.MADOTTC='" + madottc + "'";
+            sql += " AND hosokh.MADOTTC=N'" + madottc + "'";
             sql += " ORDER BY hosokh.MODIFYDATE ";
 
             SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
@@ -178,7 +178,7 @@ namespace TanHoaWater.DAL
             SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             adapter.Fill(dataset, "KH_TC_BAOCAO");
 
-            sql = " SELECT *, DONVIGIAMSAT='" + donvigiamsat + "',NGAYKHOICONG='" + ngaykhoicong + "',NGAYHOANTAT='" + ngayhoantat + "' FROM V_QUYETDINHTHICONG WHERE MADOTTC='" + madot + "'";
+            sql = " SELECT *, DONVIGIAMSAT='" + donvigiamsat + "',NGAYKHOICONG='" + ngaykhoicong + "',NGAYHOANTAT='" + ngayhoantat + "' FROM V_QUYETDINHTHICONG WHERE MADOTTC=N'" + madot + "'";
             adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             adapter.Fill(dataset, "V_QUYETDINHTHICONG");
 
@@ -194,7 +194,7 @@ namespace TanHoaWater.DAL
             SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             adapter.Fill(dataset, "KH_TC_BAOCAO");
 
-            sql = " SELECT *  FROM V_DANHSACHTHICONG WHERE MADOTTC='" + madot + "' ORDER BY MODIFYDATE";
+            sql = " SELECT *  FROM V_DANHSACHTHICONG WHERE MADOTTC=N'" + madot + "' ORDER BY MODIFYDATE";
             adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             adapter.Fill(dataset, "V_DANHSACHTHICONG");
 
@@ -209,7 +209,7 @@ namespace TanHoaWater.DAL
             string sql = " SELECT donkh.SOHOSO,HOTEN,DIENTHOAI, (SONHA + '' + DUONG + ', P.' +TENPHUONG+ ', Q.'+ q.TENQUAN) as 'DIACHI',NGAYDONGTIEN,SOHOADON,donkh.SOTIEN,donkh.DANHBO,donkh.GHICHU,COTLK,donkh.SHS";
             sql += " FROM DON_KHACHHANG donkh, PHUONG p, QUAN q, KH_HOSOKHACHHANG hosokh ";
             sql += " WHERE donkh.QUAN = q.MAQUAN AND q.MAQUAN=p.MAQUAN AND donkh.PHUONG=p.MAPHUONG and donkh.SHS = hosokh.SHS ";
-            sql += " AND hosokh.MADOTTC='" + madottc + "'";
+            sql += " AND hosokh.MADOTTC=N'" + madottc + "'";
             sql += " ORDER BY hosokh.MODIFYDATE ";
 
             SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
@@ -227,7 +227,7 @@ namespace TanHoaWater.DAL
             SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             adapter.Fill(dataset, "KH_TC_BAOCAO");
 
-            sql = " SELECT *  FROM V_DANHSACHTHICONG_BT WHERE MADOTTC='" + madot + "' ORDER BY MODIFYDATE";
+            sql = " SELECT *  FROM V_DANHSACHTHICONG_BT WHERE MADOTTC=N'" + madot + "' ORDER BY MODIFYDATE";
             adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             adapter.Fill(dataset, "V_DANHSACHTHICONG_BT");
 
@@ -243,7 +243,7 @@ namespace TanHoaWater.DAL
             SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             adapter.Fill(dataset, "KH_TC_BAOCAO");
 
-            sql = " SELECT *  FROM V_DANHSACHTHICONG_OC WHERE MADOTTC='" + madot + "' ORDER BY MODIFYDATE";
+            sql = " SELECT *  FROM V_DANHSACHTHICONG_OC WHERE MADOTTC=N'" + madot + "' ORDER BY MODIFYDATE";
             adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             adapter.Fill(dataset, "V_DANHSACHTHICONG_OC");
 
