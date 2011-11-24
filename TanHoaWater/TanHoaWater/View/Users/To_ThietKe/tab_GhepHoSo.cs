@@ -158,7 +158,10 @@ namespace TanHoaWater.View.Users.To_ThietKe
                     for (int i = 0; i < dataGridView1.Rows.Count; i++)
                     {
                         string soshs = this.dataGridView1.Rows[i].Cells[1].Value + "";
-                        DAL.C_DonKhachHang.UpdateHoSoCon(soshs, parent);
+                        if (parent.Equals(soshs) == false)
+                        {
+                            DAL.C_DonKhachHang.UpdateHoSoCon(soshs, parent);
+                        }
                         number++;
                     }
                     if (DAL.C_DonKhachHang.UpdateHoSoCha(parent, number))

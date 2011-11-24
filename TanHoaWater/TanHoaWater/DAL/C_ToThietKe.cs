@@ -283,6 +283,7 @@ namespace TanHoaWater.DAL
                 if (toTK != null) {
                     toTK.NGAYCHUYENHS = DateTime.Now.Date;
                     toTK.HOANTATTK = true;
+                    toTK.NGAYHOANTATTK = DateTime.Now.Date;
                     toTK.BOPHANCHUYEN = bp;
                 }
                 db.SubmitChanges();
@@ -324,6 +325,7 @@ namespace TanHoaWater.DAL
                 {
                     totk.TRAHS = true;
                     totk.HOANTATTK = true;
+                    totk.NGAYHOANTATTK = DateTime.Now.Date;
                     totk.NGAYTRAHS = DateTime.Now.Date;
                     db.SubmitChanges();
                     return true;

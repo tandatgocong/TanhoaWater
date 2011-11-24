@@ -134,6 +134,7 @@
     <Compile Include="DAL\C_Quan.cs" />
     <Compile Include="DAL\C_Role.cs" />
     <Compile Include="DAL\C_TenDuong.cs" />
+    <Compile Include="DAL\C_TimKiemDonKhachHang.cs" />
     <Compile Include="DAL\C_ToThietKe.cs" />
     <Compile Include="DAL\C_USERS.cs" />
     <Compile Include="DAL\TestConection.cs" />
