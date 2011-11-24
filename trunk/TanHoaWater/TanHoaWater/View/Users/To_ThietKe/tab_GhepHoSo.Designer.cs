@@ -83,7 +83,7 @@
             this.btGhep.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btGhep.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btGhep.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btGhep.Location = new System.Drawing.Point(866, 68);
+            this.btGhep.Location = new System.Drawing.Point(871, 64);
             this.btGhep.Name = "btGhep";
             this.btGhep.Size = new System.Drawing.Size(108, 23);
             this.btGhep.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;

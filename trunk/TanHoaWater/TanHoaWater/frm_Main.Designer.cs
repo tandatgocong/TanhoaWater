@@ -33,6 +33,11 @@
             this.mainLayout = new System.Windows.Forms.Panel();
             this.PanelContent = new System.Windows.Forms.Panel();
             this.PanelMain = new System.Windows.Forms.Panel();
+            this.group_DoiDHN = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.dhn_NhapDanhBo = new DevComponents.DotNetBar.ButtonX();
+            this.pictureBox17 = new System.Windows.Forms.PictureBox();
+            this.dhn_BaoCao = new DevComponents.DotNetBar.ButtonX();
+            this.pictureBox18 = new System.Windows.Forms.PictureBox();
             this.lbNgayHeThong = new DevComponents.DotNetBar.LabelX();
             this.iconMenuPanel = new System.Windows.Forms.Panel();
             this.groupTTK = new DevComponents.DotNetBar.Controls.GroupPanel();
@@ -72,16 +77,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.reflectionLabel1 = new DevComponents.DotNetBar.Controls.ReflectionLabel();
             this.ribbonControl1 = new DevComponents.DotNetBar.RibbonControl();
+            this.ribbonPanel6 = new DevComponents.DotNetBar.RibbonPanel();
+            this.menuStrip5 = new System.Windows.Forms.MenuStrip();
+            this.menuNhapDanhBo = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.ribbonPanel3 = new DevComponents.DotNetBar.RibbonPanel();
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.tínhDựToánHSKToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hoantatThietKe = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
-            this.ribbonPanel6 = new DevComponents.DotNetBar.RibbonPanel();
-            this.menuStrip5 = new System.Windows.Forms.MenuStrip();
-            this.menuNhapDanhBo = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.ribbonPanel2 = new DevComponents.DotNetBar.RibbonPanel();
             this.menuStrip3 = new System.Windows.Forms.MenuStrip();
             this.biennhan = new System.Windows.Forms.ToolStripMenuItem();
@@ -97,6 +102,7 @@
             this.subDoiMatKhau = new System.Windows.Forms.ToolStripMenuItem();
             this.subDangXuat = new System.Windows.Forms.ToolStripMenuItem();
             this.subThoat = new System.Windows.Forms.ToolStripMenuItem();
+            this.ribbonPanel5 = new DevComponents.DotNetBar.RibbonPanel();
             this.ribbonPanel4 = new DevComponents.DotNetBar.RibbonPanel();
             this.menuStrip4 = new System.Windows.Forms.MenuStrip();
             this.caculator = new System.Windows.Forms.ToolStripMenuItem();
@@ -104,7 +110,6 @@
             this.microsoftExcel = new System.Windows.Forms.ToolStripMenuItem();
             this.microsoftAccess = new System.Windows.Forms.ToolStripMenuItem();
             this.webBrowserTool = new System.Windows.Forms.ToolStripMenuItem();
-            this.ribbonPanel5 = new DevComponents.DotNetBar.RibbonPanel();
             this.menuHeThong = new DevComponents.DotNetBar.RibbonTabItem();
             this.menuKHVT = new DevComponents.DotNetBar.RibbonTabItem();
             this.menuToThietKe = new DevComponents.DotNetBar.RibbonTabItem();
@@ -132,14 +137,12 @@
             this.buttonItem13 = new DevComponents.DotNetBar.ButtonItem();
             this.buttonItem1 = new DevComponents.DotNetBar.ButtonItem();
             this.skinCollectionItem1 = new Sunisoft.IrisSkin.SkinCollectionItem();
-            this.group_DoiDHN = new DevComponents.DotNetBar.Controls.GroupPanel();
-            this.dhn_NhapDanhBo = new DevComponents.DotNetBar.ButtonX();
-            this.pictureBox17 = new System.Windows.Forms.PictureBox();
-            this.dhn_BaoCao = new DevComponents.DotNetBar.ButtonX();
-            this.pictureBox18 = new System.Windows.Forms.PictureBox();
             this.mainLayout.SuspendLayout();
             this.PanelContent.SuspendLayout();
             this.PanelMain.SuspendLayout();
+            this.group_DoiDHN.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).BeginInit();
             this.iconMenuPanel.SuspendLayout();
             this.groupTTK.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -159,19 +162,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             this.ribbonControl1.SuspendLayout();
-            this.ribbonPanel3.SuspendLayout();
-            this.menuStrip2.SuspendLayout();
             this.ribbonPanel6.SuspendLayout();
             this.menuStrip5.SuspendLayout();
+            this.ribbonPanel3.SuspendLayout();
+            this.menuStrip2.SuspendLayout();
             this.ribbonPanel2.SuspendLayout();
             this.menuStrip3.SuspendLayout();
             this.ribbonPanel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.ribbonPanel4.SuspendLayout();
             this.menuStrip4.SuspendLayout();
-            this.group_DoiDHN.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).BeginInit();
             this.SuspendLayout();
             // 
             // qatCustomizeItem1
@@ -216,6 +216,89 @@
             this.PanelMain.Name = "PanelMain";
             this.PanelMain.Size = new System.Drawing.Size(986, 615);
             this.PanelMain.TabIndex = 0;
+            // 
+            // group_DoiDHN
+            // 
+            this.group_DoiDHN.CanvasColor = System.Drawing.SystemColors.Control;
+            this.group_DoiDHN.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.group_DoiDHN.Controls.Add(this.dhn_NhapDanhBo);
+            this.group_DoiDHN.Controls.Add(this.pictureBox17);
+            this.group_DoiDHN.Controls.Add(this.dhn_BaoCao);
+            this.group_DoiDHN.Controls.Add(this.pictureBox18);
+            this.group_DoiDHN.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.group_DoiDHN.Location = new System.Drawing.Point(11, 8);
+            this.group_DoiDHN.Name = "group_DoiDHN";
+            this.group_DoiDHN.Size = new System.Drawing.Size(828, 186);
+            // 
+            // 
+            // 
+            this.group_DoiDHN.Style.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.group_DoiDHN.Style.BackColorGradientAngle = 90;
+            this.group_DoiDHN.Style.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.group_DoiDHN.Style.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.group_DoiDHN.Style.BorderBottomWidth = 1;
+            this.group_DoiDHN.Style.BorderColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.group_DoiDHN.Style.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.group_DoiDHN.Style.BorderLeftWidth = 1;
+            this.group_DoiDHN.Style.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.group_DoiDHN.Style.BorderRightWidth = 1;
+            this.group_DoiDHN.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.group_DoiDHN.Style.BorderTopWidth = 1;
+            this.group_DoiDHN.Style.CornerDiameter = 4;
+            this.group_DoiDHN.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
+            this.group_DoiDHN.Style.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.group_DoiDHN.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
+            this.group_DoiDHN.TabIndex = 15;
+            this.group_DoiDHN.Text = "Đội Quản Lý Đồng Hồ Nước";
+            this.group_DoiDHN.Visible = false;
+            // 
+            // dhn_NhapDanhBo
+            // 
+            this.dhn_NhapDanhBo.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.dhn_NhapDanhBo.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.dhn_NhapDanhBo.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dhn_NhapDanhBo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(22)))), ((int)(((byte)(111)))));
+            this.dhn_NhapDanhBo.Location = new System.Drawing.Point(23, 9);
+            this.dhn_NhapDanhBo.Name = "dhn_NhapDanhBo";
+            this.dhn_NhapDanhBo.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.F10);
+            this.dhn_NhapDanhBo.Size = new System.Drawing.Size(161, 26);
+            this.dhn_NhapDanhBo.TabIndex = 26;
+            this.dhn_NhapDanhBo.Text = " Nhập Danh Bộ && HĐ";
+            this.dhn_NhapDanhBo.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
+            this.dhn_NhapDanhBo.Click += new System.EventHandler(this.dhn_NhapDanhBo_Click);
+            // 
+            // pictureBox17
+            // 
+            this.pictureBox17.Image = global::TanHoaWater.Properties.Resources.bt_bg;
+            this.pictureBox17.Location = new System.Drawing.Point(19, 5);
+            this.pictureBox17.Name = "pictureBox17";
+            this.pictureBox17.Size = new System.Drawing.Size(169, 35);
+            this.pictureBox17.TabIndex = 27;
+            this.pictureBox17.TabStop = false;
+            // 
+            // dhn_BaoCao
+            // 
+            this.dhn_BaoCao.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.dhn_BaoCao.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.dhn_BaoCao.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dhn_BaoCao.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(22)))), ((int)(((byte)(111)))));
+            this.dhn_BaoCao.Location = new System.Drawing.Point(23, 46);
+            this.dhn_BaoCao.Name = "dhn_BaoCao";
+            this.dhn_BaoCao.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.F1);
+            this.dhn_BaoCao.Size = new System.Drawing.Size(161, 26);
+            this.dhn_BaoCao.TabIndex = 1;
+            this.dhn_BaoCao.Text = "  Báo Cáo Tổng Kết";
+            this.dhn_BaoCao.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
+            this.dhn_BaoCao.Click += new System.EventHandler(this.dhn_BaoCao_Click);
+            // 
+            // pictureBox18
+            // 
+            this.pictureBox18.Image = global::TanHoaWater.Properties.Resources.bt_bg;
+            this.pictureBox18.Location = new System.Drawing.Point(19, 42);
+            this.pictureBox18.Name = "pictureBox18";
+            this.pictureBox18.Size = new System.Drawing.Size(169, 35);
+            this.pictureBox18.TabIndex = 19;
+            this.pictureBox18.TabStop = false;
             // 
             // lbNgayHeThong
             // 
@@ -764,6 +847,47 @@
             this.ribbonControl1.TabIndex = 0;
             this.ribbonControl1.Text = "menu";
             // 
+            // ribbonPanel6
+            // 
+            this.ribbonPanel6.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.ribbonPanel6.Controls.Add(this.menuStrip5);
+            this.ribbonPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ribbonPanel6.Location = new System.Drawing.Point(0, 28);
+            this.ribbonPanel6.Name = "ribbonPanel6";
+            this.ribbonPanel6.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
+            this.ribbonPanel6.Size = new System.Drawing.Size(988, 24);
+            this.ribbonPanel6.TabIndex = 6;
+            // 
+            // menuStrip5
+            // 
+            this.menuStrip5.BackColor = System.Drawing.Color.Transparent;
+            this.menuStrip5.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold);
+            this.menuStrip5.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuNhapDanhBo,
+            this.toolStripMenuItem4});
+            this.menuStrip5.Location = new System.Drawing.Point(3, 0);
+            this.menuStrip5.Name = "menuStrip5";
+            this.menuStrip5.Size = new System.Drawing.Size(982, 25);
+            this.menuStrip5.TabIndex = 2;
+            this.menuStrip5.Text = "menuStrip5";
+            // 
+            // menuNhapDanhBo
+            // 
+            this.menuNhapDanhBo.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.menuNhapDanhBo.Image = global::TanHoaWater.Properties.Resources.giaohoso;
+            this.menuNhapDanhBo.Name = "menuNhapDanhBo";
+            this.menuNhapDanhBo.Size = new System.Drawing.Size(239, 21);
+            this.menuNhapDanhBo.Text = "Nhập Danh Bộ && Số Hợp Đồng";
+            this.menuNhapDanhBo.Click += new System.EventHandler(this.menuNhapDanhBo_Click);
+            // 
+            // toolStripMenuItem4
+            // 
+            this.toolStripMenuItem4.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.toolStripMenuItem4.Image = global::TanHoaWater.Properties.Resources.Clipboard_Paste;
+            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(159, 21);
+            this.toolStripMenuItem4.Text = "Báo Cáo Tổng Kết";
+            // 
             // ribbonPanel3
             // 
             this.ribbonPanel3.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
@@ -825,47 +949,6 @@
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
             this.toolStripMenuItem3.Size = new System.Drawing.Size(159, 21);
             this.toolStripMenuItem3.Text = "Báo Cáo Tổng Kết";
-            // 
-            // ribbonPanel6
-            // 
-            this.ribbonPanel6.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
-            this.ribbonPanel6.Controls.Add(this.menuStrip5);
-            this.ribbonPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ribbonPanel6.Location = new System.Drawing.Point(0, 28);
-            this.ribbonPanel6.Name = "ribbonPanel6";
-            this.ribbonPanel6.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.ribbonPanel6.Size = new System.Drawing.Size(988, 24);
-            this.ribbonPanel6.TabIndex = 6;
-            // 
-            // menuStrip5
-            // 
-            this.menuStrip5.BackColor = System.Drawing.Color.Transparent;
-            this.menuStrip5.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold);
-            this.menuStrip5.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuNhapDanhBo,
-            this.toolStripMenuItem4});
-            this.menuStrip5.Location = new System.Drawing.Point(3, 0);
-            this.menuStrip5.Name = "menuStrip5";
-            this.menuStrip5.Size = new System.Drawing.Size(982, 25);
-            this.menuStrip5.TabIndex = 2;
-            this.menuStrip5.Text = "menuStrip5";
-            // 
-            // menuNhapDanhBo
-            // 
-            this.menuNhapDanhBo.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.menuNhapDanhBo.Image = global::TanHoaWater.Properties.Resources.giaohoso;
-            this.menuNhapDanhBo.Name = "menuNhapDanhBo";
-            this.menuNhapDanhBo.Size = new System.Drawing.Size(239, 21);
-            this.menuNhapDanhBo.Text = "Nhập Danh Bộ && Số Hợp Đồng";
-            this.menuNhapDanhBo.Click += new System.EventHandler(this.menuNhapDanhBo_Click);
-            // 
-            // toolStripMenuItem4
-            // 
-            this.toolStripMenuItem4.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.toolStripMenuItem4.Image = global::TanHoaWater.Properties.Resources.Clipboard_Paste;
-            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(159, 21);
-            this.toolStripMenuItem4.Text = "Báo Cáo Tổng Kết";
             // 
             // ribbonPanel2
             // 
@@ -1023,6 +1106,17 @@
             this.subThoat.Text = "Thoát";
             this.subThoat.Click += new System.EventHandler(this.subThoat_Click);
             // 
+            // ribbonPanel5
+            // 
+            this.ribbonPanel5.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.ribbonPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ribbonPanel5.Location = new System.Drawing.Point(0, 28);
+            this.ribbonPanel5.Name = "ribbonPanel5";
+            this.ribbonPanel5.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
+            this.ribbonPanel5.Size = new System.Drawing.Size(988, 24);
+            this.ribbonPanel5.TabIndex = 5;
+            this.ribbonPanel5.Visible = false;
+            // 
             // ribbonPanel4
             // 
             this.ribbonPanel4.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
@@ -1097,17 +1191,6 @@
             this.webBrowserTool.Size = new System.Drawing.Size(111, 21);
             this.webBrowserTool.Text = "Portl Office";
             this.webBrowserTool.Click += new System.EventHandler(this.webBrowserTool_Click);
-            // 
-            // ribbonPanel5
-            // 
-            this.ribbonPanel5.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
-            this.ribbonPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ribbonPanel5.Location = new System.Drawing.Point(0, 28);
-            this.ribbonPanel5.Name = "ribbonPanel5";
-            this.ribbonPanel5.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.ribbonPanel5.Size = new System.Drawing.Size(988, 24);
-            this.ribbonPanel5.TabIndex = 5;
-            this.ribbonPanel5.Visible = false;
             // 
             // menuHeThong
             // 
@@ -1337,89 +1420,6 @@
             this.skinCollectionItem1.SkinPassword = null;
             this.skinCollectionItem1.SkinSteam = ((System.IO.MemoryStream)(resources.GetObject("skinCollectionItem1.SkinSteam")));
             // 
-            // group_DoiDHN
-            // 
-            this.group_DoiDHN.CanvasColor = System.Drawing.SystemColors.Control;
-            this.group_DoiDHN.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
-            this.group_DoiDHN.Controls.Add(this.dhn_NhapDanhBo);
-            this.group_DoiDHN.Controls.Add(this.pictureBox17);
-            this.group_DoiDHN.Controls.Add(this.dhn_BaoCao);
-            this.group_DoiDHN.Controls.Add(this.pictureBox18);
-            this.group_DoiDHN.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.group_DoiDHN.Location = new System.Drawing.Point(11, 8);
-            this.group_DoiDHN.Name = "group_DoiDHN";
-            this.group_DoiDHN.Size = new System.Drawing.Size(828, 186);
-            // 
-            // 
-            // 
-            this.group_DoiDHN.Style.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.group_DoiDHN.Style.BackColorGradientAngle = 90;
-            this.group_DoiDHN.Style.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.group_DoiDHN.Style.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.group_DoiDHN.Style.BorderBottomWidth = 1;
-            this.group_DoiDHN.Style.BorderColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-            this.group_DoiDHN.Style.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.group_DoiDHN.Style.BorderLeftWidth = 1;
-            this.group_DoiDHN.Style.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.group_DoiDHN.Style.BorderRightWidth = 1;
-            this.group_DoiDHN.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.group_DoiDHN.Style.BorderTopWidth = 1;
-            this.group_DoiDHN.Style.CornerDiameter = 4;
-            this.group_DoiDHN.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
-            this.group_DoiDHN.Style.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.group_DoiDHN.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
-            this.group_DoiDHN.TabIndex = 15;
-            this.group_DoiDHN.Text = "Đội Quản Lý Đồng Hồ Nước";
-            this.group_DoiDHN.Visible = false;
-            // 
-            // dhn_NhapDanhBo
-            // 
-            this.dhn_NhapDanhBo.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.dhn_NhapDanhBo.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.dhn_NhapDanhBo.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dhn_NhapDanhBo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(22)))), ((int)(((byte)(111)))));
-            this.dhn_NhapDanhBo.Location = new System.Drawing.Point(23, 9);
-            this.dhn_NhapDanhBo.Name = "dhn_NhapDanhBo";
-            this.dhn_NhapDanhBo.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.F10);
-            this.dhn_NhapDanhBo.Size = new System.Drawing.Size(161, 26);
-            this.dhn_NhapDanhBo.TabIndex = 26;
-            this.dhn_NhapDanhBo.Text = " Nhập Danh Bộ && HĐ";
-            this.dhn_NhapDanhBo.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
-            this.dhn_NhapDanhBo.Click += new System.EventHandler(this.dhn_NhapDanhBo_Click);
-            // 
-            // pictureBox17
-            // 
-            this.pictureBox17.Image = global::TanHoaWater.Properties.Resources.bt_bg;
-            this.pictureBox17.Location = new System.Drawing.Point(19, 5);
-            this.pictureBox17.Name = "pictureBox17";
-            this.pictureBox17.Size = new System.Drawing.Size(169, 35);
-            this.pictureBox17.TabIndex = 27;
-            this.pictureBox17.TabStop = false;
-            // 
-            // dhn_BaoCao
-            // 
-            this.dhn_BaoCao.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.dhn_BaoCao.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.dhn_BaoCao.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dhn_BaoCao.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(22)))), ((int)(((byte)(111)))));
-            this.dhn_BaoCao.Location = new System.Drawing.Point(23, 46);
-            this.dhn_BaoCao.Name = "dhn_BaoCao";
-            this.dhn_BaoCao.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.F1);
-            this.dhn_BaoCao.Size = new System.Drawing.Size(161, 26);
-            this.dhn_BaoCao.TabIndex = 1;
-            this.dhn_BaoCao.Text = "  Báo Cáo Tổng Kết";
-            this.dhn_BaoCao.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
-            this.dhn_BaoCao.Click += new System.EventHandler(this.dhn_BaoCao_Click);
-            // 
-            // pictureBox18
-            // 
-            this.pictureBox18.Image = global::TanHoaWater.Properties.Resources.bt_bg;
-            this.pictureBox18.Location = new System.Drawing.Point(19, 42);
-            this.pictureBox18.Name = "pictureBox18";
-            this.pictureBox18.Size = new System.Drawing.Size(169, 35);
-            this.pictureBox18.TabIndex = 19;
-            this.pictureBox18.TabStop = false;
-            // 
             // frm_Main
             // 
             this.AllowDrop = true;
@@ -1442,6 +1442,9 @@
             this.PanelContent.ResumeLayout(false);
             this.PanelMain.ResumeLayout(false);
             this.PanelMain.PerformLayout();
+            this.group_DoiDHN.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).EndInit();
             this.iconMenuPanel.ResumeLayout(false);
             this.groupTTK.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
@@ -1462,14 +1465,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
             this.ribbonControl1.ResumeLayout(false);
             this.ribbonControl1.PerformLayout();
-            this.ribbonPanel3.ResumeLayout(false);
-            this.ribbonPanel3.PerformLayout();
-            this.menuStrip2.ResumeLayout(false);
-            this.menuStrip2.PerformLayout();
             this.ribbonPanel6.ResumeLayout(false);
             this.ribbonPanel6.PerformLayout();
             this.menuStrip5.ResumeLayout(false);
             this.menuStrip5.PerformLayout();
+            this.ribbonPanel3.ResumeLayout(false);
+            this.ribbonPanel3.PerformLayout();
+            this.menuStrip2.ResumeLayout(false);
+            this.menuStrip2.PerformLayout();
             this.ribbonPanel2.ResumeLayout(false);
             this.ribbonPanel2.PerformLayout();
             this.menuStrip3.ResumeLayout(false);
@@ -1482,9 +1485,6 @@
             this.ribbonPanel4.PerformLayout();
             this.menuStrip4.ResumeLayout(false);
             this.menuStrip4.PerformLayout();
-            this.group_DoiDHN.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).EndInit();
             this.ResumeLayout(false);
 
         }

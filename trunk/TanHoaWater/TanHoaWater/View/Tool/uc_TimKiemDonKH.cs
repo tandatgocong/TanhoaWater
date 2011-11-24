@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using TanHoaWater.Database;
 
 namespace TanHoaWater.View.Tool
 {
@@ -14,7 +15,6 @@ namespace TanHoaWater.View.Tool
         public uc_TimKiemDonKH()
         {
             InitializeComponent();
-            this.SearchMaHoSo.Mask =  "CCCCCCCC";
         }
 
         private void uc_TimKiemDonKH_Load(object sender, EventArgs e)
@@ -32,13 +32,13 @@ namespace TanHoaWater.View.Tool
             }
             
         }
-        string ngaygiaoTTK = "";
-        string ngaygiaoSDV = "";
-        string ngaytringky = "";
-        string trongaiTK = "";
-        string noidungTK = "";
+        string title ="";
+        string ngaytrongai = "";
+        string noidungtrongai = "";
+       
         void search() {
-            DataTable table = DAL.C_DonKhachHang.TimKiemDonKhachHang(this.SearchMaHoSo.Text, this.searchHoTenKH.Text, this.searchDiaChi.Text);
+
+            DataTable table = DAL.C_TimKiemDonKhachHang.TimBienNhan(this.SearchMaHoSo.Text, this.searchHoTenKH.Text, this.searchDiaChi.Text);
             this.dataGridView1.DataSource = table;
             Utilities.DataGridV.formatRows(dataGridView1);
             if (table.Rows.Count <= 0) {
@@ -47,33 +47,71 @@ namespace TanHoaWater.View.Tool
             }
             if (table.Rows.Count == 1)
             {
-                this.txtDotND.Text = dataGridView1.Rows[0].Cells[0].Value + "";
-                this.txtShs.Text = dataGridView1.Rows[0].Cells[1].Value + "";
-                this.txtSoHoSo.Text = dataGridView1.Rows[0].Cells[2].Value + "";
-                this.txtHoTen.Text = dataGridView1.Rows[0].Cells[4].Value + "";
-                this.txtdiachi.Text = dataGridView1.Rows[0].Cells[6].Value + "";
-                this.txtSoDT.Text = dataGridView1.Rows[0].Cells[5].Value + "";
-                this.txtLoaiKH.Text = dataGridView1.Rows[0].Cells[8].Value + "";
-                this.txtLoaiHS.Text = dataGridView1.Rows[0].Cells[9].Value + "";
-                this.txtNgayNhanHS.Text = dataGridView1.Rows[0].Cells[10].Value + "";
-                ngaygiaoTTK = dataGridView1.Rows[0].Cells[11].Value + "";
-                this.txtNgayGiaoTTK.Text = ngaygiaoTTK;
-                ngaygiaoSDV = DAL.C_USERS.findByUserName(dataGridView1.Rows[0].Cells[12].Value + "").FULLNAME;
-                this.txtSoDoVien.Text = ngaygiaoSDV;                
-               // ngaytringky= dataGridView1.Rows[0].Cells[13].Value + "";
-                ngaytringky = dataGridView1.Rows[0].Cells[13].Value + "";
-                this.txtNgayTrinhKyGD.Text = ngaytringky;
-                trongaiTK = dataGridView1.Rows[0].Cells[15].Value + "";
-                noidungTK = dataGridView1.Rows[0].Cells[16].Value + "";
-                result();
+                this.txtNgayNhanHS.Text = dataGridView1.Rows[0].Cells["NGAYNHAN"].Value + "";
+                this.txtLoaiHS.Text = dataGridView1.Rows[0].Cells["LOAIHS"].Value + "";
+                DON_KHACHHANG donkh = DAL.C_DonKhachHang.searchTimKiemDon(dataGridView1.Rows[0].Cells["g_SoHoSo"].Value + "");
+                if (donkh != null)
+                {
+                    this.DotNhanDon.Text = donkh.MADOT;
+                    this.NgayLenDotNhanDon.Text = Utilities.DateToString.NgayVNVN(donkh.CREATEDATE.Value);
+                    if (donkh.NGAYCHUYEN_HOSO != null)
+                    {
+                        this.txtNgayGiaoTTK.Text = Utilities.DateToString.NgayVNVN(donkh.NGAYCHUYEN_HOSO.Value);
+                        TOTHIETKE ttk = DAL.C_ToThietKe.findBySHS(donkh.SHS);
+                        if (ttk != null)
+                        {
+                            if (ttk.SODOVIEN != null) {
+                                this.SoDoVienTK.Text = ttk.SODOVIEN;
+                                this.txtNgayGiaoSDV.Text = ttk.NGAYGIAOSDV!=null?  Utilities.DateToString.NgayVNVN(ttk.NGAYGIAOSDV.Value):"";
+                                if (ttk.TRONGAITHIETKE == true)
+                                {
+                                    MessageBox.Show(this, "Tro Ngai TK");  
+                                }
+                                else { }
+
+                            } else {
+                                title = "CHƯA GIAO HỒ SƠ CHO SƠ ĐỒ VIÊN";
+                            }
+                        }
+                        else {
+                            title = "TỔ THIẾT KẾ KHÔNG NHẬN HỒ SƠ NÀY.";
+                        }
+                        
+                    }
+                    else {
+                        title = "HỒ SƠ CHƯA CHUYỂN TỔ THIẾT KẾ";
+                    }
+                }
+                else {
+                    title = "CHƯA LÊN ĐỢT NHẬN ĐƠN CHUYỂN TỔ THIẾT KẾ";
+                }
+               // this.txtDotND.Text = dataGridView1.Rows[0].Cells[0].Value + "";
+               // this.txtShs.Text = dataGridView1.Rows[0].Cells[1].Value + "";
+               // this.txtSoHoSo.Text = dataGridView1.Rows[0].Cells[2].Value + "";
+               // this.txtHoTen.Text = dataGridView1.Rows[0].Cells[4].Value + "";
+               // this.txtdiachi.Text = dataGridView1.Rows[0].Cells[6].Value + "";
+               // this.txtSoDT.Text = dataGridView1.Rows[0].Cells[5].Value + "";
+               // this.txtLoaiKH.Text = dataGridView1.Rows[0].Cells[8].Value + "";
+               // this.txtLoaiHS.Text = dataGridView1.Rows[0].Cells[9].Value + "";
+               // this.txtNgayNhanHS.Text = dataGridView1.Rows[0].Cells[10].Value + "";
+               // ngaygiaoTTK = dataGridView1.Rows[0].Cells[11].Value + "";
+               // this.txtNgayGiaoTTK.Text = ngaygiaoTTK;
+               // ngaygiaoSDV = DAL.C_USERS.findByUserName(dataGridView1.Rows[0].Cells[12].Value + "").FULLNAME;
+               // this.SoDoVienTK.Text = ngaygiaoSDV;                
+               //// ngaytringky= dataGridView1.Rows[0].Cells[13].Value + "";
+               // ngaytringky = dataGridView1.Rows[0].Cells[13].Value + "";
+               // this.NgayTrinhKyGD.Text = ngaytringky;
+               // trongaiTK = dataGridView1.Rows[0].Cells[15].Value + "";
+               // noidungTK = dataGridView1.Rows[0].Cells[16].Value + "";
+               // result();
             }
-            try
-            {
-                dataGridView1.Columns["NGAYGIAOTTK_"].Visible = false;
-            }
-            catch (Exception)
-            {
-            }
+            //try
+            //{
+            //    dataGridView1.Columns["NGAYGIAOTTK_"].Visible = false;
+            //}
+            //catch (Exception)
+            //{
+            //}
            
         }
         private void btSearch_Click(object sender, EventArgs e)
@@ -85,33 +123,143 @@ namespace TanHoaWater.View.Tool
         {
             Utilities.DataGridV.formatRows(dataGridView1);
         }
-
+       
+        void clearText()
+        {
+            this.txtNgayNhanHS.Text = "";
+            this.txtLoaiHS.Text = "";
+            this.txtNgayNhanHS.Text = "";
+            this.txtLoaiHS.Text = "";
+            this.DotNhanDon.Text = "";
+            this.NgayLenDotNhanDon.Text = "";
+            this.txtNgayGiaoTTK.Text = "";
+            this.SoDoVienTK.Text = "";
+            this.txtNgayGiaoSDV.Text = "";
+            NgayLapBG.Text = "";
+            SoTienDong.Text = "";
+            NgayTrinhKyGD.Text = "";
+            NgayHoanTat.Text = "";
+            NgayTraHoSoKH.Text = "";
+            DotXinPhepDD.Text = "";
+            NgayXinPhepDD.Text = "";
+            NgayCoPhep.Text = "";
+            DotThiCong.Text = "";
+            NgayLenDotTC.Text = "";
+            NgayThiCong.Text = "";
+            NgayHoanCong.Text = "";
+            ChoDanhBo.Text = "";
+            title = "";
+            ngaytrongai = "";
+            noidungtrongai = "";
+        }
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-        //    for (int i = 0; i < dataGridView1.Rows[e.RowIndex].Cells.Count; i++)
-        //    {
-        //        MessageBox.Show(this, dataGridView1.Rows[e.RowIndex].Cells[i].Value + "");
-        //    }
+
             try
             {
-                 this.txtDotND.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value+"";
-                this.txtShs.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value + "";
-                this.txtSoHoSo.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value + "";
-                this.txtHoTen.Text = dataGridView1.Rows[e.RowIndex].Cells[4].Value + "";
-                this.txtdiachi.Text = dataGridView1.Rows[e.RowIndex].Cells[6].Value + "";
-                this.txtSoDT.Text = dataGridView1.Rows[e.RowIndex].Cells[5].Value + "";
-                this.txtLoaiKH.Text = dataGridView1.Rows[e.RowIndex].Cells[8].Value + "";
-                this.txtLoaiHS.Text = dataGridView1.Rows[e.RowIndex].Cells[9].Value + "";
-                this.txtNgayNhanHS.Text = dataGridView1.Rows[e.RowIndex].Cells[10].Value + "";
-                ngaygiaoTTK = dataGridView1.Rows[e.RowIndex].Cells[11].Value + "";
-                this.txtNgayGiaoTTK.Text = ngaygiaoTTK;
-                ngaygiaoSDV = DAL.C_USERS.findByUserName(dataGridView1.Rows[e.RowIndex].Cells[12].Value + "").FULLNAME;
-                this.txtSoDoVien.Text = ngaygiaoSDV;
-                ngaytringky = dataGridView1.Rows[e.RowIndex].Cells[13].Value + "";
-                this.txtNgayTrinhKyGD.Text = ngaytringky;
-                trongaiTK = dataGridView1.Rows[e.RowIndex].Cells[15].Value + "";
-                noidungTK = dataGridView1.Rows[e.RowIndex].Cells[16].Value + "";
-                result();
+                clearText();
+                this.txtNgayNhanHS.Text = dataGridView1.Rows[e.RowIndex].Cells["NGAYNHAN"].Value + "";
+                this.txtLoaiHS.Text = dataGridView1.Rows[e.RowIndex].Cells["LOAIHS"].Value + "";
+                this.txtNgayNhanHS.Text = dataGridView1.Rows[0].Cells["NGAYNHAN"].Value + "";
+                this.txtLoaiHS.Text = dataGridView1.Rows[0].Cells["LOAIHS"].Value + "";
+                DON_KHACHHANG donkh = DAL.C_DonKhachHang.searchTimKiemDon(dataGridView1.Rows[e.RowIndex].Cells["g_SoHoSo"].Value + "");
+                if (donkh != null)
+                {
+                    this.DotNhanDon.Text = donkh.MADOT;
+                    this.NgayLenDotNhanDon.Text = Utilities.DateToString.NgayVNVN(donkh.CREATEDATE.Value);
+                    if (donkh.NGAYCHUYEN_HOSO != null)
+                    {
+                        this.txtNgayGiaoTTK.Text = Utilities.DateToString.NgayVNVN(donkh.NGAYCHUYEN_HOSO.Value);
+                        TOTHIETKE ttk = DAL.C_ToThietKe.findBySHS(donkh.SHS);
+                        if (ttk != null)
+                        {
+                            if (ttk.SODOVIEN != null)
+                            {
+                                this.SoDoVienTK.Text = ttk.SODOVIEN;
+                                this.txtNgayGiaoSDV.Text = ttk.NGAYGIAOSDV != null ? Utilities.DateToString.NgayVNVN(ttk.NGAYGIAOSDV.Value) : "";
+                                if (ttk.TRONGAITHIETKE == true)
+                                {
+                                    title = "HỒ SƠ TRỞ NGẠI THIẾT KẾ";
+                                    noidungtrongai = ttk.NOIDUNGTRONGAI;
+                                }
+                                else {
+
+                                    BG_KHOILUONGXDCB xdcb = DAL.C_KhoiLuongXDCB.findBySHS(donkh.SHS);
+                                    if (xdcb != null)
+                                    {
+                                        NgayLapBG.Text = xdcb.CREATEDATE != null ? Utilities.DateToString.NgayVNVN(xdcb.CREATEDATE.Value) : "";
+                                        SoTienDong.Text = String.Format("{0:0,0.00}", xdcb.TONGIATRI != null ? xdcb.TONGIATRI : 0.0);
+                                        NgayTrinhKyGD.Text = ttk.NGAYTKGD != null ? Utilities.DateToString.NgayVNVN(ttk.NGAYTKGD.Value) : "";
+                                        NgayHoanTat.Text = ttk.NGAYHOANTATTK != null ? Utilities.DateToString.NgayVNVN(ttk.NGAYHOANTATTK.Value) : "";
+                                        NgayTraHoSoKH.Text = ttk.NGAYTRAHS != null ? Utilities.DateToString.NgayVNVN(ttk.NGAYTRAHS.Value) : "";
+                                        KH_HOSOKHACHHANG hoskh = DAL.C_KH_HoSoKhachHang.findBySHS(donkh.SHS);
+                                        if (hoskh !=null)
+                                        {
+                                            if(hoskh.MADOTDD!=null){
+                                                KH_XINPHEPDAODUONG xiphep = DAL.C_KH_XinPhepDD.finbyMaDot(hoskh.MADOTDD);
+                                                DotXinPhepDD.Text = xiphep.MADOT;
+                                                NgayXinPhepDD.Text = Utilities.DateToString.NgayVNVN(xiphep.NGAYLAP.Value) ;
+                                                NgayCoPhep.Text = xiphep.NGAYCOPHEP != null ? Utilities.DateToString.NgayVNVN(xiphep.NGAYCOPHEP.Value) : "";
+                                            }
+                                            if (hoskh.MADOTTC != null)
+                                            {
+                                                KH_DOTTHICONG dotc = DAL.C_KH_DotThiCong.findByMadot(hoskh.MADOTTC);
+                                                DotThiCong.Text = dotc.MADOTTC;
+                                                NgayLenDotTC.Text = Utilities.DateToString.NgayVNVN(dotc.NGAYLAP.Value);
+                                                 
+                                            }
+                                            NgayThiCong.Text = hoskh.NGAYTHICONG != null ? Utilities.DateToString.NgayVNVN(hoskh.NGAYTHICONG.Value) : "";
+                                            NgayHoanCong.Text = hoskh.NGAYHOANCONG != null ? Utilities.DateToString.NgayVNVN(hoskh.NGAYHOANCONG.Value) : "";
+                                            ChoDanhBo.Text = hoskh.DHN_NGAYCHOSODB != null ? Utilities.DateToString.NgayVNVN(hoskh.DHN_NGAYCHOSODB.Value) : "";
+                                            if (hoskh.TRONGAI == true) {
+                                                title = "HỒ SƠ TRỞ NGẠI THI CÔNG";
+                                            }
+                                        }
+                                    }
+                                    else {
+                                        title = "HỒ SƠ CHƯA CHẠY BẢNG GIÁ.";
+                                    }
+                                }
+
+                            }
+                            else
+                            {
+                                title = "CHƯA GIAO HỒ SƠ CHO SƠ ĐỒ VIÊN";
+                            }
+                        }
+                        else
+                        {
+                            title = "TỔ THIẾT KẾ KHÔNG NHẬN HỒ SƠ NÀY.";
+                        }
+
+                    }
+                    else
+                    {
+                        title = "HỒ SƠ CHƯA CHUYỂN TỔ THIẾT KẾ";
+                    }
+                }
+                else
+                {
+                    title = "CHƯA LÊN ĐỢT NHẬN ĐƠN CHUYỂN TỔ THIẾT KẾ";
+                }
+                // this.txtDotND.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value+"";
+                //this.txtShs.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value + "";
+                //this.txtSoHoSo.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value + "";
+                //this.txtHoTen.Text = dataGridView1.Rows[e.RowIndex].Cells[4].Value + "";
+                //this.txtdiachi.Text = dataGridView1.Rows[e.RowIndex].Cells[6].Value + "";
+                //this.txtSoDT.Text = dataGridView1.Rows[e.RowIndex].Cells[5].Value + "";
+                //this.txtLoaiKH.Text = dataGridView1.Rows[e.RowIndex].Cells[8].Value + "";
+                //this.txtLoaiHS.Text = dataGridView1.Rows[e.RowIndex].Cells[9].Value + "";
+                //this.txtNgayNhanHS.Text = dataGridView1.Rows[e.RowIndex].Cells[10].Value + "";
+                //ngaygiaoTTK = dataGridView1.Rows[e.RowIndex].Cells[11].Value + "";
+                //this.txtNgayGiaoTTK.Text = ngaygiaoTTK;
+                //ngaygiaoSDV = DAL.C_USERS.findByUserName(dataGridView1.Rows[e.RowIndex].Cells[12].Value + "").FULLNAME;
+                //this.SoDoVienTK.Text = ngaygiaoSDV;
+                //ngaytringky = dataGridView1.Rows[e.RowIndex].Cells[13].Value + "";
+                //this.NgayTrinhKyGD.Text = ngaytringky;
+                //trongaiTK = dataGridView1.Rows[e.RowIndex].Cells[15].Value + "";
+                //noidungTK = dataGridView1.Rows[e.RowIndex].Cells[16].Value + "";
+                //result();
             }
             catch (Exception)
             {
@@ -148,35 +296,35 @@ namespace TanHoaWater.View.Tool
         {
             refesh();
         }
-        public void result() {
+        //public void result() {
           
-            groupBox1.Visible = true;
-            if ("True".Equals(trongaiTK)) {
-                lbresult.Text = "HỒ SƠ TRỞ NGẠI THIẾT KẾ";
-                lbresult.ForeColor = Color.Red;
-                resultNoiDung.Text = noidungTK;
-            } else {
-                lbresult.ForeColor = Color.Blue;
-                if (!"".Equals(ngaytringky))
-                {
-                    lbresult.Text = "HỒ SƠ ĐANG HOÀN THÀNH ";
-                    resultNoiDung.Text = "Hồ Sơ Trình Ký Ban Giám Đốc";
-                }
-                else if (!"".Equals(ngaygiaoTTK))
-                {
-                    lbresult.Text = "HỒ SƠ ĐANG HOÀN THÀNH ";
-                    resultNoiDung.Text = "Hồ Sơ Đang Khảo Sát Thiết Kế";
-                }
-                else {
-                    lbresult.Text = "HỒ SƠ ĐANG HOÀN THÀNH ";
-                    resultNoiDung.Text = "Hồ Sơ Chưa Chuyển Tồ Thiết Kế";
-                }
+        //    groupBox1.Visible = true;
+        //    if ("True".Equals(trongaiTK)) {
+        //        lbresult.Text = "HỒ SƠ TRỞ NGẠI THIẾT KẾ";
+        //        lbresult.ForeColor = Color.Red;
+        //        resultNoiDung.Text = noidungTK;
+        //    } else {
+        //        lbresult.ForeColor = Color.Blue;
+        //        if (!"".Equals(ngaytringky))
+        //        {
+        //            lbresult.Text = "HỒ SƠ ĐANG HOÀN THÀNH ";
+        //            resultNoiDung.Text = "Hồ Sơ Trình Ký Ban Giám Đốc";
+        //        }
+        //        else if (!"".Equals(ngaygiaoTTK))
+        //        {
+        //            lbresult.Text = "HỒ SƠ ĐANG HOÀN THÀNH ";
+        //            resultNoiDung.Text = "Hồ Sơ Đang Khảo Sát Thiết Kế";
+        //        }
+        //        else {
+        //            lbresult.Text = "HỒ SƠ ĐANG HOÀN THÀNH ";
+        //            resultNoiDung.Text = "Hồ Sơ Chưa Chuyển Tồ Thiết Kế";
+        //        }
                     
-                //string ngaygiaoTTK = "";
-                //string ngaygiaoSDV = "";
-                //string ngaytringky = "";
-            }
+        //        //string ngaygiaoTTK = "";
+        //        //string ngaygiaoSDV = "";
+        //        //string ngaytringky = "";
+        //    }
         
-        }
+        //}
     }
 }
