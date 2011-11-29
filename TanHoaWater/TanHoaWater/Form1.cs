@@ -11,6 +11,7 @@ using TanHoaWater.View.Users.KEHOACH.Report;
 using TanHoaWater.View.Users.KEHOACH.DOTTHICONG;
 using TanHoaWater.View.Users.KEHOACH.DOTTHICONG.BC;
 using TanHoaWater.View.Users.DONGHONUOC.BC;
+using System.IO;
 
 namespace TanHoaWater
 {
@@ -20,6 +21,7 @@ namespace TanHoaWater
         {
             InitializeComponent();
 
+            MessageBox.Show(this, AppDomain.CurrentDomain.BaseDirectory);  
             ReportDocument rp = new rpt_DIEUCHINH();
             //rp.SetDataSource(DAL.C_DHN_ChoDanhBo.BC_DIEUCHINH("TH001"));
             crystalReportViewer1.ReportSource = rp;

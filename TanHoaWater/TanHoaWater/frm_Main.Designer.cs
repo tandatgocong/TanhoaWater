@@ -137,6 +137,7 @@
             this.buttonItem13 = new DevComponents.DotNetBar.ButtonItem();
             this.buttonItem1 = new DevComponents.DotNetBar.ButtonItem();
             this.skinCollectionItem1 = new Sunisoft.IrisSkin.SkinCollectionItem();
+            this.v_DHN_MSTTableAdapter1 = new TanHoaWater.View.Users.DONGHONUOC.BC.chodanhboTableAdapters.V_DHN_MSTTableAdapter();
             this.mainLayout.SuspendLayout();
             this.PanelContent.SuspendLayout();
             this.PanelMain.SuspendLayout();
@@ -180,7 +181,7 @@
             // 
             // mainLayout
             // 
-            this.mainLayout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(206)))), ((int)(((byte)(236)))));
+            this.mainLayout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
             this.mainLayout.Controls.Add(this.PanelContent);
             this.mainLayout.Controls.Add(this.ribbonControl1);
             this.mainLayout.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -193,6 +194,7 @@
             // 
             // PanelContent
             // 
+            this.PanelContent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
             this.PanelContent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PanelContent.Controls.Add(this.PanelMain);
             this.PanelContent.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -203,6 +205,7 @@
             // 
             // PanelMain
             // 
+            this.PanelMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
             this.PanelMain.Controls.Add(this.group_DoiDHN);
             this.PanelMain.Controls.Add(this.lbNgayHeThong);
             this.PanelMain.Controls.Add(this.iconMenuPanel);
@@ -272,7 +275,7 @@
             this.pictureBox17.Image = global::TanHoaWater.Properties.Resources.bt_bg;
             this.pictureBox17.Location = new System.Drawing.Point(19, 5);
             this.pictureBox17.Name = "pictureBox17";
-            this.pictureBox17.Size = new System.Drawing.Size(169, 35);
+            this.pictureBox17.Size = new System.Drawing.Size(169, 34);
             this.pictureBox17.TabIndex = 27;
             this.pictureBox17.TabStop = false;
             // 
@@ -296,7 +299,7 @@
             this.pictureBox18.Image = global::TanHoaWater.Properties.Resources.bt_bg;
             this.pictureBox18.Location = new System.Drawing.Point(19, 42);
             this.pictureBox18.Name = "pictureBox18";
-            this.pictureBox18.Size = new System.Drawing.Size(169, 35);
+            this.pictureBox18.Size = new System.Drawing.Size(169, 34);
             this.pictureBox18.TabIndex = 19;
             this.pictureBox18.TabStop = false;
             // 
@@ -390,7 +393,7 @@
             this.pictureBox5.Image = global::TanHoaWater.Properties.Resources.bt_bg;
             this.pictureBox5.Location = new System.Drawing.Point(214, 42);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(169, 35);
+            this.pictureBox5.Size = new System.Drawing.Size(169, 34);
             this.pictureBox5.TabIndex = 28;
             this.pictureBox5.TabStop = false;
             // 
@@ -414,7 +417,7 @@
             this.pictureBox11.Image = global::TanHoaWater.Properties.Resources.bt_bg;
             this.pictureBox11.Location = new System.Drawing.Point(19, 43);
             this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(169, 35);
+            this.pictureBox11.Size = new System.Drawing.Size(169, 34);
             this.pictureBox11.TabIndex = 26;
             this.pictureBox11.TabStop = false;
             // 
@@ -436,9 +439,9 @@
             // pictureBox15
             // 
             this.pictureBox15.Image = global::TanHoaWater.Properties.Resources.bt_bg;
-            this.pictureBox15.Location = new System.Drawing.Point(214, 119);
+            this.pictureBox15.Location = new System.Drawing.Point(214, 118);
             this.pictureBox15.Name = "pictureBox15";
-            this.pictureBox15.Size = new System.Drawing.Size(169, 35);
+            this.pictureBox15.Size = new System.Drawing.Size(169, 34);
             this.pictureBox15.TabIndex = 24;
             this.pictureBox15.TabStop = false;
             // 
@@ -462,7 +465,7 @@
             this.pictureBox14.Image = global::TanHoaWater.Properties.Resources.bt_bg;
             this.pictureBox14.Location = new System.Drawing.Point(214, 81);
             this.pictureBox14.Name = "pictureBox14";
-            this.pictureBox14.Size = new System.Drawing.Size(169, 35);
+            this.pictureBox14.Size = new System.Drawing.Size(169, 34);
             this.pictureBox14.TabIndex = 22;
             this.pictureBox14.TabStop = false;
             // 
@@ -486,7 +489,7 @@
             this.pictureBox2.Image = global::TanHoaWater.Properties.Resources.bt_bg;
             this.pictureBox2.Location = new System.Drawing.Point(214, 5);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(169, 35);
+            this.pictureBox2.Size = new System.Drawing.Size(169, 34);
             this.pictureBox2.TabIndex = 16;
             this.pictureBox2.TabStop = false;
             // 
@@ -539,7 +542,7 @@
             this.pictureBox1.Image = global::TanHoaWater.Properties.Resources.bt_bg;
             this.pictureBox1.Location = new System.Drawing.Point(19, 5);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(169, 35);
+            this.pictureBox1.Size = new System.Drawing.Size(169, 34);
             this.pictureBox1.TabIndex = 17;
             this.pictureBox1.TabStop = false;
             // 
@@ -548,16 +551,16 @@
             this.pictureBox3.Image = global::TanHoaWater.Properties.Resources.bt_bg;
             this.pictureBox3.Location = new System.Drawing.Point(19, 81);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(169, 35);
+            this.pictureBox3.Size = new System.Drawing.Size(169, 34);
             this.pictureBox3.TabIndex = 18;
             this.pictureBox3.TabStop = false;
             // 
             // pictureBox4
             // 
             this.pictureBox4.Image = global::TanHoaWater.Properties.Resources.bt_bg;
-            this.pictureBox4.Location = new System.Drawing.Point(19, 119);
+            this.pictureBox4.Location = new System.Drawing.Point(19, 118);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(169, 35);
+            this.pictureBox4.Size = new System.Drawing.Size(169, 34);
             this.pictureBox4.TabIndex = 19;
             this.pictureBox4.TabStop = false;
             // 
@@ -626,7 +629,7 @@
             this.pictureBox6.Image = global::TanHoaWater.Properties.Resources.bt_bg;
             this.pictureBox6.Location = new System.Drawing.Point(203, 42);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(169, 35);
+            this.pictureBox6.Size = new System.Drawing.Size(169, 34);
             this.pictureBox6.TabIndex = 29;
             this.pictureBox6.TabStop = false;
             // 
@@ -650,7 +653,7 @@
             this.pictureBox16.Image = global::TanHoaWater.Properties.Resources.bt_bg;
             this.pictureBox16.Location = new System.Drawing.Point(19, 5);
             this.pictureBox16.Name = "pictureBox16";
-            this.pictureBox16.Size = new System.Drawing.Size(169, 35);
+            this.pictureBox16.Size = new System.Drawing.Size(169, 34);
             this.pictureBox16.TabIndex = 27;
             this.pictureBox16.TabStop = false;
             // 
@@ -734,7 +737,7 @@
             this.pictureBox7.Image = global::TanHoaWater.Properties.Resources.bt_bg;
             this.pictureBox7.Location = new System.Drawing.Point(19, 42);
             this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(169, 35);
+            this.pictureBox7.Size = new System.Drawing.Size(169, 34);
             this.pictureBox7.TabIndex = 19;
             this.pictureBox7.TabStop = false;
             // 
@@ -743,7 +746,7 @@
             this.pictureBox8.Image = global::TanHoaWater.Properties.Resources.bt_bg;
             this.pictureBox8.Location = new System.Drawing.Point(19, 80);
             this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(169, 35);
+            this.pictureBox8.Size = new System.Drawing.Size(169, 34);
             this.pictureBox8.TabIndex = 20;
             this.pictureBox8.TabStop = false;
             // 
@@ -752,7 +755,7 @@
             this.pictureBox9.Image = global::TanHoaWater.Properties.Resources.bt_bg;
             this.pictureBox9.Location = new System.Drawing.Point(19, 117);
             this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(169, 35);
+            this.pictureBox9.Size = new System.Drawing.Size(169, 34);
             this.pictureBox9.TabIndex = 21;
             this.pictureBox9.TabStop = false;
             // 
@@ -761,7 +764,7 @@
             this.pictureBox10.Image = global::TanHoaWater.Properties.Resources.bt_bg;
             this.pictureBox10.Location = new System.Drawing.Point(203, 5);
             this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(169, 35);
+            this.pictureBox10.Size = new System.Drawing.Size(169, 34);
             this.pictureBox10.TabIndex = 22;
             this.pictureBox10.TabStop = false;
             // 
@@ -770,7 +773,7 @@
             this.pictureBox12.Image = global::TanHoaWater.Properties.Resources.bt_bg;
             this.pictureBox12.Location = new System.Drawing.Point(203, 80);
             this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(169, 35);
+            this.pictureBox12.Size = new System.Drawing.Size(169, 34);
             this.pictureBox12.TabIndex = 24;
             this.pictureBox12.TabStop = false;
             // 
@@ -818,10 +821,10 @@
             // ribbonControl1
             // 
             this.ribbonControl1.AutoScroll = true;
+            this.ribbonControl1.Controls.Add(this.ribbonPanel1);
             this.ribbonControl1.Controls.Add(this.ribbonPanel6);
             this.ribbonControl1.Controls.Add(this.ribbonPanel3);
             this.ribbonControl1.Controls.Add(this.ribbonPanel2);
-            this.ribbonControl1.Controls.Add(this.ribbonPanel1);
             this.ribbonControl1.Controls.Add(this.ribbonPanel5);
             this.ribbonControl1.Controls.Add(this.ribbonPanel4);
             this.ribbonControl1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -857,6 +860,7 @@
             this.ribbonPanel6.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.ribbonPanel6.Size = new System.Drawing.Size(988, 24);
             this.ribbonPanel6.TabIndex = 6;
+            this.ribbonPanel6.Visible = false;
             // 
             // menuStrip5
             // 
@@ -1052,7 +1056,6 @@
             this.ribbonPanel1.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.ribbonPanel1.Size = new System.Drawing.Size(988, 24);
             this.ribbonPanel1.TabIndex = 1;
-            this.ribbonPanel1.Visible = false;
             // 
             // menuStrip1
             // 
@@ -1086,6 +1089,7 @@
             this.subDoiMatKhau.Size = new System.Drawing.Size(123, 21);
             this.subDoiMatKhau.Text = "Đổi mật khẩu";
             this.subDoiMatKhau.Visible = false;
+            this.subDoiMatKhau.Click += new System.EventHandler(this.subDoiMatKhau_Click);
             // 
             // subDangXuat
             // 
@@ -1194,6 +1198,7 @@
             // 
             // menuHeThong
             // 
+            this.menuHeThong.Checked = true;
             this.menuHeThong.Name = "menuHeThong";
             this.menuHeThong.Panel = this.ribbonPanel1;
             this.menuHeThong.Text = "Trang Chủ";
@@ -1215,7 +1220,6 @@
             // 
             // menuQLDHNuoc
             // 
-            this.menuQLDHNuoc.Checked = true;
             this.menuQLDHNuoc.Name = "menuQLDHNuoc";
             this.menuQLDHNuoc.Panel = this.ribbonPanel6;
             this.menuQLDHNuoc.Text = "Đội Quản Lý ĐHN";
@@ -1420,6 +1424,10 @@
             this.skinCollectionItem1.SkinPassword = null;
             this.skinCollectionItem1.SkinSteam = ((System.IO.MemoryStream)(resources.GetObject("skinCollectionItem1.SkinSteam")));
             // 
+            // v_DHN_MSTTableAdapter1
+            // 
+            this.v_DHN_MSTTableAdapter1.ClearBeforeFill = true;
+            // 
             // frm_Main
             // 
             this.AllowDrop = true;
@@ -1599,6 +1607,7 @@
         private System.Windows.Forms.PictureBox pictureBox17;
         private DevComponents.DotNetBar.ButtonX dhn_BaoCao;
         private System.Windows.Forms.PictureBox pictureBox18;
+        private View.Users.DONGHONUOC.BC.chodanhboTableAdapters.V_DHN_MSTTableAdapter v_DHN_MSTTableAdapter1;
 
     }
 }
