@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.searchDiaChi = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.searchHoTenKH = new System.Windows.Forms.TextBox();
@@ -38,19 +38,14 @@
             this.buttonX2 = new DevComponents.DotNetBar.ButtonX();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.progressBar2 = new System.Windows.Forms.ProgressBar();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.label18 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.resultNoiDung = new System.Windows.Forms.RichTextBox();
             this.lbresult = new DevComponents.DotNetBar.LabelX();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.g_SoHoSo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gr_HoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DIACHI = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LOAIHS = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NGAYNHAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.resultNoiDung = new System.Windows.Forms.RichTextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.NgayTrinhKyGD = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -90,10 +85,22 @@
             this.label21 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.SearchMaHoSo = new System.Windows.Forms.TextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.next = new System.Windows.Forms.PictureBox();
+            this.lbPaing = new System.Windows.Forms.Label();
+            this.g_SoHoSo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gr_HoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DIACHI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LOAIHS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NGAYNHAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.next)).BeginInit();
             this.SuspendLayout();
             // 
             // searchDiaChi
@@ -204,12 +211,12 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.progressBar2);
             this.panel1.Controls.Add(this.progressBar1);
             this.panel1.Controls.Add(this.label18);
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.groupBox1);
-            this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Controls.Add(this.label20);
             this.panel1.Controls.Add(this.label19);
             this.panel1.Controls.Add(this.NgayTrinhKyGD);
@@ -254,6 +261,18 @@
             this.panel1.Size = new System.Drawing.Size(983, 544);
             this.panel1.TabIndex = 0;
             // 
+            // panel2
+            // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.pictureBox2);
+            this.panel2.Controls.Add(this.next);
+            this.panel2.Controls.Add(this.lbPaing);
+            this.panel2.Controls.Add(this.dataGridView1);
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(591, 541);
+            this.panel2.TabIndex = 173;
+            // 
             // progressBar2
             // 
             this.progressBar2.Location = new System.Drawing.Point(597, 282);
@@ -292,8 +311,8 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.resultNoiDung);
             this.groupBox1.Controls.Add(this.lbresult);
+            this.groupBox1.Controls.Add(this.resultNoiDung);
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.Green;
             this.groupBox1.Location = new System.Drawing.Point(603, 415);
@@ -304,88 +323,25 @@
             this.groupBox1.Text = "Kết Quả";
             this.groupBox1.Visible = false;
             // 
+            // lbresult
+            // 
+            this.lbresult.Font = new System.Drawing.Font("Times New Roman", 17F, System.Drawing.FontStyle.Bold);
+            this.lbresult.ForeColor = System.Drawing.Color.Blue;
+            this.lbresult.Location = new System.Drawing.Point(4, 28);
+            this.lbresult.Name = "lbresult";
+            this.lbresult.Size = new System.Drawing.Size(360, 46);
+            this.lbresult.TabIndex = 2;
+            this.lbresult.Text = "fdsafd <br/>\r\nfdsafdsa";
+            this.lbresult.TextAlignment = System.Drawing.StringAlignment.Center;
+            // 
             // resultNoiDung
             // 
             this.resultNoiDung.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.resultNoiDung.Location = new System.Drawing.Point(6, 58);
+            this.resultNoiDung.Location = new System.Drawing.Point(6, 80);
             this.resultNoiDung.Name = "resultNoiDung";
-            this.resultNoiDung.Size = new System.Drawing.Size(358, 60);
+            this.resultNoiDung.Size = new System.Drawing.Size(358, 38);
             this.resultNoiDung.TabIndex = 1;
             this.resultNoiDung.Text = "";
-            // 
-            // lbresult
-            // 
-            this.lbresult.Font = new System.Drawing.Font("Times New Roman", 17.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbresult.ForeColor = System.Drawing.Color.Blue;
-            this.lbresult.Location = new System.Drawing.Point(18, 25);
-            this.lbresult.Name = "lbresult";
-            this.lbresult.Size = new System.Drawing.Size(333, 27);
-            this.lbresult.TabIndex = 0;
-            this.lbresult.Text = "HỒ SƠ ĐANG HOÀN THÀNH";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.g_SoHoSo,
-            this.gr_HoTen,
-            this.DIACHI,
-            this.LOAIHS,
-            this.NGAYNHAN});
-            this.dataGridView1.Location = new System.Drawing.Point(7, 6);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersWidth = 20;
-            this.dataGridView1.Size = new System.Drawing.Size(582, 537);
-            this.dataGridView1.TabIndex = 169;
-            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            this.dataGridView1.Sorted += new System.EventHandler(this.dataGridView1_Sorted);
-            // 
-            // g_SoHoSo
-            // 
-            this.g_SoHoSo.DataPropertyName = "SHS";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.g_SoHoSo.DefaultCellStyle = dataGridViewCellStyle1;
-            this.g_SoHoSo.HeaderText = "Số HS";
-            this.g_SoHoSo.Name = "g_SoHoSo";
-            this.g_SoHoSo.ReadOnly = true;
-            this.g_SoHoSo.Width = 83;
-            // 
-            // gr_HoTen
-            // 
-            this.gr_HoTen.DataPropertyName = "HOTEN";
-            this.gr_HoTen.HeaderText = "Họ Tên";
-            this.gr_HoTen.Name = "gr_HoTen";
-            this.gr_HoTen.ReadOnly = true;
-            this.gr_HoTen.Width = 190;
-            // 
-            // DIACHI
-            // 
-            this.DIACHI.DataPropertyName = "DIACHI";
-            this.DIACHI.HeaderText = "Địa Chỉ";
-            this.DIACHI.Name = "DIACHI";
-            this.DIACHI.ReadOnly = true;
-            this.DIACHI.Width = 285;
-            // 
-            // LOAIHS
-            // 
-            this.LOAIHS.DataPropertyName = "LOAIHS";
-            this.LOAIHS.HeaderText = "LOAIHS";
-            this.LOAIHS.Name = "LOAIHS";
-            this.LOAIHS.ReadOnly = true;
-            this.LOAIHS.Visible = false;
-            // 
-            // NGAYNHAN
-            // 
-            this.NGAYNHAN.DataPropertyName = "NGAYNHAN";
-            this.NGAYNHAN.HeaderText = "NGAYNHAN";
-            this.NGAYNHAN.Name = "NGAYNHAN";
-            this.NGAYNHAN.ReadOnly = true;
-            this.NGAYNHAN.Visible = false;
             // 
             // label20
             // 
@@ -422,6 +378,7 @@
             this.NgayTrinhKyGD.ReadOnly = true;
             this.NgayTrinhKyGD.Size = new System.Drawing.Size(113, 26);
             this.NgayTrinhKyGD.TabIndex = 166;
+            this.NgayTrinhKyGD.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label6
             // 
@@ -484,6 +441,7 @@
             this.NgayXinPhepDD.ReadOnly = true;
             this.NgayXinPhepDD.Size = new System.Drawing.Size(116, 26);
             this.NgayXinPhepDD.TabIndex = 164;
+            this.NgayXinPhepDD.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // SoDoVienTK
             // 
@@ -523,6 +481,7 @@
             this.NgayThiCong.ReadOnly = true;
             this.NgayThiCong.Size = new System.Drawing.Size(110, 26);
             this.NgayThiCong.TabIndex = 161;
+            this.NgayThiCong.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label17
             // 
@@ -548,6 +507,7 @@
             this.ChoDanhBo.ReadOnly = true;
             this.ChoDanhBo.Size = new System.Drawing.Size(262, 26);
             this.ChoDanhBo.TabIndex = 161;
+            this.ChoDanhBo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // NgayHoanCong
             // 
@@ -562,6 +522,7 @@
             this.NgayHoanCong.ReadOnly = true;
             this.NgayHoanCong.Size = new System.Drawing.Size(289, 26);
             this.NgayHoanCong.TabIndex = 161;
+            this.NgayHoanCong.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // NgayLenDotTC
             // 
@@ -576,6 +537,7 @@
             this.NgayLenDotTC.ReadOnly = true;
             this.NgayLenDotTC.Size = new System.Drawing.Size(119, 26);
             this.NgayLenDotTC.TabIndex = 161;
+            this.NgayLenDotTC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // DotThiCong
             // 
@@ -643,6 +605,7 @@
             this.NgayHoanTat.ReadOnly = true;
             this.NgayHoanTat.Size = new System.Drawing.Size(120, 26);
             this.NgayHoanTat.TabIndex = 162;
+            this.NgayHoanTat.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // NgayCoPhep
             // 
@@ -657,6 +620,7 @@
             this.NgayCoPhep.ReadOnly = true;
             this.NgayCoPhep.Size = new System.Drawing.Size(110, 26);
             this.NgayCoPhep.TabIndex = 162;
+            this.NgayCoPhep.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // NgayLapBG
             // 
@@ -671,6 +635,7 @@
             this.NgayLapBG.ReadOnly = true;
             this.NgayLapBG.Size = new System.Drawing.Size(121, 26);
             this.NgayLapBG.TabIndex = 162;
+            this.NgayLapBG.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtNgayGiaoSDV
             // 
@@ -685,6 +650,7 @@
             this.txtNgayGiaoSDV.ReadOnly = true;
             this.txtNgayGiaoSDV.Size = new System.Drawing.Size(121, 26);
             this.txtNgayGiaoSDV.TabIndex = 162;
+            this.txtNgayGiaoSDV.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtNgayGiaoTTK
             // 
@@ -699,6 +665,7 @@
             this.txtNgayGiaoTTK.ReadOnly = true;
             this.txtNgayGiaoTTK.Size = new System.Drawing.Size(121, 26);
             this.txtNgayGiaoTTK.TabIndex = 162;
+            this.txtNgayGiaoTTK.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label22
             // 
@@ -878,6 +845,104 @@
             this.SearchMaHoSo.TabIndex = 129;
             this.SearchMaHoSo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.searchHoTenKH_KeyPress);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.g_SoHoSo,
+            this.gr_HoTen,
+            this.DIACHI,
+            this.LOAIHS,
+            this.NGAYNHAN});
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView1.MultiSelect = false;
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersWidth = 20;
+            this.dataGridView1.Size = new System.Drawing.Size(587, 537);
+            this.dataGridView1.TabIndex = 170;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox2.Image = global::TanHoaWater.Properties.Resources.Previous;
+            this.pictureBox2.Location = new System.Drawing.Point(508, 508);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(19, 16);
+            this.pictureBox2.TabIndex = 172;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pre);
+            // 
+            // next
+            // 
+            this.next.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.next.Image = global::TanHoaWater.Properties.Resources.Next;
+            this.next.Location = new System.Drawing.Point(567, 508);
+            this.next.Name = "next";
+            this.next.Size = new System.Drawing.Size(19, 16);
+            this.next.TabIndex = 171;
+            this.next.TabStop = false;
+            this.next.Click += new System.EventHandler(this.next_Click);
+            // 
+            // lbPaing
+            // 
+            this.lbPaing.AutoSize = true;
+            this.lbPaing.BackColor = System.Drawing.Color.Transparent;
+            this.lbPaing.Location = new System.Drawing.Point(526, 508);
+            this.lbPaing.Name = "lbPaing";
+            this.lbPaing.Size = new System.Drawing.Size(45, 19);
+            this.lbPaing.TabIndex = 173;
+            this.lbPaing.Text = "20/20";
+            this.lbPaing.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // g_SoHoSo
+            // 
+            this.g_SoHoSo.DataPropertyName = "SHS";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.g_SoHoSo.DefaultCellStyle = dataGridViewCellStyle5;
+            this.g_SoHoSo.HeaderText = "Số HS";
+            this.g_SoHoSo.Name = "g_SoHoSo";
+            this.g_SoHoSo.ReadOnly = true;
+            this.g_SoHoSo.Width = 83;
+            // 
+            // gr_HoTen
+            // 
+            this.gr_HoTen.DataPropertyName = "HOTEN";
+            this.gr_HoTen.HeaderText = "Họ Tên";
+            this.gr_HoTen.Name = "gr_HoTen";
+            this.gr_HoTen.ReadOnly = true;
+            this.gr_HoTen.Width = 190;
+            // 
+            // DIACHI
+            // 
+            this.DIACHI.DataPropertyName = "DIACHI";
+            this.DIACHI.HeaderText = "Địa Chỉ";
+            this.DIACHI.Name = "DIACHI";
+            this.DIACHI.ReadOnly = true;
+            this.DIACHI.Width = 293;
+            // 
+            // LOAIHS
+            // 
+            this.LOAIHS.DataPropertyName = "LOAIHS";
+            this.LOAIHS.HeaderText = "LOAIHS";
+            this.LOAIHS.Name = "LOAIHS";
+            this.LOAIHS.ReadOnly = true;
+            this.LOAIHS.Visible = false;
+            // 
+            // NGAYNHAN
+            // 
+            this.NGAYNHAN.DataPropertyName = "NGAYNHAN";
+            this.NGAYNHAN.HeaderText = "NGAYNHAN";
+            this.NGAYNHAN.Name = "NGAYNHAN";
+            this.NGAYNHAN.ReadOnly = true;
+            this.NGAYNHAN.Visible = false;
+            // 
             // uc_TimKiemDonKH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -900,8 +965,12 @@
             this.groupPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.next)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -929,10 +998,8 @@
         private System.Windows.Forms.Label label9;
         private DevComponents.DotNetBar.Controls.TextBoxX txtNgayNhanHS;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private DevComponents.DotNetBar.Controls.TextBoxX txtLoaiHS;
         private System.Windows.Forms.GroupBox groupBox1;
-        private DevComponents.DotNetBar.LabelX lbresult;
         private System.Windows.Forms.RichTextBox resultNoiDung;
         private DevComponents.DotNetBar.Controls.TextBoxX DotNhanDon;
         private System.Windows.Forms.Label label8;
@@ -963,14 +1030,20 @@
         private DevComponents.DotNetBar.Controls.TextBoxX ChoDanhBo;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.TextBox SearchMaHoSo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DIENTHOAI;
+        private DevComponents.DotNetBar.Controls.TextBoxX NgayLenDotNhanDon;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Panel panel2;
+        private DevComponents.DotNetBar.LabelX lbresult;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox next;
+        private System.Windows.Forms.Label lbPaing;
         private System.Windows.Forms.DataGridViewTextBoxColumn g_SoHoSo;
         private System.Windows.Forms.DataGridViewTextBoxColumn gr_HoTen;
         private System.Windows.Forms.DataGridViewTextBoxColumn DIACHI;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DIENTHOAI;
         private System.Windows.Forms.DataGridViewTextBoxColumn LOAIHS;
         private System.Windows.Forms.DataGridViewTextBoxColumn NGAYNHAN;
-        private DevComponents.DotNetBar.Controls.TextBoxX NgayLenDotNhanDon;
-        private System.Windows.Forms.Label label23;
 
     }
 }

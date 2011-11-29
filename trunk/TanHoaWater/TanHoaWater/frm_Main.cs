@@ -33,13 +33,13 @@ namespace TanHoaWater
         }
         public frm_Main()
         {
-            //Thread th = new Thread(new ThreadStart(this.start));
-            //th.Start();
-            //Thread.Sleep(5000);
+            Thread th = new Thread(new ThreadStart(this.start));
+            th.Start();
+            Thread.Sleep(5000);
               
             InitializeComponent();
             log4net.Config.XmlConfigurator.Configure();
-            //th.Abort();
+            th.Abort();
             this.menuHeThong.Select();
 
             this.lbNgayHeThong.Text = Utilities.DateToString.fullCurrentNgay() + "  ";
@@ -433,6 +433,12 @@ namespace TanHoaWater
         private void dhn_BaoCao_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void subDoiMatKhau_Click(object sender, EventArgs e)
+        {
+            frm_ChangePassword chang = new frm_ChangePassword();
+            chang.ShowDialog();
         }
     }
 }

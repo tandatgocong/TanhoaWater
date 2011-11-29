@@ -127,6 +127,26 @@ namespace TanHoaWater.DAL
             return data.ToList();
 
         }
+        public static int ChangePass(string username, string passold, string passNew) {
+            TanHoaDataContext db = new TanHoaDataContext();
+            var data = from user in db.USERs where user.USERNAME == username  select user;
+            USER u = data.SingleOrDefault();
+            if(passold.Equals(Utilities.LogIn.Decrypt(u.PASSWORD))==true){
+                try
+                {
+                    u.PASSWORD = Utilities.LogIn.Encrypt(passNew);
+                    db.SubmitChanges();
+                    return 1;
+                }
+                catch (Exception)
+                {
+                     
+                }
+                return 0;
+            }
+            return -1;
+
+        }
 
     }
 }
