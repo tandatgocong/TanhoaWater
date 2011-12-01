@@ -32,8 +32,6 @@
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbDotTC = new DevComponents.DotNetBar.LabelX();
-            this.cbDonViGiamSat = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.btExit = new DevComponents.DotNetBar.ButtonX();
             this.btPrint = new DevComponents.DotNetBar.ButtonX();
             this.ngaytailap = new System.Windows.Forms.DateTimePicker();
@@ -59,8 +57,6 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
             this.panel1.Controls.Add(this.lbDotTC);
-            this.panel1.Controls.Add(this.cbDonViGiamSat);
-            this.panel1.Controls.Add(this.labelX1);
             this.panel1.Controls.Add(this.btExit);
             this.panel1.Controls.Add(this.btPrint);
             this.panel1.Controls.Add(this.ngaytailap);
@@ -84,31 +80,12 @@
             this.lbDotTC.TabIndex = 12;
             this.lbDotTC.Text = "Đợt Thi Công";
             // 
-            // cbDonViGiamSat
-            // 
-            this.cbDonViGiamSat.DisplayMember = "Text";
-            this.cbDonViGiamSat.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbDonViGiamSat.FormattingEnabled = true;
-            this.cbDonViGiamSat.ItemHeight = 20;
-            this.cbDonViGiamSat.Location = new System.Drawing.Point(132, 58);
-            this.cbDonViGiamSat.Name = "cbDonViGiamSat";
-            this.cbDonViGiamSat.Size = new System.Drawing.Size(345, 26);
-            this.cbDonViGiamSat.TabIndex = 11;
-            // 
-            // labelX1
-            // 
-            this.labelX1.Location = new System.Drawing.Point(12, 58);
-            this.labelX1.Name = "labelX1";
-            this.labelX1.Size = new System.Drawing.Size(117, 19);
-            this.labelX1.TabIndex = 10;
-            this.labelX1.Text = "Đơn vị giám sát :";
-            // 
             // btExit
             // 
             this.btExit.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btExit.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btExit.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btExit.Location = new System.Drawing.Point(271, 182);
+            this.btExit.Location = new System.Drawing.Point(269, 148);
             this.btExit.Name = "btExit";
             this.btExit.Size = new System.Drawing.Size(117, 31);
             this.btExit.TabIndex = 9;
@@ -120,7 +97,7 @@
             this.btPrint.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btPrint.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btPrint.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btPrint.Location = new System.Drawing.Point(143, 182);
+            this.btPrint.Location = new System.Drawing.Point(141, 148);
             this.btPrint.Name = "btPrint";
             this.btPrint.Size = new System.Drawing.Size(122, 31);
             this.btPrint.TabIndex = 8;
@@ -131,7 +108,7 @@
             // 
             this.ngaytailap.CustomFormat = "dd/MM/yyyy";
             this.ngaytailap.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.ngaytailap.Location = new System.Drawing.Point(132, 130);
+            this.ngaytailap.Location = new System.Drawing.Point(145, 104);
             this.ngaytailap.Name = "ngaytailap";
             this.ngaytailap.Size = new System.Drawing.Size(115, 26);
             this.ngaytailap.TabIndex = 7;
@@ -140,14 +117,14 @@
             // 
             this.ngaykhoicong.CustomFormat = "dd/MM/yyyy";
             this.ngaykhoicong.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.ngaykhoicong.Location = new System.Drawing.Point(132, 93);
+            this.ngaykhoicong.Location = new System.Drawing.Point(145, 67);
             this.ngaykhoicong.Name = "ngaykhoicong";
             this.ngaykhoicong.Size = new System.Drawing.Size(115, 26);
             this.ngaykhoicong.TabIndex = 7;
             // 
             // labelX5
             // 
-            this.labelX5.Location = new System.Drawing.Point(12, 133);
+            this.labelX5.Location = new System.Drawing.Point(25, 107);
             this.labelX5.Name = "labelX5";
             this.labelX5.Size = new System.Drawing.Size(149, 23);
             this.labelX5.TabIndex = 6;
@@ -155,7 +132,7 @@
             // 
             // labelX4
             // 
-            this.labelX4.Location = new System.Drawing.Point(12, 93);
+            this.labelX4.Location = new System.Drawing.Point(25, 67);
             this.labelX4.Name = "labelX4";
             this.labelX4.Size = new System.Drawing.Size(149, 23);
             this.labelX4.TabIndex = 6;
@@ -187,8 +164,6 @@
         private DevComponents.DotNetBar.LabelX labelX4;
         private DevComponents.DotNetBar.ButtonX btExit;
         private DevComponents.DotNetBar.ButtonX btPrint;
-        private DevComponents.DotNetBar.LabelX labelX1;
         private DevComponents.DotNetBar.LabelX lbDotTC;
-        private DevComponents.DotNetBar.Controls.ComboBoxEx cbDonViGiamSat;
     }
 }

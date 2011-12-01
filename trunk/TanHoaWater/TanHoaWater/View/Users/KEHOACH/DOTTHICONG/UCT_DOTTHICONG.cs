@@ -63,6 +63,14 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
             cbDonViTaiLapMD.DisplayMember = "TENCONGTY";
             cbDonViTaiLapMD.ValueMember = "ID";
 
+            cbDonViTuVanGSTLMD.DataSource = DAL.C_KH_DonViTC.getDonViGiamSatTL();
+            cbDonViTuVanGSTLMD.DisplayMember = "TENCONGTY";
+            cbDonViTuVanGSTLMD.ValueMember = "ID";
+
+            cbDonViGiamSatTC.DataSource = DAL.C_KH_DotThiCong.DonViGiamSat();
+            this.cbDonViGiamSatTC.ValueMember = "TENDONVI";
+            this.cbDonViGiamSatTC.DisplayMember = "TENDONVI";
+
             cbLoaiBangKe.DataSource = DAL.C_KH_DonViTC.getLoaiBangKe();
             cbLoaiBangKe.DisplayMember = "TENBANGKE";
             cbLoaiBangKe.ValueMember = "TENBANGKE";
@@ -73,7 +81,6 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
             try
             {
                 rows = DAL.C_KH_DotThiCong.TotalListDotThiCong();
-                lbTongHoSo.Text = "Tống Số Có " + rows + " Đợt Thi Công." ;
                 PageTotal();
                 gridDotThiCong.DataSource = DAL.C_KH_DotThiCong.getListDotThiCong(FirstRow, pageSize);
             }
@@ -148,9 +155,14 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
         
         public void LuuDot()
         {
+            try
+            {
+                
             string sodot = this.txtSodotTC.Text + "";            
             string dovithicong = this.cbDonViThiCong.Text+"";
             string donvitailap = this.cbDonViTaiLapMD.Text+"";
+            string donvigiamsat = this.cbDonViGiamSatTC.Text + "";
+            string donvigiamsatTL = this.cbDonViTuVanGSTLMD.Text + "";
             string bangke = this.txtBangKe.Text+"";
             string loaibangke = this.cbLoaiBangKe.Text+"";
             string ghichuhoancong= this.txtGhiChuHoanCong.Text+"";
@@ -196,10 +208,20 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
                 MessageBox.Show(this, "Cần Chọn Loại Bảng Kê !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.cbLoaiBangKe.Focus();
             }
+            else if ("".Equals(donvigiamsat))
+            {
+                MessageBox.Show(this, "Cần Chọn Đơn Vị Giám Sát Thi Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.cbLoaiBangKe.Focus();
+            }
+            else if ("".Equals(donvigiamsatTL))
+            {
+                MessageBox.Show(this, "Cần Chọn Đơn Vị Giám Sát Tái Lập Mặt Đường !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.cbLoaiBangKe.Focus();
+            }
             else {
                 KH_DOTTHICONG dottc = new KH_DOTTHICONG();
                 dottc.MADOTTC = sodot.ToUpper();
-                dottc.SOLUONGTLK = int.Parse(this.txtSoLuong.Text);
+                dottc.SOLUONGTLK = int.Parse(this.txtSoHoSo.Text);
                 dottc.NGAYLAP = this.dateNgayLap.Value;
                 dottc.DONVITHICONG = int.Parse(this.cbDonViThiCong.SelectedValue + "");
                
@@ -231,7 +253,9 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
                 }
                 dottc.QUYETTOAN = quyettoan;
 
-                dottc.DONVITAILAP = int.Parse(this.cbDonViTaiLapMD.SelectedValue + ""); 
+                dottc.DONVITAILAP = int.Parse(this.cbDonViTaiLapMD.SelectedValue + "");
+                dottc.DONVIGS = donvigiamsat;
+                dottc.DONVIGSTL = int.Parse(this.cbDonViTuVanGSTLMD.SelectedValue + "");
                 dottc.BANGKE = this.txtBangKe.Text;
                 dottc.LOAIBANGKE = this.cbLoaiBangKe.Text;
                 dottc.CREATEBY = DAL.C_USERS._userName;
@@ -242,14 +266,23 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
                 }
                 loadDataGrid();
               }
+            }
+            catch (Exception ex)
+            {
+                log.Error("Luu Dot Nhan Don Loi " + ex.Message);
+            }
         }
        
         public void UpdateDot(KH_DOTTHICONG dottc)
         {
-            string sodot = this.txtSodotTC.Text + "";
+            try
+            {
+                 string sodot = this.txtSodotTC.Text + "";
             string dovithicong = this.cbDonViThiCong.Text + "";
             string donvitailap = this.cbDonViTaiLapMD.Text + "";
             string bangke = this.txtBangKe.Text + "";
+            string donvigiamsat = this.cbDonViGiamSatTC.Text + "";
+            string donvigiamsatTL = this.cbDonViTuVanGSTLMD.Text + "";
             string loaibangke = this.cbLoaiBangKe.Text + "";
             string ghichuhoancong = this.txtGhiChuHoanCong.Text + "";
             string soluonghc = this.txtSoLuong.Text + "";
@@ -329,6 +362,8 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
                 dottc.QUYETTOAN = quyettoan;
 
                 dottc.DONVITAILAP = DAL.C_KH_DonViTC.findDVTLbyTENCTY(this.cbDonViTaiLapMD.Text).ID;
+                dottc.DONVIGS = donvigiamsat;
+                dottc.DONVIGSTL = DAL.C_KH_DonViTC.findDVGSTCbyName(donvigiamsatTL).ID;
                 dottc.BANGKE = this.txtBangKe.Text;
                 dottc.LOAIBANGKE = this.cbLoaiBangKe.Text;
                 dottc.CREATEBY = DAL.C_USERS._userName;
@@ -339,6 +374,12 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
                 else
                     MessageBox.Show(this, "Cập Nhật Đợt Thi Công Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 loadDataGrid();
+            }
+            }
+            catch (Exception ex)
+            {
+                
+                log.Error("Cap Nhat Dot Nhan Don Loi " + ex.Message);
             }
         }
        
@@ -394,6 +435,8 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
                 this.txtQuetToan.Checked = false;
             this.cbDonViThiCong.Text = DAL.C_KH_DonViTC.findDVTCbyID(int.Parse(dottc.DONVITHICONG+"")).TENCONGTY;
             this.cbDonViTaiLapMD.Text = DAL.C_KH_DonViTC.findDVTLbyID(int.Parse(dottc.DONVITAILAP+"")).TENCONGTY;
+            this.cbDonViTuVanGSTLMD.Text = DAL.C_KH_DonViTC.findDVGSTCbyID(int.Parse(dottc.DONVIGSTL + "")).TENCONGTY;
+            this.cbDonViGiamSatTC.Text = dottc.DONVIGS;
             this.dateChuyenBu.ValueObject =  dottc.CHUYENBUHANMUC;
             this.dateNgayLap.ValueObject = dottc.NGAYLAP;
             this.cbLoaiBangKe.Text = dottc.LOAIBANGKE;
@@ -612,6 +655,24 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
             this.tabThamSo.Controls.Add(new tab_DonViTCTLMD());
             //  this.tabCapNhatDS.Controls.Add(new tab_CapNhatDanhSachND(madot));
             this.tabControl1.SelectedTabIndex = 2;
+        }
+
+        private void searchTimKiem_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13) {
+                try
+                {
+                    string dottcS = this.searchTimKiem.Text;
+                    KH_DOTTHICONG dottc = DAL.C_KH_DotThiCong.findByMadot(dottcS);
+                    if (dottc != null)
+                    {
+                        loadTextBox(dottc);
+                    }
+                }
+                catch (Exception)
+                {
+                }
+            }
         }
         
     }

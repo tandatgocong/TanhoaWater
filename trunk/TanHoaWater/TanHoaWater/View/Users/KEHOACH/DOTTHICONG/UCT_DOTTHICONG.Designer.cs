@@ -39,8 +39,10 @@
             this.tabDanhSachDot = new DevComponents.DotNetBar.TabControlPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btQuyetDinh = new DevComponents.DotNetBar.ButtonX();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btCapNhatGanMoiDoi = new DevComponents.DotNetBar.ButtonX();
             this.btInDanhSachGanMoi = new DevComponents.DotNetBar.ButtonX();
+            this.next = new System.Windows.Forms.PictureBox();
             this.lbPaing = new System.Windows.Forms.Label();
             this.dateNgayThanhToan = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.dateNgayChuyenKT = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
@@ -49,6 +51,8 @@
             this.dateNgayLap = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.cbLoaiBangKe = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.cbDonViThiCong = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.cbDonViGiamSatTC = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.cbDonViTuVanGSTLMD = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.cbDonViTaiLapMD = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btCapNhatBoiTuong = new DevComponents.DotNetBar.ButtonX();
@@ -66,6 +70,7 @@
             this.txtGhiChuHoanCong = new System.Windows.Forms.TextBox();
             this.txtSoLuong = new System.Windows.Forms.TextBox();
             this.txtTon = new System.Windows.Forms.TextBox();
+            this.searchTimKiem = new System.Windows.Forms.TextBox();
             this.txtBangKe = new System.Windows.Forms.TextBox();
             this.txtSodotTC = new System.Windows.Forms.TextBox();
             this.labelX21 = new DevComponents.DotNetBar.LabelX();
@@ -73,27 +78,28 @@
             this.labelX18 = new DevComponents.DotNetBar.LabelX();
             this.labelX14 = new DevComponents.DotNetBar.LabelX();
             this.labelX10 = new DevComponents.DotNetBar.LabelX();
-            this.lbTongHoSo = new DevComponents.DotNetBar.LabelX();
             this.labelX8 = new DevComponents.DotNetBar.LabelX();
             this.labelX7 = new DevComponents.DotNetBar.LabelX();
             this.labelX17 = new DevComponents.DotNetBar.LabelX();
             this.labelX13 = new DevComponents.DotNetBar.LabelX();
+            this.labelX11 = new DevComponents.DotNetBar.LabelX();
+            this.labelX5 = new DevComponents.DotNetBar.LabelX();
             this.labelX6 = new DevComponents.DotNetBar.LabelX();
             this.labelX9 = new DevComponents.DotNetBar.LabelX();
             this.labelX16 = new DevComponents.DotNetBar.LabelX();
             this.labelX4 = new DevComponents.DotNetBar.LabelX();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
+            this.labelX12 = new DevComponents.DotNetBar.LabelX();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.txtSearchDotTC = new System.Windows.Forms.TextBox();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.tabControl1 = new DevComponents.DotNetBar.TabControl();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.next = new System.Windows.Forms.PictureBox();
-            this.tabItem3 = new DevComponents.DotNetBar.TabItem(this.components);
             this.tabThamSo = new DevComponents.DotNetBar.TabControlPanel();
+            this.tabItem3 = new DevComponents.DotNetBar.TabItem(this.components);
             this.tabDanhSachDot.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.next)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateNgayThanhToan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateNgayChuyenKT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateChuyenBu)).BeginInit();
@@ -103,9 +109,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridDotThiCong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabControl1)).BeginInit();
             this.tabControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.next)).BeginInit();
             this.SuspendLayout();
             // 
             // tabCapNhatDS
@@ -119,8 +122,8 @@
             this.tabCapNhatDS.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(188)))), ((int)(((byte)(227)))));
             this.tabCapNhatDS.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
             this.tabCapNhatDS.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(165)))), ((int)(((byte)(199)))));
-            this.tabCapNhatDS.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right)
-                        | DevComponents.DotNetBar.eBorderSide.Bottom)));
+            this.tabCapNhatDS.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
+            | DevComponents.DotNetBar.eBorderSide.Bottom)));
             this.tabCapNhatDS.Style.GradientAngle = 90;
             this.tabCapNhatDS.TabIndex = 2;
             this.tabCapNhatDS.TabItem = this.tabItem2;
@@ -153,8 +156,8 @@
             this.tabDanhSachDot.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(188)))), ((int)(((byte)(227)))));
             this.tabDanhSachDot.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
             this.tabDanhSachDot.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(165)))), ((int)(((byte)(199)))));
-            this.tabDanhSachDot.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right)
-                        | DevComponents.DotNetBar.eBorderSide.Bottom)));
+            this.tabDanhSachDot.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
+            | DevComponents.DotNetBar.eBorderSide.Bottom)));
             this.tabDanhSachDot.Style.GradientAngle = 90;
             this.tabDanhSachDot.TabIndex = 1;
             this.tabDanhSachDot.TabItem = this.tabItem1;
@@ -175,6 +178,8 @@
             this.panel1.Controls.Add(this.dateNgayLap);
             this.panel1.Controls.Add(this.cbLoaiBangKe);
             this.panel1.Controls.Add(this.cbDonViThiCong);
+            this.panel1.Controls.Add(this.cbDonViGiamSatTC);
+            this.panel1.Controls.Add(this.cbDonViTuVanGSTLMD);
             this.panel1.Controls.Add(this.cbDonViTaiLapMD);
             this.panel1.Controls.Add(this.groupBox2);
             this.panel1.Controls.Add(this.gridDotThiCong);
@@ -187,6 +192,7 @@
             this.panel1.Controls.Add(this.txtGhiChuHoanCong);
             this.panel1.Controls.Add(this.txtSoLuong);
             this.panel1.Controls.Add(this.txtTon);
+            this.panel1.Controls.Add(this.searchTimKiem);
             this.panel1.Controls.Add(this.txtBangKe);
             this.panel1.Controls.Add(this.txtSodotTC);
             this.panel1.Controls.Add(this.labelX21);
@@ -194,16 +200,18 @@
             this.panel1.Controls.Add(this.labelX18);
             this.panel1.Controls.Add(this.labelX14);
             this.panel1.Controls.Add(this.labelX10);
-            this.panel1.Controls.Add(this.lbTongHoSo);
             this.panel1.Controls.Add(this.labelX8);
             this.panel1.Controls.Add(this.labelX7);
             this.panel1.Controls.Add(this.labelX17);
             this.panel1.Controls.Add(this.labelX13);
+            this.panel1.Controls.Add(this.labelX11);
+            this.panel1.Controls.Add(this.labelX5);
             this.panel1.Controls.Add(this.labelX6);
             this.panel1.Controls.Add(this.labelX9);
             this.panel1.Controls.Add(this.labelX16);
             this.panel1.Controls.Add(this.labelX4);
             this.panel1.Controls.Add(this.labelX3);
+            this.panel1.Controls.Add(this.labelX12);
             this.panel1.Controls.Add(this.labelX2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(1, 1);
@@ -217,7 +225,7 @@
             this.btQuyetDinh.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btQuyetDinh.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btQuyetDinh.ForeColor = System.Drawing.Color.Maroon;
-            this.btQuyetDinh.Location = new System.Drawing.Point(721, 283);
+            this.btQuyetDinh.Location = new System.Drawing.Point(691, 286);
             this.btQuyetDinh.Name = "btQuyetDinh";
             this.btQuyetDinh.Size = new System.Drawing.Size(205, 23);
             this.btQuyetDinh.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
@@ -225,13 +233,24 @@
             this.btQuyetDinh.Text = "Quyết Định Giao Thi Công";
             this.btQuyetDinh.Click += new System.EventHandler(this.btQuyetDinh_Click);
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox2.Image = global::TanHoaWater.Properties.Resources.Previous;
+            this.pictureBox2.Location = new System.Drawing.Point(606, 239);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(19, 16);
+            this.pictureBox2.TabIndex = 712;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.next_Click);
+            // 
             // btCapNhatGanMoiDoi
             // 
             this.btCapNhatGanMoiDoi.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btCapNhatGanMoiDoi.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btCapNhatGanMoiDoi.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btCapNhatGanMoiDoi.ForeColor = System.Drawing.Color.Maroon;
-            this.btCapNhatGanMoiDoi.Location = new System.Drawing.Point(721, 254);
+            this.btCapNhatGanMoiDoi.Location = new System.Drawing.Point(691, 257);
             this.btCapNhatGanMoiDoi.Name = "btCapNhatGanMoiDoi";
             this.btCapNhatGanMoiDoi.Size = new System.Drawing.Size(205, 23);
             this.btCapNhatGanMoiDoi.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
@@ -245,7 +264,7 @@
             this.btInDanhSachGanMoi.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btInDanhSachGanMoi.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btInDanhSachGanMoi.ForeColor = System.Drawing.Color.Maroon;
-            this.btInDanhSachGanMoi.Location = new System.Drawing.Point(721, 312);
+            this.btInDanhSachGanMoi.Location = new System.Drawing.Point(691, 315);
             this.btInDanhSachGanMoi.Name = "btInDanhSachGanMoi";
             this.btInDanhSachGanMoi.Size = new System.Drawing.Size(205, 23);
             this.btInDanhSachGanMoi.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
@@ -253,10 +272,21 @@
             this.btInDanhSachGanMoi.Text = "In Danh Sách Đợt Thi Công";
             this.btInDanhSachGanMoi.Click += new System.EventHandler(this.btInDanhSachGanMoi_Click);
             // 
+            // next
+            // 
+            this.next.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.next.Image = global::TanHoaWater.Properties.Resources.Next;
+            this.next.Location = new System.Drawing.Point(665, 239);
+            this.next.Name = "next";
+            this.next.Size = new System.Drawing.Size(19, 16);
+            this.next.TabIndex = 711;
+            this.next.TabStop = false;
+            this.next.Click += new System.EventHandler(this.next_Click);
+            // 
             // lbPaing
             // 
             this.lbPaing.AutoSize = true;
-            this.lbPaing.Location = new System.Drawing.Point(624, 207);
+            this.lbPaing.Location = new System.Drawing.Point(624, 239);
             this.lbPaing.Name = "lbPaing";
             this.lbPaing.Size = new System.Drawing.Size(45, 19);
             this.lbPaing.TabIndex = 713;
@@ -274,7 +304,7 @@
             this.dateNgayThanhToan.ButtonDropDown.Visible = true;
             this.dateNgayThanhToan.CustomFormat = "dd/MM/yyyy";
             this.dateNgayThanhToan.Format = DevComponents.Editors.eDateTimePickerFormat.Custom;
-            this.dateNgayThanhToan.Location = new System.Drawing.Point(819, 173);
+            this.dateNgayThanhToan.Location = new System.Drawing.Point(808, 81);
             // 
             // 
             // 
@@ -319,7 +349,7 @@
             this.dateNgayChuyenKT.ButtonDropDown.Visible = true;
             this.dateNgayChuyenKT.CustomFormat = "dd/MM/yyyy";
             this.dateNgayChuyenKT.Format = DevComponents.Editors.eDateTimePickerFormat.Custom;
-            this.dateNgayChuyenKT.Location = new System.Drawing.Point(819, 126);
+            this.dateNgayChuyenKT.Location = new System.Drawing.Point(647, 80);
             // 
             // 
             // 
@@ -363,7 +393,7 @@
             this.dateChuyenBu.ButtonDropDown.Visible = true;
             this.dateChuyenBu.CustomFormat = "dd/MM/yyyy";
             this.dateChuyenBu.Format = DevComponents.Editors.eDateTimePickerFormat.Custom;
-            this.dateChuyenBu.Location = new System.Drawing.Point(867, 21);
+            this.dateChuyenBu.Location = new System.Drawing.Point(531, 77);
             // 
             // 
             // 
@@ -407,7 +437,7 @@
             this.dateNgayChuyenHC.ButtonDropDown.Visible = true;
             this.dateNgayChuyenHC.CustomFormat = "dd/MM/yyyy";
             this.dateNgayChuyenHC.Format = DevComponents.Editors.eDateTimePickerFormat.Custom;
-            this.dateNgayChuyenHC.Location = new System.Drawing.Point(400, 76);
+            this.dateNgayChuyenHC.Location = new System.Drawing.Point(400, 133);
             // 
             // 
             // 
@@ -451,7 +481,7 @@
             this.dateNgayLap.ButtonDropDown.Visible = true;
             this.dateNgayLap.CustomFormat = "dd/MM/yyyy";
             this.dateNgayLap.Format = DevComponents.Editors.eDateTimePickerFormat.Custom;
-            this.dateNgayLap.Location = new System.Drawing.Point(214, 21);
+            this.dateNgayLap.Location = new System.Drawing.Point(214, 26);
             // 
             // 
             // 
@@ -492,7 +522,7 @@
             this.cbLoaiBangKe.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbLoaiBangKe.FormattingEnabled = true;
             this.cbLoaiBangKe.ItemHeight = 20;
-            this.cbLoaiBangKe.Location = new System.Drawing.Point(230, 51);
+            this.cbLoaiBangKe.Location = new System.Drawing.Point(230, 108);
             this.cbLoaiBangKe.Name = "cbLoaiBangKe";
             this.cbLoaiBangKe.Size = new System.Drawing.Size(164, 26);
             this.cbLoaiBangKe.TabIndex = 8;
@@ -504,10 +534,34 @@
             this.cbDonViThiCong.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbDonViThiCong.FormattingEnabled = true;
             this.cbDonViThiCong.ItemHeight = 20;
-            this.cbDonViThiCong.Location = new System.Drawing.Point(400, 20);
+            this.cbDonViThiCong.Location = new System.Drawing.Point(400, 25);
             this.cbDonViThiCong.Name = "cbDonViThiCong";
-            this.cbDonViThiCong.Size = new System.Drawing.Size(235, 26);
+            this.cbDonViThiCong.Size = new System.Drawing.Size(285, 26);
             this.cbDonViThiCong.TabIndex = 4;
+            // 
+            // cbDonViGiamSatTC
+            // 
+            this.cbDonViGiamSatTC.DisplayMember = "Text";
+            this.cbDonViGiamSatTC.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbDonViGiamSatTC.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbDonViGiamSatTC.FormattingEnabled = true;
+            this.cbDonViGiamSatTC.ItemHeight = 20;
+            this.cbDonViGiamSatTC.Location = new System.Drawing.Point(699, 26);
+            this.cbDonViGiamSatTC.Name = "cbDonViGiamSatTC";
+            this.cbDonViGiamSatTC.Size = new System.Drawing.Size(263, 26);
+            this.cbDonViGiamSatTC.TabIndex = 5;
+            // 
+            // cbDonViTuVanGSTLMD
+            // 
+            this.cbDonViTuVanGSTLMD.DisplayMember = "Text";
+            this.cbDonViTuVanGSTLMD.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbDonViTuVanGSTLMD.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbDonViTuVanGSTLMD.FormattingEnabled = true;
+            this.cbDonViTuVanGSTLMD.ItemHeight = 20;
+            this.cbDonViTuVanGSTLMD.Location = new System.Drawing.Point(266, 76);
+            this.cbDonViTuVanGSTLMD.Name = "cbDonViTuVanGSTLMD";
+            this.cbDonViTuVanGSTLMD.Size = new System.Drawing.Size(253, 26);
+            this.cbDonViTuVanGSTLMD.TabIndex = 5;
             // 
             // cbDonViTaiLapMD
             // 
@@ -516,16 +570,16 @@
             this.cbDonViTaiLapMD.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbDonViTaiLapMD.FormattingEnabled = true;
             this.cbDonViTaiLapMD.ItemHeight = 20;
-            this.cbDonViTaiLapMD.Location = new System.Drawing.Point(642, 21);
+            this.cbDonViTaiLapMD.Location = new System.Drawing.Point(12, 77);
             this.cbDonViTaiLapMD.Name = "cbDonViTaiLapMD";
-            this.cbDonViTaiLapMD.Size = new System.Drawing.Size(219, 26);
+            this.cbDonViTaiLapMD.Size = new System.Drawing.Size(248, 26);
             this.cbDonViTaiLapMD.TabIndex = 5;
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.btCapNhatBoiTuong);
             this.groupBox2.Controls.Add(this.btInDanhSachBt);
-            this.groupBox2.Location = new System.Drawing.Point(721, 384);
+            this.groupBox2.Location = new System.Drawing.Point(721, 414);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(225, 106);
             this.groupBox2.TabIndex = 706;
@@ -588,12 +642,13 @@
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.gridDotThiCong.DefaultCellStyle = dataGridViewCellStyle4;
             this.gridDotThiCong.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
-            this.gridDotThiCong.Location = new System.Drawing.Point(13, 227);
+            this.gridDotThiCong.Location = new System.Drawing.Point(13, 262);
             this.gridDotThiCong.Name = "gridDotThiCong";
+            this.gridDotThiCong.ReadOnly = true;
             this.gridDotThiCong.RowHeadersWidth = 30;
             this.gridDotThiCong.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.gridDotThiCong.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridDotThiCong.Size = new System.Drawing.Size(672, 355);
+            this.gridDotThiCong.Size = new System.Drawing.Size(672, 304);
             this.gridDotThiCong.TabIndex = 702;
             this.gridDotThiCong.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridDotThiCong_CellClick);
             // 
@@ -604,6 +659,7 @@
             this.gridSoDot.DefaultCellStyle = dataGridViewCellStyle2;
             this.gridSoDot.HeaderText = "Số Đợt TC";
             this.gridSoDot.Name = "gridSoDot";
+            this.gridSoDot.ReadOnly = true;
             this.gridSoDot.Width = 200;
             // 
             // gridNgay
@@ -614,6 +670,7 @@
             this.gridNgay.DefaultCellStyle = dataGridViewCellStyle3;
             this.gridNgay.HeaderText = "Ngày Lập";
             this.gridNgay.Name = "gridNgay";
+            this.gridNgay.ReadOnly = true;
             this.gridNgay.Width = 130;
             // 
             // girdLoaiDot
@@ -621,13 +678,14 @@
             this.girdLoaiDot.DataPropertyName = "LOAIBANGKE";
             this.girdLoaiDot.HeaderText = "Loại Đợt";
             this.girdLoaiDot.Name = "girdLoaiDot";
+            this.girdLoaiDot.ReadOnly = true;
             this.girdLoaiDot.Width = 310;
             // 
             // txtLyDoTroNgaiTC
             // 
-            this.txtLyDoTroNgaiTC.Location = new System.Drawing.Point(12, 126);
+            this.txtLyDoTroNgaiTC.Location = new System.Drawing.Point(12, 183);
             this.txtLyDoTroNgaiTC.Name = "txtLyDoTroNgaiTC";
-            this.txtLyDoTroNgaiTC.Size = new System.Drawing.Size(800, 73);
+            this.txtLyDoTroNgaiTC.Size = new System.Drawing.Size(963, 50);
             this.txtLyDoTroNgaiTC.TabIndex = 14;
             this.txtLyDoTroNgaiTC.Text = "";
             // 
@@ -637,7 +695,7 @@
             this.btCapNhat.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btCapNhat.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btCapNhat.ForeColor = System.Drawing.Color.Maroon;
-            this.btCapNhat.Location = new System.Drawing.Point(320, 79);
+            this.btCapNhat.Location = new System.Drawing.Point(320, 136);
             this.btCapNhat.Name = "btCapNhat";
             this.btCapNhat.Size = new System.Drawing.Size(75, 23);
             this.btCapNhat.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
@@ -651,7 +709,7 @@
             this.btLuuDotMoi.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btLuuDotMoi.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btLuuDotMoi.ForeColor = System.Drawing.Color.Maroon;
-            this.btLuuDotMoi.Location = new System.Drawing.Point(187, 79);
+            this.btLuuDotMoi.Location = new System.Drawing.Point(187, 136);
             this.btLuuDotMoi.Name = "btLuuDotMoi";
             this.btLuuDotMoi.Size = new System.Drawing.Size(126, 23);
             this.btLuuDotMoi.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
@@ -665,7 +723,7 @@
             this.btLapDotMoi.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btLapDotMoi.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btLapDotMoi.ForeColor = System.Drawing.Color.Maroon;
-            this.btLapDotMoi.Location = new System.Drawing.Point(13, 79);
+            this.btLapDotMoi.Location = new System.Drawing.Point(13, 136);
             this.btLapDotMoi.Name = "btLapDotMoi";
             this.btLapDotMoi.Size = new System.Drawing.Size(168, 23);
             this.btLapDotMoi.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
@@ -676,7 +734,7 @@
             // txtQuetToan
             // 
             this.txtQuetToan.AutoSize = true;
-            this.txtQuetToan.Location = new System.Drawing.Point(935, 79);
+            this.txtQuetToan.Location = new System.Drawing.Point(935, 136);
             this.txtQuetToan.Name = "txtQuetToan";
             this.txtQuetToan.Size = new System.Drawing.Size(38, 23);
             this.txtQuetToan.TabIndex = 13;
@@ -685,7 +743,7 @@
             // 
             // txtSoHoSo
             // 
-            this.txtSoHoSo.Location = new System.Drawing.Point(328, 21);
+            this.txtSoHoSo.Location = new System.Drawing.Point(328, 26);
             this.txtSoHoSo.Name = "txtSoHoSo";
             this.txtSoHoSo.Size = new System.Drawing.Size(66, 26);
             this.txtSoHoSo.TabIndex = 3;
@@ -696,14 +754,14 @@
             // 
             // txtGhiChuHoanCong
             // 
-            this.txtGhiChuHoanCong.Location = new System.Drawing.Point(519, 77);
+            this.txtGhiChuHoanCong.Location = new System.Drawing.Point(519, 134);
             this.txtGhiChuHoanCong.Name = "txtGhiChuHoanCong";
             this.txtGhiChuHoanCong.Size = new System.Drawing.Size(293, 26);
             this.txtGhiChuHoanCong.TabIndex = 10;
             // 
             // txtSoLuong
             // 
-            this.txtSoLuong.Location = new System.Drawing.Point(818, 77);
+            this.txtSoLuong.Location = new System.Drawing.Point(818, 134);
             this.txtSoLuong.Name = "txtSoLuong";
             this.txtSoLuong.Size = new System.Drawing.Size(54, 26);
             this.txtSoLuong.TabIndex = 11;
@@ -714,7 +772,7 @@
             // 
             // txtTon
             // 
-            this.txtTon.Location = new System.Drawing.Point(878, 78);
+            this.txtTon.Location = new System.Drawing.Point(878, 135);
             this.txtTon.Name = "txtTon";
             this.txtTon.Size = new System.Drawing.Size(48, 26);
             this.txtTon.TabIndex = 12;
@@ -722,9 +780,18 @@
             this.txtTon.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtTon.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTon_KeyPress);
             // 
+            // searchTimKiem
+            // 
+            this.searchTimKiem.Location = new System.Drawing.Point(160, 234);
+            this.searchTimKiem.Name = "searchTimKiem";
+            this.searchTimKiem.Size = new System.Drawing.Size(219, 26);
+            this.searchTimKiem.TabIndex = 7;
+            this.searchTimKiem.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.searchTimKiem.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.searchTimKiem_KeyPress);
+            // 
             // txtBangKe
             // 
-            this.txtBangKe.Location = new System.Drawing.Point(70, 50);
+            this.txtBangKe.Location = new System.Drawing.Point(70, 107);
             this.txtBangKe.Name = "txtBangKe";
             this.txtBangKe.Size = new System.Drawing.Size(153, 26);
             this.txtBangKe.TabIndex = 7;
@@ -735,7 +802,7 @@
             this.txtSodotTC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.txtSodotTC.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSodotTC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.txtSodotTC.Location = new System.Drawing.Point(12, 21);
+            this.txtSodotTC.Location = new System.Drawing.Point(12, 26);
             this.txtSodotTC.Name = "txtSodotTC";
             this.txtSodotTC.ReadOnly = true;
             this.txtSodotTC.Size = new System.Drawing.Size(193, 26);
@@ -746,7 +813,7 @@
             // labelX21
             // 
             this.labelX21.BackColor = System.Drawing.Color.Transparent;
-            this.labelX21.Location = new System.Drawing.Point(187, 104);
+            this.labelX21.Location = new System.Drawing.Point(13, 163);
             this.labelX21.Margin = new System.Windows.Forms.Padding(4);
             this.labelX21.Name = "labelX21";
             this.labelX21.Size = new System.Drawing.Size(339, 22);
@@ -756,7 +823,7 @@
             // labelX20
             // 
             this.labelX20.BackColor = System.Drawing.Color.Transparent;
-            this.labelX20.Location = new System.Drawing.Point(818, 104);
+            this.labelX20.Location = new System.Drawing.Point(646, 58);
             this.labelX20.Margin = new System.Windows.Forms.Padding(4);
             this.labelX20.Name = "labelX20";
             this.labelX20.Size = new System.Drawing.Size(154, 22);
@@ -766,17 +833,17 @@
             // labelX18
             // 
             this.labelX18.BackColor = System.Drawing.Color.Transparent;
-            this.labelX18.Location = new System.Drawing.Point(819, 150);
+            this.labelX18.Location = new System.Drawing.Point(808, 58);
             this.labelX18.Margin = new System.Windows.Forms.Padding(4);
             this.labelX18.Name = "labelX18";
-            this.labelX18.Size = new System.Drawing.Size(161, 22);
+            this.labelX18.Size = new System.Drawing.Size(154, 22);
             this.labelX18.TabIndex = 695;
             this.labelX18.Text = "Ngày Thanh Toán";
             // 
             // labelX14
             // 
             this.labelX14.BackColor = System.Drawing.Color.Transparent;
-            this.labelX14.Location = new System.Drawing.Point(926, 51);
+            this.labelX14.Location = new System.Drawing.Point(926, 108);
             this.labelX14.Margin = new System.Windows.Forms.Padding(4);
             this.labelX14.Name = "labelX14";
             this.labelX14.Size = new System.Drawing.Size(49, 22);
@@ -787,7 +854,7 @@
             // labelX10
             // 
             this.labelX10.BackColor = System.Drawing.Color.Transparent;
-            this.labelX10.Location = new System.Drawing.Point(882, 51);
+            this.labelX10.Location = new System.Drawing.Point(882, 108);
             this.labelX10.Margin = new System.Windows.Forms.Padding(4);
             this.labelX10.Name = "labelX10";
             this.labelX10.Size = new System.Drawing.Size(36, 22);
@@ -795,19 +862,10 @@
             this.labelX10.Text = "Tồn";
             this.labelX10.TextAlignment = System.Drawing.StringAlignment.Center;
             // 
-            // lbTongHoSo
-            // 
-            this.lbTongHoSo.BackColor = System.Drawing.Color.Transparent;
-            this.lbTongHoSo.Location = new System.Drawing.Point(13, 204);
-            this.lbTongHoSo.Margin = new System.Windows.Forms.Padding(4);
-            this.lbTongHoSo.Name = "lbTongHoSo";
-            this.lbTongHoSo.Size = new System.Drawing.Size(586, 22);
-            this.lbTongHoSo.TabIndex = 695;
-            // 
             // labelX8
             // 
             this.labelX8.BackColor = System.Drawing.Color.Transparent;
-            this.labelX8.Location = new System.Drawing.Point(401, 50);
+            this.labelX8.Location = new System.Drawing.Point(401, 107);
             this.labelX8.Margin = new System.Windows.Forms.Padding(4);
             this.labelX8.Name = "labelX8";
             this.labelX8.Size = new System.Drawing.Size(112, 22);
@@ -817,7 +875,7 @@
             // labelX7
             // 
             this.labelX7.BackColor = System.Drawing.Color.Transparent;
-            this.labelX7.Location = new System.Drawing.Point(867, -2);
+            this.labelX7.Location = new System.Drawing.Point(531, 54);
             this.labelX7.Margin = new System.Windows.Forms.Padding(4);
             this.labelX7.Name = "labelX7";
             this.labelX7.Size = new System.Drawing.Size(101, 22);
@@ -827,7 +885,7 @@
             // labelX17
             // 
             this.labelX17.BackColor = System.Drawing.Color.Transparent;
-            this.labelX17.Location = new System.Drawing.Point(818, 51);
+            this.labelX17.Location = new System.Drawing.Point(818, 108);
             this.labelX17.Margin = new System.Windows.Forms.Padding(4);
             this.labelX17.Name = "labelX17";
             this.labelX17.Size = new System.Drawing.Size(57, 22);
@@ -838,17 +896,37 @@
             // labelX13
             // 
             this.labelX13.BackColor = System.Drawing.Color.Transparent;
-            this.labelX13.Location = new System.Drawing.Point(550, 50);
+            this.labelX13.Location = new System.Drawing.Point(550, 107);
             this.labelX13.Margin = new System.Windows.Forms.Padding(4);
             this.labelX13.Name = "labelX13";
             this.labelX13.Size = new System.Drawing.Size(271, 22);
             this.labelX13.TabIndex = 695;
             this.labelX13.Text = "Ghi chú hoàn công";
             // 
+            // labelX11
+            // 
+            this.labelX11.BackColor = System.Drawing.Color.Transparent;
+            this.labelX11.Location = new System.Drawing.Point(699, 3);
+            this.labelX11.Margin = new System.Windows.Forms.Padding(4);
+            this.labelX11.Name = "labelX11";
+            this.labelX11.Size = new System.Drawing.Size(167, 22);
+            this.labelX11.TabIndex = 695;
+            this.labelX11.Text = "Đơn vị giám sát thi công";
+            // 
+            // labelX5
+            // 
+            this.labelX5.BackColor = System.Drawing.Color.Transparent;
+            this.labelX5.Location = new System.Drawing.Point(268, 53);
+            this.labelX5.Margin = new System.Windows.Forms.Padding(4);
+            this.labelX5.Name = "labelX5";
+            this.labelX5.Size = new System.Drawing.Size(255, 22);
+            this.labelX5.TabIndex = 695;
+            this.labelX5.Text = "Đơn vị tư vấn giám sát  TLMĐ";
+            // 
             // labelX6
             // 
             this.labelX6.BackColor = System.Drawing.Color.Transparent;
-            this.labelX6.Location = new System.Drawing.Point(642, -2);
+            this.labelX6.Location = new System.Drawing.Point(12, 54);
             this.labelX6.Margin = new System.Windows.Forms.Padding(4);
             this.labelX6.Name = "labelX6";
             this.labelX6.Size = new System.Drawing.Size(167, 22);
@@ -858,7 +936,7 @@
             // labelX9
             // 
             this.labelX9.BackColor = System.Drawing.Color.Transparent;
-            this.labelX9.Location = new System.Drawing.Point(12, 54);
+            this.labelX9.Location = new System.Drawing.Point(12, 111);
             this.labelX9.Margin = new System.Windows.Forms.Padding(4);
             this.labelX9.Name = "labelX9";
             this.labelX9.Size = new System.Drawing.Size(63, 22);
@@ -868,7 +946,7 @@
             // labelX16
             // 
             this.labelX16.BackColor = System.Drawing.Color.Transparent;
-            this.labelX16.Location = new System.Drawing.Point(400, -2);
+            this.labelX16.Location = new System.Drawing.Point(400, 3);
             this.labelX16.Margin = new System.Windows.Forms.Padding(4);
             this.labelX16.Name = "labelX16";
             this.labelX16.Size = new System.Drawing.Size(185, 22);
@@ -878,7 +956,7 @@
             // labelX4
             // 
             this.labelX4.BackColor = System.Drawing.Color.Transparent;
-            this.labelX4.Location = new System.Drawing.Point(342, -2);
+            this.labelX4.Location = new System.Drawing.Point(342, 3);
             this.labelX4.Margin = new System.Windows.Forms.Padding(4);
             this.labelX4.Name = "labelX4";
             this.labelX4.Size = new System.Drawing.Size(64, 22);
@@ -888,17 +966,27 @@
             // labelX3
             // 
             this.labelX3.BackColor = System.Drawing.Color.Transparent;
-            this.labelX3.Location = new System.Drawing.Point(214, -2);
+            this.labelX3.Location = new System.Drawing.Point(214, 3);
             this.labelX3.Margin = new System.Windows.Forms.Padding(4);
             this.labelX3.Name = "labelX3";
             this.labelX3.Size = new System.Drawing.Size(101, 22);
             this.labelX3.TabIndex = 695;
             this.labelX3.Text = "Ngày thành lập";
             // 
+            // labelX12
+            // 
+            this.labelX12.BackColor = System.Drawing.Color.Transparent;
+            this.labelX12.Location = new System.Drawing.Point(12, 236);
+            this.labelX12.Margin = new System.Windows.Forms.Padding(4);
+            this.labelX12.Name = "labelX12";
+            this.labelX12.Size = new System.Drawing.Size(149, 22);
+            this.labelX12.TabIndex = 695;
+            this.labelX12.Text = "Tìm kiếm đợt thi công";
+            // 
             // labelX2
             // 
             this.labelX2.BackColor = System.Drawing.Color.Transparent;
-            this.labelX2.Location = new System.Drawing.Point(46, -2);
+            this.labelX2.Location = new System.Drawing.Point(46, 3);
             this.labelX2.Margin = new System.Windows.Forms.Padding(4);
             this.labelX2.Name = "labelX2";
             this.labelX2.Size = new System.Drawing.Size(101, 22);
@@ -944,8 +1032,8 @@
             new DevComponents.DotNetBar.BackgroundColorBlend(System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(254))))), 0.45F),
             new DevComponents.DotNetBar.BackgroundColorBlend(System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(254))))), 1F)});
             this.tabControl1.ColorScheme.TabItemSelectedText = System.Drawing.Color.Red;
-            this.tabControl1.Controls.Add(this.tabThamSo);
             this.tabControl1.Controls.Add(this.tabCapNhatDS);
+            this.tabControl1.Controls.Add(this.tabThamSo);
             this.tabControl1.Controls.Add(this.tabDanhSachDot);
             this.tabControl1.Location = new System.Drawing.Point(2, 2);
             this.tabControl1.Name = "tabControl1";
@@ -960,39 +1048,6 @@
             this.tabControl1.Tabs.Add(this.tabItem3);
             this.tabControl1.Text = "tabControl1";
             // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox2.Image = global::TanHoaWater.Properties.Resources.Previous;
-            this.pictureBox2.Location = new System.Drawing.Point(606, 207);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(19, 16);
-            this.pictureBox2.TabIndex = 712;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.next_Click);
-            // 
-            // next
-            // 
-            this.next.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.next.Image = global::TanHoaWater.Properties.Resources.Next;
-            this.next.Location = new System.Drawing.Point(665, 207);
-            this.next.Name = "next";
-            this.next.Size = new System.Drawing.Size(19, 16);
-            this.next.TabIndex = 711;
-            this.next.TabStop = false;
-            this.next.Click += new System.EventHandler(this.next_Click);
-            // 
-            // tabItem3
-            // 
-            this.tabItem3.AttachedControl = this.tabThamSo;
-            this.tabItem3.Name = "tabItem3";
-            this.tabItem3.Text = "Tham Số";
-            this.tabItem3.Click += new System.EventHandler(this.tabItem3_Click);
-            // 
             // tabThamSo
             // 
             this.tabThamSo.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -1004,11 +1059,18 @@
             this.tabThamSo.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(188)))), ((int)(((byte)(227)))));
             this.tabThamSo.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
             this.tabThamSo.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(165)))), ((int)(((byte)(199)))));
-            this.tabThamSo.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right)
-                        | DevComponents.DotNetBar.eBorderSide.Bottom)));
+            this.tabThamSo.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
+            | DevComponents.DotNetBar.eBorderSide.Bottom)));
             this.tabThamSo.Style.GradientAngle = 90;
             this.tabThamSo.TabIndex = 3;
             this.tabThamSo.TabItem = this.tabItem3;
+            // 
+            // tabItem3
+            // 
+            this.tabItem3.AttachedControl = this.tabThamSo;
+            this.tabItem3.Name = "tabItem3";
+            this.tabItem3.Text = "Đơn Vị Thi Công- TLMĐ";
+            this.tabItem3.Click += new System.EventHandler(this.tabItem3_Click);
             // 
             // UCT_DOTTHICONG
             // 
@@ -1024,6 +1086,8 @@
             this.tabDanhSachDot.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.next)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateNgayThanhToan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateNgayChuyenKT)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateChuyenBu)).EndInit();
@@ -1033,9 +1097,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridDotThiCong)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabControl1)).EndInit();
             this.tabControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.next)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1047,7 +1108,6 @@
         private DevComponents.DotNetBar.TabItem tabItem1;
         private DevComponents.DotNetBar.TabControlPanel tabDanhSachDot;
         private DevComponents.DotNetBar.TabControl tabControl1;
-        private System.Windows.Forms.ErrorProvider errorProvider1;
         private DevComponents.DotNetBar.LabelX labelX1;
         private System.Windows.Forms.TextBox txtSearchDotTC;
         private System.Windows.Forms.Panel panel1;
@@ -1093,7 +1153,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox next;
         private System.Windows.Forms.Label lbPaing;
-        private DevComponents.DotNetBar.LabelX lbTongHoSo;
         private System.Windows.Forms.TextBox txtSoHoSo;
         private DevComponents.DotNetBar.ButtonX btQuyetDinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn gridSoDot;
@@ -1101,6 +1160,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn girdLoaiDot;
         private DevComponents.DotNetBar.TabControlPanel tabThamSo;
         private DevComponents.DotNetBar.TabItem tabItem3;
+        private DevComponents.DotNetBar.Controls.ComboBoxEx cbDonViGiamSatTC;
+        private DevComponents.DotNetBar.Controls.ComboBoxEx cbDonViTuVanGSTLMD;
+        private DevComponents.DotNetBar.LabelX labelX11;
+        private DevComponents.DotNetBar.LabelX labelX5;
+        private System.Windows.Forms.TextBox searchTimKiem;
+        private DevComponents.DotNetBar.LabelX labelX12;
 
     }
 }

@@ -284,7 +284,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
             try
             {
                 loadDataGrid();
-                this.errorProvider1.Clear();
+              
 
             }
             catch (Exception)
@@ -295,48 +295,41 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
         public void add() {
 
             if (this.cbDotNhanDon.SelectedValue == null) {
-                this.errorProvider1.Clear();
-                this.errorProvider1.SetError(this.cbDotNhanDon, "Cần Chọn Đợt Nhận Đơn.");
+                MessageBox.Show(this, "Cần Chọn Đợt Nhận Đơn.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.cbDotNhanDon.Focus();
             }else if (this.txtSHS.Text.Length < 7)
             {
-                this.errorProvider1.Clear();
-                this.errorProvider1.SetError(this.txtSHS, "Số Hồ Sơ Không Hợp Lệ.");
+                MessageBox.Show(this, "Số Hồ Sơ Không Hợp Lệ.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.txtSHS.Focus();
             }
             else if ("".Equals(this.txtHoTen.Text))
             {
-                this.errorProvider1.Clear();
-                this.errorProvider1.SetError(this.txtHoTen, "Họ Tên Khách Hàng Không Được Trống.");
+                MessageBox.Show(this, "Họ Tên Khách Hàng Không Được Trống.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.txtHoTen.Focus();
             }
             else if ("".Equals(this.sonha.Text))
             {
-                this.errorProvider1.Clear();
-                this.errorProvider1.SetError(this.sonha, "Số Nhà Không Được Trống.");
+                MessageBox.Show(this, "Số Nhà Không Được Trống.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.sonha.Focus();
             }
             else if ("".Equals(this.duong.Text))
             {
-                this.errorProvider1.Clear();
-                this.errorProvider1.SetError(this.duong, "Tên Đường Không Được Trống.");
+                MessageBox.Show(this, "Tên Đường Không Được Trống.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.duong.Focus();
             }
             else if (DAL.C_DonKhachHang.findBySOHOSO(this.txtSHS.Text) != null)
             {
-                this.errorProvider1.Clear();
-                this.errorProvider1.SetError(this.txtSHS, "Số Hồ Sơ Đã Tồn Tại.");
+                MessageBox.Show(this, "Số Hồ Sơ Đã Tồn Tại.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.txtSHS.Focus();
             }
             else if (DAL.C_DonKhachHang.findByAddressAndLoaiHS(this.cbDotNhanDon.SelectedValue.ToString(), this.cbLoaiHS.SelectedValue.ToString(), this.sonha.Text, this.duong.Text, _maphuong, "" + _maquan))
             {
-                this.errorProvider1.Clear();
-                this.errorProvider1.SetError(this.sonha, "Địa Chỉ Khách Hàng Đã Được Nhận Đơn.");
+                MessageBox.Show(this, "Địa Chỉ Khách Hàng Đã Được Nhận Đơn.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.sonha.Focus();
             }
             else
             {
-                this.errorProvider1.Clear();
+                 
                 DON_KHACHHANG donKH = new DON_KHACHHANG();
                 donKH.MADOT = this.cbDotNhanDon.SelectedValue.ToString();
                 donKH.SOHOSO = this.txtSoHoSo.Text;
@@ -433,9 +426,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
             this.sonha.Text = null;
             this.duong.Text = null;
             this.txtSoHoSo.Text = null;
-            this.errorProvider1.Clear();
             this.txtSHS.Focus();
-            this.errorProvider1.Clear();
             this.soho.Value = 1;
         }
 

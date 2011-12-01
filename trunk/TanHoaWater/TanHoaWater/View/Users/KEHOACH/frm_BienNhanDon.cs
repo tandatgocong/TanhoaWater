@@ -130,7 +130,6 @@ namespace TanHoaWater.View.Users.KEHOACH
         }
 
         public void reset() {
-            errorProvider1.Clear();
             this.soBienNhan.Text = DAL.Idetity.IdentityBienNhan(this.cbLoaiBN.SelectedValue + "");
             this.txtHoTen.Text="";
             this.txtDt.Text = "";
@@ -180,35 +179,34 @@ namespace TanHoaWater.View.Users.KEHOACH
                 }
                 if ("".Equals(hoten))
                 {
-                    errorProvider1.SetError(txtHoTen, "Nhập Họ Tên.");
+                    MessageBox.Show(this, "Nhập Họ Tên.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.txtHoTen.Focus();
                 }
                 else if ("".Equals(sonha))
                 {
-                    errorProvider1.SetError(txtsonha, "Nhập Số Nhà.");
+                    MessageBox.Show(this, "Nhập Số Nhà.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.txtsonha.Focus();
                 }
                 else if ("".Equals(tenduong))
                 {
-                    errorProvider1.SetError(txtDuong, "Nhập Số Nhà.");
+                    MessageBox.Show(this, "Nhập Tên Đường.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.txtDuong.Focus();
                 }
                 else if (quan == null)
                 {
-                    errorProvider1.SetError(Quan, "Chọn Quận .");
+                    MessageBox.Show(this, "Chọn Quận.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Quan.Select();
                 }
                 else if (phuong == null)
                 {
                     cbPhuong.DataSource = DAL.C_Phuong.getListByQuan(quan.MAQUAN);
                     cbPhuong.ValueMember = "MAPHUONG";
-                    cbPhuong.DisplayMember = "TENPHUONG";                    
-                    errorProvider1.SetError(cbPhuong, "Chọn Phường.");
+                    cbPhuong.DisplayMember = "TENPHUONG";
+                    MessageBox.Show(this, "Chọn Phường.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.cbPhuong.Select();
                 }
                 else
                 {
-                    errorProvider1.Clear();
                     BIENNHANDON biennhan = new BIENNHANDON();
                     biennhan.SHS = this.soBienNhan.Text;
                     biennhan.LOAIDON = cbLoaiBN.SelectedValue + "";
@@ -355,7 +353,7 @@ namespace TanHoaWater.View.Users.KEHOACH
 
         private void tabItem3_Click(object sender, EventArgs e)
         {
-            this.editSoBN.Mask = DateTime.Now.Year.ToString().Substring(2) + "CCCCCC";
+            this.editSoBN.Mask = "CCCCCCCC";
             editSoBN.Focus();
         }
 
@@ -382,22 +380,22 @@ namespace TanHoaWater.View.Users.KEHOACH
                 }
                 if ("".Equals(hoten))
                 {
-                    errorProvider1.SetError(editHoTen, "Nhập Họ Tên.");
+                    MessageBox.Show(this, "Nhập Họ Tên.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.editHoTen.Focus();
                 }
                 else if ("".Equals(sonha))
                 {
-                    errorProvider1.SetError(editSoNha, "Nhập Số Nhà.");
+                    MessageBox.Show(this, "Nhập Số Nhà.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.editSoNha.Focus();
                 }
                 else if ("".Equals(tenduong))
                 {
-                    errorProvider1.SetError(txtDuong, "Nhập Số Nhà.");
+                    MessageBox.Show(this, "Nhập Số Nhà.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.txtDuong.Focus();
                 }
                 else if (quan == null)
                 {
-                    errorProvider1.SetError(editQuan, "Chọn Quận .");
+                    MessageBox.Show(this, "Chọn Quận.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.editQuan.Select();
                 }
                 else if (phuong == null)
@@ -405,7 +403,7 @@ namespace TanHoaWater.View.Users.KEHOACH
                     editPhuong.DataSource = DAL.C_Phuong.getListByQuan(quan.MAQUAN);
                     editPhuong.ValueMember = "MAPHUONG";
                     editPhuong.DisplayMember = "TENPHUONG";
-                    errorProvider1.SetError(editPhuong, "Chọn Phường.");
+                    MessageBox.Show(this, "Chọn Phường.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.editPhuong.Select();
                 }
                 else

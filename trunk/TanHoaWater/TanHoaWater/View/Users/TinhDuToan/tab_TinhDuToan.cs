@@ -686,6 +686,9 @@ namespace TanHoaWater.View.Users.TinhDuToan
 
                 if (bgKL.PHIQUANLY != null && !"".Equals(bgKL.PHIQUANLY) && bool.Parse(bgKL.PHIQUANLY + "")) this.checkPhiQuanLy.Checked = true;
                 else this.checkPhiQuanLy.Checked = false;
+
+                if (bgKL.KHTUTAILAP != null && !"".Equals(bgKL.KHTUTAILAP) && bool.Parse(bgKL.KHTUTAILAP + "")) this.vatTuXDCBKhachHangCap.Checked = true;
+                else this.vatTuXDCBKhachHangCap.Checked = false;
             }
             else {
                 radioGhiMoi.Checked = true;
@@ -1597,7 +1600,14 @@ namespace TanHoaWater.View.Users.TinhDuToan
 
                 double TongThanhTien = total + double.Parse(ds.Tables["BG_SUMTAILAPMATDUONG"].Rows[0][1].ToString());
                 CrystalReportViewer r = new CrystalReportViewer();
-                ReportDocument rp = new rptBangGia();
+                ReportDocument rp = new ReportDocument();
+                if (vatTuXDCBKhachHangCap.Checked)
+                {
+                    rp = new rptBangGiaTuTaiLap();
+                }
+                else {
+                    rp = new rptBangGia();
+                }
 
                 //rp.Subreports["Subreport1"].SetParameterValue("Tienchu", Utilities.Doctien.ReadMoney(String.Format("{0:0}", TongThanhTien)));
                   rp.SetDataSource(ds);

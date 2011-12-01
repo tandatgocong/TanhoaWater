@@ -20,6 +20,24 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
     {
         private static readonly ILog log = LogManager.GetLogger(typeof(uct_DOTNHANDON).Name);
         string _madot_ = null;
+        int currentPageIndex = 1;
+        int pageSize = 21;
+        int pageNumber = 0;
+        int FirstRow, LastRow;
+        int rows;
+        private void PageTotal()
+        {
+            try
+            {
+                pageNumber = rows % pageSize != 0 ? rows / pageSize + 1 : rows / pageSize;
+                lbPaing.Text = currentPageIndex + "/" + pageNumber;
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex); ;
+            }
+
+        }
         public uct_DOTNHANDON()
         {
             InitializeComponent();
@@ -33,6 +51,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
 
         public void formLoad()
         {
+           
             #region Load Combox Loai Ho So
             this.cbLoaiHS.DataSource = DAL.C_LoaiHoSo.getListCombobox();
             this.cbLoaiHS.DisplayMember = "Display";
@@ -55,25 +74,30 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                 string madot = this.txtsoDot.Text.ToUpper();
                 DateTime ngaylap = this.createDate.Value;
                 string loaiDonNhan = this.cbLoaiHS.SelectedValue.ToString();
-                if (madot.Length != 9)
+                if ("".Equals(madot))
                 {
-                    errorProvider1.SetError(this.txtsoDot, "Nhập đợt nhận đơn không hợp lệ.");
+                    MessageBox.Show(this, "Nhập đợt nhận đơn không hợp lệ.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtsoDot.Focus();
                 }
                 else if ("1/1/0001".Equals(ngaylap.ToShortDateString()))
                 {
-                    errorProvider1.SetError(this.createDate, "Ngày nhận đơn không hợp lệ.");
+                    MessageBox.Show(this, "Ngày nhận đơn không hợp lệ.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    createDate.Focus();
+                    createDate.Select();
                 }
                 else if ("".Equals(loaiDonNhan))
                 {
-                    errorProvider1.SetError(this.cbLoaiHS, "Chọn loại nhận đơn.");
+                    MessageBox.Show(this, "Chọn loại nhận đơn.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    cbLoaiHS.Focus();
+                    cbLoaiHS.Select();
                 }
                 else if (DAL.C_DotNhanDon.findByMaDot(madot) != null)
                 {
-                    errorProvider1.SetError(this.txtsoDot, "Số đợt đã tồn tại.");
+                    MessageBox.Show(this, "Số đợt đã tồn tại.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtsoDot.Focus();
                 }
                 else
                 {
-                    errorProvider1.Clear();
                     DOT_NHAN_DON dotnhan = new DOT_NHAN_DON();
                     dotnhan.MADOT = madot;
                     dotnhan.NGAYLAPDON = ngaylap;
@@ -91,11 +115,51 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
             }           
   
         }
-        public void loadGrid() {            
-            this.mainGrid.DataSource = DAL.C_DotNhanDon.getList();
+        public void loadGrid() {
+            try
+            {
+                rows = DAL.C_DotNhanDon.TotalListByDotNhanDon();
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex);
+            }
+            PageTotal();
+            this.mainGrid.DataSource = DAL.C_DotNhanDon.getList(FirstRow, pageSize);
             Utilities.DataGridV.formatRows(mainGrid);
         }
-       
+        private void next_Click(object sender, EventArgs e)
+        {
+            if (currentPageIndex < pageNumber)
+            {
+                currentPageIndex = currentPageIndex + 1;
+                FirstRow = pageSize * (currentPageIndex - 1);
+                LastRow = pageSize * (currentPageIndex);
+                PageTotal();
+                loadGrid();
+            }
+
+        }
+
+        private void pre(object sender, EventArgs e)
+        {
+            try
+            {
+                if (currentPageIndex > 1)
+                {
+                    currentPageIndex = currentPageIndex - 1;
+                    FirstRow = pageSize * (currentPageIndex - 1);
+                    LastRow = pageSize * (currentPageIndex);
+                    PageTotal();
+                    loadGrid();
+                }
+            }
+            catch (Exception)
+            {
+
+            }
+
+        }
 
         private void SearchDot_Click(object sender, EventArgs e)
         {

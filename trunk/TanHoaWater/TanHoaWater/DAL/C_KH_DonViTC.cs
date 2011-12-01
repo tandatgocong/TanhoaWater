@@ -32,10 +32,29 @@ namespace TanHoaWater.DAL
             var list = from query in data.KH_DONVITHICONGs where query.TENCONGTY == name select query;
             return list.SingleOrDefault();
         }
+
+        public static KH_DONVIGIAMSATTL findDVGSTCbyName(string name)
+        {
+            TanHoaDataContext data = new TanHoaDataContext();
+            var list = from query in data.KH_DONVIGIAMSATTLs where query.TENCONGTY == name select query;
+            return list.SingleOrDefault();
+        }
+        public static KH_DONVIGIAMSATTL findDVGSTCbyID(int id)
+        {
+            var list = from query in data.KH_DONVIGIAMSATTLs where query.ID == id select query;
+            return list.SingleOrDefault();
+        }
+
         public static List<KH_DONVITAILAP> getDonViTaiLap()
         {
             TanHoaDataContext data = new TanHoaDataContext();
             var list = from query in data.KH_DONVITAILAPs where query.XOA != true orderby query.ID descending select query;
+            return list.ToList();
+        }
+        public static List<KH_DONVIGIAMSATTL> getDonViGiamSatTL()
+        {
+            TanHoaDataContext data = new TanHoaDataContext();
+            var list = from query in data.KH_DONVIGIAMSATTLs where query.XOA != true orderby query.ID descending select query;
             return list.ToList();
         }
        
@@ -74,6 +93,14 @@ namespace TanHoaWater.DAL
             data.KH_DONVITAILAPs.InsertOnSubmit(dvtl);
             data.SubmitChanges();
         }
+
+        public static void AddDonViGiamSatTL(KH_DONVIGIAMSATTL dvtl)
+        {
+            data.KH_DONVIGIAMSATTLs.InsertOnSubmit(dvtl);
+            data.SubmitChanges();
+        }
+
+        
         public static void Update()
         {
             data.SubmitChanges();

@@ -574,6 +574,12 @@
     <Compile Include="View\Users\TinhDuToan\frm_LogBG.Designer.cs">
       <DependentUpon>frm_LogBG.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Users\TinhDuToan\report\rptBangGiaTuTaiLap.cs">
+      <DependentUpon>rptBangGiaTuTaiLap.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="View\Users\TinhDuToan\report\CrystalReport2.cs">
       <DependentUpon>CrystalReport2.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -668,12 +674,6 @@
     </Compile>
     <Compile Include="View\Users\To_ThietKe\tab_GhepHoSo.Designer.cs">
       <DependentUpon>tab_GhepHoSo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\Users\To_ThietKe\tab_HoanTatTK.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="View\Users\To_ThietKe\tab_HoanTatTK.Designer.cs">
-      <DependentUpon>tab_HoanTatTK.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Users\To_ThietKe\uct_GiaoHS.cs">
       <SubType>UserControl</SubType>
@@ -880,6 +880,10 @@
     <EmbeddedResource Include="View\Users\TinhDuToan\frm_LogBG.resx">
       <DependentUpon>frm_LogBG.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\TinhDuToan\report\rptBangGiaTuTaiLap.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptBangGiaTuTaiLap.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Users\TinhDuToan\report\CrystalReport2.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReport2.cs</LastGenOutput>
@@ -931,9 +935,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\To_ThietKe\tab_GhepHoSo.resx">
       <DependentUpon>tab_GhepHoSo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Users\To_ThietKe\tab_HoanTatTK.resx">
-      <DependentUpon>tab_HoanTatTK.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\To_ThietKe\uct_GiaoHS.resx">
       <DependentUpon>uct_GiaoHS.cs</DependentUpon>

@@ -44,15 +44,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.reflectionLabel6 = new DevComponents.DotNetBar.Controls.ReflectionLabel();
             this.gridHoanCong = new DevComponents.DotNetBar.Controls.DataGridViewX();
-            this.cbDotHoanCong = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.btInBangKe = new DevComponents.DotNetBar.ButtonX();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.dateThiCong = new System.Windows.Forms.DateTimePicker();
-            this.checkChuaHoanCong = new System.Windows.Forms.RadioButton();
-            this.chekDaHoanCong = new System.Windows.Forms.RadioButton();
-            this.checkALl = new System.Windows.Forms.RadioButton();
-            this.btTachChiPhi = new DevComponents.DotNetBar.ButtonX();
-            this.btHoanTat = new DevComponents.DotNetBar.ButtonX();
             this.hc_SHS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hc_ChonIn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.hc_HoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,6 +59,15 @@
             this.hc_NhanCong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hc_ChiPhiVT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hc_MayThiCong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cbDotHoanCong = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.btInBangKe = new DevComponents.DotNetBar.ButtonX();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.dateThiCong = new System.Windows.Forms.DateTimePicker();
+            this.checkChuaHoanCong = new System.Windows.Forms.RadioButton();
+            this.chekDaHoanCong = new System.Windows.Forms.RadioButton();
+            this.checkALl = new System.Windows.Forms.RadioButton();
+            this.btTachChiPhi = new DevComponents.DotNetBar.ButtonX();
+            this.btHoanTat = new DevComponents.DotNetBar.ButtonX();
             ((System.ComponentModel.ISupportInitialize)(this.gridHoanCong)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -138,124 +138,6 @@
             this.gridHoanCong.CellValidated += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridHoanCong_CellValidated);
             this.gridHoanCong.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.gridHoanCong_DataError);
             this.gridHoanCong.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.gridHoanCong_EditingControlShowing);
-            // 
-            // cbDotHoanCong
-            // 
-            this.cbDotHoanCong.DisplayMember = "Text";
-            this.cbDotHoanCong.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbDotHoanCong.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbDotHoanCong.FormattingEnabled = true;
-            this.cbDotHoanCong.ItemHeight = 23;
-            this.cbDotHoanCong.Location = new System.Drawing.Point(432, 6);
-            this.cbDotHoanCong.Name = "cbDotHoanCong";
-            this.cbDotHoanCong.Size = new System.Drawing.Size(270, 29);
-            this.cbDotHoanCong.TabIndex = 4;
-            this.cbDotHoanCong.SelectedIndexChanged += new System.EventHandler(this.cbDotHoanCong_SelectedIndexChanged);
-            // 
-            // btInBangKe
-            // 
-            this.btInBangKe.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btInBangKe.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btInBangKe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btInBangKe.Location = new System.Drawing.Point(9, 35);
-            this.btInBangKe.Name = "btInBangKe";
-            this.btInBangKe.Size = new System.Drawing.Size(121, 23);
-            this.btInBangKe.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
-            this.btInBangKe.TabIndex = 5;
-            this.btInBangKe.Text = "In Bảng Kê";
-            this.btInBangKe.Click += new System.EventHandler(this.btInBangKe_Click);
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.dateThiCong);
-            this.panel2.Controls.Add(this.checkChuaHoanCong);
-            this.panel2.Controls.Add(this.chekDaHoanCong);
-            this.panel2.Controls.Add(this.checkALl);
-            this.panel2.Controls.Add(this.btTachChiPhi);
-            this.panel2.Controls.Add(this.btHoanTat);
-            this.panel2.Controls.Add(this.btInBangKe);
-            this.panel2.Controls.Add(this.cbDotHoanCong);
-            this.panel2.Controls.Add(this.gridHoanCong);
-            this.panel2.Controls.Add(this.reflectionLabel6);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(999, 585);
-            this.panel2.TabIndex = 699;
-            // 
-            // dateThiCong
-            // 
-            this.dateThiCong.CustomFormat = "dd/MM/yyyy";
-            this.dateThiCong.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateThiCong.Location = new System.Drawing.Point(105, 246);
-            this.dateThiCong.Name = "dateThiCong";
-            this.dateThiCong.Size = new System.Drawing.Size(137, 26);
-            this.dateThiCong.TabIndex = 9;
-            this.dateThiCong.Visible = false;
-            this.dateThiCong.ValueChanged += new System.EventHandler(this.dateThiCong_ValueChanged);
-            this.dateThiCong.Leave += new System.EventHandler(this.dateThiCong_Leave);
-            // 
-            // checkChuaHoanCong
-            // 
-            this.checkChuaHoanCong.AutoSize = true;
-            this.checkChuaHoanCong.Checked = true;
-            this.checkChuaHoanCong.Location = new System.Drawing.Point(622, 37);
-            this.checkChuaHoanCong.Name = "checkChuaHoanCong";
-            this.checkChuaHoanCong.Size = new System.Drawing.Size(135, 23);
-            this.checkChuaHoanCong.TabIndex = 8;
-            this.checkChuaHoanCong.TabStop = true;
-            this.checkChuaHoanCong.Text = "Chưa Hoàn Công";
-            this.checkChuaHoanCong.UseVisualStyleBackColor = true;
-            this.checkChuaHoanCong.CheckedChanged += new System.EventHandler(this.checkChuaHoanCong_CheckedChanged);
-            // 
-            // chekDaHoanCong
-            // 
-            this.chekDaHoanCong.AutoSize = true;
-            this.chekDaHoanCong.Location = new System.Drawing.Point(502, 37);
-            this.chekDaHoanCong.Name = "chekDaHoanCong";
-            this.chekDaHoanCong.Size = new System.Drawing.Size(119, 23);
-            this.chekDaHoanCong.TabIndex = 8;
-            this.chekDaHoanCong.Text = "Đã Hoàn Công";
-            this.chekDaHoanCong.UseVisualStyleBackColor = true;
-            this.chekDaHoanCong.CheckedChanged += new System.EventHandler(this.chekDaHoanCong_CheckedChanged);
-            // 
-            // checkALl
-            // 
-            this.checkALl.AutoSize = true;
-            this.checkALl.Location = new System.Drawing.Point(431, 37);
-            this.checkALl.Name = "checkALl";
-            this.checkALl.Size = new System.Drawing.Size(69, 23);
-            this.checkALl.TabIndex = 8;
-            this.checkALl.Text = "Tất Cả";
-            this.checkALl.UseVisualStyleBackColor = true;
-            this.checkALl.CheckedChanged += new System.EventHandler(this.checkALl_CheckedChanged);
-            // 
-            // btTachChiPhi
-            // 
-            this.btTachChiPhi.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btTachChiPhi.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btTachChiPhi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btTachChiPhi.Location = new System.Drawing.Point(136, 35);
-            this.btTachChiPhi.Name = "btTachChiPhi";
-            this.btTachChiPhi.Size = new System.Drawing.Size(160, 23);
-            this.btTachChiPhi.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
-            this.btTachChiPhi.TabIndex = 5;
-            this.btTachChiPhi.Text = "Tách Chi Phí Gan-Nhựa";
-            this.btTachChiPhi.Click += new System.EventHandler(this.btTachChiPhi_Click);
-            // 
-            // btHoanTat
-            // 
-            this.btHoanTat.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btHoanTat.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btHoanTat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btHoanTat.Location = new System.Drawing.Point(868, 35);
-            this.btHoanTat.Name = "btHoanTat";
-            this.btHoanTat.Size = new System.Drawing.Size(109, 23);
-            this.btHoanTat.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
-            this.btHoanTat.TabIndex = 5;
-            this.btHoanTat.Text = "Hoàn Tất";
-            this.btHoanTat.Click += new System.EventHandler(this.btHoanTat_Click);
             // 
             // hc_SHS
             // 
@@ -402,6 +284,124 @@
             this.hc_MayThiCong.Name = "hc_MayThiCong";
             this.hc_MayThiCong.ReadOnly = true;
             this.hc_MayThiCong.Width = 120;
+            // 
+            // cbDotHoanCong
+            // 
+            this.cbDotHoanCong.DisplayMember = "Text";
+            this.cbDotHoanCong.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbDotHoanCong.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbDotHoanCong.FormattingEnabled = true;
+            this.cbDotHoanCong.ItemHeight = 23;
+            this.cbDotHoanCong.Location = new System.Drawing.Point(432, 6);
+            this.cbDotHoanCong.Name = "cbDotHoanCong";
+            this.cbDotHoanCong.Size = new System.Drawing.Size(270, 29);
+            this.cbDotHoanCong.TabIndex = 4;
+            this.cbDotHoanCong.SelectedIndexChanged += new System.EventHandler(this.cbDotHoanCong_SelectedIndexChanged);
+            // 
+            // btInBangKe
+            // 
+            this.btInBangKe.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btInBangKe.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btInBangKe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btInBangKe.Location = new System.Drawing.Point(9, 35);
+            this.btInBangKe.Name = "btInBangKe";
+            this.btInBangKe.Size = new System.Drawing.Size(121, 23);
+            this.btInBangKe.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
+            this.btInBangKe.TabIndex = 5;
+            this.btInBangKe.Text = "In Bảng Kê";
+            this.btInBangKe.Click += new System.EventHandler(this.btInBangKe_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.dateThiCong);
+            this.panel2.Controls.Add(this.checkChuaHoanCong);
+            this.panel2.Controls.Add(this.chekDaHoanCong);
+            this.panel2.Controls.Add(this.checkALl);
+            this.panel2.Controls.Add(this.btTachChiPhi);
+            this.panel2.Controls.Add(this.btHoanTat);
+            this.panel2.Controls.Add(this.btInBangKe);
+            this.panel2.Controls.Add(this.cbDotHoanCong);
+            this.panel2.Controls.Add(this.gridHoanCong);
+            this.panel2.Controls.Add(this.reflectionLabel6);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(999, 585);
+            this.panel2.TabIndex = 699;
+            // 
+            // dateThiCong
+            // 
+            this.dateThiCong.CustomFormat = "dd/MM/yyyy";
+            this.dateThiCong.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateThiCong.Location = new System.Drawing.Point(105, 246);
+            this.dateThiCong.Name = "dateThiCong";
+            this.dateThiCong.Size = new System.Drawing.Size(137, 26);
+            this.dateThiCong.TabIndex = 9;
+            this.dateThiCong.Visible = false;
+            this.dateThiCong.ValueChanged += new System.EventHandler(this.dateThiCong_ValueChanged);
+            this.dateThiCong.Leave += new System.EventHandler(this.dateThiCong_Leave);
+            // 
+            // checkChuaHoanCong
+            // 
+            this.checkChuaHoanCong.AutoSize = true;
+            this.checkChuaHoanCong.Checked = true;
+            this.checkChuaHoanCong.Location = new System.Drawing.Point(622, 37);
+            this.checkChuaHoanCong.Name = "checkChuaHoanCong";
+            this.checkChuaHoanCong.Size = new System.Drawing.Size(135, 23);
+            this.checkChuaHoanCong.TabIndex = 8;
+            this.checkChuaHoanCong.TabStop = true;
+            this.checkChuaHoanCong.Text = "Chưa Hoàn Công";
+            this.checkChuaHoanCong.UseVisualStyleBackColor = true;
+            this.checkChuaHoanCong.CheckedChanged += new System.EventHandler(this.checkChuaHoanCong_CheckedChanged);
+            // 
+            // chekDaHoanCong
+            // 
+            this.chekDaHoanCong.AutoSize = true;
+            this.chekDaHoanCong.Location = new System.Drawing.Point(502, 37);
+            this.chekDaHoanCong.Name = "chekDaHoanCong";
+            this.chekDaHoanCong.Size = new System.Drawing.Size(119, 23);
+            this.chekDaHoanCong.TabIndex = 8;
+            this.chekDaHoanCong.Text = "Đã Hoàn Công";
+            this.chekDaHoanCong.UseVisualStyleBackColor = true;
+            this.chekDaHoanCong.CheckedChanged += new System.EventHandler(this.chekDaHoanCong_CheckedChanged);
+            // 
+            // checkALl
+            // 
+            this.checkALl.AutoSize = true;
+            this.checkALl.Location = new System.Drawing.Point(431, 37);
+            this.checkALl.Name = "checkALl";
+            this.checkALl.Size = new System.Drawing.Size(69, 23);
+            this.checkALl.TabIndex = 8;
+            this.checkALl.Text = "Tất Cả";
+            this.checkALl.UseVisualStyleBackColor = true;
+            this.checkALl.CheckedChanged += new System.EventHandler(this.checkALl_CheckedChanged);
+            // 
+            // btTachChiPhi
+            // 
+            this.btTachChiPhi.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btTachChiPhi.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btTachChiPhi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btTachChiPhi.Location = new System.Drawing.Point(136, 35);
+            this.btTachChiPhi.Name = "btTachChiPhi";
+            this.btTachChiPhi.Size = new System.Drawing.Size(160, 23);
+            this.btTachChiPhi.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
+            this.btTachChiPhi.TabIndex = 5;
+            this.btTachChiPhi.Text = "Tách Chi Phí Gan-Nhựa";
+            this.btTachChiPhi.Click += new System.EventHandler(this.btTachChiPhi_Click);
+            // 
+            // btHoanTat
+            // 
+            this.btHoanTat.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btHoanTat.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btHoanTat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btHoanTat.Location = new System.Drawing.Point(868, 35);
+            this.btHoanTat.Name = "btHoanTat";
+            this.btHoanTat.Size = new System.Drawing.Size(109, 23);
+            this.btHoanTat.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
+            this.btHoanTat.TabIndex = 5;
+            this.btHoanTat.Text = "Hoàn Tất";
+            this.btHoanTat.Click += new System.EventHandler(this.btHoanTat_Click);
             // 
             // tab_DanhSachHoanCong
             // 

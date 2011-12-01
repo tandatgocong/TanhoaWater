@@ -375,6 +375,7 @@
             this.dataGridViewDotTC.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dataGridViewDotTC.Location = new System.Drawing.Point(4, 184);
             this.dataGridViewDotTC.Name = "dataGridViewDotTC";
+            this.dataGridViewDotTC.ReadOnly = true;
             dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle15.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -394,6 +395,7 @@
             this.SHS.Frozen = true;
             this.SHS.HeaderText = "SHS";
             this.SHS.Name = "SHS";
+            this.SHS.ReadOnly = true;
             this.SHS.Visible = false;
             // 
             // G_SOHOSO
@@ -404,6 +406,7 @@
             this.G_SOHOSO.Frozen = true;
             this.G_SOHOSO.HeaderText = "Số Hồ Sơ";
             this.G_SOHOSO.Name = "G_SOHOSO";
+            this.G_SOHOSO.ReadOnly = true;
             this.G_SOHOSO.Width = 130;
             // 
             // g_dotbangke
@@ -414,6 +417,7 @@
             this.g_dotbangke.Frozen = true;
             this.g_dotbangke.HeaderText = "Đợt Bảng Kê";
             this.g_dotbangke.Name = "g_dotbangke";
+            this.g_dotbangke.ReadOnly = true;
             this.g_dotbangke.Width = 120;
             // 
             // gr_Hoten
@@ -422,6 +426,7 @@
             this.gr_Hoten.Frozen = true;
             this.gr_Hoten.HeaderText = "Họ và Tên";
             this.gr_Hoten.Name = "gr_Hoten";
+            this.gr_Hoten.ReadOnly = true;
             this.gr_Hoten.Width = 250;
             // 
             // gr_SoDienThoai
@@ -429,6 +434,7 @@
             this.gr_SoDienThoai.DataPropertyName = "DIENTHOAI";
             this.gr_SoDienThoai.HeaderText = "Số Điện Thoại";
             this.gr_SoDienThoai.Name = "gr_SoDienThoai";
+            this.gr_SoDienThoai.ReadOnly = true;
             this.gr_SoDienThoai.Width = 120;
             // 
             // gr_sonha
@@ -438,12 +444,14 @@
             this.gr_sonha.DefaultCellStyle = dataGridViewCellStyle4;
             this.gr_sonha.HeaderText = "Số Nhà";
             this.gr_sonha.Name = "gr_sonha";
+            this.gr_sonha.ReadOnly = true;
             // 
             // g_duong
             // 
             this.g_duong.DataPropertyName = "DUONG";
             this.g_duong.HeaderText = "Đường";
             this.g_duong.Name = "g_duong";
+            this.g_duong.ReadOnly = true;
             this.g_duong.Width = 250;
             // 
             // g_phuong
@@ -453,6 +461,7 @@
             this.g_phuong.DefaultCellStyle = dataGridViewCellStyle5;
             this.g_phuong.HeaderText = "Phường";
             this.g_phuong.Name = "g_phuong";
+            this.g_phuong.ReadOnly = true;
             this.g_phuong.Width = 120;
             // 
             // g_dotxpdd
@@ -462,6 +471,7 @@
             this.g_dotxpdd.DefaultCellStyle = dataGridViewCellStyle6;
             this.g_dotxpdd.HeaderText = "Số Đợt XPĐĐ";
             this.g_dotxpdd.Name = "g_dotxpdd";
+            this.g_dotxpdd.ReadOnly = true;
             this.g_dotxpdd.Width = 150;
             // 
             // g_ngayxinphep
@@ -472,6 +482,7 @@
             this.g_ngayxinphep.DefaultCellStyle = dataGridViewCellStyle7;
             this.g_ngayxinphep.HeaderText = "Ngày XPĐĐ";
             this.g_ngayxinphep.Name = "g_ngayxinphep";
+            this.g_ngayxinphep.ReadOnly = true;
             this.g_ngayxinphep.Width = 150;
             // 
             // grNgayDongTien
@@ -482,6 +493,7 @@
             this.grNgayDongTien.DefaultCellStyle = dataGridViewCellStyle8;
             this.grNgayDongTien.HeaderText = "Ngày Đóng Tiền";
             this.grNgayDongTien.Name = "grNgayDongTien";
+            this.grNgayDongTien.ReadOnly = true;
             this.grNgayDongTien.Width = 170;
             // 
             // g_sohoadon
@@ -491,6 +503,7 @@
             this.g_sohoadon.DefaultCellStyle = dataGridViewCellStyle9;
             this.g_sohoadon.HeaderText = "Số Hóa Đơn";
             this.g_sohoadon.Name = "g_sohoadon";
+            this.g_sohoadon.ReadOnly = true;
             this.g_sohoadon.Width = 150;
             // 
             // gridGiaTriSauThue
@@ -502,6 +515,7 @@
             this.gridGiaTriSauThue.DefaultCellStyle = dataGridViewCellStyle10;
             this.gridGiaTriSauThue.HeaderText = "Giá Trị Sau Thuế";
             this.gridGiaTriSauThue.Name = "gridGiaTriSauThue";
+            this.gridGiaTriSauThue.ReadOnly = true;
             this.gridGiaTriSauThue.Width = 150;
             // 
             // gridTLMD
@@ -513,6 +527,7 @@
             this.gridTLMD.DefaultCellStyle = dataGridViewCellStyle11;
             this.gridTLMD.HeaderText = "TLMĐ";
             this.gridTLMD.Name = "gridTLMD";
+            this.gridTLMD.ReadOnly = true;
             this.gridTLMD.Width = 140;
             // 
             // gr_tongsotien
@@ -523,6 +538,7 @@
             this.gr_tongsotien.DefaultCellStyle = dataGridViewCellStyle12;
             this.gr_tongsotien.HeaderText = "Tổng Số Tiền";
             this.gr_tongsotien.Name = "gr_tongsotien";
+            this.gr_tongsotien.ReadOnly = true;
             this.gr_tongsotien.Width = 150;
             // 
             // grid_CoTLK
@@ -532,6 +548,7 @@
             this.grid_CoTLK.DefaultCellStyle = dataGridViewCellStyle13;
             this.grid_CoTLK.HeaderText = "Cỡ TLK";
             this.grid_CoTLK.Name = "grid_CoTLK";
+            this.grid_CoTLK.ReadOnly = true;
             this.grid_CoTLK.Width = 130;
             // 
             // btPrint

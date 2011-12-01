@@ -14,10 +14,12 @@ namespace TanHoaWater.View.Users.TinhDuToan
     public partial class tabThongSoBG : UserControl
     {
         private static readonly ILog log = LogManager.GetLogger(typeof(tabThongSoBG).Name);
+        BG_REPORT report = null;
+        BG_HESOBANGGIA hsbg = null;
         public tabThongSoBG()
         {
             InitializeComponent();
-            BG_HESOBANGGIA hsbg = DAL.C_HeSoBangGia.getHeSoBangGia();
+            hsbg = DAL.C_HeSoBangGia.getHeSoBangGia();
             if (hsbg != null) {
                 this.NhanCong.Text = hsbg.NC+"";
                 this.MayThiCong.Text = hsbg.MTC + "";
@@ -32,13 +34,25 @@ namespace TanHoaWater.View.Users.TinhDuToan
                 this.ThueVAT.Text = hsbg.VAT + "";
 
             }
+            report = DAL.C_HeSoBangGia.getReport();
+            if (report != null) {
+                LINE1.Text = report.LINE1;
+                LINE2.Text = report.LINE2;
+                LINE3.Text = report.LINE3;
+                LINE4.Text = report.LINE4;
+                LINE5.Text = report.LINE5;
+                DuyetChucVu.Text = report.DUYET;
+                DuyetNguoiDuyet.Text = report.NGUOIDUYET;
+                THANHLAP.Text = report.THANHLAP;
+                NGUOILAP.Text = report.NGUOILAP;
+            }
         }
 
         private void btUpdate_Click(object sender, EventArgs e)
         {
             try
             {
-                BG_HESOBANGGIA hsbg = DAL.C_HeSoBangGia.getHeSoBangGia();
+               // BG_HESOBANGGIA hsbg = DAL.C_HeSoBangGia.getHeSoBangGia();
                 hsbg.NC = double.Parse(this.NhanCong.Text);
                 hsbg.MTC = double.Parse(this.MayThiCong.Text);
                 hsbg.CABA = double.Parse(this.PhiCaBa.Text);
@@ -207,6 +221,37 @@ namespace TanHoaWater.View.Users.TinhDuToan
                 }
                 e.Handled = false;
             }
+        }
+
+        private void btCapNhatBangGia_Click(object sender, EventArgs e)
+        {
+            try
+            {
+               // BG_HESOBANGGIA hsbg = DAL.C_HeSoBangGia.getHeSoBangGia();
+                report.LINE1=LINE1.Text;
+                report.LINE2=LINE2.Text ;
+                report.LINE3=LINE3.Text;
+                report.LINE4 =LINE4.Text;
+                report.LINE5= LINE5.Text;
+                report.DUYET= DuyetChucVu.Text;
+                report.NGUOIDUYET=DuyetNguoiDuyet.Text;
+                report.THANHLAP=THANHLAP.Text;
+                report.NGUOILAP=NGUOILAP.Text;
+                if (DAL.C_HeSoBangGia.UpdateHeSoBangGia())
+                {
+                    MessageBox.Show(this, "Cập Nhật Thông Số Bảng Giá Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show(this, "Cập Nhật Thông Số Bảng Giá Thất Bại!", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Error("Cap Nhat THong So That Bai " + ex.Message);
+                MessageBox.Show(this, "Cập Nhật Thông Số Bảng Giá Thất Bại!", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
     }
 }
