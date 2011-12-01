@@ -178,7 +178,7 @@ namespace TanHoaWater.DAL
             SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             adapter.Fill(dataset, "KH_TC_BAOCAO");
 
-            sql = " SELECT *, DONVIGIAMSAT='" + donvigiamsat + "',NGAYKHOICONG='" + ngaykhoicong + "',NGAYHOANTAT='" + ngayhoantat + "' FROM V_QUYETDINHTHICONG WHERE MADOTTC=N'" + madot + "'";
+            sql = " SELECT *,NGAYTHICONG='" + ngaykhoicong + "',NGAYHOANTAT='" + ngayhoantat + "' FROM V_QUYETDINHTHICONG WHERE MADOTTC=N'" + madot + "'";
             adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             adapter.Fill(dataset, "V_QUYETDINHTHICONG");
 

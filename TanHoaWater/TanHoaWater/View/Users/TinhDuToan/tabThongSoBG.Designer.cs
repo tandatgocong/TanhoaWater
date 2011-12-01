@@ -29,6 +29,14 @@
         private void InitializeComponent()
         {
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
+            this.groupPanel2 = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.btCapNhatBangGia = new DevComponents.DotNetBar.ButtonX();
+            this.THANHLAP = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.NGUOILAP = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.DuyetChucVu = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.DuyetNguoiDuyet = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.btUpdate = new DevComponents.DotNetBar.ButtonX();
             this.ThueVAT = new System.Windows.Forms.TextBox();
@@ -61,21 +69,19 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.groupPanel2 = new DevComponents.DotNetBar.Controls.GroupPanel();
-            this.label20 = new System.Windows.Forms.Label();
-            this.textBoxX1 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.textBoxX2 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.label21 = new System.Windows.Forms.Label();
-            this.textBoxX3 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.textBoxX4 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.LINE1 = new System.Windows.Forms.RichTextBox();
+            this.LINE2 = new System.Windows.Forms.RichTextBox();
+            this.LINE3 = new System.Windows.Forms.RichTextBox();
+            this.LINE4 = new System.Windows.Forms.RichTextBox();
+            this.LINE5 = new System.Windows.Forms.RichTextBox();
             this.panelEx1.SuspendLayout();
-            this.groupPanel1.SuspendLayout();
             this.groupPanel2.SuspendLayout();
+            this.groupPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelEx1
             // 
-            this.panelEx1.CanvasColor = System.Drawing.SystemColors.Control;
+            this.panelEx1.CanvasColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
             this.panelEx1.Controls.Add(this.groupPanel2);
             this.panelEx1.Controls.Add(this.groupPanel1);
             this.panelEx1.Location = new System.Drawing.Point(0, 0);
@@ -88,6 +94,134 @@
             this.panelEx1.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemText;
             this.panelEx1.Style.GradientAngle = 90;
             this.panelEx1.TabIndex = 0;
+            // 
+            // groupPanel2
+            // 
+            this.groupPanel2.CanvasColor = System.Drawing.SystemColors.Control;
+            this.groupPanel2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.groupPanel2.Controls.Add(this.LINE5);
+            this.groupPanel2.Controls.Add(this.LINE4);
+            this.groupPanel2.Controls.Add(this.LINE3);
+            this.groupPanel2.Controls.Add(this.LINE2);
+            this.groupPanel2.Controls.Add(this.LINE1);
+            this.groupPanel2.Controls.Add(this.btCapNhatBangGia);
+            this.groupPanel2.Controls.Add(this.THANHLAP);
+            this.groupPanel2.Controls.Add(this.NGUOILAP);
+            this.groupPanel2.Controls.Add(this.DuyetChucVu);
+            this.groupPanel2.Controls.Add(this.DuyetNguoiDuyet);
+            this.groupPanel2.Controls.Add(this.label20);
+            this.groupPanel2.Controls.Add(this.label22);
+            this.groupPanel2.Location = new System.Drawing.Point(217, 3);
+            this.groupPanel2.Name = "groupPanel2";
+            this.groupPanel2.Size = new System.Drawing.Size(522, 438);
+            // 
+            // 
+            // 
+            this.groupPanel2.Style.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.groupPanel2.Style.BackColorGradientAngle = 90;
+            this.groupPanel2.Style.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.groupPanel2.Style.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.groupPanel2.Style.BorderBottomWidth = 1;
+            this.groupPanel2.Style.BorderColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.groupPanel2.Style.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.groupPanel2.Style.BorderLeftWidth = 1;
+            this.groupPanel2.Style.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.groupPanel2.Style.BorderRightWidth = 1;
+            this.groupPanel2.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.groupPanel2.Style.BorderTopWidth = 1;
+            this.groupPanel2.Style.CornerDiameter = 4;
+            this.groupPanel2.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
+            this.groupPanel2.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
+            this.groupPanel2.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this.groupPanel2.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
+            this.groupPanel2.TabIndex = 1;
+            this.groupPanel2.Text = "Thông Số Bảng Giá";
+            // 
+            // btCapNhatBangGia
+            // 
+            this.btCapNhatBangGia.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btCapNhatBangGia.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btCapNhatBangGia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btCapNhatBangGia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btCapNhatBangGia.Location = new System.Drawing.Point(221, 391);
+            this.btCapNhatBangGia.Name = "btCapNhatBangGia";
+            this.btCapNhatBangGia.Size = new System.Drawing.Size(64, 23);
+            this.btCapNhatBangGia.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
+            this.btCapNhatBangGia.TabIndex = 2;
+            this.btCapNhatBangGia.Text = "Cập Nhật";
+            this.btCapNhatBangGia.Click += new System.EventHandler(this.btCapNhatBangGia_Click);
+            // 
+            // THANHLAP
+            // 
+            // 
+            // 
+            // 
+            this.THANHLAP.Border.Class = "TextBoxBorder";
+            this.THANHLAP.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.THANHLAP.Location = new System.Drawing.Point(291, 350);
+            this.THANHLAP.Name = "THANHLAP";
+            this.THANHLAP.Size = new System.Drawing.Size(222, 26);
+            this.THANHLAP.TabIndex = 4;
+            this.THANHLAP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // NGUOILAP
+            // 
+            // 
+            // 
+            // 
+            this.NGUOILAP.Border.Class = "TextBoxBorder";
+            this.NGUOILAP.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NGUOILAP.Location = new System.Drawing.Point(291, 394);
+            this.NGUOILAP.Name = "NGUOILAP";
+            this.NGUOILAP.Size = new System.Drawing.Size(222, 26);
+            this.NGUOILAP.TabIndex = 4;
+            this.NGUOILAP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // DuyetChucVu
+            // 
+            // 
+            // 
+            // 
+            this.DuyetChucVu.Border.Class = "TextBoxBorder";
+            this.DuyetChucVu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DuyetChucVu.Location = new System.Drawing.Point(3, 350);
+            this.DuyetChucVu.Name = "DuyetChucVu";
+            this.DuyetChucVu.Size = new System.Drawing.Size(213, 26);
+            this.DuyetChucVu.TabIndex = 4;
+            this.DuyetChucVu.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // DuyetNguoiDuyet
+            // 
+            // 
+            // 
+            // 
+            this.DuyetNguoiDuyet.Border.Class = "TextBoxBorder";
+            this.DuyetNguoiDuyet.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DuyetNguoiDuyet.Location = new System.Drawing.Point(3, 394);
+            this.DuyetNguoiDuyet.Name = "DuyetNguoiDuyet";
+            this.DuyetNguoiDuyet.Size = new System.Drawing.Size(213, 26);
+            this.DuyetNguoiDuyet.TabIndex = 4;
+            this.DuyetNguoiDuyet.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(363, 328);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(96, 19);
+            this.label20.TabIndex = 3;
+            this.label20.Text = "THÀNH LẬP";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(70, 328);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(60, 19);
+            this.label22.TabIndex = 2;
+            this.label22.Text = "DUYỆT";
             // 
             // groupPanel1
             // 
@@ -126,7 +260,7 @@
             this.groupPanel1.Controls.Add(this.label12);
             this.groupPanel1.Location = new System.Drawing.Point(3, 3);
             this.groupPanel1.Name = "groupPanel1";
-            this.groupPanel1.Size = new System.Drawing.Size(229, 438);
+            this.groupPanel1.Size = new System.Drawing.Size(203, 438);
             // 
             // 
             // 
@@ -451,105 +585,50 @@
             this.label12.Text = "%";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // groupPanel2
+            // LINE1
             // 
-            this.groupPanel2.CanvasColor = System.Drawing.SystemColors.Control;
-            this.groupPanel2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
-            this.groupPanel2.Controls.Add(this.textBoxX4);
-            this.groupPanel2.Controls.Add(this.textBoxX2);
-            this.groupPanel2.Controls.Add(this.textBoxX3);
-            this.groupPanel2.Controls.Add(this.textBoxX1);
-            this.groupPanel2.Controls.Add(this.label21);
-            this.groupPanel2.Controls.Add(this.label20);
-            this.groupPanel2.Location = new System.Drawing.Point(238, 3);
-            this.groupPanel2.Name = "groupPanel2";
-            this.groupPanel2.Size = new System.Drawing.Size(496, 438);
+            this.LINE1.Font = new System.Drawing.Font("Times New Roman", 11F);
+            this.LINE1.Location = new System.Drawing.Point(3, 3);
+            this.LINE1.Name = "LINE1";
+            this.LINE1.Size = new System.Drawing.Size(510, 59);
+            this.LINE1.TabIndex = 5;
+            this.LINE1.Text = "";
             // 
+            // LINE2
             // 
+            this.LINE2.Font = new System.Drawing.Font("Times New Roman", 11F);
+            this.LINE2.Location = new System.Drawing.Point(3, 66);
+            this.LINE2.Name = "LINE2";
+            this.LINE2.Size = new System.Drawing.Size(510, 59);
+            this.LINE2.TabIndex = 5;
+            this.LINE2.Text = "";
             // 
-            this.groupPanel2.Style.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.groupPanel2.Style.BackColorGradientAngle = 90;
-            this.groupPanel2.Style.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.groupPanel2.Style.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.groupPanel2.Style.BorderBottomWidth = 1;
-            this.groupPanel2.Style.BorderColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-            this.groupPanel2.Style.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.groupPanel2.Style.BorderLeftWidth = 1;
-            this.groupPanel2.Style.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.groupPanel2.Style.BorderRightWidth = 1;
-            this.groupPanel2.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.groupPanel2.Style.BorderTopWidth = 1;
-            this.groupPanel2.Style.CornerDiameter = 4;
-            this.groupPanel2.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
-            this.groupPanel2.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
-            this.groupPanel2.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
-            this.groupPanel2.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
-            this.groupPanel2.TabIndex = 1;
-            this.groupPanel2.Text = "Thông Số Bảng Giá";
+            // LINE3
             // 
-            // label20
+            this.LINE3.Font = new System.Drawing.Font("Times New Roman", 11F);
+            this.LINE3.Location = new System.Drawing.Point(3, 131);
+            this.LINE3.Name = "LINE3";
+            this.LINE3.Size = new System.Drawing.Size(510, 59);
+            this.LINE3.TabIndex = 5;
+            this.LINE3.Text = "";
             // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(47, 333);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(63, 18);
-            this.label20.TabIndex = 0;
-            this.label20.Text = "DUYỆT";
+            // LINE4
             // 
-            // textBoxX1
+            this.LINE4.Font = new System.Drawing.Font("Times New Roman", 11F);
+            this.LINE4.Location = new System.Drawing.Point(3, 199);
+            this.LINE4.Name = "LINE4";
+            this.LINE4.Size = new System.Drawing.Size(510, 59);
+            this.LINE4.TabIndex = 5;
+            this.LINE4.Text = "";
             // 
+            // LINE5
             // 
-            // 
-            // 
-            this.textBoxX1.Border.Class = "TextBoxBorder";
-            this.textBoxX1.Location = new System.Drawing.Point(3, 394);
-            this.textBoxX1.Name = "textBoxX1";
-            this.textBoxX1.Size = new System.Drawing.Size(144, 20);
-            this.textBoxX1.TabIndex = 1;
-            // 
-            // textBoxX2
-            // 
-            // 
-            // 
-            // 
-            this.textBoxX2.Border.Class = "TextBoxBorder";
-            this.textBoxX2.Location = new System.Drawing.Point(3, 354);
-            this.textBoxX2.Name = "textBoxX2";
-            this.textBoxX2.Size = new System.Drawing.Size(144, 20);
-            this.textBoxX2.TabIndex = 1;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(364, 333);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(99, 18);
-            this.label21.TabIndex = 0;
-            this.label21.Text = "THÀNH LẬP";
-            // 
-            // textBoxX3
-            // 
-            // 
-            // 
-            // 
-            this.textBoxX3.Border.Class = "TextBoxBorder";
-            this.textBoxX3.Location = new System.Drawing.Point(333, 394);
-            this.textBoxX3.Name = "textBoxX3";
-            this.textBoxX3.Size = new System.Drawing.Size(144, 20);
-            this.textBoxX3.TabIndex = 1;
-            // 
-            // textBoxX4
-            // 
-            // 
-            // 
-            // 
-            this.textBoxX4.Border.Class = "TextBoxBorder";
-            this.textBoxX4.Location = new System.Drawing.Point(333, 354);
-            this.textBoxX4.Name = "textBoxX4";
-            this.textBoxX4.Size = new System.Drawing.Size(144, 20);
-            this.textBoxX4.TabIndex = 1;
+            this.LINE5.Font = new System.Drawing.Font("Times New Roman", 11F);
+            this.LINE5.Location = new System.Drawing.Point(3, 264);
+            this.LINE5.Name = "LINE5";
+            this.LINE5.Size = new System.Drawing.Size(510, 59);
+            this.LINE5.TabIndex = 5;
+            this.LINE5.Text = "";
             // 
             // tabThongSoBG
             // 
@@ -559,10 +638,10 @@
             this.Name = "tabThongSoBG";
             this.Size = new System.Drawing.Size(977, 534);
             this.panelEx1.ResumeLayout(false);
-            this.groupPanel1.ResumeLayout(false);
-            this.groupPanel1.PerformLayout();
             this.groupPanel2.ResumeLayout(false);
             this.groupPanel2.PerformLayout();
+            this.groupPanel1.ResumeLayout(false);
+            this.groupPanel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -603,11 +682,17 @@
         private System.Windows.Forms.Label label13;
         private DevComponents.DotNetBar.ButtonX btUpdate;
         private DevComponents.DotNetBar.Controls.GroupPanel groupPanel2;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX2;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX1;
+        private DevComponents.DotNetBar.Controls.TextBoxX DuyetNguoiDuyet;
         private System.Windows.Forms.Label label20;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX4;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX3;
-        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label22;
+        private DevComponents.DotNetBar.Controls.TextBoxX THANHLAP;
+        private DevComponents.DotNetBar.Controls.TextBoxX NGUOILAP;
+        private DevComponents.DotNetBar.Controls.TextBoxX DuyetChucVu;
+        private DevComponents.DotNetBar.ButtonX btCapNhatBangGia;
+        private System.Windows.Forms.RichTextBox LINE5;
+        private System.Windows.Forms.RichTextBox LINE4;
+        private System.Windows.Forms.RichTextBox LINE3;
+        private System.Windows.Forms.RichTextBox LINE2;
+        private System.Windows.Forms.RichTextBox LINE1;
     }
 }

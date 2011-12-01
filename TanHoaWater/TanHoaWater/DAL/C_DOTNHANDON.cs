@@ -85,7 +85,7 @@ namespace TanHoaWater.DAL
             }
             return false;
         }
-        public static DataTable getList()
+        public static DataTable getList11()
         {
             TanHoaDataContext db = new TanHoaDataContext();
             db.Connection.Open();
@@ -99,6 +99,35 @@ namespace TanHoaWater.DAL
             adapter.Fill(table);
             db.Connection.Close();
             return table;
+        }
+        public static DataTable getList(int FirstRow, int pageSize)
+        {
+            TanHoaDataContext db = new TanHoaDataContext();
+            db.Connection.Open();
+            string sql = " SELECT MADOT , NGAYLAPDON= CONVERT(VARCHAR(10),NGAYLAPDON,103), TENLOAI,";
+            sql += " CASE WHEN CHUYENDON='False' THEN N'Chưa chuyển'  WHEN CHUYENDON='True' THEN N'Đã chuyển' ELSE N'Chuyển 1 phần'   END as 'CHUYEN'";
+            sql += " FROM DOT_NHAN_DON dot, LOAI_HOSO loai";
+            sql += " WHERE loai.MALOAI = dot.LOAIDON";
+            sql += " ORDER BY NGAYLAPDON DESC ";
+            SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
+            DataSet dataset = new DataSet();
+            adapter.Fill(dataset, FirstRow, pageSize, "TABLE");
+            db.Connection.Close();
+            return dataset.Tables[0];
+
+        }
+        public static int TotalListByDotNhanDon()
+        {
+            TanHoaDataContext db = new TanHoaDataContext();
+            SqlConnection conn = new SqlConnection(db.Connection.ConnectionString);
+            conn.Open();
+            string sql = " SELECT COUNT(*) ";
+            sql += " FROM DOT_NHAN_DON dot, LOAI_HOSO loai";
+            sql += " WHERE loai.MALOAI = dot.LOAIDON";
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            int result = Convert.ToInt32(cmd.ExecuteScalar());
+            conn.Close();
+            return result;
         }
         public static DataTable Search(string madot, DateTime ngaylap, string maloai)
         {

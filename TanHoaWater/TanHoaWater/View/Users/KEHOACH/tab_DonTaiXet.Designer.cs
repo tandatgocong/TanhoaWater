@@ -163,11 +163,12 @@
             this.CD_NguoiDuyetDon.DisplayMember = "Text";
             this.CD_NguoiDuyetDon.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.CD_NguoiDuyetDon.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CD_NguoiDuyetDon.DropDownWidth = 200;
             this.CD_NguoiDuyetDon.FormattingEnabled = true;
             this.CD_NguoiDuyetDon.ItemHeight = 16;
-            this.CD_NguoiDuyetDon.Location = new System.Drawing.Point(682, 246);
+            this.CD_NguoiDuyetDon.Location = new System.Drawing.Point(649, 246);
             this.CD_NguoiDuyetDon.Name = "CD_NguoiDuyetDon";
-            this.CD_NguoiDuyetDon.Size = new System.Drawing.Size(152, 22);
+            this.CD_NguoiDuyetDon.Size = new System.Drawing.Size(185, 22);
             this.CD_NguoiDuyetDon.TabIndex = 132;
             // 
             // nguoiduyetDon
@@ -175,7 +176,7 @@
             this.nguoiduyetDon.AutoSize = true;
             this.nguoiduyetDon.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nguoiduyetDon.ForeColor = System.Drawing.Color.Maroon;
-            this.nguoiduyetDon.Location = new System.Drawing.Point(591, 250);
+            this.nguoiduyetDon.Location = new System.Drawing.Point(558, 250);
             this.nguoiduyetDon.Name = "nguoiduyetDon";
             this.nguoiduyetDon.Size = new System.Drawing.Size(93, 16);
             this.nguoiduyetDon.TabIndex = 133;

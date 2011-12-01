@@ -18,9 +18,9 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
         {
             InitializeComponent();
 
-            this.cbDonViGiamSat.DataSource = DAL.C_KH_DotThiCong.DonViGiamSat();
-            this.cbDonViGiamSat.ValueMember = "TENDONVI";
-            this.cbDonViGiamSat.DisplayMember = "TENDONVI";
+            //this.cbDonViGiamSat.DataSource = DAL.C_KH_DotThiCong.DonViGiamSat();
+            //this.cbDonViGiamSat.ValueMember = "TENDONVI";
+            //this.cbDonViGiamSat.DisplayMember = "TENDONVI";
  
             lbDotTC.Text = "Đợt Thi Công : " + madot;
             _madot = madot;
@@ -32,7 +32,7 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
             ReportDocument rp = new rpt_QuyetDinhTC();  
             string NGAYKHOICONGDAO = Utilities.DateToString.NgayVN(ngaykhoicong);
             string NGAYHOANTATTL = Utilities.DateToString.NgayVN(ngaytailap);
-            rp.SetDataSource(DAL.C_KH_DotThiCong.BC_QuyetDinhThiCong(_madot, this.cbDonViGiamSat.Text, NGAYKHOICONGDAO, NGAYHOANTATTL));
+            rp.SetDataSource(DAL.C_KH_DotThiCong.BC_QuyetDinhThiCong(_madot, "", NGAYKHOICONGDAO, NGAYHOANTATTL));
             crystalReportViewer1.ReportSource = rp;
             this.WindowState = FormWindowState.Maximized;
         }

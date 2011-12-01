@@ -400,6 +400,7 @@
             this.dataGridViewX1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dataGridViewX1.Location = new System.Drawing.Point(0, 186);
             this.dataGridViewX1.Name = "dataGridViewX1";
+            this.dataGridViewX1.ReadOnly = true;
             this.dataGridViewX1.RowHeadersWidth = 30;
             this.dataGridViewX1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewX1.Size = new System.Drawing.Size(980, 400);
@@ -413,6 +414,7 @@
             this.G_SOHOSO.Frozen = true;
             this.G_SOHOSO.HeaderText = "Số Hồ Sơ";
             this.G_SOHOSO.Name = "G_SOHOSO";
+            this.G_SOHOSO.ReadOnly = true;
             this.G_SOHOSO.Width = 130;
             // 
             // G_HoaDon
@@ -423,6 +425,7 @@
             this.G_HoaDon.Frozen = true;
             this.G_HoaDon.HeaderText = "Hóa Đơn";
             this.G_HoaDon.Name = "G_HoaDon";
+            this.G_HoaDon.ReadOnly = true;
             // 
             // G_HovaTen
             // 
@@ -430,6 +433,7 @@
             this.G_HovaTen.Frozen = true;
             this.G_HovaTen.HeaderText = "Họ và Tên";
             this.G_HovaTen.Name = "G_HovaTen";
+            this.G_HovaTen.ReadOnly = true;
             this.G_HovaTen.Width = 250;
             // 
             // G_DiaChi
@@ -437,6 +441,7 @@
             this.G_DiaChi.DataPropertyName = "DIACHI";
             this.G_DiaChi.HeaderText = "Đia Chỉ";
             this.G_DiaChi.Name = "G_DiaChi";
+            this.G_DiaChi.ReadOnly = true;
             this.G_DiaChi.Width = 350;
             // 
             // G_NgayDongTien
@@ -446,6 +451,7 @@
             this.G_NgayDongTien.DefaultCellStyle = dataGridViewCellStyle3;
             this.G_NgayDongTien.HeaderText = "Ngày Đóng Tiền";
             this.G_NgayDongTien.Name = "G_NgayDongTien";
+            this.G_NgayDongTien.ReadOnly = true;
             this.G_NgayDongTien.Width = 135;
             // 
             // G_TinhTrang
@@ -453,6 +459,7 @@
             this.G_TinhTrang.DataPropertyName = "GHICHU";
             this.G_TinhTrang.HeaderText = "Tình Trạng";
             this.G_TinhTrang.Name = "G_TinhTrang";
+            this.G_TinhTrang.ReadOnly = true;
             this.G_TinhTrang.Width = 300;
             // 
             // G_SoTien
@@ -463,6 +470,7 @@
             this.G_SoTien.DefaultCellStyle = dataGridViewCellStyle4;
             this.G_SoTien.HeaderText = "Số Tiền";
             this.G_SoTien.Name = "G_SoTien";
+            this.G_SoTien.ReadOnly = true;
             this.G_SoTien.Width = 110;
             // 
             // G_DienThoai
@@ -472,6 +480,7 @@
             this.G_DienThoai.DefaultCellStyle = dataGridViewCellStyle5;
             this.G_DienThoai.HeaderText = "Điện Thoại";
             this.G_DienThoai.Name = "G_DienThoai";
+            this.G_DienThoai.ReadOnly = true;
             this.G_DienThoai.Width = 110;
             // 
             // G_CoTL
@@ -481,6 +490,7 @@
             this.G_CoTL.DefaultCellStyle = dataGridViewCellStyle6;
             this.G_CoTL.HeaderText = "Cỡ TLK";
             this.G_CoTL.Name = "G_CoTL";
+            this.G_CoTL.ReadOnly = true;
             this.G_CoTL.Width = 90;
             // 
             // G_DANHBO

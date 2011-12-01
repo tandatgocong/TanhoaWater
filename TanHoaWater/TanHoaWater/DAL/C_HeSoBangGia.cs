@@ -30,5 +30,11 @@ namespace TanHoaWater.DAL
             }
             return false;
         }
+        public static BG_REPORT getReport()
+        {
+            var banggia = from hs in db.BG_REPORTs where hs.STT == 1 select hs;
+            return banggia.SingleOrDefault();
+        }
+        
     }
 }

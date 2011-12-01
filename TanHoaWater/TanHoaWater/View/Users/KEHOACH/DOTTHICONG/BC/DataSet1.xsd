@@ -7,29 +7,6 @@
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="TANHOA_WATERConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="TANHOA_WATERConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.TanHoaWater.Properties.Settings.GlobalReference.Default.TANHOA_WATERConnectionString" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="V_QUYETDINHTHICONGTableAdapter" GeneratorDataComponentClassName="V_QUYETDINHTHICONGTableAdapter" Name="V_QUYETDINHTHICONG" UserDataComponentName="V_QUYETDINHTHICONGTableAdapter">
-            <MainSource>
-              <DbSource ConnectionRef="TANHOA_WATERConnectionString (Settings)" DbObjectName="TANHOA_WATER.dbo.V_QUYETDINHTHICONG" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT MADOTTC, NGAYLAP, CTYTHICONG, TCSHD, TCNGAYKYHD, CTYTAILAP, TLSHD, TLNGAYKYHD FROM dbo.V_QUYETDINHTHICONG</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-            </MainSource>
-            <Mappings>
-              <Mapping SourceColumn="MADOTTC" DataSetColumn="MADOTTC" />
-              <Mapping SourceColumn="NGAYLAP" DataSetColumn="NGAYLAP" />
-              <Mapping SourceColumn="CTYTHICONG" DataSetColumn="CTYTHICONG" />
-              <Mapping SourceColumn="TCSHD" DataSetColumn="TCSHD" />
-              <Mapping SourceColumn="TCNGAYKYHD" DataSetColumn="TCNGAYKYHD" />
-              <Mapping SourceColumn="CTYTAILAP" DataSetColumn="CTYTAILAP" />
-              <Mapping SourceColumn="TLSHD" DataSetColumn="TLSHD" />
-              <Mapping SourceColumn="TLNGAYKYHD" DataSetColumn="TLNGAYKYHD" />
-            </Mappings>
-            <Sources />
-          </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="KH_TC_BAOCAOTableAdapter" GeneratorDataComponentClassName="KH_TC_BAOCAOTableAdapter" Name="KH_TC_BAOCAO" UserDataComponentName="KH_TC_BAOCAOTableAdapter">
             <MainSource>
               <DbSource ConnectionRef="TANHOA_WATERConnectionString (Settings)" DbObjectName="TANHOA_WATER.dbo.KH_TC_BAOCAO" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
@@ -84,6 +61,33 @@ SELECT ID, CVDUYET, NGUOIDUYET, CVKEHOACH, NGUOITL FROM KH_TC_BAOCAO WHERE (ID =
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="V_QUYETDINHTHICONGTableAdapter" GeneratorDataComponentClassName="V_QUYETDINHTHICONGTableAdapter" Name="V_QUYETDINHTHICONG" UserDataComponentName="V_QUYETDINHTHICONGTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TANHOA_WATERConnectionString (Settings)" DbObjectName="TANHOA_WATER.dbo.V_QUYETDINHTHICONG" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT MADOTTC, NGAYLAP, CTYTHICONG, TCSHD, TCNGAYKYHD, CTYTAILAP, TLSHD, TLNGAYKYHD, CTYGIAMSAT, GSSHD, GSNGAYKYHD, DONVIGS FROM dbo.V_QUYETDINHTHICONG</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="MADOTTC" DataSetColumn="MADOTTC" />
+              <Mapping SourceColumn="NGAYLAP" DataSetColumn="NGAYLAP" />
+              <Mapping SourceColumn="CTYTHICONG" DataSetColumn="CTYTHICONG" />
+              <Mapping SourceColumn="TCSHD" DataSetColumn="TCSHD" />
+              <Mapping SourceColumn="TCNGAYKYHD" DataSetColumn="TCNGAYKYHD" />
+              <Mapping SourceColumn="CTYTAILAP" DataSetColumn="CTYTAILAP" />
+              <Mapping SourceColumn="TLSHD" DataSetColumn="TLSHD" />
+              <Mapping SourceColumn="TLNGAYKYHD" DataSetColumn="TLNGAYKYHD" />
+              <Mapping SourceColumn="CTYGIAMSAT" DataSetColumn="CTYGIAMSAT" />
+              <Mapping SourceColumn="GSSHD" DataSetColumn="GSSHD" />
+              <Mapping SourceColumn="GSNGAYKYHD" DataSetColumn="GSNGAYKYHD" />
+              <Mapping SourceColumn="DONVIGS" DataSetColumn="DONVIGS" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -92,53 +96,6 @@ SELECT ID, CVDUYET, NGUOIDUYET, CVKEHOACH, NGUOITL FROM KH_TC_BAOCAO WHERE (ID =
   <xs:element name="DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet1" msprop:Generator_UserDSName="DataSet1">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="V_QUYETDINHTHICONG" msprop:Generator_TableClassName="V_QUYETDINHTHICONGDataTable" msprop:Generator_TableVarName="tableV_QUYETDINHTHICONG" msprop:Generator_TablePropName="V_QUYETDINHTHICONG" msprop:Generator_RowDeletingName="V_QUYETDINHTHICONGRowDeleting" msprop:Generator_UserTableName="V_QUYETDINHTHICONG" msprop:Generator_RowChangingName="V_QUYETDINHTHICONGRowChanging" msprop:Generator_RowEvHandlerName="V_QUYETDINHTHICONGRowChangeEventHandler" msprop:Generator_RowDeletedName="V_QUYETDINHTHICONGRowDeleted" msprop:Generator_RowEvArgName="V_QUYETDINHTHICONGRowChangeEvent" msprop:Generator_RowChangedName="V_QUYETDINHTHICONGRowChanged" msprop:Generator_RowClassName="V_QUYETDINHTHICONGRow">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="MADOTTC" msprop:Generator_ColumnVarNameInTable="columnMADOTTC" msprop:Generator_ColumnPropNameInRow="MADOTTC" msprop:Generator_ColumnPropNameInTable="MADOTTCColumn" msprop:Generator_UserColumnName="MADOTTC">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="250" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="NGAYLAP" msprop:Generator_ColumnVarNameInTable="columnNGAYLAP" msprop:Generator_ColumnPropNameInRow="NGAYLAP" msprop:Generator_ColumnPropNameInTable="NGAYLAPColumn" msprop:Generator_UserColumnName="NGAYLAP" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="CTYTHICONG" msprop:Generator_ColumnVarNameInTable="columnCTYTHICONG" msprop:Generator_ColumnPropNameInRow="CTYTHICONG" msprop:Generator_ColumnPropNameInTable="CTYTHICONGColumn" msprop:Generator_UserColumnName="CTYTHICONG" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="2147483647" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="TCSHD" msprop:Generator_ColumnVarNameInTable="columnTCSHD" msprop:Generator_ColumnPropNameInRow="TCSHD" msprop:Generator_ColumnPropNameInTable="TCSHDColumn" msprop:Generator_UserColumnName="TCSHD" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="2147483647" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="TCNGAYKYHD" msprop:Generator_ColumnVarNameInTable="columnTCNGAYKYHD" msprop:Generator_ColumnPropNameInRow="TCNGAYKYHD" msprop:Generator_ColumnPropNameInTable="TCNGAYKYHDColumn" msprop:Generator_UserColumnName="TCNGAYKYHD" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="CTYTAILAP" msprop:Generator_ColumnVarNameInTable="columnCTYTAILAP" msprop:Generator_ColumnPropNameInRow="CTYTAILAP" msprop:Generator_ColumnPropNameInTable="CTYTAILAPColumn" msprop:Generator_UserColumnName="CTYTAILAP" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="2147483647" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="TLSHD" msprop:Generator_ColumnVarNameInTable="columnTLSHD" msprop:Generator_ColumnPropNameInRow="TLSHD" msprop:Generator_ColumnPropNameInTable="TLSHDColumn" msprop:Generator_UserColumnName="TLSHD" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="2147483647" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="TLNGAYKYHD" msprop:Generator_ColumnVarNameInTable="columnTLNGAYKYHD" msprop:Generator_ColumnPropNameInRow="TLNGAYKYHD" msprop:Generator_ColumnPropNameInTable="TLNGAYKYHDColumn" msprop:Generator_UserColumnName="TLNGAYKYHD" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="DONVIGIAMSAT" msprop:Generator_ColumnVarNameInTable="columnDONVIGIAMSAT" msprop:Generator_ColumnPropNameInRow="DONVIGIAMSAT" msprop:Generator_ColumnPropNameInTable="DONVIGIAMSATColumn" msprop:Generator_UserColumnName="DONVIGIAMSAT" type="xs:string" minOccurs="0" />
-              <xs:element name="NGAYKHOICONG" msprop:Generator_ColumnVarNameInTable="columnNGAYKHOICONG" msprop:Generator_ColumnPropNameInRow="NGAYKHOICONG" msprop:Generator_ColumnPropNameInTable="NGAYKHOICONGColumn" msprop:Generator_UserColumnName="NGAYKHOICONG" type="xs:string" minOccurs="0" />
-              <xs:element name="NGAYHOANTAT" msprop:Generator_ColumnVarNameInTable="columnNGAYHOANTAT" msprop:Generator_ColumnPropNameInRow="NGAYHOANTAT" msprop:Generator_ColumnPropNameInTable="NGAYHOANTATColumn" msprop:Generator_UserColumnName="NGAYHOANTAT" type="xs:string" minOccurs="0" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
         <xs:element name="KH_TC_BAOCAO" msprop:Generator_TableClassName="KH_TC_BAOCAODataTable" msprop:Generator_TableVarName="tableKH_TC_BAOCAO" msprop:Generator_TablePropName="KH_TC_BAOCAO" msprop:Generator_RowDeletingName="KH_TC_BAOCAORowDeleting" msprop:Generator_UserTableName="KH_TC_BAOCAO" msprop:Generator_RowChangingName="KH_TC_BAOCAORowChanging" msprop:Generator_RowEvHandlerName="KH_TC_BAOCAORowChangeEventHandler" msprop:Generator_RowDeletedName="KH_TC_BAOCAORowDeleted" msprop:Generator_RowEvArgName="KH_TC_BAOCAORowChangeEvent" msprop:Generator_RowChangedName="KH_TC_BAOCAORowChanged" msprop:Generator_RowClassName="KH_TC_BAOCAORow">
           <xs:complexType>
             <xs:sequence>
@@ -174,15 +131,101 @@ SELECT ID, CVDUYET, NGUOIDUYET, CVKEHOACH, NGUOITL FROM KH_TC_BAOCAO WHERE (ID =
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="V_QUYETDINHTHICONG" msprop:Generator_TableClassName="V_QUYETDINHTHICONGDataTable" msprop:Generator_TableVarName="tableV_QUYETDINHTHICONG" msprop:Generator_TablePropName="V_QUYETDINHTHICONG" msprop:Generator_RowDeletingName="V_QUYETDINHTHICONGRowDeleting" msprop:Generator_UserTableName="V_QUYETDINHTHICONG" msprop:Generator_RowChangingName="V_QUYETDINHTHICONGRowChanging" msprop:Generator_RowEvHandlerName="V_QUYETDINHTHICONGRowChangeEventHandler" msprop:Generator_RowDeletedName="V_QUYETDINHTHICONGRowDeleted" msprop:Generator_RowEvArgName="V_QUYETDINHTHICONGRowChangeEvent" msprop:Generator_RowChangedName="V_QUYETDINHTHICONGRowChanged" msprop:Generator_RowClassName="V_QUYETDINHTHICONGRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MADOTTC" msprop:Generator_ColumnVarNameInTable="columnMADOTTC" msprop:Generator_ColumnPropNameInRow="MADOTTC" msprop:Generator_ColumnPropNameInTable="MADOTTCColumn" msprop:Generator_UserColumnName="MADOTTC">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NGAYLAP" msprop:Generator_ColumnVarNameInTable="columnNGAYLAP" msprop:Generator_ColumnPropNameInRow="NGAYLAP" msprop:Generator_ColumnPropNameInTable="NGAYLAPColumn" msprop:Generator_UserColumnName="NGAYLAP" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="CTYTHICONG" msprop:Generator_ColumnVarNameInTable="columnCTYTHICONG" msprop:Generator_ColumnPropNameInRow="CTYTHICONG" msprop:Generator_ColumnPropNameInTable="CTYTHICONGColumn" msprop:Generator_UserColumnName="CTYTHICONG" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TCSHD" msprop:Generator_ColumnVarNameInTable="columnTCSHD" msprop:Generator_ColumnPropNameInRow="TCSHD" msprop:Generator_ColumnPropNameInTable="TCSHDColumn" msprop:Generator_UserColumnName="TCSHD" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TCNGAYKYHD" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTCNGAYKYHD" msprop:Generator_ColumnPropNameInRow="TCNGAYKYHD" msprop:Generator_ColumnPropNameInTable="TCNGAYKYHDColumn" msprop:Generator_UserColumnName="TCNGAYKYHD" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CTYTAILAP" msprop:Generator_ColumnVarNameInTable="columnCTYTAILAP" msprop:Generator_ColumnPropNameInRow="CTYTAILAP" msprop:Generator_ColumnPropNameInTable="CTYTAILAPColumn" msprop:Generator_UserColumnName="CTYTAILAP" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TLSHD" msprop:Generator_ColumnVarNameInTable="columnTLSHD" msprop:Generator_ColumnPropNameInRow="TLSHD" msprop:Generator_ColumnPropNameInTable="TLSHDColumn" msprop:Generator_UserColumnName="TLSHD" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TLNGAYKYHD" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTLNGAYKYHD" msprop:Generator_ColumnPropNameInRow="TLNGAYKYHD" msprop:Generator_ColumnPropNameInTable="TLNGAYKYHDColumn" msprop:Generator_UserColumnName="TLNGAYKYHD" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CTYGIAMSAT" msprop:Generator_ColumnVarNameInTable="columnCTYGIAMSAT" msprop:Generator_ColumnPropNameInRow="CTYGIAMSAT" msprop:Generator_ColumnPropNameInTable="CTYGIAMSATColumn" msprop:Generator_UserColumnName="CTYGIAMSAT" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="GSSHD" msprop:Generator_ColumnVarNameInTable="columnGSSHD" msprop:Generator_ColumnPropNameInRow="GSSHD" msprop:Generator_ColumnPropNameInTable="GSSHDColumn" msprop:Generator_UserColumnName="GSSHD" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="GSNGAYKYHD" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnGSNGAYKYHD" msprop:Generator_ColumnPropNameInRow="GSNGAYKYHD" msprop:Generator_ColumnPropNameInTable="GSNGAYKYHDColumn" msprop:Generator_UserColumnName="GSNGAYKYHD" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DONVIGS" msprop:Generator_ColumnVarNameInTable="columnDONVIGS" msprop:Generator_ColumnPropNameInRow="DONVIGS" msprop:Generator_ColumnPropNameInTable="DONVIGSColumn" msprop:Generator_UserColumnName="DONVIGS" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NGAYTHICONG" msprop:Generator_ColumnVarNameInTable="columnNGAYTHICONG" msprop:Generator_ColumnPropNameInRow="NGAYTHICONG" msprop:Generator_ColumnPropNameInTable="NGAYTHICONGColumn" msprop:Generator_UserColumnName="NGAYTHICONG" type="xs:string" minOccurs="0" />
+              <xs:element name="NGAYHOANTAT" msprop:Generator_ColumnVarNameInTable="columnNGAYHOANTAT" msprop:Generator_ColumnPropNameInRow="NGAYHOANTAT" msprop:Generator_ColumnPropNameInTable="NGAYHOANTATColumn" msprop:Generator_UserColumnName="NGAYHOANTAT" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:V_QUYETDINHTHICONG" />
-      <xs:field xpath="mstns:MADOTTC" />
-    </xs:unique>
-    <xs:unique name="KH_TC_BAOCAO_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:KH_TC_BAOCAO" />
       <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="V_QUYETDINHTHICONG_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:V_QUYETDINHTHICONG" />
+      <xs:field xpath="mstns:MADOTTC" />
     </xs:unique>
   </xs:element>
 </xs:schema>
