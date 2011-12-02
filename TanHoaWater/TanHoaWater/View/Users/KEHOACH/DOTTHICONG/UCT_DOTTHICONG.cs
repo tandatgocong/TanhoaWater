@@ -498,18 +498,34 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
 
         private void txtSoLuong_Leave(object sender, EventArgs e)
         {
-            this.txtTon.Text = (int.Parse(txtSoHoSo.Text) - int.Parse(txtSoLuong.Text)) + "";
+            try
+            {
+                this.txtTon.Text = (int.Parse(txtSoHoSo.Text) - int.Parse(txtSoLuong.Text)) + "";
+            }
+            catch (Exception)
+            {
+                
+            }
+            
         }
 
         private void btCapNhat_Click(object sender, EventArgs e)
         {
+            try
+            {
+                KH_DOTTHICONG dottc = DAL.C_KH_DotThiCong.findByMadot(this.txtSodotTC.Text);
+                if (dottc != null)
+                {
+                    UpdateDot(dottc);
+                }
 
-            KH_DOTTHICONG dottc = DAL.C_KH_DotThiCong.findByMadot(this.txtSodotTC.Text);
-            if (dottc != null) {
-                UpdateDot(dottc);
+                this.txtSodotTC.ReadOnly = true;
+            }
+            catch (Exception ex)
+            {
+                log.Error("Loi "+ ex.Message);
             }
 
-            this.txtSodotTC.ReadOnly = true;
         }
 
         private void txtSearchDotTC_Enter(object sender, EventArgs e)

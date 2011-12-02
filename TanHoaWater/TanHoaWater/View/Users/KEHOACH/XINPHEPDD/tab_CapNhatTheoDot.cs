@@ -135,12 +135,13 @@ namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
         {
             try
             {
+
                 if (gridXiPhepDD.CurrentCell.OwningColumn.Name == "thaotac")
                 {
                     string _shs = gridXiPhepDD.Rows[gridXiPhepDD.CurrentRow.Index].Cells["gridMaHS"].Value + "";
                     if (MessageBox.Show(this, "Có Muốn Hủy Hồ Sơ " + _shs + " Không ?", "..: Thông Báo :..", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        DAL.C_KH_HoSoKhachHang.Delete(_shs);
+                        DAL.C_KH_HoSoKhachHang.HuyDaoDuong(_shs);
                         loadDataGrid(this.cbMaDot.Text);
                     }
                 }

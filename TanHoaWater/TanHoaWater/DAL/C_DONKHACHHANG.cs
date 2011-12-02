@@ -552,7 +552,7 @@ namespace TanHoaWater.DAL
                 if (donkh != null)
                 {
                     donkh.SOHO = soho;
-                    donkh.HOTEN = donkh.HOTEN + " ( ĐD " + soho + " Hộ) ";
+                    donkh.HOTEN = donkh.HOTEN + " (ĐD " + soho + " Hộ)";
                     donkh.LOAIKH = "TT";
                 }
                 db.SubmitChanges();

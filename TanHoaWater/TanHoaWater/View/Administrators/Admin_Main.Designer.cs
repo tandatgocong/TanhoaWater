@@ -30,14 +30,19 @@
         {
             this.adminPanel = new System.Windows.Forms.SplitContainer();
             this.advTree1 = new DevComponents.AdvTree.AdvTree();
-            this.node1 = new DevComponents.AdvTree.Node();
-            this.users = new DevComponents.AdvTree.Node();
-            this.node2 = new DevComponents.AdvTree.Node();
             this.nodeConnector1 = new DevComponents.AdvTree.NodeConnector();
             this.elementStyle1 = new DevComponents.DotNetBar.ElementStyle();
             this.elementStyle4 = new DevComponents.DotNetBar.ElementStyle();
             this.elementStyle3 = new DevComponents.DotNetBar.ElementStyle();
             this.elementStyle2 = new DevComponents.DotNetBar.ElementStyle();
+            this.node1 = new DevComponents.AdvTree.Node();
+            this.BanGDPND = new DevComponents.AdvTree.Node();
+            this.users = new DevComponents.AdvTree.Node();
+            this.node2 = new DevComponents.AdvTree.Node();
+            this.node4 = new DevComponents.AdvTree.Node();
+            this.node5 = new DevComponents.AdvTree.Node();
+            this.node6 = new DevComponents.AdvTree.Node();
+            this.node7 = new DevComponents.AdvTree.Node();
             this.adminPanel.Panel1.SuspendLayout();
             this.adminPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.advTree1)).BeginInit();
@@ -84,32 +89,6 @@
             this.advTree1.TabIndex = 0;
             this.advTree1.Text = "advTree1";
             this.advTree1.Click += new System.EventHandler(this.advTree1_Click);
-            // 
-            // node1
-            // 
-            this.node1.Expanded = true;
-            this.node1.Image = global::TanHoaWater.Properties.Resources.home;
-            this.node1.Name = "node1";
-            this.node1.Nodes.AddRange(new DevComponents.AdvTree.Node[] {
-            this.users,
-            this.node2});
-            this.node1.Text = "QUẢN TRỊ                        ";
-            // 
-            // users
-            // 
-            this.users.Expanded = true;
-            this.users.Image = global::TanHoaWater.Properties.Resources.users1;
-            this.users.Name = "users";
-            this.users.Text = "Người Dùng                 ";
-            this.users.NodeClick += new System.EventHandler(this.users_NodeClick_1);
-            // 
-            // node2
-            // 
-            this.node2.Expanded = true;
-            this.node2.Image = global::TanHoaWater.Properties.Resources.Icon_maps;
-            this.node2.Name = "node2";
-            this.node2.Text = "Hệ Thống Tên Đường";
-            this.node2.NodeClick += new System.EventHandler(this.node2_NodeClick);
             // 
             // nodeConnector1
             // 
@@ -189,6 +168,69 @@
             this.elementStyle2.PaddingTop = 1;
             this.elementStyle2.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(84)))), ((int)(((byte)(115)))));
             // 
+            // node1
+            // 
+            this.node1.Expanded = true;
+            this.node1.Image = global::TanHoaWater.Properties.Resources.home;
+            this.node1.Name = "node1";
+            this.node1.Nodes.AddRange(new DevComponents.AdvTree.Node[] {
+            this.BanGDPND,
+            this.users,
+            this.node2});
+            this.node1.Text = "QUẢN TRỊ                        ";
+            // 
+            // BanGDPND
+            // 
+            this.BanGDPND.Expanded = true;
+            this.BanGDPND.Image = global::TanHoaWater.Properties.Resources.User1;
+            this.BanGDPND.Name = "BanGDPND";
+            this.BanGDPND.Text = "Ban Giám Đốc - PNĐ";
+            this.BanGDPND.NodeClick += new System.EventHandler(this.BanGDPND_NodeClick);
+            // 
+            // users
+            // 
+            this.users.Expanded = true;
+            this.users.Image = global::TanHoaWater.Properties.Resources.users1;
+            this.users.Name = "users";
+            this.users.Text = "Người Dùng                 ";
+            this.users.NodeClick += new System.EventHandler(this.users_NodeClick_1);
+            // 
+            // node2
+            // 
+            this.node2.Expanded = true;
+            this.node2.Image = global::TanHoaWater.Properties.Resources.Icon_maps;
+            this.node2.Name = "node2";
+            this.node2.Text = "Hệ Thống Tên Đường";
+            this.node2.NodeClick += new System.EventHandler(this.node2_NodeClick);
+            // 
+            // node4
+            // 
+            this.node4.Expanded = true;
+            this.node4.Image = global::TanHoaWater.Properties.Resources.users1;
+            this.node4.Name = "node4";
+            this.node4.Text = "Người Dùng                 ";
+            // 
+            // node5
+            // 
+            this.node5.Expanded = true;
+            this.node5.Image = global::TanHoaWater.Properties.Resources.users1;
+            this.node5.Name = "node5";
+            this.node5.Text = "Người Dùng                 ";
+            // 
+            // node6
+            // 
+            this.node6.Expanded = true;
+            this.node6.Image = global::TanHoaWater.Properties.Resources.users1;
+            this.node6.Name = "node6";
+            this.node6.Text = "Người Dùng                 ";
+            // 
+            // node7
+            // 
+            this.node7.Expanded = true;
+            this.node7.Image = global::TanHoaWater.Properties.Resources.users1;
+            this.node7.Name = "node7";
+            this.node7.Text = "Người Dùng                 ";
+            // 
             // Admin_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -215,6 +257,11 @@
         private DevComponents.DotNetBar.ElementStyle elementStyle3;
         private DevComponents.DotNetBar.ElementStyle elementStyle2;
         private DevComponents.AdvTree.Node node2;
+        private DevComponents.AdvTree.Node BanGDPND;
+        private DevComponents.AdvTree.Node node4;
+        private DevComponents.AdvTree.Node node5;
+        private DevComponents.AdvTree.Node node6;
+        private DevComponents.AdvTree.Node node7;
 
 
     }
