@@ -88,6 +88,12 @@
             // panelEx2
             // 
             this.panelEx2.CanvasColor = System.Drawing.SystemColors.Control;
+            this.panelEx2.Controls.Add(this.taix_diachi);
+            this.panelEx2.Controls.Add(this.taix_dotnhandon);
+            this.panelEx2.Controls.Add(this.taix_hoten);
+            this.panelEx2.Controls.Add(this.taix_sodt);
+            this.panelEx2.Controls.Add(this.taix_loaikh);
+            this.panelEx2.Controls.Add(this.taix_shs);
             this.panelEx2.Controls.Add(this.refresh);
             this.panelEx2.Controls.Add(this.groupBox1);
             this.panelEx2.Controls.Add(this.label25);
@@ -96,22 +102,16 @@
             this.panelEx2.Controls.Add(this.label2);
             this.panelEx2.Controls.Add(this.label3);
             this.panelEx2.Controls.Add(this.label4);
-            this.panelEx2.Controls.Add(this.taix_diachi);
             this.panelEx2.Controls.Add(this.label16);
             this.panelEx2.Controls.Add(this.taix_noiduntrongai);
-            this.panelEx2.Controls.Add(this.taix_dotnhandon);
             this.panelEx2.Controls.Add(this.label6);
-            this.panelEx2.Controls.Add(this.taix_hoten);
             this.panelEx2.Controls.Add(this.taix_ngaydaottk);
             this.panelEx2.Controls.Add(this.taix_sodovien);
             this.panelEx2.Controls.Add(this.taix_ghichu);
             this.panelEx2.Controls.Add(this.label18);
-            this.panelEx2.Controls.Add(this.taix_sodt);
             this.panelEx2.Controls.Add(this.update_TaiXet);
             this.panelEx2.Controls.Add(this.taix_loaihs);
             this.panelEx2.Controls.Add(this.label19);
-            this.panelEx2.Controls.Add(this.taix_loaikh);
-            this.panelEx2.Controls.Add(this.taix_shs);
             this.panelEx2.Controls.Add(this.label20);
             this.panelEx2.Controls.Add(this.label21);
             this.panelEx2.Controls.Add(this.label22);
@@ -325,12 +325,12 @@
             // 
             // 
             this.taix_diachi.Border.Class = "TextBoxBorder";
-            this.taix_diachi.Location = new System.Drawing.Point(110, 116);
+            this.taix_diachi.Location = new System.Drawing.Point(97, 116);
             this.taix_diachi.Margin = new System.Windows.Forms.Padding(4);
             this.taix_diachi.Multiline = true;
             this.taix_diachi.Name = "taix_diachi";
             this.taix_diachi.ReadOnly = true;
-            this.taix_diachi.Size = new System.Drawing.Size(323, 25);
+            this.taix_diachi.Size = new System.Drawing.Size(336, 25);
             this.taix_diachi.TabIndex = 13;
             // 
             // label16
@@ -359,12 +359,12 @@
             // 
             // 
             this.taix_dotnhandon.Border.Class = "TextBoxBorder";
-            this.taix_dotnhandon.Location = new System.Drawing.Point(110, 43);
+            this.taix_dotnhandon.Location = new System.Drawing.Point(97, 43);
             this.taix_dotnhandon.Margin = new System.Windows.Forms.Padding(4);
             this.taix_dotnhandon.Multiline = true;
             this.taix_dotnhandon.Name = "taix_dotnhandon";
             this.taix_dotnhandon.ReadOnly = true;
-            this.taix_dotnhandon.Size = new System.Drawing.Size(321, 25);
+            this.taix_dotnhandon.Size = new System.Drawing.Size(334, 25);
             this.taix_dotnhandon.TabIndex = 119;
             // 
             // label6
@@ -383,12 +383,12 @@
             // 
             // 
             this.taix_hoten.Border.Class = "TextBoxBorder";
-            this.taix_hoten.Location = new System.Drawing.Point(110, 80);
+            this.taix_hoten.Location = new System.Drawing.Point(97, 80);
             this.taix_hoten.Margin = new System.Windows.Forms.Padding(4);
             this.taix_hoten.Multiline = true;
             this.taix_hoten.Name = "taix_hoten";
             this.taix_hoten.ReadOnly = true;
-            this.taix_hoten.Size = new System.Drawing.Size(323, 25);
+            this.taix_hoten.Size = new System.Drawing.Size(336, 25);
             this.taix_hoten.TabIndex = 11;
             // 
             // taix_ngaydaottk
@@ -449,12 +449,12 @@
             // 
             // 
             this.taix_sodt.Border.Class = "TextBoxBorder";
-            this.taix_sodt.Location = new System.Drawing.Point(108, 149);
+            this.taix_sodt.Location = new System.Drawing.Point(95, 149);
             this.taix_sodt.Margin = new System.Windows.Forms.Padding(4);
             this.taix_sodt.Multiline = true;
             this.taix_sodt.Name = "taix_sodt";
             this.taix_sodt.ReadOnly = true;
-            this.taix_sodt.Size = new System.Drawing.Size(325, 25);
+            this.taix_sodt.Size = new System.Drawing.Size(338, 25);
             this.taix_sodt.TabIndex = 117;
             // 
             // update_TaiXet
@@ -503,22 +503,22 @@
             // 
             // 
             this.taix_loaikh.Border.Class = "TextBoxBorder";
-            this.taix_loaikh.Location = new System.Drawing.Point(108, 182);
+            this.taix_loaikh.Location = new System.Drawing.Point(95, 182);
             this.taix_loaikh.Margin = new System.Windows.Forms.Padding(4);
             this.taix_loaikh.Multiline = true;
             this.taix_loaikh.Name = "taix_loaikh";
             this.taix_loaikh.ReadOnly = true;
-            this.taix_loaikh.Size = new System.Drawing.Size(325, 25);
+            this.taix_loaikh.Size = new System.Drawing.Size(338, 25);
             this.taix_loaikh.TabIndex = 115;
             // 
             // taix_shs
             // 
             this.taix_shs.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.taix_shs.Location = new System.Drawing.Point(110, 10);
+            this.taix_shs.Location = new System.Drawing.Point(97, 10);
             this.taix_shs.Margin = new System.Windows.Forms.Padding(4);
             this.taix_shs.Name = "taix_shs";
             this.taix_shs.PromptChar = ' ';
-            this.taix_shs.Size = new System.Drawing.Size(86, 24);
+            this.taix_shs.Size = new System.Drawing.Size(99, 24);
             this.taix_shs.TabIndex = 8;
             this.taix_shs.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.taix_shs_KeyPress);
             // 

@@ -136,11 +136,13 @@ namespace TanHoaWater
         {
             if ("AD".Equals(DAL.C_USERS._roles.Trim()))
             {
+                menuQuanTri.Visible = true;
                 this.PanelContent.Controls.Clear();
                 this.PanelContent.Controls.Add(new Admin_Main());
             }
             else if ("US".Equals(DAL.C_USERS._roles.Trim()))
             {
+                menuQuanTri.Visible = false;
                 if ("TTK".Equals(DAL.C_USERS._maphong.Trim()))
                 {
                     this.menuToThietKe.Visible = true;
@@ -277,6 +279,7 @@ namespace TanHoaWater
             this.menuToThietKe.Visible = false;
             this.menuQLDHNuoc.Visible = false;
             this.menuKHVT.Visible = false;
+            menuQuanTri.Visible = false;
             iconMenuPanel.Controls.Clear();
             DAL.C_USERS._fullName = null;
             DAL.C_USERS._roles = null;
@@ -358,14 +361,14 @@ namespace TanHoaWater
         private void hoantatThietKe_Click(object sender, EventArgs e)
         {
             this.PanelContent.Controls.Clear();
-           // this.PanelContent.Controls.Add(new tab_HoanTatTK());
+            this.PanelContent.Controls.Add(new tab_HoanTatTK());
             this.menuToThietKe.Select();
         }
 
         private void btHoanTatTK_Click(object sender, EventArgs e)
         {
             this.PanelContent.Controls.Clear();
-           // this.PanelContent.Controls.Add(new tab_HoanTatTK());
+            this.PanelContent.Controls.Add(new tab_HoanTatTK());
             this.menuToThietKe.Select();
         }
 
@@ -439,6 +442,13 @@ namespace TanHoaWater
         {
             frm_ChangePassword chang = new frm_ChangePassword();
             chang.ShowDialog();
+        }
+
+        private void menuQuanTri_Click(object sender, EventArgs e)
+        {
+            menuQuanTri.Visible = true;
+            this.PanelContent.Controls.Clear();
+            this.PanelContent.Controls.Add(new Admin_Main());
         }
     }
 }

@@ -50,7 +50,7 @@ namespace TanHoaWater.DAL
         {
             TanHoaDataContext db = new TanHoaDataContext();
             db.Connection.Open();
-            string sql = " SELECT SHS,HOTEN, (SONHA +' '+ DUONG +', P.'+p.TENPHUONG+', Q.'+ q.TENQUAN ) as 'DIACHI',NGAYNHAN= CONVERT(VARCHAR(10),NGAYNHAN,103), lkh.TENLOAI as 'LOAIDON' ";
+            string sql = " SELECT SOHOSO,SHS,HOTEN, (SONHA +' '+ DUONG +', P.'+p.TENPHUONG+', Q.'+ q.TENQUAN ) as 'DIACHI',NGAYNHAN= CONVERT(VARCHAR(10),NGAYNHAN,103), lkh.TENLOAI as 'LOAIDON' ";
             sql += " FROM DON_KHACHHANG kh,QUAN q,PHUONG p, LOAI_KHACHHANG lkh ";
             sql += " WHERE  kh.QUAN = q.MAQUAN AND q.MAQUAN=p.MAQUAN AND kh.PHUONG=p.MAPHUONG AND lkh.MALOAI=kh.LOAIKH";
             sql += " AND MADOT='" + dot + "'";
@@ -69,11 +69,38 @@ namespace TanHoaWater.DAL
             var data = from don in db.DON_KHACHHANGs where don.SHS == sohoso select don;
             return data.SingleOrDefault();
         }
+        public static DON_KHACHHANG findBySHS(string shs)
+        {
+            TanHoaDataContext db = new TanHoaDataContext();
+            var data = from don in db.DON_KHACHHANGs where don.SHS == shs select don;
+            return data.SingleOrDefault();
+        }
+        public static int checkHoSoTonTai(string dot)
+        {
+            TanHoaDataContext db = new TanHoaDataContext();
+            SqlConnection conn = new SqlConnection(db.Connection.ConnectionString);
+            conn.Open();
+            string sql = " SELECT COUNT(*) ";
+            sql += " FROM DON_KHACHHANG kh ";
+            sql += " WHERE  SHS='" + dot + "'";
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            int result = Convert.ToInt32(cmd.ExecuteScalar());
+            conn.Close();
+            return result;
+        }
+
+        
         public static DON_KHACHHANG searchTimKiemDon(string sohoso)
         {
             TanHoaDataContext db = new TanHoaDataContext();
-            var data = from don in db.DON_KHACHHANGs where don.SHS == sohoso || don.HOSOCHA == sohoso select don;
-            return data.SingleOrDefault();
+            var data = from don in db.DON_KHACHHANGs where don.SHS == sohoso select don;
+            DON_KHACHHANG donkh =  data.SingleOrDefault();
+            if (donkh.HOSOCHA != null)
+            {
+                var hosocha = from don in db.DON_KHACHHANGs where don.SHS == donkh.HOSOCHA select don;
+                return hosocha.SingleOrDefault();
+            }
+            return donkh;
         }
         
         public static DON_KHACHHANG findBySOHOSO_(string sohoso)
@@ -224,7 +251,7 @@ namespace TanHoaWater.DAL
             TanHoaDataContext db = new TanHoaDataContext();
             string sql = " SELECT SONHA = replace(SONHA,' ',''), DUONG = replace(DUONG,' ',''),PHUONG,QUAN ";
             sql += " FROM DON_KHACHHANG ";
-            sql += " WHERE MADOT='" + dot + "' AND LOAIHOSO='" + loaiHS + "' AND SONHA='" + sonha + "' AND DUONG='" + duong + "' AND PHUONG='" + phuong + "' AND QUAN='" + quan + "' ";
+            sql += " WHERE LOAIHOSO='" + loaiHS + "' AND SONHA=N'" + sonha + "' AND DUONG=N'" + duong + "' AND PHUONG='" + phuong + "' AND QUAN='" + quan + "' ";
             SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             DataTable table = new DataTable();
             adapter.Fill(table);

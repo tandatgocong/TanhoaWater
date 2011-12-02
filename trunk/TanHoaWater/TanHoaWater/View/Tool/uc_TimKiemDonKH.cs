@@ -107,7 +107,7 @@ namespace TanHoaWater.View.Tool
                                                 }
                                                 else
                                                 {
-                                                    title = "HỒ SƠ CHƯA LÊN ĐỢT ĐÀO ĐƯỜNG";
+                                                    title = "HỒ SƠ CHƯA LÊN ĐỢT <br/> ĐÀO ĐƯỜNG";
                                                 }
                                                 if (hoskh.MADOTTC != null)
                                                 {
@@ -118,7 +118,7 @@ namespace TanHoaWater.View.Tool
                                                 }
                                                 else
                                                 {
-                                                    title = "HỒ SƠ CHƯA LÊN ĐỢT THI CÔNG";
+                                                    title = "HỒ SƠ CHƯA LÊN ĐỢT <br/> THI CÔNG";
                                                 }
                                                 NgayThiCong.Text = hoskh.NGAYTHICONG != null ? Utilities.DateToString.NgayVNVN(hoskh.NGAYTHICONG.Value) : "";
                                                 NgayHoanCong.Text = hoskh.NGAYHOANCONG != null ? Utilities.DateToString.NgayVNVN(hoskh.NGAYHOANCONG.Value) : "";
@@ -129,6 +129,9 @@ namespace TanHoaWater.View.Tool
                                                     title = "HỒ SƠ TRỞ NGẠI THI CÔNG";
                                                     noidungtrongai = hoskh.NOIDUNGTN;
                                                 }
+                                            }
+                                            else {
+                                                title = "HỒ SƠ CHƯA LÊN ĐỢT <br/> ĐÀO ĐƯỜNG";
                                             }
                                         }
                                         else
@@ -189,9 +192,9 @@ namespace TanHoaWater.View.Tool
                         this.lbresult.Text = title;
                     }
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-
+                    log.Error("Tim Bien Nhan Loi" + ex.Message);
                 }
             }   
         }
@@ -265,7 +268,8 @@ namespace TanHoaWater.View.Tool
                                     title = "HỒ SƠ TRỞ NGẠI THIẾT KẾ";
                                     noidungtrongai = ttk.NOIDUNGTRONGAI;
                                 }
-                                else {
+                                else
+                                {
 
                                     BG_KHOILUONGXDCB xdcb = DAL.C_KhoiLuongXDCB.findBySHS(donkh.SHS);
                                     if (xdcb != null)
@@ -276,17 +280,18 @@ namespace TanHoaWater.View.Tool
                                         NgayHoanTat.Text = ttk.NGAYHOANTATTK != null ? Utilities.DateToString.NgayVNVN(ttk.NGAYHOANTATTK.Value) : "";
                                         NgayTraHoSoKH.Text = ttk.NGAYTRAHS != null ? Utilities.DateToString.NgayVNVN(ttk.NGAYTRAHS.Value) : "";
                                         KH_HOSOKHACHHANG hoskh = DAL.C_KH_HoSoKhachHang.findBySHS(donkh.SHS);
-                                        if (hoskh !=null)
+                                        if (hoskh != null)
                                         {
-                                            if(hoskh.MADOTDD!=null){
+                                            if (hoskh.MADOTDD != null)
+                                            {
                                                 KH_XINPHEPDAODUONG xiphep = DAL.C_KH_XinPhepDD.finbyMaDot(hoskh.MADOTDD);
                                                 DotXinPhepDD.Text = xiphep.MADOT;
-                                                NgayXinPhepDD.Text = Utilities.DateToString.NgayVNVN(xiphep.NGAYLAP.Value) ;
+                                                NgayXinPhepDD.Text = Utilities.DateToString.NgayVNVN(xiphep.NGAYLAP.Value);
                                                 NgayCoPhep.Text = xiphep.NGAYCOPHEP != null ? Utilities.DateToString.NgayVNVN(xiphep.NGAYCOPHEP.Value) : "";
                                             }
                                             else
                                             {
-                                                title = "HỒ SƠ CHƯA LÊN ĐỢT ĐÀO ĐƯỜNG";
+                                                title = "HỒ SƠ CHƯA LÊN ĐỢT <br/> ĐÀO ĐƯỜNG";
                                             }
                                             if (hoskh.MADOTTC != null)
                                             {
@@ -295,20 +300,27 @@ namespace TanHoaWater.View.Tool
                                                 NgayLenDotTC.Text = Utilities.DateToString.NgayVNVN(dotc.NGAYLAP.Value);
 
                                             }
-                                            else {
-                                                title = "HỒ SƠ CHƯA LÊN ĐỢT THI CÔNG";
+                                            else
+                                            {
+                                                title = "HỒ SƠ CHƯA LÊN ĐỢT <br/> THI CÔNG";
                                             }
                                             NgayThiCong.Text = hoskh.NGAYTHICONG != null ? Utilities.DateToString.NgayVNVN(hoskh.NGAYTHICONG.Value) : "";
                                             NgayHoanCong.Text = hoskh.NGAYHOANCONG != null ? Utilities.DateToString.NgayVNVN(hoskh.NGAYHOANCONG.Value) : "";
                                             ChoDanhBo.Text = hoskh.DHN_NGAYCHOSODB != null ? Utilities.DateToString.NgayVNVN(hoskh.DHN_NGAYCHOSODB.Value) : "";
                                             title = "HỒ SƠ ĐÃ HOÀN CÔNG";
-                                            if (hoskh.TRONGAI == true) {
+                                            if (hoskh.TRONGAI == true)
+                                            {
                                                 title = "HỒ SƠ TRỞ NGẠI THI CÔNG";
                                                 noidungtrongai = hoskh.NOIDUNGTN;
                                             }
                                         }
+                                        else
+                                        {
+                                            title = "HỒ SƠ CHƯA LÊN ĐỢT <br/> ĐÀO ĐƯỜNG";
+                                        }
                                     }
-                                    else {
+                                    else
+                                    {
                                         title = "HỒ SƠ CHƯA CHẠY BẢNG GIÁ.";
                                     }
                                 }

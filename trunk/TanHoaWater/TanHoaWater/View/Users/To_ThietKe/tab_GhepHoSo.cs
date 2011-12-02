@@ -15,7 +15,6 @@ namespace TanHoaWater.View.Users.To_ThietKe
         public tab_GhepHoSo()
         {
             InitializeComponent();
-            this.txtSHS.Mask = DateTime.Now.Year.ToString().Substring(2) + "CCCCCC";
             init();
         }
         public void clear()

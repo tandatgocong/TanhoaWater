@@ -36,7 +36,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.reflectionLabel1 = new DevComponents.DotNetBar.Controls.ReflectionLabel();
             this.tabControl1 = new DevComponents.DotNetBar.TabControl();
             this.tabDanhSachDot = new DevComponents.DotNetBar.TabControlPanel();
             this.btCapNhatCoPhep = new DevComponents.DotNetBar.ButtonX();
@@ -75,7 +74,7 @@
             this.tabItem1 = new DevComponents.DotNetBar.TabItem(this.components);
             this.tabCapNhatDS = new DevComponents.DotNetBar.TabControlPanel();
             this.tabItem2 = new DevComponents.DotNetBar.TabItem(this.components);
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.reflectionLabel1 = new DevComponents.DotNetBar.Controls.ReflectionLabel();
             ((System.ComponentModel.ISupportInitialize)(this.tabControl1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabDanhSachDot.SuspendLayout();
@@ -86,19 +85,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateTimeSearch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.next)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // reflectionLabel1
-            // 
-            this.reflectionLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.reflectionLabel1.Location = new System.Drawing.Point(281, 4);
-            this.reflectionLabel1.Margin = new System.Windows.Forms.Padding(4);
-            this.reflectionLabel1.Name = "reflectionLabel1";
-            this.reflectionLabel1.Size = new System.Drawing.Size(686, 40);
-            this.reflectionLabel1.TabIndex = 668;
-            this.reflectionLabel1.Text = "<b><font size=\"+8\"><i></i><font color=\"#B02B2C\"> XIN PHÉP ĐÀO ĐƯỜNG</font></font>" +
-                "</b>";
             // 
             // tabControl1
             // 
@@ -170,8 +157,8 @@
             this.tabDanhSachDot.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(188)))), ((int)(((byte)(227)))));
             this.tabDanhSachDot.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
             this.tabDanhSachDot.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(165)))), ((int)(((byte)(199)))));
-            this.tabDanhSachDot.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right)
-                        | DevComponents.DotNetBar.eBorderSide.Bottom)));
+            this.tabDanhSachDot.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
+            | DevComponents.DotNetBar.eBorderSide.Bottom)));
             this.tabDanhSachDot.Style.GradientAngle = 90;
             this.tabDanhSachDot.TabIndex = 1;
             this.tabDanhSachDot.TabItem = this.tabItem1;
@@ -299,13 +286,14 @@
             this.buttonX1.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.buttonX1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonX1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.buttonX1.Location = new System.Drawing.Point(756, 379);
+            this.buttonX1.Location = new System.Drawing.Point(756, 477);
             this.buttonX1.Name = "buttonX1";
             this.buttonX1.Size = new System.Drawing.Size(175, 26);
             this.buttonX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
             this.buttonX1.TabIndex = 706;
             this.buttonX1.Text = "Thư Mời Đóng Tiền";
             this.buttonX1.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
+            this.buttonX1.Visible = false;
             // 
             // dataDanhSachDaoDuong
             // 
@@ -553,7 +541,7 @@
             this.btInDanhSachMienPhep.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btInDanhSachMienPhep.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btInDanhSachMienPhep.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btInDanhSachMienPhep.Location = new System.Drawing.Point(756, 347);
+            this.btInDanhSachMienPhep.Location = new System.Drawing.Point(756, 362);
             this.btInDanhSachMienPhep.Name = "btInDanhSachMienPhep";
             this.btInDanhSachMienPhep.Size = new System.Drawing.Size(175, 26);
             this.btInDanhSachMienPhep.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
@@ -567,7 +555,7 @@
             this.inDanhSachCoPhep.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.inDanhSachCoPhep.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.inDanhSachCoPhep.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.inDanhSachCoPhep.Location = new System.Drawing.Point(756, 314);
+            this.inDanhSachCoPhep.Location = new System.Drawing.Point(756, 329);
             this.inDanhSachCoPhep.Name = "inDanhSachCoPhep";
             this.inDanhSachCoPhep.Size = new System.Drawing.Size(175, 26);
             this.inDanhSachCoPhep.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
@@ -582,7 +570,7 @@
             this.huyDotXP.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.huyDotXP.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.huyDotXP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.huyDotXP.Location = new System.Drawing.Point(756, 411);
+            this.huyDotXP.Location = new System.Drawing.Point(756, 415);
             this.huyDotXP.Name = "huyDotXP";
             this.huyDotXP.Size = new System.Drawing.Size(175, 26);
             this.huyDotXP.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
@@ -597,7 +585,7 @@
             this.capnhatDSChoDot.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.capnhatDSChoDot.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.capnhatDSChoDot.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.capnhatDSChoDot.Location = new System.Drawing.Point(756, 282);
+            this.capnhatDSChoDot.Location = new System.Drawing.Point(756, 292);
             this.capnhatDSChoDot.Name = "capnhatDSChoDot";
             this.capnhatDSChoDot.Size = new System.Drawing.Size(175, 26);
             this.capnhatDSChoDot.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
@@ -740,8 +728,8 @@
             this.tabCapNhatDS.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(188)))), ((int)(((byte)(227)))));
             this.tabCapNhatDS.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
             this.tabCapNhatDS.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(165)))), ((int)(((byte)(199)))));
-            this.tabCapNhatDS.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right)
-                        | DevComponents.DotNetBar.eBorderSide.Bottom)));
+            this.tabCapNhatDS.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
+            | DevComponents.DotNetBar.eBorderSide.Bottom)));
             this.tabCapNhatDS.Style.GradientAngle = 90;
             this.tabCapNhatDS.TabIndex = 2;
             this.tabCapNhatDS.TabItem = this.tabItem2;
@@ -753,17 +741,24 @@
             this.tabItem2.Text = "Cập Nhật Danh Sách Theo Đợt";
             this.tabItem2.Click += new System.EventHandler(this.tabItem2_Click);
             // 
-            // errorProvider1
+            // reflectionLabel1
             // 
-            this.errorProvider1.ContainerControl = this;
+            this.reflectionLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reflectionLabel1.Location = new System.Drawing.Point(4, 2);
+            this.reflectionLabel1.Margin = new System.Windows.Forms.Padding(4);
+            this.reflectionLabel1.Name = "reflectionLabel1";
+            this.reflectionLabel1.ReflectionEnabled = false;
+            this.reflectionLabel1.Size = new System.Drawing.Size(393, 32);
+            this.reflectionLabel1.TabIndex = 670;
+            this.reflectionLabel1.Text = "<font color=\"#ED1C24\"><b><font size=\"+6\">\r\nXIN PHÉP ĐÀO ĐƯỜNG</font></b></font>";
             // 
             // UCT_XINPHEPDD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
-            this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.reflectionLabel1);
+            this.Controls.Add(this.tabControl1);
             this.Name = "UCT_XINPHEPDD";
             this.Size = new System.Drawing.Size(988, 638);
             ((System.ComponentModel.ISupportInitialize)(this.tabControl1)).EndInit();
@@ -778,14 +773,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateTimeSearch)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.next)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private DevComponents.DotNetBar.Controls.ReflectionLabel reflectionLabel1;
         private DevComponents.DotNetBar.TabControl tabControl1;
         private DevComponents.DotNetBar.TabControlPanel tabDanhSachDot;
         private DevComponents.DotNetBar.TabItem tabItem1;
@@ -818,12 +811,12 @@
         private DevComponents.DotNetBar.LabelX labelX4;
         private DevComponents.DotNetBar.LabelX labelX2;
         private DevComponents.DotNetBar.LabelX labelX1;
-        private System.Windows.Forms.ErrorProvider errorProvider1;
         private DevComponents.DotNetBar.ButtonX buttonX1;
         private DevComponents.DotNetBar.ButtonX btCapNhat;
         private DevComponents.Editors.DateTimeAdv.DateTimeInput dateNgayLap;
         private DevComponents.DotNetBar.ButtonX btCapNhatCoPhep;
         private DevComponents.Editors.DateTimeAdv.DateTimeInput dateNgayCoPhep;
         private DevComponents.DotNetBar.LabelX labelX5;
+        private DevComponents.DotNetBar.Controls.ReflectionLabel reflectionLabel1;
     }
 }

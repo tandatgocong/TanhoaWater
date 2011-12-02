@@ -17,6 +17,12 @@ namespace TanHoaWater.DAL
             var roles = from p in data.ROLEs select p;
             return roles.ToList();
         }
+        public static ROLE findByTenQuyen(string tenquyen)
+        {
+            TanHoaDataContext data = new TanHoaDataContext();
+            var roles = from p in data.ROLEs where p.ROLENAME== tenquyen select p;
+            return roles.SingleOrDefault();
+        }
         public static ArrayList comboxSearch()
         {
             TanHoaDataContext db = new TanHoaDataContext();

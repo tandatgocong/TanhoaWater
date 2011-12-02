@@ -92,8 +92,8 @@ namespace TanHoaWater.DAL
             string sql = " SELECT MADOT , NGAYLAPDON= CONVERT(VARCHAR(10),NGAYLAPDON,103), TENLOAI,";
             sql += " CASE WHEN CHUYENDON='False' THEN N'Chưa chuyển'  WHEN CHUYENDON='True' THEN N'Đã chuyển' ELSE N'Chuyển 1 phần'   END as 'CHUYEN'";
             sql += " FROM DOT_NHAN_DON dot, LOAI_HOSO loai";
-            sql += " WHERE loai.MALOAI = dot.LOAIDON";           
-            sql += " ORDER BY NGAYLAPDON DESC ";
+            sql += " WHERE loai.MALOAI = dot.LOAIDON";
+            sql += " ORDER BY dot.CREATEDATE DESC ";
             SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             DataTable table = new DataTable();
             adapter.Fill(table);
@@ -108,7 +108,7 @@ namespace TanHoaWater.DAL
             sql += " CASE WHEN CHUYENDON='False' THEN N'Chưa chuyển'  WHEN CHUYENDON='True' THEN N'Đã chuyển' ELSE N'Chuyển 1 phần'   END as 'CHUYEN'";
             sql += " FROM DOT_NHAN_DON dot, LOAI_HOSO loai";
             sql += " WHERE loai.MALOAI = dot.LOAIDON";
-            sql += " ORDER BY NGAYLAPDON DESC ";
+            sql += " ORDER BY dot.CREATEDATE DESC ";
             SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             DataSet dataset = new DataSet();
             adapter.Fill(dataset, FirstRow, pageSize, "TABLE");
@@ -146,8 +146,8 @@ namespace TanHoaWater.DAL
             if (!"".Equals(maloai)) {
                 sql += " AND dot.LOAIDON = '" + maloai + "'";            
             }
-            
-            sql += " ORDER BY NGAYLAPDON DESC ";
+
+            sql += " ORDER BY dot.CREATEDATE DESC ";
             SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             DataTable table = new DataTable();
             adapter.Fill(table);
@@ -162,7 +162,7 @@ namespace TanHoaWater.DAL
             string sql = " SELECT MADOT , (MADOT + '   '+  TENLOAI) as 'TEND'";            
             sql += " FROM DOT_NHAN_DON dot, LOAI_HOSO loai";
             sql += " WHERE loai.MALOAI = dot.LOAIDON";
-            sql += " ORDER BY NGAYLAPDON DESC ";
+            sql += " ORDER BY dot.CREATEDATE DESC ";
             SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             DataTable table = new DataTable();
             adapter.Fill(table);
@@ -176,7 +176,7 @@ namespace TanHoaWater.DAL
             string sql = " SELECT MADOT , (MADOT + '   '+  TENLOAI) as 'TEND'";
             sql += " FROM DOT_NHAN_DON dot, LOAI_HOSO loai";
             sql += " WHERE loai.MALOAI = dot.LOAIDON AND CHUYENDON = 'False'";
-            sql += " ORDER BY NGAYLAPDON DESC ";
+            sql += " ORDER BY dot.CREATEDATE DESC ";
             SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             DataTable table = new DataTable();
             adapter.Fill(table);
@@ -190,7 +190,7 @@ namespace TanHoaWater.DAL
             string sql = " SELECT MADOT , (MADOT + '   '+  TENLOAI) as 'TEND'";
             sql += " FROM DOT_NHAN_DON dot, LOAI_HOSO loai";
             sql += " WHERE loai.MALOAI = dot.LOAIDON AND CHUYENDON = 'True'";
-            sql += " ORDER BY NGAYLAPDON DESC ";
+            sql += " ORDER BY dot.CREATEDATE DESC ";
             SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             DataTable table = new DataTable();
             adapter.Fill(table);
@@ -204,7 +204,7 @@ namespace TanHoaWater.DAL
             string sql = " SELECT MADOT , NGAYLAPDON= CONVERT(VARCHAR(10),NGAYLAPDON,103), TENLOAI ";
             sql += " FROM DOT_NHAN_DON dot, LOAI_HOSO loai";
             sql += " WHERE loai.MALOAI = dot.LOAIDON AND CHUYENDON = 'False'";
-            sql += " ORDER BY NGAYLAPDON DESC ";
+            sql += " ORDER BY dot.CREATEDATE DESC";
             SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             DataTable table = new DataTable();
             adapter.Fill(table);

@@ -99,7 +99,7 @@ namespace TanHoaWater.DAL
             {
                 sql += " AND NGAYNHAN ='" + ngaynhan + "'";
             }
-            sql += " ORDER BY QUAN,PHUONG,DUONG,SONHA DESC ";
+            sql += " ORDER BY SHS ASC ";
             SqlDataAdapter dond = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             dond.Fill(ds, "V_DANHSACH_HS_SDV");
 

@@ -16,7 +16,6 @@ namespace TanHoaWater.View.Users.KEHOACH
         public tab_DonTroNgai()
         {
             InitializeComponent();
-            this.txtSHS.Mask = "CCCCCCCC";
             txtSHS.Focus();
         }
 

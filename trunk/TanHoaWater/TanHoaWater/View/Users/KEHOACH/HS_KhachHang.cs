@@ -22,7 +22,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
         int pageNumber = 0;
         int FirstRow, LastRow;
         int rows;
-
+        AutoCompleteStringCollection namesCollection = new AutoCompleteStringCollection();
         private static readonly ILog log = LogManager.GetLogger(typeof(HSKHACHHANG).Name);
         public HSKHACHHANG(int tab)
         {
@@ -82,6 +82,21 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                formLoad();
                refresh();
                this.txtSHS.Focus();
+           }
+           try
+           {
+                List <TENDUONG> list  = DAL.C_TenDuong.getList();
+                foreach (var item in list)
+                {
+                    namesCollection.Add(item.DUONG);
+                }
+                duong.AutoCompleteMode = AutoCompleteMode.Suggest;
+                duong.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                duong.AutoCompleteCustomSource = namesCollection;
+           }
+           catch (Exception)
+           {
+               
            }
         }
 
@@ -200,8 +215,10 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
             _soshoso();
         }
         DateTime ngaynhan = DateTime.Now;
+        string loaihoso = "";
         private void txtSHS_KeyPress(object sender, KeyPressEventArgs e)
         {
+            flag = true;
             if (e.KeyChar == 13)
             {
                 BIENNHANDON biennhan = DAL.C_BienNhanDon.finbyMaBienNhan(this.txtSHS.Text);
@@ -225,6 +242,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                     this.dienthoai.Text = biennhan.DIENTHOAI;
                     this.sonha.Text = biennhan.SONHA;
                     this.duong.Text = biennhan.DUONG;
+                    loaihoso = biennhan.LOAIDON;
                     this.soho.Value = int.Parse(biennhan.SOHO + ""); ;
                     this.dienthoai.Text = biennhan.DIENTHOAI;
                     this.cbQuan.Text = recordQuan.TENQUAN;
@@ -237,7 +255,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                     //MessageBox.Show(this, "Không Tìm Thấy Số Biên Nhận Khách Hàng !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     //this.txtSHS.Clear();
                     //this.txtSHS.Focus();
-                    //refresh();
+                    refresh();
 
                 }
             }
@@ -277,6 +295,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
             //    this.txtSHS.Focus();
             //}
             _soshoso();
+            flag = true;
         }
 
         private void cbDotNhanDon_SelectedValueChanged(object sender, EventArgs e)
@@ -292,16 +311,17 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
 
             }
         }
+        bool flag = true;
         public void add() {
-
+            flag = false;
             if (this.cbDotNhanDon.SelectedValue == null) {
                 MessageBox.Show(this, "Cần Chọn Đợt Nhận Đơn.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.cbDotNhanDon.Focus();
-            }else if (this.txtSHS.Text.Length < 7)
-            {
-                MessageBox.Show(this, "Số Hồ Sơ Không Hợp Lệ.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.txtSHS.Focus();
-            }
+            }//else if (this.txtSHS.Text.Length < 7)
+            //{
+            //    MessageBox.Show(this, "Số Hồ Sơ Không Hợp Lệ.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //    this.txtSHS.Focus();
+            //}
             else if ("".Equals(this.txtHoTen.Text))
             {
                 MessageBox.Show(this, "Họ Tên Khách Hàng Không Được Trống.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -317,93 +337,180 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                 MessageBox.Show(this, "Tên Đường Không Được Trống.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.duong.Focus();
             }
-            else if (DAL.C_DonKhachHang.findBySOHOSO(this.txtSHS.Text) != null)
-            {
-                MessageBox.Show(this, "Số Hồ Sơ Đã Tồn Tại.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.txtSHS.Focus();
-            }
-            else if (DAL.C_DonKhachHang.findByAddressAndLoaiHS(this.cbDotNhanDon.SelectedValue.ToString(), this.cbLoaiHS.SelectedValue.ToString(), this.sonha.Text, this.duong.Text, _maphuong, "" + _maquan))
-            {
-                MessageBox.Show(this, "Địa Chỉ Khách Hàng Đã Được Nhận Đơn.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.sonha.Focus();
-            }
             else
             {
-                 
-                DON_KHACHHANG donKH = new DON_KHACHHANG();
-                donKH.MADOT = this.cbDotNhanDon.SelectedValue.ToString();
-                donKH.SOHOSO = this.txtSoHoSo.Text;
-                donKH.SHS = this.txtSHS.Text;
-                if (soho.Value > 1)
+                if (DAL.C_DonKhachHang.findByAddressAndLoaiHS(this.cbDotNhanDon.SelectedValue.ToString(), loaihoso, this.sonha.Text, this.duong.Text, _maphuong, "" + _maquan))
                 {
-                    donKH.TAPTHE = true;
-                    cbLoaiKH.Text = "Tập Thể";
+                    if (MessageBox.Show(this, "Địa Chỉ Khách Hàng Đã Được Nhận Đơn. Có Muốn Thêm Mới Hồ Sơ ?", "..: Thông Báo :..", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                    {
+                        DON_KHACHHANG donKH = new DON_KHACHHANG();
+                        donKH.MADOT = this.cbDotNhanDon.SelectedValue.ToString();
+                        donKH.SOHOSO = this.txtSoHoSo.Text;
+                        donKH.SHS = this.txtSHS.Text;
+                        if (soho.Value > 1)
+                        {
+                            donKH.TAPTHE = true;
+                            cbLoaiKH.Text = "Tập Thể";
+                        }
+                        else
+                        {
+                            donKH.TAPTHE = false;
+                            cbLoaiKH.Text = "Cá Nhân";
+                        }
+                        //else
+                        //{
+                        //    donKH.HOTEN = this.txtHoTen.Text;
+                        //}
+                        donKH.HOTEN = this.txtHoTen.Text;
+                        donKH.DIENTHOAI = this.dienthoai.Text;
+                        donKH.SOHO = int.Parse(this.soho.Value.ToString());
+                        donKH.SONHA = this.sonha.Text;
+                        donKH.TINHKHOAN = true;
+                        if (this.sonha.Text.Contains("/") == true)
+                        {
+                            donKH.LOAIMIENPHI = "Hẻm";
+                        }
+                        else
+                        {
+                            donKH.LOAIMIENPHI = "Mặt tiền";
+                        }
+                        donKH.DUONG = this.duong.Text;
+                        donKH.PHUONG = _maphuong;
+                        donKH.QUAN = _maquan;
+                        string maloaikh = "";
+                        if (this.cbLoaiKH.SelectedValue == null || "".Equals(this.cbLoaiKH.SelectedValue.ToString()) == true)
+                        {
+                            maloaikh = DAL.C_LoaiKhachHang.finbyTenLoai(this.cbLoaiKH.Text).MALOAI;
+                        }
+                        else
+                        {
+                            maloaikh = this.cbLoaiKH.SelectedValue.ToString();
+                        }
+                        donKH.LOAIKH = maloaikh;
+                        donKH.LOAIHOSO = DAL.C_DotNhanDon.findByMaDot(this.cbDotNhanDon.SelectedValue.ToString()).LOAIDON;
+                        donKH.GHICHU = this.ghichu.Text;
+                        if (this.khan.Checked == true)
+                        {
+                            donKH.HOSOKHAN = true;
+                            donKH.GHICHUKHAN = this.ghichukhan.Text;
+                        }
+                        donKH.NGAYNHAN = ngaynhan;
+                        donKH.DANHBO = this.txtDanhBo.Text;
+                        donKH.HOPDONG = this.txtHopDong.Text;
+                        donKH.CREATEBY = DAL.C_USERS._userName;
+                        donKH.CREATEDATE = DateTime.Now;
+
+                        if (DAL.C_DonKhachHang.checkHoSoTonTai(donKH.SHS) != 0)
+                        {
+                            MessageBox.Show(this, "Số Hồ Sơ Đã Tồn Tại.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.txtSHS.Focus();
+                        }
+                        else
+                        {
+                            DAL.C_DonKhachHang.InsertDonHK(donKH);
+                            loadDataGrid();
+                            Utilities.DataGridV.formatRows(dataG);
+                            refresh();
+                            try
+                            {
+                                this.txtSHS.Text = (int.Parse(donKH.SHS) + 1) + "";
+                                this.txtSHS.Focus();
+                            }
+                            catch (Exception)
+                            {
+
+                            }
+                        }
+                    }
                 }
                 else
                 {
-                    donKH.TAPTHE = false;
-                    cbLoaiKH.Text = "Cá Nhân";
+
+                    DON_KHACHHANG donKH = new DON_KHACHHANG();
+                    donKH.MADOT = this.cbDotNhanDon.SelectedValue.ToString();
+                    donKH.SOHOSO = this.txtSoHoSo.Text;
+                    donKH.SHS = this.txtSHS.Text;
+                    if (soho.Value > 1)
+                    {
+                        donKH.TAPTHE = true;
+                        cbLoaiKH.Text = "Tập Thể";
+                    }
+                    else
+                    {
+                        donKH.TAPTHE = false;
+                        cbLoaiKH.Text = "Cá Nhân";
+                    }
+                    //else
+                    //{
+                    //    donKH.HOTEN = this.txtHoTen.Text;
+                    //}
+                    donKH.HOTEN = this.txtHoTen.Text;
+                    donKH.DIENTHOAI = this.dienthoai.Text;
+                    donKH.SOHO = int.Parse(this.soho.Value.ToString());
+                    donKH.SONHA = this.sonha.Text;
+                    donKH.TINHKHOAN = true;
+                    if (this.sonha.Text.Contains("/") == true)
+                    {
+                        donKH.LOAIMIENPHI = "Hẻm";
+                    }
+                    else
+                    {
+                        donKH.LOAIMIENPHI = "Mặt tiền";
+                    }
+                    donKH.DUONG = this.duong.Text;
+                    donKH.PHUONG = _maphuong;
+                    donKH.QUAN = _maquan;
+                    string maloaikh = "";
+                    if (this.cbLoaiKH.SelectedValue == null || "".Equals(this.cbLoaiKH.SelectedValue.ToString()) == true)
+                    {
+                        maloaikh = DAL.C_LoaiKhachHang.finbyTenLoai(this.cbLoaiKH.Text).MALOAI;
+                    }
+                    else
+                    {
+                        maloaikh = this.cbLoaiKH.SelectedValue.ToString();
+                    }
+                    donKH.LOAIKH = maloaikh;
+                    donKH.LOAIHOSO = DAL.C_DotNhanDon.findByMaDot(this.cbDotNhanDon.SelectedValue.ToString()).LOAIDON;
+                    donKH.GHICHU = this.ghichu.Text;
+                    if (this.khan.Checked == true)
+                    {
+                        donKH.HOSOKHAN = true;
+                        donKH.GHICHUKHAN = this.ghichukhan.Text;
+                    }
+                    donKH.NGAYNHAN = ngaynhan;
+                    donKH.DANHBO = this.txtDanhBo.Text;
+                    donKH.HOPDONG = this.txtHopDong.Text;
+                    donKH.CREATEBY = DAL.C_USERS._userName;
+                    donKH.CREATEDATE = DateTime.Now;
+
+                    if (DAL.C_DonKhachHang.checkHoSoTonTai(donKH.SHS) != 0)
+                    {
+                        MessageBox.Show(this, "Số Hồ Sơ Đã Tồn Tại.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.txtSHS.Focus();
+                    }
+                    else
+                    {
+                        DAL.C_DonKhachHang.InsertDonHK(donKH);
+                        loadDataGrid();
+                        Utilities.DataGridV.formatRows(dataG);
+                        refresh();
+                        try
+                        {
+                            this.txtSHS.Text = (int.Parse(donKH.SHS) + 1) + "";
+                            this.txtSHS.Focus();
+                        }
+                        catch (Exception)
+                        {
+
+                        }
+                    }
                 }
-                //else
-                //{
-                //    donKH.HOTEN = this.txtHoTen.Text;
-                //}
-                donKH.HOTEN = this.txtHoTen.Text;
-                donKH.DIENTHOAI = this.dienthoai.Text;
-                donKH.SOHO = int.Parse(this.soho.Value.ToString());
-                donKH.SONHA = this.sonha.Text;
-                donKH.TINHKHOAN = true;
-                if (this.sonha.Text.Contains("/") == true)
-                {
-                    donKH.LOAIMIENPHI = "Hẻm";
-                }
-                else
-                {
-                    donKH.LOAIMIENPHI = "Mặt tiền";
-                }
-                donKH.DUONG = this.duong.Text;
-                donKH.PHUONG = _maphuong;
-                donKH.QUAN = _maquan;
-                string maloaikh = "";
-                if (this.cbLoaiKH.SelectedValue == null || "".Equals(this.cbLoaiKH.SelectedValue.ToString()) == true)
-                {
-                    maloaikh = DAL.C_LoaiKhachHang.finbyTenLoai(this.cbLoaiKH.Text).MALOAI;
-                }
-                else
-                {
-                    maloaikh = this.cbLoaiKH.SelectedValue.ToString();
-                }
-                donKH.LOAIKH = maloaikh;
-                donKH.LOAIHOSO = DAL.C_DotNhanDon.findByMaDot(this.cbDotNhanDon.SelectedValue.ToString()).LOAIDON;
-                donKH.GHICHU = this.ghichu.Text;
-                if (this.khan.Checked == true)
-                {
-                    donKH.HOSOKHAN = true;
-                    donKH.GHICHUKHAN = this.ghichukhan.Text;
-                }
-                donKH.NGAYNHAN = ngaynhan;
-                donKH.DANHBO = this.txtDanhBo.Text;
-                donKH.HOPDONG = this.txtHopDong.Text;
-                donKH.CREATEBY = DAL.C_USERS._userName;
-                donKH.CREATEDATE = DateTime.Now;
-                DAL.C_DonKhachHang.InsertDonHK(donKH);
-                loadDataGrid();
-                Utilities.DataGridV.formatRows(dataG);
-                refresh();
-                try 
-	            {
-                    this.txtSHS.Text = (int.Parse(donKH.SHS) + 1) + "";
-		
-	            }
-	            catch (Exception)
-	            {
-		
-	            }
             }
         }
         private void btInsert_Click(object sender, EventArgs e)
         {
             add();
+            
         }
 
         private void khan_CheckedChanged(object sender, EventArgs e)
@@ -420,7 +527,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
         public void refresh()
         {
             this.txtSHS.Text = null;
-            this.txtSHS.Mask = "CCCCCCCC";
+            
             this.txtHoTen.Text = null;
             this.dienthoai.Text = null;
             this.sonha.Text = null;
@@ -782,12 +889,16 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
 
         private void ghichu_Leave(object sender, EventArgs e)
         {
-            add();
+            if (flag)
+            {
+                add();
+            }
         }
 
         private void ghichu_KeyPress(object sender, KeyPressEventArgs e)
         {
-            //if (e.KeyChar == 13) {
+            //if (e.KeyChar == 13)
+            //{
             //    add();
             //}
         }
@@ -795,6 +906,11 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
         private void txtDanhBo_Leave(object sender, EventArgs e)
         {
             this.txtDanhBo.Text = Utilities.FormatSoHoSoDanhBo.sodanhbo(this.txtDanhBo.Text);
+        }
+
+        private void txtSHS_CursorChanged(object sender, EventArgs e)
+        {
+            add();
         }
 
     }

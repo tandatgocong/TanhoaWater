@@ -23,8 +23,7 @@ namespace TanHoaWater.View.Users.TinhDuToan
         public tab_TinhDuToan()
         {
             InitializeComponent();
-            loadComboboxPhuiDao();
-            this.txtSHS.Mask = "CCCCCCCC";
+            loadComboboxPhuiDao();          
             this.txtSHS.Focus();
             pd_MaKetCau.AutoComplete = true;
             txtNguoiLapBG.Text = DAL.C_USERS._fullName;

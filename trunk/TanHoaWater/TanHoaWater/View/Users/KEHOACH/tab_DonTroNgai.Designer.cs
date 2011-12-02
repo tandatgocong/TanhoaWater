@@ -45,6 +45,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.txtDotND = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtHoTen = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtGhiChu = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.label7 = new System.Windows.Forms.Label();
             this.txtSoDT = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.btUpdate = new DevComponents.DotNetBar.ButtonX();
@@ -56,7 +57,6 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.txtGhiChu = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.panel8.SuspendLayout();
             this.groupPanel1.SuspendLayout();
             this.panelEx1.SuspendLayout();
@@ -108,28 +108,28 @@
             // panelEx1
             // 
             this.panelEx1.CanvasColor = System.Drawing.SystemColors.Control;
-            this.panelEx1.Controls.Add(this.refresh);
             this.panelEx1.Controls.Add(this.txtnoidungtrongai);
+            this.panelEx1.Controls.Add(this.txt_sdv);
+            this.panelEx1.Controls.Add(this.txtdiachi);
+            this.panelEx1.Controls.Add(this.txtDotND);
+            this.panelEx1.Controls.Add(this.txtHoTen);
+            this.panelEx1.Controls.Add(this.txtGhiChu);
+            this.panelEx1.Controls.Add(this.txtSoDT);
+            this.panelEx1.Controls.Add(this.txtLoaiHS);
+            this.panelEx1.Controls.Add(this.txtLoaiKH);
+            this.panelEx1.Controls.Add(this.txtSHS);
+            this.panelEx1.Controls.Add(this.refresh);
             this.panelEx1.Controls.Add(this.label5);
             this.panelEx1.Controls.Add(this.txtSoHoSo);
-            this.panelEx1.Controls.Add(this.txt_sdv);
             this.panelEx1.Controls.Add(this.txtSoHo);
             this.panelEx1.Controls.Add(this.label12);
             this.panelEx1.Controls.Add(this.label9);
             this.panelEx1.Controls.Add(this.txtResult);
             this.panelEx1.Controls.Add(this.label8);
-            this.panelEx1.Controls.Add(this.txtdiachi);
             this.panelEx1.Controls.Add(this.label10);
-            this.panelEx1.Controls.Add(this.txtDotND);
-            this.panelEx1.Controls.Add(this.txtHoTen);
-            this.panelEx1.Controls.Add(this.txtGhiChu);
             this.panelEx1.Controls.Add(this.label7);
-            this.panelEx1.Controls.Add(this.txtSoDT);
             this.panelEx1.Controls.Add(this.btUpdate);
-            this.panelEx1.Controls.Add(this.txtLoaiHS);
             this.panelEx1.Controls.Add(this.label11);
-            this.panelEx1.Controls.Add(this.txtLoaiKH);
-            this.panelEx1.Controls.Add(this.txtSHS);
             this.panelEx1.Controls.Add(this.label17);
             this.panelEx1.Controls.Add(this.label14);
             this.panelEx1.Controls.Add(this.label13);
@@ -165,10 +165,10 @@
             // 
             // txtnoidungtrongai
             // 
-            this.txtnoidungtrongai.Location = new System.Drawing.Point(117, 367);
+            this.txtnoidungtrongai.Location = new System.Drawing.Point(103, 367);
             this.txtnoidungtrongai.Margin = new System.Windows.Forms.Padding(4);
             this.txtnoidungtrongai.Name = "txtnoidungtrongai";
-            this.txtnoidungtrongai.Size = new System.Drawing.Size(321, 65);
+            this.txtnoidungtrongai.Size = new System.Drawing.Size(335, 65);
             this.txtnoidungtrongai.TabIndex = 120;
             this.txtnoidungtrongai.Text = "";
             // 
@@ -202,12 +202,12 @@
             // 
             // 
             this.txt_sdv.Border.Class = "TextBoxBorder";
-            this.txt_sdv.Location = new System.Drawing.Point(117, 334);
+            this.txt_sdv.Location = new System.Drawing.Point(103, 334);
             this.txt_sdv.Margin = new System.Windows.Forms.Padding(4);
             this.txt_sdv.Multiline = true;
             this.txt_sdv.Name = "txt_sdv";
             this.txt_sdv.ReadOnly = true;
-            this.txt_sdv.Size = new System.Drawing.Size(323, 25);
+            this.txt_sdv.Size = new System.Drawing.Size(337, 25);
             this.txt_sdv.TabIndex = 119;
             // 
             // txtSoHo
@@ -265,12 +265,12 @@
             // 
             // 
             this.txtdiachi.Border.Class = "TextBoxBorder";
-            this.txtdiachi.Location = new System.Drawing.Point(117, 126);
+            this.txtdiachi.Location = new System.Drawing.Point(103, 126);
             this.txtdiachi.Margin = new System.Windows.Forms.Padding(4);
             this.txtdiachi.Multiline = true;
             this.txtdiachi.Name = "txtdiachi";
             this.txtdiachi.ReadOnly = true;
-            this.txtdiachi.Size = new System.Drawing.Size(323, 25);
+            this.txtdiachi.Size = new System.Drawing.Size(337, 25);
             this.txtdiachi.TabIndex = 13;
             // 
             // label10
@@ -289,12 +289,12 @@
             // 
             // 
             this.txtDotND.Border.Class = "TextBoxBorder";
-            this.txtDotND.Location = new System.Drawing.Point(117, 47);
+            this.txtDotND.Location = new System.Drawing.Point(103, 47);
             this.txtDotND.Margin = new System.Windows.Forms.Padding(4);
             this.txtDotND.Multiline = true;
             this.txtDotND.Name = "txtDotND";
             this.txtDotND.ReadOnly = true;
-            this.txtDotND.Size = new System.Drawing.Size(323, 25);
+            this.txtDotND.Size = new System.Drawing.Size(337, 25);
             this.txtDotND.TabIndex = 119;
             // 
             // txtHoTen
@@ -303,13 +303,27 @@
             // 
             // 
             this.txtHoTen.Border.Class = "TextBoxBorder";
-            this.txtHoTen.Location = new System.Drawing.Point(117, 89);
+            this.txtHoTen.Location = new System.Drawing.Point(103, 89);
             this.txtHoTen.Margin = new System.Windows.Forms.Padding(4);
             this.txtHoTen.Multiline = true;
             this.txtHoTen.Name = "txtHoTen";
             this.txtHoTen.ReadOnly = true;
-            this.txtHoTen.Size = new System.Drawing.Size(323, 25);
+            this.txtHoTen.Size = new System.Drawing.Size(337, 25);
             this.txtHoTen.TabIndex = 11;
+            // 
+            // txtGhiChu
+            // 
+            // 
+            // 
+            // 
+            this.txtGhiChu.Border.Class = "TextBoxBorder";
+            this.txtGhiChu.Location = new System.Drawing.Point(103, 291);
+            this.txtGhiChu.Margin = new System.Windows.Forms.Padding(4);
+            this.txtGhiChu.Multiline = true;
+            this.txtGhiChu.Name = "txtGhiChu";
+            this.txtGhiChu.ReadOnly = true;
+            this.txtGhiChu.Size = new System.Drawing.Size(337, 25);
+            this.txtGhiChu.TabIndex = 118;
             // 
             // label7
             // 
@@ -327,12 +341,12 @@
             // 
             // 
             this.txtSoDT.Border.Class = "TextBoxBorder";
-            this.txtSoDT.Location = new System.Drawing.Point(117, 248);
+            this.txtSoDT.Location = new System.Drawing.Point(103, 248);
             this.txtSoDT.Margin = new System.Windows.Forms.Padding(4);
             this.txtSoDT.Multiline = true;
             this.txtSoDT.Name = "txtSoDT";
             this.txtSoDT.ReadOnly = true;
-            this.txtSoDT.Size = new System.Drawing.Size(323, 25);
+            this.txtSoDT.Size = new System.Drawing.Size(337, 25);
             this.txtSoDT.TabIndex = 117;
             // 
             // btUpdate
@@ -357,12 +371,12 @@
             // 
             // 
             this.txtLoaiHS.Border.Class = "TextBoxBorder";
-            this.txtLoaiHS.Location = new System.Drawing.Point(117, 208);
+            this.txtLoaiHS.Location = new System.Drawing.Point(103, 208);
             this.txtLoaiHS.Margin = new System.Windows.Forms.Padding(4);
             this.txtLoaiHS.Multiline = true;
             this.txtLoaiHS.Name = "txtLoaiHS";
             this.txtLoaiHS.ReadOnly = true;
-            this.txtLoaiHS.Size = new System.Drawing.Size(323, 25);
+            this.txtLoaiHS.Size = new System.Drawing.Size(337, 25);
             this.txtLoaiHS.TabIndex = 116;
             // 
             // label11
@@ -381,22 +395,22 @@
             // 
             // 
             this.txtLoaiKH.Border.Class = "TextBoxBorder";
-            this.txtLoaiKH.Location = new System.Drawing.Point(117, 164);
+            this.txtLoaiKH.Location = new System.Drawing.Point(103, 164);
             this.txtLoaiKH.Margin = new System.Windows.Forms.Padding(4);
             this.txtLoaiKH.Multiline = true;
             this.txtLoaiKH.Name = "txtLoaiKH";
             this.txtLoaiKH.ReadOnly = true;
-            this.txtLoaiKH.Size = new System.Drawing.Size(323, 25);
+            this.txtLoaiKH.Size = new System.Drawing.Size(337, 25);
             this.txtLoaiKH.TabIndex = 115;
             // 
             // txtSHS
             // 
             this.txtSHS.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSHS.Location = new System.Drawing.Point(117, 10);
+            this.txtSHS.Location = new System.Drawing.Point(103, 10);
             this.txtSHS.Margin = new System.Windows.Forms.Padding(4);
             this.txtSHS.Name = "txtSHS";
             this.txtSHS.PromptChar = ' ';
-            this.txtSHS.Size = new System.Drawing.Size(86, 24);
+            this.txtSHS.Size = new System.Drawing.Size(100, 24);
             this.txtSHS.TabIndex = 8;
             this.txtSHS.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSHS_KeyPress);
             // 
@@ -439,20 +453,6 @@
             this.label15.Size = new System.Drawing.Size(68, 16);
             this.label15.TabIndex = 82;
             this.label15.Text = "Mã Hồ Sơ";
-            // 
-            // txtGhiChu
-            // 
-            // 
-            // 
-            // 
-            this.txtGhiChu.Border.Class = "TextBoxBorder";
-            this.txtGhiChu.Location = new System.Drawing.Point(117, 291);
-            this.txtGhiChu.Margin = new System.Windows.Forms.Padding(4);
-            this.txtGhiChu.Multiline = true;
-            this.txtGhiChu.Name = "txtGhiChu";
-            this.txtGhiChu.ReadOnly = true;
-            this.txtGhiChu.Size = new System.Drawing.Size(323, 25);
-            this.txtGhiChu.TabIndex = 118;
             // 
             // tab_DonTroNgai
             // 

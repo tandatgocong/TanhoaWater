@@ -35,9 +35,10 @@ namespace TanHoaWater.DAL
             var data = from user in db.USERs where user.DUYET == true && user.MAPHONG.Equals("VTTH")==true select user;
            return data.SingleOrDefault().USERNAME;     
         }
+        static TanHoaDataContext db = new TanHoaDataContext();
         public static USER findByUserName(string username)
         {
-            TanHoaDataContext db = new TanHoaDataContext();
+            
             var data = from user in db.USERs where user.USERNAME == username select user;
             USER us = data.SingleOrDefault();     
             return us;
@@ -49,11 +50,10 @@ namespace TanHoaWater.DAL
             USER us = data.SingleOrDefault();
             return us;
         }
-        public  bool UpdateUser(USER user)
+        public static bool UpdateUser()
         {
             try
             {
-                TanHoaDataContext db = new TanHoaDataContext();
                 db.SubmitChanges();
             }
             catch (Exception)

@@ -172,7 +172,6 @@
             // txtSHS
             // 
             this.txtSHS.Location = new System.Drawing.Point(92, 9);
-            this.txtSHS.Mask = "CCCCCCC";
             this.txtSHS.Name = "txtSHS";
             this.txtSHS.PromptChar = ' ';
             this.txtSHS.Size = new System.Drawing.Size(107, 26);

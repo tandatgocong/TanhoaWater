@@ -155,6 +155,7 @@
             this.dataGridViewX1.ReadOnly = true;
             this.dataGridViewX1.RowHeadersWidth = 30;
             this.dataGridViewX1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dataGridViewX1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewX1.Size = new System.Drawing.Size(503, 563);
             this.dataGridViewX1.TabIndex = 29;
             this.dataGridViewX1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewX1_CellClick);
@@ -198,7 +199,7 @@
             // lbPaing
             // 
             this.lbPaing.AutoSize = true;
-            this.lbPaing.Location = new System.Drawing.Point(470, 40);
+            this.lbPaing.Location = new System.Drawing.Point(449, 40);
             this.lbPaing.Name = "lbPaing";
             this.lbPaing.Size = new System.Drawing.Size(40, 16);
             this.lbPaing.TabIndex = 52;
@@ -209,7 +210,7 @@
             // 
             this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox2.Image = global::TanHoaWater.Properties.Resources.Previous;
-            this.pictureBox2.Location = new System.Drawing.Point(448, 40);
+            this.pictureBox2.Location = new System.Drawing.Point(427, 40);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(19, 16);
             this.pictureBox2.TabIndex = 51;
@@ -220,7 +221,7 @@
             // 
             this.next.Cursor = System.Windows.Forms.Cursors.Hand;
             this.next.Image = global::TanHoaWater.Properties.Resources.Next;
-            this.next.Location = new System.Drawing.Point(507, 40);
+            this.next.Location = new System.Drawing.Point(486, 40);
             this.next.Name = "next";
             this.next.Size = new System.Drawing.Size(23, 16);
             this.next.TabIndex = 50;

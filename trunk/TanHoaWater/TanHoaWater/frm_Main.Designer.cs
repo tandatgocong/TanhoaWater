@@ -33,6 +33,9 @@
             this.mainLayout = new System.Windows.Forms.Panel();
             this.PanelContent = new System.Windows.Forms.Panel();
             this.PanelMain = new System.Windows.Forms.Panel();
+            this.reflectionLabel3 = new DevComponents.DotNetBar.Controls.ReflectionLabel();
+            this.reflectionLabel2 = new DevComponents.DotNetBar.Controls.ReflectionLabel();
+            this.reflectionLabel1 = new DevComponents.DotNetBar.Controls.ReflectionLabel();
             this.group_DoiDHN = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.dhn_NhapDanhBo = new DevComponents.DotNetBar.ButtonX();
             this.pictureBox17 = new System.Windows.Forms.PictureBox();
@@ -75,7 +78,6 @@
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.reflectionImage1 = new DevComponents.DotNetBar.Controls.ReflectionImage();
             this.label1 = new System.Windows.Forms.Label();
-            this.reflectionLabel1 = new DevComponents.DotNetBar.Controls.ReflectionLabel();
             this.ribbonControl1 = new DevComponents.DotNetBar.RibbonControl();
             this.ribbonPanel1 = new DevComponents.DotNetBar.RibbonPanel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -138,8 +140,8 @@
             this.buttonItem1 = new DevComponents.DotNetBar.ButtonItem();
             this.skinCollectionItem1 = new Sunisoft.IrisSkin.SkinCollectionItem();
             this.v_DHN_MSTTableAdapter1 = new TanHoaWater.View.Users.DONGHONUOC.BC.chodanhboTableAdapters.V_DHN_MSTTableAdapter();
-            this.reflectionLabel2 = new DevComponents.DotNetBar.Controls.ReflectionLabel();
-            this.reflectionLabel3 = new DevComponents.DotNetBar.Controls.ReflectionLabel();
+            this.menuQuanTri = new DevComponents.DotNetBar.RibbonTabItem();
+            this.ribbonPanel7 = new DevComponents.DotNetBar.RibbonPanel();
             this.mainLayout.SuspendLayout();
             this.PanelContent.SuspendLayout();
             this.PanelMain.SuspendLayout();
@@ -223,6 +225,39 @@
             this.PanelMain.Name = "PanelMain";
             this.PanelMain.Size = new System.Drawing.Size(986, 615);
             this.PanelMain.TabIndex = 0;
+            // 
+            // reflectionLabel3
+            // 
+            this.reflectionLabel3.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reflectionLabel3.Location = new System.Drawing.Point(159, 64);
+            this.reflectionLabel3.Name = "reflectionLabel3";
+            this.reflectionLabel3.ReflectionEnabled = false;
+            this.reflectionLabel3.Size = new System.Drawing.Size(624, 34);
+            this.reflectionLabel3.TabIndex = 17;
+            this.reflectionLabel3.Text = "<b><font size=\"+6\"><font color=\"#B02B2C\">CÔNG TY TNHH MTV CẤP NƯỚC TÂN HÒA</font>" +
+    "</font></b>";
+            // 
+            // reflectionLabel2
+            // 
+            this.reflectionLabel2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reflectionLabel2.Location = new System.Drawing.Point(169, 31);
+            this.reflectionLabel2.Name = "reflectionLabel2";
+            this.reflectionLabel2.ReflectionEnabled = false;
+            this.reflectionLabel2.Size = new System.Drawing.Size(607, 34);
+            this.reflectionLabel2.TabIndex = 16;
+            this.reflectionLabel2.Text = "<font size=\"+6\"><font color=\"#B02B2C\">TRÁCH NHIỆM HỮU HẠN MỘT THÀNH VIÊN </font><" +
+    "/font>";
+            // 
+            // reflectionLabel1
+            // 
+            this.reflectionLabel1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reflectionLabel1.Location = new System.Drawing.Point(223, 0);
+            this.reflectionLabel1.Name = "reflectionLabel1";
+            this.reflectionLabel1.ReflectionEnabled = false;
+            this.reflectionLabel1.Size = new System.Drawing.Size(526, 34);
+            this.reflectionLabel1.TabIndex = 8;
+            this.reflectionLabel1.Text = "<font size=\"+6\"><font color=\"#B02B2C\">TỔNG CÔNG TY CẤP NƯỚC SÀI GÒN </font></font" +
+    ">";
             // 
             // group_DoiDHN
             // 
@@ -811,24 +846,14 @@
             this.label1.TabIndex = 10;
             this.label1.Text = "HỆ QUẢN LÝ HỒ SƠ THÔNG TIN KHÁCH HÀNG";
             // 
-            // reflectionLabel1
-            // 
-            this.reflectionLabel1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.reflectionLabel1.Location = new System.Drawing.Point(223, 0);
-            this.reflectionLabel1.Name = "reflectionLabel1";
-            this.reflectionLabel1.ReflectionEnabled = false;
-            this.reflectionLabel1.Size = new System.Drawing.Size(526, 34);
-            this.reflectionLabel1.TabIndex = 8;
-            this.reflectionLabel1.Text = "<font size=\"+6\"><font color=\"#B02B2C\">TỔNG CÔNG TY CẤP NƯỚC SÀI GÒN </font></font" +
-    ">";
-            // 
             // ribbonControl1
             // 
             this.ribbonControl1.AutoScroll = true;
             this.ribbonControl1.Controls.Add(this.ribbonPanel1);
+            this.ribbonControl1.Controls.Add(this.ribbonPanel7);
+            this.ribbonControl1.Controls.Add(this.ribbonPanel2);
             this.ribbonControl1.Controls.Add(this.ribbonPanel6);
             this.ribbonControl1.Controls.Add(this.ribbonPanel3);
-            this.ribbonControl1.Controls.Add(this.ribbonPanel2);
             this.ribbonControl1.Controls.Add(this.ribbonPanel5);
             this.ribbonControl1.Controls.Add(this.ribbonPanel4);
             this.ribbonControl1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -839,7 +864,8 @@
             this.menuToThietKe,
             this.menuQLDHNuoc,
             this.congcu,
-            this.menuTiemKiem});
+            this.menuTiemKiem,
+            this.menuQuanTri});
             this.ribbonControl1.KeyTipsFont = new System.Drawing.Font("Tahoma", 7F);
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.Name = "ribbonControl1";
@@ -1432,27 +1458,24 @@
             // 
             this.v_DHN_MSTTableAdapter1.ClearBeforeFill = true;
             // 
-            // reflectionLabel2
+            // menuQuanTri
             // 
-            this.reflectionLabel2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.reflectionLabel2.Location = new System.Drawing.Point(169, 31);
-            this.reflectionLabel2.Name = "reflectionLabel2";
-            this.reflectionLabel2.ReflectionEnabled = false;
-            this.reflectionLabel2.Size = new System.Drawing.Size(607, 34);
-            this.reflectionLabel2.TabIndex = 16;
-            this.reflectionLabel2.Text = "<font size=\"+6\"><font color=\"#B02B2C\">TRÁCH NHIỆM HỮU HẠN MỘT THÀNH VIÊN </font><" +
-    "/font>";
+            this.menuQuanTri.Name = "menuQuanTri";
+            this.menuQuanTri.Panel = this.ribbonPanel7;
+            this.menuQuanTri.Text = "Quản Trị";
+            this.menuQuanTri.Visible = false;
+            this.menuQuanTri.Click += new System.EventHandler(this.menuQuanTri_Click);
             // 
-            // reflectionLabel3
+            // ribbonPanel7
             // 
-            this.reflectionLabel3.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.reflectionLabel3.Location = new System.Drawing.Point(159, 64);
-            this.reflectionLabel3.Name = "reflectionLabel3";
-            this.reflectionLabel3.ReflectionEnabled = false;
-            this.reflectionLabel3.Size = new System.Drawing.Size(624, 34);
-            this.reflectionLabel3.TabIndex = 17;
-            this.reflectionLabel3.Text = "<b><font size=\"+6\"><font color=\"#B02B2C\">CÔNG TY TNHH MTV CẤP NƯỚC TÂN HÒA</font>" +
-    "</font></b>";
+            this.ribbonPanel7.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.ribbonPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ribbonPanel7.Location = new System.Drawing.Point(0, 28);
+            this.ribbonPanel7.Name = "ribbonPanel7";
+            this.ribbonPanel7.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
+            this.ribbonPanel7.Size = new System.Drawing.Size(988, 24);
+            this.ribbonPanel7.TabIndex = 7;
+            this.ribbonPanel7.Visible = false;
             // 
             // frm_Main
             // 
@@ -1636,6 +1659,8 @@
         private View.Users.DONGHONUOC.BC.chodanhboTableAdapters.V_DHN_MSTTableAdapter v_DHN_MSTTableAdapter1;
         private DevComponents.DotNetBar.Controls.ReflectionLabel reflectionLabel3;
         private DevComponents.DotNetBar.Controls.ReflectionLabel reflectionLabel2;
+        private DevComponents.DotNetBar.RibbonPanel ribbonPanel7;
+        private DevComponents.DotNetBar.RibbonTabItem menuQuanTri;
 
     }
 }

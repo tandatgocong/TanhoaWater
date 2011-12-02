@@ -116,6 +116,7 @@ namespace TanHoaWater.View.Users.To_ThietKe
                 checkboxHeader1.Name = "checkboxHeader";
                 checkboxHeader1.Size = new Size(17, 17);
                 checkboxHeader1.Location = rect.Location;
+                checkboxHeader1.ForeColor = Color.Transparent;
                 checkboxHeader1.CheckedChanged += new EventHandler(checkboxHeader1_CheckedChanged);
                 DG_SDV.Controls.Add(checkboxHeader1);
 
@@ -641,11 +642,9 @@ namespace TanHoaWater.View.Users.To_ThietKe
             this.txtSoDT.Text = null;
             this.txtGhiChu.Text = null;
             this.txt_sdv.Text = null;
-            this.txtSHS.Mask = "CCCCCCCC";
         }
         private void tabItem4_Click(object sender, EventArgs e)
         {
-            this.txtSHS.Mask = "CCCCCCCC";
             refesh();
         }
 
