@@ -28,7 +28,6 @@ namespace TanHoaWater.View.Users.To_ThietKe
             this.bophanChuyen.DisplayMember = "TENPHONG";
             this.bophanChuyen.ValueMember = "MAPHONG";
             #endregion
-            this.txtSHS.Mask = "CCCCCCCC";
 
         }
         string _madot = "";
@@ -99,7 +98,7 @@ namespace TanHoaWater.View.Users.To_ThietKe
                 if (DAL.C_ToThietKe.HoaTatTK(ttk.SHS))
                 {
                     DataTable table = DAL.C_ToThietKe.GetDotToTK(ttk.MADOT);
-                    groupPanel2.Visible = true;
+                    //groupPanel2.Visible = true;
                     string madot = table.Rows[0][0].ToString();
                     _madot = madot;
                     string ngay = table.Rows[0][1].ToString();
@@ -108,8 +107,8 @@ namespace TanHoaWater.View.Users.To_ThietKe
                     int trongai = int.Parse(table.Rows[0][4].ToString());
                     int hoanthanh = int.Parse(table.Rows[0][5].ToString());
                     int chualam = tonghs - (trongai + hoanthanh);
-                    lbKetQuaHS.Text = "Đợt Nhận Đơn " + madot + " : " + tendot + ", Tồng Số " + tonghs + " đơn. <br/>    Trong đó: ";
-                    lbKetQuaHSHT.Text = "- Hoàn Tất " + hoanthanh + " đơn <br/>- Trở Ngại " + trongai + " đơn <br/> - Chưa Làm " + chualam + " đơn ";
+                  ///  lbKetQuaHS.Text = "Đợt Nhận Đơn " + madot + " : " + tendot + ", Tồng Số " + tonghs + " đơn. <br/>    Trong đó: ";
+                  //  lbKetQuaHSHT.Text = "- Hoàn Tất " + hoanthanh + " đơn <br/>- Trở Ngại " + trongai + " đơn <br/> - Chưa Làm " + chualam + " đơn ";
                     this.dataGridView1.DataSource = DAL.C_ToThietKe.ListHoanTatTK(madot);
                     Utilities.DataGridV.formatRows(dataGridView1);
 
@@ -130,11 +129,141 @@ namespace TanHoaWater.View.Users.To_ThietKe
         {
             hoantatTK();
         }
-
+        string madot = "";
+        
         private void txtSHS_KeyPress(object sender, KeyPressEventArgs e)
         {
+            try
+            {
+                if (e.KeyChar == 13)
+                {
+                    if (e.KeyChar == 13)
+                    {
+                        DataTable table = DAL.C_ToThietKe.findByHSHT(this.txtSHS.Text);
+                        if (table.Rows.Count <= 0)
+                        {
+                            MessageBox.Show(this, "Không Tìm Thấy Hồ Sơ !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            this.txtSHS.Text = "";
+                            this.txtHoTen.Text = "";
+                            this.txtGhiChu.Text = "";
+                            this.txtDiaChi.Text = "";
+                            this.txtSHS.Focus();
+                        }
+                        else
+                        {
+                            string _shs = table.Rows[0][0].ToString();
+                            this.txtHoTen.Text = table.Rows[0][1].ToString();
+                            this.txtDiaChi.Text = table.Rows[0][2].ToString();
+                            madot = table.Rows[0][3].ToString();
+                            this.txtGhiChu.Text = "";
+                            this.txtGhiChu.Focus();
+                            //this.dataGridView1.DataSource = DAL.C_ToThietKe.ListHoanTatTK(madot);
+                            
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Error("Loi Tim Ho So Hoan Tat" + ex.Message);
+            }
+
+        }
+                    //        this.dataGridView1.DataSource = DAL.C_ToThietKe.ListHoanTatTK(madot);
+                    //Utilities.DataGridV.formatRows(dataGridView1);
+        private void printHoanTat_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtGhiChu_Leave(object sender, EventArgs e)
+        {
+           
+            
+        }
+
+        private void InBangKe(object sender, EventArgs e)
+        {
+            if (!"".Equals(madot))
+            {
+                ReportDocument rp = new rpt_HoanTatTK();
+                rp.SetDataSource(DAL.C_ToThietKe.BC_HOANTATTK(madot, DAL.C_USERS._userName));
+                DataTable table= DAL.C_ToThietKe.DIEMHOSO(madot, DAL.C_USERS._userName);
+                int trongai = 0;
+                int chualam = 0;
+                int hoantat = 0;
+                for (int i = 0; i < table.Rows.Count; i++) {
+
+                    if ("".Equals(table.Rows[i][0].ToString())) {
+                        chualam = int.Parse(table.Rows[i][1].ToString());                   
+                    }else if ("Trở Ngại".Equals(table.Rows[i][0].ToString()))
+                    {
+                        trongai = int.Parse(table.Rows[i][1].ToString());
+                    }
+                    else if ("Hoàn Tất".Equals(table.Rows[i][0].ToString()))
+                    {
+                        hoantat = int.Parse(table.Rows[i][1].ToString());
+                    }
+                }
+                 rp.SetParameterValue("HOANTAT",hoantat);
+                 rp.SetParameterValue("TRONGAI",trongai);
+                 rp.SetParameterValue("CHUATRA",chualam);
+                rpt_Main rpt = new rpt_Main(rp);
+                rpt.ShowDialog();
+            }
+        }
+
+        private void txtGhiChu_KeyPress(object sender, KeyPressEventArgs e)
+        {
             if (e.KeyChar == 13) {
-                hoantatTK();
+                try
+                {
+                    if (!"".Equals(txtSHS.Text))
+                    {
+                        DAL.C_ToThietKe.HoaTatTK(txtSHS.Text.Trim(), this.txtGhiChu.Text);
+                        this.dataGridView1.DataSource = DAL.C_ToThietKe.ListHoanTatTK(madot);
+                        Utilities.DataGridV.formatRows(dataGridView1);
+                    }
+                }
+                catch (Exception)
+                {
+
+                }
+                txtSHS.Focus();
+            }
+        }
+
+        private void buttonX1_Click(object sender, EventArgs e)
+        {
+            if (!"".Equals(cbDotNhanDon.Text))
+            {
+                ReportDocument rp = new rpt_HoanTatTK();
+                rp.SetDataSource(DAL.C_ToThietKe.BC_HOANTATTK(cbDotNhanDon.Text, DAL.C_USERS._userName));
+                DataTable table = DAL.C_ToThietKe.DIEMHOSO(cbDotNhanDon.Text, DAL.C_USERS._userName);
+                int trongai = 0;
+                int chualam = 0;
+                int hoantat = 0;
+                for (int i = 0; i < table.Rows.Count; i++)
+                {
+
+                    if ("".Equals(table.Rows[i][0].ToString()))
+                    {
+                        chualam = int.Parse(table.Rows[i][1].ToString());
+                    }
+                    else if ("Trở Ngại".Equals(table.Rows[i][0].ToString()))
+                    {
+                        trongai = int.Parse(table.Rows[i][1].ToString());
+                    }
+                    else if ("Hoàn Tất".Equals(table.Rows[i][0].ToString()))
+                    {
+                        hoantat = int.Parse(table.Rows[i][1].ToString());
+                    }
+                }
+                rp.SetParameterValue("HOANTAT", hoantat);
+                rp.SetParameterValue("TRONGAI", trongai);
+                rp.SetParameterValue("CHUATRA", chualam);
+                rpt_Main rpt = new rpt_Main(rp);
+                rpt.ShowDialog();
             }
         }
     }

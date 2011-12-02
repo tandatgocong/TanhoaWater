@@ -639,6 +639,11 @@
     <Compile Include="View\Users\TinhDuToan\tab_DanhMucVT.Designer.cs">
       <DependentUpon>tab_DanhMucVT.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Users\To_ThietKe\Report\HTTK.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HTTK.xsd</DependentUpon>
+    </Compile>
     <Compile Include="View\Users\To_ThietKe\Report\KSTK\rpt_KSTK_byNgay.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -662,6 +667,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>rpt_CHUYENHS.rpt</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\Users\To_ThietKe\Report\rpt_HoanTatTK.cs">
+      <DependentUpon>rpt_HoanTatTK.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="View\Users\To_ThietKe\Report\rpt_DSHS_Giao_SDV.cs">
       <AutoGen>True</AutoGen>
@@ -944,6 +955,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_CHUYENHS.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\To_ThietKe\Report\rpt_HoanTatTK.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_HoanTatTK.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Users\To_ThietKe\Report\rpt_DSHS_Giao_SDV.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_DSHS_Giao_SDV.cs</LastGenOutput>
@@ -1155,6 +1170,17 @@
     </None>
     <None Include="View\Users\TinhDuToan\report\DataSet2.xss">
       <DependentUpon>DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="View\Users\To_ThietKe\Report\HTTK.xsc">
+      <DependentUpon>HTTK.xsd</DependentUpon>
+    </None>
+    <None Include="View\Users\To_ThietKe\Report\HTTK.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HTTK.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="View\Users\To_ThietKe\Report\HTTK.xss">
+      <DependentUpon>HTTK.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
