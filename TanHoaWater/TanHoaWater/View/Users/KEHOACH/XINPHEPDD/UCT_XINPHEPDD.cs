@@ -109,36 +109,34 @@ namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
             refesh();
             try
             {
-                this.errorProvider1.Clear();
-
+              
                 if ("".Equals(this.txtSoDot.Text))
                 {
-                    this.errorProvider1.SetError(txtSoDot, "Số Đợt Xin Phép Đào Đường Không Được Trống !");
+                    MessageBox.Show(this, "Số Đợt Xin Phép Đào Đường Không Được Trống !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.txtSoDot.Focus();
                 }
                 else if ("".Equals(this.cbNoiCap.Text))
                 {
-                    this.errorProvider1.SetError(cbNoiCap, "Nơi Phép Đào Đường Không Được Trống !");
+                    MessageBox.Show(this, "Nơi Phép Đào Đường Không Được Trống !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.cbNoiCap.Select();
                 }
                 else if ("1/1/0001".Equals(dateNgayLap.Value.ToShortDateString()))
                 {
-                    this.errorProvider1.SetError(dateNgayLap, "Chọn Ngày Lập Đợt Xin Phép Đào Đường !");
+                    MessageBox.Show(this, "Chọn Ngày Lập Đợt Xin Phép Đào Đường !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.dateNgayLap.Select();
                 }
                 else if ("".Equals(this.txtMaQuanLy.Text))
                 {
-                    this.errorProvider1.SetError(txtMaQuanLy, "Mã Quản lý Đợt Không Được Trống !");
+                    MessageBox.Show(this, "Mã Quản lý Đợt Không Được Trống !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.txtMaQuanLy.Focus();
                 }
                 else if (DAL.C_KH_XinPhepDD.finbyMaDot(this.txtSoDot.Text) != null)
-                {
-                    this.errorProvider1.SetError(txtSoDot, "Số Đợt Xin Phép Đào Đường Đã Có !");
+                {;
+                    MessageBox.Show(this, "Số Đợt Xin Phép Đào Đường Đã Có !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.txtSoDot.Focus();
                 }
                 else
                 {
-                    this.errorProvider1.Clear();
                     Database.KH_XINPHEPDAODUONG xinphep = new Database.KH_XINPHEPDAODUONG();
                     xinphep.MADOT = this.txtSoDot.Text.ToUpper();
                     xinphep.NOICAPPHEP = this.cbNoiCap.Text;
@@ -371,11 +369,11 @@ namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
             {
                 if ("1/1/0001".Equals(dateNgayCoPhep.Value.ToShortDateString()))
                 {
-                    this.errorProvider1.SetError(dateNgayCoPhep, "Chọn Ngày Lập Đợt Xin Phép Đào Đường !");
+                    MessageBox.Show(this, "Chọn Ngày Có Phép Đào Đường !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.dateNgayCoPhep.Select();
                 }
                 else {
-                    errorProvider1.Clear();
+                  
                     if (DAL.C_KH_XinPhepDD.UpdateCoPhep(madot, this.dateNgayCoPhep.Value.Date) == false) {
                         MessageBox.Show(this, "Cập Nhật Ngày Có Phép Đào Đường Lỗi !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     } else {
@@ -391,7 +389,7 @@ namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
 
         private void tabItem1_Click(object sender, EventArgs e)
         {
-            errorProvider1.Clear();
+            
         }
 
         private void cbNoiCap_Leave(object sender, EventArgs e)

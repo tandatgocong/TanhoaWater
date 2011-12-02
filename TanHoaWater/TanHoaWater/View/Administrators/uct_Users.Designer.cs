@@ -30,11 +30,16 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.txtUserName = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
-            this.userGridView = new System.Windows.Forms.DataGridView();
+            this.userGridView = new DevComponents.DotNetBar.Controls.DataGridViewX();
             this.USERNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FULLNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TENPHONG = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -94,7 +99,7 @@
             // 
             // labelX1
             // 
-            this.labelX1.Location = new System.Drawing.Point(17, 7);
+            this.labelX1.Location = new System.Drawing.Point(3, 1);
             this.labelX1.Margin = new System.Windows.Forms.Padding(4);
             this.labelX1.Name = "labelX1";
             this.labelX1.Size = new System.Drawing.Size(113, 28);
@@ -103,7 +108,7 @@
             // 
             // labelX3
             // 
-            this.labelX3.Location = new System.Drawing.Point(319, 8);
+            this.labelX3.Location = new System.Drawing.Point(305, 7);
             this.labelX3.Margin = new System.Windows.Forms.Padding(4);
             this.labelX3.Name = "labelX3";
             this.labelX3.Size = new System.Drawing.Size(84, 18);
@@ -112,7 +117,7 @@
             // 
             // txtUserName
             // 
-            this.txtUserName.Location = new System.Drawing.Point(115, 7);
+            this.txtUserName.Location = new System.Drawing.Point(101, 4);
             this.txtUserName.Margin = new System.Windows.Forms.Padding(4);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(196, 22);
@@ -120,7 +125,7 @@
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(388, 4);
+            this.txtName.Location = new System.Drawing.Point(374, 4);
             this.txtName.Margin = new System.Windows.Forms.Padding(4);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(196, 22);
@@ -147,12 +152,24 @@
             this.CHUCVU,
             this.ROLENAME,
             this.tinhtrang});
-            this.userGridView.Location = new System.Drawing.Point(17, 36);
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.userGridView.DefaultCellStyle = dataGridViewCellStyle6;
+            this.userGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
+            this.userGridView.Location = new System.Drawing.Point(3, 33);
+            this.userGridView.MultiSelect = false;
             this.userGridView.Name = "userGridView";
+            this.userGridView.ReadOnly = true;
             this.userGridView.RowHeadersWidth = 20;
-            this.userGridView.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.userGridView.Size = new System.Drawing.Size(697, 391);
+            this.userGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.userGridView.Size = new System.Drawing.Size(737, 391);
             this.userGridView.TabIndex = 11;
+            this.userGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.userGridView_CellClick);
             this.userGridView.Sorted += new System.EventHandler(this.userGridView_Sorted);
             this.userGridView.Click += new System.EventHandler(this.userGridView_Click);
             // 
@@ -161,38 +178,52 @@
             this.USERNAME.DataPropertyName = "USERNAME";
             this.USERNAME.HeaderText = "UserName";
             this.USERNAME.Name = "USERNAME";
+            this.USERNAME.ReadOnly = true;
             // 
             // FULLNAME
             // 
             this.FULLNAME.DataPropertyName = "FULLNAME";
             this.FULLNAME.HeaderText = "Họ Tên";
             this.FULLNAME.Name = "FULLNAME";
-            this.FULLNAME.Width = 150;
+            this.FULLNAME.ReadOnly = true;
+            this.FULLNAME.Width = 170;
             // 
             // TENPHONG
             // 
             this.TENPHONG.DataPropertyName = "TENPHONG";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.TENPHONG.DefaultCellStyle = dataGridViewCellStyle2;
             this.TENPHONG.HeaderText = "Bộ Phận";
             this.TENPHONG.Name = "TENPHONG";
+            this.TENPHONG.ReadOnly = true;
             this.TENPHONG.Width = 120;
             // 
             // CHUCVU
             // 
             this.CHUCVU.DataPropertyName = "CHUCVU";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.CHUCVU.DefaultCellStyle = dataGridViewCellStyle3;
             this.CHUCVU.HeaderText = "Chức Vụ";
             this.CHUCVU.Name = "CHUCVU";
+            this.CHUCVU.ReadOnly = true;
             // 
             // ROLENAME
             // 
             this.ROLENAME.DataPropertyName = "ROLENAME";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ROLENAME.DefaultCellStyle = dataGridViewCellStyle4;
             this.ROLENAME.HeaderText = "Quyền";
             this.ROLENAME.Name = "ROLENAME";
+            this.ROLENAME.ReadOnly = true;
             // 
             // tinhtrang
             // 
             this.tinhtrang.DataPropertyName = "TINHTRANG";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.tinhtrang.DefaultCellStyle = dataGridViewCellStyle5;
             this.tinhtrang.HeaderText = "Tình Trạng";
             this.tinhtrang.Name = "tinhtrang";
+            this.tinhtrang.ReadOnly = true;
             this.tinhtrang.Width = 120;
             // 
             // errorProvider1
@@ -204,7 +235,7 @@
             this.groupPanel1.CanvasColor = System.Drawing.SystemColors.Control;
             this.groupPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.groupPanel1.Controls.Add(this.panel1);
-            this.groupPanel1.Location = new System.Drawing.Point(18, 433);
+            this.groupPanel1.Location = new System.Drawing.Point(3, 433);
             this.groupPanel1.Name = "groupPanel1";
             this.groupPanel1.Size = new System.Drawing.Size(697, 171);
             // 
@@ -311,7 +342,7 @@
             this.btCapNhat.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btCapNhat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btCapNhat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btCapNhat.Location = new System.Drawing.Point(324, 113);
+            this.btCapNhat.Location = new System.Drawing.Point(320, 113);
             this.btCapNhat.Name = "btCapNhat";
             this.btCapNhat.Size = new System.Drawing.Size(71, 23);
             this.btCapNhat.TabIndex = 21;
@@ -640,7 +671,7 @@
             this.btSearch.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btSearch.Image = global::TanHoaWater.Properties.Resources.user_find;
             this.btSearch.ImageFixedSize = new System.Drawing.Size(20, 20);
-            this.btSearch.Location = new System.Drawing.Point(592, 4);
+            this.btSearch.Location = new System.Drawing.Point(578, 4);
             this.btSearch.Margin = new System.Windows.Forms.Padding(4);
             this.btSearch.Name = "btSearch";
             this.btSearch.Size = new System.Drawing.Size(89, 22);
@@ -652,6 +683,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
             this.Controls.Add(this.groupPanel1);
             this.Controls.Add(this.userGridView);
             this.Controls.Add(this.btSearch);
@@ -684,7 +716,7 @@
         private System.Windows.Forms.TextBox txtUserName;
         private System.Windows.Forms.TextBox txtName;
         private DevComponents.DotNetBar.ButtonX btSearch;
-        private System.Windows.Forms.DataGridView userGridView;
+        private DevComponents.DotNetBar.Controls.DataGridViewX userGridView;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private DevComponents.DotNetBar.Controls.GroupPanel groupPanel1;
         private System.Windows.Forms.Panel panel1;

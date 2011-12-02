@@ -23,9 +23,9 @@ namespace TanHoaWater.View.Users.KEHOACH
         public frm_BienNhanDon()
         {
             InitializeComponent();
-            this.cbLoaiBN.Select();
             load();
             this.tabControl1.SelectedTabIndex = 0;
+            this.txtHoTen.Focus();
 
         }
         public void load() {
@@ -148,12 +148,13 @@ namespace TanHoaWater.View.Users.KEHOACH
             this.txtHoTen.Focus();
 
         }
-        public void printingBienNhan(string mabiennhan, string user)
+        public void printingBienNhan(string mabiennhan, string dienthoai, string user)
         {
           // CrystalReportViewer r = new CrystalReportViewer();
            ReportDocument rp = new crp_BIENNHAN();
            rp.PrintOptions.PaperSize = PaperSize.Paper11x17;
            rp.SetDataSource(DAL.C_BienNhanDon.printBienNhan(mabiennhan, user));
+           rp.SetParameterValue("dienthoai", dienthoai);
             rpt_InBienNhan  inp = new rpt_InBienNhan(rp);
             inp.ShowDialog();
           // r.ReportSource = rp; 
@@ -248,7 +249,7 @@ namespace TanHoaWater.View.Users.KEHOACH
                     biennhan.CREATEBY = DAL.C_USERS._userName;
                     biennhan.CREATEDATE = DateTime.Now;
                     DAL.C_BienNhanDon.InsertBienNhanDon(biennhan);
-                    printingBienNhan(biennhan.SHS, DAL.C_USERS._userName);                   
+                    printingBienNhan(biennhan.SHS, biennhan.DIENTHOAI, DAL.C_USERS._userName);                   
                     reset();
                 }
             }

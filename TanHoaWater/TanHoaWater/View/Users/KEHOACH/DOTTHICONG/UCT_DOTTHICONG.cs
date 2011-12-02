@@ -663,10 +663,29 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
                 try
                 {
                     string dottcS = this.searchTimKiem.Text;
-                    KH_DOTTHICONG dottc = DAL.C_KH_DotThiCong.findByMadot(dottcS);
-                    if (dottc != null)
+                    if ("".Equals(dottcS)) {
+                        loadDataGrid();
+                    }
+                    else
                     {
-                        loadTextBox(dottc);
+                        DataTable table = DAL.C_KH_DotThiCong.getListDotThiCongbyMaDot(dottcS);
+                        if (table.Rows.Count <= 0)
+                        {
+                            MessageBox.Show(this, "Không Tìm Thấy Đợt Thi Công!", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else if (table.Rows.Count == 1)
+                        {
+                            KH_DOTTHICONG dottc = DAL.C_KH_DotThiCong.findByMadot(table.Rows[0][0].ToString());
+                            if (dottc != null)
+                            {
+                                loadTextBox(dottc);
+                            }
+                            gridDotThiCong.DataSource = table;
+                        }
+                        else
+                        {
+                            gridDotThiCong.DataSource = table;
+                        }
                     }
                 }
                 catch (Exception)

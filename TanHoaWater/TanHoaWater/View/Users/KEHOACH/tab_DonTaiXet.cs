@@ -19,7 +19,6 @@ namespace TanHoaWater.View.Users.KEHOACH
         {
             InitializeComponent();
 
-            this.taix_shs.Mask = "CCCCCCCC";
             fromload();            
             #region Nguoi Duyet Don
             this.CD_NguoiDuyetDon.DataSource = DAL.C_USERS.getUserByMaPhongAndLevel("VTTH", 0);

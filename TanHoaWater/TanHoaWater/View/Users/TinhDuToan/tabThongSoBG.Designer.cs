@@ -30,6 +30,11 @@
         {
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
             this.groupPanel2 = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.LINE5 = new System.Windows.Forms.RichTextBox();
+            this.LINE4 = new System.Windows.Forms.RichTextBox();
+            this.LINE3 = new System.Windows.Forms.RichTextBox();
+            this.LINE2 = new System.Windows.Forms.RichTextBox();
+            this.LINE1 = new System.Windows.Forms.RichTextBox();
             this.btCapNhatBangGia = new DevComponents.DotNetBar.ButtonX();
             this.THANHLAP = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.NGUOILAP = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -69,11 +74,6 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.LINE1 = new System.Windows.Forms.RichTextBox();
-            this.LINE2 = new System.Windows.Forms.RichTextBox();
-            this.LINE3 = new System.Windows.Forms.RichTextBox();
-            this.LINE4 = new System.Windows.Forms.RichTextBox();
-            this.LINE5 = new System.Windows.Forms.RichTextBox();
             this.panelEx1.SuspendLayout();
             this.groupPanel2.SuspendLayout();
             this.groupPanel1.SuspendLayout();
@@ -136,6 +136,51 @@
             this.groupPanel2.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
             this.groupPanel2.TabIndex = 1;
             this.groupPanel2.Text = "Thông Số Bảng Giá";
+            // 
+            // LINE5
+            // 
+            this.LINE5.Font = new System.Drawing.Font("Times New Roman", 11F);
+            this.LINE5.Location = new System.Drawing.Point(3, 264);
+            this.LINE5.Name = "LINE5";
+            this.LINE5.Size = new System.Drawing.Size(510, 59);
+            this.LINE5.TabIndex = 5;
+            this.LINE5.Text = "";
+            // 
+            // LINE4
+            // 
+            this.LINE4.Font = new System.Drawing.Font("Times New Roman", 11F);
+            this.LINE4.Location = new System.Drawing.Point(3, 199);
+            this.LINE4.Name = "LINE4";
+            this.LINE4.Size = new System.Drawing.Size(510, 59);
+            this.LINE4.TabIndex = 5;
+            this.LINE4.Text = "";
+            // 
+            // LINE3
+            // 
+            this.LINE3.Font = new System.Drawing.Font("Times New Roman", 11F);
+            this.LINE3.Location = new System.Drawing.Point(3, 131);
+            this.LINE3.Name = "LINE3";
+            this.LINE3.Size = new System.Drawing.Size(510, 59);
+            this.LINE3.TabIndex = 5;
+            this.LINE3.Text = "";
+            // 
+            // LINE2
+            // 
+            this.LINE2.Font = new System.Drawing.Font("Times New Roman", 11F);
+            this.LINE2.Location = new System.Drawing.Point(3, 66);
+            this.LINE2.Name = "LINE2";
+            this.LINE2.Size = new System.Drawing.Size(510, 59);
+            this.LINE2.TabIndex = 5;
+            this.LINE2.Text = "";
+            // 
+            // LINE1
+            // 
+            this.LINE1.Font = new System.Drawing.Font("Times New Roman", 11F);
+            this.LINE1.Location = new System.Drawing.Point(3, 3);
+            this.LINE1.Name = "LINE1";
+            this.LINE1.Size = new System.Drawing.Size(510, 59);
+            this.LINE1.TabIndex = 5;
+            this.LINE1.Text = "";
             // 
             // btCapNhatBangGia
             // 
@@ -206,20 +251,20 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.Location = new System.Drawing.Point(363, 328);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(96, 19);
+            this.label20.Size = new System.Drawing.Size(100, 19);
             this.label20.TabIndex = 3;
             this.label20.Text = "THÀNH LẬP";
             // 
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.Location = new System.Drawing.Point(70, 328);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(60, 19);
+            this.label22.Size = new System.Drawing.Size(62, 19);
             this.label22.TabIndex = 2;
             this.label22.Text = "DUYỆT";
             // 
@@ -584,51 +629,6 @@
             this.label12.TabIndex = 0;
             this.label12.Text = "%";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // LINE1
-            // 
-            this.LINE1.Font = new System.Drawing.Font("Times New Roman", 11F);
-            this.LINE1.Location = new System.Drawing.Point(3, 3);
-            this.LINE1.Name = "LINE1";
-            this.LINE1.Size = new System.Drawing.Size(510, 59);
-            this.LINE1.TabIndex = 5;
-            this.LINE1.Text = "";
-            // 
-            // LINE2
-            // 
-            this.LINE2.Font = new System.Drawing.Font("Times New Roman", 11F);
-            this.LINE2.Location = new System.Drawing.Point(3, 66);
-            this.LINE2.Name = "LINE2";
-            this.LINE2.Size = new System.Drawing.Size(510, 59);
-            this.LINE2.TabIndex = 5;
-            this.LINE2.Text = "";
-            // 
-            // LINE3
-            // 
-            this.LINE3.Font = new System.Drawing.Font("Times New Roman", 11F);
-            this.LINE3.Location = new System.Drawing.Point(3, 131);
-            this.LINE3.Name = "LINE3";
-            this.LINE3.Size = new System.Drawing.Size(510, 59);
-            this.LINE3.TabIndex = 5;
-            this.LINE3.Text = "";
-            // 
-            // LINE4
-            // 
-            this.LINE4.Font = new System.Drawing.Font("Times New Roman", 11F);
-            this.LINE4.Location = new System.Drawing.Point(3, 199);
-            this.LINE4.Name = "LINE4";
-            this.LINE4.Size = new System.Drawing.Size(510, 59);
-            this.LINE4.TabIndex = 5;
-            this.LINE4.Text = "";
-            // 
-            // LINE5
-            // 
-            this.LINE5.Font = new System.Drawing.Font("Times New Roman", 11F);
-            this.LINE5.Location = new System.Drawing.Point(3, 264);
-            this.LINE5.Name = "LINE5";
-            this.LINE5.Size = new System.Drawing.Size(510, 59);
-            this.LINE5.TabIndex = 5;
-            this.LINE5.Text = "";
             // 
             // tabThongSoBG
             // 

@@ -9,11 +9,13 @@ using System.Windows.Forms;
 using TanHoaWater.Database;
 using TanHoaWater.DAL;
 using TanHoaWater.Utilities;
+using log4net;
 
 namespace TanHoaWater.View.Administrators
 {
     public partial class uct_Users : UserControl
     {
+        private static readonly ILog log = LogManager.GetLogger(typeof(uct_Users).Name);
         public uct_Users()
         {
             InitializeComponent();
@@ -41,7 +43,6 @@ namespace TanHoaWater.View.Administrators
         public void LoadUsers(){
             DAL.C_USERS user = new DAL.C_USERS();
             userGridView.DataSource = user.getList(this.txtUserName.Text, this.txtName.Text, "");
-            Utilities.DataGridV.formatRows(userGridView);
         }
 
         //public void formatGirdView() {           
@@ -102,17 +103,17 @@ namespace TanHoaWater.View.Administrators
         {
             LoadUsers();
             //formatGirdView();
-            Utilities.DataGridV.formatRows(userGridView);
+            
         }
 
         private void userGridView_Click(object sender, EventArgs e)
         {
-            Utilities.DataGridV.formatRows(userGridView);
+            
         }
 
         private void userGridView_Sorted(object sender, EventArgs e)
         {
-            Utilities.DataGridV.formatRows(userGridView);
+            
         }
 
         private void btThemMoi_Click(object sender, EventArgs e)
@@ -173,13 +174,84 @@ namespace TanHoaWater.View.Administrators
                     LoadUsers();
                 }
             }
-            catch (Exception)
-            { }
+            catch (Exception ex)
+            {
+                log.Error("Them Nguoi Dung Loi" + ex.Message);
+            }
         }
 
         private void btCapNhat_Click(object sender, EventArgs e)
         {
+            try
+            {
+                string username = this.u_tendangnhap.Text;
+                string fullName = this.u_hoten.Text;
+                string chucvu = this.u_chucvu.Text;
 
+                if (username == null || "".Equals(username))
+                {
+                    errorProvider1.Clear();
+                    errorProvider1.SetError(this.u_tendangnhap, "Tên đăng nhập không được trống !");
+                    u_tendangnhap.Focus();
+
+                }
+                else if (fullName == null || "".Equals(fullName))
+                {
+                    errorProvider1.Clear();
+                    errorProvider1.SetError(this.u_hoten, "Họ Và Tên không được trống !");
+                    u_hoten.Focus();
+
+                }
+                else if (chucvu == null || "".Equals(chucvu))
+                {
+                    errorProvider1.Clear();
+                    errorProvider1.SetError(this.u_chucvu, "Chọn Chức Vụ !");
+                    u_chucvu.Focus();
+
+                }
+                else
+                {
+                    errorProvider1.Clear();
+                    USER user = DAL.C_USERS.findByUserName(username);
+                    if (user != null)
+                    {
+                        user.FULLNAME = fullName;
+                        user.PASSWORD = LogIn.Encrypt(this.u_matkhau.Text);
+                        user.ROLEID = DAL.C_Role.findByTenQuyen(this.u_Quyen.Text + "").ROLEID;
+                        user.MAPHONG = DAL.C_PhongBan.findbyTenPhong(this.u_BoPhan.Text + "").MAPHONG;
+                        user.MODIFYBY = C_USERS._userName;
+                        if (u_kichhoat.Checked)
+                        {
+                            user.ENABLED = true;
+                        }
+                        else
+                        {
+                            user.ENABLED = false;
+                        }
+                        user.MODIFYDATE = DateTime.Now;
+                        DAL.C_USERS users = new DAL.C_USERS();
+                        try
+                        {
+                            DAL.C_USERS.UpdateUser();
+                            MessageBox.Show(this, "Cập nhật thông tin người dùng thành công.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            LoadUsers();
+                        }
+                        catch (Exception)
+                        {
+                            MessageBox.Show(this, "Cập nhật thông tin người dùng thất bại.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                       
+                    }
+                    else {
+                        MessageBox.Show(this, "Người dùng không tồn tại.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Error("Them Nguoi Dung Loi" + ex.Message);
+                MessageBox.Show(this, "Cập nhật thông tin người dùng thất bại.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         public void refesh() {
             this.u_hoten.Text = "";
@@ -192,6 +264,33 @@ namespace TanHoaWater.View.Administrators
         private void btmLamLai_Click(object sender, EventArgs e)
         {
             refesh();
+        }
+
+        private void userGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                bool kichhoat = false;
+                this.u_hoten.Text = userGridView.Rows[e.RowIndex].Cells["FULLNAME"].Value + "";
+                this.u_tendangnhap.Text = userGridView.Rows[e.RowIndex].Cells["USERNAME"].Value + "";
+                this.u_chucvu.Text = userGridView.Rows[e.RowIndex].Cells["CHUCVU"].Value + "";
+                this.u_Quyen.Text = userGridView.Rows[e.RowIndex].Cells["ROLENAME"].Value + "";
+                this.u_BoPhan.Text = userGridView.Rows[e.RowIndex].Cells["TENPHONG"].Value + "";
+                if ("Chưa".Contains(userGridView.Rows[e.RowIndex].Cells["TINHTRANG"].Value + ""))
+                {
+                    kichhoat = false;
+                }
+                else {
+                    kichhoat = true;
+                }
+
+                this.u_kichhoat.Checked = kichhoat;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, ex.Message);
+            }
+            
         } 
     }
 }
