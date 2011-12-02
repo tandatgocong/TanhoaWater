@@ -117,6 +117,14 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
                             this.txtSHS.Focus();
                             refesh();
                         }
+                        try
+                        {
+                            this.txtSHS.Text = (int.Parse(kh_sh.SHS) + 1) + "";
+                        }
+                        catch (Exception)
+                        {
+
+                        }
                     }
                     else
                     {
@@ -156,6 +164,14 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
                         kh_sh.DHN_SONHANKHAU = 0;
                         //  kh_sh
                         DAL.C_KH_HoSoKhachHang.Update();
+                        try
+                        {
+                            this.txtSHS.Text = (int.Parse(kh_sh.SHS) + 1) + "";
+                        }
+                        catch (Exception)
+                        {
+
+                        }
                     }
                 }
 

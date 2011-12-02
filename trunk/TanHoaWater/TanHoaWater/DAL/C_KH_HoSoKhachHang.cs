@@ -49,18 +49,47 @@ namespace TanHoaWater.DAL
             var obj = from dd in db.KH_HOSOKHACHHANGs where dd.SHS == shs select dd;
             return obj.SingleOrDefault();
         }
-        public static bool Delete(string shs) {
+        public static bool HuyDaoDuong(string shs) {
             try
             {
                 TanHoaDataContext db = new TanHoaDataContext();
                 var obj = from dd in db.KH_HOSOKHACHHANGs where dd.SHS == shs select dd;
-                db.KH_HOSOKHACHHANGs.DeleteOnSubmit(obj.SingleOrDefault());
+                KH_HOSOKHACHHANG hskh = obj.SingleOrDefault();
+                if (hskh != null) {
+                    hskh.MADOTDD = null;
+                    hskh.CHOPHEP=null;
+                    hskh.NGAYCOPHEP=null;
+                
+                }
                 db.SubmitChanges();
                 return true;
             }
             catch (Exception ex)
             {
-                log.Error("Loi Xoa Ke Hoach Ho So Khach Hang " + ex.Message);
+                log.Error("Huy Dao Duong Loi" + ex.Message);
+
+            }
+            return false;
+        }
+        public static bool HuyDotTC(string shs)
+        {
+            try
+            {
+                TanHoaDataContext db = new TanHoaDataContext();
+                var obj = from dd in db.KH_HOSOKHACHHANGs where dd.SHS == shs select dd;
+                KH_HOSOKHACHHANG hskh = obj.SingleOrDefault();
+                if (hskh != null)
+                {
+                    hskh.MADOTTC = null;
+                    hskh.TRONGAI = null;
+                    hskh.NOIDUNGTN = null;
+                }
+                db.SubmitChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                log.Error("Huy Dao Duong Loi" + ex.Message);
 
             }
             return false;

@@ -56,7 +56,7 @@
             // 
             // labelX2
             // 
-            this.labelX2.Location = new System.Drawing.Point(59, 54);
+            this.labelX2.Location = new System.Drawing.Point(26, 54);
             this.labelX2.Name = "labelX2";
             this.labelX2.Size = new System.Drawing.Size(75, 23);
             this.labelX2.TabIndex = 1;
@@ -64,7 +64,7 @@
             // 
             // labelX3
             // 
-            this.labelX3.Location = new System.Drawing.Point(59, 83);
+            this.labelX3.Location = new System.Drawing.Point(26, 83);
             this.labelX3.Name = "labelX3";
             this.labelX3.Size = new System.Drawing.Size(75, 23);
             this.labelX3.TabIndex = 1;
@@ -72,7 +72,7 @@
             // 
             // labelX4
             // 
-            this.labelX4.Location = new System.Drawing.Point(59, 112);
+            this.labelX4.Location = new System.Drawing.Point(26, 112);
             this.labelX4.Name = "labelX4";
             this.labelX4.Size = new System.Drawing.Size(66, 23);
             this.labelX4.TabIndex = 1;
@@ -88,7 +88,7 @@
             // 
             // lbHoTen
             // 
-            this.lbHoTen.Location = new System.Drawing.Point(131, 83);
+            this.lbHoTen.Location = new System.Drawing.Point(98, 83);
             this.lbHoTen.Name = "lbHoTen";
             this.lbHoTen.Size = new System.Drawing.Size(405, 23);
             this.lbHoTen.TabIndex = 1;
@@ -96,7 +96,7 @@
             // 
             // lbDiaChi
             // 
-            this.lbDiaChi.Location = new System.Drawing.Point(131, 112);
+            this.lbDiaChi.Location = new System.Drawing.Point(98, 112);
             this.lbDiaChi.Name = "lbDiaChi";
             this.lbDiaChi.Size = new System.Drawing.Size(405, 23);
             this.lbDiaChi.TabIndex = 1;
@@ -119,7 +119,7 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewX1.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewX1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
-            this.dataGridViewX1.Location = new System.Drawing.Point(59, 150);
+            this.dataGridViewX1.Location = new System.Drawing.Point(26, 150);
             this.dataGridViewX1.Name = "dataGridViewX1";
             this.dataGridViewX1.Size = new System.Drawing.Size(414, 244);
             this.dataGridViewX1.TabIndex = 2;

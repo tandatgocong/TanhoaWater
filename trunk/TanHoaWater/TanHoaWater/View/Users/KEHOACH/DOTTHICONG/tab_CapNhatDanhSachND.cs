@@ -105,6 +105,7 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
                             this.txtSHS.Focus();
                             refesh();
                         }
+                        
                     }
                     else
                     {
@@ -253,6 +254,26 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
             }
             
             
+        }
+
+        private void dataGridViewDotTC_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (dataGridViewDotTC.CurrentCell.OwningColumn.Name == "thaotac")
+                {
+                    string _shs = dataGridViewDotTC.Rows[dataGridViewDotTC.CurrentRow.Index].Cells["SHS"].Value + "";
+                    if (MessageBox.Show(this, "Có Muốn Hủy Hồ Sơ " + _shs + " Không ?", "..: Thông Báo :..", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        DAL.C_KH_HoSoKhachHang.HuyDotTC(_shs);
+                        loadDataGrid();
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+            }
         }
     }
 }

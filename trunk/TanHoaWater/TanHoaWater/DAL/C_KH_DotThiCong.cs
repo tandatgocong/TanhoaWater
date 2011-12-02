@@ -168,7 +168,7 @@ namespace TanHoaWater.DAL
         public static DataTable getListDotThiCong(string madottc) { 
          TanHoaDataContext db = new TanHoaDataContext();
             db.Connection.Open();
-            string sql = " SELECT donkh.SHS,donkh.SOHOSO,donkh.MADOT,HOTEN,DIENTHOAI, SONHA, DUONG,TENPHUONG,hosokh.MADOTDD,hosokh.NGAYNHAN, NGAYDONGTIEN,SOHOADON,TONGIATRI,TAILAPMATDUONG,TONGIATRI+TAILAPMATDUONG as 'TONGTIEN'  ";
+            string sql = " SELECT HUY=N'Hủy', donkh.SHS,donkh.SOHOSO,donkh.MADOT,HOTEN,DIENTHOAI, SONHA, DUONG,TENPHUONG,hosokh.MADOTDD,hosokh.NGAYNHAN, NGAYDONGTIEN,SOHOADON,TONGIATRI,TAILAPMATDUONG,TONGIATRI+TAILAPMATDUONG as 'TONGTIEN',COTLK  ";
             sql += "  FROM DON_KHACHHANG donkh, PHUONG p, QUAN q, KH_HOSOKHACHHANG hosokh ";
             sql += " WHERE donkh.QUAN = q.MAQUAN AND q.MAQUAN=p.MAQUAN AND donkh.PHUONG=p.MAPHUONG and donkh.SHS = hosokh.SHS ";
             sql += " AND hosokh.MADOTTC=N'" + madottc + "'";

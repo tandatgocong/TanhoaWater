@@ -65,6 +65,8 @@
             this.btThemMoiHoSo = new DevComponents.DotNetBar.ButtonX();
             this.lbTongHoSo = new DevComponents.DotNetBar.LabelX();
             this.dataGridViewDotTC = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.btPrint = new System.Windows.Forms.PictureBox();
+            this.thaotac = new System.Windows.Forms.DataGridViewButtonColumn();
             this.SHS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.G_SOHOSO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.g_dotbangke = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -81,7 +83,6 @@
             this.gridTLMD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gr_tongsotien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grid_CoTLK = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btPrint = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dateNgayDongTien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDotTC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btPrint)).BeginInit();
@@ -348,6 +349,7 @@
             this.dataGridViewDotTC.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewDotTC.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewDotTC.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.thaotac,
             this.SHS,
             this.G_SOHOSO,
             this.g_dotbangke,
@@ -388,6 +390,27 @@
             this.dataGridViewDotTC.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewDotTC.Size = new System.Drawing.Size(978, 400);
             this.dataGridViewDotTC.TabIndex = 718;
+            this.dataGridViewDotTC.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDotTC_CellClick);
+            // 
+            // btPrint
+            // 
+            this.btPrint.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btPrint.Image = global::TanHoaWater.Properties.Resources.print1;
+            this.btPrint.Location = new System.Drawing.Point(948, 159);
+            this.btPrint.Name = "btPrint";
+            this.btPrint.Size = new System.Drawing.Size(32, 22);
+            this.btPrint.TabIndex = 719;
+            this.btPrint.TabStop = false;
+            this.btPrint.Click += new System.EventHandler(this.btPrint_Click);
+            // 
+            // thaotac
+            // 
+            this.thaotac.DataPropertyName = "HUY";
+            this.thaotac.Frozen = true;
+            this.thaotac.HeaderText = "";
+            this.thaotac.Name = "thaotac";
+            this.thaotac.ReadOnly = true;
+            this.thaotac.Width = 70;
             // 
             // SHS
             // 
@@ -472,7 +495,7 @@
             this.g_dotxpdd.HeaderText = "Số Đợt XPĐĐ";
             this.g_dotxpdd.Name = "g_dotxpdd";
             this.g_dotxpdd.ReadOnly = true;
-            this.g_dotxpdd.Width = 150;
+            this.g_dotxpdd.Width = 140;
             // 
             // g_ngayxinphep
             // 
@@ -483,7 +506,7 @@
             this.g_ngayxinphep.HeaderText = "Ngày XPĐĐ";
             this.g_ngayxinphep.Name = "g_ngayxinphep";
             this.g_ngayxinphep.ReadOnly = true;
-            this.g_ngayxinphep.Width = 150;
+            this.g_ngayxinphep.Width = 140;
             // 
             // grNgayDongTien
             // 
@@ -494,7 +517,7 @@
             this.grNgayDongTien.HeaderText = "Ngày Đóng Tiền";
             this.grNgayDongTien.Name = "grNgayDongTien";
             this.grNgayDongTien.ReadOnly = true;
-            this.grNgayDongTien.Width = 170;
+            this.grNgayDongTien.Width = 160;
             // 
             // g_sohoadon
             // 
@@ -504,7 +527,7 @@
             this.g_sohoadon.HeaderText = "Số Hóa Đơn";
             this.g_sohoadon.Name = "g_sohoadon";
             this.g_sohoadon.ReadOnly = true;
-            this.g_sohoadon.Width = 150;
+            this.g_sohoadon.Width = 110;
             // 
             // gridGiaTriSauThue
             // 
@@ -549,18 +572,6 @@
             this.grid_CoTLK.HeaderText = "Cỡ TLK";
             this.grid_CoTLK.Name = "grid_CoTLK";
             this.grid_CoTLK.ReadOnly = true;
-            this.grid_CoTLK.Width = 130;
-            // 
-            // btPrint
-            // 
-            this.btPrint.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btPrint.Image = global::TanHoaWater.Properties.Resources.print1;
-            this.btPrint.Location = new System.Drawing.Point(948, 159);
-            this.btPrint.Name = "btPrint";
-            this.btPrint.Size = new System.Drawing.Size(32, 22);
-            this.btPrint.TabIndex = 719;
-            this.btPrint.TabStop = false;
-            this.btPrint.Click += new System.EventHandler(this.btPrint_Click);
             // 
             // tab_CapNhatDanhSachND
             // 
@@ -625,6 +636,8 @@
         private DevComponents.DotNetBar.ButtonX btThemMoiHoSo;
         private DevComponents.DotNetBar.LabelX lbTongHoSo;
         private DevComponents.DotNetBar.Controls.DataGridViewX dataGridViewDotTC;
+        private System.Windows.Forms.PictureBox btPrint;
+        private System.Windows.Forms.DataGridViewButtonColumn thaotac;
         private System.Windows.Forms.DataGridViewTextBoxColumn SHS;
         private System.Windows.Forms.DataGridViewTextBoxColumn G_SOHOSO;
         private System.Windows.Forms.DataGridViewTextBoxColumn g_dotbangke;
@@ -641,6 +654,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn gridTLMD;
         private System.Windows.Forms.DataGridViewTextBoxColumn gr_tongsotien;
         private System.Windows.Forms.DataGridViewTextBoxColumn grid_CoTLK;
-        private System.Windows.Forms.PictureBox btPrint;
     }
 }

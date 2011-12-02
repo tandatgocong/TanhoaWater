@@ -336,7 +336,7 @@
             this.dateNgayThanhToan.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
             this.dateNgayThanhToan.Name = "dateNgayThanhToan";
             this.dateNgayThanhToan.Size = new System.Drawing.Size(154, 26);
-            this.dateNgayThanhToan.TabIndex = 166;
+            this.dateNgayThanhToan.TabIndex = 10;
             // 
             // dateNgayChuyenKT
             // 
@@ -381,7 +381,7 @@
             this.dateNgayChuyenKT.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
             this.dateNgayChuyenKT.Name = "dateNgayChuyenKT";
             this.dateNgayChuyenKT.Size = new System.Drawing.Size(154, 26);
-            this.dateNgayChuyenKT.TabIndex = 15;
+            this.dateNgayChuyenKT.TabIndex = 9;
             // 
             // dateChuyenBu
             // 
@@ -425,7 +425,7 @@
             this.dateChuyenBu.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
             this.dateChuyenBu.Name = "dateChuyenBu";
             this.dateChuyenBu.Size = new System.Drawing.Size(108, 26);
-            this.dateChuyenBu.TabIndex = 6;
+            this.dateChuyenBu.TabIndex = 8;
             // 
             // dateNgayChuyenHC
             // 
@@ -469,7 +469,7 @@
             this.dateNgayChuyenHC.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
             this.dateNgayChuyenHC.Name = "dateNgayChuyenHC";
             this.dateNgayChuyenHC.Size = new System.Drawing.Size(108, 26);
-            this.dateNgayChuyenHC.TabIndex = 9;
+            this.dateNgayChuyenHC.TabIndex = 13;
             // 
             // dateNgayLap
             // 
@@ -525,7 +525,7 @@
             this.cbLoaiBangKe.Location = new System.Drawing.Point(230, 108);
             this.cbLoaiBangKe.Name = "cbLoaiBangKe";
             this.cbLoaiBangKe.Size = new System.Drawing.Size(164, 26);
-            this.cbLoaiBangKe.TabIndex = 8;
+            this.cbLoaiBangKe.TabIndex = 12;
             // 
             // cbDonViThiCong
             // 
@@ -544,6 +544,7 @@
             this.cbDonViGiamSatTC.DisplayMember = "Text";
             this.cbDonViGiamSatTC.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbDonViGiamSatTC.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbDonViGiamSatTC.DropDownWidth = 300;
             this.cbDonViGiamSatTC.FormattingEnabled = true;
             this.cbDonViGiamSatTC.ItemHeight = 20;
             this.cbDonViGiamSatTC.Location = new System.Drawing.Point(699, 26);
@@ -561,7 +562,7 @@
             this.cbDonViTuVanGSTLMD.Location = new System.Drawing.Point(266, 76);
             this.cbDonViTuVanGSTLMD.Name = "cbDonViTuVanGSTLMD";
             this.cbDonViTuVanGSTLMD.Size = new System.Drawing.Size(253, 26);
-            this.cbDonViTuVanGSTLMD.TabIndex = 5;
+            this.cbDonViTuVanGSTLMD.TabIndex = 7;
             // 
             // cbDonViTaiLapMD
             // 
@@ -573,7 +574,7 @@
             this.cbDonViTaiLapMD.Location = new System.Drawing.Point(12, 77);
             this.cbDonViTaiLapMD.Name = "cbDonViTaiLapMD";
             this.cbDonViTaiLapMD.Size = new System.Drawing.Size(248, 26);
-            this.cbDonViTaiLapMD.TabIndex = 5;
+            this.cbDonViTaiLapMD.TabIndex = 6;
             // 
             // groupBox2
             // 
@@ -686,7 +687,7 @@
             this.txtLyDoTroNgaiTC.Location = new System.Drawing.Point(12, 183);
             this.txtLyDoTroNgaiTC.Name = "txtLyDoTroNgaiTC";
             this.txtLyDoTroNgaiTC.Size = new System.Drawing.Size(963, 50);
-            this.txtLyDoTroNgaiTC.TabIndex = 14;
+            this.txtLyDoTroNgaiTC.TabIndex = 18;
             this.txtLyDoTroNgaiTC.Text = "";
             // 
             // btCapNhat
@@ -737,7 +738,7 @@
             this.txtQuetToan.Location = new System.Drawing.Point(935, 136);
             this.txtQuetToan.Name = "txtQuetToan";
             this.txtQuetToan.Size = new System.Drawing.Size(38, 23);
-            this.txtQuetToan.TabIndex = 13;
+            this.txtQuetToan.TabIndex = 17;
             this.txtQuetToan.Text = "R";
             this.txtQuetToan.UseVisualStyleBackColor = true;
             // 
@@ -757,15 +758,14 @@
             this.txtGhiChuHoanCong.Location = new System.Drawing.Point(519, 134);
             this.txtGhiChuHoanCong.Name = "txtGhiChuHoanCong";
             this.txtGhiChuHoanCong.Size = new System.Drawing.Size(293, 26);
-            this.txtGhiChuHoanCong.TabIndex = 10;
+            this.txtGhiChuHoanCong.TabIndex = 14;
             // 
             // txtSoLuong
             // 
             this.txtSoLuong.Location = new System.Drawing.Point(818, 134);
             this.txtSoLuong.Name = "txtSoLuong";
             this.txtSoLuong.Size = new System.Drawing.Size(54, 26);
-            this.txtSoLuong.TabIndex = 11;
-            this.txtSoLuong.Text = "0";
+            this.txtSoLuong.TabIndex = 15;
             this.txtSoLuong.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtSoLuong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoLuong_KeyPress);
             this.txtSoLuong.Leave += new System.EventHandler(this.txtSoLuong_Leave);
@@ -775,8 +775,7 @@
             this.txtTon.Location = new System.Drawing.Point(878, 135);
             this.txtTon.Name = "txtTon";
             this.txtTon.Size = new System.Drawing.Size(48, 26);
-            this.txtTon.TabIndex = 12;
-            this.txtTon.Text = "0";
+            this.txtTon.TabIndex = 16;
             this.txtTon.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtTon.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTon_KeyPress);
             // 
@@ -794,7 +793,7 @@
             this.txtBangKe.Location = new System.Drawing.Point(70, 107);
             this.txtBangKe.Name = "txtBangKe";
             this.txtBangKe.Size = new System.Drawing.Size(153, 26);
-            this.txtBangKe.TabIndex = 7;
+            this.txtBangKe.TabIndex = 11;
             this.txtBangKe.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtSodotTC
@@ -1032,9 +1031,9 @@
             new DevComponents.DotNetBar.BackgroundColorBlend(System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(254))))), 0.45F),
             new DevComponents.DotNetBar.BackgroundColorBlend(System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(254))))), 1F)});
             this.tabControl1.ColorScheme.TabItemSelectedText = System.Drawing.Color.Red;
+            this.tabControl1.Controls.Add(this.tabDanhSachDot);
             this.tabControl1.Controls.Add(this.tabCapNhatDS);
             this.tabControl1.Controls.Add(this.tabThamSo);
-            this.tabControl1.Controls.Add(this.tabDanhSachDot);
             this.tabControl1.Location = new System.Drawing.Point(2, 2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedTabFont = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

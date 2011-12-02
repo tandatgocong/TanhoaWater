@@ -136,6 +136,15 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
             //    dateThiCong.Select();
             //    dateThiCong.Focus();
             //}
+            //try
+            //{
+            //    this.gridHoanCong.Rows[e.RowIndex].Cells["hc_SoTLK"].Value = (this.gridHoanCong.Rows[e.RowIndex].Cells["hc_SoTLK"].Value + "").ToUpper();
+            //}
+            //catch (Exception)
+            //{
+                
+            //}
+            
         }
 
         private void dateThiCong_Leave(object sender, EventArgs e)
@@ -157,21 +166,30 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
         }
         private void gridHoanCong_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
         {
-            if (gridHoanCong.CurrentCell.OwningColumn.Name == "hc_SoTLK")
+            try
             {
-                btInBangKe.Enabled = false;
-                btHoanTat.Enabled = true;
+                if (gridHoanCong.CurrentCell.OwningColumn.Name == "hc_SoTLK")
+                {
+                    btInBangKe.Enabled = false;
+                    btHoanTat.Enabled = true;
+                    this.gridHoanCong.Rows[gridHoanCong.CurrentCell.RowIndex].Cells["hc_SoTLK"].Value = (this.gridHoanCong.Rows[gridHoanCong.CurrentCell.RowIndex].Cells["hc_SoTLK"].Value + "").ToUpper();
+                }
+                txtKeypress = e.Control;
+                if (gridHoanCong.CurrentCell.OwningColumn.Name == "hc_ChiSo")
+                {
+                    txtKeypress.KeyPress -= KeyPressHandle;
+                    txtKeypress.KeyPress += KeyPressHandle;
+                }
+                else
+                {
+                    txtKeypress.KeyPress -= KeyPressHandle;
+                }
             }
-            txtKeypress = e.Control;
-            if (gridHoanCong.CurrentCell.OwningColumn.Name == "hc_ChiSo")
+            catch (Exception)
             {
-                txtKeypress.KeyPress -= KeyPressHandle;
-                txtKeypress.KeyPress += KeyPressHandle;
+                
             }
-            else
-            {
-                txtKeypress.KeyPress -= KeyPressHandle;
-            }
+           
         }
 
         private void gridHoanCong_CellValidated(object sender, DataGridViewCellEventArgs e)
@@ -195,9 +213,11 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
 
         bool flag = true;
         void updateDulieu() {
+            int i = 0;
             try
             {
-                for (int i = 0; i < gridHoanCong.Rows.Count; i++)
+                
+                for (i = 0; i < gridHoanCong.Rows.Count; i++)
                 {
                     string ngaytc = "";
                     string chiso = "";
@@ -248,7 +268,7 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
                             chiso = this.gridHoanCong.Rows[i].Cells["hc_ChiSo"].Value + "";
                         }
 
-                        DAL.C_KH_HoanCong.HoanCong(shs, DateTime.ParseExact(ngaytc, "dd/MM/yyyy", null), int.Parse(chiso), sothanTLK, HoanCong);
+                        DAL.C_KH_HoanCong.HoanCong(shs, DateTime.ParseExact(ngaytc, "dd/MM/yyyy", null), int.Parse(chiso), sothanTLK.ToUpper(), HoanCong);
                     }
                    
                 }
@@ -258,6 +278,7 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
             }
             catch (Exception ex)
             {
+                this.gridHoanCong.Rows[i].ErrorText = "Lỗi Dữ Liệu";
                 log.Error("Loi Hoan Tat Hoan Cong" + ex.Message);
             }
             

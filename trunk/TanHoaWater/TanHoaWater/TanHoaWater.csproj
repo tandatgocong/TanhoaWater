@@ -114,6 +114,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL\C_Admin_BaoCao.cs" />
     <Compile Include="DAL\C_BaoCao_View.cs" />
     <Compile Include="DAL\C_BienNhanDon.cs" />
     <Compile Include="DAL\C_CongTacBangGia.cs" />
@@ -161,6 +162,11 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Roles\TTK.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -190,6 +196,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\Strings.cs" />
+    <Compile Include="View\Administrators\uct_PhongBanDoi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Administrators\uct_PhongBanDoi.Designer.cs">
+      <DependentUpon>uct_PhongBanDoi.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Administrators\ut_HeThongDuong.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -699,6 +711,9 @@
     <EmbeddedResource Include="Roles\VTTH.resx">
       <DependentUpon>VTTH.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Administrators\uct_PhongBanDoi.resx">
+      <DependentUpon>uct_PhongBanDoi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Administrators\ut_HeThongDuong.resx">
       <DependentUpon>ut_HeThongDuong.cs</DependentUpon>
     </EmbeddedResource>
@@ -954,8 +969,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="SplashScreen.resx">
       <DependentUpon>SplashScreen.cs</DependentUpon>
@@ -985,11 +1000,6 @@
       <DependentUpon>frm_Login.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="Database\TanHoa.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>TanHoa.designer.cs</LastGenOutput>
@@ -1328,6 +1338,8 @@
     <Content Include="Lib\IrisSkin2.dll" />
     <Content Include="Lib\log4net.dll" />
     <Content Include="Lib\String_Indentity.dll" />
+    <None Include="Resources\User.png" />
+    <None Include="Resources\giamdoc.jpg" />
     <None Include="Resources\Clipboard Paste.png" />
     <None Include="Resources\Arrow2 Left.png" />
     <None Include="Resources\Arrow2 Right.png" />
