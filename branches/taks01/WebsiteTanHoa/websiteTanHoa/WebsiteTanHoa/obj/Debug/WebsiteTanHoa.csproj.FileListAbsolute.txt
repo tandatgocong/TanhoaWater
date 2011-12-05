@@ -1,0 +1,5 @@
+E:\DATA\TAN HOA\PROJECT\tanhoawater\WebsiteTanHoa\WebsiteTanHoa\WebsiteTanHoa\bin\WebsiteTanHoa.dll
+E:\DATA\TAN HOA\PROJECT\tanhoawater\WebsiteTanHoa\WebsiteTanHoa\WebsiteTanHoa\bin\WebsiteTanHoa.pdb
+E:\DATA\TAN HOA\PROJECT\tanhoawater\WebsiteTanHoa\WebsiteTanHoa\WebsiteTanHoa\obj\Debug\ResolveAssemblyReference.cache
+E:\DATA\TAN HOA\PROJECT\tanhoawater\WebsiteTanHoa\WebsiteTanHoa\WebsiteTanHoa\obj\Debug\WebsiteTanHoa.dll
+E:\DATA\TAN HOA\PROJECT\tanhoawater\WebsiteTanHoa\WebsiteTanHoa\WebsiteTanHoa\obj\Debug\WebsiteTanHoa.pdb
