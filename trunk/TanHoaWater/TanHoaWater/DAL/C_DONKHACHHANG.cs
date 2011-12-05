@@ -370,7 +370,6 @@ namespace TanHoaWater.DAL
                 if (donkh != null)
                 {
                     donkh.TRONGAITHIETKE = false;
-                    donkh.NOIDUNGTRONGAI = "";
                     donkh.BOPHANCHUYEN = "TTK";
                     donkh.NGUOICHUYEN_HOSO = DAL.C_USERS._userName;
                     donkh.NGAYCHUYEN_HOSO = System.DateTime.Now.Date;

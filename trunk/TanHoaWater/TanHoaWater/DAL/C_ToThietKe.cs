@@ -433,7 +433,7 @@ namespace TanHoaWater.DAL
 
 
         }
-        public static DataSet BC_HOANTATTK(string dotnd, string nguoilap)
+        public static DataSet BC_HOANTATTK(string dotnd, string nguoilap, string hoantat)
         {
             DataSet ds = new DataSet();
             TanHoaDataContext db = new TanHoaDataContext();
@@ -441,6 +441,14 @@ namespace TanHoaWater.DAL
             string sql = "SELECT * FROM V_TTK_HOANTATTK ";
             sql += " WHERE TTKMD='" + dotnd + "'";
             sql += " AND USERNAME='" + nguoilap + "'";
+            if ("True".Equals(hoantat)) {
+                sql += " AND TKHOANTAT='True' AND (TKTRONGAI='False' OR TKTRONGAI IS NULL) "; 
+            }
+            else if ("False".Equals(hoantat))
+            {
+                sql += " AND TKTRONGAI='True'"; 
+            
+            }
             SqlDataAdapter dond = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             dond.Fill(ds, "V_TTK_HOANTATTK");
 
