@@ -35,6 +35,12 @@ namespace TanHoaWater.DAL
             var banggia = from hs in db.BG_REPORTs where hs.STT == 1 select hs;
             return banggia.SingleOrDefault();
         }
+
+        public static BG_HESOPHUIDAO getHesoPhui()
+        {
+            var banggia = from hs in db.BG_HESOPHUIDAOs  select hs;
+            return banggia.SingleOrDefault();
+        }
         
     }
 }

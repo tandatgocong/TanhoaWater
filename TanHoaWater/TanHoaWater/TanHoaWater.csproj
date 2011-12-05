@@ -639,6 +639,12 @@
     <Compile Include="View\Users\TinhDuToan\tab_DanhMucVT.Designer.cs">
       <DependentUpon>tab_DanhMucVT.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Users\To_ThietKe\Report\rpt_DSHoanTat.cs">
+      <DependentUpon>rpt_DSHoanTat.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="View\Users\To_ThietKe\Report\HTTK.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -939,6 +945,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\TinhDuToan\tab_DanhMucVT.resx">
       <DependentUpon>tab_DanhMucVT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\To_ThietKe\Report\rpt_DSHoanTat.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_DSHoanTat.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\To_ThietKe\Report\KSTK\rpt_KSTK_byNgay.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
