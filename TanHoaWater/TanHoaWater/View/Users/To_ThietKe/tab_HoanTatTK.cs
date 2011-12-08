@@ -239,8 +239,10 @@ namespace TanHoaWater.View.Users.To_ThietKe
                         if (!"".Equals(txtSHS.Text))
                         {
                             DAL.C_ToThietKe.HoaTatTK(txtSHS.Text.Trim(), this.txtGhiChu.Text);
+                            DAL.C_ToThietKe.CapNhatHoanTatChoDot(madot);
                             this.dataGridView1.DataSource = DAL.C_ToThietKe.ListHoanTatTK(madot);
                             Utilities.DataGridV.formatRows(dataGridView1);
+
                         }
                     }
                     catch (Exception)

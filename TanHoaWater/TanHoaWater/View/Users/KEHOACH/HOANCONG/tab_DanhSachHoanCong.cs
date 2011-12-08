@@ -11,12 +11,13 @@ using TanHoaWater.View.Users.HOANCONG.BC;
 using CrystalDecisions.CrystalReports.Engine;
 using TanHoaWater.View.Users.KEHOACH.HOANCONG.BC;
 using TanHoaWater.View.Users.Report;
-
+using TanHoaWater.Database;
 namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
 {
     public partial class tab_DanhSachHoanCong : UserControl
     {
         private static readonly ILog log = LogManager.GetLogger(typeof(tab_DanhSachHoanCong).Name);
+        AutoCompleteStringCollection namesCollection = new AutoCompleteStringCollection();
         public tab_DanhSachHoanCong(string madottc)
         {
             InitializeComponent();
@@ -29,12 +30,23 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
             }
             catch (Exception)
             {
-                
+
             }
-            
+
+            List<DHN_DONGHO> list = DAL.C_DHN_TENDONGHO.ListDanhSachDongHo();
+            foreach (var item in list)
+            {
+                namesCollection.Add(item.TENDONGHO);
+            }
+            //gr_TenDongHo.AutoCompleteMode = AutoCompleteMode.Suggest;
+            //gr_TenDongHo.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            //gr_TenDongHo.AutoCompleteCustomSource = namesCollection;.AutoCompleteCustomSource = namesCollection;
+
+
         }
-        public void loadData() { 
-        
+        public void loadData()
+        {
+
         }
 
         private void checkChuaHoanCong_CheckedChanged(object sender, EventArgs e)
@@ -72,7 +84,8 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
 
             }
         }
-        public void hoantat() {
+        public void hoantat()
+        {
             try
             {
                 if (checkALl.Checked)
@@ -110,7 +123,7 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
                     dateThiCong.Focus();
 
                 }
-               
+
             }
             catch (Exception)
             {
@@ -142,9 +155,9 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
             //}
             //catch (Exception)
             //{
-                
+
             //}
-            
+
         }
 
         private void dateThiCong_Leave(object sender, EventArgs e)
@@ -166,14 +179,28 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
         }
         private void gridHoanCong_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
         {
+
             try
             {
+                if (gridHoanCong.CurrentCell.OwningColumn.Name == "gr_TenDongHo")
+                {
+                    if (e.Control is DataGridViewTextBoxEditingControl)
+                    {
+                        DataGridViewTextBoxEditingControl te =
+                        (DataGridViewTextBoxEditingControl)e.Control;
+                        te.AutoCompleteMode = AutoCompleteMode.Suggest;
+                        te.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                        te.AutoCompleteCustomSource = namesCollection;
+                    }
+                }
                 if (gridHoanCong.CurrentCell.OwningColumn.Name == "hc_SoTLK")
                 {
                     btInBangKe.Enabled = false;
                     btHoanTat.Enabled = true;
                     this.gridHoanCong.Rows[gridHoanCong.CurrentCell.RowIndex].Cells["hc_SoTLK"].Value = (this.gridHoanCong.Rows[gridHoanCong.CurrentCell.RowIndex].Cells["hc_SoTLK"].Value + "").ToUpper();
+
                 }
+
                 txtKeypress = e.Control;
                 if (gridHoanCong.CurrentCell.OwningColumn.Name == "hc_ChiSo")
                 {
@@ -187,9 +214,9 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
             }
             catch (Exception)
             {
-                
+
             }
-           
+
         }
 
         private void gridHoanCong_CellValidated(object sender, DataGridViewCellEventArgs e)
@@ -212,11 +239,12 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
         }
 
         bool flag = true;
-        void updateDulieu() {
+        void updateDulieu()
+        {
             int i = 0;
             try
             {
-                
+
                 for (i = 0; i < gridHoanCong.Rows.Count; i++)
                 {
                     string ngaytc = "";
@@ -224,6 +252,8 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
                     string shs = this.gridHoanCong.Rows[i].Cells["hc_SHS"].Value + "";
                     string sothanTLK = this.gridHoanCong.Rows[i].Cells["hc_SoTLK"].Value + "";
                     string hc = this.gridHoanCong.Rows[i].Cells["hc_DHN"].Value + "";
+                    string hieudongho = this.gridHoanCong.Rows[i].Cells["gr_TenDongHo"].Value + "";
+                    string s_cotlk = (this.gridHoanCong.Rows[i].Cells["hc_TLK"].Value + "").Trim();
                     bool HoanCong = false;
                     try
                     {
@@ -267,10 +297,18 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
                             this.gridHoanCong.Rows[i].Cells["hc_ChiSo"].ErrorText = null;
                             chiso = this.gridHoanCong.Rows[i].Cells["hc_ChiSo"].Value + "";
                         }
+                        int cotlk = 15;
+                        try
+                        {
+                            cotlk = int.Parse(s_cotlk);
+                        }
+                        catch (Exception)
+                        {
 
-                        DAL.C_KH_HoanCong.HoanCong(shs, DateTime.ParseExact(ngaytc, "dd/MM/yyyy", null), int.Parse(chiso), sothanTLK.ToUpper(), HoanCong);
+                        }
+                        DAL.C_KH_HoanCong.HoanCong(shs, DateTime.ParseExact(ngaytc, "dd/MM/yyyy", null), int.Parse(chiso), cotlk, sothanTLK.ToUpper(), hieudongho, HoanCong);
                     }
-                   
+
                 }
                 MessageBox.Show(this, "Hoàn Tất.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.btInBangKe.Enabled = true;
@@ -281,18 +319,19 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
                 this.gridHoanCong.Rows[i].ErrorText = "Lỗi Dữ Liệu";
                 log.Error("Loi Hoan Tat Hoan Cong" + ex.Message);
             }
-            
+
         }
 
         private void btHoanTat_Click(object sender, EventArgs e)
         {
             updateDulieu();
-           
-          
+
+
         }
 
-        public string getSHS() {
-            string result="";
+        public string getSHS()
+        {
+            string result = "";
             for (int i = 0; i < gridHoanCong.Rows.Count; i++)
             {
                 string shs = this.gridHoanCong.Rows[i].Cells["hc_SHS"].Value + "";
@@ -326,11 +365,35 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
                 rpt_Main rpt = new rpt_Main(rp);
                 rpt.ShowDialog();
             }
-           
+
         }
 
         private void gridHoanCong_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
+
+        }
+
+        public int checktrungsothan(string hopdong)
+        {
+            int count = 0;
+            for (int i = 0; i < gridHoanCong.Rows.Count; i++)
+                if (hopdong.Equals((this.gridHoanCong.Rows[i].Cells["hc_SoTLK"].Value + "").Trim()))
+                  count++;
+            return count;
+        }
+        private void gridHoanCong_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            if (gridHoanCong.CurrentCell.OwningColumn.Name == "hc_SoTLK")
+            {
+                if (checktrungsothan(this.gridHoanCong.Rows[gridHoanCong.CurrentCell.RowIndex].Cells["hc_SoTLK"].Value + "")>1)
+                {
+                    MessageBox.Show(this, "Số Thân TLK Đã Tồn Tại.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else if (DAL.C_KH_HoSoKhachHang.checkSoThanTLK(this.gridHoanCong.Rows[gridHoanCong.CurrentCell.RowIndex].Cells["hc_SoTLK"].Value + "") >= 1)
+                {
+                    MessageBox.Show(this, "Số Thân TLK Đã Tồn Tại.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
 
         }
     }

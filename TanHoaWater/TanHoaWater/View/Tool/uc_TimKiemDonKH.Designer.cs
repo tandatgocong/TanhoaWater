@@ -94,6 +94,7 @@
             this.label21 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.SearchMaHoSo = new System.Windows.Forms.TextBox();
+            this.lbsohoso = new System.Windows.Forms.Label();
             this.groupPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -264,6 +265,7 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.lbsohoso);
             this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Controls.Add(this.next);
             this.panel2.Controls.Add(this.lbPaing);
@@ -943,6 +945,17 @@
             this.SearchMaHoSo.TabIndex = 129;
             this.SearchMaHoSo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.searchHoTenKH_KeyPress);
             // 
+            // lbsohoso
+            // 
+            this.lbsohoso.AutoSize = true;
+            this.lbsohoso.Font = new System.Drawing.Font("Times New Roman", 10F);
+            this.lbsohoso.ForeColor = System.Drawing.Color.Red;
+            this.lbsohoso.Location = new System.Drawing.Point(2, 508);
+            this.lbsohoso.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbsohoso.Name = "lbsohoso";
+            this.lbsohoso.Size = new System.Drawing.Size(0, 16);
+            this.lbsohoso.TabIndex = 174;
+            // 
             // uc_TimKiemDonKH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -1044,6 +1057,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DIACHI;
         private System.Windows.Forms.DataGridViewTextBoxColumn LOAIHS;
         private System.Windows.Forms.DataGridViewTextBoxColumn NGAYNHAN;
+        private System.Windows.Forms.Label lbsohoso;
 
     }
 }

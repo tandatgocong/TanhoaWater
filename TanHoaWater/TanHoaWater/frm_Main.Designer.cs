@@ -1491,7 +1491,7 @@
             this.MainMenuStrip = this.menuStrip4;
             this.Name = "frm_Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Tan Hoa Water Co., ltd";
+            this.Text = "Tan Hoa Water Co., Ltd";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_Main_FormClosing);
             this.Load += new System.EventHandler(this.frm_Main_Load);
             this.SizeChanged += new System.EventHandler(this.frm_Main_SizeChanged);

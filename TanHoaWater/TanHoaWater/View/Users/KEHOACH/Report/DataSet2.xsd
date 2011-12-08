@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet2" targetNamespace="http://tempuri.org/DataSet2.xsd" xmlns:mstns="http://tempuri.org/DataSet2.xsd" xmlns="http://tempuri.org/DataSet2.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="TANHOA_WATERConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="TANHOA_WATERConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.TanHoaWater.Properties.Settings.GlobalReference.Default.TANHOA_WATERConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="V_BIENNHANDONTableAdapter" GeneratorDataComponentClassName="V_BIENNHANDONTableAdapter" Name="V_BIENNHANDON" UserDataComponentName="V_BIENNHANDONTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TANHOA_WATERConnectionString (Settings)" DbObjectName="TANHOA_WATER.dbo.V_BIENNHANDON" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT SHS, HOTEN, TENDUONG, TENPHUONG, TENQUAN, HKTK, TAMTRU, CHUQUYENNHA, GIAYPHEPKD, GIAYPHEPXD, GIAYTOKHAC, BIENLAITIENUOC, USERNAME, FULLNAME, NAM, THANG, NGAY, TENLOAI FROM dbo.V_BIENNHANDON</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="SHS" DataSetColumn="SHS" />
+              <Mapping SourceColumn="HOTEN" DataSetColumn="HOTEN" />
+              <Mapping SourceColumn="TENDUONG" DataSetColumn="TENDUONG" />
+              <Mapping SourceColumn="TENPHUONG" DataSetColumn="TENPHUONG" />
+              <Mapping SourceColumn="TENQUAN" DataSetColumn="TENQUAN" />
+              <Mapping SourceColumn="HKTK" DataSetColumn="HKTK" />
+              <Mapping SourceColumn="TAMTRU" DataSetColumn="TAMTRU" />
+              <Mapping SourceColumn="CHUQUYENNHA" DataSetColumn="CHUQUYENNHA" />
+              <Mapping SourceColumn="GIAYPHEPKD" DataSetColumn="GIAYPHEPKD" />
+              <Mapping SourceColumn="GIAYPHEPXD" DataSetColumn="GIAYPHEPXD" />
+              <Mapping SourceColumn="GIAYTOKHAC" DataSetColumn="GIAYTOKHAC" />
+              <Mapping SourceColumn="BIENLAITIENUOC" DataSetColumn="BIENLAITIENUOC" />
+              <Mapping SourceColumn="USERNAME" DataSetColumn="USERNAME" />
+              <Mapping SourceColumn="FULLNAME" DataSetColumn="FULLNAME" />
+              <Mapping SourceColumn="NAM" DataSetColumn="NAM" />
+              <Mapping SourceColumn="THANG" DataSetColumn="THANG" />
+              <Mapping SourceColumn="NGAY" DataSetColumn="NGAY" />
+              <Mapping SourceColumn="TENLOAI" DataSetColumn="TENLOAI" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet2" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet2" msprop:Generator_UserDSName="DataSet2">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="V_BIENNHANDON" msprop:Generator_TableClassName="V_BIENNHANDONDataTable" msprop:Generator_TableVarName="tableV_BIENNHANDON" msprop:Generator_TablePropName="V_BIENNHANDON" msprop:Generator_RowDeletingName="V_BIENNHANDONRowDeleting" msprop:Generator_UserTableName="V_BIENNHANDON" msprop:Generator_RowChangingName="V_BIENNHANDONRowChanging" msprop:Generator_RowEvHandlerName="V_BIENNHANDONRowChangeEventHandler" msprop:Generator_RowDeletedName="V_BIENNHANDONRowDeleted" msprop:Generator_RowEvArgName="V_BIENNHANDONRowChangeEvent" msprop:Generator_RowChangedName="V_BIENNHANDONRowChanged" msprop:Generator_RowClassName="V_BIENNHANDONRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SHS" msprop:Generator_ColumnVarNameInTable="columnSHS" msprop:Generator_ColumnPropNameInRow="SHS" msprop:Generator_ColumnPropNameInTable="SHSColumn" msprop:Generator_UserColumnName="SHS">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="HOTEN" msprop:Generator_ColumnVarNameInTable="columnHOTEN" msprop:Generator_ColumnPropNameInRow="HOTEN" msprop:Generator_ColumnPropNameInTable="HOTENColumn" msprop:Generator_UserColumnName="HOTEN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TENDUONG" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTENDUONG" msprop:Generator_ColumnPropNameInRow="TENDUONG" msprop:Generator_ColumnPropNameInTable="TENDUONGColumn" msprop:Generator_UserColumnName="TENDUONG" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="501" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TENPHUONG" msprop:Generator_ColumnVarNameInTable="columnTENPHUONG" msprop:Generator_ColumnPropNameInRow="TENPHUONG" msprop:Generator_ColumnPropNameInTable="TENPHUONGColumn" msprop:Generator_UserColumnName="TENPHUONG" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TENQUAN" msprop:Generator_ColumnVarNameInTable="columnTENQUAN" msprop:Generator_ColumnPropNameInRow="TENQUAN" msprop:Generator_ColumnPropNameInTable="TENQUANColumn" msprop:Generator_UserColumnName="TENQUAN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="HKTK" msprop:Generator_ColumnVarNameInTable="columnHKTK" msprop:Generator_ColumnPropNameInRow="HKTK" msprop:Generator_ColumnPropNameInTable="HKTKColumn" msprop:Generator_UserColumnName="HKTK" type="xs:boolean" minOccurs="0" />
+              <xs:element name="TAMTRU" msprop:Generator_ColumnVarNameInTable="columnTAMTRU" msprop:Generator_ColumnPropNameInRow="TAMTRU" msprop:Generator_ColumnPropNameInTable="TAMTRUColumn" msprop:Generator_UserColumnName="TAMTRU" type="xs:boolean" minOccurs="0" />
+              <xs:element name="CHUQUYENNHA" msprop:Generator_ColumnVarNameInTable="columnCHUQUYENNHA" msprop:Generator_ColumnPropNameInRow="CHUQUYENNHA" msprop:Generator_ColumnPropNameInTable="CHUQUYENNHAColumn" msprop:Generator_UserColumnName="CHUQUYENNHA" type="xs:boolean" minOccurs="0" />
+              <xs:element name="GIAYPHEPKD" msprop:Generator_ColumnVarNameInTable="columnGIAYPHEPKD" msprop:Generator_ColumnPropNameInRow="GIAYPHEPKD" msprop:Generator_ColumnPropNameInTable="GIAYPHEPKDColumn" msprop:Generator_UserColumnName="GIAYPHEPKD" type="xs:boolean" minOccurs="0" />
+              <xs:element name="GIAYPHEPXD" msprop:Generator_ColumnVarNameInTable="columnGIAYPHEPXD" msprop:Generator_ColumnPropNameInRow="GIAYPHEPXD" msprop:Generator_ColumnPropNameInTable="GIAYPHEPXDColumn" msprop:Generator_UserColumnName="GIAYPHEPXD" type="xs:boolean" minOccurs="0" />
+              <xs:element name="GIAYTOKHAC" msprop:Generator_ColumnVarNameInTable="columnGIAYTOKHAC" msprop:Generator_ColumnPropNameInRow="GIAYTOKHAC" msprop:Generator_ColumnPropNameInTable="GIAYTOKHACColumn" msprop:Generator_UserColumnName="GIAYTOKHAC" type="xs:boolean" minOccurs="0" />
+              <xs:element name="BIENLAITIENUOC" msprop:Generator_ColumnVarNameInTable="columnBIENLAITIENUOC" msprop:Generator_ColumnPropNameInRow="BIENLAITIENUOC" msprop:Generator_ColumnPropNameInTable="BIENLAITIENUOCColumn" msprop:Generator_UserColumnName="BIENLAITIENUOC" type="xs:boolean" minOccurs="0" />
+              <xs:element name="USERNAME" msprop:Generator_ColumnVarNameInTable="columnUSERNAME" msprop:Generator_ColumnPropNameInRow="USERNAME" msprop:Generator_ColumnPropNameInTable="USERNAMEColumn" msprop:Generator_UserColumnName="USERNAME">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FULLNAME" msprop:Generator_ColumnVarNameInTable="columnFULLNAME" msprop:Generator_ColumnPropNameInRow="FULLNAME" msprop:Generator_ColumnPropNameInTable="FULLNAMEColumn" msprop:Generator_UserColumnName="FULLNAME" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NAM" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNAM" msprop:Generator_ColumnPropNameInRow="NAM" msprop:Generator_ColumnPropNameInTable="NAMColumn" msprop:Generator_UserColumnName="NAM" type="xs:int" minOccurs="0" />
+              <xs:element name="THANG" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTHANG" msprop:Generator_ColumnPropNameInRow="THANG" msprop:Generator_ColumnPropNameInTable="THANGColumn" msprop:Generator_UserColumnName="THANG" type="xs:int" minOccurs="0" />
+              <xs:element name="NGAY" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNGAY" msprop:Generator_ColumnPropNameInRow="NGAY" msprop:Generator_ColumnPropNameInTable="NGAYColumn" msprop:Generator_UserColumnName="NGAY" type="xs:int" minOccurs="0" />
+              <xs:element name="TENLOAI" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTENLOAI" msprop:Generator_ColumnPropNameInRow="TENLOAI" msprop:Generator_ColumnPropNameInTable="TENLOAIColumn" msprop:Generator_UserColumnName="TENLOAI" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

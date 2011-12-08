@@ -380,6 +380,25 @@ namespace TanHoaWater.DAL
             return false;
         }
 
+        public static void CapNhatHoanTatChoDot(string madot) {
+            try
+            {
+                TanHoaDataContext db = new TanHoaDataContext();
+                var query = from ttk in db.DOT_NHAN_DONs where ttk.MADOT == madot select ttk;
+                DOT_NHAN_DON dotnd = query.SingleOrDefault();
+                if (dotnd != null) {
+                    dotnd.NGAYTRAHS = DateTime.Now.Date;
+                    db.SubmitChanges();
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                log.Error("Loi khi chuyen hs" + ex.Message);
+
+            }
+        }
         public static void HoaTatTKbyDot(string madot)
         {
             try
@@ -393,7 +412,7 @@ namespace TanHoaWater.DAL
                         HoaTatTK(item.SHS);
                     }
                 }
-
+                CapNhatHoanTatChoDot(madot);
 
             }
             catch (Exception ex)

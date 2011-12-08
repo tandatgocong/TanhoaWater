@@ -98,6 +98,19 @@ namespace TanHoaWater.View.Users.KEHOACH
         {
 
             this.soBienNhan.Text = DAL.Idetity.IdentityBienNhan(this.cbLoaiBN.SelectedValue + "");
+            if ((this.cbLoaiBN.SelectedValue + "").Equals("GM")) {
+                groupDiDoi.Visible = false;
+                groupganmoi.Visible = true;
+            }
+            else if ((this.cbLoaiBN.SelectedValue + "").Equals("DD"))
+            {
+                groupDiDoi.Visible = true;
+                groupganmoi.Visible = false;
+            }
+            else {
+                groupDiDoi.Visible = false;
+                groupganmoi.Visible = false;
+            }
             
         }
 
@@ -129,15 +142,16 @@ namespace TanHoaWater.View.Users.KEHOACH
             }
         }
 
-        public void reset() {
+        public void reset()
+        {
             this.soBienNhan.Text = DAL.Idetity.IdentityBienNhan(this.cbLoaiBN.SelectedValue + "");
-            this.txtHoTen.Text="";
+            this.txtHoTen.Text = "";
             this.txtDt.Text = "";
-            this.txtsonha.Text="";
-            this.txtDuong.Text="";
+            this.txtsonha.Text = "";
+            this.txtDuong.Text = "";
             this.cbPhuong.Text = null;
             this.Quan.Text = null;
-           
+
             this.cbPhuong.DataSource = DAL.C_Phuong.getListPhuong();
             this.cbPhuong.DisplayMember = "Display";
             this.cbPhuong.ValueMember = "Value";
@@ -145,13 +159,27 @@ namespace TanHoaWater.View.Users.KEHOACH
             Quan.DataSource = DAL.C_Quan.getList();
             Quan.ValueMember = "MAQUAN";
             Quan.DisplayMember = "TENQUAN";
+
+            checkHK.Checked = false; ;
+            checkChuQuyen.Checked = false; ;
+            checkGiayPhepXD.Checked = false;
+            checkGiayPhepKD.Checked = false;
+            GM_giaytokhac.Checked = false;
+            DD_GiayToKhac.Checked = false;
+            checkBienLaiTN.Checked = false;
+            checkSoTTKT3.Checked = false;
             this.txtHoTen.Focus();
 
         }
+
         public void printingBienNhan(string mabiennhan, string dienthoai, string user)
         {
           // CrystalReportViewer r = new CrystalReportViewer();
-           ReportDocument rp = new crp_BIENNHAN();
+           ReportDocument rp = new crp_BIENNHAN_GM();
+           if (mabiennhan.Contains("DD"))
+            {
+                rp = new crp_BIENNHAN_DD();
+            }
            rp.PrintOptions.PaperSize = PaperSize.Paper11x17;
            rp.SetDataSource(DAL.C_BienNhanDon.printBienNhan(mabiennhan, user));
            rp.SetParameterValue("dienthoai", dienthoai);
@@ -219,6 +247,7 @@ namespace TanHoaWater.View.Users.KEHOACH
                     biennhan.NGAYNHAN = DateTime.Now.Date;
                     biennhan.SOHO = int.Parse(this.numericUpDown1.Value + "");
                     biennhan.DIENTHOAI = txtDt.Text;
+                   //1
                     if (checkHK.Checked)
                     {
                         biennhan.HKTK = true;
@@ -227,7 +256,7 @@ namespace TanHoaWater.View.Users.KEHOACH
                     {
                         biennhan.HKTK = false;
                     }
-
+                    //2
                     if (checkChuQuyen.Checked)
                     {
                         biennhan.CHUQUYENNHA = true;
@@ -236,8 +265,8 @@ namespace TanHoaWater.View.Users.KEHOACH
                     {
                         biennhan.CHUQUYENNHA = false;
                     }
-
-                    if (checkGiayPhep.Checked)
+                    //3
+                    if (checkGiayPhepXD.Checked)
                     {
                         biennhan.GIAYPHEPXD = true;
                     }
@@ -245,7 +274,53 @@ namespace TanHoaWater.View.Users.KEHOACH
                     {
                         biennhan.GIAYPHEPXD = false;
                     }
-
+                    //4
+                    if (checkSoTTKT3.Checked)
+                    {
+                        biennhan.TAMTRU = true;
+                    }
+                    else
+                    {
+                        biennhan.TAMTRU = false;
+                    }
+                    //5
+                    if (checkGiayPhepKD.Checked)
+                    {
+                        biennhan.GIAYPHEPKD = true;
+                    }
+                    else
+                    {
+                        biennhan.GIAYPHEPKD = false;
+                    }
+                    //6
+                    if (GM_giaytokhac.Checked)
+                    {
+                        biennhan.GIAYTOKHAC = true;
+                    }
+                    else
+                    {
+                        biennhan.GIAYTOKHAC = false;
+                    }
+                    if ((cbLoaiBN.SelectedValue + "").Equals("DD"))
+                    {
+                        if (DD_GiayToKhac.Checked)
+                        {
+                            biennhan.GIAYTOKHAC = true;
+                        }
+                        else
+                        {
+                            biennhan.GIAYTOKHAC = false;
+                        }
+                        //8
+                        if (checkBienLaiTN.Checked)
+                        {
+                            biennhan.BIENLAITIENUOC = true;
+                        }
+                        else
+                        {
+                            biennhan.BIENLAITIENUOC = false;
+                        }
+                    }
                     biennhan.CREATEBY = DAL.C_USERS._userName;
                     biennhan.CREATEDATE = DateTime.Now;
                     DAL.C_BienNhanDon.InsertBienNhanDon(biennhan);
@@ -299,7 +374,8 @@ namespace TanHoaWater.View.Users.KEHOACH
             baocao();
         }
 
-        public void resetedit() {
+        public void resetedit()
+        {
 
             editSoBN.Text = "";
             editLoaiBN.Text = "";
@@ -309,9 +385,16 @@ namespace TanHoaWater.View.Users.KEHOACH
             editDienThoai.Text = null;
             editPhuong.Text = null;
             editQuan.Text = null;
-            this.editHK.Checked = false;
-            this.editGiayPhep.Checked = false;
-            this.editGiayCQ.Checked = false;
+
+            eddit_checkhokhau.Checked = false;
+            editcheckchuquyennha.Checked = false;
+            edit_giayphepxd.Checked = false;
+            edit_tamtrukt3.Checked = false;
+            edit_giayphepkd.Checked = false;
+            editgiaytokhac.Checked = false;
+            editddgiaytokhac.Checked = false;
+            editbienlaithutien.Checked = false;
+
             editSoBN.Focus();
 
         }
@@ -325,6 +408,15 @@ namespace TanHoaWater.View.Users.KEHOACH
                     BIENNHANDON biennhan = DAL.C_BienNhanDon.finbyMabienNhanEdit(this.editSoBN.Text);
                     if (biennhan != null)
                     {
+                        if(biennhan.LOAIDON.Equals("DD")){
+                            editGM.Visible = false;
+                            editDD.Visible = true;
+                        }else{
+                            editGM.Visible = true;
+                            editDD.Visible = false;
+                        }
+
+
                         editSoBN.Text = biennhan.SHS;
                         editLoaiBN.Text = biennhan.LOAI_NHANDON.TENLOAI;
                         editHoTen.Text = biennhan.HOTEN;
@@ -333,11 +425,27 @@ namespace TanHoaWater.View.Users.KEHOACH
                         editTenDuong.Text = biennhan.DUONG;
                         QUAN q = DAL.C_Quan.finByMaQuan(biennhan.QUAN);
                         editQuan.Text = q.TENQUAN;
-                        editPhuong.Text = DAL.C_Phuong.finbyPhuong(q.MAQUAN, biennhan.PHUONG).TENPHUONG ; 
-                        this.editHK.Checked = bool.Parse(biennhan.HKTK + "");
-                        this.editGiayPhep.Checked = bool.Parse(biennhan.GIAYPHEPXD + "");
-                        this.editGiayCQ.Checked = bool.Parse(biennhan.CHUQUYENNHA + "");    
-                        
+                        editPhuong.Text = DAL.C_Phuong.finbyPhuong(q.MAQUAN, biennhan.PHUONG).TENPHUONG ;
+                        try
+                        {
+                            eddit_checkhokhau.Checked = bool.Parse(biennhan.HKTK + "");
+                            editcheckchuquyennha.Checked = bool.Parse(biennhan.CHUQUYENNHA + "");
+                            edit_giayphepxd.Checked = bool.Parse(biennhan.GIAYPHEPXD + "");
+                            edit_tamtrukt3.Checked = bool.Parse(biennhan.TAMTRU + "");
+                            edit_giayphepkd.Checked = bool.Parse(biennhan.GIAYPHEPKD + "");
+                            editgiaytokhac.Checked = bool.Parse(biennhan.GIAYTOKHAC + "");
+                        }
+                        catch (Exception)
+                        {
+                        }
+                        try
+                        {
+                            editddgiaytokhac.Checked = bool.Parse(biennhan.GIAYTOKHAC + "");
+                            editbienlaithutien.Checked = bool.Parse(biennhan.BIENLAITIENUOC + "");
+                        }
+                        catch (Exception)
+                        {
+                        }
                     }
                     else {
                         MessageBox.Show(this, "Không Tìm Thấy Biên Nhận !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -420,7 +528,8 @@ namespace TanHoaWater.View.Users.KEHOACH
                         biennhan.PHUONG = phuong.MAPHUONG;
                         biennhan.QUAN = quan.MAQUAN;
                         biennhan.DIENTHOAI = editDienThoai.Text;
-                        if (editHK.Checked)
+                        //1
+                        if (eddit_checkhokhau.Checked)
                         {
                             biennhan.HKTK = true;
                         }
@@ -428,8 +537,8 @@ namespace TanHoaWater.View.Users.KEHOACH
                         {
                             biennhan.HKTK = false;
                         }
-
-                        if (editGiayCQ.Checked)
+                        //2
+                        if (editcheckchuquyennha.Checked)
                         {
                             biennhan.CHUQUYENNHA = true;
                         }
@@ -437,8 +546,8 @@ namespace TanHoaWater.View.Users.KEHOACH
                         {
                             biennhan.CHUQUYENNHA = false;
                         }
-
-                        if (editGiayPhep.Checked)
+                        //3
+                        if (edit_giayphepxd.Checked)
                         {
                             biennhan.GIAYPHEPXD = true;
                         }
@@ -446,7 +555,55 @@ namespace TanHoaWater.View.Users.KEHOACH
                         {
                             biennhan.GIAYPHEPXD = false;
                         }
-
+                        //4
+                        if (edit_tamtrukt3.Checked)
+                        {
+                            biennhan.TAMTRU = true;
+                        }
+                        else
+                        {
+                            biennhan.TAMTRU = false;
+                        }
+                        //5
+                        if (edit_giayphepkd.Checked)
+                        {
+                            biennhan.GIAYPHEPKD = true;
+                        }
+                        else
+                        {
+                            biennhan.GIAYPHEPKD = false;
+                        }
+                        //6
+                        if (editgiaytokhac.Checked)
+                        {
+                            biennhan.GIAYTOKHAC = true;
+                        }
+                        else
+                        {
+                            biennhan.GIAYTOKHAC = false;
+                        }
+                        if (biennhan.LOAIDON.Equals("DD"))
+                        {
+                            //7
+                            if (editddgiaytokhac.Checked)
+                            {
+                                biennhan.GIAYTOKHAC = true;
+                            }
+                            else
+                            {
+                                biennhan.GIAYTOKHAC = false;
+                            }
+                            //8
+                            if (editbienlaithutien.Checked)
+                            {
+                                biennhan.BIENLAITIENUOC = true;
+                            }
+                            else
+                            {
+                                biennhan.BIENLAITIENUOC = false;
+                            }
+                        }
+                       
                         biennhan.MODIFYBY = DAL.C_USERS._userName;
                         biennhan.MODIFYDATE = DateTime.Now;
                         DON_KHACHHANG donkh=  DAL.C_DonKhachHang.findBySOHOSO(biennhan.SHS);
@@ -460,7 +617,7 @@ namespace TanHoaWater.View.Users.KEHOACH
                             
                             MessageBox.Show(this, "Cập Nhật Biên Nhận Thành Công!", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             //printingBienNhan(biennhan.SHS, DAL.C_USERS._userName);
-                            resetedit();
+                            //resetedit();
                         } else {
                             MessageBox.Show(this, "Cập Nhật Biên Nhận Thất Bại !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
@@ -506,6 +663,11 @@ namespace TanHoaWater.View.Users.KEHOACH
             {
                 txtHoTen.Text = txtHoTen.Text  +" (ĐD " + numericUpDown1.Value + " Hộ)";
             }
+        }
+
+        private void btInBN(object sender, EventArgs e)
+        {
+            printingBienNhan(editSoBN.Text, editDienThoai.Text, DAL.C_USERS._userName);
         }
     }
 }

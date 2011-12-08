@@ -50,10 +50,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(988, 671);
             this.Controls.Add(this.crystalReportViewer);
-            this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "rpt_View";
-            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.ResumeLayout(false);
 

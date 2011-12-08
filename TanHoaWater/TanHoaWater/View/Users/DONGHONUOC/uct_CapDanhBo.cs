@@ -155,11 +155,11 @@ namespace TanHoaWater.View.Users.DONGHONUOC
                 {
                     if ("".Equals(_sodanhbo))
                     {
-                        gridHoanCong.Rows[gridHoanCong.CurrentCell.RowIndex].Cells["hc_SoDanhBo"].Value = gridHoanCong.Rows[gridHoanCong.CurrentCell.RowIndex].Cells["hc_Ma_QP"].Value;
+                        gridHoanCong.Rows[gridHoanCong.CurrentCell.RowIndex].Cells["hc_SoDanhBo"].Value = "13"+((gridHoanCong.Rows[gridHoanCong.CurrentCell.RowIndex].Cells["hc_Ma_QP"].Value+"").Substring(2,2));
                     }
                     else
                     {
-                        gridHoanCong.Rows[gridHoanCong.CurrentCell.RowIndex].Cells["hc_SoDanhBo"].Value = gridHoanCong.Rows[gridHoanCong.CurrentCell.RowIndex].Cells["hc_Ma_QP"].Value + "" + _sodanhbo.Substring(4, 3);
+                        gridHoanCong.Rows[gridHoanCong.CurrentCell.RowIndex].Cells["hc_SoDanhBo"].Value = "13" + ((gridHoanCong.Rows[gridHoanCong.CurrentCell.RowIndex].Cells["hc_Ma_QP"].Value + "").Substring(2, 2)) + "" + _sodanhbo.Substring(4, 3);
                     }
                 }
             }
@@ -247,27 +247,66 @@ namespace TanHoaWater.View.Users.DONGHONUOC
                 
             }
         }
-
+        public int checktrungdanhbo(string danhbo) {
+            int count = 0;
+            for(int i=0;i<gridHoanCong.Rows.Count;i++)
+                if(danhbo.Equals((this.gridHoanCong.Rows[i].Cells["hc_SoDanhBo"].Value + "").Trim()))
+                    count++;
+            return count;
+        }
+        public int checktrunghopdong(string hopdong) {
+            int count = 0;
+            for (int i = 0; i < gridHoanCong.Rows.Count; i++)
+                if (hopdong.Equals((this.gridHoanCong.Rows[i].Cells["hc_hopdong"].Value + "").Trim()))
+                    count++;
+            return count;
+        }
         private void gridHoanCong_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
                 if (gridHoanCong.CurrentCell.OwningColumn.Name == "hc_SoDanhBo")
                 {
-                    string hc_SoDanhBo = gridHoanCong.Rows[gridHoanCong.CurrentCell.RowIndex].Cells["hc_SoDanhBo"].Value + "";
-                    if (hc_SoDanhBo.Replace(".", "").Length != 11)
+                    
+                    try
                     {
-                        MessageBox.Show(this, "Sai Số Danh Bộ ", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        gridHoanCong.Rows[gridHoanCong.CurrentCell.RowIndex].Cells["hc_SoDanhBo"].Selected = true;
+                        string hc_SoDanhBo = gridHoanCong.Rows[gridHoanCong.CurrentCell.RowIndex].Cells["hc_SoDanhBo"].Value + "";
+                        if (hc_SoDanhBo.Replace(".", "").Length != 11)
+                        {
+                            MessageBox.Show(this, "Sai Số Danh Bộ ", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            gridHoanCong.Rows[gridHoanCong.CurrentCell.RowIndex].Cells["hc_SoDanhBo"].Selected = true;
+                        }else if (checktrungdanhbo(this.gridHoanCong.Rows[gridHoanCong.CurrentCell.RowIndex].Cells["hc_SoDanhBo"].Value + "") > 1)
+                        {
+                            MessageBox.Show(this, "Trùng Số Danh Bộ.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else if (DAL.C_KH_HoSoKhachHang.checkSoDanhBo((this.gridHoanCong.Rows[gridHoanCong.CurrentCell.RowIndex].Cells["hc_SoDanhBo"].Value + "").Replace(".", "")) >= 1)
+                        {
+                            MessageBox.Show(this, "Trùng Số Danh Bộ.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
+                    catch (Exception)
+                    {
+                    }
+                    
                     this.btInBangKe.Enabled = false;
                     this.btInBangDC.Enabled = false;
                 }
+               
                 if (gridHoanCong.CurrentCell.OwningColumn.Name == "hc_hopdong")
                 {
                     gridHoanCong.Rows[gridHoanCong.CurrentCell.RowIndex].Cells["hc_hopdong"].Value = gridHoanCong.Rows[gridHoanCong.CurrentCell.RowIndex].Cells["hc_hopdong"].Value.ToString().ToUpper();
                     _sohopdong= gridHoanCong.Rows[gridHoanCong.CurrentCell.RowIndex].Cells["hc_hopdong"].Value.ToString().ToUpper();
+
+                    if (checktrunghopdong(this.gridHoanCong.Rows[gridHoanCong.CurrentCell.RowIndex].Cells["hc_hopdong"].Value + "")>1)
+                    {
+                        MessageBox.Show(this, "Trùng Số Hợp Đồng.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else if (DAL.C_KH_HoSoKhachHang.countSoHopDong(this.gridHoanCong.Rows[gridHoanCong.CurrentCell.RowIndex].Cells["hc_hopdong"].Value + "") >= 1)
+                    {
+                        MessageBox.Show(this, "Trùng Số Hợp Đồng.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
+
                 if (gridHoanCong.CurrentCell.OwningColumn.Name == "hc_MaDMA")
                 {
                     _maDMA = gridHoanCong.Rows[gridHoanCong.CurrentCell.RowIndex].Cells["hc_MaDMA"].Value.ToString().ToUpper();

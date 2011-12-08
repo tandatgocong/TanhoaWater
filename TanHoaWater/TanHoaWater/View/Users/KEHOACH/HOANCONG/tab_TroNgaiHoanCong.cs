@@ -126,6 +126,7 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
                         DAL.C_KH_HoanCong.TroNgai(shs,TroNgai,noidung);
                     }
                 //DAL.C_KH_HoanCong.CapNhat();
+                MessageBox.Show(this, "Hoàn Tất.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
@@ -137,7 +138,7 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
         private void btHoanTat_Click(object sender, EventArgs e)
         {
             updateDulieu();
-           
+            
           
         }
 

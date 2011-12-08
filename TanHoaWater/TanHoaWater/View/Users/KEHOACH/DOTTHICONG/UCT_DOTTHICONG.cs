@@ -670,7 +670,7 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
             this.tabThamSo.Controls.Clear();
             this.tabThamSo.Controls.Add(new tab_DonViTCTLMD());
             //  this.tabCapNhatDS.Controls.Add(new tab_CapNhatDanhSachND(madot));
-            this.tabControl1.SelectedTabIndex = 2;
+            this.tabControl1.SelectedTabIndex = 3;
         }
 
         private void searchTimKiem_KeyPress(object sender, KeyPressEventArgs e)
@@ -707,6 +707,56 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
                 catch (Exception)
                 {
                 }
+            }
+        }
+
+        private void btTheoBangKe_Click(object sender, EventArgs e)
+        {
+            string madot = "";
+            string tendot = "";
+            try
+            {
+                madot = gridDotThiCong.Rows[gridDotThiCong.CurrentRow.Index].Cells["gridSoDot"].Value + "";
+                tendot = gridDotThiCong.Rows[gridDotThiCong.CurrentRow.Index].Cells["girdLoaiDot"].Value + "";
+            }
+            catch (Exception)
+            {
+            }
+            if (!"".Equals(madot))
+            {
+                this.tabControlPanel1.Controls.Clear();
+                this.tabControlPanel1.Controls.Add(new tab_CapNhatDanhSachbyDot(madot));
+                //  this.tabCapNhatDS.Controls.Add(new tab_CapNhatDanhSachND(madot));
+                this.tabControl1.SelectedTabIndex = 2;
+            }
+            else
+            {
+                MessageBox.Show(this, "Cần Chọn Mã Đợt Để Xin Phép Đào Đường !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void tabItem4_Click(object sender, EventArgs e)
+        {
+            string madot = "";
+            string tendot = "";
+            try
+            {
+                madot = gridDotThiCong.Rows[gridDotThiCong.CurrentRow.Index].Cells["gridSoDot"].Value + "";
+                tendot = gridDotThiCong.Rows[gridDotThiCong.CurrentRow.Index].Cells["girdLoaiDot"].Value + "";
+            }
+            catch (Exception)
+            {
+            }
+            if (!"".Equals(madot))
+            {
+                this.tabControlPanel1.Controls.Clear();
+                this.tabControlPanel1.Controls.Add(new tab_CapNhatDanhSachbyDot(madot));
+                //  this.tabCapNhatDS.Controls.Add(new tab_CapNhatDanhSachND(madot));
+                this.tabControl1.SelectedTabIndex = 2;
+            }
+            else
+            {
+                MessageBox.Show(this, "Cần Chọn Mã Đợt Để Xin Phép Đào Đường !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
         
