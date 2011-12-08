@@ -114,7 +114,9 @@ namespace TanHoaWater.DAL
         {
             try
             {
+
                db.SubmitChanges();
+               db = new TanHoaDataContext();
                 return true;
             }
             catch (Exception ex)
@@ -124,5 +126,82 @@ namespace TanHoaWater.DAL
             }
             return false;
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sodotxp"></param>
+        /// <returns></returns>
+        /// 
+        public static int countSoThanTLK(string sodotxp)
+        {
+            TanHoaDataContext db = new TanHoaDataContext();
+            SqlConnection conn = new SqlConnection(db.Connection.ConnectionString);
+            conn.Open();
+            string sql = " SELECT COUNT(*) ";
+            sql += "  FROM DON_KHACHHANG  ";
+            sql += " WHERE SOTHANTLK='" + sodotxp + "'";
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            int result = Convert.ToInt32(cmd.ExecuteScalar());
+            conn.Close();
+            return result;
+        }
+
+        public static int countSoHopDong(string sohopdong)
+        {
+            TanHoaDataContext db = new TanHoaDataContext();
+            SqlConnection conn = new SqlConnection(db.Connection.ConnectionString);
+            conn.Open();
+            string sql = " SELECT COUNT(*) ";
+            sql += "  FROM KH_HOSOKHACHHANG  ";
+            sql += " WHERE DHN_SOHOPDONG='" + sohopdong + "'";
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            int result = Convert.ToInt32(cmd.ExecuteScalar());
+            conn.Close();
+            return result;
+        }
+
+        
+
+        public static int checkSoThanTLK(string sodotxp)
+        {
+            TanHoaDataContext db = new TanHoaDataContext();
+            SqlConnection conn = new SqlConnection(db.Connection.ConnectionString);
+            conn.Open();
+            string sql = " SELECT COUNT(*) ";
+            sql += "  FROM KH_HOSOKHACHHANG  ";
+            sql += " WHERE SOTHANTLK='" + sodotxp + "'";
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            int result = Convert.ToInt32(cmd.ExecuteScalar());
+            conn.Close();
+            return result;
+        }
+        
+        public static int checkSoDanhBo(string sodanhbo)
+        {
+            TanHoaDataContext db = new TanHoaDataContext();
+            SqlConnection conn = new SqlConnection(db.Connection.ConnectionString);
+            conn.Open();
+            string sql = " SELECT COUNT(*) ";
+            sql += "  FROM KH_HOSOKHACHHANG  ";
+            sql += " WHERE DHN_SODANHBO='" + sodanhbo + "'";
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            int result = Convert.ToInt32(cmd.ExecuteScalar());
+            conn.Close();
+            return result;
+        }
+
+        public static int checkCoDotTC(string shs)
+        {
+            TanHoaDataContext db = new TanHoaDataContext();
+            SqlConnection conn = new SqlConnection(db.Connection.ConnectionString);
+            conn.Open();
+            string sql = " SELECT COUNT(*) FROM KH_HOSOKHACHHANG WHERE SHS='" + shs + "' AND (MADOTTC IS NOT NULL OR MADOTTC='') ";
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            int result = Convert.ToInt32(cmd.ExecuteScalar());
+            conn.Close();
+            return result;
+        }
+        
+
     }
 }

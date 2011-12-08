@@ -913,5 +913,11 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
             add();
         }
 
+        private void tab_xemlog_Click(object sender, EventArgs e)
+        {
+            this.tabControlPanel7.Controls.Clear();
+            this.tabControlPanel7.Controls.Add(new tab_LogDonKH());
+        }
+
     }
 }

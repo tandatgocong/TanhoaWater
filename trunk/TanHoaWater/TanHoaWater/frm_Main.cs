@@ -34,11 +34,10 @@ namespace TanHoaWater
         public frm_Main()
         {
             Thread th = new Thread(new ThreadStart(this.start));
+
             th.Start();
             Thread.Sleep(5000);
-              
             InitializeComponent();
-            log4net.Config.XmlConfigurator.Configure();
             th.Abort();
             this.menuHeThong.Select();
 
@@ -62,12 +61,23 @@ namespace TanHoaWater
             this.Text = "Tan Hoa Water Co., ltd - Nhân Viên : " + DAL.C_USERS._fullName;
         }
         private void frm_Main_Load(object sender, EventArgs e)
-        {           
-            if (DAL.TestConection.testConnection() == false)
+        {
+            try
             {
+                if (DAL.TestConection.testConnection() == false)
+                {
+                    MessageBox.Show(this, "Lỗi Kết Nối, Kiểm Tra Kết Nối Tới Server.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Application.Exit();
+                }
+                log4net.Config.XmlConfigurator.Configure();
+            }
+            catch (Exception ex)
+            {
+                log.Error("Loi Load Chuong Trinh: " + ex.Message);
                 MessageBox.Show(this, "Lỗi Kết Nối, Kiểm Tra Kết Nối Tới Server.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Application.Exit();
             }
+
             this.Show();
             dangnhap();
 
@@ -75,8 +85,8 @@ namespace TanHoaWater
 
         private void subThoat_Click(object sender, EventArgs e)
         {
-            
-                Application.Exit();
+
+            Application.Exit();
         }
         public void formLoad()
         {
@@ -101,26 +111,66 @@ namespace TanHoaWater
 
         private void btDotNhanDon_Click(object sender, EventArgs e)
         {
-            this.PanelContent.Controls.Clear();
-            this.PanelContent.Controls.Add(new uct_DOTNHANDON());
+            try
+            {
+                this.PanelContent.Controls.Clear();
+                this.PanelContent.Controls.Add(new uct_DOTNHANDON());
+            }
+            catch (Exception ex)
+            {
+                log.Error("Loi Load Form " + ex.Message);
+                MessageBox.Show(this, "", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Application.Exit();
+            }
+
         }
 
         private void menuNhanDon_Click(object sender, EventArgs e)
         {
-            this.PanelContent.Controls.Clear();
-            this.PanelContent.Controls.Add(new HSKHACHHANG(1));
+
+            try
+            {
+                this.PanelContent.Controls.Clear();
+                this.PanelContent.Controls.Add(new HSKHACHHANG(1));
+            }
+            catch (Exception ex)
+            {
+                log.Error("Loi Load Form " + ex.Message);
+                MessageBox.Show(this, "", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Application.Exit();
+            }
         }
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            this.PanelContent.Controls.Clear();
-            this.PanelContent.Controls.Add(new uct_GiaoHS(1));
+
+            try
+            {
+                this.PanelContent.Controls.Clear();
+                this.PanelContent.Controls.Add(new uct_GiaoHS(1));
+            }
+            catch (Exception ex)
+            {
+                log.Error("Loi Load Form " + ex.Message);
+                MessageBox.Show(this, "", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Application.Exit();
+            }
         }
 
         private void tínhDựToánHSKToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.PanelContent.Controls.Clear();
-            this.PanelContent.Controls.Add(new tab_DanhMucVT(1));
+
+            try
+            {
+                this.PanelContent.Controls.Clear();
+                this.PanelContent.Controls.Add(new tab_DanhMucVT(1));
+            }
+            catch (Exception ex)
+            {
+                log.Error("Loi Load Form " + ex.Message);
+                MessageBox.Show(this, "", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Application.Exit();
+            }
         }
 
         private void ribbonTabItem1_Click(object sender, EventArgs e)
@@ -170,51 +220,101 @@ namespace TanHoaWater
             }
             else if ("QT".Equals(DAL.C_USERS._roles.Trim()))
             {
-                 
-                    this.menuToThietKe.Visible = true;
-                    this.iconMenuPanel.Controls.Clear();
-                    this.menuKHVT.Visible = true;
-                    this.menuQLDHNuoc.Visible = true;
+
+                this.menuToThietKe.Visible = true;
+                this.iconMenuPanel.Controls.Clear();
+                this.menuKHVT.Visible = true;
+                this.menuQLDHNuoc.Visible = true;
             }
         }
 
         private void vtth_DotNhanDon_Click(object sender, EventArgs e)
         {
-            this.menuKHVT.Visible = true;
-            this.menuKHVT.Select();
-            this.PanelContent.Controls.Clear();
-            this.PanelContent.Controls.Add(new uct_DOTNHANDON());
+
+            try
+            {
+                this.menuKHVT.Visible = true;
+                this.menuKHVT.Select();
+                this.PanelContent.Controls.Clear();
+                this.PanelContent.Controls.Add(new uct_DOTNHANDON());
+            }
+            catch (Exception ex)
+            {
+                log.Error("Loi Load Form " + ex.Message);
+                MessageBox.Show(this, "", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Application.Exit();
+            }
 
         }
 
         private void vtth_NhanDonKH_Click(object sender, EventArgs e)
         {
-            this.menuKHVT.Visible = true;
-            this.menuKHVT.Select();
-            this.PanelContent.Controls.Clear();
-            this.PanelContent.Controls.Add(new HSKHACHHANG(1));
+
+            try
+            {
+                this.menuKHVT.Visible = true;
+                this.menuKHVT.Select();
+                this.PanelContent.Controls.Clear();
+                this.PanelContent.Controls.Add(new HSKHACHHANG(1));
+            }
+            catch (Exception ex)
+            {
+                log.Error("Loi Load Form " + ex.Message);
+                MessageBox.Show(this, "", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Application.Exit();
+            }
         }
         private void btChuyenDon_Click(object sender, EventArgs e)
         {
-            this.menuKHVT.Visible = true;
-            this.menuKHVT.Select();
-            this.PanelContent.Controls.Clear();
-            this.PanelContent.Controls.Add(new UCT_XINPHEPDD());
+
+            try
+            {
+                this.menuKHVT.Visible = true;
+                this.menuKHVT.Select();
+                this.PanelContent.Controls.Clear();
+                this.PanelContent.Controls.Add(new UCT_XINPHEPDD());
+            }
+            catch (Exception ex)
+            {
+                log.Error("Loi Load Form " + ex.Message);
+                MessageBox.Show(this, "", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Application.Exit();
+            }
         }
         private void vtth_HoSoTraNgai_Click(object sender, EventArgs e)
         {
-            this.menuKHVT.Visible = true;
-            this.menuKHVT.Select();
-            this.PanelContent.Controls.Clear();
-            this.PanelContent.Controls.Add(new UCT_DOTTHICONG());
+
+            try
+            {
+                this.menuKHVT.Visible = true;
+                this.menuKHVT.Select();
+                this.PanelContent.Controls.Clear();
+                this.PanelContent.Controls.Add(new UCT_DOTTHICONG());
+            }
+            catch (Exception ex)
+            {
+                log.Error("Loi Load Form " + ex.Message);
+                MessageBox.Show(this, "", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Application.Exit();
+            }
         }
 
         private void vtth_HoSoTaiXet_Click(object sender, EventArgs e)
         {
-            this.menuKHVT.Visible = true;
-            this.menuKHVT.Select();
-            this.PanelContent.Controls.Clear();
-            this.PanelContent.Controls.Add(new UCT_HOANCONG());
+
+            try
+            {
+                this.menuKHVT.Visible = true;
+                this.menuKHVT.Select();
+                this.PanelContent.Controls.Clear();
+                this.PanelContent.Controls.Add(new UCT_HOANCONG());
+            }
+            catch (Exception ex)
+            {
+                log.Error("Loi Load Form " + ex.Message);
+                MessageBox.Show(this, "", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Application.Exit();
+            }
         }
 
         private void khvt_TraCuuHS_Click(object sender, EventArgs e)
@@ -223,55 +323,125 @@ namespace TanHoaWater
         }
         private void timkiemDOn_Click(object sender, EventArgs e)
         {
-            this.menuKHVT.Visible = true;
-            this.menuKHVT.Select();
-            this.PanelContent.Controls.Clear();
-            //this.PanelContent.Controls.Add(new HSKHACHHANG(5));
+
+            try
+            {
+                this.menuKHVT.Visible = true;
+                this.menuKHVT.Select();
+                this.PanelContent.Controls.Clear();
+                //this.PanelContent.Controls.Add(new HSKHACHHANG(5));
+            }
+            catch (Exception ex)
+            {
+                log.Error("Loi Load Form " + ex.Message);
+                MessageBox.Show(this, "", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Application.Exit();
+            }
         }
         private void khvt_BaoCao_Click(object sender, EventArgs e)
         {
-            this.menuKHVT.Visible = true;
-            this.menuKHVT.Select();
-            this.PanelContent.Controls.Clear();
-            this.PanelContent.Controls.Add(new HSKHACHHANG(6));
+
+            try
+            {
+                this.menuKHVT.Visible = true;
+                this.menuKHVT.Select();
+                this.PanelContent.Controls.Clear();
+                this.PanelContent.Controls.Add(new HSKHACHHANG(6));
+            }
+            catch (Exception ex)
+            {
+                log.Error("Loi Load Form " + ex.Message);
+                MessageBox.Show(this, "", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Application.Exit();
+            }
         }
 
         private void btGiaoHoSo_Click(object sender, EventArgs e)
         {
-            this.menuToThietKe.Visible = true;
-            this.menuToThietKe.Select();
-            this.PanelContent.Controls.Clear();
-            this.PanelContent.Controls.Add(new uct_GiaoHS(1));
+
+            try
+            {
+                this.menuToThietKe.Visible = true;
+                this.menuToThietKe.Select();
+                this.PanelContent.Controls.Clear();
+                this.PanelContent.Controls.Add(new uct_GiaoHS(1));
+            }
+            catch (Exception ex)
+            {
+                log.Error("Loi Load Form " + ex.Message);
+                MessageBox.Show(this, "", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Application.Exit();
+            }
         }
         private void btGhepHoSo_Click(object sender, EventArgs e)
         {
-            this.menuToThietKe.Visible = true;
-            this.menuToThietKe.Select();
-            this.PanelContent.Controls.Clear();
-            this.PanelContent.Controls.Add(new uct_GiaoHS(2));
+
+            try
+            {
+                this.menuToThietKe.Visible = true;
+                this.menuToThietKe.Select();
+                this.PanelContent.Controls.Clear();
+                this.PanelContent.Controls.Add(new uct_GiaoHS(2));
+            }
+            catch (Exception ex)
+            {
+                log.Error("Loi Load Form " + ex.Message);
+                MessageBox.Show(this, "", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Application.Exit();
+            }
         }
         private void bt_SDVTraHS_Click(object sender, EventArgs e)
         {
-            this.menuToThietKe.Visible = true;
-            this.menuToThietKe.Select();
-            this.PanelContent.Controls.Clear();
-            this.PanelContent.Controls.Add(new uct_GiaoHS(3));
+
+            try
+            {
+                this.menuToThietKe.Visible = true;
+                this.menuToThietKe.Select();
+                this.PanelContent.Controls.Clear();
+                this.PanelContent.Controls.Add(new uct_GiaoHS(3));
+            }
+            catch (Exception ex)
+            {
+                log.Error("Loi Load Form " + ex.Message);
+                MessageBox.Show(this, "", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Application.Exit();
+            }
         }
 
         private void btTheoDoiTHTK_Click(object sender, EventArgs e)
         {
-            this.menuToThietKe.Visible = true;
-            this.menuToThietKe.Select();
-            this.PanelContent.Controls.Clear();
-            this.PanelContent.Controls.Add(new uct_GiaoHS(4));
+
+            try
+            {
+                this.menuToThietKe.Visible = true;
+                this.menuToThietKe.Select();
+                this.PanelContent.Controls.Clear();
+                this.PanelContent.Controls.Add(new uct_GiaoHS(4));
+            }
+            catch (Exception ex)
+            {
+                log.Error("Loi Load Form " + ex.Message);
+                MessageBox.Show(this, "", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Application.Exit();
+            }
         }
 
         private void btTimKiem_Click(object sender, EventArgs e)
         {
-            this.menuToThietKe.Visible = true;
-            this.menuToThietKe.Select();
-            this.PanelContent.Controls.Clear();
-            this.PanelContent.Controls.Add(new uct_GiaoHS(5));
+
+            try
+            {
+                this.menuToThietKe.Visible = true;
+                this.menuToThietKe.Select();
+                this.PanelContent.Controls.Clear();
+                this.PanelContent.Controls.Add(new uct_GiaoHS(5));
+            }
+            catch (Exception ex)
+            {
+                log.Error("Loi Load Form " + ex.Message);
+                MessageBox.Show(this, "", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Application.Exit();
+            }
         }
 
         private void subDangXuat_Click(object sender, EventArgs e)
@@ -292,32 +462,72 @@ namespace TanHoaWater
 
         private void btTinhDuToan_Click(object sender, EventArgs e)
         {
-            this.menuToThietKe.Visible = true;
-            this.menuToThietKe.Select();
-            this.PanelContent.Controls.Clear();
-            this.PanelContent.Controls.Add(new tab_DanhMucVT(1));
+
+            try
+            {
+                this.menuToThietKe.Visible = true;
+                this.menuToThietKe.Select();
+                this.PanelContent.Controls.Clear();
+                this.PanelContent.Controls.Add(new tab_DanhMucVT(1));
+            }
+            catch (Exception ex)
+            {
+                log.Error("Loi Load Form " + ex.Message);
+                MessageBox.Show(this, "", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Application.Exit();
+            }
         }
 
         private void btDanhMucVT_Click(object sender, EventArgs e)
         {
-            this.menuToThietKe.Visible = true;
-            this.menuToThietKe.Select();
-            this.PanelContent.Controls.Clear();
-            this.PanelContent.Controls.Add(new tab_DanhMucVT(2));
+
+            try
+            {
+                this.menuToThietKe.Visible = true;
+                this.menuToThietKe.Select();
+                this.PanelContent.Controls.Clear();
+                this.PanelContent.Controls.Add(new tab_DanhMucVT(2));
+            }
+            catch (Exception ex)
+            {
+                log.Error("Loi Load Form " + ex.Message);
+                MessageBox.Show(this, "", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Application.Exit();
+            }
         }
 
         private void btTaiLapMatBang_Click(object sender, EventArgs e)
         {
-            this.menuToThietKe.Visible = true;
-            this.menuToThietKe.Select();
-            this.PanelContent.Controls.Clear();
-            this.PanelContent.Controls.Add(new tab_DanhMucVT(3));
+
+            try
+            {
+                this.menuToThietKe.Visible = true;
+                this.menuToThietKe.Select();
+                this.PanelContent.Controls.Clear();
+                this.PanelContent.Controls.Add(new tab_DanhMucVT(3));
+            }
+            catch (Exception ex)
+            {
+                log.Error("Loi Load Form " + ex.Message);
+                MessageBox.Show(this, "", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Application.Exit();
+            }
         }
 
         private void btBienNhan_Click(object sender, EventArgs e)
         {
-            frm_BienNhanDon bn = new frm_BienNhanDon();
-            bn.ShowDialog();
+
+            try
+            {
+                frm_BienNhanDon bn = new frm_BienNhanDon();
+                bn.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                log.Error("Loi Load Form " + ex.Message);
+                MessageBox.Show(this, "", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Application.Exit();
+            }
         }
 
         private void caculator_Click(object sender, EventArgs e)
@@ -342,14 +552,34 @@ namespace TanHoaWater
 
         private void webBrowserTool_Click(object sender, EventArgs e)
         {
-            this.PanelContent.Controls.Clear();
-            this.PanelContent.Controls.Add(new webBrowser());
+
+            try
+            {
+                this.PanelContent.Controls.Clear();
+                this.PanelContent.Controls.Add(new webBrowser());
+            }
+            catch (Exception ex)
+            {
+                log.Error("Loi Load Form " + ex.Message);
+                MessageBox.Show(this, "", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Application.Exit();
+            }
         }
 
         private void menuTiemKiem_Click(object sender, EventArgs e)
         {
-            this.PanelContent.Controls.Clear();
-            this.PanelContent.Controls.Add(new uc_TimKiemDonKH());
+
+            try
+            {
+                this.PanelContent.Controls.Clear();
+                this.PanelContent.Controls.Add(new uc_TimKiemDonKH());
+            }
+            catch (Exception ex)
+            {
+                log.Error("Loi Load Form " + ex.Message);
+                MessageBox.Show(this, "", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Application.Exit();
+            }
         }
 
         private void biennhan_Click(object sender, EventArgs e)
@@ -360,16 +590,36 @@ namespace TanHoaWater
 
         private void hoantatThietKe_Click(object sender, EventArgs e)
         {
-            this.PanelContent.Controls.Clear();
-            this.PanelContent.Controls.Add(new tab_HoanTatTK());
-            this.menuToThietKe.Select();
+
+            try
+            {
+                this.PanelContent.Controls.Clear();
+                this.PanelContent.Controls.Add(new tab_HoanTatTK());
+                this.menuToThietKe.Select();
+            }
+            catch (Exception ex)
+            {
+                log.Error("Loi Load Form " + ex.Message);
+                MessageBox.Show(this, "", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Application.Exit();
+            }
         }
 
         private void btHoanTatTK_Click(object sender, EventArgs e)
         {
-            this.PanelContent.Controls.Clear();
-            this.PanelContent.Controls.Add(new tab_HoanTatTK());
-            this.menuToThietKe.Select();
+
+            try
+            {
+                this.PanelContent.Controls.Clear();
+                this.PanelContent.Controls.Add(new tab_HoanTatTK());
+                this.menuToThietKe.Select();
+            }
+            catch (Exception ex)
+            {
+                log.Error("Loi Load Form " + ex.Message);
+                MessageBox.Show(this, "", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Application.Exit();
+            }
         }
 
         private void frm_Main_SizeChanged(object sender, EventArgs e)
@@ -379,11 +629,12 @@ namespace TanHoaWater
             {
                 PanelContent.Location = new Point(
     this.ClientSize.Width / 2 - PanelMain.Size.Width / 2,
-    this.ClientSize.Height / 2 - PanelMain.Size.Height / 2 +3);
+    this.ClientSize.Height / 2 - PanelMain.Size.Height / 2 + 3);
                 PanelContent.Anchor = AnchorStyles.None;
                 this.lbNgayHeThong.Location = new System.Drawing.Point(800, 0);
             }
-            else {
+            else
+            {
                 this.lbNgayHeThong.Location = new System.Drawing.Point(653, 0);
                 this.PanelContent.Location = new System.Drawing.Point(0, 54);
             }
@@ -391,46 +642,96 @@ namespace TanHoaWater
 
         private void xinphepDaoDuong_Click(object sender, EventArgs e)
         {
-           
-            this.PanelContent.Controls.Clear();
-            this.PanelContent.Controls.Add(new UCT_XINPHEPDD());
-            this.menuKHVT.Select();
-        } 
+
+            try
+            {
+
+                this.PanelContent.Controls.Clear();
+                this.PanelContent.Controls.Add(new UCT_XINPHEPDD());
+                this.menuKHVT.Select();
+            }
+            catch (Exception ex)
+            {
+                log.Error("Loi Load Form " + ex.Message);
+                MessageBox.Show(this, "", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Application.Exit();
+            }
+        }
         private void frm_Main_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (MessageBox.Show(this, "Thoát Chương Trình ?", "..: Thông Báo :..", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.No)
             {
                 e.Cancel = true;
             }
-            
+
         }
 
         private void Kh_DotThiCong_Click(object sender, EventArgs e)
         {
-            this.PanelContent.Controls.Clear();
-            this.PanelContent.Controls.Add(new UCT_DOTTHICONG());
-            this.menuKHVT.Select();
+
+            try
+            {
+                this.PanelContent.Controls.Clear();
+                this.PanelContent.Controls.Add(new UCT_DOTTHICONG());
+                this.menuKHVT.Select();
+            }
+            catch (Exception ex)
+            {
+                log.Error("Loi Load Form " + ex.Message);
+                MessageBox.Show(this, "", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Application.Exit();
+            }
         }
 
         private void menuHoanCong_Click(object sender, EventArgs e)
         {
-            this.PanelContent.Controls.Clear();
-            this.PanelContent.Controls.Add(new UCT_HOANCONG());
-            this.menuKHVT.Select();
+
+            try
+            {
+                this.PanelContent.Controls.Clear();
+                this.PanelContent.Controls.Add(new UCT_HOANCONG());
+                this.menuKHVT.Select();
+            }
+            catch (Exception ex)
+            {
+                log.Error("Loi Load Form " + ex.Message);
+                MessageBox.Show(this, "", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Application.Exit();
+            }
         }
 
         private void menuNhapDanhBo_Click(object sender, EventArgs e)
         {
-            this.PanelContent.Controls.Clear();
-            this.PanelContent.Controls.Add(new UCT_CapDanhBo());
-            this.menuQLDHNuoc.Select();
+
+            try
+            {
+                this.PanelContent.Controls.Clear();
+                this.PanelContent.Controls.Add(new UCT_CapDanhBo());
+                this.menuQLDHNuoc.Select();
+            }
+            catch (Exception ex)
+            {
+                log.Error("Loi Load Form " + ex.Message);
+                MessageBox.Show(this, "", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Application.Exit();
+            }
         }
 
         private void dhn_NhapDanhBo_Click(object sender, EventArgs e)
         {
-            this.PanelContent.Controls.Clear();
-            this.PanelContent.Controls.Add(new UCT_CapDanhBo());
-            this.menuQLDHNuoc.Select();
+
+            try
+            {
+                this.PanelContent.Controls.Clear();
+                this.PanelContent.Controls.Add(new UCT_CapDanhBo());
+                this.menuQLDHNuoc.Select();
+            }
+            catch (Exception ex)
+            {
+                log.Error("Loi Load Form " + ex.Message);
+                MessageBox.Show(this, "", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Application.Exit();
+            }
         }
 
         private void dhn_BaoCao_Click(object sender, EventArgs e)
@@ -446,9 +747,20 @@ namespace TanHoaWater
 
         private void menuQuanTri_Click(object sender, EventArgs e)
         {
-            menuQuanTri.Visible = true;
-            this.PanelContent.Controls.Clear();
-            this.PanelContent.Controls.Add(new Admin_Main());
+
+            try
+            {
+                menuQuanTri.Visible = true;
+                this.PanelContent.Controls.Clear();
+                this.PanelContent.Controls.Add(new Admin_Main());
+            }
+            catch (Exception ex)
+            {
+                log.Error("Loi Load Form " + ex.Message);
+                MessageBox.Show(this, "", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Application.Exit();
+            }
+
         }
     }
 }

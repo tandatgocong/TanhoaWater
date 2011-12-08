@@ -652,5 +652,14 @@ namespace TanHoaWater.DAL
             int result = Convert.ToInt32(cmd.ExecuteScalar());
             conn.Close();
         }
+
+        public static bool dontaixet(string sohoso) {
+            TanHoaDataContext db = new TanHoaDataContext();
+            var data = from don in db.TMP_TAIXETs where don.MAHOSO == sohoso select don;
+            if(data.SingleOrDefault()!=null)
+                return true;
+            return false;
+
+        }
     }
 }

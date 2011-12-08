@@ -333,7 +333,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                         }
                         donkh.MODIFYBY = DAL.C_USERS._userName;
                         donkh.MODIFYDATE = DateTime.Now;
-                        donkh.MODIFYLOG = donkh.MODIFYLOG + " | " + DAL.C_USERS._userName + " Đã chỉnh sửa thông tin ngày " + DateTime.Now;
+                        donkh.MODIFYLOG = donkh.MODIFYLOG + " ..|.. " + DAL.C_USERS._userName + " đã chỉnh sửa thông tin:  `" + txtghichusua.Text + "` ngày " + DateTime.Now;
                         try
                         {
                             DAL.C_DonKhachHang.SHSupdate(donkh);
@@ -372,6 +372,11 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
         private void dataSearCh_Sorted(object sender, EventArgs e)
         {
             Utilities.DataGridV.formatRows(dataSearCh);
+        }
+
+        private void label18_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

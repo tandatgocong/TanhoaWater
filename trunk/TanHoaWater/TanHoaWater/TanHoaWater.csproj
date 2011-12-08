@@ -123,6 +123,7 @@
     <Compile Include="DAL\C_DanhMucVatTu.cs" />
     <Compile Include="DAL\C_DHN_HoKhau.cs" />
     <Compile Include="DAL\C_DHN_ChoDanhBo.cs" />
+    <Compile Include="DAL\C_DHN_TENDONGHO.cs" />
     <Compile Include="DAL\C_DonGiaTaiLapMatDuong.cs" />
     <Compile Include="DAL\C_DonGiaVatTu.cs" />
     <Compile Include="DAL\C_DonKhachHang.cs" />
@@ -341,6 +342,12 @@
       <DependentUpon>rpt_QuyetDinhTC.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="View\Users\KEHOACH\DOTTHICONG\tab_CapNhatDanhSachbyDot.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Users\KEHOACH\DOTTHICONG\tab_CapNhatDanhSachbyDot.Designer.cs">
+      <DependentUpon>tab_CapNhatDanhSachbyDot.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Users\KEHOACH\DOTTHICONG\tab_CapNhatDanhSachND.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -421,6 +428,17 @@
     <Compile Include="View\Users\KEHOACH\reportView.Designer.cs">
       <DependentUpon>reportView.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Users\KEHOACH\Report\crp_BIENNHAN_DD.cs">
+      <DependentUpon>crp_BIENNHAN_DD.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="View\Users\KEHOACH\Report\DataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="View\Users\KEHOACH\Report\rpt_BaoCaoTinhHinhNhanDon.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -451,10 +469,10 @@
     <Compile Include="View\Users\KEHOACH\frm_BienNhanDon.Designer.cs">
       <DependentUpon>frm_BienNhanDon.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Users\KEHOACH\Report\crp_BIENNHAN.cs">
+    <Compile Include="View\Users\KEHOACH\Report\crp_BIENNHAN_GM.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>crp_BIENNHAN.rpt</DependentUpon>
+      <DependentUpon>crp_BIENNHAN_GM.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="View\Users\KEHOACH\Report\rpt_TroNgaiQuan.cs">
@@ -573,6 +591,12 @@
     </Compile>
     <Compile Include="View\Users\KEHOACH\XINPHEPDD\UCT_XINPHEPDD.Designer.cs">
       <DependentUpon>UCT_XINPHEPDD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Users\KEHOACH\tab_LogDonKH.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Users\KEHOACH\tab_LogDonKH.Designer.cs">
+      <DependentUpon>tab_LogDonKH.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Users\TinhDuToan\frm_ChonLaiDG.cs">
       <SubType>Form</SubType>
@@ -791,6 +815,9 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_QuyetDinhTC.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\KEHOACH\DOTTHICONG\tab_CapNhatDanhSachbyDot.resx">
+      <DependentUpon>tab_CapNhatDanhSachbyDot.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Users\KEHOACH\DOTTHICONG\tab_CapNhatDanhSachND.resx">
       <DependentUpon>tab_CapNhatDanhSachND.cs</DependentUpon>
     </EmbeddedResource>
@@ -826,6 +853,10 @@
     <EmbeddedResource Include="View\Users\KEHOACH\reportView.resx">
       <DependentUpon>reportView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\KEHOACH\Report\crp_BIENNHAN_DD.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crp_BIENNHAN_DD.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Users\KEHOACH\Report\rpt_BaoCaoTinhHinhNhanDon.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_BaoCaoTinhHinhNhanDon.cs</LastGenOutput>
@@ -843,9 +874,9 @@
     <EmbeddedResource Include="View\Users\KEHOACH\frm_BienNhanDon.resx">
       <DependentUpon>frm_BienNhanDon.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Users\KEHOACH\Report\crp_BIENNHAN.rpt">
+    <EmbeddedResource Include="View\Users\KEHOACH\Report\crp_BIENNHAN_GM.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>crp_BIENNHAN.cs</LastGenOutput>
+      <LastGenOutput>crp_BIENNHAN_GM.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\KEHOACH\Report\rpt_TroNgaiQuan.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -911,6 +942,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\KEHOACH\XINPHEPDD\UCT_XINPHEPDD.resx">
       <DependentUpon>UCT_XINPHEPDD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\KEHOACH\tab_LogDonKH.resx">
+      <DependentUpon>tab_LogDonKH.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\TinhDuToan\frm_ChonLaiDG.resx">
       <DependentUpon>frm_ChonLaiDG.cs</DependentUpon>
@@ -1158,6 +1193,17 @@
     </None>
     <None Include="View\Users\KEHOACH\HOANCONG\BC\HoanCong.xss">
       <DependentUpon>HoanCong.xsd</DependentUpon>
+    </None>
+    <None Include="View\Users\KEHOACH\Report\DataSet2.xsc">
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="View\Users\KEHOACH\Report\DataSet2.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet2.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="View\Users\KEHOACH\Report\DataSet2.xss">
+      <DependentUpon>DataSet2.xsd</DependentUpon>
     </None>
     <None Include="View\Users\KEHOACH\XINPHEPDD\BC\DataSet1.xsc">
       <DependentUpon>DataSet1.xsd</DependentUpon>

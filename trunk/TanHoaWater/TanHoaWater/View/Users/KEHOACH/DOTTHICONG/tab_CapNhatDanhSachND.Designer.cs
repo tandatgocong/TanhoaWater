@@ -65,7 +65,6 @@
             this.btThemMoiHoSo = new DevComponents.DotNetBar.ButtonX();
             this.lbTongHoSo = new DevComponents.DotNetBar.LabelX();
             this.dataGridViewDotTC = new DevComponents.DotNetBar.Controls.DataGridViewX();
-            this.btPrint = new System.Windows.Forms.PictureBox();
             this.thaotac = new System.Windows.Forms.DataGridViewButtonColumn();
             this.SHS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.G_SOHOSO = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -83,6 +82,7 @@
             this.gridTLMD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gr_tongsotien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grid_CoTLK = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btPrint = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dateNgayDongTien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDotTC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btPrint)).BeginInit();
@@ -376,6 +376,7 @@
             this.dataGridViewDotTC.DefaultCellStyle = dataGridViewCellStyle14;
             this.dataGridViewDotTC.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dataGridViewDotTC.Location = new System.Drawing.Point(4, 184);
+            this.dataGridViewDotTC.MultiSelect = false;
             this.dataGridViewDotTC.Name = "dataGridViewDotTC";
             this.dataGridViewDotTC.ReadOnly = true;
             dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -391,17 +392,6 @@
             this.dataGridViewDotTC.Size = new System.Drawing.Size(978, 400);
             this.dataGridViewDotTC.TabIndex = 718;
             this.dataGridViewDotTC.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDotTC_CellClick);
-            // 
-            // btPrint
-            // 
-            this.btPrint.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btPrint.Image = global::TanHoaWater.Properties.Resources.print1;
-            this.btPrint.Location = new System.Drawing.Point(948, 159);
-            this.btPrint.Name = "btPrint";
-            this.btPrint.Size = new System.Drawing.Size(32, 22);
-            this.btPrint.TabIndex = 719;
-            this.btPrint.TabStop = false;
-            this.btPrint.Click += new System.EventHandler(this.btPrint_Click);
             // 
             // thaotac
             // 
@@ -572,6 +562,17 @@
             this.grid_CoTLK.HeaderText = "Cỡ TLK";
             this.grid_CoTLK.Name = "grid_CoTLK";
             this.grid_CoTLK.ReadOnly = true;
+            // 
+            // btPrint
+            // 
+            this.btPrint.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btPrint.Image = global::TanHoaWater.Properties.Resources.print1;
+            this.btPrint.Location = new System.Drawing.Point(948, 159);
+            this.btPrint.Name = "btPrint";
+            this.btPrint.Size = new System.Drawing.Size(32, 22);
+            this.btPrint.TabIndex = 719;
+            this.btPrint.TabStop = false;
+            this.btPrint.Click += new System.EventHandler(this.btPrint_Click);
             // 
             // tab_CapNhatDanhSachND
             // 

@@ -34,11 +34,13 @@ namespace TanHoaWater.View.Users.DONGHONUOC
                 {
                     string soHoHK = dataGridViewX1.Rows[i].Cells["soHoHK"].Value + "";
                     string hk_GhiChu = dataGridViewX1.Rows[i].Cells["hk_GhiChu"].Value + "";
+                    string hk_nhankhau = dataGridViewX1.Rows[i].Cells["gr_NhanKhau"].Value !=null ? dataGridViewX1.Rows[i].Cells["gr_NhanKhau"].Value+"": "0";
                     if (!"".Equals(soHoHK))
                     {
                         DB_HOKHAU hk = new DB_HOKHAU();
                         hk.SODANHBO = _sodanhbo.Replace(".", "");
                         hk.SOHOKHAU = soHoHK;
+                        hk.SONHANKHAU = int.Parse(hk_nhankhau);
                         hk.GHICHU = hk_GhiChu;
                         hk.CREATEDATE = DateTime.Now;
                         hk.CREATEBY = DAL.C_USERS._userName;

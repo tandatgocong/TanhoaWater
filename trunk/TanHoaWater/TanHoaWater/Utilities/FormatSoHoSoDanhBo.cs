@@ -23,5 +23,15 @@ namespace TanHoaWater.Utilities
             }
             return _danhbo;
         }
+        public static string sodanhbo(string _danhbo, string kytu)
+        {
+            if (_danhbo.Length == 11)
+            {
+                _danhbo = _danhbo.Insert(4, kytu);
+                _danhbo = _danhbo.Insert(8, kytu);
+
+            }
+            return _danhbo;
+        }
     }
 }

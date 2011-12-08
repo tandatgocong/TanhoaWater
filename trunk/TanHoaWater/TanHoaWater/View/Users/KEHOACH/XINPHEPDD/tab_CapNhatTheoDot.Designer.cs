@@ -289,6 +289,7 @@
             this.gridXiPhepDD.DefaultCellStyle = dataGridViewCellStyle4;
             this.gridXiPhepDD.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.gridXiPhepDD.Location = new System.Drawing.Point(8, 211);
+            this.gridXiPhepDD.MultiSelect = false;
             this.gridXiPhepDD.Name = "gridXiPhepDD";
             this.gridXiPhepDD.RowHeadersWidth = 30;
             this.gridXiPhepDD.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;

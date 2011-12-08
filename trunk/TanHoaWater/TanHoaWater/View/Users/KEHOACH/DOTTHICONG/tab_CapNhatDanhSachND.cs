@@ -45,8 +45,10 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
                 DAL.C_DonKhachHang.DongTienKH(this.txtSHS.Text, this.dateNgayDongTien.Value.Date, this.txtSoHoaDon.Text);
             }
         }
+        bool flag = true;
        public void add()
         {
+            flag = false;
             try
             {
                 if ("".Equals(this.txtSHS.Text))
@@ -105,46 +107,91 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
                             this.txtSHS.Focus();
                             refesh();
                         }
-                        
+
                     }
                     else
                     {
-                        kh_sh.MADOTTC = _madot;
-                        kh_sh.COTLK = int.Parse(this.cbCoTLK.Text);
-                        kh_sh.MODIFYBY = DAL.C_USERS._userName;
-                        kh_sh.MODIFYDATE = DateTime.Now;
-                        if (xdcb != null)
+                        if (kh_sh.MADOTTC != null || !"".Equals(kh_sh.MADOTTC + ""))
                         {
-                            kh_sh.CPVATTU = xdcb.CPVATTU;
-                            kh_sh.CPNHANCONG = xdcb.CPNHANCONG;
-                            kh_sh.CPMAYTHICONG = xdcb.CPMAYTHICONG;
-                            kh_sh.CPCABA = xdcb.CPCABA;
-                            kh_sh.CHIPHITRUCTIEP = xdcb.CHIPHITRUCTIEP;
-                            kh_sh.CHIPHICHUNG = xdcb.CHIPHICHUNG;
-                            kh_sh.TAILAPMATDUONG = xdcb.TAILAPMATDUONG;
-                            kh_sh.TLMDTRUOCTHUE = xdcb.TLMDTRUOCTHUE;
-                            kh_sh.CONG1 = xdcb.CONG1;
-                            kh_sh.THUE55 = xdcb.THUE55;
-                            kh_sh.CONG3 = xdcb.CONG3;
-                            kh_sh.THUEGTGT = xdcb.THUEGTGT;
-                            kh_sh.TONGIATRI = xdcb.TONGIATRI;
-                            kh_sh.CPGAN = xdcb.CPGAN;
-                            kh_sh.CPNHUA = xdcb.CPNHUA;
+                            if (MessageBox.Show(this, "Đã Lên Đơt Thi Công Cho Số Hồ Sơ Rồi.", "..: Thông Báo :..", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                            {
+                                kh_sh.MADOTTC = _madot;
+                                kh_sh.COTLK = int.Parse(this.cbCoTLK.Text);
+                                kh_sh.MODIFYBY = DAL.C_USERS._userName;
+                                kh_sh.MODIFYDATE = DateTime.Now;
+                                if (xdcb != null)
+                                {
+                                    kh_sh.CPVATTU = xdcb.CPVATTU;
+                                    kh_sh.CPNHANCONG = xdcb.CPNHANCONG;
+                                    kh_sh.CPMAYTHICONG = xdcb.CPMAYTHICONG;
+                                    kh_sh.CPCABA = xdcb.CPCABA;
+                                    kh_sh.CHIPHITRUCTIEP = xdcb.CHIPHITRUCTIEP;
+                                    kh_sh.CHIPHICHUNG = xdcb.CHIPHICHUNG;
+                                    kh_sh.TAILAPMATDUONG = xdcb.TAILAPMATDUONG;
+                                    kh_sh.TLMDTRUOCTHUE = xdcb.TLMDTRUOCTHUE;
+                                    kh_sh.CONG1 = xdcb.CONG1;
+                                    kh_sh.THUE55 = xdcb.THUE55;
+                                    kh_sh.CONG3 = xdcb.CONG3;
+                                    kh_sh.THUEGTGT = xdcb.THUEGTGT;
+                                    kh_sh.TONGIATRI = xdcb.TONGIATRI;
+                                    kh_sh.CPGAN = xdcb.CPGAN;
+                                    kh_sh.CPNHUA = xdcb.CPNHUA;
+                                }
+                                if (donkh != null)
+                                {
+                                    kh_sh.DHN_HOTEN = Utilities.Strings.convertToUnSign(donkh.HOTEN.Replace("(ĐD " + donkh.SOHO + " Hộ)", ""));
+                                    kh_sh.DHN_SONHA = Utilities.Strings.convertToUnSign(donkh.SONHA);
+                                    kh_sh.DHN_DIACHI = Utilities.Strings.convertToUnSign(donkh.DUONG);
+                                    kh_sh.DHN_MAQUANPHUONG = donkh.QUAN + "" + donkh.PHUONG;
+                                }
+                                kh_sh.DHN_GIABIEU = 11;
+                                kh_sh.DHN_DMGOC = 0;
+                                kh_sh.DHN_DMCAPBU = 0;
+                                kh_sh.DHN_SOHO = 0;
+                                kh_sh.DHN_SONHANKHAU = 0;
+                                //  kh_sh
+                                DAL.C_KH_HoSoKhachHang.Update();
+                            }
                         }
-                        if (donkh != null)
+                        else
                         {
-                            kh_sh.DHN_HOTEN = Utilities.Strings.convertToUnSign(donkh.HOTEN.Replace("(ĐD " + donkh.SOHO + " Hộ)", ""));
-                            kh_sh.DHN_SONHA = Utilities.Strings.convertToUnSign(donkh.SONHA);
-                            kh_sh.DHN_DIACHI = Utilities.Strings.convertToUnSign(donkh.DUONG);
-                            kh_sh.DHN_MAQUANPHUONG = donkh.QUAN + "" + donkh.PHUONG;
+                            kh_sh.MADOTTC = _madot;
+                            kh_sh.COTLK = int.Parse(this.cbCoTLK.Text);
+                            kh_sh.MODIFYBY = DAL.C_USERS._userName;
+                            kh_sh.MODIFYDATE = DateTime.Now;
+                            if (xdcb != null)
+                            {
+                                kh_sh.CPVATTU = xdcb.CPVATTU;
+                                kh_sh.CPNHANCONG = xdcb.CPNHANCONG;
+                                kh_sh.CPMAYTHICONG = xdcb.CPMAYTHICONG;
+                                kh_sh.CPCABA = xdcb.CPCABA;
+                                kh_sh.CHIPHITRUCTIEP = xdcb.CHIPHITRUCTIEP;
+                                kh_sh.CHIPHICHUNG = xdcb.CHIPHICHUNG;
+                                kh_sh.TAILAPMATDUONG = xdcb.TAILAPMATDUONG;
+                                kh_sh.TLMDTRUOCTHUE = xdcb.TLMDTRUOCTHUE;
+                                kh_sh.CONG1 = xdcb.CONG1;
+                                kh_sh.THUE55 = xdcb.THUE55;
+                                kh_sh.CONG3 = xdcb.CONG3;
+                                kh_sh.THUEGTGT = xdcb.THUEGTGT;
+                                kh_sh.TONGIATRI = xdcb.TONGIATRI;
+                                kh_sh.CPGAN = xdcb.CPGAN;
+                                kh_sh.CPNHUA = xdcb.CPNHUA;
+                            }
+                            if (donkh != null)
+                            {
+                                kh_sh.DHN_HOTEN = Utilities.Strings.convertToUnSign(donkh.HOTEN.Replace("(ĐD " + donkh.SOHO + " Hộ)", ""));
+                                kh_sh.DHN_SONHA = Utilities.Strings.convertToUnSign(donkh.SONHA);
+                                kh_sh.DHN_DIACHI = Utilities.Strings.convertToUnSign(donkh.DUONG);
+                                kh_sh.DHN_MAQUANPHUONG = donkh.QUAN + "" + donkh.PHUONG;
+                            }
+                            kh_sh.DHN_GIABIEU = 11;
+                            kh_sh.DHN_DMGOC = 0;
+                            kh_sh.DHN_DMCAPBU = 0;
+                            kh_sh.DHN_SOHO = 0;
+                            kh_sh.DHN_SONHANKHAU = 0;
+                            //  kh_sh
+                            DAL.C_KH_HoSoKhachHang.Update();
                         }
-                        kh_sh.DHN_GIABIEU = 11;
-                        kh_sh.DHN_DMGOC = 0;
-                        kh_sh.DHN_DMCAPBU = 0;
-                        kh_sh.DHN_SOHO = 0;
-                        kh_sh.DHN_SONHANKHAU = 0;
-                        //  kh_sh
-                        DAL.C_KH_HoSoKhachHang.Update();
                     }
                 }
       
@@ -166,6 +213,7 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
         {
             if (e.KeyChar == 13)
             {
+                flag = true;
                 DataTable table = DAL.C_KH_DotThiCong.findByHSHT(this.txtSHS.Text);
                 if (table.Rows.Count <= 0)
                 {
@@ -188,9 +236,11 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
 
         private void txtSoHoaDon_Leave(object sender, EventArgs e)
         {
-            add();
-            this.txtSHS.Focus();
-            
+            if (flag == true)
+            {
+                add();
+                this.txtSHS.Focus();
+            }
         }
 
         private void btThemMoiHoSo_Click(object sender, EventArgs e)

@@ -181,6 +181,22 @@ namespace TanHoaWater.DAL
             return dataset.Tables[0];        
         }
 
+        public static DataTable getListHSbyBangKe(string bangke)
+        {
+            TanHoaDataContext db = new TanHoaDataContext();
+            db.Connection.Open();
+            string sql = "SELECT HUY=N'Thêm', donkh.SHS,donkh.SOHOSO,donkh.MADOT,HOTEN,DIENTHOAI, SONHA, DUONG,TENPHUONG ";
+            sql += "   FROM DON_KHACHHANG donkh, PHUONG p, QUAN q  ";
+            sql += " WHERE donkh.QUAN = q.MAQUAN AND q.MAQUAN=p.MAQUAN AND donkh.PHUONG=p.MAPHUONG ";
+            sql += " AND donkh.MADOT LIKE N'%" + bangke + "%'";
+            sql += " ORDER BY donkh.CREATEDATE  ";
+
+            SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
+            DataSet dataset = new DataSet();
+            adapter.Fill(dataset, "TABLE");
+            db.Connection.Close();
+            return dataset.Tables[0];
+        }
         public static DataSet BC_QuyetDinhThiCong(string madot, string donvigiamsat, string ngaykhoicong, string ngayhoantat)
         {
             TanHoaDataContext db = new TanHoaDataContext();

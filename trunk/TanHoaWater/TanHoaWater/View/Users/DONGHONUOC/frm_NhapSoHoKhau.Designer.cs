@@ -39,6 +39,7 @@
             this.lbDiaChi = new DevComponents.DotNetBar.LabelX();
             this.dataGridViewX1 = new DevComponents.DotNetBar.Controls.DataGridViewX();
             this.soHoHK = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gr_NhanKhau = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hk_GhiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewX1)).BeginInit();
             this.SuspendLayout();
@@ -80,7 +81,7 @@
             // 
             // lbSoHoSo
             // 
-            this.lbSoHoSo.Location = new System.Drawing.Point(131, 54);
+            this.lbSoHoSo.Location = new System.Drawing.Point(98, 54);
             this.lbSoHoSo.Name = "lbSoHoSo";
             this.lbSoHoSo.Size = new System.Drawing.Size(374, 23);
             this.lbSoHoSo.TabIndex = 1;
@@ -106,9 +107,9 @@
             // 
             this.dataGridViewX1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.dataGridViewX1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dataGridViewX1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewX1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.soHoHK,
+            this.gr_NhanKhau,
             this.hk_GhiChu});
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
@@ -121,7 +122,8 @@
             this.dataGridViewX1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dataGridViewX1.Location = new System.Drawing.Point(26, 150);
             this.dataGridViewX1.Name = "dataGridViewX1";
-            this.dataGridViewX1.Size = new System.Drawing.Size(414, 244);
+            this.dataGridViewX1.RowHeadersWidth = 20;
+            this.dataGridViewX1.Size = new System.Drawing.Size(477, 244);
             this.dataGridViewX1.TabIndex = 2;
             this.dataGridViewX1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewX1_CellEndEdit);
             // 
@@ -132,12 +134,18 @@
             this.soHoHK.Name = "soHoHK";
             this.soHoHK.Width = 120;
             // 
+            // gr_NhanKhau
+            // 
+            this.gr_NhanKhau.DataPropertyName = "SONHANKHAU";
+            this.gr_NhanKhau.HeaderText = "Số Nhân Khẩu";
+            this.gr_NhanKhau.Name = "gr_NhanKhau";
+            // 
             // hk_GhiChu
             // 
             this.hk_GhiChu.DataPropertyName = "GHICHU";
             this.hk_GhiChu.HeaderText = "Ghi Chú";
             this.hk_GhiChu.Name = "hk_GhiChu";
-            this.hk_GhiChu.Width = 250;
+            this.hk_GhiChu.Width = 230;
             // 
             // frm_NhapSoHoKhau
             // 
@@ -151,8 +159,8 @@
             this.Controls.Add(this.lbHoTen);
             this.Controls.Add(this.labelX3);
             this.Controls.Add(this.lbSoHoSo);
-            this.Controls.Add(this.labelX2);
             this.Controls.Add(this.lbDanhBo);
+            this.Controls.Add(this.labelX2);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -176,6 +184,7 @@
         private DevComponents.DotNetBar.LabelX lbDiaChi;
         private DevComponents.DotNetBar.Controls.DataGridViewX dataGridViewX1;
         private System.Windows.Forms.DataGridViewTextBoxColumn soHoHK;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gr_NhanKhau;
         private System.Windows.Forms.DataGridViewTextBoxColumn hk_GhiChu;
 
     }
