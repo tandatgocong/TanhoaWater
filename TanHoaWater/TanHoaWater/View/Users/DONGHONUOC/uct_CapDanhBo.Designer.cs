@@ -73,6 +73,7 @@
             this.hc_ngaythicong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hc_sotlk = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gr_HIEUDONGHO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hc_hopdong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hc_hieuLuc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hc_GiaBieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -266,6 +267,7 @@
             this.hc_ngaythicong,
             this.dataGridViewTextBoxColumn11,
             this.hc_sotlk,
+            this.gr_HIEUDONGHO,
             this.hc_hopdong,
             this.hc_hieuLuc,
             this.hc_GiaBieu,
@@ -412,6 +414,13 @@
             this.hc_sotlk.Name = "hc_sotlk";
             this.hc_sotlk.ReadOnly = true;
             this.hc_sotlk.Width = 150;
+            // 
+            // gr_HIEUDONGHO
+            // 
+            this.gr_HIEUDONGHO.DataPropertyName = "HIEUDONGHO";
+            this.gr_HIEUDONGHO.HeaderText = "Hiệu Đồng Hồ";
+            this.gr_HIEUDONGHO.Name = "gr_HIEUDONGHO";
+            this.gr_HIEUDONGHO.Width = 120;
             // 
             // hc_hopdong
             // 
@@ -564,6 +573,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn hc_ngaythicong;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
         private System.Windows.Forms.DataGridViewTextBoxColumn hc_sotlk;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gr_HIEUDONGHO;
         private System.Windows.Forms.DataGridViewTextBoxColumn hc_hopdong;
         private System.Windows.Forms.DataGridViewTextBoxColumn hc_hieuLuc;
         private System.Windows.Forms.DataGridViewTextBoxColumn hc_GiaBieu;
