@@ -393,6 +393,18 @@ namespace TanHoaWater.View.Users.To_ThietKe.Report {
             
             private global::System.Data.DataColumn columnTKGHICHU;
             
+            private global::System.Data.DataColumn columnNGAYHOANTATTK;
+            
+            private global::System.Data.DataColumn columnTTKNHANDON;
+            
+            private global::System.Data.DataColumn columnSODOVIEN;
+            
+            private global::System.Data.DataColumn columnNGAYGIAOSDV;
+            
+            private global::System.Data.DataColumn columnSDVTRAHS;
+            
+            private global::System.Data.DataColumn columnNGAYSDVTRAHS;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public V_TTK_HOANTATTKDataTable() {
@@ -884,6 +896,54 @@ namespace TanHoaWater.View.Users.To_ThietKe.Report {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn NGAYHOANTATTKColumn {
+                get {
+                    return this.columnNGAYHOANTATTK;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TTKNHANDONColumn {
+                get {
+                    return this.columnTTKNHANDON;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn SODOVIENColumn {
+                get {
+                    return this.columnSODOVIEN;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn NGAYGIAOSDVColumn {
+                get {
+                    return this.columnNGAYGIAOSDV;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn SDVTRAHSColumn {
+                get {
+                    return this.columnSDVTRAHS;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn NGAYSDVTRAHSColumn {
+                get {
+                    return this.columnNGAYSDVTRAHS;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -976,7 +1036,13 @@ namespace TanHoaWater.View.Users.To_ThietKe.Report {
                         bool TKHOANTAT, 
                         bool TKTRONGAI, 
                         string TKNOIDUNGTRONGAI, 
-                        string TKGHICHU) {
+                        string TKGHICHU, 
+                        System.DateTime NGAYHOANTATTK, 
+                        System.DateTime TTKNHANDON, 
+                        string SODOVIEN, 
+                        System.DateTime NGAYGIAOSDV, 
+                        bool SDVTRAHS, 
+                        System.DateTime NGAYSDVTRAHS) {
                 V_TTK_HOANTATTKRow rowV_TTK_HOANTATTKRow = ((V_TTK_HOANTATTKRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         TTKMD,
@@ -1035,7 +1101,13 @@ namespace TanHoaWater.View.Users.To_ThietKe.Report {
                         TKHOANTAT,
                         TKTRONGAI,
                         TKNOIDUNGTRONGAI,
-                        TKGHICHU};
+                        TKGHICHU,
+                        NGAYHOANTATTK,
+                        TTKNHANDON,
+                        SODOVIEN,
+                        NGAYGIAOSDV,
+                        SDVTRAHS,
+                        NGAYSDVTRAHS};
                 rowV_TTK_HOANTATTKRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowV_TTK_HOANTATTKRow);
                 return rowV_TTK_HOANTATTKRow;
@@ -1115,6 +1187,12 @@ namespace TanHoaWater.View.Users.To_ThietKe.Report {
                 this.columnTKTRONGAI = base.Columns["TKTRONGAI"];
                 this.columnTKNOIDUNGTRONGAI = base.Columns["TKNOIDUNGTRONGAI"];
                 this.columnTKGHICHU = base.Columns["TKGHICHU"];
+                this.columnNGAYHOANTATTK = base.Columns["NGAYHOANTATTK"];
+                this.columnTTKNHANDON = base.Columns["TTKNHANDON"];
+                this.columnSODOVIEN = base.Columns["SODOVIEN"];
+                this.columnNGAYGIAOSDV = base.Columns["NGAYGIAOSDV"];
+                this.columnSDVTRAHS = base.Columns["SDVTRAHS"];
+                this.columnNGAYSDVTRAHS = base.Columns["NGAYSDVTRAHS"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1234,6 +1312,18 @@ namespace TanHoaWater.View.Users.To_ThietKe.Report {
                 base.Columns.Add(this.columnTKNOIDUNGTRONGAI);
                 this.columnTKGHICHU = new global::System.Data.DataColumn("TKGHICHU", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTKGHICHU);
+                this.columnNGAYHOANTATTK = new global::System.Data.DataColumn("NGAYHOANTATTK", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNGAYHOANTATTK);
+                this.columnTTKNHANDON = new global::System.Data.DataColumn("TTKNHANDON", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTTKNHANDON);
+                this.columnSODOVIEN = new global::System.Data.DataColumn("SODOVIEN", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSODOVIEN);
+                this.columnNGAYGIAOSDV = new global::System.Data.DataColumn("NGAYGIAOSDV", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNGAYGIAOSDV);
+                this.columnSDVTRAHS = new global::System.Data.DataColumn("SDVTRAHS", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSDVTRAHS);
+                this.columnNGAYSDVTRAHS = new global::System.Data.DataColumn("NGAYSDVTRAHS", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNGAYSDVTRAHS);
                 this.columnTTKMD.AllowDBNull = false;
                 this.columnTTKMD.MaxLength = 20;
                 this.columnTTKSOHOSO.AllowDBNull = false;
@@ -1285,6 +1375,7 @@ namespace TanHoaWater.View.Users.To_ThietKe.Report {
                 this.columnTINHTRANGSVD.MaxLength = 8;
                 this.columnTKNOIDUNGTRONGAI.MaxLength = 2147483647;
                 this.columnTKGHICHU.MaxLength = 2147483647;
+                this.columnSODOVIEN.MaxLength = 20;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2284,6 +2375,102 @@ namespace TanHoaWater.View.Users.To_ThietKe.Report {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime NGAYHOANTATTK {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableV_TTK_HOANTATTK.NGAYHOANTATTKColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NGAYHOANTATTK\' in table \'V_TTK_HOANTATTK\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableV_TTK_HOANTATTK.NGAYHOANTATTKColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime TTKNHANDON {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableV_TTK_HOANTATTK.TTKNHANDONColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TTKNHANDON\' in table \'V_TTK_HOANTATTK\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableV_TTK_HOANTATTK.TTKNHANDONColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string SODOVIEN {
+                get {
+                    try {
+                        return ((string)(this[this.tableV_TTK_HOANTATTK.SODOVIENColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'SODOVIEN\' in table \'V_TTK_HOANTATTK\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableV_TTK_HOANTATTK.SODOVIENColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime NGAYGIAOSDV {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableV_TTK_HOANTATTK.NGAYGIAOSDVColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NGAYGIAOSDV\' in table \'V_TTK_HOANTATTK\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableV_TTK_HOANTATTK.NGAYGIAOSDVColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool SDVTRAHS {
+                get {
+                    try {
+                        return ((bool)(this[this.tableV_TTK_HOANTATTK.SDVTRAHSColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'SDVTRAHS\' in table \'V_TTK_HOANTATTK\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableV_TTK_HOANTATTK.SDVTRAHSColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime NGAYSDVTRAHS {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableV_TTK_HOANTATTK.NGAYSDVTRAHSColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NGAYSDVTRAHS\' in table \'V_TTK_HOANTATTK\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableV_TTK_HOANTATTK.NGAYSDVTRAHSColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsDANHBONull() {
                 return this.IsNull(this.tableV_TTK_HOANTATTK.DANHBOColumn);
             }
@@ -2833,6 +3020,78 @@ namespace TanHoaWater.View.Users.To_ThietKe.Report {
             public void SetTKGHICHUNull() {
                 this[this.tableV_TTK_HOANTATTK.TKGHICHUColumn] = global::System.Convert.DBNull;
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsNGAYHOANTATTKNull() {
+                return this.IsNull(this.tableV_TTK_HOANTATTK.NGAYHOANTATTKColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetNGAYHOANTATTKNull() {
+                this[this.tableV_TTK_HOANTATTK.NGAYHOANTATTKColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTTKNHANDONNull() {
+                return this.IsNull(this.tableV_TTK_HOANTATTK.TTKNHANDONColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTTKNHANDONNull() {
+                this[this.tableV_TTK_HOANTATTK.TTKNHANDONColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsSODOVIENNull() {
+                return this.IsNull(this.tableV_TTK_HOANTATTK.SODOVIENColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetSODOVIENNull() {
+                this[this.tableV_TTK_HOANTATTK.SODOVIENColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsNGAYGIAOSDVNull() {
+                return this.IsNull(this.tableV_TTK_HOANTATTK.NGAYGIAOSDVColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetNGAYGIAOSDVNull() {
+                this[this.tableV_TTK_HOANTATTK.NGAYGIAOSDVColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsSDVTRAHSNull() {
+                return this.IsNull(this.tableV_TTK_HOANTATTK.SDVTRAHSColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetSDVTRAHSNull() {
+                this[this.tableV_TTK_HOANTATTK.SDVTRAHSColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsNGAYSDVTRAHSNull() {
+                return this.IsNull(this.tableV_TTK_HOANTATTK.NGAYSDVTRAHSColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetNGAYSDVTRAHSNull() {
+                this[this.tableV_TTK_HOANTATTK.NGAYSDVTRAHSColumn] = global::System.Convert.DBNull;
+            }
         }
         
         /// <summary>
@@ -3051,6 +3310,12 @@ namespace TanHoaWater.View.Users.To_ThietKe.Report.HTTKTableAdapters {
             tableMapping.ColumnMappings.Add("TKTRONGAI", "TKTRONGAI");
             tableMapping.ColumnMappings.Add("TKNOIDUNGTRONGAI", "TKNOIDUNGTRONGAI");
             tableMapping.ColumnMappings.Add("TKGHICHU", "TKGHICHU");
+            tableMapping.ColumnMappings.Add("NGAYHOANTATTK", "NGAYHOANTATTK");
+            tableMapping.ColumnMappings.Add("TTKNHANDON", "TTKNHANDON");
+            tableMapping.ColumnMappings.Add("SODOVIEN", "SODOVIEN");
+            tableMapping.ColumnMappings.Add("NGAYGIAOSDV", "NGAYGIAOSDV");
+            tableMapping.ColumnMappings.Add("SDVTRAHS", "SDVTRAHS");
+            tableMapping.ColumnMappings.Add("NGAYSDVTRAHS", "NGAYSDVTRAHS");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -3067,7 +3332,7 @@ namespace TanHoaWater.View.Users.To_ThietKe.Report.HTTKTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT TTKMD, TTKSOHOSO, ID, MADOT, SOHOSO, SHS, DANHBO, HOPDONG, HOTEN, DIENTHOAI, SOHOBD, SOHO, SONHA, SONHA_TTK, DUONG, PHUONG, QUAN, NGAYNHAN, LOAIKH, LOAIHOSO, TAPTHE, TINHKHOAN, LOAIMIENPHI, GHICHU, HOSOKHAN, GHICHUKHAN, CHUYEN_HOSO, BOPHANCHUYEN, NGUOICHUYEN_HOSO, NGAYCHUYEN_HOSO, TRONGAICHUYEN_HOSO, NOIDUNGTNCHUYEN, TRONGAITHIETKE, NOIDUNGTRONGAI, HOSOCHA, XINPHEPDAODUONG, TRINHKYBGD, NGAYDONGTIEN, SOHOADON, SOTIEN, CREATEBY, CREATEDATE, MODIFYBY, MODIFYDATE, MODIFYLOG, MAQUAN, TENQUAN, MAPHUONG, TENPHUONG, TENLOAI, USERNAME, NGUOILAP, TINHTRANGSVD, TKHOANTAT, TKTRONGAI, TKNOIDUNGTRONGAI, TKGHICHU FROM dbo.V_TTK_HOANTATTK";
+            this._commandCollection[0].CommandText = @"SELECT TTKMD, TTKSOHOSO, ID, MADOT, SOHOSO, SHS, DANHBO, HOPDONG, HOTEN, DIENTHOAI, SOHOBD, SOHO, SONHA, SONHA_TTK, DUONG, PHUONG, QUAN, NGAYNHAN, LOAIKH, LOAIHOSO, TAPTHE, TINHKHOAN, LOAIMIENPHI, GHICHU, HOSOKHAN, GHICHUKHAN, CHUYEN_HOSO, BOPHANCHUYEN, NGUOICHUYEN_HOSO, NGAYCHUYEN_HOSO, TRONGAICHUYEN_HOSO, NOIDUNGTNCHUYEN, TRONGAITHIETKE, NOIDUNGTRONGAI, HOSOCHA, XINPHEPDAODUONG, TRINHKYBGD, NGAYDONGTIEN, SOHOADON, SOTIEN, CREATEBY, CREATEDATE, MODIFYBY, MODIFYDATE, MODIFYLOG, MAQUAN, TENQUAN, MAPHUONG, TENPHUONG, TENLOAI, USERNAME, NGUOILAP, TINHTRANGSVD, TKHOANTAT, TKTRONGAI, TKNOIDUNGTRONGAI, TKGHICHU, NGAYHOANTATTK, TTKNHANDON, SODOVIEN, NGAYGIAOSDV, SDVTRAHS, NGAYSDVTRAHS FROM dbo.V_TTK_HOANTATTK";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

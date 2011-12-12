@@ -62,16 +62,18 @@
             this.labelX6 = new DevComponents.DotNetBar.LabelX();
             this.txtTinhTrangTLK = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.dataGridViewX1 = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.thaotac = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.SHS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.G_SOHOSO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.G_HoaDon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.G_HovaTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.G_DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.G_HoaDon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.G_NgayDongTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.G_TinhTrang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.G_SoTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.G_DienThoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.G_CoTL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.G_DANHBO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.G_CoTL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.G_TinhTrang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.G_DienThoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.btPrint)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateNgayDongTien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewX1)).BeginInit();
@@ -379,16 +381,18 @@
             this.dataGridViewX1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridViewX1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewX1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.thaotac,
+            this.SHS,
             this.G_SOHOSO,
-            this.G_HoaDon,
             this.G_HovaTen,
             this.G_DiaChi,
+            this.G_HoaDon,
             this.G_NgayDongTien,
-            this.G_TinhTrang,
             this.G_SoTien,
-            this.G_DienThoai,
+            this.G_DANHBO,
             this.G_CoTL,
-            this.G_DANHBO});
+            this.G_TinhTrang,
+            this.G_DienThoai});
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle7.Font = new System.Drawing.Font("Times New Roman", 12F);
@@ -406,6 +410,27 @@
             this.dataGridViewX1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewX1.Size = new System.Drawing.Size(980, 400);
             this.dataGridViewX1.TabIndex = 743;
+            this.dataGridViewX1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewX1_CellClick);
+            // 
+            // thaotac
+            // 
+            this.thaotac.DataPropertyName = "HUY";
+            this.thaotac.Frozen = true;
+            this.thaotac.HeaderText = "";
+            this.thaotac.Name = "thaotac";
+            this.thaotac.ReadOnly = true;
+            this.thaotac.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.thaotac.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.thaotac.Width = 70;
+            // 
+            // SHS
+            // 
+            this.SHS.DataPropertyName = "SHS";
+            this.SHS.Frozen = true;
+            this.SHS.HeaderText = "SHS";
+            this.SHS.Name = "SHS";
+            this.SHS.ReadOnly = true;
+            this.SHS.Visible = false;
             // 
             // G_SOHOSO
             // 
@@ -417,16 +442,6 @@
             this.G_SOHOSO.Name = "G_SOHOSO";
             this.G_SOHOSO.ReadOnly = true;
             this.G_SOHOSO.Width = 130;
-            // 
-            // G_HoaDon
-            // 
-            this.G_HoaDon.DataPropertyName = "SOHOADON";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.G_HoaDon.DefaultCellStyle = dataGridViewCellStyle2;
-            this.G_HoaDon.Frozen = true;
-            this.G_HoaDon.HeaderText = "Hóa Đơn";
-            this.G_HoaDon.Name = "G_HoaDon";
-            this.G_HoaDon.ReadOnly = true;
             // 
             // G_HovaTen
             // 
@@ -445,6 +460,15 @@
             this.G_DiaChi.ReadOnly = true;
             this.G_DiaChi.Width = 350;
             // 
+            // G_HoaDon
+            // 
+            this.G_HoaDon.DataPropertyName = "SOHOADON";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.G_HoaDon.DefaultCellStyle = dataGridViewCellStyle2;
+            this.G_HoaDon.HeaderText = "Hóa Đơn";
+            this.G_HoaDon.Name = "G_HoaDon";
+            this.G_HoaDon.ReadOnly = true;
+            // 
             // G_NgayDongTien
             // 
             this.G_NgayDongTien.DataPropertyName = "NGAYDONGTIEN";
@@ -454,14 +478,6 @@
             this.G_NgayDongTien.Name = "G_NgayDongTien";
             this.G_NgayDongTien.ReadOnly = true;
             this.G_NgayDongTien.Width = 135;
-            // 
-            // G_TinhTrang
-            // 
-            this.G_TinhTrang.DataPropertyName = "GHICHU";
-            this.G_TinhTrang.HeaderText = "Tình Trạng";
-            this.G_TinhTrang.Name = "G_TinhTrang";
-            this.G_TinhTrang.ReadOnly = true;
-            this.G_TinhTrang.Width = 300;
             // 
             // G_SoTien
             // 
@@ -474,26 +490,6 @@
             this.G_SoTien.ReadOnly = true;
             this.G_SoTien.Width = 110;
             // 
-            // G_DienThoai
-            // 
-            this.G_DienThoai.DataPropertyName = "DIENTHOAI";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.G_DienThoai.DefaultCellStyle = dataGridViewCellStyle5;
-            this.G_DienThoai.HeaderText = "Điện Thoại";
-            this.G_DienThoai.Name = "G_DienThoai";
-            this.G_DienThoai.ReadOnly = true;
-            this.G_DienThoai.Width = 110;
-            // 
-            // G_CoTL
-            // 
-            this.G_CoTL.DataPropertyName = "COTLK";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.G_CoTL.DefaultCellStyle = dataGridViewCellStyle6;
-            this.G_CoTL.HeaderText = "Cỡ TLK";
-            this.G_CoTL.Name = "G_CoTL";
-            this.G_CoTL.ReadOnly = true;
-            this.G_CoTL.Width = 90;
-            // 
             // G_DANHBO
             // 
             this.G_DANHBO.DataPropertyName = "DANHBO";
@@ -501,6 +497,34 @@
             this.G_DANHBO.Name = "G_DANHBO";
             this.G_DANHBO.ReadOnly = true;
             this.G_DANHBO.Width = 150;
+            // 
+            // G_CoTL
+            // 
+            this.G_CoTL.DataPropertyName = "COTLK";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.G_CoTL.DefaultCellStyle = dataGridViewCellStyle5;
+            this.G_CoTL.HeaderText = "Cỡ TLK";
+            this.G_CoTL.Name = "G_CoTL";
+            this.G_CoTL.ReadOnly = true;
+            this.G_CoTL.Width = 90;
+            // 
+            // G_TinhTrang
+            // 
+            this.G_TinhTrang.DataPropertyName = "GHICHU";
+            this.G_TinhTrang.HeaderText = "Tình Trạng";
+            this.G_TinhTrang.Name = "G_TinhTrang";
+            this.G_TinhTrang.ReadOnly = true;
+            this.G_TinhTrang.Width = 300;
+            // 
+            // G_DienThoai
+            // 
+            this.G_DienThoai.DataPropertyName = "DIENTHOAI";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.G_DienThoai.DefaultCellStyle = dataGridViewCellStyle6;
+            this.G_DienThoai.HeaderText = "Điện Thoại";
+            this.G_DienThoai.Name = "G_DienThoai";
+            this.G_DienThoai.ReadOnly = true;
+            this.G_DienThoai.Width = 110;
             // 
             // tab_CapNhatDSBoiThuong
             // 
@@ -574,15 +598,17 @@
         private DevComponents.DotNetBar.LabelX labelX6;
         private DevComponents.DotNetBar.Controls.TextBoxX txtTinhTrangTLK;
         private DevComponents.DotNetBar.Controls.DataGridViewX dataGridViewX1;
+        private System.Windows.Forms.DataGridViewButtonColumn thaotac;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SHS;
         private System.Windows.Forms.DataGridViewTextBoxColumn G_SOHOSO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn G_HoaDon;
         private System.Windows.Forms.DataGridViewTextBoxColumn G_HovaTen;
         private System.Windows.Forms.DataGridViewTextBoxColumn G_DiaChi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn G_HoaDon;
         private System.Windows.Forms.DataGridViewTextBoxColumn G_NgayDongTien;
-        private System.Windows.Forms.DataGridViewTextBoxColumn G_TinhTrang;
         private System.Windows.Forms.DataGridViewTextBoxColumn G_SoTien;
-        private System.Windows.Forms.DataGridViewTextBoxColumn G_DienThoai;
-        private System.Windows.Forms.DataGridViewTextBoxColumn G_CoTL;
         private System.Windows.Forms.DataGridViewTextBoxColumn G_DANHBO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn G_CoTL;
+        private System.Windows.Forms.DataGridViewTextBoxColumn G_TinhTrang;
+        private System.Windows.Forms.DataGridViewTextBoxColumn G_DienThoai;
     }
 }

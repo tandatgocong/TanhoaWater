@@ -31,7 +31,7 @@ namespace TanHoaWater.DAL
                 sql += " AND hosokh.DHN_CHODB='True'";
 
             db.Connection.Open();
-            sql += " ORDER BY hosokh.MODIFYDATE";
+            sql += " ORDER BY hosokh.STT ASC";
             SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             DataSet dataset = new DataSet();
             adapter.Fill(dataset, "TABLE");
@@ -47,7 +47,7 @@ namespace TanHoaWater.DAL
             sql += " WHERE donkh.QUAN = q.MAQUAN AND q.MAQUAN=p.MAQUAN AND donkh.PHUONG=p.MAPHUONG  ";
             sql += "  AND donkh.SHS = hosokh.SHS AND hosokh.DHN_SODOT=N'" + dotbangke + "'";
             db.Connection.Open();
-            sql += " ORDER BY hosokh.MODIFYDATE";
+            sql += " ORDER BY hosokh.STT ASC";
             SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             DataSet dataset = new DataSet();
             adapter.Fill(dataset, "TABLE");

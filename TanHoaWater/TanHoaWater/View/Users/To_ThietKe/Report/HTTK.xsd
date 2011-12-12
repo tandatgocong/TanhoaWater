@@ -12,7 +12,7 @@
               <DbSource ConnectionRef="TANHOA_WATERConnectionString (Settings)" DbObjectName="TANHOA_WATER.dbo.V_TTK_HOANTATTK" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT TTKMD, TTKSOHOSO, ID, MADOT, SOHOSO, SHS, DANHBO, HOPDONG, HOTEN, DIENTHOAI, SOHOBD, SOHO, SONHA, SONHA_TTK, DUONG, PHUONG, QUAN, NGAYNHAN, LOAIKH, LOAIHOSO, TAPTHE, TINHKHOAN, LOAIMIENPHI, GHICHU, HOSOKHAN, GHICHUKHAN, CHUYEN_HOSO, BOPHANCHUYEN, NGUOICHUYEN_HOSO, NGAYCHUYEN_HOSO, TRONGAICHUYEN_HOSO, NOIDUNGTNCHUYEN, TRONGAITHIETKE, NOIDUNGTRONGAI, HOSOCHA, XINPHEPDAODUONG, TRINHKYBGD, NGAYDONGTIEN, SOHOADON, SOTIEN, CREATEBY, CREATEDATE, MODIFYBY, MODIFYDATE, MODIFYLOG, MAQUAN, TENQUAN, MAPHUONG, TENPHUONG, TENLOAI, USERNAME, NGUOILAP, TINHTRANGSVD, TKHOANTAT, TKTRONGAI, TKNOIDUNGTRONGAI, TKGHICHU FROM dbo.V_TTK_HOANTATTK</CommandText>
+                    <CommandText>SELECT TTKMD, TTKSOHOSO, ID, MADOT, SOHOSO, SHS, DANHBO, HOPDONG, HOTEN, DIENTHOAI, SOHOBD, SOHO, SONHA, SONHA_TTK, DUONG, PHUONG, QUAN, NGAYNHAN, LOAIKH, LOAIHOSO, TAPTHE, TINHKHOAN, LOAIMIENPHI, GHICHU, HOSOKHAN, GHICHUKHAN, CHUYEN_HOSO, BOPHANCHUYEN, NGUOICHUYEN_HOSO, NGAYCHUYEN_HOSO, TRONGAICHUYEN_HOSO, NOIDUNGTNCHUYEN, TRONGAITHIETKE, NOIDUNGTRONGAI, HOSOCHA, XINPHEPDAODUONG, TRINHKYBGD, NGAYDONGTIEN, SOHOADON, SOTIEN, CREATEBY, CREATEDATE, MODIFYBY, MODIFYDATE, MODIFYLOG, MAQUAN, TENQUAN, MAPHUONG, TENPHUONG, TENLOAI, USERNAME, NGUOILAP, TINHTRANGSVD, TKHOANTAT, TKTRONGAI, TKNOIDUNGTRONGAI, TKGHICHU, NGAYHOANTATTK, TTKNHANDON, SODOVIEN, NGAYGIAOSDV, SDVTRAHS, NGAYSDVTRAHS FROM dbo.V_TTK_HOANTATTK</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -76,6 +76,12 @@
               <Mapping SourceColumn="TKTRONGAI" DataSetColumn="TKTRONGAI" />
               <Mapping SourceColumn="TKNOIDUNGTRONGAI" DataSetColumn="TKNOIDUNGTRONGAI" />
               <Mapping SourceColumn="TKGHICHU" DataSetColumn="TKGHICHU" />
+              <Mapping SourceColumn="NGAYHOANTATTK" DataSetColumn="NGAYHOANTATTK" />
+              <Mapping SourceColumn="TTKNHANDON" DataSetColumn="TTKNHANDON" />
+              <Mapping SourceColumn="SODOVIEN" DataSetColumn="SODOVIEN" />
+              <Mapping SourceColumn="NGAYGIAOSDV" DataSetColumn="NGAYGIAOSDV" />
+              <Mapping SourceColumn="SDVTRAHS" DataSetColumn="SDVTRAHS" />
+              <Mapping SourceColumn="NGAYSDVTRAHS" DataSetColumn="NGAYSDVTRAHS" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -363,6 +369,18 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="NGAYHOANTATTK" msprop:Generator_ColumnVarNameInTable="columnNGAYHOANTATTK" msprop:Generator_ColumnPropNameInRow="NGAYHOANTATTK" msprop:Generator_ColumnPropNameInTable="NGAYHOANTATTKColumn" msprop:Generator_UserColumnName="NGAYHOANTATTK" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="TTKNHANDON" msprop:Generator_ColumnVarNameInTable="columnTTKNHANDON" msprop:Generator_ColumnPropNameInRow="TTKNHANDON" msprop:Generator_ColumnPropNameInTable="TTKNHANDONColumn" msprop:Generator_UserColumnName="TTKNHANDON" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="SODOVIEN" msprop:Generator_ColumnVarNameInTable="columnSODOVIEN" msprop:Generator_ColumnPropNameInRow="SODOVIEN" msprop:Generator_ColumnPropNameInTable="SODOVIENColumn" msprop:Generator_UserColumnName="SODOVIEN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NGAYGIAOSDV" msprop:Generator_ColumnVarNameInTable="columnNGAYGIAOSDV" msprop:Generator_ColumnPropNameInRow="NGAYGIAOSDV" msprop:Generator_ColumnPropNameInTable="NGAYGIAOSDVColumn" msprop:Generator_UserColumnName="NGAYGIAOSDV" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="SDVTRAHS" msprop:Generator_ColumnVarNameInTable="columnSDVTRAHS" msprop:Generator_ColumnPropNameInRow="SDVTRAHS" msprop:Generator_ColumnPropNameInTable="SDVTRAHSColumn" msprop:Generator_UserColumnName="SDVTRAHS" type="xs:boolean" minOccurs="0" />
+              <xs:element name="NGAYSDVTRAHS" msprop:Generator_ColumnVarNameInTable="columnNGAYSDVTRAHS" msprop:Generator_ColumnPropNameInRow="NGAYSDVTRAHS" msprop:Generator_ColumnPropNameInTable="NGAYSDVTRAHSColumn" msprop:Generator_UserColumnName="NGAYSDVTRAHS" type="xs:dateTime" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

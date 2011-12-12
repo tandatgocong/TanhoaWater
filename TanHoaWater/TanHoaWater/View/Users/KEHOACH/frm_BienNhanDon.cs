@@ -398,7 +398,7 @@ namespace TanHoaWater.View.Users.KEHOACH
             editSoBN.Focus();
 
         }
-
+        int soho = 0;
         private void editSoBN_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 13) {
@@ -416,7 +416,8 @@ namespace TanHoaWater.View.Users.KEHOACH
                             editDD.Visible = false;
                         }
 
-
+                        editSoho.Value = biennhan.SOHO.Value;
+                        soho = biennhan.SOHO.Value; ;
                         editSoBN.Text = biennhan.SHS;
                         editLoaiBN.Text = biennhan.LOAI_NHANDON.TENLOAI;
                         editHoTen.Text = biennhan.HOTEN;
@@ -659,15 +660,31 @@ namespace TanHoaWater.View.Users.KEHOACH
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
-            if (numericUpDown1.Value > 1)
-            {
-                txtHoTen.Text = txtHoTen.Text  +" (ĐD " + numericUpDown1.Value + " Hộ)";
-            }
+            //if (numericUpDown1.Value > 1)
+            //{
+            //    txtHoTen.Text = txtHoTen.Text  +" (ĐD " + numericUpDown1.Value + " Hộ)";
+            //}
         }
 
         private void btInBN(object sender, EventArgs e)
         {
             printingBienNhan(editSoBN.Text, editDienThoai.Text, DAL.C_USERS._userName);
+        }
+
+        private void numericUpDown1_Leave(object sender, EventArgs e)
+        {
+            if (numericUpDown1.Value > 1)
+            {
+                txtHoTen.Text = txtHoTen.Text + " (ĐD " + numericUpDown1.Value + " Hộ)";
+            }
+        }
+
+        private void editSoho_Leave(object sender, EventArgs e)
+        {
+            if (editSoho.Value > 1)
+            {
+                txtHoTen.Text = txtHoTen.Text.Replace(" (ĐD " + soho + " Hộ)","") + " (ĐD " + editSoho.Value + " Hộ)";
+            }
         }
     }
 }

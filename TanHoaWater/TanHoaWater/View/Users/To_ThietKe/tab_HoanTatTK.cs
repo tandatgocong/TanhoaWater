@@ -380,5 +380,14 @@ namespace TanHoaWater.View.Users.To_ThietKe
             }
 
         }
+
+        private void btXem_Click(object sender, EventArgs e)
+        {
+            ReportDocument rp = new rpt_DSHoanTatbyDate();
+            rp.SetDataSource(DAL.C_ToThietKe.BC_HOANTATTK_BYDATE(Utilities.DateToString.NgayVN(bcDate), DAL.C_USERS._userName ));
+
+            rp.SetParameterValue("ngay", Utilities.DateToString.NgayVN(bcDate));
+            report.ReportSource = rp;
+        }
     }
 }

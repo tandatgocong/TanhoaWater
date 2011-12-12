@@ -41,7 +41,7 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
         {
             InitializeComponent();
             formload();
-          
+
             loadDataGrid();
             //List<KH_DOTTHICONG> list = DAL.C_KH_DotThiCong.AutoCompleteDotNhanDon();
             //foreach (var item in list)
@@ -51,10 +51,11 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
             //txtSearchDotTC.AutoCompleteMode = AutoCompleteMode.Suggest;
             //txtSearchDotTC.AutoCompleteSource = AutoCompleteSource.CustomSource;
             //txtSearchDotTC.AutoCompleteCustomSource = namesCollection;
-            
+
         }
 
-        public void formload() {
+        public void formload()
+        {
             cbDonViThiCong.DataSource = DAL.C_KH_DonViTC.getDonViThiCong();
             cbDonViThiCong.DisplayMember = "TENCONGTY";
             cbDonViThiCong.ValueMember = "ID";
@@ -75,7 +76,7 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
             cbLoaiBangKe.DisplayMember = "TENBANGKE";
             cbLoaiBangKe.ValueMember = "TENBANGKE";
         }
-        
+
         public void loadDataGrid()
         {
             try
@@ -88,9 +89,9 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
             {
                 log.Error(ex);
             }
-        
+
         }
-        
+
         private void txtSoHoSo_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!Char.IsControl(e.KeyChar) && !Char.IsNumber(e.KeyChar))
@@ -129,8 +130,9 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
                 e.Handled = false;
             }
         }
-        
-        public void refesh() {
+
+        public void refesh()
+        {
             this.txtSodotTC.Text = "";
             this.txtSoHoSo.Text = "0";
             this.txtBangKe.Text = "";
@@ -145,244 +147,252 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
             this.dateNgayChuyenKT.ValueObject = null;
             this.dateNgayThanhToan.ValueObject = null;
         }
-        
+
         private void btLapDotMoi_Click(object sender, EventArgs e)
         {
             this.txtSodotTC.ReadOnly = false;
             refesh();
             this.dateNgayLap.Value = DateTime.Now.Date;
         }
-        
+
         public void LuuDot()
         {
             try
             {
-                
-            string sodot = this.txtSodotTC.Text + "";            
-            string dovithicong = this.cbDonViThiCong.Text+"";
-            string donvitailap = this.cbDonViTaiLapMD.Text+"";
-            string donvigiamsat = this.cbDonViGiamSatTC.Text + "";
-            string donvigiamsatTL = this.cbDonViTuVanGSTLMD.Text + "";
-            string bangke = this.txtBangKe.Text+"";
-            string loaibangke = this.cbLoaiBangKe.Text+"";
-            string ghichuhoancong= this.txtGhiChuHoanCong.Text+"";
-            string soluonghc = this.txtSoLuong.Text + "";
-            string ton = this.txtTon.Text+"";
-            bool quyettoan = false;
-            if (this.txtQuetToan.Checked)
-                quyettoan = true;
-            else
-                quyettoan = false;
 
-            if ("".Equals(sodot)) {
-                MessageBox.Show(this, "Nhập Số Đợt Thi Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.txtSodotTC.Text = "";
-                this.txtSodotTC.Focus();
-            }else if (DAL.C_KH_DotThiCong.findByMadot(sodot)!=null) {
-                MessageBox.Show(this, "Số Đợt Thi Công Đã Tồn Tại.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.txtSodotTC.Text = "";
-                this.txtSodotTC.Focus();
-            }else if ("1/1/0001".Equals(this.dateNgayLap.Value.ToShortDateString()))
-            {
-                MessageBox.Show(this, "Cần Chọn Ngày Lập", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                dateNgayLap.Select();
-            }
-            else if ("".Equals(dovithicong))
-            {
-                MessageBox.Show(this, "Cần Chọn Đơn Vị Thi Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);             
-                this.cbDonViThiCong.Select();
-            }
-            else if ("".Equals(donvitailap))
-            {
-                MessageBox.Show(this, "Cần Chọn Đơn Vị Tái Lập Mặt Đường !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);            
-                this.cbDonViTaiLapMD.Select();
-            }
-            else if ("".Equals(bangke))
-            {
-                MessageBox.Show(this, "Cần Nhập Bảng Kê !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.txtBangKe.Text = "";
-                this.txtBangKe.Focus();
-            }
-            else if ("".Equals(loaibangke))
-            {
-                MessageBox.Show(this, "Cần Chọn Loại Bảng Kê !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.cbLoaiBangKe.Focus();
-            }
-            else if ("".Equals(donvigiamsat))
-            {
-                MessageBox.Show(this, "Cần Chọn Đơn Vị Giám Sát Thi Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.cbLoaiBangKe.Focus();
-            }
-            else if ("".Equals(donvigiamsatTL))
-            {
-                MessageBox.Show(this, "Cần Chọn Đơn Vị Giám Sát Tái Lập Mặt Đường !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.cbLoaiBangKe.Focus();
-            }
-            else {
-                KH_DOTTHICONG dottc = new KH_DOTTHICONG();
-                dottc.MADOTTC = sodot.ToUpper();
-                dottc.SOLUONGTLK = int.Parse(this.txtSoHoSo.Text);
-                dottc.NGAYLAP = this.dateNgayLap.Value;
-                dottc.DONVITHICONG = int.Parse(this.cbDonViThiCong.SelectedValue + "");
-               
-                if (!"1/1/0001".Equals(this.dateNgayChuyenHC.Value.ToShortDateString())) {
-                    dottc.NGAYCHUYENHC = dateNgayChuyenHC.Value.Date;
-                }
-                if (!"1/1/0001".Equals(this.dateNgayChuyenKT.Value.ToShortDateString()))
-                {
-                    dottc.NGAYCHUYENKT = dateNgayChuyenKT.Value.Date;
-                }
-                if (!"1/1/0001".Equals(this.dateNgayThanhToan.Value.ToShortDateString()))
-                {
-                    dottc.NGAYTHANHTOAN = dateNgayThanhToan.Value.Date;
-                }
-                if(!"".Equals(txtGhiChuHoanCong.Text)){
-                    dottc.GHICHUHC= txtGhiChuHoanCong.Text;
-                }
-                if (!"".Equals(txtSoLuong.Text))
-                {
-                    dottc.SOLUONG_HCTLK =  int.Parse(txtSoLuong.Text);
-                }
-                if (!"".Equals(txtTon.Text))
-                {
-                    dottc.CONLAI_TLK = int.Parse(txtTon.Text);
-                }
-                if (!"".Equals(txtLyDoTroNgaiTC.Text))
-                {
-                    dottc.TRONGAITC =  txtLyDoTroNgaiTC.Text;
-                }
-                dottc.QUYETTOAN = quyettoan;
+                string sodot = this.txtSodotTC.Text + "";
+                string dovithicong = this.cbDonViThiCong.Text + "";
+                string donvitailap = this.cbDonViTaiLapMD.Text + "";
+                string donvigiamsat = this.cbDonViGiamSatTC.Text + "";
+                string donvigiamsatTL = this.cbDonViTuVanGSTLMD.Text + "";
+                string bangke = this.txtBangKe.Text + "";
+                string loaibangke = this.cbLoaiBangKe.Text + "";
+                string ghichuhoancong = this.txtGhiChuHoanCong.Text + "";
+                string soluonghc = this.txtSoLuong.Text + "";
+                string ton = this.txtTon.Text + "";
+                bool quyettoan = false;
+                if (this.txtQuetToan.Checked)
+                    quyettoan = true;
+                else
+                    quyettoan = false;
 
-                dottc.DONVITAILAP = int.Parse(this.cbDonViTaiLapMD.SelectedValue + "");
-                dottc.DONVIGS = donvigiamsat;
-                dottc.DONVIGSTL = int.Parse(this.cbDonViTuVanGSTLMD.SelectedValue + "");
-                dottc.BANGKE = this.txtBangKe.Text;
-                dottc.LOAIBANGKE = this.cbLoaiBangKe.Text;
-                dottc.CREATEBY = DAL.C_USERS._userName;
-                dottc.CREATEDATE = DateTime.Now;
-
-                if (DAL.C_KH_DotThiCong.InsertDotTC(dottc) == false) {
-                    MessageBox.Show(this, "Lỗi Thêm Đợt Thi Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if ("".Equals(sodot))
+                {
+                    MessageBox.Show(this, "Nhập Số Đợt Thi Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.txtSodotTC.Text = "";
+                    this.txtSodotTC.Focus();
                 }
-                loadDataGrid();
-              }
+                else if (DAL.C_KH_DotThiCong.findByMadot(sodot) != null)
+                {
+                    MessageBox.Show(this, "Số Đợt Thi Công Đã Tồn Tại.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.txtSodotTC.Text = "";
+                    this.txtSodotTC.Focus();
+                }
+                else if ("1/1/0001".Equals(this.dateNgayLap.Value.ToShortDateString()))
+                {
+                    MessageBox.Show(this, "Cần Chọn Ngày Lập", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    dateNgayLap.Select();
+                }
+                else if ("".Equals(dovithicong))
+                {
+                    MessageBox.Show(this, "Cần Chọn Đơn Vị Thi Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.cbDonViThiCong.Select();
+                }
+                else if ("".Equals(donvitailap))
+                {
+                    MessageBox.Show(this, "Cần Chọn Đơn Vị Tái Lập Mặt Đường !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.cbDonViTaiLapMD.Select();
+                }
+                else if ("".Equals(bangke))
+                {
+                    MessageBox.Show(this, "Cần Nhập Bảng Kê !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.txtBangKe.Text = "";
+                    this.txtBangKe.Focus();
+                }
+                else if ("".Equals(loaibangke))
+                {
+                    MessageBox.Show(this, "Cần Chọn Loại Bảng Kê !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.cbLoaiBangKe.Focus();
+                }
+                else if ("".Equals(donvigiamsat))
+                {
+                    MessageBox.Show(this, "Cần Chọn Đơn Vị Giám Sát Thi Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.cbLoaiBangKe.Focus();
+                }
+                else if ("".Equals(donvigiamsatTL))
+                {
+                    MessageBox.Show(this, "Cần Chọn Đơn Vị Giám Sát Tái Lập Mặt Đường !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.cbLoaiBangKe.Focus();
+                }
+                else
+                {
+                    KH_DOTTHICONG dottc = new KH_DOTTHICONG();
+                    dottc.MADOTTC = sodot.ToUpper();
+                    dottc.SOLUONGTLK = int.Parse(this.txtSoHoSo.Text);
+                    dottc.NGAYLAP = this.dateNgayLap.Value;
+                    dottc.DONVITHICONG = int.Parse(this.cbDonViThiCong.SelectedValue + "");
+
+                    if (!"1/1/0001".Equals(this.dateNgayChuyenHC.Value.ToShortDateString()))
+                    {
+                        dottc.NGAYCHUYENHC = dateNgayChuyenHC.Value.Date;
+                    }
+                    if (!"1/1/0001".Equals(this.dateNgayChuyenKT.Value.ToShortDateString()))
+                    {
+                        dottc.NGAYCHUYENKT = dateNgayChuyenKT.Value.Date;
+                    }
+                    if (!"1/1/0001".Equals(this.dateNgayThanhToan.Value.ToShortDateString()))
+                    {
+                        dottc.NGAYTHANHTOAN = dateNgayThanhToan.Value.Date;
+                    }
+                    if (!"".Equals(txtGhiChuHoanCong.Text))
+                    {
+                        dottc.GHICHUHC = txtGhiChuHoanCong.Text;
+                    }
+                    if (!"".Equals(txtSoLuong.Text))
+                    {
+                        dottc.SOLUONG_HCTLK = int.Parse(txtSoLuong.Text);
+                    }
+                    if (!"".Equals(txtTon.Text))
+                    {
+                        dottc.CONLAI_TLK = int.Parse(txtTon.Text);
+                    }
+                    if (!"".Equals(txtLyDoTroNgaiTC.Text))
+                    {
+                        dottc.TRONGAITC = txtLyDoTroNgaiTC.Text;
+                    }
+                    dottc.QUYETTOAN = quyettoan;
+
+                    dottc.DONVITAILAP = int.Parse(this.cbDonViTaiLapMD.SelectedValue + "");
+                    dottc.DONVIGS = donvigiamsat;
+                    dottc.DONVIGSTL = int.Parse(this.cbDonViTuVanGSTLMD.SelectedValue + "");
+                    dottc.BANGKE = this.txtBangKe.Text;
+                    dottc.LOAIBANGKE = this.cbLoaiBangKe.Text;
+                    dottc.CREATEBY = DAL.C_USERS._userName;
+                    dottc.CREATEDATE = DateTime.Now;
+
+                    if (DAL.C_KH_DotThiCong.InsertDotTC(dottc) == false)
+                    {
+                        MessageBox.Show(this, "Lỗi Thêm Đợt Thi Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    loadDataGrid();
+                }
             }
             catch (Exception ex)
             {
                 log.Error("Luu Dot Nhan Don Loi " + ex.Message);
             }
         }
-       
+
         public void UpdateDot(KH_DOTTHICONG dottc)
         {
             try
             {
-                 string sodot = this.txtSodotTC.Text + "";
-            string dovithicong = this.cbDonViThiCong.Text + "";
-            string donvitailap = this.cbDonViTaiLapMD.Text + "";
-            string bangke = this.txtBangKe.Text + "";
-            string donvigiamsat = this.cbDonViGiamSatTC.Text + "";
-            string donvigiamsatTL = this.cbDonViTuVanGSTLMD.Text + "";
-            string loaibangke = this.cbLoaiBangKe.Text + "";
-            string ghichuhoancong = this.txtGhiChuHoanCong.Text + "";
-            string soluonghc = this.txtSoLuong.Text + "";
-            string ton = this.txtTon.Text + "";
-            bool quyettoan = false;
-            if (this.txtQuetToan.Checked)
-                quyettoan = true;
-            else
-                quyettoan = false;
-
-            if ("".Equals(sodot))
-            {
-                MessageBox.Show(this, "Nhập Số Đợt Thi Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.txtSodotTC.Text = "";
-                this.txtSodotTC.Focus();
-            }
-           else if ("1/1/0001".Equals(this.dateNgayLap.Value.ToShortDateString()))
-            {
-                MessageBox.Show(this, "Cần Chọn Ngày Lập", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                dateNgayLap.Select();
-            }
-            else if ("".Equals(dovithicong))
-            {
-                MessageBox.Show(this, "Cần Chọn Đơn Vị Thi Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.cbDonViThiCong.Select();
-            }
-            else if ("".Equals(donvitailap))
-            {
-                MessageBox.Show(this, "Cần Chọn Đơn Vị Tái Lập Mặt Đường !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.cbDonViTaiLapMD.Select();
-            }
-            else if ("".Equals(bangke))
-            {
-                MessageBox.Show(this, "Cần Nhập Bảng Kê !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.txtBangKe.Text = "";
-                this.txtBangKe.Focus();
-            }
-            else if ("".Equals(loaibangke))
-            {
-                MessageBox.Show(this, "Cần Chọn Loại Bảng Kê !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.cbLoaiBangKe.Focus();
-            }
-            else
-            {
-                dottc.SOLUONGTLK = int.Parse(this.txtSoLuong.Text);
-                dottc.NGAYLAP = this.dateNgayLap.Value;
-                dottc.DONVITHICONG = DAL.C_KH_DonViTC.findDVTCbyTENCTY(this.cbDonViThiCong.Text).ID;
-
-                if (!"1/1/0001".Equals(this.dateNgayChuyenHC.Value.ToShortDateString()))
-                {
-                    dottc.NGAYCHUYENHC = dateNgayChuyenHC.Value.Date;
-                }
-                if (!"1/1/0001".Equals(this.dateNgayChuyenKT.Value.ToShortDateString()))
-                {
-                    dottc.NGAYCHUYENKT = dateNgayChuyenKT.Value.Date;
-                }
-                if (!"1/1/0001".Equals(this.dateNgayThanhToan.Value.ToShortDateString()))
-                {
-                    dottc.NGAYTHANHTOAN = dateNgayThanhToan.Value.Date;
-                }
-                if (!"".Equals(txtGhiChuHoanCong.Text))
-                {
-                    dottc.GHICHUHC = txtGhiChuHoanCong.Text;
-                }
-                if (!"".Equals(txtSoLuong.Text))
-                {
-                    dottc.SOLUONG_HCTLK = int.Parse(txtSoLuong.Text);
-                }
-                if (!"".Equals(txtTon.Text))
-                {
-                    dottc.CONLAI_TLK = int.Parse(txtTon.Text);
-                }
-                if (!"".Equals(txtLyDoTroNgaiTC.Text))
-                {
-                    dottc.TRONGAITC = txtLyDoTroNgaiTC.Text;
-                }
-                dottc.QUYETTOAN = quyettoan;
-
-                dottc.DONVITAILAP = DAL.C_KH_DonViTC.findDVTLbyTENCTY(this.cbDonViTaiLapMD.Text).ID;
-                dottc.DONVIGS = donvigiamsat;
-                dottc.DONVIGSTL = DAL.C_KH_DonViTC.findDVGSTCbyName(donvigiamsatTL).ID;
-                dottc.BANGKE = this.txtBangKe.Text;
-                dottc.LOAIBANGKE = this.cbLoaiBangKe.Text;
-                dottc.CREATEBY = DAL.C_USERS._userName;
-                dottc.CREATEDATE = DateTime.Now.Date;
-
-                if (DAL.C_KH_DotThiCong.UpdateDotTC(dottc) == false)
-                    MessageBox.Show(this, "Cập Nhật Đợt Thi Công Không Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                string sodot = this.txtSodotTC.Text + "";
+                string dovithicong = this.cbDonViThiCong.Text + "";
+                string donvitailap = this.cbDonViTaiLapMD.Text + "";
+                string bangke = this.txtBangKe.Text + "";
+                string donvigiamsat = this.cbDonViGiamSatTC.Text + "";
+                string donvigiamsatTL = this.cbDonViTuVanGSTLMD.Text + "";
+                string loaibangke = this.cbLoaiBangKe.Text + "";
+                string ghichuhoancong = this.txtGhiChuHoanCong.Text + "";
+                string soluonghc = this.txtSoLuong.Text + "";
+                string ton = this.txtTon.Text + "";
+                bool quyettoan = false;
+                if (this.txtQuetToan.Checked)
+                    quyettoan = true;
                 else
-                    MessageBox.Show(this, "Cập Nhật Đợt Thi Công Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                loadDataGrid();
-            }
+                    quyettoan = false;
+
+                if ("".Equals(sodot))
+                {
+                    MessageBox.Show(this, "Nhập Số Đợt Thi Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.txtSodotTC.Text = "";
+                    this.txtSodotTC.Focus();
+                }
+                else if ("1/1/0001".Equals(this.dateNgayLap.Value.ToShortDateString()))
+                {
+                    MessageBox.Show(this, "Cần Chọn Ngày Lập", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    dateNgayLap.Select();
+                }
+                else if ("".Equals(dovithicong))
+                {
+                    MessageBox.Show(this, "Cần Chọn Đơn Vị Thi Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.cbDonViThiCong.Select();
+                }
+                else if ("".Equals(donvitailap))
+                {
+                    MessageBox.Show(this, "Cần Chọn Đơn Vị Tái Lập Mặt Đường !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.cbDonViTaiLapMD.Select();
+                }
+                else if ("".Equals(bangke))
+                {
+                    MessageBox.Show(this, "Cần Nhập Bảng Kê !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.txtBangKe.Text = "";
+                    this.txtBangKe.Focus();
+                }
+                else if ("".Equals(loaibangke))
+                {
+                    MessageBox.Show(this, "Cần Chọn Loại Bảng Kê !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.cbLoaiBangKe.Focus();
+                }
+                else
+                {
+                    dottc.SOLUONGTLK = int.Parse(this.txtSoLuong.Text);
+                    dottc.NGAYLAP = this.dateNgayLap.Value;
+                    dottc.DONVITHICONG = DAL.C_KH_DonViTC.findDVTCbyTENCTY(this.cbDonViThiCong.Text).ID;
+
+                    if (!"1/1/0001".Equals(this.dateNgayChuyenHC.Value.ToShortDateString()))
+                    {
+                        dottc.NGAYCHUYENHC = dateNgayChuyenHC.Value.Date;
+                    }
+                    if (!"1/1/0001".Equals(this.dateNgayChuyenKT.Value.ToShortDateString()))
+                    {
+                        dottc.NGAYCHUYENKT = dateNgayChuyenKT.Value.Date;
+                    }
+                    if (!"1/1/0001".Equals(this.dateNgayThanhToan.Value.ToShortDateString()))
+                    {
+                        dottc.NGAYTHANHTOAN = dateNgayThanhToan.Value.Date;
+                    }
+                    if (!"".Equals(txtGhiChuHoanCong.Text))
+                    {
+                        dottc.GHICHUHC = txtGhiChuHoanCong.Text;
+                    }
+                    if (!"".Equals(txtSoLuong.Text))
+                    {
+                        dottc.SOLUONG_HCTLK = int.Parse(txtSoLuong.Text);
+                    }
+                    if (!"".Equals(txtTon.Text))
+                    {
+                        dottc.CONLAI_TLK = int.Parse(txtTon.Text);
+                    }
+                    if (!"".Equals(txtLyDoTroNgaiTC.Text))
+                    {
+                        dottc.TRONGAITC = txtLyDoTroNgaiTC.Text;
+                    }
+                    dottc.QUYETTOAN = quyettoan;
+
+                    dottc.DONVITAILAP = DAL.C_KH_DonViTC.findDVTLbyTENCTY(this.cbDonViTaiLapMD.Text).ID;
+                    dottc.DONVIGS = donvigiamsat;
+                    dottc.DONVIGSTL = DAL.C_KH_DonViTC.findDVGSTCbyName(donvigiamsatTL).ID;
+                    dottc.BANGKE = this.txtBangKe.Text;
+                    dottc.LOAIBANGKE = this.cbLoaiBangKe.Text;
+                    dottc.CREATEBY = DAL.C_USERS._userName;
+                    dottc.CREATEDATE = DateTime.Now.Date;
+
+                    if (DAL.C_KH_DotThiCong.UpdateDotTC(dottc) == false)
+                        MessageBox.Show(this, "Cập Nhật Đợt Thi Công Không Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    else
+                        MessageBox.Show(this, "Cập Nhật Đợt Thi Công Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    loadDataGrid();
+                }
             }
             catch (Exception ex)
             {
-                
+
                 log.Error("Cap Nhat Dot Nhan Don Loi " + ex.Message);
             }
         }
-       
+
         private void next_Click(object sender, EventArgs e)
         {
             if (currentPageIndex < pageNumber)
@@ -422,34 +432,35 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
             this.txtSodotTC.ReadOnly = true;
         }
 
-        public void loadTextBox(KH_DOTTHICONG dottc) {        
+        public void loadTextBox(KH_DOTTHICONG dottc)
+        {
             this.txtSodotTC.Text = dottc.MADOTTC;
-            this.txtSoHoSo.Text = dottc.SOLUONGTLK+"";
+            this.txtSoHoSo.Text = dottc.SOLUONGTLK + "";
             this.txtBangKe.Text = dottc.BANGKE;
             this.txtGhiChuHoanCong.Text = dottc.GHICHUHC;
             this.txtSoLuong.Text = dottc.SOLUONG_HCTLK != null ? dottc.SOLUONG_HCTLK + "" : "0";
-            
+
             if (dottc.QUYETTOAN == true)
                 this.txtQuetToan.Checked = true;
             else
                 this.txtQuetToan.Checked = false;
-            this.cbDonViThiCong.Text = DAL.C_KH_DonViTC.findDVTCbyID(int.Parse(dottc.DONVITHICONG+"")).TENCONGTY;
-            this.cbDonViTaiLapMD.Text = DAL.C_KH_DonViTC.findDVTLbyID(int.Parse(dottc.DONVITAILAP+"")).TENCONGTY;
+            this.cbDonViThiCong.Text = DAL.C_KH_DonViTC.findDVTCbyID(int.Parse(dottc.DONVITHICONG + "")).TENCONGTY;
+            this.cbDonViTaiLapMD.Text = DAL.C_KH_DonViTC.findDVTLbyID(int.Parse(dottc.DONVITAILAP + "")).TENCONGTY;
             this.cbDonViTuVanGSTLMD.Text = DAL.C_KH_DonViTC.findDVGSTCbyID(int.Parse(dottc.DONVIGSTL + "")).TENCONGTY;
             this.cbDonViGiamSatTC.Text = dottc.DONVIGS;
-            this.dateChuyenBu.ValueObject =  dottc.CHUYENBUHANMUC;
+            this.dateChuyenBu.ValueObject = dottc.CHUYENBUHANMUC;
             this.dateNgayLap.ValueObject = dottc.NGAYLAP;
             this.cbLoaiBangKe.Text = dottc.LOAIBANGKE;
             this.dateChuyenBu.ValueObject = dottc.CHUYENBUHANMUC;
             this.dateNgayChuyenHC.ValueObject = dottc.NGAYCHUYENHC;
             this.txtGhiChuHoanCong.Text = dottc.GHICHUHC;
-            this.txtTon.Text = dottc.CONLAI_TLK != null ? dottc.CONLAI_TLK+"" : "0";
+            this.txtTon.Text = dottc.CONLAI_TLK != null ? dottc.CONLAI_TLK + "" : "0";
             this.dateNgayChuyenKT.ValueObject = dottc.NGAYCHUYENKT;
             this.dateNgayThanhToan.ValueObject = dottc.NGAYTHANHTOAN;
             this.txtLyDoTroNgaiTC.Text = dottc.TRONGAITC;
 
         }
-        
+
         private void gridDotThiCong_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -462,9 +473,9 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
                 }
             }
             catch (Exception)
-            { 
+            {
             }
-            
+
         }
 
         private void txtSearchDotTC_KeyPress(object sender, KeyPressEventArgs e)
@@ -476,7 +487,8 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
                 {
                     loadTextBox(dottc);
                 }
-                else {
+                else
+                {
                     MessageBox.Show(this, "Không Tìm Thấy Đợt Thi Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     refesh();
                     txtSearchDotTC.Text = "";
@@ -504,9 +516,9 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
             }
             catch (Exception)
             {
-                
+
             }
-            
+
         }
 
         private void btCapNhat_Click(object sender, EventArgs e)
@@ -523,7 +535,7 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
             }
             catch (Exception ex)
             {
-                log.Error("Loi "+ ex.Message);
+                log.Error("Loi " + ex.Message);
             }
 
         }
@@ -533,7 +545,8 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
             MessageBox.Show(this, "safdsa");
         }
 
-        public void tabClick() {
+        public void tabClick()
+        {
 
             string madot = "";
             string tendot = "";
@@ -597,7 +610,7 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
             if (!"".Equals(madot))
             {
                 frmDialogPrintting obj = new frmDialogPrintting(madot);
-                obj.ShowDialog(); 
+                obj.ShowDialog();
             }
             else
             {
@@ -627,7 +640,7 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
                     mainReport.ShowDialog();
                 }
                 else if (tendot.Equals("Ống Cái") || tendot.Equals("Gắn Mới"))
-                { 
+                {
                     ReportDocument rp = new rpt_DanhSachHSTC_OC();
                     rp.SetDataSource(DAL.C_KH_DotThiCong.BC_DanhSachDotThiCong_OC(madot));
                     rpt_Main mainReport = new rpt_Main(rp);
@@ -652,17 +665,17 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
                     rpt_Main mainReport = new rpt_Main(rp);
                     mainReport.ShowDialog();
                 }
-                else  
+                else
                 {
                     reportValues rpt = new reportValues(1, madot);
                     rpt.ShowDialog();
-                }  
+                }
             }
             else
             {
                 MessageBox.Show(this, "Cần Chọn Mã Đợt Để Xin Phép Đào Đường !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            
+
         }
 
         private void tabItem3_Click(object sender, EventArgs e)
@@ -670,16 +683,18 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
             this.tabThamSo.Controls.Clear();
             this.tabThamSo.Controls.Add(new tab_DonViTCTLMD());
             //  this.tabCapNhatDS.Controls.Add(new tab_CapNhatDanhSachND(madot));
-            this.tabControl1.SelectedTabIndex = 3;
+            this.tabControl1.SelectedTabIndex = 4;
         }
 
         private void searchTimKiem_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == 13) {
+            if (e.KeyChar == 13)
+            {
                 try
                 {
                     string dottcS = this.searchTimKiem.Text;
-                    if ("".Equals(dottcS)) {
+                    if ("".Equals(dottcS))
+                    {
                         loadDataGrid();
                     }
                     else
@@ -759,6 +774,55 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
                 MessageBox.Show(this, "Cần Chọn Mã Đợt Để Xin Phép Đào Đường !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-        
+
+        private void btChinhSuaDanhSach_Click(object sender, EventArgs e)
+        {
+            string madot = "";
+            string tendot = "";
+            try
+            {
+                madot = gridDotThiCong.Rows[gridDotThiCong.CurrentRow.Index].Cells["gridSoDot"].Value + "";
+                tendot = gridDotThiCong.Rows[gridDotThiCong.CurrentRow.Index].Cells["girdLoaiDot"].Value + "";
+            }
+            catch (Exception)
+            {
+            }
+            if (!"".Equals(madot))
+            {
+                this.tabControlPanel2.Controls.Clear();
+                this.tabControlPanel2.Controls.Add(new Tab_EditDanhSachTC(madot));
+                //  this.tabCapNhatDS.Controls.Add(new tab_CapNhatDanhSachND(madot));
+                this.tabControl1.SelectedTabIndex = 3;
+            }
+            else
+            {
+                MessageBox.Show(this, "Cần Chọn Mã Đợt Để Xin Phép Đào Đường !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void tabItem5_Click(object sender, EventArgs e)
+        {
+            string madot = "";
+            string tendot = "";
+            try
+            {
+                madot = gridDotThiCong.Rows[gridDotThiCong.CurrentRow.Index].Cells["gridSoDot"].Value + "";
+                tendot = gridDotThiCong.Rows[gridDotThiCong.CurrentRow.Index].Cells["girdLoaiDot"].Value + "";
+            }
+            catch (Exception)
+            {
+            }
+            if (!"".Equals(madot))
+            {
+                this.tabControlPanel2.Controls.Clear();
+                this.tabControlPanel2.Controls.Add(new Tab_EditDanhSachTC(madot));
+                //  this.tabCapNhatDS.Controls.Add(new tab_CapNhatDanhSachND(madot));
+                this.tabControl1.SelectedTabIndex = 3;
+            }
+            else
+            {
+                MessageBox.Show(this, "Cần Chọn Mã Đợt Để Xin Phép Đào Đường !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
     }
 }

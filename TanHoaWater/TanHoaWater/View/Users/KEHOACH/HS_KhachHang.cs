@@ -918,6 +918,60 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
             this.tabControlPanel7.Controls.Clear();
             this.tabControlPanel7.Controls.Add(new tab_LogDonKH());
         }
+         
+        private void textBoxX1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+
+                DataTable table = DAL.C_KH_DotThiCong.findByHSHT(this.textBoxX1.Text);
+                if (table.Rows.Count <= 0)
+                {
+                    MessageBox.Show(this, "Không Tìm Thấy Hồ Sơ Hoàn Tất Thiết Kế !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+
+                }
+                else
+                {
+
+                    this.txtHoTenKH.Text = table.Rows[0][2].ToString();
+                    this.txtDiaChi.Text = table.Rows[0][3].ToString();
+                    this.txtPhuong.Text = table.Rows[0][4].ToString();
+                    this.txtQuan.Text = table.Rows[0][5].ToString();
+                    this.dateNgayDongTien.ValueObject = table.Rows[0][6];
+                    this.txtSoHoaDon.Text = table.Rows[0][7].ToString();
+                    BG_KHOILUONGXDCB xdcb = DAL.C_KhoiLuongXDCB.findBySHS(table.Rows[0][0].ToString());
+                    if (xdcb != null)
+                    {
+                        txtSoTien.Text = String.Format("{0:0,0.00}", xdcb.TONGIATRI != null ? xdcb.TONGIATRI : 0.0);
+                    }
+                    
+                }
+            }
+        }
+
+        private void btLuuHoSo_Click(object sender, EventArgs e)
+        {
+            if (!"".Equals(this.txtSoHoaDon.Text) && !"1/1/0001".Equals(this.dateNgayDongTien.Value.ToShortDateString()))
+            {
+                try
+                {
+                    DAL.C_DonKhachHang.DongTienKH(this.textBoxX1.Text, this.dateNgayDongTien.Value.Date, this.txtSoHoaDon.Text);
+                    MessageBox.Show(this, "Cập Nhật Khách Hàng Đóng Tiền Thành Công.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    log.Error("Khach Hang Dong Tien Loi." + ex.Message);
+                    MessageBox.Show(this, "Cập Nhật Khách Hàng Đóng Tiền Lỗi .", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+               
+            }
+            else
+            {
+                MessageBox.Show(this, "Cần Nhập Số Hóa Đơn Và Ngày Đóng Tiền", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtSoHoaDon.Focus();
+            }
+        }
 
     }
 }

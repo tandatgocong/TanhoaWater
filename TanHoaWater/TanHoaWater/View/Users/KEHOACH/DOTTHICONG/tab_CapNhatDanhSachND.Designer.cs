@@ -65,15 +65,16 @@
             this.btThemMoiHoSo = new DevComponents.DotNetBar.ButtonX();
             this.lbTongHoSo = new DevComponents.DotNetBar.LabelX();
             this.dataGridViewDotTC = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.btPrint = new System.Windows.Forms.PictureBox();
             this.thaotac = new System.Windows.Forms.DataGridViewButtonColumn();
             this.SHS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.G_SOHOSO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.g_dotbangke = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gr_Hoten = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gr_SoDienThoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gr_sonha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.g_duong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.g_phuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gr_SoDienThoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.g_dotxpdd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.g_ngayxinphep = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grNgayDongTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -82,7 +83,7 @@
             this.gridTLMD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gr_tongsotien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grid_CoTLK = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btPrint = new System.Windows.Forms.PictureBox();
+            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dateNgayDongTien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDotTC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btPrint)).BeginInit();
@@ -354,10 +355,10 @@
             this.G_SOHOSO,
             this.g_dotbangke,
             this.gr_Hoten,
-            this.gr_SoDienThoai,
             this.gr_sonha,
             this.g_duong,
             this.g_phuong,
+            this.gr_SoDienThoai,
             this.g_dotxpdd,
             this.g_ngayxinphep,
             this.grNgayDongTien,
@@ -365,7 +366,8 @@
             this.gridGiaTriSauThue,
             this.gridTLMD,
             this.gr_tongsotien,
-            this.grid_CoTLK});
+            this.grid_CoTLK,
+            this.STT});
             dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle14.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -393,6 +395,17 @@
             this.dataGridViewDotTC.TabIndex = 718;
             this.dataGridViewDotTC.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDotTC_CellClick);
             // 
+            // btPrint
+            // 
+            this.btPrint.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btPrint.Image = global::TanHoaWater.Properties.Resources.print1;
+            this.btPrint.Location = new System.Drawing.Point(948, 159);
+            this.btPrint.Name = "btPrint";
+            this.btPrint.Size = new System.Drawing.Size(32, 22);
+            this.btPrint.TabIndex = 719;
+            this.btPrint.TabStop = false;
+            this.btPrint.Click += new System.EventHandler(this.btPrint_Click);
+            // 
             // thaotac
             // 
             this.thaotac.DataPropertyName = "HUY";
@@ -400,7 +413,7 @@
             this.thaotac.HeaderText = "";
             this.thaotac.Name = "thaotac";
             this.thaotac.ReadOnly = true;
-            this.thaotac.Width = 70;
+            this.thaotac.Width = 60;
             // 
             // SHS
             // 
@@ -442,14 +455,6 @@
             this.gr_Hoten.ReadOnly = true;
             this.gr_Hoten.Width = 250;
             // 
-            // gr_SoDienThoai
-            // 
-            this.gr_SoDienThoai.DataPropertyName = "DIENTHOAI";
-            this.gr_SoDienThoai.HeaderText = "Số Điện Thoại";
-            this.gr_SoDienThoai.Name = "gr_SoDienThoai";
-            this.gr_SoDienThoai.ReadOnly = true;
-            this.gr_SoDienThoai.Width = 120;
-            // 
             // gr_sonha
             // 
             this.gr_sonha.DataPropertyName = "SONHA";
@@ -476,6 +481,14 @@
             this.g_phuong.Name = "g_phuong";
             this.g_phuong.ReadOnly = true;
             this.g_phuong.Width = 120;
+            // 
+            // gr_SoDienThoai
+            // 
+            this.gr_SoDienThoai.DataPropertyName = "DIENTHOAI";
+            this.gr_SoDienThoai.HeaderText = "Số Điện Thoại";
+            this.gr_SoDienThoai.Name = "gr_SoDienThoai";
+            this.gr_SoDienThoai.ReadOnly = true;
+            this.gr_SoDienThoai.Width = 120;
             // 
             // g_dotxpdd
             // 
@@ -563,16 +576,13 @@
             this.grid_CoTLK.Name = "grid_CoTLK";
             this.grid_CoTLK.ReadOnly = true;
             // 
-            // btPrint
+            // STT
             // 
-            this.btPrint.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btPrint.Image = global::TanHoaWater.Properties.Resources.print1;
-            this.btPrint.Location = new System.Drawing.Point(948, 159);
-            this.btPrint.Name = "btPrint";
-            this.btPrint.Size = new System.Drawing.Size(32, 22);
-            this.btPrint.TabIndex = 719;
-            this.btPrint.TabStop = false;
-            this.btPrint.Click += new System.EventHandler(this.btPrint_Click);
+            this.STT.DataPropertyName = "STT";
+            this.STT.HeaderText = "STT";
+            this.STT.Name = "STT";
+            this.STT.ReadOnly = true;
+            this.STT.Visible = false;
             // 
             // tab_CapNhatDanhSachND
             // 
@@ -643,10 +653,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn G_SOHOSO;
         private System.Windows.Forms.DataGridViewTextBoxColumn g_dotbangke;
         private System.Windows.Forms.DataGridViewTextBoxColumn gr_Hoten;
-        private System.Windows.Forms.DataGridViewTextBoxColumn gr_SoDienThoai;
         private System.Windows.Forms.DataGridViewTextBoxColumn gr_sonha;
         private System.Windows.Forms.DataGridViewTextBoxColumn g_duong;
         private System.Windows.Forms.DataGridViewTextBoxColumn g_phuong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gr_SoDienThoai;
         private System.Windows.Forms.DataGridViewTextBoxColumn g_dotxpdd;
         private System.Windows.Forms.DataGridViewTextBoxColumn g_ngayxinphep;
         private System.Windows.Forms.DataGridViewTextBoxColumn grNgayDongTien;
@@ -655,5 +665,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn gridTLMD;
         private System.Windows.Forms.DataGridViewTextBoxColumn gr_tongsotien;
         private System.Windows.Forms.DataGridViewTextBoxColumn grid_CoTLK;
+        private System.Windows.Forms.DataGridViewTextBoxColumn STT;
     }
 }

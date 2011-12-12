@@ -45,10 +45,11 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
         }
         public void loadDataGrid()
         {
-            dataGridViewX1.DataSource = DAL.C_KH_DotThiCong.getListDotThiCongBT(_madot);
-            Utilities.DataGridV.formatSoHoSoDanhBo(dataGridViewX1);
-            lbTongHoSo.Text = "Tổng Số Có " + dataGridViewX1.Rows.Count + " Hồ Sơ";
-          
+           
+                dataGridViewX1.DataSource = DAL.C_KH_DotThiCong.getListDotThiCongBT(_madot);
+                Utilities.DataGridV.formatSoHoSoDanhBo(dataGridViewX1);
+                lbTongHoSo.Text = "Tổng Số Có " + dataGridViewX1.Rows.Count + " Hồ Sơ";
+           
         }
         public void DongTien()
         {
@@ -290,6 +291,26 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
             rp.SetDataSource(DAL.C_KH_DotThiCong.BC_DanhSachDotThiCong_BT(_madot));
             rpt_Main mainReport = new rpt_Main(rp);
             mainReport.ShowDialog();
+        }
+
+        private void dataGridViewX1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (dataGridViewX1.CurrentCell.OwningColumn.Name == "thaotac")
+                {
+                    string _shs = dataGridViewX1.Rows[dataGridViewX1.CurrentRow.Index].Cells["SHS"].Value + "";
+                    if (MessageBox.Show(this, "Có Muốn Hủy Hồ Sơ " + _shs + " Không ?", "..: Thông Báo :..", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        DAL.C_KH_HoSoKhachHang.HuyDotTC(_shs);
+                        loadDataGrid();
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+            }
         }
     }
 }
