@@ -356,9 +356,9 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
         }
 
         private void btDelete_Click(object sender, EventArgs e)    {
-            string q = "Xóa Hồ Sơ " + this.txtSoHoSo.Text  + " ?";
+            string q = "Xóa Hồ Sơ " + this.txtSHS.Text + " ?";
             if (MessageBox.Show(this, q, "..: Thông Báo :..", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) {
-                DAL.C_DonKhachHang.DeleteDonKH(this.txtSoHoSo.Text);
+                DAL.C_DonKhachHang.DeleteDonKH(this.txtSHS.Text);
                 clear();
                 search();
             }      

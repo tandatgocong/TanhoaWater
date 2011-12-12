@@ -12775,6 +12775,8 @@ namespace TanHoaWater.Database
 		
 		private string _MODIFYLOG;
 		
+		private System.Nullable<int> _STT;
+		
 		private EntityRef<DON_KHACHHANG> _DON_KHACHHANG;
 		
 		private EntityRef<KH_DOTTHICONG> _KH_DOTTHICONG;
@@ -12903,6 +12905,8 @@ namespace TanHoaWater.Database
     partial void OnMODIFYDATEChanged();
     partial void OnMODIFYLOGChanging(string value);
     partial void OnMODIFYLOGChanged();
+    partial void OnSTTChanging(System.Nullable<int> value);
+    partial void OnSTTChanged();
     #endregion
 		
 		public KH_HOSOKHACHHANG()
@@ -14101,6 +14105,26 @@ namespace TanHoaWater.Database
 					this._MODIFYLOG = value;
 					this.SendPropertyChanged("MODIFYLOG");
 					this.OnMODIFYLOGChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_STT", DbType="Int")]
+		public System.Nullable<int> STT
+		{
+			get
+			{
+				return this._STT;
+			}
+			set
+			{
+				if ((this._STT != value))
+				{
+					this.OnSTTChanging(value);
+					this.SendPropertyChanging();
+					this._STT = value;
+					this.SendPropertyChanged("STT");
+					this.OnSTTChanged();
 				}
 			}
 		}
@@ -19286,9 +19310,17 @@ namespace TanHoaWater.Database
 		
 		private System.Nullable<bool> _HKTK;
 		
+		private System.Nullable<bool> _TAMTRU;
+		
 		private System.Nullable<bool> _CHUQUYENNHA;
 		
+		private System.Nullable<bool> _GIAYPHEPKD;
+		
 		private System.Nullable<bool> _GIAYPHEPXD;
+		
+		private System.Nullable<bool> _GIAYTOKHAC;
+		
+		private System.Nullable<bool> _BIENLAITIENUOC;
 		
 		private string _USERNAME;
 		
@@ -19402,6 +19434,22 @@ namespace TanHoaWater.Database
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TAMTRU", DbType="Bit")]
+		public System.Nullable<bool> TAMTRU
+		{
+			get
+			{
+				return this._TAMTRU;
+			}
+			set
+			{
+				if ((this._TAMTRU != value))
+				{
+					this._TAMTRU = value;
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CHUQUYENNHA", DbType="Bit")]
 		public System.Nullable<bool> CHUQUYENNHA
 		{
@@ -19418,6 +19466,22 @@ namespace TanHoaWater.Database
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GIAYPHEPKD", DbType="Bit")]
+		public System.Nullable<bool> GIAYPHEPKD
+		{
+			get
+			{
+				return this._GIAYPHEPKD;
+			}
+			set
+			{
+				if ((this._GIAYPHEPKD != value))
+				{
+					this._GIAYPHEPKD = value;
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GIAYPHEPXD", DbType="Bit")]
 		public System.Nullable<bool> GIAYPHEPXD
 		{
@@ -19430,6 +19494,38 @@ namespace TanHoaWater.Database
 				if ((this._GIAYPHEPXD != value))
 				{
 					this._GIAYPHEPXD = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GIAYTOKHAC", DbType="Bit")]
+		public System.Nullable<bool> GIAYTOKHAC
+		{
+			get
+			{
+				return this._GIAYTOKHAC;
+			}
+			set
+			{
+				if ((this._GIAYTOKHAC != value))
+				{
+					this._GIAYTOKHAC = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BIENLAITIENUOC", DbType="Bit")]
+		public System.Nullable<bool> BIENLAITIENUOC
+		{
+			get
+			{
+				return this._BIENLAITIENUOC;
+			}
+			set
+			{
+				if ((this._BIENLAITIENUOC != value))
+				{
+					this._BIENLAITIENUOC = value;
 				}
 			}
 		}
@@ -28037,6 +28133,18 @@ namespace TanHoaWater.Database
 		
 		private string _TKGHICHU;
 		
+		private string _NGAYHOANTATTK;
+		
+		private string _TTKNHANDON;
+		
+		private string _SODOVIEN;
+		
+		private System.Nullable<System.DateTime> _NGAYGIAOSDV;
+		
+		private System.Nullable<bool> _SDVTRAHS;
+		
+		private System.Nullable<System.DateTime> _NGAYSDVTRAHS;
+		
 		public V_TTK_HOANTATTK()
 		{
 		}
@@ -28949,6 +29057,102 @@ namespace TanHoaWater.Database
 				if ((this._TKGHICHU != value))
 				{
 					this._TKGHICHU = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAYHOANTATTK", DbType="VarChar(10)")]
+		public string NGAYHOANTATTK
+		{
+			get
+			{
+				return this._NGAYHOANTATTK;
+			}
+			set
+			{
+				if ((this._NGAYHOANTATTK != value))
+				{
+					this._NGAYHOANTATTK = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TTKNHANDON", DbType="VarChar(10)")]
+		public string TTKNHANDON
+		{
+			get
+			{
+				return this._TTKNHANDON;
+			}
+			set
+			{
+				if ((this._TTKNHANDON != value))
+				{
+					this._TTKNHANDON = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SODOVIEN", DbType="VarChar(20)")]
+		public string SODOVIEN
+		{
+			get
+			{
+				return this._SODOVIEN;
+			}
+			set
+			{
+				if ((this._SODOVIEN != value))
+				{
+					this._SODOVIEN = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAYGIAOSDV", DbType="DateTime")]
+		public System.Nullable<System.DateTime> NGAYGIAOSDV
+		{
+			get
+			{
+				return this._NGAYGIAOSDV;
+			}
+			set
+			{
+				if ((this._NGAYGIAOSDV != value))
+				{
+					this._NGAYGIAOSDV = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SDVTRAHS", DbType="Bit")]
+		public System.Nullable<bool> SDVTRAHS
+		{
+			get
+			{
+				return this._SDVTRAHS;
+			}
+			set
+			{
+				if ((this._SDVTRAHS != value))
+				{
+					this._SDVTRAHS = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAYSDVTRAHS", DbType="DateTime")]
+		public System.Nullable<System.DateTime> NGAYSDVTRAHS
+		{
+			get
+			{
+				return this._NGAYSDVTRAHS;
+			}
+			set
+			{
+				if ((this._NGAYSDVTRAHS != value))
+				{
+					this._NGAYSDVTRAHS = value;
 				}
 			}
 		}

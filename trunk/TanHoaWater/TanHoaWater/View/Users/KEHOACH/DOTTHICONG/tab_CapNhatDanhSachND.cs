@@ -223,7 +223,7 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
                 }
                 else
                 {
-                    this.txtSHS.Text = table.Rows[0][0].ToString();
+                    
                     this.txtHoTenKH.Text = table.Rows[0][2].ToString();
                     this.txtDiaChi.Text = table.Rows[0][3].ToString();
                     this.txtPhuong.Text = table.Rows[0][4].ToString();

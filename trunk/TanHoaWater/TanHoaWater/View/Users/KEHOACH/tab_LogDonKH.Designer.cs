@@ -33,7 +33,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.cbDotNhanDon = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.label17 = new System.Windows.Forms.Label();
             this.chuyenhoso = new DevComponents.DotNetBar.Controls.CheckBoxX();
             this.label13 = new System.Windows.Forms.Label();
@@ -42,7 +41,6 @@
             this.label14 = new System.Windows.Forms.Label();
             this.txtSHS = new System.Windows.Forms.MaskedTextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.dienthoai = new System.Windows.Forms.MaskedTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -52,18 +50,13 @@
             this.txtsonha = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.label10 = new System.Windows.Forms.Label();
             this.duong = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.cbLoaiHS = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.txtSoHo = new System.Windows.Forms.NumericUpDown();
-            this.cbLoaiKH = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.cbQuan = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.cbPhuong = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.bnngaysua = new System.Windows.Forms.TextBox();
             this.bnnguoisua = new System.Windows.Forms.TextBox();
-            this.bnNgayLao = new System.Windows.Forms.TextBox();
             this.bnnguoilap = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -80,6 +73,13 @@
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
+            this.cbLoaiKH = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.cbLoaiHS = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.dienthoai = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.cbDotNhanDon = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.cbPhuong = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.cbQuan = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.bnNgayLao = new System.Windows.Forms.TextBox();
             this.groupPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtSoHo)).BeginInit();
@@ -143,7 +143,6 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
-            this.panel1.Controls.Add(this.cbDotNhanDon);
             this.panel1.Controls.Add(this.label17);
             this.panel1.Controls.Add(this.chuyenhoso);
             this.panel1.Controls.Add(this.label13);
@@ -152,44 +151,34 @@
             this.panel1.Controls.Add(this.label14);
             this.panel1.Controls.Add(this.txtSHS);
             this.panel1.Controls.Add(this.label11);
-            this.panel1.Controls.Add(this.dienthoai);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.txtSoHoSo);
             this.panel1.Controls.Add(this.txtHoTen);
+            this.panel1.Controls.Add(this.cbDotNhanDon);
+            this.panel1.Controls.Add(this.dienthoai);
             this.panel1.Controls.Add(this.ghichu);
             this.panel1.Controls.Add(this.txtsonha);
             this.panel1.Controls.Add(this.label10);
-            this.panel1.Controls.Add(this.duong);
             this.panel1.Controls.Add(this.cbLoaiHS);
-            this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.txtSoHo);
             this.panel1.Controls.Add(this.cbLoaiKH);
             this.panel1.Controls.Add(this.cbQuan);
             this.panel1.Controls.Add(this.cbPhuong);
+            this.panel1.Controls.Add(this.duong);
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.label9);
+            this.panel1.Controls.Add(this.txtSoHo);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(963, 142);
             this.panel1.TabIndex = 0;
             // 
-            // cbDotNhanDon
-            // 
-            this.cbDotNhanDon.DisplayMember = "Text";
-            this.cbDotNhanDon.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbDotNhanDon.FormattingEnabled = true;
-            this.cbDotNhanDon.ItemHeight = 16;
-            this.cbDotNhanDon.Location = new System.Drawing.Point(508, 69);
-            this.cbDotNhanDon.Name = "cbDotNhanDon";
-            this.cbDotNhanDon.Size = new System.Drawing.Size(135, 22);
-            this.cbDotNhanDon.TabIndex = 114;
-            // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(427, 74);
+            this.label17.Location = new System.Drawing.Point(427, 77);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(68, 16);
             this.label17.TabIndex = 111;
@@ -198,7 +187,7 @@
             // chuyenhoso
             // 
             this.chuyenhoso.Enabled = false;
-            this.chuyenhoso.Location = new System.Drawing.Point(767, 76);
+            this.chuyenhoso.Location = new System.Drawing.Point(788, 76);
             this.chuyenhoso.Name = "chuyenhoso";
             this.chuyenhoso.Size = new System.Drawing.Size(21, 15);
             this.chuyenhoso.TabIndex = 23;
@@ -215,7 +204,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(671, 75);
+            this.label16.Location = new System.Drawing.Point(692, 75);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(94, 16);
             this.label16.TabIndex = 109;
@@ -257,20 +246,10 @@
             this.label11.TabIndex = 87;
             this.label11.Text = "Loại K.Hàng";
             // 
-            // dienthoai
-            // 
-            this.dienthoai.Location = new System.Drawing.Point(508, 41);
-            this.dienthoai.Mask = "00000000000";
-            this.dienthoai.Name = "dienthoai";
-            this.dienthoai.PromptChar = ' ';
-            this.dienthoai.ReadOnly = true;
-            this.dienthoai.Size = new System.Drawing.Size(172, 22);
-            this.dienthoai.TabIndex = 18;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(240, 104);
+            this.label5.Location = new System.Drawing.Point(240, 107);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(54, 16);
             this.label5.TabIndex = 89;
@@ -279,7 +258,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(19, 104);
+            this.label6.Location = new System.Drawing.Point(15, 107);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(40, 16);
             this.label6.TabIndex = 91;
@@ -329,7 +308,7 @@
             this.ghichu.Multiline = true;
             this.ghichu.Name = "ghichu";
             this.ghichu.ReadOnly = true;
-            this.ghichu.Size = new System.Drawing.Size(174, 25);
+            this.ghichu.Size = new System.Drawing.Size(178, 25);
             this.ghichu.TabIndex = 19;
             // 
             // txtsonha
@@ -367,19 +346,6 @@
             this.duong.Size = new System.Drawing.Size(219, 25);
             this.duong.TabIndex = 13;
             // 
-            // cbLoaiHS
-            // 
-            this.cbLoaiHS.DisplayMember = "Text";
-            this.cbLoaiHS.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbLoaiHS.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbLoaiHS.DropDownWidth = 250;
-            this.cbLoaiHS.FormattingEnabled = true;
-            this.cbLoaiHS.ItemHeight = 16;
-            this.cbLoaiHS.Location = new System.Drawing.Point(766, 9);
-            this.cbLoaiHS.Name = "cbLoaiHS";
-            this.cbLoaiHS.Size = new System.Drawing.Size(174, 22);
-            this.cbLoaiHS.TabIndex = 17;
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -402,43 +368,9 @@
             // 
             this.txtSoHo.Location = new System.Drawing.Point(364, 9);
             this.txtSoHo.Name = "txtSoHo";
+            this.txtSoHo.ReadOnly = true;
             this.txtSoHo.Size = new System.Drawing.Size(48, 22);
             this.txtSoHo.TabIndex = 10;
-            // 
-            // cbLoaiKH
-            // 
-            this.cbLoaiKH.DisplayMember = "Text";
-            this.cbLoaiKH.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbLoaiKH.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbLoaiKH.FormattingEnabled = true;
-            this.cbLoaiKH.ItemHeight = 16;
-            this.cbLoaiKH.Location = new System.Drawing.Point(508, 9);
-            this.cbLoaiKH.Name = "cbLoaiKH";
-            this.cbLoaiKH.Size = new System.Drawing.Size(172, 22);
-            this.cbLoaiKH.TabIndex = 16;
-            // 
-            // cbQuan
-            // 
-            this.cbQuan.DisplayMember = "Text";
-            this.cbQuan.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbQuan.FormattingEnabled = true;
-            this.cbQuan.ItemHeight = 16;
-            this.cbQuan.Location = new System.Drawing.Point(92, 98);
-            this.cbQuan.Name = "cbQuan";
-            this.cbQuan.Size = new System.Drawing.Size(129, 22);
-            this.cbQuan.TabIndex = 14;
-            // 
-            // cbPhuong
-            // 
-            this.cbPhuong.DisplayMember = "Text";
-            this.cbPhuong.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbPhuong.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbPhuong.FormattingEnabled = true;
-            this.cbPhuong.ItemHeight = 16;
-            this.cbPhuong.Location = new System.Drawing.Point(296, 98);
-            this.cbPhuong.Name = "cbPhuong";
-            this.cbPhuong.Size = new System.Drawing.Size(116, 22);
-            this.cbPhuong.TabIndex = 15;
             // 
             // errorProvider1
             // 
@@ -465,6 +397,7 @@
             // 
             this.bnngaysua.Location = new System.Drawing.Point(80, 123);
             this.bnngaysua.Name = "bnngaysua";
+            this.bnngaysua.ReadOnly = true;
             this.bnngaysua.Size = new System.Drawing.Size(350, 22);
             this.bnngaysua.TabIndex = 1;
             // 
@@ -472,20 +405,15 @@
             // 
             this.bnnguoisua.Location = new System.Drawing.Point(82, 95);
             this.bnnguoisua.Name = "bnnguoisua";
+            this.bnnguoisua.ReadOnly = true;
             this.bnnguoisua.Size = new System.Drawing.Size(350, 22);
             this.bnnguoisua.TabIndex = 1;
-            // 
-            // bnNgayLao
-            // 
-            this.bnNgayLao.Location = new System.Drawing.Point(82, 65);
-            this.bnNgayLao.Name = "bnNgayLao";
-            this.bnNgayLao.Size = new System.Drawing.Size(350, 22);
-            this.bnNgayLao.TabIndex = 1;
             // 
             // bnnguoilap
             // 
             this.bnnguoilap.Location = new System.Drawing.Point(82, 32);
             this.bnnguoilap.Name = "bnnguoilap";
+            this.bnnguoilap.ReadOnly = true;
             this.bnnguoilap.Size = new System.Drawing.Size(350, 22);
             this.bnnguoilap.TabIndex = 1;
             // 
@@ -565,6 +493,7 @@
             // 
             this.hsngaysua.Location = new System.Drawing.Point(94, 112);
             this.hsngaysua.Name = "hsngaysua";
+            this.hsngaysua.ReadOnly = true;
             this.hsngaysua.Size = new System.Drawing.Size(350, 22);
             this.hsngaysua.TabIndex = 1;
             // 
@@ -572,6 +501,7 @@
             // 
             this.hsnguoilap.Location = new System.Drawing.Point(94, 21);
             this.hsnguoilap.Name = "hsnguoilap";
+            this.hsnguoilap.ReadOnly = true;
             this.hsnguoilap.Size = new System.Drawing.Size(350, 22);
             this.hsnguoilap.TabIndex = 1;
             // 
@@ -579,6 +509,7 @@
             // 
             this.hsnguoisua.Location = new System.Drawing.Point(94, 84);
             this.hsnguoisua.Name = "hsnguoisua";
+            this.hsnguoisua.ReadOnly = true;
             this.hsnguoisua.Size = new System.Drawing.Size(350, 22);
             this.hsnguoisua.TabIndex = 1;
             // 
@@ -595,6 +526,7 @@
             // 
             this.hsngaylap.Location = new System.Drawing.Point(94, 54);
             this.hsngaylap.Name = "hsngaylap";
+            this.hsngaylap.ReadOnly = true;
             this.hsngaylap.Size = new System.Drawing.Size(350, 22);
             this.hsngaylap.TabIndex = 1;
             // 
@@ -624,6 +556,92 @@
             this.label21.Size = new System.Drawing.Size(68, 16);
             this.label21.TabIndex = 0;
             this.label21.Text = "Ngày Sửa";
+            // 
+            // cbLoaiKH
+            // 
+            // 
+            // 
+            // 
+            this.cbLoaiKH.Border.Class = "TextBoxBorder";
+            this.cbLoaiKH.Location = new System.Drawing.Point(508, 10);
+            this.cbLoaiKH.Multiline = true;
+            this.cbLoaiKH.Name = "cbLoaiKH";
+            this.cbLoaiKH.ReadOnly = true;
+            this.cbLoaiKH.Size = new System.Drawing.Size(178, 25);
+            this.cbLoaiKH.TabIndex = 13;
+            // 
+            // cbLoaiHS
+            // 
+            // 
+            // 
+            // 
+            this.cbLoaiHS.Border.Class = "TextBoxBorder";
+            this.cbLoaiHS.Location = new System.Drawing.Point(766, 9);
+            this.cbLoaiHS.Multiline = true;
+            this.cbLoaiHS.Name = "cbLoaiHS";
+            this.cbLoaiHS.ReadOnly = true;
+            this.cbLoaiHS.Size = new System.Drawing.Size(178, 25);
+            this.cbLoaiHS.TabIndex = 13;
+            // 
+            // dienthoai
+            // 
+            // 
+            // 
+            // 
+            this.dienthoai.Border.Class = "TextBoxBorder";
+            this.dienthoai.Location = new System.Drawing.Point(508, 41);
+            this.dienthoai.Multiline = true;
+            this.dienthoai.Name = "dienthoai";
+            this.dienthoai.ReadOnly = true;
+            this.dienthoai.Size = new System.Drawing.Size(178, 25);
+            this.dienthoai.TabIndex = 19;
+            // 
+            // cbDotNhanDon
+            // 
+            // 
+            // 
+            // 
+            this.cbDotNhanDon.Border.Class = "TextBoxBorder";
+            this.cbDotNhanDon.Location = new System.Drawing.Point(508, 72);
+            this.cbDotNhanDon.Multiline = true;
+            this.cbDotNhanDon.Name = "cbDotNhanDon";
+            this.cbDotNhanDon.ReadOnly = true;
+            this.cbDotNhanDon.Size = new System.Drawing.Size(178, 25);
+            this.cbDotNhanDon.TabIndex = 19;
+            // 
+            // cbPhuong
+            // 
+            // 
+            // 
+            // 
+            this.cbPhuong.Border.Class = "TextBoxBorder";
+            this.cbPhuong.Location = new System.Drawing.Point(294, 98);
+            this.cbPhuong.Multiline = true;
+            this.cbPhuong.Name = "cbPhuong";
+            this.cbPhuong.ReadOnly = true;
+            this.cbPhuong.Size = new System.Drawing.Size(118, 25);
+            this.cbPhuong.TabIndex = 13;
+            // 
+            // cbQuan
+            // 
+            // 
+            // 
+            // 
+            this.cbQuan.Border.Class = "TextBoxBorder";
+            this.cbQuan.Location = new System.Drawing.Point(92, 100);
+            this.cbQuan.Multiline = true;
+            this.cbQuan.Name = "cbQuan";
+            this.cbQuan.ReadOnly = true;
+            this.cbQuan.Size = new System.Drawing.Size(142, 25);
+            this.cbQuan.TabIndex = 13;
+            // 
+            // bnNgayLao
+            // 
+            this.bnNgayLao.Location = new System.Drawing.Point(82, 65);
+            this.bnNgayLao.Name = "bnNgayLao";
+            this.bnNgayLao.ReadOnly = true;
+            this.bnNgayLao.Size = new System.Drawing.Size(350, 22);
+            this.bnNgayLao.TabIndex = 1;
             // 
             // tab_LogDonKH
             // 
@@ -660,7 +678,6 @@
         private System.Windows.Forms.TextBox SearchMaHoSo;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Panel panel1;
-        private DevComponents.DotNetBar.Controls.ComboBoxEx cbDotNhanDon;
         private System.Windows.Forms.Label label17;
         private DevComponents.DotNetBar.Controls.CheckBoxX chuyenhoso;
         private System.Windows.Forms.Label label13;
@@ -669,7 +686,6 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.MaskedTextBox txtSHS;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.MaskedTextBox dienthoai;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
@@ -679,13 +695,9 @@
         private DevComponents.DotNetBar.Controls.TextBoxX txtsonha;
         private System.Windows.Forms.Label label10;
         private DevComponents.DotNetBar.Controls.TextBoxX duong;
-        private DevComponents.DotNetBar.Controls.ComboBoxEx cbLoaiHS;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.NumericUpDown txtSoHo;
-        private DevComponents.DotNetBar.Controls.ComboBoxEx cbLoaiKH;
-        private DevComponents.DotNetBar.Controls.ComboBoxEx cbQuan;
-        private DevComponents.DotNetBar.Controls.ComboBoxEx cbPhuong;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label22;
@@ -700,12 +712,18 @@
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.TextBox bnngaysua;
         private System.Windows.Forms.TextBox bnnguoisua;
-        private System.Windows.Forms.TextBox bnNgayLao;
         private System.Windows.Forms.TextBox bnnguoilap;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private DevComponents.DotNetBar.Controls.TextBoxX cbDotNhanDon;
+        private DevComponents.DotNetBar.Controls.TextBoxX dienthoai;
+        private DevComponents.DotNetBar.Controls.TextBoxX cbLoaiHS;
+        private DevComponents.DotNetBar.Controls.TextBoxX cbLoaiKH;
+        private DevComponents.DotNetBar.Controls.TextBoxX cbQuan;
+        private DevComponents.DotNetBar.Controls.TextBoxX cbPhuong;
+        private System.Windows.Forms.TextBox bnNgayLao;
 
     }
 }

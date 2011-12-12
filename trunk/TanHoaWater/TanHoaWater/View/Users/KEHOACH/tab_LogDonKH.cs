@@ -56,6 +56,13 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                             this.hsngaysua.Text = donkh.MODIFYDATE+"";
                             this.hsnguoisua.Text = donkh.MODIFYBY;
                             this.hsnoidungsua.Text = donkh.MODIFYLOG;
+                            if (donkh.CHUYEN_HOSO == true)
+                            {
+                                chuyenhoso.Checked = true;
+                            }
+                            else {
+                                chuyenhoso.Checked = false;
+                            }
                             Database.BIENNHANDON biennhan = DAL.C_BienNhanDon.finbyMaBienNhan(donkh.SHS);
                             if (biennhan != null)
                             {

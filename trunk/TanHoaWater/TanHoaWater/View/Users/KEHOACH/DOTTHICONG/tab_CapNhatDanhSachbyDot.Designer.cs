@@ -46,10 +46,10 @@
             this.G_SOHOSO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.g_dotbangke = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gr_Hoten = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gr_SoDienThoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gr_sonha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.g_duong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.g_phuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gr_SoDienThoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDotTC)).BeginInit();
             this.SuspendLayout();
             // 
@@ -125,10 +125,10 @@
             this.G_SOHOSO,
             this.g_dotbangke,
             this.gr_Hoten,
-            this.gr_SoDienThoai,
             this.gr_sonha,
             this.g_duong,
-            this.g_phuong});
+            this.g_phuong,
+            this.gr_SoDienThoai});
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -205,14 +205,6 @@
             this.gr_Hoten.ReadOnly = true;
             this.gr_Hoten.Width = 250;
             // 
-            // gr_SoDienThoai
-            // 
-            this.gr_SoDienThoai.DataPropertyName = "DIENTHOAI";
-            this.gr_SoDienThoai.HeaderText = "Số Điện Thoại";
-            this.gr_SoDienThoai.Name = "gr_SoDienThoai";
-            this.gr_SoDienThoai.ReadOnly = true;
-            this.gr_SoDienThoai.Width = 120;
-            // 
             // gr_sonha
             // 
             this.gr_sonha.DataPropertyName = "SONHA";
@@ -239,6 +231,14 @@
             this.g_phuong.Name = "g_phuong";
             this.g_phuong.ReadOnly = true;
             this.g_phuong.Width = 120;
+            // 
+            // gr_SoDienThoai
+            // 
+            this.gr_SoDienThoai.DataPropertyName = "DIENTHOAI";
+            this.gr_SoDienThoai.HeaderText = "Số Điện Thoại";
+            this.gr_SoDienThoai.Name = "gr_SoDienThoai";
+            this.gr_SoDienThoai.ReadOnly = true;
+            this.gr_SoDienThoai.Width = 120;
             // 
             // tab_CapNhatDanhSachbyDot
             // 
@@ -273,9 +273,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn G_SOHOSO;
         private System.Windows.Forms.DataGridViewTextBoxColumn g_dotbangke;
         private System.Windows.Forms.DataGridViewTextBoxColumn gr_Hoten;
-        private System.Windows.Forms.DataGridViewTextBoxColumn gr_SoDienThoai;
         private System.Windows.Forms.DataGridViewTextBoxColumn gr_sonha;
         private System.Windows.Forms.DataGridViewTextBoxColumn g_duong;
         private System.Windows.Forms.DataGridViewTextBoxColumn g_phuong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gr_SoDienThoai;
     }
 }

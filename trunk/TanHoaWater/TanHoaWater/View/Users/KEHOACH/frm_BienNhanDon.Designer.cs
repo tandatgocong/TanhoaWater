@@ -35,6 +35,38 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_BienNhanDon));
             this.tabControl1 = new DevComponents.DotNetBar.TabControl();
+            this.tabControlPanel3 = new DevComponents.DotNetBar.TabControlPanel();
+            this.panelEx3 = new System.Windows.Forms.Panel();
+            this.editDD = new System.Windows.Forms.GroupBox();
+            this.editbienlaithutien = new System.Windows.Forms.CheckBox();
+            this.editddgiaytokhac = new System.Windows.Forms.CheckBox();
+            this.editGM = new System.Windows.Forms.GroupBox();
+            this.edit_tamtrukt3 = new System.Windows.Forms.CheckBox();
+            this.eddit_checkhokhau = new System.Windows.Forms.CheckBox();
+            this.editcheckchuquyennha = new System.Windows.Forms.CheckBox();
+            this.edit_giayphepkd = new System.Windows.Forms.CheckBox();
+            this.editgiaytokhac = new System.Windows.Forms.CheckBox();
+            this.edit_giayphepxd = new System.Windows.Forms.CheckBox();
+            this.editSoBN = new System.Windows.Forms.MaskedTextBox();
+            this.editDienThoai = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX11 = new DevComponents.DotNetBar.LabelX();
+            this.editTenDuong = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.editSoNha = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.btEditLamLai = new DevComponents.DotNetBar.ButtonX();
+            this.buttonX3 = new DevComponents.DotNetBar.ButtonX();
+            this.btUpdate = new DevComponents.DotNetBar.ButtonX();
+            this.editQuan = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.editPhuong = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.labelX12 = new DevComponents.DotNetBar.LabelX();
+            this.labelX13 = new DevComponents.DotNetBar.LabelX();
+            this.editLoaiBN = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.editHoTen = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX14 = new DevComponents.DotNetBar.LabelX();
+            this.labelX15 = new DevComponents.DotNetBar.LabelX();
+            this.labelX16 = new DevComponents.DotNetBar.LabelX();
+            this.labelX18 = new DevComponents.DotNetBar.LabelX();
+            this.reflectionLabel2 = new DevComponents.DotNetBar.Controls.ReflectionLabel();
+            this.tabItem3 = new DevComponents.DotNetBar.TabItem(this.components);
             this.tabControlPanel1 = new DevComponents.DotNetBar.TabControlPanel();
             this.panelEx1 = new System.Windows.Forms.Panel();
             this.groupDiDoi = new System.Windows.Forms.GroupBox();
@@ -69,28 +101,6 @@
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.reflectionLabel1 = new DevComponents.DotNetBar.Controls.ReflectionLabel();
             this.tabItem1 = new DevComponents.DotNetBar.TabItem(this.components);
-            this.tabControlPanel3 = new DevComponents.DotNetBar.TabControlPanel();
-            this.panelEx3 = new System.Windows.Forms.Panel();
-            this.editSoBN = new System.Windows.Forms.MaskedTextBox();
-            this.editDienThoai = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.labelX11 = new DevComponents.DotNetBar.LabelX();
-            this.editTenDuong = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.editSoNha = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.btEditLamLai = new DevComponents.DotNetBar.ButtonX();
-            this.buttonX3 = new DevComponents.DotNetBar.ButtonX();
-            this.btUpdate = new DevComponents.DotNetBar.ButtonX();
-            this.editQuan = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.editPhuong = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.labelX12 = new DevComponents.DotNetBar.LabelX();
-            this.labelX13 = new DevComponents.DotNetBar.LabelX();
-            this.editLoaiBN = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.editHoTen = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.labelX14 = new DevComponents.DotNetBar.LabelX();
-            this.labelX15 = new DevComponents.DotNetBar.LabelX();
-            this.labelX16 = new DevComponents.DotNetBar.LabelX();
-            this.labelX18 = new DevComponents.DotNetBar.LabelX();
-            this.reflectionLabel2 = new DevComponents.DotNetBar.Controls.ReflectionLabel();
-            this.tabItem3 = new DevComponents.DotNetBar.TabItem(this.components);
             this.tabControlPanel2 = new DevComponents.DotNetBar.TabControlPanel();
             this.panelEx2 = new System.Windows.Forms.Panel();
             this.dataGridViewDC = new DevComponents.DotNetBar.Controls.DataGridViewX();
@@ -110,30 +120,23 @@
             this.SOHS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TENLOAI = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TENQUAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.editDD = new System.Windows.Forms.GroupBox();
-            this.editbienlaithutien = new System.Windows.Forms.CheckBox();
-            this.editddgiaytokhac = new System.Windows.Forms.CheckBox();
-            this.editGM = new System.Windows.Forms.GroupBox();
-            this.edit_tamtrukt3 = new System.Windows.Forms.CheckBox();
-            this.eddit_checkhokhau = new System.Windows.Forms.CheckBox();
-            this.editcheckchuquyennha = new System.Windows.Forms.CheckBox();
-            this.edit_giayphepkd = new System.Windows.Forms.CheckBox();
-            this.editgiaytokhac = new System.Windows.Forms.CheckBox();
-            this.edit_giayphepxd = new System.Windows.Forms.CheckBox();
+            this.editSoho = new System.Windows.Forms.NumericUpDown();
+            this.labelX2 = new DevComponents.DotNetBar.LabelX();
             ((System.ComponentModel.ISupportInitialize)(this.tabControl1)).BeginInit();
             this.tabControl1.SuspendLayout();
+            this.tabControlPanel3.SuspendLayout();
+            this.panelEx3.SuspendLayout();
+            this.editDD.SuspendLayout();
+            this.editGM.SuspendLayout();
             this.tabControlPanel1.SuspendLayout();
             this.panelEx1.SuspendLayout();
             this.groupDiDoi.SuspendLayout();
             this.groupganmoi.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            this.tabControlPanel3.SuspendLayout();
-            this.panelEx3.SuspendLayout();
             this.tabControlPanel2.SuspendLayout();
             this.panelEx2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDC)).BeginInit();
-            this.editDD.SuspendLayout();
-            this.editGM.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.editSoho)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -155,6 +158,373 @@
             this.tabControl1.Tabs.Add(this.tabItem3);
             this.tabControl1.Tabs.Add(this.tabItem2);
             this.tabControl1.Text = "tabControl1";
+            // 
+            // tabControlPanel3
+            // 
+            this.tabControlPanel3.Controls.Add(this.panelEx3);
+            this.tabControlPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControlPanel3.Location = new System.Drawing.Point(0, 27);
+            this.tabControlPanel3.Name = "tabControlPanel3";
+            this.tabControlPanel3.Padding = new System.Windows.Forms.Padding(1);
+            this.tabControlPanel3.Size = new System.Drawing.Size(669, 515);
+            this.tabControlPanel3.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(254)))));
+            this.tabControlPanel3.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(188)))), ((int)(((byte)(227)))));
+            this.tabControlPanel3.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.tabControlPanel3.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(165)))), ((int)(((byte)(199)))));
+            this.tabControlPanel3.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
+            | DevComponents.DotNetBar.eBorderSide.Bottom)));
+            this.tabControlPanel3.Style.GradientAngle = 90;
+            this.tabControlPanel3.TabIndex = 3;
+            this.tabControlPanel3.TabItem = this.tabItem3;
+            // 
+            // panelEx3
+            // 
+            this.panelEx3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
+            this.panelEx3.Controls.Add(this.editSoho);
+            this.panelEx3.Controls.Add(this.labelX2);
+            this.panelEx3.Controls.Add(this.editDD);
+            this.panelEx3.Controls.Add(this.editGM);
+            this.panelEx3.Controls.Add(this.editSoBN);
+            this.panelEx3.Controls.Add(this.editDienThoai);
+            this.panelEx3.Controls.Add(this.labelX11);
+            this.panelEx3.Controls.Add(this.editTenDuong);
+            this.panelEx3.Controls.Add(this.editSoNha);
+            this.panelEx3.Controls.Add(this.btEditLamLai);
+            this.panelEx3.Controls.Add(this.buttonX3);
+            this.panelEx3.Controls.Add(this.btUpdate);
+            this.panelEx3.Controls.Add(this.editQuan);
+            this.panelEx3.Controls.Add(this.editPhuong);
+            this.panelEx3.Controls.Add(this.labelX12);
+            this.panelEx3.Controls.Add(this.labelX13);
+            this.panelEx3.Controls.Add(this.editLoaiBN);
+            this.panelEx3.Controls.Add(this.editHoTen);
+            this.panelEx3.Controls.Add(this.labelX14);
+            this.panelEx3.Controls.Add(this.labelX15);
+            this.panelEx3.Controls.Add(this.labelX16);
+            this.panelEx3.Controls.Add(this.labelX18);
+            this.panelEx3.Controls.Add(this.reflectionLabel2);
+            this.panelEx3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelEx3.Location = new System.Drawing.Point(1, 1);
+            this.panelEx3.Name = "panelEx3";
+            this.panelEx3.Size = new System.Drawing.Size(667, 513);
+            this.panelEx3.TabIndex = 1;
+            // 
+            // editDD
+            // 
+            this.editDD.Controls.Add(this.editbienlaithutien);
+            this.editDD.Controls.Add(this.editddgiaytokhac);
+            this.editDD.Location = new System.Drawing.Point(78, 311);
+            this.editDD.Name = "editDD";
+            this.editDD.Size = new System.Drawing.Size(506, 105);
+            this.editDD.TabIndex = 49;
+            this.editDD.TabStop = false;
+            this.editDD.Text = "Đính kèm biên nhận di dời cần 1 trong các giấy tờ sau :";
+            this.editDD.Visible = false;
+            // 
+            // editbienlaithutien
+            // 
+            this.editbienlaithutien.AutoSize = true;
+            this.editbienlaithutien.Location = new System.Drawing.Point(19, 24);
+            this.editbienlaithutien.Name = "editbienlaithutien";
+            this.editbienlaithutien.Size = new System.Drawing.Size(154, 23);
+            this.editbienlaithutien.TabIndex = 50;
+            this.editbienlaithutien.Text = "Biên lai thu tiền nước";
+            this.editbienlaithutien.UseVisualStyleBackColor = true;
+            // 
+            // editddgiaytokhac
+            // 
+            this.editddgiaytokhac.AutoSize = true;
+            this.editddgiaytokhac.Location = new System.Drawing.Point(19, 48);
+            this.editddgiaytokhac.Name = "editddgiaytokhac";
+            this.editddgiaytokhac.Size = new System.Drawing.Size(105, 23);
+            this.editddgiaytokhac.TabIndex = 51;
+            this.editddgiaytokhac.Text = "Giấy tờ khác";
+            this.editddgiaytokhac.UseVisualStyleBackColor = true;
+            // 
+            // editGM
+            // 
+            this.editGM.Controls.Add(this.edit_tamtrukt3);
+            this.editGM.Controls.Add(this.eddit_checkhokhau);
+            this.editGM.Controls.Add(this.editcheckchuquyennha);
+            this.editGM.Controls.Add(this.edit_giayphepkd);
+            this.editGM.Controls.Add(this.editgiaytokhac);
+            this.editGM.Controls.Add(this.edit_giayphepxd);
+            this.editGM.Location = new System.Drawing.Point(87, 313);
+            this.editGM.Name = "editGM";
+            this.editGM.Size = new System.Drawing.Size(566, 105);
+            this.editGM.TabIndex = 43;
+            this.editGM.TabStop = false;
+            this.editGM.Text = "Đính kèm biên nhận gắn mới cần 1 trong các giấy tờ sau :";
+            // 
+            // edit_tamtrukt3
+            // 
+            this.edit_tamtrukt3.AutoSize = true;
+            this.edit_tamtrukt3.Location = new System.Drawing.Point(231, 25);
+            this.edit_tamtrukt3.Name = "edit_tamtrukt3";
+            this.edit_tamtrukt3.Size = new System.Drawing.Size(124, 23);
+            this.edit_tamtrukt3.TabIndex = 12;
+            this.edit_tamtrukt3.Text = "Sổ tạm trú KT3";
+            this.edit_tamtrukt3.UseVisualStyleBackColor = true;
+            // 
+            // eddit_checkhokhau
+            // 
+            this.eddit_checkhokhau.AutoSize = true;
+            this.eddit_checkhokhau.Location = new System.Drawing.Point(19, 24);
+            this.eddit_checkhokhau.Name = "eddit_checkhokhau";
+            this.eddit_checkhokhau.Size = new System.Drawing.Size(101, 23);
+            this.eddit_checkhokhau.TabIndex = 11;
+            this.eddit_checkhokhau.Text = "Sổ hộ khẩu.";
+            this.eddit_checkhokhau.UseVisualStyleBackColor = true;
+            // 
+            // editcheckchuquyennha
+            // 
+            this.editcheckchuquyennha.AutoSize = true;
+            this.editcheckchuquyennha.Location = new System.Drawing.Point(19, 48);
+            this.editcheckchuquyennha.Name = "editcheckchuquyennha";
+            this.editcheckchuquyennha.Size = new System.Drawing.Size(173, 23);
+            this.editcheckchuquyennha.TabIndex = 13;
+            this.editcheckchuquyennha.Text = "Giấy chủ quyền nhà/đất.";
+            this.editcheckchuquyennha.UseVisualStyleBackColor = true;
+            // 
+            // edit_giayphepkd
+            // 
+            this.edit_giayphepkd.AutoSize = true;
+            this.edit_giayphepkd.Location = new System.Drawing.Point(19, 74);
+            this.edit_giayphepkd.Name = "edit_giayphepkd";
+            this.edit_giayphepkd.Size = new System.Drawing.Size(160, 23);
+            this.edit_giayphepkd.TabIndex = 15;
+            this.edit_giayphepkd.Text = "Giấy phép kinh doanh";
+            this.edit_giayphepkd.UseVisualStyleBackColor = true;
+            // 
+            // editgiaytokhac
+            // 
+            this.editgiaytokhac.AutoSize = true;
+            this.editgiaytokhac.Location = new System.Drawing.Point(229, 74);
+            this.editgiaytokhac.Name = "editgiaytokhac";
+            this.editgiaytokhac.Size = new System.Drawing.Size(105, 23);
+            this.editgiaytokhac.TabIndex = 16;
+            this.editgiaytokhac.Text = "Giấy tờ khác";
+            this.editgiaytokhac.UseVisualStyleBackColor = true;
+            // 
+            // edit_giayphepxd
+            // 
+            this.edit_giayphepxd.AutoSize = true;
+            this.edit_giayphepxd.Location = new System.Drawing.Point(230, 47);
+            this.edit_giayphepxd.Name = "edit_giayphepxd";
+            this.edit_giayphepxd.Size = new System.Drawing.Size(150, 23);
+            this.edit_giayphepxd.TabIndex = 14;
+            this.edit_giayphepxd.Text = "Giấy phép xây dựng";
+            this.edit_giayphepxd.UseVisualStyleBackColor = true;
+            // 
+            // editSoBN
+            // 
+            this.editSoBN.Location = new System.Drawing.Point(186, 58);
+            this.editSoBN.Name = "editSoBN";
+            this.editSoBN.PromptChar = ' ';
+            this.editSoBN.Size = new System.Drawing.Size(313, 26);
+            this.editSoBN.TabIndex = 40;
+            this.editSoBN.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.editSoBN_KeyPress);
+            // 
+            // editDienThoai
+            // 
+            // 
+            // 
+            // 
+            this.editDienThoai.Border.Class = "TextBoxBorder";
+            this.editDienThoai.Location = new System.Drawing.Point(186, 277);
+            this.editDienThoai.Name = "editDienThoai";
+            this.editDienThoai.Size = new System.Drawing.Size(313, 26);
+            this.editDienThoai.TabIndex = 48;
+            // 
+            // labelX11
+            // 
+            this.labelX11.Location = new System.Drawing.Point(87, 278);
+            this.labelX11.Name = "labelX11";
+            this.labelX11.Size = new System.Drawing.Size(150, 23);
+            this.labelX11.TabIndex = 29;
+            this.labelX11.Text = "Điện Thoại";
+            // 
+            // editTenDuong
+            // 
+            // 
+            // 
+            // 
+            this.editTenDuong.Border.Class = "TextBoxBorder";
+            this.editTenDuong.Location = new System.Drawing.Point(309, 182);
+            this.editTenDuong.Name = "editTenDuong";
+            this.editTenDuong.Size = new System.Drawing.Size(190, 26);
+            this.editTenDuong.TabIndex = 45;
+            // 
+            // editSoNha
+            // 
+            // 
+            // 
+            // 
+            this.editSoNha.Border.Class = "TextBoxBorder";
+            this.editSoNha.Location = new System.Drawing.Point(186, 182);
+            this.editSoNha.Name = "editSoNha";
+            this.editSoNha.Size = new System.Drawing.Size(117, 26);
+            this.editSoNha.TabIndex = 44;
+            // 
+            // btEditLamLai
+            // 
+            this.btEditLamLai.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btEditLamLai.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btEditLamLai.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btEditLamLai.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btEditLamLai.Location = new System.Drawing.Point(374, 433);
+            this.btEditLamLai.Name = "btEditLamLai";
+            this.btEditLamLai.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.F5);
+            this.btEditLamLai.Size = new System.Drawing.Size(91, 25);
+            this.btEditLamLai.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
+            this.btEditLamLai.TabIndex = 54;
+            this.btEditLamLai.Text = "Làm Lại ";
+            this.btEditLamLai.Click += new System.EventHandler(this.btEditLamLai_Click);
+            // 
+            // buttonX3
+            // 
+            this.buttonX3.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonX3.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.buttonX3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonX3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.buttonX3.Location = new System.Drawing.Point(278, 433);
+            this.buttonX3.Name = "buttonX3";
+            this.buttonX3.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.F1);
+            this.buttonX3.Size = new System.Drawing.Size(91, 25);
+            this.buttonX3.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
+            this.buttonX3.TabIndex = 53;
+            this.buttonX3.Text = "In Biên Nhận";
+            this.buttonX3.Click += new System.EventHandler(this.btInBN);
+            // 
+            // btUpdate
+            // 
+            this.btUpdate.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btUpdate.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btUpdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btUpdate.Location = new System.Drawing.Point(182, 433);
+            this.btUpdate.Name = "btUpdate";
+            this.btUpdate.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.F1);
+            this.btUpdate.Size = new System.Drawing.Size(91, 25);
+            this.btUpdate.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
+            this.btUpdate.TabIndex = 52;
+            this.btUpdate.Text = "Cập Nhật";
+            this.btUpdate.Click += new System.EventHandler(this.btUpdate_Click);
+            // 
+            // editQuan
+            // 
+            this.editQuan.DisplayMember = "Text";
+            this.editQuan.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.editQuan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.editQuan.FormattingEnabled = true;
+            this.editQuan.ItemHeight = 20;
+            this.editQuan.Location = new System.Drawing.Point(186, 245);
+            this.editQuan.Name = "editQuan";
+            this.editQuan.Size = new System.Drawing.Size(136, 26);
+            this.editQuan.TabIndex = 47;
+            // 
+            // editPhuong
+            // 
+            this.editPhuong.DisplayMember = "Text";
+            this.editPhuong.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.editPhuong.DropDownHeight = 150;
+            this.editPhuong.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.editPhuong.DropDownWidth = 100;
+            this.editPhuong.IntegralHeight = false;
+            this.editPhuong.ItemHeight = 20;
+            this.editPhuong.Location = new System.Drawing.Point(186, 213);
+            this.editPhuong.Name = "editPhuong";
+            this.editPhuong.Size = new System.Drawing.Size(136, 26);
+            this.editPhuong.TabIndex = 46;
+            // 
+            // labelX12
+            // 
+            this.labelX12.Location = new System.Drawing.Point(87, 245);
+            this.labelX12.Name = "labelX12";
+            this.labelX12.Size = new System.Drawing.Size(52, 23);
+            this.labelX12.TabIndex = 38;
+            this.labelX12.Text = "Quận";
+            // 
+            // labelX13
+            // 
+            this.labelX13.Location = new System.Drawing.Point(87, 213);
+            this.labelX13.Name = "labelX13";
+            this.labelX13.Size = new System.Drawing.Size(93, 23);
+            this.labelX13.TabIndex = 36;
+            this.labelX13.Text = "Phường";
+            // 
+            // editLoaiBN
+            // 
+            // 
+            // 
+            // 
+            this.editLoaiBN.Border.Class = "TextBoxBorder";
+            this.editLoaiBN.Location = new System.Drawing.Point(186, 89);
+            this.editLoaiBN.Name = "editLoaiBN";
+            this.editLoaiBN.ReadOnly = true;
+            this.editLoaiBN.Size = new System.Drawing.Size(313, 26);
+            this.editLoaiBN.TabIndex = 41;
+            // 
+            // editHoTen
+            // 
+            // 
+            // 
+            // 
+            this.editHoTen.Border.Class = "TextBoxBorder";
+            this.editHoTen.Location = new System.Drawing.Point(186, 121);
+            this.editHoTen.Name = "editHoTen";
+            this.editHoTen.Size = new System.Drawing.Size(313, 26);
+            this.editHoTen.TabIndex = 42;
+            // 
+            // labelX14
+            // 
+            this.labelX14.Location = new System.Drawing.Point(87, 122);
+            this.labelX14.Name = "labelX14";
+            this.labelX14.Size = new System.Drawing.Size(150, 23);
+            this.labelX14.TabIndex = 28;
+            this.labelX14.Text = "Họ và Tên";
+            // 
+            // labelX15
+            // 
+            this.labelX15.Location = new System.Drawing.Point(87, 56);
+            this.labelX15.Name = "labelX15";
+            this.labelX15.Size = new System.Drawing.Size(93, 23);
+            this.labelX15.TabIndex = 24;
+            this.labelX15.Text = "Số Biên Nhận";
+            // 
+            // labelX16
+            // 
+            this.labelX16.Location = new System.Drawing.Point(87, 183);
+            this.labelX16.Name = "labelX16";
+            this.labelX16.Size = new System.Drawing.Size(126, 23);
+            this.labelX16.TabIndex = 22;
+            this.labelX16.Text = "Địa Chỉ  ";
+            // 
+            // labelX18
+            // 
+            this.labelX18.Location = new System.Drawing.Point(87, 88);
+            this.labelX18.Name = "labelX18";
+            this.labelX18.Size = new System.Drawing.Size(150, 27);
+            this.labelX18.TabIndex = 18;
+            this.labelX18.Text = "Loại BN";
+            // 
+            // reflectionLabel2
+            // 
+            this.reflectionLabel2.Location = new System.Drawing.Point(65, 4);
+            this.reflectionLabel2.Margin = new System.Windows.Forms.Padding(4);
+            this.reflectionLabel2.Name = "reflectionLabel2";
+            this.reflectionLabel2.ReflectionEnabled = false;
+            this.reflectionLabel2.Size = new System.Drawing.Size(434, 67);
+            this.reflectionLabel2.TabIndex = 16;
+            this.reflectionLabel2.Text = "<b><font size=\"+6\"><font color=\"#ED1C24\">SỬA BIÊN NHẬN ĐƠN KHÁCH HÀNG</font></fon" +
+    "t></b>";
+            // 
+            // tabItem3
+            // 
+            this.tabItem3.AttachedControl = this.tabControlPanel3;
+            this.tabItem3.Name = "tabItem3";
+            this.tabItem3.Text = "In && Sửa Biên Nhận";
+            this.tabItem3.Click += new System.EventHandler(this.tabItem3_Click);
             // 
             // tabControlPanel1
             // 
@@ -325,6 +695,7 @@
             0,
             0});
             this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
+            this.numericUpDown1.Leave += new System.EventHandler(this.numericUpDown1_Leave);
             // 
             // labelX19
             // 
@@ -340,14 +711,14 @@
             // 
             // 
             this.txtDt.Border.Class = "TextBoxBorder";
-            this.txtDt.Location = new System.Drawing.Point(186, 209);
+            this.txtDt.Location = new System.Drawing.Point(186, 309);
             this.txtDt.Name = "txtDt";
             this.txtDt.Size = new System.Drawing.Size(326, 26);
-            this.txtDt.TabIndex = 5;
+            this.txtDt.TabIndex = 9;
             // 
             // labelX8
             // 
-            this.labelX8.Location = new System.Drawing.Point(87, 210);
+            this.labelX8.Location = new System.Drawing.Point(87, 310);
             this.labelX8.Name = "labelX8";
             this.labelX8.Size = new System.Drawing.Size(150, 23);
             this.labelX8.TabIndex = 29;
@@ -359,10 +730,10 @@
             // 
             // 
             this.txtDuong.Border.Class = "TextBoxBorder";
-            this.txtDuong.Location = new System.Drawing.Point(317, 239);
+            this.txtDuong.Location = new System.Drawing.Point(317, 208);
             this.txtDuong.Name = "txtDuong";
             this.txtDuong.Size = new System.Drawing.Size(195, 26);
-            this.txtDuong.TabIndex = 7;
+            this.txtDuong.TabIndex = 6;
             this.txtDuong.Leave += new System.EventHandler(this.txtDuong_Leave);
             // 
             // txtsonha
@@ -371,10 +742,10 @@
             // 
             // 
             this.txtsonha.Border.Class = "TextBoxBorder";
-            this.txtsonha.Location = new System.Drawing.Point(186, 239);
+            this.txtsonha.Location = new System.Drawing.Point(186, 208);
             this.txtsonha.Name = "txtsonha";
             this.txtsonha.Size = new System.Drawing.Size(125, 26);
-            this.txtsonha.TabIndex = 6;
+            this.txtsonha.TabIndex = 5;
             // 
             // buttonX2
             // 
@@ -441,10 +812,10 @@
             this.Quan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Quan.FormattingEnabled = true;
             this.Quan.ItemHeight = 20;
-            this.Quan.Location = new System.Drawing.Point(186, 308);
+            this.Quan.Location = new System.Drawing.Point(186, 277);
             this.Quan.Name = "Quan";
             this.Quan.Size = new System.Drawing.Size(136, 26);
-            this.Quan.TabIndex = 9;
+            this.Quan.TabIndex = 8;
             // 
             // cbPhuong
             // 
@@ -455,15 +826,15 @@
             this.cbPhuong.DropDownWidth = 100;
             this.cbPhuong.IntegralHeight = false;
             this.cbPhuong.ItemHeight = 20;
-            this.cbPhuong.Location = new System.Drawing.Point(186, 274);
+            this.cbPhuong.Location = new System.Drawing.Point(186, 243);
             this.cbPhuong.Name = "cbPhuong";
             this.cbPhuong.Size = new System.Drawing.Size(136, 26);
-            this.cbPhuong.TabIndex = 8;
+            this.cbPhuong.TabIndex = 7;
             this.cbPhuong.SelectedValueChanged += new System.EventHandler(this.cbPhuong_SelectedValueChanged);
             // 
             // labelX7
             // 
-            this.labelX7.Location = new System.Drawing.Point(87, 308);
+            this.labelX7.Location = new System.Drawing.Point(87, 277);
             this.labelX7.Name = "labelX7";
             this.labelX7.Size = new System.Drawing.Size(52, 23);
             this.labelX7.TabIndex = 38;
@@ -471,7 +842,7 @@
             // 
             // labelX6
             // 
-            this.labelX6.Location = new System.Drawing.Point(87, 274);
+            this.labelX6.Location = new System.Drawing.Point(87, 243);
             this.labelX6.Name = "labelX6";
             this.labelX6.Size = new System.Drawing.Size(93, 23);
             this.labelX6.TabIndex = 36;
@@ -518,7 +889,7 @@
             // 
             // labelX3
             // 
-            this.labelX3.Location = new System.Drawing.Point(87, 236);
+            this.labelX3.Location = new System.Drawing.Point(87, 205);
             this.labelX3.Name = "labelX3";
             this.labelX3.Size = new System.Drawing.Size(126, 23);
             this.labelX3.TabIndex = 22;
@@ -548,264 +919,6 @@
             this.tabItem1.AttachedControl = this.tabControlPanel1;
             this.tabItem1.Name = "tabItem1";
             this.tabItem1.Text = "Tạo Mới Biên Nhận";
-            // 
-            // tabControlPanel3
-            // 
-            this.tabControlPanel3.Controls.Add(this.panelEx3);
-            this.tabControlPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControlPanel3.Location = new System.Drawing.Point(0, 27);
-            this.tabControlPanel3.Name = "tabControlPanel3";
-            this.tabControlPanel3.Padding = new System.Windows.Forms.Padding(1);
-            this.tabControlPanel3.Size = new System.Drawing.Size(669, 515);
-            this.tabControlPanel3.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(254)))));
-            this.tabControlPanel3.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(188)))), ((int)(((byte)(227)))));
-            this.tabControlPanel3.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.tabControlPanel3.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(165)))), ((int)(((byte)(199)))));
-            this.tabControlPanel3.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
-            | DevComponents.DotNetBar.eBorderSide.Bottom)));
-            this.tabControlPanel3.Style.GradientAngle = 90;
-            this.tabControlPanel3.TabIndex = 3;
-            this.tabControlPanel3.TabItem = this.tabItem3;
-            // 
-            // panelEx3
-            // 
-            this.panelEx3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
-            this.panelEx3.Controls.Add(this.editDD);
-            this.panelEx3.Controls.Add(this.editGM);
-            this.panelEx3.Controls.Add(this.editSoBN);
-            this.panelEx3.Controls.Add(this.editDienThoai);
-            this.panelEx3.Controls.Add(this.labelX11);
-            this.panelEx3.Controls.Add(this.editTenDuong);
-            this.panelEx3.Controls.Add(this.editSoNha);
-            this.panelEx3.Controls.Add(this.btEditLamLai);
-            this.panelEx3.Controls.Add(this.buttonX3);
-            this.panelEx3.Controls.Add(this.btUpdate);
-            this.panelEx3.Controls.Add(this.editQuan);
-            this.panelEx3.Controls.Add(this.editPhuong);
-            this.panelEx3.Controls.Add(this.labelX12);
-            this.panelEx3.Controls.Add(this.labelX13);
-            this.panelEx3.Controls.Add(this.editLoaiBN);
-            this.panelEx3.Controls.Add(this.editHoTen);
-            this.panelEx3.Controls.Add(this.labelX14);
-            this.panelEx3.Controls.Add(this.labelX15);
-            this.panelEx3.Controls.Add(this.labelX16);
-            this.panelEx3.Controls.Add(this.labelX18);
-            this.panelEx3.Controls.Add(this.reflectionLabel2);
-            this.panelEx3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelEx3.Location = new System.Drawing.Point(1, 1);
-            this.panelEx3.Name = "panelEx3";
-            this.panelEx3.Size = new System.Drawing.Size(667, 513);
-            this.panelEx3.TabIndex = 1;
-            // 
-            // editSoBN
-            // 
-            this.editSoBN.Location = new System.Drawing.Point(186, 81);
-            this.editSoBN.Name = "editSoBN";
-            this.editSoBN.PromptChar = ' ';
-            this.editSoBN.Size = new System.Drawing.Size(313, 26);
-            this.editSoBN.TabIndex = 39;
-            this.editSoBN.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.editSoBN_KeyPress);
-            // 
-            // editDienThoai
-            // 
-            // 
-            // 
-            // 
-            this.editDienThoai.Border.Class = "TextBoxBorder";
-            this.editDienThoai.Location = new System.Drawing.Point(186, 180);
-            this.editDienThoai.Name = "editDienThoai";
-            this.editDienThoai.Size = new System.Drawing.Size(313, 26);
-            this.editDienThoai.TabIndex = 23;
-            // 
-            // labelX11
-            // 
-            this.labelX11.Location = new System.Drawing.Point(87, 181);
-            this.labelX11.Name = "labelX11";
-            this.labelX11.Size = new System.Drawing.Size(150, 23);
-            this.labelX11.TabIndex = 29;
-            this.labelX11.Text = "Điện Thoại";
-            // 
-            // editTenDuong
-            // 
-            // 
-            // 
-            // 
-            this.editTenDuong.Border.Class = "TextBoxBorder";
-            this.editTenDuong.Location = new System.Drawing.Point(309, 210);
-            this.editTenDuong.Name = "editTenDuong";
-            this.editTenDuong.Size = new System.Drawing.Size(190, 26);
-            this.editTenDuong.TabIndex = 26;
-            // 
-            // editSoNha
-            // 
-            // 
-            // 
-            // 
-            this.editSoNha.Border.Class = "TextBoxBorder";
-            this.editSoNha.Location = new System.Drawing.Point(186, 210);
-            this.editSoNha.Name = "editSoNha";
-            this.editSoNha.Size = new System.Drawing.Size(117, 26);
-            this.editSoNha.TabIndex = 25;
-            // 
-            // btEditLamLai
-            // 
-            this.btEditLamLai.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btEditLamLai.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btEditLamLai.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btEditLamLai.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btEditLamLai.Location = new System.Drawing.Point(374, 433);
-            this.btEditLamLai.Name = "btEditLamLai";
-            this.btEditLamLai.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.F5);
-            this.btEditLamLai.Size = new System.Drawing.Size(91, 25);
-            this.btEditLamLai.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
-            this.btEditLamLai.TabIndex = 35;
-            this.btEditLamLai.Text = "Làm Lại ";
-            this.btEditLamLai.Click += new System.EventHandler(this.btEditLamLai_Click);
-            // 
-            // buttonX3
-            // 
-            this.buttonX3.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX3.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonX3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.buttonX3.Location = new System.Drawing.Point(278, 433);
-            this.buttonX3.Name = "buttonX3";
-            this.buttonX3.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.F1);
-            this.buttonX3.Size = new System.Drawing.Size(91, 25);
-            this.buttonX3.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
-            this.buttonX3.TabIndex = 34;
-            this.buttonX3.Text = "In Biên Nhận";
-            this.buttonX3.Click += new System.EventHandler(this.btInBN);
-            // 
-            // btUpdate
-            // 
-            this.btUpdate.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btUpdate.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btUpdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btUpdate.Location = new System.Drawing.Point(182, 433);
-            this.btUpdate.Name = "btUpdate";
-            this.btUpdate.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.F1);
-            this.btUpdate.Size = new System.Drawing.Size(91, 25);
-            this.btUpdate.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
-            this.btUpdate.TabIndex = 34;
-            this.btUpdate.Text = "Cập Nhật";
-            this.btUpdate.Click += new System.EventHandler(this.btUpdate_Click);
-            // 
-            // editQuan
-            // 
-            this.editQuan.DisplayMember = "Text";
-            this.editQuan.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.editQuan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.editQuan.FormattingEnabled = true;
-            this.editQuan.ItemHeight = 20;
-            this.editQuan.Location = new System.Drawing.Point(186, 279);
-            this.editQuan.Name = "editQuan";
-            this.editQuan.Size = new System.Drawing.Size(136, 26);
-            this.editQuan.TabIndex = 30;
-            // 
-            // editPhuong
-            // 
-            this.editPhuong.DisplayMember = "Text";
-            this.editPhuong.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.editPhuong.DropDownHeight = 150;
-            this.editPhuong.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.editPhuong.DropDownWidth = 100;
-            this.editPhuong.IntegralHeight = false;
-            this.editPhuong.ItemHeight = 20;
-            this.editPhuong.Location = new System.Drawing.Point(186, 245);
-            this.editPhuong.Name = "editPhuong";
-            this.editPhuong.Size = new System.Drawing.Size(136, 26);
-            this.editPhuong.TabIndex = 27;
-            // 
-            // labelX12
-            // 
-            this.labelX12.Location = new System.Drawing.Point(87, 279);
-            this.labelX12.Name = "labelX12";
-            this.labelX12.Size = new System.Drawing.Size(52, 23);
-            this.labelX12.TabIndex = 38;
-            this.labelX12.Text = "Quận";
-            // 
-            // labelX13
-            // 
-            this.labelX13.Location = new System.Drawing.Point(87, 245);
-            this.labelX13.Name = "labelX13";
-            this.labelX13.Size = new System.Drawing.Size(93, 23);
-            this.labelX13.TabIndex = 36;
-            this.labelX13.Text = "Phường";
-            // 
-            // editLoaiBN
-            // 
-            // 
-            // 
-            // 
-            this.editLoaiBN.Border.Class = "TextBoxBorder";
-            this.editLoaiBN.Location = new System.Drawing.Point(186, 113);
-            this.editLoaiBN.Name = "editLoaiBN";
-            this.editLoaiBN.ReadOnly = true;
-            this.editLoaiBN.Size = new System.Drawing.Size(313, 26);
-            this.editLoaiBN.TabIndex = 21;
-            // 
-            // editHoTen
-            // 
-            // 
-            // 
-            // 
-            this.editHoTen.Border.Class = "TextBoxBorder";
-            this.editHoTen.Location = new System.Drawing.Point(186, 148);
-            this.editHoTen.Name = "editHoTen";
-            this.editHoTen.Size = new System.Drawing.Size(313, 26);
-            this.editHoTen.TabIndex = 21;
-            // 
-            // labelX14
-            // 
-            this.labelX14.Location = new System.Drawing.Point(87, 149);
-            this.labelX14.Name = "labelX14";
-            this.labelX14.Size = new System.Drawing.Size(150, 23);
-            this.labelX14.TabIndex = 28;
-            this.labelX14.Text = "Họ và Tên";
-            // 
-            // labelX15
-            // 
-            this.labelX15.Location = new System.Drawing.Point(87, 79);
-            this.labelX15.Name = "labelX15";
-            this.labelX15.Size = new System.Drawing.Size(93, 23);
-            this.labelX15.TabIndex = 24;
-            this.labelX15.Text = "Số Biên Nhận";
-            // 
-            // labelX16
-            // 
-            this.labelX16.Location = new System.Drawing.Point(87, 207);
-            this.labelX16.Name = "labelX16";
-            this.labelX16.Size = new System.Drawing.Size(126, 23);
-            this.labelX16.TabIndex = 22;
-            this.labelX16.Text = "Địa Chỉ  ";
-            // 
-            // labelX18
-            // 
-            this.labelX18.Location = new System.Drawing.Point(87, 112);
-            this.labelX18.Name = "labelX18";
-            this.labelX18.Size = new System.Drawing.Size(150, 27);
-            this.labelX18.TabIndex = 18;
-            this.labelX18.Text = "Loại BN";
-            // 
-            // reflectionLabel2
-            // 
-            this.reflectionLabel2.Location = new System.Drawing.Point(65, 4);
-            this.reflectionLabel2.Margin = new System.Windows.Forms.Padding(4);
-            this.reflectionLabel2.Name = "reflectionLabel2";
-            this.reflectionLabel2.ReflectionEnabled = false;
-            this.reflectionLabel2.Size = new System.Drawing.Size(434, 67);
-            this.reflectionLabel2.TabIndex = 16;
-            this.reflectionLabel2.Text = "<b><font size=\"+6\"><font color=\"#ED1C24\">SỬA BIÊN NHẬN ĐƠN KHÁCH HÀNG</font></fon" +
-    "t></b>";
-            // 
-            // tabItem3
-            // 
-            this.tabItem3.AttachedControl = this.tabControlPanel3;
-            this.tabItem3.Name = "tabItem3";
-            this.tabItem3.Text = "In && Sửa Biên Nhận";
-            this.tabItem3.Click += new System.EventHandler(this.tabItem3_Click);
             // 
             // tabControlPanel2
             // 
@@ -1011,112 +1124,26 @@
             this.TENQUAN.HeaderText = "Quận";
             this.TENQUAN.Name = "TENQUAN";
             // 
-            // editDD
+            // editSoho
             // 
-            this.editDD.Controls.Add(this.editbienlaithutien);
-            this.editDD.Controls.Add(this.editddgiaytokhac);
-            this.editDD.Location = new System.Drawing.Point(78, 311);
-            this.editDD.Name = "editDD";
-            this.editDD.Size = new System.Drawing.Size(506, 105);
-            this.editDD.TabIndex = 44;
-            this.editDD.TabStop = false;
-            this.editDD.Text = "Đính kèm biên nhận di dời cần 1 trong các giấy tờ sau :";
-            this.editDD.Visible = false;
+            this.editSoho.Location = new System.Drawing.Point(186, 150);
+            this.editSoho.Name = "editSoho";
+            this.editSoho.Size = new System.Drawing.Size(74, 26);
+            this.editSoho.TabIndex = 43;
+            this.editSoho.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.editSoho.Leave += new System.EventHandler(this.editSoho_Leave);
             // 
-            // editbienlaithutien
+            // labelX2
             // 
-            this.editbienlaithutien.AutoSize = true;
-            this.editbienlaithutien.Location = new System.Drawing.Point(19, 24);
-            this.editbienlaithutien.Name = "editbienlaithutien";
-            this.editbienlaithutien.Size = new System.Drawing.Size(154, 23);
-            this.editbienlaithutien.TabIndex = 10;
-            this.editbienlaithutien.Text = "Biên lai thu tiền nước";
-            this.editbienlaithutien.UseVisualStyleBackColor = true;
-            // 
-            // editddgiaytokhac
-            // 
-            this.editddgiaytokhac.AutoSize = true;
-            this.editddgiaytokhac.Location = new System.Drawing.Point(19, 48);
-            this.editddgiaytokhac.Name = "editddgiaytokhac";
-            this.editddgiaytokhac.Size = new System.Drawing.Size(105, 23);
-            this.editddgiaytokhac.TabIndex = 11;
-            this.editddgiaytokhac.Text = "Giấy tờ khác";
-            this.editddgiaytokhac.UseVisualStyleBackColor = true;
-            // 
-            // editGM
-            // 
-            this.editGM.Controls.Add(this.edit_tamtrukt3);
-            this.editGM.Controls.Add(this.eddit_checkhokhau);
-            this.editGM.Controls.Add(this.editcheckchuquyennha);
-            this.editGM.Controls.Add(this.edit_giayphepkd);
-            this.editGM.Controls.Add(this.editgiaytokhac);
-            this.editGM.Controls.Add(this.edit_giayphepxd);
-            this.editGM.Location = new System.Drawing.Point(87, 313);
-            this.editGM.Name = "editGM";
-            this.editGM.Size = new System.Drawing.Size(566, 105);
-            this.editGM.TabIndex = 43;
-            this.editGM.TabStop = false;
-            this.editGM.Text = "Đính kèm biên nhận gắn mới cần 1 trong các giấy tờ sau :";
-            // 
-            // edit_tamtrukt3
-            // 
-            this.edit_tamtrukt3.AutoSize = true;
-            this.edit_tamtrukt3.Location = new System.Drawing.Point(231, 25);
-            this.edit_tamtrukt3.Name = "edit_tamtrukt3";
-            this.edit_tamtrukt3.Size = new System.Drawing.Size(124, 23);
-            this.edit_tamtrukt3.TabIndex = 12;
-            this.edit_tamtrukt3.Text = "Sổ tạm trú KT3";
-            this.edit_tamtrukt3.UseVisualStyleBackColor = true;
-            // 
-            // eddit_checkhokhau
-            // 
-            this.eddit_checkhokhau.AutoSize = true;
-            this.eddit_checkhokhau.Location = new System.Drawing.Point(19, 24);
-            this.eddit_checkhokhau.Name = "eddit_checkhokhau";
-            this.eddit_checkhokhau.Size = new System.Drawing.Size(101, 23);
-            this.eddit_checkhokhau.TabIndex = 11;
-            this.eddit_checkhokhau.Text = "Sổ hộ khẩu.";
-            this.eddit_checkhokhau.UseVisualStyleBackColor = true;
-            // 
-            // editcheckchuquyennha
-            // 
-            this.editcheckchuquyennha.AutoSize = true;
-            this.editcheckchuquyennha.Location = new System.Drawing.Point(19, 48);
-            this.editcheckchuquyennha.Name = "editcheckchuquyennha";
-            this.editcheckchuquyennha.Size = new System.Drawing.Size(173, 23);
-            this.editcheckchuquyennha.TabIndex = 13;
-            this.editcheckchuquyennha.Text = "Giấy chủ quyền nhà/đất.";
-            this.editcheckchuquyennha.UseVisualStyleBackColor = true;
-            // 
-            // edit_giayphepkd
-            // 
-            this.edit_giayphepkd.AutoSize = true;
-            this.edit_giayphepkd.Location = new System.Drawing.Point(19, 74);
-            this.edit_giayphepkd.Name = "edit_giayphepkd";
-            this.edit_giayphepkd.Size = new System.Drawing.Size(160, 23);
-            this.edit_giayphepkd.TabIndex = 15;
-            this.edit_giayphepkd.Text = "Giấy phép kinh doanh";
-            this.edit_giayphepkd.UseVisualStyleBackColor = true;
-            // 
-            // editgiaytokhac
-            // 
-            this.editgiaytokhac.AutoSize = true;
-            this.editgiaytokhac.Location = new System.Drawing.Point(229, 74);
-            this.editgiaytokhac.Name = "editgiaytokhac";
-            this.editgiaytokhac.Size = new System.Drawing.Size(105, 23);
-            this.editgiaytokhac.TabIndex = 16;
-            this.editgiaytokhac.Text = "Giấy tờ khác";
-            this.editgiaytokhac.UseVisualStyleBackColor = true;
-            // 
-            // edit_giayphepxd
-            // 
-            this.edit_giayphepxd.AutoSize = true;
-            this.edit_giayphepxd.Location = new System.Drawing.Point(230, 47);
-            this.edit_giayphepxd.Name = "edit_giayphepxd";
-            this.edit_giayphepxd.Size = new System.Drawing.Size(150, 23);
-            this.edit_giayphepxd.TabIndex = 14;
-            this.edit_giayphepxd.Text = "Giấy phép xây dựng";
-            this.edit_giayphepxd.UseVisualStyleBackColor = true;
+            this.labelX2.Location = new System.Drawing.Point(87, 151);
+            this.labelX2.Name = "labelX2";
+            this.labelX2.Size = new System.Drawing.Size(150, 23);
+            this.labelX2.TabIndex = 46;
+            this.labelX2.Text = "Số Hộ";
             // 
             // frm_BienNhanDon
             // 
@@ -1137,6 +1164,13 @@
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.frm_BienNhanDon_KeyPress);
             ((System.ComponentModel.ISupportInitialize)(this.tabControl1)).EndInit();
             this.tabControl1.ResumeLayout(false);
+            this.tabControlPanel3.ResumeLayout(false);
+            this.panelEx3.ResumeLayout(false);
+            this.panelEx3.PerformLayout();
+            this.editDD.ResumeLayout(false);
+            this.editDD.PerformLayout();
+            this.editGM.ResumeLayout(false);
+            this.editGM.PerformLayout();
             this.tabControlPanel1.ResumeLayout(false);
             this.panelEx1.ResumeLayout(false);
             this.groupDiDoi.ResumeLayout(false);
@@ -1144,16 +1178,10 @@
             this.groupganmoi.ResumeLayout(false);
             this.groupganmoi.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            this.tabControlPanel3.ResumeLayout(false);
-            this.panelEx3.ResumeLayout(false);
-            this.panelEx3.PerformLayout();
             this.tabControlPanel2.ResumeLayout(false);
             this.panelEx2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDC)).EndInit();
-            this.editDD.ResumeLayout(false);
-            this.editDD.PerformLayout();
-            this.editGM.ResumeLayout(false);
-            this.editGM.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.editSoho)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1246,6 +1274,8 @@
         private System.Windows.Forms.CheckBox edit_giayphepkd;
         private System.Windows.Forms.CheckBox editgiaytokhac;
         private System.Windows.Forms.CheckBox edit_giayphepxd;
+        private System.Windows.Forms.NumericUpDown editSoho;
+        private DevComponents.DotNetBar.LabelX labelX2;
 
 
     }

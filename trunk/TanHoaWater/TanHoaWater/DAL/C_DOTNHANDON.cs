@@ -12,11 +12,23 @@ namespace TanHoaWater.DAL
     public class C_DotNhanDon
     {
         private static readonly ILog log = LogManager.GetLogger(typeof(C_DotNhanDon).Name);
+        static TanHoaDataContext data = new TanHoaDataContext();
         public static DOT_NHAN_DON findByMaDot(string madot)
-        {
-            TanHoaDataContext data = new TanHoaDataContext();
+        {          
             var dotnhandon = from query in data.DOT_NHAN_DONs where query.MADOT == madot select query;
             return dotnhandon.SingleOrDefault();
+        }
+
+        public static void Update()
+        {
+            try
+            {
+                data.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+                 log.Error("Sua Dot Nhan Don Loi " + ex.Message ); 
+            }
         }
         public static List<DOT_NHAN_DON> getALL()
         {
@@ -105,7 +117,7 @@ namespace TanHoaWater.DAL
             TanHoaDataContext db = new TanHoaDataContext();
             db.Connection.Open();
             string sql = " SELECT MADOT , NGAYLAPDON= CONVERT(VARCHAR(10),NGAYLAPDON,103), TENLOAI,";
-            sql += " CASE WHEN CHUYENDON='False' THEN N'Chưa chuyển'  WHEN CHUYENDON='True' THEN N'Đã chuyển' ELSE N'Chuyển 1 phần'   END as 'CHUYEN', NGAYCHUYEN= CONVERT(VARCHAR(10),NGAYCHUYEN,103),NGAYTRAHS= CONVERT(VARCHAR(10),NGAYTRAHS,103) ";
+            sql += " CASE WHEN CHUYENDON='False' THEN N'Chưa chuyển'  WHEN CHUYENDON='True' THEN N'Đã chuyển' ELSE N'Chuyển 1 phần'   END as 'CHUYEN', NGAYCHUYEN= CONVERT(VARCHAR(10),NGAYCHUYEN,103),NGAYTRAHS= CONVERT(VARCHAR(10),NGAYTRAHS,103), dot.CREATEBY ";
             sql += " FROM DOT_NHAN_DON dot, LOAI_HOSO loai";
             sql += " WHERE loai.MALOAI = dot.LOAIDON";
             sql += " ORDER BY dot.CREATEDATE DESC ";
@@ -134,7 +146,7 @@ namespace TanHoaWater.DAL
             TanHoaDataContext db = new TanHoaDataContext();
             db.Connection.Open();
             string sql = " SELECT MADOT , NGAYLAPDON= CONVERT(VARCHAR(10),NGAYLAPDON,103), TENLOAI,";
-            sql += " CASE WHEN CHUYENDON='False' THEN N'Chưa chuyển'  WHEN CHUYENDON='True' THEN N'Đã chuyển' ELSE N'Chuyển 1 phần'   END as 'CHUYEN'";
+            sql += " CASE WHEN CHUYENDON='False' THEN N'Chưa chuyển'  WHEN CHUYENDON='True' THEN N'Đã chuyển' ELSE N'Chuyển 1 phần'   END as 'CHUYEN', NGAYCHUYEN= CONVERT(VARCHAR(10),NGAYCHUYEN,103),NGAYTRAHS= CONVERT(VARCHAR(10),NGAYTRAHS,103), dot.CREATEBY";
             sql += " FROM DOT_NHAN_DON dot, LOAI_HOSO loai";
             sql += " WHERE loai.MALOAI = dot.LOAIDON";
             if (madot.Length == 9) {

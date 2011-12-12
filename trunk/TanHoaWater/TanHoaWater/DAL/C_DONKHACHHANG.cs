@@ -92,15 +92,23 @@ namespace TanHoaWater.DAL
         
         public static DON_KHACHHANG searchTimKiemDon(string sohoso)
         {
-            TanHoaDataContext db = new TanHoaDataContext();
-            var data = from don in db.DON_KHACHHANGs where don.SHS == sohoso select don;
-            DON_KHACHHANG donkh =  data.SingleOrDefault();
-            if (donkh.HOSOCHA != null)
+            try
             {
-                var hosocha = from don in db.DON_KHACHHANGs where don.SHS == donkh.HOSOCHA select don;
-                return hosocha.SingleOrDefault();
+                TanHoaDataContext db = new TanHoaDataContext();
+                var data = from don in db.DON_KHACHHANGs where don.SHS == sohoso select don;
+                DON_KHACHHANG donkh = data.SingleOrDefault();
+                if (donkh.HOSOCHA != null)
+                {
+                    var hosocha = from don in db.DON_KHACHHANGs where don.SHS == donkh.HOSOCHA select don;
+                    return hosocha.SingleOrDefault();
+                }
+                return donkh;
             }
-            return donkh;
+            catch (Exception ex)
+            {
+                log.Error("TIM KIEM DON KHACH HANG " + ex.Message);
+            }
+            return null;
         }
         
         public static DON_KHACHHANG findBySOHOSO_(string sohoso)
@@ -219,7 +227,7 @@ namespace TanHoaWater.DAL
             try
             {
                 TanHoaDataContext db = new TanHoaDataContext();
-                var ff = from aa in db.DON_KHACHHANGs where aa.SOHOSO == donkh select aa;
+                var ff = from aa in db.DON_KHACHHANGs where aa.SHS == donkh select aa;
                 db.DON_KHACHHANGs.DeleteOnSubmit(ff.SingleOrDefault());
                 db.SubmitChanges();
                 return true;
@@ -553,6 +561,7 @@ namespace TanHoaWater.DAL
                     donkh.SOHO = soho;
                     donkh.HOTEN = donkh.HOTEN + " (ĐD " + soho + " Hộ)";
                     donkh.LOAIKH = "TT";
+                    donkh.MODIFYLOG = donkh.MODIFYLOG + "..|.." + C_USERS._userName + " ghép hồ sơ tập thể.";
                 }
                 db.SubmitChanges();
                 return true;

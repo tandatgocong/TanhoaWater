@@ -27,7 +27,7 @@ namespace TanHoaWater.DAL
             else
                 sql += " AND hosokh.CHUYENHOANCONG='True'";
 
-            sql += "ORDER BY hosokh.MODIFYDATE ";
+            sql += "ORDER BY hosokh.STT ASC ";
             SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             DataSet dataset = new DataSet();
             adapter.Fill(dataset,  "TABLE");
@@ -73,7 +73,7 @@ namespace TanHoaWater.DAL
                 sql += " AND hosokh.HOANCONG='True'";            
            
             db.Connection.Open();
-            sql += " ORDER BY hosokh.MODIFYDATE";
+            sql += " ORDER BY hosokh.STT ASC ";
             SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             DataSet dataset = new DataSet();
             adapter.Fill(dataset, "TABLE");
@@ -97,7 +97,7 @@ namespace TanHoaWater.DAL
                 sql += " AND hosokh.HOANCONG='True'";
 
             db.Connection.Open();
-            sql += " ORDER BY hosokh.MODIFYDATE";
+            sql += " ORDER BY hosokh.STT ASC";
             SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             DataSet dataset = new DataSet();
             adapter.Fill(dataset, "TABLE");
@@ -197,7 +197,7 @@ namespace TanHoaWater.DAL
             SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             adapter.Fill(dataset, "KH_TC_BAOCAO");
 
-            sql = "SELECT * FROM V_HOANCONG WHERE MADOTTC=N'" + madot + "' AND SHS IN (" + query + ") ORDER BY MODIFYDATE";
+            sql = "SELECT * FROM V_HOANCONG WHERE MADOTTC=N'" + madot + "' AND SHS IN (" + query + ") ORDER BY STT ASC ";
             adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             adapter.Fill(dataset, "V_HOANCONG");
 

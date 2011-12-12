@@ -36,12 +36,172 @@ namespace TanHoaWater.View.Tool
         string title ="";
         string ngaytrongai = "";
         string noidungtrongai = "";
-       
+
+        void Result(DON_KHACHHANG donkh)
+        {
+            if (donkh != null)
+            {
+                this.DotNhanDon.Text = donkh.MADOT;
+                this.NgayLenDotNhanDon.Text = Utilities.DateToString.NgayVNVN(donkh.CREATEDATE.Value);
+                if (donkh.NGAYCHUYEN_HOSO != null)
+                {
+                    this.txtNgayGiaoTTK.Text = Utilities.DateToString.NgayVNVN(donkh.NGAYCHUYEN_HOSO.Value);
+                    TOTHIETKE ttk = DAL.C_ToThietKe.findBySHS(donkh.SHS);
+                    if (ttk != null)
+                    {
+                        if (ttk.SODOVIEN != null)
+                        {
+                            this.SoDoVienTK.Text = DAL.C_USERS.findByUserName(ttk.SODOVIEN).FULLNAME;
+                            this.txtNgayGiaoSDV.Text = ttk.NGAYGIAOSDV != null ? Utilities.DateToString.NgayVNVN(ttk.NGAYGIAOSDV.Value) : "";
+                            if (ttk.TRONGAITHIETKE == true)
+                            {
+                                title = "HỒ SƠ TRỞ NGẠI THIẾT KẾ";
+                                noidungtrongai = ttk.NOIDUNGTRONGAI;
+                            }
+                            else
+                            {
+
+                                BG_KHOILUONGXDCB xdcb = DAL.C_KhoiLuongXDCB.findBySHS(donkh.SHS);
+
+                                if (xdcb != null)
+                                {
+                                    NgayLapBG.Text = xdcb.CREATEDATE != null ? Utilities.DateToString.NgayVNVN(xdcb.CREATEDATE.Value) : "";
+                                    SoTienDong.Text = String.Format("{0:0,0.00}", xdcb.TONGIATRI != null ? xdcb.TONGIATRI : 0.0);
+                                    NgayTrinhKyGD.Text = ttk.NGAYTKGD != null ? Utilities.DateToString.NgayVNVN(ttk.NGAYTKGD.Value) : "";
+                                    NgayHoanTat.Text = ttk.NGAYHOANTATTK != null ? Utilities.DateToString.NgayVNVN(ttk.NGAYHOANTATTK.Value) : "";
+                                    NgayTraHoSoKH.Text = ttk.NGAYTRAHS != null ? Utilities.DateToString.NgayVNVN(ttk.NGAYTRAHS.Value) : "";
+                                    KH_HOSOKHACHHANG hoskh = DAL.C_KH_HoSoKhachHang.findBySHS(donkh.SHS);
+                                    if (hoskh != null)
+                                    {
+                                        if (hoskh.MADOTDD != null)
+                                        {
+                                            KH_XINPHEPDAODUONG xiphep = DAL.C_KH_XinPhepDD.finbyMaDot(hoskh.MADOTDD);
+                                            DotXinPhepDD.Text = xiphep.MAQUANLY;
+                                            NgayXinPhepDD.Text = Utilities.DateToString.NgayVNVN(xiphep.NGAYLAP.Value);
+                                            NgayCoPhep.Text = xiphep.NGAYCOPHEP != null ? Utilities.DateToString.NgayVNVN(xiphep.NGAYCOPHEP.Value) : "";
+                                        }
+                                        else
+                                        {
+                                            title = "HỒ SƠ CHƯA LÊN ĐỢT <br/> ĐÀO ĐƯỜNG";
+                                        }
+                                        if (hoskh.MADOTTC != null)
+                                        {
+                                            KH_DOTTHICONG dotc = DAL.C_KH_DotThiCong.findByMadot(hoskh.MADOTTC);
+                                            DotThiCong.Text = dotc.MADOTTC;
+                                            NgayLenDotTC.Text = Utilities.DateToString.NgayVNVN(dotc.NGAYLAP.Value);
+                                            txtDomViTC.Text = DAL.C_KH_DonViTC.findDVTCbyID(dotc.DONVITHICONG.Value).TENCONGTY;
+
+                                        }
+                                        else
+                                        {
+                                            title = "HỒ SƠ CHƯA LÊN ĐỢT <br/> THI CÔNG";
+                                        }
+                                        NgayThiCong.Text = hoskh.NGAYTHICONG != null ? Utilities.DateToString.NgayVNVN(hoskh.NGAYTHICONG.Value) : "";
+                                        NgayHoanCong.Text = hoskh.NGAYHOANCONG != null ? Utilities.DateToString.NgayVNVN(hoskh.NGAYHOANCONG.Value) : "";
+                                        ChoDanhBo.Text = hoskh.DHN_NGAYCHOSODB != null ? Utilities.DateToString.NgayVNVN(hoskh.DHN_NGAYCHOSODB.Value) : "";
+
+                                        if (hoskh.DHN_CHODB != true)
+                                        {
+                                            title = "HỒ CHƯA CHO DANH BỘ.";
+                                        }
+                                        else
+                                        {
+                                            title = "HỒ SƠ ĐÃ HOÀN TẤT";
+                                        }
+                                        if (hoskh.TRONGAI == true)
+                                        {
+                                            title = "HỒ SƠ TRỞ NGẠI THI CÔNG";
+                                            noidungtrongai = hoskh.NOIDUNGTN;
+                                        }
+                                    }
+                                    else
+                                    {
+                                        title = "HỒ SƠ CHƯA CHUYỂN <br/> KẾ HOẠCH";
+                                    }
+                                }
+                                else
+                                {
+                                    KH_HOSOKHACHHANG hoskh = DAL.C_KH_HoSoKhachHang.findBySHS(donkh.SHS);
+                                    if (hoskh != null)
+                                    {
+                                        if (hoskh.MADOTDD != null)
+                                        {
+                                            KH_XINPHEPDAODUONG xiphep = DAL.C_KH_XinPhepDD.finbyMaDot(hoskh.MADOTDD);
+                                            DotXinPhepDD.Text = xiphep.MAQUANLY;
+                                            NgayXinPhepDD.Text = Utilities.DateToString.NgayVNVN(xiphep.NGAYLAP.Value);
+                                            NgayCoPhep.Text = xiphep.NGAYCOPHEP != null ? Utilities.DateToString.NgayVNVN(xiphep.NGAYCOPHEP.Value) : "";
+                                        }
+                                        else
+                                        {
+                                            title = "HỒ SƠ CHƯA LÊN ĐỢT <br/> ĐÀO ĐƯỜNG";
+                                        }
+                                        if (hoskh.MADOTTC != null)
+                                        {
+                                            KH_DOTTHICONG dotc = DAL.C_KH_DotThiCong.findByMadot(hoskh.MADOTTC);
+                                            DotThiCong.Text = dotc.MADOTTC;
+                                            NgayLenDotTC.Text = Utilities.DateToString.NgayVNVN(dotc.NGAYLAP.Value);
+
+                                        }
+                                        else
+                                        {
+                                            title = "HỒ SƠ CHƯA LÊN ĐỢT <br/> THI CÔNG";
+                                        }
+                                        NgayThiCong.Text = hoskh.NGAYTHICONG != null ? Utilities.DateToString.NgayVNVN(hoskh.NGAYTHICONG.Value) : "";
+                                        NgayHoanCong.Text = hoskh.NGAYHOANCONG != null ? Utilities.DateToString.NgayVNVN(hoskh.NGAYHOANCONG.Value) : "";
+                                        ChoDanhBo.Text = hoskh.DHN_NGAYCHOSODB != null ? Utilities.DateToString.NgayVNVN(hoskh.DHN_NGAYCHOSODB.Value) : "";
+                                        if (hoskh.HOANCONG != true) {
+                                            title = "HỒ CHƯA HOÀN CÔNG.";
+                                        }else if (hoskh.DHN_CHODB != true)
+                                        {
+                                            title = "HỒ CHƯA CHO DANH BỘ.";
+                                        }
+                                        else
+                                        {
+                                            title = "HỒ SƠ ĐÃ HOÀN TẤT";
+                                        }
+                                        if (hoskh.TRONGAI == true)
+                                        {
+                                            title = "HỒ SƠ TRỞ NGẠI THI CÔNG";
+                                            noidungtrongai = hoskh.NOIDUNGTN;
+                                        }
+                                    }
+                                    else { title = "HỒ SƠ CHƯA CHẠY BẢNG GIÁ."; }
+
+                                }
+                            }
+
+                        }
+                        else
+                        {
+                            title = "CHƯA GIAO HỒ SƠ <br/>CHO SƠ ĐỒ VIÊN";
+                        }
+                        if (DAL.C_DonKhachHang.dontaixet(donkh.SOHOSO))
+                        {
+                            groupBox1.Text = "Kết Quả ----> ĐƠN TÁI XÉT";
+                        }
+                    }
+                    else
+                    {
+                        title = "TỔ THIẾT KẾ KHÔNG NHẬN HỒ SƠ NÀY.";
+                    }
+
+                }
+                else
+                {
+                    title = "HỒ SƠ CHƯA CHUYỂN <br/> TỔ THIẾT KẾ";
+                }
+
+            }
+            else
+            {
+                title = "CHƯA LÊN ĐỢT NHẬN ĐƠN <br/> CHUYỂN TỔ THIẾT KẾ";
+            }
+        }
         void search() {
             groupBox1.Text = "Kết Quả ";
             try
             {
-                rows = DAL.C_TimKiemDonKhachHang.TotalRecord(this.SearchMaHoSo.Text, this.searchHoTenKH.Text, this.searchDiaChi.Text);
+                rows = DAL.C_TimKiemDonKhachHang.TotalTimDonKH(this.SearchMaHoSo.Text, this.searchHoTenKH.Text, this.searchDiaChi.Text);
             }
             catch (Exception ex)
             {
@@ -49,15 +209,37 @@ namespace TanHoaWater.View.Tool
             }
             PageTotal();
 
-            DataTable table = DAL.C_TimKiemDonKhachHang.TimBienNhan(this.SearchMaHoSo.Text, this.searchHoTenKH.Text, this.searchDiaChi.Text, FirstRow, pageSize);
+            DataTable table = DAL.C_TimKiemDonKhachHang.TimDonKH(this.SearchMaHoSo.Text, this.searchHoTenKH.Text, this.searchDiaChi.Text, FirstRow, pageSize);
             this.dataGridView1.DataSource = table;
-            lbsohoso.Text = "Tổng Số Có " + table.Rows.Count + " Hồ Sơ.";
+            lbsohoso.Text = "Tổng Số Có " + rows  + " Hồ Sơ.";
             Utilities.DataGridV.formatRows(dataGridView1);
             if (table.Rows.Count <= 0) {
-                MessageBox.Show(this, "Không Tìm Thấy Thông Tin Khách Hàng !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                refesh();
-            }
-            if (table.Rows.Count == 1)
+                
+                try
+                {
+                    rows = DAL.C_TimKiemDonKhachHang.TotalRecord(this.SearchMaHoSo.Text, this.searchHoTenKH.Text, this.searchDiaChi.Text);
+                }
+                catch (Exception ex)
+                {
+                    log.Error(ex);
+                }
+                PageTotal();
+
+                table = DAL.C_TimKiemDonKhachHang.TimBienNhan(this.SearchMaHoSo.Text, this.searchHoTenKH.Text, this.searchDiaChi.Text, FirstRow, pageSize);
+                this.dataGridView1.DataSource = table;
+                lbsohoso.Text = "Tổng Số Có " + rows + " Hồ Sơ.";
+                Utilities.DataGridV.formatRows(dataGridView1);
+                if (table.Rows.Count <= 0)
+                {
+                    MessageBox.Show(this, "Không Tìm Thấy Thông Tin Khách Hàng !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    refesh();
+                }
+                else {
+                    title = "HỒ SƠ CHƯA LÊN ĐỢT <br/> NHẬN ĐƠN";
+                }
+
+               
+            }else if (table.Rows.Count == 1)
             {
                 try
                 {
@@ -67,195 +249,27 @@ namespace TanHoaWater.View.Tool
                     this.txtNgayNhanHS.Text = dataGridView1.Rows[0].Cells["NGAYNHAN"].Value + "";
                     this.txtLoaiHS.Text = dataGridView1.Rows[0].Cells["LOAIHS"].Value + "";
                     DON_KHACHHANG donkh = DAL.C_DonKhachHang.searchTimKiemDon(dataGridView1.Rows[0].Cells["g_SoHoSo"].Value + "");
-                    if (donkh != null)
-                    {
-                        this.DotNhanDon.Text = donkh.MADOT;
-                        this.NgayLenDotNhanDon.Text = Utilities.DateToString.NgayVNVN(donkh.CREATEDATE.Value);
-                        if (donkh.NGAYCHUYEN_HOSO != null)
-                        {
-                            this.txtNgayGiaoTTK.Text = Utilities.DateToString.NgayVNVN(donkh.NGAYCHUYEN_HOSO.Value);
-                            TOTHIETKE ttk = DAL.C_ToThietKe.findBySHS(donkh.SHS);
-                            if (ttk != null)
-                            {
-                                if (ttk.SODOVIEN != null)
-                                {
-                                    this.SoDoVienTK.Text = DAL.C_USERS.findByUserName(ttk.SODOVIEN).FULLNAME;
-                                    this.txtNgayGiaoSDV.Text = ttk.NGAYGIAOSDV != null ? Utilities.DateToString.NgayVNVN(ttk.NGAYGIAOSDV.Value) : "";
-                                    if (ttk.TRONGAITHIETKE == true)
-                                    {
-                                        title = "HỒ SƠ TRỞ NGẠI THIẾT KẾ";
-                                        noidungtrongai = ttk.NOIDUNGTRONGAI;
-                                    }
-                                    else
-                                    {
+                    Result(donkh);
 
-                                        BG_KHOILUONGXDCB xdcb = DAL.C_KhoiLuongXDCB.findBySHS(donkh.SHS);
-                                       
-                                        if (xdcb != null)
-                                        {
-                                            NgayLapBG.Text = xdcb.CREATEDATE != null ? Utilities.DateToString.NgayVNVN(xdcb.CREATEDATE.Value) : "";
-                                            SoTienDong.Text = String.Format("{0:0,0.00}", xdcb.TONGIATRI != null ? xdcb.TONGIATRI : 0.0);
-                                            NgayTrinhKyGD.Text = ttk.NGAYTKGD != null ? Utilities.DateToString.NgayVNVN(ttk.NGAYTKGD.Value) : "";
-                                            NgayHoanTat.Text = ttk.NGAYHOANTATTK != null ? Utilities.DateToString.NgayVNVN(ttk.NGAYHOANTATTK.Value) : "";
-                                            NgayTraHoSoKH.Text = ttk.NGAYTRAHS != null ? Utilities.DateToString.NgayVNVN(ttk.NGAYTRAHS.Value) : "";
-                                            KH_HOSOKHACHHANG hoskh = DAL.C_KH_HoSoKhachHang.findBySHS(donkh.SHS);
-                                            if (hoskh != null)
-                                            {
-                                                if (hoskh.MADOTDD != null)
-                                                {
-                                                    KH_XINPHEPDAODUONG xiphep = DAL.C_KH_XinPhepDD.finbyMaDot(hoskh.MADOTDD);
-                                                    DotXinPhepDD.Text = xiphep.MAQUANLY;
-                                                    NgayXinPhepDD.Text = Utilities.DateToString.NgayVNVN(xiphep.NGAYLAP.Value);
-                                                    NgayCoPhep.Text = xiphep.NGAYCOPHEP != null ? Utilities.DateToString.NgayVNVN(xiphep.NGAYCOPHEP.Value) : "";
-                                                }
-                                                else
-                                                {
-                                                    title = "HỒ SƠ CHƯA LÊN ĐỢT <br/> ĐÀO ĐƯỜNG";
-                                                }
-                                                if (hoskh.MADOTTC != null)
-                                                {
-                                                    KH_DOTTHICONG dotc = DAL.C_KH_DotThiCong.findByMadot(hoskh.MADOTTC);
-                                                    DotThiCong.Text = dotc.MADOTTC;
-                                                    NgayLenDotTC.Text = Utilities.DateToString.NgayVNVN(dotc.NGAYLAP.Value);
-
-                                                }
-                                                else
-                                                {
-                                                    title = "HỒ SƠ CHƯA LÊN ĐỢT <br/> THI CÔNG";
-                                                }
-                                                NgayThiCong.Text = hoskh.NGAYTHICONG != null ? Utilities.DateToString.NgayVNVN(hoskh.NGAYTHICONG.Value) : "";
-                                                NgayHoanCong.Text = hoskh.NGAYHOANCONG != null ? Utilities.DateToString.NgayVNVN(hoskh.NGAYHOANCONG.Value) : "";
-                                                ChoDanhBo.Text = hoskh.DHN_NGAYCHOSODB != null ? Utilities.DateToString.NgayVNVN(hoskh.DHN_NGAYCHOSODB.Value) : "";
-                                                 
-                                                if (hoskh.DHN_CHODB != true)
-                                                {
-                                                    title = "HỒ CHƯA CHO DANH BỘ.";
-                                                }
-                                                else {
-                                                    title = "HỒ SƠ ĐÃ HOÀN TẤT";
-                                                }
-                                                if (hoskh.TRONGAI == true)
-                                                {
-                                                    title = "HỒ SƠ TRỞ NGẠI THI CÔNG";
-                                                    noidungtrongai = hoskh.NOIDUNGTN;
-                                                }
-                                            }
-                                            else {
-                                                title = "HỒ SƠ CHƯA CHUYỂN <br/> KẾ HOẠCH";
-                                            }
-                                        }
-                                        else
-                                        {
-                                            KH_HOSOKHACHHANG hoskh = DAL.C_KH_HoSoKhachHang.findBySHS(donkh.SHS);
-                                            if (hoskh != null)
-                                            {
-                                                if (hoskh.MADOTDD != null)
-                                                {
-                                                    KH_XINPHEPDAODUONG xiphep = DAL.C_KH_XinPhepDD.finbyMaDot(hoskh.MADOTDD);
-                                                    DotXinPhepDD.Text = xiphep.MAQUANLY;
-                                                    NgayXinPhepDD.Text = Utilities.DateToString.NgayVNVN(xiphep.NGAYLAP.Value);
-                                                    NgayCoPhep.Text = xiphep.NGAYCOPHEP != null ? Utilities.DateToString.NgayVNVN(xiphep.NGAYCOPHEP.Value) : "";
-                                                }
-                                                else
-                                                {
-                                                    title = "HỒ SƠ CHƯA LÊN ĐỢT <br/> ĐÀO ĐƯỜNG";
-                                                }
-                                                if (hoskh.MADOTTC != null)
-                                                {
-                                                    KH_DOTTHICONG dotc = DAL.C_KH_DotThiCong.findByMadot(hoskh.MADOTTC);
-                                                    DotThiCong.Text = dotc.MADOTTC;
-                                                    NgayLenDotTC.Text = Utilities.DateToString.NgayVNVN(dotc.NGAYLAP.Value);
-
-                                                }
-                                                else
-                                                {
-                                                    title = "HỒ SƠ CHƯA LÊN ĐỢT <br/> THI CÔNG";
-                                                }
-                                                NgayThiCong.Text = hoskh.NGAYTHICONG != null ? Utilities.DateToString.NgayVNVN(hoskh.NGAYTHICONG.Value) : "";
-                                                NgayHoanCong.Text = hoskh.NGAYHOANCONG != null ? Utilities.DateToString.NgayVNVN(hoskh.NGAYHOANCONG.Value) : "";
-                                                ChoDanhBo.Text = hoskh.DHN_NGAYCHOSODB != null ? Utilities.DateToString.NgayVNVN(hoskh.DHN_NGAYCHOSODB.Value) : "";
-
-                                                if (hoskh.DHN_CHODB != true)
-                                                {
-                                                    title = "HỒ CHƯA CHO DANH BỘ.";
-                                                }
-                                                else
-                                                {
-                                                    title = "HỒ SƠ ĐÃ HOÀN TẤT";
-                                                }
-                                                if (hoskh.TRONGAI == true)
-                                                {
-                                                    title = "HỒ SƠ TRỞ NGẠI THI CÔNG";
-                                                    noidungtrongai = hoskh.NOIDUNGTN;
-                                                }
-                                            }
-                                            else { title = "HỒ SƠ CHƯA CHẠY BẢNG GIÁ."; }
-                                            
-                                        }
-                                    }
-
-                                }
-                                else
-                                {
-                                    title = "CHƯA GIAO HỒ SƠ <br/>CHO SƠ ĐỒ VIÊN";
-                                }
-                                if (DAL.C_DonKhachHang.dontaixet(donkh.SOHOSO)) {
-                                    groupBox1.Text = "Kết Quả ----> ĐƠN TÁI XÉT";
-                                }
-                            }
-                            else
-                            {
-                                title = "TỔ THIẾT KẾ KHÔNG NHẬN HỒ SƠ NÀY.";
-                            }
-
-                        }
-                        else
-                        {
-                            title = "HỒ SƠ CHƯA CHUYỂN <br/> TỔ THIẾT KẾ";
-                        }
-                        
-                    }
-                    else
-                    {
-                        title = "CHƯA LÊN ĐỢT NHẬN ĐƠN <br/> CHUYỂN TỔ THIẾT KẾ";
-                    }
-                    // this.txtDotND.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value+"";
-                    //this.txtShs.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value + "";
-                    //this.txtSoHoSo.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value + "";
-                    //this.txtHoTen.Text = dataGridView1.Rows[e.RowIndex].Cells[4].Value + "";
-                    //this.txtdiachi.Text = dataGridView1.Rows[e.RowIndex].Cells[6].Value + "";
-                    //this.txtSoDT.Text = dataGridView1.Rows[e.RowIndex].Cells[5].Value + "";
-                    //this.txtLoaiKH.Text = dataGridView1.Rows[e.RowIndex].Cells[8].Value + "";
-                    //this.txtLoaiHS.Text = dataGridView1.Rows[e.RowIndex].Cells[9].Value + "";
-                    //this.txtNgayNhanHS.Text = dataGridView1.Rows[e.RowIndex].Cells[10].Value + "";
-                    //ngaygiaoTTK = dataGridView1.Rows[e.RowIndex].Cells[11].Value + "";
-                    //this.txtNgayGiaoTTK.Text = ngaygiaoTTK;
-                    //ngaygiaoSDV = DAL.C_USERS.findByUserName(dataGridView1.Rows[e.RowIndex].Cells[12].Value + "").FULLNAME;
-                    //this.SoDoVienTK.Text = ngaygiaoSDV;
-                    //ngaytringky = dataGridView1.Rows[e.RowIndex].Cells[13].Value + "";
-                    //this.NgayTrinhKyGD.Text = ngaytringky;
-                    //trongaiTK = dataGridView1.Rows[e.RowIndex].Cells[15].Value + "";
-                    //noidungTK = dataGridView1.Rows[e.RowIndex].Cells[16].Value + "";
-                    //result();
-                    groupBox1.Visible = true;
-                    
-                    if (title.Contains("HỒ SƠ TRỞ NGẠI"))
-                    {
-                        this.lbresult.ForeColor = Color.Red;
-                        this.lbresult.Text = title;
-                        this.resultNoiDung.Text = noidungtrongai;
-                    }
-                    else
-                    {
-                        this.lbresult.ForeColor = Color.Blue;
-                        this.lbresult.Text = title;
-                    }
                 }
                 catch (Exception ex)
                 {
                     log.Error("Tim Bien Nhan Loi" + ex.Message);
                 }
-            }   
+            }
+
+            groupBox1.Visible = true;
+            if (title.Contains("HỒ SƠ TRỞ NGẠI"))
+            {
+                this.lbresult.ForeColor = Color.Red;
+                this.lbresult.Text = title;
+                this.resultNoiDung.Text = noidungtrongai;
+            }
+            else
+            {
+                this.lbresult.ForeColor = Color.Blue;
+                this.lbresult.Text = title;
+            }
         }
         private void btSearch_Click(object sender, EventArgs e)
         {
@@ -278,6 +292,7 @@ namespace TanHoaWater.View.Tool
             this.txtNgayGiaoTTK.Text = "";
             this.SoDoVienTK.Text = "";
             this.txtNgayGiaoSDV.Text = "";
+            this.txtDomViTC.Text = "";
             NgayLapBG.Text = "";
             SoTienDong.Text = "";
             NgayTrinhKyGD.Text = "";
@@ -309,192 +324,7 @@ namespace TanHoaWater.View.Tool
                 this.txtNgayNhanHS.Text = dataGridView1.Rows[e.RowIndex].Cells["NGAYNHAN"].Value + "";
                 this.txtLoaiHS.Text = dataGridView1.Rows[e.RowIndex].Cells["LOAIHS"].Value + "";
                 DON_KHACHHANG donkh = DAL.C_DonKhachHang.searchTimKiemDon(dataGridView1.Rows[e.RowIndex].Cells["g_SoHoSo"].Value + "");
-                if (donkh != null)
-                {
-                    this.DotNhanDon.Text = donkh.MADOT;
-                    this.NgayLenDotNhanDon.Text = Utilities.DateToString.NgayVNVN(donkh.CREATEDATE.Value);
-                    if (donkh.NGAYCHUYEN_HOSO != null)
-                    {
-                        this.DotNhanDon.Text = donkh.MADOT;
-                        this.NgayLenDotNhanDon.Text = Utilities.DateToString.NgayVNVN(donkh.CREATEDATE.Value);
-                        if (donkh.NGAYCHUYEN_HOSO != null)
-                        {
-                            this.txtNgayGiaoTTK.Text = Utilities.DateToString.NgayVNVN(donkh.NGAYCHUYEN_HOSO.Value);
-                            TOTHIETKE ttk = DAL.C_ToThietKe.findBySHS(donkh.SHS);
-                            if (ttk != null)
-                            {
-                                if (ttk.SODOVIEN != null)
-                                {
-                                    this.SoDoVienTK.Text = DAL.C_USERS.findByUserName(ttk.SODOVIEN).FULLNAME;
-                                    this.txtNgayGiaoSDV.Text = ttk.NGAYGIAOSDV != null ? Utilities.DateToString.NgayVNVN(ttk.NGAYGIAOSDV.Value) : "";
-                                    if (ttk.TRONGAITHIETKE == true)
-                                    {
-                                        title = "HỒ SƠ TRỞ NGẠI THIẾT KẾ";
-                                        noidungtrongai = ttk.NOIDUNGTRONGAI;
-                                    }
-                                    else
-                                    {
-
-                                        BG_KHOILUONGXDCB xdcb = DAL.C_KhoiLuongXDCB.findBySHS(donkh.SHS);
-
-                                        if (xdcb != null)
-                                        {
-                                            NgayLapBG.Text = xdcb.CREATEDATE != null ? Utilities.DateToString.NgayVNVN(xdcb.CREATEDATE.Value) : "";
-                                            SoTienDong.Text = String.Format("{0:0,0.00}", xdcb.TONGIATRI != null ? xdcb.TONGIATRI : 0.0);
-                                            NgayTrinhKyGD.Text = ttk.NGAYTKGD != null ? Utilities.DateToString.NgayVNVN(ttk.NGAYTKGD.Value) : "";
-                                            NgayHoanTat.Text = ttk.NGAYHOANTATTK != null ? Utilities.DateToString.NgayVNVN(ttk.NGAYHOANTATTK.Value) : "";
-                                            NgayTraHoSoKH.Text = ttk.NGAYTRAHS != null ? Utilities.DateToString.NgayVNVN(ttk.NGAYTRAHS.Value) : "";
-                                            KH_HOSOKHACHHANG hoskh = DAL.C_KH_HoSoKhachHang.findBySHS(donkh.SHS);
-                                            if (hoskh != null)
-                                            {
-                                                if (hoskh.MADOTDD != null)
-                                                {
-                                                    KH_XINPHEPDAODUONG xiphep = DAL.C_KH_XinPhepDD.finbyMaDot(hoskh.MADOTDD);
-                                                    DotXinPhepDD.Text = xiphep.MAQUANLY;
-                                                    NgayXinPhepDD.Text = Utilities.DateToString.NgayVNVN(xiphep.NGAYLAP.Value);
-                                                    NgayCoPhep.Text = xiphep.NGAYCOPHEP != null ? Utilities.DateToString.NgayVNVN(xiphep.NGAYCOPHEP.Value) : "";
-                                                }
-                                                else
-                                                {
-                                                    title = "HỒ SƠ CHƯA LÊN ĐỢT <br/> ĐÀO ĐƯỜNG";
-                                                }
-                                                if (hoskh.MADOTTC != null)
-                                                {
-                                                    KH_DOTTHICONG dotc = DAL.C_KH_DotThiCong.findByMadot(hoskh.MADOTTC);
-                                                    DotThiCong.Text = dotc.MADOTTC;
-                                                    NgayLenDotTC.Text = Utilities.DateToString.NgayVNVN(dotc.NGAYLAP.Value);
-
-                                                }
-                                                else
-                                                {
-                                                    title = "HỒ SƠ CHƯA LÊN ĐỢT <br/> THI CÔNG";
-                                                }
-                                                NgayThiCong.Text = hoskh.NGAYTHICONG != null ? Utilities.DateToString.NgayVNVN(hoskh.NGAYTHICONG.Value) : "";
-                                                NgayHoanCong.Text = hoskh.NGAYHOANCONG != null ? Utilities.DateToString.NgayVNVN(hoskh.NGAYHOANCONG.Value) : "";
-                                                ChoDanhBo.Text = hoskh.DHN_NGAYCHOSODB != null ? Utilities.DateToString.NgayVNVN(hoskh.DHN_NGAYCHOSODB.Value) : "";
-
-                                                if (hoskh.DHN_CHODB != true)
-                                                {
-                                                    title = "HỒ CHƯA CHO DANH BỘ.";
-                                                }
-                                                else
-                                                {
-                                                    title = "HỒ SƠ ĐÃ HOÀN TẤT";
-                                                }
-                                                if (hoskh.HOANCONG == true) { } else {
-                                                    title = "HỒ SƠ CHƯA HOÀN CÔNG";
-                                                }
-                                                if (hoskh.TRONGAI == true)
-                                                {
-                                                    title = "HỒ SƠ TRỞ NGẠI THI CÔNG";
-                                                    noidungtrongai = hoskh.NOIDUNGTN;
-                                                }
-                                            }
-                                            else
-                                            {
-                                                title = "HỒ SƠ CHƯA CHUYỂN <br/> KẾ HOẠCH";
-                                            }
-                                        }
-                                        else
-                                        {
-                                            KH_HOSOKHACHHANG hoskh = DAL.C_KH_HoSoKhachHang.findBySHS(donkh.SHS);
-                                            if (hoskh != null)
-                                            {
-                                                if (hoskh.MADOTDD != null)
-                                                {
-                                                    KH_XINPHEPDAODUONG xiphep = DAL.C_KH_XinPhepDD.finbyMaDot(hoskh.MADOTDD);
-                                                    DotXinPhepDD.Text = xiphep.MAQUANLY;
-                                                    NgayXinPhepDD.Text = Utilities.DateToString.NgayVNVN(xiphep.NGAYLAP.Value);
-                                                    NgayCoPhep.Text = xiphep.NGAYCOPHEP != null ? Utilities.DateToString.NgayVNVN(xiphep.NGAYCOPHEP.Value) : "";
-                                                }
-                                                else
-                                                {
-                                                    title = "HỒ SƠ CHƯA LÊN ĐỢT <br/> ĐÀO ĐƯỜNG";
-                                                }
-                                                if (hoskh.MADOTTC != null)
-                                                {
-                                                    KH_DOTTHICONG dotc = DAL.C_KH_DotThiCong.findByMadot(hoskh.MADOTTC);
-                                                    DotThiCong.Text = dotc.MADOTTC;
-                                                    NgayLenDotTC.Text = Utilities.DateToString.NgayVNVN(dotc.NGAYLAP.Value);
-
-                                                }
-                                                else
-                                                {
-                                                    title = "HỒ SƠ CHƯA LÊN ĐỢT <br/> THI CÔNG";
-                                                }
-                                                NgayThiCong.Text = hoskh.NGAYTHICONG != null ? Utilities.DateToString.NgayVNVN(hoskh.NGAYTHICONG.Value) : "";
-                                                NgayHoanCong.Text = hoskh.NGAYHOANCONG != null ? Utilities.DateToString.NgayVNVN(hoskh.NGAYHOANCONG.Value) : "";
-                                                ChoDanhBo.Text = hoskh.DHN_NGAYCHOSODB != null ? Utilities.DateToString.NgayVNVN(hoskh.DHN_NGAYCHOSODB.Value) : "";
-
-                                                if (hoskh.DHN_CHODB != true)
-                                                {
-                                                    title = "HỒ CHƯA CHO DANH BỘ.";
-                                                }
-                                                else
-                                                {
-                                                    title = "HỒ SƠ ĐÃ HOÀN TẤT";
-                                                }
-                                                if (hoskh.HOANCONG == true) { }
-                                                else
-                                                {
-                                                    title = "HỒ SƠ CHƯA HOÀN CÔNG";
-                                                }
-                                                if (hoskh.TRONGAI == true)
-                                                {
-                                                    title = "HỒ SƠ TRỞ NGẠI THI CÔNG";
-                                                    noidungtrongai = hoskh.NOIDUNGTN;
-                                                }
-                                            }
-                                            else { title = "HỒ SƠ CHƯA CHẠY BẢNG GIÁ."; }
-
-                                        }
-                                    }
-
-                                }
-                                else
-                                {
-                                    title = "CHƯA GIAO HỒ SƠ <br/>CHO SƠ ĐỒ VIÊN";
-                                }
-                                if (DAL.C_DonKhachHang.dontaixet(donkh.SOHOSO))
-                                {
-                                    groupBox1.Text = "Kết Quả ----> ĐƠN TÁI XÉT";
-                                }
-                            }
-                            else
-                            {
-                                title = "TỔ THIẾT KẾ KHÔNG NHẬN HỒ SƠ NÀY.";
-                            }
-
-                        }
-                        else
-                        {
-                            title = "HỒ SƠ CHƯA CHUYỂN <br/> TỔ THIẾT KẾ";
-                        }
-
-                    }
-                }
-                else
-                {
-                    title = "CHƯA LÊN ĐỢT NHẬN ĐƠN <br/> CHUYỂN TỔ THIẾT KẾ";
-                }
-                // this.txtDotND.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value+"";
-                //this.txtShs.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value + "";
-                //this.txtSoHoSo.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value + "";
-                //this.txtHoTen.Text = dataGridView1.Rows[e.RowIndex].Cells[4].Value + "";
-                //this.txtdiachi.Text = dataGridView1.Rows[e.RowIndex].Cells[6].Value + "";
-                //this.txtSoDT.Text = dataGridView1.Rows[e.RowIndex].Cells[5].Value + "";
-                //this.txtLoaiKH.Text = dataGridView1.Rows[e.RowIndex].Cells[8].Value + "";
-                //this.txtLoaiHS.Text = dataGridView1.Rows[e.RowIndex].Cells[9].Value + "";
-                //this.txtNgayNhanHS.Text = dataGridView1.Rows[e.RowIndex].Cells[10].Value + "";
-                //ngaygiaoTTK = dataGridView1.Rows[e.RowIndex].Cells[11].Value + "";
-                //this.txtNgayGiaoTTK.Text = ngaygiaoTTK;
-                //ngaygiaoSDV = DAL.C_USERS.findByUserName(dataGridView1.Rows[e.RowIndex].Cells[12].Value + "").FULLNAME;
-                //this.SoDoVienTK.Text = ngaygiaoSDV;
-                //ngaytringky = dataGridView1.Rows[e.RowIndex].Cells[13].Value + "";
-                //this.NgayTrinhKyGD.Text = ngaytringky;
-                //trongaiTK = dataGridView1.Rows[e.RowIndex].Cells[15].Value + "";
-                //noidungTK = dataGridView1.Rows[e.RowIndex].Cells[16].Value + "";
-                //result();
+                Result(donkh);               
                 groupBox1.Visible = true;
                 if (title.Contains("HỒ SƠ TRỞ NGẠI"))
                 {
@@ -575,7 +405,7 @@ namespace TanHoaWater.View.Tool
         //}
 
         int currentPageIndex = 1;
-        int pageSize = 18;
+        int pageSize = 20;
         int pageNumber = 0;
         int FirstRow, LastRow;
         int rows;

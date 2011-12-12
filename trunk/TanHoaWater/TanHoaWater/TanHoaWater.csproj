@@ -81,6 +81,11 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\log4net.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>Lib\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.VisualBasic" />
@@ -163,6 +168,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -179,6 +190,12 @@
     </Compile>
     <Compile Include="Roles\VTTH.Designer.cs">
       <DependentUpon>VTTH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="tab_XinPhepDD24.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="tab_XinPhepDD24.Designer.cs">
+      <DependentUpon>tab_XinPhepDD24.cs</DependentUpon>
     </Compile>
     <Compile Include="Utilities\AddValueCombox.cs" />
     <Compile Include="Utilities\DataGridV.cs" />
@@ -341,6 +358,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>rpt_QuyetDinhTC.rpt</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\Users\KEHOACH\DOTTHICONG\Tab_EditDanhSachTC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Users\KEHOACH\DOTTHICONG\Tab_EditDanhSachTC.Designer.cs">
+      <DependentUpon>Tab_EditDanhSachTC.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Users\KEHOACH\DOTTHICONG\tab_CapNhatDanhSachbyDot.cs">
       <SubType>UserControl</SubType>
@@ -663,6 +686,12 @@
     <Compile Include="View\Users\TinhDuToan\tab_DanhMucVT.Designer.cs">
       <DependentUpon>tab_DanhMucVT.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Users\To_ThietKe\Report\rpt_DSHoanTatbyDate.cs">
+      <DependentUpon>rpt_DSHoanTatbyDate.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="View\Users\To_ThietKe\Report\rpt_DSHoanTat.cs">
       <DependentUpon>rpt_DSHoanTat.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -746,11 +775,17 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Roles\TTK.resx">
       <DependentUpon>TTK.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Roles\VTTH.resx">
       <DependentUpon>VTTH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tab_XinPhepDD24.resx">
+      <DependentUpon>tab_XinPhepDD24.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Administrators\uct_PhongBanDoi.resx">
       <DependentUpon>uct_PhongBanDoi.cs</DependentUpon>
@@ -814,6 +849,9 @@
     <EmbeddedResource Include="View\Users\KEHOACH\DOTTHICONG\BC\rpt_QuyetDinhTC.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_QuyetDinhTC.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\KEHOACH\DOTTHICONG\Tab_EditDanhSachTC.resx">
+      <DependentUpon>Tab_EditDanhSachTC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\KEHOACH\DOTTHICONG\tab_CapNhatDanhSachbyDot.resx">
       <DependentUpon>tab_CapNhatDanhSachbyDot.cs</DependentUpon>
@@ -980,6 +1018,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\TinhDuToan\tab_DanhMucVT.resx">
       <DependentUpon>tab_DanhMucVT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\To_ThietKe\Report\rpt_DSHoanTatbyDate.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_DSHoanTatbyDate.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\To_ThietKe\Report\rpt_DSHoanTat.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

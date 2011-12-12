@@ -197,12 +197,33 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
             //}
             Utilities.DataGridV.formatRows(detail);
         }
-
+        DOT_NHAN_DON dotnd = null;
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
                 string _madot = mainGrid.Rows[e.RowIndex].Cells[0].Value != null ? mainGrid.Rows[e.RowIndex].Cells[0].Value.ToString() : null;
+                try
+                {
+                    dotnd= DAL.C_DotNhanDon.findByMaDot(_madot);
+                    if(dotnd!=null){
+                        this.txtsoDot.Text = dotnd.MADOT;
+                        this.createDate.ValueObject = dotnd.NGAYLAPDON;
+                        this.cbLoaiHS.Text = DAL.C_LoaiHoSo.findbyMaLoai(dotnd.LOAIDON).TENLOAI;
+                        if (dotnd.CHUYENDON == true)
+                        {
+                            btCapNhat.Enabled = false;
+                        }
+                        else {
+                            btCapNhat.Enabled = true;
+                        }
+                    }
+                    
+                }
+                catch (Exception)
+                {
+                    
+                }
                 loadDetail(_madot);
                 this.lbSoKHNhanDon.Text = "Có " + sokh + " khách hàng đợt nhận đơn " + _madot;
                 _madot_ = _madot;
@@ -312,6 +333,28 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
         private void mainGrid_Sorted(object sender, EventArgs e)
         {
             Utilities.DataGridV.formatRows(mainGrid);
+        }
+
+        private void updateDot(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dotnd != null) {
+                    dotnd.NGAYLAPDON = createDate.Value;
+                    if (cbLoaiHS.SelectedValue != null) {
+                        dotnd.LOAIDON = cbLoaiHS.SelectedValue+"";
+                    }
+                    dotnd.MODIFYBY = DAL.C_USERS._userName;
+                    dotnd.MODIFYDATE = DateTime.Now;
+                    DAL.C_DotNhanDon.Update();
+                    MessageBox.Show(this, "Cập Nhật Đợt Thành Công", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                log.Error("Sua Thong Tin Dot Nhan Don Loi" + ex.Message);   
+            }
         }
     }
 }

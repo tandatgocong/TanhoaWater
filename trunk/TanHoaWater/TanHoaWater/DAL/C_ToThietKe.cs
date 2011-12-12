@@ -461,11 +461,11 @@ namespace TanHoaWater.DAL
             sql += " WHERE TTKMD='" + dotnd + "'";
             sql += " AND USERNAME='" + nguoilap + "'";
             if ("True".Equals(hoantat)) {
-                sql += " AND TKHOANTAT='True' AND (TKTRONGAI='False' OR TKTRONGAI IS NULL) "; 
+                sql += " AND TKHOANTAT='True' AND (TRONGAITHIETKE='False' OR TRONGAITHIETKE IS NULL) "; 
             }
             else if ("False".Equals(hoantat))
             {
-                sql += " AND TKTRONGAI='True'"; 
+                sql += " AND TRONGAITHIETKE='True'"; 
             
             }
             SqlDataAdapter dond = new SqlDataAdapter(sql, db.Connection.ConnectionString);
@@ -486,5 +486,22 @@ namespace TanHoaWater.DAL
             dond.Fill(ds);
             return ds.Tables[0];
         }
+
+        public static DataSet BC_HOANTATTK_BYDATE( string ngayhoantat ,string nguoilap)
+        {
+            DataSet ds = new DataSet();
+            TanHoaDataContext db = new TanHoaDataContext();
+            db.Connection.Open();
+            string sql = "SELECT * FROM V_TTK_HOANTATTK ";
+            sql += " WHERE NGAYHOANTATTK='" + ngayhoantat + "'";
+            sql += " AND USERNAME='" + nguoilap + "'";
+            sql += " AND TKHOANTAT='True' AND (TRONGAITHIETKE='False' OR TRONGAITHIETKE IS NULL) ";
+             
+            SqlDataAdapter dond = new SqlDataAdapter(sql, db.Connection.ConnectionString);
+            dond.Fill(ds, "V_TTK_HOANTATTK");
+
+            return ds;
+        }
+
     }
 }
