@@ -174,6 +174,12 @@
     <Compile Include="Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Lib\app.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>app.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\cNetworkDrive_0017.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -201,6 +207,7 @@
     <Compile Include="Utilities\DataGridV.cs" />
     <Compile Include="Utilities\DateToString.cs" />
     <Compile Include="Utilities\Doctien.cs" />
+    <Compile Include="Utilities\Files.cs" />
     <Compile Include="Utilities\FormatNumber.cs" />
     <Compile Include="DAL\Idetity.cs" />
     <Compile Include="Utilities\FormatSoHoSoDanhBo.cs" />
@@ -597,6 +604,12 @@
     <Compile Include="View\Users\KEHOACH\XINPHEPDD\frmDialogPrintting.Designer.cs">
       <DependentUpon>frmDialogPrintting.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Users\KEHOACH\XINPHEPDD\frm_Export.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Users\KEHOACH\XINPHEPDD\frm_Export.Designer.cs">
+      <DependentUpon>frm_Export.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Users\KEHOACH\XINPHEPDD\tab_CapNhatTheoDot.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -972,6 +985,9 @@
     <EmbeddedResource Include="View\Users\KEHOACH\XINPHEPDD\frmDialogPrintting.resx">
       <DependentUpon>frmDialogPrintting.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\KEHOACH\XINPHEPDD\frm_Export.resx">
+      <DependentUpon>frm_Export.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Users\KEHOACH\XINPHEPDD\tab_CapNhatTheoDot.resx">
       <DependentUpon>tab_CapNhatTheoDot.cs</DependentUpon>
     </EmbeddedResource>
@@ -1106,6 +1122,11 @@
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>TanHoa.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+    </None>
+    <None Include="Lib\app.conf" />
+    <None Include="Lib\app.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>app.Designer.cs</LastGenOutput>
     </None>
     <None Include="Lib\user.dat" />
     <None Include="Properties\Settings.settings">

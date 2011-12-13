@@ -56,6 +56,11 @@ namespace TanHoaWater.DAL
 
        
         }
+        public static List<KH_HOSOKHACHHANG> ListHSKHByDotTC(string dottc) {
+            TanHoaDataContext db = new TanHoaDataContext();
+            var obj = from dd in db.KH_HOSOKHACHHANGs where dd.MADOTDD==dottc select dd;
+            return obj.ToList();
+        }
         public static DataTable getList(string sodot, string noicapphep, string ngaylap, int FirstRow, int pageSize)
         {
             TanHoaDataContext db = new TanHoaDataContext();
@@ -181,11 +186,14 @@ namespace TanHoaWater.DAL
                 {
 
                     string kichthuoc = "";
+                    double dai = 0;
                     var dataPhui = from query in db.BG_KICHTHUOCPHUIDAOs where query.SHS == shs && query.MADANHMUC == item.MADANHMUC select query;
                     bool status = true;
                     int k = 1;
                     foreach (var phui in dataPhui.ToList())
                     {
+                        dai += phui.DAI.Value;
+
                         if (phui.SOLUONG > 1 && status == true)
                         {
                             kichthuoc += phui.SOLUONG;
@@ -200,6 +208,25 @@ namespace TanHoaWater.DAL
                         k++;
                     }
                     item.KICHTHUOC = kichthuoc;
+                    item.DAI = String.Format("{0:0.00}", dai);
+                    item.SAU = "0.6";
+                    if (item.MADANHMUC.Equals("N12B") || item.MADANHMUC.Equals("N12C") || item.MADANHMUC.Equals("N5") || item.MADANHMUC.Equals("NHUA10") || item.MADANHMUC.Equals("NHUA10-C3"))
+                    {
+                        item.TENKETCAU = "BÊ TÔNG NHỰA";
+                        item.RONG = "0.8";
+                    }
+                    else if(item.TENKETCAU.Contains("BTXM")) {
+                        item.RONG = "0.6";
+                    }
+                    else if (item.TENKETCAU.Contains("LỀ GẠCH"))
+                    {
+                        item.RONG = "0.3";
+                    }
+                    else {
+                        item.RONG = "0.6";
+                    }
+                   
+ 
                 }
                 db.SubmitChanges();
             }
@@ -256,6 +283,33 @@ namespace TanHoaWater.DAL
             }
             
             return false;
+        }
+        static TanHoaDataContext db = new TanHoaDataContext();
+        public static KH_BAOCAOPHUIDAO finbyBaoCaoPhuiDaoBySTT(int stt) {
+            try
+            {
+                var obj = from dd in db.KH_BAOCAOPHUIDAOs where dd.STT == stt select dd;
+                return obj.SingleOrDefault();
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+            }
+
+            return null;
+        }
+        public static void UpdatePhui()
+        {
+            try
+            {
+                db.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+            }
+           
+             
         }
 
     }

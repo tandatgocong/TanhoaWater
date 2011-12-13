@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new DevComponents.DotNetBar.TabControl();
             this.tabDanhSachDot = new DevComponents.DotNetBar.TabControlPanel();
             this.btCapNhatCoPhep = new DevComponents.DotNetBar.ButtonX();
@@ -75,6 +75,7 @@
             this.tabCapNhatDS = new DevComponents.DotNetBar.TabControlPanel();
             this.tabItem2 = new DevComponents.DotNetBar.TabItem(this.components);
             this.reflectionLabel1 = new DevComponents.DotNetBar.Controls.ReflectionLabel();
+            this.btExport = new DevComponents.DotNetBar.ButtonX();
             ((System.ComponentModel.ISupportInitialize)(this.tabControl1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabDanhSachDot.SuspendLayout();
@@ -123,6 +124,7 @@
             // 
             // tabDanhSachDot
             // 
+            this.tabDanhSachDot.Controls.Add(this.btExport);
             this.tabDanhSachDot.Controls.Add(this.btCapNhatCoPhep);
             this.tabDanhSachDot.Controls.Add(this.dateNgayCoPhep);
             this.tabDanhSachDot.Controls.Add(this.dateNgayLap);
@@ -302,14 +304,14 @@
             this.dataDanhSachDaoDuong.AllowUserToOrderColumns = true;
             this.dataDanhSachDaoDuong.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
             this.dataDanhSachDaoDuong.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 12F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataDanhSachDaoDuong.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Times New Roman", 12F);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataDanhSachDaoDuong.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dataDanhSachDaoDuong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataDanhSachDaoDuong.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.gridSoDot,
@@ -317,27 +319,27 @@
             this.gridNgayLap,
             this.gridMaQuanLy,
             this.gridNgayCoPhep});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Times New Roman", 12F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataDanhSachDaoDuong.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Times New Roman", 12F);
+            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataDanhSachDaoDuong.DefaultCellStyle = dataGridViewCellStyle13;
             this.dataDanhSachDaoDuong.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dataDanhSachDaoDuong.Location = new System.Drawing.Point(16, 82);
             this.dataDanhSachDaoDuong.MultiSelect = false;
             this.dataDanhSachDaoDuong.Name = "dataDanhSachDaoDuong";
             this.dataDanhSachDaoDuong.ReadOnly = true;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Times New Roman", 12F);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataDanhSachDaoDuong.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Times New Roman", 12F);
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataDanhSachDaoDuong.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.dataDanhSachDaoDuong.RowHeadersWidth = 25;
             this.dataDanhSachDaoDuong.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataDanhSachDaoDuong.Size = new System.Drawing.Size(722, 459);
@@ -346,8 +348,8 @@
             // gridSoDot
             // 
             this.gridSoDot.DataPropertyName = "MADOT";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.gridSoDot.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.gridSoDot.DefaultCellStyle = dataGridViewCellStyle9;
             this.gridSoDot.HeaderText = "Số Đợt";
             this.gridSoDot.Name = "gridSoDot";
             this.gridSoDot.ReadOnly = true;
@@ -356,8 +358,8 @@
             // gridNoiCapPhep
             // 
             this.gridNoiCapPhep.DataPropertyName = "NOICAPPHEP";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.gridNoiCapPhep.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.gridNoiCapPhep.DefaultCellStyle = dataGridViewCellStyle10;
             this.gridNoiCapPhep.HeaderText = "Nơi C.P";
             this.gridNoiCapPhep.Name = "gridNoiCapPhep";
             this.gridNoiCapPhep.ReadOnly = true;
@@ -366,9 +368,9 @@
             // gridNgayLap
             // 
             this.gridNgayLap.DataPropertyName = "NGAYLAP";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.Format = "dd/MM/yyyy";
-            this.gridNgayLap.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.Format = "dd/MM/yyyy";
+            this.gridNgayLap.DefaultCellStyle = dataGridViewCellStyle11;
             this.gridNgayLap.HeaderText = "Ngày Lập";
             this.gridNgayLap.Name = "gridNgayLap";
             this.gridNgayLap.ReadOnly = true;
@@ -384,9 +386,9 @@
             // gridNgayCoPhep
             // 
             this.gridNgayCoPhep.DataPropertyName = "NGAYCOPHEP";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.Format = "dd/MM/yyyy";
-            this.gridNgayCoPhep.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.Format = "dd/MM/yyyy";
+            this.gridNgayCoPhep.DefaultCellStyle = dataGridViewCellStyle12;
             this.gridNgayCoPhep.HeaderText = "Ngày Có Phép";
             this.gridNgayCoPhep.Name = "gridNgayCoPhep";
             this.gridNgayCoPhep.ReadOnly = true;
@@ -576,7 +578,7 @@
             this.huyDotXP.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.huyDotXP.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.huyDotXP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.huyDotXP.Location = new System.Drawing.Point(756, 415);
+            this.huyDotXP.Location = new System.Drawing.Point(754, 445);
             this.huyDotXP.Name = "huyDotXP";
             this.huyDotXP.Size = new System.Drawing.Size(175, 26);
             this.huyDotXP.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
@@ -758,6 +760,20 @@
             this.reflectionLabel1.TabIndex = 670;
             this.reflectionLabel1.Text = "<font color=\"#ED1C24\"><b><font size=\"+6\">\r\nXIN PHÉP ĐÀO ĐƯỜNG</font></b></font>";
             // 
+            // btExport
+            // 
+            this.btExport.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btExport.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btExport.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btExport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btExport.Location = new System.Drawing.Point(754, 394);
+            this.btExport.Name = "btExport";
+            this.btExport.Size = new System.Drawing.Size(175, 26);
+            this.btExport.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
+            this.btExport.TabIndex = 710;
+            this.btExport.Text = "Xuất File Gửi Xin Phép";
+            this.btExport.Click += new System.EventHandler(this.btExport_Click);
+            // 
             // UCT_XINPHEPDD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -824,5 +840,6 @@
         private DevComponents.Editors.DateTimeAdv.DateTimeInput dateNgayCoPhep;
         private DevComponents.DotNetBar.LabelX labelX5;
         private DevComponents.DotNetBar.Controls.ReflectionLabel reflectionLabel1;
+        private DevComponents.DotNetBar.ButtonX btExport;
     }
 }
