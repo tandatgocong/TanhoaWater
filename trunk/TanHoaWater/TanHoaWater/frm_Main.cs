@@ -33,12 +33,12 @@ namespace TanHoaWater
         }
         public frm_Main()
         {
-            //Thread th = new Thread(new ThreadStart(this.start));
+            Thread th = new Thread(new ThreadStart(this.start));
 
-            //th.Start();
-            //Thread.Sleep(5000);
+            th.Start();
+            Thread.Sleep(5000);
             InitializeComponent();
-            //th.Abort();
+            th.Abort();
             this.menuHeThong.Select();
 
             this.lbNgayHeThong.Text = Utilities.DateToString.fullCurrentNgay() + "  ";

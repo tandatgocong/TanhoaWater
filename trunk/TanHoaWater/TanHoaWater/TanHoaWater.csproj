@@ -290,6 +290,12 @@
     <Compile Include="View\Users\DONGHONUOC\uct_CapDanhBo.Designer.cs">
       <DependentUpon>uct_CapDanhBo.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Users\KEHOACH\dialogNhapDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Users\KEHOACH\dialogNhapDon.Designer.cs">
+      <DependentUpon>dialogNhapDon.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Users\KEHOACH\DOTTHICONG\BC\reportValues.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -831,6 +837,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\DONGHONUOC\uct_CapDanhBo.resx">
       <DependentUpon>uct_CapDanhBo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\KEHOACH\dialogNhapDon.resx">
+      <DependentUpon>dialogNhapDon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\KEHOACH\DOTTHICONG\BC\reportValues.resx">
       <DependentUpon>reportValues.cs</DependentUpon>

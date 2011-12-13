@@ -145,7 +145,21 @@ namespace TanHoaWater.DAL
             }
             db.SubmitChanges();
         }
-
+       
+        public static void chuyenhsbySHS(string shs, string nguoichuyen, string pbchuyen)
+        {
+            TanHoaDataContext db = new TanHoaDataContext();
+            var data = from don in db.DON_KHACHHANGs where don.SHS == shs select don;
+            DON_KHACHHANG donKH = data.SingleOrDefault();
+            if (donKH != null)
+            {
+                donKH.CHUYEN_HOSO = true;
+                donKH.NGAYCHUYEN_HOSO = DateTime.Now;
+                donKH.NGUOICHUYEN_HOSO = nguoichuyen;
+                donKH.BOPHANCHUYEN = pbchuyen;
+            }
+            db.SubmitChanges();
+        }
         public static void chuyenhsbydot(string sodot, string nguoichuyen, string pbchuyen)
         {
             TanHoaDataContext db = new TanHoaDataContext();
