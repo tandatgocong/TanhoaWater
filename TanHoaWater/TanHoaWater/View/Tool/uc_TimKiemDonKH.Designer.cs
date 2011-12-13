@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.searchDiaChi = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -47,6 +48,7 @@
             this.g_SoHoSo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gr_HoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DIACHI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gr_DienThoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LOAIHS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NGAYNHAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.progressBar2 = new System.Windows.Forms.ProgressBar();
@@ -57,6 +59,7 @@
             this.lbresult = new DevComponents.DotNetBar.LabelX();
             this.resultNoiDung = new System.Windows.Forms.RichTextBox();
             this.label20 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.NgayTrinhKyGD = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.label6 = new System.Windows.Forms.Label();
@@ -71,6 +74,7 @@
             this.ChoDanhBo = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.NgayHoanCong = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.NgayLenDotTC = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtDomViTC = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.DotThiCong = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.label4 = new System.Windows.Forms.Label();
             this.DotXinPhepDD = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -95,8 +99,6 @@
             this.label21 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.SearchMaHoSo = new System.Windows.Forms.TextBox();
-            this.txtDomViTC = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.label24 = new System.Windows.Forms.Label();
             this.groupPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -282,19 +284,20 @@
             // lbsohoso
             // 
             this.lbsohoso.AutoSize = true;
-            this.lbsohoso.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbsohoso.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbsohoso.ForeColor = System.Drawing.Color.Red;
-            this.lbsohoso.Location = new System.Drawing.Point(2, 508);
+            this.lbsohoso.Location = new System.Drawing.Point(2, 517);
             this.lbsohoso.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbsohoso.Name = "lbsohoso";
-            this.lbsohoso.Size = new System.Drawing.Size(0, 15);
+            this.lbsohoso.Size = new System.Drawing.Size(25, 19);
             this.lbsohoso.TabIndex = 174;
+            this.lbsohoso.Text = "db";
             // 
             // pictureBox2
             // 
             this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox2.Image = global::TanHoaWater.Properties.Resources.Previous;
-            this.pictureBox2.Location = new System.Drawing.Point(508, 508);
+            this.pictureBox2.Location = new System.Drawing.Point(508, 517);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(19, 16);
             this.pictureBox2.TabIndex = 172;
@@ -305,7 +308,7 @@
             // 
             this.next.Cursor = System.Windows.Forms.Cursors.Hand;
             this.next.Image = global::TanHoaWater.Properties.Resources.Next;
-            this.next.Location = new System.Drawing.Point(567, 508);
+            this.next.Location = new System.Drawing.Point(567, 517);
             this.next.Name = "next";
             this.next.Size = new System.Drawing.Size(19, 16);
             this.next.TabIndex = 171;
@@ -316,7 +319,7 @@
             // 
             this.lbPaing.AutoSize = true;
             this.lbPaing.BackColor = System.Drawing.Color.Transparent;
-            this.lbPaing.Location = new System.Drawing.Point(526, 508);
+            this.lbPaing.Location = new System.Drawing.Point(526, 517);
             this.lbPaing.Name = "lbPaing";
             this.lbPaing.Size = new System.Drawing.Size(45, 19);
             this.lbPaing.TabIndex = 173;
@@ -334,23 +337,24 @@
             this.g_SoHoSo,
             this.gr_HoTen,
             this.DIACHI,
+            this.gr_DienThoai,
             this.LOAIHS,
             this.NGAYNHAN});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 20;
-            this.dataGridView1.Size = new System.Drawing.Size(587, 537);
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(587, 514);
             this.dataGridView1.TabIndex = 170;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // g_SoHoSo
             // 
             this.g_SoHoSo.DataPropertyName = "SHS";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.g_SoHoSo.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.g_SoHoSo.DefaultCellStyle = dataGridViewCellStyle1;
             this.g_SoHoSo.HeaderText = "Số HS";
             this.g_SoHoSo.Name = "g_SoHoSo";
             this.g_SoHoSo.ReadOnly = true;
@@ -371,6 +375,15 @@
             this.DIACHI.Name = "DIACHI";
             this.DIACHI.ReadOnly = true;
             this.DIACHI.Width = 293;
+            // 
+            // gr_DienThoai
+            // 
+            this.gr_DienThoai.DataPropertyName = "DIENTHOAI";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.gr_DienThoai.DefaultCellStyle = dataGridViewCellStyle2;
+            this.gr_DienThoai.HeaderText = "Điện Thoại";
+            this.gr_DienThoai.Name = "gr_DienThoai";
+            this.gr_DienThoai.ReadOnly = true;
             // 
             // LOAIHS
             // 
@@ -465,9 +478,20 @@
             this.label20.Location = new System.Drawing.Point(597, 355);
             this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(88, 16);
+            this.label20.Size = new System.Drawing.Size(85, 16);
             this.label20.TabIndex = 165;
-            this.label20.Text = "Ngày Lên Đợt";
+            this.label20.Text = "Ngày Chuyển";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Times New Roman", 10F);
+            this.label24.Location = new System.Drawing.Point(596, 325);
+            this.label24.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(87, 16);
+            this.label24.TabIndex = 165;
+            this.label24.Text = "ĐVị Thi Công";
             // 
             // label19
             // 
@@ -653,6 +677,20 @@
             this.NgayLenDotTC.Size = new System.Drawing.Size(106, 26);
             this.NgayLenDotTC.TabIndex = 161;
             this.NgayLenDotTC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtDomViTC
+            // 
+            this.txtDomViTC.BackColor = System.Drawing.SystemColors.Window;
+            // 
+            // 
+            // 
+            this.txtDomViTC.Border.Class = "TextBoxBorder";
+            this.txtDomViTC.Location = new System.Drawing.Point(684, 322);
+            this.txtDomViTC.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDomViTC.Name = "txtDomViTC";
+            this.txtDomViTC.ReadOnly = true;
+            this.txtDomViTC.Size = new System.Drawing.Size(290, 26);
+            this.txtDomViTC.TabIndex = 161;
             // 
             // DotThiCong
             // 
@@ -960,31 +998,6 @@
             this.SearchMaHoSo.TabIndex = 129;
             this.SearchMaHoSo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.searchHoTenKH_KeyPress);
             // 
-            // txtDomViTC
-            // 
-            this.txtDomViTC.BackColor = System.Drawing.SystemColors.Window;
-            // 
-            // 
-            // 
-            this.txtDomViTC.Border.Class = "TextBoxBorder";
-            this.txtDomViTC.Location = new System.Drawing.Point(684, 322);
-            this.txtDomViTC.Margin = new System.Windows.Forms.Padding(4);
-            this.txtDomViTC.Name = "txtDomViTC";
-            this.txtDomViTC.ReadOnly = true;
-            this.txtDomViTC.Size = new System.Drawing.Size(290, 26);
-            this.txtDomViTC.TabIndex = 161;
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Times New Roman", 10F);
-            this.label24.Location = new System.Drawing.Point(596, 325);
-            this.label24.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(87, 16);
-            this.label24.TabIndex = 165;
-            this.label24.Text = "ĐVị Thi Công";
-            // 
             // uc_TimKiemDonKH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -1081,14 +1094,15 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox next;
         private System.Windows.Forms.Label lbPaing;
-        private System.Windows.Forms.DataGridViewTextBoxColumn g_SoHoSo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn gr_HoTen;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DIACHI;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LOAIHS;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NGAYNHAN;
         private System.Windows.Forms.Label lbsohoso;
         private System.Windows.Forms.Label label24;
         private DevComponents.DotNetBar.Controls.TextBoxX txtDomViTC;
+        private System.Windows.Forms.DataGridViewTextBoxColumn g_SoHoSo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gr_HoTen;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DIACHI;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gr_DienThoai;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LOAIHS;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NGAYNHAN;
 
     }
 }

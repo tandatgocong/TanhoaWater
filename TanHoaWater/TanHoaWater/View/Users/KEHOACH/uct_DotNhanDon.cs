@@ -195,6 +195,32 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
             //{
             //    this.checkCD.Visible = false;
             //}
+            ////cap nhat tinh trang
+            for (int i = 0; i < detail.Rows.Count; i++)
+            {
+                try
+                {
+                    string shs = detail.Rows[i].Cells["SHS"].Value + "";
+                    TOTHIETKE ttk = DAL.C_ToThietKe.findBySHS(shs);
+                    if (ttk != null)
+                    {
+                        if (ttk.HOANTATTK == true && (ttk.TRONGAITHIETKE == null || ttk.TRONGAITHIETKE == false))
+                        {
+                            detail.Rows[i].Cells["gHoanTat"].Value = "Hoàn Tất";
+                            detail.Rows[i].Cells["g_ngayht"].Value = Utilities.DateToString.NgayVN(ttk.NGAYHOANTATTK.Value) + "";
+                        }
+                        if (ttk.TRONGAITHIETKE == true)
+                        {
+                            detail.Rows[i].Cells["gHoanTat"].Value = "Trở Ngại";
+                            detail.Rows[i].Cells["g_ngayht"].Value = Utilities.DateToString.NgayVN(ttk.NGAYTRAHS.Value) + "";
+                        }
+
+                    }
+                }
+                catch (Exception)
+                {
+                }
+            }
             Utilities.DataGridV.formatRows(detail);
         }
         DOT_NHAN_DON dotnd = null;
@@ -203,6 +229,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
             try
             {
                 string _madot = mainGrid.Rows[e.RowIndex].Cells[0].Value != null ? mainGrid.Rows[e.RowIndex].Cells[0].Value.ToString() : null;
+
                 try
                 {
                     dotnd= DAL.C_DotNhanDon.findByMaDot(_madot);
@@ -213,9 +240,12 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                         if (dotnd.CHUYENDON == true)
                         {
                             btCapNhat.Enabled = false;
+                            btAddHS.Visible = true;
                         }
                         else {
                             btCapNhat.Enabled = true;
+
+                            btAddHS.Visible = false;
                         }
                     }
                     
@@ -226,6 +256,9 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                 }
                 loadDetail(_madot);
                 this.lbSoKHNhanDon.Text = "Có " + sokh + " khách hàng đợt nhận đơn " + _madot;
+
+                   
+                ///
                 _madot_ = _madot;
                 this.cbBOPHAN.Visible = false;
                 this.chyenTTK.Visible = false;
@@ -354,6 +387,16 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
             catch (Exception ex)
             {
                 log.Error("Sua Thong Tin Dot Nhan Don Loi" + ex.Message);   
+            }
+        }
+
+        private void btAddHS_Click(object sender, EventArgs e)
+        {
+            if (dotnd != null)
+            {
+                dialogNhapDon frm = new dialogNhapDon(dotnd.MADOT);
+                frm.ShowDialog();
+                loadDetail(dotnd.MADOT);
             }
         }
     }

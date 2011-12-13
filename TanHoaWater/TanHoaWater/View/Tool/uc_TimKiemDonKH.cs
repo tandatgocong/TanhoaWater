@@ -34,7 +34,6 @@ namespace TanHoaWater.View.Tool
             this.groupBox1.Visible = false;
         }
         string title ="";
-        string ngaytrongai = "";
         string noidungtrongai = "";
 
         void Result(DON_KHACHHANG donkh)
@@ -130,6 +129,7 @@ namespace TanHoaWater.View.Tool
                                             DotXinPhepDD.Text = xiphep.MAQUANLY;
                                             NgayXinPhepDD.Text = Utilities.DateToString.NgayVNVN(xiphep.NGAYLAP.Value);
                                             NgayCoPhep.Text = xiphep.NGAYCOPHEP != null ? Utilities.DateToString.NgayVNVN(xiphep.NGAYCOPHEP.Value) : "";
+
                                         }
                                         else
                                         {
@@ -140,6 +140,7 @@ namespace TanHoaWater.View.Tool
                                             KH_DOTTHICONG dotc = DAL.C_KH_DotThiCong.findByMadot(hoskh.MADOTTC);
                                             DotThiCong.Text = dotc.MADOTTC;
                                             NgayLenDotTC.Text = Utilities.DateToString.NgayVNVN(dotc.NGAYLAP.Value);
+                                            txtDomViTC.Text = DAL.C_KH_DonViTC.findDVTCbyID(dotc.DONVITHICONG.Value).TENCONGTY;
 
                                         }
                                         else
@@ -307,7 +308,6 @@ namespace TanHoaWater.View.Tool
             NgayHoanCong.Text = "";
             ChoDanhBo.Text = "";
             title = "";
-            ngaytrongai = "";
             noidungtrongai = "";
             this.resultNoiDung.Text = "";
         }
@@ -405,7 +405,7 @@ namespace TanHoaWater.View.Tool
         //}
 
         int currentPageIndex = 1;
-        int pageSize = 20;
+        int pageSize = 21;
         int pageNumber = 0;
         int FirstRow, LastRow;
         int rows;
