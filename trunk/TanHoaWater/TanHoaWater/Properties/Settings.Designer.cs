@@ -26,8 +26,8 @@ namespace TanHoaWater.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=SERVER_HP380\\SQLEXPRESS;Initial Catalog=TANHOA_WATER;Persist Security" +
-            " Info=True;User ID=hskh;Password=hskh@tanhoa2011")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.;Initial Catalog=TANHOA_WATER;Persist Security Info=True;User ID=sa;" +
+            "Password=sa123")]
         public string TANHOA_WATERConnectionString {
             get {
                 return ((string)(this["TANHOA_WATERConnectionString"]));

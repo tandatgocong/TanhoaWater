@@ -398,5 +398,27 @@ namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
             this.txtMaQuanLy.Text = this.txtSoDot.Text + "-" + this.cbNoiCap.Text;
             this.txtMaQuanLy.Text = this.txtMaQuanLy.Text.ToUpper();
         }
+
+        private void btExport_Click(object sender, EventArgs e)
+        {
+            string madot = "";
+            try
+            {
+                madot = dataDanhSachDaoDuong.Rows[dataDanhSachDaoDuong.CurrentRow.Index].Cells["gridSoDot"].Value + "";
+                if ((dataDanhSachDaoDuong.Rows[dataDanhSachDaoDuong.CurrentRow.Index].Cells["gridMaQuanLy"].Value + "").Contains("QTP"))
+                {
+                    frm_Export frm = new frm_Export(madot);
+                    frm.ShowDialog();
+                }
+                else {
+
+                    MessageBox.Show(this, "Chỉ lấy bảng vẽ của Q. Tân Phú.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+            }
+            catch (Exception)
+            {
+            }
+        }
     }
 }
