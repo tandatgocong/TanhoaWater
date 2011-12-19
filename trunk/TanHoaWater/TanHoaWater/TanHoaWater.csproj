@@ -119,6 +119,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL\C_BGDC_CongTacBangGia.cs" />
+    <Compile Include="DAL\C_BGDC_KhoiLuongXDCB.cs" />
+    <Compile Include="DAL\C_BGDC_KichThuocPhuiDao.cs" />
     <Compile Include="DAL\C_Admin_BaoCao.cs" />
     <Compile Include="DAL\C_BaoCao_View.cs" />
     <Compile Include="DAL\C_BienNhanDon.cs" />

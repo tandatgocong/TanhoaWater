@@ -155,6 +155,22 @@ namespace TanHoaWater.View.Users.TinhDuToan
         private void GridCacCongTac_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
         {
 
+            try
+            {
+                txtKeypress = e.Control;
+                if (GridCacCongTac.CurrentCell.OwningColumn.Name == "congtac_khoiluong")
+                {
+                    txtKeypress.KeyPress -= KeyPressHandle;
+                    txtKeypress.KeyPress += KeyPressHandle;
+                }
+                else
+                {
+                    txtKeypress.KeyPress -= KeyPressHandle;
+                }
+            }
+            catch (Exception)
+            {
+            }
         }
 
         private void GridCacCongTac_CellValidated(object sender, DataGridViewCellEventArgs e)
@@ -354,7 +370,7 @@ namespace TanHoaWater.View.Users.TinhDuToan
 
             }
         }
-
+        
         private void btThoat_Click(object sender, EventArgs e)
         {
           

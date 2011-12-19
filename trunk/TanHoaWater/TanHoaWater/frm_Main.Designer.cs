@@ -235,7 +235,7 @@
             this.reflectionLabel3.Size = new System.Drawing.Size(624, 34);
             this.reflectionLabel3.TabIndex = 17;
             this.reflectionLabel3.Text = "<b><font size=\"+6\"><font color=\"#B02B2C\">CÔNG TY TNHH MTV CẤP NƯỚC TÂN HÒA</font>" +
-    "</font></b>";
+                "</font></b>";
             // 
             // reflectionLabel2
             // 
@@ -246,7 +246,7 @@
             this.reflectionLabel2.Size = new System.Drawing.Size(607, 34);
             this.reflectionLabel2.TabIndex = 16;
             this.reflectionLabel2.Text = "<font size=\"+6\"><font color=\"#B02B2C\">TRÁCH NHIỆM HỮU HẠN MỘT THÀNH VIÊN </font><" +
-    "/font>";
+                "/font>";
             // 
             // reflectionLabel1
             // 
@@ -257,7 +257,7 @@
             this.reflectionLabel1.Size = new System.Drawing.Size(526, 34);
             this.reflectionLabel1.TabIndex = 8;
             this.reflectionLabel1.Text = "<font size=\"+6\"><font color=\"#B02B2C\">TỔNG CÔNG TY CẤP NƯỚC SÀI GÒN </font></font" +
-    ">";
+                ">";
             // 
             // group_DoiDHN
             // 
@@ -824,7 +824,7 @@
             this.labelX1.Size = new System.Drawing.Size(597, 23);
             this.labelX1.TabIndex = 11;
             this.labelX1.Text = "© Copyright  2011 - Tan Hoa Water Supply Company Limted. Developed by Tan Hoa\'s I" +
-    "T Group.\r\n";
+                "T Group.\r\n";
             // 
             // reflectionImage1
             // 
