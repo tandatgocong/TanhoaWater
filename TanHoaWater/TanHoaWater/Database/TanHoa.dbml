@@ -1,5 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="TANHOA_WATER" Class="TanHoaDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=TANHOA_WATER;Persist Security Info=True;User ID=sa" SettingsObjectName="TanHoaWater.Properties.Settings" SettingsPropertyName="TANHOA_WATERConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.USERS" Member="USERs">
+    <Type Name="USER">
+      <Column Name="USERNAME" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PASSWORD" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FULLNAME" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ROLEID" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="ENABLED" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CAP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MAPHONG" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="CREATEBY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CREATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MODIFYBY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MODIFYDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DUYET" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="USER_TOTHIETKE" Member="TOTHIETKEs" ThisKey="USERNAME" OtherKey="SODOVIEN" Type="TOTHIETKE" />
+      <Association Name="PHONGBANDOI_USER" Member="PHONGBANDOI" ThisKey="MAPHONG" OtherKey="MAPHONG" Type="PHONGBANDOI" IsForeignKey="true" />
+      <Association Name="ROLE_USER" Member="ROLE" ThisKey="ROLEID" OtherKey="ROLEID" Type="ROLE" IsForeignKey="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.BG_CONGTACBANGIA" Member="BG_CONGTACBANGIAs">
     <Type Name="BG_CONGTACBANGIA">
       <Column Name="STT" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -21,25 +40,6 @@
       <Column Name="MODIFYDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Association Name="DANHMUCVATTU_BG_CONGTACBANGIA" Member="DANHMUCVATTU" ThisKey="MAHIEU" OtherKey="MAHIEU" Type="DANHMUCVATTU" IsForeignKey="true" />
       <Association Name="DON_KHACHHANG_BG_CONGTACBANGIA" Member="DON_KHACHHANG" ThisKey="SHS" OtherKey="SHS" Type="DON_KHACHHANG" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.USERS" Member="USERs">
-    <Type Name="USER">
-      <Column Name="USERNAME" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="PASSWORD" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="FULLNAME" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="ROLEID" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
-      <Column Name="ENABLED" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="CAP" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="MAPHONG" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="CREATEBY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="CREATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="MODIFYBY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="MODIFYDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="DUYET" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Association Name="USER_TOTHIETKE" Member="TOTHIETKEs" ThisKey="USERNAME" OtherKey="SODOVIEN" Type="TOTHIETKE" />
-      <Association Name="PHONGBANDOI_USER" Member="PHONGBANDOI" ThisKey="MAPHONG" OtherKey="MAPHONG" Type="PHONGBANDOI" IsForeignKey="true" />
-      <Association Name="ROLE_USER" Member="ROLE" ThisKey="ROLEID" OtherKey="ROLEID" Type="ROLE" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.BG_HESOBANGGIA" Member="BG_HESOBANGGIAs">
@@ -167,6 +167,96 @@
       <Column Name="NGUOILAP" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.BGDC_CONGTACBANGIA" Member="BGDC_CONGTACBANGIAs">
+    <Type Name="BGDC_CONGTACBANGIA">
+      <Column Name="STT" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SOLAN" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SHS" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MAHIEU" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="MAHDG" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="TENVT" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="DVT" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="NHOM" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="LOAISN" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="KHOILUONG" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="DONGIAVL" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="DONGIANC" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="DONGIAMTC" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="GHICHU" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="CREATEBY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CREATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MODIFYBY" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="MODIFYDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="DANHMUCVATTU_BGDC_CONGTACBANGIA" Member="DANHMUCVATTU" ThisKey="MAHIEU" OtherKey="MAHIEU" Type="DANHMUCVATTU" IsForeignKey="true" />
+      <Association Name="DON_KHACHHANG_BGDC_CONGTACBANGIA" Member="DON_KHACHHANG" ThisKey="SHS" OtherKey="SHS" Type="DON_KHACHHANG" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BGDC_KHOILUONGXDCB" Member="BGDC_KHOILUONGXDCBs">
+    <Type Name="BGDC_KHOILUONGXDCB">
+      <Column Name="STT" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SOLAN" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SHS" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CATNHUA" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="BOCNHUA" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CATBTXM" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="BOCBTXM" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="DATCAP4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="DATCAP3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CAT" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="DA04" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="XUCDAT" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CPVATTU" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CPNHANCONG" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CPMAYTHICONG" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CPCABA" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CHIPHITRUCTIEP" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CHIPHICHUNG" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TAILAPMATDUONG" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TLMDTRUOCTHUE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CPGAN" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CPNHUA" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CONG1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="THUE55" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CONG3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="THUEGTGT" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TONGIATRI" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="GHICHU" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="PHICABA" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="PHIGIAMSAT" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="PHIQUANLY" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CREATEBY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CREATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MODIFYBY" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="MODIFYDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="BGLOG" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="DON_KHACHHANG_BGDC_KHOILUONGXDCB" Member="DON_KHACHHANG" ThisKey="SHS" OtherKey="SHS" Type="DON_KHACHHANG" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BGDC_KICHTHUOCPHUIDAO" Member="BGDC_KICHTHUOCPHUIDAOs">
+    <Type Name="BGDC_KICHTHUOCPHUIDAO">
+      <Column Name="STT" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SOLAN" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SHS" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MADANHMUC" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="TENKETCAU" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DVT" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="DAI" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="RONG" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="DOSAU" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="SOLUONG" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="KHOILUONG" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CHUVI" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="THETICH" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="COTINHTL" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="GHICHU" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="CREATEBY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CREATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MODIFYBY" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="MODIFYDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="DANHMUCTAILAPMATDUONG_BGDC_KICHTHUOCPHUIDAO" Member="DANHMUCTAILAPMATDUONG" ThisKey="MADANHMUC" OtherKey="MADANHMUC" Type="DANHMUCTAILAPMATDUONG" IsForeignKey="true" />
+      <Association Name="DON_KHACHHANG_BGDC_KICHTHUOCPHUIDAO" Member="DON_KHACHHANG" ThisKey="SHS" OtherKey="SHS" Type="DON_KHACHHANG" IsForeignKey="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.BIENNHANDON" Member="BIENNHANDONs">
     <Type Name="BIENNHANDON">
       <Column Name="SHS" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -247,6 +337,7 @@
       <Column Name="MODIFYBY" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
       <Column Name="MODIFYDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Association Name="DANHMUCTAILAPMATDUONG_BG_KICHTHUOCPHUIDAO" Member="BG_KICHTHUOCPHUIDAOs" ThisKey="MADANHMUC" OtherKey="MADANHMUC" Type="BG_KICHTHUOCPHUIDAO" />
+      <Association Name="DANHMUCTAILAPMATDUONG_BGDC_KICHTHUOCPHUIDAO" Member="BGDC_KICHTHUOCPHUIDAOs" ThisKey="MADANHMUC" OtherKey="MADANHMUC" Type="BGDC_KICHTHUOCPHUIDAO" />
       <Association Name="DANHMUCTAILAPMATDUONG_DONGIATAILAPMATDUONG" Member="DONGIATAILAPMATDUONGs" ThisKey="MADANHMUC" OtherKey="MADANHMUC" Type="DONGIATAILAPMATDUONG" />
     </Type>
   </Table>
@@ -264,6 +355,7 @@
       <Column Name="MODIFYBY" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
       <Column Name="MODIFYDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Association Name="DANHMUCVATTU_BG_CONGTACBANGIA" Member="BG_CONGTACBANGIAs" ThisKey="MAHIEU" OtherKey="MAHIEU" Type="BG_CONGTACBANGIA" />
+      <Association Name="DANHMUCVATTU_BGDC_CONGTACBANGIA" Member="BGDC_CONGTACBANGIAs" ThisKey="MAHIEU" OtherKey="MAHIEU" Type="BGDC_CONGTACBANGIA" />
       <Association Name="DANHMUCVATTU_DANHMUCBOVATTU" Member="DANHMUCBOVATTUs" ThisKey="MAHIEU" OtherKey="MABOVT" Type="DANHMUCBOVATTU" />
       <Association Name="DANHMUCVATTU_DONGIAVATTU" Member="DONGIAVATTUs" ThisKey="MAHIEU" OtherKey="MAHIEUDG" Type="DONGIAVATTU" />
     </Type>
@@ -348,6 +440,9 @@
       <Association Name="DON_KHACHHANG_BG_CONGTACBANGIA" Member="BG_CONGTACBANGIAs" ThisKey="SHS" OtherKey="SHS" Type="BG_CONGTACBANGIA" />
       <Association Name="DON_KHACHHANG_BG_KHOILUONGXDCB" Member="BG_KHOILUONGXDCBs" ThisKey="SHS" OtherKey="SHS" Type="BG_KHOILUONGXDCB" />
       <Association Name="DON_KHACHHANG_BG_KICHTHUOCPHUIDAO" Member="BG_KICHTHUOCPHUIDAOs" ThisKey="SHS" OtherKey="SHS" Type="BG_KICHTHUOCPHUIDAO" />
+      <Association Name="DON_KHACHHANG_BGDC_CONGTACBANGIA" Member="BGDC_CONGTACBANGIAs" ThisKey="SHS" OtherKey="SHS" Type="BGDC_CONGTACBANGIA" />
+      <Association Name="DON_KHACHHANG_BGDC_KHOILUONGXDCB" Member="BGDC_KHOILUONGXDCBs" ThisKey="SHS" OtherKey="SHS" Type="BGDC_KHOILUONGXDCB" />
+      <Association Name="DON_KHACHHANG_BGDC_KICHTHUOCPHUIDAO" Member="BGDC_KICHTHUOCPHUIDAOs" ThisKey="SHS" OtherKey="SHS" Type="BGDC_KICHTHUOCPHUIDAO" />
       <Association Name="DON_KHACHHANG_KH_HOSOKHACHHANG" Member="KH_HOSOKHACHHANG" ThisKey="SHS" OtherKey="SHS" Type="KH_HOSOKHACHHANG" Cardinality="One" />
       <Association Name="DON_KHACHHANG_TOTHIETKE" Member="TOTHIETKEs" ThisKey="SHS" OtherKey="SHS" Type="TOTHIETKE" />
       <Association Name="DOT_NHAN_DON_DON_KHACHHANG" Member="DOT_NHAN_DON" ThisKey="MADOT" OtherKey="MADOT" Type="DOT_NHAN_DON" IsForeignKey="true" />

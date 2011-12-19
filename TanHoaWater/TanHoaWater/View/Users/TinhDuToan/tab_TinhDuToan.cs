@@ -1020,22 +1020,22 @@ namespace TanHoaWater.View.Users.TinhDuToan
 
         private void GridCacCongTac_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
         {
-            //try
-            //{
-            //    txtKeypress = e.Control;
-            //    if (GridCacCongTac.CurrentCell.OwningColumn.Name == "congtac_khoiluong")
-            //    {
-            //        txtKeypress.KeyPress -= KeyPressHandle;
-            //        txtKeypress.KeyPress += KeyPressHandle;
-            //    }
-            //    else
-            //    {
-            //        txtKeypress.KeyPress -= KeyPressHandle;
-            //    }
-            //}
-            //catch (Exception)
-            //{
-            //}
+            try
+            {
+                txtKeypress = e.Control;
+                if (GridCacCongTac.CurrentCell.OwningColumn.Name == "congtac_khoiluong")
+                {
+                    txtKeypress.KeyPress -= KeyPressHandle;
+                    txtKeypress.KeyPress += KeyPressHandle;
+                }
+                else
+                {
+                    txtKeypress.KeyPress -= KeyPressHandle;
+                }
+            }
+            catch (Exception)
+            {
+            }
         }
 
         private void GridCacCongTac_CellValidated(object sender, DataGridViewCellEventArgs e)
@@ -2091,6 +2091,25 @@ namespace TanHoaWater.View.Users.TinhDuToan
                     selectin += "'"+ item.MAHIEU +"',";
                 }
                 LoadNewCacCongTac_Load(selectin);
+                try
+                {
+                    foreach (var item in list)
+                    {
+                        for (int i = 0; i < GridCacCongTac.Rows.Count; i++)
+                        {
+
+                            if (item.MAHIEU.Equals(GridCacCongTac.Rows[i].Cells["congtac_mahieu"].Value))
+                            {
+                                GridCacCongTac.Rows[i].Cells["congtac_khoiluong"].Value = item.KHOILUONG;
+                                GridCacCongTac.Rows[i].Cells["contac_loaisd"].Value = item.LOAISN;
+                            }
+                        }
+                    }
+                }
+                catch (Exception)
+                {
+                   
+                }
             }
         }
 
