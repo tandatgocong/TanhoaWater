@@ -9,6 +9,8 @@ using System.Windows.Forms;
 using log4net;
 using TanHoaWater.Database;
 using System.Text.RegularExpressions;
+using TanHoaWater.View.Users.TinhDuToan.BGDieuChinh;
+using TanHoaWater.View.Users.BGDieuChinh;
 
 namespace TanHoaWater.View.Users.TinhDuToan
 {
@@ -47,12 +49,12 @@ namespace TanHoaWater.View.Users.TinhDuToan
             }
             if (tab == 2)
             {
-                tabControl1.SelectedTabIndex = 1;
+                tabControl1.SelectedTabIndex = 2;
                 tab2select();
             }
             if (tab == 3)
             {
-                tabControl1.SelectedTabIndex = 2;
+                tabControl1.SelectedTabIndex = 3;
                 panelTaiLapMD.Controls.Clear();
                 panelTaiLapMD.Controls.Add(new tab_DanhMucTaiLapMD());
             }
@@ -214,7 +216,6 @@ namespace TanHoaWater.View.Users.TinhDuToan
 
         private void tabTaiLapMatDuong_Click(object sender, EventArgs e)
         {
-            tabControl1.SelectedTabIndex = 2;
             panelTaiLapMD.Controls.Clear();
             panelTaiLapMD.Controls.Add(new tab_DanhMucTaiLapMD());
         }
@@ -748,9 +749,14 @@ namespace TanHoaWater.View.Users.TinhDuToan
 
         private void tabItem2_Click(object sender, EventArgs e)
         {
-            tabControl1.SelectedTabIndex = 4;
             panelThongSoBG.Controls.Clear();
             panelThongSoBG.Controls.Add(new tabThongSoBG());
+        }
+
+        private void tabItem3_Click(object sender, EventArgs e)
+        {
+            tabControlPanel4.Controls.Clear();
+            tabControlPanel4.Controls.Add(new tab_BangGiaDieuChinh());
         }
 
         

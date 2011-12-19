@@ -176,34 +176,195 @@ namespace TanHoaWater.DAL
             _CPNHUA.Direction = ParameterDirection.Output;
 
             cmd.ExecuteNonQuery();
+            try
+            {
+                CPVATLIEU = double.Parse( cmd.Parameters["@A"].Value + "" );
+            }
+            catch (Exception)
+            {
+            }
+            try
+            {
+                CPNHANCONG = double.Parse( cmd.Parameters["@B1"].Value + "" );
+            }
+            catch (Exception)
+            {
+            }
+            try
+            {
+                CPMAYTHICONG = double.Parse( cmd.Parameters["@C1"].Value + "" );
+            }
+            catch (Exception)
+            {
+            }
 
-            CPVATLIEU = double.Parse(("" + cmd.Parameters["@A"].Value).Equals("") != true ? cmd.Parameters["@A"].Value + "" : "0.0");
-            CPNHANCONG = double.Parse(("" + cmd.Parameters["@B1"].Value).Equals("") != true ? cmd.Parameters["@B1"].Value + "" : "0.0");
-            CPMAYTHICONG = double.Parse(("" + cmd.Parameters["@C1"].Value).Equals("") != true ? cmd.Parameters["@C1"].Value + "" : "0.0");
-            B = double.Parse(("" + cmd.Parameters["@B"].Value).Equals("") != true ? cmd.Parameters["@B"].Value + "" : "0.0");
-            C = double.Parse(("" + cmd.Parameters["@C"].Value).Equals("") != true ? cmd.Parameters["@C"].Value + "" : "0.0");
-            C2 = double.Parse(("" + cmd.Parameters["@C2"].Value).Equals("") != true ? cmd.Parameters["@C2"].Value + "" : "0.0");
-            D = double.Parse(("" + cmd.Parameters["@D"].Value).Equals("") != true ? cmd.Parameters["@D"].Value + "" : "0.0");
-            E = double.Parse(("" + cmd.Parameters["@E"].Value).Equals("") != true ? cmd.Parameters["@E"].Value + "" : "0.0");
-            F = double.Parse(("" + cmd.Parameters["@F"].Value).Equals("") != true ? cmd.Parameters["@F"].Value + "" : "0.0");
-            G = double.Parse(("" + cmd.Parameters["@G"].Value).Equals("") != true ? cmd.Parameters["@G"].Value + "" : "0.0");
-            H = double.Parse(("" + cmd.Parameters["@H"].Value).Equals("") != true ? cmd.Parameters["@H"].Value + "" : "0.0");
-            I = double.Parse(("" + cmd.Parameters["@I"].Value).Equals("") != true ? cmd.Parameters["@I"].Value + "" : "0.0");
-            J = double.Parse(("" + cmd.Parameters["@J"].Value).Equals("") != true ? cmd.Parameters["@J"].Value + "" : "0.0");
-            K = double.Parse(("" + cmd.Parameters["@K"].Value).Equals("") != true ? cmd.Parameters["@K"].Value + "" : "0.0");
-            L = double.Parse(("" + cmd.Parameters["@L"].Value).Equals("") != true ? cmd.Parameters["@L"].Value + "" : "0.0");
-            CPCABA = double.Parse(("" + cmd.Parameters["@CPCABA"].Value).Equals("") != true ? cmd.Parameters["@CPCABA"].Value + "" : "0.0");
-            THUE55 = double.Parse(("" + cmd.Parameters["@G"].Value).Equals("") != true ? cmd.Parameters["@G"].Value + "" : "0.0");
-            TONGTRUOCTHUE = double.Parse(("" + cmd.Parameters["@H"].Value).Equals("") != true ? cmd.Parameters["@H"].Value + "" : "0.0");
-            TONG = double.Parse(("" + cmd.Parameters["@TOTAL"].Value).Equals("") != true ? cmd.Parameters["@TOTAL"].Value + "" : "0.0");
-            VAT = double.Parse(("" + cmd.Parameters["@VAT"].Value).Equals("") != true ? cmd.Parameters["@VAT"].Value + "" : "0.0");
-            TLMDTRUOCTHUE = double.Parse(("" + cmd.Parameters["@TLMDTRUOCTHUE"].Value).Equals("") != true ? cmd.Parameters["@TLMDTRUOCTHUE"].Value + "" : "0.0");
-            TAILAPMATDUONG = double.Parse(("" + cmd.Parameters["@TAILAPMATDUONG"].Value).Equals("") != true ? cmd.Parameters["@TAILAPMATDUONG"].Value + "" : "0.0");
-            CHIPHITRUCTIEP = double.Parse(("" + cmd.Parameters["@D"].Value).Equals("") != true ? cmd.Parameters["@D"].Value + "" : "0.0");
-            CHIPHICHUNG = double.Parse(("" + cmd.Parameters["@E"].Value).Equals("") != true ? cmd.Parameters["@E"].Value + "" : "0.0");
-            CPGAN = double.Parse(("" + cmd.Parameters["@CPGAN"].Value).Equals("") != true ? cmd.Parameters["@CPGAN"].Value + "" : "0.0");
-            CPNHUA = double.Parse(("" + cmd.Parameters["@CPNHUA"].Value).Equals("") != true ? cmd.Parameters["@CPNHUA"].Value + "" : "0.0");
-
+            try
+            {
+                B = double.Parse( cmd.Parameters["@B"].Value + "" );
+            }
+            catch (Exception)
+            {
+            }
+            try
+            {
+                C = double.Parse( cmd.Parameters["@C"].Value + "" );
+            }
+            catch (Exception)
+            {
+            }
+            try
+            {
+                C2 = double.Parse( cmd.Parameters["@C2"].Value + "" );
+            }
+            catch (Exception)
+            {
+                
+            }
+            try
+            {
+                D = double.Parse( cmd.Parameters["@D"].Value + "" );
+            }
+            catch (Exception)
+            {
+                
+            }
+            try
+            {
+                E = double.Parse( cmd.Parameters["@E"].Value + "" );
+            }
+            catch (Exception)
+            {
+                
+            }
+            try
+            {
+                F = double.Parse( cmd.Parameters["@F"].Value + "" );
+            }
+            catch (Exception)
+            {
+            }
+            try
+            {
+                G = double.Parse( cmd.Parameters["@G"].Value + "" );
+            }
+            catch (Exception)
+            {
+            }
+            try
+            {
+                H = double.Parse( cmd.Parameters["@H"].Value + "" );
+            }
+            catch (Exception)
+            {
+            }
+            try
+            {
+                I = double.Parse( cmd.Parameters["@I"].Value + "" );
+            }
+            catch (Exception)
+            {
+            }
+            try
+            {
+                J = double.Parse( cmd.Parameters["@J"].Value + "" );
+            }
+            catch (Exception)
+            {
+            }
+            try
+            {
+                K = double.Parse( cmd.Parameters["@K"].Value + "" );
+            }
+            catch (Exception)
+            {
+            }
+            try
+            {
+                L = double.Parse( cmd.Parameters["@L"].Value + "" );
+            }
+            catch (Exception)
+            {
+            }
+            try
+            {
+                CPCABA = double.Parse(  cmd.Parameters["@CPCABA"].Value + "" );
+            }
+            catch (Exception)
+            {
+            }
+            try
+            {
+                THUE55 = double.Parse( cmd.Parameters["@G"].Value + "" );
+            }
+            catch (Exception)
+            {
+            }
+            try
+            {
+                TONGTRUOCTHUE = double.Parse( cmd.Parameters["@H"].Value + "" );
+            }
+            catch (Exception)
+            {
+            }
+            try
+            {
+                TONG = double.Parse( cmd.Parameters["@TOTAL"].Value + "" );
+            }
+            catch (Exception)
+            {
+            }
+            try
+            {
+                VAT = double.Parse( cmd.Parameters["@VAT"].Value + "" );
+            }
+            catch (Exception)
+            { 
+            }
+            try
+            {
+                TLMDTRUOCTHUE = double.Parse( cmd.Parameters["@TLMDTRUOCTHUE"].Value + "" );
+            }
+            catch (Exception)
+            { 
+            }
+            try
+            {
+                TAILAPMATDUONG = double.Parse( cmd.Parameters["@TAILAPMATDUONG"].Value + "" );
+            }
+            catch (Exception)
+            {
+            }
+            try
+            {
+                CHIPHITRUCTIEP = double.Parse(  cmd.Parameters["@D"].Value + "" );
+            }
+            catch (Exception)
+            {
+            }
+            try
+            {
+                CHIPHICHUNG = double.Parse( cmd.Parameters["@E"].Value + "" );
+            }
+            catch (Exception)
+            {
+             
+            }
+            try
+            {
+                CPGAN = double.Parse( cmd.Parameters["@CPGAN"].Value + "" );
+            }
+            catch (Exception)
+            {
+                
+            }
+            try
+            {
+                CPNHUA = double.Parse( cmd.Parameters["@CPNHUA"].Value + "" );
+            }
+            catch (Exception)
+            {
+            }
+            
             conn.Close();
         }
 

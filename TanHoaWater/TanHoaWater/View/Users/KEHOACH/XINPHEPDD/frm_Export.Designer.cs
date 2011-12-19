@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Export));
             this.NGAYCONGVAN = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.SOCONGVAN = new System.Windows.Forms.TextBox();
@@ -35,6 +36,9 @@
             this.lbDotdd = new DevComponents.DotNetBar.LabelX();
             this.btExport = new DevComponents.DotNetBar.ButtonX();
             this.result = new DevComponents.DotNetBar.LabelX();
+            this.label1 = new System.Windows.Forms.Label();
+            this.rdSoHoSo = new System.Windows.Forms.RadioButton();
+            this.radioDuong = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // NGAYCONGVAN
@@ -65,7 +69,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(85, 54);
+            this.label2.Location = new System.Drawing.Point(66, 54);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(122, 19);
             this.label2.TabIndex = 5;
@@ -89,7 +93,7 @@
             this.btExport.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btExport.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btExport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btExport.Location = new System.Drawing.Point(213, 111);
+            this.btExport.Location = new System.Drawing.Point(213, 149);
             this.btExport.Name = "btExport";
             this.btExport.Size = new System.Drawing.Size(161, 23);
             this.btExport.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
@@ -101,27 +105,62 @@
             // 
             this.result.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.result.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.result.Location = new System.Drawing.Point(13, 141);
+            this.result.Location = new System.Drawing.Point(13, 179);
             this.result.Margin = new System.Windows.Forms.Padding(4);
             this.result.Name = "result";
             this.result.Size = new System.Drawing.Size(510, 34);
             this.result.TabIndex = 722;
             this.result.TextAlignment = System.Drawing.StringAlignment.Center;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(66, 113);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(113, 19);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "FILE BẢNG VẼ";
+            // 
+            // rdSoHoSo
+            // 
+            this.rdSoHoSo.AutoSize = true;
+            this.rdSoHoSo.Checked = true;
+            this.rdSoHoSo.Location = new System.Drawing.Point(213, 111);
+            this.rdSoHoSo.Name = "rdSoHoSo";
+            this.rdSoHoSo.Size = new System.Drawing.Size(88, 23);
+            this.rdSoHoSo.TabIndex = 723;
+            this.rdSoHoSo.TabStop = true;
+            this.rdSoHoSo.Text = "Số Hồ Sơ";
+            this.rdSoHoSo.UseVisualStyleBackColor = true;
+            // 
+            // radioDuong
+            // 
+            this.radioDuong.AutoSize = true;
+            this.radioDuong.Location = new System.Drawing.Point(307, 109);
+            this.radioDuong.Name = "radioDuong";
+            this.radioDuong.Size = new System.Drawing.Size(96, 23);
+            this.radioDuong.TabIndex = 724;
+            this.radioDuong.Text = "Tên Đường";
+            this.radioDuong.UseVisualStyleBackColor = true;
+            // 
             // frm_Export
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(536, 179);
+            this.ClientSize = new System.Drawing.Size(536, 223);
+            this.Controls.Add(this.radioDuong);
+            this.Controls.Add(this.rdSoHoSo);
             this.Controls.Add(this.result);
             this.Controls.Add(this.btExport);
             this.Controls.Add(this.lbDotdd);
             this.Controls.Add(this.NGAYCONGVAN);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.SOCONGVAN);
             this.Controls.Add(this.label2);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frm_Export";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -140,5 +179,8 @@
         private DevComponents.DotNetBar.LabelX lbDotdd;
         private DevComponents.DotNetBar.ButtonX btExport;
         private DevComponents.DotNetBar.LabelX result;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.RadioButton rdSoHoSo;
+        private System.Windows.Forms.RadioButton radioDuong;
     }
 }

@@ -149,8 +149,9 @@ namespace TanHoaWater.DAL
             sql += " CASE WHEN CHUYENDON='False' THEN N'Chưa chuyển'  WHEN CHUYENDON='True' THEN N'Đã chuyển' ELSE N'Chuyển 1 phần'   END as 'CHUYEN', NGAYCHUYEN= CONVERT(VARCHAR(10),NGAYCHUYEN,103),NGAYTRAHS= CONVERT(VARCHAR(10),NGAYTRAHS,103), dot.CREATEBY";
             sql += " FROM DOT_NHAN_DON dot, LOAI_HOSO loai";
             sql += " WHERE loai.MALOAI = dot.LOAIDON";
-            if (madot.Length == 9) {
-                sql += " AND dot.MADOT = '" + madot + "'";
+            if (!"".Equals(madot))
+            {
+                sql += " AND dot.MADOT LIKE '" + madot + "%'";
             }
             if (!"1/1/0001".Equals(ngaylap.ToShortDateString())){
                 sql += " AND dot.NGAYLAPDON = '" + ngaylap.ToShortDateString() + "'";

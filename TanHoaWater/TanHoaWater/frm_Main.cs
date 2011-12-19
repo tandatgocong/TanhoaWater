@@ -21,6 +21,7 @@ using TanHoaWater.View.Users.KEHOACH.XINPHEPDD;
 using TanHoaWater.View.Users.KEHOACH.DOTTHICONG;
 using TanHoaWater.View.Users.KEHOACH.HOANCONG;
 using TanHoaWater.View.Users.DONGHONUOC;
+using TanHoaWater.View.Users.TinhDuToan.BGDieuChinh;
 
 namespace TanHoaWater
 {
@@ -33,12 +34,12 @@ namespace TanHoaWater
         }
         public frm_Main()
         {
-            Thread th = new Thread(new ThreadStart(this.start));
+            //Thread th = new Thread(new ThreadStart(this.start));
 
-            th.Start();
-            Thread.Sleep(5000);
+            //th.Start();
+            //Thread.Sleep(5000);
             InitializeComponent();
-            th.Abort();
+            //th.Abort();
             this.menuHeThong.Select();
 
             this.lbNgayHeThong.Text = Utilities.DateToString.fullCurrentNgay() + "  ";
@@ -762,5 +763,21 @@ namespace TanHoaWater
             }
 
         }
+
+        //private void menuDieuChinh_Click(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        this.PanelContent.Controls.Clear();
+        //        this.PanelContent.Controls.Add(new frm_BGDieuChinh());
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        log.Error("Loi Load Form " + ex.Message);
+        //        MessageBox.Show(this, "Lỗi Load Dữ Liệu", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //        Application.Exit();
+        //    }
+
+        //}
     }
 }
