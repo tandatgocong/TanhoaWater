@@ -186,6 +186,7 @@ namespace TanHoaWater
             tR.ShrinkToFit = false;
             tR.MergeCells = true;
             tR.Value2 = "Sau khi thi công xong(chậm nhất là 48 giờ tính từ khi bắt đầu khởi công)";
+            tR.BorderAround(ExcelCOM.XlLineStyle.xlContinuous, ExcelCOM.XlBorderWeight.xlThin, ExcelCOM.XlColorIndex.xlColorIndexAutomatic, 0);
             exApp.Visible = false;
             string path =Utilities.Files.localSave+ "\\209/2011".Replace("/", "_")+"\\BANGXINPHEPDD.xls";
             exBook.SaveAs(path.Replace("\\\\","\\"), ExcelCOM.XlFileFormat.xlWorkbookNormal,

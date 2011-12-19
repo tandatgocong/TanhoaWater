@@ -122,6 +122,8 @@
     <Compile Include="DAL\C_Admin_BaoCao.cs" />
     <Compile Include="DAL\C_BaoCao_View.cs" />
     <Compile Include="DAL\C_BienNhanDon.cs" />
+    <Compile Include="DAL\C_BoVatTu.cs" />
+    <Compile Include="DAL\C_BoVatTuTaoSan.cs" />
     <Compile Include="DAL\C_CongTacBangGia.cs" />
     <Compile Include="DAL\C_DanhMucBoVT.cs" />
     <Compile Include="DAL\C_DanhMucTaiLapMD.cs" />
@@ -162,12 +164,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TanHoa.dbml</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Form2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -200,7 +196,7 @@
     <Compile Include="tab_XinPhepDD24.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="tab_XinPhepDD24.Designer.cs">
+    <Compile Include="tab_XinPhepDD24.designer.cs">
       <DependentUpon>tab_XinPhepDD24.cs</DependentUpon>
     </Compile>
     <Compile Include="Utilities\AddValueCombox.cs" />
@@ -640,6 +636,30 @@
     <Compile Include="View\Users\KEHOACH\tab_LogDonKH.Designer.cs">
       <DependentUpon>tab_LogDonKH.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Users\TinhDuToan\BGDieuChinh\frm_BGDieuChinh.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Users\TinhDuToan\BGDieuChinh\frm_BGDieuChinh.Designer.cs">
+      <DependentUpon>frm_BGDieuChinh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Users\TinhDuToan\BGDieuChinh\tab_BangGiaDieuChinh.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Users\TinhDuToan\BGDieuChinh\tab_BangGiaDieuChinh.Designer.cs">
+      <DependentUpon>tab_BangGiaDieuChinh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Users\TinhDuToan\frmBoVT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Users\TinhDuToan\frmBoVT.Designer.cs">
+      <DependentUpon>frmBoVT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Users\TinhDuToan\tab_BoVatTuTaoSan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Users\TinhDuToan\tab_BoVatTuTaoSan.Designer.cs">
+      <DependentUpon>tab_BoVatTuTaoSan.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Users\TinhDuToan\frm_ChonLaiDG.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -791,9 +811,6 @@
     <None Include="Database\TanHoa.dbml.layout">
       <DependentUpon>TanHoa.dbml</DependentUpon>
     </None>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
@@ -1009,6 +1026,18 @@
     <EmbeddedResource Include="View\Users\KEHOACH\tab_LogDonKH.resx">
       <DependentUpon>tab_LogDonKH.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\TinhDuToan\BGDieuChinh\frm_BGDieuChinh.resx">
+      <DependentUpon>frm_BGDieuChinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\TinhDuToan\BGDieuChinh\tab_BangGiaDieuChinh.resx">
+      <DependentUpon>tab_BangGiaDieuChinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\TinhDuToan\frmBoVT.resx">
+      <DependentUpon>frmBoVT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\TinhDuToan\tab_BoVatTuTaoSan.resx">
+      <DependentUpon>tab_BoVatTuTaoSan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\TinhDuToan\frm_ChonLaiDG.resx">
       <DependentUpon>frm_ChonLaiDG.cs</DependentUpon>
@@ -1492,6 +1521,7 @@
     <Content Include="Lib\IrisSkin2.dll" />
     <Content Include="Lib\log4net.dll" />
     <Content Include="Lib\String_Indentity.dll" />
+    <None Include="Resources\Write3.png" />
     <None Include="Resources\User.png" />
     <None Include="Resources\giamdoc.jpg" />
     <None Include="Resources\Clipboard Paste.png" />

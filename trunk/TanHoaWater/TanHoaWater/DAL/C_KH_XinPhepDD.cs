@@ -213,20 +213,11 @@ namespace TanHoaWater.DAL
                     if (item.MADANHMUC.Equals("N12B") || item.MADANHMUC.Equals("N12C") || item.MADANHMUC.Equals("N5") || item.MADANHMUC.Equals("NHUA10") || item.MADANHMUC.Equals("NHUA10-C3"))
                     {
                         item.TENKETCAU = "BÊ TÔNG NHỰA";
-                        item.RONG = "0.8";
+                        item.RONG = "0.3->0.8";
                     }
-                    else if(item.TENKETCAU.Contains("BTXM")) {
-                        item.RONG = "0.6";
+                    else  {
+                        item.RONG = "0.3->0.6";
                     }
-                    else if (item.TENKETCAU.Contains("LỀ GẠCH"))
-                    {
-                        item.RONG = "0.3";
-                    }
-                    else {
-                        item.RONG = "0.6";
-                    }
-                   
- 
                 }
                 db.SubmitChanges();
             }

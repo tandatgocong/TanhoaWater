@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dottc_NgayKyhd = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
@@ -86,14 +86,6 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.gstl_NgayKyHD = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.gridDonViGiamSatTL = new System.Windows.Forms.DataGridView();
-            this.gstl_CapNhat = new DevComponents.DotNetBar.ButtonX();
-            this.gstl_Xoa = new DevComponents.DotNetBar.ButtonX();
-            this.gstl_ThemMoi = new DevComponents.DotNetBar.ButtonX();
-            this.gstl_HopDong = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.gstl_TenCTy = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.labelX8 = new DevComponents.DotNetBar.LabelX();
-            this.labelX9 = new DevComponents.DotNetBar.LabelX();
-            this.labelX10 = new DevComponents.DotNetBar.LabelX();
             this.gs_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gs_TENCTY = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gs_HOPDONG = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -103,6 +95,14 @@
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gstl_CapNhat = new DevComponents.DotNetBar.ButtonX();
+            this.gstl_Xoa = new DevComponents.DotNetBar.ButtonX();
+            this.gstl_ThemMoi = new DevComponents.DotNetBar.ButtonX();
+            this.gstl_HopDong = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.gstl_TenCTy = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX8 = new DevComponents.DotNetBar.LabelX();
+            this.labelX9 = new DevComponents.DotNetBar.LabelX();
+            this.labelX10 = new DevComponents.DotNetBar.LabelX();
             this.groupPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dottc_NgayKyhd)).BeginInit();
@@ -230,15 +230,15 @@
             this.tc_MODIFYBY,
             this.tc_MODIFYDATE,
             this.XOA});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dotc_GridList.DefaultCellStyle = dataGridViewCellStyle5;
-            this.dotc_GridList.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dotc_GridList.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dotc_GridList.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
             this.dotc_GridList.Location = new System.Drawing.Point(3, 107);
             this.dotc_GridList.MultiSelect = false;
             this.dotc_GridList.Name = "dotc_GridList";
@@ -523,15 +523,15 @@
             this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn8,
             this.TLMD_XOA});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.tlmd_GridList.DefaultCellStyle = dataGridViewCellStyle6;
-            this.tlmd_GridList.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.tlmd_GridList.DefaultCellStyle = dataGridViewCellStyle2;
+            this.tlmd_GridList.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
             this.tlmd_GridList.Location = new System.Drawing.Point(3, 107);
             this.tlmd_GridList.MultiSelect = false;
             this.tlmd_GridList.Name = "tlmd_GridList";
@@ -778,15 +778,15 @@
             this.donvigiamsat.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2});
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.donvigiamsat.DefaultCellStyle = dataGridViewCellStyle7;
-            this.donvigiamsat.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.donvigiamsat.DefaultCellStyle = dataGridViewCellStyle3;
+            this.donvigiamsat.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
             this.donvigiamsat.Location = new System.Drawing.Point(17, 44);
             this.donvigiamsat.MultiSelect = false;
             this.donvigiamsat.Name = "donvigiamsat";
@@ -938,15 +938,15 @@
             this.dataGridViewTextBoxColumn13,
             this.dataGridViewTextBoxColumn14,
             this.dataGridViewTextBoxColumn15});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gridDonViGiamSatTL.DefaultCellStyle = dataGridViewCellStyle8;
-            this.gridDonViGiamSatTL.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridDonViGiamSatTL.DefaultCellStyle = dataGridViewCellStyle4;
+            this.gridDonViGiamSatTL.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
             this.gridDonViGiamSatTL.Location = new System.Drawing.Point(3, 108);
             this.gridDonViGiamSatTL.MultiSelect = false;
             this.gridDonViGiamSatTL.Name = "gridDonViGiamSatTL";
@@ -956,6 +956,85 @@
             this.gridDonViGiamSatTL.Size = new System.Drawing.Size(462, 103);
             this.gridDonViGiamSatTL.TabIndex = 3;
             this.gridDonViGiamSatTL.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridDonViGiamSatTL_CellClick);
+            // 
+            // gs_ID
+            // 
+            this.gs_ID.DataPropertyName = "ID";
+            this.gs_ID.Frozen = true;
+            this.gs_ID.HeaderText = "ID";
+            this.gs_ID.Name = "gs_ID";
+            this.gs_ID.ReadOnly = true;
+            this.gs_ID.Visible = false;
+            this.gs_ID.Width = 40;
+            // 
+            // gs_TENCTY
+            // 
+            this.gs_TENCTY.DataPropertyName = "TENCONGTY";
+            this.gs_TENCTY.Frozen = true;
+            this.gs_TENCTY.HeaderText = "Tên Công Ty";
+            this.gs_TENCTY.Name = "gs_TENCTY";
+            this.gs_TENCTY.ReadOnly = true;
+            this.gs_TENCTY.Width = 250;
+            // 
+            // gs_HOPDONG
+            // 
+            this.gs_HOPDONG.DataPropertyName = "SOHOPDONG";
+            this.gs_HOPDONG.HeaderText = "Số Hợp Đồng";
+            this.gs_HOPDONG.Name = "gs_HOPDONG";
+            this.gs_HOPDONG.ReadOnly = true;
+            this.gs_HOPDONG.Width = 200;
+            // 
+            // gs_NGAYKY
+            // 
+            this.gs_NGAYKY.DataPropertyName = "NGAYKYHD";
+            this.gs_NGAYKY.HeaderText = "Ngày Ký HĐ";
+            this.gs_NGAYKY.Name = "gs_NGAYKY";
+            this.gs_NGAYKY.ReadOnly = true;
+            this.gs_NGAYKY.Width = 170;
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "CREATEBY";
+            this.dataGridViewTextBoxColumn11.HeaderText = "CREATEBY";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.ReadOnly = true;
+            this.dataGridViewTextBoxColumn11.Visible = false;
+            this.dataGridViewTextBoxColumn11.Width = 120;
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.DataPropertyName = "CREATEDATE";
+            this.dataGridViewTextBoxColumn12.HeaderText = "CREATEDATE";
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.dataGridViewTextBoxColumn12.ReadOnly = true;
+            this.dataGridViewTextBoxColumn12.Visible = false;
+            this.dataGridViewTextBoxColumn12.Width = 120;
+            // 
+            // dataGridViewTextBoxColumn13
+            // 
+            this.dataGridViewTextBoxColumn13.DataPropertyName = "MODIFYBY";
+            this.dataGridViewTextBoxColumn13.HeaderText = "MODIFYBY";
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            this.dataGridViewTextBoxColumn13.ReadOnly = true;
+            this.dataGridViewTextBoxColumn13.Visible = false;
+            this.dataGridViewTextBoxColumn13.Width = 120;
+            // 
+            // dataGridViewTextBoxColumn14
+            // 
+            this.dataGridViewTextBoxColumn14.DataPropertyName = "MODIFYDATE";
+            this.dataGridViewTextBoxColumn14.HeaderText = "MODIFYDATE";
+            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            this.dataGridViewTextBoxColumn14.ReadOnly = true;
+            this.dataGridViewTextBoxColumn14.Visible = false;
+            this.dataGridViewTextBoxColumn14.Width = 120;
+            // 
+            // dataGridViewTextBoxColumn15
+            // 
+            this.dataGridViewTextBoxColumn15.DataPropertyName = "XOA";
+            this.dataGridViewTextBoxColumn15.HeaderText = "Column1";
+            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
+            this.dataGridViewTextBoxColumn15.ReadOnly = true;
+            this.dataGridViewTextBoxColumn15.Visible = false;
             // 
             // gstl_CapNhat
             // 
@@ -1041,85 +1120,6 @@
             this.labelX10.Size = new System.Drawing.Size(100, 23);
             this.labelX10.TabIndex = 0;
             this.labelX10.Text = "Tên Công Ty";
-            // 
-            // gs_ID
-            // 
-            this.gs_ID.DataPropertyName = "ID";
-            this.gs_ID.Frozen = true;
-            this.gs_ID.HeaderText = "ID";
-            this.gs_ID.Name = "gs_ID";
-            this.gs_ID.ReadOnly = true;
-            this.gs_ID.Visible = false;
-            this.gs_ID.Width = 40;
-            // 
-            // gs_TENCTY
-            // 
-            this.gs_TENCTY.DataPropertyName = "TENCONGTY";
-            this.gs_TENCTY.Frozen = true;
-            this.gs_TENCTY.HeaderText = "Tên Công Ty";
-            this.gs_TENCTY.Name = "gs_TENCTY";
-            this.gs_TENCTY.ReadOnly = true;
-            this.gs_TENCTY.Width = 250;
-            // 
-            // gs_HOPDONG
-            // 
-            this.gs_HOPDONG.DataPropertyName = "SOHOPDONG";
-            this.gs_HOPDONG.HeaderText = "Số Hợp Đồng";
-            this.gs_HOPDONG.Name = "gs_HOPDONG";
-            this.gs_HOPDONG.ReadOnly = true;
-            this.gs_HOPDONG.Width = 200;
-            // 
-            // gs_NGAYKY
-            // 
-            this.gs_NGAYKY.DataPropertyName = "NGAYKYHD";
-            this.gs_NGAYKY.HeaderText = "Ngày Ký HĐ";
-            this.gs_NGAYKY.Name = "gs_NGAYKY";
-            this.gs_NGAYKY.ReadOnly = true;
-            this.gs_NGAYKY.Width = 170;
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "CREATEBY";
-            this.dataGridViewTextBoxColumn11.HeaderText = "CREATEBY";
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            this.dataGridViewTextBoxColumn11.ReadOnly = true;
-            this.dataGridViewTextBoxColumn11.Visible = false;
-            this.dataGridViewTextBoxColumn11.Width = 120;
-            // 
-            // dataGridViewTextBoxColumn12
-            // 
-            this.dataGridViewTextBoxColumn12.DataPropertyName = "CREATEDATE";
-            this.dataGridViewTextBoxColumn12.HeaderText = "CREATEDATE";
-            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            this.dataGridViewTextBoxColumn12.ReadOnly = true;
-            this.dataGridViewTextBoxColumn12.Visible = false;
-            this.dataGridViewTextBoxColumn12.Width = 120;
-            // 
-            // dataGridViewTextBoxColumn13
-            // 
-            this.dataGridViewTextBoxColumn13.DataPropertyName = "MODIFYBY";
-            this.dataGridViewTextBoxColumn13.HeaderText = "MODIFYBY";
-            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
-            this.dataGridViewTextBoxColumn13.ReadOnly = true;
-            this.dataGridViewTextBoxColumn13.Visible = false;
-            this.dataGridViewTextBoxColumn13.Width = 120;
-            // 
-            // dataGridViewTextBoxColumn14
-            // 
-            this.dataGridViewTextBoxColumn14.DataPropertyName = "MODIFYDATE";
-            this.dataGridViewTextBoxColumn14.HeaderText = "MODIFYDATE";
-            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
-            this.dataGridViewTextBoxColumn14.ReadOnly = true;
-            this.dataGridViewTextBoxColumn14.Visible = false;
-            this.dataGridViewTextBoxColumn14.Width = 120;
-            // 
-            // dataGridViewTextBoxColumn15
-            // 
-            this.dataGridViewTextBoxColumn15.DataPropertyName = "XOA";
-            this.dataGridViewTextBoxColumn15.HeaderText = "Column1";
-            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
-            this.dataGridViewTextBoxColumn15.ReadOnly = true;
-            this.dataGridViewTextBoxColumn15.Visible = false;
             // 
             // tab_DonViTCTLMD
             // 

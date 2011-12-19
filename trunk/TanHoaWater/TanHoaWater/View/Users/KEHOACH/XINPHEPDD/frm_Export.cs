@@ -57,7 +57,12 @@ namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
 
             for (int i = 0; i < list.Count; i++)
             {
-
+                
+                if (rows > 11) {
+                    exSheet.Cells[rows, 2] = "\"";
+                    exSheet.Cells[rows, 3] = "\"";
+                    exSheet.Cells[rows, 4] = "\"";
+                }
                 KH_HOSOKHACHHANG hskh = list[i];
                 exSheet.Cells[rows, 1] = i + 1;
                 DON_KHACHHANG donkh = DAL.C_DonKhachHang.findBySHS(hskh.SHS);
@@ -75,19 +80,25 @@ namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
                 }
                 else
                 {
-                    exSheet.Cells[rows, 14] = "--nt--";
+                    exSheet.Cells[rows, 14] = "\"";
                 }
                 exSheet.Cells[rows, 6] = donkh.DUONG;//DUONG
                 exSheet.Cells[rows, 7] = DAL.C_Phuong.finbyPhuong(donkh.QUAN, donkh.PHUONG).TENPHUONG;//PHUONG
                 ///copy bang ve  
-                Utilities.Files.CopyFile(arrFile, donkh.SHS, _dotdd.Replace("/", "_"), donkh.SHS);
+                string tenfile = donkh.SHS;
+                if (rdSoHoSo.Checked) {
+                    tenfile = donkh.SHS;
+                } if (radioDuong.Checked) {
+                    tenfile = hskh.DHN_SONHA.Replace("/", "-") + " " + hskh.DHN_DIACHI.Replace("/", "-");
+                }
+                Utilities.Files.CopyFile(arrFile, donkh.SHS, _dotdd.Replace("/", "_"), tenfile);
                 exSheet.Cells[rows, 12] = Utilities.Files.FileName;
                 exSheet.Cells[rows, 13] = Utilities.Files.createFile;
 
 
                 if (mucdichdao.Equals(hskh.MUCDICHDD))
                 {
-                    exSheet.Cells[rows, 15] = "--nt--";// MUC DICH DAO
+                    exSheet.Cells[rows, 15] =  "\"";// MUC DICH DAO
                 }
                 else
                 {
@@ -97,7 +108,7 @@ namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
 
                 if (phuongphapdao.Equals(hskh.PHUONGPHAPDD))
                 {
-                    exSheet.Cells[rows, 16] = "--nt--"; // PHUONG PHAP DAO
+                    exSheet.Cells[rows, 16] =  "\""; // PHUONG PHAP DAO
                 }
                 else
                 {
@@ -105,14 +116,32 @@ namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
                     phuongphapdao = hskh.PHUONGPHAPDD;
                 }
 
-                exSheet.Cells[rows, 17] = "6g";// DAO TU GIO
-                exSheet.Cells[rows, 18] = "21g";// DAO DIEN GIO
+                if ("Hẻm".Equals(donkh.LOAIMIENPHI)) {
+                    exSheet.Cells[rows, 17] = "6g00";// DAO TU GIO
+                    exSheet.Cells[rows, 18] = "21g00";// DAO DIEN GIO
+                    exSheet.Cells[rows, 22] = "6g00";// TU TAI LAP
+                    exSheet.Cells[rows, 23] = "21g00";// DEN TAI LAP
+                }
+                else if ("Mặt tiền".Equals(donkh.LOAIMIENPHI))
+                {
+                    exSheet.Cells[rows, 17] = "22g00";// DAO TU GIO
+                    exSheet.Cells[rows, 18] = "5g00";// DAO DIEN GIO
+                    exSheet.Cells[rows, 22] = "22g00";// TU TAI LAP
+                    exSheet.Cells[rows, 23] = "5g00";// DEN TAI LAP
+                }
+                else {
+                    exSheet.Cells[rows, 17] = "22g00";// DAO TU GIO
+                    exSheet.Cells[rows, 18] = "5g00";// DAO DIEN GIO
+                    exSheet.Cells[rows, 22] = "22g00";// TU TAI LAP
+                    exSheet.Cells[rows, 23] = "5g00";// DEN TAI LAP
+                }
+              
                 exSheet.Cells[rows, 19] = ""; // DAO TU NGAY
                 exSheet.Cells[rows, 20] = "";// DAO DEN NGAY
 
                 if (dvtl.Equals(hskh.DVITAILAPDD))
                 {
-                    exSheet.Cells[rows, 21] = "--nt--"; // PHUONG PHAP DAO
+                    exSheet.Cells[rows, 21] =  "\""; // PHUONG PHAP DAO
                 }
                 else
                 {
@@ -122,8 +151,7 @@ namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
 
 
 
-                exSheet.Cells[rows, 22] = "6g";// TU TAI LAP
-                exSheet.Cells[rows, 23] = "21g";// DEN TAI LAP
+               
                 List<KH_BAOCAOPHUIDAO> listPhui = DAL.C_KH_XinPhepDD.getListBCPhuiDao(donkh.SHS);
                 bool inde = true;
                 foreach (KH_BAOCAOPHUIDAO item in listPhui)
@@ -146,6 +174,8 @@ namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
             tR.ShrinkToFit = false;
             tR.MergeCells = true;
             tR.Value2 = "Sau khi thi công xong(chậm nhất là 48 giờ tính từ khi bắt đầu khởi công)";
+            
+
             exApp.Visible = false;
             string path = Utilities.Files.localSave + "\\209/2011".Replace("/", "_") + "\\BANGXINPHEPDD.xls";
             exBook.SaveAs(path.Replace("\\\\", "\\"), ExcelCOM.XlFileFormat.xlWorkbookNormal,

@@ -51,8 +51,6 @@
             this.gr_DienThoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LOAIHS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NGAYNHAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.progressBar2 = new System.Windows.Forms.ProgressBar();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.label18 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -99,6 +97,8 @@
             this.label21 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.SearchMaHoSo = new System.Windows.Forms.TextBox();
+            this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
+            this.buttonX3 = new DevComponents.DotNetBar.ButtonX();
             this.groupPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -216,9 +216,9 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.buttonX3);
+            this.panel1.Controls.Add(this.buttonX1);
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.progressBar2);
-            this.panel1.Controls.Add(this.progressBar1);
             this.panel1.Controls.Add(this.label18);
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.groupBox1);
@@ -400,20 +400,6 @@
             this.NGAYNHAN.Name = "NGAYNHAN";
             this.NGAYNHAN.ReadOnly = true;
             this.NGAYNHAN.Visible = false;
-            // 
-            // progressBar2
-            // 
-            this.progressBar2.Location = new System.Drawing.Point(597, 282);
-            this.progressBar2.Name = "progressBar2";
-            this.progressBar2.Size = new System.Drawing.Size(376, 8);
-            this.progressBar2.TabIndex = 172;
-            // 
-            // progressBar1
-            // 
-            this.progressBar1.Location = new System.Drawing.Point(597, 211);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(377, 10);
-            this.progressBar1.TabIndex = 172;
             // 
             // label18
             // 
@@ -998,6 +984,26 @@
             this.SearchMaHoSo.TabIndex = 129;
             this.SearchMaHoSo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.searchHoTenKH_KeyPress);
             // 
+            // buttonX1
+            // 
+            this.buttonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonX1.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.buttonX1.Location = new System.Drawing.Point(597, 212);
+            this.buttonX1.Name = "buttonX1";
+            this.buttonX1.Size = new System.Drawing.Size(376, 6);
+            this.buttonX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
+            this.buttonX1.TabIndex = 676;
+            // 
+            // buttonX3
+            // 
+            this.buttonX3.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonX3.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.buttonX3.Location = new System.Drawing.Point(598, 282);
+            this.buttonX3.Name = "buttonX3";
+            this.buttonX3.Size = new System.Drawing.Size(376, 6);
+            this.buttonX3.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
+            this.buttonX3.TabIndex = 677;
+            // 
             // uc_TimKiemDonKH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -1067,14 +1073,12 @@
         private System.Windows.Forms.Label label14;
         private DevComponents.DotNetBar.Controls.TextBoxX NgayHoanTat;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.ProgressBar progressBar1;
         private DevComponents.DotNetBar.Controls.TextBoxX DotXinPhepDD;
         private System.Windows.Forms.Label label18;
         private DevComponents.DotNetBar.Controls.TextBoxX NgayXinPhepDD;
         private System.Windows.Forms.Label label17;
         private DevComponents.DotNetBar.Controls.TextBoxX NgayCoPhep;
         private DevComponents.DotNetBar.Controls.TextBoxX NgayLapBG;
-        private System.Windows.Forms.ProgressBar progressBar2;
         private System.Windows.Forms.Label label19;
         private DevComponents.DotNetBar.Controls.TextBoxX DotThiCong;
         private System.Windows.Forms.Label label20;
@@ -1103,6 +1107,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn gr_DienThoai;
         private System.Windows.Forms.DataGridViewTextBoxColumn LOAIHS;
         private System.Windows.Forms.DataGridViewTextBoxColumn NGAYNHAN;
+        private DevComponents.DotNetBar.ButtonX buttonX3;
+        private DevComponents.DotNetBar.ButtonX buttonX1;
 
     }
 }
