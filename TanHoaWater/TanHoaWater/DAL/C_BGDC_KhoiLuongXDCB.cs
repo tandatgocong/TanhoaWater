@@ -16,11 +16,11 @@ namespace TanHoaWater.DAL
             db.BGDC_KHOILUONGXDCBs.InsertOnSubmit(klxd);
             db.SubmitChanges();
         }
-        public static BGDC_KHOILUONGXDCB findBySHS(string shs)
+        public static BGDC_KHOILUONGXDCB findBySHS(string shs, int lan)
         {
             try
             {
-                var query = from kt in db.BGDC_KHOILUONGXDCBs where kt.SHS == shs select kt;
+                var query = from kt in db.BGDC_KHOILUONGXDCBs where kt.SHS == shs && kt.LAN ==lan select kt;
                 return query.SingleOrDefault();
             }
             catch (Exception ex)
@@ -44,5 +44,10 @@ namespace TanHoaWater.DAL
         //    cmd.ExecuteNonQuery();
         //    conn.Close();
         //}
+        public static List<BGDC_KHOILUONGXDCB> getListBGDCBySHS(string shs) {
+            var query = from q in db.BGDC_KHOILUONGXDCBs where q.SHS == shs orderby q.LAN ascending select q;
+            return query.ToList();
+
+        }
     }
 }
