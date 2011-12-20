@@ -24,13 +24,13 @@ namespace TanHoaWater.DAL
         //    var query = from kt in db.BGDC_KICHTHUOCPHUIDAOs where kt.SHS == shs select kt;
         //    return query.ToList();
         //}
-        public static DataTable getListBySHS(string shs)
+        public static DataTable getListBySHS(string shs, int lan)
         {
             TanHoaDataContext db = new TanHoaDataContext();
             db.Connection.Open();
             string sql = " SELECT MADANHMUC, TENKETCAU, DVT, DAI, RONG, DOSAU, SOLUONG, KHOILUONG, CHUVI, THETICH, COTINHTL ";
             sql += " FROM BGDC_KICHTHUOCPHUIDAO ";
-            sql += " WHERE  SHS='" + shs + "' ";
+            sql += " WHERE  SHS='" + shs + "' AND LAN='"+ lan +"' ";
             SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             DataSet dataset = new DataSet();
             adapter.Fill(dataset, "TABLE");

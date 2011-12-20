@@ -876,7 +876,7 @@ namespace TanHoaWater.View.Users.TinhDuToan
             radioGhiMoi.Checked = true;
             radioGhiDe.Checked = false;
             radioNone.Checked = false;
-
+            checkKHDT.Checked = false;
             //for (int i = 0; i < GridCacCongTac.Rows.Count; i++)
             //{
             //    GridCacCongTac.Rows.RemoveAt(i);
@@ -1897,11 +1897,15 @@ namespace TanHoaWater.View.Users.TinhDuToan
                 }
 
                 //rp.Subreports["Subreport1"].SetParameterValue("Tienchu", Utilities.Doctien.ReadMoney(String.Format("{0:0}", TongThanhTien)));
-                  rp.SetDataSource(ds);
+                rp.SetDataSource(ds);
                 rp.SetParameterValue("Tienchu", Utilities.Doctien.ReadMoney(String.Format("{0:0}", TongThanhTien)));
                 rp.SetParameterValue("subTienchu", Utilities.Doctien.ReadMoney(String.Format("{0:0}", TongThanhTien)));
                 rp.SetParameterValue("gan", _tongketgan);
                 rp.SetParameterValue("nhua", _tongketnhua);
+                if(checkKHDT.Checked)
+                    rp.SetParameterValue("khachhangdautu", "(KHÁCH HÀNG ĐẦU TƯ)");
+                else
+                    rp.SetParameterValue("khachhangdautu", "");
 
                 
 
