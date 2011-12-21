@@ -8,7 +8,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TanHoaWater.View.Users.TinhDuToan.report {
+namespace TanHoaWater.View.Users.BGDieuChinh.report
+{
     using System;
     using System.ComponentModel;
     using CrystalDecisions.Shared;
