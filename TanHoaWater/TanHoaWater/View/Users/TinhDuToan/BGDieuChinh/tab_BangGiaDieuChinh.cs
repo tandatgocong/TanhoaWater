@@ -59,6 +59,13 @@ namespace TanHoaWater.View.Users.BGDieuChinh
 
         public void LoadTabCacLanDieuChinh() {
 
+            DataTable tableDongTien = new DataTable();
+            tableDongTien.Columns.Add("NGAYDONGTIEN", typeof(string));
+            tableDongTien.Columns.Add("TIENGANTLK", typeof(double));
+            tableDongTien.Columns.Add("TIENTLMD", typeof(double));
+            tableDongTien.Columns.Add("TONGCONG", typeof(double));
+           
+
             DataTable table = new DataTable();
             table.Columns.Add("LOAD", typeof(string));
             table.Columns.Add("LANDC", typeof(int));
@@ -82,6 +89,18 @@ namespace TanHoaWater.View.Users.BGDieuChinh
                 myDataRow["NGUOILAPDT"] = klxd.CREATEBY;
                 myDataRow["TOTALDUTOAN"] = klxd.TONGIATRI + klxd.TAILAPMATDUONG;    
                 table.Rows.Add(myDataRow);
+
+                DON_KHACHHANG donkh = DAL.C_DonKhachHang.findBySHS(klxd.SHS);
+                if (!"".Equals(donkh.NGAYDONGTIEN.Value + "")) {
+                    DataRow dontienRow = tableDongTien.NewRow();
+                    dontienRow["NGAYDONGTIEN"] = Utilities.DateToString.NgayVN(donkh.NGAYDONGTIEN.Value); ;
+                    dontienRow["TIENGANTLK"] = klxd.TONGIATRI;
+                    dontienRow["TIENTLMD"] = klxd.TAILAPMATDUONG;
+                    dontienRow["TONGCONG"] = klxd.TONGIATRI + klxd.TAILAPMATDUONG;
+                    tableDongTien.Rows.Add(dontienRow);
+                }
+
+
                 List<BGDC_KHOILUONGXDCB> list = DAL.C_BGDC_KhoiLuongXDCB.getListBGDCBySHS(klxd.SHS);
                 foreach (var item in list)
                 {
@@ -95,12 +114,23 @@ namespace TanHoaWater.View.Users.BGDieuChinh
                     myDataRow["NGUOILAPDT"] = item.CREATEBY;
                     myDataRow["TOTALDUTOAN"] = item.TONGIATRI + item.TAILAPMATDUONG;    
                     table.Rows.Add(myDataRow);
+
+                    if (!"".Equals(item.NGAYDONGTIEN + ""))
+                    {
+                        DataRow dontienRow = tableDongTien.NewRow();
+                        dontienRow["NGAYDONGTIEN"] = Utilities.DateToString.NgayVN(item.NGAYDONGTIEN.Value); ;
+                        dontienRow["TIENGANTLK"] = item.TONGIATRI;
+                        dontienRow["TIENTLMD"] = item.TAILAPMATDUONG;
+                        dontienRow["TONGCONG"] = item.TONGIATRI + item.TAILAPMATDUONG;
+                        tableDongTien.Rows.Add(dontienRow);
+                    }
+
                     solandieuchinh = item.LAN.Value + 1;
                 }
             }
             
             GridCacLanDC.DataSource = table;
-
+            gridCacLanDongTien.DataSource = tableDongTien;
         }
         private Control txtKeypress;
         private void KeyPressHandle(object sender, System.Windows.Forms.KeyPressEventArgs e)
@@ -172,10 +202,10 @@ namespace TanHoaWater.View.Users.BGDieuChinh
         private void GridPhuiDao_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
 
-          //  MessageBox.Show(this, GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells["pd_MaKetCau"].Value + "");
+            //  MessageBox.Show(this, GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells["pd_MaKetCau"].Value + "");
             if (GridPhuiDao.CurrentCell.OwningColumn.Name == "pd_MaKetCau")
             {
-                
+
                 DANHMUCTAILAPMATDUONG dmvt = DAL.C_DanhMucTaiLapMD.finbyMaDM(GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells["pd_MaKetCau"].Value + "");
                 if (dmvt != null)
                 {
@@ -183,7 +213,8 @@ namespace TanHoaWater.View.Users.BGDieuChinh
                     GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells["phuidao_tenketcau"].Value = dmvt.TENKETCAU.ToUpper();
                     GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells["Phui_DonGia"].Value = dmvt.DONGIA;
                     GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells["phuidao_dvt"].Value = dmvt.DVT;
-                    if (mahieuvt.Equals("TNHA")) {
+                    if (mahieuvt.Equals("TNHA"))
+                    {
                         GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells["phuidao_Daii"].Value = this.txtSoHo.Value;
                     }
                 }
@@ -195,9 +226,51 @@ namespace TanHoaWater.View.Users.BGDieuChinh
                 }
                 //Utilities.DataGridV.formatRows(GridPhuiDao);
             }
+            if (GridPhuiDao.CurrentCell.OwningColumn.Name == "phuidao_Daii" | GridPhuiDao.CurrentCell.OwningColumn.Name == "phuidao_rongg" | GridPhuiDao.CurrentCell.OwningColumn.Name == "phuidao_sauu" | GridPhuiDao.CurrentCell.OwningColumn.Name == "phuidao_sll")
+            {
+                try
+                {
+                    string s_dai = GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells["phuidao_Daii"].Value + "";
+                    string s_rong = GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells["phuidao_rongg"].Value + "";
+                    string s_sau = GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells["phuidao_sauu"].Value + "";
+                    string s_soluong = GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells["phuidao_sll"].Value + "";
+
+                    double dai = double.Parse(s_dai);
+                    double rong = double.Parse(s_rong);
+                    double sau = double.Parse(s_sau);
+                    int soluong = int.Parse(s_soluong);
+                    this.GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells["phuidao_Daii"].Value = String.Format("{0:0.00}", dai);
+                    this.GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells["phuidao_rongg"].Value = String.Format("{0:0.00}", rong);
+                    this.GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells["phuidao_sauu"].Value = String.Format("{0:0.00}", sau);
+                    this.GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells["phuidao_sll"].Value = soluong;
+
+                    double khoiluong = 0.0;
+                    double chuvi = 0.0;
+                    double thetich = 0.0;
+                    if (dai >= 0 && rong >= 0 && soluong >= 1 && sau > 0)
+                    {
+                        khoiluong = dai * rong * soluong;
+                        if (rong > 0.3)
+                            chuvi = (dai + rong) * 2 * soluong;
+                        else
+                            chuvi = dai * 2 * soluong;
+                        thetich = dai * rong * sau * soluong;
+                    }
+                    GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells["phui_khoiluong"].Value = Math.Round(khoiluong, 3);
+                    GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells["phuidao_chuvi"].Value = Math.Round(chuvi, 3);
+                    GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells["phuidao_thetich"].Value = Math.Round(thetich, 3);
+
+                    DuToan();
+                }
+                catch (Exception)
+                {
+
+                }
+            }
             tinhlai = true;
 
         }
+
         private void GridPhuiDao_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
         {
 
@@ -363,44 +436,44 @@ namespace TanHoaWater.View.Users.BGDieuChinh
         }
         private void GridPhuiDao_CellStateChanged(object sender, DataGridViewCellStateChangedEventArgs e)
         {
-            try
-            {
-                string s_dai = GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells["phuidao_Daii"].Value + "";
-                string s_rong = GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells["phuidao_rongg"].Value + "";
-                string s_sau = GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells["phuidao_sauu"].Value + "";
-                string s_soluong = GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells["phuidao_sll"].Value + "";
+            //try
+            //{
+            //    string s_dai = GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells["phuidao_Daii"].Value + "";
+            //    string s_rong = GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells["phuidao_rongg"].Value + "";
+            //    string s_sau = GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells["phuidao_sauu"].Value + "";
+            //    string s_soluong = GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells["phuidao_sll"].Value + "";
 
-                double dai = double.Parse(s_dai);
-                double rong = double.Parse(s_rong);
-                double sau = double.Parse(s_sau);
-                int soluong = int.Parse(s_soluong);
-                this.GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells["phuidao_Daii"].Value = String.Format("{0:0.00}", dai);
-                this.GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells["phuidao_rongg"].Value = String.Format("{0:0.00}", rong);
-                this.GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells["phuidao_sauu"].Value = String.Format("{0:0.00}", sau);
-                this.GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells["phuidao_sll"].Value =  soluong;
+            //    double dai = double.Parse(s_dai);
+            //    double rong = double.Parse(s_rong);
+            //    double sau = double.Parse(s_sau);
+            //    int soluong = int.Parse(s_soluong);
+            //    this.GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells["phuidao_Daii"].Value = String.Format("{0:0.00}", dai);
+            //    this.GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells["phuidao_rongg"].Value = String.Format("{0:0.00}", rong);
+            //    this.GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells["phuidao_sauu"].Value = String.Format("{0:0.00}", sau);
+            //    this.GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells["phuidao_sll"].Value =  soluong;
    
-                    double khoiluong = 0.0;
-                    double chuvi = 0.0;
-                    double thetich = 0.0;
-                    if (dai >= 0 && rong >= 0 && soluong >= 1 && sau > 0)
-                    {
-                        khoiluong = dai * rong * soluong;
-                        if (rong > 0.3)
-                            chuvi = (dai + rong) * 2 * soluong;
-                        else
-                            chuvi = dai * 2 * soluong;
-                        thetich = dai * rong * sau * soluong;
-                    }
-                    GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells["phui_khoiluong"].Value = Math.Round(khoiluong, 3);
-                    GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells["phuidao_chuvi"].Value = Math.Round(chuvi, 3);
-                    GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells["phuidao_thetich"].Value = Math.Round(thetich, 3);
+            //        double khoiluong = 0.0;
+            //        double chuvi = 0.0;
+            //        double thetich = 0.0;
+            //        if (dai >= 0 && rong >= 0 && soluong >= 1 && sau > 0)
+            //        {
+            //            khoiluong = dai * rong * soluong;
+            //            if (rong > 0.3)
+            //                chuvi = (dai + rong) * 2 * soluong;
+            //            else
+            //                chuvi = dai * 2 * soluong;
+            //            thetich = dai * rong * sau * soluong;
+            //        }
+            //        GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells["phui_khoiluong"].Value = Math.Round(khoiluong, 3);
+            //        GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells["phuidao_chuvi"].Value = Math.Round(chuvi, 3);
+            //        GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells["phuidao_thetich"].Value = Math.Round(thetich, 3);
 
-                    DuToan();                       
-            }
-            catch (Exception)
-            {
+            //        DuToan();                       
+            //}
+            //catch (Exception)
+            //{
 
-            }
+            //}
         }
 
         private void GridPhuiDao_UserDeletedRow(object sender, DataGridViewRowEventArgs e)
@@ -1298,7 +1371,7 @@ namespace TanHoaWater.View.Users.BGDieuChinh
                 klxdcb.PHIQUANLY = phiQL;
 
                // DAL.C_CongTacBangGia.TongKetChiPhi(_shs, phiC3, phiGS, phiQL);
-                DAL.C_BGDC_CongTacBangGia.TongKetChiPhi(_shs, phiC3, phiGS, phiQL);
+                DAL.C_BGDC_CongTacBangGia.TongKetChiPhi(_shs, phiC3, phiGS, phiQL, solandieuchinh);
 
                 klxdcb.CPVATTU = DAL.C_BGDC_CongTacBangGia.CPVATLIEU;
                 klxdcb.CPNHANCONG = DAL.C_BGDC_CongTacBangGia.CPNHANCONG;
@@ -1338,7 +1411,37 @@ namespace TanHoaWater.View.Users.BGDieuChinh
                 }
                 //klxdcb.LOAIDC = "Điều Chỉnh";
                //DAL.C_KhoiLuongXDCB.InsertKTPD(klxdcb);
+                try
+                {
+                    
+                    double gantlcu = !"".Equals(TienGanTLKCu.Text.Trim()) ? double.Parse(TienGanTLKCu.Text.Trim()) : 0.0;
+                    double tlmdcu = !"".Equals(TienTLMDCu.Text.Trim()) ? double.Parse(TienTLMDCu.Text.Trim()) : 0.0;
+                    double tongiatricu = !"".Equals(TienTongGiaTriCu.Text.Trim()) ? double.Parse(TienTongGiaTriCu.Text.Trim()) : 0.0;
+
+                    double kqgantlk = DAL.C_BGDC_CongTacBangGia.TONG - gantlcu;
+                    double kqtlmd = DAL.C_BGDC_CongTacBangGia.TAILAPMATDUONG - tlmdcu;
+                    double kqtonggiatri = (DAL.C_BGDC_CongTacBangGia.TONG + DAL.C_BGDC_CongTacBangGia.TAILAPMATDUONG) - tongiatricu;
+                    klxdcb.DCTIENTLK = kqgantlk;
+                    klxdcb.DCTIENTLMD = kqtlmd;
+                    klxdcb.DCTIENTLMD = kqtonggiatri;
+
+                }
+                catch (Exception)
+                {
+                     
+                }
+               
+
                 DAL.C_BGDC_KhoiLuongXDCB.InsertKTPD(klxdcb);
+                // Tinh gia tri
+                NgayLapBGMoi.Text = Utilities.DateToString.NgayVN(DateTime.Now.Date);
+                TienGanTLKMoi.Text = String.Format("{0:0,0.00}", DAL.C_BGDC_CongTacBangGia.TONG);
+                TienTLMDMoi.Text = String.Format("{0:0,0.00}", DAL.C_BGDC_CongTacBangGia.TAILAPMATDUONG);
+                TongGiaTriMoi.Text = String.Format("{0:0,0.00}", (DAL.C_BGDC_CongTacBangGia.TONG + DAL.C_BGDC_CongTacBangGia.TAILAPMATDUONG));
+                
+                
+
+                //
             }
             catch (Exception ex)
             {
@@ -1787,7 +1890,8 @@ namespace TanHoaWater.View.Users.BGDieuChinh
                         InsertCONGTACBANGGIA();
                         InsertKHOILUONGXDCB();
                         //INBANGIA(_shs);
-                        
+                        solandieuchinh++;
+
                         //if (banggiadaco == true)
                         //{
                         //    tabControl2.SelectedTabIndex = 2;
@@ -1827,6 +1931,8 @@ namespace TanHoaWater.View.Users.BGDieuChinh
                         //    banggiadaco = true;
                         //    radioGhiDe.Checked = true;
                         //}
+                        TinhGiaTriBG();
+                        LoadTabCacLanDieuChinh();
                     }
                 }
                 catch (Exception ex)
@@ -1846,6 +1952,42 @@ namespace TanHoaWater.View.Users.BGDieuChinh
             }
         }
 
+        public void TinhGiaTriBG() {
+
+            try
+            {
+                tabControl2.SelectedTabIndex = 3;
+
+                double gantlmoi = !"".Equals(TienGanTLKMoi.Text.Trim()) ? double.Parse(TienGanTLKMoi.Text.Trim()) : 0.0;
+                double tlmdmoi = !"".Equals(TienTLMDMoi.Text.Trim()) ? double.Parse(TienTLMDMoi.Text.Trim()) : 0.0;
+                double tongiatrimoi = !"".Equals(TongGiaTriMoi.Text.Trim()) ? double.Parse(TongGiaTriMoi.Text.Trim()) : 0.0;
+
+                double gantlcu = !"".Equals(TienGanTLKCu.Text.Trim()) ? double.Parse(TienGanTLKCu.Text.Trim()) : 0.0;
+                double tlmdcu = !"".Equals(TienTLMDCu.Text.Trim()) ? double.Parse(TienTLMDCu.Text.Trim()) : 0.0;
+                double tongiatricu = !"".Equals(TienTongGiaTriCu.Text.Trim()) ? double.Parse(TienTongGiaTriCu.Text.Trim()) : 0.0;
+
+                double kqgantlk = gantlmoi - gantlcu;
+                double kqtlmd = tlmdmoi - tlmdcu;
+                double kqtonggiatri = tongiatrimoi - tongiatricu;
+
+                ketquatonggiatri.Text = String.Format("{0:0,0.00}", kqtonggiatri);  
+                ketquaGanTLK.Text = String.Format("{0:0,0.00}",kqgantlk);  
+                ketquaTLMD.Text = String.Format("{0:0,0.00}", kqtlmd);  
+                if (kqtonggiatri > 0) {
+                    lbsotien.Text = "Số Tiền Khách Hàng Đóng Bổ Sung : <b>" + ketquatonggiatri.Text + "</b>";
+                }
+                else if (kqtonggiatri < 0) {
+                    lbsotien.Text = "Số Tiền Hoàn Lại Khách Hàng : <b>" + String.Format("{0:0,0.00}", Math.Abs(kqtonggiatri)) + "</b>";
+                }
+                 
+                lbBangChu.Text = Utilities.Doctien.ReadMoney(""+ Math.Abs(Math.Round(kqtonggiatri)));
+            }
+            catch (Exception ex)
+            {
+                log.Error("Tinh GIa Tri Bang Gia " + ex.Message);   
+            }
+        
+        }
         private void GridCacCongTac_CellLeave(object sender, DataGridViewCellEventArgs e)
         {
             try
