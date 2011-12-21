@@ -1898,8 +1898,8 @@ namespace TanHoaWater.View.Users.TinhDuToan
 
                 //rp.Subreports["Subreport1"].SetParameterValue("Tienchu", Utilities.Doctien.ReadMoney(String.Format("{0:0}", TongThanhTien)));
                 rp.SetDataSource(ds);
-                rp.SetParameterValue("Tienchu", Utilities.Doctien.ReadMoney(String.Format("{0:0}", TongThanhTien)));
-                rp.SetParameterValue("subTienchu", Utilities.Doctien.ReadMoney(String.Format("{0:0}", TongThanhTien)));
+                rp.SetParameterValue("Tienchu", Utilities.Doctien.ReadMoney(Math.Round(TongThanhTien)+""));
+                rp.SetParameterValue("subTienchu", Utilities.Doctien.ReadMoney(Math.Round(TongThanhTien) + ""));
                 rp.SetParameterValue("gan", _tongketgan);
                 rp.SetParameterValue("nhua", _tongketnhua);
                 if(checkKHDT.Checked)

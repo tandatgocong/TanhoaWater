@@ -84,7 +84,7 @@ namespace TanHoaWater.DAL
         public static double K= 0.0;
         public static double L= 0.0;
 
-        public static void TongKetChiPhi(string shs, bool _PHIC3,  bool _PHIGS,  bool _PHIQL ) {
+        public static void TongKetChiPhi(string shs, bool _PHIC3,  bool _PHIGS,  bool _PHIQL,int lan ) {
             TanHoaDataContext db = new TanHoaDataContext();
             SqlConnection conn = new SqlConnection(db.Connection.ConnectionString);
 
@@ -95,6 +95,10 @@ namespace TanHoaWater.DAL
             SqlParameter inparm = cmd.Parameters.Add("@shs", SqlDbType.VarChar);
             inparm.Direction = ParameterDirection.Input;
             inparm.Value = shs;
+
+            SqlParameter solan = cmd.Parameters.Add("@LAN", SqlDbType.Int);
+            solan.Direction = ParameterDirection.Input;
+            solan.Value = lan;
 
             SqlParameter PHIC3 = cmd.Parameters.Add("@PHIC3", SqlDbType.Bit);
             PHIC3.Direction = ParameterDirection.Input;
@@ -368,7 +372,7 @@ namespace TanHoaWater.DAL
             conn.Close();
         }
 
-        public static void deleteData(string shs) {
+        public static void deleteData(string shs, int lan) {
             TanHoaDataContext db = new TanHoaDataContext();
             SqlConnection conn = new SqlConnection(db.Connection.ConnectionString);
 
@@ -379,6 +383,11 @@ namespace TanHoaWater.DAL
             SqlParameter inparm = cmd.Parameters.Add("@shs", SqlDbType.VarChar);
             inparm.Direction = ParameterDirection.Input;
             inparm.Value = shs;
+
+            SqlParameter solan = cmd.Parameters.Add("@LAN", SqlDbType.Int);
+            solan.Direction = ParameterDirection.Input;
+            solan.Value = lan;
+
             cmd.ExecuteNonQuery();
             conn.Close();
         }
