@@ -651,6 +651,29 @@
     <Compile Include="View\Users\TinhDuToan\BGDieuChinh\frm_ViewBangGiaDC.Designer.cs">
       <DependentUpon>frm_ViewBangGiaDC.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Users\TinhDuToan\BGDieuChinh\report\DataSet2.Designer.cs">
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="View\Users\TinhDuToan\BGDieuChinh\report\rptBangGia.cs">
+      <DependentUpon>rptBangGia.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="View\Users\TinhDuToan\BGDieuChinh\report\rptBangGiaTuTaiLap.cs">
+      <DependentUpon>rptBangGiaTuTaiLap.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="View\Users\TinhDuToan\BGDieuChinh\report\subReport.cs">
+      <DependentUpon>subReport.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="View\Users\TinhDuToan\BGDieuChinh\tab_BangGiaDieuChinh.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -662,6 +685,12 @@
     </Compile>
     <Compile Include="View\Users\TinhDuToan\frmBoVT.Designer.cs">
       <DependentUpon>frmBoVT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Users\TinhDuToan\report\rptBangGiaTuTaiLap.cs">
+      <DependentUpon>rptBangGiaTuTaiLap.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="View\Users\TinhDuToan\tab_BoVatTuTaoSan.cs">
       <SubType>UserControl</SubType>
@@ -681,14 +710,8 @@
     <Compile Include="View\Users\TinhDuToan\frm_LogBG.Designer.cs">
       <DependentUpon>frm_LogBG.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Users\TinhDuToan\report\rptBangGiaTuTaiLap.cs">
-      <DependentUpon>rptBangGiaTuTaiLap.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <SubType>Component</SubType>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="View\Users\TinhDuToan\report\CrystalReport2.cs">
-      <DependentUpon>CrystalReport2.rpt</DependentUpon>
+    <Compile Include="View\Users\TinhDuToan\report\rptBangGiaTuTaiLap1.cs">
+      <DependentUpon>rptBangGiaTuTaiLap1.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
@@ -1039,11 +1062,27 @@
     <EmbeddedResource Include="View\Users\TinhDuToan\BGDieuChinh\frm_BGDieuChinh.resx">
       <DependentUpon>frm_BGDieuChinh.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\TinhDuToan\BGDieuChinh\report\rptBangGia.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptBangGia.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\TinhDuToan\BGDieuChinh\report\rptBangGiaTuTaiLap.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptBangGiaTuTaiLap.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\TinhDuToan\BGDieuChinh\report\subReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>subReport.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Users\TinhDuToan\BGDieuChinh\tab_BangGiaDieuChinh.resx">
       <DependentUpon>tab_BangGiaDieuChinh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\TinhDuToan\frmBoVT.resx">
       <DependentUpon>frmBoVT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\TinhDuToan\report\rptBangGiaTuTaiLap.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptBangGiaTuTaiLap.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\TinhDuToan\tab_BoVatTuTaoSan.resx">
       <DependentUpon>tab_BoVatTuTaoSan.cs</DependentUpon>
@@ -1054,13 +1093,9 @@
     <EmbeddedResource Include="View\Users\TinhDuToan\frm_LogBG.resx">
       <DependentUpon>frm_LogBG.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Users\TinhDuToan\report\rptBangGiaTuTaiLap.rpt">
+    <EmbeddedResource Include="View\Users\TinhDuToan\report\rptBangGiaTuTaiLap1.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>rptBangGiaTuTaiLap.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Users\TinhDuToan\report\CrystalReport2.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>CrystalReport2.cs</LastGenOutput>
+      <LastGenOutput>rptBangGiaTuTaiLap1.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\TinhDuToan\report\rptBangGia.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -1325,6 +1360,17 @@
     </None>
     <None Include="View\Users\KEHOACH\XINPHEPDD\BC\DataSet1.xss">
       <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="View\Users\TinhDuToan\BGDieuChinh\report\DataSet2.xsc">
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="View\Users\TinhDuToan\BGDieuChinh\report\DataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="View\Users\TinhDuToan\BGDieuChinh\report\DataSet2.xss">
+      <DependentUpon>DataSet2.xsd</DependentUpon>
     </None>
     <None Include="View\Users\TinhDuToan\report\DataSet2.xsc">
       <DependentUpon>DataSet2.xsd</DependentUpon>

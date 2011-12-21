@@ -58,7 +58,7 @@ namespace TanHoaWater
                     oNetDrive.MapDrive(UserName, Password);
                     
                 }
-                catch (Exception err)
+                catch (Exception  )
                 {
                     
                 }

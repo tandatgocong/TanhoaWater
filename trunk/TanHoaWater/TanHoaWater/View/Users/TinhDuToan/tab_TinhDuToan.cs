@@ -1117,7 +1117,7 @@ namespace TanHoaWater.View.Users.TinhDuToan
                         string _mahieuvt = this.GridCacCongTac.Rows[i].Cells["congtac_mahieu"].Value + "";
                         congtacbg.MAHIEU = _mahieuvt;
                         congtacbg.MAHDG = this.GridCacCongTac.Rows[i].Cells["congtacMahieuDG"].Value + "";
-                        congtacbg.TENVT = this.GridCacCongTac.Rows[i].Cells["congtac_hanmuc"].Value + "";
+                        congtacbg.TENVT = DAL.C_DanhMucVatTu.finbyMaHieu(_mahieuvt).TENVT.ToUpper();
                         congtacbg.DVT = this.GridCacCongTac.Rows[i].Cells["congtac_dvt"].Value + "";                                        
                         string nhom= this.GridCacCongTac.Rows[i].Cells["congTacNhom"].Value + "";
                         string loaisd = this.GridCacCongTac.Rows[i].Cells["contac_loaisd"].Value + "";
@@ -1141,7 +1141,7 @@ namespace TanHoaWater.View.Users.TinhDuToan
                                 if (!"XDCB".Equals(nhom))
                                 {
                                     DAL.C_HeSo.getHeSoBangGia();
-                                    congtacbg.TENVT = "SỬ DỤNG LẠI " + this.GridCacCongTac.Rows[i].Cells["congtac_hanmuc"].Value + "";
+                                    congtacbg.TENVT = "SỬ DỤNG LẠI " + DAL.C_DanhMucVatTu.finbyMaHieu(_mahieuvt).TENVT.ToUpper() + "";
                                     congtacbg.DONGIAVL = 0;
                                     congtacbg.DONGIANC = nhancong * DAL.C_HeSo._HSSuDungLai;
                                     congtacbg.DONGIAMTC = maythicong * DAL.C_HeSo._HSSuDungLai;
@@ -1152,7 +1152,7 @@ namespace TanHoaWater.View.Users.TinhDuToan
                                 }
                                 break;
                             case "AP":
-                                congtacbg.TENVT = this.GridCacCongTac.Rows[i].Cells["congtac_hanmuc"].Value + "" + " (THỬ ÁP)";
+                                congtacbg.TENVT = DAL.C_DanhMucVatTu.finbyMaHieu(_mahieuvt).TENVT.ToUpper() + "" + " (THỬ ÁP)";
                                 congtacbg.DONGIAVL = vatlieu;
                                 congtacbg.DONGIANC = nhancong;
                                 congtacbg.DONGIAMTC = maythicong;                                
@@ -1161,7 +1161,7 @@ namespace TanHoaWater.View.Users.TinhDuToan
                                 if (!"XDCB".Equals(nhom))
                                 {
                                     DAL.C_HeSo.getHeSoBangGia();
-                                    congtacbg.TENVT = "CÔNG GỞ "+ this.GridCacCongTac.Rows[i].Cells["congtac_hanmuc"].Value + " (VẬT TƯ CŨ)";
+                                    congtacbg.TENVT = "CÔNG GỞ " + DAL.C_DanhMucVatTu.finbyMaHieu(_mahieuvt).TENVT.ToUpper() + " (VẬT TƯ CŨ)";
                                     congtacbg.DONGIAVL = 0;
                                     congtacbg.DONGIANC = nhancong * DAL.C_HeSo._HSThuHoi;
                                     congtacbg.DONGIAMTC = maythicong * DAL.C_HeSo._HSThuHoi;
@@ -1185,7 +1185,7 @@ namespace TanHoaWater.View.Users.TinhDuToan
 
                                         congtacbg.DONGIAVL = 0.0;
                                         congtacbg.DONGIAMTC = 0.0;
-                                        congtacbg.TENVT = this.GridCacCongTac.Rows[i].Cells["congtac_hanmuc"].Value + " (K/H CUNG CẤP) ";
+                                        congtacbg.TENVT = DAL.C_DanhMucVatTu.finbyMaHieu(_mahieuvt).TENVT.ToUpper() + " (K/H CUNG CẤP) ";
 
                                     }
                                     else
@@ -1332,8 +1332,19 @@ namespace TanHoaWater.View.Users.TinhDuToan
                klxdcb.CONG3 = DAL.C_CongTacBangGia.TONGTRUOCTHUE;
                klxdcb.THUEGTGT = DAL.C_CongTacBangGia.VAT;
                klxdcb.TONGIATRI = DAL.C_CongTacBangGia.TONG;
-               klxdcb.TLMDTRUOCTHUE = DAL.C_CongTacBangGia.TLMDTRUOCTHUE;
-               klxdcb.TAILAPMATDUONG = DAL.C_CongTacBangGia.TAILAPMATDUONG;
+
+               if (vatTuXDCBKhachHangCap.Checked)
+               {
+                   klxdcb.KHTUTAILAP = true;
+                   klxdcb.TLMDTRUOCTHUE = 0.0;
+                   klxdcb.TAILAPMATDUONG = 0.0;
+               }
+               else {
+                   klxdcb.KHTUTAILAP = false;
+                   klxdcb.TLMDTRUOCTHUE = DAL.C_CongTacBangGia.TLMDTRUOCTHUE;
+                   klxdcb.TAILAPMATDUONG = DAL.C_CongTacBangGia.TAILAPMATDUONG;
+               }
+
                klxdcb.CHIPHITRUCTIEP = DAL.C_CongTacBangGia.CHIPHITRUCTIEP;
                klxdcb.CHIPHICHUNG = DAL.C_CongTacBangGia.CHIPHICHUNG;
                klxdcb.CPGAN = DAL.C_CongTacBangGia.CPGAN;
