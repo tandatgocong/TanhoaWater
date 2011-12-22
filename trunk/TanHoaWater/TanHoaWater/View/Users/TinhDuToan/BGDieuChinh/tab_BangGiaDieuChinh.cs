@@ -13,6 +13,7 @@ using CrystalDecisions.Windows.Forms;
 using CrystalDecisions.CrystalReports.Engine;
 using TanHoaWater.View.Users.Report;
 using TanHoaWater.View.Users.TinhDuToan.BGDieuChinh.report;
+using TanHoaWater.View.Users.TinhDuToan.BGDieuChinh;
 
 namespace TanHoaWater.View.Users.BGDieuChinh
 {
@@ -2381,6 +2382,72 @@ namespace TanHoaWater.View.Users.BGDieuChinh
                 this.txtSHS.BackColor = Color.Red;
 
             }
+        }
+
+
+
+        public void VATTUDIEUCHINH(string _shs, int lan)
+        {
+            //try
+            //{
+            TanHoaDataContext db = new TanHoaDataContext();
+            DataSet ds = new DataSet();
+            db.Connection.Open();
+
+            string sql = "SELECT distinct * FROM BGDC_CHITIETBG  WHERE SHS='" + _shs + "' AND LAN='" + lan + "'";
+
+            SqlDataAdapter dond = new SqlDataAdapter(sql, db.Connection.ConnectionString);
+            dond.Fill(ds, "BG_CHITIETBG");
+
+
+            string user = "SELECT distinct * FROM BGDC_TAILAPMATDUONG  WHERE SHS='" + _shs + "' AND LAN='" + lan + "'";
+            SqlDataAdapter ct = new SqlDataAdapter(user, db.Connection.ConnectionString);
+            ct.Fill(ds, "BG_TAILAPMATDUONG");
+
+            user = "SELECT distinct * FROM W_HS ";
+            ct = new SqlDataAdapter(user, db.Connection.ConnectionString);
+            ct.Fill(ds, "BG_HESOBANGGIA");
+
+
+            user = "SELECT distinct  * FROM BG_THONGTINKHACHANG  WHERE SHS='" + _shs + "'";
+            ct = new SqlDataAdapter(user, db.Connection.ConnectionString);
+            ct.Fill(ds, "BG_THONGTINKHACHANG");
+
+            user = "SELECT distinct * FROM BGDC_SUMTAILAPMATDUONG  WHERE SHS='" + _shs + "' AND LAN='" + lan + "'";
+            ct = new SqlDataAdapter(user, db.Connection.ConnectionString);
+            ct.Fill(ds, "BG_SUMTAILAPMATDUONG");
+
+            user = "SELECT  distinct * FROM BG_REPORT ";
+            ct = new SqlDataAdapter(user, db.Connection.ConnectionString);
+            ct.Fill(ds, "BG_REPORT");
+
+            user = "SELECT distinct * FROM USERS  WHERE USERNAME='" + DAL.C_USERS._userName + "'";
+            ct = new SqlDataAdapter(user, db.Connection.ConnectionString);
+            ct.Fill(ds, "USERS");
+
+            ReportDocument rp = new rpt_VatTuDieuChinh();
+             
+            //rp = new rptBangGia();
+            //rp.Subreports["Subreport1"].SetParameterValue("Tienchu", Utilities.Doctien.ReadMoney(String.Format("{0:0}", TongThanhTien)));
+            rp.SetDataSource(ds);
+ 
+                rpt_Main bc = new rpt_Main(rp);
+                bc.ShowDialog();
+            
+            // crystalReportViewer1.ReportSource = rp;
+            //}
+            //catch (Exception ex)
+            //{
+            //    log.Error("Loi Tao Bang Gia " + ex.Message);
+            //}
+
+        }
+
+        private void buttonX2_Click(object sender, EventArgs e)
+        {
+            //VATTUDIEUCHINH("11000024", 2);
+            frm_INDanhMucVT vt = new frm_INDanhMucVT();
+            vt.ShowDialog();
         }
 
         

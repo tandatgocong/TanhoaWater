@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet" targetNamespace="http://tempuri.org/DataSet.xsd" xmlns:mstns="http://tempuri.org/DataSet.xsd" xmlns="http://tempuri.org/DataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="TANHOA_WATERConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="TANHOA_WATERConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.TanHoaWater.Properties.Settings.GlobalReference.Default.TANHOA_WATERConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="BGDC_CHITIETBGTableAdapter" GeneratorDataComponentClassName="BGDC_CHITIETBGTableAdapter" Name="BGDC_CHITIETBG" UserDataComponentName="BGDC_CHITIETBGTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TANHOA_WATERConnectionString (Settings)" DbObjectName="TANHOA_WATER.dbo.BGDC_CHITIETBG" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT SHS, LAN, MAHIEU, MAHDG, TENVT, DVT, NHOM, LOAISN, KHOILUONG, DONGIAVL, DONGIANC, DONGIAMTC, TT_VL, TT_NC, TT_MTC, NHOMVT FROM dbo.BGDC_CHITIETBG</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="SHS" DataSetColumn="SHS" />
+              <Mapping SourceColumn="LAN" DataSetColumn="LAN" />
+              <Mapping SourceColumn="MAHIEU" DataSetColumn="MAHIEU" />
+              <Mapping SourceColumn="MAHDG" DataSetColumn="MAHDG" />
+              <Mapping SourceColumn="TENVT" DataSetColumn="TENVT" />
+              <Mapping SourceColumn="DVT" DataSetColumn="DVT" />
+              <Mapping SourceColumn="NHOM" DataSetColumn="NHOM" />
+              <Mapping SourceColumn="LOAISN" DataSetColumn="LOAISN" />
+              <Mapping SourceColumn="KHOILUONG" DataSetColumn="KHOILUONG" />
+              <Mapping SourceColumn="DONGIAVL" DataSetColumn="DONGIAVL" />
+              <Mapping SourceColumn="DONGIANC" DataSetColumn="DONGIANC" />
+              <Mapping SourceColumn="DONGIAMTC" DataSetColumn="DONGIAMTC" />
+              <Mapping SourceColumn="TT_VL" DataSetColumn="TT_VL" />
+              <Mapping SourceColumn="TT_NC" DataSetColumn="TT_NC" />
+              <Mapping SourceColumn="TT_MTC" DataSetColumn="TT_MTC" />
+              <Mapping SourceColumn="NHOMVT" DataSetColumn="NHOMVT" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="DataSet" msprop:Generator_UserDSName="DataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="BGDC_CHITIETBG" msprop:Generator_TableClassName="BGDC_CHITIETBGDataTable" msprop:Generator_TableVarName="tableBGDC_CHITIETBG" msprop:Generator_TablePropName="BGDC_CHITIETBG" msprop:Generator_RowDeletingName="BGDC_CHITIETBGRowDeleting" msprop:Generator_UserTableName="BGDC_CHITIETBG" msprop:Generator_RowChangingName="BGDC_CHITIETBGRowChanging" msprop:Generator_RowEvHandlerName="BGDC_CHITIETBGRowChangeEventHandler" msprop:Generator_RowDeletedName="BGDC_CHITIETBGRowDeleted" msprop:Generator_RowEvArgName="BGDC_CHITIETBGRowChangeEvent" msprop:Generator_RowChangedName="BGDC_CHITIETBGRowChanged" msprop:Generator_RowClassName="BGDC_CHITIETBGRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SHS" msprop:Generator_ColumnVarNameInTable="columnSHS" msprop:Generator_ColumnPropNameInRow="SHS" msprop:Generator_ColumnPropNameInTable="SHSColumn" msprop:Generator_UserColumnName="SHS" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LAN" msprop:Generator_ColumnVarNameInTable="columnLAN" msprop:Generator_ColumnPropNameInRow="LAN" msprop:Generator_ColumnPropNameInTable="LANColumn" msprop:Generator_UserColumnName="LAN" type="xs:int" minOccurs="0" />
+              <xs:element name="MAHIEU" msprop:Generator_ColumnVarNameInTable="columnMAHIEU" msprop:Generator_ColumnPropNameInRow="MAHIEU" msprop:Generator_ColumnPropNameInTable="MAHIEUColumn" msprop:Generator_UserColumnName="MAHIEU" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MAHDG" msprop:Generator_ColumnVarNameInTable="columnMAHDG" msprop:Generator_ColumnPropNameInRow="MAHDG" msprop:Generator_ColumnPropNameInTable="MAHDGColumn" msprop:Generator_UserColumnName="MAHDG" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TENVT" msprop:Generator_ColumnVarNameInTable="columnTENVT" msprop:Generator_ColumnPropNameInRow="TENVT" msprop:Generator_ColumnPropNameInTable="TENVTColumn" msprop:Generator_UserColumnName="TENVT" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DVT" msprop:Generator_ColumnVarNameInTable="columnDVT" msprop:Generator_ColumnPropNameInRow="DVT" msprop:Generator_ColumnPropNameInTable="DVTColumn" msprop:Generator_UserColumnName="DVT" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NHOM" msprop:Generator_ColumnVarNameInTable="columnNHOM" msprop:Generator_ColumnPropNameInRow="NHOM" msprop:Generator_ColumnPropNameInTable="NHOMColumn" msprop:Generator_UserColumnName="NHOM" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LOAISN" msprop:Generator_ColumnVarNameInTable="columnLOAISN" msprop:Generator_ColumnPropNameInRow="LOAISN" msprop:Generator_ColumnPropNameInTable="LOAISNColumn" msprop:Generator_UserColumnName="LOAISN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="KHOILUONG" msprop:Generator_ColumnVarNameInTable="columnKHOILUONG" msprop:Generator_ColumnPropNameInRow="KHOILUONG" msprop:Generator_ColumnPropNameInTable="KHOILUONGColumn" msprop:Generator_UserColumnName="KHOILUONG" type="xs:double" minOccurs="0" />
+              <xs:element name="DONGIAVL" msprop:Generator_ColumnVarNameInTable="columnDONGIAVL" msprop:Generator_ColumnPropNameInRow="DONGIAVL" msprop:Generator_ColumnPropNameInTable="DONGIAVLColumn" msprop:Generator_UserColumnName="DONGIAVL" type="xs:double" minOccurs="0" />
+              <xs:element name="DONGIANC" msprop:Generator_ColumnVarNameInTable="columnDONGIANC" msprop:Generator_ColumnPropNameInRow="DONGIANC" msprop:Generator_ColumnPropNameInTable="DONGIANCColumn" msprop:Generator_UserColumnName="DONGIANC" type="xs:double" minOccurs="0" />
+              <xs:element name="DONGIAMTC" msprop:Generator_ColumnVarNameInTable="columnDONGIAMTC" msprop:Generator_ColumnPropNameInRow="DONGIAMTC" msprop:Generator_ColumnPropNameInTable="DONGIAMTCColumn" msprop:Generator_UserColumnName="DONGIAMTC" type="xs:double" minOccurs="0" />
+              <xs:element name="TT_VL" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTT_VL" msprop:Generator_ColumnPropNameInRow="TT_VL" msprop:Generator_ColumnPropNameInTable="TT_VLColumn" msprop:Generator_UserColumnName="TT_VL" type="xs:double" minOccurs="0" />
+              <xs:element name="TT_NC" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTT_NC" msprop:Generator_ColumnPropNameInRow="TT_NC" msprop:Generator_ColumnPropNameInTable="TT_NCColumn" msprop:Generator_UserColumnName="TT_NC" type="xs:double" minOccurs="0" />
+              <xs:element name="TT_MTC" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTT_MTC" msprop:Generator_ColumnPropNameInRow="TT_MTC" msprop:Generator_ColumnPropNameInTable="TT_MTCColumn" msprop:Generator_UserColumnName="TT_MTC" type="xs:double" minOccurs="0" />
+              <xs:element name="NHOMVT" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNHOMVT" msprop:Generator_ColumnPropNameInRow="NHOMVT" msprop:Generator_ColumnPropNameInTable="NHOMVTColumn" msprop:Generator_UserColumnName="NHOMVT" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
