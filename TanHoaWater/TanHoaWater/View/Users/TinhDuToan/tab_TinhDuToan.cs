@@ -1117,12 +1117,14 @@ namespace TanHoaWater.View.Users.TinhDuToan
                         string _mahieuvt = this.GridCacCongTac.Rows[i].Cells["congtac_mahieu"].Value + "";
                         congtacbg.MAHIEU = _mahieuvt;
                         congtacbg.MAHDG = this.GridCacCongTac.Rows[i].Cells["congtacMahieuDG"].Value + "";
-                        congtacbg.TENVT = DAL.C_DanhMucVatTu.finbyMaHieu(_mahieuvt).TENVT.ToUpper();
-                        congtacbg.DVT = this.GridCacCongTac.Rows[i].Cells["congtac_dvt"].Value + "";                                        
-                        string nhom= this.GridCacCongTac.Rows[i].Cells["congTacNhom"].Value + "";
+                        DANHMUCVATTU dmvt = DAL.C_DanhMucVatTu.finbyMaHieu(_mahieuvt);
+                        congtacbg.MAHDG = dmvt.MAHDG;
+                        congtacbg.TENVT = dmvt.TENVT.ToUpper();
+                        congtacbg.DVT = dmvt.DVT;
+                        string nhom = dmvt.NHOMVT;
                         string loaisd = this.GridCacCongTac.Rows[i].Cells["contac_loaisd"].Value + "";
-                        congtacbg.NHOM = this.GridCacCongTac.Rows[i].Cells["congTacNhom"].Value + "";
-                        congtacbg.LOAISN =loaisd;
+                        congtacbg.NHOM = dmvt.NHOMVT;
+                        congtacbg.LOAISN = loaisd;
                         congtacbg.KHOILUONG = double.Parse(this.GridCacCongTac.Rows[i].Cells["congtac_khoiluong"].Value + "");
                         //if ("XDCB".Equals(nhom))
                         //{
@@ -1131,9 +1133,48 @@ namespace TanHoaWater.View.Users.TinhDuToan
                         //else {
                         //    congtacbg.KHOILUONG = double.Parse(this.GridCacCongTac.Rows[i].Cells["congtac_khoiluong"].Value + "");
                         //}
-                        double vatlieu=double.Parse(this.GridCacCongTac.Rows[i].Cells["congtac_VL"].Value + "");
-                        double nhancong=double.Parse(this.GridCacCongTac.Rows[i].Cells["congtac_NC"].Value + "");
-                        double maythicong=double.Parse(this.GridCacCongTac.Rows[i].Cells["congtac_MTC"].Value + "");
+
+                        double vatlieu = 0.0;
+                        double nhancong = 0.0;
+                        double maythicong = 0.0;
+                        if (dmvt.BOVT == true)
+                        {
+                            DataTable dongiavt = DAL.C_DonGiaVatTu.getDonGiaBoVT(dmvt.MAHIEU);
+                            if (dongiavt != null)
+                            {
+                                vatlieu = double.Parse(dongiavt.Rows[0][0].ToString());
+                                nhancong = double.Parse(dongiavt.Rows[0][1].ToString());
+                                maythicong = double.Parse(dongiavt.Rows[0][2].ToString());
+                            }
+                        }
+                        else
+                        {
+                            DONGIAVATTU dongiavt = DAL.C_DonGiaVatTu.getDonGia(dmvt.MAHIEU);
+                            if (dongiavt != null)
+                            {
+                                vatlieu = dongiavt.DGVATLIEU.Value;
+                                nhancong = dongiavt.DGNHANCONG.Value;
+                                maythicong = dongiavt.DGMAYTHICONG.Value;
+                            }
+                        }
+
+                        //congtacbg.TENVT = DAL.C_DanhMucVatTu.finbyMaHieu(_mahieuvt).TENVT.ToUpper();
+                        //congtacbg.DVT = this.GridCacCongTac.Rows[i].Cells["congtac_dvt"].Value + "";                                        
+                        //string nhom= this.GridCacCongTac.Rows[i].Cells["congTacNhom"].Value + "";
+                        //string loaisd = this.GridCacCongTac.Rows[i].Cells["contac_loaisd"].Value + "";
+                        //congtacbg.NHOM = this.GridCacCongTac.Rows[i].Cells["congTacNhom"].Value + "";
+                        //congtacbg.LOAISN =loaisd;
+                        //congtacbg.KHOILUONG = double.Parse(this.GridCacCongTac.Rows[i].Cells["congtac_khoiluong"].Value + "");
+                        ////if ("XDCB".Equals(nhom))
+                        ////{
+                        ////    congtacbg.KHOILUONG = double.Parse(this.GridCacCongTac.Rows[i].Cells["congtac_khoiluong"].Value + "")/1000;
+                        ////}
+                        ////else {
+                        ////    congtacbg.KHOILUONG = double.Parse(this.GridCacCongTac.Rows[i].Cells["congtac_khoiluong"].Value + "");
+                        ////}
+                        //double vatlieu=double.Parse(this.GridCacCongTac.Rows[i].Cells["congtac_VL"].Value + "");
+                        //double nhancong=double.Parse(this.GridCacCongTac.Rows[i].Cells["congtac_NC"].Value + "");
+                        //double maythicong=double.Parse(this.GridCacCongTac.Rows[i].Cells["congtac_MTC"].Value + "");
 
                         switch (loaisd)
 	                    {
