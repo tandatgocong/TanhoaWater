@@ -166,6 +166,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TanHoa.dbml</DependentUpon>
     </Compile>
+    <Compile Include="DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Form2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -638,11 +643,22 @@
     <Compile Include="View\Users\KEHOACH\tab_LogDonKH.Designer.cs">
       <DependentUpon>tab_LogDonKH.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Users\TinhDuToan\BGDieuChinh\DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="View\Users\TinhDuToan\BGDieuChinh\frm_BGDieuChinh.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="View\Users\TinhDuToan\BGDieuChinh\frm_BGDieuChinh.Designer.cs">
       <DependentUpon>frm_BGDieuChinh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Users\TinhDuToan\BGDieuChinh\frm_INDanhMucVT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Users\TinhDuToan\BGDieuChinh\frm_INDanhMucVT.Designer.cs">
+      <DependentUpon>frm_INDanhMucVT.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Users\TinhDuToan\BGDieuChinh\report\rptBangGiaTuTaiLap00.cs">
       <DependentUpon>rptBangGiaTuTaiLap00.rpt</DependentUpon>
@@ -678,6 +694,12 @@
       <AutoGen>True</AutoGen>
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="View\Users\TinhDuToan\BGDieuChinh\rpt_VatTuDieuChinh.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_VatTuDieuChinh.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="View\Users\TinhDuToan\BGDieuChinh\tab_BangGiaDieuChinh.cs">
       <SubType>UserControl</SubType>
@@ -1067,6 +1089,10 @@
     <EmbeddedResource Include="View\Users\TinhDuToan\BGDieuChinh\frm_BGDieuChinh.resx">
       <DependentUpon>frm_BGDieuChinh.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\TinhDuToan\BGDieuChinh\frm_INDanhMucVT.resx">
+      <DependentUpon>frm_INDanhMucVT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\TinhDuToan\BGDieuChinh\Report1.rdlc" />
     <EmbeddedResource Include="View\Users\TinhDuToan\BGDieuChinh\report\rptBangGiaTuTaiLap00.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptBangGiaTuTaiLap00.cs</LastGenOutput>
@@ -1085,6 +1111,10 @@
     <EmbeddedResource Include="View\Users\TinhDuToan\BGDieuChinh\report\subReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>subReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\TinhDuToan\BGDieuChinh\rpt_VatTuDieuChinh.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_VatTuDieuChinh.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\TinhDuToan\BGDieuChinh\tab_BangGiaDieuChinh.resx">
       <DependentUpon>tab_BangGiaDieuChinh.cs</DependentUpon>
@@ -1216,6 +1246,17 @@
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>TanHoa.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet.xsc">
+      <DependentUpon>DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet.xss">
+      <DependentUpon>DataSet.xsd</DependentUpon>
     </None>
     <None Include="Lib\app.conf" />
     <None Include="Lib\app.settings">
@@ -1371,6 +1412,17 @@
       <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
     </None>
     <None Include="View\Users\KEHOACH\XINPHEPDD\BC\DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="View\Users\TinhDuToan\BGDieuChinh\DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="View\Users\TinhDuToan\BGDieuChinh\DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="View\Users\TinhDuToan\BGDieuChinh\DataSet1.xss">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>
     <None Include="View\Users\TinhDuToan\BGDieuChinh\report\DataSet2.xsc">
