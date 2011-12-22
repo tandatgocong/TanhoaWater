@@ -456,8 +456,8 @@
             this.tabControlPanel1.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(233)))), ((int)(((byte)(215)))));
             this.tabControlPanel1.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
             this.tabControlPanel1.Style.BorderColor.Color = System.Drawing.SystemColors.ControlDarkDark;
-            this.tabControlPanel1.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
-            | DevComponents.DotNetBar.eBorderSide.Bottom)));
+            this.tabControlPanel1.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right)
+                        | DevComponents.DotNetBar.eBorderSide.Bottom)));
             this.tabControlPanel1.Style.GradientAngle = 90;
             this.tabControlPanel1.TabIndex = 6;
             this.tabControlPanel1.TabItem = this.tabItem1;
@@ -612,8 +612,8 @@
             this.tabControlPanel2.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(233)))), ((int)(((byte)(215)))));
             this.tabControlPanel2.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
             this.tabControlPanel2.Style.BorderColor.Color = System.Drawing.SystemColors.ControlDarkDark;
-            this.tabControlPanel2.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
-            | DevComponents.DotNetBar.eBorderSide.Bottom)));
+            this.tabControlPanel2.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right)
+                        | DevComponents.DotNetBar.eBorderSide.Bottom)));
             this.tabControlPanel2.Style.GradientAngle = 90;
             this.tabControlPanel2.TabIndex = 7;
             this.tabControlPanel2.TabItem = this.tabItem2;
@@ -976,8 +976,8 @@
             this.PanelThamSo.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(233)))), ((int)(((byte)(215)))));
             this.PanelThamSo.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
             this.PanelThamSo.Style.BorderColor.Color = System.Drawing.SystemColors.ControlDarkDark;
-            this.PanelThamSo.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
-            | DevComponents.DotNetBar.eBorderSide.Bottom)));
+            this.PanelThamSo.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right)
+                        | DevComponents.DotNetBar.eBorderSide.Bottom)));
             this.PanelThamSo.Style.GradientAngle = 90;
             this.PanelThamSo.TabIndex = 3;
             this.PanelThamSo.TabItem = this.tabThamSo;
@@ -1518,8 +1518,8 @@
             this.tabControlPanel6.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(233)))), ((int)(((byte)(215)))));
             this.tabControlPanel6.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
             this.tabControlPanel6.Style.BorderColor.Color = System.Drawing.SystemColors.ControlDarkDark;
-            this.tabControlPanel6.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
-            | DevComponents.DotNetBar.eBorderSide.Bottom)));
+            this.tabControlPanel6.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right)
+                        | DevComponents.DotNetBar.eBorderSide.Bottom)));
             this.tabControlPanel6.Style.GradientAngle = 90;
             this.tabControlPanel6.TabIndex = 4;
             this.tabControlPanel6.TabItem = this.tabBoiThuong;
@@ -1751,8 +1751,8 @@
             this.tabControlPanel7.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(233)))), ((int)(((byte)(215)))));
             this.tabControlPanel7.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
             this.tabControlPanel7.Style.BorderColor.Color = System.Drawing.SystemColors.ControlDarkDark;
-            this.tabControlPanel7.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
-            | DevComponents.DotNetBar.eBorderSide.Bottom)));
+            this.tabControlPanel7.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right)
+                        | DevComponents.DotNetBar.eBorderSide.Bottom)));
             this.tabControlPanel7.Style.GradientAngle = 90;
             this.tabControlPanel7.TabIndex = 5;
             this.tabControlPanel7.TabItem = this.tabItem5;
@@ -2137,8 +2137,8 @@
             this.tabControlPanel3.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(233)))), ((int)(((byte)(215)))));
             this.tabControlPanel3.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
             this.tabControlPanel3.Style.BorderColor.Color = System.Drawing.SystemColors.ControlDarkDark;
-            this.tabControlPanel3.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
-            | DevComponents.DotNetBar.eBorderSide.Bottom)));
+            this.tabControlPanel3.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right)
+                        | DevComponents.DotNetBar.eBorderSide.Bottom)));
             this.tabControlPanel3.Style.GradientAngle = 90;
             this.tabControlPanel3.TabIndex = 1;
             this.tabControlPanel3.TabItem = this.tabNhapPhuiDao;
@@ -2569,8 +2569,8 @@
             this.tabControlPanel4.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(233)))), ((int)(((byte)(215)))));
             this.tabControlPanel4.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
             this.tabControlPanel4.Style.BorderColor.Color = System.Drawing.SystemColors.ControlDarkDark;
-            this.tabControlPanel4.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
-            | DevComponents.DotNetBar.eBorderSide.Bottom)));
+            this.tabControlPanel4.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right)
+                        | DevComponents.DotNetBar.eBorderSide.Bottom)));
             this.tabControlPanel4.Style.GradientAngle = 90;
             this.tabControlPanel4.TabIndex = 2;
             this.tabControlPanel4.TabItem = this.tabCacCongTac;
@@ -3038,7 +3038,7 @@
             this.txtSHS.Name = "txtSHS";
             this.txtSHS.Size = new System.Drawing.Size(134, 23);
             this.txtSHS.TabIndex = 2;
-            this.txtSHS.Text = "11000025";
+            this.txtSHS.Text = "11000024";
             this.txtSHS.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSHS_KeyPress);
             // 
             // txtHoTen

@@ -55,16 +55,15 @@ namespace TanHoaWater.View.Users.BGDieuChinh
             this.contac_loaisd.DisplayMember = "MALOAI";
             this.contac_loaisd.ValueMember = "MALOAI";
         }
-
+        bool khachangtuTaiLap = false;
         public void LoadTabCacLanDieuChinh() {
 
             DataTable tableDongTien = new DataTable();
             tableDongTien.Columns.Add("NGAYDONGTIEN", typeof(string));
             tableDongTien.Columns.Add("TIENGANTLK", typeof(double));
             tableDongTien.Columns.Add("TIENTLMD", typeof(double));
-            tableDongTien.Columns.Add("TONGCONG", typeof(double));
-           
-
+            tableDongTien.Columns.Add("TONGCONG", typeof(double));           
+            
             DataTable table = new DataTable();
             table.Columns.Add("LOAD", typeof(string));
             table.Columns.Add("LANDC", typeof(int));
@@ -76,6 +75,7 @@ namespace TanHoaWater.View.Users.BGDieuChinh
             table.Columns.Add("TOTALDUTOAN", typeof(double));
 
             BG_KHOILUONGXDCB klxd = DAL.C_KhoiLuongXDCB.findBySHS(_shs);
+            
             if (klxd != null) {
                 DataRow myDataRow = table.NewRow();
                 myDataRow["LOAD"] = "Lấy Số Liệu";
@@ -785,6 +785,7 @@ namespace TanHoaWater.View.Users.BGDieuChinh
         string _shs = "";
         bool view = true;
         bool banggiadaco = false;
+       
         public void LoadDuLieuBangGia(string shs)
         {
             //banggiadaco = false;
@@ -821,8 +822,14 @@ namespace TanHoaWater.View.Users.BGDieuChinh
                 if (bgKL.PHIQUANLY != null && !"".Equals(bgKL.PHIQUANLY) && bool.Parse(bgKL.PHIQUANLY + "")) this.checkPhiQuanLy.Checked = true;
                 else this.checkPhiQuanLy.Checked = false;
 
-                if (bgKL.KHTUTAILAP != null && !"".Equals(bgKL.KHTUTAILAP) && bool.Parse(bgKL.KHTUTAILAP + "")) this.vatTuXDCBKhachHangCap.Checked = true;
-                else this.vatTuXDCBKhachHangCap.Checked = false;
+                if (bgKL.KHTUTAILAP != null && !"".Equals(bgKL.KHTUTAILAP) && bool.Parse(bgKL.KHTUTAILAP + ""))
+                {
+                    this.vatTuXDCBKhachHangCap.Checked = true;
+                    khachangtuTaiLap = true;
+                }
+                else { this.vatTuXDCBKhachHangCap.Checked = false;
+                    khachangtuTaiLap = false;
+                }
 
                 //  Load Thong Tin Gia Tri Cu
                 NgayLapBGCu.Text = Utilities.DateToString.NgayVN(bgKL.CREATEDATE.Value);
@@ -1175,10 +1182,11 @@ namespace TanHoaWater.View.Users.BGDieuChinh
                         string _mahieuvt = this.GridCacCongTac.Rows[i].Cells["congtac_mahieu"].Value + "";
                         congtacbg.MAHIEU = _mahieuvt;
                         congtacbg.LAN = solandieuchinh;                     
-                        congtacbg.MAHDG = this.GridCacCongTac.Rows[i].Cells["congtacMahieuDG"].Value + "";
-                        congtacbg.TENVT = DAL.C_DanhMucVatTu.finbyMaHieu(_mahieuvt).TENVT.ToUpper();
-                        congtacbg.DVT = this.GridCacCongTac.Rows[i].Cells["congtac_dvt"].Value + "";
-                        string nhom = this.GridCacCongTac.Rows[i].Cells["congTacNhom"].Value + "";
+                        DANHMUCVATTU dmvt= DAL.C_DanhMucVatTu.finbyMaHieu(_mahieuvt);
+                        congtacbg.MAHDG = dmvt.MAHDG;
+                        congtacbg.TENVT = dmvt.TENVT.ToUpper();
+                        congtacbg.DVT = dmvt.DVT;
+                        string nhom = dmvt.NHOMVT;
                         string loaisd = this.GridCacCongTac.Rows[i].Cells["contac_loaisd"].Value + "";
                         congtacbg.NHOM = this.GridCacCongTac.Rows[i].Cells["congTacNhom"].Value + "";
                         congtacbg.LOAISN = loaisd;
@@ -1190,9 +1198,30 @@ namespace TanHoaWater.View.Users.BGDieuChinh
                         //else {
                         //    congtacbg.KHOILUONG = double.Parse(this.GridCacCongTac.Rows[i].Cells["congtac_khoiluong"].Value + "");
                         //}
-                        double vatlieu = double.Parse(this.GridCacCongTac.Rows[i].Cells["congtac_VL"].Value + "");
-                        double nhancong = double.Parse(this.GridCacCongTac.Rows[i].Cells["congtac_NC"].Value + "");
-                        double maythicong = double.Parse(this.GridCacCongTac.Rows[i].Cells["congtac_MTC"].Value + "");
+                        
+                        double vatlieu = 0.0;
+                        double nhancong =  0.0;
+                        double maythicong =  0.0;
+                        if (dmvt.BOVT == true)
+                        {
+                            DataTable dongiavt = DAL.C_DonGiaVatTu.getDonGiaBoVT(dmvt.MAHIEU);
+                            if (dongiavt != null)
+                            {
+                                vatlieu =double.Parse( dongiavt.Rows[0][0].ToString());
+                                nhancong = double.Parse(dongiavt.Rows[0][1].ToString());
+                                maythicong = double.Parse(dongiavt.Rows[0][2].ToString());
+                            }
+                        }
+                        else
+                        {
+                            DONGIAVATTU dongiavt = DAL.C_DonGiaVatTu.getDonGia(dmvt.MAHIEU);
+                            if (dongiavt != null)
+                            {
+                                vatlieu = dongiavt.DGVATLIEU.Value;
+                                nhancong = dongiavt.DGNHANCONG.Value;
+                                maythicong = dongiavt.DGMAYTHICONG.Value;
+                            }
+                        }
 
                         switch (loaisd)
                         {
@@ -1200,7 +1229,7 @@ namespace TanHoaWater.View.Users.BGDieuChinh
                                 if (!"XDCB".Equals(nhom))
                                 {
                                     DAL.C_HeSo.getHeSoBangGia();
-                                    congtacbg.TENVT = "SỬ DỤNG LẠI " + DAL.C_DanhMucVatTu.finbyMaHieu(_mahieuvt).TENVT.ToUpper() + "";
+                                    congtacbg.TENVT = "SỬ DỤNG LẠI " + dmvt.TENVT.ToUpper() + "";
                                     congtacbg.DONGIAVL = 0;
                                     congtacbg.DONGIANC = nhancong * DAL.C_HeSo._HSSuDungLai;
                                     congtacbg.DONGIAMTC = maythicong * DAL.C_HeSo._HSSuDungLai;
@@ -1213,7 +1242,7 @@ namespace TanHoaWater.View.Users.BGDieuChinh
                                 }
                                 break;
                             case "AP":
-                                congtacbg.TENVT = DAL.C_DanhMucVatTu.finbyMaHieu(_mahieuvt).TENVT.ToUpper() + "" + " (THỬ ÁP)";
+                                congtacbg.TENVT = dmvt.TENVT.ToUpper() + "" + " (THỬ ÁP)";
                                 congtacbg.DONGIAVL = vatlieu;
                                 congtacbg.DONGIANC = nhancong;
                                 congtacbg.DONGIAMTC = maythicong;
@@ -1222,7 +1251,7 @@ namespace TanHoaWater.View.Users.BGDieuChinh
                                 if (!"XDCB".Equals(nhom))
                                 {
                                     DAL.C_HeSo.getHeSoBangGia();
-                                    congtacbg.TENVT = "CÔNG GỞ " + DAL.C_DanhMucVatTu.finbyMaHieu(_mahieuvt).TENVT.ToUpper() + " (VẬT TƯ CŨ)";
+                                    congtacbg.TENVT = "CÔNG GỞ " + dmvt.TENVT.ToUpper() + " (VẬT TƯ CŨ)";
                                     congtacbg.DONGIAVL = 0;
                                     congtacbg.DONGIANC = nhancong * DAL.C_HeSo._HSThuHoi;
                                     congtacbg.DONGIAMTC = maythicong * DAL.C_HeSo._HSThuHoi;
@@ -1248,7 +1277,7 @@ namespace TanHoaWater.View.Users.BGDieuChinh
 
                                         congtacbg.DONGIAVL = 0.0;
                                         congtacbg.DONGIAMTC = 0.0;
-                                        congtacbg.TENVT = DAL.C_DanhMucVatTu.finbyMaHieu(_mahieuvt).TENVT.ToUpper() + " (K/H CUNG CẤP) ";
+                                        congtacbg.TENVT = dmvt.TENVT.ToUpper() + " (K/H CUNG CẤP) ";
 
                                     }
                                     else
@@ -1280,8 +1309,8 @@ namespace TanHoaWater.View.Users.BGDieuChinh
             
 
         }
-        double gantlcu =  0.0;
-        double tlmdcu =  0.0;
+        double gantlcu = 0.0;
+        double tlmdcu = 0.0;
         double tongiatricu =  0.0;
 
         double kqgantlk = 0.0;
@@ -1423,8 +1452,8 @@ namespace TanHoaWater.View.Users.BGDieuChinh
                 else
                 {
                     klxdcb.KHTUTAILAP = false;
-                    klxdcb.TLMDTRUOCTHUE = DAL.C_CongTacBangGia.TLMDTRUOCTHUE;
-                    klxdcb.TAILAPMATDUONG = DAL.C_CongTacBangGia.TAILAPMATDUONG;
+                    klxdcb.TLMDTRUOCTHUE = DAL.C_BGDC_CongTacBangGia.TLMDTRUOCTHUE;
+                    klxdcb.TAILAPMATDUONG = DAL.C_BGDC_CongTacBangGia.TAILAPMATDUONG;
                 }
                 klxdcb.CHIPHITRUCTIEP = DAL.C_BGDC_CongTacBangGia.CHIPHITRUCTIEP;
                 klxdcb.CHIPHICHUNG = DAL.C_BGDC_CongTacBangGia.CHIPHICHUNG;
@@ -1447,33 +1476,70 @@ namespace TanHoaWater.View.Users.BGDieuChinh
                 }
                 //klxdcb.LOAIDC = "Điều Chỉnh";
                //DAL.C_KhoiLuongXDCB.InsertKTPD(klxdcb);
-                try
-                {
+
+
+                //try
+                //{
                     
-                     gantlcu = !"".Equals(TienGanTLKCu.Text.Trim()) ? double.Parse(TienGanTLKCu.Text.Trim()) : 0.0;
-                     tlmdcu = !"".Equals(TienTLMDCu.Text.Trim()) ? double.Parse(TienTLMDCu.Text.Trim()) : 0.0;
-                     tongiatricu = !"".Equals(TienTongGiaTriCu.Text.Trim()) ? double.Parse(TienTongGiaTriCu.Text.Trim()) : 0.0;
+                //   double gantlcu = !"".Equals(TienGanTLKCu.Text.Trim()) ? double.Parse(TienGanTLKCu.Text.Trim()) : 0.0;
+                //   double tlmdcu = !"".Equals(TienTLMDCu.Text.Trim()) ? double.Parse(TienTLMDCu.Text.Trim()) : 0.0;
+                //   double tongiatricu = !"".Equals(TienTongGiaTriCu.Text.Trim()) ? double.Parse(TienTongGiaTriCu.Text.Trim()) : 0.0;
 
-                     kqgantlk = DAL.C_BGDC_CongTacBangGia.TONG - gantlcu;
-                     kqtlmd = DAL.C_BGDC_CongTacBangGia.TAILAPMATDUONG - tlmdcu;
-                     kqtonggiatri = (DAL.C_BGDC_CongTacBangGia.TONG + DAL.C_BGDC_CongTacBangGia.TAILAPMATDUONG) - tongiatricu;
-                    klxdcb.DCTIENTLK = kqgantlk;
-                    klxdcb.DCTIENTLMD = kqtlmd;
-                    klxdcb.DCTIENTLMD = kqtonggiatri;
+                //   double kqgantlk = DAL.C_BGDC_CongTacBangGia.TONG - gantlcu;
+                //   double kqtlmd = DAL.C_BGDC_CongTacBangGia.TAILAPMATDUONG - tlmdcu;
+                //   double kqtonggiatri = (DAL.C_BGDC_CongTacBangGia.TONG + DAL.C_BGDC_CongTacBangGia.TAILAPMATDUONG) - tongiatricu;
+                //    klxdcb.DCTIENTLK = kqgantlk;
+                //    klxdcb.DCTIENTLMD = kqtlmd;
+                //    klxdcb.DCTIENTLMD = kqtonggiatri;
 
-                }
-                catch (Exception)
-                {
+                //}
+                //catch (Exception)
+                //{
                      
-                }
+                //}
                
 
                 DAL.C_BGDC_KhoiLuongXDCB.InsertKTPD(klxdcb);
                 // Tinh gia tri
-                NgayLapBGMoi.Text = Utilities.DateToString.NgayVN(DateTime.Now.Date);
-                TienGanTLKMoi.Text = String.Format("{0:0,0.00}", DAL.C_BGDC_CongTacBangGia.TONG);
-                TienTLMDMoi.Text = String.Format("{0:0,0.00}", DAL.C_BGDC_CongTacBangGia.TAILAPMATDUONG);
-                TongGiaTriMoi.Text = String.Format("{0:0,0.00}", (DAL.C_BGDC_CongTacBangGia.TONG + DAL.C_BGDC_CongTacBangGia.TAILAPMATDUONG));
+                try
+                {
+                    tabControl2.SelectedTabIndex = 3;
+                    NgayLapBGMoi.Text = Utilities.DateToString.NgayVN(DateTime.Now.Date);
+                    TienGanTLKMoi.Text = String.Format("{0:0,0.00}", DAL.C_BGDC_CongTacBangGia.TONG);
+                    TienTLMDMoi.Text = String.Format("{0:0,0.00}", DAL.C_BGDC_CongTacBangGia.TAILAPMATDUONG);
+                    TongGiaTriMoi.Text = String.Format("{0:0,0.00}", (DAL.C_BGDC_CongTacBangGia.TONG + DAL.C_BGDC_CongTacBangGia.TAILAPMATDUONG));
+
+                    double gantlmoi = DAL.C_BGDC_CongTacBangGia.TONG;
+                    double tlmdmoi = DAL.C_BGDC_CongTacBangGia.TAILAPMATDUONG;
+                    double tongiatrimoi = (DAL.C_BGDC_CongTacBangGia.TONG + DAL.C_BGDC_CongTacBangGia.TAILAPMATDUONG);
+
+                    gantlcu = !"".Equals(TienGanTLKCu.Text.Trim()) ? double.Parse(TienGanTLKCu.Text.Trim()) : 0.0;
+                    tlmdcu = !"".Equals(TienTLMDCu.Text.Trim()) ? double.Parse(TienTLMDCu.Text.Trim()) : 0.0;
+                    tongiatricu = !"".Equals(TienTongGiaTriCu.Text.Trim()) ? double.Parse(TienTongGiaTriCu.Text.Trim()) : 0.0;
+
+                    kqgantlk = gantlmoi - gantlcu;
+                    kqtlmd = tlmdmoi - tlmdcu;
+                    kqtonggiatri = tongiatrimoi - tongiatricu;
+
+                    ketquatonggiatri.Text = String.Format("{0:0,0.00}", kqtonggiatri);
+                    ketquaGanTLK.Text = String.Format("{0:0,0.00}", kqgantlk);
+                    ketquaTLMD.Text = String.Format("{0:0,0.00}", kqtlmd);
+                    if (kqtonggiatri > 0)
+                    {
+                        lbsotien.Text = "Số Tiền Khách Hàng Đóng Bổ Sung : <b>" + ketquatonggiatri.Text + "</b>";
+                    }
+                    else if (kqtonggiatri < 0)
+                    {
+                        lbsotien.Text = "Số Tiền Hoàn Lại Khách Hàng : <b>" + String.Format("{0:0,0.00}", Math.Abs(kqtonggiatri)) + "</b>";
+                    }
+
+                    lbBangChu.Text = Utilities.Doctien.ReadMoney("" + String.Format("{0:0}", Math.Abs(kqtonggiatri)));
+                }
+                catch (Exception ex)
+                {
+                    log.Error("Tinh GIa Tri Bang Gia " + ex.Message);
+                }
+               
                 
                 
 
@@ -1614,33 +1680,33 @@ namespace TanHoaWater.View.Users.BGDieuChinh
             table.Columns.Add("CPNHUA", typeof(double));
 
             DataRow myDataRow = table.NewRow();
-            total = DAL.C_CongTacBangGia.TONG;
+            total = DAL.C_BGDC_CongTacBangGia.TONG;
             myDataRow["SHS"] = shs;
-            myDataRow["A"] = DAL.C_CongTacBangGia.CPVATLIEU;
-            myDataRow["B"] = DAL.C_CongTacBangGia.B;
-            myDataRow["C"] = DAL.C_CongTacBangGia.C;
-            myDataRow["CPCABA"] = DAL.C_CongTacBangGia.CPCABA;
+            myDataRow["A"] = DAL.C_BGDC_CongTacBangGia.CPVATLIEU;
+            myDataRow["B"] = DAL.C_BGDC_CongTacBangGia.B;
+            myDataRow["C"] = DAL.C_BGDC_CongTacBangGia.C;
+            myDataRow["CPCABA"] = DAL.C_BGDC_CongTacBangGia.CPCABA;
             myDataRow["TOTAL"] = total;
-            myDataRow["VAT"] = DAL.C_CongTacBangGia.VAT;
-            myDataRow["B1"] = DAL.C_CongTacBangGia.CPNHANCONG;
-            myDataRow["C1"] = DAL.C_CongTacBangGia.CPMAYTHICONG;
-            myDataRow["C2"] = DAL.C_CongTacBangGia.C2;
-            myDataRow["D"] = DAL.C_CongTacBangGia.D;
-            myDataRow["E"] = DAL.C_CongTacBangGia.E;
-            myDataRow["F"] = DAL.C_CongTacBangGia.F;
-            myDataRow["G"] = DAL.C_CongTacBangGia.G;
-            myDataRow["H"] = DAL.C_CongTacBangGia.H;
-            myDataRow["I"] = DAL.C_CongTacBangGia.I;
-            myDataRow["J"] = DAL.C_CongTacBangGia.J;
-            myDataRow["K"] = DAL.C_CongTacBangGia.K;
-            myDataRow["L"] = DAL.C_CongTacBangGia.L;
+            myDataRow["VAT"] = DAL.C_BGDC_CongTacBangGia.VAT;
+            myDataRow["B1"] = DAL.C_BGDC_CongTacBangGia.CPNHANCONG;
+            myDataRow["C1"] = DAL.C_BGDC_CongTacBangGia.CPMAYTHICONG;
+            myDataRow["C2"] = DAL.C_BGDC_CongTacBangGia.C2;
+            myDataRow["D"] = DAL.C_BGDC_CongTacBangGia.D;
+            myDataRow["E"] = DAL.C_BGDC_CongTacBangGia.E;
+            myDataRow["F"] = DAL.C_BGDC_CongTacBangGia.F;
+            myDataRow["G"] = DAL.C_BGDC_CongTacBangGia.G;
+            myDataRow["H"] = DAL.C_BGDC_CongTacBangGia.H;
+            myDataRow["I"] = DAL.C_BGDC_CongTacBangGia.I;
+            myDataRow["J"] = DAL.C_BGDC_CongTacBangGia.J;
+            myDataRow["K"] = DAL.C_BGDC_CongTacBangGia.K;
+            myDataRow["L"] = DAL.C_BGDC_CongTacBangGia.L;
 
-            myDataRow["TAILAPMATDUONG"] = DAL.C_CongTacBangGia.TAILAPMATDUONG;
-            myDataRow["TLMDTRUOCTHUE"] = DAL.C_CongTacBangGia.TLMDTRUOCTHUE;
-            myDataRow["CPGAN"] = DAL.C_CongTacBangGia.CPGAN;
-            myDataRow["CPNHUA"] = DAL.C_CongTacBangGia.CPNHUA;
-            _tongketgan = DAL.C_CongTacBangGia.CPGAN;
-            _tongketnhua = DAL.C_CongTacBangGia.CPNHUA;
+            myDataRow["TAILAPMATDUONG"] = DAL.C_BGDC_CongTacBangGia.TAILAPMATDUONG;
+            myDataRow["TLMDTRUOCTHUE"] = DAL.C_BGDC_CongTacBangGia.TLMDTRUOCTHUE;
+            myDataRow["CPGAN"] = DAL.C_BGDC_CongTacBangGia.CPGAN;
+            myDataRow["CPNHUA"] = DAL.C_BGDC_CongTacBangGia.CPNHUA;
+            _tongketgan = DAL.C_BGDC_CongTacBangGia.CPGAN;
+            _tongketnhua = DAL.C_BGDC_CongTacBangGia.CPNHUA;
            
             table.Rows.Add(myDataRow);
             //conn.Close();
@@ -1653,162 +1719,8 @@ namespace TanHoaWater.View.Users.BGDieuChinh
         /// 
         /// </summary>
         /// <param name="_shs"></param>
-        public static DataTable TongKetChiPhi_NONE(string shs, bool _PHIC3, bool _PHIGS, bool _PHIQL)
-        {
-                    TanHoaDataContext db = new TanHoaDataContext();
-            SqlConnection conn = new SqlConnection(db.Connection.ConnectionString);
-
-            conn.Open();
-            SqlCommand cmd = new SqlCommand("TONGKETCHIPHI", conn);
-            cmd.CommandType = CommandType.StoredProcedure;
-
-            SqlParameter inparm = cmd.Parameters.Add("@shs", SqlDbType.VarChar);
-            inparm.Direction = ParameterDirection.Input;
-            inparm.Value = shs;
-
-            SqlParameter PHIC3 = cmd.Parameters.Add("@PHIC3", SqlDbType.Bit);
-            PHIC3.Direction = ParameterDirection.Input;
-            PHIC3.Value = _PHIC3;
-
-            SqlParameter PHIGS = cmd.Parameters.Add("@PHIGS", SqlDbType.Bit);
-            PHIGS.Direction = ParameterDirection.Input;
-            PHIGS.Value = _PHIGS;
-
-            SqlParameter PHIQL = cmd.Parameters.Add("@PHIQL", SqlDbType.Bit);
-            PHIQL.Direction = ParameterDirection.Input;
-            PHIQL.Value = _PHIQL;
-            
-
-            SqlParameter _A = cmd.Parameters.Add("@A", SqlDbType.Float);
-            _A.Direction = ParameterDirection.Output;
-
-            SqlParameter _B = cmd.Parameters.Add("@B", SqlDbType.Float);
-            _B.Direction = ParameterDirection.Output;
-
-            SqlParameter _C = cmd.Parameters.Add("@C", SqlDbType.Float);
-            _C.Direction = ParameterDirection.Output;
-
-            SqlParameter _CHIPHICABA = cmd.Parameters.Add("@CPCABA", SqlDbType.Float);
-            _CHIPHICABA.Direction = ParameterDirection.Output;
-
-            SqlParameter _TONG = cmd.Parameters.Add("@TOTAL", SqlDbType.Float);
-            _TONG.Direction = ParameterDirection.Output;
-
-            SqlParameter _VAT = cmd.Parameters.Add("@VAT", SqlDbType.Float);
-            _VAT.Direction = ParameterDirection.Output;
-
-            SqlParameter B1 = cmd.Parameters.Add("@B1", SqlDbType.Float);
-            B1.Direction = ParameterDirection.Output;
-
-            SqlParameter C1 = cmd.Parameters.Add("@C1", SqlDbType.Float);
-            C1.Direction = ParameterDirection.Output;
-
-            SqlParameter C2 = cmd.Parameters.Add("@C2", SqlDbType.Float);
-            C2.Direction = ParameterDirection.Output;
-
-            SqlParameter D = cmd.Parameters.Add("@D", SqlDbType.Float);
-            D.Direction = ParameterDirection.Output;
-
-            SqlParameter E = cmd.Parameters.Add("@E", SqlDbType.Float);
-            E.Direction = ParameterDirection.Output;
-
-            SqlParameter F = cmd.Parameters.Add("@F", SqlDbType.Float);
-            F.Direction = ParameterDirection.Output;
-
-            SqlParameter G = cmd.Parameters.Add("@G", SqlDbType.Float);
-            G.Direction = ParameterDirection.Output;
-
-            SqlParameter H = cmd.Parameters.Add("@H", SqlDbType.Float);
-            H.Direction = ParameterDirection.Output;
-
-            SqlParameter I = cmd.Parameters.Add("@I", SqlDbType.Float);
-            I.Direction = ParameterDirection.Output;
-
-            SqlParameter J = cmd.Parameters.Add("@J", SqlDbType.Float);
-            J.Direction = ParameterDirection.Output;
-
-            SqlParameter K = cmd.Parameters.Add("@K", SqlDbType.Float);
-            K.Direction = ParameterDirection.Output;
-
-            SqlParameter L = cmd.Parameters.Add("@L", SqlDbType.Float);
-            L.Direction = ParameterDirection.Output;
-
-
-            SqlParameter _TAILAPMATDUONG = cmd.Parameters.Add("@TAILAPMATDUONG", SqlDbType.Float);
-            _TAILAPMATDUONG.Direction = ParameterDirection.Output;
-
-            SqlParameter _TLMDTRUOCTHUE = cmd.Parameters.Add("@TLMDTRUOCTHUE", SqlDbType.Float);
-            _TLMDTRUOCTHUE.Direction = ParameterDirection.Output;
-
-            SqlParameter _CPGAN = cmd.Parameters.Add("@CPGAN", SqlDbType.Float);
-            _CPGAN.Direction = ParameterDirection.Output;
-
-            SqlParameter _CPNHUA = cmd.Parameters.Add("@CPNHUA", SqlDbType.Float);
-            _CPNHUA.Direction = ParameterDirection.Output;
-
-            cmd.ExecuteNonQuery();
-
-            DataTable table = new DataTable("TONGKETKINHPHI");
-            table.Columns.Add("SHS", typeof(string));
-            table.Columns.Add("A", typeof(double));
-            table.Columns.Add("B", typeof(double));
-            table.Columns.Add("C", typeof(double));
-            table.Columns.Add("CPCABA", typeof(double));
-            table.Columns.Add("TOTAL", typeof(double));
-            table.Columns.Add("VAT", typeof(double));
-            table.Columns.Add("B1", typeof(double));
-            table.Columns.Add("C1", typeof(double));
-            table.Columns.Add("C2", typeof(double));
-            table.Columns.Add("D", typeof(double));
-            table.Columns.Add("E", typeof(double));
-            table.Columns.Add("F", typeof(double));
-            table.Columns.Add("G", typeof(double));
-            table.Columns.Add("H", typeof(double));
-            table.Columns.Add("I", typeof(double));
-            table.Columns.Add("J", typeof(double));
-            table.Columns.Add("K", typeof(double));
-            table.Columns.Add("L", typeof(double));
-
-            table.Columns.Add("TAILAPMATDUONG", typeof(double));
-            table.Columns.Add("TLMDTRUOCTHUE", typeof(double));
-            table.Columns.Add("CPGAN", typeof(double));
-            table.Columns.Add("CPNHUA", typeof(double));
-
-            DataRow myDataRow = table.NewRow();
-            total = double.Parse(("" + cmd.Parameters["@TOTAL"].Value).Equals("") != true ? cmd.Parameters["@TOTAL"].Value + "" : "0.0");
-            myDataRow["SHS"] = shs;
-            myDataRow["A"] = double.Parse(("" + cmd.Parameters["@A"].Value).Equals("") != true ? cmd.Parameters["@A"].Value + "" : "0.0");
-            myDataRow["B"] = double.Parse(("" + cmd.Parameters["@B"].Value).Equals("") != true ? cmd.Parameters["@B"].Value + "" : "0.0");
-            myDataRow["C"] = double.Parse(("" + cmd.Parameters["@C"].Value).Equals("") != true ? cmd.Parameters["@C"].Value + "" : "0.0");
-            myDataRow["CPCABA"] = double.Parse(("" + cmd.Parameters["@CPCABA"].Value).Equals("") != true ? cmd.Parameters["@CPCABA"].Value + "" : "0.0");
-            myDataRow["TOTAL"] = total;
-            myDataRow["VAT"] = double.Parse(("" + cmd.Parameters["@VAT"].Value).Equals("") != true ? cmd.Parameters["@VAT"].Value + "" : "0.0");
-            myDataRow["B1"] = double.Parse(("" + cmd.Parameters["@B1"].Value).Equals("") != true ? cmd.Parameters["@B1"].Value + "" : "0.0");
-            myDataRow["C1"] = double.Parse(("" + cmd.Parameters["@C1"].Value).Equals("") != true ? cmd.Parameters["@C1"].Value + "" : "0.0");
-            myDataRow["C2"] = double.Parse(("" + cmd.Parameters["@C2"].Value).Equals("") != true ? cmd.Parameters["@C2"].Value + "" : "0.0");
-            myDataRow["D"] = double.Parse(("" + cmd.Parameters["@D"].Value).Equals("") != true ? cmd.Parameters["@D"].Value + "" : "0.0");
-            myDataRow["E"] = double.Parse(("" + cmd.Parameters["@E"].Value).Equals("") != true ? cmd.Parameters["@E"].Value + "" : "0.0");
-            myDataRow["F"] = double.Parse(("" + cmd.Parameters["@F"].Value).Equals("") != true ? cmd.Parameters["@F"].Value + "" : "0.0");
-            myDataRow["G"] = double.Parse(("" + cmd.Parameters["@G"].Value).Equals("") != true ? cmd.Parameters["@G"].Value + "" : "0.0");
-            myDataRow["H"] = double.Parse(("" + cmd.Parameters["@H"].Value).Equals("") != true ? cmd.Parameters["@H"].Value + "" : "0.0");
-            myDataRow["I"] = double.Parse(("" + cmd.Parameters["@I"].Value).Equals("") != true ? cmd.Parameters["@I"].Value + "" : "0.0");
-            myDataRow["J"] = double.Parse(("" + cmd.Parameters["@J"].Value).Equals("") != true ? cmd.Parameters["@J"].Value + "" : "0.0");
-            myDataRow["K"] = double.Parse(("" + cmd.Parameters["@K"].Value).Equals("") != true ? cmd.Parameters["@K"].Value + "" : "0.0");
-            myDataRow["L"] = double.Parse(("" + cmd.Parameters["@L"].Value).Equals("") != true ? cmd.Parameters["@L"].Value + "" : "0.0");
-
-            myDataRow["TAILAPMATDUONG"] = double.Parse(("" + cmd.Parameters["@TAILAPMATDUONG"].Value).Equals("") != true ? cmd.Parameters["@TAILAPMATDUONG"].Value + "" : "0.0");
-            myDataRow["TLMDTRUOCTHUE"] = double.Parse(("" + cmd.Parameters["@TLMDTRUOCTHUE"].Value).Equals("") != true ? cmd.Parameters["@TLMDTRUOCTHUE"].Value + "" : "0.0");
-
-            _tongketgan = double.Parse(("" + cmd.Parameters["@CPGAN"].Value).Equals("") != true ? cmd.Parameters["@CPGAN"].Value + "" : "0.0");
-            _tongketnhua = double.Parse(("" + cmd.Parameters["@CPNHUA"].Value).Equals("") != true ? cmd.Parameters["@CPNHUA"].Value + "" : "0.0");
-            myDataRow["CPGAN"] = _tongketgan;
-            myDataRow["CPNHUA"] =_tongketnhua;
-            table.Rows.Add(myDataRow);
-            conn.Close();
-            return table;
-        }
-
-        public  void INBANGIA(string _shs, int lan) {
+      
+        public  void INBANGIA(string _shs, int lan, bool view) {
             //try
             //{
                 TanHoaDataContext db = new TanHoaDataContext();
@@ -1862,32 +1774,49 @@ namespace TanHoaWater.View.Users.BGDieuChinh
                     phiGS = true;
                 else phiGS = false;
 
+                //ds.Tables.Add(TongKetChiPhi(_shs, phiC3, phiGS, phiQL));
                 ds.Tables.Add(TongKetChiPhi(_shs, phiC3, phiGS, phiQL));
 
                 double TongThanhTien = total + double.Parse(ds.Tables["BG_SUMTAILAPMATDUONG"].Rows[0][1].ToString());
                 CrystalReportViewer r = new CrystalReportViewer();
                 ReportDocument rp = new ReportDocument();
-                //if (vatTuXDCBKhachHangCap.Checked)
-                //{
-                //    rp = new rptBangGiaTuTaiLap();
-                //}
-                //else {
-                //    rp = new rptBangGia();
-                //}
-                rp = new rptBangGia();
+                if (vatTuXDCBKhachHangCap.Checked && khachangtuTaiLap==false)
+                {
+
+                    rp = new rptBangGiaTuTaiLap();
+                }
+                else if (vatTuXDCBKhachHangCap.Checked && khachangtuTaiLap == true)
+                {
+                    rp = new rptBangGiaTuTaiLap00();
+                }
+                else
+                {
+                    rp = new rptBangGia();
+                }
+                //rp = new rptBangGia();
                 //rp.Subreports["Subreport1"].SetParameterValue("Tienchu", Utilities.Doctien.ReadMoney(String.Format("{0:0}", TongThanhTien)));
-                  rp.SetDataSource(ds);
-                
-                rp.SetParameterValue("subTienchu", Utilities.Doctien.ReadMoney(String.Format("{0:0}", TongThanhTien)));
+                rp.SetDataSource(ds);
+
+                rp.SetParameterValue("subTienchu", Utilities.Doctien.ReadMoney(String.Format("{0:0}", Math.Round(Math.Abs(kqtonggiatri)))));
                 rp.SetParameterValue("gan", _tongketgan);
                 rp.SetParameterValue("nhua", _tongketnhua);
 
 
+                
                 rp.SetParameterValue("gantlkKhauTru", gantlcu);
                 rp.SetParameterValue("gantlkConLai", kqgantlk);
                 rp.SetParameterValue("tlmdkhautru", tlmdcu);
+                if (kqtlmd == 0.0)
+                {
+                    kqtlmd = 0.0000000001;
+                }
+               // rp.Subreports["subReport"].SetParameterValue("tlmdcolai", kqtlmd);
                 rp.SetParameterValue("tlmdcolai", kqtlmd);
                 rp.SetParameterValue("sotienkhautrutruoc", tongiatricu);
+                
+                if (kqtonggiatri == 0)
+                    kqtonggiatri = 0.0000000001;
+
                 rp.SetParameterValue("ketquagiatri", kqtonggiatri);
 
                 if (checkKHDT.Checked)
@@ -1895,9 +1824,17 @@ namespace TanHoaWater.View.Users.BGDieuChinh
                 else
                     rp.SetParameterValue("khachhangdautu", "");
                 //DAL.C_CongTacBangGia.CapNhatHoanTatTK(_shs);
-
-                rpt_Main bc = new rpt_Main(rp);
-                bc.ShowDialog();
+                rp.SetParameterValue("ngaytinhbanggiacu", NgayLapBGCu.Text.Trim());
+                if (view)
+                {
+                    rpt_ViewBangGiaDC bc = new rpt_ViewBangGiaDC(rp,_shs, solandieuchinh);
+                    bc.ShowDialog();
+                }
+                else
+                {
+                    rpt_Main bc = new rpt_Main(rp);
+                    bc.ShowDialog();
+                }
                 // crystalReportViewer1.ReportSource = rp;
             //}
             //catch (Exception ex)
@@ -1937,7 +1874,7 @@ namespace TanHoaWater.View.Users.BGDieuChinh
                         InsertBG_KICHTHUOCPHUIDAO();
                         InsertCONGTACBANGGIA();
                         InsertKHOILUONGXDCB();
-                        INBANGIA(_shs, solandieuchinh);
+                        INBANGIA(_shs, solandieuchinh, false);
                         solandieuchinh++;
 
                         //if (banggiadaco == true)
@@ -1979,7 +1916,7 @@ namespace TanHoaWater.View.Users.BGDieuChinh
                         //    banggiadaco = true;
                         //    radioGhiDe.Checked = true;
                         //}
-                        TinhGiaTriBG();
+                       
                         LoadTabCacLanDieuChinh();
                     }
                 }
@@ -1999,43 +1936,7 @@ namespace TanHoaWater.View.Users.BGDieuChinh
 
             }
         }
-
-        public void TinhGiaTriBG() {
-
-            try
-            {
-                tabControl2.SelectedTabIndex = 3;
-
-                double gantlmoi = !"".Equals(TienGanTLKMoi.Text.Trim()) ? double.Parse(TienGanTLKMoi.Text.Trim()) : 0.0;
-                double tlmdmoi = !"".Equals(TienTLMDMoi.Text.Trim()) ? double.Parse(TienTLMDMoi.Text.Trim()) : 0.0;
-                double tongiatrimoi = !"".Equals(TongGiaTriMoi.Text.Trim()) ? double.Parse(TongGiaTriMoi.Text.Trim()) : 0.0;
-
-                double gantlcu = !"".Equals(TienGanTLKCu.Text.Trim()) ? double.Parse(TienGanTLKCu.Text.Trim()) : 0.0;
-                double tlmdcu = !"".Equals(TienTLMDCu.Text.Trim()) ? double.Parse(TienTLMDCu.Text.Trim()) : 0.0;
-                double tongiatricu = !"".Equals(TienTongGiaTriCu.Text.Trim()) ? double.Parse(TienTongGiaTriCu.Text.Trim()) : 0.0;
-
-                double kqgantlk = gantlmoi - gantlcu;
-                double kqtlmd = tlmdmoi - tlmdcu;
-                double kqtonggiatri = tongiatrimoi - tongiatricu;
-
-                ketquatonggiatri.Text = String.Format("{0:0,0.00}", kqtonggiatri);  
-                ketquaGanTLK.Text = String.Format("{0:0,0.00}",kqgantlk);  
-                ketquaTLMD.Text = String.Format("{0:0,0.00}", kqtlmd);  
-                if (kqtonggiatri > 0) {
-                    lbsotien.Text = "Số Tiền Khách Hàng Đóng Bổ Sung : <b>" + ketquatonggiatri.Text + "</b>";
-                }
-                else if (kqtonggiatri < 0) {
-                    lbsotien.Text = "Số Tiền Hoàn Lại Khách Hàng : <b>" + String.Format("{0:0,0.00}", Math.Abs(kqtonggiatri)) + "</b>";
-                }
-
-                lbBangChu.Text = Utilities.Doctien.ReadMoney("" + String.Format("{0:0}", Math.Abs(kqtonggiatri)));
-            }
-            catch (Exception ex)
-            {
-                log.Error("Tinh GIa Tri Bang Gia " + ex.Message);   
-            }
         
-        }
         private void GridCacCongTac_CellLeave(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -2446,16 +2347,39 @@ namespace TanHoaWater.View.Users.BGDieuChinh
 
         private void btXemBangGia_Click(object sender, EventArgs e)
         {
-            if ("0".Equals(txtKLCat.Text) || "0.00".Equals(txtKLCat.Text))
+            if (!"".Equals(_shs))
             {
-                MessageBox.Show(this, "Cần Nhập Thông Tin Bảng Giá !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                string logText = "";
+                try
+                {
+                    if ("0".Equals(txtKLCat.Text) || "0.00".Equals(txtKLCat.Text))
+                    {
+                        MessageBox.Show(this, "Cần Nhập Thông Tin Bảng Giá !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+
+                        tinhlai = false;
+                        InsertBG_KICHTHUOCPHUIDAO();
+                        InsertCONGTACBANGGIA();
+                        InsertKHOILUONGXDCB();
+                        INBANGIA(_shs, solandieuchinh,true);
+                        LoadTabCacLanDieuChinh();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    log.Error("Loi In Bang Gia " + ex.Message);
+                    MessageBox.Show(this, "Tạo Mới Bảng Giá Thất Bại. ", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
             }
             else
             {
+                MessageBox.Show(this, "Nhập Số Hồ Sơ Tính Dự Toán.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.txtSHS.Focus();
+                this.txtSHS.BackColor = Color.Red;
 
-                solandieuchinh = 2;
-                INBANGIA(_shs, solandieuchinh);
-                
             }
         }
 

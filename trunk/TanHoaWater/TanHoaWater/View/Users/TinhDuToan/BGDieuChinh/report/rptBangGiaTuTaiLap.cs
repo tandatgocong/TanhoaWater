@@ -106,7 +106,7 @@ namespace TanHoaWater.View.Users.TinhDuToan.BGDieuChinh.report {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_Tienchu {
+        public CrystalDecisions.Shared.IParameterField Parameter_gan {
             get {
                 return this.DataDefinition.ParameterFields[0];
             }
@@ -114,7 +114,7 @@ namespace TanHoaWater.View.Users.TinhDuToan.BGDieuChinh.report {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_gan {
+        public CrystalDecisions.Shared.IParameterField Parameter_nhua {
             get {
                 return this.DataDefinition.ParameterFields[1];
             }
@@ -122,7 +122,7 @@ namespace TanHoaWater.View.Users.TinhDuToan.BGDieuChinh.report {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_nhua {
+        public CrystalDecisions.Shared.IParameterField Parameter_khachhangdautu {
             get {
                 return this.DataDefinition.ParameterFields[2];
             }
@@ -130,7 +130,7 @@ namespace TanHoaWater.View.Users.TinhDuToan.BGDieuChinh.report {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_khachhangdautu {
+        public CrystalDecisions.Shared.IParameterField Parameter_gantlkKhauTru {
             get {
                 return this.DataDefinition.ParameterFields[3];
             }
@@ -138,9 +138,57 @@ namespace TanHoaWater.View.Users.TinhDuToan.BGDieuChinh.report {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_subReportrpt_subTienchu {
+        public CrystalDecisions.Shared.IParameterField Parameter_gantlkConLai {
             get {
                 return this.DataDefinition.ParameterFields[4];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_subReportrpt_subTienchu {
+            get {
+                return this.DataDefinition.ParameterFields[5];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_subReportrpt_tlmdkhautru {
+            get {
+                return this.DataDefinition.ParameterFields[6];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_subReportrpt_sotienkhautrutruoc {
+            get {
+                return this.DataDefinition.ParameterFields[7];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_subReportrpt_ketquagiatri {
+            get {
+                return this.DataDefinition.ParameterFields[8];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_subReportrpt_ngaytinhbanggiacu {
+            get {
+                return this.DataDefinition.ParameterFields[9];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_subReportrpt_tlmdcolai {
+            get {
+                return this.DataDefinition.ParameterFields[10];
             }
         }
     }
