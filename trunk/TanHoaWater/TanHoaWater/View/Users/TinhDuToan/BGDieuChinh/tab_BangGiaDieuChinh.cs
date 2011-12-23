@@ -1861,7 +1861,6 @@ namespace TanHoaWater.View.Users.BGDieuChinh
           
            if (!"".Equals(_shs))
             {
-                string logText = "";
                 try
                 {
                     if ("0".Equals(txtKLCat.Text) || "0.00".Equals(txtKLCat.Text))

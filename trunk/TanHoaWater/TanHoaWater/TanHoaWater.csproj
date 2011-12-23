@@ -643,6 +643,10 @@
     <Compile Include="View\Users\KEHOACH\tab_LogDonKH.Designer.cs">
       <DependentUpon>tab_LogDonKH.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Users\TinhDuToan\BGDieuChinh\DataSet1.cs">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="View\Users\TinhDuToan\BGDieuChinh\DataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
