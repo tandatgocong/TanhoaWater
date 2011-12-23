@@ -7,11 +7,11 @@
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="TANHOA_WATERConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="TANHOA_WATERConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.TanHoaWater.Properties.Settings.GlobalReference.Default.TANHOA_WATERConnectionString" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="BGDC_CHITIETBGTableAdapter" GeneratorDataComponentClassName="BGDC_CHITIETBGTableAdapter" Name="BGDC_CHITIETBG" UserDataComponentName="BGDC_CHITIETBGTableAdapter">
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="BGDCCHITIETBGTableAdapter" GeneratorDataComponentClassName="BGDCCHITIETBGTableAdapter" Name="BGDCCHITIETBG" UserDataComponentName="BGDCCHITIETBGTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="TANHOA_WATERConnectionString (Settings)" DbObjectName="TANHOA_WATER.dbo.BGDC_CHITIETBG" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="TANHOA_WATERConnectionString (Settings)" DbObjectName="TANHOA_WATER.dbo.BGDC_CHITIETBG" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT SHS, LAN, MAHIEU, MAHDG, TENVT, DVT, NHOM, LOAISN, KHOILUONG, DONGIAVL, DONGIANC, DONGIAMTC, TT_VL, TT_NC, TT_MTC, NHOMVT FROM dbo.BGDC_CHITIETBG</CommandText>
                     <Parameters />
                   </DbCommand>
@@ -46,7 +46,7 @@
   <xs:element name="DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet1" msprop:Generator_UserDSName="DataSet1">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="BGDC_CHITIETBG" msprop:Generator_TableClassName="BGDC_CHITIETBGDataTable" msprop:Generator_TableVarName="tableBGDC_CHITIETBG" msprop:Generator_TablePropName="BGDC_CHITIETBG" msprop:Generator_RowDeletingName="BGDC_CHITIETBGRowDeleting" msprop:Generator_UserTableName="BGDC_CHITIETBG" msprop:Generator_RowChangingName="BGDC_CHITIETBGRowChanging" msprop:Generator_RowEvHandlerName="BGDC_CHITIETBGRowChangeEventHandler" msprop:Generator_RowDeletedName="BGDC_CHITIETBGRowDeleted" msprop:Generator_RowEvArgName="BGDC_CHITIETBGRowChangeEvent" msprop:Generator_RowChangedName="BGDC_CHITIETBGRowChanged" msprop:Generator_RowClassName="BGDC_CHITIETBGRow">
+        <xs:element name="BGDCCHITIETBG" msprop:Generator_TableClassName="BGDCCHITIETBGDataTable" msprop:Generator_TableVarName="tableBGDCCHITIETBG" msprop:Generator_TablePropName="BGDCCHITIETBG" msprop:Generator_RowDeletingName="BGDCCHITIETBGRowDeleting" msprop:Generator_UserTableName="BGDCCHITIETBG" msprop:Generator_RowChangingName="BGDCCHITIETBGRowChanging" msprop:Generator_RowEvHandlerName="BGDCCHITIETBGRowChangeEventHandler" msprop:Generator_RowDeletedName="BGDCCHITIETBGRowDeleted" msprop:Generator_RowEvArgName="BGDCCHITIETBGRowChangeEvent" msprop:Generator_RowChangedName="BGDCCHITIETBGRowChanged" msprop:Generator_RowClassName="BGDCCHITIETBGRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="SHS" msprop:Generator_ColumnVarNameInTable="columnSHS" msprop:Generator_ColumnPropNameInRow="SHS" msprop:Generator_ColumnPropNameInTable="SHSColumn" msprop:Generator_UserColumnName="SHS" minOccurs="0">
