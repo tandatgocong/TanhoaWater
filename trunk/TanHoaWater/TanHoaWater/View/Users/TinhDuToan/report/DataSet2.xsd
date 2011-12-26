@@ -305,114 +305,6 @@ SELECT STT, LINE1, LINE2, LINE3, LINE4, LINE5, LINE6, DUYET, NGUOIDUYET, THANHLA
   <xs:element name="DataSet2" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet2" msprop:Generator_UserDSName="DataSet2">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="BG_TAILAPMATDUONG" msprop:Generator_TableClassName="BG_TAILAPMATDUONGDataTable" msprop:Generator_TableVarName="tableBG_TAILAPMATDUONG" msprop:Generator_TablePropName="BG_TAILAPMATDUONG" msprop:Generator_RowDeletingName="BG_TAILAPMATDUONGRowDeleting" msprop:Generator_UserTableName="BG_TAILAPMATDUONG" msprop:Generator_RowChangingName="BG_TAILAPMATDUONGRowChanging" msprop:Generator_RowEvHandlerName="BG_TAILAPMATDUONGRowChangeEventHandler" msprop:Generator_RowDeletedName="BG_TAILAPMATDUONGRowDeleted" msprop:Generator_RowEvArgName="BG_TAILAPMATDUONGRowChangeEvent" msprop:Generator_RowChangedName="BG_TAILAPMATDUONGRowChanged" msprop:Generator_RowClassName="BG_TAILAPMATDUONGRow">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="MADANHMUC" msprop:Generator_ColumnVarNameInTable="columnMADANHMUC" msprop:Generator_ColumnPropNameInRow="MADANHMUC" msprop:Generator_ColumnPropNameInTable="MADANHMUCColumn" msprop:Generator_UserColumnName="MADANHMUC">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="20" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="TENKETCAU" msprop:Generator_ColumnVarNameInTable="columnTENKETCAU" msprop:Generator_ColumnPropNameInRow="TENKETCAU" msprop:Generator_ColumnPropNameInTable="TENKETCAUColumn" msprop:Generator_UserColumnName="TENKETCAU" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="250" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="KHOILUONG" msprop:Generator_ColumnVarNameInTable="columnKHOILUONG" msprop:Generator_ColumnPropNameInRow="KHOILUONG" msprop:Generator_ColumnPropNameInTable="KHOILUONGColumn" msprop:Generator_UserColumnName="KHOILUONG" type="xs:double" minOccurs="0" />
-              <xs:element name="DONGIA" msprop:Generator_ColumnVarNameInTable="columnDONGIA" msprop:Generator_ColumnPropNameInRow="DONGIA" msprop:Generator_ColumnPropNameInTable="DONGIAColumn" msprop:Generator_UserColumnName="DONGIA" type="xs:double" minOccurs="0" />
-              <xs:element name="THANHTIEN" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTHANHTIEN" msprop:Generator_ColumnPropNameInRow="THANHTIEN" msprop:Generator_ColumnPropNameInTable="THANHTIENColumn" msprop:Generator_UserColumnName="THANHTIEN" type="xs:double" minOccurs="0" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="BG_CHITIETBG" msprop:Generator_TableClassName="BG_CHITIETBGDataTable" msprop:Generator_TableVarName="tableBG_CHITIETBG" msprop:Generator_TablePropName="BG_CHITIETBG" msprop:Generator_RowDeletingName="BG_CHITIETBGRowDeleting" msprop:Generator_UserTableName="BG_CHITIETBG" msprop:Generator_RowChangingName="BG_CHITIETBGRowChanging" msprop:Generator_RowEvHandlerName="BG_CHITIETBGRowChangeEventHandler" msprop:Generator_RowDeletedName="BG_CHITIETBGRowDeleted" msprop:Generator_RowEvArgName="BG_CHITIETBGRowChangeEvent" msprop:Generator_RowChangedName="BG_CHITIETBGRowChanged" msprop:Generator_RowClassName="BG_CHITIETBGRow">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="SHS" msprop:Generator_ColumnVarNameInTable="columnSHS" msprop:Generator_ColumnPropNameInRow="SHS" msprop:Generator_ColumnPropNameInTable="SHSColumn" msprop:Generator_UserColumnName="SHS" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="MAHIEU" msprop:Generator_ColumnVarNameInTable="columnMAHIEU" msprop:Generator_ColumnPropNameInRow="MAHIEU" msprop:Generator_ColumnPropNameInTable="MAHIEUColumn" msprop:Generator_UserColumnName="MAHIEU" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="20" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="MAHDG" msprop:Generator_ColumnVarNameInTable="columnMAHDG" msprop:Generator_ColumnPropNameInRow="MAHDG" msprop:Generator_ColumnPropNameInTable="MAHDGColumn" msprop:Generator_UserColumnName="MAHDG" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="20" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="TENVT" msprop:Generator_ColumnVarNameInTable="columnTENVT" msprop:Generator_ColumnPropNameInRow="TENVT" msprop:Generator_ColumnPropNameInTable="TENVTColumn" msprop:Generator_UserColumnName="TENVT" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="250" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="DVT" msprop:Generator_ColumnVarNameInTable="columnDVT" msprop:Generator_ColumnPropNameInRow="DVT" msprop:Generator_ColumnPropNameInTable="DVTColumn" msprop:Generator_UserColumnName="DVT" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="20" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="NHOM" msprop:Generator_ColumnVarNameInTable="columnNHOM" msprop:Generator_ColumnPropNameInRow="NHOM" msprop:Generator_ColumnPropNameInTable="NHOMColumn" msprop:Generator_UserColumnName="NHOM" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="20" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="LOAISN" msprop:Generator_ColumnVarNameInTable="columnLOAISN" msprop:Generator_ColumnPropNameInRow="LOAISN" msprop:Generator_ColumnPropNameInTable="LOAISNColumn" msprop:Generator_UserColumnName="LOAISN" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="20" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="KHOILUONG" msprop:Generator_ColumnVarNameInTable="columnKHOILUONG" msprop:Generator_ColumnPropNameInRow="KHOILUONG" msprop:Generator_ColumnPropNameInTable="KHOILUONGColumn" msprop:Generator_UserColumnName="KHOILUONG" type="xs:double" minOccurs="0" />
-              <xs:element name="DONGIAVL" msprop:Generator_ColumnVarNameInTable="columnDONGIAVL" msprop:Generator_ColumnPropNameInRow="DONGIAVL" msprop:Generator_ColumnPropNameInTable="DONGIAVLColumn" msprop:Generator_UserColumnName="DONGIAVL" type="xs:double" minOccurs="0" />
-              <xs:element name="DONGIANC" msprop:Generator_ColumnVarNameInTable="columnDONGIANC" msprop:Generator_ColumnPropNameInRow="DONGIANC" msprop:Generator_ColumnPropNameInTable="DONGIANCColumn" msprop:Generator_UserColumnName="DONGIANC" type="xs:double" minOccurs="0" />
-              <xs:element name="DONGIAMTC" msprop:Generator_ColumnVarNameInTable="columnDONGIAMTC" msprop:Generator_ColumnPropNameInRow="DONGIAMTC" msprop:Generator_ColumnPropNameInTable="DONGIAMTCColumn" msprop:Generator_UserColumnName="DONGIAMTC" type="xs:double" minOccurs="0" />
-              <xs:element name="TT_VL" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTT_VL" msprop:Generator_ColumnPropNameInRow="TT_VL" msprop:Generator_ColumnPropNameInTable="TT_VLColumn" msprop:Generator_UserColumnName="TT_VL" type="xs:double" minOccurs="0" />
-              <xs:element name="TT_NC" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTT_NC" msprop:Generator_ColumnPropNameInRow="TT_NC" msprop:Generator_ColumnPropNameInTable="TT_NCColumn" msprop:Generator_UserColumnName="TT_NC" type="xs:double" minOccurs="0" />
-              <xs:element name="TT_MTC" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTT_MTC" msprop:Generator_ColumnPropNameInRow="TT_MTC" msprop:Generator_ColumnPropNameInTable="TT_MTCColumn" msprop:Generator_UserColumnName="TT_MTC" type="xs:double" minOccurs="0" />
-              <xs:element name="NHOMVT" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNHOMVT" msprop:Generator_ColumnPropNameInRow="NHOMVT" msprop:Generator_ColumnPropNameInTable="NHOMVTColumn" msprop:Generator_UserColumnName="NHOMVT" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="4" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="BG_SUMTAILAPMATDUONG" msprop:Generator_TableClassName="BG_SUMTAILAPMATDUONGDataTable" msprop:Generator_TableVarName="tableBG_SUMTAILAPMATDUONG" msprop:Generator_TablePropName="BG_SUMTAILAPMATDUONG" msprop:Generator_RowDeletingName="BG_SUMTAILAPMATDUONGRowDeleting" msprop:Generator_UserTableName="BG_SUMTAILAPMATDUONG" msprop:Generator_RowChangingName="BG_SUMTAILAPMATDUONGRowChanging" msprop:Generator_RowEvHandlerName="BG_SUMTAILAPMATDUONGRowChangeEventHandler" msprop:Generator_RowDeletedName="BG_SUMTAILAPMATDUONGRowDeleted" msprop:Generator_RowEvArgName="BG_SUMTAILAPMATDUONGRowChangeEvent" msprop:Generator_RowChangedName="BG_SUMTAILAPMATDUONGRowChanged" msprop:Generator_RowClassName="BG_SUMTAILAPMATDUONGRow">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="SHS" msprop:Generator_ColumnVarNameInTable="columnSHS" msprop:Generator_ColumnPropNameInRow="SHS" msprop:Generator_ColumnPropNameInTable="SHSColumn" msprop:Generator_UserColumnName="SHS">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="SAUTHUE" msprop:Generator_ColumnVarNameInTable="columnSAUTHUE" msprop:Generator_ColumnPropNameInRow="SAUTHUE" msprop:Generator_ColumnPropNameInTable="SAUTHUEColumn" msprop:Generator_UserColumnName="SAUTHUE" type="xs:double" minOccurs="0" />
-              <xs:element name="TRUOCTHUE" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTRUOCTHUE" msprop:Generator_ColumnPropNameInRow="TRUOCTHUE" msprop:Generator_ColumnPropNameInTable="TRUOCTHUEColumn" msprop:Generator_UserColumnName="TRUOCTHUE" type="xs:double" minOccurs="0" />
-              <xs:element name="THUEGTGT" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTHUEGTGT" msprop:Generator_ColumnPropNameInRow="THUEGTGT" msprop:Generator_ColumnPropNameInTable="THUEGTGTColumn" msprop:Generator_UserColumnName="THUEGTGT" type="xs:double" minOccurs="0" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
         <xs:element name="USERS" msprop:Generator_TableClassName="USERSDataTable" msprop:Generator_TableVarName="tableUSERS" msprop:Generator_TablePropName="USERS" msprop:Generator_RowDeletingName="USERSRowDeleting" msprop:Generator_UserTableName="USERS" msprop:Generator_RowChangingName="USERSRowChanging" msprop:Generator_RowEvHandlerName="USERSRowChangeEventHandler" msprop:Generator_RowDeletedName="USERSRowDeleted" msprop:Generator_RowEvArgName="USERSRowChangeEvent" msprop:Generator_RowChangedName="USERSRowChanged" msprop:Generator_RowClassName="USERSRow">
           <xs:complexType>
             <xs:sequence>
@@ -653,6 +545,114 @@ SELECT STT, LINE1, LINE2, LINE3, LINE4, LINE5, LINE6, DUYET, NGUOIDUYET, THANHLA
                 </xs:simpleType>
               </xs:element>
               <xs:element name="MODIFYDATE" msprop:Generator_ColumnVarNameInTable="columnMODIFYDATE" msprop:Generator_ColumnPropNameInRow="MODIFYDATE" msprop:Generator_ColumnPropNameInTable="MODIFYDATEColumn" msprop:Generator_UserColumnName="MODIFYDATE" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="BG_SUMTAILAPMATDUONG" msprop:Generator_TableClassName="BG_SUMTAILAPMATDUONGDataTable" msprop:Generator_TableVarName="tableBG_SUMTAILAPMATDUONG" msprop:Generator_TablePropName="BG_SUMTAILAPMATDUONG" msprop:Generator_RowDeletingName="BG_SUMTAILAPMATDUONGRowDeleting" msprop:Generator_UserTableName="BG_SUMTAILAPMATDUONG" msprop:Generator_RowChangingName="BG_SUMTAILAPMATDUONGRowChanging" msprop:Generator_RowEvHandlerName="BG_SUMTAILAPMATDUONGRowChangeEventHandler" msprop:Generator_RowDeletedName="BG_SUMTAILAPMATDUONGRowDeleted" msprop:Generator_RowEvArgName="BG_SUMTAILAPMATDUONGRowChangeEvent" msprop:Generator_RowChangedName="BG_SUMTAILAPMATDUONGRowChanged" msprop:Generator_RowClassName="BG_SUMTAILAPMATDUONGRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SHS" msprop:Generator_ColumnVarNameInTable="columnSHS" msprop:Generator_ColumnPropNameInRow="SHS" msprop:Generator_ColumnPropNameInTable="SHSColumn" msprop:Generator_UserColumnName="SHS">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SAUTHUE" msprop:Generator_ColumnVarNameInTable="columnSAUTHUE" msprop:Generator_ColumnPropNameInRow="SAUTHUE" msprop:Generator_ColumnPropNameInTable="SAUTHUEColumn" msprop:Generator_UserColumnName="SAUTHUE" type="xs:double" minOccurs="0" />
+              <xs:element name="TRUOCTHUE" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTRUOCTHUE" msprop:Generator_ColumnPropNameInRow="TRUOCTHUE" msprop:Generator_ColumnPropNameInTable="TRUOCTHUEColumn" msprop:Generator_UserColumnName="TRUOCTHUE" type="xs:double" minOccurs="0" />
+              <xs:element name="THUEGTGT" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTHUEGTGT" msprop:Generator_ColumnPropNameInRow="THUEGTGT" msprop:Generator_ColumnPropNameInTable="THUEGTGTColumn" msprop:Generator_UserColumnName="THUEGTGT" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="BG_CHITIETBG" msprop:Generator_TableClassName="BG_CHITIETBGDataTable" msprop:Generator_TableVarName="tableBG_CHITIETBG" msprop:Generator_TablePropName="BG_CHITIETBG" msprop:Generator_RowDeletingName="BG_CHITIETBGRowDeleting" msprop:Generator_UserTableName="BG_CHITIETBG" msprop:Generator_RowChangingName="BG_CHITIETBGRowChanging" msprop:Generator_RowEvHandlerName="BG_CHITIETBGRowChangeEventHandler" msprop:Generator_RowDeletedName="BG_CHITIETBGRowDeleted" msprop:Generator_RowEvArgName="BG_CHITIETBGRowChangeEvent" msprop:Generator_RowChangedName="BG_CHITIETBGRowChanged" msprop:Generator_RowClassName="BG_CHITIETBGRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SHS" msprop:Generator_ColumnVarNameInTable="columnSHS" msprop:Generator_ColumnPropNameInRow="SHS" msprop:Generator_ColumnPropNameInTable="SHSColumn" msprop:Generator_UserColumnName="SHS" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MAHIEU" msprop:Generator_ColumnVarNameInTable="columnMAHIEU" msprop:Generator_ColumnPropNameInRow="MAHIEU" msprop:Generator_ColumnPropNameInTable="MAHIEUColumn" msprop:Generator_UserColumnName="MAHIEU" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MAHDG" msprop:Generator_ColumnVarNameInTable="columnMAHDG" msprop:Generator_ColumnPropNameInRow="MAHDG" msprop:Generator_ColumnPropNameInTable="MAHDGColumn" msprop:Generator_UserColumnName="MAHDG" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TENVT" msprop:Generator_ColumnVarNameInTable="columnTENVT" msprop:Generator_ColumnPropNameInRow="TENVT" msprop:Generator_ColumnPropNameInTable="TENVTColumn" msprop:Generator_UserColumnName="TENVT" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DVT" msprop:Generator_ColumnVarNameInTable="columnDVT" msprop:Generator_ColumnPropNameInRow="DVT" msprop:Generator_ColumnPropNameInTable="DVTColumn" msprop:Generator_UserColumnName="DVT" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NHOM" msprop:Generator_ColumnVarNameInTable="columnNHOM" msprop:Generator_ColumnPropNameInRow="NHOM" msprop:Generator_ColumnPropNameInTable="NHOMColumn" msprop:Generator_UserColumnName="NHOM" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LOAISN" msprop:Generator_ColumnVarNameInTable="columnLOAISN" msprop:Generator_ColumnPropNameInRow="LOAISN" msprop:Generator_ColumnPropNameInTable="LOAISNColumn" msprop:Generator_UserColumnName="LOAISN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="KHOILUONG" msprop:Generator_ColumnVarNameInTable="columnKHOILUONG" msprop:Generator_ColumnPropNameInRow="KHOILUONG" msprop:Generator_ColumnPropNameInTable="KHOILUONGColumn" msprop:Generator_UserColumnName="KHOILUONG" type="xs:double" minOccurs="0" />
+              <xs:element name="DONGIAVL" msprop:Generator_ColumnVarNameInTable="columnDONGIAVL" msprop:Generator_ColumnPropNameInRow="DONGIAVL" msprop:Generator_ColumnPropNameInTable="DONGIAVLColumn" msprop:Generator_UserColumnName="DONGIAVL" type="xs:double" minOccurs="0" />
+              <xs:element name="DONGIANC" msprop:Generator_ColumnVarNameInTable="columnDONGIANC" msprop:Generator_ColumnPropNameInRow="DONGIANC" msprop:Generator_ColumnPropNameInTable="DONGIANCColumn" msprop:Generator_UserColumnName="DONGIANC" type="xs:double" minOccurs="0" />
+              <xs:element name="DONGIAMTC" msprop:Generator_ColumnVarNameInTable="columnDONGIAMTC" msprop:Generator_ColumnPropNameInRow="DONGIAMTC" msprop:Generator_ColumnPropNameInTable="DONGIAMTCColumn" msprop:Generator_UserColumnName="DONGIAMTC" type="xs:double" minOccurs="0" />
+              <xs:element name="TT_VL" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTT_VL" msprop:Generator_ColumnPropNameInRow="TT_VL" msprop:Generator_ColumnPropNameInTable="TT_VLColumn" msprop:Generator_UserColumnName="TT_VL" type="xs:double" minOccurs="0" />
+              <xs:element name="TT_NC" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTT_NC" msprop:Generator_ColumnPropNameInRow="TT_NC" msprop:Generator_ColumnPropNameInTable="TT_NCColumn" msprop:Generator_UserColumnName="TT_NC" type="xs:double" minOccurs="0" />
+              <xs:element name="TT_MTC" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTT_MTC" msprop:Generator_ColumnPropNameInRow="TT_MTC" msprop:Generator_ColumnPropNameInTable="TT_MTCColumn" msprop:Generator_UserColumnName="TT_MTC" type="xs:double" minOccurs="0" />
+              <xs:element name="NHOMVT" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNHOMVT" msprop:Generator_ColumnPropNameInRow="NHOMVT" msprop:Generator_ColumnPropNameInTable="NHOMVTColumn" msprop:Generator_UserColumnName="NHOMVT" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="BG_TAILAPMATDUONG" msprop:Generator_TableClassName="BG_TAILAPMATDUONGDataTable" msprop:Generator_TableVarName="tableBG_TAILAPMATDUONG" msprop:Generator_TablePropName="BG_TAILAPMATDUONG" msprop:Generator_RowDeletingName="BG_TAILAPMATDUONGRowDeleting" msprop:Generator_UserTableName="BG_TAILAPMATDUONG" msprop:Generator_RowChangingName="BG_TAILAPMATDUONGRowChanging" msprop:Generator_RowEvHandlerName="BG_TAILAPMATDUONGRowChangeEventHandler" msprop:Generator_RowDeletedName="BG_TAILAPMATDUONGRowDeleted" msprop:Generator_RowEvArgName="BG_TAILAPMATDUONGRowChangeEvent" msprop:Generator_RowChangedName="BG_TAILAPMATDUONGRowChanged" msprop:Generator_RowClassName="BG_TAILAPMATDUONGRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MADANHMUC" msprop:Generator_ColumnVarNameInTable="columnMADANHMUC" msprop:Generator_ColumnPropNameInRow="MADANHMUC" msprop:Generator_ColumnPropNameInTable="MADANHMUCColumn" msprop:Generator_UserColumnName="MADANHMUC">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TENKETCAU" msprop:Generator_ColumnVarNameInTable="columnTENKETCAU" msprop:Generator_ColumnPropNameInRow="TENKETCAU" msprop:Generator_ColumnPropNameInTable="TENKETCAUColumn" msprop:Generator_UserColumnName="TENKETCAU" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="KHOILUONG" msprop:Generator_ColumnVarNameInTable="columnKHOILUONG" msprop:Generator_ColumnPropNameInRow="KHOILUONG" msprop:Generator_ColumnPropNameInTable="KHOILUONGColumn" msprop:Generator_UserColumnName="KHOILUONG" type="xs:double" minOccurs="0" />
+              <xs:element name="DONGIA" msprop:Generator_ColumnVarNameInTable="columnDONGIA" msprop:Generator_ColumnPropNameInRow="DONGIA" msprop:Generator_ColumnPropNameInTable="DONGIAColumn" msprop:Generator_UserColumnName="DONGIA" type="xs:double" minOccurs="0" />
+              <xs:element name="THANHTIEN" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTHANHTIEN" msprop:Generator_ColumnPropNameInRow="THANHTIEN" msprop:Generator_ColumnPropNameInTable="THANHTIENColumn" msprop:Generator_UserColumnName="THANHTIEN" type="xs:double" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

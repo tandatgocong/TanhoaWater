@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using TanHoaWater.View.Users;
+using TanHoaWater.View.Users.TinhDuToan.BGDieuChinh;
 
 namespace TanHoaWater
 {
@@ -17,8 +18,8 @@ namespace TanHoaWater
            
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frm_Main());
-           /// Application.Run(new Form2());
+            //Application.Run(new frm_Main());
+            Application.Run(new frm_VatTuDieuChinh());
         }
     }
 }

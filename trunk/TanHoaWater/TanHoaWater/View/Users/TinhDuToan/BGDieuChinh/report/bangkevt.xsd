@@ -1,0 +1,629 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="bangkevt" targetNamespace="http://tempuri.org/bangkevt.xsd" xmlns:mstns="http://tempuri.org/bangkevt.xsd" xmlns="http://tempuri.org/bangkevt.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="TANHOA_WATERConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="TANHOA_WATERConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.TanHoaWater.Properties.Settings.GlobalReference.Default.TANHOA_WATERConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="XDCBTableAdapter" GeneratorDataComponentClassName="XDCBTableAdapter" Name="XDCB" UserDataComponentName="XDCBTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TANHOA_WATERConnectionString (Settings)" DbObjectName="TANHOA_WATER.dbo.BG_CHITIETBG" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT SHS, MAHIEU, MAHDG, TENVT, DVT, NHOM, LOAISN, KHOILUONG, DONGIAVL, DONGIANC, DONGIAMTC, TT_VL, TT_NC, TT_MTC, NHOMVT FROM dbo.BG_CHITIETBG</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="SHS" DataSetColumn="SHS" />
+              <Mapping SourceColumn="MAHIEU" DataSetColumn="MAHIEU" />
+              <Mapping SourceColumn="MAHDG" DataSetColumn="MAHDG" />
+              <Mapping SourceColumn="TENVT" DataSetColumn="TENVT" />
+              <Mapping SourceColumn="DVT" DataSetColumn="DVT" />
+              <Mapping SourceColumn="NHOM" DataSetColumn="NHOM" />
+              <Mapping SourceColumn="LOAISN" DataSetColumn="LOAISN" />
+              <Mapping SourceColumn="KHOILUONG" DataSetColumn="KHOILUONG" />
+              <Mapping SourceColumn="DONGIAVL" DataSetColumn="DONGIAVL" />
+              <Mapping SourceColumn="DONGIANC" DataSetColumn="DONGIANC" />
+              <Mapping SourceColumn="DONGIAMTC" DataSetColumn="DONGIAMTC" />
+              <Mapping SourceColumn="TT_VL" DataSetColumn="TT_VL" />
+              <Mapping SourceColumn="TT_NC" DataSetColumn="TT_NC" />
+              <Mapping SourceColumn="TT_MTC" DataSetColumn="TT_MTC" />
+              <Mapping SourceColumn="NHOMVT" DataSetColumn="NHOMVT" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="USERSTableAdapter" GeneratorDataComponentClassName="USERSTableAdapter" Name="USERS" UserDataComponentName="USERSTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TANHOA_WATERConnectionString (Settings)" DbObjectName="TANHOA_WATER.dbo.USERS" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[USERS] WHERE (([USERNAME] = @Original_USERNAME) AND ((@IsNull_PASSWORD = 1 AND [PASSWORD] IS NULL) OR ([PASSWORD] = @Original_PASSWORD)) AND ((@IsNull_FULLNAME = 1 AND [FULLNAME] IS NULL) OR ([FULLNAME] = @Original_FULLNAME)) AND ((@IsNull_ROLEID = 1 AND [ROLEID] IS NULL) OR ([ROLEID] = @Original_ROLEID)) AND ((@IsNull_ENABLED = 1 AND [ENABLED] IS NULL) OR ([ENABLED] = @Original_ENABLED)) AND ((@IsNull_CAP = 1 AND [CAP] IS NULL) OR ([CAP] = @Original_CAP)) AND ((@IsNull_MAPHONG = 1 AND [MAPHONG] IS NULL) OR ([MAPHONG] = @Original_MAPHONG)) AND ((@IsNull_CREATEBY = 1 AND [CREATEBY] IS NULL) OR ([CREATEBY] = @Original_CREATEBY)) AND ((@IsNull_CREATEDATE = 1 AND [CREATEDATE] IS NULL) OR ([CREATEDATE] = @Original_CREATEDATE)) AND ((@IsNull_MODIFYBY = 1 AND [MODIFYBY] IS NULL) OR ([MODIFYBY] = @Original_MODIFYBY)) AND ((@IsNull_MODIFYDATE = 1 AND [MODIFYDATE] IS NULL) OR ([MODIFYDATE] = @Original_MODIFYDATE)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_USERNAME" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="USERNAME" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_PASSWORD" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="PASSWORD" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_PASSWORD" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="PASSWORD" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_FULLNAME" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="FULLNAME" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_FULLNAME" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="FULLNAME" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_ROLEID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ROLEID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_ROLEID" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="ROLEID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_ENABLED" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ENABLED" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_ENABLED" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="ENABLED" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_CAP" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CAP" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_CAP" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CAP" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_MAPHONG" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="MAPHONG" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_MAPHONG" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="MAPHONG" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_CREATEBY" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CREATEBY" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_CREATEBY" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="CREATEBY" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_CREATEDATE" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CREATEDATE" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_CREATEDATE" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="CREATEDATE" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_MODIFYBY" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="MODIFYBY" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_MODIFYBY" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="MODIFYBY" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_MODIFYDATE" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="MODIFYDATE" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_MODIFYDATE" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="MODIFYDATE" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[USERS] ([USERNAME], [PASSWORD], [FULLNAME], [ROLEID], [ENABLED], [CAP], [MAPHONG], [CREATEBY], [CREATEDATE], [MODIFYBY], [MODIFYDATE]) VALUES (@USERNAME, @PASSWORD, @FULLNAME, @ROLEID, @ENABLED, @CAP, @MAPHONG, @CREATEBY, @CREATEDATE, @MODIFYBY, @MODIFYDATE);
+SELECT USERNAME, PASSWORD, FULLNAME, ROLEID, ENABLED, CAP, MAPHONG, CREATEBY, CREATEDATE, MODIFYBY, MODIFYDATE FROM USERS WHERE (USERNAME = @USERNAME)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@USERNAME" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="USERNAME" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@PASSWORD" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="PASSWORD" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@FULLNAME" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="FULLNAME" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@ROLEID" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="ROLEID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@ENABLED" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="ENABLED" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@CAP" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CAP" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@MAPHONG" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="MAPHONG" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@CREATEBY" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="CREATEBY" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@CREATEDATE" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="CREATEDATE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@MODIFYBY" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="MODIFYBY" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@MODIFYDATE" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="MODIFYDATE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT USERNAME, PASSWORD, FULLNAME, ROLEID, ENABLED, CAP, MAPHONG, CREATEBY, CREATEDATE, MODIFYBY, MODIFYDATE FROM dbo.USERS</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[USERS] SET [USERNAME] = @USERNAME, [PASSWORD] = @PASSWORD, [FULLNAME] = @FULLNAME, [ROLEID] = @ROLEID, [ENABLED] = @ENABLED, [CAP] = @CAP, [MAPHONG] = @MAPHONG, [CREATEBY] = @CREATEBY, [CREATEDATE] = @CREATEDATE, [MODIFYBY] = @MODIFYBY, [MODIFYDATE] = @MODIFYDATE WHERE (([USERNAME] = @Original_USERNAME) AND ((@IsNull_PASSWORD = 1 AND [PASSWORD] IS NULL) OR ([PASSWORD] = @Original_PASSWORD)) AND ((@IsNull_FULLNAME = 1 AND [FULLNAME] IS NULL) OR ([FULLNAME] = @Original_FULLNAME)) AND ((@IsNull_ROLEID = 1 AND [ROLEID] IS NULL) OR ([ROLEID] = @Original_ROLEID)) AND ((@IsNull_ENABLED = 1 AND [ENABLED] IS NULL) OR ([ENABLED] = @Original_ENABLED)) AND ((@IsNull_CAP = 1 AND [CAP] IS NULL) OR ([CAP] = @Original_CAP)) AND ((@IsNull_MAPHONG = 1 AND [MAPHONG] IS NULL) OR ([MAPHONG] = @Original_MAPHONG)) AND ((@IsNull_CREATEBY = 1 AND [CREATEBY] IS NULL) OR ([CREATEBY] = @Original_CREATEBY)) AND ((@IsNull_CREATEDATE = 1 AND [CREATEDATE] IS NULL) OR ([CREATEDATE] = @Original_CREATEDATE)) AND ((@IsNull_MODIFYBY = 1 AND [MODIFYBY] IS NULL) OR ([MODIFYBY] = @Original_MODIFYBY)) AND ((@IsNull_MODIFYDATE = 1 AND [MODIFYDATE] IS NULL) OR ([MODIFYDATE] = @Original_MODIFYDATE)));
+SELECT USERNAME, PASSWORD, FULLNAME, ROLEID, ENABLED, CAP, MAPHONG, CREATEBY, CREATEDATE, MODIFYBY, MODIFYDATE FROM USERS WHERE (USERNAME = @USERNAME)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@USERNAME" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="USERNAME" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@PASSWORD" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="PASSWORD" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@FULLNAME" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="FULLNAME" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@ROLEID" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="ROLEID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@ENABLED" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="ENABLED" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@CAP" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CAP" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@MAPHONG" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="MAPHONG" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@CREATEBY" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="CREATEBY" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@CREATEDATE" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="CREATEDATE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@MODIFYBY" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="MODIFYBY" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@MODIFYDATE" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="MODIFYDATE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_USERNAME" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="USERNAME" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_PASSWORD" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="PASSWORD" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_PASSWORD" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="PASSWORD" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_FULLNAME" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="FULLNAME" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_FULLNAME" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="FULLNAME" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_ROLEID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ROLEID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_ROLEID" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="ROLEID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_ENABLED" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ENABLED" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_ENABLED" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="ENABLED" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_CAP" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CAP" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_CAP" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CAP" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_MAPHONG" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="MAPHONG" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_MAPHONG" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="MAPHONG" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_CREATEBY" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CREATEBY" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_CREATEBY" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="CREATEBY" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_CREATEDATE" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CREATEDATE" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_CREATEDATE" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="CREATEDATE" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_MODIFYBY" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="MODIFYBY" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_MODIFYBY" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="MODIFYBY" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_MODIFYDATE" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="MODIFYDATE" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_MODIFYDATE" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="MODIFYDATE" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="USERNAME" DataSetColumn="USERNAME" />
+              <Mapping SourceColumn="PASSWORD" DataSetColumn="PASSWORD" />
+              <Mapping SourceColumn="FULLNAME" DataSetColumn="FULLNAME" />
+              <Mapping SourceColumn="ROLEID" DataSetColumn="ROLEID" />
+              <Mapping SourceColumn="ENABLED" DataSetColumn="ENABLED" />
+              <Mapping SourceColumn="CAP" DataSetColumn="CAP" />
+              <Mapping SourceColumn="MAPHONG" DataSetColumn="MAPHONG" />
+              <Mapping SourceColumn="CREATEBY" DataSetColumn="CREATEBY" />
+              <Mapping SourceColumn="CREATEDATE" DataSetColumn="CREATEDATE" />
+              <Mapping SourceColumn="MODIFYBY" DataSetColumn="MODIFYBY" />
+              <Mapping SourceColumn="MODIFYDATE" DataSetColumn="MODIFYDATE" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="BG_REPORTTableAdapter" GeneratorDataComponentClassName="BG_REPORTTableAdapter" Name="BG_REPORT" UserDataComponentName="BG_REPORTTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TANHOA_WATERConnectionString (Settings)" DbObjectName="TANHOA_WATER.dbo.BG_REPORT" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[BG_REPORT] WHERE (([STT] = @Original_STT) AND ((@IsNull_DUYET = 1 AND [DUYET] IS NULL) OR ([DUYET] = @Original_DUYET)) AND ((@IsNull_NGUOIDUYET = 1 AND [NGUOIDUYET] IS NULL) OR ([NGUOIDUYET] = @Original_NGUOIDUYET)) AND ((@IsNull_THANHLAP = 1 AND [THANHLAP] IS NULL) OR ([THANHLAP] = @Original_THANHLAP)) AND ((@IsNull_NGUOILAP = 1 AND [NGUOILAP] IS NULL) OR ([NGUOILAP] = @Original_NGUOILAP)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_STT" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="STT" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_DUYET" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="DUYET" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_DUYET" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="DUYET" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_NGUOIDUYET" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="NGUOIDUYET" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_NGUOIDUYET" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="NGUOIDUYET" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_THANHLAP" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="THANHLAP" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_THANHLAP" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="THANHLAP" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_NGUOILAP" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="NGUOILAP" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_NGUOILAP" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="NGUOILAP" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[BG_REPORT] ([LINE1], [LINE2], [LINE3], [LINE4], [LINE5], [LINE6], [DUYET], [NGUOIDUYET], [THANHLAP], [NGUOILAP]) VALUES (@LINE1, @LINE2, @LINE3, @LINE4, @LINE5, @LINE6, @DUYET, @NGUOIDUYET, @THANHLAP, @NGUOILAP);
+SELECT STT, LINE1, LINE2, LINE3, LINE4, LINE5, LINE6, DUYET, NGUOIDUYET, THANHLAP, NGUOILAP FROM BG_REPORT WHERE (STT = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@LINE1" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="LINE1" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@LINE2" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="LINE2" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@LINE3" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="LINE3" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@LINE4" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="LINE4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@LINE5" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="LINE5" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@LINE6" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="LINE6" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@DUYET" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="DUYET" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@NGUOIDUYET" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="NGUOIDUYET" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@THANHLAP" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="THANHLAP" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@NGUOILAP" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="NGUOILAP" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT STT, LINE1, LINE2, LINE3, LINE4, LINE5, LINE6, DUYET, NGUOIDUYET, THANHLAP, NGUOILAP FROM dbo.BG_REPORT</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[BG_REPORT] SET [LINE1] = @LINE1, [LINE2] = @LINE2, [LINE3] = @LINE3, [LINE4] = @LINE4, [LINE5] = @LINE5, [LINE6] = @LINE6, [DUYET] = @DUYET, [NGUOIDUYET] = @NGUOIDUYET, [THANHLAP] = @THANHLAP, [NGUOILAP] = @NGUOILAP WHERE (([STT] = @Original_STT) AND ((@IsNull_DUYET = 1 AND [DUYET] IS NULL) OR ([DUYET] = @Original_DUYET)) AND ((@IsNull_NGUOIDUYET = 1 AND [NGUOIDUYET] IS NULL) OR ([NGUOIDUYET] = @Original_NGUOIDUYET)) AND ((@IsNull_THANHLAP = 1 AND [THANHLAP] IS NULL) OR ([THANHLAP] = @Original_THANHLAP)) AND ((@IsNull_NGUOILAP = 1 AND [NGUOILAP] IS NULL) OR ([NGUOILAP] = @Original_NGUOILAP)));
+SELECT STT, LINE1, LINE2, LINE3, LINE4, LINE5, LINE6, DUYET, NGUOIDUYET, THANHLAP, NGUOILAP FROM BG_REPORT WHERE (STT = @STT)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@LINE1" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="LINE1" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@LINE2" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="LINE2" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@LINE3" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="LINE3" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@LINE4" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="LINE4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@LINE5" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="LINE5" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@LINE6" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="LINE6" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@DUYET" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="DUYET" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@NGUOIDUYET" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="NGUOIDUYET" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@THANHLAP" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="THANHLAP" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@NGUOILAP" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="NGUOILAP" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_STT" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="STT" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_DUYET" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="DUYET" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_DUYET" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="DUYET" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_NGUOIDUYET" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="NGUOIDUYET" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_NGUOIDUYET" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="NGUOIDUYET" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_THANHLAP" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="THANHLAP" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_THANHLAP" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="THANHLAP" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_NGUOILAP" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="NGUOILAP" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_NGUOILAP" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="NGUOILAP" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="STT" ColumnName="STT" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@STT" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="STT" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="STT" DataSetColumn="STT" />
+              <Mapping SourceColumn="LINE1" DataSetColumn="LINE1" />
+              <Mapping SourceColumn="LINE2" DataSetColumn="LINE2" />
+              <Mapping SourceColumn="LINE3" DataSetColumn="LINE3" />
+              <Mapping SourceColumn="LINE4" DataSetColumn="LINE4" />
+              <Mapping SourceColumn="LINE5" DataSetColumn="LINE5" />
+              <Mapping SourceColumn="LINE6" DataSetColumn="LINE6" />
+              <Mapping SourceColumn="DUYET" DataSetColumn="DUYET" />
+              <Mapping SourceColumn="NGUOIDUYET" DataSetColumn="NGUOIDUYET" />
+              <Mapping SourceColumn="THANHLAP" DataSetColumn="THANHLAP" />
+              <Mapping SourceColumn="NGUOILAP" DataSetColumn="NGUOILAP" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="BG_THONGTINKHACHANGTableAdapter" GeneratorDataComponentClassName="BG_THONGTINKHACHANGTableAdapter" Name="BG_THONGTINKHACHANG" UserDataComponentName="BG_THONGTINKHACHANGTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TANHOA_WATERConnectionString (Settings)" DbObjectName="TANHOA_WATER.dbo.BG_THONGTINKHACHANG" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT SHS, HOTEN, DIACHI, DANHBO, LOAIHOSO FROM dbo.BG_THONGTINKHACHANG</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="SHS" DataSetColumn="SHS" />
+              <Mapping SourceColumn="HOTEN" DataSetColumn="HOTEN" />
+              <Mapping SourceColumn="DIACHI" DataSetColumn="DIACHI" />
+              <Mapping SourceColumn="DANHBO" DataSetColumn="DANHBO" />
+              <Mapping SourceColumn="LOAIHOSO" DataSetColumn="LOAIHOSO" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="VATTUTableAdapter" GeneratorDataComponentClassName="VATTUTableAdapter" Name="VATTU" UserDataComponentName="VATTUTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TANHOA_WATERConnectionString (Settings)" DbObjectName="TANHOA_WATER.dbo.BG_CHITIETBG" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT SHS, MAHIEU, MAHDG, TENVT, DVT, NHOM, LOAISN, KHOILUONG, DONGIAVL, DONGIANC, DONGIAMTC, TT_VL, TT_NC, TT_MTC, NHOMVT FROM dbo.BG_CHITIETBG</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="SHS" DataSetColumn="SHS" />
+              <Mapping SourceColumn="MAHIEU" DataSetColumn="MAHIEU" />
+              <Mapping SourceColumn="MAHDG" DataSetColumn="MAHDG" />
+              <Mapping SourceColumn="TENVT" DataSetColumn="TENVT" />
+              <Mapping SourceColumn="DVT" DataSetColumn="DVT" />
+              <Mapping SourceColumn="NHOM" DataSetColumn="NHOM" />
+              <Mapping SourceColumn="LOAISN" DataSetColumn="LOAISN" />
+              <Mapping SourceColumn="KHOILUONG" DataSetColumn="KHOILUONG" />
+              <Mapping SourceColumn="DONGIAVL" DataSetColumn="DONGIAVL" />
+              <Mapping SourceColumn="DONGIANC" DataSetColumn="DONGIANC" />
+              <Mapping SourceColumn="DONGIAMTC" DataSetColumn="DONGIAMTC" />
+              <Mapping SourceColumn="TT_VL" DataSetColumn="TT_VL" />
+              <Mapping SourceColumn="TT_NC" DataSetColumn="TT_NC" />
+              <Mapping SourceColumn="TT_MTC" DataSetColumn="TT_MTC" />
+              <Mapping SourceColumn="NHOMVT" DataSetColumn="NHOMVT" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="bangkevt" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="bangkevt" msprop:Generator_UserDSName="bangkevt">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="XDCB" msprop:Generator_TableClassName="XDCBDataTable" msprop:Generator_TableVarName="tableXDCB" msprop:Generator_TablePropName="XDCB" msprop:Generator_RowDeletingName="XDCBRowDeleting" msprop:Generator_UserTableName="XDCB" msprop:Generator_RowChangingName="XDCBRowChanging" msprop:Generator_RowEvHandlerName="XDCBRowChangeEventHandler" msprop:Generator_RowDeletedName="XDCBRowDeleted" msprop:Generator_RowEvArgName="XDCBRowChangeEvent" msprop:Generator_RowChangedName="XDCBRowChanged" msprop:Generator_RowClassName="XDCBRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SHS" msprop:Generator_ColumnVarNameInTable="columnSHS" msprop:Generator_ColumnPropNameInRow="SHS" msprop:Generator_ColumnPropNameInTable="SHSColumn" msprop:Generator_UserColumnName="SHS" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MAHIEU" msprop:Generator_ColumnVarNameInTable="columnMAHIEU" msprop:Generator_ColumnPropNameInRow="MAHIEU" msprop:Generator_ColumnPropNameInTable="MAHIEUColumn" msprop:Generator_UserColumnName="MAHIEU" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MAHDG" msprop:Generator_ColumnVarNameInTable="columnMAHDG" msprop:Generator_ColumnPropNameInRow="MAHDG" msprop:Generator_ColumnPropNameInTable="MAHDGColumn" msprop:Generator_UserColumnName="MAHDG" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TENVT" msprop:Generator_ColumnVarNameInTable="columnTENVT" msprop:Generator_ColumnPropNameInRow="TENVT" msprop:Generator_ColumnPropNameInTable="TENVTColumn" msprop:Generator_UserColumnName="TENVT" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DVT" msprop:Generator_ColumnVarNameInTable="columnDVT" msprop:Generator_ColumnPropNameInRow="DVT" msprop:Generator_ColumnPropNameInTable="DVTColumn" msprop:Generator_UserColumnName="DVT" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NHOM" msprop:Generator_ColumnVarNameInTable="columnNHOM" msprop:Generator_ColumnPropNameInRow="NHOM" msprop:Generator_ColumnPropNameInTable="NHOMColumn" msprop:Generator_UserColumnName="NHOM" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LOAISN" msprop:Generator_ColumnVarNameInTable="columnLOAISN" msprop:Generator_ColumnPropNameInRow="LOAISN" msprop:Generator_ColumnPropNameInTable="LOAISNColumn" msprop:Generator_UserColumnName="LOAISN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="KHOILUONG" msprop:Generator_ColumnVarNameInTable="columnKHOILUONG" msprop:Generator_ColumnPropNameInRow="KHOILUONG" msprop:Generator_ColumnPropNameInTable="KHOILUONGColumn" msprop:Generator_UserColumnName="KHOILUONG" type="xs:double" minOccurs="0" />
+              <xs:element name="DONGIAVL" msprop:Generator_ColumnVarNameInTable="columnDONGIAVL" msprop:Generator_ColumnPropNameInRow="DONGIAVL" msprop:Generator_ColumnPropNameInTable="DONGIAVLColumn" msprop:Generator_UserColumnName="DONGIAVL" type="xs:double" minOccurs="0" />
+              <xs:element name="DONGIANC" msprop:Generator_ColumnVarNameInTable="columnDONGIANC" msprop:Generator_ColumnPropNameInRow="DONGIANC" msprop:Generator_ColumnPropNameInTable="DONGIANCColumn" msprop:Generator_UserColumnName="DONGIANC" type="xs:double" minOccurs="0" />
+              <xs:element name="DONGIAMTC" msprop:Generator_ColumnVarNameInTable="columnDONGIAMTC" msprop:Generator_ColumnPropNameInRow="DONGIAMTC" msprop:Generator_ColumnPropNameInTable="DONGIAMTCColumn" msprop:Generator_UserColumnName="DONGIAMTC" type="xs:double" minOccurs="0" />
+              <xs:element name="TT_VL" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTT_VL" msprop:Generator_ColumnPropNameInRow="TT_VL" msprop:Generator_ColumnPropNameInTable="TT_VLColumn" msprop:Generator_UserColumnName="TT_VL" type="xs:double" minOccurs="0" />
+              <xs:element name="TT_NC" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTT_NC" msprop:Generator_ColumnPropNameInRow="TT_NC" msprop:Generator_ColumnPropNameInTable="TT_NCColumn" msprop:Generator_UserColumnName="TT_NC" type="xs:double" minOccurs="0" />
+              <xs:element name="TT_MTC" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTT_MTC" msprop:Generator_ColumnPropNameInRow="TT_MTC" msprop:Generator_ColumnPropNameInTable="TT_MTCColumn" msprop:Generator_UserColumnName="TT_MTC" type="xs:double" minOccurs="0" />
+              <xs:element name="NHOMVT" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNHOMVT" msprop:Generator_ColumnPropNameInRow="NHOMVT" msprop:Generator_ColumnPropNameInTable="NHOMVTColumn" msprop:Generator_UserColumnName="NHOMVT" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="USERS" msprop:Generator_TableClassName="USERSDataTable" msprop:Generator_TableVarName="tableUSERS" msprop:Generator_TablePropName="USERS" msprop:Generator_RowDeletingName="USERSRowDeleting" msprop:Generator_UserTableName="USERS" msprop:Generator_RowChangingName="USERSRowChanging" msprop:Generator_RowEvHandlerName="USERSRowChangeEventHandler" msprop:Generator_RowDeletedName="USERSRowDeleted" msprop:Generator_RowEvArgName="USERSRowChangeEvent" msprop:Generator_RowChangedName="USERSRowChanged" msprop:Generator_RowClassName="USERSRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="USERNAME" msprop:Generator_ColumnVarNameInTable="columnUSERNAME" msprop:Generator_ColumnPropNameInRow="USERNAME" msprop:Generator_ColumnPropNameInTable="USERNAMEColumn" msprop:Generator_UserColumnName="USERNAME">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PASSWORD" msprop:Generator_ColumnVarNameInTable="columnPASSWORD" msprop:Generator_ColumnPropNameInRow="PASSWORD" msprop:Generator_ColumnPropNameInTable="PASSWORDColumn" msprop:Generator_UserColumnName="PASSWORD" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FULLNAME" msprop:Generator_ColumnVarNameInTable="columnFULLNAME" msprop:Generator_ColumnPropNameInRow="FULLNAME" msprop:Generator_ColumnPropNameInTable="FULLNAMEColumn" msprop:Generator_UserColumnName="FULLNAME" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ROLEID" msprop:Generator_ColumnVarNameInTable="columnROLEID" msprop:Generator_ColumnPropNameInRow="ROLEID" msprop:Generator_ColumnPropNameInTable="ROLEIDColumn" msprop:Generator_UserColumnName="ROLEID" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ENABLED" msprop:Generator_ColumnVarNameInTable="columnENABLED" msprop:Generator_ColumnPropNameInRow="ENABLED" msprop:Generator_ColumnPropNameInTable="ENABLEDColumn" msprop:Generator_UserColumnName="ENABLED" type="xs:boolean" minOccurs="0" />
+              <xs:element name="CAP" msprop:Generator_ColumnVarNameInTable="columnCAP" msprop:Generator_ColumnPropNameInRow="CAP" msprop:Generator_ColumnPropNameInTable="CAPColumn" msprop:Generator_UserColumnName="CAP" type="xs:int" minOccurs="0" />
+              <xs:element name="MAPHONG" msprop:Generator_ColumnVarNameInTable="columnMAPHONG" msprop:Generator_ColumnPropNameInRow="MAPHONG" msprop:Generator_ColumnPropNameInTable="MAPHONGColumn" msprop:Generator_UserColumnName="MAPHONG" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CREATEBY" msprop:Generator_ColumnVarNameInTable="columnCREATEBY" msprop:Generator_ColumnPropNameInRow="CREATEBY" msprop:Generator_ColumnPropNameInTable="CREATEBYColumn" msprop:Generator_UserColumnName="CREATEBY" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CREATEDATE" msprop:Generator_ColumnVarNameInTable="columnCREATEDATE" msprop:Generator_ColumnPropNameInRow="CREATEDATE" msprop:Generator_ColumnPropNameInTable="CREATEDATEColumn" msprop:Generator_UserColumnName="CREATEDATE" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="MODIFYBY" msprop:Generator_ColumnVarNameInTable="columnMODIFYBY" msprop:Generator_ColumnPropNameInRow="MODIFYBY" msprop:Generator_ColumnPropNameInTable="MODIFYBYColumn" msprop:Generator_UserColumnName="MODIFYBY" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MODIFYDATE" msprop:Generator_ColumnVarNameInTable="columnMODIFYDATE" msprop:Generator_ColumnPropNameInRow="MODIFYDATE" msprop:Generator_ColumnPropNameInTable="MODIFYDATEColumn" msprop:Generator_UserColumnName="MODIFYDATE" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="BG_THONGTINKHACHANG" msprop:Generator_TableClassName="BG_THONGTINKHACHANGDataTable" msprop:Generator_TableVarName="tableBG_THONGTINKHACHANG" msprop:Generator_TablePropName="BG_THONGTINKHACHANG" msprop:Generator_RowDeletingName="BG_THONGTINKHACHANGRowDeleting" msprop:Generator_UserTableName="BG_THONGTINKHACHANG" msprop:Generator_RowChangingName="BG_THONGTINKHACHANGRowChanging" msprop:Generator_RowEvHandlerName="BG_THONGTINKHACHANGRowChangeEventHandler" msprop:Generator_RowDeletedName="BG_THONGTINKHACHANGRowDeleted" msprop:Generator_RowEvArgName="BG_THONGTINKHACHANGRowChangeEvent" msprop:Generator_RowChangedName="BG_THONGTINKHACHANGRowChanged" msprop:Generator_RowClassName="BG_THONGTINKHACHANGRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SHS" msprop:Generator_ColumnVarNameInTable="columnSHS" msprop:Generator_ColumnPropNameInRow="SHS" msprop:Generator_ColumnPropNameInTable="SHSColumn" msprop:Generator_UserColumnName="SHS">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="HOTEN" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnHOTEN" msprop:Generator_ColumnPropNameInRow="HOTEN" msprop:Generator_ColumnPropNameInTable="HOTENColumn" msprop:Generator_UserColumnName="HOTEN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DIACHI" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDIACHI" msprop:Generator_ColumnPropNameInRow="DIACHI" msprop:Generator_ColumnPropNameInTable="DIACHIColumn" msprop:Generator_UserColumnName="DIACHI" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="216" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DANHBO" msprop:Generator_ColumnVarNameInTable="columnDANHBO" msprop:Generator_ColumnPropNameInRow="DANHBO" msprop:Generator_ColumnPropNameInTable="DANHBOColumn" msprop:Generator_UserColumnName="DANHBO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LOAIHOSO" msprop:Generator_ColumnVarNameInTable="columnLOAIHOSO" msprop:Generator_ColumnPropNameInRow="LOAIHOSO" msprop:Generator_ColumnPropNameInTable="LOAIHOSOColumn" msprop:Generator_UserColumnName="LOAIHOSO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="BG_REPORT" msprop:Generator_TableClassName="BG_REPORTDataTable" msprop:Generator_TableVarName="tableBG_REPORT" msprop:Generator_TablePropName="BG_REPORT" msprop:Generator_RowDeletingName="BG_REPORTRowDeleting" msprop:Generator_UserTableName="BG_REPORT" msprop:Generator_RowChangingName="BG_REPORTRowChanging" msprop:Generator_RowEvHandlerName="BG_REPORTRowChangeEventHandler" msprop:Generator_RowDeletedName="BG_REPORTRowDeleted" msprop:Generator_RowEvArgName="BG_REPORTRowChangeEvent" msprop:Generator_RowChangedName="BG_REPORTRowChanged" msprop:Generator_RowClassName="BG_REPORTRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="STT" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnSTT" msprop:Generator_ColumnPropNameInRow="STT" msprop:Generator_ColumnPropNameInTable="STTColumn" msprop:Generator_UserColumnName="STT" type="xs:int" />
+              <xs:element name="LINE1" msprop:Generator_ColumnVarNameInTable="columnLINE1" msprop:Generator_ColumnPropNameInRow="LINE1" msprop:Generator_ColumnPropNameInTable="LINE1Column" msprop:Generator_UserColumnName="LINE1" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LINE2" msprop:Generator_ColumnVarNameInTable="columnLINE2" msprop:Generator_ColumnPropNameInRow="LINE2" msprop:Generator_ColumnPropNameInTable="LINE2Column" msprop:Generator_UserColumnName="LINE2" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LINE3" msprop:Generator_ColumnVarNameInTable="columnLINE3" msprop:Generator_ColumnPropNameInRow="LINE3" msprop:Generator_ColumnPropNameInTable="LINE3Column" msprop:Generator_UserColumnName="LINE3" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LINE4" msprop:Generator_ColumnVarNameInTable="columnLINE4" msprop:Generator_ColumnPropNameInRow="LINE4" msprop:Generator_ColumnPropNameInTable="LINE4Column" msprop:Generator_UserColumnName="LINE4" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LINE5" msprop:Generator_ColumnVarNameInTable="columnLINE5" msprop:Generator_ColumnPropNameInRow="LINE5" msprop:Generator_ColumnPropNameInTable="LINE5Column" msprop:Generator_UserColumnName="LINE5" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LINE6" msprop:Generator_ColumnVarNameInTable="columnLINE6" msprop:Generator_ColumnPropNameInRow="LINE6" msprop:Generator_ColumnPropNameInTable="LINE6Column" msprop:Generator_UserColumnName="LINE6" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DUYET" msprop:Generator_ColumnVarNameInTable="columnDUYET" msprop:Generator_ColumnPropNameInRow="DUYET" msprop:Generator_ColumnPropNameInTable="DUYETColumn" msprop:Generator_UserColumnName="DUYET" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NGUOIDUYET" msprop:Generator_ColumnVarNameInTable="columnNGUOIDUYET" msprop:Generator_ColumnPropNameInRow="NGUOIDUYET" msprop:Generator_ColumnPropNameInTable="NGUOIDUYETColumn" msprop:Generator_UserColumnName="NGUOIDUYET" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="THANHLAP" msprop:Generator_ColumnVarNameInTable="columnTHANHLAP" msprop:Generator_ColumnPropNameInRow="THANHLAP" msprop:Generator_ColumnPropNameInTable="THANHLAPColumn" msprop:Generator_UserColumnName="THANHLAP" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NGUOILAP" msprop:Generator_ColumnVarNameInTable="columnNGUOILAP" msprop:Generator_ColumnPropNameInRow="NGUOILAP" msprop:Generator_ColumnPropNameInTable="NGUOILAPColumn" msprop:Generator_UserColumnName="NGUOILAP" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="VATTU" msprop:Generator_TableClassName="VATTUDataTable" msprop:Generator_TableVarName="tableVATTU" msprop:Generator_TablePropName="VATTU" msprop:Generator_RowDeletingName="VATTURowDeleting" msprop:Generator_UserTableName="VATTU" msprop:Generator_RowChangingName="VATTURowChanging" msprop:Generator_RowEvHandlerName="VATTURowChangeEventHandler" msprop:Generator_RowDeletedName="VATTURowDeleted" msprop:Generator_RowEvArgName="VATTURowChangeEvent" msprop:Generator_RowChangedName="VATTURowChanged" msprop:Generator_RowClassName="VATTURow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SHS" msprop:Generator_ColumnVarNameInTable="columnSHS" msprop:Generator_ColumnPropNameInRow="SHS" msprop:Generator_ColumnPropNameInTable="SHSColumn" msprop:Generator_UserColumnName="SHS" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MAHIEU" msprop:Generator_ColumnVarNameInTable="columnMAHIEU" msprop:Generator_ColumnPropNameInRow="MAHIEU" msprop:Generator_ColumnPropNameInTable="MAHIEUColumn" msprop:Generator_UserColumnName="MAHIEU" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MAHDG" msprop:Generator_ColumnVarNameInTable="columnMAHDG" msprop:Generator_ColumnPropNameInRow="MAHDG" msprop:Generator_ColumnPropNameInTable="MAHDGColumn" msprop:Generator_UserColumnName="MAHDG" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TENVT" msprop:Generator_ColumnVarNameInTable="columnTENVT" msprop:Generator_ColumnPropNameInRow="TENVT" msprop:Generator_ColumnPropNameInTable="TENVTColumn" msprop:Generator_UserColumnName="TENVT" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DVT" msprop:Generator_ColumnVarNameInTable="columnDVT" msprop:Generator_ColumnPropNameInRow="DVT" msprop:Generator_ColumnPropNameInTable="DVTColumn" msprop:Generator_UserColumnName="DVT" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NHOM" msprop:Generator_ColumnVarNameInTable="columnNHOM" msprop:Generator_ColumnPropNameInRow="NHOM" msprop:Generator_ColumnPropNameInTable="NHOMColumn" msprop:Generator_UserColumnName="NHOM" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LOAISN" msprop:Generator_ColumnVarNameInTable="columnLOAISN" msprop:Generator_ColumnPropNameInRow="LOAISN" msprop:Generator_ColumnPropNameInTable="LOAISNColumn" msprop:Generator_UserColumnName="LOAISN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="KHOILUONG" msprop:Generator_ColumnVarNameInTable="columnKHOILUONG" msprop:Generator_ColumnPropNameInRow="KHOILUONG" msprop:Generator_ColumnPropNameInTable="KHOILUONGColumn" msprop:Generator_UserColumnName="KHOILUONG" type="xs:double" minOccurs="0" />
+              <xs:element name="DONGIAVL" msprop:Generator_ColumnVarNameInTable="columnDONGIAVL" msprop:Generator_ColumnPropNameInRow="DONGIAVL" msprop:Generator_ColumnPropNameInTable="DONGIAVLColumn" msprop:Generator_UserColumnName="DONGIAVL" type="xs:double" minOccurs="0" />
+              <xs:element name="DONGIANC" msprop:Generator_ColumnVarNameInTable="columnDONGIANC" msprop:Generator_ColumnPropNameInRow="DONGIANC" msprop:Generator_ColumnPropNameInTable="DONGIANCColumn" msprop:Generator_UserColumnName="DONGIANC" type="xs:double" minOccurs="0" />
+              <xs:element name="DONGIAMTC" msprop:Generator_ColumnVarNameInTable="columnDONGIAMTC" msprop:Generator_ColumnPropNameInRow="DONGIAMTC" msprop:Generator_ColumnPropNameInTable="DONGIAMTCColumn" msprop:Generator_UserColumnName="DONGIAMTC" type="xs:double" minOccurs="0" />
+              <xs:element name="TT_VL" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTT_VL" msprop:Generator_ColumnPropNameInRow="TT_VL" msprop:Generator_ColumnPropNameInTable="TT_VLColumn" msprop:Generator_UserColumnName="TT_VL" type="xs:double" minOccurs="0" />
+              <xs:element name="TT_NC" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTT_NC" msprop:Generator_ColumnPropNameInRow="TT_NC" msprop:Generator_ColumnPropNameInTable="TT_NCColumn" msprop:Generator_UserColumnName="TT_NC" type="xs:double" minOccurs="0" />
+              <xs:element name="TT_MTC" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTT_MTC" msprop:Generator_ColumnPropNameInRow="TT_MTC" msprop:Generator_ColumnPropNameInTable="TT_MTCColumn" msprop:Generator_UserColumnName="TT_MTC" type="xs:double" minOccurs="0" />
+              <xs:element name="NHOMVT" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNHOMVT" msprop:Generator_ColumnPropNameInRow="NHOMVT" msprop:Generator_ColumnPropNameInTable="NHOMVTColumn" msprop:Generator_UserColumnName="NHOMVT" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:USERS" />
+      <xs:field xpath="mstns:USERNAME" />
+    </xs:unique>
+    <xs:unique name="BG_THONGTINKHACHANG_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:BG_THONGTINKHACHANG" />
+      <xs:field xpath="mstns:SHS" />
+    </xs:unique>
+    <xs:unique name="BG_REPORT_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:BG_REPORT" />
+      <xs:field xpath="mstns:STT" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
