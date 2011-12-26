@@ -2424,14 +2424,14 @@ namespace TanHoaWater.View.Users.BGDieuChinh
             ct = new SqlDataAdapter(user, db.Connection.ConnectionString);
             ct.Fill(ds, "USERS");
 
-            ReportDocument rp = new rpt_VatTuDieuChinh();
+            //ReportDocument rp = new rpt_VatTuDieuChinh();
              
-            //rp = new rptBangGia();
-            //rp.Subreports["Subreport1"].SetParameterValue("Tienchu", Utilities.Doctien.ReadMoney(String.Format("{0:0}", TongThanhTien)));
-            rp.SetDataSource(ds);
+            ////rp = new rptBangGia();
+            ////rp.Subreports["Subreport1"].SetParameterValue("Tienchu", Utilities.Doctien.ReadMoney(String.Format("{0:0}", TongThanhTien)));
+            //rp.SetDataSource(ds);
  
-                rpt_Main bc = new rpt_Main(rp);
-                bc.ShowDialog();
+            //    rpt_Main bc = new rpt_Main(rp);
+            //    bc.ShowDialog();
             
             // crystalReportViewer1.ReportSource = rp;
             //}
@@ -2445,8 +2445,8 @@ namespace TanHoaWater.View.Users.BGDieuChinh
         private void buttonX2_Click(object sender, EventArgs e)
         {
             //VATTUDIEUCHINH("11000024", 2);
-            frm_INDanhMucVT vt = new frm_INDanhMucVT();
-            vt.ShowDialog();
+            //frm_INDanhMucVT vt = new frm_INDanhMucVT();
+            //vt.ShowDialog();
         }
 
         
