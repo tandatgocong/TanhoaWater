@@ -28,7 +28,7 @@ namespace TanHoaWater.View.Users.TinhDuToan.BGDieuChinh
             SqlDataAdapter dond = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             dond.Fill(ds, "VATTU");
 
-            sql = "SELECT distinct * FROM BGDC_CHITIETBG  WHERE SHS='" + "11000024" + "' AND LAN='4' AND NHOM ='XDCB'";
+            sql = "SELECT distinct * FROM BGDC_CHITIETBG  WHERE SHS='" + "11000024" + "' AND LAN='4' AND NHOM = 'XDCB' ";
             dond = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             dond.Fill(ds, "XDCB");
 
