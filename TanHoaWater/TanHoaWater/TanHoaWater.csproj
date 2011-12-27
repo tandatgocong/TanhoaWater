@@ -661,8 +661,8 @@
     <Compile Include="View\Users\TinhDuToan\BGDieuChinh\report\subXDCB.cs">
       <DependentUpon>subXDCB.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
-      <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="View\Users\TinhDuToan\BGDieuChinh\report\subVATTU.cs">
       <DependentUpon>subVATTU.rpt</DependentUpon>
