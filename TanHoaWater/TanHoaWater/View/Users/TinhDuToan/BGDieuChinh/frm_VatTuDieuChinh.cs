@@ -23,14 +23,40 @@ namespace TanHoaWater.View.Users.TinhDuToan.BGDieuChinh
             DataSet ds = new DataSet();
             db.Connection.Open();
 
-            string sql = "SELECT distinct * FROM BGDC_CHITIETBG  WHERE SHS='" + "11000024" + "' AND LAN='4' AND NHOM <> 'XDCB'";
+            string sql = "SELECT distinct * FROM BG_CHITIETBG  WHERE SHS='" + "11000024" + "' AND NHOM <> 'XDCB' ";
 
+            
             SqlDataAdapter dond = new SqlDataAdapter(sql, db.Connection.ConnectionString);
-            dond.Fill(ds, "VATTU");
+            dond.Fill(ds, "VATTUTRUOCDC");
+
+            sql = "SELECT distinct * FROM BG_CHITIETBG  WHERE SHS='" + "11000024" + "' AND NHOM = 'XDCB' ";
+            dond = new SqlDataAdapter(sql, db.Connection.ConnectionString);
+            dond.Fill(ds, "XDCBTUOCDC");
+
+
+            
+
+            sql = "SELECT distinct * FROM BGDC_CHITIETBG  WHERE SHS='" + "11000024" + "' AND LAN='4' AND NHOM <> 'XDCB'";
+            dond = new SqlDataAdapter(sql, db.Connection.ConnectionString);
+            dond.Fill(ds, "VATTUSAUDC");
 
             sql = "SELECT distinct * FROM BGDC_CHITIETBG  WHERE SHS='" + "11000024" + "' AND LAN='4' AND NHOM = 'XDCB' ";
             dond = new SqlDataAdapter(sql, db.Connection.ConnectionString);
-            dond.Fill(ds, "XDCB");
+            dond.Fill(ds, "XDCBSAUDC");
+
+
+
+
+
+
+
+
+            //LAY THONG TIN 
+            DataTable VATTUTRUOCDC = ds.Tables["VATTUTRUOCDC"];
+            DataTable XDCBTUOCDC = ds.Tables["XDCBTUOCDC"];
+
+
+
 
             sql = "SELECT distinct  * FROM BG_THONGTINKHACHANG  WHERE SHS='" + "11000024" + "'";
             dond = new SqlDataAdapter(sql, db.Connection.ConnectionString);
