@@ -18,7 +18,7 @@ namespace TanHoaWater.View.Users.TinhDuToan.BGDieuChinh
         public frm_VatTuDieuChinh()
         {
             InitializeComponent();
-            ReportDocument rp = new rptVatTuDieuChinh();
+            //ReportDocument rp = new rptVatTuDieuChinh();
             TanHoaDataContext db = new TanHoaDataContext();
             DataSet ds = new DataSet();
             db.Connection.Open();
@@ -55,7 +55,26 @@ namespace TanHoaWater.View.Users.TinhDuToan.BGDieuChinh
             DataTable VATTUTRUOCDC = ds.Tables["VATTUTRUOCDC"];
             DataTable XDCBTUOCDC = ds.Tables["XDCBTUOCDC"];
 
+            DataTable VATTUSAUDC = ds.Tables["VATTUSAUDC"];
+            DataTable XDCBSAUDC = ds.Tables["XDCBSAUDC"];
 
+            for (int i = 0; i < VATTUSAUDC.Rows.Count; i++)
+            {
+                string mahieuTDC = VATTUSAUDC.Rows[i]["MAHIEU"].ToString();
+                string tenvtTDC = VATTUSAUDC.Rows[i]["TENVT"].ToString();
+                string khoiluongTDC = VATTUSAUDC.Rows[i]["KHOILUONG"].ToString();
+                string loaiSDTDC = VATTUSAUDC.Rows[i]["LOAISN"].ToString();
+                for (int j = 0; j < VATTUTRUOCDC.Rows.Count; j++)
+                {
+
+                }
+                MessageBox.Show(this, mahieuTDC + "--" + tenvtTDC + "----" + khoiluongTDC + "----" + loaiSDTDC);
+            }
+
+            dataGridView1.DataSource = VATTUTRUOCDC;
+            dataGridView2.DataSource = XDCBTUOCDC;
+            dataGridView3.DataSource = VATTUSAUDC;
+            dataGridView4.DataSource = XDCBSAUDC;
 
 
             sql = "SELECT distinct  * FROM BG_THONGTINKHACHANG  WHERE SHS='" + "11000024" + "'";
@@ -71,8 +90,8 @@ namespace TanHoaWater.View.Users.TinhDuToan.BGDieuChinh
             sql = "SELECT distinct * FROM USERS  WHERE USERNAME='" + DAL.C_USERS._userName + "'";
             dond = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             dond.Fill(ds, "USERS");
-            rp.SetDataSource(ds);
-            crystalReportViewer1.ReportSource = rp;
+            //rp.SetDataSource(ds);
+            //crystalReportViewer1.ReportSource = rp;
         }
     }
 }

@@ -18,8 +18,8 @@ namespace TanHoaWater
            
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new frm_Main());
-            Application.Run(new frm_VatTuDieuChinh());
+            Application.Run(new frm_Main());
+            // Application.Run(new frm_VatTuDieuChinh());
         }
     }
 }

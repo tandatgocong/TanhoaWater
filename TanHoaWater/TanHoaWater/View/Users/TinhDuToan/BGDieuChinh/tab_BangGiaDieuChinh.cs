@@ -574,7 +574,7 @@ namespace TanHoaWater.View.Users.BGDieuChinh
         private void tabCacCongTac_Click(object sender, EventArgs e)
         {
             visibleTab(false, false, false, true, false);
-
+            /*
             try
             {
                 string CNHUA = this.txtChuViCatNhua.Text;
@@ -698,16 +698,14 @@ namespace TanHoaWater.View.Users.BGDieuChinh
                                 GridCacCongTac.Rows[i].Cells["congtac_MTC"].Value = dongiavt.DGMAYTHICONG;
                             }
                         }
-                    }
-                    //Utilities.DataGridV.formatRows(GridCacCongTac);
-
+                    }                   
                 }
             }
             catch (Exception ex)
             {
                 log.Error("Loi cap Nhat Don Gia" + ex.Message);
             }
-
+            */
 
         }
         private void GridCacCongTac_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -846,6 +844,7 @@ namespace TanHoaWater.View.Users.BGDieuChinh
                 view = true;
             }
 
+            this.congtac_khoiluong.DataPropertyName = "KHOILUONG";
             this.GridCacCongTac.DataSource = DAL.C_CongTacBangGia.getListBySHS(shs);
             #endregion
         }
@@ -900,8 +899,9 @@ namespace TanHoaWater.View.Users.BGDieuChinh
                 banggiadaco = false;
                 view = true;
             }
-
+            this.congtac_khoiluong.DataPropertyName = "SUDUNGLAI";
             this.GridCacCongTac.DataSource = DAL.C_BGDC_CongTacBangGia.getListBySHS(shs, lan);
+            
             #endregion
         }
         public void refresh() {
@@ -1080,26 +1080,67 @@ namespace TanHoaWater.View.Users.BGDieuChinh
                     return;
                 }
             }
+
+            ////
+            try
+            {
+                if (GridCacCongTac.CurrentCell.OwningColumn.Name == "congtac_khoiluong")
+                {
+                    if (double.Parse(this.GridCacCongTac.Rows[e.RowIndex].Cells["congtac_khoiluong"].Value + "") > 10)
+                    {
+                        this.GridCacCongTac.Rows[e.RowIndex].Cells["congtac_khoiluong"].Value = String.Format("{0:0,0.00}", double.Parse(this.GridCacCongTac.Rows[e.RowIndex].Cells["congtac_khoiluong"].Value + "")); ;
+                    }
+                    else
+                    {
+                        this.GridCacCongTac.Rows[e.RowIndex].Cells["congtac_khoiluong"].Value = String.Format("{0:0.00}", double.Parse(this.GridCacCongTac.Rows[e.RowIndex].Cells["congtac_khoiluong"].Value + "")); ;
+                    }
+                }
+                if (GridCacCongTac.CurrentCell.OwningColumn.Name == "congtac_capmoi")
+                {
+                    if (double.Parse(this.GridCacCongTac.Rows[e.RowIndex].Cells["congtac_capmoi"].Value + "") > 10)
+                    {
+                        this.GridCacCongTac.Rows[e.RowIndex].Cells["congtac_capmoi"].Value = String.Format("{0:0,0.00}", double.Parse(this.GridCacCongTac.Rows[e.RowIndex].Cells["congtac_capmoi"].Value + "")); ;
+                    }
+                    else
+                    {
+                        this.GridCacCongTac.Rows[e.RowIndex].Cells["congtac_capmoi"].Value = String.Format("{0:0.00}", double.Parse(this.GridCacCongTac.Rows[e.RowIndex].Cells["congtac_capmoi"].Value + "")); ;
+                    }
+                }
+                if (GridCacCongTac.CurrentCell.OwningColumn.Name == "congtac_thuhoi")
+                {
+                    if (double.Parse(this.GridCacCongTac.Rows[e.RowIndex].Cells["congtac_thuhoi"].Value + "") > 10)
+                    {
+                        this.GridCacCongTac.Rows[e.RowIndex].Cells["congtac_thuhoi"].Value = String.Format("{0:0,0.00}", double.Parse(this.GridCacCongTac.Rows[e.RowIndex].Cells["congtac_thuhoi"].Value + "")); ;
+                    }
+                    else
+                    {
+                        this.GridCacCongTac.Rows[e.RowIndex].Cells["congtac_thuhoi"].Value = String.Format("{0:0.00}", double.Parse(this.GridCacCongTac.Rows[e.RowIndex].Cells["congtac_thuhoi"].Value + "")); ;
+                    }
+                }
+
+            }
+            catch (Exception)
+            { }
         }
 
         private void GridCacCongTac_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
         {
-            //try
-            //{
-            //    txtKeypress = e.Control;
-            //    if (GridCacCongTac.CurrentCell.OwningColumn.Name == "congtac_khoiluong")
-            //    {
-            //        txtKeypress.KeyPress -= KeyPressHandle;
-            //        txtKeypress.KeyPress += KeyPressHandle;
-            //    }
-            //    else
-            //    {
-            //        txtKeypress.KeyPress -= KeyPressHandle;
-            //    }
-            //}
-            //catch (Exception)
-            //{
-            //}
+            try
+            {
+                txtKeypress = e.Control;
+                if (GridCacCongTac.CurrentCell.OwningColumn.Name == "congtac_khoiluong" | GridCacCongTac.CurrentCell.OwningColumn.Name == "vattu_capmoi" | GridCacCongTac.CurrentCell.OwningColumn.Name == "vattu_thuhoi")
+                {
+                    txtKeypress.KeyPress -= KeyPressHandle;
+                    txtKeypress.KeyPress += KeyPressHandle;
+                }
+                else
+                {
+                    txtKeypress.KeyPress -= KeyPressHandle;
+                }
+            }
+            catch (Exception)
+            {
+            }
         }
 
         private void GridCacCongTac_CellValidated(object sender, DataGridViewCellEventArgs e)
@@ -1191,7 +1232,14 @@ namespace TanHoaWater.View.Users.BGDieuChinh
                         string loaisd = this.GridCacCongTac.Rows[i].Cells["contac_loaisd"].Value + "";
                         congtacbg.NHOM = this.GridCacCongTac.Rows[i].Cells["congTacNhom"].Value + "";
                         congtacbg.LOAISN = loaisd;
-                        congtacbg.KHOILUONG = double.Parse(this.GridCacCongTac.Rows[i].Cells["congtac_khoiluong"].Value + "");
+                        double sql = double.Parse(this.GridCacCongTac.Rows[i].Cells["congtac_khoiluong"].Value!=null ? this.GridCacCongTac.Rows[i].Cells["congtac_khoiluong"].Value.ToString() : "0.0");
+                        double capmoi = double.Parse(this.GridCacCongTac.Rows[i].Cells["congtac_capmoi"].Value != null ? this.GridCacCongTac.Rows[i].Cells["congtac_capmoi"].Value.ToString() : "0.0");  //double.Parse(this.GridCacCongTac.Rows[i].Cells["congtac_capmoi"].Value + "");
+                        double thuhoi = double.Parse(this.GridCacCongTac.Rows[i].Cells["congtac_thuhoi"].Value != null ? this.GridCacCongTac.Rows[i].Cells["congtac_thuhoi"].Value.ToString() : "0.0");//  double.Parse(this.GridCacCongTac.Rows[i].Cells["congtac_thuhoi"].Value + "");
+                        congtacbg.KHOILUONG = sql + capmoi;
+                        congtacbg.SUDUNGLAI = sql;
+                        congtacbg.CAPMOI = capmoi;
+                        congtacbg.THUHOI = thuhoi;
+
                         //if ("XDCB".Equals(nhom))
                         //{
                         //    congtacbg.KHOILUONG = double.Parse(this.GridCacCongTac.Rows[i].Cells["congtac_khoiluong"].Value + "")/1000;
@@ -1861,8 +1909,8 @@ namespace TanHoaWater.View.Users.BGDieuChinh
           
            if (!"".Equals(_shs))
             {
-                try
-                {
+                //try
+                //{
                     if ("0".Equals(txtKLCat.Text) || "0.00".Equals(txtKLCat.Text))
                     {
                         MessageBox.Show(this, "Cần Nhập Thông Tin Bảng Giá !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -1919,12 +1967,12 @@ namespace TanHoaWater.View.Users.BGDieuChinh
                        
                         LoadTabCacLanDieuChinh();
                     }
-                }
-                catch (Exception ex)
-                {
-                    log.Error("Loi In Bang Gia " + ex.Message);
-                    MessageBox.Show(this, "Tạo Mới Bảng Giá Thất Bại. ", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                //}
+                //catch (Exception ex)
+                //{
+                //    log.Error("Loi In Bang Gia " + ex.Message);
+                //    MessageBox.Show(this, "Tạo Mới Bảng Giá Thất Bại. ", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //}
                
                             
             }
