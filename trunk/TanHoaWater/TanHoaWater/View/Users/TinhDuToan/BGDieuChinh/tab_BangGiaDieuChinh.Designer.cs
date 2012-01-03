@@ -279,6 +279,7 @@
             this.congtac_VL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.congtac_NC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.congtac_MTC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.KHOILUONG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panelTinhDuToan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabControl2)).BeginInit();
@@ -427,9 +428,9 @@
             this.tabControl2.CanReorderTabs = true;
             this.tabControl2.Controls.Add(this.tabControlPanel4);
             this.tabControl2.Controls.Add(this.tabControlPanel2);
+            this.tabControl2.Controls.Add(this.PanelThamSo);
             this.tabControl2.Controls.Add(this.tabControlPanel3);
             this.tabControl2.Controls.Add(this.tabControlPanel1);
-            this.tabControl2.Controls.Add(this.PanelThamSo);
             this.tabControl2.Controls.Add(this.tabControlPanel6);
             this.tabControl2.Controls.Add(this.tabControlPanel7);
             this.tabControl2.Location = new System.Drawing.Point(8, 110);
@@ -515,7 +516,8 @@
             this.congTacNhom,
             this.congtac_VL,
             this.congtac_NC,
-            this.congtac_MTC});
+            this.congtac_MTC,
+            this.KHOILUONG});
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -2793,7 +2795,7 @@
             this.buttonX2.Size = new System.Drawing.Size(140, 30);
             this.buttonX2.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
             this.buttonX2.TabIndex = 23;
-            this.buttonX2.Text = "Xem Bảng Giá";
+            this.buttonX2.Text = "Vật Tư Điều Chỉnh";
             this.buttonX2.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
             this.buttonX2.Click += new System.EventHandler(this.buttonX2_Click);
             // 
@@ -3173,6 +3175,12 @@
             this.congtac_MTC.Name = "congtac_MTC";
             this.congtac_MTC.Visible = false;
             // 
+            // KHOILUONG
+            // 
+            this.KHOILUONG.HeaderText = "KHOILUONG";
+            this.KHOILUONG.Name = "KHOILUONG";
+            this.KHOILUONG.Visible = false;
+            // 
             // tab_BangGiaDieuChinh
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -3449,5 +3457,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn congtac_VL;
         private System.Windows.Forms.DataGridViewTextBoxColumn congtac_NC;
         private System.Windows.Forms.DataGridViewTextBoxColumn congtac_MTC;
+        private System.Windows.Forms.DataGridViewTextBoxColumn KHOILUONG;
     }
 }
