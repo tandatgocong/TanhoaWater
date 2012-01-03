@@ -42,7 +42,7 @@ namespace TanHoaWater.DAL
             TanHoaDataContext db = new TanHoaDataContext();
             db.Connection.Open();
             //string sql = " SELECT MAHIEU, MAHDG, TENVT, DVT, NHOM as 'NHOMVT', LOAISN,CASE WHEN NHOM='XDCB' THEN KHOILUONG*1000 ELSE KHOILUONG END as 'KHOILUONG' , DONGIAVL, DONGIANC, DONGIAMTC ";
-            string sql = " SELECT MAHIEU, MAHDG, TENVT, DVT, NHOM as 'NHOMVT', LOAISN, KHOILUONG , DONGIAVL, DONGIANC, DONGIAMTC ";
+            string sql = " SELECT MAHIEU, MAHDG, TENVT, DVT, NHOM as 'NHOMVT', LOAISN, KHOILUONG ,SUDUNGLAI,CAPMOI,THUHOI, DONGIAVL, DONGIANC, DONGIAMTC ";
             sql += " FROM BGDC_CONGTACBANGIA ";
             sql += " WHERE  SHS='" + shs + "' AND LAN='" + lan + "' ";
             SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
