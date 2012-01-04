@@ -84,7 +84,7 @@ SELECT STT, KTGIAMDOC_CV, TENKT, THANHLAP, TENTHL FROM DHN_BAOCAO WHERE (STT = @
               <DbSource ConnectionRef="TANHOA_WATERConnectionString (Settings)" DbObjectName="TANHOA_WATER.dbo.V_CHOSODANHBO" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT SHS, HOTEN, DIACHI, COTLK, NGAYTHICONG, MODIFYDATE, MADOTTC, CHISO, SOTHANTLK, DHN_SODANHBO, DHN_MADMA, DHN_SOHOPDONG, DHN_SOHO, DHN_SONHANKHAU, DHN_GIABIEU, DHN_DMGOC, DHN_DMCAPBU, DHN_HIEULUC, DHN_MAQUANPHUONG, DHN_SODOT FROM dbo.V_CHOSODANHBO</CommandText>
+                    <CommandText>SELECT SHS, HOTEN, DIACHI, COTLK, NGAYTHICONG, MODIFYDATE, MADOTTC, CHISO, SOTHANTLK, DHN_SODANHBO, DHN_MADMA, DHN_PHIENLOTRINH, DHN_SOHOPDONG, DHN_SOHO, DHN_SONHANKHAU, DHN_GIABIEU, DHN_DMGOC, DHN_DMCAPBU, DHN_HIEULUC, DHN_MAQUANPHUONG, DHN_SODOT, STT FROM dbo.V_CHOSODANHBO</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -102,6 +102,7 @@ SELECT STT, KTGIAMDOC_CV, TENKT, THANHLAP, TENTHL FROM DHN_BAOCAO WHERE (STT = @
               <Mapping SourceColumn="SOTHANTLK" DataSetColumn="SOTHANTLK" />
               <Mapping SourceColumn="DHN_SODANHBO" DataSetColumn="DHN_SODANHBO" />
               <Mapping SourceColumn="DHN_MADMA" DataSetColumn="DHN_MADMA" />
+              <Mapping SourceColumn="DHN_PHIENLOTRINH" DataSetColumn="DHN_PHIENLOTRINH" />
               <Mapping SourceColumn="DHN_SOHOPDONG" DataSetColumn="DHN_SOHOPDONG" />
               <Mapping SourceColumn="DHN_SOHO" DataSetColumn="DHN_SOHO" />
               <Mapping SourceColumn="DHN_SONHANKHAU" DataSetColumn="DHN_SONHANKHAU" />
@@ -111,6 +112,7 @@ SELECT STT, KTGIAMDOC_CV, TENKT, THANHLAP, TENTHL FROM DHN_BAOCAO WHERE (STT = @
               <Mapping SourceColumn="DHN_HIEULUC" DataSetColumn="DHN_HIEULUC" />
               <Mapping SourceColumn="DHN_MAQUANPHUONG" DataSetColumn="DHN_MAQUANPHUONG" />
               <Mapping SourceColumn="DHN_SODOT" DataSetColumn="DHN_SODOT" />
+              <Mapping SourceColumn="STT" DataSetColumn="STT" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -194,17 +196,17 @@ SELECT STT, KTGIAMDOC_CV, TENKT, THANHLAP, TENTHL FROM DHN_BAOCAO WHERE (STT = @
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="HOTEN" msprop:Generator_ColumnVarNameInTable="columnHOTEN" msprop:Generator_ColumnPropNameInRow="HOTEN" msprop:Generator_ColumnPropNameInTable="HOTENColumn" msprop:Generator_UserColumnName="HOTEN" minOccurs="0">
+              <xs:element name="HOTEN" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnHOTEN" msprop:Generator_ColumnPropNameInRow="HOTEN" msprop:Generator_ColumnPropNameInTable="HOTENColumn" msprop:Generator_UserColumnName="HOTEN" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
+                    <xs:maxLength value="4000" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
               <xs:element name="DIACHI" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDIACHI" msprop:Generator_ColumnPropNameInRow="DIACHI" msprop:Generator_ColumnPropNameInTable="DIACHIColumn" msprop:Generator_UserColumnName="DIACHI" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="209" />
+                    <xs:maxLength value="609" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
@@ -246,6 +248,13 @@ SELECT STT, KTGIAMDOC_CV, TENKT, THANHLAP, TENTHL FROM DHN_BAOCAO WHERE (STT = @
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="DHN_PHIENLOTRINH" msprop:Generator_ColumnVarNameInTable="columnDHN_PHIENLOTRINH" msprop:Generator_ColumnPropNameInRow="DHN_PHIENLOTRINH" msprop:Generator_ColumnPropNameInTable="DHN_PHIENLOTRINHColumn" msprop:Generator_UserColumnName="DHN_PHIENLOTRINH" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
               <xs:element name="DHN_SOHOPDONG" msprop:Generator_ColumnVarNameInTable="columnDHN_SOHOPDONG" msprop:Generator_ColumnPropNameInRow="DHN_SOHOPDONG" msprop:Generator_ColumnPropNameInTable="DHN_SOHOPDONGColumn" msprop:Generator_UserColumnName="DHN_SOHOPDONG" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -279,6 +288,7 @@ SELECT STT, KTGIAMDOC_CV, TENKT, THANHLAP, TENTHL FROM DHN_BAOCAO WHERE (STT = @
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="STT" msprop:Generator_ColumnVarNameInTable="columnSTT" msprop:Generator_ColumnPropNameInRow="STT" msprop:Generator_ColumnPropNameInTable="STTColumn" msprop:Generator_UserColumnName="STT" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

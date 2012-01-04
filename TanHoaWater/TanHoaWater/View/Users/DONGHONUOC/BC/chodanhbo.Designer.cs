@@ -971,6 +971,8 @@ namespace TanHoaWater.View.Users.DONGHONUOC.BC {
             
             private global::System.Data.DataColumn columnDHN_MADMA;
             
+            private global::System.Data.DataColumn columnDHN_PHIENLOTRINH;
+            
             private global::System.Data.DataColumn columnDHN_SOHOPDONG;
             
             private global::System.Data.DataColumn columnDHN_SOHO;
@@ -988,6 +990,8 @@ namespace TanHoaWater.View.Users.DONGHONUOC.BC {
             private global::System.Data.DataColumn columnDHN_MAQUANPHUONG;
             
             private global::System.Data.DataColumn columnDHN_SODOT;
+            
+            private global::System.Data.DataColumn columnSTT;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -1112,6 +1116,14 @@ namespace TanHoaWater.View.Users.DONGHONUOC.BC {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DHN_PHIENLOTRINHColumn {
+                get {
+                    return this.columnDHN_PHIENLOTRINH;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn DHN_SOHOPDONGColumn {
                 get {
                     return this.columnDHN_SOHOPDONG;
@@ -1184,6 +1196,14 @@ namespace TanHoaWater.View.Users.DONGHONUOC.BC {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn STTColumn {
+                get {
+                    return this.columnSTT;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1231,6 +1251,7 @@ namespace TanHoaWater.View.Users.DONGHONUOC.BC {
                         string SOTHANTLK, 
                         string DHN_SODANHBO, 
                         string DHN_MADMA, 
+                        string DHN_PHIENLOTRINH, 
                         string DHN_SOHOPDONG, 
                         int DHN_SOHO, 
                         int DHN_SONHANKHAU, 
@@ -1239,7 +1260,8 @@ namespace TanHoaWater.View.Users.DONGHONUOC.BC {
                         int DHN_DMCAPBU, 
                         string DHN_HIEULUC, 
                         string DHN_MAQUANPHUONG, 
-                        string DHN_SODOT) {
+                        string DHN_SODOT, 
+                        int STT) {
                 V_CHOSODANHBORow rowV_CHOSODANHBORow = ((V_CHOSODANHBORow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         SHS,
@@ -1253,6 +1275,7 @@ namespace TanHoaWater.View.Users.DONGHONUOC.BC {
                         SOTHANTLK,
                         DHN_SODANHBO,
                         DHN_MADMA,
+                        DHN_PHIENLOTRINH,
                         DHN_SOHOPDONG,
                         DHN_SOHO,
                         DHN_SONHANKHAU,
@@ -1261,7 +1284,8 @@ namespace TanHoaWater.View.Users.DONGHONUOC.BC {
                         DHN_DMCAPBU,
                         DHN_HIEULUC,
                         DHN_MAQUANPHUONG,
-                        DHN_SODOT};
+                        DHN_SODOT,
+                        STT};
                 rowV_CHOSODANHBORow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowV_CHOSODANHBORow);
                 return rowV_CHOSODANHBORow;
@@ -1302,6 +1326,7 @@ namespace TanHoaWater.View.Users.DONGHONUOC.BC {
                 this.columnSOTHANTLK = base.Columns["SOTHANTLK"];
                 this.columnDHN_SODANHBO = base.Columns["DHN_SODANHBO"];
                 this.columnDHN_MADMA = base.Columns["DHN_MADMA"];
+                this.columnDHN_PHIENLOTRINH = base.Columns["DHN_PHIENLOTRINH"];
                 this.columnDHN_SOHOPDONG = base.Columns["DHN_SOHOPDONG"];
                 this.columnDHN_SOHO = base.Columns["DHN_SOHO"];
                 this.columnDHN_SONHANKHAU = base.Columns["DHN_SONHANKHAU"];
@@ -1311,6 +1336,7 @@ namespace TanHoaWater.View.Users.DONGHONUOC.BC {
                 this.columnDHN_HIEULUC = base.Columns["DHN_HIEULUC"];
                 this.columnDHN_MAQUANPHUONG = base.Columns["DHN_MAQUANPHUONG"];
                 this.columnDHN_SODOT = base.Columns["DHN_SODOT"];
+                this.columnSTT = base.Columns["STT"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1338,6 +1364,8 @@ namespace TanHoaWater.View.Users.DONGHONUOC.BC {
                 base.Columns.Add(this.columnDHN_SODANHBO);
                 this.columnDHN_MADMA = new global::System.Data.DataColumn("DHN_MADMA", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDHN_MADMA);
+                this.columnDHN_PHIENLOTRINH = new global::System.Data.DataColumn("DHN_PHIENLOTRINH", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDHN_PHIENLOTRINH);
                 this.columnDHN_SOHOPDONG = new global::System.Data.DataColumn("DHN_SOHOPDONG", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDHN_SOHOPDONG);
                 this.columnDHN_SOHO = new global::System.Data.DataColumn("DHN_SOHO", typeof(int), null, global::System.Data.MappingType.Element);
@@ -1356,20 +1384,24 @@ namespace TanHoaWater.View.Users.DONGHONUOC.BC {
                 base.Columns.Add(this.columnDHN_MAQUANPHUONG);
                 this.columnDHN_SODOT = new global::System.Data.DataColumn("DHN_SODOT", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDHN_SODOT);
+                this.columnSTT = new global::System.Data.DataColumn("STT", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSTT);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnSHS}, true));
                 this.columnSHS.AllowDBNull = false;
                 this.columnSHS.Unique = true;
                 this.columnSHS.MaxLength = 50;
-                this.columnHOTEN.MaxLength = 50;
+                this.columnHOTEN.ReadOnly = true;
+                this.columnHOTEN.MaxLength = 4000;
                 this.columnDIACHI.ReadOnly = true;
-                this.columnDIACHI.MaxLength = 209;
+                this.columnDIACHI.MaxLength = 609;
                 this.columnNGAYTHICONG.ReadOnly = true;
                 this.columnNGAYTHICONG.MaxLength = 20;
                 this.columnMADOTTC.MaxLength = 250;
                 this.columnSOTHANTLK.MaxLength = 30;
                 this.columnDHN_SODANHBO.MaxLength = 50;
                 this.columnDHN_MADMA.MaxLength = 2147483647;
+                this.columnDHN_PHIENLOTRINH.MaxLength = 50;
                 this.columnDHN_SOHOPDONG.MaxLength = 2147483647;
                 this.columnDHN_HIEULUC.MaxLength = 2147483647;
                 this.columnDHN_MAQUANPHUONG.MaxLength = 4;
@@ -1924,6 +1956,22 @@ namespace TanHoaWater.View.Users.DONGHONUOC.BC {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DHN_PHIENLOTRINH {
+                get {
+                    try {
+                        return ((string)(this[this.tableV_CHOSODANHBO.DHN_PHIENLOTRINHColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DHN_PHIENLOTRINH\' in table \'V_CHOSODANHBO\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableV_CHOSODANHBO.DHN_PHIENLOTRINHColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string DHN_SOHOPDONG {
                 get {
                     try {
@@ -2068,6 +2116,22 @@ namespace TanHoaWater.View.Users.DONGHONUOC.BC {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int STT {
+                get {
+                    try {
+                        return ((int)(this[this.tableV_CHOSODANHBO.STTColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'STT\' in table \'V_CHOSODANHBO\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableV_CHOSODANHBO.STTColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsHOTENNull() {
                 return this.IsNull(this.tableV_CHOSODANHBO.HOTENColumn);
             }
@@ -2188,6 +2252,18 @@ namespace TanHoaWater.View.Users.DONGHONUOC.BC {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDHN_PHIENLOTRINHNull() {
+                return this.IsNull(this.tableV_CHOSODANHBO.DHN_PHIENLOTRINHColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDHN_PHIENLOTRINHNull() {
+                this[this.tableV_CHOSODANHBO.DHN_PHIENLOTRINHColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsDHN_SOHOPDONGNull() {
                 return this.IsNull(this.tableV_CHOSODANHBO.DHN_SOHOPDONGColumn);
             }
@@ -2292,6 +2368,18 @@ namespace TanHoaWater.View.Users.DONGHONUOC.BC {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetDHN_SODOTNull() {
                 this[this.tableV_CHOSODANHBO.DHN_SODOTColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsSTTNull() {
+                return this.IsNull(this.tableV_CHOSODANHBO.STTColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetSTTNull() {
+                this[this.tableV_CHOSODANHBO.STTColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -3052,6 +3140,7 @@ namespace TanHoaWater.View.Users.DONGHONUOC.BC.chodanhboTableAdapters {
             tableMapping.ColumnMappings.Add("SOTHANTLK", "SOTHANTLK");
             tableMapping.ColumnMappings.Add("DHN_SODANHBO", "DHN_SODANHBO");
             tableMapping.ColumnMappings.Add("DHN_MADMA", "DHN_MADMA");
+            tableMapping.ColumnMappings.Add("DHN_PHIENLOTRINH", "DHN_PHIENLOTRINH");
             tableMapping.ColumnMappings.Add("DHN_SOHOPDONG", "DHN_SOHOPDONG");
             tableMapping.ColumnMappings.Add("DHN_SOHO", "DHN_SOHO");
             tableMapping.ColumnMappings.Add("DHN_SONHANKHAU", "DHN_SONHANKHAU");
@@ -3061,6 +3150,7 @@ namespace TanHoaWater.View.Users.DONGHONUOC.BC.chodanhboTableAdapters {
             tableMapping.ColumnMappings.Add("DHN_HIEULUC", "DHN_HIEULUC");
             tableMapping.ColumnMappings.Add("DHN_MAQUANPHUONG", "DHN_MAQUANPHUONG");
             tableMapping.ColumnMappings.Add("DHN_SODOT", "DHN_SODOT");
+            tableMapping.ColumnMappings.Add("STT", "STT");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -3077,10 +3167,7 @@ namespace TanHoaWater.View.Users.DONGHONUOC.BC.chodanhboTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT SHS, HOTEN, DIACHI, COTLK, NGAYTHICONG, MODIFYDATE, MADOTTC, CHISO, SOTHAN" +
-                "TLK, DHN_SODANHBO, DHN_MADMA, DHN_SOHOPDONG, DHN_SOHO, DHN_SONHANKHAU, DHN_GIABI" +
-                "EU, DHN_DMGOC, DHN_DMCAPBU, DHN_HIEULUC, DHN_MAQUANPHUONG, DHN_SODOT FROM dbo.V_" +
-                "CHOSODANHBO";
+            this._commandCollection[0].CommandText = @"SELECT SHS, HOTEN, DIACHI, COTLK, NGAYTHICONG, MODIFYDATE, MADOTTC, CHISO, SOTHANTLK, DHN_SODANHBO, DHN_MADMA, DHN_PHIENLOTRINH, DHN_SOHOPDONG, DHN_SOHO, DHN_SONHANKHAU, DHN_GIABIEU, DHN_DMGOC, DHN_DMCAPBU, DHN_HIEULUC, DHN_MAQUANPHUONG, DHN_SODOT, STT FROM dbo.V_CHOSODANHBO";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
