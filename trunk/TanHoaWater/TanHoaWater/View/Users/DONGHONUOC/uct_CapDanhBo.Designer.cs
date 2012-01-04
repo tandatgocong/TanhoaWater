@@ -80,6 +80,7 @@
             this.hc_DMucGoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hc_DMCapBu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hc_SoDanhBo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dhn_lotrinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hc_MaDMA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hc_Ma_QP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hc_HsCty = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -274,6 +275,7 @@
             this.hc_DMucGoc,
             this.hc_DMCapBu,
             this.hc_SoDanhBo,
+            this.dhn_lotrinh,
             this.hc_MaDMA,
             this.hc_Ma_QP,
             this.hc_HsCty,
@@ -474,6 +476,13 @@
             this.hc_SoDanhBo.Name = "hc_SoDanhBo";
             this.hc_SoDanhBo.Width = 120;
             // 
+            // dhn_lotrinh
+            // 
+            this.dhn_lotrinh.DataPropertyName = "DHN_PHIENLOTRINH";
+            this.dhn_lotrinh.HeaderText = "Phiên Lộ Trình";
+            this.dhn_lotrinh.Name = "dhn_lotrinh";
+            this.dhn_lotrinh.Width = 120;
+            // 
             // hc_MaDMA
             // 
             this.hc_MaDMA.DataPropertyName = "DHN_MADMA";
@@ -580,6 +589,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn hc_DMucGoc;
         private System.Windows.Forms.DataGridViewTextBoxColumn hc_DMCapBu;
         private System.Windows.Forms.DataGridViewTextBoxColumn hc_SoDanhBo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dhn_lotrinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn hc_MaDMA;
         private System.Windows.Forms.DataGridViewTextBoxColumn hc_Ma_QP;
         private System.Windows.Forms.DataGridViewTextBoxColumn hc_HsCty;
