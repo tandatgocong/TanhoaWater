@@ -255,8 +255,9 @@ namespace TanHoaWater.View.Users.TinhDuToan.BGDieuChinh
             ct.Fill(ds, "USERS");
 
             ReportDocument rp = new rptVatTuDieuChinh(); 
-            rp.SetDataSource(ds); 
-
+            
+            rp.SetDataSource(ds);
+            rp.SetParameterValue("solan", lan);
              crystalReportViewer1.ReportSource = rp;
             //}
             //catch (Exception ex)

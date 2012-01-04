@@ -1849,7 +1849,7 @@ namespace TanHoaWater.View.Users.BGDieuChinh
                 rp.SetParameterValue("subTienchu", Utilities.Doctien.ReadMoney(String.Format("{0:0}", Math.Round(Math.Abs(kqtonggiatri)))));
                 rp.SetParameterValue("gan", _tongketgan);
                 rp.SetParameterValue("nhua", _tongketnhua);
-
+                rp.SetParameterValue("solan", lan);
 
                 
                 rp.SetParameterValue("gantlkKhauTru", gantlcu);
