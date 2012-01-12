@@ -31,6 +31,11 @@ namespace TanHoaWater.DAL
             string user = "SELECT USERNAME, UPPER(FULLNAME) AS 'FULLNAME' FROM USERS WHERE USERNAME='" + nguoiduyet + "'";
             SqlDataAdapter ct = new SqlDataAdapter(user, db.Connection.ConnectionString);
             ct.Fill(ds, "USERS");
+
+            string bc = "SELECT * FROM KH_TC_BAOCAO ";
+            ct = new SqlDataAdapter(bc, db.Connection.ConnectionString);
+            ct.Fill(ds, "KH_TC_BAOCAO");
+
             return ds;
         }
 

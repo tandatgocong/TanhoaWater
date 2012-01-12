@@ -764,6 +764,22 @@ namespace TanHoaWater
 
         }
 
+        private void khvt_bctk_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.PanelContent.Controls.Clear();
+                this.PanelContent.Controls.Add(new tab_BAOCAOTONGKET());
+                this.menuKHVT.Select();
+            }
+            catch (Exception ex)
+            {
+                log.Error("Loi Load Form " + ex.Message);
+                MessageBox.Show(this, "Lỗi Load Dữ Liệu", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Application.Exit();
+            }
+        }
+
         //private void menuDieuChinh_Click(object sender, EventArgs e)
         //{
         //    try

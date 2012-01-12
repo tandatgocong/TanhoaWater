@@ -39,6 +39,8 @@
             this.buttonX2 = new DevComponents.DotNetBar.ButtonX();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonX3 = new DevComponents.DotNetBar.ButtonX();
+            this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lbsohoso = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -97,8 +99,8 @@
             this.label21 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.SearchMaHoSo = new System.Windows.Forms.TextBox();
-            this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
-            this.buttonX3 = new DevComponents.DotNetBar.ButtonX();
+            this.label25 = new System.Windows.Forms.Label();
+            this.txtNgayDongTien = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.groupPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -231,6 +233,7 @@
             this.panel1.Controls.Add(this.label13);
             this.panel1.Controls.Add(this.label16);
             this.panel1.Controls.Add(this.NgayXinPhepDD);
+            this.panel1.Controls.Add(this.txtNgayDongTien);
             this.panel1.Controls.Add(this.SoDoVienTK);
             this.panel1.Controls.Add(this.label14);
             this.panel1.Controls.Add(this.NgayThiCong);
@@ -262,11 +265,32 @@
             this.panel1.Controls.Add(this.label15);
             this.panel1.Controls.Add(this.label21);
             this.panel1.Controls.Add(this.label9);
+            this.panel1.Controls.Add(this.label25);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(983, 544);
             this.panel1.TabIndex = 0;
+            // 
+            // buttonX3
+            // 
+            this.buttonX3.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonX3.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.buttonX3.Location = new System.Drawing.Point(598, 282);
+            this.buttonX3.Name = "buttonX3";
+            this.buttonX3.Size = new System.Drawing.Size(376, 6);
+            this.buttonX3.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
+            this.buttonX3.TabIndex = 677;
+            // 
+            // buttonX1
+            // 
+            this.buttonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonX1.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.buttonX1.Location = new System.Drawing.Point(597, 212);
+            this.buttonX1.Name = "buttonX1";
+            this.buttonX1.Size = new System.Drawing.Size(376, 6);
+            this.buttonX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
+            this.buttonX1.TabIndex = 676;
             // 
             // panel2
             // 
@@ -523,11 +547,11 @@
             // 
             // 
             this.SoTienDong.Border.Class = "TextBoxBorder";
-            this.SoTienDong.Location = new System.Drawing.Point(677, 125);
+            this.SoTienDong.Location = new System.Drawing.Point(852, 125);
             this.SoTienDong.Margin = new System.Windows.Forms.Padding(4);
             this.SoTienDong.Name = "SoTienDong";
             this.SoTienDong.ReadOnly = true;
-            this.SoTienDong.Size = new System.Drawing.Size(296, 26);
+            this.SoTienDong.Size = new System.Drawing.Size(121, 26);
             this.SoTienDong.TabIndex = 164;
             this.SoTienDong.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -535,12 +559,12 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Times New Roman", 10F);
-            this.label13.Location = new System.Drawing.Point(593, 133);
+            this.label13.Location = new System.Drawing.Point(794, 130);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(87, 16);
+            this.label13.Size = new System.Drawing.Size(52, 16);
             this.label13.TabIndex = 163;
-            this.label13.Text = "Số Tiền Đóng";
+            this.label13.Text = "Số Tiền";
             // 
             // label16
             // 
@@ -984,25 +1008,30 @@
             this.SearchMaHoSo.TabIndex = 129;
             this.SearchMaHoSo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.searchHoTenKH_KeyPress);
             // 
-            // buttonX1
+            // label25
             // 
-            this.buttonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX1.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX1.Location = new System.Drawing.Point(597, 212);
-            this.buttonX1.Name = "buttonX1";
-            this.buttonX1.Size = new System.Drawing.Size(376, 6);
-            this.buttonX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
-            this.buttonX1.TabIndex = 676;
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Times New Roman", 10F);
+            this.label25.Location = new System.Drawing.Point(593, 130);
+            this.label25.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(81, 16);
+            this.label25.TabIndex = 678;
+            this.label25.Text = "Ngày Đ.Tiền";
             // 
-            // buttonX3
+            // txtNgayDongTien
             // 
-            this.buttonX3.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX3.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX3.Location = new System.Drawing.Point(598, 282);
-            this.buttonX3.Name = "buttonX3";
-            this.buttonX3.Size = new System.Drawing.Size(376, 6);
-            this.buttonX3.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
-            this.buttonX3.TabIndex = 677;
+            this.txtNgayDongTien.BackColor = System.Drawing.SystemColors.Window;
+            // 
+            // 
+            // 
+            this.txtNgayDongTien.Border.Class = "TextBoxBorder";
+            this.txtNgayDongTien.Location = new System.Drawing.Point(670, 125);
+            this.txtNgayDongTien.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNgayDongTien.Name = "txtNgayDongTien";
+            this.txtNgayDongTien.ReadOnly = true;
+            this.txtNgayDongTien.Size = new System.Drawing.Size(120, 26);
+            this.txtNgayDongTien.TabIndex = 164;
             // 
             // uc_TimKiemDonKH
             // 
@@ -1109,6 +1138,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NGAYNHAN;
         private DevComponents.DotNetBar.ButtonX buttonX3;
         private DevComponents.DotNetBar.ButtonX buttonX1;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtNgayDongTien;
+        private System.Windows.Forms.Label label25;
 
     }
 }

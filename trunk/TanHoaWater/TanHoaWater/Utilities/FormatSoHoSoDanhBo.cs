@@ -25,7 +25,8 @@ namespace TanHoaWater.Utilities
         }
         public static string sodanhbo(string _danhbo, string kytu)
         {
-            if (_danhbo.Length == 11)
+            _danhbo = _danhbo.Trim();
+            if (_danhbo.Length >8)
             {
                 _danhbo = _danhbo.Insert(4, kytu);
                 _danhbo = _danhbo.Insert(8, kytu);
@@ -33,5 +34,18 @@ namespace TanHoaWater.Utilities
             }
             return _danhbo;
         }
+
+        public static string phienlotrinh(string _lotrinh, string kytu)
+        {
+            _lotrinh = _lotrinh.Replace(" ","");
+            if (_lotrinh.Length>6)
+            {
+                _lotrinh = _lotrinh.Insert(2, kytu);
+                _lotrinh = _lotrinh.Insert(5, kytu);
+
+            }
+            return _lotrinh;
+        }
+
     }
 }
