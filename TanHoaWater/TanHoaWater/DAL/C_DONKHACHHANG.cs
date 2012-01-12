@@ -391,7 +391,7 @@ namespace TanHoaWater.DAL
                 DON_KHACHHANG donkh = data.SingleOrDefault();
                 if (donkh != null)
                 {
-                    donkh.TRONGAITHIETKE = false;
+                    donkh.TRONGAITHIETKE = null;
                     donkh.BOPHANCHUYEN = "TTK";
                     donkh.NGUOICHUYEN_HOSO = DAL.C_USERS._userName;
                     donkh.NGAYCHUYEN_HOSO = System.DateTime.Now.Date;
@@ -503,7 +503,7 @@ namespace TanHoaWater.DAL
                         ttk.SODOVIEN = null;
                         ttk.NGAYNHAN = DateTime.Now.Date;
                         ttk.TRAHS = false;
-                        ttk.TRONGAITHIETKE = false;
+                        ttk.TRONGAITHIETKE = null;
                     }
                     else
                     {

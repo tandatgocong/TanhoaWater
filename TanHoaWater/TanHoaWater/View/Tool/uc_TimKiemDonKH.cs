@@ -40,6 +40,7 @@ namespace TanHoaWater.View.Tool
         {
             if (donkh != null)
             {
+                this.txtNgayDongTien.Text = donkh.NGAYDONGTIEN != null ? Utilities.DateToString.NgayVNVN(donkh.NGAYDONGTIEN.Value) : "";
                 this.DotNhanDon.Text = donkh.MADOT;
                 this.NgayLenDotNhanDon.Text = Utilities.DateToString.NgayVNVN(donkh.CREATEDATE.Value);
                 if (donkh.NGAYCHUYEN_HOSO != null)

@@ -241,12 +241,14 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
         bool flag = true;
         void updateDulieu()
         {
+            bool flag = false;
             int i = 0;
             try
             {
 
                 for (i = 0; i < gridHoanCong.Rows.Count; i++)
                 {
+                    flag = false;
                     string ngaytc = "";
                     string chiso = "";
                     string shs = this.gridHoanCong.Rows[i].Cells["hc_SHS"].Value + "";
@@ -307,10 +309,17 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
 
                         }
                         DAL.C_KH_HoanCong.HoanCong(shs, DateTime.ParseExact(ngaytc, "dd/MM/yyyy", null), int.Parse(chiso), cotlk, sothanTLK.ToUpper(), hieudongho, HoanCong);
+                        flag = true;
                     }
 
                 }
-                MessageBox.Show(this, "Hoàn Tất.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                if (flag) {
+                    MessageBox.Show(this, "Hoàn Tất.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                } else {
+                    MessageBox.Show(this, "Lỗi Cập Nhật Dữ Liệu.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                
                 this.btInBangKe.Enabled = true;
                 //hoantat();
             }
