@@ -37,8 +37,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_ChonLaiDG));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBoxX1 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.textBoxX2 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtTenVT = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.btCapNhatDGVT = new DevComponents.DotNetBar.ButtonX();
             this.GridDonGiaVT = new System.Windows.Forms.DataGridView();
             this.dg_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,13 +47,14 @@
             this.dgXiMang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dg_ngay = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dg_Chon = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.cbMaVatTu = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             ((System.ComponentModel.ISupportInitialize)(this.GridDonGiaVT)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(18, 13);
+            this.label1.Location = new System.Drawing.Point(13, 12);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(78, 19);
@@ -64,34 +64,23 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(18, 49);
+            this.label2.Location = new System.Drawing.Point(13, 50);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 19);
+            this.label2.Size = new System.Drawing.Size(80, 19);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Mã Vật Tư";
+            this.label2.Text = "Tên Vật Tư";
             // 
-            // textBoxX1
-            // 
-            // 
-            // 
-            // 
-            this.textBoxX1.Border.Class = "TextBoxBorder";
-            this.textBoxX1.Location = new System.Drawing.Point(103, 11);
-            this.textBoxX1.Name = "textBoxX1";
-            this.textBoxX1.Size = new System.Drawing.Size(389, 26);
-            this.textBoxX1.TabIndex = 1;
-            // 
-            // textBoxX2
+            // txtTenVT
             // 
             // 
             // 
             // 
-            this.textBoxX2.Border.Class = "TextBoxBorder";
-            this.textBoxX2.Location = new System.Drawing.Point(103, 47);
-            this.textBoxX2.Name = "textBoxX2";
-            this.textBoxX2.Size = new System.Drawing.Size(389, 26);
-            this.textBoxX2.TabIndex = 1;
+            this.txtTenVT.Border.Class = "TextBoxBorder";
+            this.txtTenVT.Location = new System.Drawing.Point(92, 47);
+            this.txtTenVT.Name = "txtTenVT";
+            this.txtTenVT.Size = new System.Drawing.Size(389, 26);
+            this.txtTenVT.TabIndex = 1;
             // 
             // btCapNhatDGVT
             // 
@@ -105,6 +94,7 @@
             this.btCapNhatDGVT.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
             this.btCapNhatDGVT.TabIndex = 1;
             this.btCapNhatDGVT.Text = "Cập Nhật Đơn Giá VT";
+            this.btCapNhatDGVT.Click += new System.EventHandler(this.btCapNhatDGVT_Click);
             // 
             // GridDonGiaVT
             // 
@@ -142,6 +132,7 @@
             this.GridDonGiaVT.RowHeadersWidth = 30;
             this.GridDonGiaVT.Size = new System.Drawing.Size(470, 342);
             this.GridDonGiaVT.TabIndex = 0;
+            this.GridDonGiaVT.UserAddedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.GridDonGiaVT_UserAddedRow);
             // 
             // dg_ID
             // 
@@ -204,21 +195,39 @@
             this.dg_Chon.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dg_Chon.Width = 55;
             // 
+            // cbMaVatTu
+            // 
+            this.cbMaVatTu.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbMaVatTu.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbMaVatTu.DisplayMember = "Text";
+            this.cbMaVatTu.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbMaVatTu.DropDownHeight = 150;
+            this.cbMaVatTu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbMaVatTu.FormattingEnabled = true;
+            this.cbMaVatTu.IntegralHeight = false;
+            this.cbMaVatTu.ItemHeight = 20;
+            this.cbMaVatTu.Location = new System.Drawing.Point(92, 9);
+            this.cbMaVatTu.Name = "cbMaVatTu";
+            this.cbMaVatTu.Size = new System.Drawing.Size(400, 26);
+            this.cbMaVatTu.TabIndex = 2;
+            this.cbMaVatTu.SelectedValueChanged += new System.EventHandler(this.cbMaVatTu_SelectedValueChanged);
+            this.cbMaVatTu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbMaVatTu_KeyPress);
+            // 
             // frm_ChonLaiDG
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(511, 486);
+            this.Controls.Add(this.cbMaVatTu);
             this.Controls.Add(this.btCapNhatDGVT);
             this.Controls.Add(this.GridDonGiaVT);
-            this.Controls.Add(this.textBoxX2);
-            this.Controls.Add(this.textBoxX1);
+            this.Controls.Add(this.txtTenVT);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frm_ChonLaiDG";
@@ -235,8 +244,7 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX1;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX2;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtTenVT;
         private DevComponents.DotNetBar.ButtonX btCapNhatDGVT;
         private System.Windows.Forms.DataGridView GridDonGiaVT;
         private System.Windows.Forms.DataGridViewTextBoxColumn dg_ID;
@@ -246,5 +254,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dgXiMang;
         private System.Windows.Forms.DataGridViewTextBoxColumn dg_ngay;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dg_Chon;
+        private DevComponents.DotNetBar.Controls.ComboBoxEx cbMaVatTu;
     }
 }

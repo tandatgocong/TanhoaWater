@@ -1063,9 +1063,8 @@ namespace TanHoaWater.View.Users.TinhDuToan
 
         private void btChonLaiDonGia_Click(object sender, EventArgs e)
         {
-            //frm_ChonLaiDG from = new frm_ChonLaiDG();
-            //from.ShowDialog();
-
+            frm_ChonLaiDG from = new frm_ChonLaiDG();
+            from.ShowDialog();
         }
     
         public void InsertBG_KICHTHUOCPHUIDAO()
