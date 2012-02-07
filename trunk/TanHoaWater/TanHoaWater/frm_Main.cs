@@ -65,12 +65,13 @@ namespace TanHoaWater
         {
             try
             {
+                log4net.Config.XmlConfigurator.Configure();
                 if (DAL.TestConection.testConnection() == false)
                 {
                     MessageBox.Show(this, "Lỗi Kết Nối, Kiểm Tra Kết Nối Tới Server.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     Application.Exit();
                 }
-                log4net.Config.XmlConfigurator.Configure();
+               
             }
             catch (Exception ex)
             {
