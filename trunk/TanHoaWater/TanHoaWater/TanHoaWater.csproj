@@ -151,6 +151,8 @@
     <Compile Include="DAL\C_KH_HoSoKhachHang.cs" />
     <Compile Include="DAL\C_KH_XinPhepDD.cs" />
     <Compile Include="DAL\C_KichThuocPhuiDao.cs" />
+    <Compile Include="DAL\C_KTTC_HeSoQT.cs" />
+    <Compile Include="DAL\C_KTTC_HoanCongQuyetToan.cs" />
     <Compile Include="DAL\C_LoaiHoSo.cs" />
     <Compile Include="DAL\C_LoaiKhachHang.cs" />
     <Compile Include="DAL\C_LoaiNhanDon.cs" />
@@ -680,6 +682,18 @@
     <Compile Include="View\Users\KEHOACH\tab_LogDonKH.Designer.cs">
       <DependentUpon>tab_LogDonKH.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Users\KTTC\frm_HeSoQT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Users\KTTC\frm_HeSoQT.Designer.cs">
+      <DependentUpon>frm_HeSoQT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Users\KTTC\frm_HoanCongQuyetToan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Users\KTTC\frm_HoanCongQuyetToan.Designer.cs">
+      <DependentUpon>frm_HoanCongQuyetToan.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Users\TinhDuToan\BGDieuChinh\frm_BGDieuChinh.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -1149,6 +1163,12 @@
     <EmbeddedResource Include="View\Users\KEHOACH\tab_LogDonKH.resx">
       <DependentUpon>tab_LogDonKH.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\KTTC\frm_HeSoQT.resx">
+      <DependentUpon>frm_HeSoQT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\KTTC\frm_HoanCongQuyetToan.resx">
+      <DependentUpon>frm_HoanCongQuyetToan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\TinhDuToan\BGDieuChinh\frm_BGDieuChinh.resx">
       <DependentUpon>frm_BGDieuChinh.cs</DependentUpon>
@@ -1722,6 +1742,7 @@
     <Content Include="Lib\IrisSkin2.dll" />
     <Content Include="Lib\log4net.dll" />
     <Content Include="Lib\String_Indentity.dll" />
+    <None Include="Resources\Currency Euro.png" />
     <None Include="Resources\Write3.png" />
     <None Include="Resources\User.png" />
     <None Include="Resources\giamdoc.jpg" />

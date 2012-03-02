@@ -22,6 +22,7 @@ using TanHoaWater.View.Users.KEHOACH.DOTTHICONG;
 using TanHoaWater.View.Users.KEHOACH.HOANCONG;
 using TanHoaWater.View.Users.DONGHONUOC;
 using TanHoaWater.View.Users.TinhDuToan.BGDieuChinh;
+using TanHoaWater.View.Users.KTTC;
 
 namespace TanHoaWater
 {
@@ -779,6 +780,12 @@ namespace TanHoaWater
                 MessageBox.Show(this, "Lỗi Load Dữ Liệu", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Application.Exit();
             }
+        }
+
+        private void menuQuyetToan_Click(object sender, EventArgs e)
+        {
+            frm_HoanCongQuyetToan hcqt = new frm_HoanCongQuyetToan();
+            hcqt.ShowDialog();
         }
 
         //private void menuDieuChinh_Click(object sender, EventArgs e)
