@@ -24,12 +24,14 @@ namespace TanHoaWater.DAL
 
             TanHoaDataContext db = new TanHoaDataContext();
             db.Connection.Open();
-            string sql = " SELECT STT,DOTQT,NHATHAU,TONGSODHN,QUYETTOAN ,THANHTOAN ,SOHOSO ,TENKH,SONHA,TENDUONG ,PHUONG ,QUAN ,SODHN ";
-		    sql += ",CATDA ,NHANCONG ,CP_NHANCONG ,MAYTC ,CP_MAYTC ,CHIPHICHUNG ,CP_CHUNG ";
-		    sql += ",THUNHAPCHUITHUE ,	CP_TNCTTT ,	GXLTT ,	THUE ,	SAUTHUE ,	GHICHU ";
+            string sql = " SELECT ID, STT, DOTQT, NHATHAU, TONGSODHN, QUYETTOAN, THANHTOAN, SOHOSO, TENKH, SONHA, TENDUONG, PHUONG, QUAN ";
+            sql += " , SODHN,convert(varchar,convert(decimal(20,2), CATDA)) as 'CATDA', convert(varchar,convert(decimal(20,2), NHANCONG)) as 'NHANCONG' ,convert(varchar,convert(decimal(20,2), CPNC)) as 'CPNC' ,";
+            sql += " convert(varchar,convert(decimal(20,2), CP_NHANCONG)) as 'CP_NHANCONG' , convert(varchar,convert(decimal(20,2), MAYTC)) as 'MAYTC'  ,convert(varchar,convert(decimal(20,2), MAYTHICONG)) as 'MAYTHICONG'  ,";
+            sql += " convert(varchar,convert(decimal(20,2), CP_MAYTC)) as 'CP_MAYTC'  , convert(varchar,convert(decimal(20,2), CHIPHICHUNG)) as 'CHIPHICHUNG' ,  convert(varchar,convert(decimal(20,2), CP_CHUNG)) as 'CP_CHUNG'  ";
+            sql += " ,  convert(varchar,convert(decimal(20,2), THUNHAPCHUITHUE)) as 'THUNHAPCHUITHUE'  , convert(varchar,convert(decimal(20,2), CP_TNCTTT)) as 'CP_TNCTTT'  , convert(varchar,convert(decimal(20,2), GXLTT)) as 'GXLTT',convert(varchar,convert(decimal(20,2), THUE)) as 'THUE' ,convert(varchar,convert(decimal(20,2), SAUTHUE)) as 'SAUTHUE' , GHICHU ";
             sql += "FROM KTTC_QUYETTOAN_GANDHN  ";
             sql += "WHERE DOTQT ='" + madot + "'";
-            sql += "ORDER BY STT DESC";
+            sql += "ORDER BY STT ASC ";
             SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             DataTable table = new DataTable();
             adapter.Fill(table);
@@ -39,9 +41,9 @@ namespace TanHoaWater.DAL
         }
 
         static TanHoaDataContext db = new TanHoaDataContext();
-        public static KTTC_QUYETTOAN_GANDHN findByQuyetToan(string _SOHOSO)
+        public static KTTC_QUYETTOAN_GANDHN findByQuyetToan(int _id)
         {
-            var obj = from dd in db.KTTC_QUYETTOAN_GANDHNs where dd.SOHOSO == _SOHOSO select dd;
+            var obj = from dd in db.KTTC_QUYETTOAN_GANDHNs where dd.ID == _id select dd;
             return obj.SingleOrDefault();
         }
         public static bool Update() {

@@ -774,8 +774,10 @@
       <Column Name="SODHN" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="CATDA" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="NHANCONG" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CPNC" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="CP_NHANCONG" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="MAYTC" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MAYTHICONG" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="CP_MAYTC" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="CHIPHICHUNG" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="CP_CHUNG" Type="System.Double" DbType="Float" CanBeNull="true" />
@@ -3129,6 +3131,78 @@
     <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.TONGKETCHIPHI_DC" Method="TONGKETCHIPHI_DC6">
+    <Parameter Name="SHS" Parameter="sHS" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="LAN" Parameter="lAN" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PHIC3" Parameter="pHIC3" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="PHIGS" Parameter="pHIGS" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="PHIQL" Parameter="pHIQL" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="A" Parameter="a" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="B" Parameter="b" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="C" Parameter="c" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="CPCABA" Parameter="cPCABA" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="TOTAL" Parameter="tOTAL" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="VAT" Parameter="vAT" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="B1" Parameter="b1" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="C1" Parameter="c1" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="C2" Parameter="c2" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="D" Parameter="d" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="E" Parameter="e" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="F" Parameter="f" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="G" Parameter="g" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="H" Parameter="h" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="I" Parameter="i" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="J" Parameter="j" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="K" Parameter="k" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="L" Parameter="l" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="TAILAPMATDUONG" Parameter="tAILAPMATDUONG" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="TLMDTRUOCTHUE" Parameter="tLMDTRUOCTHUE" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="CPGAN" Parameter="cPGAN" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="CPNHUA" Parameter="cPNHUA" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.DELETEDATABG" Method="DELETEDATABG32">
+    <Parameter Name="SHS" Parameter="sHS" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.TONGKETPHUIDAO" Method="TONGKETPHUIDAO27">
+    <Parameter Name="SHS" Parameter="sHS" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.DELETEDATABG_DC" Method="DELETEDATABG_DC7">
+    <Parameter Name="SHS" Parameter="sHS" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="LAN" Parameter="lAN" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.TONGKETCHIPHI" Method="TONGKETCHIPHI33">
+    <Parameter Name="SHS" Parameter="sHS" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="PHIC3" Parameter="pHIC3" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="PHIGS" Parameter="pHIGS" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="PHIQL" Parameter="pHIQL" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="A" Parameter="a" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="B" Parameter="b" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="C" Parameter="c" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="CPCABA" Parameter="cPCABA" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="TOTAL" Parameter="tOTAL" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="VAT" Parameter="vAT" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="B1" Parameter="b1" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="C1" Parameter="c1" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="C2" Parameter="c2" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="D" Parameter="d" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="E" Parameter="e" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="F" Parameter="f" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="G" Parameter="g" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="H" Parameter="h" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="I" Parameter="i" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="J" Parameter="j" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="K" Parameter="k" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="L" Parameter="l" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="TAILAPMATDUONG" Parameter="tAILAPMATDUONG" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="TLMDTRUOCTHUE" Parameter="tLMDTRUOCTHUE" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="CPGAN" Parameter="cPGAN" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="CPNHUA" Parameter="cPNHUA" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.TONGKETCHIPHI_DC" Method="TONGKETCHIPHI_DC7">
     <Parameter Name="SHS" Parameter="sHS" Type="System.String" DbType="VarChar(50)" />
     <Parameter Name="LAN" Parameter="lAN" Type="System.Int32" DbType="Int" />
     <Parameter Name="PHIC3" Parameter="pHIC3" Type="System.Boolean" DbType="Bit" />

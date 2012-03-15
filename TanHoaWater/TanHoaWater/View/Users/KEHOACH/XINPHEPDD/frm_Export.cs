@@ -177,7 +177,7 @@ namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
             
 
             exApp.Visible = false;
-            string path = Utilities.Files.localSave + "\\209/2011".Replace("/", "_") + "\\BANGXINPHEPDD.xls";
+            string path = "C:\\BANGXINPHEPDD.xls";
             exBook.SaveAs(path.Replace("\\\\", "\\"), ExcelCOM.XlFileFormat.xlWorkbookNormal,
                 null, null, false, false,
                 ExcelCOM.XlSaveAsAccessMode.xlExclusive,
@@ -192,6 +192,7 @@ namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
             catch (Exception ex)
             {
                 log.Error("Export File Loi" + ex.Message);
+                MessageBox.Show(this, "Xuất File Lỗi. ", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }

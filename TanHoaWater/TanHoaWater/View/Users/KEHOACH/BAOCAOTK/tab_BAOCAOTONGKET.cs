@@ -132,12 +132,12 @@ namespace TanHoaWater.View.Users.KEHOACH
 
                     if (tabItem7.IsSelected == true)
                     {
-                        ds = DAL.C_KH_BAOCAO.BC_TONGKET(cbLoaiBN.SelectedValue + "", 1, "", this.cbQuan.SelectedValue + "", this.congtaTuNgay.Value.ToShortDateString(), this.congtacDenNgay.Value.ToShortDateString());
+                        ds = DAL.C_KH_BAOCAO.BC_TONGKET(cbLoaiBN.SelectedValue + "", 1, "", this.cbQuan.SelectedValue + "", Utilities.DateToString.NgayVN(congtaTuNgay), Utilities.DateToString.NgayVN(congtacDenNgay));
                     }
                     else if (tabItem8.IsSelected == true)
                     {
                         type = 2;
-                        ds = DAL.C_KH_BAOCAO.BC_TONGKET(cbLoaiBN.SelectedValue + "", 2, this.cbPhuong.SelectedValue + "", this.cbPhuongQuan.SelectedValue + "", this.congtaTuNgay.Value.ToShortDateString(), this.congtacDenNgay.Value.ToShortDateString());
+                        ds = DAL.C_KH_BAOCAO.BC_TONGKET(cbLoaiBN.SelectedValue + "", 2, this.cbPhuong.SelectedValue + "", this.cbPhuongQuan.SelectedValue + "", Utilities.DateToString.NgayVN(congtaTuNgay), Utilities.DateToString.NgayVN(congtacDenNgay));
                        
                     }
                    

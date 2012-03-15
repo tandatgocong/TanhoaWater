@@ -19,6 +19,7 @@ namespace TanHoaWater.Utilities
         public static string localSave = "";
         public static string createFile = "";
         public static string FileName = "";
+        
         public static string[] getFileOnServer()
         {
 
