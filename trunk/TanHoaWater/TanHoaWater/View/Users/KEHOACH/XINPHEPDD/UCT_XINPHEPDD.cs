@@ -405,19 +405,20 @@ namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
             try
             {
                 madot = dataDanhSachDaoDuong.Rows[dataDanhSachDaoDuong.CurrentRow.Index].Cells["gridSoDot"].Value + "";
-                if ((dataDanhSachDaoDuong.Rows[dataDanhSachDaoDuong.CurrentRow.Index].Cells["gridMaQuanLy"].Value + "").Contains("QTP"))
-                {
+                //if ((dataDanhSachDaoDuong.Rows[dataDanhSachDaoDuong.CurrentRow.Index].Cells["gridMaQuanLy"].Value + "").Contains("QTP"))
+                //{
                     frm_Export frm = new frm_Export(madot);
                     frm.ShowDialog();
-                }
-                else {
+                //}
+                //else {
 
-                    MessageBox.Show(this, "Chỉ lấy bảng vẽ của Q. Tân Phú.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+                //    MessageBox.Show(this, "Chỉ lấy bảng vẽ của Q. Tân Phú.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //}
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                log.Error("Export Loi " + ex.Message);
             }
         }
     }
