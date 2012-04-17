@@ -23,6 +23,7 @@ using TanHoaWater.View.Users.KEHOACH.HOANCONG;
 using TanHoaWater.View.Users.DONGHONUOC;
 using TanHoaWater.View.Users.TinhDuToan.BGDieuChinh;
 using TanHoaWater.View.Users.KTTC;
+using System.Globalization;
 
 namespace TanHoaWater
 {
@@ -35,12 +36,13 @@ namespace TanHoaWater
         }
         public frm_Main()
         {
-            //Thread th = new Thread(new ThreadStart(this.start));
 
-            //th.Start();
-            //Thread.Sleep(5000);
+
+            Thread th = new Thread(new ThreadStart(this.start));
+            th.Start();
+            Thread.Sleep(5000);
             InitializeComponent();
-            //th.Abort();
+            th.Abort();
             this.menuHeThong.Select();
 
             this.lbNgayHeThong.Text = Utilities.DateToString.fullCurrentNgay() + "  ";
