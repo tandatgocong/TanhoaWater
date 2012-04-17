@@ -4,6 +4,8 @@ using System.Linq;
 using System.Windows.Forms;
 using TanHoaWater.View.Users;
 using TanHoaWater.View.Users.TinhDuToan.BGDieuChinh;
+using System.Threading;
+using System.Globalization;
 
 namespace TanHoaWater
 {
@@ -15,7 +17,11 @@ namespace TanHoaWater
         [STAThread]
         static void Main()
         {
-           
+            Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US");
+            // Sets the UI culture to French (France)
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
+            
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new frm_Main());

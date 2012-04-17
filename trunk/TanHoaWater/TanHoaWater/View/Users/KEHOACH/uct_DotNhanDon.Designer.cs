@@ -302,6 +302,7 @@
             this.mainGrid.Size = new System.Drawing.Size(589, 495);
             this.mainGrid.TabIndex = 28;
             this.mainGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.mainGrid.RowStateChanged += new System.Windows.Forms.DataGridViewRowStateChangedEventHandler(this.mainGrid_RowStateChanged);
             this.mainGrid.Sorted += new System.EventHandler(this.mainGrid_Sorted);
             // 
             // DOTNHAN
@@ -520,6 +521,7 @@
             this.txtsoDot.Name = "txtsoDot";
             this.txtsoDot.Size = new System.Drawing.Size(122, 26);
             this.txtsoDot.TabIndex = 31;
+            this.txtsoDot.TextChanged += new System.EventHandler(this.txtsoDot_TextChanged);
             // 
             // lbPaing
             // 
@@ -581,7 +583,7 @@
             this.reflectionLabel1.Size = new System.Drawing.Size(525, 28);
             this.reflectionLabel1.TabIndex = 0;
             this.reflectionLabel1.Text = "<font color=\"#ED1C24\"><b><font size=\"+6\">DANH SÁCH CÁC ĐỢT NHẬN ĐƠN KHÁCH HÀNG</f" +
-                "ont></b></font>";
+    "ont></b></font>";
             // 
             // uct_DOTNHANDON
             // 
