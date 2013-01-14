@@ -38,11 +38,11 @@ namespace TanHoaWater
         {
 
 
-            Thread th = new Thread(new ThreadStart(this.start));
-            th.Start();
-            Thread.Sleep(5000);
+            //Thread th = new Thread(new ThreadStart(this.start));
+            //th.Start();
+            //Thread.Sleep(5000);
             InitializeComponent();
-            th.Abort();
+            //th.Abort();
             this.menuHeThong.Select();
 
             this.lbNgayHeThong.Text = Utilities.DateToString.fullCurrentNgay() + "  ";

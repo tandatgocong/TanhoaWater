@@ -204,6 +204,7 @@
             this.detail.Name = "detail";
             this.detail.ReadOnly = true;
             this.detail.RowHeadersVisible = false;
+            this.detail.RowTemplate.Height = 28;
             this.detail.Size = new System.Drawing.Size(376, 424);
             this.detail.TabIndex = 20;
             // 
@@ -298,6 +299,7 @@
             this.mainGrid.Name = "mainGrid";
             this.mainGrid.ReadOnly = true;
             this.mainGrid.RowHeadersVisible = false;
+            this.mainGrid.RowTemplate.Height = 30;
             this.mainGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.mainGrid.Size = new System.Drawing.Size(589, 495);
             this.mainGrid.TabIndex = 28;
@@ -583,7 +585,7 @@
             this.reflectionLabel1.Size = new System.Drawing.Size(525, 28);
             this.reflectionLabel1.TabIndex = 0;
             this.reflectionLabel1.Text = "<font color=\"#ED1C24\"><b><font size=\"+6\">DANH SÁCH CÁC ĐỢT NHẬN ĐƠN KHÁCH HÀNG</f" +
-    "ont></b></font>";
+                "ont></b></font>";
             // 
             // uct_DOTNHANDON
             // 

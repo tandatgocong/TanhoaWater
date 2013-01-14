@@ -827,6 +827,7 @@
             this.searchTimKiem.Size = new System.Drawing.Size(219, 26);
             this.searchTimKiem.TabIndex = 7;
             this.searchTimKiem.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.searchTimKiem.TextChanged += new System.EventHandler(this.searchTimKiem_TextChanged);
             this.searchTimKiem.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.searchTimKiem_KeyPress);
             // 
             // txtBangKe
