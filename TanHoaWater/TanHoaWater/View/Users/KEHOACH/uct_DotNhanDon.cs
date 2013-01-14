@@ -21,7 +21,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
         private static readonly ILog log = LogManager.GetLogger(typeof(uct_DOTNHANDON).Name);
         string _madot_ = null;
         int currentPageIndex = 1;
-        int pageSize = 50;
+        int pageSize = 10;
         int pageNumber = 0;
         int FirstRow, LastRow;
         int rows;

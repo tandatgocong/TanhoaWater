@@ -824,5 +824,18 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
                 MessageBox.Show(this, "Cần Chọn Mã Đợt Để Xin Phép Đào Đường !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
+        private void searchTimKiem_TextChanged(object sender, EventArgs e)
+        {
+            gridDotThiCong.ClearSelection();
+            foreach (DataGridViewRow currentRow in gridDotThiCong.Rows)
+            {
+                if (currentRow.Cells["gridSoDot"].Value.ToString().Contains(searchTimKiem.Text))
+                {
+                    currentRow.Selected = true;
+                    break;
+                }
+            }
+        }
     }
 }

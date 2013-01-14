@@ -28,7 +28,7 @@ namespace TanHoaWater.DAL
             SqlDataAdapter dond = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             dond.Fill(ds, "V_DONKHACHHANG");
 
-            string user = "SELECT USERNAME, UPPER(FULLNAME) AS 'FULLNAME' FROM USERS WHERE USERNAME='" + nguoiduyet + "'";
+            string user = "SELECT USERNAME, UPPER(FULLNAME) AS 'FULLNAME', CHUCVU AS 'MODIFYBY' FROM USERS WHERE USERNAME='" + nguoiduyet + "'";
             SqlDataAdapter ct = new SqlDataAdapter(user, db.Connection.ConnectionString);
             ct.Fill(ds, "USERS");
 
