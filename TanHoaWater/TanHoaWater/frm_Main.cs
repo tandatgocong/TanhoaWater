@@ -49,12 +49,14 @@ namespace TanHoaWater
 
             PanelMain.Location = new Point(this.ClientSize.Width / 2 - PanelMain.Size.Width / 2, this.ClientSize.Height / 2 - PanelMain.Size.Height / 2);
             PanelMain.Anchor = AnchorStyles.None;
+          
 
         }
 
         public static frm_Login dn = new frm_Login();
         public void dangnhap()
         {
+            CNTANHOA.CNTANHOA.Conecttionstring();
             dn.ShowDialog();
             if (DAL.C_USERS._roles != null)
             {
@@ -187,8 +189,19 @@ namespace TanHoaWater
             //     this.iconMenuPanel.Controls.Add(new TTK());
 
         }
+        public void Roles(bool b) {
+
+            KH_biennhan.Visible = b;
+            KH_DonKhachHang.Visible = b;
+            KH_DotNhanDon.Visible = b;
+            DD_XinPhepDD.Visible = b;
+            TC_DotThiCong.Visible = b;
+            HC_HoanCong.Visible = b;
+
+        }
         public void role(string role)
         {
+            Roles(false);
             if ("AD".Equals(DAL.C_USERS._roles.Trim()))
             {
                 menuQuanTri.Visible = true;
@@ -213,13 +226,36 @@ namespace TanHoaWater
                     this.iconMenuPanel.Controls.Add(group_VTTH);
                     group_VTTH.Visible = true;
 
+                    
+                    if("KH".Contains(DAL.C_USERS._maquyen)){
+                        this.KH_DotNhanDon.Visible = true;
+                        this.KH_biennhan.Visible = true;
+                        this.KH_DonKhachHang.Visible = true;
+                    }
+
+                    if ("TC".Contains(DAL.C_USERS._maquyen))
+                    {
+                        this.TC_DotThiCong.Visible = true;
+                    }
+
+                    if ("HC".Contains(DAL.C_USERS._maquyen))
+                    {
+                        this.HC_HoanCong.Visible = true;
+                    }
+
+                    if ("DD".Contains(DAL.C_USERS._maquyen))
+                    {
+                        this.DD_XinPhepDD.Visible = true;
+                    }
+
+
                 }
                 else if ("DHN".Equals(DAL.C_USERS._maphong.Trim()))
                 {
                     this.menuQLDHNuoc.Visible = true;
                     this.iconMenuPanel.Controls.Clear();
-                    this.iconMenuPanel.Controls.Add(group_DoiDHN);
-                    group_DoiDHN.Visible = true;
+                  //  this.iconMenuPanel.Controls.Add(group_DoiDHN);
+                  //  group_DoiDHN.Visible = true;
 
                 }
             }
@@ -664,10 +700,10 @@ namespace TanHoaWater
         }
         private void frm_Main_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (MessageBox.Show(this, "Thoát Chương Trình ?", "..: Thông Báo :..", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.No)
-            {
-                e.Cancel = true;
-            }
+            //if (MessageBox.Show(this, "Thoát Chương Trình ?", "..: Thông Báo :..", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.No)
+            //{
+            //    e.Cancel = true;
+            //}
 
         }
 

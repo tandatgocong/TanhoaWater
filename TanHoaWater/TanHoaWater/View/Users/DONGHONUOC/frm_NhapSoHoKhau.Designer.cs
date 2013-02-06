@@ -41,6 +41,7 @@
             this.soHoHK = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gr_NhanKhau = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hk_GhiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btInBangKe = new DevComponents.DotNetBar.ButtonX();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewX1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -123,7 +124,7 @@
             this.dataGridViewX1.Location = new System.Drawing.Point(26, 150);
             this.dataGridViewX1.Name = "dataGridViewX1";
             this.dataGridViewX1.RowHeadersWidth = 20;
-            this.dataGridViewX1.Size = new System.Drawing.Size(477, 244);
+            this.dataGridViewX1.Size = new System.Drawing.Size(515, 244);
             this.dataGridViewX1.TabIndex = 2;
             this.dataGridViewX1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewX1_CellEndEdit);
             // 
@@ -139,6 +140,7 @@
             this.gr_NhanKhau.DataPropertyName = "SONHANKHAU";
             this.gr_NhanKhau.HeaderText = "Số Nhân Khẩu";
             this.gr_NhanKhau.Name = "gr_NhanKhau";
+            this.gr_NhanKhau.Width = 110;
             // 
             // hk_GhiChu
             // 
@@ -147,12 +149,27 @@
             this.hk_GhiChu.Name = "hk_GhiChu";
             this.hk_GhiChu.Width = 230;
             // 
+            // btInBangKe
+            // 
+            this.btInBangKe.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btInBangKe.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btInBangKe.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btInBangKe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btInBangKe.Location = new System.Drawing.Point(420, 404);
+            this.btInBangKe.Name = "btInBangKe";
+            this.btInBangKe.Size = new System.Drawing.Size(121, 23);
+            this.btInBangKe.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
+            this.btInBangKe.TabIndex = 12;
+            this.btInBangKe.Text = "Hoàn Tất";
+            this.btInBangKe.Click += new System.EventHandler(this.btInBangKe_Click);
+            // 
             // frm_NhapSoHoKhau
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(511, 406);
+            this.ClientSize = new System.Drawing.Size(545, 439);
+            this.Controls.Add(this.btInBangKe);
             this.Controls.Add(this.dataGridViewX1);
             this.Controls.Add(this.labelX4);
             this.Controls.Add(this.lbDiaChi);
@@ -186,6 +203,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn soHoHK;
         private System.Windows.Forms.DataGridViewTextBoxColumn gr_NhanKhau;
         private System.Windows.Forms.DataGridViewTextBoxColumn hk_GhiChu;
+        private DevComponents.DotNetBar.ButtonX btInBangKe;
 
     }
 }

@@ -14,6 +14,7 @@ namespace TanHoaWater.View.Users.DONGHONUOC
     public partial class frm_NhapSoHoKhau : Form
     {
         string _sodanhbo = "";
+        public  int sonk=0;
         public frm_NhapSoHoKhau(string sodanhbo, string shs, string  hoten, string diachi)
         {
             InitializeComponent();
@@ -23,6 +24,7 @@ namespace TanHoaWater.View.Users.DONGHONUOC
             this.lbDiaChi.Text = ": " + diachi;
             this.lbSoHoSo.Text = ": " + shs;
             this.dataGridViewX1.DataSource = DAL.C_DHN_HoKhau.finbySoDanhBo(_sodanhbo.Replace(".",""));
+            sonk = 0;
         }
 
         private static readonly ILog log = LogManager.GetLogger(typeof(frm_NhapSoHoKhau).Name);
@@ -41,6 +43,7 @@ namespace TanHoaWater.View.Users.DONGHONUOC
                         hk.SODANHBO = _sodanhbo.Replace(".", "");
                         hk.SOHOKHAU = soHoHK;
                         hk.SONHANKHAU = int.Parse(hk_nhankhau);
+                        sonk += int.Parse(hk_nhankhau);
                         hk.GHICHU = hk_GhiChu;
                         hk.CREATEDATE = DateTime.Now;
                         hk.CREATEBY = DAL.C_USERS._userName;
@@ -56,15 +59,7 @@ namespace TanHoaWater.View.Users.DONGHONUOC
         }
         private void frm_NhapSoHoKhau_FormClosing(object sender, FormClosingEventArgs e)
         {
-            try
-            {
-                DAL.C_DHN_HoKhau.Delete(_sodanhbo.Replace(".", ""));
-            }
-            catch (Exception ex)
-            {
-                log.Error(ex.Message);
-            }            
-            Insert();
+           
         }
 
         private void dataGridViewX1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
@@ -84,6 +79,20 @@ namespace TanHoaWater.View.Users.DONGHONUOC
                     }
                 }
             }
+        }
+
+        private void btInBangKe_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DAL.C_DHN_HoKhau.Delete(_sodanhbo.Replace(".", ""));
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+            }
+            Insert();
+            
         }
     }
 }

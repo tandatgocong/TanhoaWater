@@ -18,7 +18,6 @@ namespace TanHoaWater
         static void Main()
         {
             Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US");
-            // Sets the UI culture to French (France)
             Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
             
 

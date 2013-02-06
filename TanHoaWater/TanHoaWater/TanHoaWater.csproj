@@ -55,6 +55,9 @@
     <ApplicationIcon>Lib\icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CNTANHOA">
+      <HintPath>Lib\CNTANHOA.dll</HintPath>
+    </Reference>
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
       <HintPath>bin\Debug\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
     </Reference>
@@ -607,6 +610,27 @@
     <Compile Include="View\Users\KEHOACH\tab_DonTroNgai.Designer.cs">
       <DependentUpon>tab_DonTroNgai.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Users\KEHOACH\ThuMoiDongTien\ganthayongnganhdhn.cs">
+      <DependentUpon>ganthayongnganhdhn.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="View\Users\KEHOACH\ThuMoiDongTien\lapdatongcapnuoc.cs">
+      <DependentUpon>lapdatongcapnuoc.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="View\Users\KEHOACH\ThuMoiDongTien\thumoi.cs">
+      <DependentUpon>thumoi.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\Users\KEHOACH\ThuMoiDongTien\thumoi.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>thumoi.xsd</DependentUpon>
+    </Compile>
     <Compile Include="View\Users\KEHOACH\uct_DotNhanDon.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -1126,6 +1150,14 @@
     <EmbeddedResource Include="View\Users\KEHOACH\tab_DonTroNgai.resx">
       <DependentUpon>tab_DonTroNgai.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\KEHOACH\ThuMoiDongTien\ganthayongnganhdhn.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ganthayongnganhdhn.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\KEHOACH\ThuMoiDongTien\lapdatongcapnuoc.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>lapdatongcapnuoc.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Users\KEHOACH\uct_DotNhanDon.resx">
       <DependentUpon>uct_DotNhanDon.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -1504,6 +1536,17 @@
     </None>
     <None Include="View\Users\KEHOACH\Report\DataSet2.xss">
       <DependentUpon>DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="View\Users\KEHOACH\ThuMoiDongTien\thumoi.xsc">
+      <DependentUpon>thumoi.xsd</DependentUpon>
+    </None>
+    <None Include="View\Users\KEHOACH\ThuMoiDongTien\thumoi.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>thumoi.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="View\Users\KEHOACH\ThuMoiDongTien\thumoi.xss">
+      <DependentUpon>thumoi.xsd</DependentUpon>
     </None>
     <None Include="View\Users\KEHOACH\XINPHEPDD\BC\DataSet1.xsc">
       <DependentUpon>DataSet1.xsd</DependentUpon>
