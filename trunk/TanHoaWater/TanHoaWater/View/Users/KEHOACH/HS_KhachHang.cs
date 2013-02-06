@@ -12,6 +12,9 @@ using log4net;
 using CrystalDecisions.CrystalReports.Engine;
 using TanHoaWater.View.Users.KEHOACH.Report;
 using TanHoaWater.View.Users.KEHOACH;
+using System.Data.SqlClient;
+using CrystalDecisions.Shared;
+using TanHoaWater.View.Users.KEHOACH.ThuMoiDongTien;
 
 namespace TanHoaWater.View.Users.HSKHACHHANG
 {
@@ -27,7 +30,9 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
         public HSKHACHHANG(int tab)
         {
             InitializeComponent();
-           if (tab == 2) {
+            comboBox1.SelectedIndex = 0;
+            if (tab == 2)
+            {
                 tabControl1.SelectedTabIndex = 1;
                 this.resultChuyen.Visible = false;
                 this.resultDGChuyen.Visible = false;
@@ -37,55 +42,58 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                 #region Load Bo Phan Chuyen
                 this.bophanChuyen.DataSource = DAL.C_PhongBan.getList();
                 this.bophanChuyen.DisplayMember = "TENPHONG";
-                this.bophanChuyen.ValueMember = "MAPHONG";                
+                this.bophanChuyen.ValueMember = "MAPHONG";
                 #endregion
                 load_cd_Grid();
-              
+
             }
-            else if (tab == 3) {
+            else if (tab == 3)
+            {
                 tabControl1.SelectedTabIndex = 2;
                 this.panel4.Controls.Clear();
                 this.panel4.Controls.Add(new tab_DonTroNgai());
             }
-            else if (tab == 4) {
+            else if (tab == 4)
+            {
                 tabControl1.SelectedTabIndex = 3;
                 this.panel5.Controls.Clear();
                 this.panel5.Controls.Add(new tab_DonTaiXet());
             }
-            else if (tab == 5) {
+            else if (tab == 5)
+            {
                 this.panel2.Controls.Clear();
                 this.panel2.Controls.Add(new tab_TimKiemDonKH());
                 tabControl1.SelectedTabIndex = 4;
-            }            
-           else if (tab == 6)
-           {
-               #region Bao cao Quan
-               this.BC_QUAN.DataSource = DAL.C_Quan.getList();
-               this.BC_QUAN.DisplayMember = "TENQUAN";
-               this.BC_QUAN.ValueMember = "MAQUAN";
-               #endregion
-               #region Loai Dot Nhan Don
-               this.BC_DOTNHANDON.DataSource = DAL.C_DotNhanDon.getListtMa_Dot();
-               this.BC_DOTNHANDON.DisplayMember = "TEND";
-               this.BC_DOTNHANDON.ValueMember = "MADOT";
-               #endregion
-               #region Load User
-               this.BC_NGUOIDUYET.DataSource = DAL.C_USERS.getUserByMaPhongAndLevel("VTTH", 0);
-               this.BC_NGUOIDUYET.DisplayMember = "FULLNAME";
-               this.BC_NGUOIDUYET.ValueMember = "USERNAME";
-               #endregion
-               tabControl1.SelectedTabIndex = 5;
-           }
-           else
-           {
+            }
+            else if (tab == 6)
+            {
+                #region Bao cao Quan
+                this.BC_QUAN.DataSource = DAL.C_Quan.getList();
+                this.BC_QUAN.DisplayMember = "TENQUAN";
+                this.BC_QUAN.ValueMember = "MAQUAN";
+                #endregion
+                #region Loai Dot Nhan Don
+                this.BC_DOTNHANDON.DataSource = DAL.C_DotNhanDon.getListtMa_Dot();
+                this.BC_DOTNHANDON.DisplayMember = "TEND";
+                this.BC_DOTNHANDON.ValueMember = "MADOT";
+                #endregion
+                #region Load User
+                this.BC_NGUOIDUYET.DataSource = DAL.C_USERS.getUserByMaPhongAndLevel("VTTH", 0);
+                this.BC_NGUOIDUYET.DisplayMember = "FULLNAME";
+                this.BC_NGUOIDUYET.ValueMember = "USERNAME";
+                #endregion
+                tabControl1.SelectedTabIndex = 5;
+            }
+            else
+            {
 
-               formLoad();
-               refresh();
-               this.txtSHS.Focus();
-           }
-           try
-           {
-                List <TENDUONG> list  = DAL.C_TenDuong.getList();
+                formLoad();
+                refresh();
+                this.txtSHS.Focus();
+            }
+            try
+            {
+                List<TENDUONG> list = DAL.C_TenDuong.getList();
                 foreach (var item in list)
                 {
                     namesCollection.Add(item.DUONG);
@@ -93,11 +101,11 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                 duong.AutoCompleteMode = AutoCompleteMode.Suggest;
                 duong.AutoCompleteSource = AutoCompleteSource.CustomSource;
                 duong.AutoCompleteCustomSource = namesCollection;
-           }
-           catch (Exception)
-           {
-               
-           }
+            }
+            catch (Exception)
+            {
+
+            }
         }
 
         private void txtghichukhan_MouseClick(object sender, MouseEventArgs e)
@@ -160,7 +168,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
             try
             {
                 int maquan = int.Parse(this.cbQuan.SelectedValue.ToString());
-                _maquan = maquan;                
+                _maquan = maquan;
                 this.cbPhuong.DataSource = DAL.C_Phuong.getListByQuan(maquan);
                 this.cbPhuong.DisplayMember = "TENPHUONG";
                 this.cbPhuong.ValueMember = "MAPHUONG";
@@ -187,9 +195,9 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                 this.txtSoHoSo.Text = this.cbQuan.SelectedValue + "" + this.cbPhuong.SelectedValue + sohoso + this.txtSHS.Text;
             }
             catch (Exception)
-            { 
+            {
             }
-           
+
         }
         private void cbPhuong_SelectedValueChanged(object sender, EventArgs e)
         {
@@ -209,9 +217,9 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
             }
             catch (Exception)
             {
-                 
+
             }
-            
+
             _soshoso();
         }
         DateTime ngaynhan = DateTime.Now;
@@ -303,7 +311,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
             try
             {
                 loadDataGrid();
-              
+
 
             }
             catch (Exception)
@@ -312,9 +320,11 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
             }
         }
         bool flag = true;
-        public void add() {
+        public void add()
+        {
             flag = false;
-            if (this.cbDotNhanDon.SelectedValue == null) {
+            if (this.cbDotNhanDon.SelectedValue == null)
+            {
                 MessageBox.Show(this, "Cần Chọn Đợt Nhận Đơn.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.cbDotNhanDon.Focus();
             }//else if (this.txtSHS.Text.Length < 7)
@@ -510,7 +520,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
         private void btInsert_Click(object sender, EventArgs e)
         {
             add();
-            
+
         }
 
         private void khan_CheckedChanged(object sender, EventArgs e)
@@ -527,7 +537,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
         public void refresh()
         {
             this.txtSHS.Text = null;
-            
+
             this.txtHoTen.Text = null;
             this.dienthoai.Text = null;
             this.sonha.Text = null;
@@ -567,7 +577,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
             }
             PageTotal();
             int sokh = DAL.C_DonKhachHang.TotalListByDot(_madot);
-            this.dataG.DataSource = DAL.C_DonKhachHang.getListbyDot(_madot, FirstRow, pageSize);            
+            this.dataG.DataSource = DAL.C_DonKhachHang.getListbyDot(_madot, FirstRow, pageSize);
             this.totalRecord.Text = "Tống công có " + sokh + " khách hàng đợt nhận đơn " + _madot;
             Utilities.DataGridV.formatRows(dataG);
         }
@@ -626,7 +636,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
             this.BC_DOTNHANDON.ValueMember = "MADOT";
             #endregion
             #region Load User
-            this.BC_NGUOIDUYET.DataSource = DAL.C_USERS.getUserByMaPhongAndLevel("VTTH",0);
+            this.BC_NGUOIDUYET.DataSource = DAL.C_USERS.getUserByMaPhongAndLevel("VTTH", 0);
             this.BC_NGUOIDUYET.DisplayMember = "FULLNAME";
             this.BC_NGUOIDUYET.ValueMember = "USERNAME";
             #endregion
@@ -673,7 +683,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
             }
             if (this.BC_LOAIBC.SelectedIndex == 2)
             {
-                ReportDocument rp = new rpt_TroNgai ();
+                ReportDocument rp = new rpt_TroNgai();
                 rp.SetDataSource(DAL.C_BAOCAO_VIEW.BC_DOTNHANDON_DOT(this.BC_DOTNHANDON.SelectedValue.ToString(), DAL.C_USERS._userName, this.BC_NGUOIDUYET.SelectedValue.ToString(), null, "True"));
                 report.ReportSource = rp;
             }
@@ -693,9 +703,9 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
             this.nguoiduyetDon.Visible = false;
             this.cd_detail.Visible = true;
             #region Load Bo Phan Chuyen
-                this.bophanChuyen.DataSource = DAL.C_PhongBan.getList();
-                this.bophanChuyen.DisplayMember = "TENPHONG";
-                this.bophanChuyen.ValueMember = "MAPHONG";
+            this.bophanChuyen.DataSource = DAL.C_PhongBan.getList();
+            this.bophanChuyen.DisplayMember = "TENPHONG";
+            this.bophanChuyen.ValueMember = "MAPHONG";
             #endregion
             // customize dataviewgrid, add checkbox column
             //if (flag == 0)
@@ -717,9 +727,9 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
             //    checkboxHeader.CheckedChanged += new EventHandler(checkboxHeader_CheckedChanged);
             //  //  cd_MainGird.Controls.Add(checkboxHeader);
             //}
-           
+
             load_cd_Grid();
-            Utilities.DataGridV.formatRows(cd_MainGird);   
+            Utilities.DataGridV.formatRows(cd_MainGird);
         }
         public void load_cd_Grid()
         {
@@ -755,7 +765,8 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                 {
                     MessageBox.Show(this, "Không Có Hồ Sơ Nào Để Chuyển.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                else {
+                else
+                {
                     DateTime ngaynhan = DateTime.Now;
                     #region  Update DOT NHAN DON
                     //for (int i = 0; i < cd_MainGird.RowCount; i++)
@@ -829,11 +840,11 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
 
             this.cd_detail.DataSource = DAL.C_DonKhachHang.getListbyDot(madot);
             sokh = DAL.C_DonKhachHang.getListbyDot(madot).Rows.Count;
-            
+
             Utilities.DataGridV.formatRows(cd_detail);
         }
 
-       
+
 
         private void resultPrint_Click(object sender, EventArgs e)
         {
@@ -844,7 +855,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
             }
             catch (Exception ex)
             {
-                log.Error("Lỗi Khi In" +  ex.Message);
+                log.Error("Lỗi Khi In" + ex.Message);
                 MessageBox.Show(this, "Lỗi Khi In.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
@@ -918,7 +929,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
             this.tabControlPanel7.Controls.Clear();
             this.tabControlPanel7.Controls.Add(new tab_LogDonKH());
         }
-         
+
         private void textBoxX1_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 13)
@@ -940,12 +951,13 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                     this.txtQuan.Text = table.Rows[0][5].ToString();
                     this.dateNgayDongTien.ValueObject = table.Rows[0][6];
                     this.txtSoHoaDon.Text = table.Rows[0][7].ToString();
+                    this.textBoxX2DB.Text = table.Rows[0]["DANHBO"].ToString();
                     BG_KHOILUONGXDCB xdcb = DAL.C_KhoiLuongXDCB.findBySHS(table.Rows[0][0].ToString());
                     if (xdcb != null)
                     {
-                        txtSoTien.Text = String.Format("{0:0,0.00}", xdcb.TONGIATRI != null ? xdcb.TONGIATRI : 0.0);
+                        txtSoTien.Text = String.Format("{0:0,0.00}", xdcb.TONGIATRI != null ? xdcb.TONGIATRI : 0.0).Replace(",",".");
                     }
-                    
+
                 }
             }
         }
@@ -964,7 +976,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                     log.Error("Khach Hang Dong Tien Loi." + ex.Message);
                     MessageBox.Show(this, "Cập Nhật Khách Hàng Đóng Tiền Lỗi .", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-               
+
             }
             else
             {
@@ -973,5 +985,92 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
             }
         }
 
+        private void buttonX1_Click(object sender, EventArgs e)
+        {
+            DataTable table = new DataTable("THUMOI");
+            table.Columns.Add("TITLE", typeof(string));
+            table.Columns.Add("HOTEN", typeof(string));
+            table.Columns.Add("DIACHI", typeof(string));
+            table.Columns.Add("TUNGAY", typeof(string));
+            table.Columns.Add("DENNGAY", typeof(string));
+            table.Columns.Add("SOTIEN", typeof(string));
+            table.Columns.Add("DANHBO", typeof(string));
+
+
+            DataSet ds = new DataSet();
+
+            TanHoaDataContext db = new TanHoaDataContext();
+            db.Connection.Open();
+
+            string sql = " SELECT * FROM KH_TC_BAOCAO ";
+            SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
+            adapter.Fill(ds, "KH_TC_BAOCAO");
+
+            if (comboBox1.SelectedIndex == 0)
+            {
+                DataRow myDataRow = table.NewRow();
+                myDataRow["TITLE"] = "THƠ MỜI THANH TOÁN CHI PHÍ LẮP ĐẶT ỐNG CẤP NƯỚC";
+                myDataRow["HOTEN"] = txtHoTenKH.Text;
+                myDataRow["DIACHI"] = txtDiaChi.Text;
+                myDataRow["TUNGAY"] = dateTuNgay.Text;
+                myDataRow["DENNGAY"] = dateDenNgay.Text;
+                myDataRow["SOTIEN"] = txtSoTien.Text;
+                myDataRow["DANHBO"] = textBoxX2DB.Text;
+
+                table.Rows.Add(myDataRow);
+                ds.Tables.Add(table);
+
+
+                ReportDocument rp = new lapdatongcapnuoc();
+               
+                rp.SetDataSource(ds);
+                rpt_InBienNhan inp = new rpt_InBienNhan(rp);
+                inp.ShowDialog();
+            }
+            else if (comboBox1.SelectedIndex == 1)
+            {
+                ReportDocument rp = new ganthayongnganhdhn();
+
+                DataRow myDataRow = table.NewRow();
+                myDataRow["TITLE"] = "THƠ MỜI THANH TOÁN CHI PHÍ DỜI ĐỒNG HỒ NƯỚC";
+                myDataRow["HOTEN"] = txtHoTenKH.Text;
+                myDataRow["DIACHI"] = txtDiaChi.Text;
+                myDataRow["TUNGAY"] = dateTuNgay.Text;
+                myDataRow["DENNGAY"] = dateDenNgay.Text;
+                myDataRow["SOTIEN"] = txtSoTien.Text;
+                myDataRow["DANHBO"] = textBoxX2DB.Text;
+
+                table.Rows.Add(myDataRow);
+                ds.Tables.Add(table);
+
+                rp.SetDataSource(ds);
+                rp.SetParameterValue("title", " dời đồng hồ nước ");
+                rpt_InBienNhan inp = new rpt_InBienNhan(rp);
+                inp.ShowDialog();
+
+            }
+            else
+            {
+                ReportDocument rp = new ganthayongnganhdhn();
+                rp.PrintOptions.PaperSize = PaperSize.Paper11x17;
+                DataRow myDataRow = table.NewRow();
+                myDataRow["TITLE"] = "THƠ MỜI THANH TOÁN CHI PHÍ GẮN ỐNG NGÁNH ĐHN + ĐHN";
+                myDataRow["HOTEN"] = txtHoTenKH.Text;
+                myDataRow["DIACHI"] = txtDiaChi.Text;
+                myDataRow["TUNGAY"] = dateTuNgay.Text;
+                myDataRow["DENNGAY"] = dateDenNgay.Text;
+                myDataRow["SOTIEN"] = txtSoTien.Text;
+                myDataRow["DANHBO"] = textBoxX2DB.Text;
+                table.Rows.Add(myDataRow);
+                ds.Tables.Add(table);
+                rp.SetDataSource(ds);
+                rp.SetParameterValue("title", " gắn ống ngánh ĐHN");
+                rpt_InBienNhan inp = new rpt_InBienNhan(rp);
+                inp.ShowDialog();
+
+            }
+
+
+        }
     }
 }

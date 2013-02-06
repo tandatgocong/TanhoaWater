@@ -356,7 +356,11 @@ namespace TanHoaWater.View.Users.DONGHONUOC
                         else
                         {
                             frm_NhapSoHoKhau frm = new frm_NhapSoHoKhau(danhbo, shs, hoten, diachi);
-                            frm.ShowDialog();
+                            if (frm.ShowDialog() == DialogResult.OK) {
+
+                                gridHoanCong.Rows[gridHoanCong.CurrentCell.RowIndex].Cells["hc_SoNhanKhau"].Value = frm.sonk;
+                            }
+                            
                         }
                     }
                 }

@@ -24,7 +24,7 @@ namespace TanHoaWater.DAL
         {
             TanHoaDataContext db = new TanHoaDataContext();
             db.Connection.Open();
-            string sql = " SELECT  SOHOKHAU, GHICHU FROM  DB_HOKHAU WHERE  SODANHBO='" + sodanhbo + "'";
+            string sql = " SELECT  SOHOKHAU,SONHANKHAU, GHICHU FROM  DB_HOKHAU WHERE  SODANHBO='" + sodanhbo + "'";
             SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             DataTable table = new DataTable();
             adapter.Fill(table);

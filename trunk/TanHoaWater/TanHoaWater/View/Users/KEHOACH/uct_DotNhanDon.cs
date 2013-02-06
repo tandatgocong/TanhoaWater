@@ -21,7 +21,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
         private static readonly ILog log = LogManager.GetLogger(typeof(uct_DOTNHANDON).Name);
         string _madot_ = null;
         int currentPageIndex = 1;
-        int pageSize = 10;
+        int pageSize = 100;
         int pageNumber = 0;
         int FirstRow, LastRow;
         int rows;
@@ -435,6 +435,11 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                 log.Error(ex.Message);
             }
             
+        }
+
+        private void txtsoDot_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+
         }
     }
 }

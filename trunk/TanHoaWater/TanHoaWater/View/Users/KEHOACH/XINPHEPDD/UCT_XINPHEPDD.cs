@@ -421,5 +421,18 @@ namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
                 log.Error("Export Loi " + ex.Message);
             }
         }
+
+        private void txtSearchSoDot_TextChanged(object sender, EventArgs e)
+        {
+            dataDanhSachDaoDuong.ClearSelection();
+            foreach (DataGridViewRow currentRow in dataDanhSachDaoDuong.Rows)
+            {
+                if (currentRow.Cells["gridSoDot"].Value.ToString().Contains(txtSearchSoDot.Text))
+                {
+                    currentRow.Selected = true;
+                    break;
+                }
+            }
+        }
     }
 }

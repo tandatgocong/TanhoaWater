@@ -38,6 +38,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new DevComponents.DotNetBar.TabControl();
             this.tabDanhSachDot = new DevComponents.DotNetBar.TabControlPanel();
+            this.btExport = new DevComponents.DotNetBar.ButtonX();
             this.btCapNhatCoPhep = new DevComponents.DotNetBar.ButtonX();
             this.dateNgayCoPhep = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.dateNgayLap = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
@@ -75,7 +76,6 @@
             this.tabCapNhatDS = new DevComponents.DotNetBar.TabControlPanel();
             this.tabItem2 = new DevComponents.DotNetBar.TabItem(this.components);
             this.reflectionLabel1 = new DevComponents.DotNetBar.Controls.ReflectionLabel();
-            this.btExport = new DevComponents.DotNetBar.ButtonX();
             ((System.ComponentModel.ISupportInitialize)(this.tabControl1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabDanhSachDot.SuspendLayout();
@@ -159,11 +159,25 @@
             this.tabDanhSachDot.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(188)))), ((int)(((byte)(227)))));
             this.tabDanhSachDot.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
             this.tabDanhSachDot.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(165)))), ((int)(((byte)(199)))));
-            this.tabDanhSachDot.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
-            | DevComponents.DotNetBar.eBorderSide.Bottom)));
+            this.tabDanhSachDot.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right)
+                        | DevComponents.DotNetBar.eBorderSide.Bottom)));
             this.tabDanhSachDot.Style.GradientAngle = 90;
             this.tabDanhSachDot.TabIndex = 1;
             this.tabDanhSachDot.TabItem = this.tabItem1;
+            // 
+            // btExport
+            // 
+            this.btExport.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btExport.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btExport.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btExport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btExport.Location = new System.Drawing.Point(754, 394);
+            this.btExport.Name = "btExport";
+            this.btExport.Size = new System.Drawing.Size(175, 26);
+            this.btExport.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
+            this.btExport.TabIndex = 710;
+            this.btExport.Text = "Xuất File Gửi Xin Phép";
+            this.btExport.Click += new System.EventHandler(this.btExport_Click);
             // 
             // btCapNhatCoPhep
             // 
@@ -467,7 +481,7 @@
             this.dateTimeSearch.ButtonDropDown.Visible = true;
             this.dateTimeSearch.CustomFormat = "dd/MM/yyyy";
             this.dateTimeSearch.Format = DevComponents.Editors.eDateTimePickerFormat.Custom;
-            this.dateTimeSearch.Location = new System.Drawing.Point(4, 31);
+            this.dateTimeSearch.Location = new System.Drawing.Point(3, 31);
             // 
             // 
             // 
@@ -541,6 +555,7 @@
             this.txtSearchSoDot.Name = "txtSearchSoDot";
             this.txtSearchSoDot.Size = new System.Drawing.Size(159, 26);
             this.txtSearchSoDot.TabIndex = 2;
+            this.txtSearchSoDot.TextChanged += new System.EventHandler(this.txtSearchSoDot_TextChanged);
             this.txtSearchSoDot.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearchSoDot_KeyPress);
             // 
             // btInDanhSachMienPhep
@@ -736,8 +751,8 @@
             this.tabCapNhatDS.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(188)))), ((int)(((byte)(227)))));
             this.tabCapNhatDS.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
             this.tabCapNhatDS.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(165)))), ((int)(((byte)(199)))));
-            this.tabCapNhatDS.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
-            | DevComponents.DotNetBar.eBorderSide.Bottom)));
+            this.tabCapNhatDS.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right)
+                        | DevComponents.DotNetBar.eBorderSide.Bottom)));
             this.tabCapNhatDS.Style.GradientAngle = 90;
             this.tabCapNhatDS.TabIndex = 2;
             this.tabCapNhatDS.TabItem = this.tabItem2;
@@ -759,20 +774,6 @@
             this.reflectionLabel1.Size = new System.Drawing.Size(393, 32);
             this.reflectionLabel1.TabIndex = 670;
             this.reflectionLabel1.Text = "<font color=\"#ED1C24\"><b><font size=\"+6\">\r\nXIN PHÉP ĐÀO ĐƯỜNG</font></b></font>";
-            // 
-            // btExport
-            // 
-            this.btExport.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btExport.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btExport.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btExport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btExport.Location = new System.Drawing.Point(754, 394);
-            this.btExport.Name = "btExport";
-            this.btExport.Size = new System.Drawing.Size(175, 26);
-            this.btExport.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
-            this.btExport.TabIndex = 710;
-            this.btExport.Text = "Xuất File Gửi Xin Phép";
-            this.btExport.Click += new System.EventHandler(this.btExport_Click);
             // 
             // UCT_XINPHEPDD
             // 

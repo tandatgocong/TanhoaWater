@@ -524,6 +524,7 @@
             this.txtsoDot.Size = new System.Drawing.Size(122, 26);
             this.txtsoDot.TabIndex = 31;
             this.txtsoDot.TextChanged += new System.EventHandler(this.txtsoDot_TextChanged);
+            this.txtsoDot.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtsoDot_KeyPress_1);
             // 
             // lbPaing
             // 
