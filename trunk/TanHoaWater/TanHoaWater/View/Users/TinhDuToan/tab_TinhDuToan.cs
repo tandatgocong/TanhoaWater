@@ -1985,6 +1985,31 @@ namespace TanHoaWater.View.Users.TinhDuToan
                 log.Error("Cap Nhat SDV LOI" + ex.Message);
             }
         }
+        public void InsertHoSoOngCai()
+        {
+
+            string tmp = _shs + "D";
+            string sql = "  INSERT INTO DON_KHACHHANG(MADOT, SOHOSO, SHS, DANHBO, HOPDONG, HOTEN, DIENTHOAI, SOHOBD, SOHO, SONHA, SONHA_TTK, DUONG, PHUONG, QUAN, NGAYNHAN, LOAIKH, LOAIHOSO, TAPTHE, TINHKHOAN, LOAIMIENPHI, GHICHU, HOSOKHAN, GHICHUKHAN, CHUYEN_HOSO, BOPHANCHUYEN, NGUOICHUYEN_HOSO, NGAYCHUYEN_HOSO, TRONGAICHUYEN_HOSO, NOIDUNGTNCHUYEN, TRONGAITHIETKE, NOIDUNGTRONGAI, HOSOCHA, XINPHEPDAODUONG, TRINHKYBGD, NGAYDONGTIEN, SOHOADON, SOTIEN, CREATEBY, CREATEDATE, MODIFYBY, MODIFYDATE, MODIFYLOG) ";
+            sql += "  SELECT MADOT, SOHOSO=SOHOSO+'B', SHS=SHS+'B', DANHBO, HOPDONG, HOTEN, DIENTHOAI, SOHOBD, SOHO, SONHA, SONHA_TTK, DUONG, PHUONG, QUAN, NGAYNHAN, LOAIKH, LOAIHOSO, TAPTHE, TINHKHOAN, LOAIMIENPHI, GHICHU, HOSOKHAN, GHICHUKHAN, CHUYEN_HOSO, BOPHANCHUYEN, NGUOICHUYEN_HOSO, NGAYCHUYEN_HOSO, TRONGAICHUYEN_HOSO, NOIDUNGTNCHUYEN, TRONGAITHIETKE, NOIDUNGTRONGAI, HOSOCHA, XINPHEPDAODUONG, TRINHKYBGD, NGAYDONGTIEN, SOHOADON, SOTIEN, CREATEBY, CREATEDATE, MODIFYBY, MODIFYDATE, MODIFYLOG";
+            sql += "    FROM DON_KHACHHANG ";
+            sql += "   WHERE SHS='"+_shs+"' ";
+
+            DAL.LinQConnection.ExecuteCommand_(sql);
+
+            sql = "  INSERT INTO TOTHIETKE(MADOT, SOHOSO, SHS, NGAYNHAN, SODOVIEN, NGAYGIAOSDV, TRAHS, NGAYTRAHS, NGAYCHUYENHS, BOPHANCHUYEN, TRONGAITHIETKE, NOIDUNGTRONGAI, NGAYTKGD, HOANTATTK, NGAYHOANTATTK, GHICHU, CREATEBY, CREATEDATE, MODIFYBY, MODIFYDATE, MODIFYLOG) ";
+            sql += "  SELECT MADOT,SOHOSO=SOHOSO+'B' , SHS=SHS+'B', NGAYNHAN, SODOVIEN, NGAYGIAOSDV, TRAHS, NGAYTRAHS, NGAYCHUYENHS, BOPHANCHUYEN, TRONGAITHIETKE, NOIDUNGTRONGAI, NGAYTKGD, HOANTATTK, NGAYHOANTATTK, GHICHU, CREATEBY, CREATEDATE, MODIFYBY, MODIFYDATE, MODIFYLOG ";
+            sql += "    FROM TOTHIETKE ";
+            sql += "   WHERE SHS='" + _shs + "' ";
+
+            DAL.LinQConnection.ExecuteCommand_(sql);
+
+            _shs = tmp;
+            InsertBG_KICHTHUOCPHUIDAO();
+            InsertCONGTACBANGGIA();
+            InsertKHOILUONGXDCB();
+            DAL.C_CongTacBangGia.CapNhatHoanTatTK(tmp);
+        }
+
         private void btTinhBangGia_Click(object sender, EventArgs e)
         {
           
@@ -2010,6 +2035,12 @@ namespace TanHoaWater.View.Users.TinhDuToan
                                 InsertCONGTACBANGGIA();
                                 InsertKHOILUONGXDCB();
                                 INBANGIA(_shs);
+                                if (checkHSongCai.Checked)
+                                {
+                                    InsertHoSoOngCai();
+
+                                }
+
                                 DAL.C_CongTacBangGia.updateghide(_shs, logText);
                             }
                             else if (radioNone.Checked)
@@ -2036,6 +2067,11 @@ namespace TanHoaWater.View.Users.TinhDuToan
                             InsertKHOILUONGXDCB();
                             INBANGIA(_shs);
                             DAL.C_CongTacBangGia.CapNhatHoanTatTK(_shs);
+                            if (checkHSongCai.Checked)
+                            {
+                                InsertHoSoOngCai();
+
+                            }
                             banggiadaco = true;
                             radioGhiDe.Checked = true;
                         }

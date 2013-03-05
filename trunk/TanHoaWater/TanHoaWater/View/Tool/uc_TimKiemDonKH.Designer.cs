@@ -67,6 +67,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.NgayXinPhepDD = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtNgayDongTien = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.SoDoVienTK = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.label14 = new System.Windows.Forms.Label();
             this.NgayThiCong = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -98,9 +99,10 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.SearchMaHoSo = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
-            this.txtNgayDongTien = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.SearchMaHoSo = new System.Windows.Forms.TextBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.txtNgayChuyenTC = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.groupPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -218,6 +220,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label26);
+            this.panel1.Controls.Add(this.txtNgayChuyenTC);
             this.panel1.Controls.Add(this.buttonX3);
             this.panel1.Controls.Add(this.buttonX1);
             this.panel1.Controls.Add(this.panel2);
@@ -238,7 +242,6 @@
             this.panel1.Controls.Add(this.label14);
             this.panel1.Controls.Add(this.NgayThiCong);
             this.panel1.Controls.Add(this.label17);
-            this.panel1.Controls.Add(this.ChoDanhBo);
             this.panel1.Controls.Add(this.NgayHoanCong);
             this.panel1.Controls.Add(this.NgayLenDotTC);
             this.panel1.Controls.Add(this.txtDomViTC);
@@ -251,7 +254,6 @@
             this.panel1.Controls.Add(this.NgayLapBG);
             this.panel1.Controls.Add(this.txtNgayGiaoSDV);
             this.panel1.Controls.Add(this.txtNgayGiaoTTK);
-            this.panel1.Controls.Add(this.label22);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label12);
@@ -300,6 +302,8 @@
             this.panel2.Controls.Add(this.next);
             this.panel2.Controls.Add(this.lbPaing);
             this.panel2.Controls.Add(this.dataGridView1);
+            this.panel2.Controls.Add(this.ChoDanhBo);
+            this.panel2.Controls.Add(this.label22);
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(591, 541);
@@ -488,9 +492,9 @@
             this.label20.Location = new System.Drawing.Point(597, 355);
             this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(85, 16);
+            this.label20.Size = new System.Drawing.Size(88, 16);
             this.label20.TabIndex = 165;
-            this.label20.Text = "Ngày Chuyển";
+            this.label20.Text = "Ngày Lập Đợt";
             // 
             // label24
             // 
@@ -592,6 +596,20 @@
             this.NgayXinPhepDD.TabIndex = 164;
             this.NgayXinPhepDD.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // txtNgayDongTien
+            // 
+            this.txtNgayDongTien.BackColor = System.Drawing.SystemColors.Window;
+            // 
+            // 
+            // 
+            this.txtNgayDongTien.Border.Class = "TextBoxBorder";
+            this.txtNgayDongTien.Location = new System.Drawing.Point(670, 125);
+            this.txtNgayDongTien.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNgayDongTien.Name = "txtNgayDongTien";
+            this.txtNgayDongTien.ReadOnly = true;
+            this.txtNgayDongTien.Size = new System.Drawing.Size(120, 26);
+            this.txtNgayDongTien.TabIndex = 164;
+            // 
             // SoDoVienTK
             // 
             this.SoDoVienTK.BackColor = System.Drawing.SystemColors.Window;
@@ -624,11 +642,11 @@
             // 
             // 
             this.NgayThiCong.Border.Class = "TextBoxBorder";
-            this.NgayThiCong.Location = new System.Drawing.Point(870, 350);
+            this.NgayThiCong.Location = new System.Drawing.Point(686, 381);
             this.NgayThiCong.Margin = new System.Windows.Forms.Padding(4);
             this.NgayThiCong.Name = "NgayThiCong";
             this.NgayThiCong.ReadOnly = true;
-            this.NgayThiCong.Size = new System.Drawing.Size(104, 26);
+            this.NgayThiCong.Size = new System.Drawing.Size(105, 26);
             this.NgayThiCong.TabIndex = 161;
             this.NgayThiCong.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -650,13 +668,14 @@
             // 
             // 
             this.ChoDanhBo.Border.Class = "TextBoxBorder";
-            this.ChoDanhBo.Location = new System.Drawing.Point(870, 379);
+            this.ChoDanhBo.Location = new System.Drawing.Point(373, 513);
             this.ChoDanhBo.Margin = new System.Windows.Forms.Padding(4);
             this.ChoDanhBo.Name = "ChoDanhBo";
             this.ChoDanhBo.ReadOnly = true;
             this.ChoDanhBo.Size = new System.Drawing.Size(103, 26);
             this.ChoDanhBo.TabIndex = 161;
             this.ChoDanhBo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.ChoDanhBo.Visible = false;
             // 
             // NgayHoanCong
             // 
@@ -665,7 +684,7 @@
             // 
             // 
             this.NgayHoanCong.Border.Class = "TextBoxBorder";
-            this.NgayHoanCong.Location = new System.Drawing.Point(685, 379);
+            this.NgayHoanCong.Location = new System.Drawing.Point(869, 382);
             this.NgayHoanCong.Margin = new System.Windows.Forms.Padding(4);
             this.NgayHoanCong.Name = "NgayHoanCong";
             this.NgayHoanCong.ReadOnly = true;
@@ -834,12 +853,13 @@
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Times New Roman", 10F);
-            this.label22.Location = new System.Drawing.Point(787, 384);
+            this.label22.Location = new System.Drawing.Point(290, 518);
             this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(84, 16);
             this.label22.TabIndex = 159;
             this.label22.Text = "Cho Danh Bộ";
+            this.label22.Visible = false;
             // 
             // label7
             // 
@@ -856,12 +876,12 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 10F);
-            this.label5.Location = new System.Drawing.Point(598, 383);
+            this.label5.Location = new System.Drawing.Point(798, 387);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(85, 16);
+            this.label5.Size = new System.Drawing.Size(71, 16);
             this.label5.TabIndex = 159;
-            this.label5.Text = "Ngày H.Công";
+            this.label5.Text = "Hoàn Công";
             // 
             // label12
             // 
@@ -981,12 +1001,12 @@
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Times New Roman", 10F);
-            this.label21.Location = new System.Drawing.Point(800, 355);
+            this.label21.Location = new System.Drawing.Point(593, 387);
             this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(61, 16);
+            this.label21.Size = new System.Drawing.Size(95, 16);
             this.label21.TabIndex = 165;
-            this.label21.Text = "Thi Công";
+            this.label21.Text = "Ngày Thi Công";
             // 
             // label9
             // 
@@ -999,15 +1019,6 @@
             this.label9.TabIndex = 151;
             this.label9.Text = "Loại HS";
             // 
-            // SearchMaHoSo
-            // 
-            this.SearchMaHoSo.Location = new System.Drawing.Point(60, 9);
-            this.SearchMaHoSo.Margin = new System.Windows.Forms.Padding(4);
-            this.SearchMaHoSo.Name = "SearchMaHoSo";
-            this.SearchMaHoSo.Size = new System.Drawing.Size(122, 26);
-            this.SearchMaHoSo.TabIndex = 129;
-            this.SearchMaHoSo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.searchHoTenKH_KeyPress);
-            // 
             // label25
             // 
             this.label25.AutoSize = true;
@@ -1019,19 +1030,40 @@
             this.label25.TabIndex = 678;
             this.label25.Text = "Ngày Đ.Tiền";
             // 
-            // txtNgayDongTien
+            // SearchMaHoSo
             // 
-            this.txtNgayDongTien.BackColor = System.Drawing.SystemColors.Window;
+            this.SearchMaHoSo.Location = new System.Drawing.Point(60, 9);
+            this.SearchMaHoSo.Margin = new System.Windows.Forms.Padding(4);
+            this.SearchMaHoSo.Name = "SearchMaHoSo";
+            this.SearchMaHoSo.Size = new System.Drawing.Size(122, 26);
+            this.SearchMaHoSo.TabIndex = 129;
+            this.SearchMaHoSo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.searchHoTenKH_KeyPress);
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Times New Roman", 10F);
+            this.label26.Location = new System.Drawing.Point(793, 356);
+            this.label26.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(73, 16);
+            this.label26.TabIndex = 680;
+            this.label26.Text = "Chuyển TC";
+            // 
+            // txtNgayChuyenTC
+            // 
+            this.txtNgayChuyenTC.BackColor = System.Drawing.SystemColors.Window;
             // 
             // 
             // 
-            this.txtNgayDongTien.Border.Class = "TextBoxBorder";
-            this.txtNgayDongTien.Location = new System.Drawing.Point(670, 125);
-            this.txtNgayDongTien.Margin = new System.Windows.Forms.Padding(4);
-            this.txtNgayDongTien.Name = "txtNgayDongTien";
-            this.txtNgayDongTien.ReadOnly = true;
-            this.txtNgayDongTien.Size = new System.Drawing.Size(120, 26);
-            this.txtNgayDongTien.TabIndex = 164;
+            this.txtNgayChuyenTC.Border.Class = "TextBoxBorder";
+            this.txtNgayChuyenTC.Location = new System.Drawing.Point(867, 351);
+            this.txtNgayChuyenTC.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNgayChuyenTC.Name = "txtNgayChuyenTC";
+            this.txtNgayChuyenTC.ReadOnly = true;
+            this.txtNgayChuyenTC.Size = new System.Drawing.Size(106, 26);
+            this.txtNgayChuyenTC.TabIndex = 679;
+            this.txtNgayChuyenTC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // uc_TimKiemDonKH
             // 
@@ -1140,6 +1172,8 @@
         private DevComponents.DotNetBar.ButtonX buttonX1;
         private DevComponents.DotNetBar.Controls.TextBoxX txtNgayDongTien;
         private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label26;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtNgayChuyenTC;
 
     }
 }

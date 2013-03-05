@@ -236,74 +236,161 @@ namespace TanHoaWater.View.Users.KEHOACH
                 }
                 else
                 {
-                    BIENNHANDON biennhan = new BIENNHANDON();
-                    biennhan.SHS = this.soBienNhan.Text;
-                    biennhan.LOAIDON = cbLoaiBN.SelectedValue + "";
-                    biennhan.HOTEN = hoten;
-                    biennhan.SONHA = sonha;
-                    biennhan.DUONG = txtDuong.Text;
-                    biennhan.PHUONG = phuong.MAPHUONG;
-                    biennhan.QUAN = quan.MAQUAN;
-                    biennhan.NGAYNHAN = DateTime.Now.Date;
-                    biennhan.SOHO = int.Parse(this.numericUpDown1.Value + "");
-                    biennhan.DIENTHOAI = txtDt.Text;
-                   //1
-                    if (checkHK.Checked)
+                    if (DAL.C_DonKhachHang.findByAddressAndLoaiHS("", loaihs, sonha, tenduong, phuong.MAPHUONG, "" + quan.MAQUAN))
                     {
-                        biennhan.HKTK = true;
+                        if (MessageBox.Show(this, "Địa Chỉ Khách Hàng Đã Được Nhận Đơn. Có Muốn Thêm Mới Hồ Sơ ?", "..: Thông Báo :..", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                        {
+                            BIENNHANDON biennhan = new BIENNHANDON();
+                            biennhan.SHS = this.soBienNhan.Text;
+                            biennhan.LOAIDON = cbLoaiBN.SelectedValue + "";
+                            biennhan.HOTEN = hoten;
+                            biennhan.SONHA = sonha;
+                            biennhan.DUONG = txtDuong.Text;
+                            biennhan.PHUONG = phuong.MAPHUONG;
+                            biennhan.QUAN = quan.MAQUAN;
+                            biennhan.NGAYNHAN = DateTime.Now.Date;
+                            biennhan.SOHO = int.Parse(this.numericUpDown1.Value + "");
+                            biennhan.DIENTHOAI = txtDt.Text;
+                            //1
+                            if (checkHK.Checked)
+                            {
+                                biennhan.HKTK = true;
+                            }
+                            else
+                            {
+                                biennhan.HKTK = false;
+                            }
+                            //2
+                            if (checkChuQuyen.Checked)
+                            {
+                                biennhan.CHUQUYENNHA = true;
+                            }
+                            else
+                            {
+                                biennhan.CHUQUYENNHA = false;
+                            }
+                            //3
+                            if (checkGiayPhepXD.Checked)
+                            {
+                                biennhan.GIAYPHEPXD = true;
+                            }
+                            else
+                            {
+                                biennhan.GIAYPHEPXD = false;
+                            }
+                            //4
+                            if (checkSoTTKT3.Checked)
+                            {
+                                biennhan.TAMTRU = true;
+                            }
+                            else
+                            {
+                                biennhan.TAMTRU = false;
+                            }
+                            //5
+                            if (checkGiayPhepKD.Checked)
+                            {
+                                biennhan.GIAYPHEPKD = true;
+                            }
+                            else
+                            {
+                                biennhan.GIAYPHEPKD = false;
+                            }
+                            //6
+                            if (GM_giaytokhac.Checked)
+                            {
+                                biennhan.GIAYTOKHAC = true;
+                            }
+                            else
+                            {
+                                biennhan.GIAYTOKHAC = false;
+                            }
+                            if ((cbLoaiBN.SelectedValue + "").Equals("DD"))
+                            {
+                                if (DD_GiayToKhac.Checked)
+                                {
+                                    biennhan.GIAYTOKHAC = true;
+                                }
+                                else
+                                {
+                                    biennhan.GIAYTOKHAC = false;
+                                }
+                                //8
+                                if (checkBienLaiTN.Checked)
+                                {
+                                    biennhan.BIENLAITIENUOC = true;
+                                }
+                                else
+                                {
+                                    biennhan.BIENLAITIENUOC = false;
+                                }
+                            }
+                            biennhan.CREATEBY = DAL.C_USERS._userName;
+                            biennhan.CREATEDATE = DateTime.Now;
+                            DAL.C_BienNhanDon.InsertBienNhanDon(biennhan);
+                            printingBienNhan(biennhan.SHS, biennhan.DIENTHOAI, DAL.C_USERS._userName);
+                            reset();
+                        }
                     }
-                    else
-                    {
-                        biennhan.HKTK = false;
-                    }
-                    //2
-                    if (checkChuQuyen.Checked)
-                    {
-                        biennhan.CHUQUYENNHA = true;
-                    }
-                    else
-                    {
-                        biennhan.CHUQUYENNHA = false;
-                    }
-                    //3
-                    if (checkGiayPhepXD.Checked)
-                    {
-                        biennhan.GIAYPHEPXD = true;
-                    }
-                    else
-                    {
-                        biennhan.GIAYPHEPXD = false;
-                    }
-                    //4
-                    if (checkSoTTKT3.Checked)
-                    {
-                        biennhan.TAMTRU = true;
-                    }
-                    else
-                    {
-                        biennhan.TAMTRU = false;
-                    }
-                    //5
-                    if (checkGiayPhepKD.Checked)
-                    {
-                        biennhan.GIAYPHEPKD = true;
-                    }
-                    else
-                    {
-                        biennhan.GIAYPHEPKD = false;
-                    }
-                    //6
-                    if (GM_giaytokhac.Checked)
-                    {
-                        biennhan.GIAYTOKHAC = true;
-                    }
-                    else
-                    {
-                        biennhan.GIAYTOKHAC = false;
-                    }
-                    if ((cbLoaiBN.SelectedValue + "").Equals("DD"))
-                    {
-                        if (DD_GiayToKhac.Checked)
+                    else {
+                        BIENNHANDON biennhan = new BIENNHANDON();
+                        biennhan.SHS = this.soBienNhan.Text;
+                        biennhan.LOAIDON = cbLoaiBN.SelectedValue + "";
+                        biennhan.HOTEN = hoten;
+                        biennhan.SONHA = sonha;
+                        biennhan.DUONG = txtDuong.Text;
+                        biennhan.PHUONG = phuong.MAPHUONG;
+                        biennhan.QUAN = quan.MAQUAN;
+                        biennhan.NGAYNHAN = DateTime.Now.Date;
+                        biennhan.SOHO = int.Parse(this.numericUpDown1.Value + "");
+                        biennhan.DIENTHOAI = txtDt.Text;
+                        //1
+                        if (checkHK.Checked)
+                        {
+                            biennhan.HKTK = true;
+                        }
+                        else
+                        {
+                            biennhan.HKTK = false;
+                        }
+                        //2
+                        if (checkChuQuyen.Checked)
+                        {
+                            biennhan.CHUQUYENNHA = true;
+                        }
+                        else
+                        {
+                            biennhan.CHUQUYENNHA = false;
+                        }
+                        //3
+                        if (checkGiayPhepXD.Checked)
+                        {
+                            biennhan.GIAYPHEPXD = true;
+                        }
+                        else
+                        {
+                            biennhan.GIAYPHEPXD = false;
+                        }
+                        //4
+                        if (checkSoTTKT3.Checked)
+                        {
+                            biennhan.TAMTRU = true;
+                        }
+                        else
+                        {
+                            biennhan.TAMTRU = false;
+                        }
+                        //5
+                        if (checkGiayPhepKD.Checked)
+                        {
+                            biennhan.GIAYPHEPKD = true;
+                        }
+                        else
+                        {
+                            biennhan.GIAYPHEPKD = false;
+                        }
+                        //6
+                        if (GM_giaytokhac.Checked)
                         {
                             biennhan.GIAYTOKHAC = true;
                         }
@@ -311,21 +398,33 @@ namespace TanHoaWater.View.Users.KEHOACH
                         {
                             biennhan.GIAYTOKHAC = false;
                         }
-                        //8
-                        if (checkBienLaiTN.Checked)
+                        if ((cbLoaiBN.SelectedValue + "").Equals("DD"))
                         {
-                            biennhan.BIENLAITIENUOC = true;
+                            if (DD_GiayToKhac.Checked)
+                            {
+                                biennhan.GIAYTOKHAC = true;
+                            }
+                            else
+                            {
+                                biennhan.GIAYTOKHAC = false;
+                            }
+                            //8
+                            if (checkBienLaiTN.Checked)
+                            {
+                                biennhan.BIENLAITIENUOC = true;
+                            }
+                            else
+                            {
+                                biennhan.BIENLAITIENUOC = false;
+                            }
                         }
-                        else
-                        {
-                            biennhan.BIENLAITIENUOC = false;
-                        }
+                        biennhan.CREATEBY = DAL.C_USERS._userName;
+                        biennhan.CREATEDATE = DateTime.Now;
+                        DAL.C_BienNhanDon.InsertBienNhanDon(biennhan);
+                        printingBienNhan(biennhan.SHS, biennhan.DIENTHOAI, DAL.C_USERS._userName);
+                        reset();
+                    
                     }
-                    biennhan.CREATEBY = DAL.C_USERS._userName;
-                    biennhan.CREATEDATE = DateTime.Now;
-                    DAL.C_BienNhanDon.InsertBienNhanDon(biennhan);
-                    printingBienNhan(biennhan.SHS, biennhan.DIENTHOAI, DAL.C_USERS._userName);                   
-                    reset();
                 }
             }
             catch (Exception ex)

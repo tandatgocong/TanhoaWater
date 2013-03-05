@@ -41,6 +41,7 @@ namespace TanHoaWater.View.Tool
             if (donkh != null)
             {
                 this.txtNgayDongTien.Text = donkh.NGAYDONGTIEN != null ? Utilities.DateToString.NgayVNVN(donkh.NGAYDONGTIEN.Value) : "";
+                SoTienDong.Text = String.Format("{0:0,0}", donkh.SOTIEN != null ? donkh.SOTIEN : 0.0).Replace(",",".");
                 this.DotNhanDon.Text = donkh.MADOT;
                 this.NgayLenDotNhanDon.Text = Utilities.DateToString.NgayVNVN(donkh.CREATEDATE.Value);
                 if (donkh.NGAYCHUYEN_HOSO != null)
@@ -66,7 +67,9 @@ namespace TanHoaWater.View.Tool
                                 if (xdcb != null)
                                 {
                                     NgayLapBG.Text = xdcb.CREATEDATE != null ? Utilities.DateToString.NgayVNVN(xdcb.CREATEDATE.Value) : "";
-                                    SoTienDong.Text = String.Format("{0:0,0.00}", xdcb.TONGIATRI != null ? xdcb.TONGIATRI : 0.0);
+                                  //  SoTienDong.Text = String.Format("{0:0,0.00}", xdcb.TONGIATRI != null ? xdcb.TONGIATRI : 0.0);
+                                    SoTienDong.Text = String.Format("{0:0,0}", xdcb.TONGIATRI != null ? xdcb.TONGIATRI : 0.0).Replace(",", ".");
+
                                     NgayTrinhKyGD.Text = ttk.NGAYTKGD != null ? Utilities.DateToString.NgayVNVN(ttk.NGAYTKGD.Value) : "";
                                     NgayHoanTat.Text = ttk.NGAYHOANTATTK != null ? Utilities.DateToString.NgayVNVN(ttk.NGAYHOANTATTK.Value) : "";
                                     NgayTraHoSoKH.Text = ttk.NGAYTRAHS != null ? Utilities.DateToString.NgayVNVN(ttk.NGAYTRAHS.Value) : "";
@@ -89,30 +92,35 @@ namespace TanHoaWater.View.Tool
                                             KH_DOTTHICONG dotc = DAL.C_KH_DotThiCong.findByMadot(hoskh.MADOTTC);
                                             DotThiCong.Text = dotc.MADOTTC;
                                             NgayLenDotTC.Text = Utilities.DateToString.NgayVNVN(dotc.NGAYLAP.Value);
+                                            txtNgayChuyenTC.Text = Utilities.DateToString.NgayVNVN(dotc.NGAYCHUYENTC.Value);
                                             txtDomViTC.Text = DAL.C_KH_DonViTC.findDVTCbyID(dotc.DONVITHICONG.Value).TENCONGTY;
-
+                                            NgayThiCong.Text = hoskh.NGAYTHICONG != null ? Utilities.DateToString.NgayVNVN(hoskh.NGAYTHICONG.Value) : "";
+                                            NgayHoanCong.Text = hoskh.NGAYHOANCONG != null ? Utilities.DateToString.NgayVNVN(hoskh.NGAYHOANCONG.Value) : "";
+                                            ChoDanhBo.Text = hoskh.DHN_NGAYCHOSODB != null ? Utilities.DateToString.NgayVNVN(hoskh.DHN_NGAYCHOSODB.Value) : "";
+                                            if (hoskh.HOANCONG != true)
+                                            {
+                                                title = "HỒ CHƯA HOÀN CÔNG.";
+                                            }
+                                            else if (hoskh.DHN_CHODB != true)
+                                            {
+                                                title = "HỒ CHƯA CHO DANH BỘ.";
+                                            }
+                                            else
+                                            {
+                                                title = "HỒ SƠ ĐÃ HOÀN TẤT";
+                                            }
+                                            if (hoskh.TRONGAI == true)
+                                            {
+                                                title = "HỒ SƠ TRỞ NGẠI THI CÔNG";
+                                                noidungtrongai = hoskh.NOIDUNGTN;
+                                            }
                                         }
                                         else
                                         {
                                             title = "HỒ SƠ CHƯA LÊN ĐỢT <br/> THI CÔNG";
                                         }
                                         NgayThiCong.Text = hoskh.NGAYTHICONG != null ? Utilities.DateToString.NgayVNVN(hoskh.NGAYTHICONG.Value) : "";
-                                        NgayHoanCong.Text = hoskh.NGAYHOANCONG != null ? Utilities.DateToString.NgayVNVN(hoskh.NGAYHOANCONG.Value) : "";
-                                        ChoDanhBo.Text = hoskh.DHN_NGAYCHOSODB != null ? Utilities.DateToString.NgayVNVN(hoskh.DHN_NGAYCHOSODB.Value) : "";
-
-                                        if (hoskh.DHN_CHODB != true)
-                                        {
-                                            title = "HỒ CHƯA CHO DANH BỘ.";
-                                        }
-                                        else
-                                        {
-                                            title = "HỒ SƠ ĐÃ HOÀN TẤT";
-                                        }
-                                        if (hoskh.TRONGAI == true)
-                                        {
-                                            title = "HỒ SƠ TRỞ NGẠI THI CÔNG";
-                                            noidungtrongai = hoskh.NOIDUNGTN;
-                                        }
+                                        
                                     }
                                     else
                                     {
@@ -141,31 +149,36 @@ namespace TanHoaWater.View.Tool
                                             KH_DOTTHICONG dotc = DAL.C_KH_DotThiCong.findByMadot(hoskh.MADOTTC);
                                             DotThiCong.Text = dotc.MADOTTC;
                                             NgayLenDotTC.Text = Utilities.DateToString.NgayVNVN(dotc.NGAYLAP.Value);
+                                            txtNgayChuyenTC.Text = Utilities.DateToString.NgayVNVN(dotc.NGAYCHUYENTC.Value);
                                             txtDomViTC.Text = DAL.C_KH_DonViTC.findDVTCbyID(dotc.DONVITHICONG.Value).TENCONGTY;
+
+                                            NgayThiCong.Text = hoskh.NGAYTHICONG != null ? Utilities.DateToString.NgayVNVN(hoskh.NGAYTHICONG.Value) : "";
+                                            NgayHoanCong.Text = hoskh.NGAYHOANCONG != null ? Utilities.DateToString.NgayVNVN(hoskh.NGAYHOANCONG.Value) : "";
+                                            ChoDanhBo.Text = hoskh.DHN_NGAYCHOSODB != null ? Utilities.DateToString.NgayVNVN(hoskh.DHN_NGAYCHOSODB.Value) : "";
+                                            if (hoskh.HOANCONG != true)
+                                            {
+                                                title = "HỒ CHƯA HOÀN CÔNG.";
+                                            }
+                                            else if (hoskh.DHN_CHODB != true)
+                                            {
+                                                title = "HỒ CHƯA CHO DANH BỘ.";
+                                            }
+                                            else
+                                            {
+                                                title = "HỒ SƠ ĐÃ HOÀN TẤT";
+                                            }
+                                            if (hoskh.TRONGAI == true)
+                                            {
+                                                title = "HỒ SƠ TRỞ NGẠI THI CÔNG";
+                                                noidungtrongai = hoskh.NOIDUNGTN;
+                                            }
 
                                         }
                                         else
                                         {
                                             title = "HỒ SƠ CHƯA LÊN ĐỢT <br/> THI CÔNG";
                                         }
-                                        NgayThiCong.Text = hoskh.NGAYTHICONG != null ? Utilities.DateToString.NgayVNVN(hoskh.NGAYTHICONG.Value) : "";
-                                        NgayHoanCong.Text = hoskh.NGAYHOANCONG != null ? Utilities.DateToString.NgayVNVN(hoskh.NGAYHOANCONG.Value) : "";
-                                        ChoDanhBo.Text = hoskh.DHN_NGAYCHOSODB != null ? Utilities.DateToString.NgayVNVN(hoskh.DHN_NGAYCHOSODB.Value) : "";
-                                        if (hoskh.HOANCONG != true) {
-                                            title = "HỒ CHƯA HOÀN CÔNG.";
-                                        }else if (hoskh.DHN_CHODB != true)
-                                        {
-                                            title = "HỒ CHƯA CHO DANH BỘ.";
-                                        }
-                                        else
-                                        {
-                                            title = "HỒ SƠ ĐÃ HOÀN TẤT";
-                                        }
-                                        if (hoskh.TRONGAI == true)
-                                        {
-                                            title = "HỒ SƠ TRỞ NGẠI THI CÔNG";
-                                            noidungtrongai = hoskh.NOIDUNGTN;
-                                        }
+                                        
                                     }
                                     else { title = "HỒ SƠ CHƯA CHẠY BẢNG GIÁ."; }
 
@@ -198,7 +211,59 @@ namespace TanHoaWater.View.Tool
             {
                 title = "CHƯA LÊN ĐỢT NHẬN ĐƠN <br/> CHUYỂN TỔ THIẾT KẾ";
             }
+            // TRƯỜNG HỢP ĐẶT BIỆT HỒ SƠ CHẠY BẢNG GIÁ MẪU
+            KH_HOSOKHACHHANG hoskh1 = DAL.C_KH_HoSoKhachHang.findBySHS(donkh.SHS);
+            if (hoskh1 != null)
+            {
+                if (hoskh1.MADOTDD != null)
+                {
+                    KH_XINPHEPDAODUONG xiphep = DAL.C_KH_XinPhepDD.finbyMaDot(hoskh1.MADOTDD);
+                    DotXinPhepDD.Text = xiphep.MAQUANLY;
+                    NgayXinPhepDD.Text = Utilities.DateToString.NgayVNVN(xiphep.NGAYLAP.Value);
+                    NgayCoPhep.Text = xiphep.NGAYCOPHEP != null ? Utilities.DateToString.NgayVNVN(xiphep.NGAYCOPHEP.Value) : "";
+                }
+                else
+                {
+                    title = "HỒ SƠ CHƯA LÊN ĐỢT <br/> ĐÀO ĐƯỜNG";
+                }
+                if (hoskh1.MADOTTC != null)
+                {
+                    KH_DOTTHICONG dotc = DAL.C_KH_DotThiCong.findByMadot(hoskh1.MADOTTC);
+                    DotThiCong.Text = dotc.MADOTTC;
+                    NgayLenDotTC.Text = Utilities.DateToString.NgayVNVN(dotc.NGAYLAP.Value);
+                    txtNgayChuyenTC.Text = Utilities.DateToString.NgayVNVN(dotc.NGAYCHUYENTC.Value);
+                    txtDomViTC.Text = DAL.C_KH_DonViTC.findDVTCbyID(dotc.DONVITHICONG.Value).TENCONGTY;
+
+                    NgayThiCong.Text = hoskh1.NGAYTHICONG != null ? Utilities.DateToString.NgayVNVN(hoskh1.NGAYTHICONG.Value) : "";
+                    NgayHoanCong.Text = hoskh1.NGAYHOANCONG != null ? Utilities.DateToString.NgayVNVN(hoskh1.NGAYHOANCONG.Value) : "";
+                    ChoDanhBo.Text = hoskh1.DHN_NGAYCHOSODB != null ? Utilities.DateToString.NgayVNVN(hoskh1.DHN_NGAYCHOSODB.Value) : "";
+
+                    if (hoskh1.HOANCONG != true)
+                    {
+                        title = "HỒ CHƯA HOÀN CÔNG.";
+                    }
+                    else if (hoskh1.DHN_CHODB != true)
+                    {
+                        title = "HỒ CHƯA CHO DANH BỘ.";
+                    }
+                    else
+                    {
+                        title = "HỒ SƠ ĐÃ HOÀN TẤT";
+                    }
+                    if (hoskh1.TRONGAI == true)
+                    {
+                        title = "HỒ SƠ TRỞ NGẠI THI CÔNG";
+                        noidungtrongai = hoskh1.NOIDUNGTN;
+                    }
+                }
+                else
+                {
+                    title = "HỒ SƠ CHƯA LÊN ĐỢT <br/> THI CÔNG";
+                }
+                
+            }
         }
+       
         void search() {
             groupBox1.Text = "Kết Quả ";
             try
@@ -275,7 +340,15 @@ namespace TanHoaWater.View.Tool
         }
         private void btSearch_Click(object sender, EventArgs e)
         {
-            search();
+            try
+            {
+                search();
+            }
+            catch (Exception)
+            {
+              
+            }
+           
         }
 
         private void dataGridView1_Sorted(object sender, EventArgs e)
@@ -337,6 +410,7 @@ namespace TanHoaWater.View.Tool
                 {
                     this.lbresult.ForeColor = Color.Blue;
                     this.lbresult.Text = title;
+                    this.resultNoiDung.Text = donkh.SONHA_TTK;
                 }
             }
             catch (Exception)

@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.SearchDotNhanDon = new System.Windows.Forms.TextBox();
             this.SearchMaHoSo = new System.Windows.Forms.TextBox();
@@ -56,6 +56,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtghichusua = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.label18 = new System.Windows.Forms.Label();
             this.cbDotNhanDon = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.label17 = new System.Windows.Forms.Label();
             this.chuyenhoso = new DevComponents.DotNetBar.Controls.CheckBoxX();
@@ -88,8 +90,8 @@
             this.cbQuan = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.cbPhuong = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.txtghichusua = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.label18 = new System.Windows.Forms.Label();
+            this.txtDanhBo = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.label19 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.next)).BeginInit();
@@ -262,8 +264,8 @@
             // G_SodotNhanDon
             // 
             this.G_SodotNhanDon.DataPropertyName = "MADOT";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.G_SodotNhanDon.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.G_SodotNhanDon.DefaultCellStyle = dataGridViewCellStyle1;
             this.G_SodotNhanDon.HeaderText = "Số Đợt Nhận Đơn";
             this.G_SodotNhanDon.Name = "G_SodotNhanDon";
             this.G_SodotNhanDon.ReadOnly = true;
@@ -272,8 +274,8 @@
             // SOHOSO
             // 
             this.SOHOSO.DataPropertyName = "SOHOSO";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.SOHOSO.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.SOHOSO.DefaultCellStyle = dataGridViewCellStyle2;
             this.SOHOSO.HeaderText = "Số Hồ Sơ";
             this.SOHOSO.Name = "SOHOSO";
             this.SOHOSO.ReadOnly = true;
@@ -298,8 +300,8 @@
             // NGAY_NHAN
             // 
             this.NGAY_NHAN.DataPropertyName = "NGAYNHAN";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.NGAY_NHAN.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.NGAY_NHAN.DefaultCellStyle = dataGridViewCellStyle3;
             this.NGAY_NHAN.HeaderText = "Ngày Nhận";
             this.NGAY_NHAN.Name = "NGAY_NHAN";
             this.NGAY_NHAN.ReadOnly = true;
@@ -378,6 +380,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
+            this.panel1.Controls.Add(this.txtDanhBo);
+            this.panel1.Controls.Add(this.label19);
             this.panel1.Controls.Add(this.txtghichusua);
             this.panel1.Controls.Add(this.label18);
             this.panel1.Controls.Add(this.cbDotNhanDon);
@@ -417,6 +421,28 @@
             this.panel1.Size = new System.Drawing.Size(963, 142);
             this.panel1.TabIndex = 0;
             // 
+            // txtghichusua
+            // 
+            // 
+            // 
+            // 
+            this.txtghichusua.Border.Class = "TextBoxBorder";
+            this.txtghichusua.Location = new System.Drawing.Point(508, 102);
+            this.txtghichusua.Multiline = true;
+            this.txtghichusua.Name = "txtghichusua";
+            this.txtghichusua.Size = new System.Drawing.Size(174, 25);
+            this.txtghichusua.TabIndex = 115;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(424, 107);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(81, 16);
+            this.label18.TabIndex = 116;
+            this.label18.Text = "Ghi Chú Sửa";
+            this.label18.Click += new System.EventHandler(this.label18_Click);
+            // 
             // cbDotNhanDon
             // 
             this.cbDotNhanDon.DisplayMember = "Text";
@@ -440,7 +466,7 @@
             // chuyenhoso
             // 
             this.chuyenhoso.Enabled = false;
-            this.chuyenhoso.Location = new System.Drawing.Point(767, 76);
+            this.chuyenhoso.Location = new System.Drawing.Point(926, 75);
             this.chuyenhoso.Name = "chuyenhoso";
             this.chuyenhoso.Size = new System.Drawing.Size(21, 15);
             this.chuyenhoso.TabIndex = 23;
@@ -458,7 +484,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(671, 75);
+            this.label16.Location = new System.Drawing.Point(830, 74);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(94, 16);
             this.label16.TabIndex = 109;
@@ -742,27 +768,26 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // txtghichusua
+            // txtDanhBo
             // 
             // 
             // 
             // 
-            this.txtghichusua.Border.Class = "TextBoxBorder";
-            this.txtghichusua.Location = new System.Drawing.Point(508, 102);
-            this.txtghichusua.Multiline = true;
-            this.txtghichusua.Name = "txtghichusua";
-            this.txtghichusua.Size = new System.Drawing.Size(174, 25);
-            this.txtghichusua.TabIndex = 115;
+            this.txtDanhBo.Border.Class = "TextBoxBorder";
+            this.txtDanhBo.Location = new System.Drawing.Point(712, 71);
+            this.txtDanhBo.Multiline = true;
+            this.txtDanhBo.Name = "txtDanhBo";
+            this.txtDanhBo.Size = new System.Drawing.Size(119, 25);
+            this.txtDanhBo.TabIndex = 117;
             // 
-            // label18
+            // label19
             // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(424, 107);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(81, 16);
-            this.label18.TabIndex = 116;
-            this.label18.Text = "Ghi Chú Sửa";
-            this.label18.Click += new System.EventHandler(this.label18_Click);
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(651, 75);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(60, 16);
+            this.label19.TabIndex = 118;
+            this.label19.Text = "Danh Bộ";
             // 
             // tab_TimKiemDonKH
             // 
@@ -849,6 +874,8 @@
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private DevComponents.DotNetBar.Controls.TextBoxX txtghichusua;
         private System.Windows.Forms.Label label18;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtDanhBo;
+        private System.Windows.Forms.Label label19;
 
     }
 }

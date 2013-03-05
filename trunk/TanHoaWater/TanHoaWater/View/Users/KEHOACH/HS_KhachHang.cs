@@ -15,6 +15,7 @@ using TanHoaWater.View.Users.KEHOACH;
 using System.Data.SqlClient;
 using CrystalDecisions.Shared;
 using TanHoaWater.View.Users.KEHOACH.ThuMoiDongTien;
+using TanHoaWater.View.Users.Report;
 
 namespace TanHoaWater.View.Users.HSKHACHHANG
 {
@@ -91,21 +92,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                 refresh();
                 this.txtSHS.Focus();
             }
-            try
-            {
-                List<TENDUONG> list = DAL.C_TenDuong.getList();
-                foreach (var item in list)
-                {
-                    namesCollection.Add(item.DUONG);
-                }
-                duong.AutoCompleteMode = AutoCompleteMode.Suggest;
-                duong.AutoCompleteSource = AutoCompleteSource.CustomSource;
-                duong.AutoCompleteCustomSource = namesCollection;
-            }
-            catch (Exception)
-            {
-
-            }
+            
         }
 
         private void txtghichukhan_MouseClick(object sender, MouseEventArgs e)
@@ -349,7 +336,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
             }
             else
             {
-                if (DAL.C_DonKhachHang.findByAddressAndLoaiHS(this.cbDotNhanDon.SelectedValue.ToString(), loaihoso, this.sonha.Text, this.duong.Text, _maphuong, "" + _maquan))
+                if (DAL.C_DonKhachHang.findByAddressAndLoaiHS_(this.cbDotNhanDon.SelectedValue.ToString(), loaihoso, this.sonha.Text, this.duong.Text, _maphuong, "" + _maquan))
                 {
                     if (MessageBox.Show(this, "Địa Chỉ Khách Hàng Đã Được Nhận Đơn. Có Muốn Thêm Mới Hồ Sơ ?", "..: Thông Báo :..", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                     {
@@ -541,7 +528,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
             this.txtHoTen.Text = null;
             this.dienthoai.Text = null;
             this.sonha.Text = null;
-            this.duong.Text = null;
+          //  this.duong.Text = null;
             this.txtSoHoSo.Text = null;
             this.txtSHS.Focus();
             this.soho.Value = 1;
@@ -850,7 +837,11 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
         {
             try
             {
-                rpt_DanhSachChuyen ds = new rpt_DanhSachChuyen(_madot, DAL.C_USERS._userName, CD_NguoiDuyetDon.SelectedValue.ToString());
+                bool flag = false;
+                if ("TCTB".Equals(this.bophanChuyen.SelectedValue.ToString())) {
+                    flag = true;
+                }
+                rpt_DanhSachChuyen ds = new rpt_DanhSachChuyen(_madot, DAL.C_USERS._userName, CD_NguoiDuyetDon.SelectedValue.ToString(), flag);
                 ds.ShowDialog();
             }
             catch (Exception ex)
@@ -968,7 +959,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
             {
                 try
                 {
-                    DAL.C_DonKhachHang.DongTienKH(this.textBoxX1.Text, this.dateNgayDongTien.Value.Date, this.txtSoHoaDon.Text);
+                    DAL.C_DonKhachHang.DongTienKH_(this.textBoxX1.Text, this.dateNgayDongTien.Value.Date, this.txtSoHoaDon.Text);
                     MessageBox.Show(this, "Cập Nhật Khách Hàng Đóng Tiền Thành Công.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
@@ -1071,6 +1062,34 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
             }
 
 
+        }
+
+        private void HSKHACHHANG_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                List<TENDUONG> list = DAL.C_TenDuong.getList();
+                foreach (var item in list)
+                {
+                    namesCollection.Add(item.DUONG);
+                }
+                duong.AutoCompleteMode = AutoCompleteMode.Suggest;
+                duong.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                duong.AutoCompleteCustomSource = namesCollection;
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+
+        private void print_Click(object sender, EventArgs e)
+        {
+            string _madot_ = this.cbDotNhanDon.SelectedValue.ToString();
+            ReportDocument rp = new rpt_DOT_QUAN();
+            rp.SetDataSource(DAL.C_BAOCAO_VIEW.BC_DOTNHANDON_DOT(_madot_, DAL.C_USERS._userName, DAL.C_USERS.KHVTDuyet(), null, null));
+            rpt_Main main = new rpt_Main(rp);
+            main.ShowDialog();
         }
     }
 }

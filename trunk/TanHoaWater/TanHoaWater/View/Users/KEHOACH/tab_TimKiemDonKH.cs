@@ -200,6 +200,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                         this.txtHoTen.Text = donkh.HOTEN;
                         this.txtsonha.Text = donkh.SONHA;
                         this.duong.Text = donkh.DUONG;
+                        this.txtDanhBo.Text = donkh.DANHBO;
                         // select Quan
                         cbQuan.Text = DAL.C_Quan.finByMaQuan(donkh.QUAN).TENQUAN;
                         // select Phuong
@@ -325,6 +326,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                         donkh.DUONG = tenduong;
                         donkh.PHUONG = phuong.MAPHUONG;
                         donkh.QUAN = quan.MAQUAN;
+                        donkh.DANHBO = this.txtDanhBo.Text;
                         donkh.LOAIKH = DAL.C_LoaiKhachHang.finbyTenLoai(this.cbLoaiKH.Text).MALOAI;
                         donkh.DIENTHOAI = this.dienthoai.Text;
                         donkh.GHICHU = this.ghichu.Text;

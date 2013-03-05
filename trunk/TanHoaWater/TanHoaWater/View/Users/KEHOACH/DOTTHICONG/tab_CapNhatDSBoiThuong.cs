@@ -55,7 +55,17 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
         {
             if (!"".Equals(this.txtSoHoaDon.Text) && !"1/1/0001".Equals(this.dateNgayDongTien.Value.ToShortDateString()))
             {
-                DAL.C_DonKhachHang.DongTienKH(this.txtSHS.Text, this.dateNgayDongTien.Value.Date, this.txtSoHoaDon.Text);
+                double sotien= 0;
+                try 
+	            {	        
+		            sotien = double.Parse(this.txtSoTien.Text);
+	            }
+	            catch (Exception)
+	            {
+	            }
+
+
+                DAL.C_DonKhachHang.DongTienKH(this.txtSHS.Text, this.dateNgayDongTien.Value.Date, this.txtSoHoaDon.Text, this.txtSoDanhBo.Text, sotien, this.txtTinhTrangTLK.Text);
             }
         }
         bool flag = true;
@@ -114,6 +124,7 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
                         kh_sh.MODIFYDATE = DateTime.Now;
                         kh_sh.CREATEBY = DAL.C_USERS._userName;
                         kh_sh.CREATEDATE = DateTime.Now.Date;
+                       
                         if (DAL.C_KH_HoSoKhachHang.Insert(kh_sh) == false)
                         {// co roi do len dot thi cong truoc
                             MessageBox.Show(this, "Thêm Hồ Sơ Xin Phép Bị lỗi !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);

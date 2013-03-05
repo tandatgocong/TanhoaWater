@@ -25,7 +25,7 @@ namespace TanHoaWater.DAL
             }
             if (!"".Equals(diachi))
             {
-                sql += " AND ( SONHA +'  '+DUONG+',  P.'+ p.TENPHUONG+',  Q.'+q.TENQUAN) LIKE N'%" + diachi + "%'";
+                sql += " AND  replace(( SONHA +'  '+DUONG+',  P.'+ p.TENPHUONG+',  Q.'+q.TENQUAN),' ','')  LIKE N'%" + diachi.Replace(" ", "") + "%'";
             }
             TanHoaDataContext db = new TanHoaDataContext();
             db.Connection.Open();
@@ -51,7 +51,7 @@ namespace TanHoaWater.DAL
             }
             if (!"".Equals(diachi))
             {
-                sql += " AND ( SONHA +'  '+DUONG+',  P.'+ p.TENPHUONG+',  Q.'+q.TENQUAN) LIKE N'%" + diachi + "%'";
+                sql += " AND  replace(( SONHA +'  '+DUONG+',  P.'+ p.TENPHUONG+',  Q.'+q.TENQUAN),' ','')  LIKE N'%" + diachi.Replace(" ", "") + "%'";
             }
             TanHoaDataContext db = new TanHoaDataContext();
             SqlConnection conn = new SqlConnection(db.Connection.ConnectionString);
@@ -71,7 +71,8 @@ namespace TanHoaWater.DAL
             sql += " WHERE biennhan.QUAN = q.MAQUAN AND q.MAQUAN=p.MAQUAN  AND biennhan.PHUONG=p.MAPHUONG AND lhs.MALOAI=biennhan.LOAIHOSO";
             if (!"".Equals(shs))
             {
-                sql += " AND biennhan.SHS = '" + shs + "'";
+              //  sql += " AND biennhan.SHS = '" + shs + "'";
+                sql += " AND (biennhan.SHS = '" + shs + "' OR biennhan.HOSOCHA = '" + shs + "' )";
             }
             if (!"".Equals(hoten))
             {
@@ -79,7 +80,7 @@ namespace TanHoaWater.DAL
             }
             if (!"".Equals(diachi))
             {
-                sql += " AND ( SONHA +'  '+DUONG+',  P.'+ p.TENPHUONG+',  Q.'+q.TENQUAN) LIKE N'%" + diachi + "%'";
+                sql += " AND  replace(( SONHA +'  '+DUONG+',  P.'+ p.TENPHUONG+',  Q.'+q.TENQUAN),' ','')  LIKE N'%" + diachi.Replace(" ", "") + "%'";
             }
             TanHoaDataContext db = new TanHoaDataContext();
             db.Connection.Open();
@@ -105,7 +106,7 @@ namespace TanHoaWater.DAL
             }
             if (!"".Equals(diachi))
             {
-                sql += " AND ( SONHA +'  '+DUONG+',  P.'+ p.TENPHUONG+',  Q.'+q.TENQUAN) LIKE N'%" + diachi + "%'";
+                sql += " AND  replace(( SONHA +'  '+DUONG+',  P.'+ p.TENPHUONG+',  Q.'+q.TENQUAN),' ','')  LIKE N'%" + diachi.Replace(" ","") + "%'";
             }
             TanHoaDataContext db = new TanHoaDataContext();
             SqlConnection conn = new SqlConnection(db.Connection.ConnectionString);
