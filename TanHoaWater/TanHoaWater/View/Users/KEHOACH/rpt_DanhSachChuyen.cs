@@ -13,13 +13,22 @@ namespace TanHoaWater.View.Users.KEHOACH
 {
     public partial class rpt_DanhSachChuyen : Form
     {
-        public rpt_DanhSachChuyen(string dotnd, string nguoilap, string nguoiduyet)
+        public rpt_DanhSachChuyen(string dotnd, string nguoilap, string nguoiduyet, bool flag)
         {
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
-            ReportDocument rp = new rpt_DOT_QUAN();
-            rp.SetDataSource(DAL.C_BAOCAO_VIEW.BC_CHUYENDON(dotnd,nguoilap,nguoiduyet));
-            crystalReportViewer.ReportSource = rp;
+            if (flag)
+            {
+                ReportDocument rp = new rpt_DOT_QUAN_TCTB();
+                rp.SetDataSource(DAL.C_BAOCAO_VIEW.BC_CHUYENDON(dotnd, nguoilap, nguoiduyet));
+                crystalReportViewer.ReportSource = rp;
+            }
+            else {
+                ReportDocument rp = new rpt_DOT_QUAN();
+                rp.SetDataSource(DAL.C_BAOCAO_VIEW.BC_CHUYENDON(dotnd, nguoilap, nguoiduyet));
+                crystalReportViewer.ReportSource = rp;
+            }
+            
         }
     }
 }

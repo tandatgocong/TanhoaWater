@@ -287,7 +287,7 @@ namespace TanHoaWater.DAL
             {
                 TanHoaDataContext db = new TanHoaDataContext();
                 db.Connection.Open();
-                string sql = " SELECT HUY=N'Hủy',donkh.SHS,donkh.SOHOSO,HOTEN, (SONHA + '' + DUONG + ', P.' +TENPHUONG+ ', Q.'+ q.TENQUAN) as 'DIACHI',NGAYDONGTIEN,donkh.SOTIEN,donkh.DANHBO,COTLK,donkh.GHICHU,DIENTHOAI";
+                string sql = " SELECT HUY=N'Hủy',donkh.SHS,donkh.SOHOSO,HOTEN, (SONHA + ' ' + DUONG + ', P.' +TENPHUONG+ ', Q.'+ q.TENQUAN) as 'DIACHI',NGAYDONGTIEN,donkh.SOTIEN,donkh.DANHBO,COTLK,donkh.GHICHU,DIENTHOAI";
                 sql += " FROM DON_KHACHHANG donkh, PHUONG p, QUAN q, KH_HOSOKHACHHANG hosokh ";
                 sql += " WHERE donkh.QUAN = q.MAQUAN AND q.MAQUAN=p.MAQUAN AND donkh.PHUONG=p.MAPHUONG and donkh.SHS = hosokh.SHS ";
                 sql += " AND hosokh.MADOTTC=N'" + madottc + "'";

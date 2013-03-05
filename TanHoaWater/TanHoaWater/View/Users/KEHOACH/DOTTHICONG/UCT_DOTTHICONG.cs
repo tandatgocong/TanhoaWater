@@ -17,7 +17,7 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
     public partial class UCT_DOTTHICONG : UserControl
     {
         int currentPageIndex = 1;
-        int pageSize = 11;
+        int pageSize = 30;
         int pageNumber = 0;
         int FirstRow, LastRow;
         int rows;
@@ -236,6 +236,12 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
                     {
                         dottc.NGAYCHUYENHC = dateNgayChuyenHC.Value.Date;
                     }
+
+                    if (!"1/1/0001".Equals(this.dateChuyenTC.Value.ToShortDateString()))
+                    {
+                        dottc.NGAYCHUYENTC = dateChuyenTC.Value.Date;
+                    }
+
                     if (!"1/1/0001".Equals(this.dateNgayChuyenKT.Value.ToShortDateString()))
                     {
                         dottc.NGAYCHUYENKT = dateNgayChuyenKT.Value.Date;
@@ -337,7 +343,7 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
                 }
                 else
                 {
-                    dottc.SOLUONGTLK = int.Parse(this.txtSoLuong.Text);
+                    dottc.SOLUONGTLK = int.Parse(this.txtSoHoSo.Text);
                     dottc.NGAYLAP = this.dateNgayLap.Value;
                     dottc.DONVITHICONG = DAL.C_KH_DonViTC.findDVTCbyTENCTY(this.cbDonViThiCong.Text).ID;
 
@@ -345,6 +351,13 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
                     {
                         dottc.NGAYCHUYENHC = dateNgayChuyenHC.Value.Date;
                     }
+
+                    if (!"1/1/0001".Equals(this.dateChuyenTC.Value.ToShortDateString()))
+                    {
+                        dottc.NGAYCHUYENTC = dateChuyenTC.Value.Date;
+                    }
+
+
                     if (!"1/1/0001".Equals(this.dateNgayChuyenKT.Value.ToShortDateString()))
                     {
                         dottc.NGAYCHUYENKT = dateNgayChuyenKT.Value.Date;
@@ -376,8 +389,8 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
                     dottc.DONVIGSTL = DAL.C_KH_DonViTC.findDVGSTCbyName(donvigiamsatTL).ID;
                     dottc.BANGKE = this.txtBangKe.Text;
                     dottc.LOAIBANGKE = this.cbLoaiBangKe.Text;
-                    dottc.CREATEBY = DAL.C_USERS._userName;
-                    dottc.CREATEDATE = DateTime.Now.Date;
+                    dottc.MODIFYBY = DAL.C_USERS._userName;
+                    dottc.MODIFYDATE = DateTime.Now.Date;
 
                     if (DAL.C_KH_DotThiCong.UpdateDotTC(dottc) == false)
                         MessageBox.Show(this, "Cập Nhật Đợt Thi Công Không Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -450,6 +463,8 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
             this.cbDonViGiamSatTC.Text = dottc.DONVIGS;
             this.dateChuyenBu.ValueObject = dottc.CHUYENBUHANMUC;
             this.dateNgayLap.ValueObject = dottc.NGAYLAP;
+            this.dateChuyenTC.ValueObject = dottc.NGAYCHUYENTC;
+            if (!"1/1/0001".Equals(this.dateChuyenTC.Value.ToShortDateString()))
             this.cbLoaiBangKe.Text = dottc.LOAIBANGKE;
             this.dateChuyenBu.ValueObject = dottc.CHUYENBUHANMUC;
             this.dateNgayChuyenHC.ValueObject = dottc.NGAYCHUYENHC;
@@ -458,6 +473,16 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
             this.dateNgayChuyenKT.ValueObject = dottc.NGAYCHUYENKT;
             this.dateNgayThanhToan.ValueObject = dottc.NGAYTHANHTOAN;
             this.txtLyDoTroNgaiTC.Text = dottc.TRONGAITC;
+            try
+            {
+                cbLoaiBangKe.SelectedText = dottc.LOAIBANGKE;
+            }
+            catch (Exception)
+            {
+               
+            }
+
+          
 
         }
 
@@ -577,7 +602,7 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
             }
             else
             {
-                MessageBox.Show(this, "Cần Chọn Mã Đợt Để Xin Phép Đào Đường !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(this, "Cần Chọn Đợt Thi Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
         }
@@ -614,7 +639,7 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
             }
             else
             {
-                MessageBox.Show(this, "Cần Chọn Mã Đợt Để Xin Phép Đào Đường !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(this, "Cần Chọn Đợt Thi Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -636,6 +661,8 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
                 {
                     ReportDocument rp = new rpt_DanhSachHSTC_GM();
                     rp.SetDataSource(DAL.C_KH_DotThiCong.BC_DanhSachDotThiCong(madot));
+                    rp.SetParameterValue("tungay",Utilities.DateToString.NgayVN(dateTuNgay));
+                    rp.SetParameterValue("denngay", Utilities.DateToString.NgayVN(dateDenNgay));
                     rpt_Main mainReport = new rpt_Main(rp);
                     mainReport.ShowDialog();
                 }
@@ -673,7 +700,7 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
             }
             else
             {
-                MessageBox.Show(this, "Cần Chọn Mã Đợt Để Xin Phép Đào Đường !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(this, "Cần Chọn Đợt Thi Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
         }

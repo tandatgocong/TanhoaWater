@@ -74,6 +74,8 @@
             this.G_CoTL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.G_TinhTrang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.G_DienThoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtSoTien = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX11 = new DevComponents.DotNetBar.LabelX();
             ((System.ComponentModel.ISupportInitialize)(this.btPrint)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateNgayDongTien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewX1)).BeginInit();
@@ -117,7 +119,7 @@
             this.btThemMoiHoSo.Name = "btThemMoiHoSo";
             this.btThemMoiHoSo.Size = new System.Drawing.Size(122, 26);
             this.btThemMoiHoSo.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
-            this.btThemMoiHoSo.TabIndex = 739;
+            this.btThemMoiHoSo.TabIndex = 741;
             this.btThemMoiHoSo.Text = "Thêm Mới Hồ Sơ";
             this.btThemMoiHoSo.Click += new System.EventHandler(this.btThemMoiHoSo_Click);
             // 
@@ -130,7 +132,7 @@
             this.btLuuHoSo.Name = "btLuuHoSo";
             this.btLuuHoSo.Size = new System.Drawing.Size(84, 26);
             this.btLuuHoSo.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
-            this.btLuuHoSo.TabIndex = 738;
+            this.btLuuHoSo.TabIndex = 740;
             this.btLuuHoSo.Text = "Lưu Hồ Sơ";
             this.btLuuHoSo.Click += new System.EventHandler(this.btLuuHoSo_Click);
             // 
@@ -220,7 +222,7 @@
             this.txtSoHoaDon.Border.Class = "TextBoxBorder";
             this.txtSoHoaDon.Location = new System.Drawing.Point(219, 129);
             this.txtSoHoaDon.Name = "txtSoHoaDon";
-            this.txtSoHoaDon.Size = new System.Drawing.Size(127, 26);
+            this.txtSoHoaDon.Size = new System.Drawing.Size(80, 26);
             this.txtSoHoaDon.TabIndex = 736;
             // 
             // txtSHS
@@ -293,7 +295,7 @@
             // 
             this.labelX10.Location = new System.Drawing.Point(219, 106);
             this.labelX10.Name = "labelX10";
-            this.labelX10.Size = new System.Drawing.Size(181, 23);
+            this.labelX10.Size = new System.Drawing.Size(80, 23);
             this.labelX10.TabIndex = 724;
             this.labelX10.Text = "Số hóa đơn";
             // 
@@ -350,12 +352,12 @@
             this.txtSoDanhBo.Location = new System.Drawing.Point(633, 129);
             this.txtSoDanhBo.Name = "txtSoDanhBo";
             this.txtSoDanhBo.Size = new System.Drawing.Size(127, 26);
-            this.txtSoDanhBo.TabIndex = 736;
+            this.txtSoDanhBo.TabIndex = 739;
             this.txtSoDanhBo.Leave += new System.EventHandler(this.txtSoDanhBo_Leave);
             // 
             // labelX6
             // 
-            this.labelX6.Location = new System.Drawing.Point(352, 106);
+            this.labelX6.Location = new System.Drawing.Point(406, 106);
             this.labelX6.Name = "labelX6";
             this.labelX6.Size = new System.Drawing.Size(127, 23);
             this.labelX6.TabIndex = 724;
@@ -367,10 +369,10 @@
             // 
             // 
             this.txtTinhTrangTLK.Border.Class = "TextBoxBorder";
-            this.txtTinhTrangTLK.Location = new System.Drawing.Point(352, 129);
+            this.txtTinhTrangTLK.Location = new System.Drawing.Point(406, 129);
             this.txtTinhTrangTLK.Name = "txtTinhTrangTLK";
-            this.txtTinhTrangTLK.Size = new System.Drawing.Size(275, 26);
-            this.txtTinhTrangTLK.TabIndex = 736;
+            this.txtTinhTrangTLK.Size = new System.Drawing.Size(221, 26);
+            this.txtTinhTrangTLK.TabIndex = 738;
             // 
             // dataGridViewX1
             // 
@@ -526,11 +528,32 @@
             this.G_DienThoai.ReadOnly = true;
             this.G_DienThoai.Width = 110;
             // 
+            // txtSoTien
+            // 
+            // 
+            // 
+            // 
+            this.txtSoTien.Border.Class = "TextBoxBorder";
+            this.txtSoTien.Location = new System.Drawing.Point(305, 129);
+            this.txtSoTien.Name = "txtSoTien";
+            this.txtSoTien.Size = new System.Drawing.Size(95, 26);
+            this.txtSoTien.TabIndex = 737;
+            // 
+            // labelX11
+            // 
+            this.labelX11.Location = new System.Drawing.Point(319, 106);
+            this.labelX11.Name = "labelX11";
+            this.labelX11.Size = new System.Drawing.Size(59, 23);
+            this.labelX11.TabIndex = 744;
+            this.labelX11.Text = "Số Tiền";
+            // 
             // tab_CapNhatDSBoiThuong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
+            this.Controls.Add(this.txtSoTien);
+            this.Controls.Add(this.labelX11);
             this.Controls.Add(this.dataGridViewX1);
             this.Controls.Add(this.btPrint);
             this.Controls.Add(this.progressBar1);
@@ -610,5 +633,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn G_CoTL;
         private System.Windows.Forms.DataGridViewTextBoxColumn G_TinhTrang;
         private System.Windows.Forms.DataGridViewTextBoxColumn G_DienThoai;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtSoTien;
+        private DevComponents.DotNetBar.LabelX labelX11;
     }
 }

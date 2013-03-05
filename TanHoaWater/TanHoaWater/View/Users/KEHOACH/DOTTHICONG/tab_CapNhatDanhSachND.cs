@@ -42,7 +42,20 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
         public void DongTien() {
             if (!"".Equals(this.txtSoHoaDon.Text) && !"1/1/0001".Equals(this.dateNgayDongTien.Value.ToShortDateString()))
             {
-                DAL.C_DonKhachHang.DongTienKH(this.txtSHS.Text, this.dateNgayDongTien.Value.Date, this.txtSoHoaDon.Text);
+                if (!"".Equals(this.txtSoHoaDon.Text) && !"1/1/0001".Equals(this.dateNgayDongTien.Value.ToShortDateString()))
+                {
+                    double sotien = 0;
+                    try
+                    {
+                        sotien = double.Parse(this.txtSoTien.Text);
+                    }
+                    catch (Exception)
+                    {
+                    }
+
+
+                    DAL.C_DonKhachHang.DongTienKH(this.txtSHS.Text, this.dateNgayDongTien.Value.Date, this.txtSoHoaDon.Text, this.txtSoDanhBo.Text, sotien, this.txtTinhTrangTLK.Text);
+                };
             }
         }
         bool flag = true;
@@ -324,6 +337,11 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
             {
 
             }
+        }
+
+        private void txtSoDanhBo_Leave(object sender, EventArgs e)
+        {
+
         }
     }
 }

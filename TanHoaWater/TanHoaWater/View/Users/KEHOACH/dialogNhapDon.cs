@@ -189,6 +189,7 @@ namespace TanHoaWater.View.Users.KEHOACH
                             donKH.MADOT = this.txtDotNhanDon.Text;
                             donKH.SOHOSO = this.txtSoHoSo.Text;
                             donKH.SHS = this.txtSHS.Text;
+                            donKH.DANHBO = this.txtDanhBo.Text;
                             if (soho.Value > 1)
                             {
                                 donKH.TAPTHE = true;
@@ -324,7 +325,6 @@ namespace TanHoaWater.View.Users.KEHOACH
                         donKH.LOAIKH = maloaikh;
                         donKH.LOAIHOSO = DAL.C_DotNhanDon.findByMaDot(this.txtDotNhanDon.Text).LOAIDON;
                         donKH.GHICHU = this.ghichu.Text;
-
                         donKH.NGAYNHAN = ngaynhan;
                         donKH.DANHBO = this.txtDanhBo.Text;
                         donKH.CREATEBY = DAL.C_USERS._userName;

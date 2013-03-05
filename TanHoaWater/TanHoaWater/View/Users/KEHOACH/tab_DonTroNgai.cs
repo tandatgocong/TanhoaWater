@@ -125,5 +125,77 @@ namespace TanHoaWater.View.Users.KEHOACH
             this.txtSHS.Focus();
         }
 
+      
+        private void buttonX4_Click(object sender, EventArgs e)
+        {
+            int shs = int.Parse(this.txtSHS.Text);
+            int n = int.Parse(this.txtSoHo.Value.ToString());
+            string sohoso = "";
+            for (int i = 0; i < n; i++) {
+                shs = shs+1;
+                sohoso += "'" + (shs) + "',";
+            }
+            sohoso = sohoso+"''";
+
+            string sql="SELECT  biennhan.SHS, biennhan.HOTEN,( SONHA +'  '+DUONG+',  P.'+ p.TENPHUONG+',  Q.'+q.TENQUAN) as 'DIACHI',DIENTHOAI  ";
+sql += " FROM QUAN q,PHUONG p,DON_KHACHHANG biennhan ";
+sql += " WHERE biennhan.QUAN = q.MAQUAN AND q.MAQUAN=p.MAQUAN   ";
+sql += "  AND biennhan.PHUONG=p.MAPHUONG ";
+sql += "  AND biennhan.SHS IN (" + sohoso + ") ";
+dataGridView1.DataSource = DAL.LinQConnection.getDataTable(sql);
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (e.ColumnIndex == 0)
+                {
+                    for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                    {
+                        this.dataGridView1.Rows[i].Cells[0].Value = "False";
+                    }
+                    this.dataGridView1.Rows[e.RowIndex].Cells[0].Value = "True";
+
+                }
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+
+        private void buttonX1_Click(object sender, EventArgs e)
+        {
+            string parent = "";
+            int i = 0;
+            bool flag = false;
+            for ( i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+                if ("True".Equals(this.dataGridView1.Rows[i].Cells[0].Value + ""))
+                {
+                    parent = this.dataGridView1.Rows[i].Cells[1].Value + "";
+                    flag = true;
+                    break;
+                   
+                }
+            }
+            if (flag)
+            {
+                this.txtHoTen.Text = this.txtHoTen.Text.Replace(" (ĐD " + txtSoHo.Value + " Hộ)", "");
+                txtSoHo.Value = 1;
+                string sql = "UPDATE DON_KHACHHANG SET SOHO=0, HOTEN='" + this.txtHoTen.Text.Replace(" (ĐD " + txtSoHo.Value + " Hộ)", "") + "', SONHA_TTK=N'Đại diện trở ngại chuyển ĐD hồ sơ : " + parent + "'  WHERE SHS='" + this.txtSHS.Text + "'";
+                DAL.LinQConnection.ExecuteCommand_(sql);
+                sql = "UPDATE DON_KHACHHANG SET SOHO=" + dataGridView1.Rows.Count + ", HOTEN =(HOTEN + N' (ĐD " + dataGridView1.Rows.Count + " Hộ)'), HOSOCHA='" + this.txtSHS.Text + "'" + " WHERE SHS='" + parent + "'";
+                DAL.LinQConnection.ExecuteCommand_(sql);
+                this.dataGridView1.Rows[i].Cells[2].Value = this.dataGridView1.Rows[i].Cells[2].Value + " (ĐD " + dataGridView1.Rows.Count + " Hộ)";
+                MessageBox.Show(this, "Cập Nhật Hồ Sơ Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else {
+                MessageBox.Show(this, "Cập Nhật Hồ Sơ Lỗi !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
     }
 }

@@ -29,15 +29,17 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabCapNhatDS = new DevComponents.DotNetBar.TabControlPanel();
             this.tabItem2 = new DevComponents.DotNetBar.TabItem(this.components);
             this.tabItem1 = new DevComponents.DotNetBar.TabItem(this.components);
             this.tabDanhSachDot = new DevComponents.DotNetBar.TabControlPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dateChuyenTC = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
+            this.labelX15 = new DevComponents.DotNetBar.LabelX();
             this.btChinhSuaDanhSach = new DevComponents.DotNetBar.ButtonX();
             this.btQuyetDinh = new DevComponents.DotNetBar.ButtonX();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -102,8 +104,13 @@
             this.tabItem3 = new DevComponents.DotNetBar.TabItem(this.components);
             this.tabControlPanel1 = new DevComponents.DotNetBar.TabControlPanel();
             this.tabItem4 = new DevComponents.DotNetBar.TabItem(this.components);
+            this.dateTuNgay = new System.Windows.Forms.DateTimePicker();
+            this.dateDenNgay = new System.Windows.Forms.DateTimePicker();
+            this.labelX19 = new DevComponents.DotNetBar.LabelX();
+            this.labelX22 = new DevComponents.DotNetBar.LabelX();
             this.tabDanhSachDot.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dateChuyenTC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.next)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateNgayThanhToan)).BeginInit();
@@ -171,6 +178,12 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.dateTuNgay);
+            this.panel1.Controls.Add(this.dateDenNgay);
+            this.panel1.Controls.Add(this.labelX19);
+            this.panel1.Controls.Add(this.labelX22);
+            this.panel1.Controls.Add(this.dateChuyenTC);
+            this.panel1.Controls.Add(this.labelX15);
             this.panel1.Controls.Add(this.btChinhSuaDanhSach);
             this.panel1.Controls.Add(this.btQuyetDinh);
             this.panel1.Controls.Add(this.pictureBox2);
@@ -227,6 +240,61 @@
             this.panel1.Size = new System.Drawing.Size(995, 585);
             this.panel1.TabIndex = 697;
             // 
+            // dateChuyenTC
+            // 
+            // 
+            // 
+            // 
+            this.dateChuyenTC.BackgroundStyle.Class = "DateTimeInputBackground";
+            this.dateChuyenTC.BackgroundStyle.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
+            this.dateChuyenTC.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
+            this.dateChuyenTC.ButtonDropDown.Visible = true;
+            this.dateChuyenTC.CustomFormat = "dd/MM/yyyy";
+            this.dateChuyenTC.Format = DevComponents.Editors.eDateTimePickerFormat.Custom;
+            this.dateChuyenTC.Location = new System.Drawing.Point(505, 77);
+            // 
+            // 
+            // 
+            this.dateChuyenTC.MonthCalendar.AnnuallyMarkedDates = new System.DateTime[0];
+            // 
+            // 
+            // 
+            this.dateChuyenTC.MonthCalendar.BackgroundStyle.BackColor = System.Drawing.SystemColors.Window;
+            this.dateChuyenTC.MonthCalendar.ClearButtonVisible = true;
+            // 
+            // 
+            // 
+            this.dateChuyenTC.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
+            this.dateChuyenTC.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90;
+            this.dateChuyenTC.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
+            this.dateChuyenTC.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.dateChuyenTC.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
+            this.dateChuyenTC.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1;
+            this.dateChuyenTC.MonthCalendar.DisplayMonth = new System.DateTime(2011, 11, 1, 0, 0, 0, 0);
+            this.dateChuyenTC.MonthCalendar.MarkedDates = new System.DateTime[0];
+            this.dateChuyenTC.MonthCalendar.MonthlyMarkedDates = new System.DateTime[0];
+            // 
+            // 
+            // 
+            this.dateChuyenTC.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.dateChuyenTC.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90;
+            this.dateChuyenTC.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.dateChuyenTC.MonthCalendar.TodayButtonVisible = true;
+            this.dateChuyenTC.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
+            this.dateChuyenTC.Name = "dateChuyenTC";
+            this.dateChuyenTC.Size = new System.Drawing.Size(108, 26);
+            this.dateChuyenTC.TabIndex = 715;
+            // 
+            // labelX15
+            // 
+            this.labelX15.BackColor = System.Drawing.Color.Transparent;
+            this.labelX15.Location = new System.Drawing.Point(500, 54);
+            this.labelX15.Margin = new System.Windows.Forms.Padding(4);
+            this.labelX15.Name = "labelX15";
+            this.labelX15.Size = new System.Drawing.Size(120, 22);
+            this.labelX15.TabIndex = 716;
+            this.labelX15.Text = "Chuyển Thi Công";
+            // 
             // btChinhSuaDanhSach
             // 
             this.btChinhSuaDanhSach.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
@@ -248,7 +316,7 @@
             this.btQuyetDinh.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btQuyetDinh.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btQuyetDinh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btQuyetDinh.Location = new System.Drawing.Point(701, 398);
+            this.btQuyetDinh.Location = new System.Drawing.Point(701, 394);
             this.btQuyetDinh.Name = "btQuyetDinh";
             this.btQuyetDinh.Size = new System.Drawing.Size(235, 23);
             this.btQuyetDinh.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
@@ -304,7 +372,7 @@
             this.btInDanhSachGanMoi.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btInDanhSachGanMoi.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btInDanhSachGanMoi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btInDanhSachGanMoi.Location = new System.Drawing.Point(699, 438);
+            this.btInDanhSachGanMoi.Location = new System.Drawing.Point(699, 425);
             this.btInDanhSachGanMoi.Name = "btInDanhSachGanMoi";
             this.btInDanhSachGanMoi.Size = new System.Drawing.Size(235, 23);
             this.btInDanhSachGanMoi.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
@@ -345,7 +413,7 @@
             this.dateNgayThanhToan.ButtonDropDown.Visible = true;
             this.dateNgayThanhToan.CustomFormat = "dd/MM/yyyy";
             this.dateNgayThanhToan.Format = DevComponents.Editors.eDateTimePickerFormat.Custom;
-            this.dateNgayThanhToan.Location = new System.Drawing.Point(808, 81);
+            this.dateNgayThanhToan.Location = new System.Drawing.Point(856, 76);
             // 
             // 
             // 
@@ -376,7 +444,7 @@
             this.dateNgayThanhToan.MonthCalendar.TodayButtonVisible = true;
             this.dateNgayThanhToan.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
             this.dateNgayThanhToan.Name = "dateNgayThanhToan";
-            this.dateNgayThanhToan.Size = new System.Drawing.Size(154, 26);
+            this.dateNgayThanhToan.Size = new System.Drawing.Size(106, 26);
             this.dateNgayThanhToan.TabIndex = 10;
             // 
             // dateNgayChuyenKT
@@ -390,7 +458,7 @@
             this.dateNgayChuyenKT.ButtonDropDown.Visible = true;
             this.dateNgayChuyenKT.CustomFormat = "dd/MM/yyyy";
             this.dateNgayChuyenKT.Format = DevComponents.Editors.eDateTimePickerFormat.Custom;
-            this.dateNgayChuyenKT.Location = new System.Drawing.Point(647, 80);
+            this.dateNgayChuyenKT.Location = new System.Drawing.Point(742, 76);
             // 
             // 
             // 
@@ -421,7 +489,7 @@
             this.dateNgayChuyenKT.MonthCalendar.TodayButtonVisible = true;
             this.dateNgayChuyenKT.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
             this.dateNgayChuyenKT.Name = "dateNgayChuyenKT";
-            this.dateNgayChuyenKT.Size = new System.Drawing.Size(154, 26);
+            this.dateNgayChuyenKT.Size = new System.Drawing.Size(108, 26);
             this.dateNgayChuyenKT.TabIndex = 9;
             // 
             // dateChuyenBu
@@ -434,7 +502,7 @@
             this.dateChuyenBu.ButtonDropDown.Visible = true;
             this.dateChuyenBu.CustomFormat = "dd/MM/yyyy";
             this.dateChuyenBu.Format = DevComponents.Editors.eDateTimePickerFormat.Custom;
-            this.dateChuyenBu.Location = new System.Drawing.Point(531, 77);
+            this.dateChuyenBu.Location = new System.Drawing.Point(628, 76);
             // 
             // 
             // 
@@ -602,7 +670,7 @@
             this.cbDonViTuVanGSTLMD.ItemHeight = 20;
             this.cbDonViTuVanGSTLMD.Location = new System.Drawing.Point(266, 76);
             this.cbDonViTuVanGSTLMD.Name = "cbDonViTuVanGSTLMD";
-            this.cbDonViTuVanGSTLMD.Size = new System.Drawing.Size(253, 26);
+            this.cbDonViTuVanGSTLMD.Size = new System.Drawing.Size(232, 26);
             this.cbDonViTuVanGSTLMD.TabIndex = 7;
             // 
             // cbDonViTaiLapMD
@@ -621,9 +689,9 @@
             // 
             this.groupBox2.Controls.Add(this.btCapNhatBoiTuong);
             this.groupBox2.Controls.Add(this.btInDanhSachBt);
-            this.groupBox2.Location = new System.Drawing.Point(701, 476);
+            this.groupBox2.Location = new System.Drawing.Point(701, 490);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(225, 106);
+            this.groupBox2.Size = new System.Drawing.Size(225, 90);
             this.groupBox2.TabIndex = 706;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Hồ Sơ Bồi Thường";
@@ -662,27 +730,27 @@
             this.gridDotThiCong.AllowUserToDeleteRows = false;
             this.gridDotThiCong.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
             this.gridDotThiCong.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 12F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridDotThiCong.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Times New Roman", 12F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridDotThiCong.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.gridDotThiCong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridDotThiCong.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.gridSoDot,
             this.gridNgay,
             this.girdLoaiDot});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 12F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gridDotThiCong.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Times New Roman", 12F);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridDotThiCong.DefaultCellStyle = dataGridViewCellStyle8;
             this.gridDotThiCong.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.gridDotThiCong.Location = new System.Drawing.Point(13, 262);
             this.gridDotThiCong.Name = "gridDotThiCong";
@@ -697,8 +765,8 @@
             // gridSoDot
             // 
             this.gridSoDot.DataPropertyName = "MADOTTC";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.gridSoDot.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.gridSoDot.DefaultCellStyle = dataGridViewCellStyle6;
             this.gridSoDot.HeaderText = "Số Đợt TC";
             this.gridSoDot.Name = "gridSoDot";
             this.gridSoDot.ReadOnly = true;
@@ -707,9 +775,9 @@
             // gridNgay
             // 
             this.gridNgay.DataPropertyName = "NGAYLAP";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.Format = "dd/MM/yyyy";
-            this.gridNgay.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.Format = "dd/MM/yyyy";
+            this.gridNgay.DefaultCellStyle = dataGridViewCellStyle7;
             this.gridNgay.HeaderText = "Ngày Lập";
             this.gridNgay.Name = "gridNgay";
             this.gridNgay.ReadOnly = true;
@@ -864,20 +932,20 @@
             // labelX20
             // 
             this.labelX20.BackColor = System.Drawing.Color.Transparent;
-            this.labelX20.Location = new System.Drawing.Point(646, 58);
+            this.labelX20.Location = new System.Drawing.Point(742, 53);
             this.labelX20.Margin = new System.Windows.Forms.Padding(4);
             this.labelX20.Name = "labelX20";
-            this.labelX20.Size = new System.Drawing.Size(154, 22);
+            this.labelX20.Size = new System.Drawing.Size(108, 22);
             this.labelX20.TabIndex = 695;
-            this.labelX20.Text = "Ngày chuyển Kế Toán";
+            this.labelX20.Text = "Chuyển K.Toán";
             // 
             // labelX18
             // 
             this.labelX18.BackColor = System.Drawing.Color.Transparent;
-            this.labelX18.Location = new System.Drawing.Point(808, 58);
+            this.labelX18.Location = new System.Drawing.Point(856, 53);
             this.labelX18.Margin = new System.Windows.Forms.Padding(4);
             this.labelX18.Name = "labelX18";
-            this.labelX18.Size = new System.Drawing.Size(154, 22);
+            this.labelX18.Size = new System.Drawing.Size(119, 22);
             this.labelX18.TabIndex = 695;
             this.labelX18.Text = "Ngày Thanh Toán";
             // 
@@ -916,7 +984,7 @@
             // labelX7
             // 
             this.labelX7.BackColor = System.Drawing.Color.Transparent;
-            this.labelX7.Location = new System.Drawing.Point(531, 54);
+            this.labelX7.Location = new System.Drawing.Point(628, 53);
             this.labelX7.Margin = new System.Windows.Forms.Padding(4);
             this.labelX7.Name = "labelX7";
             this.labelX7.Size = new System.Drawing.Size(101, 22);
@@ -1165,6 +1233,40 @@
             this.tabItem4.Text = "Bảng Kê  Nhận Đơn";
             this.tabItem4.Click += new System.EventHandler(this.tabItem4_Click);
             // 
+            // dateTuNgay
+            // 
+            this.dateTuNgay.CustomFormat = "dd/MM/yyyy";
+            this.dateTuNgay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTuNgay.Location = new System.Drawing.Point(764, 457);
+            this.dateTuNgay.Name = "dateTuNgay";
+            this.dateTuNgay.Size = new System.Drawing.Size(100, 26);
+            this.dateTuNgay.TabIndex = 719;
+            // 
+            // dateDenNgay
+            // 
+            this.dateDenNgay.CustomFormat = "dd/MM/yyyy";
+            this.dateDenNgay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateDenNgay.Location = new System.Drawing.Point(891, 457);
+            this.dateDenNgay.Name = "dateDenNgay";
+            this.dateDenNgay.Size = new System.Drawing.Size(99, 26);
+            this.dateDenNgay.TabIndex = 720;
+            // 
+            // labelX19
+            // 
+            this.labelX19.Location = new System.Drawing.Point(864, 459);
+            this.labelX19.Name = "labelX19";
+            this.labelX19.Size = new System.Drawing.Size(45, 23);
+            this.labelX19.TabIndex = 717;
+            this.labelX19.Text = "Đến";
+            // 
+            // labelX22
+            // 
+            this.labelX22.Location = new System.Drawing.Point(697, 459);
+            this.labelX22.Name = "labelX22";
+            this.labelX22.Size = new System.Drawing.Size(75, 23);
+            this.labelX22.TabIndex = 718;
+            this.labelX22.Text = "Từ Ngày";
+            // 
             // UCT_DOTTHICONG
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -1179,6 +1281,7 @@
             this.tabDanhSachDot.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dateChuyenTC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.next)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateNgayThanhToan)).EndInit();
@@ -1265,6 +1368,12 @@
         private DevComponents.DotNetBar.ButtonX btChinhSuaDanhSach;
         private DevComponents.DotNetBar.TabControlPanel tabControlPanel2;
         private DevComponents.DotNetBar.TabItem tabItem5;
+        private DevComponents.Editors.DateTimeAdv.DateTimeInput dateChuyenTC;
+        private DevComponents.DotNetBar.LabelX labelX15;
+        private System.Windows.Forms.DateTimePicker dateTuNgay;
+        private System.Windows.Forms.DateTimePicker dateDenNgay;
+        private DevComponents.DotNetBar.LabelX labelX19;
+        private DevComponents.DotNetBar.LabelX labelX22;
 
     }
 }

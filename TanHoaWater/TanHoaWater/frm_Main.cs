@@ -226,24 +226,33 @@ namespace TanHoaWater
                     this.iconMenuPanel.Controls.Add(group_VTTH);
                     group_VTTH.Visible = true;
 
-                    
-                    if("KH".Contains(DAL.C_USERS._maquyen)){
+
+                    if ("KH".Equals(DAL.C_USERS._maquyen))
+                    {
                         this.KH_DotNhanDon.Visible = true;
                         this.KH_biennhan.Visible = true;
                         this.KH_DonKhachHang.Visible = true;
                     }
 
-                    if ("TC".Contains(DAL.C_USERS._maquyen))
+                    if ("KHTC".Equals(DAL.C_USERS._maquyen))
+                    {
+                        this.KH_DotNhanDon.Visible = true;
+                        this.KH_biennhan.Visible = true;
+                        this.KH_DonKhachHang.Visible = true;
+                        this.TC_DotThiCong.Visible = true;
+                    }
+
+                    if ("TC".Equals(DAL.C_USERS._maquyen))
                     {
                         this.TC_DotThiCong.Visible = true;
                     }
 
-                    if ("HC".Contains(DAL.C_USERS._maquyen))
+                    if ("HC".Equals(DAL.C_USERS._maquyen))
                     {
                         this.HC_HoanCong.Visible = true;
                     }
 
-                    if ("DD".Contains(DAL.C_USERS._maquyen))
+                    if ("DD".Equals(DAL.C_USERS._maquyen))
                     {
                         this.DD_XinPhepDD.Visible = true;
                     }

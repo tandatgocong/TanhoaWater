@@ -281,6 +281,31 @@ namespace TanHoaWater.DAL
             if (table.Rows.Count > 0)
                 return true;
 
+            sql = " SELECT SONHA = replace(SONHA,' ',''), DUONG = replace(DUONG,' ',''),PHUONG,QUAN ";
+            sql += " FROM BIENNHANDON ";
+            sql += " WHERE LOAIDON='" + loaiHS + "' AND SONHA=N'" + sonha + "' AND DUONG=N'" + duong + "' AND PHUONG='" + phuong + "' AND QUAN='" + quan + "' ";
+           adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
+            table = new DataTable();
+            adapter.Fill(table);
+            db.Connection.Close();
+            if (table.Rows.Count > 0)
+                return true;
+
+
+            return false;
+        }
+        public static bool findByAddressAndLoaiHS_(string dot, string loaiHS, string sonha, string duong, string phuong, string quan)
+        {
+            TanHoaDataContext db = new TanHoaDataContext();
+            string sql = " SELECT SONHA = replace(SONHA,' ',''), DUONG = replace(DUONG,' ',''),PHUONG,QUAN ";
+            sql += " FROM DON_KHACHHANG ";
+            sql += " WHERE LOAIHOSO='" + loaiHS + "' AND SONHA=N'" + sonha + "' AND DUONG=N'" + duong + "' AND PHUONG='" + phuong + "' AND QUAN='" + quan + "' ";
+            SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            db.Connection.Close();
+            if (table.Rows.Count > 0)
+                return true;
             return false;
         }
 
@@ -622,7 +647,8 @@ namespace TanHoaWater.DAL
 
         }
 
-        public static void DongTienKH(string shs, DateTime ngaydong, string sohoadon) {
+        public static void DongTienKH(string shs, DateTime ngaydong, string sohoadon, string _DANHBO, double _SOTIEN, string _GHICHU)
+        {
             try
             {
                 TanHoaDataContext db = new TanHoaDataContext();
@@ -631,6 +657,9 @@ namespace TanHoaWater.DAL
                 if (donkh != null)
                 {
                     donkh.SOHOADON = sohoadon;
+                    donkh.DANHBO = _DANHBO;
+                    donkh.SOTIEN = _SOTIEN;
+                    donkh.GHICHU = _GHICHU;
                     donkh.NGAYDONGTIEN = ngaydong;
                     donkh.MODIFYBY = DAL.C_USERS._userName;
                     donkh.MODIFYDATE = DateTime.Now;
@@ -643,6 +672,32 @@ namespace TanHoaWater.DAL
                 log.Error(ex.Message);
             }
         }
+        /// <summary>
+        /// /
+        public static void DongTienKH_(string shs, DateTime ngaydong, string sohoadon)
+        {
+            try
+            {
+                TanHoaDataContext db = new TanHoaDataContext();
+                var data = from don in db.DON_KHACHHANGs where don.SHS == shs select don;
+                DON_KHACHHANG donkh = data.SingleOrDefault();
+                if (donkh != null)
+                {
+                    donkh.NGAYDONGTIEN = ngaydong;
+                    donkh.MODIFYBY = DAL.C_USERS._userName;
+                    donkh.MODIFYDATE = DateTime.Now;
+
+                    db.SubmitChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+            }
+        }
+        /// </summary>
+        /// <param name="sohoso"></param>
+        /// <returns></returns>
       
         
         public static DON_KHACHHANG findBySHSEdit(string sohoso)
@@ -663,6 +718,7 @@ namespace TanHoaWater.DAL
             sql += ", DUONG = N'" + donkh.DUONG + "'";
             sql += ", PHUONG = '" + donkh.PHUONG + "'";
             sql += ", QUAN = '" + donkh.QUAN + "'";
+            sql += ", DANHBO = '" + donkh.DANHBO + "'";
             sql += ", LOAIKH = '" + donkh.LOAIKH + "'";
             sql += ", DIENTHOAI = '" + donkh.DIENTHOAI + "'";
             sql += ", GHICHU = '" + donkh.GHICHU + "'";
