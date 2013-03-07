@@ -90,6 +90,7 @@
             this.btPrint.Size = new System.Drawing.Size(32, 22);
             this.btPrint.TabIndex = 742;
             this.btPrint.TabStop = false;
+            this.btPrint.Visible = false;
             this.btPrint.Click += new System.EventHandler(this.btPrint_Click);
             // 
             // progressBar1

@@ -1726,6 +1726,26 @@
       <Association Name="ROLE_USER" Member="ROLE1" ThisKey="ROLEID" OtherKey="ROLEID" Type="ROLE" IsForeignKey="true" />
     </Type>
   </Table>
+  <Table Name="dbo.BG_CHITIETBG" Member="BG_CHITIETBGs">
+    <Type Name="BG_CHITIETBG">
+      <Column Name="STT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SHS" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MAHIEU" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="MAHDG" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="TENVT" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="DVT" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="NHOM" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="LOAISN" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="KHOILUONG" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="DONGIAVL" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="DONGIANC" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="DONGIAMTC" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TT_VL" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TT_NC" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TT_MTC" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="NHOMVT" Type="System.String" DbType="NVarChar(1) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
   <Table Name="dbo.KH_DOTTHICONG" Member="KH_DOTTHICONGs">
     <Type Name="KH_DOTTHICONG">
       <Column Name="MADOTTC" Type="System.String" DbType="NVarChar(250) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -1754,30 +1774,12 @@
       <Column Name="MODIFYBY" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
       <Column Name="MODIFYDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="NGAYCHUYENTC" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TCTUNGAY" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TCDENNGAY" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Association Name="KH_DOTTHICONG_KH_HOSOKHACHHANG" Member="KH_HOSOKHACHHANGs" ThisKey="MADOTTC" OtherKey="MADOTTC" Type="KH_HOSOKHACHHANG" />
       <Association Name="KH_DONVIGIAMSATTL_KH_DOTTHICONG" Member="KH_DONVIGIAMSATTL" ThisKey="DONVIGSTL" OtherKey="ID" Type="KH_DONVIGIAMSATTL" IsForeignKey="true" />
       <Association Name="KH_DONVITHICONG_KH_DOTTHICONG" Member="KH_DONVITHICONG" ThisKey="DONVITHICONG" OtherKey="ID" Type="KH_DONVITHICONG" IsForeignKey="true" />
       <Association Name="KH_DONVITAILAP_KH_DOTTHICONG" Member="KH_DONVITAILAP" ThisKey="DONVITAILAP" OtherKey="ID" Type="KH_DONVITAILAP" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.BG_CHITIETBG" Member="BG_CHITIETBGs">
-    <Type Name="BG_CHITIETBG">
-      <Column Name="STT" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="SHS" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="MAHIEU" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="MAHDG" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="TENVT" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
-      <Column Name="DVT" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
-      <Column Name="NHOM" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
-      <Column Name="LOAISN" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="KHOILUONG" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="DONGIAVL" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="DONGIANC" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="DONGIAMTC" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="TT_VL" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="TT_NC" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="TT_MTC" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="NHOMVT" Type="System.String" DbType="NVarChar(1) NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
   <Function Name="dbo.TONGKETCHIPHI" Method="TONGKETCHIPHI">
