@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="TANHOA_WATER" Class="TanHoaDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=SERVER9;Initial Catalog=TANHOA_WATER;Persist Security Info=True;User ID=sa" SettingsObjectName="TanHoaWater.Properties.Settings" SettingsPropertyName="TANHOA_WATERConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=SERVER9;Initial Catalog=TANHOA_WATER;Persist Security Info=True;User ID=sa" SettingsObjectName="TanHoaWater.Properties.Settings" SettingsPropertyName="TANHOA_WATERConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.BG_CONGTACBANGIA" Member="BG_CONGTACBANGIAs">
     <Type Name="BG_CONGTACBANGIA">
       <Column Name="STT" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -869,25 +869,6 @@
       <Column Name="MODIFYLOG" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
       <Association Name="DON_KHACHHANG_TOTHIETKE" Member="DON_KHACHHANG" ThisKey="SHS" OtherKey="SHS" Type="DON_KHACHHANG" IsForeignKey="true" />
       <Association Name="USER_TOTHIETKE" Member="USER" ThisKey="SODOVIEN" OtherKey="USERNAME" Type="USER" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.BG_CHITIETBG" Member="BG_CHITIETBGs">
-    <Type Name="BG_CHITIETBG">
-      <Column Name="SHS" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="MAHIEU" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="MAHDG" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="TENVT" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
-      <Column Name="DVT" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
-      <Column Name="NHOM" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
-      <Column Name="LOAISN" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="KHOILUONG" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="DONGIAVL" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="DONGIANC" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="DONGIAMTC" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="TT_VL" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="TT_NC" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="TT_MTC" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="NHOMVT" Type="System.String" DbType="NVarChar(1) NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
   <Table Name="dbo.W_KH_BCTONGKET" Member="W_KH_BCTONGKETs">
@@ -1777,6 +1758,26 @@
       <Association Name="KH_DONVIGIAMSATTL_KH_DOTTHICONG" Member="KH_DONVIGIAMSATTL" ThisKey="DONVIGSTL" OtherKey="ID" Type="KH_DONVIGIAMSATTL" IsForeignKey="true" />
       <Association Name="KH_DONVITHICONG_KH_DOTTHICONG" Member="KH_DONVITHICONG" ThisKey="DONVITHICONG" OtherKey="ID" Type="KH_DONVITHICONG" IsForeignKey="true" />
       <Association Name="KH_DONVITAILAP_KH_DOTTHICONG" Member="KH_DONVITAILAP" ThisKey="DONVITAILAP" OtherKey="ID" Type="KH_DONVITAILAP" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BG_CHITIETBG" Member="BG_CHITIETBGs">
+    <Type Name="BG_CHITIETBG">
+      <Column Name="STT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SHS" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MAHIEU" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="MAHDG" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="TENVT" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="DVT" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="NHOM" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="LOAISN" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="KHOILUONG" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="DONGIAVL" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="DONGIANC" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="DONGIAMTC" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TT_VL" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TT_NC" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TT_MTC" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="NHOMVT" Type="System.String" DbType="NVarChar(1) NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
   <Function Name="dbo.TONGKETCHIPHI" Method="TONGKETCHIPHI">

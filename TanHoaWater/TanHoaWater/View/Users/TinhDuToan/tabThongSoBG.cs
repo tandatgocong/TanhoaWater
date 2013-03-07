@@ -46,6 +46,7 @@ namespace TanHoaWater.View.Users.TinhDuToan
                     LINE3.Text = report.LINE3;
                     LINE4.Text = report.LINE4;
                     LINE5.Text = report.LINE5;
+                    line6.Text = report.LINE6;
                     DuyetChucVu.Text = report.DUYET;
                     DuyetNguoiDuyet.Text = report.NGUOIDUYET;
                     THANHLAP.Text = report.THANHLAP;
@@ -261,6 +262,7 @@ namespace TanHoaWater.View.Users.TinhDuToan
                 report.LINE3 = LINE3.Text;
                 report.LINE4 = LINE4.Text;
                 report.LINE5 = LINE5.Text;
+                report.LINE6 = line6.Text;
                 report.DUYET = DuyetChucVu.Text;
                 report.NGUOIDUYET = DuyetNguoiDuyet.Text;
                 report.THANHLAP = THANHLAP.Text;

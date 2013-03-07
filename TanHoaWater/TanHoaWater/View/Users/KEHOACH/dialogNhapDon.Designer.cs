@@ -30,7 +30,6 @@
         {
             this.txtSHS = new System.Windows.Forms.MaskedTextBox();
             this.dienthoai = new System.Windows.Forms.MaskedTextBox();
-            this.txtDanhBo = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.label15 = new System.Windows.Forms.Label();
             this.ghichu = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.label10 = new System.Windows.Forms.Label();
@@ -55,6 +54,7 @@
             this.buttonX2 = new DevComponents.DotNetBar.ButtonX();
             this.btInsert = new DevComponents.DotNetBar.ButtonX();
             this.cbLoaiHS = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.txtDanhBo = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.soho)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,17 +75,6 @@
             this.dienthoai.PromptChar = ' ';
             this.dienthoai.Size = new System.Drawing.Size(116, 26);
             this.dienthoai.TabIndex = 49;
-            // 
-            // txtDanhBo
-            // 
-            // 
-            // 
-            // 
-            this.txtDanhBo.Border.Class = "TextBoxBorder";
-            this.txtDanhBo.Location = new System.Drawing.Point(128, 203);
-            this.txtDanhBo.Name = "txtDanhBo";
-            this.txtDanhBo.Size = new System.Drawing.Size(191, 26);
-            this.txtDanhBo.TabIndex = 55;
             // 
             // label15
             // 
@@ -349,12 +338,21 @@
             this.cbLoaiHS.TabIndex = 59;
             this.cbLoaiHS.Visible = false;
             // 
+            // txtDanhBo
+            // 
+            this.txtDanhBo.Location = new System.Drawing.Point(128, 203);
+            this.txtDanhBo.Mask = "0000-0000000";
+            this.txtDanhBo.Name = "txtDanhBo";
+            this.txtDanhBo.Size = new System.Drawing.Size(131, 26);
+            this.txtDanhBo.TabIndex = 60;
+            // 
             // dialogNhapDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(497, 338);
+            this.Controls.Add(this.txtDanhBo);
             this.Controls.Add(this.cbLoaiHS);
             this.Controls.Add(this.buttonX2);
             this.Controls.Add(this.btInsert);
@@ -362,7 +360,6 @@
             this.Controls.Add(this.txtSHS);
             this.Controls.Add(this.dienthoai);
             this.Controls.Add(this.txtDotNhanDon);
-            this.Controls.Add(this.txtDanhBo);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.ghichu);
             this.Controls.Add(this.label10);
@@ -383,7 +380,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label8);
             this.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "dialogNhapDon";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nhập Đơn Khách Hàng";
@@ -397,7 +394,6 @@
 
         private System.Windows.Forms.MaskedTextBox txtSHS;
         private System.Windows.Forms.MaskedTextBox dienthoai;
-        private DevComponents.DotNetBar.Controls.TextBoxX txtDanhBo;
         private System.Windows.Forms.Label label15;
         private DevComponents.DotNetBar.Controls.TextBoxX ghichu;
         private System.Windows.Forms.Label label10;
@@ -422,5 +418,6 @@
         private DevComponents.DotNetBar.ButtonX buttonX2;
         private DevComponents.DotNetBar.ButtonX btInsert;
         private DevComponents.DotNetBar.Controls.ComboBoxEx cbLoaiHS;
+        private System.Windows.Forms.MaskedTextBox txtDanhBo;
     }
 }

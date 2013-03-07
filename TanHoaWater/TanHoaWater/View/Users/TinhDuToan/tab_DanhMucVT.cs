@@ -472,6 +472,7 @@ namespace TanHoaWater.View.Users.TinhDuToan
 
         private void GridBoVT_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            
             //try
             //{
 
@@ -759,6 +760,24 @@ namespace TanHoaWater.View.Users.TinhDuToan
             tabControlPanel4.Controls.Add(new tab_BangGiaDieuChinh());
         }
 
-        
+        private void GridDonGiaVT_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (e.ColumnIndex == 6)
+                {
+                    for (int i = 0; i < GridDonGiaVT.Rows.Count; i++)
+                    {
+                        this.GridDonGiaVT.Rows[i].Cells["dg_Chon"].Value = "False";
+                    }
+                    this.GridDonGiaVT.Rows[e.RowIndex].Cells["dg_Chon"].Value = "True";
+
+                }
+            }
+            catch (Exception)
+            {
+
+            }
+        }
     }
 }

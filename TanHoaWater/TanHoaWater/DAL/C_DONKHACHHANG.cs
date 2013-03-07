@@ -721,7 +721,7 @@ namespace TanHoaWater.DAL
             sql += ", DANHBO = '" + donkh.DANHBO + "'";
             sql += ", LOAIKH = '" + donkh.LOAIKH + "'";
             sql += ", DIENTHOAI = '" + donkh.DIENTHOAI + "'";
-            sql += ", GHICHU = '" + donkh.GHICHU + "'";
+            sql += ", GHICHU = N'" + donkh.GHICHU + "'";
             sql += ", MADOT = '" + donkh.MADOT + "'";
             sql += ", MODIFYBY = '" + donkh.MODIFYBY + "'";
             sql += ", MODIFYDATE = '" + donkh.MODIFYDATE + "'";
