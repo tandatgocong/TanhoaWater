@@ -58,7 +58,6 @@
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.lbDotTc = new DevComponents.DotNetBar.LabelX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
-            this.txtSoDanhBo = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX6 = new DevComponents.DotNetBar.LabelX();
             this.txtTinhTrangTLK = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.dataGridViewX1 = new DevComponents.DotNetBar.Controls.DataGridViewX();
@@ -76,6 +75,7 @@
             this.G_DienThoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtSoTien = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX11 = new DevComponents.DotNetBar.LabelX();
+            this.txtSoDanhBo = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.btPrint)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateNgayDongTien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewX1)).BeginInit();
@@ -343,18 +343,6 @@
             this.labelX1.TabIndex = 724;
             this.labelX1.Text = "Số danh bộ";
             // 
-            // txtSoDanhBo
-            // 
-            // 
-            // 
-            // 
-            this.txtSoDanhBo.Border.Class = "TextBoxBorder";
-            this.txtSoDanhBo.Location = new System.Drawing.Point(633, 129);
-            this.txtSoDanhBo.Name = "txtSoDanhBo";
-            this.txtSoDanhBo.Size = new System.Drawing.Size(127, 26);
-            this.txtSoDanhBo.TabIndex = 739;
-            this.txtSoDanhBo.Leave += new System.EventHandler(this.txtSoDanhBo_Leave);
-            // 
             // labelX6
             // 
             this.labelX6.Location = new System.Drawing.Point(406, 106);
@@ -547,11 +535,20 @@
             this.labelX11.TabIndex = 744;
             this.labelX11.Text = "Số Tiền";
             // 
+            // txtSoDanhBo
+            // 
+            this.txtSoDanhBo.Location = new System.Drawing.Point(633, 128);
+            this.txtSoDanhBo.Mask = "0000-0000000";
+            this.txtSoDanhBo.Name = "txtSoDanhBo";
+            this.txtSoDanhBo.Size = new System.Drawing.Size(115, 26);
+            this.txtSoDanhBo.TabIndex = 752;
+            // 
             // tab_CapNhatDSBoiThuong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
+            this.Controls.Add(this.txtSoDanhBo);
             this.Controls.Add(this.txtSoTien);
             this.Controls.Add(this.labelX11);
             this.Controls.Add(this.dataGridViewX1);
@@ -565,7 +562,6 @@
             this.Controls.Add(this.txtHoTenKH);
             this.Controls.Add(this.txtDiaChi);
             this.Controls.Add(this.txtTinhTrangTLK);
-            this.Controls.Add(this.txtSoDanhBo);
             this.Controls.Add(this.txtSoHoaDon);
             this.Controls.Add(this.txtSHS);
             this.Controls.Add(this.txtPhuong);
@@ -589,6 +585,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateNgayDongTien)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewX1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -617,7 +614,6 @@
         private DevComponents.DotNetBar.LabelX labelX2;
         private DevComponents.DotNetBar.LabelX lbDotTc;
         private DevComponents.DotNetBar.LabelX labelX1;
-        private DevComponents.DotNetBar.Controls.TextBoxX txtSoDanhBo;
         private DevComponents.DotNetBar.LabelX labelX6;
         private DevComponents.DotNetBar.Controls.TextBoxX txtTinhTrangTLK;
         private DevComponents.DotNetBar.Controls.DataGridViewX dataGridViewX1;
@@ -635,5 +631,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn G_DienThoai;
         private DevComponents.DotNetBar.Controls.TextBoxX txtSoTien;
         private DevComponents.DotNetBar.LabelX labelX11;
+        private System.Windows.Forms.MaskedTextBox txtSoDanhBo;
     }
 }

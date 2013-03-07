@@ -141,6 +141,24 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
             for (int i = 0; i < dataGridViewDotTC.Rows.Count; i++) { 
                 string shs = dataGridViewDotTC.Rows[i].Cells["SHS"].Value+"";
                 string stt = dataGridViewDotTC.Rows[i].Cells["STT"].Value + "";
+                double n_tlmt = 0;
+                double n_tongcong = 0;
+                try
+                {
+                    n_tlmt = double.Parse(dataGridViewDotTC.Rows[i].Cells["gridTLMD"].Value + "");
+                }
+                catch (Exception)
+                {
+                }
+                try
+                {
+                    n_tongcong = double.Parse(dataGridViewDotTC.Rows[i].Cells["gridGiaTriSauThue"].Value + "");
+                }
+                catch (Exception)
+                {
+                }
+                string sql = " UPDATE KH_HOSOKHACHHANG SET TONGIATRI='" + n_tongcong + "',TAILAPMATDUONG='" + n_tlmt + "' WHERE SHS='" + shs + "'";
+                DAL.LinQConnection.ExecuteCommand_(sql);
                 if (!"".Equals(stt)) {
                     try
                     {

@@ -54,7 +54,7 @@ namespace TanHoaWater.DAL
             }
             if (ngaynhan != null)
             {
-                sql += " AND CONVERT(VARCHAR(10),ttk.NGAYNHAN,103)='" + ngaynhan + "'";
+                sql += " AND CONVERT(VARCHAR(10),ttk.NGAYGIAOSDV,103)='" + ngaynhan + "'";
             }
             if (SODOVIEN != null)
             {
@@ -101,7 +101,7 @@ namespace TanHoaWater.DAL
             }
             if (ngaynhan != null)
             {
-                sql += " AND NGAYNHAN ='" + ngaynhan + "'";
+                sql += " AND CONVERT(VARCHAR(20),NGAYNHAN,103) ='" + ngaynhan + "'";
             }
             sql += " ORDER BY SHS ASC ";
             SqlDataAdapter dond = new SqlDataAdapter(sql, db.Connection.ConnectionString);
@@ -277,7 +277,9 @@ namespace TanHoaWater.DAL
             sql += "  CASE WHEN kh.TRONGAITHIETKE='True' THEN N'Trở Ngại'  ELSE (CASE WHEN ttk.HOANTATTK='True' THEN N'Hoàn Tất' ELSE N'' END ) END as 'TINHTRANGSVD'  ";
             sql += "  FROM TOTHIETKE ttk, DON_KHACHHANG kh,QUAN q,PHUONG p";
             sql += "  WHERE  kh.QUAN = q.MAQUAN AND q.MAQUAN=p.MAQUAN AND kh.PHUONG=p.MAPHUONG  AND ttk.SOHOSO=kh.SOHOSO ";
-            sql += " AND ttk.MADOT='" + ttkMaDot + "'";
+           sql += " AND ttk.MADOT='" + ttkMaDot + "'";
+           // sql += " AND  NGAYHOANTATTK='" + ngayhoantat + "'";
+           
             sql += " ORDER BY TINHTRANGSVD";
             SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             DataSet dataset = new DataSet();
@@ -285,6 +287,26 @@ namespace TanHoaWater.DAL
             db.Connection.Close();
             return dataset.Tables[0];
         }
+
+        public static DataTable ListHoanTatTKByDate(string ngayhoantat)
+        {
+            TanHoaDataContext db = new TanHoaDataContext();
+            db.Connection.Open();
+            string sql = "SELECT ttk.SHS,HOTEN,(SONHA +' '+ DUONG +', P.'+p.TENPHUONG+', Q.'+ q.TENQUAN ) as 'DIACHI',  ";
+            sql += "  NGAYNHAN= CONVERT(VARCHAR(10),kh.NGAYNHAN,103), NGAYHTTK=CONVERT(VARCHAR(10),ttk.NGAYTRAHS,103), ";
+            sql += "  CASE WHEN kh.TRONGAITHIETKE='True' THEN N'Trở Ngại'  ELSE (CASE WHEN ttk.HOANTATTK='True' THEN N'Hoàn Tất' ELSE N'' END ) END as 'TINHTRANGSVD'  ";
+            sql += "  FROM TOTHIETKE ttk, DON_KHACHHANG kh,QUAN q,PHUONG p";
+            sql += "  WHERE  kh.QUAN = q.MAQUAN AND q.MAQUAN=p.MAQUAN AND kh.PHUONG=p.MAPHUONG  AND ttk.SOHOSO=kh.SOHOSO ";
+            //  sql += " AND ttk.MADOT='" + ttkMaDot + "'";
+            sql += " AND  NGAYHOANTATTK='" + ngayhoantat + "'";
+
+            sql += " ORDER BY TINHTRANGSVD";
+            SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
+            DataSet dataset = new DataSet();
+            adapter.Fill(dataset, "TABLE");
+            db.Connection.Close();
+            return dataset.Tables[0];
+        } 
         public static bool chuyenhs(string shs, string bp)
         {
             try
@@ -340,6 +362,7 @@ namespace TanHoaWater.DAL
                     totk.HOANTATTK = true;
                     totk.NGAYHOANTATTK = DateTime.Now.Date;
                     totk.NGAYTRAHS = DateTime.Now.Date;
+
                     db.SubmitChanges();
                     return true;
                 }
@@ -366,6 +389,8 @@ namespace TanHoaWater.DAL
                     totk.HOANTATTK = true;
                     totk.NGAYHOANTATTK = DateTime.Now.Date;
                     totk.NGAYTRAHS = DateTime.Now.Date;
+                    totk.NGAYCHUYENHS = DateTime.Now.Date;
+                    totk.BOPHANCHUYEN = "VTTH";
                     totk.GHICHU = ghichu;
                     db.SubmitChanges();
                     return true;

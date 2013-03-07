@@ -20,6 +20,7 @@ namespace TanHoaWater.View.Users.To_ThietKe
         public tab_HoanTatTK()
         {
             InitializeComponent();
+            datehttk_.Value = DateTime.Now.Date;
             this.cbDotNhanDon.DataSource = DAL.C_ToThietKe.DANHSACHDOTNHANDON();
             this.cbDotNhanDon.ValueMember = "MADOT";
             this.cbDotNhanDon.DisplayMember = "MADOT";
@@ -240,7 +241,7 @@ namespace TanHoaWater.View.Users.To_ThietKe
                         {
                             DAL.C_ToThietKe.HoaTatTK(txtSHS.Text.Trim(), this.txtGhiChu.Text);
                             DAL.C_ToThietKe.CapNhatHoanTatChoDot(madot);
-                            this.dataGridView1.DataSource = DAL.C_ToThietKe.ListHoanTatTK(madot);
+                            this.dataGridView1.DataSource = DAL.C_ToThietKe.ListHoanTatTKByDate(Utilities.DateToString.NgayVN(datehttk_));
                             Utilities.DataGridV.formatRows(dataGridView1);
 
                         }
@@ -305,14 +306,23 @@ namespace TanHoaWater.View.Users.To_ThietKe
         {
             try
             {
-                if (!"".Equals(madot))
-                {
-                    ReportDocument rp = new rpt_DSHoanTat();
-                    rp.SetDataSource(DAL.C_ToThietKe.BC_HOANTATTK(madot, DAL.C_USERS._userName, "True"));
-                    rp.SetParameterValue("Title", "DANH SÁCH HOÀN TẤT THIẾT KẾ");
-                    rpt_Main rpt = new rpt_Main(rp);
-                    rpt.ShowDialog();
-                }
+
+                ReportDocument rp = new rpt_DSHoanTatbyDate();
+                rp.SetDataSource(DAL.C_ToThietKe.BC_HOANTATTK_BYDATE(Utilities.DateToString.NgayVN(DateTime.Now.Date), DAL.C_USERS._userName));
+
+                rp.SetParameterValue("ngay", Utilities.DateToString.NgayVN(DateTime.Now.Date));
+             //   report.ReportSource = rp;
+                rpt_Main rpt = new rpt_Main(rp);
+                rpt.ShowDialog();
+
+                //if (!"".Equals(madot))
+                //{
+                //    ReportDocument rp = new rpt_DSHoanTat();
+                //    rp.SetDataSource(DAL.C_ToThietKe.BC_HOANTATTK(madot, DAL.C_USERS._userName, "True"));
+                //    rp.SetParameterValue("Title", "DANH SÁCH HOÀN TẤT THIẾT KẾ GIAO BAN KẾ HOẠCH");
+                //    rpt_Main rpt = new rpt_Main(rp);
+                //    rpt.ShowDialog();
+                //}
             }
             catch (Exception ex)
             {

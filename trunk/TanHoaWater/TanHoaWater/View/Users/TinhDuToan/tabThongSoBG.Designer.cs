@@ -75,31 +75,32 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.groupPanel3 = new DevComponents.DotNetBar.Controls.GroupPanel();
-            this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
-            this.label21 = new System.Windows.Forms.Label();
-            this.KL_NHUA12 = new System.Windows.Forms.TextBox();
-            this.DATC4_NHUA12 = new System.Windows.Forms.TextBox();
-            this.lab = new System.Windows.Forms.Label();
-            this.KL_NHUA10 = new System.Windows.Forms.TextBox();
-            this.label24 = new System.Windows.Forms.Label();
-            this.DATC4_NHUA10 = new System.Windows.Forms.TextBox();
-            this.label25 = new System.Windows.Forms.Label();
-            this.KL_BT10 = new System.Windows.Forms.TextBox();
-            this.label26 = new System.Windows.Forms.Label();
-            this.DATC4_BT10 = new System.Windows.Forms.TextBox();
-            this.label27 = new System.Windows.Forms.Label();
-            this.DATC4_DAXANH = new System.Windows.Forms.TextBox();
-            this.label28 = new System.Windows.Forms.Label();
-            this.DATC4_DADO = new System.Windows.Forms.TextBox();
-            this.label29 = new System.Windows.Forms.Label();
-            this.KLDA04_TNHA = new System.Windows.Forms.TextBox();
-            this.label30 = new System.Windows.Forms.Label();
-            this.CHISODD = new System.Windows.Forms.TextBox();
-            this.label31 = new System.Windows.Forms.Label();
-            this.KL_CONLAI = new System.Windows.Forms.TextBox();
+            this.label32 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.DATC4_CONLAI = new System.Windows.Forms.TextBox();
-            this.label32 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.KL_CONLAI = new System.Windows.Forms.TextBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.CHISODD = new System.Windows.Forms.TextBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.KLDA04_TNHA = new System.Windows.Forms.TextBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.DATC4_DADO = new System.Windows.Forms.TextBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.DATC4_DAXANH = new System.Windows.Forms.TextBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.DATC4_BT10 = new System.Windows.Forms.TextBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.KL_BT10 = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.DATC4_NHUA10 = new System.Windows.Forms.TextBox();
+            this.KL_NHUA10 = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
+            this.KL_NHUA12 = new System.Windows.Forms.TextBox();
+            this.lab = new System.Windows.Forms.Label();
+            this.DATC4_NHUA12 = new System.Windows.Forms.TextBox();
+            this.line6 = new System.Windows.Forms.RichTextBox();
             this.panelEx1.SuspendLayout();
             this.groupPanel2.SuspendLayout();
             this.groupPanel1.SuspendLayout();
@@ -127,6 +128,7 @@
             // 
             this.groupPanel2.CanvasColor = System.Drawing.SystemColors.Control;
             this.groupPanel2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.groupPanel2.Controls.Add(this.line6);
             this.groupPanel2.Controls.Add(this.LINE5);
             this.groupPanel2.Controls.Add(this.LINE4);
             this.groupPanel2.Controls.Add(this.LINE3);
@@ -168,7 +170,7 @@
             // LINE5
             // 
             this.LINE5.Font = new System.Drawing.Font("Times New Roman", 11F);
-            this.LINE5.Location = new System.Drawing.Point(3, 251);
+            this.LINE5.Location = new System.Drawing.Point(3, 194);
             this.LINE5.Name = "LINE5";
             this.LINE5.Size = new System.Drawing.Size(457, 69);
             this.LINE5.TabIndex = 5;
@@ -177,25 +179,25 @@
             // LINE4
             // 
             this.LINE4.Font = new System.Drawing.Font("Times New Roman", 11F);
-            this.LINE4.Location = new System.Drawing.Point(3, 196);
+            this.LINE4.Location = new System.Drawing.Point(3, 154);
             this.LINE4.Name = "LINE4";
-            this.LINE4.Size = new System.Drawing.Size(457, 43);
+            this.LINE4.Size = new System.Drawing.Size(457, 37);
             this.LINE4.TabIndex = 5;
             this.LINE4.Text = "";
             // 
             // LINE3
             // 
             this.LINE3.Font = new System.Drawing.Font("Times New Roman", 11F);
-            this.LINE3.Location = new System.Drawing.Point(3, 128);
+            this.LINE3.Location = new System.Drawing.Point(3, 111);
             this.LINE3.Name = "LINE3";
-            this.LINE3.Size = new System.Drawing.Size(457, 59);
+            this.LINE3.Size = new System.Drawing.Size(457, 39);
             this.LINE3.TabIndex = 5;
             this.LINE3.Text = "";
             // 
             // LINE2
             // 
             this.LINE2.Font = new System.Drawing.Font("Times New Roman", 11F);
-            this.LINE2.Location = new System.Drawing.Point(3, 50);
+            this.LINE2.Location = new System.Drawing.Point(3, 45);
             this.LINE2.Name = "LINE2";
             this.LINE2.Size = new System.Drawing.Size(457, 62);
             this.LINE2.TabIndex = 5;
@@ -206,7 +208,7 @@
             this.LINE1.Font = new System.Drawing.Font("Times New Roman", 11F);
             this.LINE1.Location = new System.Drawing.Point(3, 0);
             this.LINE1.Name = "LINE1";
-            this.LINE1.Size = new System.Drawing.Size(457, 44);
+            this.LINE1.Size = new System.Drawing.Size(457, 41);
             this.LINE1.TabIndex = 5;
             this.LINE1.Text = "";
             // 
@@ -713,208 +715,14 @@
             this.groupPanel3.TabIndex = 2;
             this.groupPanel3.Text = "Hệ Số  Phui Đào";
             // 
-            // buttonX1
+            // label32
             // 
-            this.buttonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX1.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonX1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.buttonX1.Location = new System.Drawing.Point(-3, 391);
-            this.buttonX1.Name = "buttonX1";
-            this.buttonX1.Size = new System.Drawing.Size(89, 23);
-            this.buttonX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
-            this.buttonX1.TabIndex = 2;
-            this.buttonX1.Text = "Cập Nhật Phui";
-            this.buttonX1.Click += new System.EventHandler(this.buttonX1_Click);
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(88, 5);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(69, 13);
-            this.label21.TabIndex = 3;
-            this.label21.Text = "KL_NHUA12";
-            // 
-            // KL_NHUA12
-            // 
-            this.KL_NHUA12.Location = new System.Drawing.Point(91, 21);
-            this.KL_NHUA12.Name = "KL_NHUA12";
-            this.KL_NHUA12.Size = new System.Drawing.Size(78, 20);
-            this.KL_NHUA12.TabIndex = 1;
-            this.KL_NHUA12.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.KL_NHUA12.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NhanCong_KeyPress);
-            // 
-            // DATC4_NHUA12
-            // 
-            this.DATC4_NHUA12.Location = new System.Drawing.Point(91, 55);
-            this.DATC4_NHUA12.Name = "DATC4_NHUA12";
-            this.DATC4_NHUA12.Size = new System.Drawing.Size(78, 20);
-            this.DATC4_NHUA12.TabIndex = 1;
-            this.DATC4_NHUA12.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.DATC4_NHUA12.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NhanCong_KeyPress);
-            // 
-            // lab
-            // 
-            this.lab.AutoSize = true;
-            this.lab.Location = new System.Drawing.Point(88, 39);
-            this.lab.Name = "lab";
-            this.lab.Size = new System.Drawing.Size(91, 13);
-            this.lab.TabIndex = 3;
-            this.lab.Text = "DATC4_NHUA12";
-            // 
-            // KL_NHUA10
-            // 
-            this.KL_NHUA10.Location = new System.Drawing.Point(91, 90);
-            this.KL_NHUA10.Name = "KL_NHUA10";
-            this.KL_NHUA10.Size = new System.Drawing.Size(78, 20);
-            this.KL_NHUA10.TabIndex = 1;
-            this.KL_NHUA10.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.KL_NHUA10.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NhanCong_KeyPress);
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(88, 75);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(69, 13);
-            this.label24.TabIndex = 3;
-            this.label24.Text = "KL_NHUA10";
-            // 
-            // DATC4_NHUA10
-            // 
-            this.DATC4_NHUA10.Location = new System.Drawing.Point(91, 124);
-            this.DATC4_NHUA10.Name = "DATC4_NHUA10";
-            this.DATC4_NHUA10.Size = new System.Drawing.Size(78, 20);
-            this.DATC4_NHUA10.TabIndex = 1;
-            this.DATC4_NHUA10.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.DATC4_NHUA10.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NhanCong_KeyPress);
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(88, 111);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(91, 13);
-            this.label25.TabIndex = 3;
-            this.label25.Text = "DATC4_NHUA10";
-            // 
-            // KL_BT10
-            // 
-            this.KL_BT10.Location = new System.Drawing.Point(91, 159);
-            this.KL_BT10.Name = "KL_BT10";
-            this.KL_BT10.Size = new System.Drawing.Size(78, 20);
-            this.KL_BT10.TabIndex = 1;
-            this.KL_BT10.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.KL_BT10.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NhanCong_KeyPress);
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(88, 144);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(52, 13);
-            this.label26.TabIndex = 3;
-            this.label26.Text = "KL_BT10";
-            // 
-            // DATC4_BT10
-            // 
-            this.DATC4_BT10.Location = new System.Drawing.Point(91, 192);
-            this.DATC4_BT10.Name = "DATC4_BT10";
-            this.DATC4_BT10.Size = new System.Drawing.Size(78, 20);
-            this.DATC4_BT10.TabIndex = 1;
-            this.DATC4_BT10.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.DATC4_BT10.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NhanCong_KeyPress);
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(88, 178);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(74, 13);
-            this.label27.TabIndex = 3;
-            this.label27.Text = "DATC4_BT10";
-            // 
-            // DATC4_DAXANH
-            // 
-            this.DATC4_DAXANH.Location = new System.Drawing.Point(91, 224);
-            this.DATC4_DAXANH.Name = "DATC4_DAXANH";
-            this.DATC4_DAXANH.Size = new System.Drawing.Size(78, 20);
-            this.DATC4_DAXANH.TabIndex = 1;
-            this.DATC4_DAXANH.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.DATC4_DAXANH.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NhanCong_KeyPress);
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(88, 211);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(93, 13);
-            this.label28.TabIndex = 3;
-            this.label28.Text = "DATC4_DAXANH";
-            // 
-            // DATC4_DADO
-            // 
-            this.DATC4_DADO.Location = new System.Drawing.Point(91, 258);
-            this.DATC4_DADO.Name = "DATC4_DADO";
-            this.DATC4_DADO.Size = new System.Drawing.Size(78, 20);
-            this.DATC4_DADO.TabIndex = 1;
-            this.DATC4_DADO.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.DATC4_DADO.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NhanCong_KeyPress);
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(88, 245);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(79, 13);
-            this.label29.TabIndex = 3;
-            this.label29.Text = "DATC4_DADO";
-            // 
-            // KLDA04_TNHA
-            // 
-            this.KLDA04_TNHA.Location = new System.Drawing.Point(91, 293);
-            this.KLDA04_TNHA.Name = "KLDA04_TNHA";
-            this.KLDA04_TNHA.Size = new System.Drawing.Size(78, 20);
-            this.KLDA04_TNHA.TabIndex = 1;
-            this.KLDA04_TNHA.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.KLDA04_TNHA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NhanCong_KeyPress);
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(88, 278);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(83, 13);
-            this.label30.TabIndex = 3;
-            this.label30.Text = "KLDA04_TNHA";
-            // 
-            // CHISODD
-            // 
-            this.CHISODD.Location = new System.Drawing.Point(91, 329);
-            this.CHISODD.Name = "CHISODD";
-            this.CHISODD.Size = new System.Drawing.Size(78, 20);
-            this.CHISODD.TabIndex = 1;
-            this.CHISODD.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.CHISODD.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NhanCong_KeyPress);
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(88, 314);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(56, 13);
-            this.label31.TabIndex = 3;
-            this.label31.Text = "CHISODD";
-            // 
-            // KL_CONLAI
-            // 
-            this.KL_CONLAI.Location = new System.Drawing.Point(91, 362);
-            this.KL_CONLAI.Name = "KL_CONLAI";
-            this.KL_CONLAI.Size = new System.Drawing.Size(78, 20);
-            this.KL_CONLAI.TabIndex = 1;
-            this.KL_CONLAI.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.KL_CONLAI.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NhanCong_KeyPress);
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(89, 383);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(87, 13);
+            this.label32.TabIndex = 3;
+            this.label32.Text = "DATC4_CONLAI";
             // 
             // label23
             // 
@@ -934,14 +742,217 @@
             this.DATC4_CONLAI.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.DATC4_CONLAI.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NhanCong_KeyPress);
             // 
-            // label32
+            // label31
             // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(89, 383);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(87, 13);
-            this.label32.TabIndex = 3;
-            this.label32.Text = "DATC4_CONLAI";
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(88, 314);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(56, 13);
+            this.label31.TabIndex = 3;
+            this.label31.Text = "CHISODD";
+            // 
+            // KL_CONLAI
+            // 
+            this.KL_CONLAI.Location = new System.Drawing.Point(91, 362);
+            this.KL_CONLAI.Name = "KL_CONLAI";
+            this.KL_CONLAI.Size = new System.Drawing.Size(78, 20);
+            this.KL_CONLAI.TabIndex = 1;
+            this.KL_CONLAI.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.KL_CONLAI.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NhanCong_KeyPress);
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(88, 278);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(83, 13);
+            this.label30.TabIndex = 3;
+            this.label30.Text = "KLDA04_TNHA";
+            // 
+            // CHISODD
+            // 
+            this.CHISODD.Location = new System.Drawing.Point(91, 329);
+            this.CHISODD.Name = "CHISODD";
+            this.CHISODD.Size = new System.Drawing.Size(78, 20);
+            this.CHISODD.TabIndex = 1;
+            this.CHISODD.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.CHISODD.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NhanCong_KeyPress);
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(88, 245);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(79, 13);
+            this.label29.TabIndex = 3;
+            this.label29.Text = "DATC4_DADO";
+            // 
+            // KLDA04_TNHA
+            // 
+            this.KLDA04_TNHA.Location = new System.Drawing.Point(91, 293);
+            this.KLDA04_TNHA.Name = "KLDA04_TNHA";
+            this.KLDA04_TNHA.Size = new System.Drawing.Size(78, 20);
+            this.KLDA04_TNHA.TabIndex = 1;
+            this.KLDA04_TNHA.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.KLDA04_TNHA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NhanCong_KeyPress);
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(88, 211);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(93, 13);
+            this.label28.TabIndex = 3;
+            this.label28.Text = "DATC4_DAXANH";
+            // 
+            // DATC4_DADO
+            // 
+            this.DATC4_DADO.Location = new System.Drawing.Point(91, 258);
+            this.DATC4_DADO.Name = "DATC4_DADO";
+            this.DATC4_DADO.Size = new System.Drawing.Size(78, 20);
+            this.DATC4_DADO.TabIndex = 1;
+            this.DATC4_DADO.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.DATC4_DADO.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NhanCong_KeyPress);
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(88, 178);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(74, 13);
+            this.label27.TabIndex = 3;
+            this.label27.Text = "DATC4_BT10";
+            // 
+            // DATC4_DAXANH
+            // 
+            this.DATC4_DAXANH.Location = new System.Drawing.Point(91, 224);
+            this.DATC4_DAXANH.Name = "DATC4_DAXANH";
+            this.DATC4_DAXANH.Size = new System.Drawing.Size(78, 20);
+            this.DATC4_DAXANH.TabIndex = 1;
+            this.DATC4_DAXANH.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.DATC4_DAXANH.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NhanCong_KeyPress);
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(88, 144);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(52, 13);
+            this.label26.TabIndex = 3;
+            this.label26.Text = "KL_BT10";
+            // 
+            // DATC4_BT10
+            // 
+            this.DATC4_BT10.Location = new System.Drawing.Point(91, 192);
+            this.DATC4_BT10.Name = "DATC4_BT10";
+            this.DATC4_BT10.Size = new System.Drawing.Size(78, 20);
+            this.DATC4_BT10.TabIndex = 1;
+            this.DATC4_BT10.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.DATC4_BT10.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NhanCong_KeyPress);
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(88, 111);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(91, 13);
+            this.label25.TabIndex = 3;
+            this.label25.Text = "DATC4_NHUA10";
+            // 
+            // KL_BT10
+            // 
+            this.KL_BT10.Location = new System.Drawing.Point(91, 159);
+            this.KL_BT10.Name = "KL_BT10";
+            this.KL_BT10.Size = new System.Drawing.Size(78, 20);
+            this.KL_BT10.TabIndex = 1;
+            this.KL_BT10.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.KL_BT10.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NhanCong_KeyPress);
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(88, 75);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(69, 13);
+            this.label24.TabIndex = 3;
+            this.label24.Text = "KL_NHUA10";
+            // 
+            // DATC4_NHUA10
+            // 
+            this.DATC4_NHUA10.Location = new System.Drawing.Point(91, 124);
+            this.DATC4_NHUA10.Name = "DATC4_NHUA10";
+            this.DATC4_NHUA10.Size = new System.Drawing.Size(78, 20);
+            this.DATC4_NHUA10.TabIndex = 1;
+            this.DATC4_NHUA10.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.DATC4_NHUA10.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NhanCong_KeyPress);
+            // 
+            // KL_NHUA10
+            // 
+            this.KL_NHUA10.Location = new System.Drawing.Point(91, 90);
+            this.KL_NHUA10.Name = "KL_NHUA10";
+            this.KL_NHUA10.Size = new System.Drawing.Size(78, 20);
+            this.KL_NHUA10.TabIndex = 1;
+            this.KL_NHUA10.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.KL_NHUA10.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NhanCong_KeyPress);
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(88, 5);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(69, 13);
+            this.label21.TabIndex = 3;
+            this.label21.Text = "KL_NHUA12";
+            // 
+            // buttonX1
+            // 
+            this.buttonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonX1.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.buttonX1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonX1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.buttonX1.Location = new System.Drawing.Point(-3, 391);
+            this.buttonX1.Name = "buttonX1";
+            this.buttonX1.Size = new System.Drawing.Size(89, 23);
+            this.buttonX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
+            this.buttonX1.TabIndex = 2;
+            this.buttonX1.Text = "Cập Nhật Phui";
+            this.buttonX1.Click += new System.EventHandler(this.buttonX1_Click);
+            // 
+            // KL_NHUA12
+            // 
+            this.KL_NHUA12.Location = new System.Drawing.Point(91, 21);
+            this.KL_NHUA12.Name = "KL_NHUA12";
+            this.KL_NHUA12.Size = new System.Drawing.Size(78, 20);
+            this.KL_NHUA12.TabIndex = 1;
+            this.KL_NHUA12.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.KL_NHUA12.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NhanCong_KeyPress);
+            // 
+            // lab
+            // 
+            this.lab.AutoSize = true;
+            this.lab.Location = new System.Drawing.Point(88, 39);
+            this.lab.Name = "lab";
+            this.lab.Size = new System.Drawing.Size(91, 13);
+            this.lab.TabIndex = 3;
+            this.lab.Text = "DATC4_NHUA12";
+            // 
+            // DATC4_NHUA12
+            // 
+            this.DATC4_NHUA12.Location = new System.Drawing.Point(91, 55);
+            this.DATC4_NHUA12.Name = "DATC4_NHUA12";
+            this.DATC4_NHUA12.Size = new System.Drawing.Size(78, 20);
+            this.DATC4_NHUA12.TabIndex = 1;
+            this.DATC4_NHUA12.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.DATC4_NHUA12.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NhanCong_KeyPress);
+            // 
+            // line6
+            // 
+            this.line6.Font = new System.Drawing.Font("Times New Roman", 11F);
+            this.line6.Location = new System.Drawing.Point(3, 269);
+            this.line6.Name = "line6";
+            this.line6.Size = new System.Drawing.Size(457, 44);
+            this.line6.TabIndex = 6;
+            this.line6.Text = "";
             // 
             // tabThongSoBG
             // 
@@ -1035,5 +1046,6 @@
         private System.Windows.Forms.TextBox KL_CONLAI;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.TextBox DATC4_CONLAI;
+        private System.Windows.Forms.RichTextBox line6;
     }
 }

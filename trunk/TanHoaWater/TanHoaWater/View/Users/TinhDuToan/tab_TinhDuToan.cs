@@ -1888,7 +1888,7 @@ namespace TanHoaWater.View.Users.TinhDuToan
                 DataSet ds = new DataSet();
                 db.Connection.Open();
 
-                string sql = "SELECT distinct * FROM BG_CHITIETBG  WHERE SHS='" + _shs + "'";
+                string sql = "SELECT distinct * FROM BG_CHITIETBG  WHERE SHS='" + _shs + "' ORDER BY STT ASC";
 
                 SqlDataAdapter dond = new SqlDataAdapter(sql, db.Connection.ConnectionString);
                 dond.Fill(ds, "BG_CHITIETBG");

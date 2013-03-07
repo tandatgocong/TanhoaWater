@@ -146,7 +146,6 @@
             dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewDotTC.RowHeadersDefaultCellStyle = dataGridViewCellStyle16;
             this.dataGridViewDotTC.RowHeadersWidth = 30;
-            this.dataGridViewDotTC.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewDotTC.Size = new System.Drawing.Size(978, 500);
             this.dataGridViewDotTC.TabIndex = 718;
             this.dataGridViewDotTC.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDotTC_CellClick);
@@ -301,7 +300,7 @@
             dataGridViewCellStyle11.Format = "N0";
             dataGridViewCellStyle11.NullValue = null;
             this.gridGiaTriSauThue.DefaultCellStyle = dataGridViewCellStyle11;
-            this.gridGiaTriSauThue.HeaderText = "Giá Trị Sau Thuế";
+            this.gridGiaTriSauThue.HeaderText = "Số Tiền";
             this.gridGiaTriSauThue.Name = "gridGiaTriSauThue";
             this.gridGiaTriSauThue.Width = 150;
             // 
@@ -322,7 +321,7 @@
             dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
             dataGridViewCellStyle13.Format = "N0";
             this.gr_tongsotien.DefaultCellStyle = dataGridViewCellStyle13;
-            this.gr_tongsotien.HeaderText = "Tổng Số Tiền";
+            this.gr_tongsotien.HeaderText = "Tổng Thành Tiền";
             this.gr_tongsotien.Name = "gr_tongsotien";
             this.gr_tongsotien.Width = 150;
             // 

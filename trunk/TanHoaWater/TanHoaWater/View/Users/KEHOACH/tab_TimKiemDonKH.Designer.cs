@@ -56,6 +56,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label19 = new System.Windows.Forms.Label();
             this.txtghichusua = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.label18 = new System.Windows.Forms.Label();
             this.cbDotNhanDon = new DevComponents.DotNetBar.Controls.ComboBoxEx();
@@ -90,8 +91,7 @@
             this.cbQuan = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.cbPhuong = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.txtDanhBo = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.label19 = new System.Windows.Forms.Label();
+            this.txtDanhBo = new System.Windows.Forms.MaskedTextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.next)).BeginInit();
@@ -420,6 +420,15 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(963, 142);
             this.panel1.TabIndex = 0;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(651, 75);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(60, 16);
+            this.label19.TabIndex = 118;
+            this.label19.Text = "Danh Bộ";
             // 
             // txtghichusua
             // 
@@ -770,24 +779,11 @@
             // 
             // txtDanhBo
             // 
-            // 
-            // 
-            // 
-            this.txtDanhBo.Border.Class = "TextBoxBorder";
-            this.txtDanhBo.Location = new System.Drawing.Point(712, 71);
-            this.txtDanhBo.Multiline = true;
+            this.txtDanhBo.Location = new System.Drawing.Point(717, 71);
+            this.txtDanhBo.Mask = "0000-0000000";
             this.txtDanhBo.Name = "txtDanhBo";
-            this.txtDanhBo.Size = new System.Drawing.Size(119, 25);
-            this.txtDanhBo.TabIndex = 117;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(651, 75);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(60, 16);
-            this.label19.TabIndex = 118;
-            this.label19.Text = "Danh Bộ";
+            this.txtDanhBo.Size = new System.Drawing.Size(115, 22);
+            this.txtDanhBo.TabIndex = 119;
             // 
             // tab_TimKiemDonKH
             // 
@@ -874,8 +870,8 @@
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private DevComponents.DotNetBar.Controls.TextBoxX txtghichusua;
         private System.Windows.Forms.Label label18;
-        private DevComponents.DotNetBar.Controls.TextBoxX txtDanhBo;
         private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.MaskedTextBox txtDanhBo;
 
     }
 }

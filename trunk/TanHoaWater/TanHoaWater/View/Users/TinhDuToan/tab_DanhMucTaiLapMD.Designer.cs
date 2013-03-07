@@ -29,16 +29,28 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelDanhMucVT = new DevComponents.DotNetBar.PanelEx();
+            this.groupDGVT = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.panelDonGia = new DevComponents.DotNetBar.PanelEx();
+            this.btCapNhatDGVT = new DevComponents.DotNetBar.ButtonX();
+            this.GridDonGiaVT = new System.Windows.Forms.DataGridView();
+            this.dg_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dg_mahieudg = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dg_dg = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dg_vatlieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dg_nhanCong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgXiMang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dg_ngay = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dg_Chon = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.btXoa = new DevComponents.DotNetBar.ButtonX();
             this.btmLamLai = new DevComponents.DotNetBar.ButtonX();
@@ -53,6 +65,11 @@
             this.btLamLai = new DevComponents.DotNetBar.ButtonX();
             this.groupPanel11 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.GridDanhMucTLMD = new System.Windows.Forms.DataGridView();
+            this.madanhmuc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenketcau = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dvt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nhomvt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DONGIASO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pren = new System.Windows.Forms.PictureBox();
             this.labelX62 = new DevComponents.DotNetBar.LabelX();
             this.totalRecord = new DevComponents.DotNetBar.LabelX();
@@ -66,33 +83,16 @@
             this.txtMaDM = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX56 = new DevComponents.DotNetBar.LabelX();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.groupDGVT = new DevComponents.DotNetBar.Controls.GroupPanel();
-            this.panelDonGia = new DevComponents.DotNetBar.PanelEx();
-            this.btCapNhatDGVT = new DevComponents.DotNetBar.ButtonX();
-            this.GridDonGiaVT = new System.Windows.Forms.DataGridView();
-            this.madanhmuc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tenketcau = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dvt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nhomvt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DONGIASO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dg_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dg_mahieudg = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dg_dg = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dg_vatlieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dg_nhanCong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgXiMang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dg_ngay = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dg_Chon = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.panelDanhMucVT.SuspendLayout();
+            this.groupDGVT.SuspendLayout();
+            this.panelDonGia.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GridDonGiaVT)).BeginInit();
             this.groupPanel1.SuspendLayout();
             this.groupPanel11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridDanhMucTLMD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pren)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.next)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            this.groupDGVT.SuspendLayout();
-            this.panelDonGia.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.GridDonGiaVT)).BeginInit();
             this.SuspendLayout();
             // 
             // panelDanhMucVT
@@ -121,6 +121,178 @@
             this.panelDanhMucVT.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemText;
             this.panelDanhMucVT.Style.GradientAngle = 90;
             this.panelDanhMucVT.TabIndex = 3;
+            // 
+            // groupDGVT
+            // 
+            this.groupDGVT.CanvasColor = System.Drawing.Color.Maroon;
+            this.groupDGVT.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.groupDGVT.Controls.Add(this.panelDonGia);
+            this.groupDGVT.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupDGVT.Location = new System.Drawing.Point(466, 243);
+            this.groupDGVT.Name = "groupDGVT";
+            this.groupDGVT.Size = new System.Drawing.Size(508, 288);
+            // 
+            // 
+            // 
+            this.groupDGVT.Style.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.groupDGVT.Style.BackColorGradientAngle = 90;
+            this.groupDGVT.Style.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.groupDGVT.Style.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.groupDGVT.Style.BorderBottomWidth = 1;
+            this.groupDGVT.Style.BorderColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.groupDGVT.Style.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.groupDGVT.Style.BorderLeftWidth = 1;
+            this.groupDGVT.Style.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.groupDGVT.Style.BorderRightWidth = 1;
+            this.groupDGVT.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.groupDGVT.Style.BorderTopWidth = 1;
+            this.groupDGVT.Style.CornerDiameter = 4;
+            this.groupDGVT.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
+            this.groupDGVT.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this.groupDGVT.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
+            this.groupDGVT.TabIndex = 57;
+            this.groupDGVT.Text = "Đơn Giá Vật Tư";
+            // 
+            // panelDonGia
+            // 
+            this.panelDonGia.CanvasColor = System.Drawing.SystemColors.Control;
+            this.panelDonGia.Controls.Add(this.btCapNhatDGVT);
+            this.panelDonGia.Controls.Add(this.GridDonGiaVT);
+            this.panelDonGia.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelDonGia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panelDonGia.Location = new System.Drawing.Point(0, 0);
+            this.panelDonGia.Name = "panelDonGia";
+            this.panelDonGia.Size = new System.Drawing.Size(502, 265);
+            this.panelDonGia.Style.Alignment = System.Drawing.StringAlignment.Center;
+            this.panelDonGia.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
+            this.panelDonGia.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
+            this.panelDonGia.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
+            this.panelDonGia.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemText;
+            this.panelDonGia.Style.GradientAngle = 90;
+            this.panelDonGia.TabIndex = 0;
+            // 
+            // btCapNhatDGVT
+            // 
+            this.btCapNhatDGVT.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btCapNhatDGVT.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btCapNhatDGVT.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btCapNhatDGVT.ForeColor = System.Drawing.Color.DarkRed;
+            this.btCapNhatDGVT.Location = new System.Drawing.Point(364, 237);
+            this.btCapNhatDGVT.Name = "btCapNhatDGVT";
+            this.btCapNhatDGVT.Size = new System.Drawing.Size(135, 23);
+            this.btCapNhatDGVT.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
+            this.btCapNhatDGVT.TabIndex = 1;
+            this.btCapNhatDGVT.Text = "Cập Nhật Đơn Giá ";
+            this.btCapNhatDGVT.Click += new System.EventHandler(this.btCapNhatDGVT_Click);
+            // 
+            // GridDonGiaVT
+            // 
+            this.GridDonGiaVT.AllowUserToDeleteRows = false;
+            this.GridDonGiaVT.AllowUserToResizeColumns = false;
+            this.GridDonGiaVT.AllowUserToResizeRows = false;
+            this.GridDonGiaVT.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridDonGiaVT.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.GridDonGiaVT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridDonGiaVT.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dg_ID,
+            this.dg_mahieudg,
+            this.dg_dg,
+            this.dg_vatlieu,
+            this.dg_nhanCong,
+            this.dgXiMang,
+            this.dg_ngay,
+            this.dg_Chon});
+            this.GridDonGiaVT.Location = new System.Drawing.Point(6, 3);
+            this.GridDonGiaVT.Name = "GridDonGiaVT";
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridDonGiaVT.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.GridDonGiaVT.RowHeadersWidth = 30;
+            this.GridDonGiaVT.Size = new System.Drawing.Size(493, 228);
+            this.GridDonGiaVT.TabIndex = 0;
+            this.GridDonGiaVT.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridDonGiaVT_CellClick);
+            this.GridDonGiaVT.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.GridDonGiaVT_EditingControlShowing);
+            this.GridDonGiaVT.Sorted += new System.EventHandler(this.GridDonGiaVT_Sorted);
+            this.GridDonGiaVT.UserAddedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.GridDonGiaVT_UserAddedRow);
+            // 
+            // dg_ID
+            // 
+            this.dg_ID.DataPropertyName = "STT";
+            this.dg_ID.HeaderText = "ID";
+            this.dg_ID.Name = "dg_ID";
+            this.dg_ID.Visible = false;
+            // 
+            // dg_mahieudg
+            // 
+            this.dg_mahieudg.DataPropertyName = "MADANHMUC";
+            this.dg_mahieudg.HeaderText = "MAHIEUDG";
+            this.dg_mahieudg.Name = "dg_mahieudg";
+            this.dg_mahieudg.ReadOnly = true;
+            this.dg_mahieudg.Visible = false;
+            // 
+            // dg_dg
+            // 
+            this.dg_dg.DataPropertyName = "DONGIA";
+            this.dg_dg.HeaderText = "ĐG";
+            this.dg_dg.Name = "dg_dg";
+            this.dg_dg.Width = 80;
+            // 
+            // dg_vatlieu
+            // 
+            this.dg_vatlieu.DataPropertyName = "DGVATLIEU";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle2.NullValue = null;
+            this.dg_vatlieu.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dg_vatlieu.HeaderText = "VL";
+            this.dg_vatlieu.Name = "dg_vatlieu";
+            this.dg_vatlieu.Width = 70;
+            // 
+            // dg_nhanCong
+            // 
+            this.dg_nhanCong.DataPropertyName = "DGNHANCONG";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.dg_nhanCong.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dg_nhanCong.HeaderText = "NC";
+            this.dg_nhanCong.Name = "dg_nhanCong";
+            this.dg_nhanCong.Width = 70;
+            // 
+            // dgXiMang
+            // 
+            this.dgXiMang.DataPropertyName = "DGMAYTHICONG";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.dgXiMang.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dgXiMang.HeaderText = "MTC";
+            this.dgXiMang.Name = "dgXiMang";
+            this.dgXiMang.Width = 80;
+            // 
+            // dg_ngay
+            // 
+            this.dg_ngay.DataPropertyName = "NGAYHIEULUC";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dg_ngay.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dg_ngay.HeaderText = "Ngày Áp Giá";
+            this.dg_ngay.Name = "dg_ngay";
+            this.dg_ngay.ReadOnly = true;
+            // 
+            // dg_Chon
+            // 
+            this.dg_Chon.DataPropertyName = "CHON";
+            this.dg_Chon.HeaderText = "Chọn";
+            this.dg_Chon.Name = "dg_Chon";
+            this.dg_Chon.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dg_Chon.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dg_Chon.Width = 55;
             // 
             // groupPanel1
             // 
@@ -351,6 +523,51 @@
             this.GridDanhMucTLMD.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridDanhMucTLMD_CellClick);
             this.GridDanhMucTLMD.Sorted += new System.EventHandler(this.GridDanhMucTLMD_Sorted);
             // 
+            // madanhmuc
+            // 
+            this.madanhmuc.DataPropertyName = "MADANHMUC";
+            this.madanhmuc.HeaderText = "Mã Danh Mục";
+            this.madanhmuc.Name = "madanhmuc";
+            this.madanhmuc.ReadOnly = true;
+            // 
+            // tenketcau
+            // 
+            this.tenketcau.DataPropertyName = "TENKETCAU";
+            this.tenketcau.HeaderText = "Tên Kết Cấu";
+            this.tenketcau.Name = "tenketcau";
+            this.tenketcau.ReadOnly = true;
+            this.tenketcau.Width = 220;
+            // 
+            // dvt
+            // 
+            this.dvt.DataPropertyName = "DVT";
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dvt.DefaultCellStyle = dataGridViewCellStyle8;
+            this.dvt.HeaderText = "ĐVT";
+            this.dvt.Name = "dvt";
+            this.dvt.ReadOnly = true;
+            this.dvt.Width = 50;
+            // 
+            // nhomvt
+            // 
+            this.nhomvt.DataPropertyName = "DONGIA";
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle9.Format = "N0";
+            dataGridViewCellStyle9.NullValue = null;
+            this.nhomvt.DefaultCellStyle = dataGridViewCellStyle9;
+            this.nhomvt.HeaderText = "Đơn Giá";
+            this.nhomvt.Name = "nhomvt";
+            this.nhomvt.ReadOnly = true;
+            this.nhomvt.Visible = false;
+            // 
+            // DONGIASO
+            // 
+            this.DONGIASO.DataPropertyName = "DONGIASO";
+            this.DONGIASO.HeaderText = "DONGIASO";
+            this.DONGIASO.Name = "DONGIASO";
+            this.DONGIASO.ReadOnly = true;
+            this.DONGIASO.Visible = false;
+            // 
             // pren
             // 
             this.pren.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -481,223 +698,6 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // groupDGVT
-            // 
-            this.groupDGVT.CanvasColor = System.Drawing.Color.Maroon;
-            this.groupDGVT.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
-            this.groupDGVT.Controls.Add(this.panelDonGia);
-            this.groupDGVT.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupDGVT.Location = new System.Drawing.Point(466, 243);
-            this.groupDGVT.Name = "groupDGVT";
-            this.groupDGVT.Size = new System.Drawing.Size(508, 288);
-            // 
-            // 
-            // 
-            this.groupDGVT.Style.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.groupDGVT.Style.BackColorGradientAngle = 90;
-            this.groupDGVT.Style.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.groupDGVT.Style.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.groupDGVT.Style.BorderBottomWidth = 1;
-            this.groupDGVT.Style.BorderColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-            this.groupDGVT.Style.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.groupDGVT.Style.BorderLeftWidth = 1;
-            this.groupDGVT.Style.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.groupDGVT.Style.BorderRightWidth = 1;
-            this.groupDGVT.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.groupDGVT.Style.BorderTopWidth = 1;
-            this.groupDGVT.Style.CornerDiameter = 4;
-            this.groupDGVT.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
-            this.groupDGVT.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
-            this.groupDGVT.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
-            this.groupDGVT.TabIndex = 57;
-            this.groupDGVT.Text = "Đơn Giá Vật Tư";
-            // 
-            // panelDonGia
-            // 
-            this.panelDonGia.CanvasColor = System.Drawing.SystemColors.Control;
-            this.panelDonGia.Controls.Add(this.btCapNhatDGVT);
-            this.panelDonGia.Controls.Add(this.GridDonGiaVT);
-            this.panelDonGia.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDonGia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panelDonGia.Location = new System.Drawing.Point(0, 0);
-            this.panelDonGia.Name = "panelDonGia";
-            this.panelDonGia.Size = new System.Drawing.Size(502, 265);
-            this.panelDonGia.Style.Alignment = System.Drawing.StringAlignment.Center;
-            this.panelDonGia.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
-            this.panelDonGia.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
-            this.panelDonGia.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
-            this.panelDonGia.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemText;
-            this.panelDonGia.Style.GradientAngle = 90;
-            this.panelDonGia.TabIndex = 0;
-            // 
-            // btCapNhatDGVT
-            // 
-            this.btCapNhatDGVT.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btCapNhatDGVT.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btCapNhatDGVT.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btCapNhatDGVT.ForeColor = System.Drawing.Color.DarkRed;
-            this.btCapNhatDGVT.Location = new System.Drawing.Point(364, 237);
-            this.btCapNhatDGVT.Name = "btCapNhatDGVT";
-            this.btCapNhatDGVT.Size = new System.Drawing.Size(135, 23);
-            this.btCapNhatDGVT.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
-            this.btCapNhatDGVT.TabIndex = 1;
-            this.btCapNhatDGVT.Text = "Cập Nhật Đơn Giá ";
-            this.btCapNhatDGVT.Click += new System.EventHandler(this.btCapNhatDGVT_Click);
-            // 
-            // GridDonGiaVT
-            // 
-            this.GridDonGiaVT.AllowUserToDeleteRows = false;
-            this.GridDonGiaVT.AllowUserToResizeColumns = false;
-            this.GridDonGiaVT.AllowUserToResizeRows = false;
-            this.GridDonGiaVT.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridDonGiaVT.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.GridDonGiaVT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GridDonGiaVT.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dg_ID,
-            this.dg_mahieudg,
-            this.dg_dg,
-            this.dg_vatlieu,
-            this.dg_nhanCong,
-            this.dgXiMang,
-            this.dg_ngay,
-            this.dg_Chon});
-            this.GridDonGiaVT.Location = new System.Drawing.Point(6, 3);
-            this.GridDonGiaVT.Name = "GridDonGiaVT";
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridDonGiaVT.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            this.GridDonGiaVT.RowHeadersWidth = 30;
-            this.GridDonGiaVT.Size = new System.Drawing.Size(493, 228);
-            this.GridDonGiaVT.TabIndex = 0;
-            this.GridDonGiaVT.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridDonGiaVT_CellClick);
-            this.GridDonGiaVT.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.GridDonGiaVT_EditingControlShowing);
-            this.GridDonGiaVT.Sorted += new System.EventHandler(this.GridDonGiaVT_Sorted);
-            this.GridDonGiaVT.UserAddedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.GridDonGiaVT_UserAddedRow);
-            // 
-            // madanhmuc
-            // 
-            this.madanhmuc.DataPropertyName = "MADANHMUC";
-            this.madanhmuc.HeaderText = "Mã Danh Mục";
-            this.madanhmuc.Name = "madanhmuc";
-            this.madanhmuc.ReadOnly = true;
-            // 
-            // tenketcau
-            // 
-            this.tenketcau.DataPropertyName = "TENKETCAU";
-            this.tenketcau.HeaderText = "Tên Kết Cấu";
-            this.tenketcau.Name = "tenketcau";
-            this.tenketcau.ReadOnly = true;
-            this.tenketcau.Width = 220;
-            // 
-            // dvt
-            // 
-            this.dvt.DataPropertyName = "DVT";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dvt.DefaultCellStyle = dataGridViewCellStyle8;
-            this.dvt.HeaderText = "ĐVT";
-            this.dvt.Name = "dvt";
-            this.dvt.ReadOnly = true;
-            this.dvt.Width = 50;
-            // 
-            // nhomvt
-            // 
-            this.nhomvt.DataPropertyName = "DONGIA";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle9.Format = "N0";
-            dataGridViewCellStyle9.NullValue = null;
-            this.nhomvt.DefaultCellStyle = dataGridViewCellStyle9;
-            this.nhomvt.HeaderText = "Đơn Giá";
-            this.nhomvt.Name = "nhomvt";
-            this.nhomvt.ReadOnly = true;
-            this.nhomvt.Visible = false;
-            // 
-            // DONGIASO
-            // 
-            this.DONGIASO.DataPropertyName = "DONGIASO";
-            this.DONGIASO.HeaderText = "DONGIASO";
-            this.DONGIASO.Name = "DONGIASO";
-            this.DONGIASO.ReadOnly = true;
-            this.DONGIASO.Visible = false;
-            // 
-            // dg_ID
-            // 
-            this.dg_ID.DataPropertyName = "STT";
-            this.dg_ID.HeaderText = "ID";
-            this.dg_ID.Name = "dg_ID";
-            this.dg_ID.Visible = false;
-            // 
-            // dg_mahieudg
-            // 
-            this.dg_mahieudg.DataPropertyName = "MADANHMUC";
-            this.dg_mahieudg.HeaderText = "MAHIEUDG";
-            this.dg_mahieudg.Name = "dg_mahieudg";
-            this.dg_mahieudg.ReadOnly = true;
-            this.dg_mahieudg.Visible = false;
-            // 
-            // dg_dg
-            // 
-            this.dg_dg.DataPropertyName = "DONGIA";
-            this.dg_dg.HeaderText = "ĐG";
-            this.dg_dg.Name = "dg_dg";
-            this.dg_dg.Width = 80;
-            // 
-            // dg_vatlieu
-            // 
-            this.dg_vatlieu.DataPropertyName = "DGVATLIEU";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle2.NullValue = null;
-            this.dg_vatlieu.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dg_vatlieu.HeaderText = "VL";
-            this.dg_vatlieu.Name = "dg_vatlieu";
-            this.dg_vatlieu.Width = 70;
-            // 
-            // dg_nhanCong
-            // 
-            this.dg_nhanCong.DataPropertyName = "DGNHANCONG";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.dg_nhanCong.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dg_nhanCong.HeaderText = "NC";
-            this.dg_nhanCong.Name = "dg_nhanCong";
-            this.dg_nhanCong.Width = 70;
-            // 
-            // dgXiMang
-            // 
-            this.dgXiMang.DataPropertyName = "DGMAYTHICONG";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.dgXiMang.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dgXiMang.HeaderText = "MTC";
-            this.dgXiMang.Name = "dgXiMang";
-            this.dgXiMang.Width = 80;
-            // 
-            // dg_ngay
-            // 
-            this.dg_ngay.DataPropertyName = "NGAYHIEULUC";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dg_ngay.DefaultCellStyle = dataGridViewCellStyle5;
-            this.dg_ngay.HeaderText = "Ngày Áp Giá";
-            this.dg_ngay.Name = "dg_ngay";
-            this.dg_ngay.ReadOnly = true;
-            // 
-            // dg_Chon
-            // 
-            this.dg_Chon.DataPropertyName = "CHON";
-            this.dg_Chon.HeaderText = "Chọn";
-            this.dg_Chon.Name = "dg_Chon";
-            this.dg_Chon.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dg_Chon.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dg_Chon.Width = 55;
-            // 
             // tab_DanhMucTaiLapMD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -709,6 +709,9 @@
             this.Name = "tab_DanhMucTaiLapMD";
             this.Size = new System.Drawing.Size(977, 534);
             this.panelDanhMucVT.ResumeLayout(false);
+            this.groupDGVT.ResumeLayout(false);
+            this.panelDonGia.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.GridDonGiaVT)).EndInit();
             this.groupPanel1.ResumeLayout(false);
             this.groupPanel11.ResumeLayout(false);
             this.groupPanel11.PerformLayout();
@@ -716,9 +719,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pren)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.next)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            this.groupDGVT.ResumeLayout(false);
-            this.panelDonGia.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.GridDonGiaVT)).EndInit();
             this.ResumeLayout(false);
 
         }
