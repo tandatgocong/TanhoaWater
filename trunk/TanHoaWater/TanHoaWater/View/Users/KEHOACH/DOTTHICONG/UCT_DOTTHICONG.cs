@@ -236,7 +236,20 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
                     {
                         dottc.NGAYCHUYENHC = dateNgayChuyenHC.Value.Date;
                     }
+                    /////////////
+                    if (!"1/1/0001".Equals(this.dtcTuNgay.Value.ToShortDateString()))
+                    {
+                        dottc.TCTUNGAY = dtcTuNgay.Value.Date;
+                    }
 
+
+                    if (!"1/1/0001".Equals(this.dtcDenNgay.Value.ToShortDateString()))
+                    {
+                        dottc.TCDENNGAY = dtcDenNgay.Value.Date;
+                    }
+
+
+                    /////
                     if (!"1/1/0001".Equals(this.dateChuyenTC.Value.ToShortDateString()))
                     {
                         dottc.NGAYCHUYENTC = dateChuyenTC.Value.Date;
@@ -356,7 +369,17 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
                     {
                         dottc.NGAYCHUYENTC = dateChuyenTC.Value.Date;
                     }
+                    /////////////
+                    if (!"1/1/0001".Equals(this.dtcTuNgay.Value.ToShortDateString()))
+                    {
+                        dottc.TCTUNGAY = dtcTuNgay.Value.Date;
+                    }
 
+
+                    if (!"1/1/0001".Equals(this.dtcDenNgay.Value.ToShortDateString()))
+                    {
+                        dottc.TCDENNGAY = dtcDenNgay.Value.Date;
+                    }
 
                     if (!"1/1/0001".Equals(this.dateNgayChuyenKT.Value.ToShortDateString()))
                     {
@@ -464,7 +487,10 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
             this.dateChuyenBu.ValueObject = dottc.CHUYENBUHANMUC;
             this.dateNgayLap.ValueObject = dottc.NGAYLAP;
             this.dateChuyenTC.ValueObject = dottc.NGAYCHUYENTC;
-            if (!"1/1/0001".Equals(this.dateChuyenTC.Value.ToShortDateString()))
+
+            this.dtcTuNgay.ValueObject = dottc.TCTUNGAY;
+            this.dtcDenNgay.ValueObject = dottc.TCDENNGAY;
+           // if (!"1/1/0001".Equals(this.dateChuyenTC.Value.ToShortDateString()))        
             this.cbLoaiBangKe.Text = dottc.LOAIBANGKE;
             this.dateChuyenBu.ValueObject = dottc.CHUYENBUHANMUC;
             this.dateNgayChuyenHC.ValueObject = dottc.NGAYCHUYENHC;
@@ -473,17 +499,7 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
             this.dateNgayChuyenKT.ValueObject = dottc.NGAYCHUYENKT;
             this.dateNgayThanhToan.ValueObject = dottc.NGAYTHANHTOAN;
             this.txtLyDoTroNgaiTC.Text = dottc.TRONGAITC;
-            try
-            {
-                cbLoaiBangKe.SelectedText = dottc.LOAIBANGKE;
-            }
-            catch (Exception)
-            {
-               
-            }
-
-          
-
+           
         }
 
         private void gridDotThiCong_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -655,14 +671,33 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
             catch (Exception)
             {
             }
+            string ngaytk = "";
+            KH_DOTTHICONG dotc = DAL.C_KH_DotThiCong.findByMadot(madot);
+            ngaytk = "Ngày " + dotc.NGAYLAP.Value.Day.ToString() + " tháng " + dotc.NGAYLAP.Value.Month.ToString() + " năm " + dotc.NGAYLAP.Value.Year.ToString();
             if (!"".Equals(madot) && !"".Equals(tendot))
             {
                 if (tendot.Equals("Gắn Mới(NĐ117)"))
                 {
                     ReportDocument rp = new rpt_DanhSachHSTC_GM();
+                    string tungay = "";
+                    string denngay = "";
+                    try
+                    {
+                       
+                        if (dotc != null)
+                        {
+                            tungay = Utilities.DateToString.NgayVN(dotc.TCTUNGAY.Value);
+                            denngay = Utilities.DateToString.NgayVN(dotc.TCDENNGAY.Value);
+                        }
+                    }
+                    catch (Exception)
+                    {
+                    }
+                    
                     rp.SetDataSource(DAL.C_KH_DotThiCong.BC_DanhSachDotThiCong(madot));
-                    rp.SetParameterValue("tungay",Utilities.DateToString.NgayVN(dateTuNgay));
-                    rp.SetParameterValue("denngay", Utilities.DateToString.NgayVN(dateDenNgay));
+                    rp.SetParameterValue("tungay", tungay);
+                    rp.SetParameterValue("denngay", denngay);
+                    rp.SetParameterValue("ngaytk", ngaytk);
                     rpt_Main mainReport = new rpt_Main(rp);
                     mainReport.ShowDialog();
                 }
@@ -670,6 +705,7 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
                 {
                     ReportDocument rp = new rpt_DanhSachHSTC_OC();
                     rp.SetDataSource(DAL.C_KH_DotThiCong.BC_DanhSachDotThiCong_OC(madot));
+                    rp.SetParameterValue("ngaytk", ngaytk);
                     rpt_Main mainReport = new rpt_Main(rp);
                     mainReport.ShowDialog();
                 }
@@ -677,6 +713,7 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
                 {
                     ReportDocument rp = new rpt_DanhSachHSTC_BT();
                     rp.SetDataSource(DAL.C_KH_DotThiCong.BC_DanhSachDotThiCong_BT(madot));
+                    rp.SetParameterValue("ngaytk", ngaytk);
                     rpt_Main mainReport = new rpt_Main(rp);
                     mainReport.ShowDialog();
                 }
@@ -689,6 +726,7 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
                 {
                     ReportDocument rp = new rpt_DanhSachHSTC_DOI();
                     rp.SetDataSource(DAL.C_KH_DotThiCong.BC_DanhSachDotThiCong_OC(madot));
+                    rp.SetParameterValue("ngaytk", ngaytk);
                     rpt_Main mainReport = new rpt_Main(rp);
                     mainReport.ShowDialog();
                 }

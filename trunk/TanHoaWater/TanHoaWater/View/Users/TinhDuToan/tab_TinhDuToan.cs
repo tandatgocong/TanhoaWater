@@ -23,7 +23,8 @@ namespace TanHoaWater.View.Users.TinhDuToan
         public tab_TinhDuToan()
         {
             InitializeComponent();
-            loadComboboxPhuiDao();          
+            loadComboboxPhuiDao();
+            fontSize.SelectedIndex = 2;
             this.txtSHS.Focus();
             pd_MaKetCau.AutoComplete = true;
             txtNguoiLapBG.Text = DAL.C_USERS._fullName;
@@ -1947,7 +1948,14 @@ namespace TanHoaWater.View.Users.TinhDuToan
                     rp = new rptBangGiaTuTaiLap();
                 }
                 else {
-                    rp = new rptBangGia();
+                    if (fontSize.SelectedIndex == 0) {
+                        rp = new rptBangGia_8();
+                    } else if (fontSize.SelectedIndex == 1) {
+                        rp = new rptBangGia_9();
+                    } else {
+                        rp = new rptBangGia();
+                    }
+                    
                 }
 
                 //rp.Subreports["Subreport1"].SetParameterValue("Tienchu", Utilities.Doctien.ReadMoney(String.Format("{0:0}", TongThanhTien)));

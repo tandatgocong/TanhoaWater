@@ -44,6 +44,18 @@ namespace TanHoaWater.DAL
             return null;
         }
 
+        public static KH_LOAIBANGKE getByTenLoaiBK(string tenloai) {
+            try
+            {
+                var query = from dottc in db.KH_LOAIBANGKEs where dottc.TENBANGKE == tenloai select dottc;
+                return query.SingleOrDefault();
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+            }
+            return null;
+        }
 
         public static bool InsertDotTC(KH_DOTTHICONG dottc)
         {

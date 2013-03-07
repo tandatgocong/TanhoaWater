@@ -38,6 +38,8 @@
             this.tabItem1 = new DevComponents.DotNetBar.TabItem(this.components);
             this.tabDanhSachDot = new DevComponents.DotNetBar.TabControlPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.labelX19 = new DevComponents.DotNetBar.LabelX();
+            this.labelX22 = new DevComponents.DotNetBar.LabelX();
             this.dateChuyenTC = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.labelX15 = new DevComponents.DotNetBar.LabelX();
             this.btChinhSuaDanhSach = new DevComponents.DotNetBar.ButtonX();
@@ -104,10 +106,8 @@
             this.tabItem3 = new DevComponents.DotNetBar.TabItem(this.components);
             this.tabControlPanel1 = new DevComponents.DotNetBar.TabControlPanel();
             this.tabItem4 = new DevComponents.DotNetBar.TabItem(this.components);
-            this.dateTuNgay = new System.Windows.Forms.DateTimePicker();
-            this.dateDenNgay = new System.Windows.Forms.DateTimePicker();
-            this.labelX19 = new DevComponents.DotNetBar.LabelX();
-            this.labelX22 = new DevComponents.DotNetBar.LabelX();
+            this.dtcTuNgay = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
+            this.dtcDenNgay = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.tabDanhSachDot.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dateChuyenTC)).BeginInit();
@@ -122,6 +122,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridDotThiCong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabControl1)).BeginInit();
             this.tabControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtcTuNgay)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtcDenNgay)).BeginInit();
             this.SuspendLayout();
             // 
             // tabCapNhatDS
@@ -178,8 +180,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.dateTuNgay);
-            this.panel1.Controls.Add(this.dateDenNgay);
+            this.panel1.Controls.Add(this.dtcDenNgay);
+            this.panel1.Controls.Add(this.dtcTuNgay);
             this.panel1.Controls.Add(this.labelX19);
             this.panel1.Controls.Add(this.labelX22);
             this.panel1.Controls.Add(this.dateChuyenTC);
@@ -239,6 +241,22 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(995, 585);
             this.panel1.TabIndex = 697;
+            // 
+            // labelX19
+            // 
+            this.labelX19.Location = new System.Drawing.Point(783, 166);
+            this.labelX19.Name = "labelX19";
+            this.labelX19.Size = new System.Drawing.Size(83, 23);
+            this.labelX19.TabIndex = 717;
+            this.labelX19.Text = "Đến Ngày";
+            // 
+            // labelX22
+            // 
+            this.labelX22.Location = new System.Drawing.Point(546, 164);
+            this.labelX22.Name = "labelX22";
+            this.labelX22.Size = new System.Drawing.Size(135, 23);
+            this.labelX22.TabIndex = 718;
+            this.labelX22.Text = "Thi Công Từ Ngày";
             // 
             // dateChuyenTC
             // 
@@ -628,7 +646,6 @@
             // 
             this.cbLoaiBangKe.DisplayMember = "Text";
             this.cbLoaiBangKe.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbLoaiBangKe.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbLoaiBangKe.FormattingEnabled = true;
             this.cbLoaiBangKe.ItemHeight = 20;
             this.cbLoaiBangKe.Location = new System.Drawing.Point(230, 108);
@@ -793,9 +810,9 @@
             // 
             // txtLyDoTroNgaiTC
             // 
-            this.txtLyDoTroNgaiTC.Location = new System.Drawing.Point(12, 183);
+            this.txtLyDoTroNgaiTC.Location = new System.Drawing.Point(12, 192);
             this.txtLyDoTroNgaiTC.Name = "txtLyDoTroNgaiTC";
-            this.txtLyDoTroNgaiTC.Size = new System.Drawing.Size(963, 50);
+            this.txtLyDoTroNgaiTC.Size = new System.Drawing.Size(963, 41);
             this.txtLyDoTroNgaiTC.TabIndex = 18;
             this.txtLyDoTroNgaiTC.Text = "";
             // 
@@ -1233,39 +1250,95 @@
             this.tabItem4.Text = "Bảng Kê  Nhận Đơn";
             this.tabItem4.Click += new System.EventHandler(this.tabItem4_Click);
             // 
-            // dateTuNgay
+            // dtcTuNgay
             // 
-            this.dateTuNgay.CustomFormat = "dd/MM/yyyy";
-            this.dateTuNgay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTuNgay.Location = new System.Drawing.Point(764, 457);
-            this.dateTuNgay.Name = "dateTuNgay";
-            this.dateTuNgay.Size = new System.Drawing.Size(100, 26);
-            this.dateTuNgay.TabIndex = 719;
             // 
-            // dateDenNgay
             // 
-            this.dateDenNgay.CustomFormat = "dd/MM/yyyy";
-            this.dateDenNgay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateDenNgay.Location = new System.Drawing.Point(891, 457);
-            this.dateDenNgay.Name = "dateDenNgay";
-            this.dateDenNgay.Size = new System.Drawing.Size(99, 26);
-            this.dateDenNgay.TabIndex = 720;
             // 
-            // labelX19
+            this.dtcTuNgay.BackgroundStyle.Class = "DateTimeInputBackground";
+            this.dtcTuNgay.BackgroundStyle.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
+            this.dtcTuNgay.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
+            this.dtcTuNgay.ButtonDropDown.Visible = true;
+            this.dtcTuNgay.CustomFormat = "dd/MM/yyyy";
+            this.dtcTuNgay.Format = DevComponents.Editors.eDateTimePickerFormat.Custom;
+            this.dtcTuNgay.Location = new System.Drawing.Point(669, 163);
             // 
-            this.labelX19.Location = new System.Drawing.Point(864, 459);
-            this.labelX19.Name = "labelX19";
-            this.labelX19.Size = new System.Drawing.Size(45, 23);
-            this.labelX19.TabIndex = 717;
-            this.labelX19.Text = "Đến";
             // 
-            // labelX22
             // 
-            this.labelX22.Location = new System.Drawing.Point(697, 459);
-            this.labelX22.Name = "labelX22";
-            this.labelX22.Size = new System.Drawing.Size(75, 23);
-            this.labelX22.TabIndex = 718;
-            this.labelX22.Text = "Từ Ngày";
+            this.dtcTuNgay.MonthCalendar.AnnuallyMarkedDates = new System.DateTime[0];
+            // 
+            // 
+            // 
+            this.dtcTuNgay.MonthCalendar.BackgroundStyle.BackColor = System.Drawing.SystemColors.Window;
+            this.dtcTuNgay.MonthCalendar.ClearButtonVisible = true;
+            // 
+            // 
+            // 
+            this.dtcTuNgay.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
+            this.dtcTuNgay.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90;
+            this.dtcTuNgay.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
+            this.dtcTuNgay.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.dtcTuNgay.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
+            this.dtcTuNgay.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1;
+            this.dtcTuNgay.MonthCalendar.DisplayMonth = new System.DateTime(2011, 11, 1, 0, 0, 0, 0);
+            this.dtcTuNgay.MonthCalendar.MarkedDates = new System.DateTime[0];
+            this.dtcTuNgay.MonthCalendar.MonthlyMarkedDates = new System.DateTime[0];
+            // 
+            // 
+            // 
+            this.dtcTuNgay.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.dtcTuNgay.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90;
+            this.dtcTuNgay.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.dtcTuNgay.MonthCalendar.TodayButtonVisible = true;
+            this.dtcTuNgay.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
+            this.dtcTuNgay.Name = "dtcTuNgay";
+            this.dtcTuNgay.Size = new System.Drawing.Size(108, 26);
+            this.dtcTuNgay.TabIndex = 719;
+            // 
+            // dtcDenNgay
+            // 
+            // 
+            // 
+            // 
+            this.dtcDenNgay.BackgroundStyle.Class = "DateTimeInputBackground";
+            this.dtcDenNgay.BackgroundStyle.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
+            this.dtcDenNgay.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
+            this.dtcDenNgay.ButtonDropDown.Visible = true;
+            this.dtcDenNgay.CustomFormat = "dd/MM/yyyy";
+            this.dtcDenNgay.Format = DevComponents.Editors.eDateTimePickerFormat.Custom;
+            this.dtcDenNgay.Location = new System.Drawing.Point(854, 163);
+            // 
+            // 
+            // 
+            this.dtcDenNgay.MonthCalendar.AnnuallyMarkedDates = new System.DateTime[0];
+            // 
+            // 
+            // 
+            this.dtcDenNgay.MonthCalendar.BackgroundStyle.BackColor = System.Drawing.SystemColors.Window;
+            this.dtcDenNgay.MonthCalendar.ClearButtonVisible = true;
+            // 
+            // 
+            // 
+            this.dtcDenNgay.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
+            this.dtcDenNgay.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90;
+            this.dtcDenNgay.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
+            this.dtcDenNgay.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.dtcDenNgay.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
+            this.dtcDenNgay.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1;
+            this.dtcDenNgay.MonthCalendar.DisplayMonth = new System.DateTime(2011, 11, 1, 0, 0, 0, 0);
+            this.dtcDenNgay.MonthCalendar.MarkedDates = new System.DateTime[0];
+            this.dtcDenNgay.MonthCalendar.MonthlyMarkedDates = new System.DateTime[0];
+            // 
+            // 
+            // 
+            this.dtcDenNgay.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.dtcDenNgay.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90;
+            this.dtcDenNgay.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.dtcDenNgay.MonthCalendar.TodayButtonVisible = true;
+            this.dtcDenNgay.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
+            this.dtcDenNgay.Name = "dtcDenNgay";
+            this.dtcDenNgay.Size = new System.Drawing.Size(108, 26);
+            this.dtcDenNgay.TabIndex = 720;
             // 
             // UCT_DOTTHICONG
             // 
@@ -1293,6 +1366,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridDotThiCong)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabControl1)).EndInit();
             this.tabControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtcTuNgay)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtcDenNgay)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1370,10 +1445,10 @@
         private DevComponents.DotNetBar.TabItem tabItem5;
         private DevComponents.Editors.DateTimeAdv.DateTimeInput dateChuyenTC;
         private DevComponents.DotNetBar.LabelX labelX15;
-        private System.Windows.Forms.DateTimePicker dateTuNgay;
-        private System.Windows.Forms.DateTimePicker dateDenNgay;
         private DevComponents.DotNetBar.LabelX labelX19;
         private DevComponents.DotNetBar.LabelX labelX22;
+        private DevComponents.Editors.DateTimeAdv.DateTimeInput dtcDenNgay;
+        private DevComponents.Editors.DateTimeAdv.DateTimeInput dtcTuNgay;
 
     }
 }

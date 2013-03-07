@@ -41,6 +41,8 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
             this.txtSoHoaDon.Text = "";
             this.txtTinhTrangTLK.Text = "";
             this.txtSoDanhBo.Text = "";
+            this.txtSoTien.Text = "";
+            this.txtTinhTrangTLK.Text = "";
             this.txtSHS.Focus();
         }
         public void loadDataGrid()

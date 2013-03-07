@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG.BC {
+namespace TanHoaWater.View.Users.TinhDuToan.report {
     using System;
     using System.ComponentModel;
     using CrystalDecisions.Shared;
@@ -16,14 +16,14 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG.BC {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class rpt_DanhSachHSTC_BT_DOI : ReportClass {
+    public class rptBangGia_9 : ReportClass {
         
-        public rpt_DanhSachHSTC_BT_DOI() {
+        public rptBangGia_9() {
         }
         
         public override string ResourceName {
             get {
-                return "rpt_DanhSachHSTC_BT_DOI.rpt";
+                return "rptBangGia-9.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG.BC {
         
         public override string FullResourceName {
             get {
-                return "TanHoaWater.View.Users.KEHOACH.DOTTHICONG.BC.rpt_DanhSachHSTC_BT_DOI.rpt";
+                return "TanHoaWater.View.Users.TinhDuToan.report.rptBangGia-9.rpt";
             }
             set {
                 // Do nothing
@@ -66,7 +66,7 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG.BC {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
+        public CrystalDecisions.CrystalReports.Engine.Section GroupHeaderSection2 {
             get {
                 return this.ReportDefinition.Sections[2];
             }
@@ -74,7 +74,7 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG.BC {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
+        public CrystalDecisions.CrystalReports.Engine.Section DetailSection1 {
             get {
                 return this.ReportDefinition.Sections[3];
             }
@@ -82,7 +82,7 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG.BC {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section5 {
+        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection2 {
             get {
                 return this.ReportDefinition.Sections[4];
             }
@@ -90,7 +90,23 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG.BC {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_KETHOP {
+        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
+            get {
+                return this.ReportDefinition.Sections[5];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.CrystalReports.Engine.Section Section5 {
+            get {
+                return this.ReportDefinition.Sections[6];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_Tienchu {
             get {
                 return this.DataDefinition.ParameterFields[0];
             }
@@ -98,17 +114,41 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG.BC {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_ngaytk {
+        public CrystalDecisions.Shared.IParameterField Parameter_gan {
             get {
                 return this.DataDefinition.ParameterFields[1];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_nhua {
+            get {
+                return this.DataDefinition.ParameterFields[2];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_khachhangdautu {
+            get {
+                return this.DataDefinition.ParameterFields[3];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_subReportrpt_subTienchu {
+            get {
+                return this.DataDefinition.ParameterFields[4];
             }
         }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class Cachedrpt_DanhSachHSTC_BT_DOI : Component, ICachedReport {
+    public class CachedrptBangGia_9 : Component, ICachedReport {
         
-        public Cachedrpt_DanhSachHSTC_BT_DOI() {
+        public CachedrptBangGia_9() {
         }
         
         [Browsable(false)]
@@ -145,7 +185,7 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG.BC {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            rpt_DanhSachHSTC_BT_DOI rpt = new rpt_DanhSachHSTC_BT_DOI();
+            rptBangGia_9 rpt = new rptBangGia_9();
             rpt.Site = this.Site;
             return rpt;
         }

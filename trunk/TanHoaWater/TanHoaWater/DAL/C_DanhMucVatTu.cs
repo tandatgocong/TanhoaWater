@@ -174,7 +174,7 @@ namespace TanHoaWater.DAL
             string sql = " SELECT MAHIEU,MAHDG,UPPER(TENVT) AS 'TENVT',DVT,NHOMVT as 'NHOMVT','CM' as 'LOAISN','1' as 'KHOILUONG' ,'1' as DONGIAVL,'1' as DONGIANC,'1' as DONGIAMTC  ";
             sql += " FROM DANHMUCVATTU ";
             sql += " WHERE MAHIEU IN (" + selectin + ") ";
-            sql += " ORDER BY CREATEDATE ASC ";
+            sql += " ORDER BY STT ASC ";
             SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             DataSet dataset = new DataSet();
             adapter.Fill(dataset,   "TABLE");
