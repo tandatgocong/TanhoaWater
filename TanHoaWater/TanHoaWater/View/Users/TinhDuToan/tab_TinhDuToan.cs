@@ -24,7 +24,7 @@ namespace TanHoaWater.View.Users.TinhDuToan
         {
             InitializeComponent();
             loadComboboxPhuiDao();
-            fontSize.SelectedIndex = 2;
+            fontSize.SelectedIndex = 3;
             this.txtSHS.Focus();
             pd_MaKetCau.AutoComplete = true;
             txtNguoiLapBG.Text = DAL.C_USERS._fullName;
@@ -1949,10 +1949,16 @@ namespace TanHoaWater.View.Users.TinhDuToan
                 }
                 else {
                     if (fontSize.SelectedIndex == 0) {
-                        rp = new rptBangGia_8();
+                        rp = new rptBangGia_7();
                     } else if (fontSize.SelectedIndex == 1) {
+                        rp = new rptBangGia_8();
+                    }
+                    else if (fontSize.SelectedIndex == 2)
+                    {
                         rp = new rptBangGia_9();
-                    } else {
+                    }
+                    else
+                    {
                         rp = new rptBangGia();
                     }
                     
