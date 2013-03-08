@@ -807,6 +807,12 @@
     <Compile Include="View\Users\TinhDuToan\frmBoVT.Designer.cs">
       <DependentUpon>frmBoVT.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Users\TinhDuToan\report\rptBangGia-7.cs">
+      <DependentUpon>rptBangGia-7.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="View\Users\TinhDuToan\report\rptBangGia-9.cs">
       <DependentUpon>rptBangGia-9.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -1267,6 +1273,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\TinhDuToan\frmBoVT.resx">
       <DependentUpon>frmBoVT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\TinhDuToan\report\rptBangGia-7.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptBangGia-7.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\TinhDuToan\report\rptBangGia-9.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

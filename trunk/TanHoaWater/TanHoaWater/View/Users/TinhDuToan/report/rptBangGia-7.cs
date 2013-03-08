@@ -16,14 +16,14 @@ namespace TanHoaWater.View.Users.TinhDuToan.report {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class rptBangGia : ReportClass {
+    public class rptBangGia_7 : ReportClass {
         
-        public rptBangGia() {
+        public rptBangGia_7() {
         }
         
         public override string ResourceName {
             get {
-                return "rptBangGia.rpt";
+                return "rptBangGia-7.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace TanHoaWater.View.Users.TinhDuToan.report {
         
         public override string FullResourceName {
             get {
-                return "TanHoaWater.View.Users.TinhDuToan.report.rptBangGia.rpt";
+                return "TanHoaWater.View.Users.TinhDuToan.report.rptBangGia-7.rpt";
             }
             set {
                 // Do nothing
@@ -106,14 +106,6 @@ namespace TanHoaWater.View.Users.TinhDuToan.report {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section PageFooterSection2 {
-            get {
-                return this.ReportDefinition.Sections[7];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
         public CrystalDecisions.Shared.IParameterField Parameter_Tienchu {
             get {
                 return this.DataDefinition.ParameterFields[0];
@@ -154,9 +146,9 @@ namespace TanHoaWater.View.Users.TinhDuToan.report {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedrptBangGia : Component, ICachedReport {
+    public class CachedrptBangGia_7 : Component, ICachedReport {
         
-        public CachedrptBangGia() {
+        public CachedrptBangGia_7() {
         }
         
         [Browsable(false)]
@@ -193,7 +185,7 @@ namespace TanHoaWater.View.Users.TinhDuToan.report {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            rptBangGia rpt = new rptBangGia();
+            rptBangGia_7 rpt = new rptBangGia_7();
             rpt.Site = this.Site;
             return rpt;
         }
