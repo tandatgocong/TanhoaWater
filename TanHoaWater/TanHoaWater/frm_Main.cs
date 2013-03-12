@@ -24,6 +24,7 @@ using TanHoaWater.View.Users.DONGHONUOC;
 using TanHoaWater.View.Users.TinhDuToan.BGDieuChinh;
 using TanHoaWater.View.Users.KTTC;
 using System.Globalization;
+using TanHoaWater.View.Users.TCTB;
 
 namespace TanHoaWater
 {
@@ -266,6 +267,11 @@ namespace TanHoaWater
                   //  this.iconMenuPanel.Controls.Add(group_DoiDHN);
                   //  group_DoiDHN.Visible = true;
 
+                }
+                else if ("TCTB".Equals(DAL.C_USERS._maphong.Trim()))
+                {
+                    this.menuDoiTCTB.Visible = true;
+                    this.iconMenuPanel.Controls.Clear();
                 }
             }
             else if ("QT".Equals(DAL.C_USERS._roles.Trim()))
@@ -833,6 +839,22 @@ namespace TanHoaWater
         {
             frm_HoanCongQuyetToan hcqt = new frm_HoanCongQuyetToan();
             hcqt.ShowDialog();
+        }
+
+        private void toolStripMenuItem8_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.PanelContent.Controls.Clear();
+                this.PanelContent.Controls.Add(new tab_DanhSachHoanCongTCTB(""));
+                this.menuDoiTCTB.Select();
+            }
+            catch (Exception ex)
+            {
+                log.Error("Loi Load Form " + ex.Message);
+                MessageBox.Show(this, "Lỗi Load Dữ Liệu", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Application.Exit();
+            } 
         }
 
         //private void menuDieuChinh_Click(object sender, EventArgs e)

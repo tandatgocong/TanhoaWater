@@ -298,7 +298,7 @@ namespace TanHoaWater.DAL
             sql += "  FROM TOTHIETKE ttk, DON_KHACHHANG kh,QUAN q,PHUONG p";
             sql += "  WHERE  kh.QUAN = q.MAQUAN AND q.MAQUAN=p.MAQUAN AND kh.PHUONG=p.MAPHUONG  AND ttk.SOHOSO=kh.SOHOSO ";
             //  sql += " AND ttk.MADOT='" + ttkMaDot + "'";
-            sql += " AND  NGAYHOANTATTK='" + ngayhoantat + "'";
+            sql += " AND CONVERT(VARCHAR(10),ttk.NGAYTRAHS,103) ='" + ngayhoantat + "'";
 
             sql += " ORDER BY TINHTRANGSVD";
             SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
@@ -492,6 +492,28 @@ namespace TanHoaWater.DAL
             {
                 sql += " AND TRONGAITHIETKE='True'"; 
             
+            }
+            SqlDataAdapter dond = new SqlDataAdapter(sql, db.Connection.ConnectionString);
+            dond.Fill(ds, "V_TTK_HOANTATTK");
+
+            return ds;
+        }
+        public static DataSet BC_HOANTATTK_BANGEK(string dotnd, string nguoilap, string hoantat)
+        {
+            DataSet ds = new DataSet();
+            TanHoaDataContext db = new TanHoaDataContext();
+            db.Connection.Open();
+            string sql = "SELECT * FROM V_TTK_HOANTATTK ";
+            sql += " WHERE TTKMD='" + dotnd + "' AND TKHOANTAT='True'";
+            sql += " AND USERNAME='" + nguoilap + "'";
+            if ("True".Equals(hoantat))
+            {
+                sql += " AND TKHOANTAT='True' AND (TRONGAITHIETKE='False' OR TRONGAITHIETKE IS NULL) ";
+            }
+            else if ("False".Equals(hoantat))
+            {
+                sql += " AND TRONGAITHIETKE='True'";
+
             }
             SqlDataAdapter dond = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             dond.Fill(ds, "V_TTK_HOANTATTK");

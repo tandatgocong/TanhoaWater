@@ -12,21 +12,27 @@ using CrystalDecisions.CrystalReports.Engine;
 using TanHoaWater.View.Users.KEHOACH.HOANCONG.BC;
 using TanHoaWater.View.Users.Report;
 using TanHoaWater.Database;
-namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
+using System.Globalization;
+namespace TanHoaWater.View.Users.TCTB
 {
-    public partial class tab_DanhSachHoanCong : UserControl
+    public partial class tab_DanhSachHoanCongTCTB : UserControl
     {
-        private static readonly ILog log = LogManager.GetLogger(typeof(tab_DanhSachHoanCong).Name);
+        private static readonly ILog log = LogManager.GetLogger(typeof(tab_DanhSachHoanCongTCTB).Name);
         AutoCompleteStringCollection namesCollection = new AutoCompleteStringCollection();
-        public tab_DanhSachHoanCong(string madottc)
+        public tab_DanhSachHoanCongTCTB(string madottc)
         {
             InitializeComponent();
-            cbDotHoanCong.DataSource = DAL.C_KH_DotThiCong.getListDTC();
+            //string sql = "SELECT [SHS],[HOTEN],[DIACHI],[COTLK],[NGAYTHICONG],[CHISO],[SOTHANTLK],[HIEUDONGHO],[SOHOADON],[NGAYDONGTIEN] ,[TCTB_TONGGIATRI],[TCTB_CPNHANCONG],[TCTB_CPVATTU],[ONG20],[ONG25],[ONG50],[ONG100],[ONG150],[ONGKHAC],[MADOTTC],[DHN_NGAYKIEMDINH] FROM V_HOANGCONGTCTB WHERE MADOTTC='" + this.cbDotHoanCong.Text.Replace(" ", "") + "'";
+            //gridHoanCong.DataSource = DAL.LinQConnection.getDataTable(sql);
+
+
+            string sql = "SELECT MADOTTC FROM V_HOANGCONGTCTB GROUP BY MADOTTC ORDER BY MADOTTC ASC";
+            cbDotHoanCong.DataSource = DAL.LinQConnection.getDataTable(sql);
             cbDotHoanCong.DisplayMember = "MADOTTC";
             cbDotHoanCong.ValueMember = "MADOTTC";
             try
             {
-                gridHoanCong.DataSource = DAL.C_KH_HoanCong.getListHoanCong(madottc, -1);
+                hoantat();
             }
             catch (Exception)
             {
@@ -38,9 +44,10 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
             {
                 namesCollection.Add(item.TENDONGHO);
             }
-            //gr_TenDongHo.AutoCompleteMode = AutoCompleteMode.Suggest;
-            //gr_TenDongHo.AutoCompleteSource = AutoCompleteSource.CustomSource;
-            //gr_TenDongHo.AutoCompleteCustomSource = namesCollection;.AutoCompleteCustomSource = namesCollection;
+            txtHieu.AutoCompleteMode = AutoCompleteMode.Suggest;
+            txtHieu.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            txtHieu.AutoCompleteCustomSource = namesCollection;
+
 
 
         }
@@ -88,14 +95,11 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
         {
             try
             {
-                if (checkALl.Checked)
-                    gridHoanCong.DataSource = DAL.C_KH_HoanCong.getListHoanCong_(this.cbDotHoanCong.Text, 0);
-                else if (checkChuaHoanCong.Checked)
-                    gridHoanCong.DataSource = DAL.C_KH_HoanCong.getListHoanCong_(this.cbDotHoanCong.Text, -1);
-                else if (chekDaHoanCong.Checked)
-                    gridHoanCong.DataSource = DAL.C_KH_HoanCong.getListHoanCong_(this.cbDotHoanCong.Text, 1);
 
-            }
+                string sql = "SELECT [SHS],'True' as 'IN',[HOTEN],[DIACHI],[COTLK],[NGAYTHICONG],[CHISO],[SOTHANTLK],[HIEUDONGHO],[SOHOADON],[NGAYDONGTIEN] ,[TCTB_TONGGIATRI],[TCTB_CPNHANCONG],[TCTB_CPVATTU],[ONG20],[ONG25],[ONG50],[ONG100],[ONG150],[ONGKHAC],[MADOTTC],[DHN_NGAYKIEMDINH],DANHBO ";
+                sql+=" FROM V_HOANGCONGTCTB WHERE MADOTTC='" + this.cbDotHoanCong.Text.Replace(" ", "") + "'"; 
+                gridHoanCong.DataSource = DAL.LinQConnection.getDataTable(sql);
+                     }
             catch (Exception)
             {
 
@@ -105,24 +109,37 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
         {
             hoantat();
         }
-
+        
         private void gridHoanCong_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
-                if (e.RowIndex < 0) return;
-                else if (gridHoanCong.CurrentCell.OwningColumn.Name == "hc_NgayTC")
-                {
-                    dateThiCong.Visible = true;
-                    dateThiCong.Top = this.gridHoanCong.Top + gridHoanCong.GetRowDisplayRectangle(e.RowIndex, true).Top;
-                    dateThiCong.Left = this.gridHoanCong.Left + gridHoanCong.GetColumnDisplayRectangle(e.ColumnIndex, true).Left;
-                    dateThiCong.Width = gridHoanCong.Columns[e.ColumnIndex].Width;
-                    dateThiCong.Height = gridHoanCong.Rows[e.RowIndex].Height;
-                    dateThiCong.BringToFront();
-                    dateThiCong.Select();
-                    dateThiCong.Focus();
-
-                }
+               this.txtSHS.Text= this.gridHoanCong.Rows[e.RowIndex].Cells["hc_SHS"].Value+"";
+               this.txtHoTen.Text = this.gridHoanCong.Rows[e.RowIndex].Cells["hc_HoTen"].Value + "";
+               this.txtDiaChi.Text = this.gridHoanCong.Rows[e.RowIndex].Cells["hc_DiaChi"].Value + "";
+               this.txtCoTLK.Text = this.gridHoanCong.Rows[e.RowIndex].Cells["hc_CoTLK"].Value + "";
+               this.dateNgayGan.ValueObject = DateTime.ParseExact(this.gridHoanCong.Rows[e.RowIndex].Cells["hc_NgayTC"].Value + "", "dd/MM/yyyy", new CultureInfo("en-US"));
+               if ("".Equals(this.gridHoanCong.Rows[e.RowIndex].Cells["hc_ChiSo"].Value + "")) {
+                   this.txtChiSo.Text = "00";
+               } else { 
+             this.txtChiSo.Text = this.gridHoanCong.Rows[e.RowIndex].Cells["hc_ChiSo"].Value + "";
+               }
+              
+               this.txtSoThan.Text = this.gridHoanCong.Rows[e.RowIndex].Cells["hc_SoTLK"].Value + "";
+               this.txtHieu.Text = this.gridHoanCong.Rows[e.RowIndex].Cells["gr_TenDongHo"].Value + "";
+               this.txtbienLai.Text = this.gridHoanCong.Rows[e.RowIndex].Cells["hc_SoBL"].Value + "";
+               this.dateNgayDongTien.ValueObject = this.gridHoanCong.Rows[e.RowIndex].Cells["hc_NgayDongTein"].Value;
+               this.txtTongGiaTri.Text = this.gridHoanCong.Rows[e.RowIndex].Cells["hc_TongGTXL"].Value + "";
+               this.txtNhanCong.Text = this.gridHoanCong.Rows[e.RowIndex].Cells["hc_NhanCong"].Value + "";
+               this.txtVatTu.Text = this.gridHoanCong.Rows[e.RowIndex].Cells["hc_ChiPhiVT"].Value + "";
+               this.txtO20.Text = this.gridHoanCong.Rows[e.RowIndex].Cells["O20"].Value + "";
+               this.txtO25.Text = this.gridHoanCong.Rows[e.RowIndex].Cells["O25"].Value + "";
+               this.txtO50.Text = this.gridHoanCong.Rows[e.RowIndex].Cells["O50"].Value + "";
+               this.txtO100.Text = this.gridHoanCong.Rows[e.RowIndex].Cells["O100"].Value + "";
+               this.txtOK.Text = this.gridHoanCong.Rows[e.RowIndex].Cells["OK"].Value + "";
+               this.txtDanhBo.Text = this.gridHoanCong.Rows[e.RowIndex].Cells["DANHBO"].Value + "";
+               this.txtSHS.Focus();
+                    
 
             }
             catch (Exception)
@@ -132,8 +149,8 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
 
         private void dateThiCong_ValueChanged(object sender, EventArgs e)
         {
-            gridHoanCong.Rows[gridHoanCong.CurrentCell.RowIndex].Cells["hc_NgayTC"].Value = Utilities.DateToString.NgayVN(this.dateThiCong);
-            dateThiCong.Visible = false;
+           // gridHoanCong.Rows[gridHoanCong.CurrentCell.RowIndex].Cells["hc_NgayTC"].Value = Utilities.DateToString.NgayVN(this.dateThiCong);
+           // dateThiCong.Visible = false;
         }
 
         private void gridHoanCong_CellLeave(object sender, DataGridViewCellEventArgs e)
@@ -162,7 +179,7 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
 
         private void dateThiCong_Leave(object sender, EventArgs e)
         {
-            this.dateThiCong.Visible = false;
+          //  this.dateThiCong.Visible = false;
         }
         private Control txtKeypress;
         private void KeyPressHandle(object sender, System.Windows.Forms.KeyPressEventArgs e)
@@ -331,10 +348,54 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
 
         }
 
+        
+        double ParseDouble(string so) {
+            try
+            {
+                return double.Parse(so.Replace(" ",""));
+            }
+            catch (Exception)
+            {
+            }
+            return 0;
+        }
         private void btHoanTat_Click(object sender, EventArgs e)
         {
-            updateDulieu();
+            //updateDulieu();
+            string shs = this.txtSHS.Text;
+            KH_HOSOKHACHHANG hskh = DAL.C_HoanCongDHN_DotTCTB.findByHoSoHC(shs);
+            if (hskh != null) {
+                try{
+                    hskh.COTLK = int.Parse(this.txtCoTLK.Text);
+                }
+                catch (Exception)
+                {}
+                if (!"1/1/0001".Equals(this.dateNgayGan.Value.ToShortDateString()))
+                {
+                    hskh.NGAYTHICONG = dateNgayGan.Value.Date;
+                }
+                try{
+                       hskh.CHISO = int.Parse(this.txtChiSo.Text);
+                }
+                catch (Exception)
+                {}
+                hskh.SOTHANTLK = this.txtSoThan.Text;
+                hskh.HIEUDONGHO=this.txtHieu.Text;
+                hskh.TCTB_TONGGIATRI = ParseDouble(this.txtTongGiaTri.Text);
+                hskh.TCTB_CPNHANCONG = ParseDouble(this.txtNhanCong.Text);
+                hskh.TCTB_CPVATTU = ParseDouble(this.txtVatTu.Text);
+                hskh.ONG20 = this.txtO20.Text;
+                hskh.ONG25 = this.txtO25.Text;
+                hskh.ONG50 = this.txtO50.Text;
+                hskh.ONG100 = this.txtO100.Text;
+                hskh.ONGKHAC = this.txtOK.Text;
+                if (DAL.C_HoanCongDHN_DotTCTB.Update()== false)
+                    MessageBox.Show(this, "Cập Nhật Đợt Thi Công Không Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+              
+                hoantat();
 
+                    
+            }           
 
         }
 
@@ -390,19 +451,9 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
                   count++;
             return count;
         }
-        private void gridHoanCong_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+
+        private void label6_Click(object sender, EventArgs e)
         {
-            if (gridHoanCong.CurrentCell.OwningColumn.Name == "hc_SoTLK")
-            {
-                if (checktrungsothan(this.gridHoanCong.Rows[gridHoanCong.CurrentCell.RowIndex].Cells["hc_SoTLK"].Value + "")>1)
-                {
-                    MessageBox.Show(this, "Số Thân TLK Đã Tồn Tại.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-                else if (DAL.C_KH_HoSoKhachHang.checkSoThanTLK(this.gridHoanCong.Rows[gridHoanCong.CurrentCell.RowIndex].Cells["hc_SoTLK"].Value + "") >= 1)
-                {
-                    MessageBox.Show(this, "Số Thân TLK Đã Tồn Tại.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-            }
 
         }
     }
