@@ -478,7 +478,7 @@
             this.btThem.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btThem.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btThem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btThem.Location = new System.Drawing.Point(898, 214);
+            this.btThem.Location = new System.Drawing.Point(897, 214);
             this.btThem.Name = "btThem";
             this.btThem.Size = new System.Drawing.Size(75, 24);
             this.btThem.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;

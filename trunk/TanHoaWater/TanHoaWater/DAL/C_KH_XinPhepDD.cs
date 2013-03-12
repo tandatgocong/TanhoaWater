@@ -203,11 +203,16 @@ namespace TanHoaWater.DAL
                         {
                             kichthuoc += " + ";
                         }
-                        kichthuoc += "(" + Utilities.Strings.DoiDonViMet(phui.DAI.Value) + "x" + Utilities.Strings.DoiDonViMet(phui.RONG.Value) + ")";
+                        kichthuoc += "(" + Utilities.Strings.DoiDonViMet(phui.DAI.Value) + "x" + Utilities.Strings.DoiDonViMet(phui.RONG.Value) + ")m";
 
                         k++;
                     }
-                    item.KICHTHUOC = kichthuoc;
+                    if (DAL.C_DonKhachHang.findBySHS(shs).SOHO > 1) {
+                        item.KICHTHUOC = DAL.C_DonKhachHang.findBySHS(shs).SOHO +""+ kichthuoc;
+                    } else {
+                        item.KICHTHUOC = kichthuoc;
+                    }
+                    
                     item.DAI = String.Format("{0:0.00}", dai);
                     item.SAU = "0.6";
                     if (item.MADANHMUC.Equals("N12B") || item.MADANHMUC.Equals("N12C") || item.MADANHMUC.Equals("N5") || item.MADANHMUC.Equals("NHUA10") || item.MADANHMUC.Equals("NHUA10-C3"))

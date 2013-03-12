@@ -70,16 +70,22 @@ namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
                 }
                 else {
                     string _shs = table.Rows[0][0].ToString();
-                    if (DAL.C_KH_XinPhepDD.getListBCPhuiDao(_shs).Count <= 0)
-                    {
+                    //if (DAL.C_KH_XinPhepDD.getListBCPhuiDao(_shs).Count <= 0)
+                    //{
 
-                        DAL.C_KH_XinPhepDD.getPhuiDao(_shs);
+                    //    DAL.C_KH_XinPhepDD.getPhuiDao(_shs);
+                    //    DAL.C_KH_XinPhepDD.TinhPhuiDao(_shs);
+                    //    GridViewPhuiDao.DataSource = DAL.C_KH_XinPhepDD.getListBCPhuiDao(_shs);
+                    //}
+                    //else {
+                    //    GridViewPhuiDao.DataSource = DAL.C_KH_XinPhepDD.getListBCPhuiDao(_shs);
+                    //}
+                    DAL.LinQConnection.ExecuteCommand_("DELETE FROM KH_BAOCAOPHUIDAO WHERE SHS='" + _shs + "'");
+                     DAL.C_KH_XinPhepDD.getPhuiDao(_shs);
                         DAL.C_KH_XinPhepDD.TinhPhuiDao(_shs);
                         GridViewPhuiDao.DataSource = DAL.C_KH_XinPhepDD.getListBCPhuiDao(_shs);
-                    }
-                    else {
-                        GridViewPhuiDao.DataSource = DAL.C_KH_XinPhepDD.getListBCPhuiDao(_shs);
-                    }
+
+                    
                     if ("DD".Contains(_shs))
                     {
                         cbMucDichDD.SelectedIndex = 1;
@@ -104,6 +110,7 @@ namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
                     catch (Exception)
                     {
                     }
+                   /* Ko tìm bảng vẽ
                     try
                     {
                         if (xinphep != null) {
@@ -119,12 +126,21 @@ namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
                     {
                         
                     }
+                    * */
                     this.txtHoTen.Text = table.Rows[0][1].ToString();
                     this.txtDiaChi.Text = table.Rows[0][2].ToString();
                     this.txtGhiChu.Text = table.Rows[0][0].ToString();
                     this.txtGhiChu.Focus();
               }
             }
+        }
+        public void Refresh()
+        {
+            txtMaSHS.Text = "";
+            txtHoTen.Text = "";
+            txtDiaChi.Text = "";
+            txtGhiChu.Text = "";
+            txtMaSHS.Focus();
         }
 
         public void loadDataGrid(string sodot) {
@@ -218,9 +234,10 @@ namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
                     }
                     flag = false;
                     loadDataGrid(this.cbMaDot.Text);
+                    Refresh();
                     try
                     {
-                        this.txtMaSHS.Text = (int.Parse(txtMaSHS.Text) + 1)+"";
+                        //this.txtMaSHS.Text = (int.Parse(txtMaSHS.Text) + 1)+"";
                     }
                     catch (Exception)
                     {
@@ -240,8 +257,7 @@ namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
         {
             if (e.KeyChar == 13) {
                 add();
-                this.txtMaSHS.Focus();
-                this.txtMaSHS.Select();
+                Refresh();
             }
         }
 
@@ -306,6 +322,7 @@ namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
         private void btThem_Click(object sender, EventArgs e)
         {
             add();
+           
         }
 
         private void btExport_Click(object sender, EventArgs e)
