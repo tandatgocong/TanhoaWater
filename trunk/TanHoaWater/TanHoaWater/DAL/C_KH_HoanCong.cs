@@ -80,6 +80,33 @@ namespace TanHoaWater.DAL
             db.Connection.Close();
             return dataset.Tables[0];
         }
+
+        public static DataTable getListHoanCong_(string dottc, int flag)
+        {
+            string sql = "SELECT  donkh.SHS,HOTEN,(SONHA +' '+ DUONG+', P.'+TENPHUONG +', Q.'+TENQUAN) AS 'DIACHI',hosokh.COTLK, CONVERT(varchar(50), hosokh.NGAYTHICONG,103) as 'NGAYTHICONG', hosokh.CHISO, hosokh.SOTHANTLK,hosokh.HIEUDONGHO,hosokh.HOANCONG,donkh.SOHOADON,donkh.NGAYDONGTIEN, hosokh.CPVATTU, hosokh.CPNHANCONG, hosokh.CPMAYTHICONG,hosokh.TAILAPMATDUONG  ";
+            sql += " FROM DON_KHACHHANG donkh, PHUONG p, QUAN q, KH_HOSOKHACHHANG hosokh ";
+            sql += " WHERE donkh.QUAN = q.MAQUAN AND q.MAQUAN=p.MAQUAN AND donkh.PHUONG=p.MAPHUONG  ";
+            sql += "  AND donkh.SHS = hosokh.SHS  AND hosokh.MADOTTC=N'" + dottc + "'";
+
+            // flag = -1: chua hoan cong
+            // flag = 1: da hoan cong
+            // flag = 0: ta ca
+
+            if (flag == -1)
+                sql += " AND (hosokh.HOANCONG IS NULL OR hosokh.HOANCONG='False') ";
+            else if (flag == 1)
+                sql += " AND hosokh.HOANCONG='True'";
+
+            db.Connection.Open();
+            sql += " ORDER BY hosokh.STT ASC ";
+            SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
+            DataSet dataset = new DataSet();
+            adapter.Fill(dataset, "TABLE");
+            db.Connection.Close();
+            return dataset.Tables[0];
+        }
+     
+
         public static DataTable getListHoanCongTroNgai(string dottc, int flag)
         {
             string sql = "SELECT  donkh.SHS,HOTEN,(SONHA +' '+ DUONG+', P.'+TENPHUONG +', Q.'+TENQUAN) AS 'DIACHI', hosokh.TRONGAI,hosokh.NOIDUNGTN ";

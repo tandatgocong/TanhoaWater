@@ -230,7 +230,6 @@ namespace TanHoaWater.View.Users.To_ThietKe
 
         private void txtGhiChu_KeyPress(object sender, KeyPressEventArgs e)
         {
-
             try
             {
                 if (e.KeyChar == 13)
@@ -398,6 +397,48 @@ namespace TanHoaWater.View.Users.To_ThietKe
 
             rp.SetParameterValue("ngay", Utilities.DateToString.NgayVN(bcDate));
             report.ReportSource = rp;
+        }
+
+        private void buttonX2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!"".Equals(madot))
+                {
+                    ReportDocument rp = new rpt_HoanTatTK();
+                    rp.SetDataSource(DAL.C_ToThietKe.BC_HOANTATTK_BANGEK(madot, DAL.C_USERS._userName, null));
+                    DataTable table = DAL.C_ToThietKe.DIEMHOSO(madot, DAL.C_USERS._userName);
+                    int trongai = 0;
+                    int chualam = 0;
+                    int hoantat = 0;
+                    for (int i = 0; i < table.Rows.Count; i++)
+                    {
+
+                        if ("".Equals(table.Rows[i][0].ToString()))
+                        {
+                            chualam = int.Parse(table.Rows[i][1].ToString());
+                        }
+                        else if ("Trở Ngại".Equals(table.Rows[i][0].ToString()))
+                        {
+                            trongai = int.Parse(table.Rows[i][1].ToString());
+                        }
+                        else if ("Hoàn Tất".Equals(table.Rows[i][0].ToString()))
+                        {
+                            hoantat = int.Parse(table.Rows[i][1].ToString());
+                        }
+                    }
+                    rp.SetParameterValue("HOANTAT", hoantat);
+                    rp.SetParameterValue("TRONGAI", trongai);
+                    rp.SetParameterValue("CHUATRA", chualam);
+                    rpt_Main rpt = new rpt_Main(rp);
+                    rpt.ShowDialog();
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Error("Loi In Bang Ke : " + ex.Message);
+            }
+
         }
     }
 }

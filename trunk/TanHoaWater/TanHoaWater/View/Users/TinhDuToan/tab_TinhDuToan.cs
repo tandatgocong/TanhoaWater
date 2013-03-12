@@ -2029,6 +2029,9 @@ namespace TanHoaWater.View.Users.TinhDuToan
           
            if (!"".Equals(_shs))
             {
+               /////
+                string updateDanhBo = "UPDATE [DON_KHACHHANG] SET DANHBO='"+this+"' WHERE SHS=''";
+               /////
                 string logText = "";
                 try
                 {

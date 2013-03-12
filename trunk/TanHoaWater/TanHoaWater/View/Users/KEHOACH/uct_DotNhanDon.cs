@@ -284,6 +284,8 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
             //}
             ReportDocument rp = new rpt_DOT_QUAN();
             rp.SetDataSource(DAL.C_BAOCAO_VIEW.BC_DOTNHANDON_DOT(_madot_, DAL.C_USERS._userName, DAL.C_USERS.KHVTDuyet(), null, null));
+            DOT_NHAN_DON dotnd = DAL.C_DotNhanDon.findByMaDot(_madot_);
+            rp.SetParameterValue("ngaylapdot", " ngày " + dotnd.NGAYLAPDON.Date.Day + " tháng " + dotnd.NGAYLAPDON.Date.Month + " năm " + dotnd.NGAYLAPDON.Date.Year);
             rpt_Main main = new rpt_Main(rp);
             main.ShowDialog();
 
@@ -438,6 +440,11 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
         }
 
         private void txtsoDot_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void buttonX1_Click(object sender, EventArgs e)
         {
 
         }

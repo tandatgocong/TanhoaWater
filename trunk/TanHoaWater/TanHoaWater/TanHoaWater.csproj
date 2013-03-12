@@ -146,6 +146,7 @@
     <Compile Include="DAL\C_DotNhanDon.cs" />
     <Compile Include="DAL\C_HeSo.cs" />
     <Compile Include="DAL\C_HeSoBangGia.cs" />
+    <Compile Include="DAL\C_HoanCongDHN_DotTCTB.cs" />
     <Compile Include="DAL\C_KH_BAOCAO.cs" />
     <Compile Include="DAL\C_KH_HoanCong.cs" />
     <Compile Include="DAL\C_KhoiLuongXDCB.cs" />
@@ -725,6 +726,12 @@
     <Compile Include="View\Users\KTTC\frm_HoanCongQuyetToan.Designer.cs">
       <DependentUpon>frm_HoanCongQuyetToan.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Users\TCTB\tab_DanhSachHoanCongTCTB.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Users\TCTB\tab_DanhSachHoanCongTCTB.Designer.cs">
+      <DependentUpon>tab_DanhSachHoanCongTCTB.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Users\TinhDuToan\BGDieuChinh\frm_BGDieuChinh.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -1230,6 +1237,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\KTTC\frm_HoanCongQuyetToan.resx">
       <DependentUpon>frm_HoanCongQuyetToan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\TCTB\tab_DanhSachHoanCongTCTB.resx">
+      <DependentUpon>tab_DanhSachHoanCongTCTB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\TinhDuToan\BGDieuChinh\frm_BGDieuChinh.resx">
       <DependentUpon>frm_BGDieuChinh.cs</DependentUpon>

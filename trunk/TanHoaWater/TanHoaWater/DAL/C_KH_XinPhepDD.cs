@@ -203,7 +203,7 @@ namespace TanHoaWater.DAL
                         {
                             kichthuoc += " + ";
                         }
-                        kichthuoc += "(" + Utilities.Strings.DoiDonViMet(phui.KHOILUONG.Value) + "x" + Utilities.Strings.DoiDonViMet(phui.CHUVI.Value) + ")";
+                        kichthuoc += "(" + Utilities.Strings.DoiDonViMet(phui.DAI.Value) + "x" + Utilities.Strings.DoiDonViMet(phui.RONG.Value) + ")";
 
                         k++;
                     }
