@@ -726,6 +726,23 @@
     <Compile Include="View\Users\KTTC\frm_HoanCongQuyetToan.Designer.cs">
       <DependentUpon>frm_HoanCongQuyetToan.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Users\TCTB\optionCPGanNhua.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Users\TCTB\optionCPGanNhua.Designer.cs">
+      <DependentUpon>optionCPGanNhua.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Users\TCTB\Report\DataSetTCTB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetTCTB.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="View\Users\TCTB\Report\rpt_HoanCongTCTB.cs">
+      <DependentUpon>rpt_HoanCongTCTB.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="View\Users\TCTB\tab_DanhSachHoanCongTCTB.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -1238,6 +1255,13 @@
     <EmbeddedResource Include="View\Users\KTTC\frm_HoanCongQuyetToan.resx">
       <DependentUpon>frm_HoanCongQuyetToan.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\TCTB\optionCPGanNhua.resx">
+      <DependentUpon>optionCPGanNhua.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\TCTB\Report\rpt_HoanCongTCTB.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_HoanCongTCTB.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Users\TCTB\tab_DanhSachHoanCongTCTB.resx">
       <DependentUpon>tab_DanhSachHoanCongTCTB.cs</DependentUpon>
     </EmbeddedResource>
@@ -1609,6 +1633,17 @@
     </None>
     <None Include="View\Users\KEHOACH\XINPHEPDD\BC\DataSet1.xss">
       <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="View\Users\TCTB\Report\DataSetTCTB.xsc">
+      <DependentUpon>DataSetTCTB.xsd</DependentUpon>
+    </None>
+    <None Include="View\Users\TCTB\Report\DataSetTCTB.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetTCTB.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="View\Users\TCTB\Report\DataSetTCTB.xss">
+      <DependentUpon>DataSetTCTB.xsd</DependentUpon>
     </None>
     <None Include="View\Users\TinhDuToan\BGDieuChinh\report\bangkevt.xsc">
       <DependentUpon>bangkevt.xsd</DependentUpon>

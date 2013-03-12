@@ -13,6 +13,7 @@ using TanHoaWater.View.Users.KEHOACH.HOANCONG.BC;
 using TanHoaWater.View.Users.Report;
 using TanHoaWater.Database;
 using System.Globalization;
+using TanHoaWater.View.Users.TCTB.Report;
 namespace TanHoaWater.View.Users.TCTB
 {
     public partial class tab_DanhSachHoanCongTCTB : UserControl
@@ -99,6 +100,8 @@ namespace TanHoaWater.View.Users.TCTB
                 string sql = "SELECT [SHS],'True' as 'IN',[HOTEN],[DIACHI],[COTLK],[NGAYTHICONG],[CHISO],[SOTHANTLK],[HIEUDONGHO],[SOHOADON],[NGAYDONGTIEN] ,[TCTB_TONGGIATRI],[TCTB_CPNHANCONG],[TCTB_CPVATTU],[ONG20],[ONG25],[ONG50],[ONG100],[ONG150],[ONGKHAC],[MADOTTC],[DHN_NGAYKIEMDINH],DANHBO ";
                 sql+=" FROM V_HOANGCONGTCTB WHERE MADOTTC='" + this.cbDotHoanCong.Text.Replace(" ", "") + "'"; 
                 gridHoanCong.DataSource = DAL.LinQConnection.getDataTable(sql);
+                TongKetGanNhua();
+
                      }
             catch (Exception)
             {
@@ -109,15 +112,42 @@ namespace TanHoaWater.View.Users.TCTB
         {
             hoantat();
         }
-        
+        public void Refresh()
+        {
+            this.txtSHS.Text = "";
+            this.txtHoTen.Text = "";
+            this.txtDiaChi.Text = "";
+            this.txtCoTLK.Text = "";
+            this.dateNgayGan.ValueObject = null;
+            this.txtChiSo.Text = "00";
+            this.txtSoThan.Text = "";
+            this.txtHieu.Text = "";
+            this.txtbienLai.Text = "";
+            this.dateNgayDongTien.ValueObject = null;
+            this.txtTongGiaTri.Text = "";
+            this.txtNhanCong.Text = "";
+            this.txtVatTu.Text = "";
+            this.txtO20.Text = "";
+       //     this.txtO25.Text = "";
+            this.txtO50.Text = "";
+            this.txtO100.Text = "";
+            this.txtOK.Text = "";
+            this.txtDanhBo.Text = "";
+            this.txtSHS.Focus();
+
+        }
         private void gridHoanCong_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
+                Refresh();
                this.txtSHS.Text= this.gridHoanCong.Rows[e.RowIndex].Cells["hc_SHS"].Value+"";
                this.txtHoTen.Text = this.gridHoanCong.Rows[e.RowIndex].Cells["hc_HoTen"].Value + "";
                this.txtDiaChi.Text = this.gridHoanCong.Rows[e.RowIndex].Cells["hc_DiaChi"].Value + "";
                this.txtCoTLK.Text = this.gridHoanCong.Rows[e.RowIndex].Cells["hc_CoTLK"].Value + "";
+               this.txtbienLai.Text = this.gridHoanCong.Rows[e.RowIndex].Cells["hc_SoBL"].Value + "";
+               this.dateNgayDongTien.ValueObject = this.gridHoanCong.Rows[e.RowIndex].Cells["hc_NgayDongTein"].Value;
+               this.txtDanhBo.Text = this.gridHoanCong.Rows[e.RowIndex].Cells["DANHBO"].Value + "";
                this.dateNgayGan.ValueObject = DateTime.ParseExact(this.gridHoanCong.Rows[e.RowIndex].Cells["hc_NgayTC"].Value + "", "dd/MM/yyyy", new CultureInfo("en-US"));
                if ("".Equals(this.gridHoanCong.Rows[e.RowIndex].Cells["hc_ChiSo"].Value + "")) {
                    this.txtChiSo.Text = "00";
@@ -127,17 +157,16 @@ namespace TanHoaWater.View.Users.TCTB
               
                this.txtSoThan.Text = this.gridHoanCong.Rows[e.RowIndex].Cells["hc_SoTLK"].Value + "";
                this.txtHieu.Text = this.gridHoanCong.Rows[e.RowIndex].Cells["gr_TenDongHo"].Value + "";
-               this.txtbienLai.Text = this.gridHoanCong.Rows[e.RowIndex].Cells["hc_SoBL"].Value + "";
-               this.dateNgayDongTien.ValueObject = this.gridHoanCong.Rows[e.RowIndex].Cells["hc_NgayDongTein"].Value;
+             
                this.txtTongGiaTri.Text = this.gridHoanCong.Rows[e.RowIndex].Cells["hc_TongGTXL"].Value + "";
                this.txtNhanCong.Text = this.gridHoanCong.Rows[e.RowIndex].Cells["hc_NhanCong"].Value + "";
                this.txtVatTu.Text = this.gridHoanCong.Rows[e.RowIndex].Cells["hc_ChiPhiVT"].Value + "";
                this.txtO20.Text = this.gridHoanCong.Rows[e.RowIndex].Cells["O20"].Value + "";
-               this.txtO25.Text = this.gridHoanCong.Rows[e.RowIndex].Cells["O25"].Value + "";
+            //   this.txtO25.Text = this.gridHoanCong.Rows[e.RowIndex].Cells["O25"].Value + "";
                this.txtO50.Text = this.gridHoanCong.Rows[e.RowIndex].Cells["O50"].Value + "";
                this.txtO100.Text = this.gridHoanCong.Rows[e.RowIndex].Cells["O100"].Value + "";
                this.txtOK.Text = this.gridHoanCong.Rows[e.RowIndex].Cells["OK"].Value + "";
-               this.txtDanhBo.Text = this.gridHoanCong.Rows[e.RowIndex].Cells["DANHBO"].Value + "";
+              
                this.txtSHS.Focus();
                     
 
@@ -385,12 +414,12 @@ namespace TanHoaWater.View.Users.TCTB
                 hskh.TCTB_CPNHANCONG = ParseDouble(this.txtNhanCong.Text);
                 hskh.TCTB_CPVATTU = ParseDouble(this.txtVatTu.Text);
                 hskh.ONG20 = this.txtO20.Text;
-                hskh.ONG25 = this.txtO25.Text;
+              //  hskh.ONG25 = this.txtO25.Text;
                 hskh.ONG50 = this.txtO50.Text;
                 hskh.ONG100 = this.txtO100.Text;
                 hskh.ONGKHAC = this.txtOK.Text;
                 if (DAL.C_HoanCongDHN_DotTCTB.Update()== false)
-                    MessageBox.Show(this, "Cập Nhật Đợt Thi Công Không Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(this, "Cập Nhật Hoàn Công Không Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
               
                 hoantat();
 
@@ -426,18 +455,20 @@ namespace TanHoaWater.View.Users.TCTB
 
         private void btInBangKe_Click(object sender, EventArgs e)
         {
-            if (getSHS().Equals(""))
-                MessageBox.Show(this, "Cần Chọn Hồ Sơ In", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            else
-            {
-                ReportDocument rp = new rpt_HoanCong();
-                rp.SetDataSource(DAL.C_KH_HoanCong.BC_HOANCONG(this.cbDotHoanCong.Text, getSHS()));
+            
+                ReportDocument rp = new rpt_HoanCongTCTB();
+              //  rp.SetDataSource(DAL.C_KH_HoanCong.BC_HOANCONG(this.cbDotHoanCong.Text, getSHS()));
                 rpt_Main rpt = new rpt_Main(rp);
                 rpt.ShowDialog();
-            }
+          
 
         }
+        public void TongKetGanNhua() {
+            this.TKtxtTongKetVT.Text = DAL.C_HoanCongDHN_DotTCTB.getTongCPVatTu(this.cbDotHoanCong.Text.Replace(" ", "")).ToString();
+            this.TKtxtVatTuGan.Text = "0";
+            TKtxtVatTuNhua.Text = DAL.C_HoanCongDHN_DotTCTB.getTongCPVatTu(this.cbDotHoanCong.Text.Replace(" ", "")).ToString();
 
+        }
         private void gridHoanCong_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
 
@@ -453,6 +484,63 @@ namespace TanHoaWater.View.Users.TCTB
         }
 
         private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btTachChiPhi_Click_1(object sender, EventArgs e)
+        {
+            TCTB_TONGKEVATTU tkvt = DAL.C_HoanCongDHN_DotTCTB.findTongKetVTHC(this.cbDotHoanCong.Text.Replace(" ", ""));
+            if (tkvt != null) {
+                tkvt.VATUGAN = ParseDouble(TKtxtVatTuGan.Text);
+                tkvt.VATUNHUA = ParseDouble(TKtxtVatTuNhua.Text);
+                if (DAL.C_HoanCongDHN_DotTCTB.Update() == false)
+                    MessageBox.Show(this, "Cập Nhật Chi Phí Gan Nhựa Không Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else
+                    MessageBox.Show(this, "Cập Nhật Chi Phí Gan Nhựa Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+          
+            } else {
+                tkvt = new TCTB_TONGKEVATTU();
+                tkvt.MADOTTC = this.cbDotHoanCong.Text.Replace(" ", "");
+                tkvt.VATUGAN =ParseDouble(TKtxtVatTuGan.Text);
+                tkvt.VATUNHUA = ParseDouble(TKtxtVatTuNhua.Text);
+                if (DAL.C_HoanCongDHN_DotTCTB.Insert(tkvt) == false)
+                    MessageBox.Show(this, "Cập Nhật Hoàn Công Không Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else
+                    MessageBox.Show(this, "Cập Nhật Chi Phí Gan Nhựa Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
+            }
+        }
+
+        private void TKtxtVatTuGan_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            try
+            {
+                double kq = int.Parse(this.TKtxtTongKetVT.Text);
+                double s1 = int.Parse(this.TKtxtVatTuGan.Text);
+                this.TKtxtVatTuNhua.Text = (kq - s1)+"";
+            }
+            catch (Exception)
+            {
+               
+            }
+        }
+
+        private void TKtxtVatTuNhua_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            try
+            {
+                double kq = int.Parse(this.TKtxtTongKetVT.Text);
+                double s1 = int.Parse(this.TKtxtVatTuNhua.Text);
+                this.TKtxtVatTuGan.Text = (kq - s1) + "";
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+
+        private void txtO100_TextChanged(object sender, EventArgs e)
         {
 
         }
