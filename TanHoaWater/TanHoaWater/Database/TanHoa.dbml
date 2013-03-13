@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="TANHOA_WATER" Class="TanHoaDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=TANHOA_WATER;Persist Security Info=True;User ID=sa" SettingsObjectName="TanHoaWater.Properties.Settings" SettingsPropertyName="TANHOA_WATERConnectionString1" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=SERVER9;Initial Catalog=TANHOA_WATER;Persist Security Info=True;User ID=sa" SettingsObjectName="TanHoaWater.Properties.Settings" SettingsPropertyName="TANHOA_WATERConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.BG_CONGTACBANGIA" Member="BG_CONGTACBANGIAs">
     <Type Name="BG_CONGTACBANGIA">
       <Column Name="STT" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -1711,6 +1711,34 @@
       <Association Name="KH_DONVITAILAP_KH_DOTTHICONG" Member="KH_DONVITAILAP" ThisKey="DONVITAILAP" OtherKey="ID" Type="KH_DONVITAILAP" IsForeignKey="true" />
     </Type>
   </Table>
+  <Table Name="dbo.TCTB_TONGKEVATTU" Member="TCTB_TONGKEVATTUs">
+    <Type Name="TCTB_TONGKEVATTU">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MADOTTC" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="HSGAN" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="HSNHUA" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="VATUGAN" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="VATUNHUA" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CPNHANCONG" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TCTB_HESOHOANCONG" Member="TCTB_HESOHOANCONGs">
+    <Type Name="TCTB_HESOHOANCONG">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="HSGAN" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="HSNHUA" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TONGGIATRI" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CPNHANCONG" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CPVATTU" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="KTGIAMDOC" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="PGDKYTHUAT" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CVDOITCTB" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CVDUYETGD" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NGUOIDUYETGD" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="KTKSCV" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="KTTSTEN" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.KH_HOSOKHACHHANG" Member="KH_HOSOKHACHHANGs">
     <Type Name="KH_HOSOKHACHHANG">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
@@ -1780,37 +1808,16 @@
       <Column Name="TCTB_TONGGIATRI" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="TCTB_CPNHANCONG" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="TCTB_CPVATTU" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="ONG20" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="ONG50" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="ONG100" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="ONG150" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="ONGKHAC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ONG20" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ONG50" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ONG100" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ONG150" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ONGKHAC" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="DHN_NGAYKIEMDINH" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="ONG25" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Association Name="KH_XINPHEPDAODUONG_KH_HOSOKHACHHANG" Member="KH_XINPHEPDAODUONG" ThisKey="MADOTDD" OtherKey="MADOT" Type="KH_XINPHEPDAODUONG" IsForeignKey="true" />
       <Association Name="DON_KHACHHANG_KH_HOSOKHACHHANG" Member="DON_KHACHHANG" ThisKey="SHS" OtherKey="SHS" Type="DON_KHACHHANG" IsForeignKey="true" />
       <Association Name="KH_DOTTHICONG_KH_HOSOKHACHHANG" Member="KH_DOTTHICONG" ThisKey="MADOTTC" OtherKey="MADOTTC" Type="KH_DOTTHICONG" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.TCTB_HESOHOANCONG" Member="TCTB_HESOHOANCONGs">
-    <Type Name="TCTB_HESOHOANCONG">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="HSGAN" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="HSNHUA" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="TONGGIATRI" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="CPNHANCONG" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="CPVATTU" Type="System.Double" DbType="Float" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.TCTB_TONGKEVATTU" Member="TCTB_TONGKEVATTUs">
-    <Type Name="TCTB_TONGKEVATTU">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="MADOTTC" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="HSGAN" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="HSNHUA" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="VATUGAN" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="VATUNHUA" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="CPNHANCONG" Type="System.Double" DbType="Float" CanBeNull="true" />
     </Type>
   </Table>
   <Function Name="dbo.TONGKETCHIPHI" Method="TONGKETCHIPHI">

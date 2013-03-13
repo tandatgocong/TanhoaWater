@@ -215,7 +215,7 @@ namespace TanHoaWater.DAL
             return dataset;
         }
 
-        public static DataSet BC_HOANCONG(string madot,string query)
+        public static DataSet BC_HOANCONG(string madot, string query)
         {
             TanHoaDataContext db = new TanHoaDataContext();
             db.Connection.Open();

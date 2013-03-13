@@ -27,7 +27,7 @@ namespace TanHoaWater.View.Users.TCTB
             //gridHoanCong.DataSource = DAL.LinQConnection.getDataTable(sql);
 
 
-            string sql = "SELECT MADOTTC FROM V_HOANGCONGTCTB GROUP BY MADOTTC ORDER BY MADOTTC ASC";
+            string sql = "SELECT MADOTTC FROM V_HOANGCONGTCTB  GROUP BY MADOTTC ORDER BY MADOTTC ASC";
             cbDotHoanCong.DataSource = DAL.LinQConnection.getDataTable(sql);
             cbDotHoanCong.DisplayMember = "MADOTTC";
             cbDotHoanCong.ValueMember = "MADOTTC";
@@ -148,7 +148,7 @@ namespace TanHoaWater.View.Users.TCTB
                this.txtbienLai.Text = this.gridHoanCong.Rows[e.RowIndex].Cells["hc_SoBL"].Value + "";
                this.dateNgayDongTien.ValueObject = this.gridHoanCong.Rows[e.RowIndex].Cells["hc_NgayDongTein"].Value;
                this.txtDanhBo.Text = this.gridHoanCong.Rows[e.RowIndex].Cells["DANHBO"].Value + "";
-               this.dateNgayGan.ValueObject = DateTime.ParseExact(this.gridHoanCong.Rows[e.RowIndex].Cells["hc_NgayTC"].Value + "", "dd/MM/yyyy", new CultureInfo("en-US"));
+               this.dateNgayGan.ValueObject = this.gridHoanCong.Rows[e.RowIndex].Cells["hc_NgayTC"].Value;
                if ("".Equals(this.gridHoanCong.Rows[e.RowIndex].Cells["hc_ChiSo"].Value + "")) {
                    this.txtChiSo.Text = "00";
                } else { 
@@ -413,11 +413,33 @@ namespace TanHoaWater.View.Users.TCTB
                 hskh.TCTB_TONGGIATRI = ParseDouble(this.txtTongGiaTri.Text);
                 hskh.TCTB_CPNHANCONG = ParseDouble(this.txtNhanCong.Text);
                 hskh.TCTB_CPVATTU = ParseDouble(this.txtVatTu.Text);
-                hskh.ONG20 = this.txtO20.Text;
-              //  hskh.ONG25 = this.txtO25.Text;
-                hskh.ONG50 = this.txtO50.Text;
-                hskh.ONG100 = this.txtO100.Text;
-                hskh.ONGKHAC = this.txtOK.Text;
+                try
+                {
+                    hskh.ONG20 = double.Parse(this.txtO20.Text);
+                }
+                catch (Exception){ }
+                try
+                {
+                    hskh.ONG50 = double.Parse(this.txtO50.Text);
+                }
+                catch (Exception) { }
+                try
+                {
+                    hskh.ONG100 = double.Parse(this.txtO100.Text);
+                }
+                catch (Exception) { }
+                try
+                {
+                    hskh.ONG150 = double.Parse(this.txtO150.Text);
+                }
+                catch (Exception) { }
+                try
+                {
+                    hskh.ONGKHAC = double.Parse(this.txtOK.Text);
+                }
+                catch (Exception) { }
+               //  hskh.ONG25 = this.txtO25.Text;
+               
                 if (DAL.C_HoanCongDHN_DotTCTB.Update()== false)
                     MessageBox.Show(this, "Cập Nhật Hoàn Công Không Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
               
@@ -457,16 +479,33 @@ namespace TanHoaWater.View.Users.TCTB
         {
             
                 ReportDocument rp = new rpt_HoanCongTCTB();
-              //  rp.SetDataSource(DAL.C_KH_HoanCong.BC_HOANCONG(this.cbDotHoanCong.Text, getSHS()));
+                rp.SetDataSource(DAL.C_HoanCongDHN_DotTCTB.BC_HOANCONG_TCTB(this.cbDotHoanCong.Text));
+                string tlkgom = "Gồm TLK ";
+                DataTable table = DAL.LinQConnection.getDataTable("select COTLK, COUNT(*)  from KH_HOSOKHACHHANG WHERE MADOTTC='" + this.cbDotHoanCong.Text.Replace(" ", "") + "' group by COTLK");
+                for (int i = 0; i < table.Rows.Count; i++)
+                {
+                    tlkgom += table.Rows[i][0].ToString()+" ly   : " + table.Rows[i][1].ToString()+"Cái. ";
+                }
+                rp.SetParameterValue("tlkgom", tlkgom);
                 rpt_Main rpt = new rpt_Main(rp);
                 rpt.ShowDialog();
           
 
         }
         public void TongKetGanNhua() {
-            this.TKtxtTongKetVT.Text = DAL.C_HoanCongDHN_DotTCTB.getTongCPVatTu(this.cbDotHoanCong.Text.Replace(" ", "")).ToString();
-            this.TKtxtVatTuGan.Text = "0";
-            TKtxtVatTuNhua.Text = DAL.C_HoanCongDHN_DotTCTB.getTongCPVatTu(this.cbDotHoanCong.Text.Replace(" ", "")).ToString();
+            TCTB_TONGKEVATTU tkvt = DAL.C_HoanCongDHN_DotTCTB.findTongKetVTHC(this.cbDotHoanCong.Text.Replace(" ", ""));
+            if (tkvt != null)
+            {
+                this.TKtxtTongKetVT.Text = tkvt.VATUNHUA + "";
+                this.TKtxtVatTuGan.Text = tkvt.VATUGAN + "";
+                this.TKtxtTongKetVT.Text = DAL.C_HoanCongDHN_DotTCTB.getTongCPVatTu(this.cbDotHoanCong.Text.Replace(" ", "")).ToString();
+            }
+            else {
+                this.TKtxtTongKetVT.Text = DAL.C_HoanCongDHN_DotTCTB.getTongCPVatTu(this.cbDotHoanCong.Text.Replace(" ", "")).ToString();
+                this.TKtxtVatTuGan.Text = "0";
+                TKtxtVatTuNhua.Text = DAL.C_HoanCongDHN_DotTCTB.getTongCPVatTu(this.cbDotHoanCong.Text.Replace(" ", "")).ToString();
+            }
+          
 
         }
         private void gridHoanCong_DataError(object sender, DataGridViewDataErrorEventArgs e)

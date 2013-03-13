@@ -16,14 +16,14 @@ namespace TanHoaWater.View.Users.TCTB.Report {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class rpt_HoanCongTCTB : ReportClass {
+    public class rpt_HoanCongTCTB_DOI : ReportClass {
         
-        public rpt_HoanCongTCTB() {
+        public rpt_HoanCongTCTB_DOI() {
         }
         
         public override string ResourceName {
             get {
-                return "rpt_HoanCongTCTB.rpt";
+                return "rpt_HoanCongTCTB_DOI.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace TanHoaWater.View.Users.TCTB.Report {
         
         public override string FullResourceName {
             get {
-                return "TanHoaWater.View.Users.TCTB.Report.rpt_HoanCongTCTB.rpt";
+                return "TanHoaWater.View.Users.TCTB.Report.rpt_HoanCongTCTB_DOI.rpt";
             }
             set {
                 // Do nothing
@@ -98,9 +98,9 @@ namespace TanHoaWater.View.Users.TCTB.Report {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class Cachedrpt_HoanCongTCTB : Component, ICachedReport {
+    public class Cachedrpt_HoanCongTCTB_DOI : Component, ICachedReport {
         
-        public Cachedrpt_HoanCongTCTB() {
+        public Cachedrpt_HoanCongTCTB_DOI() {
         }
         
         [Browsable(false)]
@@ -137,7 +137,7 @@ namespace TanHoaWater.View.Users.TCTB.Report {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            rpt_HoanCongTCTB rpt = new rpt_HoanCongTCTB();
+            rpt_HoanCongTCTB_DOI rpt = new rpt_HoanCongTCTB_DOI();
             rpt.Site = this.Site;
             return rpt;
         }
