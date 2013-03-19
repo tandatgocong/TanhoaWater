@@ -701,13 +701,20 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
                     rpt_Main mainReport = new rpt_Main(rp);
                     mainReport.ShowDialog();
                 }
-                else if (tendot.Equals("Ống Cái") || tendot.Equals("Gắn Mới"))
+                else if (tendot.Equals("Ống Cái") )
                 {
                     ReportDocument rp = new rpt_DanhSachHSTC_OC();
                     rp.SetDataSource(DAL.C_KH_DotThiCong.BC_DanhSachDotThiCong_OC(madot));
                     rp.SetParameterValue("ngaytk", ngaytk);
                     rpt_Main mainReport = new rpt_Main(rp);
                     mainReport.ShowDialog();
+                }else if(tendot.Equals("Gắn Mới")){
+                    ReportDocument rp = new rpt_DanhSachHSTC_GMDT();
+                    rp.SetDataSource(DAL.C_KH_DotThiCong.BC_DanhSachDotThiCong_OC(madot));
+                    rp.SetParameterValue("ngaytk", ngaytk);
+                    rpt_Main mainReport = new rpt_Main(rp);
+                    mainReport.ShowDialog();
+                
                 }
                 else if (tendot.Equals("Bồi Thường"))
                 {

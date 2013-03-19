@@ -29,17 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-<<<<<<< .mine
-=======
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
->>>>>>> .r206
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.reflectionLabel1 = new DevComponents.DotNetBar.Controls.ReflectionLabel();
             this.tabControl1 = new DevComponents.DotNetBar.TabControl();
             this.tabControlPanel8 = new DevComponents.DotNetBar.TabControlPanel();
@@ -233,11 +229,8 @@
             this.tabControl1.CanReorderTabs = true;
             this.tabControl1.Controls.Add(this.tabControlPanel3);
             this.tabControl1.Controls.Add(this.tabControlPanel1);
-<<<<<<< .mine
             this.tabControl1.Controls.Add(this.tabControlPanel8);
             this.tabControl1.Controls.Add(this.tabControlPanel3);
-=======
->>>>>>> .r206
             this.tabControl1.Controls.Add(this.tabControlPanel5);
             this.tabControl1.Controls.Add(this.tabControlPanel2);
             this.tabControl1.Controls.Add(this.tabControlPanel6);
@@ -1698,9 +1691,7 @@
             this.tabItem1.Name = "tabItem1";
             this.tabItem1.Text = "Nhận Đơn Khách Hàng";
             this.tabItem1.Click += new System.EventHandler(this.tabItem1_Click);
-            // 
-<<<<<<< .mine
-=======
+
             // tabControlPanel3
             // 
             this.tabControlPanel3.Controls.Add(this.panelChuyenDon);
@@ -2086,8 +2077,7 @@
             this.tabChuyenDon.Text = "Chuyển Đơn";
             this.tabChuyenDon.Click += new System.EventHandler(this.tabChuyenDon_Click);
             // 
->>>>>>> .r206
-            // tabControlPanel5
+               // tabControlPanel5
             // 
             this.tabControlPanel5.Controls.Add(this.panel4);
             this.tabControlPanel5.Dock = System.Windows.Forms.DockStyle.Fill;

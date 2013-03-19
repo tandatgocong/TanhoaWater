@@ -413,41 +413,12 @@ namespace TanHoaWater.View.Users.TCTB
                 hskh.TCTB_TONGGIATRI = ParseDouble(this.txtTongGiaTri.Text);
                 hskh.TCTB_CPNHANCONG = ParseDouble(this.txtNhanCong.Text);
                 hskh.TCTB_CPVATTU = ParseDouble(this.txtVatTu.Text);
-<<<<<<< .mine
+
                 hskh.ONG20 = ParseDouble(this.txtO20.Text);
               //  hskh.ONG25 = this.txtO25.Text;
                 hskh.ONG50 = ParseDouble(this.txtO50.Text);
                 hskh.ONG100 = ParseDouble(this.txtO100.Text);
                 hskh.ONGKHAC = ParseDouble(this.txtOK.Text);
-=======
-                try
-                {
-                    hskh.ONG20 = double.Parse(this.txtO20.Text);
-                }
-                catch (Exception){ }
-                try
-                {
-                    hskh.ONG50 = double.Parse(this.txtO50.Text);
-                }
-                catch (Exception) { }
-                try
-                {
-                    hskh.ONG100 = double.Parse(this.txtO100.Text);
-                }
-                catch (Exception) { }
-                try
-                {
-                    hskh.ONG150 = double.Parse(this.txtO150.Text);
-                }
-                catch (Exception) { }
-                try
-                {
-                    hskh.ONGKHAC = double.Parse(this.txtOK.Text);
-                }
-                catch (Exception) { }
-               //  hskh.ONG25 = this.txtO25.Text;
-               
->>>>>>> .r206
                 if (DAL.C_HoanCongDHN_DotTCTB.Update()== false)
                     MessageBox.Show(this, "Cập Nhật Hoàn Công Không Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
               

@@ -23,8 +23,8 @@ namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
         {
             InitializeComponent();
             this.cbMaDot.DataSource = DAL.C_KH_XinPhepDD.ListAllXinPhepDD();
-            this.cbMaDot.ValueMember = "MAQUANLY";
-            this.cbMaDot.DisplayMember = "MAQUANLY";
+            this.cbMaDot.ValueMember = "MADOT";
+            this.cbMaDot.DisplayMember = "MADOT";
             cbMaDot.Text = madot;
             xinphep = DAL.C_KH_XinPhepDD.finbyMaDot(madot);
             loadDataGrid(this.cbMaDot.SelectedValue.ToString());
