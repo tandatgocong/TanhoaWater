@@ -130,7 +130,7 @@ namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
                     MessageBox.Show(this, "Mã Quản lý Đợt Không Được Trống !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.txtMaQuanLy.Focus();
                 }
-                else if (DAL.C_KH_XinPhepDD.finbyMaDot(this.txtMaQuanLy.Text) != null)
+                else if (DAL.C_KH_XinPhepDD.finbyMaDot((this.txtSoDot.Text.ToUpper() + "-" + this.cbNoiCap.Text)) != null)
                 {;
                     MessageBox.Show(this, "Số Đợt Xin Phép Đào Đường Đã Có !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.txtSoDot.Focus();
@@ -138,10 +138,11 @@ namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
                 else
                 {
                     Database.KH_XINPHEPDAODUONG xinphep = new Database.KH_XINPHEPDAODUONG();
-                    xinphep.MADOT = this.txtSoDot.Text.ToUpper();
+                    xinphep.MADOT = (this.txtSoDot.Text.ToUpper() + "-" + this.cbNoiCap.Text);
                     xinphep.NOICAPPHEP = this.cbNoiCap.Text;
                     xinphep.NGAYLAP = this.dateNgayLap.Value;
                     xinphep.MAQUANLY = this.txtMaQuanLy.Text.ToUpper();
+                    xinphep.MADOTXP = this.txtSoDot.Text.ToUpper();
                     xinphep.CREATEBY = DAL.C_USERS._userName;
                     xinphep.CREATEDATE = DateTime.Now;
                     if (DAL.C_KH_XinPhepDD.Insert(xinphep) == false)
@@ -264,7 +265,7 @@ namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
             DateTime ngaylap = DateTime.Now.Date;
             try
             {
-                madot = dataDanhSachDaoDuong.Rows[dataDanhSachDaoDuong.CurrentRow.Index].Cells["gridMaQuanLy"].Value + "";
+                madot = dataDanhSachDaoDuong.Rows[dataDanhSachDaoDuong.CurrentRow.Index].Cells["MADOTXP"].Value + "";
                 ngaylap = DateTime.Parse(dataDanhSachDaoDuong.Rows[dataDanhSachDaoDuong.CurrentRow.Index].Cells["gridNgayLap"].Value + "");
 
             }
@@ -293,7 +294,7 @@ namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
             string madot = "";
             try
             {
-                madot = dataDanhSachDaoDuong.Rows[dataDanhSachDaoDuong.CurrentRow.Index].Cells["gridSoDot"].Value + "";
+                madot = dataDanhSachDaoDuong.Rows[dataDanhSachDaoDuong.CurrentRow.Index].Cells["MADOTXP"].Value + "";
 
             }
             catch (Exception)
@@ -311,7 +312,7 @@ namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
             string madot = "";
             try
             {
-                madot = dataDanhSachDaoDuong.Rows[dataDanhSachDaoDuong.CurrentRow.Index].Cells["gridSoDot"].Value + "";
+                madot = dataDanhSachDaoDuong.Rows[dataDanhSachDaoDuong.CurrentRow.Index].Cells["MADOTXP"].Value + "";
 
             }
             catch (Exception)
@@ -326,7 +327,7 @@ namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
             string madot = "";
             try
             {
-                madot = dataDanhSachDaoDuong.Rows[dataDanhSachDaoDuong.CurrentRow.Index].Cells["gridSoDot"].Value + "";
+                madot = dataDanhSachDaoDuong.Rows[dataDanhSachDaoDuong.CurrentRow.Index].Cells["MADOTXP"].Value + "";
 
             }
             catch (Exception)
@@ -433,6 +434,11 @@ namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
                     break;
                 }
             }
+        }
+
+        private void btCapNhat_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
