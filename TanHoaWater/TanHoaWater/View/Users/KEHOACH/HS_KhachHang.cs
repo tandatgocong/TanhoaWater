@@ -342,7 +342,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                     {
                         DON_KHACHHANG donKH = new DON_KHACHHANG();
                         donKH.MADOT = this.cbDotNhanDon.SelectedValue.ToString();
-                        donKH.SOHOSO = this.txtSoHoSo.Text;
+                        donKH.SOHOSO = this.txtSoHoSo.Text.ToUpper();
                         donKH.SHS = this.txtSHS.Text;
                         if (soho.Value > 1)
                         {
@@ -1002,7 +1002,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                 DataRow myDataRow = table.NewRow();
                 myDataRow["TITLE"] = "THƠ MỜI THANH TOÁN CHI PHÍ LẮP ĐẶT ỐNG CẤP NƯỚC";
                 myDataRow["HOTEN"] = txtHoTenKH.Text;
-                myDataRow["DIACHI"] = txtDiaChi.Text;
+                myDataRow["DIACHI"] = txtDiaChi.Text + ", Phường " + this.txtPhuong.Text + ", Quận " + this.txtQuan.Text;
                 myDataRow["TUNGAY"] = dateTuNgay.Text;
                 myDataRow["DENNGAY"] = dateDenNgay.Text;
                 myDataRow["SOTIEN"] = txtSoTien.Text;
@@ -1025,7 +1025,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                 DataRow myDataRow = table.NewRow();
                 myDataRow["TITLE"] = "THƠ MỜI THANH TOÁN CHI PHÍ DỜI ĐỒNG HỒ NƯỚC";
                 myDataRow["HOTEN"] = txtHoTenKH.Text;
-                myDataRow["DIACHI"] = txtDiaChi.Text;
+                myDataRow["DIACHI"] = txtDiaChi.Text + ", Phường " + this.txtPhuong.Text + ", Quận " + this.txtQuan.Text;
                 myDataRow["TUNGAY"] = dateTuNgay.Text;
                 myDataRow["DENNGAY"] = dateDenNgay.Text;
                 myDataRow["SOTIEN"] = txtSoTien.Text;
@@ -1047,7 +1047,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                 DataRow myDataRow = table.NewRow();
                 myDataRow["TITLE"] = "THƠ MỜI THANH TOÁN CHI PHÍ GẮN ỐNG NGÁNH ĐHN + ĐHN";
                 myDataRow["HOTEN"] = txtHoTenKH.Text;
-                myDataRow["DIACHI"] = txtDiaChi.Text;
+                myDataRow["DIACHI"] = txtDiaChi.Text + ", Phường " + this.txtPhuong.Text + ", Quận " + this.txtQuan.Text;
                 myDataRow["TUNGAY"] = dateTuNgay.Text;
                 myDataRow["DENNGAY"] = dateDenNgay.Text;
                 myDataRow["SOTIEN"] = txtSoTien.Text;

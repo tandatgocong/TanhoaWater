@@ -28,7 +28,7 @@ namespace TanHoaWater.View.Tool
             //this.searchHoTenKH.Text="";
             //this.searchDiaChi.Text = "";          
             this.SearchMaHoSo.Focus();
-            DataTable table = DAL.C_TimKiemDonKhachHang.TimBienNhan("13", null,null,0,0);
+            DataTable table = DAL.C_TimKiemDonKhachHang.TimBienNhan("13", "","",0,0);
             this.dataGridView1.DataSource = table;
             clearText();
             this.groupBox1.Visible = false;
@@ -82,10 +82,11 @@ namespace TanHoaWater.View.Tool
                                             DotXinPhepDD.Text = xiphep.MAQUANLY;
                                             NgayXinPhepDD.Text = Utilities.DateToString.NgayVNVN(xiphep.NGAYLAP.Value);
                                             NgayCoPhep.Text = xiphep.NGAYCOPHEP != null ? Utilities.DateToString.NgayVNVN(xiphep.NGAYCOPHEP.Value) : "";
+                                            title = "HỒ SƠ ĐÃ LÊN ĐỢT XIN PHÉP <br/>  ĐÀO ĐƯỜNG";
                                         }
                                         else
                                         {
-                                            title = "HỒ SƠ CHƯA LÊN ĐỢT <br/> ĐÀO ĐƯỜNG";
+                                            title = "HỒ SƠ CHƯA LÊN ĐỢT XIN PHÉP <br/> ĐÀO ĐƯỜNG";
                                         }
                                         if (hoskh.MADOTTC != null)
                                         {
@@ -114,6 +115,7 @@ namespace TanHoaWater.View.Tool
                                                 title = "HỒ SƠ TRỞ NGẠI THI CÔNG";
                                                 noidungtrongai = hoskh.NOIDUNGTN;
                                             }
+                                            title = "HỒ SƠ ĐÃ LÊN ĐỢT <br/> THI CÔNG";
                                         }
                                         else
                                         {

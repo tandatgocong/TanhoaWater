@@ -194,7 +194,7 @@ namespace TanHoaWater.View.Users.KEHOACH
             try
             {
                 string loaihs = cbLoaiBN.SelectedValue + "";
-                string soshs = this.soBienNhan.Text;
+                string soshs = this.soBienNhan.Text.ToUpper();
                 string hoten = this.txtHoTen.Text;
                 string sonha = this.txtsonha.Text;
                 string tenduong = this.txtDuong.Text;

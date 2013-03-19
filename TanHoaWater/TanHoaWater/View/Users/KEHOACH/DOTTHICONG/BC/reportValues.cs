@@ -14,11 +14,13 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG.BC
     {
         int _flag = 0;
         string _madotc = "";
-        public reportValues(int flag, string madotc)
+        string _ngaytk="";
+        public reportValues(int flag, string madotc, string ngaytk)
         {
             InitializeComponent();
             _flag = flag;
             _madotc = madotc;
+            _ngaytk = ngaytk;
             if (flag == 1) {
                 this.labelX1.Text = "Nhập Mã Công Trình";
             }
@@ -36,6 +38,7 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG.BC
                 ReportDocument rp = new rpt_DanhSachHSTC_DOIMP();
                 rp.SetDataSource(DAL.C_KH_DotThiCong.BC_DanhSachDotThiCong_OC(_madotc));
                 rp.SetParameterValue("MaCT",this.textBoxX1.Text);
+                rp.SetParameterValue("ngaytk", _ngaytk);
                 crystalReportViewer1.ReportSource = rp;
                 this.WindowState = FormWindowState.Maximized;
             }
@@ -45,6 +48,7 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG.BC
                 ReportDocument rp = new rpt_DanhSachHSTC_BT_DOI();
                 rp.SetDataSource(DAL.C_KH_DotThiCong.BC_DanhSachDotThiCong_OC(_madotc));
                 rp.SetParameterValue("KETHOP", this.textBoxX1.Text);
+                rp.SetParameterValue("ngaytk", _ngaytk);
                 crystalReportViewer1.ReportSource = rp;
                 this.WindowState = FormWindowState.Maximized;
             }

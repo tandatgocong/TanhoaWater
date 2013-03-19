@@ -719,7 +719,7 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
                 }
                 else if (tendot.Equals("Dời-BT"))
                 {
-                    reportValues rpt = new reportValues(2, madot);
+                    reportValues rpt = new reportValues(2, madot,ngaytk);
                     rpt.ShowDialog();
                 }
                 else if (tendot.Equals("Dời"))
@@ -732,7 +732,7 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
                 }
                 else
                 {
-                    reportValues rpt = new reportValues(1, madot);
+                    reportValues rpt = new reportValues(1, madot,ngaytk);
                     rpt.ShowDialog();
                 }
             }
