@@ -34,7 +34,7 @@ namespace TanHoaWater.DAL
             db.Connection.Open();
             string sql = " SELECT DKH.SHS, HOTEN, SONHA + ' ' + DUONG as 'DIACHI', TENPHUONG, HS.GHICHU, N'Hủy' as 'HUY' ";
             sql += "  FROM DON_KHACHHANG DKH, PHUONG P, QUAN Q, KH_HOSOKHACHHANG HS ";
-            sql += " WHERE DKH.QUAN = Q.MAQUAN AND Q.MAQUAN=P.MAQUAN AND DKH.PHUONG=p.MAPHUONG AND HS.SHS = DKH.SHS AND HS.MADOTDD='" + sodotxp + "'";
+            sql += " WHERE DKH.QUAN = Q.MAQUAN AND Q.MAQUAN=P.MAQUAN AND DKH.PHUONG=p.MAPHUONG AND HS.SHS = DKH.SHS AND  HS.MADOTDD=REPLACE('" + sodotxp + "',' ','') ";
             sql += " ORDER BY DKH.NGAYNHAN DESC ";
             SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             DataSet dataset = new DataSet();

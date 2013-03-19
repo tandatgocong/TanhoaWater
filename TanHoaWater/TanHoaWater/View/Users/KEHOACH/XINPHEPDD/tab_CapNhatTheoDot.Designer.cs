@@ -102,6 +102,7 @@
             // cbMaDot
             // 
             this.cbMaDot.DropDownHeight = 150;
+            this.cbMaDot.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMaDot.DropDownWidth = 200;
             this.cbMaDot.FormattingEnabled = true;
             this.cbMaDot.IntegralHeight = false;
