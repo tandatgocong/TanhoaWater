@@ -65,7 +65,7 @@ namespace TanHoaWater.DAL
         {
             TanHoaDataContext db = new TanHoaDataContext();
             db.Connection.Open();
-            string sql = " SELECT MADOT,NOICAPPHEP,NGAYLAP,MAQUANLY,NGAYCOPHEP";
+            string sql = " SELECT MADOTXP,MADOT,NOICAPPHEP,NGAYLAP,MAQUANLY,NGAYCOPHEP";
             sql += " FROM KH_XINPHEPDAODUONG WHERE MADOT IS NOT NULL";
             if (!"".Equals(sodot))
             {

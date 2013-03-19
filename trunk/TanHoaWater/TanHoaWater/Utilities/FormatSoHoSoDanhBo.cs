@@ -18,7 +18,7 @@ namespace TanHoaWater.Utilities
             if (_danhbo.Length == 11)
             {
                 _danhbo = _danhbo.Insert(4, "-");
-                _danhbo = _danhbo.Insert(8, "-");
+                //_danhbo = _danhbo.Insert(8, "");
                
             }
             return _danhbo;

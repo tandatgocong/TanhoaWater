@@ -26,22 +26,11 @@ namespace TanHoaWater.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.;Initial Catalog=TANHOA_WATER;Persist Security Info=True;User ID=sa;" +
-            "Password=123@tanhoa")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=SERVER9;Initial Catalog=TANHOA_WATER;Persist Security Info=True;User " +
+            "ID=sa;Password=123@tanhoa")]
         public string TANHOA_WATERConnectionString {
             get {
                 return ((string)(this["TANHOA_WATERConnectionString"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=SERVER9;Initial Catalog=TANHOA_WATER;Persist Security Info=True;User " +
-            "ID=sa;Password=123@tanhoa")]
-        public string TANHOA_WATERConnectionString1 {
-            get {
-                return ((string)(this["TANHOA_WATERConnectionString1"]));
             }
         }
     }

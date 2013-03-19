@@ -90,6 +90,8 @@
             this.labelX6 = new DevComponents.DotNetBar.LabelX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.txtSoDanhBo = new System.Windows.Forms.MaskedTextBox();
+            this.txtTaiLapMĐ = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX12 = new DevComponents.DotNetBar.LabelX();
             ((System.ComponentModel.ISupportInitialize)(this.dateNgayDongTien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDotTC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btPrint)).BeginInit();
@@ -300,11 +302,11 @@
             this.btLuuHoSo.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btLuuHoSo.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btLuuHoSo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btLuuHoSo.Location = new System.Drawing.Point(763, 126);
+            this.btLuuHoSo.Location = new System.Drawing.Point(730, 156);
             this.btLuuHoSo.Name = "btLuuHoSo";
             this.btLuuHoSo.Size = new System.Drawing.Size(84, 26);
             this.btLuuHoSo.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
-            this.btLuuHoSo.TabIndex = 9;
+            this.btLuuHoSo.TabIndex = 13;
             this.btLuuHoSo.Text = "Lưu Hồ Sơ";
             this.btLuuHoSo.Click += new System.EventHandler(this.btLuuHoSo_Click);
             // 
@@ -320,11 +322,11 @@
             this.btThemMoiHoSo.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btThemMoiHoSo.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btThemMoiHoSo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btThemMoiHoSo.Location = new System.Drawing.Point(853, 126);
+            this.btThemMoiHoSo.Location = new System.Drawing.Point(820, 156);
             this.btThemMoiHoSo.Name = "btThemMoiHoSo";
             this.btThemMoiHoSo.Size = new System.Drawing.Size(122, 26);
             this.btThemMoiHoSo.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
-            this.btThemMoiHoSo.TabIndex = 10;
+            this.btThemMoiHoSo.TabIndex = 14;
             this.btThemMoiHoSo.Text = "Thêm Mới Hồ Sơ";
             this.btThemMoiHoSo.Click += new System.EventHandler(this.btThemMoiHoSo_Click);
             // 
@@ -335,7 +337,7 @@
             this.lbTongHoSo.Location = new System.Drawing.Point(4, 159);
             this.lbTongHoSo.Margin = new System.Windows.Forms.Padding(4);
             this.lbTongHoSo.Name = "lbTongHoSo";
-            this.lbTongHoSo.Size = new System.Drawing.Size(881, 22);
+            this.lbTongHoSo.Size = new System.Drawing.Size(683, 22);
             this.lbTongHoSo.TabIndex = 714;
             this.lbTongHoSo.Text = "t";
             // 
@@ -599,16 +601,16 @@
             this.txtSoTien.Border.Class = "TextBoxBorder";
             this.txtSoTien.Location = new System.Drawing.Point(302, 127);
             this.txtSoTien.Name = "txtSoTien";
-            this.txtSoTien.Size = new System.Drawing.Size(95, 26);
-            this.txtSoTien.TabIndex = 747;
+            this.txtSoTien.Size = new System.Drawing.Size(115, 26);
+            this.txtSoTien.TabIndex = 9;
             // 
             // labelX11
             // 
-            this.labelX11.Location = new System.Drawing.Point(316, 104);
+            this.labelX11.Location = new System.Drawing.Point(302, 104);
             this.labelX11.Name = "labelX11";
-            this.labelX11.Size = new System.Drawing.Size(59, 23);
+            this.labelX11.Size = new System.Drawing.Size(115, 23);
             this.labelX11.TabIndex = 750;
-            this.labelX11.Text = "Số Tiền";
+            this.labelX11.Text = "Giá Trị Xây Lắp";
             // 
             // txtTinhTrangTLK
             // 
@@ -616,14 +618,14 @@
             // 
             // 
             this.txtTinhTrangTLK.Border.Class = "TextBoxBorder";
-            this.txtTinhTrangTLK.Location = new System.Drawing.Point(403, 127);
+            this.txtTinhTrangTLK.Location = new System.Drawing.Point(538, 127);
             this.txtTinhTrangTLK.Name = "txtTinhTrangTLK";
             this.txtTinhTrangTLK.Size = new System.Drawing.Size(221, 26);
-            this.txtTinhTrangTLK.TabIndex = 748;
+            this.txtTinhTrangTLK.TabIndex = 11;
             // 
             // labelX6
             // 
-            this.labelX6.Location = new System.Drawing.Point(403, 104);
+            this.labelX6.Location = new System.Drawing.Point(538, 104);
             this.labelX6.Name = "labelX6";
             this.labelX6.Size = new System.Drawing.Size(127, 23);
             this.labelX6.TabIndex = 745;
@@ -631,7 +633,7 @@
             // 
             // labelX1
             // 
-            this.labelX1.Location = new System.Drawing.Point(630, 104);
+            this.labelX1.Location = new System.Drawing.Point(770, 104);
             this.labelX1.Name = "labelX1";
             this.labelX1.Size = new System.Drawing.Size(127, 23);
             this.labelX1.TabIndex = 746;
@@ -639,17 +641,38 @@
             // 
             // txtSoDanhBo
             // 
-            this.txtSoDanhBo.Location = new System.Drawing.Point(630, 126);
+            this.txtSoDanhBo.Location = new System.Drawing.Point(770, 126);
             this.txtSoDanhBo.Mask = "0000-0000000";
             this.txtSoDanhBo.Name = "txtSoDanhBo";
             this.txtSoDanhBo.Size = new System.Drawing.Size(115, 26);
-            this.txtSoDanhBo.TabIndex = 751;
+            this.txtSoDanhBo.TabIndex = 12;
+            // 
+            // txtTaiLapMĐ
+            // 
+            // 
+            // 
+            // 
+            this.txtTaiLapMĐ.Border.Class = "TextBoxBorder";
+            this.txtTaiLapMĐ.Location = new System.Drawing.Point(419, 127);
+            this.txtTaiLapMĐ.Name = "txtTaiLapMĐ";
+            this.txtTaiLapMĐ.Size = new System.Drawing.Size(115, 26);
+            this.txtTaiLapMĐ.TabIndex = 10;
+            // 
+            // labelX12
+            // 
+            this.labelX12.Location = new System.Drawing.Point(419, 104);
+            this.labelX12.Name = "labelX12";
+            this.labelX12.Size = new System.Drawing.Size(115, 23);
+            this.labelX12.TabIndex = 753;
+            this.labelX12.Text = "Tái Lập MĐ";
             // 
             // tab_CapNhatDanhSachND
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
+            this.Controls.Add(this.txtTaiLapMĐ);
+            this.Controls.Add(this.labelX12);
             this.Controls.Add(this.txtSoDanhBo);
             this.Controls.Add(this.txtSoTien);
             this.Controls.Add(this.labelX11);
@@ -740,5 +763,7 @@
         private DevComponents.DotNetBar.LabelX labelX6;
         private DevComponents.DotNetBar.LabelX labelX1;
         private System.Windows.Forms.MaskedTextBox txtSoDanhBo;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtTaiLapMĐ;
+        private DevComponents.DotNetBar.LabelX labelX12;
     }
 }

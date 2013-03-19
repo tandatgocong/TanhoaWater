@@ -26,8 +26,11 @@ namespace TanHoaWater.DAL
 
         public static string IdentityBienNhan(string loaihs)
         {
-            string year = DateTime.Now.Year.ToString().Substring(2);
+            string year = DateTime.Now.Year.ToString().Substring(2);            
             string kytumacdinh = year + loaihs;
+            if ("DD".Equals(loaihs)) {
+                kytumacdinh = year + "D0";
+            }
             string id = kytumacdinh + "999";
             try
             {

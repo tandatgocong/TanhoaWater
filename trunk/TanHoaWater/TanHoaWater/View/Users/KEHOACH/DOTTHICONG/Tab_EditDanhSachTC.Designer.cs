@@ -59,6 +59,7 @@
             this.g_duong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.g_phuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gr_SoDienThoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TINHTRANGTLK = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.g_dotxpdd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.g_ngayxinphep = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grNgayDongTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -117,6 +118,7 @@
             this.g_duong,
             this.g_phuong,
             this.gr_SoDienThoai,
+            this.TINHTRANGTLK,
             this.g_dotxpdd,
             this.g_ngayxinphep,
             this.grNgayDongTien,
@@ -160,6 +162,7 @@
             this.btPrint.Size = new System.Drawing.Size(32, 22);
             this.btPrint.TabIndex = 719;
             this.btPrint.TabStop = false;
+            this.btPrint.Visible = false;
             this.btPrint.Click += new System.EventHandler(this.btPrint_Click);
             // 
             // btCapNhat
@@ -254,6 +257,13 @@
             this.gr_SoDienThoai.HeaderText = "Số Điện Thoại";
             this.gr_SoDienThoai.Name = "gr_SoDienThoai";
             this.gr_SoDienThoai.Width = 120;
+            // 
+            // TINHTRANGTLK
+            // 
+            this.TINHTRANGTLK.DataPropertyName = "GHICHU";
+            this.TINHTRANGTLK.HeaderText = "Tình Trạng TLK";
+            this.TINHTRANGTLK.Name = "TINHTRANGTLK";
+            this.TINHTRANGTLK.Width = 200;
             // 
             // g_dotxpdd
             // 
@@ -370,6 +380,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn g_duong;
         private System.Windows.Forms.DataGridViewTextBoxColumn g_phuong;
         private System.Windows.Forms.DataGridViewTextBoxColumn gr_SoDienThoai;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TINHTRANGTLK;
         private System.Windows.Forms.DataGridViewTextBoxColumn g_dotxpdd;
         private System.Windows.Forms.DataGridViewTextBoxColumn g_ngayxinphep;
         private System.Windows.Forms.DataGridViewTextBoxColumn grNgayDongTien;

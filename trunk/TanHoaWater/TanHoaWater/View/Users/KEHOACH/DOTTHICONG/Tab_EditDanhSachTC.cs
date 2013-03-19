@@ -14,9 +14,9 @@ using log4net;
 
 namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
 {
-    public partial class Tab_EditDanhSachTC  : UserControl
+    public partial class Tab_EditDanhSachTC : UserControl
     {
-        string _madot="";
+        string _madot = "";
         public Tab_EditDanhSachTC(string madot)
         {
             InitializeComponent();
@@ -37,63 +37,63 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
                 e.Handled = false;
             }
         }
-      
-      
-     public void loadDataGrid()
-     {
-         dataGridViewDotTC.DataSource = DAL.C_KH_DotThiCong.getListDotThiCong(_madot);
-         Utilities.DataGridV.formatSoHoSo(dataGridViewDotTC);
-     }
-        
+
+
+        public void loadDataGrid()
+        {
+            dataGridViewDotTC.DataSource = DAL.C_KH_DotThiCong.getListDotThiCong(_madot);
+            Utilities.DataGridV.formatSoHoSo(dataGridViewDotTC);
+        }
+
         private static readonly ILog log = LogManager.GetLogger(typeof(tab_CapNhatDanhSachND).Name);
         private void btPrint_Click(object sender, EventArgs e)
         {
-            try
-            {
-                string tendot = DAL.C_KH_DotThiCong.findByMadot(_madot).LOAIBANGKE;
-                if (tendot.Equals("Gắn Mới(NĐ117)"))
-                {
-                    ReportDocument rp = new rpt_DanhSachHSTC_GM();
-                    rp.SetDataSource(DAL.C_KH_DotThiCong.BC_DanhSachDotThiCong(_madot));
-                    rpt_Main mainReport = new rpt_Main(rp);
-                    mainReport.ShowDialog();
-                }
-                else if (tendot.Equals("Ống Cái") || tendot.Equals("Gắn Mới"))
-                {
-                    ReportDocument rp = new rpt_DanhSachHSTC_OC();
-                    rp.SetDataSource(DAL.C_KH_DotThiCong.BC_DanhSachDotThiCong_OC(_madot));
-                    rpt_Main mainReport = new rpt_Main(rp);
-                    mainReport.ShowDialog();
-                }
-                else if (tendot.Equals("Bồi Thường"))
-                {
-                    ReportDocument rp = new rpt_DanhSachHSTC_BT();
-                    rp.SetDataSource(DAL.C_KH_DotThiCong.BC_DanhSachDotThiCong_BT(_madot));
-                    rpt_Main mainReport = new rpt_Main(rp);
-                    mainReport.ShowDialog();
-                }
-                else if (tendot.Equals("Dời-BT"))
-                {
-                    reportValues rpt = new reportValues(2, _madot);
-                    rpt.ShowDialog();
-                }
-                else if (tendot.Equals("Dời"))
-                {
-                    ReportDocument rp = new rpt_DanhSachHSTC_DOI();
-                    rp.SetDataSource(DAL.C_KH_DotThiCong.BC_DanhSachDotThiCong_OC(_madot));
-                    rpt_Main mainReport = new rpt_Main(rp);
-                    mainReport.ShowDialog();
-                }
-                else
-                {
-                    reportValues rpt = new reportValues(1, _madot);
-                    rpt.ShowDialog();
-                }  
-            }
-            catch (Exception ex)
-            {
-                log.Error("In danh sach dot thi cong " + ex.Message);
-            }
+            //try
+            //{
+            //    string tendot = DAL.C_KH_DotThiCong.findByMadot(_madot).LOAIBANGKE;
+            //    if (tendot.Equals("Gắn Mới(NĐ117)"))
+            //    {
+            //        ReportDocument rp = new rpt_DanhSachHSTC_GM();
+            //        rp.SetDataSource(DAL.C_KH_DotThiCong.BC_DanhSachDotThiCong(_madot));
+            //        rpt_Main mainReport = new rpt_Main(rp);
+            //        mainReport.ShowDialog();
+            //    }
+            //    else if (tendot.Equals("Ống Cái") || tendot.Equals("Gắn Mới"))
+            //    {
+            //        ReportDocument rp = new rpt_DanhSachHSTC_OC();
+            //        rp.SetDataSource(DAL.C_KH_DotThiCong.BC_DanhSachDotThiCong_OC(_madot));
+            //        rpt_Main mainReport = new rpt_Main(rp);
+            //        mainReport.ShowDialog();
+            //    }
+            //    else if (tendot.Equals("Bồi Thường"))
+            //    {
+            //        ReportDocument rp = new rpt_DanhSachHSTC_BT();
+            //        rp.SetDataSource(DAL.C_KH_DotThiCong.BC_DanhSachDotThiCong_BT(_madot));
+            //        rpt_Main mainReport = new rpt_Main(rp);
+            //        mainReport.ShowDialog();
+            //    }
+            //    else if (tendot.Equals("Dời-BT"))
+            //    {
+            //        reportValues rpt = new reportValues(2, _madot);
+            //        rpt.ShowDialog();
+            //    }
+            //    else if (tendot.Equals("Dời"))
+            //    {
+            //        ReportDocument rp = new rpt_DanhSachHSTC_DOI();
+            //        rp.SetDataSource(DAL.C_KH_DotThiCong.BC_DanhSachDotThiCong_OC(_madot));
+            //        rpt_Main mainReport = new rpt_Main(rp);
+            //        mainReport.ShowDialog();
+            //    }
+            //    else
+            //    {
+            //        reportValues rpt = new reportValues(1, _madot);
+            //        rpt.ShowDialog();
+            //    }  
+            //}
+            //catch (Exception ex)
+            //{
+            //    log.Error("In danh sach dot thi cong " + ex.Message);
+            //}
         }
 
         private void dataGridViewDotTC_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -138,9 +138,11 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
 
         private void btCapNhat_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < dataGridViewDotTC.Rows.Count; i++) { 
-                string shs = dataGridViewDotTC.Rows[i].Cells["SHS"].Value+"";
+            for (int i = 0; i < dataGridViewDotTC.Rows.Count; i++)
+            {
+                string shs = dataGridViewDotTC.Rows[i].Cells["SHS"].Value + "";
                 string stt = dataGridViewDotTC.Rows[i].Cells["STT"].Value + "";
+                string ghichu = dataGridViewDotTC.Rows[i].Cells["TINHTRANGTLK"].Value + "";
                 double n_tlmt = 0;
                 double n_tongcong = 0;
                 try
@@ -159,7 +161,10 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
                 }
                 string sql = " UPDATE KH_HOSOKHACHHANG SET TONGIATRI='" + n_tongcong + "',TAILAPMATDUONG='" + n_tlmt + "' WHERE SHS='" + shs + "'";
                 DAL.LinQConnection.ExecuteCommand_(sql);
-                if (!"".Equals(stt)) {
+                string sql1 = " UPDATE DON_KHACHHANG SET GHICHU=N'" + ghichu + "' WHERE SHS='" + shs + "'";
+                DAL.LinQConnection.ExecuteCommand_(sql1);
+                if (!"".Equals(stt))
+                {
                     try
                     {
                         DAL.C_KH_DotThiCong.UpdateSTT(shs, int.Parse(stt));
