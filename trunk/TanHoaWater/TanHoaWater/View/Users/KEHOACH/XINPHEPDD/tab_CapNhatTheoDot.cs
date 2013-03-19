@@ -23,11 +23,11 @@ namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
         {
             InitializeComponent();
             this.cbMaDot.DataSource = DAL.C_KH_XinPhepDD.ListAllXinPhepDD();
-            this.cbMaDot.ValueMember = "MADOT";
-            this.cbMaDot.DisplayMember = "MADOT";
+            this.cbMaDot.ValueMember = "MAQUANLY";
+            this.cbMaDot.DisplayMember = "MAQUANLY";
             cbMaDot.Text = madot;
             xinphep = DAL.C_KH_XinPhepDD.finbyMaDot(madot);
-            loadDataGrid(madot);
+            loadDataGrid(this.cbMaDot.SelectedValue.ToString());
             _ngaylap = ngaylap;
             try
             {
@@ -144,7 +144,7 @@ namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
         }
 
         public void loadDataGrid(string sodot) {
-            DataTable table = DAL.C_KH_HoSoKhachHang.getListHSbyDot(sodot);
+            DataTable table = DAL.C_KH_HoSoKhachHang.getListHSbyDot(sodot); 
             this.gridXiPhepDD.DataSource = table;
             this.lbTongHoSo.Text = "Tổng Số Hồ Sơ XPĐĐ: " + table.Rows.Count + " hồ sơ.";
         }
@@ -263,7 +263,7 @@ namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
 
         private void cbMaDot_SelectedValueChanged(object sender, EventArgs e)
         {
-            loadDataGrid(this.cbMaDot.Text);
+            loadDataGrid(this.cbMaDot.SelectedValue.ToString());
         }
         bool flag = false;
         private void GridViewPhuiDao_CellEndEdit(object sender, DataGridViewCellEventArgs e)
