@@ -176,7 +176,7 @@ namespace TanHoaWater.View.Users.KEHOACH
         {
           // CrystalReportViewer r = new CrystalReportViewer();
            ReportDocument rp = new crp_BIENNHAN_GM();
-           if (mabiennhan.Contains("DD"))
+           if (mabiennhan.Contains("D"))
             {
                 rp = new crp_BIENNHAN_DD();
             }
