@@ -445,7 +445,7 @@ namespace TanHoaWater.DAL
         public static DataTable finbyDonKHTinhDuToan(string shs)
         {
             string sql = " SELECT ttk.MADOT, ttk.SHS, HOTEN, kh.DIENTHOAI,";
-            sql += " SONHA,DUONG,p.TENPHUONG,q.TENQUAN,SOHO,lkh.TENLOAI,DANHBO,lhs.TENLOAI,FULLNAME, kh.TINHKHOAN,kh.LOAIMIENPHI ";// end 14
+            sql += " SONHA,DUONG,p.TENPHUONG,q.TENQUAN,SOHO,lkh.TENLOAI,DANHBO,lhs.TENLOAI,FULLNAME, kh.TINHKHOAN,kh.LOAIMIENPHI ,(CASE WHEN kh.SHS like '%BT%' THEN 'BT' ELSE  CASE WHEN kh.SHS like '%D%' THEN 'DD' ELSE 'GM' END END) as  'LOAIHOSO'";// end 14
             sql += " FROM TOTHIETKE ttk, DON_KHACHHANG kh,QUAN q,PHUONG p, LOAI_HOSO lhs, USERS us, LOAI_KHACHHANG lkh ";
             sql += " WHERE kh.LOAIKH=lkh.MALOAI AND  kh.QUAN = q.MAQUAN AND q.MAQUAN=p.MAQUAN AND kh.PHUONG=p.MAPHUONG AND lhs.MALOAI=kh.LOAIHOSO AND ttk.SOHOSO=kh.SOHOSO AND us.USERNAME=ttk.SODOVIEN";
             sql += " AND ttk.SHS ='" + shs + "'";

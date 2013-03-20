@@ -915,7 +915,19 @@ namespace TanHoaWater.View.Users.TinhDuToan
                     this.txtSoHo.Value = int.Parse(table.Rows[0][8].ToString());
                     this.txtLoaiKH.Text = table.Rows[0][9].ToString();
                     this.txtDanhBo.Text = table.Rows[0][10].ToString();
-                    this.txtTenBangThietKe.Text = table.Rows[0][11].ToString();
+                    
+                    if ("GM".Equals(table.Rows[0]["LOAIHOSO"].ToString())){
+                      this.txtTenBangThietKe.Text ="BẢNG GIÁ LẮP ĐẶT THỦY LƯỢNG KẾ";
+                    }
+                    else if ("DD".Equals(table.Rows[0]["LOAIHOSO"].ToString())){
+                    this.txtTenBangThietKe.Text ="BẢNG GIÁ DỜI THỦY LƯỢNG KẾ";
+                    }
+                    else if ("BT".Equals(table.Rows[0]["LOAIHOSO"].ToString()))
+                    {
+
+                        this.txtTenBangThietKe.Text = "BẢNG GIÁ BỒI THƯỜNG THỦY LƯỢNG KẾ";
+                    }
+
                     this.txtSoDoVien.Text = table.Rows[0][12].ToString();
                     if ("True".Equals(table.Rows[0][13].ToString()))
                     {
@@ -1968,6 +1980,7 @@ namespace TanHoaWater.View.Users.TinhDuToan
                 rp.SetDataSource(ds);
                 rp.SetParameterValue("Tienchu", Utilities.Doctien.ReadMoney(Math.Round(TongThanhTien)+""));
                 rp.SetParameterValue("subTienchu", Utilities.Doctien.ReadMoney(Math.Round(TongThanhTien) + ""));
+                rp.SetParameterValue("title_p", this.txtTenBangThietKe.Text.ToUpper());
                 rp.SetParameterValue("gan", _tongketgan);
                 rp.SetParameterValue("nhua", _tongketnhua);
                 if(checkKHDT.Checked)
