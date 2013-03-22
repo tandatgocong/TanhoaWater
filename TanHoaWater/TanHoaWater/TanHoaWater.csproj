@@ -624,6 +624,12 @@
     <Compile Include="View\Users\KEHOACH\tab_DonTroNgai.Designer.cs">
       <DependentUpon>tab_DonTroNgai.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Users\KEHOACH\ThuMoiDongTien\ganmoi.cs">
+      <DependentUpon>ganmoi.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="View\Users\KEHOACH\ThuMoiDongTien\ganthayongnganhdhn.cs">
       <DependentUpon>ganthayongnganhdhn.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -1218,6 +1224,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\KEHOACH\tab_DonTroNgai.resx">
       <DependentUpon>tab_DonTroNgai.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\KEHOACH\ThuMoiDongTien\ganmoi.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ganmoi.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\KEHOACH\ThuMoiDongTien\ganthayongnganhdhn.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

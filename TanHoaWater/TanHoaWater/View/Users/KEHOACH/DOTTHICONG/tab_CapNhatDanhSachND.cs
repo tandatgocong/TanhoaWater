@@ -287,12 +287,7 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
 
         private void txtSoHoaDon_Leave(object sender, EventArgs e)
         {
-            if (flag == true)
-            {
-                add();
-                refesh();
-                this.txtSHS.Focus();
-            }
+           
         }
 
         private void btThemMoiHoSo_Click(object sender, EventArgs e)
@@ -382,6 +377,16 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
         private void txtSoDanhBo_Leave(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtSoDanhBo_Leave_1(object sender, EventArgs e)
+        {
+            if (flag == true)
+            {
+                add();
+                refesh();
+                this.txtSHS.Focus();
+            }
         }
     }
 }
