@@ -646,6 +646,7 @@
             this.txtSoDanhBo.Name = "txtSoDanhBo";
             this.txtSoDanhBo.Size = new System.Drawing.Size(115, 26);
             this.txtSoDanhBo.TabIndex = 12;
+            this.txtSoDanhBo.Leave += new System.EventHandler(this.txtSoDanhBo_Leave_1);
             // 
             // txtTaiLapMĐ
             // 

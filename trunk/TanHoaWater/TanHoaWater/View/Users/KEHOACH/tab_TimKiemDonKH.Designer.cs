@@ -56,6 +56,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtDanhBo = new System.Windows.Forms.MaskedTextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.txtghichusua = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.label18 = new System.Windows.Forms.Label();
@@ -91,7 +92,6 @@
             this.cbQuan = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.cbPhuong = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.txtDanhBo = new System.Windows.Forms.MaskedTextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.next)).BeginInit();
@@ -421,6 +421,14 @@
             this.panel1.Size = new System.Drawing.Size(963, 142);
             this.panel1.TabIndex = 0;
             // 
+            // txtDanhBo
+            // 
+            this.txtDanhBo.Location = new System.Drawing.Point(717, 71);
+            this.txtDanhBo.Mask = "0000-0000000";
+            this.txtDanhBo.Name = "txtDanhBo";
+            this.txtDanhBo.Size = new System.Drawing.Size(115, 22);
+            this.txtDanhBo.TabIndex = 119;
+            // 
             // label19
             // 
             this.label19.AutoSize = true;
@@ -649,7 +657,6 @@
             // 
             this.txtHoTen.Border.Class = "TextBoxBorder";
             this.txtHoTen.Location = new System.Drawing.Point(92, 38);
-            this.txtHoTen.Multiline = true;
             this.txtHoTen.Name = "txtHoTen";
             this.txtHoTen.Size = new System.Drawing.Size(320, 25);
             this.txtHoTen.TabIndex = 11;
@@ -673,7 +680,6 @@
             // 
             this.txtsonha.Border.Class = "TextBoxBorder";
             this.txtsonha.Location = new System.Drawing.Point(92, 68);
-            this.txtsonha.Multiline = true;
             this.txtsonha.Name = "txtsonha";
             this.txtsonha.Size = new System.Drawing.Size(78, 25);
             this.txtsonha.TabIndex = 12;
@@ -694,7 +700,6 @@
             // 
             this.duong.Border.Class = "TextBoxBorder";
             this.duong.Location = new System.Drawing.Point(193, 68);
-            this.duong.Multiline = true;
             this.duong.Name = "duong";
             this.duong.Size = new System.Drawing.Size(219, 25);
             this.duong.TabIndex = 13;
@@ -776,14 +781,6 @@
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
-            // 
-            // txtDanhBo
-            // 
-            this.txtDanhBo.Location = new System.Drawing.Point(717, 71);
-            this.txtDanhBo.Mask = "0000-0000000";
-            this.txtDanhBo.Name = "txtDanhBo";
-            this.txtDanhBo.Size = new System.Drawing.Size(115, 22);
-            this.txtDanhBo.TabIndex = 119;
             // 
             // tab_TimKiemDonKH
             // 

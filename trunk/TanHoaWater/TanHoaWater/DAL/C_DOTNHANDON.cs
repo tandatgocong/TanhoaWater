@@ -203,7 +203,7 @@ namespace TanHoaWater.DAL
             string sql = " SELECT MADOT , (MADOT + '   '+  TENLOAI) as 'TEND'";
             sql += " FROM DOT_NHAN_DON dot, LOAI_HOSO loai";
             sql += " WHERE loai.MALOAI = dot.LOAIDON AND CHUYENDON = 'True'";
-            sql += " ORDER BY dot.CREATEDATE DESC ";
+            sql += " ORDER BY MADOT ASC ";
             SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             DataTable table = new DataTable();
             adapter.Fill(table);

@@ -946,7 +946,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                     BG_KHOILUONGXDCB xdcb = DAL.C_KhoiLuongXDCB.findBySHS(table.Rows[0][0].ToString());
                     if (xdcb != null)
                     {
-                        txtSoTien.Text = String.Format("{0:0,0.00}", xdcb.TONGIATRI != null ? xdcb.TONGIATRI : 0.0).Replace(",",".");
+                        txtSoTien.Text = String.Format("{0:0,0}", xdcb.TONGIATRI != null ? xdcb.TONGIATRI : 0.0).Replace(",",".");
                     }
 
                 }
@@ -1040,7 +1040,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                 inp.ShowDialog();
 
             }
-            else
+            else if (comboBox1.SelectedIndex == 2)
             {
                 ReportDocument rp = new ganthayongnganhdhn();
                 rp.PrintOptions.PaperSize = PaperSize.Paper11x17;
@@ -1059,6 +1059,62 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                 rpt_InBienNhan inp = new rpt_InBienNhan(rp);
                 inp.ShowDialog();
 
+            }
+            else if (comboBox1.SelectedIndex == 3){ /// gắn mới
+                ReportDocument rp = new ganmoi();
+                rp.PrintOptions.PaperSize = PaperSize.Paper11x17;
+                DataRow myDataRow = table.NewRow();
+                myDataRow["TITLE"] = "THƠ MỜI THANH TOÁN CHI PHÍ GẮN MỚI ĐỒNG HỒ NƯỚC";
+                myDataRow["HOTEN"] = txtHoTenKH.Text;
+                myDataRow["DIACHI"] = txtDiaChi.Text + ", Phường " + txtPhuong.Text + ", Quận " + txtQuan.Text;
+                myDataRow["TUNGAY"] = dateTuNgay.Text;
+                myDataRow["DENNGAY"] = dateDenNgay.Text;
+                myDataRow["SOTIEN"] = txtSoTien.Text;
+                myDataRow["DANHBO"] = textBoxX2DB.Text;
+                table.Rows.Add(myDataRow);
+                ds.Tables.Add(table);
+                rp.SetDataSource(ds);
+                //rp.SetParameterValue("title", " gắn mới ĐHN");
+                rpt_InBienNhan inp = new rpt_InBienNhan(rp);
+                inp.ShowDialog();
+            }
+            else if (comboBox1.SelectedIndex == 4)
+            { /// tái lập
+                ReportDocument rp = new ganthayongnganhdhn();
+                rp.PrintOptions.PaperSize = PaperSize.Paper11x17;
+                DataRow myDataRow = table.NewRow();
+                myDataRow["TITLE"] = "THƠ MỜI THANH TOÁN CHI PHÍ TÁI LẬP DANH BỘ";
+                myDataRow["HOTEN"] = txtHoTenKH.Text;
+                myDataRow["DIACHI"] = txtDiaChi.Text + ", Phường " + txtPhuong.Text + ", Quận " + txtQuan.Text;
+                myDataRow["TUNGAY"] = dateTuNgay.Text;
+                myDataRow["DENNGAY"] = dateDenNgay.Text;
+                myDataRow["SOTIEN"] = txtSoTien.Text;
+                myDataRow["DANHBO"] = textBoxX2DB.Text;
+                table.Rows.Add(myDataRow);
+                ds.Tables.Add(table);
+                rp.SetDataSource(ds);
+                rp.SetParameterValue("title", " tái lập danh bộ ");
+                rpt_InBienNhan inp = new rpt_InBienNhan(rp);
+                inp.ShowDialog();
+            }
+            else if (comboBox1.SelectedIndex == 5)
+            { /// bồi thường
+                ReportDocument rp = new ganthayongnganhdhn();
+                rp.PrintOptions.PaperSize = PaperSize.Paper11x17;
+                DataRow myDataRow = table.NewRow();
+                myDataRow["TITLE"] = "THƠ MỜI THANH TOÁN CHI PHÍ BỒI THƯỜNG ĐỒNG HỒ NƯỚC";
+                myDataRow["HOTEN"] = txtHoTenKH.Text;
+                myDataRow["DIACHI"] = txtDiaChi.Text + ", Phường " + txtPhuong.Text + ", Quận " + txtQuan.Text;
+                myDataRow["TUNGAY"] = dateTuNgay.Text;
+                myDataRow["DENNGAY"] = dateDenNgay.Text;
+                myDataRow["SOTIEN"] = txtSoTien.Text;
+                myDataRow["DANHBO"] = textBoxX2DB.Text;
+                table.Rows.Add(myDataRow);
+                ds.Tables.Add(table);
+                rp.SetDataSource(ds);
+                rp.SetParameterValue("title", " bồi thường ĐHN ");
+                rpt_InBienNhan inp = new rpt_InBienNhan(rp);
+                inp.ShowDialog();
             }
 
 
