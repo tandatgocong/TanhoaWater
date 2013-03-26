@@ -744,6 +744,12 @@
     <Compile Include="View\Users\TCTB\optionCPGanNhua.Designer.cs">
       <DependentUpon>optionCPGanNhua.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Users\TCTB\Report\rpt_HoanCongTCTB_GM.cs">
+      <DependentUpon>rpt_HoanCongTCTB_GM.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="View\Users\TCTB\Report\rpt_HoanCongTCTB_DOI.cs">
       <DependentUpon>rpt_HoanCongTCTB_DOI.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -1283,6 +1289,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\TCTB\optionCPGanNhua.resx">
       <DependentUpon>optionCPGanNhua.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\TCTB\Report\rpt_HoanCongTCTB_GM.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_HoanCongTCTB_GM.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\TCTB\Report\rpt_HoanCongTCTB_DOI.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

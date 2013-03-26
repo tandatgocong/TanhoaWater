@@ -295,7 +295,6 @@
             this.txtSoHoaDon.Name = "txtSoHoaDon";
             this.txtSoHoaDon.Size = new System.Drawing.Size(77, 26);
             this.txtSoHoaDon.TabIndex = 8;
-            this.txtSoHoaDon.Leave += new System.EventHandler(this.txtSoHoaDon_Leave);
             // 
             // btLuuHoSo
             // 

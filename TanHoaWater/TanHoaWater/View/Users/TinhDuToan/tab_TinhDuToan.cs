@@ -954,6 +954,9 @@ namespace TanHoaWater.View.Users.TinhDuToan
                     
                     }
                 }
+                ////////
+                vatTuXDCBKhachHangCap.Checked = false;
+                ///////
             }
         }
         double getChieuDaiHDPE()
@@ -1236,12 +1239,22 @@ namespace TanHoaWater.View.Users.TinhDuToan
 		                    default:
                                 if ("XDCB".Equals(nhom))
                                 {
-                                    if ((_mahieuvt.Equals("CAT") || _mahieuvt.Equals("DA04") || _mahieuvt.Equals("BT")) && vatTuXDCBKhachHangCap.Checked)
+                                    if ((_mahieuvt.Equals("CAT") || _mahieuvt.Equals("DA04") || _mahieuvt.Equals("BT")) && checkCatDaKHCC.Checked)
                                     {
 
                                         congtacbg.DONGIAVL = 0.0;
-                                        congtacbg.DONGIAMTC = 0.0;
+                                        congtacbg.DONGIANC = nhancong;
+                                        congtacbg.DONGIAMTC = maythicong;
                                         congtacbg.TENVT = DAL.C_DanhMucVatTu.finbyMaHieu(_mahieuvt).TENVT.ToUpper() + " (K/H CUNG CẤP) ";
+
+                                    }
+                                    else if ((_mahieuvt.Equals("CAT") || _mahieuvt.Equals("DA04") || _mahieuvt.Equals("BT")) && vatTuXDCBKhachHangCap.Checked)
+                                    {
+
+                                        congtacbg.DONGIAVL = 0.0;
+                                        congtacbg.DONGIANC = nhancong;
+                                        congtacbg.DONGIAMTC = maythicong;
+                                        congtacbg.TENVT = DAL.C_DanhMucVatTu.finbyMaHieu(_mahieuvt).TENVT.ToUpper() + "  ";
 
                                     }
                                     else
