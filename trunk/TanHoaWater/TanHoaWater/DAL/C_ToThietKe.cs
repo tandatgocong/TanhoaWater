@@ -259,7 +259,7 @@ namespace TanHoaWater.DAL
             string sql = "  SELECT DISTINCT nd.MADOT, CONVERT(VARCHAR(20),nd.NGAYLAPDON,103) ,loai.TENLOAI, COUNT(*) as 'SOHS', COUNT(TRONGAITHIETKE) as 'TRONGAI', COUNT(HOANTATTK) as 'HOANTHANH'";
             sql += " FROM DOT_NHAN_DON AS nd ,LOAI_HOSO AS loai, TOTHIETKE AS ttk";
             sql += "  WHERE nd.LOAIDON=loai.MALOAI AND ttk.MADOT=nd.MADOT ";
-            sql += " AND ttk.MADOT='" + ttkMaDot + "'";
+            sql += " AND ttk.MADOT=N'" + ttkMaDot + "'";
             sql += " GROUP BY nd.MADOT,nd.NGAYLAPDON,loai.TENLOAI ";
             SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             DataSet dataset = new DataSet();

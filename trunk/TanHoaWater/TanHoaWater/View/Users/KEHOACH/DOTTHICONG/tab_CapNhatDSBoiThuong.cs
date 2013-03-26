@@ -363,5 +363,15 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
 
             }
         }
+
+        private void txtSoDanhBo_Leave_1(object sender, EventArgs e)
+        {
+            if (flag == true)
+            {
+                add();
+                refesh();
+                this.txtSHS.Focus();
+            }
+        }
     }
 }

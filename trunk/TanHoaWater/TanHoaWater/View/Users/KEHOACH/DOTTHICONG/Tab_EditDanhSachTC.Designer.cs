@@ -68,6 +68,7 @@
             this.gridTLMD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gr_tongsotien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grid_CoTLK = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DANHBO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDotTC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btPrint)).BeginInit();
             this.SuspendLayout();
@@ -126,7 +127,8 @@
             this.gridGiaTriSauThue,
             this.gridTLMD,
             this.gr_tongsotien,
-            this.grid_CoTLK});
+            this.grid_CoTLK,
+            this.DANHBO});
             dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle15.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -343,6 +345,13 @@
             this.grid_CoTLK.HeaderText = "Cỡ TLK";
             this.grid_CoTLK.Name = "grid_CoTLK";
             // 
+            // DANHBO
+            // 
+            this.DANHBO.DataPropertyName = "DANHBO";
+            this.DANHBO.HeaderText = "Danh Bộ";
+            this.DANHBO.Name = "DANHBO";
+            this.DANHBO.Width = 120;
+            // 
             // Tab_EditDanhSachTC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -389,5 +398,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn gridTLMD;
         private System.Windows.Forms.DataGridViewTextBoxColumn gr_tongsotien;
         private System.Windows.Forms.DataGridViewTextBoxColumn grid_CoTLK;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DANHBO;
     }
 }

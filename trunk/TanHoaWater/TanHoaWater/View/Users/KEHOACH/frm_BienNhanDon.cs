@@ -151,7 +151,7 @@ namespace TanHoaWater.View.Users.KEHOACH
             this.txtDuong.Text = "";
             this.cbPhuong.Text = null;
             this.Quan.Text = null;
-
+            this.numericUpDown1.Value = 1;
             this.cbPhuong.DataSource = DAL.C_Phuong.getListPhuong();
             this.cbPhuong.DisplayMember = "Display";
             this.cbPhuong.ValueMember = "Value";
