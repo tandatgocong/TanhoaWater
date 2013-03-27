@@ -212,15 +212,27 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
                                 {
 
                                 }
-                            
+
                                 kh_sh.TLMDTRUOCTHUE = xdcb.TLMDTRUOCTHUE;
                                 kh_sh.CONG1 = xdcb.CONG1;
                                 kh_sh.THUE55 = xdcb.THUE55;
                                 kh_sh.CONG3 = xdcb.CONG3;
                                 kh_sh.THUEGTGT = xdcb.THUEGTGT;
-                               // kh_sh.TONGIATRI = xdcb.TONGIATRI;
+                                // kh_sh.TONGIATRI = xdcb.TONGIATRI;
                                 kh_sh.CPGAN = xdcb.CPGAN;
                                 kh_sh.CPNHUA = xdcb.CPNHUA;
+                            }
+                            else
+                            {
+                                try
+                                {
+                                    kh_sh.TAILAPMATDUONG = double.Parse(this.txtTaiLapMĐ.Text);
+                                    kh_sh.TONGIATRI = double.Parse(this.txtSoTien.Text);
+                                }
+                                catch (Exception)
+                                {
+
+                                }
                             }
                             if (donkh != null)
                             {
