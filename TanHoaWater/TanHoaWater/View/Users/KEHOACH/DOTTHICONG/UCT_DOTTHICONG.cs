@@ -703,8 +703,25 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
                 }
                 else if (tendot.Equals("Ống Cái") )
                 {
+                    string tungay = "";
+                    string denngay = "";
+                    try
+                    {
+
+                        if (dotc != null)
+                        {
+                            tungay = Utilities.DateToString.NgayVN(dotc.TCTUNGAY.Value);
+                            denngay = Utilities.DateToString.NgayVN(dotc.TCDENNGAY.Value);
+                        }
+                    }
+                    catch (Exception)
+                    {
+                    }
+                    
                     ReportDocument rp = new rpt_DanhSachHSTC_OC();
                     rp.SetDataSource(DAL.C_KH_DotThiCong.BC_DanhSachDotThiCong_OC(madot));
+                    rp.SetParameterValue("tungay", tungay);
+                    rp.SetParameterValue("denngay", denngay);
                     rp.SetParameterValue("ngaytk", ngaytk);
                     rpt_Main mainReport = new rpt_Main(rp);
                     mainReport.ShowDialog();

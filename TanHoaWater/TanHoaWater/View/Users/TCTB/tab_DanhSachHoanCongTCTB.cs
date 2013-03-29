@@ -456,8 +456,15 @@ namespace TanHoaWater.View.Users.TCTB
 
         private void btInBangKe_Click(object sender, EventArgs e)
         {
+            ReportDocument rp = new rpt_HoanCongTCTB();
+            if ("BT".Contains(this.cbDotHoanCong.Text)) {
+                rp = new rpt_HoanCongTCTB();
+            } else if ("D".Contains(this.cbDotHoanCong.Text)) {
+                rp = new rpt_HoanCongTCTB();
+            } else {
+                rp = new rpt_HoanCongTCTB_DOI();
+            }
             
-                ReportDocument rp = new rpt_HoanCongTCTB();
                 rp.SetDataSource(DAL.C_HoanCongDHN_DotTCTB.BC_HOANCONG_TCTB(this.cbDotHoanCong.Text));
                 string tlkgom = "Gồm TLK ";
                 DataTable table = DAL.LinQConnection.getDataTable("select COTLK, COUNT(*)  from KH_HOSOKHACHHANG WHERE MADOTTC='" + this.cbDotHoanCong.Text.Replace(" ", "") + "' group by COTLK");
