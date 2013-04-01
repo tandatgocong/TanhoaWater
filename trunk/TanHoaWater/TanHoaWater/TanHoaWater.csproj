@@ -337,6 +337,12 @@
     <Compile Include="View\Users\KEHOACH\dialogNhapDon.Designer.cs">
       <DependentUpon>dialogNhapDon.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Users\KEHOACH\DOTTHICONG\BC\rpt_DanhSachHSTC_GM_KND.cs">
+      <DependentUpon>rpt_DanhSachHSTC_GM_KND.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="View\Users\KEHOACH\DOTTHICONG\BC\rpt_DanhSachHSTC_GMDT.cs">
       <DependentUpon>rpt_DanhSachHSTC_GMDT.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -1088,6 +1094,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\KEHOACH\dialogNhapDon.resx">
       <DependentUpon>dialogNhapDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\KEHOACH\DOTTHICONG\BC\rpt_DanhSachHSTC_GM_KND.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_DanhSachHSTC_GM_KND.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\KEHOACH\DOTTHICONG\BC\rpt_DanhSachHSTC_GMDT.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

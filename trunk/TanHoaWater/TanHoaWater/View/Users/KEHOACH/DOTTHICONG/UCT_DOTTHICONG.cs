@@ -725,9 +725,27 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
                     rp.SetParameterValue("ngaytk", ngaytk);
                     rpt_Main mainReport = new rpt_Main(rp);
                     mainReport.ShowDialog();
+
                 }else if(tendot.Equals("Gắn Mới")){
-                    ReportDocument rp = new rpt_DanhSachHSTC_GMDT();
+                    string tungay = "";
+                    string denngay = "";
+                    try
+                    {
+
+                        if (dotc != null)
+                        {
+                            tungay = Utilities.DateToString.NgayVN(dotc.TCTUNGAY.Value);
+                            denngay = Utilities.DateToString.NgayVN(dotc.TCDENNGAY.Value);
+                        }
+                    }
+                    catch (Exception)
+                    {
+                    }
+
+                    ReportDocument rp = new rpt_DanhSachHSTC_GM_KND();
                     rp.SetDataSource(DAL.C_KH_DotThiCong.BC_DanhSachDotThiCong_OC(madot));
+                    rp.SetParameterValue("tungay", tungay);
+                    rp.SetParameterValue("denngay", denngay);
                     rp.SetParameterValue("ngaytk", ngaytk);
                     rpt_Main mainReport = new rpt_Main(rp);
                     mainReport.ShowDialog();
