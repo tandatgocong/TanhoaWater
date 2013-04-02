@@ -94,6 +94,15 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
                         kh_sh.SHS = this.txtSHS.Text;
                         kh_sh.MADOTTC = _madot;
                         kh_sh.COTLK = int.Parse(this.cbCoTLK.Text);
+                        try
+                        {
+                            kh_sh.TAILAPMATDUONG = double.Parse(this.txtTaiLapMĐ.Text);
+                            kh_sh.TONGIATRI = double.Parse(this.txtSoTien.Text);
+                        }
+                        catch (Exception)
+                        {
+
+                        }
                         if (xdcb != null)
                         {
                             kh_sh.CPVATTU = xdcb.CPVATTU;
@@ -103,15 +112,7 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
                             kh_sh.CHIPHITRUCTIEP = xdcb.CHIPHITRUCTIEP;
                             kh_sh.CHIPHICHUNG = xdcb.CHIPHICHUNG;
 
-                            try
-                            {
-                                kh_sh.TAILAPMATDUONG = double.Parse(this.txtTaiLapMĐ.Text);
-                                kh_sh.TONGIATRI = double.Parse(this.txtSoTien.Text);
-                            }
-                            catch (Exception)
-                            {
-                                
-                            }
+                            
                             
                             
                             kh_sh.TLMDTRUOCTHUE = xdcb.TLMDTRUOCTHUE;
@@ -164,6 +165,15 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
                                 kh_sh.COTLK = int.Parse(this.cbCoTLK.Text);
                                 kh_sh.MODIFYBY = DAL.C_USERS._userName;
                                 kh_sh.MODIFYDATE = DateTime.Now;
+                                try
+                                {
+                                    kh_sh.TAILAPMATDUONG = double.Parse(this.txtTaiLapMĐ.Text);
+                                    kh_sh.TONGIATRI = double.Parse(this.txtSoTien.Text);
+                                }
+                                catch (Exception)
+                                {
+
+                                }
                                 if (xdcb != null)
                                 {
                                     kh_sh.CPVATTU = xdcb.CPVATTU;
@@ -182,17 +192,7 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
                                     kh_sh.CPGAN = xdcb.CPGAN;
                                     kh_sh.CPNHUA = xdcb.CPNHUA;
                                 }
-                                else {
-                                    try
-                                    {
-                                        kh_sh.TAILAPMATDUONG = double.Parse(this.txtTaiLapMĐ.Text);
-                                        kh_sh.TONGIATRI = double.Parse(this.txtSoTien.Text);
-                                    }
-                                    catch (Exception)
-                                    {
-
-                                    }
-                                }
+                                
                                 if (donkh != null)
                                 {
                                     kh_sh.DHN_HOTEN = Utilities.Strings.convertToUnSign(donkh.HOTEN.Replace("(ĐD " + donkh.SOHO + " Hộ)", ""));
@@ -221,6 +221,15 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
                             kh_sh.COTLK = int.Parse(this.cbCoTLK.Text);
                             kh_sh.MODIFYBY = DAL.C_USERS._userName;
                             kh_sh.MODIFYDATE = DateTime.Now;
+                            try
+                            {
+                                kh_sh.TAILAPMATDUONG = double.Parse(this.txtTaiLapMĐ.Text);
+                                kh_sh.TONGIATRI = double.Parse(this.txtSoTien.Text);
+                            }
+                            catch (Exception)
+                            {
+
+                            }
                             if (xdcb != null)
                             {
                                 kh_sh.CPVATTU = xdcb.CPVATTU;
@@ -229,15 +238,7 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
                                 kh_sh.CPCABA = xdcb.CPCABA;
                                 kh_sh.CHIPHITRUCTIEP = xdcb.CHIPHITRUCTIEP;
                                 kh_sh.CHIPHICHUNG = xdcb.CHIPHICHUNG;
-                                try
-                                {
-                                    kh_sh.TAILAPMATDUONG = double.Parse(this.txtTaiLapMĐ.Text);
-                                    kh_sh.TONGIATRI = double.Parse(this.txtSoTien.Text);
-                                }
-                                catch (Exception)
-                                {
-
-                                }
+                                
                                 kh_sh.TLMDTRUOCTHUE = xdcb.TLMDTRUOCTHUE;
                                 kh_sh.CONG1 = xdcb.CONG1;
                                 kh_sh.THUE55 = xdcb.THUE55;

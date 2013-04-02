@@ -58,7 +58,7 @@ namespace TanHoaWater.DAL
 
         public static DataTable getListHoanCong(string dottc, int flag)
         {
-            string sql = "SELECT  donkh.SHS,HOTEN,(SONHA +' '+ DUONG+', P.'+TENPHUONG +', Q.'+TENQUAN) AS 'DIACHI',hosokh.COTLK, CONVERT(varchar(50), hosokh.NGAYTHICONG,103) as 'NGAYTHICONG', hosokh.CHISO, hosokh.SOTHANTLK,hosokh.HIEUDONGHO,hosokh.HOANCONG,donkh.SOHOADON,donkh.NGAYDONGTIEN, hosokh.CPVATTU, hosokh.CPNHANCONG, hosokh.CPMAYTHICONG,hosokh.TAILAPMATDUONG  ";
+            string sql = "SELECT  donkh.SHS,HOTEN,(SONHA +' '+ DUONG+', P.'+TENPHUONG +', Q.'+TENQUAN) AS 'DIACHI',hosokh.COTLK, CONVERT(varchar(50), hosokh.NGAYTHICONG,103) as 'NGAYTHICONG', hosokh.CHISO, hosokh.SOTHANTLK,hosokh.HIEUDONGHO,hosokh.HOANCONG,donkh.SOHOADON,donkh.NGAYDONGTIEN, hosokh.CPVATTU, hosokh.CPNHANCONG, hosokh.CPMAYTHICONG,hosokh.TONGIATRI ,DHN_NGAYKD ";
              sql += " FROM DON_KHACHHANG donkh, PHUONG p, QUAN q, KH_HOSOKHACHHANG hosokh ";
              sql += " WHERE donkh.QUAN = q.MAQUAN AND q.MAQUAN=p.MAQUAN AND donkh.PHUONG=p.MAPHUONG  ";
              sql += "  AND donkh.SHS = hosokh.SHS AND hosokh.CHUYENHOANCONG='True' AND hosokh.MADOTTC=N'" + dottc + "'";
@@ -83,7 +83,7 @@ namespace TanHoaWater.DAL
 
         public static DataTable getListHoanCong_(string dottc, int flag)
         {
-            string sql = "SELECT  donkh.SHS,HOTEN,(SONHA +' '+ DUONG+', P.'+TENPHUONG +', Q.'+TENQUAN) AS 'DIACHI',hosokh.COTLK, CONVERT(varchar(50), hosokh.NGAYTHICONG,103) as 'NGAYTHICONG', hosokh.CHISO, hosokh.SOTHANTLK,hosokh.HIEUDONGHO,hosokh.HOANCONG,donkh.SOHOADON,donkh.NGAYDONGTIEN, hosokh.CPVATTU, hosokh.CPNHANCONG, hosokh.CPMAYTHICONG,hosokh.TAILAPMATDUONG  ";
+            string sql = "SELECT  donkh.SHS,HOTEN,(SONHA +' '+ DUONG+', P.'+TENPHUONG +', Q.'+TENQUAN) AS 'DIACHI',hosokh.COTLK, CONVERT(varchar(50), hosokh.NGAYTHICONG,103) as 'NGAYTHICONG', hosokh.CHISO, hosokh.SOTHANTLK,hosokh.HIEUDONGHO,hosokh.HOANCONG,donkh.SOHOADON,donkh.NGAYDONGTIEN, hosokh.CPVATTU, hosokh.CPNHANCONG, hosokh.CPMAYTHICONG,hosokh.TONGIATRI ,DHN_NGAYKD ";
             sql += " FROM DON_KHACHHANG donkh, PHUONG p, QUAN q, KH_HOSOKHACHHANG hosokh ";
             sql += " WHERE donkh.QUAN = q.MAQUAN AND q.MAQUAN=p.MAQUAN AND donkh.PHUONG=p.MAPHUONG  ";
             sql += "  AND donkh.SHS = hosokh.SHS  AND hosokh.MADOTTC=N'" + dottc + "'";
@@ -131,7 +131,7 @@ namespace TanHoaWater.DAL
             db.Connection.Close();
             return dataset.Tables[0];
         }
-        public static void HoanCong(string shs, DateTime ngaytc, int chiso, int cotlk, string sotlk, string tendongho, bool hoancong) {
+        public static bool HoanCong(string shs, DateTime ngaytc, int chiso, int cotlk, string sotlk, string tendongho, bool hoancong, DateTime ngaykd) {
             try
             {
                 var query = from q in db.KH_HOSOKHACHHANGs where q.SHS == shs select q;
@@ -152,13 +152,16 @@ namespace TanHoaWater.DAL
                         hosokh.HOANCONG = false;
                         hosokh.NGAYHOANCONG = null;
                     }
+                    hosokh.DHN_NGAYKD = ngaykd;
                     db.SubmitChanges();
+                    return true;
                 }
             }
             catch (Exception ex)
             {
                 log.Error("Chuyen Hoan Cong :" + ex.Message);
             }
+            return false;
         }
 
         public static void TroNgai(string shs,bool trongai, string noidungtrongai)

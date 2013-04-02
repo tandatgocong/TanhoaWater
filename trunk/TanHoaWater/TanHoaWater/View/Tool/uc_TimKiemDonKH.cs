@@ -375,6 +375,7 @@ namespace TanHoaWater.View.Tool
             this.SoDoVienTK.Text = "";
             this.txtNgayGiaoSDV.Text = "";
             this.txtDomViTC.Text = "";
+            this.txtNgayChuyenTC.Text = "";
             NgayLapBG.Text = "";
             SoTienDong.Text = "";
             NgayTrinhKyGD.Text = "";

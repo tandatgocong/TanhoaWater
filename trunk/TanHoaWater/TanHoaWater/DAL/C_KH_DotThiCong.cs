@@ -34,7 +34,7 @@ namespace TanHoaWater.DAL
         {
             try
             {
-                var query = from dottc in db.KH_DOTTHICONGs orderby dottc.CREATEDATE descending select dottc;
+                var query = from dottc in db.KH_DOTTHICONGs orderby dottc.MADOTTC descending select dottc;
                 return query.ToList();
             }
             catch (Exception ex)

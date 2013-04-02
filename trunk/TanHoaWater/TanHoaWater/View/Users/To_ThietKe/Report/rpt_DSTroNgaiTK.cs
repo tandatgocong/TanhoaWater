@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TanHoaWater.View.Users.KEHOACH.HOANCONG.BC {
+namespace TanHoaWater.View.Users.To_ThietKe.Report {
     using System;
     using System.ComponentModel;
     using CrystalDecisions.Shared;
@@ -16,14 +16,14 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG.BC {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class rpt_HoanCong : ReportClass {
+    public class rpt_DSTroNgaiTK : ReportClass {
         
-        public rpt_HoanCong() {
+        public rpt_DSTroNgaiTK() {
         }
         
         public override string ResourceName {
             get {
-                return "rpt_HoanCong.rpt";
+                return "rpt_DSTroNgaiTK.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG.BC {
         
         public override string FullResourceName {
             get {
-                return "TanHoaWater.View.Users.KEHOACH.HOANCONG.BC.rpt_HoanCong.rpt";
+                return "TanHoaWater.View.Users.To_ThietKe.Report.rpt_DSTroNgaiTK.rpt";
             }
             set {
                 // Do nothing
@@ -90,7 +90,7 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG.BC {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_DemHS {
+        public CrystalDecisions.Shared.IParameterField Parameter_ngay {
             get {
                 return this.DataDefinition.ParameterFields[0];
             }
@@ -98,9 +98,9 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG.BC {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class Cachedrpt_HoanCong : Component, ICachedReport {
+    public class Cachedrpt_DSTroNgaiTK : Component, ICachedReport {
         
-        public Cachedrpt_HoanCong() {
+        public Cachedrpt_DSTroNgaiTK() {
         }
         
         [Browsable(false)]
@@ -137,7 +137,7 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG.BC {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            rpt_HoanCong rpt = new rpt_HoanCong();
+            rpt_DSTroNgaiTK rpt = new rpt_DSTroNgaiTK();
             rpt.Site = this.Site;
             return rpt;
         }
