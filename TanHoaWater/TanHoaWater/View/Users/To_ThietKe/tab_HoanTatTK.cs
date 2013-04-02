@@ -334,14 +334,13 @@ namespace TanHoaWater.View.Users.To_ThietKe
         {
             try
             {
-                if (!"".Equals(madot))
-                {
-                    ReportDocument rp = new rpt_DSHoanTat();
-                    rp.SetDataSource(DAL.C_ToThietKe.BC_HOANTATTK(madot, DAL.C_USERS._userName, "False"));
-                    rp.SetParameterValue("Title", "DANH SÁCH TRỞ NGẠI THIẾT KẾ");
+
+                ReportDocument rp = new rpt_DSTroNgaiTK();
+                    rp.SetDataSource(DAL.C_ToThietKe.BC_TRONGAITK_BYDATE(Utilities.DateToString.NgayVN(DateTime.Now.Date), DAL.C_USERS._userName));
+                    rp.SetParameterValue("ngay", Utilities.DateToString.NgayVN(DateTime.Now.Date));
                     rpt_Main rpt = new rpt_Main(rp);
                     rpt.ShowDialog();
-                }
+                
             }
             catch (Exception ex)
             {
@@ -377,7 +376,7 @@ namespace TanHoaWater.View.Users.To_ThietKe
                 if (!"".Equals(cbDotNhanDon.Text))
                 {
                     ReportDocument rp = new rpt_DSHoanTat();
-                    rp.SetDataSource(DAL.C_ToThietKe.BC_HOANTATTK(cbDotNhanDon.Text, DAL.C_USERS._userName, "False"));
+                    rp.SetDataSource(DAL.C_ToThietKe.BC_TRONGAITK_BYDATE(cbDotNhanDon.Text, DAL.C_USERS._userName));
                     rp.SetParameterValue("Title", "DANH SÁCH TRỞ NGẠI THIẾT KẾ");
                     rpt_Main rpt = new rpt_Main(rp);
                     rpt.ShowDialog();

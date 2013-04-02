@@ -549,6 +549,21 @@ namespace TanHoaWater.DAL
 
             return ds;
         }
+        public static DataSet BC_TRONGAITK_BYDATE(string ngayhoantat, string nguoilap)
+        {
+            DataSet ds = new DataSet();
+            TanHoaDataContext db = new TanHoaDataContext();
+            db.Connection.Open();
+            string sql = "SELECT  * FROM V_TTK_HOANTATTK ";
+            sql += " WHERE NGAYHOANTATTK='" + ngayhoantat + "'";
+            sql += " AND USERNAME='" + nguoilap + "'";
+            sql += " AND TRONGAITHIETKE='True' ";
+
+            SqlDataAdapter dond = new SqlDataAdapter(sql, db.Connection.ConnectionString);
+            dond.Fill(ds, "V_TTK_HOANTATTK");
+
+            return ds;
+        }
 
     }
 }

@@ -950,6 +950,12 @@
     <Compile Include="View\Users\TinhDuToan\tab_DanhMucVT.Designer.cs">
       <DependentUpon>tab_DanhMucVT.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Users\To_ThietKe\Report\rpt_DSTroNgaiTK.cs">
+      <DependentUpon>rpt_DSTroNgaiTK.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="View\Users\To_ThietKe\Report\rpt_DSHoanTatbyDate.cs">
       <DependentUpon>rpt_DSHoanTatbyDate.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -1406,6 +1412,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\TinhDuToan\tab_DanhMucVT.resx">
       <DependentUpon>tab_DanhMucVT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\To_ThietKe\Report\rpt_DSTroNgaiTK.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_DSTroNgaiTK.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\To_ThietKe\Report\rpt_DSHoanTatbyDate.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

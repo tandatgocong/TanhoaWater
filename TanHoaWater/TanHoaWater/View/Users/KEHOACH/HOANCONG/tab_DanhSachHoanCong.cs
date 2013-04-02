@@ -21,28 +21,33 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
         public tab_DanhSachHoanCong(string madottc)
         {
             InitializeComponent();
-            cbDotHoanCong.DataSource = DAL.C_KH_DotThiCong.getListDTC();
-            cbDotHoanCong.DisplayMember = "MADOTTC";
-            cbDotHoanCong.ValueMember = "MADOTTC";
+            List<KH_DOTTHICONG> list = DAL.C_KH_DotThiCong.getListDTC();
+            foreach (var item in list)
+            {
+                namesCollection.Add(item.MADOTTC);
+            }
+            cbDotTC.AutoCompleteMode = AutoCompleteMode.Suggest;
+            cbDotTC.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            cbDotTC.AutoCompleteCustomSource = namesCollection;
             try
             {
-                gridHoanCong.DataSource = DAL.C_KH_HoanCong.getListHoanCong(madottc, -1);
+                gridHoanCong.DataSource = DAL.C_KH_HoanCong.getListHoanCong(madottc, 0);
             }
             catch (Exception)
             {
 
             }
 
-            List<DHN_DONGHO> list = DAL.C_DHN_TENDONGHO.ListDanhSachDongHo();
-            foreach (var item in list)
+            List<DHN_DONGHO> list1 = DAL.C_DHN_TENDONGHO.ListDanhSachDongHo();
+            foreach (var item in list1)
             {
                 namesCollection.Add(item.TENDONGHO);
             }
-            //gr_TenDongHo.AutoCompleteMode = AutoCompleteMode.Suggest;
-            //gr_TenDongHo.AutoCompleteSource = AutoCompleteSource.CustomSource;
-            //gr_TenDongHo.AutoCompleteCustomSource = namesCollection;.AutoCompleteCustomSource = namesCollection;
+            cbDotTC.Text = madottc;
 
-
+           txtHieuDN.AutoCompleteMode = AutoCompleteMode.Suggest;
+           txtHieuDN.AutoCompleteSource = AutoCompleteSource.CustomSource;
+           txtHieuDN.AutoCompleteCustomSource = namesCollection;
         }
         public void loadData()
         {
@@ -53,7 +58,7 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
         {
             try
             {
-                gridHoanCong.DataSource = DAL.C_KH_HoanCong.getListHoanCong(this.cbDotHoanCong.Text, -1);
+                gridHoanCong.DataSource = DAL.C_KH_HoanCong.getListHoanCong(this.cbDotTC.Text, -1);
             }
             catch (Exception)
             {
@@ -65,7 +70,7 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
         {
             try
             {
-                gridHoanCong.DataSource = DAL.C_KH_HoanCong.getListHoanCong(this.cbDotHoanCong.Text, 1);
+                gridHoanCong.DataSource = DAL.C_KH_HoanCong.getListHoanCong(this.cbDotTC.Text, 1);
             }
             catch (Exception)
             {
@@ -77,7 +82,7 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
         {
             try
             {
-                gridHoanCong.DataSource = DAL.C_KH_HoanCong.getListHoanCong(this.cbDotHoanCong.Text, 0);
+                gridHoanCong.DataSource = DAL.C_KH_HoanCong.getListHoanCong(this.cbDotTC.Text, 0);
             }
             catch (Exception)
             {
@@ -89,11 +94,11 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
             try
             {
                 if (checkALl.Checked)
-                    gridHoanCong.DataSource = DAL.C_KH_HoanCong.getListHoanCong_(this.cbDotHoanCong.Text, 0);
+                    gridHoanCong.DataSource = DAL.C_KH_HoanCong.getListHoanCong_(this.cbDotTC.Text, 0);
                 else if (checkChuaHoanCong.Checked)
-                    gridHoanCong.DataSource = DAL.C_KH_HoanCong.getListHoanCong_(this.cbDotHoanCong.Text, -1);
+                    gridHoanCong.DataSource = DAL.C_KH_HoanCong.getListHoanCong_(this.cbDotTC.Text, -1);
                 else if (chekDaHoanCong.Checked)
-                    gridHoanCong.DataSource = DAL.C_KH_HoanCong.getListHoanCong_(this.cbDotHoanCong.Text, 1);
+                    gridHoanCong.DataSource = DAL.C_KH_HoanCong.getListHoanCong_(this.cbDotTC.Text, 1);
 
             }
             catch (Exception)
@@ -105,25 +110,83 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
         {
             hoantat();
         }
-
+        string formatNumber(string db) {
+            try
+            {
+                return double.Parse(db).ToString("N0");
+            }
+            catch (Exception)
+            {
+                
+                
+            }
+           
+            return "0";
+        }
+        public void Refresh()
+        {
+            this.txtSoHoSo.Focus();
+            this.txtSoHoSo.Text = "";
+            this.txtHoTen.Text = "";
+            this.txtDiaChi.Text = "";
+            this.CoTLK.Text = "";
+            this.txtNgayTC.ValueObject = null;
+            this.txtNgayKiemDinh.ValueObject = null;
+            this.ckChuyenDHN.Checked = true;
+            this.txtChiSo.Text = "";
+            this.txtSoThan.Text = "";
+            this.txtHieuDN.Text = "";
+            this.txtNgayDongTien.Text = "";
+            this.txtGiaTriXL.Text = "";
+            this.txtNhanCong.Text = "";
+            this.txtVatTu.Text = "";
+            this.txtMayTC.Text = "";
+        }
         private void gridHoanCong_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
-                if (e.RowIndex < 0) return;
-                else if (gridHoanCong.CurrentCell.OwningColumn.Name == "hc_NgayTC")
-                {
-                    dateThiCong.Visible = true;
-                    dateThiCong.Top = this.gridHoanCong.Top + gridHoanCong.GetRowDisplayRectangle(e.RowIndex, true).Top;
-                    dateThiCong.Left = this.gridHoanCong.Left + gridHoanCong.GetColumnDisplayRectangle(e.ColumnIndex, true).Left;
-                    dateThiCong.Width = gridHoanCong.Columns[e.ColumnIndex].Width;
-                    dateThiCong.Height = gridHoanCong.Rows[e.RowIndex].Height;
-                    dateThiCong.BringToFront();
-                    dateThiCong.Select();
-                    dateThiCong.Focus();
-
+                if (gridHoanCong.CurrentCell.OwningColumn.Name == "hc_ChonIn")
+                { 
                 }
+                else
+                {
+                    Refresh();
+                    this.txtSoHoSo.Focus();
+                    this.txtSoHoSo.Text = this.gridHoanCong.Rows[e.RowIndex].Cells["hc_SHS"].Value + "";
+                    this.txtHoTen.Text = this.gridHoanCong.Rows[e.RowIndex].Cells["hc_HoTen"].Value + "";
+                    this.txtDiaChi.Text = this.gridHoanCong.Rows[e.RowIndex].Cells["hc_DiaChi"].Value + "";
+                    this.CoTLK.Text = this.gridHoanCong.Rows[e.RowIndex].Cells["hc_TLK"].Value + "";
+                    if (this.gridHoanCong.Rows[e.RowIndex].Cells["hc_NgayTC"].Value != null && !"".Equals(this.gridHoanCong.Rows[e.RowIndex].Cells["hc_NgayTC"].Value + ""))
+                    {
+                        this.txtNgayTC.ValueObject = DateTime.ParseExact(this.gridHoanCong.Rows[e.RowIndex].Cells["hc_NgayTC"].Value + "", "dd/MM/yyyy", null);
+                    }
 
+                    if (this.gridHoanCong.Rows[e.RowIndex].Cells["hc_NgayKD"].Value != null && !"".Equals(this.gridHoanCong.Rows[e.RowIndex].Cells["hc_NgayKD"].Value + ""))
+                    {
+                        this.txtNgayKiemDinh.ValueObject = this.gridHoanCong.Rows[e.RowIndex].Cells["hc_NgayKD"].Value;
+                    }
+
+                    try
+                    {
+                        this.ckChuyenDHN.Checked = bool.Parse(this.gridHoanCong.Rows[e.RowIndex].Cells["hc_DHN"].Value + "");
+                    }
+                    catch (Exception)
+                    {
+
+                        this.ckChuyenDHN.Checked = true;
+                    }
+                    this.txtChiSo.Text = this.gridHoanCong.Rows[e.RowIndex].Cells["hc_ChiSo"].Value + "";
+                    this.txtSoThan.Text = this.gridHoanCong.Rows[e.RowIndex].Cells["hc_SoTLK"].Value + "";
+                    this.txtHieuDN.Text = this.gridHoanCong.Rows[e.RowIndex].Cells["gr_TenDongHo"].Value + "";
+                    this.txtNgayDongTien.Text = this.gridHoanCong.Rows[e.RowIndex].Cells["hc_NgayDongTein"].Value + "";
+                    this.txtGiaTriXL.Text = formatNumber(this.gridHoanCong.Rows[e.RowIndex].Cells["hc_TongGTXL"].Value + "");
+                    this.txtNhanCong.Text = formatNumber(this.gridHoanCong.Rows[e.RowIndex].Cells["hc_NhanCong"].Value + "");
+                    this.txtVatTu.Text = formatNumber(this.gridHoanCong.Rows[e.RowIndex].Cells["hc_ChiPhiVT"].Value + "");
+                    this.txtMayTC.Text = formatNumber(this.gridHoanCong.Rows[e.RowIndex].Cells["hc_MayThiCong"].Value + "");
+                }
+                
+               
             }
             catch (Exception)
             {
@@ -308,7 +371,7 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
                         {
 
                         }
-                        DAL.C_KH_HoanCong.HoanCong(shs, DateTime.ParseExact(ngaytc, "dd/MM/yyyy", null), int.Parse(chiso), cotlk, sothanTLK.ToUpper(), hieudongho, HoanCong);
+                   //     DAL.C_KH_HoanCong.HoanCong(shs, DateTime.ParseExact(ngaytc, "dd/MM/yyyy", null), int.Parse(chiso), cotlk, sothanTLK.ToUpper(), hieudongho, HoanCong);
                         flag = true;
                     }
 
@@ -363,6 +426,25 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
             }
         }
 
+        public string DemHS() {
+            int count = 0;
+            int hs=0;
+            for (int i = 0; i < gridHoanCong.Rows.Count; i++)
+            {
+                string hc_ChiPhiVT = this.gridHoanCong.Rows[i].Cells["hc_ChiPhiVT"].Value + "";
+                string chonin = this.gridHoanCong.Rows[i].Cells["hc_ChonIn"].Value + "";
+                if ("True".Equals(chonin))
+                {
+                    hs++;
+
+                    if (!"".Equals(hc_ChiPhiVT))
+                        count++;
+                }
+
+            }
+            return (count + " HS/ " + hs + "ĐC");
+
+        }
         private void btInBangKe_Click(object sender, EventArgs e)
         {
             if (getSHS().Equals(""))
@@ -370,7 +452,8 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
             else
             {
                 ReportDocument rp = new rpt_HoanCong();
-                rp.SetDataSource(DAL.C_KH_HoanCong.BC_HOANCONG(this.cbDotHoanCong.Text, getSHS()));
+                rp.SetDataSource(DAL.C_KH_HoanCong.BC_HOANCONG(this.cbDotTC.Text, getSHS()));
+                rp.SetParameterValue("DemHS", DemHS());
                 rpt_Main rpt = new rpt_Main(rp);
                 rpt.ShowDialog();
             }
@@ -404,6 +487,133 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
                 }
             }
 
+        }
+
+        private void cbDotTC_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                gridHoanCong.DataSource = DAL.C_KH_HoanCong.getListHoanCong(this.cbDotTC.Text, 0);
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+
+        private void buttonX2_Click(object sender, EventArgs e)
+        {
+            string shs = this.txtSoHoSo.Text;
+            string sothanTLK = this.txtSoThan.Text;
+            string hieudongho = this.txtHieuDN.Text;
+            string s_cotlk = this.CoTLK.Text;
+            bool HoanCong = false;
+            try
+            {
+                HoanCong = this.ckChuyenDHN.Checked;
+            }
+            catch (Exception)
+            {
+            }
+            DateTime ngaytc = new DateTime();
+            if (!"1/1/0001".Equals(this.txtNgayTC.Value.ToShortDateString()))
+            {
+                ngaytc = txtNgayTC.Value.Date;
+            }
+            DateTime ngaykd = new DateTime();
+            if (!"1/1/0001".Equals(this.txtNgayKiemDinh.Value.ToShortDateString()))
+            {
+                ngaykd = txtNgayKiemDinh.Value.Date;
+            }
+
+
+            int cotlk = 15;
+            try
+            {
+                cotlk = int.Parse(s_cotlk.Trim());
+            }
+            catch (Exception)
+            {
+
+            }
+            int cs = 0;
+            try
+            {
+                cs = int.Parse(this.txtChiSo.Text.Trim());
+            }
+            catch (Exception)
+            {
+
+            }
+
+
+            if (checktrungsothan(sothanTLK + "") > 1)
+            {
+                MessageBox.Show(this, "Số Thân TLK Đã Tồn Tại.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (DAL.C_KH_HoSoKhachHang.checkSoThanTLK(sothanTLK) >= 1)
+            {
+                MessageBox.Show(this, "Số Thân TLK Đã Tồn Tại.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                flag = DAL.C_KH_HoanCong.HoanCong(shs, ngaytc, cs, cotlk, sothanTLK.ToUpper(), hieudongho, HoanCong, ngaykd);
+                if (flag)
+                {
+                    MessageBox.Show(this, "Cập Nhật Thông Tin Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    gridHoanCong.DataSource = DAL.C_KH_HoanCong.getListHoanCong(this.cbDotTC.Text, 0);
+                    Refresh();
+                }
+                else
+                {
+                    MessageBox.Show(this, "Cập Nhật Thông Tin Thất Bại !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
+        }
+
+        private void txtSoHoSo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13) {
+                for (int i = 0; i < gridHoanCong.Rows.Count; i++) {
+                    if (this.txtSoHoSo.Text.Equals(this.gridHoanCong.Rows[i].Cells["hc_SHS"].Value + ""))
+                    {
+                        this.txtHoTen.Text = this.gridHoanCong.Rows[i].Cells["hc_HoTen"].Value + "";
+                        this.txtDiaChi.Text = this.gridHoanCong.Rows[i].Cells["hc_DiaChi"].Value + "";
+                        this.CoTLK.Text = this.gridHoanCong.Rows[i].Cells["hc_TLK"].Value + "";
+                        if (this.gridHoanCong.Rows[i].Cells["hc_NgayTC"].Value != null && !"".Equals(this.gridHoanCong.Rows[i].Cells["hc_NgayTC"].Value + ""))
+                        {
+                            this.txtNgayTC.ValueObject = DateTime.ParseExact(this.gridHoanCong.Rows[i].Cells["hc_NgayTC"].Value + "", "dd/MM/yyyy", null);
+                        }
+
+                        if (this.gridHoanCong.Rows[i].Cells["hc_NgayKD"].Value != null && !"".Equals(this.gridHoanCong.Rows[i].Cells["hc_NgayKD"].Value + ""))
+                        {
+                            this.txtNgayKiemDinh.ValueObject = DateTime.ParseExact(this.gridHoanCong.Rows[i].Cells["hc_NgayKD"].Value + "", "dd/MM/yyyy", null); ;
+                        }
+
+                        try
+                        {
+                            this.ckChuyenDHN.Checked = bool.Parse(this.gridHoanCong.Rows[i].Cells["hc_DHN"].Value + "");
+                        }
+                        catch (Exception)
+                        {
+
+                            this.ckChuyenDHN.Checked = true;
+                        }
+                        this.txtChiSo.Text = this.gridHoanCong.Rows[i].Cells["hc_ChiSo"].Value + "";
+                        this.txtSoThan.Text = this.gridHoanCong.Rows[i].Cells["hc_SoTLK"].Value + "";
+                        this.txtHieuDN.Text = this.gridHoanCong.Rows[i].Cells["gr_TenDongHo"].Value + "";
+                        this.txtNgayDongTien.Text = this.gridHoanCong.Rows[i].Cells["hc_NgayDongTein"].Value + "";
+                        this.txtGiaTriXL.Text = formatNumber(this.gridHoanCong.Rows[i].Cells["hc_TongGTXL"].Value + "");
+                        this.txtNhanCong.Text = formatNumber(this.gridHoanCong.Rows[i].Cells["hc_NhanCong"].Value + "");
+                        this.txtVatTu.Text = formatNumber(this.gridHoanCong.Rows[i].Cells["hc_ChiPhiVT"].Value + "");
+                        this.txtMayTC.Text = formatNumber(this.gridHoanCong.Rows[i].Cells["hc_MayThiCong"].Value + "");
+
+                        break;
+                    }
+                
+                }
+            }
         }
     }
 }
