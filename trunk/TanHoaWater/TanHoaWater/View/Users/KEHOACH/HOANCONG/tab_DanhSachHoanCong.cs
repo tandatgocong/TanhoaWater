@@ -31,7 +31,8 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
             cbDotTC.AutoCompleteCustomSource = namesCollection;
             try
             {
-                gridHoanCong.DataSource = DAL.C_KH_HoanCong.getListHoanCong(madottc, 0);
+                gridHoanCong.DataSource = DAL.C_KH_HoanCong.getListHoanCong(DAL.C_KH_DotThiCong.__dotthicong, 0);
+                lbHoanCong.Text = "Tổng cộng có " + gridHoanCong.Rows.Count + " hồ sơ Hoàn Công";
             }
             catch (Exception)
             {
@@ -43,7 +44,7 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
             {
                 namesCollection.Add(item.TENDONGHO);
             }
-            cbDotTC.Text = madottc;
+            cbDotTC.Text = DAL.C_KH_DotThiCong.__dotthicong;
 
            txtHieuDN.AutoCompleteMode = AutoCompleteMode.Suggest;
            txtHieuDN.AutoCompleteSource = AutoCompleteSource.CustomSource;
@@ -465,27 +466,27 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
 
         }
 
-        public int checktrungsothan(string hopdong)
+        public int checktrungsothan(string hopdong,string shs)
         {
             int count = 0;
             for (int i = 0; i < gridHoanCong.Rows.Count; i++)
-                if (hopdong.Equals((this.gridHoanCong.Rows[i].Cells["hc_SoTLK"].Value + "").Trim()))
+                if (hopdong.Equals((this.gridHoanCong.Rows[i].Cells["hc_SoTLK"].Value + "").Trim()) && !shs.Equals((this.gridHoanCong.Rows[i].Cells["hc_SHS"].Value + "").Trim()))
                   count++;
             return count;
         }
         private void gridHoanCong_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            if (gridHoanCong.CurrentCell.OwningColumn.Name == "hc_SoTLK")
-            {
-                if (checktrungsothan(this.gridHoanCong.Rows[gridHoanCong.CurrentCell.RowIndex].Cells["hc_SoTLK"].Value + "")>1)
-                {
-                    MessageBox.Show(this, "Số Thân TLK Đã Tồn Tại.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-                else if (DAL.C_KH_HoSoKhachHang.checkSoThanTLK(this.gridHoanCong.Rows[gridHoanCong.CurrentCell.RowIndex].Cells["hc_SoTLK"].Value + "") >= 1)
-                {
-                    MessageBox.Show(this, "Số Thân TLK Đã Tồn Tại.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-            }
+            //if (gridHoanCong.CurrentCell.OwningColumn.Name == "hc_SoTLK")
+            //{
+            //    if (checktrungsothan(this.gridHoanCong.Rows[gridHoanCong.CurrentCell.RowIndex].Cells["hc_SoTLK"].Value + "")>1)
+            //    {
+            //        MessageBox.Show(this, "Số Thân TLK Đã Tồn Tại.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    }
+            //    else if (DAL.C_KH_HoSoKhachHang.checkSoThanTLK(this.gridHoanCong.Rows[gridHoanCong.CurrentCell.RowIndex].Cells["hc_SoTLK"].Value + "") >= 1)
+            //    {
+            //        MessageBox.Show(this, "Số Thân TLK Đã Tồn Tại.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    }
+            //}
 
         }
 
@@ -494,6 +495,8 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
             try
             {
                 gridHoanCong.DataSource = DAL.C_KH_HoanCong.getListHoanCong(this.cbDotTC.Text, 0);
+                lbHoanCong.Text = "Tổng cộng có " + gridHoanCong.Rows.Count + " hồ sơ Hoàn Công";
+                DAL.C_KH_DotThiCong.__dotthicong = this.cbDotTC.Text;
             }
             catch (Exception)
             {
@@ -547,11 +550,11 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
             }
 
 
-            if (checktrungsothan(sothanTLK + "") > 1)
+            if (checktrungsothan(sothanTLK + "", shs) > 1)
             {
                 MessageBox.Show(this, "Số Thân TLK Đã Tồn Tại.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            else if (DAL.C_KH_HoSoKhachHang.checkSoThanTLK(sothanTLK) >= 1)
+            else if (DAL.C_KH_HoSoKhachHang.checkSoThanTLK(sothanTLK, shs) >= 1)
             {
                 MessageBox.Show(this, "Số Thân TLK Đã Tồn Tại.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }

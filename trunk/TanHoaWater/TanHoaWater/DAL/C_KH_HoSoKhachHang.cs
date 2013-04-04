@@ -162,14 +162,14 @@ namespace TanHoaWater.DAL
 
         
 
-        public static int checkSoThanTLK(string sodotxp)
+        public static int checkSoThanTLK(string sodotxp,string shs)
         {
             TanHoaDataContext db = new TanHoaDataContext();
             SqlConnection conn = new SqlConnection(db.Connection.ConnectionString);
             conn.Open();
             string sql = " SELECT COUNT(*) ";
             sql += "  FROM KH_HOSOKHACHHANG  ";
-            sql += " WHERE SOTHANTLK='" + sodotxp + "'";
+            sql += " WHERE SOTHANTLK='" + sodotxp + "' AND SHS <> '"+shs+"'";
             SqlCommand cmd = new SqlCommand(sql, conn);
             int result = Convert.ToInt32(cmd.ExecuteScalar());
             conn.Close();

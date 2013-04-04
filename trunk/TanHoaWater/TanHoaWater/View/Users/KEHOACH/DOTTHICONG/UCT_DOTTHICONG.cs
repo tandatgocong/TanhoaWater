@@ -71,7 +71,7 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
             cbDonViGiamSatTC.DataSource = DAL.C_KH_DotThiCong.DonViGiamSat();
             this.cbDonViGiamSatTC.ValueMember = "TENDONVI";
             this.cbDonViGiamSatTC.DisplayMember = "TENDONVI";
-
+           
             cbLoaiBangKe.DataSource = DAL.C_KH_DonViTC.getLoaiBangKe();
             cbLoaiBangKe.DisplayMember = "TENBANGKE";
             cbLoaiBangKe.ValueMember = "TENBANGKE";
