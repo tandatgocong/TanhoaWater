@@ -493,6 +493,12 @@
       <DependentUpon>rpt_HoanCong.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="View\Users\KEHOACH\HOANCONG\tab_TraHoSoHC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Users\KEHOACH\HOANCONG\tab_TraHoSoHC.Designer.cs">
+      <DependentUpon>tab_TraHoSoHC.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Users\KEHOACH\HOANCONG\tab_TroNgaiHoanCong.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -1168,6 +1174,9 @@
     <EmbeddedResource Include="View\Users\KEHOACH\HOANCONG\BC\rpt_HoanCong.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_HoanCong.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\KEHOACH\HOANCONG\tab_TraHoSoHC.resx">
+      <DependentUpon>tab_TraHoSoHC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\KEHOACH\HOANCONG\tab_TroNgaiHoanCong.resx">
       <DependentUpon>tab_TroNgaiHoanCong.cs</DependentUpon>

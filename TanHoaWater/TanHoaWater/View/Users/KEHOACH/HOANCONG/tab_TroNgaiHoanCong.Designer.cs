@@ -33,8 +33,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.reflectionLabel6 = new DevComponents.DotNetBar.Controls.ReflectionLabel();
-            this.cbDotHoanCong = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.cbDotTC = new System.Windows.Forms.TextBox();
             this.gridHoanCong = new DevComponents.DotNetBar.Controls.DataGridViewX();
             this.hc_SHS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hc_HoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,34 +58,30 @@
             this.reflectionLabel6.TabIndex = 0;
             this.reflectionLabel6.Text = "<b><font size=\"+3\">Chọn Đợt Hoàn Công</font></b>";
             // 
-            // cbDotHoanCong
-            // 
-            this.cbDotHoanCong.DisplayMember = "Text";
-            this.cbDotHoanCong.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbDotHoanCong.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbDotHoanCong.FormattingEnabled = true;
-            this.cbDotHoanCong.ItemHeight = 23;
-            this.cbDotHoanCong.Location = new System.Drawing.Point(432, 6);
-            this.cbDotHoanCong.Name = "cbDotHoanCong";
-            this.cbDotHoanCong.Size = new System.Drawing.Size(270, 29);
-            this.cbDotHoanCong.TabIndex = 4;
-            this.cbDotHoanCong.SelectedIndexChanged += new System.EventHandler(this.cbDotHoanCong_SelectedIndexChanged);
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.cbDotTC);
             this.panel2.Controls.Add(this.gridHoanCong);
             this.panel2.Controls.Add(this.checkChuaHoanCong);
             this.panel2.Controls.Add(this.chekDaHoanCong);
             this.panel2.Controls.Add(this.checkALl);
             this.panel2.Controls.Add(this.btHoanTat);
-            this.panel2.Controls.Add(this.cbDotHoanCong);
             this.panel2.Controls.Add(this.reflectionLabel6);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(999, 585);
             this.panel2.TabIndex = 699;
+            // 
+            // cbDotTC
+            // 
+            this.cbDotTC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.cbDotTC.Location = new System.Drawing.Point(435, 6);
+            this.cbDotTC.Name = "cbDotTC";
+            this.cbDotTC.Size = new System.Drawing.Size(208, 26);
+            this.cbDotTC.TabIndex = 20;
+            this.cbDotTC.Leave += new System.EventHandler(this.cbDotTC_Leave);
             // 
             // gridHoanCong
             // 
@@ -178,12 +174,10 @@
             // checkChuaHoanCong
             // 
             this.checkChuaHoanCong.AutoSize = true;
-            this.checkChuaHoanCong.Checked = true;
             this.checkChuaHoanCong.Location = new System.Drawing.Point(622, 37);
             this.checkChuaHoanCong.Name = "checkChuaHoanCong";
             this.checkChuaHoanCong.Size = new System.Drawing.Size(135, 23);
             this.checkChuaHoanCong.TabIndex = 8;
-            this.checkChuaHoanCong.TabStop = true;
             this.checkChuaHoanCong.Text = "Chưa Hoàn Công";
             this.checkChuaHoanCong.UseVisualStyleBackColor = true;
             this.checkChuaHoanCong.CheckedChanged += new System.EventHandler(this.checkChuaHoanCong_CheckedChanged);
@@ -202,10 +196,12 @@
             // checkALl
             // 
             this.checkALl.AutoSize = true;
+            this.checkALl.Checked = true;
             this.checkALl.Location = new System.Drawing.Point(431, 37);
             this.checkALl.Name = "checkALl";
             this.checkALl.Size = new System.Drawing.Size(69, 23);
             this.checkALl.TabIndex = 8;
+            this.checkALl.TabStop = true;
             this.checkALl.Text = "Tất Cả";
             this.checkALl.UseVisualStyleBackColor = true;
             this.checkALl.CheckedChanged += new System.EventHandler(this.checkALl_CheckedChanged);
@@ -233,6 +229,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "tab_TroNgaiHoanCong";
             this.Size = new System.Drawing.Size(999, 585);
+            this.Load += new System.EventHandler(this.tab_TroNgaiHoanCong_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridHoanCong)).EndInit();
@@ -243,7 +240,6 @@
         #endregion
 
         private DevComponents.DotNetBar.Controls.ReflectionLabel reflectionLabel6;
-        private DevComponents.DotNetBar.Controls.ComboBoxEx cbDotHoanCong;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.RadioButton checkChuaHoanCong;
         private System.Windows.Forms.RadioButton chekDaHoanCong;
@@ -255,6 +251,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn hc_DiaChi;
         private System.Windows.Forms.DataGridViewCheckBoxColumn hc_trongai;
         private System.Windows.Forms.DataGridViewTextBoxColumn hc_noidungtrongai;
+        private System.Windows.Forms.TextBox cbDotTC;
 
 
     }

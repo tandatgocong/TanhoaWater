@@ -17,6 +17,7 @@ namespace TanHoaWater.DAL
     {
         private static readonly ILog log = LogManager.GetLogger(typeof(C_KH_DotThiCong).Name);
         static TanHoaDataContext db = new TanHoaDataContext();
+        public static string __dotthicong = "";
         public static KH_DOTTHICONG findByMadot(string madot)
         {
             try

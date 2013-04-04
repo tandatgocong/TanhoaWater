@@ -30,6 +30,8 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
             cbDotTC.AutoCompleteMode = AutoCompleteMode.Suggest;
             cbDotTC.AutoCompleteSource = AutoCompleteSource.CustomSource;
             cbDotTC.AutoCompleteCustomSource = namesCollection;
+            this.cbDotTC.Text = DAL.C_KH_DotThiCong.__dotthicong;
+            load(this.cbDotTC.Text);
 
         }
         private void tabItem2_Click(object sender, EventArgs e)
@@ -72,7 +74,7 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
         private void tabItem3_Click(object sender, EventArgs e)
         {
             this.tabControlPanel1.Controls.Clear();
-            this.tabControlPanel1.Controls.Add(new tab_TroNgaiHoanCong(this.cbDotTC.Text));
+            this.tabControlPanel1.Controls.Add(new tab_TroNgaiHoanCong(DAL.C_KH_DotThiCong.__dotthicong));
             this.tabControl1.SelectedTabIndex = 2;
         }
 
@@ -99,6 +101,25 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
         private void cbDotTC_Leave(object sender, EventArgs e)
         {
             load(this.cbDotTC.Text);
+            DAL.C_KH_DotThiCong.__dotthicong = this.cbDotTC.Text;
+        }
+
+        private void tabItem1_Click(object sender, EventArgs e)
+        {
+            this.cbDotTC.Text = DAL.C_KH_DotThiCong.__dotthicong;
+            load(this.cbDotTC.Text);
+        }
+
+        private void UCT_HOANCONG_Load(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void tabItem4_Click(object sender, EventArgs e)
+        {
+            this.tabControlPanel2.Controls.Clear();
+            this.tabControlPanel2.Controls.Add(new tab_TraHoSoHC());
+            this.tabControl1.SelectedTabIndex = 3;
         }
     }
 }

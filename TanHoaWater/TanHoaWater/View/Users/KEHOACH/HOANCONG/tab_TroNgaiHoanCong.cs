@@ -11,27 +11,34 @@ using TanHoaWater.View.Users.HOANCONG.BC;
 using CrystalDecisions.CrystalReports.Engine;
 using TanHoaWater.View.Users.KEHOACH.HOANCONG.BC;
 using TanHoaWater.View.Users.Report;
+using TanHoaWater.Database;
 
 namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
 {
     public partial class tab_TroNgaiHoanCong : UserControl
     {
+        AutoCompleteStringCollection namesCollection = new AutoCompleteStringCollection();
         private static readonly ILog log = LogManager.GetLogger(typeof(tab_DanhSachHoanCong).Name);
         public tab_TroNgaiHoanCong(string madottc)
         {
             InitializeComponent();
-            cbDotHoanCong.DataSource = DAL.C_KH_DotThiCong.getListDTC();
-            cbDotHoanCong.DisplayMember = "MADOTTC";
-            cbDotHoanCong.ValueMember = "MADOTTC";
+            List<KH_DOTTHICONG> list = DAL.C_KH_DotThiCong.getListDTC();
+            foreach (var item in list)
+            {
+                namesCollection.Add(item.MADOTTC);
+            }
+            cbDotTC.AutoCompleteMode = AutoCompleteMode.Suggest;
+            cbDotTC.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            cbDotTC.AutoCompleteCustomSource = namesCollection;
             try
             {
-                gridHoanCong.DataSource = DAL.C_KH_HoanCong.getListHoanCongTroNgai(madottc, -1);
+                gridHoanCong.DataSource = DAL.C_KH_HoanCong.getListHoanCong(DAL.C_KH_DotThiCong.__dotthicong, 0);
             }
             catch (Exception)
             {
-                
+
             }
-            
+            cbDotTC.Text = DAL.C_KH_DotThiCong.__dotthicong;            
         }
         public void loadData() { 
         
@@ -41,7 +48,7 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
         {
             try
             {
-                gridHoanCong.DataSource = DAL.C_KH_HoanCong.getListHoanCongTroNgai(this.cbDotHoanCong.Text, -1);
+                gridHoanCong.DataSource = DAL.C_KH_HoanCong.getListHoanCongTroNgai(this.cbDotTC.Text, -1);
             }
             catch (Exception)
             {
@@ -53,7 +60,7 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
         {
             try
             {
-                gridHoanCong.DataSource = DAL.C_KH_HoanCong.getListHoanCongTroNgai(this.cbDotHoanCong.Text, 1);
+                gridHoanCong.DataSource = DAL.C_KH_HoanCong.getListHoanCongTroNgai(this.cbDotTC.Text, 1);
             }
             catch (Exception)
             {
@@ -65,7 +72,7 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
         {
             try
             {
-                gridHoanCong.DataSource = DAL.C_KH_HoanCong.getListHoanCongTroNgai(this.cbDotHoanCong.Text, 0);
+                gridHoanCong.DataSource = DAL.C_KH_HoanCong.getListHoanCongTroNgai(this.cbDotTC.Text, 0);
             }
             catch (Exception)
             {
@@ -78,11 +85,11 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
             try
             {
                if(checkALl.Checked)
-                   gridHoanCong.DataSource = DAL.C_KH_HoanCong.getListHoanCongTroNgai(this.cbDotHoanCong.Text, 0);
+                   gridHoanCong.DataSource = DAL.C_KH_HoanCong.getListHoanCongTroNgai(this.cbDotTC.Text, 0);
                else if(checkChuaHoanCong.Checked)
-                   gridHoanCong.DataSource = DAL.C_KH_HoanCong.getListHoanCongTroNgai(this.cbDotHoanCong.Text, -1);
+                   gridHoanCong.DataSource = DAL.C_KH_HoanCong.getListHoanCongTroNgai(this.cbDotTC.Text, -1);
                else if (chekDaHoanCong.Checked)
-                   gridHoanCong.DataSource = DAL.C_KH_HoanCong.getListHoanCongTroNgai(this.cbDotHoanCong.Text, 1);
+                   gridHoanCong.DataSource = DAL.C_KH_HoanCong.getListHoanCongTroNgai(this.cbDotTC.Text, 1);
 
             }
             catch (Exception)
@@ -173,7 +180,7 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
             else
             {
                 ReportDocument rp = new rpt_HoanCong();
-                rp.SetDataSource(DAL.C_KH_HoanCong.BC_HOANCONG(this.cbDotHoanCong.Text, getSHS()));
+                rp.SetDataSource(DAL.C_KH_HoanCong.BC_HOANCONG(this.cbDotTC.Text, getSHS()));
                 rpt_Main rpt = new rpt_Main(rp);
                 rpt.ShowDialog();
             }
@@ -196,6 +203,16 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
         }
 
         private void gridHoanCong_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+        {
+
+        }
+
+        private void cbDotTC_Leave(object sender, EventArgs e)
+        {
+            DAL.C_KH_DotThiCong.__dotthicong = this.cbDotTC.Text;
+        }
+
+        private void tab_TroNgaiHoanCong_Load(object sender, EventArgs e)
         {
 
         }
