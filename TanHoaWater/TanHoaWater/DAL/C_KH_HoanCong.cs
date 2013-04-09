@@ -152,7 +152,10 @@ namespace TanHoaWater.DAL
                         hosokh.HOANCONG = false;
                         hosokh.NGAYHOANCONG = null;
                     }
-                    hosokh.DHN_NGAYKD = ngaykd;
+                    if(!"1".Equals(ngaykd.Year.ToString())){
+                        hosokh.DHN_NGAYKD = ngaykd;
+                    }
+                    
                     db.SubmitChanges();
                     return true;
                 }
