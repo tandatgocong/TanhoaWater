@@ -25,12 +25,19 @@ namespace TanHoaWater.View.Users.TCTB
             InitializeComponent();
             //string sql = "SELECT [SHS],[HOTEN],[DIACHI],[COTLK],[NGAYTHICONG],[CHISO],[SOTHANTLK],[HIEUDONGHO],[SOHOADON],[NGAYDONGTIEN] ,[TCTB_TONGGIATRI],[TCTB_CPNHANCONG],[TCTB_CPVATTU],[ONG20],[ONG25],[ONG50],[ONG100],[ONG150],[ONGKHAC],[MADOTTC],[DHN_NGAYKIEMDINH] FROM V_HOANGCONGTCTB WHERE MADOTTC='" + this.cbDotHoanCong.Text.Replace(" ", "") + "'";
             //gridHoanCong.DataSource = DAL.LinQConnection.getDataTable(sql);
-
-
             string sql = "SELECT MADOTTC FROM V_HOANGCONGTCTB  GROUP BY MADOTTC ORDER BY MADOTTC ASC";
-            cbDotHoanCong.DataSource = DAL.LinQConnection.getDataTable(sql);
-            cbDotHoanCong.DisplayMember = "MADOTTC";
-            cbDotHoanCong.ValueMember = "MADOTTC";
+            DataTable table = DAL.LinQConnection.getDataTable(sql);
+            for (int i = 0; i < table.Rows.Count; i++)
+            {
+                namesCollection.Add(table.Rows[i]["MADOTTC"].ToString());
+            }
+            cbDotTC.AutoCompleteMode = AutoCompleteMode.Suggest;
+            cbDotTC.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            cbDotTC.AutoCompleteCustomSource = namesCollection;
+
+
+         
+            
             try
             {
                 hoantat();
@@ -61,7 +68,7 @@ namespace TanHoaWater.View.Users.TCTB
         {
             try
             {
-                gridHoanCong.DataSource = DAL.C_KH_HoanCong.getListHoanCong(this.cbDotHoanCong.Text, -1);
+                gridHoanCong.DataSource = DAL.C_KH_HoanCong.getListHoanCong(this.cbDotTC.Text, -1);
             }
             catch (Exception)
             {
@@ -73,7 +80,7 @@ namespace TanHoaWater.View.Users.TCTB
         {
             try
             {
-                gridHoanCong.DataSource = DAL.C_KH_HoanCong.getListHoanCong(this.cbDotHoanCong.Text, 1);
+                gridHoanCong.DataSource = DAL.C_KH_HoanCong.getListHoanCong(this.cbDotTC.Text, 1);
             }
             catch (Exception)
             {
@@ -85,7 +92,7 @@ namespace TanHoaWater.View.Users.TCTB
         {
             try
             {
-                gridHoanCong.DataSource = DAL.C_KH_HoanCong.getListHoanCong(this.cbDotHoanCong.Text, 0);
+                gridHoanCong.DataSource = DAL.C_KH_HoanCong.getListHoanCong(this.cbDotTC.Text, 0);
             }
             catch (Exception)
             {
@@ -98,7 +105,7 @@ namespace TanHoaWater.View.Users.TCTB
             {
 
                 string sql = "SELECT [SHS],'True' as 'IN',[HOTEN],[DIACHI],[COTLK],[NGAYTHICONG],[CHISO],[SOTHANTLK],[HIEUDONGHO],[SOHOADON],[NGAYDONGTIEN] ,[TCTB_TONGGIATRI],[TCTB_CPNHANCONG],[TCTB_CPVATTU],[ONG20],[ONG25],[ONG50],[ONG100],[ONG150],[ONGKHAC],[MADOTTC],[DHN_NGAYKIEMDINH],DANHBO ";
-                sql+=" FROM V_HOANGCONGTCTB WHERE MADOTTC='" + this.cbDotHoanCong.Text.Replace(" ", "") + "'"; 
+                sql += " FROM V_HOANGCONGTCTB WHERE MADOTTC='" + this.cbDotTC.Text.Replace(" ", "") + "'"; 
                 gridHoanCong.DataSource = DAL.LinQConnection.getDataTable(sql);
                 TongKetGanNhua();
 
@@ -457,17 +464,20 @@ namespace TanHoaWater.View.Users.TCTB
         private void btInBangKe_Click(object sender, EventArgs e)
         {
             ReportDocument rp = new rpt_HoanCongTCTB();
-            if ("BT".Contains(this.cbDotHoanCong.Text)) {
+            if ("BT".Contains(this.cbDotTC.Text))
+            {
                 rp = new rpt_HoanCongTCTB();
-            } else if ("D".Contains(this.cbDotHoanCong.Text)) {
+            }
+            else if ("D".Contains(this.cbDotTC.Text))
+            {
                 rp = new rpt_HoanCongTCTB();
             } else {
                 rp = new rpt_HoanCongTCTB_DOI();
             }
-            
-                rp.SetDataSource(DAL.C_HoanCongDHN_DotTCTB.BC_HOANCONG_TCTB(this.cbDotHoanCong.Text));
+
+            rp.SetDataSource(DAL.C_HoanCongDHN_DotTCTB.BC_HOANCONG_TCTB(this.cbDotTC.Text));
                 string tlkgom = "Gồm TLK ";
-                DataTable table = DAL.LinQConnection.getDataTable("select COTLK, COUNT(*)  from KH_HOSOKHACHHANG WHERE MADOTTC='" + this.cbDotHoanCong.Text.Replace(" ", "") + "' group by COTLK");
+                DataTable table = DAL.LinQConnection.getDataTable("select COTLK, COUNT(*)  from KH_HOSOKHACHHANG WHERE MADOTTC='" + this.cbDotTC.Text.Replace(" ", "") + "' group by COTLK");
                 for (int i = 0; i < table.Rows.Count; i++)
                 {
                     tlkgom += table.Rows[i][0].ToString()+" ly   : " + table.Rows[i][1].ToString()+"Cái. ";
@@ -479,17 +489,17 @@ namespace TanHoaWater.View.Users.TCTB
 
         }
         public void TongKetGanNhua() {
-            TCTB_TONGKEVATTU tkvt = DAL.C_HoanCongDHN_DotTCTB.findTongKetVTHC(this.cbDotHoanCong.Text.Replace(" ", ""));
+            TCTB_TONGKEVATTU tkvt = DAL.C_HoanCongDHN_DotTCTB.findTongKetVTHC(this.cbDotTC.Text.Replace(" ", ""));
             if (tkvt != null)
             {
                 this.TKtxtTongKetVT.Text = tkvt.VATUNHUA + "";
                 this.TKtxtVatTuGan.Text = tkvt.VATUGAN + "";
-                this.TKtxtTongKetVT.Text = DAL.C_HoanCongDHN_DotTCTB.getTongCPVatTu(this.cbDotHoanCong.Text.Replace(" ", "")).ToString();
+                this.TKtxtTongKetVT.Text = DAL.C_HoanCongDHN_DotTCTB.getTongCPVatTu(this.cbDotTC.Text.Replace(" ", "")).ToString();
             }
             else {
-                this.TKtxtTongKetVT.Text = DAL.C_HoanCongDHN_DotTCTB.getTongCPVatTu(this.cbDotHoanCong.Text.Replace(" ", "")).ToString();
+                this.TKtxtTongKetVT.Text = DAL.C_HoanCongDHN_DotTCTB.getTongCPVatTu(this.cbDotTC.Text.Replace(" ", "")).ToString();
                 this.TKtxtVatTuGan.Text = "0";
-                TKtxtVatTuNhua.Text = DAL.C_HoanCongDHN_DotTCTB.getTongCPVatTu(this.cbDotHoanCong.Text.Replace(" ", "")).ToString();
+                TKtxtVatTuNhua.Text = DAL.C_HoanCongDHN_DotTCTB.getTongCPVatTu(this.cbDotTC.Text.Replace(" ", "")).ToString();
             }
           
 
@@ -515,7 +525,7 @@ namespace TanHoaWater.View.Users.TCTB
 
         private void btTachChiPhi_Click_1(object sender, EventArgs e)
         {
-            TCTB_TONGKEVATTU tkvt = DAL.C_HoanCongDHN_DotTCTB.findTongKetVTHC(this.cbDotHoanCong.Text.Replace(" ", ""));
+            TCTB_TONGKEVATTU tkvt = DAL.C_HoanCongDHN_DotTCTB.findTongKetVTHC(this.cbDotTC.Text.Replace(" ", ""));
             if (tkvt != null) {
                 tkvt.VATUGAN = ParseDouble(TKtxtVatTuGan.Text);
                 tkvt.VATUNHUA = ParseDouble(TKtxtVatTuNhua.Text);
@@ -526,7 +536,7 @@ namespace TanHoaWater.View.Users.TCTB
           
             } else {
                 tkvt = new TCTB_TONGKEVATTU();
-                tkvt.MADOTTC = this.cbDotHoanCong.Text.Replace(" ", "");
+                tkvt.MADOTTC = this.cbDotTC.Text.Replace(" ", "");
                 tkvt.VATUGAN =ParseDouble(TKtxtVatTuGan.Text);
                 tkvt.VATUNHUA = ParseDouble(TKtxtVatTuNhua.Text);
                 if (DAL.C_HoanCongDHN_DotTCTB.Insert(tkvt) == false)
@@ -539,35 +549,64 @@ namespace TanHoaWater.View.Users.TCTB
 
         private void TKtxtVatTuGan_KeyPress(object sender, KeyPressEventArgs e)
         {
-            try
-            {
-                double kq = int.Parse(this.TKtxtTongKetVT.Text);
-                double s1 = int.Parse(this.TKtxtVatTuGan.Text);
-                this.TKtxtVatTuNhua.Text = (kq - s1)+"";
-            }
-            catch (Exception)
-            {
-               
-            }
+
         }
 
         private void TKtxtVatTuNhua_KeyPress(object sender, KeyPressEventArgs e)
         {
-            try
-            {
-                double kq = int.Parse(this.TKtxtTongKetVT.Text);
-                double s1 = int.Parse(this.TKtxtVatTuNhua.Text);
-                this.TKtxtVatTuGan.Text = (kq - s1) + "";
-            }
-            catch (Exception)
-            {
 
-            }
         }
 
         private void txtO100_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void cbDotTC_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                hoantat();
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+
+        private void TKtxtVatTuGan_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13) {
+                try
+                {
+                    double kq = int.Parse(this.TKtxtVatTuGan.Text);
+                    double s1 = int.Parse(this.TKtxtVatTuNhua.Text);
+                    this.TKtxtTongKetVT.Text = (kq + s1) + "";
+                }
+                catch (Exception)
+                {
+
+                }
+            }
+           
+        }
+
+        private void TKtxtVatTuNhua_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                try
+                {
+                    double kq = int.Parse(this.TKtxtVatTuGan.Text);
+                    double s1 = int.Parse(this.TKtxtVatTuNhua.Text);
+                    this.TKtxtTongKetVT.Text = (kq + s1) + "";
+                }
+                catch (Exception)
+                {
+
+                }
+            }
+           
         }
     }
 }

@@ -1704,17 +1704,6 @@
       <Column Name="CPVATTU" Type="System.Double" DbType="Float" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.TCTB_TONGKEVATTU" Member="TCTB_TONGKEVATTUs">
-    <Type Name="TCTB_TONGKEVATTU">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="MADOTTC" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="HSGAN" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="HSNHUA" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="VATUGAN" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="VATUNHUA" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="CPNHANCONG" Type="System.Double" DbType="Float" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.KH_XINPHEPDAODUONG" Member="KH_XINPHEPDAODUONGs">
     <Type Name="KH_XINPHEPDAODUONG">
       <Column Name="MADOT" Type="System.String" DbType="VarChar(250) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -1813,6 +1802,17 @@
       <Association Name="KH_XINPHEPDAODUONG_KH_HOSOKHACHHANG" Member="KH_XINPHEPDAODUONG" ThisKey="MADOTDD" OtherKey="MADOT" Type="KH_XINPHEPDAODUONG" IsForeignKey="true" />
       <Association Name="DON_KHACHHANG_KH_HOSOKHACHHANG" Member="DON_KHACHHANG" ThisKey="SHS" OtherKey="SHS" Type="DON_KHACHHANG" IsForeignKey="true" />
       <Association Name="KH_DOTTHICONG_KH_HOSOKHACHHANG" Member="KH_DOTTHICONG" ThisKey="MADOTTC" OtherKey="MADOTTC" Type="KH_DOTTHICONG" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TCTB_TONGKEVATTU" Member="TCTB_TONGKEVATTUs">
+    <Type Name="TCTB_TONGKEVATTU">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MADOTTC" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="HSGAN" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="HSNHUA" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="VATUGAN" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="VATUNHUA" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CPNHANCONG" Type="System.Double" DbType="Float" CanBeNull="true" />
     </Type>
   </Table>
   <Function Name="dbo.TONGKETCHIPHI" Method="TONGKETCHIPHI">

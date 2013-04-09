@@ -519,9 +519,17 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
             {
             }
             DateTime ngaytc = new DateTime();
-            if (!"1/1/0001".Equals(this.txtNgayTC.Value.ToShortDateString()))
+            if (!"1/1/0001".Equals(this.txtNgayTC.Value.Date.ToShortDateString()))
             {
                 ngaytc = txtNgayTC.Value.Date;
+            }
+            try
+            {
+
+            }
+            catch (Exception)
+            {
+              
             }
             DateTime ngaykd = new DateTime();
             if (!"1/1/0001".Equals(this.txtNgayKiemDinh.Value.ToShortDateString()))

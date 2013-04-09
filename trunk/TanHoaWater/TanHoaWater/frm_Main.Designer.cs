@@ -106,7 +106,6 @@
             this.toolStripMenuItem16 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip7 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem8 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem9 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem10 = new System.Windows.Forms.ToolStripMenuItem();
             this.ribbonPanel8 = new DevComponents.DotNetBar.RibbonPanel();
             this.menuStrip6 = new System.Windows.Forms.MenuStrip();
@@ -886,9 +885,9 @@
             // ribbonControl1
             // 
             this.ribbonControl1.AutoScroll = true;
+            this.ribbonControl1.Controls.Add(this.ribbonPanel9);
             this.ribbonControl1.Controls.Add(this.ribbonPanel1);
             this.ribbonControl1.Controls.Add(this.ribbonPanel2);
-            this.ribbonControl1.Controls.Add(this.ribbonPanel9);
             this.ribbonControl1.Controls.Add(this.ribbonPanel8);
             this.ribbonControl1.Controls.Add(this.ribbonPanel6);
             this.ribbonControl1.Controls.Add(this.ribbonPanel3);
@@ -931,6 +930,7 @@
             this.ribbonPanel1.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.ribbonPanel1.Size = new System.Drawing.Size(1010, 24);
             this.ribbonPanel1.TabIndex = 1;
+            this.ribbonPanel1.Visible = false;
             // 
             // menuStrip1
             // 
@@ -1087,9 +1087,8 @@
             this.ribbonPanel9.Location = new System.Drawing.Point(0, 28);
             this.ribbonPanel9.Name = "ribbonPanel9";
             this.ribbonPanel9.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.ribbonPanel9.Size = new System.Drawing.Size(1061, 24);
+            this.ribbonPanel9.Size = new System.Drawing.Size(1010, 24);
             this.ribbonPanel9.TabIndex = 9;
-            this.ribbonPanel9.Visible = false;
             // 
             // menuStrip8
             // 
@@ -1105,7 +1104,7 @@
             this.toolStripMenuItem16});
             this.menuStrip8.Location = new System.Drawing.Point(3, 25);
             this.menuStrip8.Name = "menuStrip8";
-            this.menuStrip8.Size = new System.Drawing.Size(1055, 25);
+            this.menuStrip8.Size = new System.Drawing.Size(1004, 25);
             this.menuStrip8.TabIndex = 2;
             this.menuStrip8.Text = "menuStrip8";
             // 
@@ -1171,11 +1170,10 @@
             this.menuStrip7.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold);
             this.menuStrip7.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem8,
-            this.toolStripMenuItem9,
             this.toolStripMenuItem10});
             this.menuStrip7.Location = new System.Drawing.Point(3, 0);
             this.menuStrip7.Name = "menuStrip7";
-            this.menuStrip7.Size = new System.Drawing.Size(1055, 25);
+            this.menuStrip7.Size = new System.Drawing.Size(1004, 25);
             this.menuStrip7.TabIndex = 1;
             this.menuStrip7.Text = "menuStrip7";
             // 
@@ -1184,17 +1182,9 @@
             this.toolStripMenuItem8.ForeColor = System.Drawing.Color.RoyalBlue;
             this.toolStripMenuItem8.Image = global::TanHoaWater.Properties.Resources.Man;
             this.toolStripMenuItem8.Name = "toolStripMenuItem8";
-            this.toolStripMenuItem8.Size = new System.Drawing.Size(192, 21);
-            this.toolStripMenuItem8.Text = "Hoàn Công Bồi Thường";
+            this.toolStripMenuItem8.Size = new System.Drawing.Size(148, 21);
+            this.toolStripMenuItem8.Text = "Hoàn Công ĐHN";
             this.toolStripMenuItem8.Click += new System.EventHandler(this.toolStripMenuItem8_Click);
-            // 
-            // toolStripMenuItem9
-            // 
-            this.toolStripMenuItem9.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.toolStripMenuItem9.Image = global::TanHoaWater.Properties.Resources.Loop;
-            this.toolStripMenuItem9.Name = "toolStripMenuItem9";
-            this.toolStripMenuItem9.Size = new System.Drawing.Size(156, 21);
-            this.toolStripMenuItem9.Text = "Hoàn Công Di Dời";
             // 
             // toolStripMenuItem10
             // 
@@ -1263,6 +1253,7 @@
             this.menuStrip5.Size = new System.Drawing.Size(1055, 25);
             this.menuStrip5.TabIndex = 2;
             this.menuStrip5.Text = "menuStrip5";
+            this.menuStrip5.Visible = false;
             // 
             // menuNhapDanhBo
             // 
@@ -1443,7 +1434,6 @@
             // 
             // menuHeThong
             // 
-            this.menuHeThong.Checked = true;
             this.menuHeThong.Name = "menuHeThong";
             this.menuHeThong.Panel = this.ribbonPanel1;
             this.menuHeThong.Text = "Trang Chủ";
@@ -1479,6 +1469,7 @@
             // 
             // menuDoiTCTB
             // 
+            this.menuDoiTCTB.Checked = true;
             this.menuDoiTCTB.Name = "menuDoiTCTB";
             this.menuDoiTCTB.Panel = this.ribbonPanel9;
             this.menuDoiTCTB.Text = "Đội TCTB";
@@ -1906,7 +1897,6 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem16;
         private System.Windows.Forms.MenuStrip menuStrip7;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem8;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem9;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem10;
 
     }
