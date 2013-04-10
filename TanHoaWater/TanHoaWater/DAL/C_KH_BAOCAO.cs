@@ -74,7 +74,18 @@ namespace TanHoaWater.DAL
                 sqltongket += " WHERE KHVT.LOAIHOSO=N'" + loaidon + "' AND CONVERT(DATETIME,KHVT.NGAYNHAN,103) BETWEEN CONVERT(DATETIME,'" + tungay + "',103) AND CONVERT(DATETIME,'" + denngay + "',103) ";
 
                 string sql = "SELECT * FROM W_KH_BCTONGKET ";
-                sql += " WHERE LOAIHOSO=N'" + loaidon + "' AND CONVERT(DATETIME,NGAYNHAN,103) BETWEEN CONVERT(DATETIME,'" + tungay + "',103) AND CONVERT(DATETIME,'" + denngay + "',103) ";
+                string tmp = "";
+                if ("BT".Equals(loaidon))
+                {
+                    sql += " WHERE SHS LIKE N'%BT%' AND CONVERT(DATETIME,NGAYNHAN,103) BETWEEN CONVERT(DATETIME,'" + tungay + "',103) AND CONVERT(DATETIME,'" + denngay + "',103) ";
+                }else 
+                if ("DD".Equals(loaidon))
+                {
+                    sql += " WHERE SHS LIKE N'%D%' AND CONVERT(DATETIME,NGAYNHAN,103) BETWEEN CONVERT(DATETIME,'" + tungay + "',103) AND CONVERT(DATETIME,'" + denngay + "',103) ";
+                }else{
+                    sql += " WHERE LOAIHOSO=N'" + loaidon + "' AND CONVERT(DATETIME,NGAYNHAN,103) BETWEEN CONVERT(DATETIME,'" + tungay + "',103) AND CONVERT(DATETIME,'" + denngay + "',103) "; 
+                }
+               
 
                 if (type == 2)
                 {
@@ -97,13 +108,13 @@ namespace TanHoaWater.DAL
                         if (ttk != null && ttk.NGAYHOANTATTK!=null)
                         {
                             table.Rows[i]["HOANTATTK"] = Utilities.DateToString.NgayVN(ttk.NGAYHOANTATTK.Value);
-                            if (!"".Equals(table.Rows[i]["DONVITHICONG"] + ""))
+                        }
+                        if (!"".Equals(table.Rows[i]["DONVITHICONG"] + ""))
+                        {
+                            KH_DONVITHICONG bctc = DAL.C_KH_DonViTC.findDVTCbyID(int.Parse(table.Rows[i]["DONVITHICONG"] + ""));
+                            if (bctc != null)
                             {
-                                KH_DONVITHICONG bctc = DAL.C_KH_DonViTC.findDVTCbyID(int.Parse(table.Rows[i]["DONVITHICONG"] + ""));
-                                if (bctc != null)
-                                {
-                                    table.Rows[i]["DONVITC"] = bctc.TENCONGTY.Replace("C.Ty", "").Replace("TNHH", "").Replace("Cổ Phần", ""); 
-                                }
+                                table.Rows[i]["DONVITC"] = bctc.TENCONGTY.Replace("C.Ty", "").Replace("TNHH", "").Replace("Cổ Phần", "");
                             }
                         }
                     }

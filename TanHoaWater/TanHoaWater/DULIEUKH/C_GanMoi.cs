@@ -6,6 +6,7 @@ using System.Text;
 using log4net;
 using System.Data;
 using System.Data.SqlClient;
+using TanHoaWater.Database;
 
 namespace TanHoaWater.DULIEUKH
 {
@@ -86,7 +87,7 @@ namespace TanHoaWater.DULIEUKH
 
         public static DataTable getPhienLoTrinh(string lotrinh) {
             string sql = "SELECT ROW_NUMBER() OVER (ORDER BY LOTRINH ASC) [STT], DANHBO, (SONHA+' '+ TENDUONG) as DIACHI, (QUAN+PHUONG) AS QUANPHUONG ,LOTRINH,'' as 'M_LOTRINH' FROM TB_DULIEUKHACHHANG WHERE LEFT(LOTRINH,4)='" + lotrinh + "' ORDER BY LOTRINH ASC ";
-            return LinQConnection.getDataTable(sql);
+            return Database.LinQConnection.getDataTable(sql);
         }
 
         public static int InsertDocSo_(string sql)
@@ -117,7 +118,7 @@ namespace TanHoaWater.DULIEUKH
         }
 
         public static DataTable getMaxLoTrinh(string dotmay) {
-            return DAL.LinQConnection.getDataTable("SELECT MAX(LOTRINH) FROM  TB_DULIEUKHACHHANG WHERE LEFT(LOTRINH,4)='" + dotmay + "'");
+            return Database.LinQConnection.getDataTable("SELECT MAX(LOTRINH) FROM  TB_DULIEUKHACHHANG WHERE LEFT(LOTRINH,4)='" + dotmay + "'");
         }
     }
 }

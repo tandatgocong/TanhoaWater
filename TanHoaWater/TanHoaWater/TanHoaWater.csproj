@@ -177,6 +177,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CapNuocTanHoa.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Database\DocSo.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DocSo.dbml</DependentUpon>
+    </Compile>
     <Compile Include="Database\LinQConnection.cs" />
     <Compile Include="Database\TanHoa.designer.cs">
       <AutoGen>True</AutoGen>
@@ -296,6 +301,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>rpt_DANHBO.rpt</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\Users\DONGHONUOC\frm_HuyLoTrinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Users\DONGHONUOC\frm_HuyLoTrinh.designer.cs">
+      <DependentUpon>frm_HuyLoTrinh.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Users\DONGHONUOC\frm_NhapSoHoKhau.cs">
       <SubType>Form</SubType>
@@ -1060,11 +1071,19 @@
       <LastGenOutput>CapNuocTanHoa.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
+    <None Include="Database\DocSo.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DocSo.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Database\TanHoa.dbml.layout">
       <DependentUpon>TanHoa.dbml</DependentUpon>
     </None>
     <None Include="Database\CapNuocTanHoa.dbml.layout">
       <DependentUpon>CapNuocTanHoa.dbml</DependentUpon>
+    </None>
+    <None Include="Database\DocSo.dbml.layout">
+      <DependentUpon>DocSo.dbml</DependentUpon>
     </None>
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
@@ -1103,6 +1122,9 @@
     <EmbeddedResource Include="View\Users\DONGHONUOC\BC\rpt_DANHBO.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_DANHBO.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\DONGHONUOC\frm_HuyLoTrinh.resx">
+      <DependentUpon>frm_HuyLoTrinh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\DONGHONUOC\frm_NhapSoHoKhau.resx">
       <DependentUpon>frm_NhapSoHoKhau.cs</DependentUpon>

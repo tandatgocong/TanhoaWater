@@ -6,27 +6,30 @@ using System.Data;
 using System.Data.SqlClient;
 using log4net;
 using System.Data.Linq.SqlClient;
+using TanHoaWater.Database;
 
 namespace TanHoaWater.DULIEUKH
 {
     public static class C_DuLieuKhachHang
     {
         private static readonly ILog log = LogManager.GetLogger(typeof(C_DuLieuKhachHang).Name);
-       
+
         static CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
 
-        public static void UpdateBaoThay(string danhbo,string result) {
-            try
-            {
-                string sql = "UPDATE TB_DULIEUKHACHHANG SET BAOTHAY='"+result+"',  MODIFYBY='" + DAL.SYS.C_USERS._userName + "', MODIFYDATE='"+DateTime.Now+"' WHERE DANHBO='" + danhbo + "' ";
-                DAL.LinQConnection.ExecuteCommand(sql);
-            }
-            catch (Exception ex)
-            {
-                log.Error(ex.Message);
-            }
-        }
-        public static TB_DULIEUKHACHHANG finByDanhBo(string danhbo) {
+        //public static void UpdateBaoThay(string danhbo, string result)
+        //{
+        //    try
+        //    {
+        //        string sql = "UPDATE TB_DULIEUKHACHHANG SET BAOTHAY='" + result + "',  MODIFYBY='" + DAL.SYS.C_USERS._userName + "', MODIFYDATE='" + DateTime.Now + "' WHERE DANHBO='" + danhbo + "' ";
+        //        DAL.LinQConnection.ExecuteCommand(sql);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        log.Error(ex.Message);
+        //    }
+        //}
+        public static TB_DULIEUKHACHHANG finByDanhBo(string danhbo)
+        {
             try
             {
                 var query = from q in db.TB_DULIEUKHACHHANGs where q.DANHBO == danhbo select q;
@@ -38,7 +41,7 @@ namespace TanHoaWater.DULIEUKH
             }
             return null;
         }
-       
+
         public static TB_DULIEUKHACHHANG finByLoTrinh(string lotrinh)
         {
             try
@@ -52,22 +55,23 @@ namespace TanHoaWater.DULIEUKH
             }
             return null;
         }
-       
-        public static TB_DULIEUKHACHHANG_HUYDB finByDanhBoHuy(string danhbo)
-        {
-            try
-            {
-                var query = from q in db.TB_DULIEUKHACHHANG_HUYDBs where q.DANHBO == danhbo select q;
-                return query.SingleOrDefault();
-            }
-            catch (Exception ex)
-            {
-                log.Error(ex.Message);
-            }
-            return null;
-        }
 
-        public static void Insert(TB_DULIEUKHACHHANG tb) {
+        //public static TB_DULIEUKHACHHANG_HUYDB finByDanhBoHuy(string danhbo)
+        //{
+        //    try
+        //    {
+        //        var query = from q in db.TB_DULIEUKHACHHANG_HUYDBs where q.DANHBO == danhbo select q;
+        //        return query.SingleOrDefault();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        log.Error(ex.Message);
+        //    }
+        //    return null;
+        //}
+
+        public static void Insert(TB_DULIEUKHACHHANG tb)
+        {
             try
             {
                 db.TB_DULIEUKHACHHANGs.InsertOnSubmit(tb);
@@ -78,13 +82,14 @@ namespace TanHoaWater.DULIEUKH
                 log.Error(ex.Message);
             }
         }
-        
+
         public static List<TB_DULIEUKHACHHANG> getAllKHACHHANG()
         {
             var query = from q in db.TB_DULIEUKHACHHANGs select q;
             return query.ToList();
         }
-        public static bool Update() {
+        public static bool Update()
+        {
             try
             {
                 db.SubmitChanges();
@@ -157,53 +162,55 @@ namespace TanHoaWater.DULIEUKH
             return ds;
         }
 
-        public static bool HuyDanhBo(TB_DULIEUKHACHHANG_HUYDB huy, TB_DULIEUKHACHHANG kh) {
+        //public static bool HuyDanhBo(TB_DULIEUKHACHHANG_HUYDB huy, TB_DULIEUKHACHHANG kh)
+        //{
 
-            try
-            {
-                db.TB_DULIEUKHACHHANG_HUYDBs.InsertOnSubmit(huy);
-                db.TB_DULIEUKHACHHANGs.DeleteOnSubmit(kh);               
-                // huy handheld
-                LinQConnectionDS.ExecuteCommand("DELETE FROM KHACHHANG WHERE DANHBA='"+ kh.DANHBO +"'");
-                db.SubmitChanges();
-                //
+        //    try
+        //    {
+        //        db.TB_DULIEUKHACHHANG_HUYDBs.InsertOnSubmit(huy);
+        //        db.TB_DULIEUKHACHHANGs.DeleteOnSubmit(kh);
+        //        // huy handheld
+        //        LinQConnectionDS.ExecuteCommand("DELETE FROM KHACHHANG WHERE DANHBA='" + kh.DANHBO + "'");
+        //        db.SubmitChanges();
+        //        //
 
-                return true;
-            }
-            catch (Exception ex)
-            {
-                log.Error(ex.Message);
-            }
-            return false;
-        }
+        //        return true;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        log.Error(ex.Message);
+        //    }
+        //    return false;
+        //}
 
 
-        public static int SoLuongHuy(string tods, string hieulucky) {
+        //public static int SoLuongHuy(string tods, string hieulucky)
+        //{
 
-            string gioihan = DAL.SYS.C_USERS.findByToDS(tods) != null ? DAL.SYS.C_USERS.findByToDS(tods).GIOIHAN : "";
-            string sql = "SELECT COUNT(*) FROM TB_DULIEUKHACHHANG_HUYDB WHERE (TAILAPDB IS NULL OR TAILAPDB='False') AND HIEULUCHUY=N'" + hieulucky + "' " + gioihan;
-            try
-            {
-                return DAL.LinQConnection.ExecuteCommand(sql);
-            }
-            catch (Exception ex)
-            { log.Error(ex.Message);      }
-            return 0;
-         
-        }
-        public static DataSet DanhSachHuyDB(string tods, string hieulucky)
-        {
-            string gioihan = DAL.SYS.C_USERS.findByToDS(tods) != null ? DAL.SYS.C_USERS.findByToDS(tods).GIOIHAN : "";
-            string query = "SELECT * FROM TB_DULIEUKHACHHANG_HUYDB WHERE (TAILAPDB IS NULL OR TAILAPDB='False') AND HIEULUCHUY=N'" + hieulucky + "' " + gioihan;
-            DataSet ds = new DataSet();
-            CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
-            db.Connection.Open();
-            SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
-            adapter.Fill(ds, "TB_DULIEUKHACHHANG_HUYDB");
+        //    string gioihan = DAL.SYS.C_USERS.findByToDS(tods) != null ? DAL.SYS.C_USERS.findByToDS(tods).GIOIHAN : "";
+        //    string sql = "SELECT COUNT(*) FROM TB_DULIEUKHACHHANG_HUYDB WHERE (TAILAPDB IS NULL OR TAILAPDB='False') AND HIEULUCHUY=N'" + hieulucky + "' " + gioihan;
+        //    try
+        //    {
+        //        return DAL.LinQConnection.ExecuteCommand(sql);
+        //    }
+        //    catch (Exception ex)
+        //    { log.Error(ex.Message); }
+        //    return 0;
 
-            return ds;        
+        //}
+        //public static DataSet DanhSachHuyDB(string tods, string hieulucky)
+        //{
+        //    string gioihan = DAL.SYS.C_USERS.findByToDS(tods) != null ? DAL.SYS.C_USERS.findByToDS(tods).GIOIHAN : "";
+        //    string query = "SELECT * FROM TB_DULIEUKHACHHANG_HUYDB WHERE (TAILAPDB IS NULL OR TAILAPDB='False') AND HIEULUCHUY=N'" + hieulucky + "' " + gioihan;
+        //    DataSet ds = new DataSet();
+        //    CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
+        //    db.Connection.Open();
+        //    SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
+        //    adapter.Fill(ds, "TB_DULIEUKHACHHANG_HUYDB");
 
-        }
+        //    return ds;
+
+        //}
 
         public static DataSet reportHuyDB(string danhbo)
         {
@@ -223,41 +230,6 @@ namespace TanHoaWater.DULIEUKH
             {
                 var query = from q in db.TB_DULIEUKHACHHANGs where q.SOTHANDH == sothan && q.HIEUDH.StartsWith(hieu) select q;
                 return query.ToList();
-            }
-            catch (Exception ex)
-            {
-                log.Error(ex.Message);
-            }
-            return null;
-        }
-
-        public static bool InsertGHICHU(TB_GHICHU gc)
-        {
-            try
-            {
-                db.TB_GHICHUs.InsertOnSubmit(gc);
-                db.SubmitChanges();
-                return true;
-            }
-            catch (Exception ex)
-            {
-                log.Error(ex.Message);
-            }
-            return false;
-        }
-
-        public static DataTable lisGhiChu(string danhbo)
-        {
-            string sql = "SELECT ID,NOIDUNG,DONVI,CREATEDATE FROM TB_GHICHU WHERE DANHBO='" + danhbo + "' ORDER BY CREATEDATE DESC";
-            return LinQConnection.getDataTable(sql);
-        }
-
-        public static TB_GHICHU findGhiChuByID(int id)
-        {
-            try
-            {
-                var query = from q in db.TB_GHICHUs where q.ID == id select q;
-                return query.SingleOrDefault();
             }
             catch (Exception ex)
             {

@@ -242,6 +242,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                     this.dienthoai.Text = biennhan.DIENTHOAI;
                     this.cbQuan.Text = recordQuan.TENQUAN;
                     this.cbPhuong.Text = recordPhuong.TENPHUONG;
+                    this.txtDanhBo.Text = biennhan.SODANHBO;
                     ngaynhan = biennhan.NGAYNHAN.Value;
                 }
                 else

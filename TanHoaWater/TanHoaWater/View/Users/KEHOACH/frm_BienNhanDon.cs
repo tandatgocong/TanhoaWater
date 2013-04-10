@@ -200,6 +200,7 @@ namespace TanHoaWater.View.Users.KEHOACH
                 string tenduong = this.txtDuong.Text;
                 string tenphuong = this.cbPhuong.Text;
                 string tenquan = this.Quan.Text;
+                string danhbo = this.txtSoDanhBo.Text;
                 QUAN quan = DAL.C_Quan.finbyTenQuan(tenquan);
                 PHUONG phuong = null;
                 if (quan != null)
@@ -251,6 +252,7 @@ namespace TanHoaWater.View.Users.KEHOACH
                             biennhan.NGAYNHAN = DateTime.Now.Date;
                             biennhan.SOHO = int.Parse(this.numericUpDown1.Value + "");
                             biennhan.DIENTHOAI = txtDt.Text;
+                            biennhan.SODANHBO = danhbo;
                             //1
                             if (checkHK.Checked)
                             {
@@ -344,6 +346,7 @@ namespace TanHoaWater.View.Users.KEHOACH
                         biennhan.NGAYNHAN = DateTime.Now.Date;
                         biennhan.SOHO = int.Parse(this.numericUpDown1.Value + "");
                         biennhan.DIENTHOAI = txtDt.Text;
+                        biennhan.SODANHBO = danhbo;
                         //1
                         if (checkHK.Checked)
                         {
@@ -784,6 +787,11 @@ namespace TanHoaWater.View.Users.KEHOACH
             {
                 txtHoTen.Text = txtHoTen.Text.Replace(" (ĐD " + soho + " Hộ)","") + " (ĐD " + editSoho.Value + " Hộ)";
             }
+        }
+
+        private void panelEx1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

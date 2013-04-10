@@ -248,32 +248,6 @@
       <Association Name="DON_KHACHHANG_BGDC_KICHTHUOCPHUIDAO" Member="DON_KHACHHANG" ThisKey="SHS" OtherKey="SHS" Type="DON_KHACHHANG" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.BIENNHANDON" Member="BIENNHANDONs">
-    <Type Name="BIENNHANDON">
-      <Column Name="SHS" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="LOAIDON" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="HOTEN" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
-      <Column Name="DIENTHOAI" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="SONHA" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
-      <Column Name="DUONG" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
-      <Column Name="PHUONG" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="QUAN" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="NGAYNHAN" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="SOHO" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="HKTK" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="TAMTRU" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="CHUQUYENNHA" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="GIAYPHEPXD" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="GIAYPHEPKD" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="GIAYTOKHAC" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="BIENLAITIENUOC" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="CREATEBY" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="CREATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="MODIFYBY" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="MODIFYDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Association Name="LOAI_NHANDON_BIENNHANDON" Member="LOAI_NHANDON" ThisKey="LOAIDON" OtherKey="LOAIDON" Type="LOAI_NHANDON" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.BOVATTAOSAN" Member="BOVATTAOSANs">
     <Type Name="BOVATTAOSAN">
       <Column Name="MABOVT" Type="System.String" DbType="VarChar(250) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -1813,6 +1787,33 @@
       <Column Name="VATUGAN" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="VATUNHUA" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="CPNHANCONG" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BIENNHANDON" Member="BIENNHANDONs">
+    <Type Name="BIENNHANDON">
+      <Column Name="SHS" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="LOAIDON" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="HOTEN" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="DIENTHOAI" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="SONHA" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="DUONG" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="PHUONG" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="QUAN" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NGAYNHAN" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SOHO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HKTK" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TAMTRU" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CHUQUYENNHA" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="GIAYPHEPXD" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="GIAYPHEPKD" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="GIAYTOKHAC" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="BIENLAITIENUOC" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CREATEBY" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="CREATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MODIFYBY" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="MODIFYDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SODANHBO" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Association Name="LOAI_NHANDON_BIENNHANDON" Member="LOAI_NHANDON" ThisKey="LOAIDON" OtherKey="LOAIDON" Type="LOAI_NHANDON" IsForeignKey="true" />
     </Type>
   </Table>
   <Function Name="dbo.TONGKETCHIPHI" Method="TONGKETCHIPHI">

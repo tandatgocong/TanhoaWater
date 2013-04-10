@@ -5,6 +5,7 @@ using System.Text;
 using log4net;
 using System.Data;
 using System.Data.SqlClient;
+using TanHoaWater.Database;
 
 namespace TanHoaWater.DULIEUKH
 {
@@ -14,33 +15,33 @@ namespace TanHoaWater.DULIEUKH
 
         static CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
 
-        public static TB_DIEUCHINHDANHBO finBySoPhieu(string sophieu)
-        {
-            try
-            {
-                var query = from q in db.TB_DIEUCHINHDANHBOs where q.SOPHIEU == sophieu select q;
-                return query.SingleOrDefault();
-            }
-            catch (Exception ex)
-            {
-                log.Error(ex.Message);
-            }
-            return null;
-        }
+        //public static TB_DIEUCHINHDANHBO finBySoPhieu(string sophieu)
+        //{
+        //    try
+        //    {
+        //        var query = from q in db.TB_DIEUCHINHDANHBOs where q.SOPHIEU == sophieu select q;
+        //        return query.SingleOrDefault();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        log.Error(ex.Message);
+        //    }
+        //    return null;
+        //}
 
 
-        public static void Insert(TB_DIEUCHINHDANHBO tb)
-        {
-            try
-            {
-                db.TB_DIEUCHINHDANHBOs.InsertOnSubmit(tb);
-                db.SubmitChanges();
-            }
-            catch (Exception ex)
-            {
-                log.Error(ex.Message);
-            }
-        }
+        //public static void Insert(TB_DIEUCHINHDANHBO tb)
+        //{
+        //    try
+        //    {
+        //        db.TB_DIEUCHINHDANHBOs.InsertOnSubmit(tb);
+        //        db.SubmitChanges();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        log.Error(ex.Message);
+        //    }
+        //}
         
         public static bool Update()
         {
