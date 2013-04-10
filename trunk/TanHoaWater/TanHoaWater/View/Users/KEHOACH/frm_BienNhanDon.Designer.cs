@@ -37,6 +37,8 @@
             this.tabControl1 = new DevComponents.DotNetBar.TabControl();
             this.tabControlPanel3 = new DevComponents.DotNetBar.TabControlPanel();
             this.panelEx3 = new System.Windows.Forms.Panel();
+            this.editSoho = new System.Windows.Forms.NumericUpDown();
+            this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.editDD = new System.Windows.Forms.GroupBox();
             this.editbienlaithutien = new System.Windows.Forms.CheckBox();
             this.editddgiaytokhac = new System.Windows.Forms.CheckBox();
@@ -120,12 +122,13 @@
             this.SOHS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TENLOAI = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TENQUAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.editSoho = new System.Windows.Forms.NumericUpDown();
-            this.labelX2 = new DevComponents.DotNetBar.LabelX();
+            this.labelX17 = new DevComponents.DotNetBar.LabelX();
+            this.txtSoDanhBo = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.tabControl1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabControlPanel3.SuspendLayout();
             this.panelEx3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.editSoho)).BeginInit();
             this.editDD.SuspendLayout();
             this.editGM.SuspendLayout();
             this.tabControlPanel1.SuspendLayout();
@@ -136,15 +139,14 @@
             this.tabControlPanel2.SuspendLayout();
             this.panelEx2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDC)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.editSoho)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
             this.tabControl1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(206)))), ((int)(((byte)(236)))));
             this.tabControl1.CanReorderTabs = true;
-            this.tabControl1.Controls.Add(this.tabControlPanel3);
             this.tabControl1.Controls.Add(this.tabControlPanel1);
+            this.tabControl1.Controls.Add(this.tabControlPanel3);
             this.tabControl1.Controls.Add(this.tabControlPanel2);
             this.tabControl1.Location = new System.Drawing.Point(0, 1);
             this.tabControl1.Name = "tabControl1";
@@ -171,8 +173,8 @@
             this.tabControlPanel3.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(188)))), ((int)(((byte)(227)))));
             this.tabControlPanel3.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
             this.tabControlPanel3.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(165)))), ((int)(((byte)(199)))));
-            this.tabControlPanel3.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
-            | DevComponents.DotNetBar.eBorderSide.Bottom)));
+            this.tabControlPanel3.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right)
+                        | DevComponents.DotNetBar.eBorderSide.Bottom)));
             this.tabControlPanel3.Style.GradientAngle = 90;
             this.tabControlPanel3.TabIndex = 3;
             this.tabControlPanel3.TabItem = this.tabItem3;
@@ -209,6 +211,27 @@
             this.panelEx3.Size = new System.Drawing.Size(667, 513);
             this.panelEx3.TabIndex = 1;
             // 
+            // editSoho
+            // 
+            this.editSoho.Location = new System.Drawing.Point(186, 150);
+            this.editSoho.Name = "editSoho";
+            this.editSoho.Size = new System.Drawing.Size(74, 26);
+            this.editSoho.TabIndex = 43;
+            this.editSoho.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.editSoho.Leave += new System.EventHandler(this.editSoho_Leave);
+            // 
+            // labelX2
+            // 
+            this.labelX2.Location = new System.Drawing.Point(87, 151);
+            this.labelX2.Name = "labelX2";
+            this.labelX2.Size = new System.Drawing.Size(150, 23);
+            this.labelX2.TabIndex = 46;
+            this.labelX2.Text = "Số Hộ";
+            // 
             // editDD
             // 
             this.editDD.Controls.Add(this.editbienlaithutien);
@@ -226,7 +249,7 @@
             this.editbienlaithutien.AutoSize = true;
             this.editbienlaithutien.Location = new System.Drawing.Point(19, 24);
             this.editbienlaithutien.Name = "editbienlaithutien";
-            this.editbienlaithutien.Size = new System.Drawing.Size(154, 23);
+            this.editbienlaithutien.Size = new System.Drawing.Size(125, 17);
             this.editbienlaithutien.TabIndex = 50;
             this.editbienlaithutien.Text = "Biên lai thu tiền nước";
             this.editbienlaithutien.UseVisualStyleBackColor = true;
@@ -236,7 +259,7 @@
             this.editddgiaytokhac.AutoSize = true;
             this.editddgiaytokhac.Location = new System.Drawing.Point(19, 48);
             this.editddgiaytokhac.Name = "editddgiaytokhac";
-            this.editddgiaytokhac.Size = new System.Drawing.Size(105, 23);
+            this.editddgiaytokhac.Size = new System.Drawing.Size(86, 17);
             this.editddgiaytokhac.TabIndex = 51;
             this.editddgiaytokhac.Text = "Giấy tờ khác";
             this.editddgiaytokhac.UseVisualStyleBackColor = true;
@@ -261,7 +284,7 @@
             this.edit_tamtrukt3.AutoSize = true;
             this.edit_tamtrukt3.Location = new System.Drawing.Point(231, 25);
             this.edit_tamtrukt3.Name = "edit_tamtrukt3";
-            this.edit_tamtrukt3.Size = new System.Drawing.Size(124, 23);
+            this.edit_tamtrukt3.Size = new System.Drawing.Size(97, 17);
             this.edit_tamtrukt3.TabIndex = 12;
             this.edit_tamtrukt3.Text = "Sổ tạm trú KT3";
             this.edit_tamtrukt3.UseVisualStyleBackColor = true;
@@ -271,7 +294,7 @@
             this.eddit_checkhokhau.AutoSize = true;
             this.eddit_checkhokhau.Location = new System.Drawing.Point(19, 24);
             this.eddit_checkhokhau.Name = "eddit_checkhokhau";
-            this.eddit_checkhokhau.Size = new System.Drawing.Size(101, 23);
+            this.eddit_checkhokhau.Size = new System.Drawing.Size(84, 17);
             this.eddit_checkhokhau.TabIndex = 11;
             this.eddit_checkhokhau.Text = "Sổ hộ khẩu.";
             this.eddit_checkhokhau.UseVisualStyleBackColor = true;
@@ -281,7 +304,7 @@
             this.editcheckchuquyennha.AutoSize = true;
             this.editcheckchuquyennha.Location = new System.Drawing.Point(19, 48);
             this.editcheckchuquyennha.Name = "editcheckchuquyennha";
-            this.editcheckchuquyennha.Size = new System.Drawing.Size(173, 23);
+            this.editcheckchuquyennha.Size = new System.Drawing.Size(145, 17);
             this.editcheckchuquyennha.TabIndex = 13;
             this.editcheckchuquyennha.Text = "Giấy chủ quyền nhà/đất.";
             this.editcheckchuquyennha.UseVisualStyleBackColor = true;
@@ -291,7 +314,7 @@
             this.edit_giayphepkd.AutoSize = true;
             this.edit_giayphepkd.Location = new System.Drawing.Point(19, 74);
             this.edit_giayphepkd.Name = "edit_giayphepkd";
-            this.edit_giayphepkd.Size = new System.Drawing.Size(160, 23);
+            this.edit_giayphepkd.Size = new System.Drawing.Size(130, 17);
             this.edit_giayphepkd.TabIndex = 15;
             this.edit_giayphepkd.Text = "Giấy phép kinh doanh";
             this.edit_giayphepkd.UseVisualStyleBackColor = true;
@@ -301,7 +324,7 @@
             this.editgiaytokhac.AutoSize = true;
             this.editgiaytokhac.Location = new System.Drawing.Point(229, 74);
             this.editgiaytokhac.Name = "editgiaytokhac";
-            this.editgiaytokhac.Size = new System.Drawing.Size(105, 23);
+            this.editgiaytokhac.Size = new System.Drawing.Size(86, 17);
             this.editgiaytokhac.TabIndex = 16;
             this.editgiaytokhac.Text = "Giấy tờ khác";
             this.editgiaytokhac.UseVisualStyleBackColor = true;
@@ -311,7 +334,7 @@
             this.edit_giayphepxd.AutoSize = true;
             this.edit_giayphepxd.Location = new System.Drawing.Point(230, 47);
             this.edit_giayphepxd.Name = "edit_giayphepxd";
-            this.edit_giayphepxd.Size = new System.Drawing.Size(150, 23);
+            this.edit_giayphepxd.Size = new System.Drawing.Size(120, 17);
             this.edit_giayphepxd.TabIndex = 14;
             this.edit_giayphepxd.Text = "Giấy phép xây dựng";
             this.edit_giayphepxd.UseVisualStyleBackColor = true;
@@ -517,7 +540,7 @@
             this.reflectionLabel2.Size = new System.Drawing.Size(434, 67);
             this.reflectionLabel2.TabIndex = 16;
             this.reflectionLabel2.Text = "<b><font size=\"+6\"><font color=\"#ED1C24\">SỬA BIÊN NHẬN ĐƠN KHÁCH HÀNG</font></fon" +
-    "t></b>";
+                "t></b>";
             // 
             // tabItem3
             // 
@@ -538,8 +561,8 @@
             this.tabControlPanel1.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(188)))), ((int)(((byte)(227)))));
             this.tabControlPanel1.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
             this.tabControlPanel1.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(165)))), ((int)(((byte)(199)))));
-            this.tabControlPanel1.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
-            | DevComponents.DotNetBar.eBorderSide.Bottom)));
+            this.tabControlPanel1.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right)
+                        | DevComponents.DotNetBar.eBorderSide.Bottom)));
             this.tabControlPanel1.Style.GradientAngle = 90;
             this.tabControlPanel1.TabIndex = 1;
             this.tabControlPanel1.TabItem = this.tabItem1;
@@ -547,6 +570,8 @@
             // panelEx1
             // 
             this.panelEx1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
+            this.panelEx1.Controls.Add(this.txtSoDanhBo);
+            this.panelEx1.Controls.Add(this.labelX17);
             this.panelEx1.Controls.Add(this.groupDiDoi);
             this.panelEx1.Controls.Add(this.groupganmoi);
             this.panelEx1.Controls.Add(this.numericUpDown1);
@@ -575,6 +600,7 @@
             this.panelEx1.Name = "panelEx1";
             this.panelEx1.Size = new System.Drawing.Size(667, 513);
             this.panelEx1.TabIndex = 0;
+            this.panelEx1.Paint += new System.Windows.Forms.PaintEventHandler(this.panelEx1_Paint);
             // 
             // groupDiDoi
             // 
@@ -593,7 +619,7 @@
             this.checkBienLaiTN.AutoSize = true;
             this.checkBienLaiTN.Location = new System.Drawing.Point(19, 24);
             this.checkBienLaiTN.Name = "checkBienLaiTN";
-            this.checkBienLaiTN.Size = new System.Drawing.Size(154, 23);
+            this.checkBienLaiTN.Size = new System.Drawing.Size(125, 17);
             this.checkBienLaiTN.TabIndex = 10;
             this.checkBienLaiTN.Text = "Biên lai thu tiền nước";
             this.checkBienLaiTN.UseVisualStyleBackColor = true;
@@ -603,7 +629,7 @@
             this.DD_GiayToKhac.AutoSize = true;
             this.DD_GiayToKhac.Location = new System.Drawing.Point(19, 48);
             this.DD_GiayToKhac.Name = "DD_GiayToKhac";
-            this.DD_GiayToKhac.Size = new System.Drawing.Size(105, 23);
+            this.DD_GiayToKhac.Size = new System.Drawing.Size(86, 17);
             this.DD_GiayToKhac.TabIndex = 11;
             this.DD_GiayToKhac.Text = "Giấy tờ khác";
             this.DD_GiayToKhac.UseVisualStyleBackColor = true;
@@ -628,7 +654,7 @@
             this.checkSoTTKT3.AutoSize = true;
             this.checkSoTTKT3.Location = new System.Drawing.Point(231, 25);
             this.checkSoTTKT3.Name = "checkSoTTKT3";
-            this.checkSoTTKT3.Size = new System.Drawing.Size(124, 23);
+            this.checkSoTTKT3.Size = new System.Drawing.Size(97, 17);
             this.checkSoTTKT3.TabIndex = 12;
             this.checkSoTTKT3.Text = "Sổ tạm trú KT3";
             this.checkSoTTKT3.UseVisualStyleBackColor = true;
@@ -638,7 +664,7 @@
             this.checkHK.AutoSize = true;
             this.checkHK.Location = new System.Drawing.Point(19, 24);
             this.checkHK.Name = "checkHK";
-            this.checkHK.Size = new System.Drawing.Size(101, 23);
+            this.checkHK.Size = new System.Drawing.Size(84, 17);
             this.checkHK.TabIndex = 11;
             this.checkHK.Text = "Sổ hộ khẩu.";
             this.checkHK.UseVisualStyleBackColor = true;
@@ -648,7 +674,7 @@
             this.checkChuQuyen.AutoSize = true;
             this.checkChuQuyen.Location = new System.Drawing.Point(19, 48);
             this.checkChuQuyen.Name = "checkChuQuyen";
-            this.checkChuQuyen.Size = new System.Drawing.Size(173, 23);
+            this.checkChuQuyen.Size = new System.Drawing.Size(145, 17);
             this.checkChuQuyen.TabIndex = 13;
             this.checkChuQuyen.Text = "Giấy chủ quyền nhà/đất.";
             this.checkChuQuyen.UseVisualStyleBackColor = true;
@@ -658,7 +684,7 @@
             this.checkGiayPhepKD.AutoSize = true;
             this.checkGiayPhepKD.Location = new System.Drawing.Point(19, 74);
             this.checkGiayPhepKD.Name = "checkGiayPhepKD";
-            this.checkGiayPhepKD.Size = new System.Drawing.Size(160, 23);
+            this.checkGiayPhepKD.Size = new System.Drawing.Size(130, 17);
             this.checkGiayPhepKD.TabIndex = 15;
             this.checkGiayPhepKD.Text = "Giấy phép kinh doanh";
             this.checkGiayPhepKD.UseVisualStyleBackColor = true;
@@ -668,7 +694,7 @@
             this.GM_giaytokhac.AutoSize = true;
             this.GM_giaytokhac.Location = new System.Drawing.Point(229, 74);
             this.GM_giaytokhac.Name = "GM_giaytokhac";
-            this.GM_giaytokhac.Size = new System.Drawing.Size(105, 23);
+            this.GM_giaytokhac.Size = new System.Drawing.Size(86, 17);
             this.GM_giaytokhac.TabIndex = 16;
             this.GM_giaytokhac.Text = "Giấy tờ khác";
             this.GM_giaytokhac.UseVisualStyleBackColor = true;
@@ -678,7 +704,7 @@
             this.checkGiayPhepXD.AutoSize = true;
             this.checkGiayPhepXD.Location = new System.Drawing.Point(230, 47);
             this.checkGiayPhepXD.Name = "checkGiayPhepXD";
-            this.checkGiayPhepXD.Size = new System.Drawing.Size(150, 23);
+            this.checkGiayPhepXD.Size = new System.Drawing.Size(120, 17);
             this.checkGiayPhepXD.TabIndex = 14;
             this.checkGiayPhepXD.Text = "Giấy phép xây dựng";
             this.checkGiayPhepXD.UseVisualStyleBackColor = true;
@@ -713,7 +739,7 @@
             this.txtDt.Border.Class = "TextBoxBorder";
             this.txtDt.Location = new System.Drawing.Point(186, 309);
             this.txtDt.Name = "txtDt";
-            this.txtDt.Size = new System.Drawing.Size(326, 26);
+            this.txtDt.Size = new System.Drawing.Size(136, 26);
             this.txtDt.TabIndex = 9;
             // 
             // labelX8
@@ -912,7 +938,7 @@
             this.reflectionLabel1.Size = new System.Drawing.Size(388, 67);
             this.reflectionLabel1.TabIndex = 16;
             this.reflectionLabel1.Text = "<b><font size=\"+6\"><font color=\"#ED1C24\">BIÊN NHẬN ĐƠN KHÁCH HÀNG</font></font></" +
-    "b>";
+                "b>";
             // 
             // tabItem1
             // 
@@ -932,8 +958,8 @@
             this.tabControlPanel2.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(188)))), ((int)(((byte)(227)))));
             this.tabControlPanel2.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
             this.tabControlPanel2.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(165)))), ((int)(((byte)(199)))));
-            this.tabControlPanel2.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
-            | DevComponents.DotNetBar.eBorderSide.Bottom)));
+            this.tabControlPanel2.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right)
+                        | DevComponents.DotNetBar.eBorderSide.Bottom)));
             this.tabControlPanel2.Style.GradientAngle = 90;
             this.tabControlPanel2.TabIndex = 2;
             this.tabControlPanel2.TabItem = this.tabItem2;
@@ -1124,26 +1150,21 @@
             this.TENQUAN.HeaderText = "Quận";
             this.TENQUAN.Name = "TENQUAN";
             // 
-            // editSoho
+            // labelX17
             // 
-            this.editSoho.Location = new System.Drawing.Point(186, 150);
-            this.editSoho.Name = "editSoho";
-            this.editSoho.Size = new System.Drawing.Size(74, 26);
-            this.editSoho.TabIndex = 43;
-            this.editSoho.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.editSoho.Leave += new System.EventHandler(this.editSoho_Leave);
+            this.labelX17.Location = new System.Drawing.Point(327, 311);
+            this.labelX17.Name = "labelX17";
+            this.labelX17.Size = new System.Drawing.Size(75, 23);
+            this.labelX17.TabIndex = 44;
+            this.labelX17.Text = "Danh Bộ";
             // 
-            // labelX2
+            // txtSoDanhBo
             // 
-            this.labelX2.Location = new System.Drawing.Point(87, 151);
-            this.labelX2.Name = "labelX2";
-            this.labelX2.Size = new System.Drawing.Size(150, 23);
-            this.labelX2.TabIndex = 46;
-            this.labelX2.Text = "Số Hộ";
+            this.txtSoDanhBo.Location = new System.Drawing.Point(397, 311);
+            this.txtSoDanhBo.Mask = "0000-0000000";
+            this.txtSoDanhBo.Name = "txtSoDanhBo";
+            this.txtSoDanhBo.Size = new System.Drawing.Size(115, 26);
+            this.txtSoDanhBo.TabIndex = 45;
             // 
             // frm_BienNhanDon
             // 
@@ -1167,12 +1188,14 @@
             this.tabControlPanel3.ResumeLayout(false);
             this.panelEx3.ResumeLayout(false);
             this.panelEx3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.editSoho)).EndInit();
             this.editDD.ResumeLayout(false);
             this.editDD.PerformLayout();
             this.editGM.ResumeLayout(false);
             this.editGM.PerformLayout();
             this.tabControlPanel1.ResumeLayout(false);
             this.panelEx1.ResumeLayout(false);
+            this.panelEx1.PerformLayout();
             this.groupDiDoi.ResumeLayout(false);
             this.groupDiDoi.PerformLayout();
             this.groupganmoi.ResumeLayout(false);
@@ -1181,7 +1204,6 @@
             this.tabControlPanel2.ResumeLayout(false);
             this.panelEx2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDC)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.editSoho)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1276,6 +1298,8 @@
         private System.Windows.Forms.CheckBox edit_giayphepxd;
         private System.Windows.Forms.NumericUpDown editSoho;
         private DevComponents.DotNetBar.LabelX labelX2;
+        private DevComponents.DotNetBar.LabelX labelX17;
+        private System.Windows.Forms.MaskedTextBox txtSoDanhBo;
 
 
     }

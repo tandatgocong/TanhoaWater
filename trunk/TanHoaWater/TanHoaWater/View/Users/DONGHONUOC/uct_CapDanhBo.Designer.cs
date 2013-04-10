@@ -214,6 +214,10 @@
             this.DHN_DIACHI = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.txtDHN_HOTEN = new System.Windows.Forms.TextBox();
+            this.txDHNSONHA = new System.Windows.Forms.TextBox();
+            this.txtDHNDUONG = new System.Windows.Forms.TextBox();
+            this.btHuyLoTrinh = new DevComponents.DotNetBar.ButtonX();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dateNgayThiCong)).BeginInit();
@@ -233,6 +237,10 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.btHuyLoTrinh);
+            this.panel1.Controls.Add(this.txtDHNDUONG);
+            this.panel1.Controls.Add(this.txDHNSONHA);
+            this.panel1.Controls.Add(this.txtDHN_HOTEN);
             this.panel1.Controls.Add(this.cbDotTC);
             this.panel1.Controls.Add(this.reflectionLabel6);
             this.panel1.Controls.Add(this.label24);
@@ -1534,7 +1542,7 @@
             dataGridViewCellStyle44.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.gridHoanCong.RowHeadersDefaultCellStyle = dataGridViewCellStyle44;
             this.gridHoanCong.RowHeadersWidth = 10;
-            this.gridHoanCong.Size = new System.Drawing.Size(976, 321);
+            this.gridHoanCong.Size = new System.Drawing.Size(976, 288);
             this.gridHoanCong.TabIndex = 2;
             this.gridHoanCong.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridHoanCong_CellClick);
             this.gridHoanCong.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridHoanCong_CellEndEdit);
@@ -1806,6 +1814,44 @@
             this.label12.TabIndex = 63;
             this.label12.Text = "ĐM Bù";
             // 
+            // txtDHN_HOTEN
+            // 
+            this.txtDHN_HOTEN.Location = new System.Drawing.Point(70, 473);
+            this.txtDHN_HOTEN.Name = "txtDHN_HOTEN";
+            this.txtDHN_HOTEN.Size = new System.Drawing.Size(100, 25);
+            this.txtDHN_HOTEN.TabIndex = 159;
+            this.txtDHN_HOTEN.Visible = false;
+            // 
+            // txDHNSONHA
+            // 
+            this.txDHNSONHA.Location = new System.Drawing.Point(202, 473);
+            this.txDHNSONHA.Name = "txDHNSONHA";
+            this.txDHNSONHA.Size = new System.Drawing.Size(100, 25);
+            this.txDHNSONHA.TabIndex = 159;
+            this.txDHNSONHA.Visible = false;
+            // 
+            // txtDHNDUONG
+            // 
+            this.txtDHNDUONG.Location = new System.Drawing.Point(342, 473);
+            this.txtDHNDUONG.Name = "txtDHNDUONG";
+            this.txtDHNDUONG.Size = new System.Drawing.Size(100, 25);
+            this.txtDHNDUONG.TabIndex = 159;
+            this.txtDHNDUONG.Visible = false;
+            // 
+            // btHuyLoTrinh
+            // 
+            this.btHuyLoTrinh.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btHuyLoTrinh.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btHuyLoTrinh.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btHuyLoTrinh.ForeColor = System.Drawing.Color.Crimson;
+            this.btHuyLoTrinh.Location = new System.Drawing.Point(768, 562);
+            this.btHuyLoTrinh.Name = "btHuyLoTrinh";
+            this.btHuyLoTrinh.Size = new System.Drawing.Size(211, 27);
+            this.btHuyLoTrinh.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
+            this.btHuyLoTrinh.TabIndex = 160;
+            this.btHuyLoTrinh.Text = "HỦY CHO LỘ TRÌNH";
+            this.btHuyLoTrinh.Click += new System.EventHandler(this.btHuyLoTrinh_Click);
+            // 
             // UCT_CapDanhBo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -1991,5 +2037,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DHN_HOTEN;
         private System.Windows.Forms.DataGridViewTextBoxColumn DHN_SONHA;
         private System.Windows.Forms.DataGridViewTextBoxColumn DHN_DIACHI;
+        private System.Windows.Forms.TextBox txtDHNDUONG;
+        private System.Windows.Forms.TextBox txDHNSONHA;
+        private System.Windows.Forms.TextBox txtDHN_HOTEN;
+        private DevComponents.DotNetBar.ButtonX btHuyLoTrinh;
     }
 }

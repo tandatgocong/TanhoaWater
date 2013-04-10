@@ -55,5 +55,16 @@ namespace TanHoaWater.Properties {
                 return ((string)(this["CAPNUOCTANHOAConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=HP_G7;Initial Catalog=DocSo_PHT;Persist Security Info=True;User ID=sa" +
+            ";Password=123@tanhoa")]
+        public string DocSo_PHTConnectionString {
+            get {
+                return ((string)(this["DocSo_PHTConnectionString"]));
+            }
+        }
     }
 }
