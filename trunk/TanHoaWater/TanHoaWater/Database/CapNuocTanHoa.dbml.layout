@@ -14,5 +14,11 @@
         <elementListCompartment Id="d3c95788-353b-48b8-8105-5d9b3cfe1d37" absoluteBounds="2.89, 1.21, 1.9700000000000002, 5.6338297526041661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="5d25f051-3b1a-400e-98ca-48a14ea77f7e" absoluteBounds="6.75, 1.75, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/CapNuocTanHoaDataContext/GNKDT_THONGTINDMA" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b39fc97b-b27d-46d5-a86c-be6e2d9aa7f3" absoluteBounds="6.765, 2.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

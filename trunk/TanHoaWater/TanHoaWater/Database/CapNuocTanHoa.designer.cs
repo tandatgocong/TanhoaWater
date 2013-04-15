@@ -36,6 +36,9 @@ namespace TanHoaWater.Database
     partial void InsertTB_GANMOI(TB_GANMOI instance);
     partial void UpdateTB_GANMOI(TB_GANMOI instance);
     partial void DeleteTB_GANMOI(TB_GANMOI instance);
+    partial void InsertGNKDT_THONGTINDMA(GNKDT_THONGTINDMA instance);
+    partial void UpdateGNKDT_THONGTINDMA(GNKDT_THONGTINDMA instance);
+    partial void DeleteGNKDT_THONGTINDMA(GNKDT_THONGTINDMA instance);
     #endregion
 		
 		public CapNuocTanHoaDataContext() : 
@@ -81,6 +84,14 @@ namespace TanHoaWater.Database
 			get
 			{
 				return this.GetTable<TB_GANMOI>();
+			}
+		}
+		
+		public System.Data.Linq.Table<GNKDT_THONGTINDMA> GNKDT_THONGTINDMAs
+		{
+			get
+			{
+				return this.GetTable<GNKDT_THONGTINDMA>();
 			}
 		}
 	}
@@ -1936,6 +1947,92 @@ namespace TanHoaWater.Database
 					this._BANGKE = value;
 					this.SendPropertyChanged("BANGKE");
 					this.OnBANGKEChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.GNKDT_THONGTINDMA")]
+	public partial class GNKDT_THONGTINDMA : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private string _MADMA;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnMADMAChanging(string value);
+    partial void OnMADMAChanged();
+    #endregion
+		
+		public GNKDT_THONGTINDMA()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MADMA", DbType="NVarChar(250)")]
+		public string MADMA
+		{
+			get
+			{
+				return this._MADMA;
+			}
+			set
+			{
+				if ((this._MADMA != value))
+				{
+					this.OnMADMAChanging(value);
+					this.SendPropertyChanging();
+					this._MADMA = value;
+					this.SendPropertyChanged("MADMA");
+					this.OnMADMAChanged();
 				}
 			}
 		}
