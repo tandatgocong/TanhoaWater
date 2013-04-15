@@ -33,6 +33,14 @@ namespace TanHoaWater.View.Users.DONGHONUOC
             cbDotTC.AutoCompleteSource = AutoCompleteSource.CustomSource;
             cbDotTC.AutoCompleteCustomSource = namesCollection;
 
+            List<GNKDT_THONGTINDMA> dmaList = DULIEUKH.C_GanMoi.getThongTinDMA();
+            foreach (var item in dmaList)
+            {
+                namesCollection.Add(item.MADMA);
+            }
+            txtMaDMA.AutoCompleteMode = AutoCompleteMode.Suggest;
+            txtMaDMA.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            txtMaDMA.AutoCompleteCustomSource = namesCollection;
 
             //cbDotHoanCong.DataSource = DAL.C_KH_DotThiCong.getListDTC();
             //cbDotHoanCong.DisplayMember = "MADOTTC";
@@ -1370,10 +1378,6 @@ namespace TanHoaWater.View.Users.DONGHONUOC
                              MessageBox.Show(this, "Danh Bộ Đã Tồn Tại Hoặc Lộ Trình Không Được Trống !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
                          }
                      }
-
-                   
-             
-                    
 
                 }
                 catch (Exception ex)

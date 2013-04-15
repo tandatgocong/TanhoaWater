@@ -58,6 +58,8 @@ namespace TanHoaWater.View.Tool
                             {
                                 title = "HỒ SƠ TRỞ NGẠI THIẾT KẾ";
                                 noidungtrongai = ttk.NOIDUNGTRONGAI;
+                                NgayHoanTat.Text = ttk.NGAYHOANTATTK != null ? Utilities.DateToString.NgayVNVN(ttk.NGAYHOANTATTK.Value) : "";
+                                NgayTraHoSoKH.Text = ttk.NGAYTRAHS != null ? Utilities.DateToString.NgayVNVN(ttk.NGAYTRAHS.Value) : "";
                             }
                             else
                             {

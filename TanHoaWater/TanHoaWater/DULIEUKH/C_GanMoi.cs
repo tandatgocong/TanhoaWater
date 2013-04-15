@@ -116,7 +116,19 @@ namespace TanHoaWater.DULIEUKH
             db.SubmitChanges();
             return result;
         }
-
+        public static  List<GNKDT_THONGTINDMA> getThongTinDMA() {
+            try
+            {
+                var query = from q in db.GNKDT_THONGTINDMAs select q;
+                return query.ToList();
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex);
+            }
+            return null;
+        }
+            
         public static DataTable getMaxLoTrinh(string dotmay) {
             return Database.LinQConnection.getDataTable("SELECT MAX(LOTRINH) FROM  TB_DULIEUKHACHHANG WHERE LEFT(LOTRINH,4)='" + dotmay + "'");
         }
