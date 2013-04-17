@@ -40,98 +40,102 @@ namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
                 
                  
             }
+            this.pd_MaKetCau.DataSource = DAL.LinQConnection.getDataTable("SELECT MADANHMUC , (MADANHMUC + ' ______ '+   UPPER(TENKETCAU) ) as 'TENKETCAU' FROM KH_XINPHEPDAODUONG_KETCAU ");
+            this.pd_MaKetCau.ValueMember = "MADANHMUC";
+            this.pd_MaKetCau.DisplayMember = "TENKETCAU";
+            this.pd_MaKetCau.DropDownWidth = 300;
             
         }
 
         private void checkLayBangGia_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkLayBangGia.Checked)
-            {
-                this.GridViewPhuiDao.Visible = true;
-            }
-            else {
-                this.GridViewPhuiDao.Visible = false;
-            }
+            //if (checkLayBangGia.Checked)
+            //{
+            //    this.GridViewPhuiDao.Visible = true;
+            //}
+            //else {
+            //    this.GridViewPhuiDao.Visible = false;
+            //}
         }
          
         private void txtMaSHS_KeyPress(object sender, KeyPressEventArgs e)
         {
           
-            if (e.KeyChar == 13) {
-                DataTable table =DAL.C_KH_XinPhepDD.findByHSHT(this.txtMaSHS.Text);
-                if (table.Rows.Count <= 0)
-                {
-                    MessageBox.Show(this, "Không Tìm Thấy Hồ Sơ Hoàn Tất Thiết Kế !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //if (e.KeyChar == 13) {
+            //    DataTable table =DAL.C_KH_XinPhepDD.findByHSHT(this.txtMaSHS.Text);
+            //    if (table.Rows.Count <= 0)
+            //    {
+            //        MessageBox.Show(this, "Không Tìm Thấy Hồ Sơ Hoàn Tất Thiết Kế !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     
-                    this.txtHoTen.Text = "";
-                    this.txtGhiChu.Text = "";
-                    this.txtDiaChi.Text = "";
-                    this.txtMaSHS.Focus();
-                }
-                else {
-                    string _shs = table.Rows[0][0].ToString();
-                    //if (DAL.C_KH_XinPhepDD.getListBCPhuiDao(_shs).Count <= 0)
-                    //{
+            //        this.txtHoTen.Text = "";
+            //        this.txtGhiChu.Text = "";
+            //        this.txtDiaChi.Text = "";
+            //        this.txtMaSHS.Focus();
+            //    }
+            //    else {
+            //        string _shs = table.Rows[0][0].ToString();
+            //        //if (DAL.C_KH_XinPhepDD.getListBCPhuiDao(_shs).Count <= 0)
+            //        //{
 
-                    //    DAL.C_KH_XinPhepDD.getPhuiDao(_shs);
-                    //    DAL.C_KH_XinPhepDD.TinhPhuiDao(_shs);
-                    //    GridViewPhuiDao.DataSource = DAL.C_KH_XinPhepDD.getListBCPhuiDao(_shs);
-                    //}
-                    //else {
-                    //    GridViewPhuiDao.DataSource = DAL.C_KH_XinPhepDD.getListBCPhuiDao(_shs);
-                    //}
-                    DAL.LinQConnection.ExecuteCommand_("DELETE FROM KH_BAOCAOPHUIDAO WHERE SHS='" + _shs + "'");
-                    DAL.C_KH_XinPhepDD.getPhuiDao(_shs);
-                    DAL.C_KH_XinPhepDD.TinhPhuiDao(_shs);
-                    GridViewPhuiDao.DataSource = DAL.C_KH_XinPhepDD.getListBCPhuiDao(_shs);
+            //        //    DAL.C_KH_XinPhepDD.getPhuiDao(_shs);
+            //        //    DAL.C_KH_XinPhepDD.TinhPhuiDao(_shs);
+            //        //    GridViewPhuiDao.DataSource = DAL.C_KH_XinPhepDD.getListBCPhuiDao(_shs);
+            //        //}
+            //        //else {
+            //        //    GridViewPhuiDao.DataSource = DAL.C_KH_XinPhepDD.getListBCPhuiDao(_shs);
+            //        //}
+            //        DAL.LinQConnection.ExecuteCommand_("DELETE FROM KH_BAOCAOPHUIDAO WHERE SHS='" + _shs + "'");
+            //        DAL.C_KH_XinPhepDD.getPhuiDao(_shs);
+            //        DAL.C_KH_XinPhepDD.TinhPhuiDao(_shs);
+            //        GridViewPhuiDao.DataSource = DAL.C_KH_XinPhepDD.getListBCPhuiDao(_shs);
                                        
-                    if ("DD".Contains(_shs))
-                    {
-                        cbMucDichDD.SelectedIndex = 1;
-                    }
-                    else
-                    {
-                        cbMucDichDD.SelectedIndex = 0;
-                    }
-                    cbPhuongPhapDao.SelectedIndex = 0;
-                    try
-                    {
-                        KH_HOSOKHACHHANG kh_sh = DAL.C_KH_HoSoKhachHang.findBySHS(this.txtMaSHS.Text);
-                        if (kh_sh != null)
-                        {
-                            if (kh_sh.MADOTTC != null || !"".Equals(kh_sh.MADOTTC + ""))
-                            {
-                                KH_DOTTHICONG dottc = DAL.C_KH_DotThiCong.findByMadot(kh_sh.MADOTTC);
-                                this.cbDonViTaiLap.Text = DAL.C_KH_DonViTC.findDVTLbyID(dottc.DONVITAILAP.Value).TENCONGTY;
-                            }
-                        }
-                    }
-                    catch (Exception)
-                    {
-                    }
-                   /* Ko tìm bảng vẽ
-                    try
-                    {
-                        if (xinphep != null) {
-                            if (xinphep.MAQUANLY.Contains("QTP"))
-                            {
-                                if (Utilities.Files.CheckFile(_shs) == false) {
-                                    MessageBox.Show(this,"Không Tìm Thấy File Bảng Vẽ Kỹ Thuật.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                                }
-                            }
-                        }
-                    }
-                    catch (Exception)
-                    {
+            //        if ("DD".Contains(_shs))
+            //        {
+            //            cbMucDichDD.SelectedIndex = 1;
+            //        }
+            //        else
+            //        {
+            //            cbMucDichDD.SelectedIndex = 0;
+            //        }
+            //        cbPhuongPhapDao.SelectedIndex = 0;
+            //        try
+            //        {
+            //            KH_HOSOKHACHHANG kh_sh = DAL.C_KH_HoSoKhachHang.findBySHS(this.txtMaSHS.Text);
+            //            if (kh_sh != null)
+            //            {
+            //                if (kh_sh.MADOTTC != null || !"".Equals(kh_sh.MADOTTC + ""))
+            //                {
+            //                    KH_DOTTHICONG dottc = DAL.C_KH_DotThiCong.findByMadot(kh_sh.MADOTTC);
+            //                    this.cbDonViTaiLap.Text = DAL.C_KH_DonViTC.findDVTLbyID(dottc.DONVITAILAP.Value).TENCONGTY;
+            //                }
+            //            }
+            //        }
+            //        catch (Exception)
+            //        {
+            //        }
+            //       /* Ko tìm bảng vẽ
+            //        try
+            //        {
+            //            if (xinphep != null) {
+            //                if (xinphep.MAQUANLY.Contains("QTP"))
+            //                {
+            //                    if (Utilities.Files.CheckFile(_shs) == false) {
+            //                        MessageBox.Show(this,"Không Tìm Thấy File Bảng Vẽ Kỹ Thuật.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //                    }
+            //                }
+            //            }
+            //        }
+            //        catch (Exception)
+            //        {
                         
-                    }
-                    * */
-                    this.txtHoTen.Text = table.Rows[0][1].ToString();
-                    this.txtDiaChi.Text = table.Rows[0][2].ToString();
-                    this.txtGhiChu.Text = table.Rows[0][0].ToString();
-                    this.txtGhiChu.Focus();
-              }
-            }
+            //        }
+            //        * */
+            //        this.txtHoTen.Text = table.Rows[0][1].ToString();
+            //        this.txtDiaChi.Text = table.Rows[0][2].ToString();
+            //        this.txtGhiChu.Text = table.Rows[0][0].ToString();
+            //        this.txtGhiChu.Focus();
+            //  }
+            //}
         }
         public void Refresh()
         {
@@ -148,27 +152,27 @@ namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
             this.lbTongHoSo.Text = "Tổng Số Hồ Sơ XPĐĐ: " + table.Rows.Count + " hồ sơ.";
         }
         public void UpdatePhuiDao() {            
-                for (int i = 0; i < GridViewPhuiDao.Rows.Count; i++)
-                {
-                    try
-                    {
-                        int stt = int.Parse((GridViewPhuiDao.Rows[i].Cells["STT"].Value + ""));
-                        KH_BAOCAOPHUIDAO phui= DAL.C_KH_XinPhepDD.finbyBaoCaoPhuiDaoBySTT(stt);
-                        if (phui != null) {
-                            phui.TENKETCAU = (GridViewPhuiDao.Rows[i].Cells["phudaoTenKetCau"].Value + "");
-                            phui.DAI = (GridViewPhuiDao.Rows[i].Cells["g_Dai"].Value + "");
-                            phui.RONG = (GridViewPhuiDao.Rows[i].Cells["g_RONG"].Value + "");
-                            phui.SAU = (GridViewPhuiDao.Rows[i].Cells["g_Sau"].Value + "");
-                            phui.KICHTHUOC = (GridViewPhuiDao.Rows[i].Cells["phuiKetCau"].Value + "");
-                        }
+                //for (int i = 0; i < GridViewPhuiDao.Rows.Count; i++)
+                //{
+                //    try
+                //    {
+                //        int stt = int.Parse((GridViewPhuiDao.Rows[i].Cells["STT"].Value + ""));
+                //        KH_BAOCAOPHUIDAO phui= DAL.C_KH_XinPhepDD.finbyBaoCaoPhuiDaoBySTT(stt);
+                //        if (phui != null) {
+                //            phui.TENKETCAU = (GridViewPhuiDao.Rows[i].Cells["phudaoTenKetCau"].Value + "");
+                //            phui.DAI = (GridViewPhuiDao.Rows[i].Cells["g_Dai"].Value + "");
+                //            phui.RONG = (GridViewPhuiDao.Rows[i].Cells["g_RONG"].Value + "");
+                //            phui.SAU = (GridViewPhuiDao.Rows[i].Cells["g_Sau"].Value + "");
+                //            phui.KICHTHUOC = (GridViewPhuiDao.Rows[i].Cells["phuiKetCau"].Value + "");
+                //        }
 
-                    }
-                    catch (Exception ex)
-                    {
-                        log.Error("Loi Cap Nhat Phui Dao " + ex.Message);
-                    }
-                }
-                DAL.C_KH_XinPhepDD.UpdatePhui();
+                //    }
+                //    catch (Exception ex)
+                //    {
+                //        log.Error("Loi Cap Nhat Phui Dao " + ex.Message);
+                //    }
+                //}
+                //DAL.C_KH_XinPhepDD.UpdatePhui();
         }
         public void add() {
             try
