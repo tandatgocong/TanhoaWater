@@ -440,5 +440,41 @@ namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
         {
 
         }
+
+        private void tabItem3_Click(object sender, EventArgs e)
+        {
+            string madot = "";
+            DateTime ngaylap = DateTime.Now.Date;
+            try
+            {
+                madot = dataDanhSachDaoDuong.Rows[dataDanhSachDaoDuong.CurrentRow.Index].Cells["gridSoDot"].Value + "";
+                ngaylap = DateTime.Parse(dataDanhSachDaoDuong.Rows[dataDanhSachDaoDuong.CurrentRow.Index].Cells["gridNgayLap"].Value + "");
+
+            }
+            catch (Exception)
+            {
+            }
+            tabHoSoDuAn.Controls.Clear();
+            tabHoSoDuAn.Controls.Add(new tab_XinPhepDuAn(madot, ngaylap));
+            this.tabControl1.SelectedTabIndex = 2;
+        }
+
+        private void btHoSoDuAn_Click(object sender, EventArgs e)
+        {
+            string madot = "";
+            DateTime ngaylap = DateTime.Now.Date;
+            try
+            {
+                madot = dataDanhSachDaoDuong.Rows[dataDanhSachDaoDuong.CurrentRow.Index].Cells["gridSoDot"].Value + "";
+                ngaylap = DateTime.Parse(dataDanhSachDaoDuong.Rows[dataDanhSachDaoDuong.CurrentRow.Index].Cells["gridNgayLap"].Value + "");
+
+            }
+            catch (Exception)
+            {
+            }
+            tabHoSoDuAn.Controls.Clear();
+            tabHoSoDuAn.Controls.Add(new tab_XinPhepDuAn(madot, ngaylap));
+            this.tabControl1.SelectedTabIndex = 2;
+        }
     }
 }

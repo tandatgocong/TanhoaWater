@@ -99,18 +99,13 @@ namespace TanHoaWater.DAL
         }
         public static DataTable getList11()
         {
-            TanHoaDataContext db = new TanHoaDataContext();
-            db.Connection.Open();
+           
             string sql = " SELECT MADOT , NGAYLAPDON= CONVERT(VARCHAR(10),NGAYLAPDON,103), TENLOAI,";
             sql += " CASE WHEN CHUYENDON='False' THEN N'Chưa chuyển'  WHEN CHUYENDON='True' THEN N'Đã chuyển' ELSE N'Chuyển 1 phần'   END as 'CHUYEN'";
             sql += " FROM DOT_NHAN_DON dot, LOAI_HOSO loai";
             sql += " WHERE loai.MALOAI = dot.LOAIDON";
             sql += " ORDER BY dot.CREATEDATE DESC ";
-            SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
-            DataTable table = new DataTable();
-            adapter.Fill(table);
-            db.Connection.Close();
-            return table;
+            return DAL.LinQConnection.getDataTable(sql); 
         }
         public static DataTable getList(int FirstRow, int pageSize)
         {
@@ -143,86 +138,63 @@ namespace TanHoaWater.DAL
         }
         public static DataTable Search(string madot, DateTime ngaylap, string maloai)
         {
-            TanHoaDataContext db = new TanHoaDataContext();
-            db.Connection.Open();
+          
             string sql = " SELECT MADOT , NGAYLAPDON= CONVERT(VARCHAR(10),NGAYLAPDON,103), TENLOAI,";
             sql += " CASE WHEN CHUYENDON='False' THEN N'Chưa chuyển'  WHEN CHUYENDON='True' THEN N'Đã chuyển' ELSE N'Chuyển 1 phần'   END as 'CHUYEN', NGAYCHUYEN= CONVERT(VARCHAR(10),NGAYCHUYEN,103),NGAYTRAHS= CONVERT(VARCHAR(10),NGAYTRAHS,103), dot.CREATEBY";
             sql += " FROM DOT_NHAN_DON dot, LOAI_HOSO loai";
             sql += " WHERE loai.MALOAI = dot.LOAIDON";
-            if (!"".Equals(madot))
-            {
+            if (!"".Equals(madot))            {
                 sql += " AND dot.MADOT LIKE '" + madot + "%'";
             }
-            if (!"1/1/0001".Equals(ngaylap.ToShortDateString())){
+            if (!"1/1/0001".Equals(ngaylap.ToShortDateString()) && !"01/01/0001".Equals(ngaylap.ToShortDateString()))
+            {
                 sql += " AND dot.NGAYLAPDON = '" + ngaylap.ToShortDateString() + "'";
             }
             if (!"".Equals(maloai)) {
                 sql += " AND dot.LOAIDON = '" + maloai + "'";            
             }
-
             sql += " ORDER BY dot.CREATEDATE DESC ";
-            SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
-            DataTable table = new DataTable();
-            adapter.Fill(table);
-            db.Connection.Close();
-            return table;
+            log.Error(sql);
+            return DAL.LinQConnection.getDataTable(sql); 
         }
 
         public static DataTable getListtMa_Dot()
         {
-            TanHoaDataContext db = new TanHoaDataContext();
-            db.Connection.Open();
+          
             string sql = " SELECT MADOT , (MADOT + '   '+  TENLOAI) as 'TEND'";            
             sql += " FROM DOT_NHAN_DON dot, LOAI_HOSO loai";
             sql += " WHERE loai.MALOAI = dot.LOAIDON";
             sql += " ORDER BY dot.CREATEDATE DESC ";
-            SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
-            DataTable table = new DataTable();
-            adapter.Fill(table);
-            db.Connection.Close();
-            return table;
+
+            return DAL.LinQConnection.getDataTable(sql); 
         }
         public static DataTable getListtMa_Dot_NoChuyen()
         {
-            TanHoaDataContext db = new TanHoaDataContext();
-            db.Connection.Open();
+          
             string sql = " SELECT MADOT , (MADOT + '   '+  TENLOAI) as 'TEND'";
             sql += " FROM DOT_NHAN_DON dot, LOAI_HOSO loai";
             sql += " WHERE loai.MALOAI = dot.LOAIDON AND CHUYENDON = 'False'";
             sql += " ORDER BY dot.CREATEDATE DESC ";
-            SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
-            DataTable table = new DataTable();
-            adapter.Fill(table);
-            db.Connection.Close();
-            return table;
+
+            return DAL.LinQConnection.getDataTable(sql); 
         }
         public static DataTable getListtMa_Dot_DaChuyen()
         {
-            TanHoaDataContext db = new TanHoaDataContext();
-            db.Connection.Open();
+            
             string sql = " SELECT MADOT , (MADOT + '   '+  TENLOAI) as 'TEND'";
             sql += " FROM DOT_NHAN_DON dot, LOAI_HOSO loai";
             sql += " WHERE loai.MALOAI = dot.LOAIDON AND CHUYENDON = 'True'";
             sql += " ORDER BY MADOT ASC ";
-            SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
-            DataTable table = new DataTable();
-            adapter.Fill(table);
-            db.Connection.Close();
-            return table;
+            return DAL.LinQConnection.getDataTable(sql); 
         }
         public static DataTable getListChuaChuyen()
         {
-            TanHoaDataContext db = new TanHoaDataContext();
-            db.Connection.Open();
+            
             string sql = " SELECT MADOT , NGAYLAPDON= CONVERT(VARCHAR(10),NGAYLAPDON,103), TENLOAI ";
             sql += " FROM DOT_NHAN_DON dot, LOAI_HOSO loai";
             sql += " WHERE loai.MALOAI = dot.LOAIDON AND CHUYENDON = 'False'";
             sql += " ORDER BY dot.CREATEDATE DESC";
-            SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
-            DataTable table = new DataTable();
-            adapter.Fill(table);
-            db.Connection.Close();
-            return table;
+            return DAL.LinQConnection.getDataTable(sql); 
         }
         
      }

@@ -723,6 +723,12 @@
     <Compile Include="View\Users\KEHOACH\DOTTHICONG\frmDialogPrintting.Designer.cs">
       <DependentUpon>frmDialogPrintting.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Users\KEHOACH\XINPHEPDD\tab_XinPhepDuAn.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Users\KEHOACH\XINPHEPDD\tab_XinPhepDuAn.Designer.cs">
+      <DependentUpon>tab_XinPhepDuAn.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Users\KEHOACH\XINPHEPDD\frmDialogPrintting.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1326,6 +1332,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\KEHOACH\DOTTHICONG\frmDialogPrintting.resx">
       <DependentUpon>frmDialogPrintting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\KEHOACH\XINPHEPDD\tab_XinPhepDuAn.resx">
+      <DependentUpon>tab_XinPhepDuAn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\KEHOACH\XINPHEPDD\frmDialogPrintting.resx">
       <DependentUpon>frmDialogPrintting.cs</DependentUpon>

@@ -192,7 +192,7 @@ namespace TanHoaWater.Database
     #endregion
 		
 		public TanHoaDataContext() : 
-				base(global::TanHoaWater.Properties.Settings.Default.TANHOA_WATERConnectionString1, mappingSource)
+				base(global::TanHoaWater.Properties.Settings.Default.TANHOA_WATERConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
