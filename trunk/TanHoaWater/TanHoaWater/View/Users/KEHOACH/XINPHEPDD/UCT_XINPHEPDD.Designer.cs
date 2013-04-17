@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new DevComponents.DotNetBar.TabControl();
             this.tabDanhSachDot = new DevComponents.DotNetBar.TabControlPanel();
             this.btExport = new DevComponents.DotNetBar.ButtonX();
@@ -43,8 +43,14 @@
             this.dateNgayCoPhep = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.dateNgayLap = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.btCapNhat = new DevComponents.DotNetBar.ButtonX();
-            this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
+            this.btHoSoDuAn = new DevComponents.DotNetBar.ButtonX();
             this.dataDanhSachDaoDuong = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.gridSoDot = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gridNoiCapPhep = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gridNgayLap = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gridMaQuanLy = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gridNgayCoPhep = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MADOTXP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.reflectionLabel2 = new DevComponents.DotNetBar.Controls.ReflectionLabel();
             this.lbPaing = new System.Windows.Forms.Label();
             this.cbNoiCap = new System.Windows.Forms.ComboBox();
@@ -70,13 +76,9 @@
             this.tabItem1 = new DevComponents.DotNetBar.TabItem(this.components);
             this.tabCapNhatDS = new DevComponents.DotNetBar.TabControlPanel();
             this.tabItem2 = new DevComponents.DotNetBar.TabItem(this.components);
+            this.tabHoSoDuAn = new DevComponents.DotNetBar.TabControlPanel();
+            this.tabItem3 = new DevComponents.DotNetBar.TabItem(this.components);
             this.reflectionLabel1 = new DevComponents.DotNetBar.Controls.ReflectionLabel();
-            this.gridSoDot = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gridNoiCapPhep = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gridNgayLap = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gridMaQuanLy = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gridNgayCoPhep = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MADOTXP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.tabControl1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabDanhSachDot.SuspendLayout();
@@ -110,6 +112,7 @@
             new DevComponents.DotNetBar.BackgroundColorBlend(System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(254))))), 1F)});
             this.tabControl1.ColorScheme.TabItemSelectedText = System.Drawing.Color.Red;
             this.tabControl1.Controls.Add(this.tabDanhSachDot);
+            this.tabControl1.Controls.Add(this.tabHoSoDuAn);
             this.tabControl1.Controls.Add(this.tabCapNhatDS);
             this.tabControl1.Location = new System.Drawing.Point(3, 36);
             this.tabControl1.Name = "tabControl1";
@@ -121,6 +124,7 @@
             this.tabControl1.TabLayoutType = DevComponents.DotNetBar.eTabLayoutType.FixedWithNavigationBox;
             this.tabControl1.Tabs.Add(this.tabItem1);
             this.tabControl1.Tabs.Add(this.tabItem2);
+            this.tabControl1.Tabs.Add(this.tabItem3);
             this.tabControl1.Text = "tabControl1";
             // 
             // tabDanhSachDot
@@ -130,7 +134,7 @@
             this.tabDanhSachDot.Controls.Add(this.dateNgayCoPhep);
             this.tabDanhSachDot.Controls.Add(this.dateNgayLap);
             this.tabDanhSachDot.Controls.Add(this.btCapNhat);
-            this.tabDanhSachDot.Controls.Add(this.buttonX1);
+            this.tabDanhSachDot.Controls.Add(this.btHoSoDuAn);
             this.tabDanhSachDot.Controls.Add(this.dataDanhSachDaoDuong);
             this.tabDanhSachDot.Controls.Add(this.reflectionLabel2);
             this.tabDanhSachDot.Controls.Add(this.lbPaing);
@@ -172,9 +176,9 @@
             this.btExport.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btExport.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btExport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btExport.Location = new System.Drawing.Point(754, 394);
+            this.btExport.Location = new System.Drawing.Point(756, 434);
             this.btExport.Name = "btExport";
-            this.btExport.Size = new System.Drawing.Size(175, 26);
+            this.btExport.Size = new System.Drawing.Size(173, 26);
             this.btExport.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
             this.btExport.TabIndex = 710;
             this.btExport.Text = "Xuất File Gửi Xin Phép";
@@ -298,20 +302,19 @@
             this.btCapNhat.Visible = false;
             this.btCapNhat.Click += new System.EventHandler(this.btCapNhat_Click);
             // 
-            // buttonX1
+            // btHoSoDuAn
             // 
-            this.buttonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX1.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonX1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.buttonX1.Location = new System.Drawing.Point(756, 477);
-            this.buttonX1.Name = "buttonX1";
-            this.buttonX1.Size = new System.Drawing.Size(175, 26);
-            this.buttonX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
-            this.buttonX1.TabIndex = 706;
-            this.buttonX1.Text = "Thư Mời Đóng Tiền";
-            this.buttonX1.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
-            this.buttonX1.Visible = false;
+            this.btHoSoDuAn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btHoSoDuAn.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btHoSoDuAn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btHoSoDuAn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btHoSoDuAn.Location = new System.Drawing.Point(756, 325);
+            this.btHoSoDuAn.Name = "btHoSoDuAn";
+            this.btHoSoDuAn.Size = new System.Drawing.Size(175, 26);
+            this.btHoSoDuAn.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
+            this.btHoSoDuAn.TabIndex = 706;
+            this.btHoSoDuAn.Text = "Cập Nhật HS Dự Án";
+            this.btHoSoDuAn.Click += new System.EventHandler(this.btHoSoDuAn_Click);
             // 
             // dataDanhSachDaoDuong
             // 
@@ -320,14 +323,14 @@
             this.dataDanhSachDaoDuong.AllowUserToOrderColumns = true;
             this.dataDanhSachDaoDuong.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
             this.dataDanhSachDaoDuong.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 12F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataDanhSachDaoDuong.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Times New Roman", 12F);
+            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataDanhSachDaoDuong.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
             this.dataDanhSachDaoDuong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataDanhSachDaoDuong.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.gridSoDot,
@@ -336,31 +339,88 @@
             this.gridMaQuanLy,
             this.gridNgayCoPhep,
             this.MADOTXP});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Times New Roman", 12F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataDanhSachDaoDuong.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Times New Roman", 12F);
+            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataDanhSachDaoDuong.DefaultCellStyle = dataGridViewCellStyle20;
             this.dataDanhSachDaoDuong.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dataDanhSachDaoDuong.Location = new System.Drawing.Point(16, 82);
             this.dataDanhSachDaoDuong.MultiSelect = false;
             this.dataDanhSachDaoDuong.Name = "dataDanhSachDaoDuong";
             this.dataDanhSachDaoDuong.ReadOnly = true;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Times New Roman", 12F);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataDanhSachDaoDuong.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Times New Roman", 12F);
+            dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataDanhSachDaoDuong.RowHeadersDefaultCellStyle = dataGridViewCellStyle21;
             this.dataDanhSachDaoDuong.RowHeadersWidth = 25;
             this.dataDanhSachDaoDuong.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataDanhSachDaoDuong.Size = new System.Drawing.Size(722, 459);
             this.dataDanhSachDaoDuong.TabIndex = 704;
+            // 
+            // gridSoDot
+            // 
+            this.gridSoDot.DataPropertyName = "MADOTXP";
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.gridSoDot.DefaultCellStyle = dataGridViewCellStyle16;
+            this.gridSoDot.HeaderText = "Số Đợt";
+            this.gridSoDot.Name = "gridSoDot";
+            this.gridSoDot.ReadOnly = true;
+            this.gridSoDot.Width = 120;
+            // 
+            // gridNoiCapPhep
+            // 
+            this.gridNoiCapPhep.DataPropertyName = "NOICAPPHEP";
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.gridNoiCapPhep.DefaultCellStyle = dataGridViewCellStyle17;
+            this.gridNoiCapPhep.HeaderText = "Nơi C.P";
+            this.gridNoiCapPhep.Name = "gridNoiCapPhep";
+            this.gridNoiCapPhep.ReadOnly = true;
+            this.gridNoiCapPhep.Width = 125;
+            // 
+            // gridNgayLap
+            // 
+            this.gridNgayLap.DataPropertyName = "NGAYLAP";
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle18.Format = "dd/MM/yyyy";
+            this.gridNgayLap.DefaultCellStyle = dataGridViewCellStyle18;
+            this.gridNgayLap.HeaderText = "Ngày Lập";
+            this.gridNgayLap.Name = "gridNgayLap";
+            this.gridNgayLap.ReadOnly = true;
+            // 
+            // gridMaQuanLy
+            // 
+            this.gridMaQuanLy.DataPropertyName = "MAQUANLY";
+            this.gridMaQuanLy.HeaderText = "Mã Quản Lý Đợt CPĐĐ";
+            this.gridMaQuanLy.Name = "gridMaQuanLy";
+            this.gridMaQuanLy.ReadOnly = true;
+            this.gridMaQuanLy.Width = 220;
+            // 
+            // gridNgayCoPhep
+            // 
+            this.gridNgayCoPhep.DataPropertyName = "NGAYCOPHEP";
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle19.Format = "dd/MM/yyyy";
+            this.gridNgayCoPhep.DefaultCellStyle = dataGridViewCellStyle19;
+            this.gridNgayCoPhep.HeaderText = "Ngày Có Phép";
+            this.gridNgayCoPhep.Name = "gridNgayCoPhep";
+            this.gridNgayCoPhep.ReadOnly = true;
+            this.gridNgayCoPhep.Width = 125;
+            // 
+            // MADOTXP
+            // 
+            this.MADOTXP.DataPropertyName = "MADOT";
+            this.MADOTXP.HeaderText = "MADOTXP";
+            this.MADOTXP.Name = "MADOTXP";
+            this.MADOTXP.ReadOnly = true;
+            this.MADOTXP.Visible = false;
             // 
             // reflectionLabel2
             // 
@@ -518,7 +578,7 @@
             this.btInDanhSachMienPhep.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btInDanhSachMienPhep.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btInDanhSachMienPhep.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btInDanhSachMienPhep.Location = new System.Drawing.Point(756, 362);
+            this.btInDanhSachMienPhep.Location = new System.Drawing.Point(756, 402);
             this.btInDanhSachMienPhep.Name = "btInDanhSachMienPhep";
             this.btInDanhSachMienPhep.Size = new System.Drawing.Size(175, 26);
             this.btInDanhSachMienPhep.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
@@ -532,7 +592,7 @@
             this.inDanhSachCoPhep.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.inDanhSachCoPhep.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.inDanhSachCoPhep.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.inDanhSachCoPhep.Location = new System.Drawing.Point(756, 329);
+            this.inDanhSachCoPhep.Location = new System.Drawing.Point(756, 369);
             this.inDanhSachCoPhep.Name = "inDanhSachCoPhep";
             this.inDanhSachCoPhep.Size = new System.Drawing.Size(175, 26);
             this.inDanhSachCoPhep.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
@@ -547,7 +607,7 @@
             this.huyDotXP.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.huyDotXP.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.huyDotXP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.huyDotXP.Location = new System.Drawing.Point(754, 445);
+            this.huyDotXP.Location = new System.Drawing.Point(756, 466);
             this.huyDotXP.Name = "huyDotXP";
             this.huyDotXP.Size = new System.Drawing.Size(175, 26);
             this.huyDotXP.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
@@ -562,7 +622,7 @@
             this.capnhatDSChoDot.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.capnhatDSChoDot.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.capnhatDSChoDot.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.capnhatDSChoDot.Location = new System.Drawing.Point(756, 292);
+            this.capnhatDSChoDot.Location = new System.Drawing.Point(756, 284);
             this.capnhatDSChoDot.Name = "capnhatDSChoDot";
             this.capnhatDSChoDot.Size = new System.Drawing.Size(175, 26);
             this.capnhatDSChoDot.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
@@ -718,6 +778,30 @@
             this.tabItem2.Text = "Cập Nhật Danh Sách Theo Đợt";
             this.tabItem2.Click += new System.EventHandler(this.tabItem2_Click);
             // 
+            // tabHoSoDuAn
+            // 
+            this.tabHoSoDuAn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabHoSoDuAn.Location = new System.Drawing.Point(0, 27);
+            this.tabHoSoDuAn.Name = "tabHoSoDuAn";
+            this.tabHoSoDuAn.Padding = new System.Windows.Forms.Padding(1);
+            this.tabHoSoDuAn.Size = new System.Drawing.Size(982, 560);
+            this.tabHoSoDuAn.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(254)))));
+            this.tabHoSoDuAn.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(188)))), ((int)(((byte)(227)))));
+            this.tabHoSoDuAn.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.tabHoSoDuAn.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(165)))), ((int)(((byte)(199)))));
+            this.tabHoSoDuAn.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right)
+                        | DevComponents.DotNetBar.eBorderSide.Bottom)));
+            this.tabHoSoDuAn.Style.GradientAngle = 90;
+            this.tabHoSoDuAn.TabIndex = 3;
+            this.tabHoSoDuAn.TabItem = this.tabItem3;
+            // 
+            // tabItem3
+            // 
+            this.tabItem3.AttachedControl = this.tabHoSoDuAn;
+            this.tabItem3.Name = "tabItem3";
+            this.tabItem3.Text = "Cập Nhật HS Dự Án";
+            this.tabItem3.Click += new System.EventHandler(this.tabItem3_Click);
+            // 
             // reflectionLabel1
             // 
             this.reflectionLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -728,63 +812,6 @@
             this.reflectionLabel1.Size = new System.Drawing.Size(393, 32);
             this.reflectionLabel1.TabIndex = 670;
             this.reflectionLabel1.Text = "<font color=\"#ED1C24\"><b><font size=\"+6\">\r\nXIN PHÉP ĐÀO ĐƯỜNG</font></b></font>";
-            // 
-            // gridSoDot
-            // 
-            this.gridSoDot.DataPropertyName = "MADOTXP";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.gridSoDot.DefaultCellStyle = dataGridViewCellStyle2;
-            this.gridSoDot.HeaderText = "Số Đợt";
-            this.gridSoDot.Name = "gridSoDot";
-            this.gridSoDot.ReadOnly = true;
-            this.gridSoDot.Width = 120;
-            // 
-            // gridNoiCapPhep
-            // 
-            this.gridNoiCapPhep.DataPropertyName = "NOICAPPHEP";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.gridNoiCapPhep.DefaultCellStyle = dataGridViewCellStyle3;
-            this.gridNoiCapPhep.HeaderText = "Nơi C.P";
-            this.gridNoiCapPhep.Name = "gridNoiCapPhep";
-            this.gridNoiCapPhep.ReadOnly = true;
-            this.gridNoiCapPhep.Width = 125;
-            // 
-            // gridNgayLap
-            // 
-            this.gridNgayLap.DataPropertyName = "NGAYLAP";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.Format = "dd/MM/yyyy";
-            this.gridNgayLap.DefaultCellStyle = dataGridViewCellStyle4;
-            this.gridNgayLap.HeaderText = "Ngày Lập";
-            this.gridNgayLap.Name = "gridNgayLap";
-            this.gridNgayLap.ReadOnly = true;
-            // 
-            // gridMaQuanLy
-            // 
-            this.gridMaQuanLy.DataPropertyName = "MAQUANLY";
-            this.gridMaQuanLy.HeaderText = "Mã Quản Lý Đợt CPĐĐ";
-            this.gridMaQuanLy.Name = "gridMaQuanLy";
-            this.gridMaQuanLy.ReadOnly = true;
-            this.gridMaQuanLy.Width = 220;
-            // 
-            // gridNgayCoPhep
-            // 
-            this.gridNgayCoPhep.DataPropertyName = "NGAYCOPHEP";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.Format = "dd/MM/yyyy";
-            this.gridNgayCoPhep.DefaultCellStyle = dataGridViewCellStyle5;
-            this.gridNgayCoPhep.HeaderText = "Ngày Có Phép";
-            this.gridNgayCoPhep.Name = "gridNgayCoPhep";
-            this.gridNgayCoPhep.ReadOnly = true;
-            this.gridNgayCoPhep.Width = 125;
-            // 
-            // MADOTXP
-            // 
-            this.MADOTXP.DataPropertyName = "MADOT";
-            this.MADOTXP.HeaderText = "MADOTXP";
-            this.MADOTXP.Name = "MADOTXP";
-            this.MADOTXP.ReadOnly = true;
-            this.MADOTXP.Visible = false;
             // 
             // UCT_XINPHEPDD
             // 
@@ -840,7 +867,7 @@
         private DevComponents.DotNetBar.LabelX labelX4;
         private DevComponents.DotNetBar.LabelX labelX2;
         private DevComponents.DotNetBar.LabelX labelX1;
-        private DevComponents.DotNetBar.ButtonX buttonX1;
+        private DevComponents.DotNetBar.ButtonX btHoSoDuAn;
         private DevComponents.DotNetBar.ButtonX btCapNhat;
         private DevComponents.Editors.DateTimeAdv.DateTimeInput dateNgayLap;
         private DevComponents.DotNetBar.ButtonX btCapNhatCoPhep;
@@ -854,5 +881,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn gridMaQuanLy;
         private System.Windows.Forms.DataGridViewTextBoxColumn gridNgayCoPhep;
         private System.Windows.Forms.DataGridViewTextBoxColumn MADOTXP;
+        private DevComponents.DotNetBar.TabControlPanel tabHoSoDuAn;
+        private DevComponents.DotNetBar.TabItem tabItem3;
     }
 }

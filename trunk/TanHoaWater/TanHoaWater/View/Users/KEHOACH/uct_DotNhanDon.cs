@@ -126,7 +126,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
             }
             PageTotal();
             this.mainGrid.DataSource = DAL.C_DotNhanDon.getList(FirstRow, pageSize);
-            Utilities.DataGridV.formatRows(mainGrid);
+           
         }
         private void next_Click(object sender, EventArgs e)
         {
@@ -361,7 +361,10 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
 
         private void txtsoDot_KeyPress(object sender, KeyPressEventArgs e)
         {
-            this.txtsoDot.Text = this.txtsoDot.Text.ToUpper();
+            if (e.KeyChar == 13) {
+                this.mainGrid.DataSource = DAL.C_DotNhanDon.Search(this.txtsoDot.Text, this.createDate.Value, this.cbLoaiHS.SelectedValue.ToString());
+                Utilities.DataGridV.formatRows(mainGrid);
+            }
 
         }
 
@@ -436,17 +439,17 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
             {
                 log.Error(ex.Message);
             }
-            
-        }
-
-        private void txtsoDot_KeyPress_1(object sender, KeyPressEventArgs e)
-        {
 
         }
 
         private void buttonX1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtsoDot_Leave(object sender, EventArgs e)
+        {
+            this.txtsoDot.Text = this.txtsoDot.Text.ToUpper();
         }
     }
 }

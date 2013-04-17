@@ -115,7 +115,7 @@ namespace TanHoaWater.DAL
             TanHoaDataContext db = new TanHoaDataContext();
             db.Connection.Open();
             string sql = " SELECT MADOTTC,NGAYLAP, LOAIBANGKE FROM KH_DOTTHICONG";
-            sql += " ORDER BY NGAYLAP DESC ";
+            sql += " ORDER BY NGAYLAP DESC, LOAIBANGKE DESC";
             SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             DataSet dataset = new DataSet();
             adapter.Fill(dataset, FirstRow, pageSize, "TABLE");
@@ -127,7 +127,7 @@ namespace TanHoaWater.DAL
             TanHoaDataContext db = new TanHoaDataContext();
             db.Connection.Open();
             string sql = " SELECT MADOTTC,NGAYLAP, LOAIBANGKE FROM KH_DOTTHICONG WHERE MADOTTC LIKE N'%" + madot + "%'";
-            sql += " ORDER BY NGAYLAP DESC ";
+            sql += " ORDER BY LOAIBANGKE DESC,NGAYLAP DESC  ";
             SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             DataSet dataset = new DataSet();
             adapter.Fill(dataset, "TABLE");
