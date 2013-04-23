@@ -76,11 +76,9 @@
             this.labelX6 = new DevComponents.DotNetBar.LabelX();
             this.groupPanel3 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.textBoxX1 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtDonGiamSatTC = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX7 = new DevComponents.DotNetBar.LabelX();
             this.donvigiamsat = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buttonX3 = new DevComponents.DotNetBar.ButtonX();
             this.groupPanel4 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -103,6 +101,10 @@
             this.labelX8 = new DevComponents.DotNetBar.LabelX();
             this.labelX9 = new DevComponents.DotNetBar.LabelX();
             this.labelX10 = new DevComponents.DotNetBar.LabelX();
+            this.btCapNhat = new DevComponents.DotNetBar.ButtonX();
+            this.gstcID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gstcdv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btXoa = new DevComponents.DotNetBar.ButtonX();
             this.groupPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dottc_NgayKyhd)).BeginInit();
@@ -740,7 +742,9 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Transparent;
-            this.panel3.Controls.Add(this.textBoxX1);
+            this.panel3.Controls.Add(this.btXoa);
+            this.panel3.Controls.Add(this.btCapNhat);
+            this.panel3.Controls.Add(this.txtDonGiamSatTC);
             this.panel3.Controls.Add(this.labelX7);
             this.panel3.Controls.Add(this.donvigiamsat);
             this.panel3.Controls.Add(this.buttonX3);
@@ -750,16 +754,16 @@
             this.panel3.Size = new System.Drawing.Size(471, 214);
             this.panel3.TabIndex = 0;
             // 
-            // textBoxX1
+            // txtDonGiamSatTC
             // 
             // 
             // 
             // 
-            this.textBoxX1.Border.Class = "TextBoxBorder";
-            this.textBoxX1.Location = new System.Drawing.Point(98, 12);
-            this.textBoxX1.Name = "textBoxX1";
-            this.textBoxX1.Size = new System.Drawing.Size(229, 26);
-            this.textBoxX1.TabIndex = 5;
+            this.txtDonGiamSatTC.Border.Class = "TextBoxBorder";
+            this.txtDonGiamSatTC.Location = new System.Drawing.Point(98, 12);
+            this.txtDonGiamSatTC.Name = "txtDonGiamSatTC";
+            this.txtDonGiamSatTC.Size = new System.Drawing.Size(370, 26);
+            this.txtDonGiamSatTC.TabIndex = 5;
             // 
             // labelX7
             // 
@@ -776,8 +780,8 @@
             this.donvigiamsat.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.donvigiamsat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.donvigiamsat.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2});
+            this.gstcID,
+            this.gstcdv});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -787,40 +791,22 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.donvigiamsat.DefaultCellStyle = dataGridViewCellStyle3;
             this.donvigiamsat.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
-            this.donvigiamsat.Location = new System.Drawing.Point(17, 44);
+            this.donvigiamsat.Location = new System.Drawing.Point(17, 70);
             this.donvigiamsat.MultiSelect = false;
             this.donvigiamsat.Name = "donvigiamsat";
             this.donvigiamsat.ReadOnly = true;
             this.donvigiamsat.RowHeadersWidth = 30;
             this.donvigiamsat.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.donvigiamsat.Size = new System.Drawing.Size(452, 167);
+            this.donvigiamsat.Size = new System.Drawing.Size(452, 141);
             this.donvigiamsat.TabIndex = 3;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "ID";
-            this.dataGridViewTextBoxColumn1.Frozen = true;
-            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Visible = false;
-            this.dataGridViewTextBoxColumn1.Width = 40;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "TENDONVI";
-            this.dataGridViewTextBoxColumn2.Frozen = true;
-            this.dataGridViewTextBoxColumn2.HeaderText = "Tên Đơn Vị";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 500;
+            this.donvigiamsat.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.donvigiamsat_CellClick);
             // 
             // buttonX3
             // 
             this.buttonX3.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.buttonX3.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.buttonX3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.buttonX3.Location = new System.Drawing.Point(393, 13);
+            this.buttonX3.Location = new System.Drawing.Point(206, 42);
             this.buttonX3.Name = "buttonX3";
             this.buttonX3.Size = new System.Drawing.Size(75, 23);
             this.buttonX3.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
@@ -1121,6 +1107,51 @@
             this.labelX10.TabIndex = 0;
             this.labelX10.Text = "Tên Công Ty";
             // 
+            // btCapNhat
+            // 
+            this.btCapNhat.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btCapNhat.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btCapNhat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btCapNhat.Location = new System.Drawing.Point(287, 42);
+            this.btCapNhat.Name = "btCapNhat";
+            this.btCapNhat.Size = new System.Drawing.Size(75, 23);
+            this.btCapNhat.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
+            this.btCapNhat.TabIndex = 6;
+            this.btCapNhat.Text = "Cập Nhật";
+            this.btCapNhat.Click += new System.EventHandler(this.btCapNhat_Click);
+            // 
+            // gstcID
+            // 
+            this.gstcID.DataPropertyName = "ID";
+            this.gstcID.Frozen = true;
+            this.gstcID.HeaderText = "ID";
+            this.gstcID.Name = "gstcID";
+            this.gstcID.ReadOnly = true;
+            this.gstcID.Visible = false;
+            this.gstcID.Width = 40;
+            // 
+            // gstcdv
+            // 
+            this.gstcdv.DataPropertyName = "TENDONVI";
+            this.gstcdv.Frozen = true;
+            this.gstcdv.HeaderText = "Tên Đơn Vị";
+            this.gstcdv.Name = "gstcdv";
+            this.gstcdv.ReadOnly = true;
+            this.gstcdv.Width = 500;
+            // 
+            // btXoa
+            // 
+            this.btXoa.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btXoa.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btXoa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btXoa.Location = new System.Drawing.Point(368, 44);
+            this.btXoa.Name = "btXoa";
+            this.btXoa.Size = new System.Drawing.Size(75, 23);
+            this.btXoa.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
+            this.btXoa.TabIndex = 7;
+            this.btXoa.Text = "Xóa";
+            this.btXoa.Click += new System.EventHandler(this.btXoa_Click);
+            // 
             // tab_DonViTCTLMD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -1192,10 +1223,8 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.DataGridView donvigiamsat;
         private DevComponents.DotNetBar.ButtonX buttonX3;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX1;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtDonGiamSatTC;
         private DevComponents.DotNetBar.LabelX labelX7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private DevComponents.DotNetBar.Controls.GroupPanel groupPanel4;
         private System.Windows.Forms.Panel panel4;
         private DevComponents.Editors.DateTimeAdv.DateTimeInput gstl_NgayKyHD;
@@ -1226,5 +1255,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
+        private DevComponents.DotNetBar.ButtonX btCapNhat;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gstcID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gstcdv;
+        private DevComponents.DotNetBar.ButtonX btXoa;
     }
 }

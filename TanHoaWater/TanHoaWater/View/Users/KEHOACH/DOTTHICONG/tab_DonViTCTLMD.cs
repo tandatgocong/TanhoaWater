@@ -361,12 +361,12 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
         {
             try
             {
-                if(this.textBoxX1.Text.Equals("")){
+                if(this.txtDonGiamSatTC.Text.Equals("")){
                     MessageBox.Show(this, "Nhập Tên Đơn Vị Giám Sát Thi Công. ", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    this.textBoxX1.Focus();
+                    this.txtDonGiamSatTC.Focus();
                 }else{
                     KH_DONVIGIAMSAT dovgs = new KH_DONVIGIAMSAT();
-                    dovgs.TENDONVI = this.textBoxX1.Text;
+                    dovgs.TENDONVI = this.txtDonGiamSatTC.Text;
                     DAL.C_KH_DonViTC.AddDonViGiamSat(dovgs);
                     this.donvigiamsat.DataSource = DAL.C_KH_DotThiCong.DonViGiamSat();
                 }
@@ -436,6 +436,67 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
                 }
                 this.gridDonViGiamSatTL.DataSource = DAL.C_KH_DonViTC.getDonViGiamSatTL();
             }
+        }
+
+        string id_donvigiamsattc = "";
+        private void btCapNhat_Click(object sender, EventArgs e)
+        {
+            string donvigs = this.txtDonGiamSatTC.Text;
+            if ("".Equals(donvigs))
+            {
+                MessageBox.Show(this, "Nhập Tên Đơn Vị Giám Sát ", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.dottc_tencongty.Focus();
+            }
+            
+            else
+            {
+                try
+                {
+                    KH_DONVIGIAMSAT dovtc = DAL.C_KH_DonViTC.findDVGiamSatID(int.Parse(id_donvigiamsattc));
+                    if (dovtc != null)
+                    {
+                        dovtc.TENDONVI = donvigs;
+                        DAL.C_KH_DonViTC.Update();
+                    
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(this, "Cập Hồ Sơ Đơn Vị Thi Công Bị Lỗi.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    log.Error("" + ex.Message);
+                }
+
+                this.donvigiamsat.DataSource = DAL.LinQConnection.getDataTable("SELECT * FROM KH_DONVIGIAMSAT ORDER BY ID DESC");
+            }
+        }
+
+        private void donvigiamsat_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                id_donvigiamsattc = donvigiamsat.Rows[e.RowIndex].Cells["gstcID"].Value + "";
+                this.txtDonGiamSatTC.Text = donvigiamsat.Rows[e.RowIndex].Cells["gstcdv"].Value + "";
+              
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+
+        private void btXoa_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DAL.LinQConnection.ExecuteCommand_("DELETE FROM KH_DONVIGIAMSAT WHERE ID='" + id_donvigiamsattc + "'");
+                this.donvigiamsat.DataSource = DAL.LinQConnection.getDataTable("SELECT * FROM KH_DONVIGIAMSAT ORDER BY ID DESC");
+                
+            }
+            catch (Exception)
+            {
+            }
+           
+            
         }
     }
 }
