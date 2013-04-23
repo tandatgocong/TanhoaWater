@@ -25,18 +25,23 @@ namespace TanHoaWater.DAL
                 //type==0 Tat Ca
                 //type==1 Theo ngay
                 //type==2 Theo dvtc
-                if (type == 1) {
+                if (type == 1)
+                {
                     sql = " SELECT hskh.MADOTTC,COUNT(hskh.SHS) as 'TLK', dvtc.TENCONGTY, ROUND(SUM(CPVATTU),0,0) as 'CPVATTU', ROUND(SUM(CPNHANCONG),0,0) as 'CPNHANCONG', ROUND(SUM(CPMAYTHICONG),0,0) as 'CPMAYTHICONG',ROUND(SUM(CHIPHITRUCTIEP),0,0) as 'CHIPHITRUCTIEP' ,ROUND(SUM(CHIPHICHUNG),0,0) as 'CHIPHICHUNG' ,ROUND(SUM(TAILAPMATDUONG),0,0) as 'TAILAPMATDUONG' ,ROUND(SUM(TONGIATRI),0,0) as 'TONGIATRI'  ,TUNGAY='', DENNGAY='', LOAIBANGKE=N'" + loaidon.ToUpper() + "' ";
                     sql += " FROM KH_HOSOKHACHHANG hskh,KH_DOTTHICONG dotc,KH_DONVITHICONG dvtc ";
                     sql += " WHERE dotc.MADOTTC=hskh.MADOTTC AND dotc.DONVITHICONG= dvtc.ID ";
                     sql += " AND LOAIBANGKE=N'" + loaidon + "' ";
-                } else if (type == 2) {
+                }
+                else if (type == 2)
+                {
                     sql = " SELECT hskh.MADOTTC,COUNT(hskh.SHS) as 'TLK', dvtc.TENCONGTY, ROUND(SUM(CPVATTU),0,0) as 'CPVATTU', ROUND(SUM(CPNHANCONG),0,0) as 'CPNHANCONG', ROUND(SUM(CPMAYTHICONG),0,0) as 'CPMAYTHICONG',ROUND(SUM(CHIPHITRUCTIEP),0,0) as 'CHIPHITRUCTIEP' ,ROUND(SUM(CHIPHICHUNG),0,0) as 'CHIPHICHUNG' ,ROUND(SUM(TAILAPMATDUONG),0,0) as 'TAILAPMATDUONG' ,ROUND(SUM(TONGIATRI),0,0) as 'TONGIATRI'  ,TUNGAY='" + tungay + "', DENNGAY='" + denngay + "', LOAIBANGKE=N'" + loaidon.ToUpper() + "' ";
                     sql += " FROM KH_HOSOKHACHHANG hskh,KH_DOTTHICONG dotc,KH_DONVITHICONG dvtc ";
                     sql += " WHERE dotc.MADOTTC=hskh.MADOTTC AND dotc.DONVITHICONG= dvtc.ID ";
                     sql += " AND LOAIBANGKE=N'" + loaidon + "' ";
                     sql += " AND CONVERT(DATETIME,dotc.NGAYLAP,103) BETWEEN CONVERT(DATETIME,'" + tungay + "',103) AND CONVERT(DATETIME,'" + denngay + "',103) ";
-                } else if (type == 3) {
+                }
+                else if (type == 3)
+                {
                     sql = " SELECT hskh.MADOTTC,COUNT(hskh.SHS) as 'TLK', dvtc.TENCONGTY, ROUND(SUM(CPVATTU),0,0) as 'CPVATTU', ROUND(SUM(CPNHANCONG),0,0) as 'CPNHANCONG', ROUND(SUM(CPMAYTHICONG),0,0) as 'CPMAYTHICONG',ROUND(SUM(CHIPHITRUCTIEP),0,0) as 'CHIPHITRUCTIEP' ,ROUND(SUM(CHIPHICHUNG),0,0) as 'CHIPHICHUNG' ,ROUND(SUM(TAILAPMATDUONG),0,0) as 'TAILAPMATDUONG' ,ROUND(SUM(TONGIATRI),0,0) as 'TONGIATRI'  ,TUNGAY='" + tctungay + "', DENNGAY='" + tcdenngay + "', LOAIBANGKE=N'" + loaidon.ToUpper() + "' ";
                     sql += " FROM KH_HOSOKHACHHANG hskh,KH_DOTTHICONG dotc,KH_DONVITHICONG dvtc ";
                     sql += " WHERE dotc.MADOTTC=hskh.MADOTTC AND dotc.DONVITHICONG= dvtc.ID ";
@@ -57,55 +62,76 @@ namespace TanHoaWater.DAL
         }
 
 
-        public static DataSet BC_TONGKET(string loaidon, int type, string maphuong, string maquan, string tungay,string denngay)
+        public static DataSet BC_TONGKET(string loaidon, int type, string maphuong, string maquan, string tungay, string denngay)
         {
             try
             {
-                string sqltongket = "SELECT COUNT(KHVT.KH_SHS) as 'HOSO', COUNT(KHVT.TTK_SHS) as 'GIAOKT',  COUNT(KHVT.HOANTATTK) as 'HOANTATTK',  COUNT(KHVT.TRONGAITHIETKE) as 'TRONGAITHIETKE', ";
-		        sqltongket +=" COUNT(KHVT.TTK_SHS) - (COUNT(KHVT.HOANTATTK)+COUNT(KHVT.TRONGAITHIETKE)) as 'TONTK',  COUNT(KHVT.NGAYDONGTIEN) as 'DONGTIEN', ";
-		        sqltongket +=" COUNT(KHVT.HOANTATTK) - COUNT(KHVT.NGAYDONGTIEN) as 'MIENPHI', COUNT(KH_HOSOKHACHHANG.MADOTTC) as 'CHUYENTC',";
-		        sqltongket +=" COUNT(KH_HOSOKHACHHANG.SHS)-COUNT(KH_HOSOKHACHHANG.MADOTTC) as 'TONTC',  COUNT(KH_HOSOKHACHHANG.HOANCONG) as 'HOANCONG' ";
-                sqltongket +=" FROM (SELECT DON_KHACHHANG.LOAIHOSO,DON_KHACHHANG.NGAYNHAN,DON_KHACHHANG.PHUONG,DON_KHACHHANG.QUAN, DON_KHACHHANG.SHS as 'KH_SHS',TOTHIETKE.SHS as'TTK_SHS' ,TOTHIETKE.HOANTATTK,TOTHIETKE.TRONGAITHIETKE,DON_KHACHHANG.NGAYDONGTIEN ";
-		        sqltongket +=" FROM  DON_KHACHHANG ";
-                sqltongket +=" LEFT JOIN TOTHIETKE";
-		        sqltongket +=" ON DON_KHACHHANG.SHS = TOTHIETKE.SHS ) as KHVT ";
-                sqltongket +=" LEFT JOIN KH_HOSOKHACHHANG";
-                sqltongket +=" ON KHVT.KH_SHS=KH_HOSOKHACHHANG.SHS";
-                sqltongket += " WHERE KHVT.LOAIHOSO=N'" + loaidon + "' AND CONVERT(DATETIME,KHVT.NGAYNHAN,103) BETWEEN CONVERT(DATETIME,'" + tungay + "',103) AND CONVERT(DATETIME,'" + denngay + "',103) ";
+
+
+
+                string sqltongket = " SELECT COUNT(KH_SHS) as 'HOSO', ";
+                sqltongket += " 	COUNT(TTK_SHS) as 'GIAOKT',";
+                sqltongket += " 		COUNT(CASE WHEN HOANTATTK =1  AND (TRONGAITHIETKE IS NULL OR TRONGAITHIETKE=0) THEN 1 ELSE NULL END) as 'HOANTATTK',";
+                sqltongket += " 		COUNT(CASE WHEN TRONGAITHIETKE =1  THEN 1 ELSE NULL END ) as 'TRONGAITHIETKE',";
+                sqltongket += " 		COUNT(KH_SHS) - (COUNT(CASE WHEN HOANTATTK =1  AND (TRONGAITHIETKE IS NULL OR TRONGAITHIETKE=0) THEN 1 ELSE NULL END) + COUNT(CASE WHEN TRONGAITHIETKE =1  THEN 1 ELSE NULL END )) as 'TONTK',  ";
+                sqltongket += " 		COUNT(CASE WHEN NGAYDONGTIEN  IS NOT NULL  THEN 1 ELSE NULL END  ) as 'DONGTIEN',  ";
+                sqltongket += " 		COUNT(CASE WHEN NGAYDONGTIEN  IS  NULL  AND MADOTTC <> '' THEN 1 ELSE NULL END  ) as 'MIENPHI',";
+                sqltongket += " 		COUNT(CASE WHEN MADOTTC <> ''  THEN 1 ELSE NULL END ) as 'CHUYENTC', ";
+                sqltongket += " 		COUNT(SHS) - COUNT(CASE WHEN MADOTTC <> ''  THEN 1 ELSE NULL END ) as 'TONTC',  ";
+                sqltongket += " 		COUNT(CASE WHEN HOANCONG <> ''  THEN 1 ELSE NULL END ) as 'HOANCONG'  ";
+                sqltongket += " FROM ";
+                sqltongket += " (SELECT *";
+                sqltongket += " FROM (";
+                sqltongket += " 	SELECT LOAIHOSO,DON_KHACHHANG.NGAYNHAN as 'NHANHOSO',";
+                sqltongket += " 		DON_KHACHHANG.PHUONG,DON_KHACHHANG.QUAN, DON_KHACHHANG.SHS as 'KH_SHS',";
+                sqltongket += " 		TOTHIETKE.SHS as'TTK_SHS' ,TOTHIETKE.HOANTATTK,TOTHIETKE.TRONGAITHIETKE,DON_KHACHHANG.NGAYDONGTIEN FROM  DON_KHACHHANG  ";
+                sqltongket += " 	LEFT JOIN TOTHIETKE ";
+                sqltongket += " 	ON DON_KHACHHANG.SHS = TOTHIETKE.SHS) AS T1";
+                sqltongket += " LEFT JOIN KH_HOSOKHACHHANG AS T2";
+                sqltongket += " ON T1.TTK_SHS = T2.SHS";
+                sqltongket += "  ) as T9";
 
                 string sql = "SELECT * FROM W_KH_BCTONGKET ";
-                string tmp = "";
+
                 if ("BT".Equals(loaidon))
                 {
                     sql += " WHERE SHS LIKE N'%BT%' AND CONVERT(DATETIME,NGAYNHAN,103) BETWEEN CONVERT(DATETIME,'" + tungay + "',103) AND CONVERT(DATETIME,'" + denngay + "',103) ";
-                }else 
-                if ("DD".Equals(loaidon))
-                {
-                    sql += " WHERE SHS LIKE N'%D%' AND CONVERT(DATETIME,NGAYNHAN,103) BETWEEN CONVERT(DATETIME,'" + tungay + "',103) AND CONVERT(DATETIME,'" + denngay + "',103) ";
-                }else{
-                    sql += " WHERE LOAIHOSO=N'" + loaidon + "' AND CONVERT(DATETIME,NGAYNHAN,103) BETWEEN CONVERT(DATETIME,'" + tungay + "',103) AND CONVERT(DATETIME,'" + denngay + "',103) "; 
+                    sqltongket += " WHERE KH_SHS LIKE N'%BT%'  AND CONVERT(DATETIME,NHANHOSO,103) BETWEEN CONVERT(DATETIME,'" + tungay + "',103) AND CONVERT(DATETIME,'" + denngay + "',103) ";
                 }
-               
+                else    if ("DD".Equals(loaidon))
+                    {
+                        sql += " WHERE SHS LIKE N'%D%' AND CONVERT(DATETIME,NGAYNHAN,103) BETWEEN CONVERT(DATETIME,'" + tungay + "',103) AND CONVERT(DATETIME,'" + denngay + "',103) ";
+                        sqltongket += " WHERE KH_SHS LIKE N'%D%' AND CONVERT(DATETIME,NHANHOSO,103) BETWEEN CONVERT(DATETIME,'" + tungay + "',103) AND CONVERT(DATETIME,'" + denngay + "',103) ";
+                    }
+                    else
+                    {
+                        sql += " WHERE LOAIHOSO=N'" + loaidon + "' AND CONVERT(DATETIME,NGAYNHAN,103) BETWEEN CONVERT(DATETIME,'" + tungay + "',103) AND CONVERT(DATETIME,'" + denngay + "',103) ";
+                        sqltongket += " WHERE LOAIHOSO=N'" + loaidon + "' AND CONVERT(DATETIME,NHANHOSO,103) BETWEEN CONVERT(DATETIME,'" + tungay + "',103) AND CONVERT(DATETIME,'" + denngay + "',103) ";
+                    }
+
 
                 if (type == 2)
                 {
                     sql += " AND  QUAN='" + maquan + "' AND PHUONG='" + maphuong + "' ";
-                    sqltongket += " AND  KHVT.QUAN='" + maquan + "' AND KHVT.PHUONG='" + maphuong + "' ";
+                    sqltongket += " AND  QUAN='" + maquan + "' AND PHUONG='" + maphuong + "' ";
                 }
-                else {
+                else
+                {
                     sql += " AND  QUAN='" + maquan + "'";
-                    sqltongket += " AND  KHVT.QUAN='" + maquan + "'";
+                    sqltongket += " AND  QUAN='" + maquan + "'";
                 }
                 TanHoaDataContext db = new TanHoaDataContext();
                 db.Connection.Open();
                 SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
                 DataTable table = new DataTable("W_KH_BCTONGKET");
                 adapter.Fill(table);
-                if (table.Rows.Count > 0) {
-                    for (int i = 0; i < table.Rows.Count; i++) {
+                if (table.Rows.Count > 0)
+                {
+                    for (int i = 0; i < table.Rows.Count; i++)
+                    {
                         string shs = table.Rows[i]["SHS"].ToString();
                         TOTHIETKE ttk = DAL.C_ToThietKe.findBySHS(shs);
-                        if (ttk != null && ttk.NGAYHOANTATTK!=null)
+                        if (ttk != null && ttk.NGAYHOANTATTK != null)
                         {
                             table.Rows[i]["HOANTATTK"] = Utilities.DateToString.NgayVN(ttk.NGAYHOANTATTK.Value);
                         }
@@ -125,7 +151,7 @@ namespace TanHoaWater.DAL
                 adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
                 adapter.Fill(dataset, "KH_TC_BAOCAO");
 
-                adapter = new SqlDataAdapter(sqltongket, db.Connection.ConnectionString);
+                adapter = new SqlDataAdapter(sqltongket.Replace(@"\t",""), db.Connection.ConnectionString);
                 adapter.Fill(dataset, "W_KH_BCTONGCONG");
 
                 dataset.Tables.Add(table);
@@ -141,6 +167,6 @@ namespace TanHoaWater.DAL
             }
             return null;
         }
-
     }
 }
+
