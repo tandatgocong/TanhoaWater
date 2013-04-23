@@ -25,6 +25,12 @@ namespace TanHoaWater.DAL
             var list = from query in data.KH_DONVITHICONGs where query.ID == id select query;
             return list.SingleOrDefault();
         }
+
+        public static KH_DONVIGIAMSAT findDVGiamSatID(int id)
+        {
+            var list = from query in data.KH_DONVIGIAMSATs where query.ID == id select query;
+            return list.SingleOrDefault();
+        }
         
         public static KH_DONVITHICONG findDVTCbyTENCTY(string name)
         {
@@ -99,6 +105,7 @@ namespace TanHoaWater.DAL
             data.KH_DONVIGIAMSATTLs.InsertOnSubmit(dvtl);
             data.SubmitChanges();
         }
+
 
         
         public static void Update()
