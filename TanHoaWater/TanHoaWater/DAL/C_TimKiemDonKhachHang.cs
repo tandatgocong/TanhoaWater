@@ -10,7 +10,7 @@ namespace TanHoaWater.DAL
 {
     class C_TimKiemDonKhachHang
     {
-        public static DataTable TimBienNhan(string shs, string hoten, string diachi, int FirstRow, int pageSize)
+        public static DataTable TimBienNhan(string shs, string hoten, string diachi, int FirstRow, int pageSize,string dienthoai)
         {
             string sql = "SELECT  biennhan.SHS, biennhan.HOTEN,( SONHA +'  '+DUONG+',  P.'+ p.TENPHUONG+',  Q.'+q.TENQUAN) as 'DIACHI', DIENTHOAI ,CONVERT(VARCHAR(20),biennhan.NGAYNHAN,103) AS 'NGAYNHAN',lhs.TENLOAI as 'LOAIHS' ";
             sql += " FROM QUAN q,PHUONG p,BIENNHANDON biennhan, LOAI_HOSO lhs ";
@@ -22,6 +22,10 @@ namespace TanHoaWater.DAL
             if (!"".Equals(hoten))
             {
                 sql += " AND HOTEN LIKE N'%" + hoten + "%'";
+            }
+            if (!"".Equals(dienthoai))
+            {
+                sql += " AND DIENTHOAI LIKE N'%" + dienthoai + "%'";
             }
             if (!"".Equals(diachi))
             {
@@ -36,7 +40,7 @@ namespace TanHoaWater.DAL
             return dataset.Tables[0];
         }
 
-        public static int TotalRecord(string shs, string hoten, string diachi)
+        public static int TotalRecord(string shs, string hoten, string diachi,string dienthoai)
         {
             string sql = "SELECT COUNT(*) ";
             sql += " FROM QUAN q,PHUONG p,BIENNHANDON biennhan, LOAI_HOSO lhs ";
@@ -48,6 +52,10 @@ namespace TanHoaWater.DAL
             if (!"".Equals(hoten))
             {
                 sql += " AND HOTEN LIKE N'%" + hoten + "%'";
+            }
+            if (!"".Equals(dienthoai))
+            {
+                sql += " AND DIENTHOAI LIKE N'%" + dienthoai + "%'";
             }
             if (!"".Equals(diachi))
             {
@@ -64,7 +72,7 @@ namespace TanHoaWater.DAL
         }
         
 
-        public static DataTable TimDonKH(string shs, string hoten, string diachi, int FirstRow, int pageSize)
+        public static DataTable TimDonKH(string shs, string hoten, string diachi, int FirstRow, int pageSize, string dienthoai)
         {
             string sql = "SELECT  biennhan.SHS, biennhan.HOTEN,( SONHA +'  '+DUONG+',  P.'+ p.TENPHUONG+',  Q.'+q.TENQUAN) as 'DIACHI',DIENTHOAI ,CONVERT(VARCHAR(20),biennhan.NGAYNHAN,103) AS 'NGAYNHAN',lhs.TENLOAI as 'LOAIHS' ";
             sql += " FROM QUAN q,PHUONG p,DON_KHACHHANG biennhan, LOAI_HOSO lhs ";
@@ -77,6 +85,10 @@ namespace TanHoaWater.DAL
             if (!"".Equals(hoten))
             {
                 sql += " AND HOTEN LIKE N'%" + hoten + "%'";
+            }
+            if (!"".Equals(dienthoai))
+            {
+                sql += " AND DIENTHOAI LIKE N'%" + dienthoai + "%'";
             }
             if (!"".Equals(diachi))
             {
@@ -91,7 +103,7 @@ namespace TanHoaWater.DAL
             return dataset.Tables[0];
         }
 
-        public static int TotalTimDonKH(string shs, string hoten, string diachi)
+        public static int TotalTimDonKH(string shs, string hoten, string diachi, string dienthoai)
         {
             string sql = "SELECT COUNT(*) ";
             sql += " FROM QUAN q,PHUONG p,DON_KHACHHANG biennhan, LOAI_HOSO lhs ";
@@ -103,6 +115,10 @@ namespace TanHoaWater.DAL
             if (!"".Equals(hoten))
             {
                 sql += " AND HOTEN LIKE N'%" + hoten + "%'";
+            }
+            if (!"".Equals(dienthoai))
+            {
+                sql += " AND DIENTHOAI LIKE N'%" + dienthoai + "%'";
             }
             if (!"".Equals(diachi))
             {

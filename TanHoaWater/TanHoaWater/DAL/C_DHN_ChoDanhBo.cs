@@ -30,14 +30,16 @@ namespace TanHoaWater.DAL
                 sql += " AND (hosokh.DHN_CHODB IS NULL OR hosokh.DHN_CHODB='False') ";
             else if (flag == 1)
                 sql += " AND hosokh.DHN_CHODB='True'";
-
-            db.Connection.Open();
+ 
             sql += " ORDER BY hosokh.STT ASC";
-            SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
-            DataSet dataset = new DataSet();
-            adapter.Fill(dataset, "TABLE");
-            db.Connection.Close();
-            return dataset.Tables[0];
+            //db.Connection.Open();
+         
+            //SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
+            //DataSet dataset = new DataSet();
+            //adapter.Fill(dataset, "TABLE");
+            //db.Connection.Close();
+            //return dataset.Tables[0];
+            return DAL.LinQConnection.getDataTable(sql);
         }
 
         public static DataTable findByDotBangKe(string dotbangke)
@@ -49,11 +51,12 @@ namespace TanHoaWater.DAL
             sql += "  AND donkh.SHS = hosokh.SHS AND hosokh.DHN_SODOT=N'" + dotbangke + "'";
             db.Connection.Open();
             sql += " ORDER BY hosokh.STT ASC";
-            SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
-            DataSet dataset = new DataSet();
-            adapter.Fill(dataset, "TABLE");
-            db.Connection.Close();
-            return dataset.Tables[0];
+            //SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
+            //DataSet dataset = new DataSet();
+            //adapter.Fill(dataset, "TABLE");
+            //db.Connection.Close();
+            //return dataset.Tables[0];
+            return DAL.LinQConnection.getDataTable(sql);
         }
 
         public static KH_HOSOKHACHHANG findbySHS(string shs) {
@@ -90,7 +93,7 @@ namespace TanHoaWater.DAL
             SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             adapter.Fill(dataset, "DHN_BAOCAO");
 
-            sql = "SELECT * FROM V_CHOSODANHBO WHERE DHN_SODOT=N'" + mabangke + "'  AND SHS IN (" + query + ") ORDER BY MODIFYDATE";
+            sql = "SELECT * FROM V_CHOSODANHBO WHERE DHN_SODOT=N'" + mabangke + "'  AND SHS IN (" + query + ") ORDER BY STT ASC ";
             adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             adapter.Fill(dataset, "V_CHOSODANHBO");
 

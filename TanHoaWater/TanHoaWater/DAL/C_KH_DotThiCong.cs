@@ -101,21 +101,22 @@ namespace TanHoaWater.DAL
         }
         public static int TotalListDotThiCong()
         {
-            TanHoaDataContext db = new TanHoaDataContext();
-            SqlConnection conn = new SqlConnection(db.Connection.ConnectionString);
-            conn.Open();
+            //TanHoaDataContext db = new TanHoaDataContext();
+            //SqlConnection conn = new SqlConnection(db.Connection.ConnectionString);
+            //conn.Open();
             string sql = " SELECT COUNT(*) FROM KH_DOTTHICONG";
-            SqlCommand cmd = new SqlCommand(sql, conn);
-            int result = Convert.ToInt32(cmd.ExecuteScalar());
-            conn.Close();
-            return result;
+            //SqlCommand cmd = new SqlCommand(sql, conn);
+            //int result = Convert.ToInt32(cmd.ExecuteScalar());
+            //conn.Close();
+            //return result;
+            return DAL.LinQConnection.ExecuteCommand(sql);
         }
         public static DataTable getListDotThiCong(int FirstRow, int pageSize)
         {
             TanHoaDataContext db = new TanHoaDataContext();
             db.Connection.Open();
             string sql = " SELECT MADOTTC,NGAYLAP, LOAIBANGKE FROM KH_DOTTHICONG";
-            sql += " ORDER BY NGAYLAP DESC, LOAIBANGKE DESC";
+            sql += " ORDER BY LOAIBANGKE DESC,NGAYLAP DESC";
             SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             DataSet dataset = new DataSet();
             adapter.Fill(dataset, FirstRow, pageSize, "TABLE");

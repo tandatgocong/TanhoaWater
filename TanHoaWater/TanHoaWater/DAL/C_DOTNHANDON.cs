@@ -44,12 +44,28 @@ namespace TanHoaWater.DAL
                 TanHoaDataContext data = new TanHoaDataContext();
                 data.DOT_NHAN_DONs.InsertOnSubmit(dnd);
                 data.SubmitChanges();
+                return true;
             }
             catch (Exception ex)
             { log.Error("Insert Dot Loi " + ex.Message ); }
 
             return false;
         }
+
+        public static bool DeleteDot(DOT_NHAN_DON dnd)
+        {
+            try
+            {
+                data.DOT_NHAN_DONs.DeleteOnSubmit(dnd);
+                data.SubmitChanges();
+                return true;
+            }
+            catch (Exception ex)
+            { log.Error("Delete Dot Loi " + ex.Message); }
+
+            return false;
+        }
+
         public static bool chuyendon(DOT_NHAN_DON dotnd)
         {
             try
@@ -125,16 +141,20 @@ namespace TanHoaWater.DAL
         }
         public static int TotalListByDotNhanDon()
         {
-            TanHoaDataContext db = new TanHoaDataContext();
-            SqlConnection conn = new SqlConnection(db.Connection.ConnectionString);
-            conn.Open();
             string sql = " SELECT COUNT(*) ";
             sql += " FROM DOT_NHAN_DON dot, LOAI_HOSO loai";
             sql += " WHERE loai.MALOAI = dot.LOAIDON";
-            SqlCommand cmd = new SqlCommand(sql, conn);
-            int result = Convert.ToInt32(cmd.ExecuteScalar());
-            conn.Close();
-            return result;
+            //TanHoaDataContext db = new TanHoaDataContext();
+            //SqlConnection conn = new SqlConnection(db.Connection.ConnectionString);
+            //conn.Open();
+            //string sql = " SELECT COUNT(*) ";
+            //sql += " FROM DOT_NHAN_DON dot, LOAI_HOSO loai";
+            //sql += " WHERE loai.MALOAI = dot.LOAIDON";
+            //SqlCommand cmd = new SqlCommand(sql, conn);
+            //int result = Convert.ToInt32(cmd.ExecuteScalar());
+            //conn.Close();
+            //return result;
+            return DAL.LinQConnection.ExecuteCommand(sql);
         }
         public static DataTable Search(string madot, DateTime ngaylap, string maloai)
         {

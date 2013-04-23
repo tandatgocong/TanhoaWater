@@ -817,6 +817,7 @@ namespace TanHoaWater.View.Users.DONGHONUOC
                 else
                 {
                     Refresh();
+                    this.txtDotBangKe.Text = this.gridHoanCong.Rows[e.RowIndex].Cells["hc_SoDot"].Value + "";
                     this.txtSoHoSo.Text = this.gridHoanCong.Rows[e.RowIndex].Cells["hc_SHS"].Value + "";
                     this.txtHoTen.Text = this.gridHoanCong.Rows[e.RowIndex].Cells["hc_HoTen"].Value + "";
                     this.txtDiaChi.Text = this.gridHoanCong.Rows[e.RowIndex].Cells["hc_DiaChi"].Value + "";
@@ -857,7 +858,7 @@ namespace TanHoaWater.View.Users.DONGHONUOC
                     this.txtGiaBieu.Text = this.gridHoanCong.Rows[e.RowIndex].Cells["hc_GiaBieu"].Value + "";
                     this.txtDMGoc.Text = this.gridHoanCong.Rows[e.RowIndex].Cells["hc_DMucGoc"].Value + "";
                     this.txtDMBu.Text = this.gridHoanCong.Rows[e.RowIndex].Cells["hc_DMCapBu"].Value + "";
-                    this.txtLoTrinhTam.Text = this.gridHoanCong.Rows[e.RowIndex].Cells["dhn_lotrinh"].Value + "";
+                    this.txtLoTrinhTam.Text = (this.gridHoanCong.Rows[e.RowIndex].Cells["dhn_lotrinh"].Value + "").Replace(" ","");
                     this.txtMaDMA.Text = this.gridHoanCong.Rows[e.RowIndex].Cells["hc_MaDMA"].Value + "";
                     this.txtMaQP.Text = this.gridHoanCong.Rows[e.RowIndex].Cells["hc_Ma_QP"].Value + "";
                     this.txtHoSoCTy.Text = this.gridHoanCong.Rows[e.RowIndex].Cells["hc_HsCty"].Value + "";
@@ -866,6 +867,19 @@ namespace TanHoaWater.View.Users.DONGHONUOC
                     this.txtSoNhanKhau.Text = this.gridHoanCong.Rows[e.RowIndex].Cells["hc_SoNhanKhau"].Value + "";
 
                     this.txtSoHoSo.Focus();
+                    TB_GANMOI tb = DULIEUKH.C_GanMoi.finByDanhBo((this.txtDanhBo.Text).Replace("-", ""));
+                    if (tb != null)
+                    {
+                        cbDotDS.Text = tb.DOT;
+                        cbToDocSo.Text = tb.TODS;
+                        cbMayDocSo.Text = int.Parse(tb.PLT.Substring(2,2)).ToString();
+                    }
+                    else {
+                        cbDotDS.Text = "";
+                        cbToDocSo.Text = "";
+                        cbMayDocSo.Text = "";
+                    }
+
                 }
 
             }
@@ -933,105 +947,110 @@ namespace TanHoaWater.View.Users.DONGHONUOC
                     hskh.DHN_MADMA = txtMaDMA.Text;
                     hskh.DHN_CHODB = true;
                     if (DAL.C_DHN_ChoDanhBo.UpdateDB() == false)
-                        MessageBox.Show(this, "Cập Nhật Hoàn Công Không Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                    //capnhat();
-                    if (flag_SoHopDong == gridHoanCong.Rows.Count)
+                        MessageBox.Show(this, "Cập Nhật Thông Tin Danh Bộ Không Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    else
                     {
-                        string shd = this.txtHopDong.Text;
-
-                        for (int i = 0; i < gridHoanCong.Rows.Count; i++)
+                        /////
+                        LoTrinhDocSo();
+                        //MessageBox.Show(this, "Cập Nhật Thông Tin Danh Bộ Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        //capnhat();
+                       /* if (flag_SoHopDong == gridHoanCong.Rows.Count)
                         {
-                            if (this.gridHoanCong.Rows[i].Cells["hc_SHS"].Value.ToString() == shs)
-                            {
+                            string shd = this.txtHopDong.Text;
 
-                                continue;
-                            }
-                            else
+                            for (int i = 0; i < gridHoanCong.Rows.Count; i++)
                             {
-                                KH_HOSOKHACHHANG hskh_temp = DAL.C_DHN_ChoDanhBo.findbySHS(this.gridHoanCong.Rows[i].Cells["hc_SHS"].Value.ToString());
-                                //int so = int.Parse(shd) + 1;
-                                string HopDong_Increase = HopDongTangTuDong(shd, 2);
-                                hskh_temp.DHN_SOHOPDONG = HopDong_Increase;
-
-                                if (DAL.C_DHN_ChoDanhBo.UpdateDB() == false)
+                                if (this.gridHoanCong.Rows[i].Cells["hc_SHS"].Value.ToString() == shs)
                                 {
-                                    MessageBox.Show(this, "Cập Nhật Hoàn Công Không Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                                    continue;
                                 }
                                 else
                                 {
-                                    shd = HopDong_Increase;
+                                    KH_HOSOKHACHHANG hskh_temp = DAL.C_DHN_ChoDanhBo.findbySHS(this.gridHoanCong.Rows[i].Cells["hc_SHS"].Value.ToString());
+                                    //int so = int.Parse(shd) + 1;
+                                    string HopDong_Increase = HopDongTangTuDong(shd, 2);
+                                    hskh_temp.DHN_SOHOPDONG = HopDong_Increase;
 
+                                    if (DAL.C_DHN_ChoDanhBo.UpdateDB() == false)
+                                    {
+                                        MessageBox.Show(this, "Cập Nhật Thông Tin Danh Bộ Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    }
+                                    else
+                                    {
+                                        shd = HopDong_Increase;
+
+
+                                    }
 
                                 }
-
                             }
-                        }
-                    }
+                        }*/
 
+/*
 
-
-                    if (flag == gridHoanCong.Rows.Count)
-                    {
-                        string madma = this.txtMaDMA.Text;
-                        for (int i = 0; i < gridHoanCong.Rows.Count; i++)
+                        if (flag == gridHoanCong.Rows.Count)
                         {
-                            if (this.gridHoanCong.Rows[i].Cells["hc_SHS"].Value.ToString() == shs)
+                            string madma = this.txtMaDMA.Text;
+                            for (int i = 0; i < gridHoanCong.Rows.Count; i++)
                             {
-
-                                continue;
-                            }
-                            else
-                            {
-                                KH_HOSOKHACHHANG hskh_temp = DAL.C_DHN_ChoDanhBo.findbySHS(this.gridHoanCong.Rows[i].Cells["hc_SHS"].Value.ToString());
-                                int so_dma = int.Parse(madma);
-
-                                hskh_temp.DHN_MADMA = so_dma.ToString();
-
-                                if (DAL.C_DHN_ChoDanhBo.UpdateDB() == false)
+                                if (this.gridHoanCong.Rows[i].Cells["hc_SHS"].Value.ToString() == shs)
                                 {
-                                    MessageBox.Show(this, "Cập Nhật Hoàn Công Không Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                                    continue;
                                 }
                                 else
                                 {
-                                    madma = so_dma.ToString();
+                                    KH_HOSOKHACHHANG hskh_temp = DAL.C_DHN_ChoDanhBo.findbySHS(this.gridHoanCong.Rows[i].Cells["hc_SHS"].Value.ToString());
+                                    int so_dma = int.Parse(madma);
 
+                                    hskh_temp.DHN_MADMA = so_dma.ToString();
+
+                                    if (DAL.C_DHN_ChoDanhBo.UpdateDB() == false)
+                                    {
+                                        MessageBox.Show(this, "Cập Nhật Thông Tin Danh Bộ Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    }
+                                    else
+                                    {
+                                        madma = so_dma.ToString();
+
+
+                                    }
 
                                 }
-
                             }
-                        }
+                        }*/
+                        //string madma = this.txtMaDMA.Text;
+                        //for (int i = 0; i < gridHoanCong.Rows.Count; i++)
+                        //{
+                        //    if (this.gridHoanCong.Rows[i].Cells["hc_SHS"].Value.ToString() == shs) 
+                        //    {
+                        //        continue;
+
+                        //    }
+                        //    else
+                        //    {
+                        //        KH_HOSOKHACHHANG hskh_temp = DAL.C_HoanCongDHN_DotTCTB.findByHoSoHC(this.gridHoanCong.Rows[i].Cells["hc_SHS"].Value.ToString());
+
+                        //        int ma = int.Parse(madma);
+                        //        hskh_temp.DHN_MADMA = ma.ToString();
+                        //        if (DAL.C_HoanCongDHN_DotTCTB.Update() == false)
+                        //        {
+                        //            MessageBox.Show(this, "Cập Nhật Hoàn Công Không Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        //        }
+                        //        else
+                        //        {
+
+                        //            madma = ma.ToString();
+
+                        //        }
+                        //    }
+                        //}
+
+
+                        hoantat();
+
                     }
-                    //string madma = this.txtMaDMA.Text;
-                    //for (int i = 0; i < gridHoanCong.Rows.Count; i++)
-                    //{
-                    //    if (this.gridHoanCong.Rows[i].Cells["hc_SHS"].Value.ToString() == shs) 
-                    //    {
-                    //        continue;
-
-                    //    }
-                    //    else
-                    //    {
-                    //        KH_HOSOKHACHHANG hskh_temp = DAL.C_HoanCongDHN_DotTCTB.findByHoSoHC(this.gridHoanCong.Rows[i].Cells["hc_SHS"].Value.ToString());
-
-                    //        int ma = int.Parse(madma);
-                    //        hskh_temp.DHN_MADMA = ma.ToString();
-                    //        if (DAL.C_HoanCongDHN_DotTCTB.Update() == false)
-                    //        {
-                    //            MessageBox.Show(this, "Cập Nhật Hoàn Công Không Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    //        }
-                    //        else
-                    //        {
-
-                    //            madma = ma.ToString();
-
-                    //        }
-                    //    }
-                    //}
-
-
-                    hoantat();
-
                 }
 
             }
@@ -1101,6 +1120,7 @@ namespace TanHoaWater.View.Users.DONGHONUOC
 
         private void cbDotTC_Leave(object sender, EventArgs e)
         {
+            this.txtDotBangKe.Text = "";
             hoantat();
         }
 
@@ -1291,7 +1311,7 @@ namespace TanHoaWater.View.Users.DONGHONUOC
                                      ////
                                      string insert = "INSERT INTO TB_DULIEUKHACHHANG(DANHBO,HOPDONG,HOTEN,SONHA,TENDUONG,QUAN,PHUONG,GIABIEU,DINHMUC,NGAYGANDH,NGAYTHAY,HIEUDH,CODH,SOTHANDH,CHISOKYTRUOC,CODE, KY,NAM,LOTRINH,DIENTHOAI,KY_,MADMA) VALUES ";
                                      insert += "('" + DANHBO + "','" + HOPDONG + "','" + HOTEN + "','" + SONHA + "','" + DUONG + "','" + QUAN + "','" + PHUONG + "','" + GIABIEU + "','" + DINHMUC + "','" + NGAYGAN + "','" + NGAYGAN + "','" + HIEU + "','" + COTLK + "','" + tb.SOTLK + "','" + CHISOTLK + "','M','" + ky + "','" + nam + "','" + LOTRINH + "','" + _dt + "','" + ky + "','"+txtMaDMA.Text+"')";
-                                     if (DAL.LinQConnection.ExecuteCommand_(insert) > 0)
+                                     if (DULIEUKH.C_GanMoi.ExecuteCommand_(insert) > 0)
                                      {
                                          log.Info("+++++++++++ TB_DULIEUKHACHHANG : " + DANHBO + "");
                                          //int may = int.Parse(cbMayDocSo.Items[cbMayDocSo.SelectedIndex].ToString());

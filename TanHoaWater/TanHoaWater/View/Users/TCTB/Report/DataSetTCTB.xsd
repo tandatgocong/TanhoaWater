@@ -228,6 +228,30 @@ SELECT ID, HSGAN, HSNHUA, TONGGIATRI, CPNHANCONG, CPVATTU, KTGIAMDOC, PGDKYTHUAT
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="V_HOANCONG_TRONGAITableAdapter" GeneratorDataComponentClassName="V_HOANCONG_TRONGAITableAdapter" Name="V_HOANCONG_TRONGAI" UserDataComponentName="V_HOANCONG_TRONGAITableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TANHOA_WATERConnectionString (Settings)" DbObjectName="TANHOA_WATER.dbo.V_HOANCONG_TRONGAI" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT SHS, SOHOSO, MADOT, HOTEN, DIENTHOAI, DIACHI, MODIFYDATE, NOIDUNGTN, MADOTTC FROM dbo.V_HOANCONG_TRONGAI</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="SHS" DataSetColumn="SHS" />
+              <Mapping SourceColumn="SOHOSO" DataSetColumn="SOHOSO" />
+              <Mapping SourceColumn="MADOT" DataSetColumn="MADOT" />
+              <Mapping SourceColumn="HOTEN" DataSetColumn="HOTEN" />
+              <Mapping SourceColumn="DIENTHOAI" DataSetColumn="DIENTHOAI" />
+              <Mapping SourceColumn="DIACHI" DataSetColumn="DIACHI" />
+              <Mapping SourceColumn="MODIFYDATE" DataSetColumn="MODIFYDATE" />
+              <Mapping SourceColumn="NOIDUNGTN" DataSetColumn="NOIDUNGTN" />
+              <Mapping SourceColumn="MADOTTC" DataSetColumn="MADOTTC" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -404,6 +428,69 @@ SELECT ID, HSGAN, HSNHUA, TONGGIATRI, CPNHANCONG, CPVATTU, KTGIAMDOC, PGDKYTHUAT
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="V_HOANCONG_TRONGAI" msprop:Generator_TableClassName="V_HOANCONG_TRONGAIDataTable" msprop:Generator_TableVarName="tableV_HOANCONG_TRONGAI" msprop:Generator_TablePropName="V_HOANCONG_TRONGAI" msprop:Generator_RowDeletingName="V_HOANCONG_TRONGAIRowDeleting" msprop:Generator_UserTableName="V_HOANCONG_TRONGAI" msprop:Generator_RowChangingName="V_HOANCONG_TRONGAIRowChanging" msprop:Generator_RowEvHandlerName="V_HOANCONG_TRONGAIRowChangeEventHandler" msprop:Generator_RowDeletedName="V_HOANCONG_TRONGAIRowDeleted" msprop:Generator_RowEvArgName="V_HOANCONG_TRONGAIRowChangeEvent" msprop:Generator_RowChangedName="V_HOANCONG_TRONGAIRowChanged" msprop:Generator_RowClassName="V_HOANCONG_TRONGAIRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SHS" msprop:Generator_ColumnVarNameInTable="columnSHS" msprop:Generator_ColumnPropNameInRow="SHS" msprop:Generator_ColumnPropNameInTable="SHSColumn" msprop:Generator_UserColumnName="SHS">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SOHOSO" msprop:Generator_ColumnVarNameInTable="columnSOHOSO" msprop:Generator_ColumnPropNameInRow="SOHOSO" msprop:Generator_ColumnPropNameInTable="SOHOSOColumn" msprop:Generator_UserColumnName="SOHOSO">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MADOT" msprop:Generator_ColumnVarNameInTable="columnMADOT" msprop:Generator_ColumnPropNameInRow="MADOT" msprop:Generator_ColumnPropNameInTable="MADOTColumn" msprop:Generator_UserColumnName="MADOT">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="HOTEN" msprop:Generator_ColumnVarNameInTable="columnHOTEN" msprop:Generator_ColumnPropNameInRow="HOTEN" msprop:Generator_ColumnPropNameInTable="HOTENColumn" msprop:Generator_UserColumnName="HOTEN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DIENTHOAI" msprop:Generator_ColumnVarNameInTable="columnDIENTHOAI" msprop:Generator_ColumnPropNameInRow="DIENTHOAI" msprop:Generator_ColumnPropNameInTable="DIENTHOAIColumn" msprop:Generator_UserColumnName="DIENTHOAI" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DIACHI" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDIACHI" msprop:Generator_ColumnPropNameInRow="DIACHI" msprop:Generator_ColumnPropNameInTable="DIACHIColumn" msprop:Generator_UserColumnName="DIACHI" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MODIFYDATE" msprop:Generator_ColumnVarNameInTable="columnMODIFYDATE" msprop:Generator_ColumnPropNameInRow="MODIFYDATE" msprop:Generator_ColumnPropNameInTable="MODIFYDATEColumn" msprop:Generator_UserColumnName="MODIFYDATE" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="NOIDUNGTN" msprop:Generator_ColumnVarNameInTable="columnNOIDUNGTN" msprop:Generator_ColumnPropNameInRow="NOIDUNGTN" msprop:Generator_ColumnPropNameInTable="NOIDUNGTNColumn" msprop:Generator_UserColumnName="NOIDUNGTN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MADOTTC" msprop:Generator_ColumnVarNameInTable="columnMADOTTC" msprop:Generator_ColumnPropNameInRow="MADOTTC" msprop:Generator_ColumnPropNameInTable="MADOTTCColumn" msprop:Generator_UserColumnName="MADOTTC" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
@@ -413,6 +500,10 @@ SELECT ID, HSGAN, HSNHUA, TONGGIATRI, CPNHANCONG, CPVATTU, KTGIAMDOC, PGDKYTHUAT
     <xs:unique name="TCTB_HESOHOANCONG_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:TCTB_HESOHOANCONG" />
       <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="V_HOANCONG_TRONGAI_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:V_HOANCONG_TRONGAI" />
+      <xs:field xpath="mstns:SHS" />
     </xs:unique>
   </xs:element>
 </xs:schema>
