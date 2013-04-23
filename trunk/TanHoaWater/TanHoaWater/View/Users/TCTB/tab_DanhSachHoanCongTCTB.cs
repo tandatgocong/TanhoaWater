@@ -401,31 +401,43 @@ namespace TanHoaWater.View.Users.TCTB
             string shs = this.txtSHS.Text;
             KH_HOSOKHACHHANG hskh = DAL.C_HoanCongDHN_DotTCTB.findByHoSoHC(shs);
             if (hskh != null) {
-                try{
-                    hskh.COTLK = int.Parse(this.txtCoTLK.Text);
-                }
-                catch (Exception)
-                {}
-                if (!"1/1/0001".Equals(this.dateNgayGan.Value.ToShortDateString()))
+                if (this.checkTroNgai.Checked)
                 {
-                    hskh.NGAYTHICONG = dateNgayGan.Value.Date;
+                    hskh.TRONGAI = true;
+                    hskh.NOIDUNGTN = this.txtNoiDungTroNgai.Text;
                 }
-                try{
-                       hskh.CHISO = int.Parse(this.txtChiSo.Text);
-                }
-                catch (Exception)
-                {}
-                hskh.SOTHANTLK = this.txtSoThan.Text;
-                hskh.HIEUDONGHO=this.txtHieu.Text;
-                hskh.TCTB_TONGGIATRI = ParseDouble(this.txtTongGiaTri.Text);
-                hskh.TCTB_CPNHANCONG = ParseDouble(this.txtNhanCong.Text);
-                hskh.TCTB_CPVATTU = ParseDouble(this.txtVatTu.Text);
+                else {
+                    try
+                    {
+                        hskh.COTLK = int.Parse(this.txtCoTLK.Text);
+                    }
+                    catch (Exception)
+                    { }
+                    if (!"1/1/0001".Equals(this.dateNgayGan.Value.ToShortDateString()))
+                    {
+                        hskh.NGAYTHICONG = dateNgayGan.Value.Date;
+                    }
+                    try
+                    {
+                        hskh.CHISO = int.Parse(this.txtChiSo.Text);
+                    }
+                    catch (Exception)
+                    { }
+                    hskh.SOTHANTLK = this.txtSoThan.Text;
+                    hskh.HIEUDONGHO = this.txtHieu.Text;
+                    hskh.TCTB_TONGGIATRI = ParseDouble(this.txtTongGiaTri.Text);
+                    hskh.TCTB_CPNHANCONG = ParseDouble(this.txtNhanCong.Text);
+                    hskh.TCTB_CPVATTU = ParseDouble(this.txtVatTu.Text);
 
-                hskh.ONG20 = ParseDouble(this.txtO20.Text);
-              //  hskh.ONG25 = this.txtO25.Text;
-                hskh.ONG50 = ParseDouble(this.txtO50.Text);
-                hskh.ONG100 = ParseDouble(this.txtO100.Text);
-                hskh.ONGKHAC = ParseDouble(this.txtOK.Text);
+                    hskh.ONG20 = ParseDouble(this.txtO20.Text);
+                    //  hskh.ONG25 = this.txtO25.Text;
+                    hskh.ONG50 = ParseDouble(this.txtO50.Text);
+                    hskh.ONG100 = ParseDouble(this.txtO100.Text);
+                    hskh.ONGKHAC = ParseDouble(this.txtOK.Text);
+                    hskh.TRONGAI = false;
+                    hskh.NOIDUNGTN = "";
+                }
+                
                 if (DAL.C_HoanCongDHN_DotTCTB.Update()== false)
                     MessageBox.Show(this, "Cập Nhật Hoàn Công Không Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
               
@@ -464,15 +476,15 @@ namespace TanHoaWater.View.Users.TCTB
         private void btInBangKe_Click(object sender, EventArgs e)
         {
             ReportDocument rp = new rpt_HoanCongTCTB();
-            if ("BT".Contains(this.cbDotTC.Text))
+            if (this.cbDotTC.Text.Contains("BT"))
             {
                 rp = new rpt_HoanCongTCTB();
             }
-            else if ("D".Contains(this.cbDotTC.Text))
+            else if (this.cbDotTC.Text.Contains("D"))
             {
-                rp = new rpt_HoanCongTCTB();
-            } else {
                 rp = new rpt_HoanCongTCTB_DOI();
+            } else {
+                rp = new rpt_HoanCongTCTB_GM();
             }
 
             rp.SetDataSource(DAL.C_HoanCongDHN_DotTCTB.BC_HOANCONG_TCTB(this.cbDotTC.Text));

@@ -444,7 +444,17 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
 
         private void buttonX1_Click(object sender, EventArgs e)
         {
-
+            string madot = this.txtsoDot.Text;
+            DOT_NHAN_DON dotnd= DAL.C_DotNhanDon.findByMaDot(madot);
+            if (DAL.C_DotNhanDon.DeleteDot(dotnd) == true)
+            {
+                MessageBox.Show(this, "Xóa Bảng Kê Thành Công .", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                loadGrid();
+            }
+            else {
+                MessageBox.Show(this, "Xóa Bảng Kê Thất Bại.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
 
         private void txtsoDot_Leave(object sender, EventArgs e)

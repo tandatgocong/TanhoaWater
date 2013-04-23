@@ -103,10 +103,10 @@ namespace TanHoaWater.View.Users.DONGHONUOC
             if (khachhang != null)
             {
                 if (MessageBox.Show(this, "Bạn Có Chắc Muốn Xóa Không ? ", "..: Thông Báo :..", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes) {
-                    DAL.LinQConnection.ExecuteCommand_("DELETE FROM DocSo_PHT.dbo.KHACHHANG where danhba IN ('" + khachhang.DANHBO + "')");
-                    DAL.LinQConnection.ExecuteCommand_("DELETE FROM TB_DULIEUKHACHHANG WHERE danhbo IN ('" + khachhang.DANHBO + "')");
-                    DAL.LinQConnection.ExecuteCommand_("DELETE FROM TB_GANMOI WHERE danhbo IN ('" + khachhang.DANHBO + "')");
-                    DAL.LinQConnection.ExecuteCommand_("DELETE FROM TB_YEUCAUDC WHERE danhbo IN ('" + khachhang.DANHBO + "')");
+                    DULIEUKH.C_GanMoi.ExecuteCommand_("DELETE FROM DocSo_PHT.dbo.KHACHHANG where danhba IN ('" + khachhang.DANHBO + "')");
+                    DULIEUKH.C_GanMoi.ExecuteCommand_("DELETE FROM TB_DULIEUKHACHHANG WHERE danhbo IN ('" + khachhang.DANHBO + "')");
+                    DULIEUKH.C_GanMoi.ExecuteCommand_("DELETE FROM TB_GANMOI WHERE danhbo IN ('" + khachhang.DANHBO + "')");
+                    DULIEUKH.C_GanMoi.ExecuteCommand_("DELETE FROM TB_YEUCAUDC WHERE danhbo IN ('" + khachhang.DANHBO + "')");
                     MessageBox.Show(this, "Xóa Thông Tin Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 

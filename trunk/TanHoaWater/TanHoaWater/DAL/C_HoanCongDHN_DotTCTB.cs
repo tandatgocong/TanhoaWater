@@ -66,9 +66,13 @@ namespace TanHoaWater.DAL
             SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             adapter.Fill(dataset, "TCTB_HESOHOANCONG");
 
-            sql = "SELECT MADOTTC, SHS, HOTEN, DIACHI, COTLK,CONVERT(VARCHAR(8), NGAYTHICONG, 3) as 'NGAYTHICONG', CHISO, SOTHANTLK, SOHOADON, NGAYDONGTIEN, HIEUDONGHO, TCTB_TONGGIATRI, TCTB_CPNHANCONG, TCTB_CPVATTU, ONG20, ONG50, ONG100, ONG150, ONGKHAC, DHN_NGAYKIEMDINH, ONG25, DANHBO, STT FROM V_HOANGCONGTCTB WHERE MADOTTC=N'" + madot + "'  ORDER BY STT ASC ";
+            sql = "SELECT MADOTTC, SHS, HOTEN, DIACHI, COTLK,CONVERT(VARCHAR(8), NGAYTHICONG, 3) as 'NGAYTHICONG', CHISO, SOTHANTLK, SOHOADON, NGAYDONGTIEN, HIEUDONGHO, TCTB_TONGGIATRI, TCTB_CPNHANCONG, TCTB_CPVATTU, ONG20, ONG50, ONG100, ONG150, ONGKHAC, DHN_NGAYKIEMDINH, ONG25, DANHBO, STT FROM V_HOANGCONGTCTB WHERE MADOTTC=N'" + madot + "' AND (TRONGAI = 'False' OR TRONGAI IS NULL )  ORDER BY STT ASC ";
             adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             adapter.Fill(dataset, "V_HOANGCONGTCTB");
+
+            sql = "SELECT * FROM V_HOANCONG_TRONGAI WHERE MADOTTC=N'" + madot + "' ";
+            adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
+            adapter.Fill(dataset, "V_HOANCONG_TRONGAI");
 
             sql = "SELECT * FROM TCTB_TONGKEVATTU WHERE MADOTTC=N'" + madot + "' ";
             adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);

@@ -432,13 +432,13 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
             int hs=0;
             for (int i = 0; i < gridHoanCong.Rows.Count; i++)
             {
-                string hc_ChiPhiVT = this.gridHoanCong.Rows[i].Cells["hc_ChiPhiVT"].Value + "";
+                string hc_ChiPhiVT = this.gridHoanCong.Rows[i].Cells["hc_TongGTXL"].Value + "";
                 string chonin = this.gridHoanCong.Rows[i].Cells["hc_ChonIn"].Value + "";
                 if ("True".Equals(chonin))
                 {
                     hs++;
 
-                    if (!"".Equals(hc_ChiPhiVT))
+                    if (!"0".Equals(hc_ChiPhiVT))
                         count++;
                 }
 

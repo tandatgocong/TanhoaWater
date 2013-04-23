@@ -758,7 +758,7 @@
             this.textBoxX1.Border.Class = "TextBoxBorder";
             this.textBoxX1.Location = new System.Drawing.Point(98, 12);
             this.textBoxX1.Name = "textBoxX1";
-            this.textBoxX1.Size = new System.Drawing.Size(283, 26);
+            this.textBoxX1.Size = new System.Drawing.Size(229, 26);
             this.textBoxX1.TabIndex = 5;
             // 
             // labelX7
@@ -820,7 +820,7 @@
             this.buttonX3.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.buttonX3.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.buttonX3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.buttonX3.Location = new System.Drawing.Point(392, 13);
+            this.buttonX3.Location = new System.Drawing.Point(393, 13);
             this.buttonX3.Name = "buttonX3";
             this.buttonX3.Size = new System.Drawing.Size(75, 23);
             this.buttonX3.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;

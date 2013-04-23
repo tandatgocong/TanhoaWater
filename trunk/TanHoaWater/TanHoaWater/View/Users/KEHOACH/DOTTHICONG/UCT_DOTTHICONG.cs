@@ -17,7 +17,7 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
     public partial class UCT_DOTTHICONG : UserControl
     {
         int currentPageIndex = 1;
-        int pageSize = 30;
+        int pageSize = 100;
         int pageNumber = 0;
         int FirstRow, LastRow;
         int rows;
@@ -52,6 +52,15 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
             //txtSearchDotTC.AutoCompleteSource = AutoCompleteSource.CustomSource;
             //txtSearchDotTC.AutoCompleteCustomSource = namesCollection;
 
+            //List<KH_DOTTHICONG> list = DAL.C_KH_DotThiCong.getListDTC();
+            //foreach (var item in list)
+            //{
+            //    namesCollection.Add(item.MADOTTC);
+            //}
+            //searchTimKiem.AutoCompleteMode = AutoCompleteMode.Suggest;
+            //searchTimKiem.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            //searchTimKiem.AutoCompleteCustomSource = namesCollection;
+
         }
 
         public void formload()
@@ -82,14 +91,13 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
             try
             {
                 rows = DAL.C_KH_DotThiCong.TotalListDotThiCong();
-                PageTotal();
-                gridDotThiCong.DataSource = DAL.C_KH_DotThiCong.getListDotThiCong(FirstRow, pageSize);
             }
             catch (Exception ex)
             {
                 log.Error(ex);
             }
-
+            PageTotal();
+            gridDotThiCong.DataSource = DAL.C_KH_DotThiCong.getListDotThiCong(FirstRow, pageSize);
         }
 
         private void txtSoHoSo_KeyPress(object sender, KeyPressEventArgs e)
@@ -203,12 +211,12 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
                     MessageBox.Show(this, "Cần Chọn Đơn Vị Tái Lập Mặt Đường !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.cbDonViTaiLapMD.Select();
                 }
-                else if ("".Equals(bangke))
-                {
-                    MessageBox.Show(this, "Cần Nhập Bảng Kê !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.txtBangKe.Text = "";
-                    this.txtBangKe.Focus();
-                }
+                //else if ("".Equals(bangke))
+                //{
+                //    MessageBox.Show(this, "Cần Nhập Bảng Kê !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //    this.txtBangKe.Text = "";
+                //    this.txtBangKe.Focus();
+                //}
                 else if ("".Equals(loaibangke))
                 {
                     MessageBox.Show(this, "Cần Chọn Loại Bảng Kê !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);

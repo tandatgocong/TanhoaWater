@@ -23,12 +23,13 @@ namespace TanHoaWater.View.Tool
         {
            
         }
-        public void refesh() { 
-            //this.SearchMaHoSo.Text="";
-            //this.searchHoTenKH.Text="";
-            //this.searchDiaChi.Text = "";          
+        public void refesh() {
+            this.SearchMaHoSo.Text = "";
+            this.searchHoTenKH.Text = "";
+            this.searchDiaChi.Text = "";
+            this.searchDienThoai.Text = "";  
             this.SearchMaHoSo.Focus();
-            DataTable table = DAL.C_TimKiemDonKhachHang.TimBienNhan("13", "","",0,0);
+            DataTable table = DAL.C_TimKiemDonKhachHang.TimBienNhan("13", "","",0,0,"");
             this.dataGridView1.DataSource = table;
             clearText();
             this.groupBox1.Visible = false;
@@ -277,7 +278,7 @@ namespace TanHoaWater.View.Tool
             groupBox1.Text = "Kết Quả ";
             try
             {
-                rows = DAL.C_TimKiemDonKhachHang.TotalTimDonKH(this.SearchMaHoSo.Text, this.searchHoTenKH.Text, this.searchDiaChi.Text);
+                rows = DAL.C_TimKiemDonKhachHang.TotalTimDonKH(this.SearchMaHoSo.Text, this.searchHoTenKH.Text, this.searchDiaChi.Text, this.searchDienThoai.Text);
             }
             catch (Exception ex)
             {
@@ -285,7 +286,7 @@ namespace TanHoaWater.View.Tool
             }
             PageTotal();
 
-            DataTable table = DAL.C_TimKiemDonKhachHang.TimDonKH(this.SearchMaHoSo.Text, this.searchHoTenKH.Text, this.searchDiaChi.Text, FirstRow, pageSize);
+            DataTable table = DAL.C_TimKiemDonKhachHang.TimDonKH(this.SearchMaHoSo.Text, this.searchHoTenKH.Text, this.searchDiaChi.Text, FirstRow, pageSize, this.searchDienThoai.Text);
             this.dataGridView1.DataSource = table;
             lbsohoso.Text = "Tổng Số Có " + rows  + " Hồ Sơ.";
             Utilities.DataGridV.formatRows(dataGridView1);
@@ -293,7 +294,7 @@ namespace TanHoaWater.View.Tool
                 
                 try
                 {
-                    rows = DAL.C_TimKiemDonKhachHang.TotalRecord(this.SearchMaHoSo.Text, this.searchHoTenKH.Text, this.searchDiaChi.Text);
+                    rows = DAL.C_TimKiemDonKhachHang.TotalRecord(this.SearchMaHoSo.Text, this.searchHoTenKH.Text, this.searchDiaChi.Text, this.searchDienThoai.Text);
                 }
                 catch (Exception ex)
                 {
@@ -301,7 +302,7 @@ namespace TanHoaWater.View.Tool
                 }
                 PageTotal();
 
-                table = DAL.C_TimKiemDonKhachHang.TimBienNhan(this.SearchMaHoSo.Text, this.searchHoTenKH.Text, this.searchDiaChi.Text, FirstRow, pageSize);
+                table = DAL.C_TimKiemDonKhachHang.TimBienNhan(this.SearchMaHoSo.Text, this.searchHoTenKH.Text, this.searchDiaChi.Text, FirstRow, pageSize, this.searchDienThoai.Text);
                 this.dataGridView1.DataSource = table;
                 lbsohoso.Text = "Tổng Số Có " + rows + " Hồ Sơ.";
                 Utilities.DataGridV.formatRows(dataGridView1);
@@ -538,6 +539,14 @@ namespace TanHoaWater.View.Tool
 
             }
 
+        }
+
+        private void searchDienThoai_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                search();
+            }
         }
 
     

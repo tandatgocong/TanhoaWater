@@ -132,5 +132,36 @@ namespace TanHoaWater.DULIEUKH
         public static DataTable getMaxLoTrinh(string dotmay) {
             return Database.LinQConnection.getDataTable("SELECT MAX(LOTRINH) FROM  TB_DULIEUKHACHHANG WHERE LEFT(LOTRINH,4)='" + dotmay + "'");
         }
+        public static int ExecuteCommand_(string sql)
+        {
+            int result = 0;
+            try
+            {
+                SqlConnection conn = new SqlConnection(db.Connection.ConnectionString);
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                result = Convert.ToInt32(cmd.ExecuteNonQuery());
+                conn.Close();
+                db.Connection.Close();
+                db.SubmitChanges();
+                return result;
+            }
+            catch (Exception ex)
+            {
+                log.Error("LinQConnection ExecuteCommand_ : " + sql);
+                log.Error("LinQConnection ExecuteCommand_ : " + ex.Message);
+
+            }
+            finally
+            {
+                db.Connection.Close();
+            }
+            db.SubmitChanges();
+            return result;
+        }
     }
 }
