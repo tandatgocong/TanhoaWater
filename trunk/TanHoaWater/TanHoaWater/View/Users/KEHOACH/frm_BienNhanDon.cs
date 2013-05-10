@@ -168,6 +168,7 @@ namespace TanHoaWater.View.Users.KEHOACH
             DD_GiayToKhac.Checked = false;
             checkBienLaiTN.Checked = false;
             checkSoTTKT3.Checked = false;
+            this.txtSoDanhBo.Text = "";
             this.txtHoTen.Focus();
 
         }

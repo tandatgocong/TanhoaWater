@@ -780,6 +780,11 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
                     rpt_Main mainReport = new rpt_Main(rp);
                     mainReport.ShowDialog();
                 }
+                else if (tendot.Equals("GQ Sự Cố"))
+                {
+                    reportValues rpt = new reportValues(3, madot,ngaytk);
+                    rpt.ShowDialog();
+                }
                 else
                 {
                     reportValues rpt = new reportValues(1, madot,ngaytk);

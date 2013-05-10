@@ -1001,7 +1001,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
             if (comboBox1.SelectedIndex == 0)
             {
                 DataRow myDataRow = table.NewRow();
-                myDataRow["TITLE"] = "THƠ MỜI THANH TOÁN CHI PHÍ LẮP ĐẶT ỐNG CẤP NƯỚC";
+                myDataRow["TITLE"] = "THƯ MỜI THANH TOÁN CHI PHÍ LẮP ĐẶT ỐNG CẤP NƯỚC";
                 myDataRow["HOTEN"] = txtHoTenKH.Text;
                 myDataRow["DIACHI"] = txtDiaChi.Text + ", Phường " +txtPhuong.Text +", Quận " + txtQuan.Text;
                 myDataRow["TUNGAY"] = dateTuNgay.Text;
@@ -1024,7 +1024,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                 ReportDocument rp = new ganthayongnganhdhn();
 
                 DataRow myDataRow = table.NewRow();
-                myDataRow["TITLE"] = "THƠ MỜI THANH TOÁN CHI PHÍ DỜI ĐỒNG HỒ NƯỚC";
+                myDataRow["TITLE"] = "THƯ MỜI THANH TOÁN CHI PHÍ DỜI ĐỒNG HỒ NƯỚC";
                 myDataRow["HOTEN"] = txtHoTenKH.Text;
                 myDataRow["DIACHI"] = txtDiaChi.Text + ", Phường " + txtPhuong.Text + ", Quận " + txtQuan.Text;
                 myDataRow["TUNGAY"] = dateTuNgay.Text;
@@ -1046,7 +1046,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                 ReportDocument rp = new ganthayongnganhdhn();
                 rp.PrintOptions.PaperSize = PaperSize.Paper11x17;
                 DataRow myDataRow = table.NewRow();
-                myDataRow["TITLE"] = "THƠ MỜI THANH TOÁN CHI PHÍ GẮN ỐNG NGÁNH ĐHN + ĐHN";
+                myDataRow["TITLE"] = "THƯ MỜI THANH TOÁN CHI PHÍ GẮN ỐNG NGÁNH ĐHN + ĐHN";
                 myDataRow["HOTEN"] = txtHoTenKH.Text;
                 myDataRow["DIACHI"] = txtDiaChi.Text + ", Phường " + txtPhuong.Text + ", Quận " + txtQuan.Text;
                 myDataRow["TUNGAY"] = dateTuNgay.Text;
@@ -1065,7 +1065,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                 ReportDocument rp = new ganmoi();
                 rp.PrintOptions.PaperSize = PaperSize.Paper11x17;
                 DataRow myDataRow = table.NewRow();
-                myDataRow["TITLE"] = "THƠ MỜI THANH TOÁN CHI PHÍ GẮN MỚI ĐỒNG HỒ NƯỚC";
+                myDataRow["TITLE"] = "THƯ MỜI THANH TOÁN CHI PHÍ GẮN MỚI ĐỒNG HỒ NƯỚC";
                 myDataRow["HOTEN"] = txtHoTenKH.Text;
                 myDataRow["DIACHI"] = txtDiaChi.Text + ", Phường " + txtPhuong.Text + ", Quận " + txtQuan.Text;
                 myDataRow["TUNGAY"] = dateTuNgay.Text;
@@ -1084,7 +1084,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                 ReportDocument rp = new ganthayongnganhdhn();
                 rp.PrintOptions.PaperSize = PaperSize.Paper11x17;
                 DataRow myDataRow = table.NewRow();
-                myDataRow["TITLE"] = "THƠ MỜI THANH TOÁN CHI PHÍ TÁI LẬP DANH BỘ";
+                myDataRow["TITLE"] = "THƯ MỜI THANH TOÁN CHI PHÍ TÁI LẬP DANH BỘ";
                 myDataRow["HOTEN"] = txtHoTenKH.Text;
                 myDataRow["DIACHI"] = txtDiaChi.Text + ", Phường " + txtPhuong.Text + ", Quận " + txtQuan.Text;
                 myDataRow["TUNGAY"] = dateTuNgay.Text;
@@ -1103,7 +1103,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                 ReportDocument rp = new ganthayongnganhdhn();
                 rp.PrintOptions.PaperSize = PaperSize.Paper11x17;
                 DataRow myDataRow = table.NewRow();
-                myDataRow["TITLE"] = "THƠ MỜI THANH TOÁN CHI PHÍ BỒI THƯỜNG ĐỒNG HỒ NƯỚC";
+                myDataRow["TITLE"] = "THƯ MỜI THANH TOÁN CHI PHÍ BỒI THƯỜNG ĐỒNG HỒ NƯỚC";
                 myDataRow["HOTEN"] = txtHoTenKH.Text;
                 myDataRow["DIACHI"] = txtDiaChi.Text + ", Phường " + txtPhuong.Text + ", Quận " + txtQuan.Text;
                 myDataRow["TUNGAY"] = dateTuNgay.Text;

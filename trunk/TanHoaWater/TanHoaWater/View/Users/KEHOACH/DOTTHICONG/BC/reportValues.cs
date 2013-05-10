@@ -28,6 +28,10 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG.BC
             {
                 this.labelX1.Text = "Bồi Thường Kết Hợp Với:";
             }
+            else if (flag == 3)
+            {
+                this.labelX1.Text = "Thông Tin";
+            }
             textBoxX1.Focus();
         }
         //MaCT
@@ -48,6 +52,16 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG.BC
                 ReportDocument rp = new rpt_DanhSachHSTC_BT_DOI();
                 rp.SetDataSource(DAL.C_KH_DotThiCong.BC_DanhSachDotThiCong_OC(_madotc));
                 rp.SetParameterValue("KETHOP", this.textBoxX1.Text);
+                rp.SetParameterValue("ngaytk", _ngaytk);
+                crystalReportViewer1.ReportSource = rp;
+                this.WindowState = FormWindowState.Maximized;
+            }
+            else if (_flag == 3)//giai quyet su co
+            {
+                panel1.Visible = false;
+                ReportDocument rp = new rpt_DanhSachHSTC_DOIMP_GQSC();
+                rp.SetDataSource(DAL.C_KH_DotThiCong.BC_DanhSachDotThiCong_OC(_madotc));
+                rp.SetParameterValue("MaCT", this.textBoxX1.Text);
                 rp.SetParameterValue("ngaytk", _ngaytk);
                 crystalReportViewer1.ReportSource = rp;
                 this.WindowState = FormWindowState.Maximized;
