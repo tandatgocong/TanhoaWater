@@ -44,7 +44,7 @@
             this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.Size = new System.Drawing.Size(457, 115);
+            this.crystalReportViewer1.Size = new System.Drawing.Size(660, 176);
             this.crystalReportViewer1.TabIndex = 0;
             this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
@@ -55,7 +55,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(457, 115);
+            this.panel1.Size = new System.Drawing.Size(660, 176);
             this.panel1.TabIndex = 1;
             // 
             // textBoxX1
@@ -65,8 +65,9 @@
             // 
             this.textBoxX1.Border.Class = "TextBoxBorder";
             this.textBoxX1.Location = new System.Drawing.Point(23, 51);
+            this.textBoxX1.Multiline = true;
             this.textBoxX1.Name = "textBoxX1";
-            this.textBoxX1.Size = new System.Drawing.Size(413, 26);
+            this.textBoxX1.Size = new System.Drawing.Size(613, 87);
             this.textBoxX1.TabIndex = 3;
             this.textBoxX1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxX1_KeyPress);
             // 
@@ -83,7 +84,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(457, 115);
+            this.ClientSize = new System.Drawing.Size(660, 176);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.crystalReportViewer1);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
