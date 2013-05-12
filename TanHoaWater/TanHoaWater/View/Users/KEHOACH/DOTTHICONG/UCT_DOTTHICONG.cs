@@ -17,7 +17,7 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
     public partial class UCT_DOTTHICONG : UserControl
     {
         int currentPageIndex = 1;
-        int pageSize = 100;
+        int pageSize = 2000;
         int pageNumber = 0;
         int FirstRow, LastRow;
         int rows;
@@ -301,7 +301,11 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
                     {
                         MessageBox.Show(this, "Lỗi Thêm Đợt Thi Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                    loadDataGrid();
+                    else {
+                        this.searchTimKiem.Text = sodot.ToUpper();
+                        Search();
+                    }
+                    //loadDataGrid();
                 }
             }
             catch (Exception ex)
@@ -806,42 +810,45 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
             this.tabControl1.SelectedTabIndex = 4;
         }
 
+        public void Search() {
+            try
+            {
+                string dottcS = this.searchTimKiem.Text;
+                if ("".Equals(dottcS))
+                {
+                    loadDataGrid();
+                }
+                else
+                {
+                    DataTable table = DAL.C_KH_DotThiCong.getListDotThiCongbyMaDot(dottcS);
+                    if (table.Rows.Count <= 0)
+                    {
+                        MessageBox.Show(this, "Không Tìm Thấy Đợt Thi Công!", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else if (table.Rows.Count == 1)
+                    {
+                        KH_DOTTHICONG dottc = DAL.C_KH_DotThiCong.findByMadot(table.Rows[0][0].ToString());
+                        if (dottc != null)
+                        {
+                            loadTextBox(dottc);
+                        }
+                        gridDotThiCong.DataSource = table;
+                    }
+                    else
+                    {
+                        gridDotThiCong.DataSource = table;
+                    }
+                }
+            }
+            catch (Exception)
+            {
+            }
+        }
         private void searchTimKiem_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 13)
             {
-                try
-                {
-                    string dottcS = this.searchTimKiem.Text;
-                    if ("".Equals(dottcS))
-                    {
-                        loadDataGrid();
-                    }
-                    else
-                    {
-                        DataTable table = DAL.C_KH_DotThiCong.getListDotThiCongbyMaDot(dottcS);
-                        if (table.Rows.Count <= 0)
-                        {
-                            MessageBox.Show(this, "Không Tìm Thấy Đợt Thi Công!", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                        else if (table.Rows.Count == 1)
-                        {
-                            KH_DOTTHICONG dottc = DAL.C_KH_DotThiCong.findByMadot(table.Rows[0][0].ToString());
-                            if (dottc != null)
-                            {
-                                loadTextBox(dottc);
-                            }
-                            gridDotThiCong.DataSource = table;
-                        }
-                        else
-                        {
-                            gridDotThiCong.DataSource = table;
-                        }
-                    }
-                }
-                catch (Exception)
-                {
-                }
+                Search();
             }
         }
 

@@ -116,7 +116,7 @@ namespace TanHoaWater.DAL
             {
 
                db.SubmitChanges();
-               db = new TanHoaDataContext();
+               
                 return true;
             }
             catch (Exception ex)
