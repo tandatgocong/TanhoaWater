@@ -795,8 +795,8 @@
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="View\Users\TCTB\Report\rpt_HoanCongTCTB_DOI.cs">
-      <DependentUpon>rpt_HoanCongTCTB_DOI.rpt</DependentUpon>
+    <Compile Include="View\Users\TCTB\Report\rpt_HoanCongTCTB_DD.cs">
+      <DependentUpon>rpt_HoanCongTCTB_DD.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
@@ -811,6 +811,12 @@
       <AutoGen>True</AutoGen>
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="View\Users\TCTB\rpt_HoanCongTCTB_DOI1.cs">
+      <DependentUpon>rpt_HoanCongTCTB_DOI.rpt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="View\Users\TCTB\tab_DanhSachHoanCongTCTB.cs">
       <SubType>UserControl</SubType>
@@ -1384,13 +1390,17 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_HoanCongTCTB_GM.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Users\TCTB\Report\rpt_HoanCongTCTB_DOI.rpt">
+    <EmbeddedResource Include="View\Users\TCTB\Report\rpt_HoanCongTCTB_DD.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>rpt_HoanCongTCTB_DOI.cs</LastGenOutput>
+      <LastGenOutput>rpt_HoanCongTCTB_DD.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\TCTB\Report\rpt_HoanCongTCTB.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_HoanCongTCTB.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\TCTB\rpt_HoanCongTCTB_DOI.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_HoanCongTCTB_DOI1.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\TCTB\tab_DanhSachHoanCongTCTB.resx">
       <DependentUpon>tab_DanhSachHoanCongTCTB.cs</DependentUpon>

@@ -17,7 +17,7 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
     public partial class UCT_DOTTHICONG : UserControl
     {
         int currentPageIndex = 1;
-        int pageSize = 2000;
+        int pageSize = 400;
         int pageNumber = 0;
         int FirstRow, LastRow;
         int rows;
@@ -662,8 +662,14 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
             }
             if (!"".Equals(madot))
             {
-                frmDialogPrintting obj = new frmDialogPrintting(madot);
-                obj.ShowDialog();
+                ReportDocument rp = new rpt_QuyetDinhTC();
+                rp.SetDataSource(DAL.C_KH_DotThiCong.BC_QuyetDinhThiCong(madot, "", "", ""));
+               // crystalReportViewer1.ReportSource = rp;
+
+                rpt_Main mainReport = new rpt_Main(rp);
+                mainReport.ShowDialog();
+                //frmDialogPrintting obj = new frmDialogPrintting(madot);
+                //obj.ShowDialog();
             }
             else
             {
