@@ -437,12 +437,32 @@ namespace TanHoaWater.View.Users.TCTB
                     hskh.TRONGAI = false;
                     hskh.NOIDUNGTN = "";
                 }
-                
-                if (DAL.C_HoanCongDHN_DotTCTB.Update()== false)
-                    MessageBox.Show(this, "Cập Nhật Hoàn Công Không Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
-              
-                hoantat();
 
+                if (DAL.C_HoanCongDHN_DotTCTB.Update() == false)
+                {
+                    try
+                    {
+                        TB_DULIEUKHACHHANG kh = DULIEUKH.C_DuLieuKhachHang.finByDanhBo(txtDanhBo.Text.Replace(" ", "").Replace("-", ""));
+                        if (kh != null) {
+                            kh.NGAYTHAY = hskh.NGAYTHICONG;
+                            kh.NGAYKIEMDINH = hskh.DHN_NGAYKIEMDINH;
+                            kh.HIEUDH = hskh.HIEUDONGHO;
+                            kh.SOTHANDH = hskh.SOTHANTLK;
+                            kh.CHISOKYTRUOC = hskh.CHISO+"";
+                            DULIEUKH.C_DuLieuKhachHang.Update();
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        log.Error(ex.Message);
+                    }
+                    
+
+                    MessageBox.Show(this, "Cập Nhật Hoàn Công Không Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    hoantat();
+                }
                     
             }           
 
@@ -482,12 +502,13 @@ namespace TanHoaWater.View.Users.TCTB
             }
             else if (this.cbDotTC.Text.Contains("D"))
             {
-                rp = new rpt_HoanCongTCTB_DOI();
+                rp = new rpt_HoanCongTCTB_DD();
+
             } else {
                 rp = new rpt_HoanCongTCTB_GM();
             }
 
-            rp.SetDataSource(DAL.C_HoanCongDHN_DotTCTB.BC_HOANCONG_TCTB(this.cbDotTC.Text));
+                rp.SetDataSource(DAL.C_HoanCongDHN_DotTCTB.BC_HOANCONG_TCTB(this.cbDotTC.Text));
                 string tlkgom = "Gồm TLK ";
                 DataTable table = DAL.LinQConnection.getDataTable("select COTLK, COUNT(*)  from KH_HOSOKHACHHANG WHERE MADOTTC='" + this.cbDotTC.Text.Replace(" ", "") + "' group by COTLK");
                 for (int i = 0; i < table.Rows.Count; i++)
@@ -504,7 +525,7 @@ namespace TanHoaWater.View.Users.TCTB
             TCTB_TONGKEVATTU tkvt = DAL.C_HoanCongDHN_DotTCTB.findTongKetVTHC(this.cbDotTC.Text.Replace(" ", ""));
             if (tkvt != null)
             {
-                this.TKtxtTongKetVT.Text = tkvt.VATUNHUA + "";
+                this.TKtxtVatTuNhua.Text = tkvt.VATUNHUA + "";
                 this.TKtxtVatTuGan.Text = tkvt.VATUGAN + "";
                 this.TKtxtTongKetVT.Text = DAL.C_HoanCongDHN_DotTCTB.getTongCPVatTu(this.cbDotTC.Text.Replace(" ", "")).ToString();
             }

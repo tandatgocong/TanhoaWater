@@ -43,9 +43,9 @@ namespace TanHoaWater.DAL
 
             TanHoaDataContext db = new TanHoaDataContext();
             db.Connection.Open();
-            string sql = " SELECT ttk.SHS,HOTEN, SONHA + ' ' + DUONG + ', P.' + TENPHUONG  as 'DIACHI'";
-            sql += " FROM DON_KHACHHANG donkh,TOTHIETKE ttk,PHUONG p, QUAN q ";
-            sql += " WHERE donkh.QUAN = q.MAQUAN AND q.MAQUAN=p.MAQUAN AND donkh.PHUONG=p.MAPHUONG AND ttk.SHS = donkh.SHS AND ttk.HOANTATTK='True' ";
+            string sql = "  SELECT donkh.SHS,HOTEN, SONHA + ' ' + DUONG + ', P.' + TENPHUONG  as 'DIACHI' ";
+            sql += " FROM DON_KHACHHANG donkh,PHUONG p, QUAN q ";
+            sql += " WHERE donkh.QUAN = q.MAQUAN AND q.MAQUAN=p.MAQUAN AND donkh.PHUONG=p.MAPHUONG ";
             sql += " AND ttk.SHS='"+ shs +"'";
 
             SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
