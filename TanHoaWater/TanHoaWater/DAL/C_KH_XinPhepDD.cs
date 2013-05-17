@@ -46,7 +46,7 @@ namespace TanHoaWater.DAL
             string sql = "  SELECT donkh.SHS,HOTEN, SONHA + ' ' + DUONG + ', P.' + TENPHUONG  as 'DIACHI' ";
             sql += " FROM DON_KHACHHANG donkh,PHUONG p, QUAN q ";
             sql += " WHERE donkh.QUAN = q.MAQUAN AND q.MAQUAN=p.MAQUAN AND donkh.PHUONG=p.MAPHUONG ";
-            sql += " AND ttk.SHS='"+ shs +"'";
+            sql += " AND donkh.SHS='" + shs + "'";
 
             SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             DataSet dataset = new DataSet();

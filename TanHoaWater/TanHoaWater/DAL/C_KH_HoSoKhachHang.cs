@@ -75,7 +75,7 @@ namespace TanHoaWater.DAL
         {
             try
             {
-                TanHoaDataContext db = new TanHoaDataContext();
+               
                 var obj = from dd in db.KH_HOSOKHACHHANGs where dd.SHS == shs select dd;
                 KH_HOSOKHACHHANG hskh = obj.SingleOrDefault();
                 if (hskh != null)

@@ -24,6 +24,18 @@ namespace TanHoaWater.DAL
             var danhmuc = from dmvt in db.DANHMUCTAILAPMATDUONGs where dmvt.MADANHMUC == madanhmuc select dmvt;
             return danhmuc.SingleOrDefault();
         }
+
+        public static KH_XINPHEPDAODUONG_KETCAU finbyMaDM_XPDD(string madanhmuc)
+        {
+            TanHoaDataContext db = new TanHoaDataContext();
+            var danhmuc = from dmvt in db.KH_XINPHEPDAODUONG_KETCAUs where dmvt.MADANHMUC == madanhmuc select dmvt;
+            return danhmuc.SingleOrDefault();
+        }
+
+
+        
+
+
         public static bool InsertDanhMucTLMD(DANHMUCTAILAPMATDUONG dm)
         {
             try
