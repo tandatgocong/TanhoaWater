@@ -37,8 +37,8 @@ namespace TanHoaWater.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=HP_G7;Initial Catalog=CAPNUOCTANHOA;Persist Security Info=True;User I" +
-            "D=sa;Password=123@tanhoa")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.90.8\\KD;Initial Catalog=CAPNUOCTANHOA;Persist Security Info=T" +
+            "rue;User ID=sa;Password=123@tanhoa")]
         public string CAPNUOCTANHOAConnectionString {
             get {
                 return ((string)(this["CAPNUOCTANHOAConnectionString"]));
@@ -48,11 +48,22 @@ namespace TanHoaWater.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=HP_G7;Initial Catalog=DocSo_PHT;Persist Security Info=True;User ID=sa" +
-            ";Password=123@tanhoa")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.90.8\\KD;Initial Catalog=DocSo_PHT;Persist Security Info=True;" +
+            "User ID=sa;Password=123@tanhoa")]
         public string DocSo_PHTConnectionString {
             get {
                 return ((string)(this["DocSo_PHTConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=SERVER9;Initial Catalog=TANHOA_WATER;Persist Security Info=True;User " +
+            "ID=sa")]
+        public string TANHOA_WATERConnectionString1 {
+            get {
+                return ((string)(this["TANHOA_WATERConnectionString1"]));
             }
         }
     }

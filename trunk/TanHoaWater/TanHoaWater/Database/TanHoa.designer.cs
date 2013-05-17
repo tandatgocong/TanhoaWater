@@ -189,6 +189,9 @@ namespace TanHoaWater.Database
     partial void InsertBIENNHANDON(BIENNHANDON instance);
     partial void UpdateBIENNHANDON(BIENNHANDON instance);
     partial void DeleteBIENNHANDON(BIENNHANDON instance);
+    partial void InsertKH_XINPHEPDAODUONG_KETCAU(KH_XINPHEPDAODUONG_KETCAU instance);
+    partial void UpdateKH_XINPHEPDAODUONG_KETCAU(KH_XINPHEPDAODUONG_KETCAU instance);
+    partial void DeleteKH_XINPHEPDAODUONG_KETCAU(KH_XINPHEPDAODUONG_KETCAU instance);
     #endregion
 		
 		public TanHoaDataContext() : 
@@ -882,6 +885,14 @@ namespace TanHoaWater.Database
 			get
 			{
 				return this.GetTable<BIENNHANDON>();
+			}
+		}
+		
+		public System.Data.Linq.Table<KH_XINPHEPDAODUONG_KETCAU> KH_XINPHEPDAODUONG_KETCAUs
+		{
+			get
+			{
+				return this.GetTable<KH_XINPHEPDAODUONG_KETCAU>();
 			}
 		}
 		
@@ -37775,6 +37786,92 @@ namespace TanHoaWater.Database
 						this._LOAIDON = default(string);
 					}
 					this.SendPropertyChanged("LOAI_NHANDON");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.KH_XINPHEPDAODUONG_KETCAU")]
+	public partial class KH_XINPHEPDAODUONG_KETCAU : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _MADANHMUC;
+		
+		private string _TENKETCAU;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMADANHMUCChanging(string value);
+    partial void OnMADANHMUCChanged();
+    partial void OnTENKETCAUChanging(string value);
+    partial void OnTENKETCAUChanged();
+    #endregion
+		
+		public KH_XINPHEPDAODUONG_KETCAU()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MADANHMUC", DbType="NVarChar(250) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string MADANHMUC
+		{
+			get
+			{
+				return this._MADANHMUC;
+			}
+			set
+			{
+				if ((this._MADANHMUC != value))
+				{
+					this.OnMADANHMUCChanging(value);
+					this.SendPropertyChanging();
+					this._MADANHMUC = value;
+					this.SendPropertyChanged("MADANHMUC");
+					this.OnMADANHMUCChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENKETCAU", DbType="NVarChar(250)")]
+		public string TENKETCAU
+		{
+			get
+			{
+				return this._TENKETCAU;
+			}
+			set
+			{
+				if ((this._TENKETCAU != value))
+				{
+					this.OnTENKETCAUChanging(value);
+					this.SendPropertyChanging();
+					this._TENKETCAU = value;
+					this.SendPropertyChanged("TENKETCAU");
+					this.OnTENKETCAUChanged();
 				}
 			}
 		}

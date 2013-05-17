@@ -57,85 +57,86 @@ namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
             //    this.GridViewPhuiDao.Visible = false;
             //}
         }
-         
+        bool hosochuco = false;
         private void txtMaSHS_KeyPress(object sender, KeyPressEventArgs e)
         {
-          
-            //if (e.KeyChar == 13) {
-            //    DataTable table =DAL.C_KH_XinPhepDD.findByHSHT(this.txtMaSHS.Text);
-            //    if (table.Rows.Count <= 0)
-            //    {
-            //        MessageBox.Show(this, "Không Tìm Thấy Hồ Sơ Hoàn Tất Thiết Kế !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    
-            //        this.txtHoTen.Text = "";
-            //        this.txtGhiChu.Text = "";
-            //        this.txtDiaChi.Text = "";
-            //        this.txtMaSHS.Focus();
-            //    }
-            //    else {
-            //        string _shs = table.Rows[0][0].ToString();
-            //        //if (DAL.C_KH_XinPhepDD.getListBCPhuiDao(_shs).Count <= 0)
-            //        //{
 
-            //        //    DAL.C_KH_XinPhepDD.getPhuiDao(_shs);
-            //        //    DAL.C_KH_XinPhepDD.TinhPhuiDao(_shs);
-            //        //    GridViewPhuiDao.DataSource = DAL.C_KH_XinPhepDD.getListBCPhuiDao(_shs);
-            //        //}
-            //        //else {
-            //        //    GridViewPhuiDao.DataSource = DAL.C_KH_XinPhepDD.getListBCPhuiDao(_shs);
-            //        //}
-            //        DAL.LinQConnection.ExecuteCommand_("DELETE FROM KH_BAOCAOPHUIDAO WHERE SHS='" + _shs + "'");
-            //        DAL.C_KH_XinPhepDD.getPhuiDao(_shs);
-            //        DAL.C_KH_XinPhepDD.TinhPhuiDao(_shs);
-            //        GridViewPhuiDao.DataSource = DAL.C_KH_XinPhepDD.getListBCPhuiDao(_shs);
-                                       
-            //        if ("DD".Contains(_shs))
-            //        {
-            //            cbMucDichDD.SelectedIndex = 1;
-            //        }
-            //        else
-            //        {
-            //            cbMucDichDD.SelectedIndex = 0;
-            //        }
-            //        cbPhuongPhapDao.SelectedIndex = 0;
-            //        try
-            //        {
-            //            KH_HOSOKHACHHANG kh_sh = DAL.C_KH_HoSoKhachHang.findBySHS(this.txtMaSHS.Text);
-            //            if (kh_sh != null)
-            //            {
-            //                if (kh_sh.MADOTTC != null || !"".Equals(kh_sh.MADOTTC + ""))
-            //                {
-            //                    KH_DOTTHICONG dottc = DAL.C_KH_DotThiCong.findByMadot(kh_sh.MADOTTC);
-            //                    this.cbDonViTaiLap.Text = DAL.C_KH_DonViTC.findDVTLbyID(dottc.DONVITAILAP.Value).TENCONGTY;
-            //                }
-            //            }
-            //        }
-            //        catch (Exception)
-            //        {
-            //        }
-            //       /* Ko tìm bảng vẽ
-            //        try
-            //        {
-            //            if (xinphep != null) {
-            //                if (xinphep.MAQUANLY.Contains("QTP"))
-            //                {
-            //                    if (Utilities.Files.CheckFile(_shs) == false) {
-            //                        MessageBox.Show(this,"Không Tìm Thấy File Bảng Vẽ Kỹ Thuật.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //                    }
-            //                }
-            //            }
-            //        }
-            //        catch (Exception)
-            //        {
+            if (e.KeyChar == 13)
+            {
+                DataTable table = DAL.C_KH_XinPhepDD.findByHSHT(this.txtMaSHS.Text);
+                if (table.Rows.Count <= 0)
+                {
+                    hosochuco = true;
+                    this.txtHoTen.Text = "";
+                    this.txtGhiChu.Text = "";
+                    this.txtDiaChi.Text = "";
+                    this.txtMaSHS.Focus();
+                }
+                else
+                {
+                    string _shs = table.Rows[0][0].ToString();
+                    //if (DAL.C_KH_XinPhepDD.getListBCPhuiDao(_shs).Count <= 0)
+                    //{
+
+                    //    DAL.C_KH_XinPhepDD.getPhuiDao(_shs);
+                    //    DAL.C_KH_XinPhepDD.TinhPhuiDao(_shs);
+                    //    GridViewPhuiDao.DataSource = DAL.C_KH_XinPhepDD.getListBCPhuiDao(_shs);
+                    //}
+                    //else {
+                    //    GridViewPhuiDao.DataSource = DAL.C_KH_XinPhepDD.getListBCPhuiDao(_shs);
+                    //}
+                    DAL.LinQConnection.ExecuteCommand_("DELETE FROM KH_BAOCAOPHUIDAO WHERE SHS='" + _shs + "'");
+                    DAL.C_KH_XinPhepDD.getPhuiDao(_shs);
+                    DAL.C_KH_XinPhepDD.TinhPhuiDao(_shs);
+                    //GridViewPhuiDao.DataSource = DAL.C_KH_XinPhepDD.getListBCPhuiDao(_shs);
+
+                    if ("DD".Contains(_shs))
+                    {
+                        cbMucDichDD.SelectedIndex = 1;
+                    }
+                    else
+                    {
+                        cbMucDichDD.SelectedIndex = 0;
+                    }
+                    cbPhuongPhapDao.SelectedIndex = 0;
+                    try
+                    {
+                        KH_HOSOKHACHHANG kh_sh = DAL.C_KH_HoSoKhachHang.findBySHS(this.txtMaSHS.Text);
+                        if (kh_sh != null)
+                        {
+                            if (kh_sh.MADOTTC != null || !"".Equals(kh_sh.MADOTTC + ""))
+                            {
+                                KH_DOTTHICONG dottc = DAL.C_KH_DotThiCong.findByMadot(kh_sh.MADOTTC);
+                                this.cbDonViTaiLap.Text = DAL.C_KH_DonViTC.findDVTLbyID(dottc.DONVITAILAP.Value).TENCONGTY;
+                            }
+                        }
+                    }
+                    catch (Exception)
+                    {
+                    }
+                    /* Ko tìm bảng vẽ
+                     try
+                     {
+                         if (xinphep != null) {
+                             if (xinphep.MAQUANLY.Contains("QTP"))
+                             {
+                                 if (Utilities.Files.CheckFile(_shs) == false) {
+                                     MessageBox.Show(this,"Không Tìm Thấy File Bảng Vẽ Kỹ Thuật.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                 }
+                             }
+                         }
+                     }
+                     catch (Exception)
+                     {
                         
-            //        }
-            //        * */
-            //        this.txtHoTen.Text = table.Rows[0][1].ToString();
-            //        this.txtDiaChi.Text = table.Rows[0][2].ToString();
-            //        this.txtGhiChu.Text = table.Rows[0][0].ToString();
-            //        this.txtGhiChu.Focus();
-            //  }
-            //}
+                     }
+                     * */
+                    this.txtHoTen.Text = table.Rows[0][1].ToString();
+                    this.txtDiaChi.Text = table.Rows[0][2].ToString();
+                    this.txtGhiChu.Text = table.Rows[0][0].ToString();
+                    this.txtGhiChu.Focus();
+                }
+            }
         }
         public void Refresh()
         {
@@ -322,8 +323,95 @@ namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
             frm.ShowDialog();
         }
 
+        public void InsertDonKhachHang() { 
+        
+                    DON_KHACHHANG donKH = new DON_KHACHHANG();
+                    donKH.MADOT = this.cbDotNhanDon.SelectedValue.ToString();
+                    donKH.SOHOSO = this.txtSoHoSo.Text;
+                    donKH.SHS = this.txtSHS.Text;
+                    if (soho.Value > 1)
+                    {
+                        donKH.TAPTHE = true;
+                        cbLoaiKH.Text = "Tập Thể";
+                    }
+                    else
+                    {
+                        donKH.TAPTHE = false;
+                        cbLoaiKH.Text = "Cá Nhân";
+                    }
+                    //else
+                    //{
+                    //    donKH.HOTEN = this.txtHoTen.Text;
+                    //}
+                    donKH.HOTEN = this.txtHoTen.Text;
+                    donKH.DIENTHOAI = this.dienthoai.Text;
+                    donKH.SOHO = int.Parse(this.soho.Value.ToString());
+                    donKH.SONHA = this.sonha.Text;
+                    donKH.TINHKHOAN = true;
+                    if (this.sonha.Text.Contains("/") == true)
+                    {
+                        donKH.LOAIMIENPHI = "Hẻm";
+                    }
+                    else
+                    {
+                        donKH.LOAIMIENPHI = "Mặt tiền";
+                    }
+                    donKH.DUONG = this.duong.Text;
+                    donKH.PHUONG = _maphuong;
+                    donKH.QUAN = _maquan;
+                    string maloaikh = "";
+                    if (this.cbLoaiKH.SelectedValue == null || "".Equals(this.cbLoaiKH.SelectedValue.ToString()) == true)
+                    {
+                        maloaikh = DAL.C_LoaiKhachHang.finbyTenLoai(this.cbLoaiKH.Text).MALOAI;
+                    }
+                    else
+                    {
+                        maloaikh = this.cbLoaiKH.SelectedValue.ToString();
+                    }
+                    donKH.LOAIKH = maloaikh;
+                    donKH.LOAIHOSO = DAL.C_DotNhanDon.findByMaDot(this.cbDotNhanDon.SelectedValue.ToString()).LOAIDON;
+                    donKH.GHICHU = this.ghichu.Text;
+                    if (this.khan.Checked == true)
+                    {
+                        donKH.HOSOKHAN = true;
+                        donKH.GHICHUKHAN = this.ghichukhan.Text;
+                    }
+                    donKH.NGAYNHAN = ngaynhan;
+                    donKH.DANHBO = this.txtDanhBo.Text;
+                    donKH.HOPDONG = this.txtHopDong.Text;
+                    donKH.CREATEBY = DAL.C_USERS._userName;
+                    donKH.CREATEDATE = DateTime.Now;
+
+                    if (DAL.C_DonKhachHang.checkHoSoTonTai(donKH.SHS) != 0)
+                    {
+                        MessageBox.Show(this, "Số Hồ Sơ Đã Tồn Tại.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.txtSHS.Focus();
+                    }
+                    else
+                    {
+                        DAL.C_DonKhachHang.InsertDonHK(donKH);
+                        loadDataGrid();
+                        Utilities.DataGridV.formatRows(dataG);
+                        refresh();
+                        try
+                        {
+                            this.txtSHS.Text = (int.Parse(donKH.SHS) + 1) + "";
+                            this.txtSHS.Focus();
+                        }
+                        catch (Exception)
+                        {
+
+                        }
+                    }
+                }
+        }
+
+        public void InsertHoSoKhachHang() { 
+        
+        }
         private void btThem_Click(object sender, EventArgs e)
         {
+
             add();
            
         }
@@ -345,6 +433,32 @@ namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
             }
             
             
+        }
+
+        private void GridPhuiDao_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            if (GridPhuiDao.CurrentCell.OwningColumn.Name == "pd_MaKetCau")
+            {
+
+                KH_XINPHEPDAODUONG_KETCAU dmvt = DAL.C_DanhMucTaiLapMD.finbyMaDM_XPDD(GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells["pd_MaKetCau"].Value + "");
+                if (dmvt != null)
+                {
+                    GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells["phuidao_tenketcau"].Value = dmvt.TENKETCAU.ToUpper();
+                    //GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells["Phui_DonGia"].Value = dmvt.DONGIA;
+                    //GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells["phuidao_dvt"].Value = dmvt.DVT;
+                    //if (mahieuvt.Equals("TNHA"))
+                    //{
+                    //    GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells["phuidao_Daii"].Value = this.txtSoHo.Value;
+                    //}
+                }
+                //else
+                //{
+                //    MessageBox.Show(this, "Không Tìm Thấy Mã Kết Cấu.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //    GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells["pd_MaKetCau"].Selected = true;
+                //    return;
+                //}
+                //Utilities.DataGridV.formatRows(GridPhuiDao);
+            }
         }
 
        
