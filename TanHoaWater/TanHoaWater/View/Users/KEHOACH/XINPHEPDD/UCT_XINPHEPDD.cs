@@ -242,20 +242,27 @@ namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
 
         private void tabItem2_Click(object sender, EventArgs e)
         {
-             string madot = "";
-             DateTime ngaylap = DateTime.Now.Date;
+            string madot = "";
+            DateTime ngaylap = DateTime.Now.Date;
             try
             {
-                madot = dataDanhSachDaoDuong.Rows[dataDanhSachDaoDuong.CurrentRow.Index].Cells["gridSoDot"].Value + "";
+                madot = dataDanhSachDaoDuong.Rows[dataDanhSachDaoDuong.CurrentRow.Index].Cells["MADOTXP"].Value + "";
                 ngaylap = DateTime.Parse(dataDanhSachDaoDuong.Rows[dataDanhSachDaoDuong.CurrentRow.Index].Cells["gridNgayLap"].Value + "");
-                
+
             }
             catch (Exception)
             {
             }
-           tabCapNhatDS.Controls.Clear();
-           tabCapNhatDS.Controls.Add(new tab_CapNhatTheoDot(madot, ngaylap));
-           this.tabControl1.SelectedTabIndex = 1;
+            if (!"".Equals(madot))
+            {
+                tabCapNhatDS.Controls.Clear();
+                tabCapNhatDS.Controls.Add(new tab_CapNhatTheoDot(madot, ngaylap));
+                this.tabControl1.SelectedTabIndex = 1;
+            }
+            else
+            {
+                MessageBox.Show(this, "Cần Chọn Mã Đợt Để Xin Phép Đào Đường !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
           
         }
 
@@ -447,16 +454,25 @@ namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
             DateTime ngaylap = DateTime.Now.Date;
             try
             {
-                madot = dataDanhSachDaoDuong.Rows[dataDanhSachDaoDuong.CurrentRow.Index].Cells["gridSoDot"].Value + "";
+                madot = dataDanhSachDaoDuong.Rows[dataDanhSachDaoDuong.CurrentRow.Index].Cells["MADOTXP"].Value + "";
                 ngaylap = DateTime.Parse(dataDanhSachDaoDuong.Rows[dataDanhSachDaoDuong.CurrentRow.Index].Cells["gridNgayLap"].Value + "");
 
             }
             catch (Exception)
             {
             }
-            tabHoSoDuAn.Controls.Clear();
-            tabHoSoDuAn.Controls.Add(new tab_XinPhepDuAn(madot, ngaylap));
-            this.tabControl1.SelectedTabIndex = 2;
+            if (!"".Equals(madot))
+            {
+                tabCapNhatDS.Controls.Clear();
+                tabHoSoDuAn.Controls.Clear();
+                tabHoSoDuAn.Controls.Add(new tab_CapNhatTheoDot(madot, ngaylap));
+                this.tabControl1.SelectedTabIndex = 2;
+            }
+            else
+            {
+                MessageBox.Show(this, "Cần Chọn Mã Đợt Để Xin Phép Đào Đường !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
         }
 
         private void btHoSoDuAn_Click(object sender, EventArgs e)
@@ -465,16 +481,26 @@ namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
             DateTime ngaylap = DateTime.Now.Date;
             try
             {
-                madot = dataDanhSachDaoDuong.Rows[dataDanhSachDaoDuong.CurrentRow.Index].Cells["gridSoDot"].Value + "";
+                madot = dataDanhSachDaoDuong.Rows[dataDanhSachDaoDuong.CurrentRow.Index].Cells["MADOTXP"].Value + "";
                 ngaylap = DateTime.Parse(dataDanhSachDaoDuong.Rows[dataDanhSachDaoDuong.CurrentRow.Index].Cells["gridNgayLap"].Value + "");
 
             }
             catch (Exception)
             {
             }
-            tabHoSoDuAn.Controls.Clear();
-            tabHoSoDuAn.Controls.Add(new tab_XinPhepDuAn(madot, ngaylap));
-            this.tabControl1.SelectedTabIndex = 2;
+            if (!"".Equals(madot))
+            {
+                tabCapNhatDS.Controls.Clear();
+                tabHoSoDuAn.Controls.Clear();
+                tabHoSoDuAn.Controls.Add(new tab_CapNhatTheoDot(madot, ngaylap));
+                this.tabControl1.SelectedTabIndex = 2;
+            }
+            else
+            {
+                MessageBox.Show(this, "Cần Chọn Mã Đợt Để Xin Phép Đào Đường !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+            
         }
     }
 }

@@ -22,12 +22,14 @@ namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
         public tab_XinPhepDuAn(string madot, DateTime ngaylap)
         {
             InitializeComponent();
-            this.cbMaDot.DataSource = DAL.C_KH_XinPhepDD.ListAllXinPhepDD();
-            this.cbMaDot.ValueMember = "MADOT";
-            this.cbMaDot.DisplayMember = "MADOT";
-            cbMaDot.Text = madot;
+
+
+            this.cbMaDotDuAn.DataSource = DAL.C_KH_XinPhepDD.ListAllXinPhepDD();
+            this.cbMaDotDuAn.ValueMember = "MADOT";
+            this.cbMaDotDuAn.DisplayMember = "MADOT";
+            cbMaDotDuAn.Text = madot;
             xinphep = DAL.C_KH_XinPhepDD.finbyMaDot(madot);
-            loadDataGrid(this.cbMaDot.SelectedValue.ToString());
+            loadDataGrid(this.cbMaDotDuAn.SelectedValue.ToString());
             _ngaylap = ngaylap;
             try
             {
@@ -37,13 +39,32 @@ namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
             }
             catch (Exception)
             {
-                
-                 
+
+
             }
-            this.pd_MaKetCau.DataSource = DAL.LinQConnection.getDataTable("SELECT MADANHMUC , (MADANHMUC + ' ______ '+   UPPER(TENKETCAU) ) as 'TENKETCAU' FROM KH_XINPHEPDAODUONG_KETCAU ");
-            this.pd_MaKetCau.ValueMember = "MADANHMUC";
-            this.pd_MaKetCau.DisplayMember = "TENKETCAU";
-            this.pd_MaKetCau.DropDownWidth = 300;
+
+
+            //this.cbMaDotDuAn.DataSource = DAL.C_KH_XinPhepDD.ListAllXinPhepDD();
+            //this.cbMaDotDuAn.ValueMember = "MADOT";
+            //this.cbMaDotDuAn.DisplayMember = "MADOT";
+            //cbMaDotDuAn.Text = madot;
+            //xinphep = DAL.C_KH_XinPhepDD.finbyMaDot(madot);
+            //loadDataGrid(this.cbMaDotDuAn.SelectedValue.ToString());
+            //_ngaylap = ngaylap;
+            //try
+            //{
+            //    cbDonViTaiLap.DataSource = DAL.C_KH_DonViTC.getDonViTaiLap();
+            //    cbDonViTaiLap.DisplayMember = "TENCONGTY";
+            //    cbDonViTaiLap.ValueMember = "TENCONGTY";
+            //}
+            //catch (Exception)
+            //{
+            //}
+
+            //this.pd_MaKetCau.DataSource = DAL.LinQConnection.getDataTable("SELECT MADANHMUC , (MADANHMUC + ' ______ '+   UPPER(TENKETCAU) ) as 'TENKETCAU' FROM KH_XINPHEPDAODUONG_KETCAU ");
+            //this.pd_MaKetCau.ValueMember = "MADANHMUC";
+            //this.pd_MaKetCau.DisplayMember = "TENKETCAU";
+            //this.pd_MaKetCau.DropDownWidth = 300;
             
         }
 
@@ -57,20 +78,18 @@ namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
             //    this.GridViewPhuiDao.Visible = false;
             //}
         }
-        bool hosochuco = false;
+
         private void txtMaSHS_KeyPress(object sender, KeyPressEventArgs e)
         {
 
             if (e.KeyChar == 13)
             {
                 DataTable table = DAL.C_KH_XinPhepDD.findByHSHT(this.txtMaSHS.Text);
+                this.txtGhiChu.Text = this.txtMaSHS.Text;
                 if (table.Rows.Count <= 0)
                 {
-                    hosochuco = true;
-                    this.txtHoTen.Text = "";
-                    this.txtGhiChu.Text = "";
-                    this.txtDiaChi.Text = "";
-                    this.txtMaSHS.Focus();
+                  
+               
                 }
                 else
                 {
@@ -85,9 +104,9 @@ namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
                     //else {
                     //    GridViewPhuiDao.DataSource = DAL.C_KH_XinPhepDD.getListBCPhuiDao(_shs);
                     //}
-                    DAL.LinQConnection.ExecuteCommand_("DELETE FROM KH_BAOCAOPHUIDAO WHERE SHS='" + _shs + "'");
-                    DAL.C_KH_XinPhepDD.getPhuiDao(_shs);
-                    DAL.C_KH_XinPhepDD.TinhPhuiDao(_shs);
+                    //DAL.LinQConnection.ExecuteCommand_("DELETE FROM KH_BAOCAOPHUIDAO WHERE SHS='" + _shs + "'");
+                    //DAL.C_KH_XinPhepDD.getPhuiDao(_shs);
+                    //DAL.C_KH_XinPhepDD.TinhPhuiDao(_shs);
                     //GridViewPhuiDao.DataSource = DAL.C_KH_XinPhepDD.getListBCPhuiDao(_shs);
 
                     if ("DD".Contains(_shs))
@@ -152,36 +171,37 @@ namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
             this.gridXiPhepDD.DataSource = table;
             this.lbTongHoSo.Text = "Tổng Số Hồ Sơ XPĐĐ: " + table.Rows.Count + " hồ sơ.";
         }
-        public void UpdatePhuiDao() {            
-                //for (int i = 0; i < GridViewPhuiDao.Rows.Count; i++)
-                //{
-                //    try
-                //    {
-                //        int stt = int.Parse((GridViewPhuiDao.Rows[i].Cells["STT"].Value + ""));
-                //        KH_BAOCAOPHUIDAO phui= DAL.C_KH_XinPhepDD.finbyBaoCaoPhuiDaoBySTT(stt);
-                //        if (phui != null) {
-                //            phui.TENKETCAU = (GridViewPhuiDao.Rows[i].Cells["phudaoTenKetCau"].Value + "");
-                //            phui.DAI = (GridViewPhuiDao.Rows[i].Cells["g_Dai"].Value + "");
-                //            phui.RONG = (GridViewPhuiDao.Rows[i].Cells["g_RONG"].Value + "");
-                //            phui.SAU = (GridViewPhuiDao.Rows[i].Cells["g_Sau"].Value + "");
-                //            phui.KICHTHUOC = (GridViewPhuiDao.Rows[i].Cells["phuiKetCau"].Value + "");
-                //        }
 
-                //    }
-                //    catch (Exception ex)
-                //    {
-                //        log.Error("Loi Cap Nhat Phui Dao " + ex.Message);
-                //    }
-                //}
-                //DAL.C_KH_XinPhepDD.UpdatePhui();
+        public void UpdatePhuiDao() {
+            for (int i = 0; i < GridPhuiDao.Rows.Count; i++)
+              {
+                  try
+                  {
+                      KH_BAOCAOPHUIDAO phui = new KH_BAOCAOPHUIDAO();
+                      phui.SHS = this.txtMaSHS.Text;
+                      phui.MADANHMUC = (GridPhuiDao.Rows[i].Cells["pd_MaKetCau"].Value + "");
+                      phui.TENKETCAU = (GridPhuiDao.Rows[i].Cells["phuidao_tenketcau"].Value + "");
+                      phui.DAI = "";
+                      phui.RONG = "";
+                      phui.SAU = "";
+                      phui.KICHTHUOC = (GridPhuiDao.Rows[i].Cells["phuikichthuoc"].Value + "");
+                      DAL.C_KH_XinPhepDD.InsertPhuiDao(phui);
+                  }
+                  catch (Exception ex)
+                  {
+                      log.Error("Loi Cap Nhat Phui Dao " + ex.Message);
+                  }
+              }
+             
         }
         public void add() {
             try
             {
-                if ("".Equals(this.cbMaDot.Text))
+                InsertDonKhachHang();
+                if ("".Equals(this.cbMaDotDuAn.Text))
                 {
                     MessageBox.Show(this, "Chọn Mã Đợt Xin Phép Đào Đường ", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    this.cbMaDot.Select();
+                    this.cbMaDotDuAn.Select();
                 }
                 else if ("".Equals(this.txtMaSHS.Text))
                 {
@@ -196,7 +216,7 @@ namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
                     {
                         kh_sh = new KH_HOSOKHACHHANG();
                         kh_sh.SHS = this.txtMaSHS.Text;
-                        kh_sh.MADOTDD = this.cbMaDot.Text;
+                        kh_sh.MADOTDD = this.cbMaDotDuAn.Text;
                         kh_sh.NGAYNHAN = _ngaylap;
                         kh_sh.GHICHU = this.txtGhiChu.Text;
                         kh_sh.CREATEBY = DAL.C_USERS._userName;
@@ -213,7 +233,7 @@ namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
                         {
                             if (MessageBox.Show(this, "Hồ Sơ Đã Lên Đợt Xin Phép Đào Đường.", "..: Thông Báo :..", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                             {
-                                kh_sh.MADOTDD = this.cbMaDot.Text;
+                                kh_sh.MADOTDD = this.cbMaDotDuAn.Text;
                                 kh_sh.MUCDICHDD = this.cbMucDichDD.Text;
                                 kh_sh.PHUONGPHAPDD = this.cbPhuongPhapDao.Text;
                                 kh_sh.DVITAILAPDD = this.cbDonViTaiLap.Text;
@@ -223,7 +243,7 @@ namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
                         }
                         else
                         {
-                            kh_sh.MADOTDD = this.cbMaDot.Text;
+                            kh_sh.MADOTDD = this.cbMaDotDuAn.Text;
                             kh_sh.MUCDICHDD = this.cbMucDichDD.Text;
                             kh_sh.PHUONGPHAPDD = this.cbPhuongPhapDao.Text;
                             kh_sh.DVITAILAPDD = this.cbDonViTaiLap.Text;
@@ -232,12 +252,12 @@ namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
                         }
 
                     }
-                    if (flag)
-                    {
-                        UpdatePhuiDao();
-                    }
-                    flag = false;
-                    loadDataGrid(this.cbMaDot.Text);
+
+                    DAL.LinQConnection.ExecuteCommand_("DELETE FROM KH_BAOCAOPHUIDAO WHERE SHS='" + this.txtMaSHS.Text + "'");
+                    UpdatePhuiDao();
+                  
+                 
+                    loadDataGrid(this.cbMaDotDuAn.Text);
                     Refresh();
                     try
                     {
@@ -267,7 +287,14 @@ namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
 
         private void cbMaDot_SelectedValueChanged(object sender, EventArgs e)
         {
-            loadDataGrid(this.cbMaDot.SelectedValue.ToString());
+            try
+            {
+                loadDataGrid(this.cbMaDotDuAn.SelectedValue.ToString());
+            }
+            catch (Exception)
+            {
+            }
+            
         }
         bool flag = false;
         private void GridViewPhuiDao_CellEndEdit(object sender, DataGridViewCellEventArgs e)
@@ -285,7 +312,7 @@ namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
                     if (MessageBox.Show(this, "Có Muốn Hủy Hồ Sơ " + _shs + " Không ?", "..: Thông Báo :..", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         DAL.C_KH_HoSoKhachHang.HuyDaoDuong(_shs);
-                        loadDataGrid(this.cbMaDot.Text);
+                        loadDataGrid(this.cbMaDotDuAn.Text);
                     }
                 }
                 //if (gridXiPhepDD.CurrentCell.OwningColumn.Name == "gridMaHS")
@@ -308,7 +335,7 @@ namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
 
         private void inDanhSachCoPhep_Click(object sender, EventArgs e)
         {
-            string madot = this.cbMaDot.Text;
+            string madot = this.cbMaDotDuAn.Text;
             ReportDocument rp = new rpt_XinPhep();
             rp.SetDataSource(DAL.C_KH_XinPhepDD.ReportxinPhepDD(madot, "", "", "", ""));
 
@@ -318,7 +345,7 @@ namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
 
         private void btInDanhSachMienPhep_Click(object sender, EventArgs e)
         {
-            string madot = this.cbMaDot.Text;
+            string madot = this.cbMaDotDuAn.Text;
             frmDialogPrintting frm = new frmDialogPrintting(madot);
             frm.ShowDialog();
         }
@@ -326,103 +353,47 @@ namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
         public void InsertDonKhachHang() { 
         
                     DON_KHACHHANG donKH = new DON_KHACHHANG();
-                    donKH.MADOT = this.cbDotNhanDon.SelectedValue.ToString();
-                    donKH.SOHOSO = this.txtSoHoSo.Text;
-                    donKH.SHS = this.txtSHS.Text;
-                    if (soho.Value > 1)
-                    {
-                        donKH.TAPTHE = true;
-                        cbLoaiKH.Text = "Tập Thể";
-                    }
-                    else
-                    {
-                        donKH.TAPTHE = false;
-                        cbLoaiKH.Text = "Cá Nhân";
-                    }
-                    //else
-                    //{
-                    //    donKH.HOTEN = this.txtHoTen.Text;
-                    //}
+                    donKH.MADOT = "HSDUAN";
+                    donKH.SOHOSO = this.txtMaSHS.Text;
+                    donKH.SHS = this.txtMaSHS.Text;
+                    donKH.TAPTHE = true;                 
                     donKH.HOTEN = this.txtHoTen.Text;
-                    donKH.DIENTHOAI = this.dienthoai.Text;
-                    donKH.SOHO = int.Parse(this.soho.Value.ToString());
-                    donKH.SONHA = this.sonha.Text;
+                    donKH.DIENTHOAI ="";
+                    donKH.SOHO = 1;
+                    donKH.SONHA = "";
                     donKH.TINHKHOAN = true;
-                    if (this.sonha.Text.Contains("/") == true)
-                    {
-                        donKH.LOAIMIENPHI = "Hẻm";
-                    }
-                    else
-                    {
-                        donKH.LOAIMIENPHI = "Mặt tiền";
-                    }
-                    donKH.DUONG = this.duong.Text;
-                    donKH.PHUONG = _maphuong;
-                    donKH.QUAN = _maquan;
-                    string maloaikh = "";
-                    if (this.cbLoaiKH.SelectedValue == null || "".Equals(this.cbLoaiKH.SelectedValue.ToString()) == true)
-                    {
-                        maloaikh = DAL.C_LoaiKhachHang.finbyTenLoai(this.cbLoaiKH.Text).MALOAI;
-                    }
-                    else
-                    {
-                        maloaikh = this.cbLoaiKH.SelectedValue.ToString();
-                    }
-                    donKH.LOAIKH = maloaikh;
-                    donKH.LOAIHOSO = DAL.C_DotNhanDon.findByMaDot(this.cbDotNhanDon.SelectedValue.ToString()).LOAIDON;
-                    donKH.GHICHU = this.ghichu.Text;
-                    if (this.khan.Checked == true)
-                    {
-                        donKH.HOSOKHAN = true;
-                        donKH.GHICHUKHAN = this.ghichukhan.Text;
-                    }
-                    donKH.NGAYNHAN = ngaynhan;
-                    donKH.DANHBO = this.txtDanhBo.Text;
-                    donKH.HOPDONG = this.txtHopDong.Text;
+                    donKH.LOAIMIENPHI = "Mặt tiền";
+                    donKH.DUONG = txtDiaChi.Text;
+                    donKH.PHUONG = "01";
+                    donKH.QUAN = 23;                    
+                    donKH.LOAIKH = "CT";
+                    donKH.LOAIHOSO = "CT";
+                    donKH.GHICHU = "";                   
+                    donKH.NGAYNHAN = DateTime.Now.Date;
+                    donKH.HOPDONG = "";
                     donKH.CREATEBY = DAL.C_USERS._userName;
                     donKH.CREATEDATE = DateTime.Now;
-
-                    if (DAL.C_DonKhachHang.checkHoSoTonTai(donKH.SHS) != 0)
-                    {
-                        MessageBox.Show(this, "Số Hồ Sơ Đã Tồn Tại.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        this.txtSHS.Focus();
-                    }
-                    else
-                    {
-                        DAL.C_DonKhachHang.InsertDonHK(donKH);
-                        loadDataGrid();
-                        Utilities.DataGridV.formatRows(dataG);
-                        refresh();
-                        try
-                        {
-                            this.txtSHS.Text = (int.Parse(donKH.SHS) + 1) + "";
-                            this.txtSHS.Focus();
-                        }
-                        catch (Exception)
-                        {
-
-                        }
-                    }
-                }
+                    DAL.C_DonKhachHang.InsertDonHK(donKH);
         }
+        public void InsertHoSoKhachHang()
+        {
 
-        public void InsertHoSoKhachHang() { 
-        
         }
         private void btThem_Click(object sender, EventArgs e)
         {
-
             add();
-           
         }
+       
 
+       
+        
         private void btExport_Click(object sender, EventArgs e)
         {
             if (xinphep != null)
             {
                 if (xinphep.MAQUANLY.Contains("QTP"))
                 {
-                    frm_Export frm = new frm_Export(this.cbMaDot.Text);
+                    frm_Export frm = new frm_Export(this.cbMaDotDuAn.Text);
                     frm.ShowDialog();
                 }
                 else
