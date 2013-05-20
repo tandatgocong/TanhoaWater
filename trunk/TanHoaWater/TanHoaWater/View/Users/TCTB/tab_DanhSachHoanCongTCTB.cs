@@ -438,34 +438,38 @@ namespace TanHoaWater.View.Users.TCTB
                     hskh.NOIDUNGTN = "";
                 }
 
-                if (DAL.C_HoanCongDHN_DotTCTB.Update() == false)
+                if (DAL.C_HoanCongDHN_DotTCTB.Update() == true)
                 {
                     try
                     {
-                        TB_DULIEUKHACHHANG kh = DULIEUKH.C_DuLieuKhachHang.finByDanhBo(txtDanhBo.Text.Replace(" ", "").Replace("-", ""));
-                        if (kh != null) {
-                            kh.NGAYTHAY = hskh.NGAYTHICONG;
-                            kh.NGAYKIEMDINH = hskh.DHN_NGAYKIEMDINH;
-                            kh.HIEUDH = hskh.HIEUDONGHO;
-                            kh.SOTHANDH = hskh.SOTHANTLK;
-                            kh.CHISOKYTRUOC = hskh.CHISO+"";
-                            DULIEUKH.C_DuLieuKhachHang.Update();
+                        if (this.cbDotTC.Text.Contains("BT"))
+                        {
+                            TB_DULIEUKHACHHANG kh = DULIEUKH.C_DuLieuKhachHang.finByDanhBo(txtDanhBo.Text.Replace(" ", "").Replace("-", ""));
+                            if (kh != null)
+                            {
+                                kh.NGAYTHAY = hskh.NGAYTHICONG;
+                                kh.NGAYKIEMDINH = hskh.DHN_NGAYKIEMDINH;
+                                kh.HIEUDH = hskh.HIEUDONGHO;
+                                kh.SOTHANDH = hskh.SOTHANTLK;
+                                kh.CHISOKYTRUOC = hskh.CHISO + "";
+                                DULIEUKH.C_DuLieuKhachHang.Update();
+                            }
                         }
-
-                    }
+                  }
                     catch (Exception ex)
                     {
                         log.Error(ex.Message);
                     }
                     
-
-                    MessageBox.Show(this, "Cập Nhật Hoàn Công Không Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+               //     MessageBox.Show(this, "Cập Nhật Hoàn Công  Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     hoantat();
                 }
-                    
-            }           
 
+                else {
+                    MessageBox.Show(this, "Cập Nhật Hoàn Công Không Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }           
         }
 
         public string getSHS()

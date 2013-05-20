@@ -140,20 +140,27 @@ namespace TanHoaWater.DAL
                 {
                     for (int i = 0; i < table.Rows.Count; i++)
                     {
-                        string shs = table.Rows[i]["SHS"].ToString();
-                        TOTHIETKE ttk = DAL.C_ToThietKe.findBySHS(shs);
-                        if (ttk != null && ttk.NGAYHOANTATTK != null)
+                        try
                         {
-                            table.Rows[i]["HOANTATTK"] = Utilities.DateToString.NgayVN(ttk.NGAYHOANTATTK.Value);
-                        }
-                        if (!"".Equals(table.Rows[i]["DONVITHICONG"] + ""))
-                        {
-                            KH_DONVITHICONG bctc = DAL.C_KH_DonViTC.findDVTCbyID(int.Parse(table.Rows[i]["DONVITHICONG"] + ""));
-                            if (bctc != null)
+                            string shs = table.Rows[i]["SHS"].ToString();
+                            TOTHIETKE ttk = DAL.C_ToThietKe.findBySHS(shs);
+                            if (ttk != null && ttk.NGAYHOANTATTK != null)
                             {
-                                table.Rows[i]["DONVITC"] = bctc.TENCONGTY.Replace("C.Ty", "").Replace("TNHH", "").Replace("Cổ Phần", "");
+                                table.Rows[i]["HOANTATTK"] = Utilities.DateToString.NgayVN(ttk.NGAYHOANTATTK.Value);
+                            }
+                            if (!"".Equals(table.Rows[i]["DONVITHICONG"] + ""))
+                            {
+                                KH_DONVITHICONG bctc = DAL.C_KH_DonViTC.findDVTCbyID(int.Parse(table.Rows[i]["DONVITHICONG"] + ""));
+                                if (bctc != null)
+                                {
+                                    table.Rows[i]["DONVITC"] = bctc.TENCONGTY.Replace("C.Ty", "").Replace("TNHH", "").Replace("Cổ Phần", "");
+                                }
                             }
                         }
+                        catch (Exception)
+                        {
+                        }
+                        
                     }
                 }
 

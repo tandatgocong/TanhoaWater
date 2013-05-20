@@ -13,10 +13,9 @@ namespace TanHoaWater.DAL
     class C_KH_XinPhepDD
     {
         private static readonly ILog log = LogManager.GetLogger(typeof(C_KH_XinPhepDD).Name);
-       
+        static TanHoaDataContext db = new TanHoaDataContext();
         public static int TotalList(string sodot, string noicapphep, string ngaylap)
         {
-            TanHoaDataContext db = new TanHoaDataContext();
             SqlConnection conn = new SqlConnection(db.Connection.ConnectionString);
             conn.Open();
             string sql = " SELECT COUNT(*)";
@@ -41,18 +40,14 @@ namespace TanHoaWater.DAL
      
         public static DataTable findByHSHT(string shs) {
 
-            TanHoaDataContext db = new TanHoaDataContext();
-            db.Connection.Open();
+           
             string sql = "  SELECT donkh.SHS,HOTEN, SONHA + ' ' + DUONG + ', P.' + TENPHUONG  as 'DIACHI' ";
             sql += " FROM DON_KHACHHANG donkh,PHUONG p, QUAN q ";
             sql += " WHERE donkh.QUAN = q.MAQUAN AND q.MAQUAN=p.MAQUAN AND donkh.PHUONG=p.MAPHUONG ";
             sql += " AND donkh.SHS='" + shs + "'";
 
-            SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
-            DataSet dataset = new DataSet();
-            adapter.Fill(dataset,"TABLE");
-            db.Connection.Close();
-            return dataset.Tables[0];
+
+            return LinQConnection.getDataTable(sql);
 
        
         }
@@ -111,6 +106,21 @@ namespace TanHoaWater.DAL
             {
                 TanHoaDataContext db = new TanHoaDataContext();
                 db.KH_XINPHEPDAODUONGs.InsertOnSubmit(xpdd);
+                db.SubmitChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                log.Error("Insert Xin Phep Dao Duong Loi. " + ex.Message);
+            }
+            return false;
+        }
+
+        public static bool InsertPhuiDao(KH_BAOCAOPHUIDAO xpdd)
+        {
+            try
+            {
+                db.KH_BAOCAOPHUIDAOs.InsertOnSubmit(xpdd);
                 db.SubmitChanges();
                 return true;
             }
@@ -280,7 +290,7 @@ namespace TanHoaWater.DAL
             
             return false;
         }
-        static TanHoaDataContext db = new TanHoaDataContext();
+       
         public static KH_BAOCAOPHUIDAO finbyBaoCaoPhuiDaoBySTT(int stt) {
             try
             {
