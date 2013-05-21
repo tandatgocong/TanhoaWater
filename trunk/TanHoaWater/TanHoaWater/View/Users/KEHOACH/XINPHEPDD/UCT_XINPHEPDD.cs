@@ -465,7 +465,7 @@ namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
             {
                 tabCapNhatDS.Controls.Clear();
                 tabHoSoDuAn.Controls.Clear();
-                tabHoSoDuAn.Controls.Add(new tab_CapNhatTheoDot(madot, ngaylap));
+                tabHoSoDuAn.Controls.Add(new tab_XinPhepDuAn(madot, ngaylap));
                 this.tabControl1.SelectedTabIndex = 2;
             }
             else
@@ -492,7 +492,7 @@ namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
             {
                 tabCapNhatDS.Controls.Clear();
                 tabHoSoDuAn.Controls.Clear();
-                tabHoSoDuAn.Controls.Add(new tab_CapNhatTheoDot(madot, ngaylap));
+                tabHoSoDuAn.Controls.Add(new tab_XinPhepDuAn(madot, ngaylap));
                 this.tabControl1.SelectedTabIndex = 2;
             }
             else

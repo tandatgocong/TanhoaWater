@@ -61,10 +61,10 @@ namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
             //{
             //}
 
-            //this.pd_MaKetCau.DataSource = DAL.LinQConnection.getDataTable("SELECT MADANHMUC , (MADANHMUC + ' ______ '+   UPPER(TENKETCAU) ) as 'TENKETCAU' FROM KH_XINPHEPDAODUONG_KETCAU ");
-            //this.pd_MaKetCau.ValueMember = "MADANHMUC";
-            //this.pd_MaKetCau.DisplayMember = "TENKETCAU";
-            //this.pd_MaKetCau.DropDownWidth = 300;
+            this.pd_MaKetCau.DataSource = DAL.LinQConnection.getDataTable("SELECT MADANHMUC , (MADANHMUC + ' ______ '+   UPPER(TENKETCAU) ) as 'TENKETCAU' FROM KH_XINPHEPDAODUONG_KETCAU ");
+            this.pd_MaKetCau.ValueMember = "MADANHMUC";
+            this.pd_MaKetCau.DisplayMember = "TENKETCAU";
+            this.pd_MaKetCau.DropDownWidth = 300;
             
         }
 
