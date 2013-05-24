@@ -56,6 +56,16 @@
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.lbDotTc = new DevComponents.DotNetBar.LabelX();
             this.dataGridViewX1 = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.txtTaiLapMĐ = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX12 = new DevComponents.DotNetBar.LabelX();
+            this.txtSoDanhBo = new System.Windows.Forms.MaskedTextBox();
+            this.txtSoTien = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX11 = new DevComponents.DotNetBar.LabelX();
+            this.txtTinhTrangTLK = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX6 = new DevComponents.DotNetBar.LabelX();
+            this.labelX1 = new DevComponents.DotNetBar.LabelX();
+            this.txtSoHoaDon = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX10 = new DevComponents.DotNetBar.LabelX();
             this.thaotac = new System.Windows.Forms.DataGridViewButtonColumn();
             this.SHS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.G_SOHOSO = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,16 +78,6 @@
             this.G_CoTL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.G_TinhTrang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.G_DienThoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtTaiLapMĐ = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.labelX12 = new DevComponents.DotNetBar.LabelX();
-            this.txtSoDanhBo = new System.Windows.Forms.MaskedTextBox();
-            this.txtSoTien = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.labelX11 = new DevComponents.DotNetBar.LabelX();
-            this.txtTinhTrangTLK = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.labelX6 = new DevComponents.DotNetBar.LabelX();
-            this.labelX1 = new DevComponents.DotNetBar.LabelX();
-            this.txtSoHoaDon = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.labelX10 = new DevComponents.DotNetBar.LabelX();
             ((System.ComponentModel.ISupportInitialize)(this.btPrint)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateNgayDongTien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewX1)).BeginInit();
@@ -359,120 +359,6 @@
             this.dataGridViewX1.TabIndex = 743;
             this.dataGridViewX1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewX1_CellClick);
             // 
-            // thaotac
-            // 
-            this.thaotac.DataPropertyName = "HUY";
-            this.thaotac.Frozen = true;
-            this.thaotac.HeaderText = "";
-            this.thaotac.Name = "thaotac";
-            this.thaotac.ReadOnly = true;
-            this.thaotac.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.thaotac.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.thaotac.Width = 70;
-            // 
-            // SHS
-            // 
-            this.SHS.DataPropertyName = "SHS";
-            this.SHS.Frozen = true;
-            this.SHS.HeaderText = "SHS";
-            this.SHS.Name = "SHS";
-            this.SHS.ReadOnly = true;
-            this.SHS.Visible = false;
-            // 
-            // G_SOHOSO
-            // 
-            this.G_SOHOSO.DataPropertyName = "SOHOSO";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.G_SOHOSO.DefaultCellStyle = dataGridViewCellStyle1;
-            this.G_SOHOSO.Frozen = true;
-            this.G_SOHOSO.HeaderText = "Số Hồ Sơ";
-            this.G_SOHOSO.Name = "G_SOHOSO";
-            this.G_SOHOSO.ReadOnly = true;
-            this.G_SOHOSO.Width = 130;
-            // 
-            // G_HovaTen
-            // 
-            this.G_HovaTen.DataPropertyName = "HOTEN";
-            this.G_HovaTen.Frozen = true;
-            this.G_HovaTen.HeaderText = "Họ và Tên";
-            this.G_HovaTen.Name = "G_HovaTen";
-            this.G_HovaTen.ReadOnly = true;
-            this.G_HovaTen.Width = 250;
-            // 
-            // G_DiaChi
-            // 
-            this.G_DiaChi.DataPropertyName = "DIACHI";
-            this.G_DiaChi.HeaderText = "Đia Chỉ";
-            this.G_DiaChi.Name = "G_DiaChi";
-            this.G_DiaChi.ReadOnly = true;
-            this.G_DiaChi.Width = 350;
-            // 
-            // G_HoaDon
-            // 
-            this.G_HoaDon.DataPropertyName = "SOHOADON";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.G_HoaDon.DefaultCellStyle = dataGridViewCellStyle2;
-            this.G_HoaDon.HeaderText = "Hóa Đơn";
-            this.G_HoaDon.Name = "G_HoaDon";
-            this.G_HoaDon.ReadOnly = true;
-            // 
-            // G_NgayDongTien
-            // 
-            this.G_NgayDongTien.DataPropertyName = "NGAYDONGTIEN";
-            dataGridViewCellStyle3.Format = "dd/MM/yyyy";
-            this.G_NgayDongTien.DefaultCellStyle = dataGridViewCellStyle3;
-            this.G_NgayDongTien.HeaderText = "Ngày Đóng Tiền";
-            this.G_NgayDongTien.Name = "G_NgayDongTien";
-            this.G_NgayDongTien.ReadOnly = true;
-            this.G_NgayDongTien.Width = 135;
-            // 
-            // G_SoTien
-            // 
-            this.G_SoTien.DataPropertyName = "SOTIEN";
-            dataGridViewCellStyle4.Format = "N0";
-            dataGridViewCellStyle4.NullValue = null;
-            this.G_SoTien.DefaultCellStyle = dataGridViewCellStyle4;
-            this.G_SoTien.HeaderText = "Số Tiền";
-            this.G_SoTien.Name = "G_SoTien";
-            this.G_SoTien.ReadOnly = true;
-            this.G_SoTien.Width = 110;
-            // 
-            // G_DANHBO
-            // 
-            this.G_DANHBO.DataPropertyName = "DANHBO";
-            this.G_DANHBO.HeaderText = "Danh Bộ";
-            this.G_DANHBO.Name = "G_DANHBO";
-            this.G_DANHBO.ReadOnly = true;
-            this.G_DANHBO.Width = 150;
-            // 
-            // G_CoTL
-            // 
-            this.G_CoTL.DataPropertyName = "COTLK";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.G_CoTL.DefaultCellStyle = dataGridViewCellStyle5;
-            this.G_CoTL.HeaderText = "Cỡ TLK";
-            this.G_CoTL.Name = "G_CoTL";
-            this.G_CoTL.ReadOnly = true;
-            this.G_CoTL.Width = 90;
-            // 
-            // G_TinhTrang
-            // 
-            this.G_TinhTrang.DataPropertyName = "GHICHU";
-            this.G_TinhTrang.HeaderText = "Tình Trạng";
-            this.G_TinhTrang.Name = "G_TinhTrang";
-            this.G_TinhTrang.ReadOnly = true;
-            this.G_TinhTrang.Width = 300;
-            // 
-            // G_DienThoai
-            // 
-            this.G_DienThoai.DataPropertyName = "DIENTHOAI";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.G_DienThoai.DefaultCellStyle = dataGridViewCellStyle6;
-            this.G_DienThoai.HeaderText = "Điện Thoại";
-            this.G_DienThoai.Name = "G_DienThoai";
-            this.G_DienThoai.ReadOnly = true;
-            this.G_DienThoai.Width = 110;
-            // 
             // txtTaiLapMĐ
             // 
             // 
@@ -566,6 +452,119 @@
             this.labelX10.TabIndex = 754;
             this.labelX10.Text = "Số hóa đơn";
             // 
+            // thaotac
+            // 
+            this.thaotac.DataPropertyName = "HUY";
+            this.thaotac.Frozen = true;
+            this.thaotac.HeaderText = "";
+            this.thaotac.Name = "thaotac";
+            this.thaotac.ReadOnly = true;
+            this.thaotac.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.thaotac.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.thaotac.Width = 70;
+            // 
+            // SHS
+            // 
+            this.SHS.DataPropertyName = "SHS";
+            this.SHS.Frozen = true;
+            this.SHS.HeaderText = "SHS";
+            this.SHS.Name = "SHS";
+            this.SHS.ReadOnly = true;
+            this.SHS.Visible = false;
+            // 
+            // G_SOHOSO
+            // 
+            this.G_SOHOSO.DataPropertyName = "SOHOSO";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.G_SOHOSO.DefaultCellStyle = dataGridViewCellStyle1;
+            this.G_SOHOSO.Frozen = true;
+            this.G_SOHOSO.HeaderText = "Số Hồ Sơ";
+            this.G_SOHOSO.Name = "G_SOHOSO";
+            this.G_SOHOSO.ReadOnly = true;
+            this.G_SOHOSO.Width = 130;
+            // 
+            // G_HovaTen
+            // 
+            this.G_HovaTen.DataPropertyName = "HOTEN";
+            this.G_HovaTen.Frozen = true;
+            this.G_HovaTen.HeaderText = "Họ và Tên";
+            this.G_HovaTen.Name = "G_HovaTen";
+            this.G_HovaTen.ReadOnly = true;
+            this.G_HovaTen.Width = 250;
+            // 
+            // G_DiaChi
+            // 
+            this.G_DiaChi.DataPropertyName = "DIACHI";
+            this.G_DiaChi.HeaderText = "Đia Chỉ";
+            this.G_DiaChi.Name = "G_DiaChi";
+            this.G_DiaChi.ReadOnly = true;
+            this.G_DiaChi.Width = 350;
+            // 
+            // G_HoaDon
+            // 
+            this.G_HoaDon.DataPropertyName = "SOHOADON";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.G_HoaDon.DefaultCellStyle = dataGridViewCellStyle2;
+            this.G_HoaDon.HeaderText = "Hóa Đơn";
+            this.G_HoaDon.Name = "G_HoaDon";
+            this.G_HoaDon.ReadOnly = true;
+            // 
+            // G_NgayDongTien
+            // 
+            this.G_NgayDongTien.DataPropertyName = "NGAYDONGTIEN";
+            dataGridViewCellStyle3.Format = "dd/MM/yyyy";
+            this.G_NgayDongTien.DefaultCellStyle = dataGridViewCellStyle3;
+            this.G_NgayDongTien.HeaderText = "Ngày Đóng Tiền";
+            this.G_NgayDongTien.Name = "G_NgayDongTien";
+            this.G_NgayDongTien.ReadOnly = true;
+            this.G_NgayDongTien.Width = 135;
+            // 
+            // G_SoTien
+            // 
+            this.G_SoTien.DataPropertyName = "SOTIEN";
+            dataGridViewCellStyle4.NullValue = null;
+            this.G_SoTien.DefaultCellStyle = dataGridViewCellStyle4;
+            this.G_SoTien.HeaderText = "Số Tiền";
+            this.G_SoTien.Name = "G_SoTien";
+            this.G_SoTien.ReadOnly = true;
+            this.G_SoTien.Width = 110;
+            // 
+            // G_DANHBO
+            // 
+            this.G_DANHBO.DataPropertyName = "DANHBO";
+            this.G_DANHBO.HeaderText = "Danh Bộ";
+            this.G_DANHBO.Name = "G_DANHBO";
+            this.G_DANHBO.ReadOnly = true;
+            this.G_DANHBO.Width = 150;
+            // 
+            // G_CoTL
+            // 
+            this.G_CoTL.DataPropertyName = "COTLK";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.G_CoTL.DefaultCellStyle = dataGridViewCellStyle5;
+            this.G_CoTL.HeaderText = "Cỡ TLK";
+            this.G_CoTL.Name = "G_CoTL";
+            this.G_CoTL.ReadOnly = true;
+            this.G_CoTL.Width = 90;
+            // 
+            // G_TinhTrang
+            // 
+            this.G_TinhTrang.DataPropertyName = "GHICHU";
+            this.G_TinhTrang.HeaderText = "Tình Trạng";
+            this.G_TinhTrang.Name = "G_TinhTrang";
+            this.G_TinhTrang.ReadOnly = true;
+            this.G_TinhTrang.Width = 300;
+            // 
+            // G_DienThoai
+            // 
+            this.G_DienThoai.DataPropertyName = "DIENTHOAI";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.G_DienThoai.DefaultCellStyle = dataGridViewCellStyle6;
+            this.G_DienThoai.HeaderText = "Điện Thoại";
+            this.G_DienThoai.Name = "G_DienThoai";
+            this.G_DienThoai.ReadOnly = true;
+            this.G_DienThoai.Width = 110;
+            // 
             // tab_CapNhatDSBoiThuong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -637,6 +636,16 @@
         private DevComponents.DotNetBar.LabelX labelX2;
         private DevComponents.DotNetBar.LabelX lbDotTc;
         private DevComponents.DotNetBar.Controls.DataGridViewX dataGridViewX1;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtTaiLapMĐ;
+        private DevComponents.DotNetBar.LabelX labelX12;
+        private System.Windows.Forms.MaskedTextBox txtSoDanhBo;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtSoTien;
+        private DevComponents.DotNetBar.LabelX labelX11;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtTinhTrangTLK;
+        private DevComponents.DotNetBar.LabelX labelX6;
+        private DevComponents.DotNetBar.LabelX labelX1;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtSoHoaDon;
+        private DevComponents.DotNetBar.LabelX labelX10;
         private System.Windows.Forms.DataGridViewButtonColumn thaotac;
         private System.Windows.Forms.DataGridViewTextBoxColumn SHS;
         private System.Windows.Forms.DataGridViewTextBoxColumn G_SOHOSO;
@@ -649,15 +658,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn G_CoTL;
         private System.Windows.Forms.DataGridViewTextBoxColumn G_TinhTrang;
         private System.Windows.Forms.DataGridViewTextBoxColumn G_DienThoai;
-        private DevComponents.DotNetBar.Controls.TextBoxX txtTaiLapMĐ;
-        private DevComponents.DotNetBar.LabelX labelX12;
-        private System.Windows.Forms.MaskedTextBox txtSoDanhBo;
-        private DevComponents.DotNetBar.Controls.TextBoxX txtSoTien;
-        private DevComponents.DotNetBar.LabelX labelX11;
-        private DevComponents.DotNetBar.Controls.TextBoxX txtTinhTrangTLK;
-        private DevComponents.DotNetBar.LabelX labelX6;
-        private DevComponents.DotNetBar.LabelX labelX1;
-        private DevComponents.DotNetBar.Controls.TextBoxX txtSoHoaDon;
-        private DevComponents.DotNetBar.LabelX labelX10;
     }
 }

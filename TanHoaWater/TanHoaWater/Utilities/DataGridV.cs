@@ -61,7 +61,8 @@ namespace TanHoaWater.Utilities
             {
                 dview.Rows[i].Cells["G_SOHOSO"].Value = sohoso(dview.Rows[i].Cells["G_SOHOSO"].Value + "");
                 dview.Rows[i].Cells["G_DANHBO"].Value = dview.Rows[i].Cells["G_DANHBO"].Value != null ? Utilities.FormatSoHoSoDanhBo.sodanhbo(dview.Rows[i].Cells["G_DANHBO"].Value + "") : dview.Rows[i].Cells["G_DANHBO"].Value;
-            }
+                           
+            }       
         }
       
         
