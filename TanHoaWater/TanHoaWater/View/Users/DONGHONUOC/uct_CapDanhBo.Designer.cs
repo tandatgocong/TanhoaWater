@@ -189,6 +189,9 @@
             this.btInBangKe = new DevComponents.DotNetBar.ButtonX();
             this.reflectionLabel2 = new DevComponents.DotNetBar.Controls.ReflectionLabel();
             this.gridHoanCong = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtSoNha = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.hc_SoDot = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hc_SHS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hc_chonin = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -216,8 +219,8 @@
             this.DHN_HOTEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DHN_SONHA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DHN_DIACHI = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
+            this.G_DUONG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.G_SONHA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dateNgayThiCong)).BeginInit();
@@ -237,6 +240,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.txtSoNha);
             this.panel1.Controls.Add(this.btHuyLoTrinh);
             this.panel1.Controls.Add(this.txtDHNDUONG);
             this.panel1.Controls.Add(this.txDHNSONHA);
@@ -1366,9 +1370,9 @@
             // 
             this.txtDiaChi.Border.Class = "TextBoxBorder";
             this.txtDiaChi.ForeColor = System.Drawing.Color.Red;
-            this.txtDiaChi.Location = new System.Drawing.Point(582, 50);
+            this.txtDiaChi.Location = new System.Drawing.Point(716, 50);
             this.txtDiaChi.Name = "txtDiaChi";
-            this.txtDiaChi.Size = new System.Drawing.Size(329, 25);
+            this.txtDiaChi.Size = new System.Drawing.Size(195, 25);
             this.txtDiaChi.TabIndex = 101;
             // 
             // txtHoTen
@@ -1560,7 +1564,9 @@
             this.hc_SoNhanKhau,
             this.DHN_HOTEN,
             this.DHN_SONHA,
-            this.DHN_DIACHI});
+            this.DHN_DIACHI,
+            this.G_DUONG,
+            this.G_SONHA});
             dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle21.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1588,6 +1594,36 @@
             this.gridHoanCong.CellStateChanged += new System.Windows.Forms.DataGridViewCellStateChangedEventHandler(this.gridHoanCong_CellStateChanged);
             this.gridHoanCong.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.gridHoanCong_DataError);
             this.gridHoanCong.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.gridHoanCong_EditingControlShowing);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(701, 119);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(32, 17);
+            this.label11.TabIndex = 62;
+            this.label11.Text = "ĐM";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(801, 118);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(53, 17);
+            this.label12.TabIndex = 63;
+            this.label12.Text = "ĐM Bù";
+            // 
+            // txtSoNha
+            // 
+            // 
+            // 
+            // 
+            this.txtSoNha.Border.Class = "TextBoxBorder";
+            this.txtSoNha.ForeColor = System.Drawing.Color.Red;
+            this.txtSoNha.Location = new System.Drawing.Point(582, 50);
+            this.txtSoNha.Name = "txtSoNha";
+            this.txtSoNha.Size = new System.Drawing.Size(128, 25);
+            this.txtSoNha.TabIndex = 161;
             // 
             // hc_SoDot
             // 
@@ -1834,23 +1870,19 @@
             this.DHN_DIACHI.Name = "DHN_DIACHI";
             this.DHN_DIACHI.Visible = false;
             // 
-            // label11
+            // G_DUONG
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(701, 119);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(32, 17);
-            this.label11.TabIndex = 62;
-            this.label11.Text = "ĐM";
+            this.G_DUONG.DataPropertyName = "DUONG";
+            this.G_DUONG.HeaderText = "DUONG";
+            this.G_DUONG.Name = "G_DUONG";
+            this.G_DUONG.Visible = false;
             // 
-            // label12
+            // G_SONHA
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(801, 118);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(53, 17);
-            this.label12.TabIndex = 63;
-            this.label12.Text = "ĐM Bù";
+            this.G_SONHA.DataPropertyName = "SONHA";
+            this.G_SONHA.HeaderText = "G_SONHA";
+            this.G_SONHA.Name = "G_SONHA";
+            this.G_SONHA.Visible = false;
             // 
             // UCT_CapDanhBo
             // 
@@ -2010,6 +2042,11 @@
         private System.Windows.Forms.Label label21;
         private DevComponents.DotNetBar.Controls.ReflectionLabel reflectionLabel6;
         private System.Windows.Forms.TextBox cbDotTC;
+        private System.Windows.Forms.TextBox txtDHNDUONG;
+        private System.Windows.Forms.TextBox txDHNSONHA;
+        private System.Windows.Forms.TextBox txtDHN_HOTEN;
+        private DevComponents.DotNetBar.ButtonX btHuyLoTrinh;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtSoNha;
         private System.Windows.Forms.DataGridViewTextBoxColumn hc_SoDot;
         private System.Windows.Forms.DataGridViewTextBoxColumn hc_SHS;
         private System.Windows.Forms.DataGridViewCheckBoxColumn hc_chonin;
@@ -2037,9 +2074,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DHN_HOTEN;
         private System.Windows.Forms.DataGridViewTextBoxColumn DHN_SONHA;
         private System.Windows.Forms.DataGridViewTextBoxColumn DHN_DIACHI;
-        private System.Windows.Forms.TextBox txtDHNDUONG;
-        private System.Windows.Forms.TextBox txDHNSONHA;
-        private System.Windows.Forms.TextBox txtDHN_HOTEN;
-        private DevComponents.DotNetBar.ButtonX btHuyLoTrinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn G_DUONG;
+        private System.Windows.Forms.DataGridViewTextBoxColumn G_SONHA;
     }
 }

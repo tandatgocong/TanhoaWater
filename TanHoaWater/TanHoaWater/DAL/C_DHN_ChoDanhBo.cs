@@ -17,7 +17,7 @@ namespace TanHoaWater.DAL
         public static DataTable getListHoanCong(string dottc, int flag)
         {
             //hosokh.COTLK,donkh.SOHOADON,donkh.NGAYDONGTIEN, hosokh.NGAYTHICONG, hosokh.CHISO, hosokh.SOTHANTLK,hosokh.HOANCONG, hosokh.CPVATTU, hosokh.CPNHANCONG, hosokh.CPMAYTHICONG,hosokh.TAILAPMATDUONG
-            string sql = "SELECT  DHN_SODOT,donkh.SHS,REPLACE(HOTEN,N'(ĐD '+CONVERT(VARCHAR(10),SOHO)+N' Hộ)',' ') AS 'HOTEN',(SONHA +' '+ DUONG+', P.'+TENPHUONG +', Q.'+TENQUAN) AS 'DIACHI',hosokh.COTLK,hosokh.NGAYTHICONG, hosokh.CHISO, hosokh.SOTHANTLK, hosokh.HIEUDONGHO, hosokh.HOANCONG,hosokh.DHN_SOHOPDONG,hosokh.DHN_GIABIEU,hosokh.DHN_DMGOC,hosokh.DHN_DMCAPBU,hosokh.DHN_SODANHBO,hosokh.DHN_PHIENLOTRINH,hosokh.DHN_MADMA,hosokh.DHN_HIEULUC,hosokh.DHN_MAQUANPHUONG,hosokh.DHN_HSCONGTY,hosokh.DHN_MASOTHUE,hosokh.DHN_SOHO,hosokh.DHN_SONHANKHAU,DHN_HOTEN,DHN_SONHA,DHN_DIACHI";
+            string sql = "SELECT  DHN_SODOT,donkh.SHS,REPLACE(HOTEN,N'(ĐD '+CONVERT(VARCHAR(10),SOHO)+N' Hộ)',' ') AS 'HOTEN',(ISNULL(DHN_SONHA,SONHA) +' '+ DUONG+', P.'+TENPHUONG +', Q.'+TENQUAN) AS 'DIACHI',hosokh.COTLK,hosokh.NGAYTHICONG, hosokh.CHISO, hosokh.SOTHANTLK, hosokh.HIEUDONGHO, hosokh.HOANCONG,hosokh.DHN_SOHOPDONG,hosokh.DHN_GIABIEU,hosokh.DHN_DMGOC,hosokh.DHN_DMCAPBU,hosokh.DHN_SODANHBO,hosokh.DHN_PHIENLOTRINH,hosokh.DHN_MADMA,hosokh.DHN_HIEULUC,hosokh.DHN_MAQUANPHUONG,hosokh.DHN_HSCONGTY,hosokh.DHN_MASOTHUE,hosokh.DHN_SOHO,hosokh.DHN_SONHANKHAU,DHN_HOTEN,DHN_SONHA,DHN_DIACHI,SONHA,DUONG";
             sql += " FROM DON_KHACHHANG donkh, PHUONG p, QUAN q, KH_HOSOKHACHHANG hosokh ";
             sql += " WHERE donkh.QUAN = q.MAQUAN AND q.MAQUAN=p.MAQUAN AND donkh.PHUONG=p.MAPHUONG  ";
             sql += "  AND donkh.SHS = hosokh.SHS AND hosokh.HOANCONG='True' AND hosokh.MADOTTC=N'" + dottc + "'";
@@ -45,7 +45,7 @@ namespace TanHoaWater.DAL
         public static DataTable findByDotBangKe(string dotbangke)
         {
             //hosokh.COTLK,donkh.SOHOADON,donkh.NGAYDONGTIEN, hosokh.NGAYTHICONG, hosokh.CHISO, hosokh.SOTHANTLK,hosokh.HOANCONG, hosokh.CPVATTU, hosokh.CPNHANCONG, hosokh.CPMAYTHICONG,hosokh.TAILAPMATDUONG
-            string sql = "SELECT  DHN_SODOT,donkh.SHS,REPLACE(HOTEN,N'(ĐD '+CONVERT(VARCHAR(10),SOHO)+N' Hộ)',' ') AS 'HOTEN',(SONHA +' '+ DUONG+', P.'+TENPHUONG +', Q.'+TENQUAN) AS 'DIACHI',hosokh.COTLK,hosokh.NGAYTHICONG, hosokh.CHISO, hosokh.SOTHANTLK,hosokh.HOANCONG,hosokh.DHN_SOHOPDONG,hosokh.DHN_GIABIEU,hosokh.DHN_DMGOC,hosokh.DHN_DMCAPBU,hosokh.DHN_SODANHBO,hosokh.DHN_PHIENLOTRINH,hosokh.DHN_MADMA,hosokh.DHN_HIEULUC,hosokh.DHN_MAQUANPHUONG,hosokh.DHN_HSCONGTY,hosokh.DHN_MASOTHUE,hosokh.DHN_SOHO,hosokh.DHN_SONHANKHAU";
+            string sql = "SELECT  DHN_SODOT,donkh.SHS,REPLACE(HOTEN,N'(ĐD '+CONVERT(VARCHAR(10),SOHO)+N' Hộ)',' ') AS 'HOTEN',(ISNULL(DHN_SONHA,SONHA) +' '+ DUONG+', P.'+TENPHUONG +', Q.'+TENQUAN) AS 'DIACHI',hosokh.COTLK,hosokh.NGAYTHICONG, hosokh.CHISO, hosokh.SOTHANTLK,hosokh.HOANCONG,hosokh.DHN_SOHOPDONG,hosokh.DHN_GIABIEU,hosokh.DHN_DMGOC,hosokh.DHN_DMCAPBU,hosokh.DHN_SODANHBO,hosokh.DHN_PHIENLOTRINH,hosokh.DHN_MADMA,hosokh.DHN_HIEULUC,hosokh.DHN_MAQUANPHUONG,hosokh.DHN_HSCONGTY,hosokh.DHN_MASOTHUE,hosokh.DHN_SOHO,hosokh.DHN_SONHANKHAU";
             sql += " FROM DON_KHACHHANG donkh, PHUONG p, QUAN q, KH_HOSOKHACHHANG hosokh ";
             sql += " WHERE donkh.QUAN = q.MAQUAN AND q.MAQUAN=p.MAQUAN AND donkh.PHUONG=p.MAPHUONG  ";
             sql += "  AND donkh.SHS = hosokh.SHS AND hosokh.DHN_SODOT=N'" + dotbangke + "'";

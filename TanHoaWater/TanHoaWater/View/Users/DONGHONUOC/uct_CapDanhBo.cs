@@ -820,7 +820,10 @@ namespace TanHoaWater.View.Users.DONGHONUOC
                     this.txtDotBangKe.Text = this.gridHoanCong.Rows[e.RowIndex].Cells["hc_SoDot"].Value + "";
                     this.txtSoHoSo.Text = this.gridHoanCong.Rows[e.RowIndex].Cells["hc_SHS"].Value + "";
                     this.txtHoTen.Text = this.gridHoanCong.Rows[e.RowIndex].Cells["hc_HoTen"].Value + "";
-                    this.txtDiaChi.Text = this.gridHoanCong.Rows[e.RowIndex].Cells["hc_DiaChi"].Value + "";
+
+                    this.txtSoNha.Text = this.gridHoanCong.Rows[e.RowIndex].Cells["G_SONHA"].Value + "";
+                    this.txtDiaChi.Text = this.gridHoanCong.Rows[e.RowIndex].Cells["G_DUONG"].Value + "";
+                    
                     this.txtSoTLK.Text = this.gridHoanCong.Rows[e.RowIndex].Cells["hc_sotlk"].Value + "";
                     this.txtTLK.Text = this.gridHoanCong.Rows[e.RowIndex].Cells["hc_tlk"].Value + "";
                     this.dateNgayThiCong.ValueObject = null;
@@ -888,12 +891,17 @@ namespace TanHoaWater.View.Users.DONGHONUOC
             }
         }
 
-
+        void capnhatDiaChiDHN(string shs) {
+            string sql = "UPDATE KH_HOSOKHACHHANG SET DHN_SONHA=N'"+this.txtSoNha.Text+"' WHERE SHS='"+shs+"' ";
+            DAL.LinQConnection.ExecuteCommand_(sql);
+        }
         private void btCapNhat_Click(object sender, EventArgs e)
         {
             try
-            {   //updateDulieu();
+            {
                 string shs = this.txtSoHoSo.Text;
+                capnhatDiaChiDHN(shs);
+                //updateDulieu();
                 // KH_HOSOKHACHHANG hskh = DAL.C_HoanCongDHN_DotTCTB.findByHoSoHC(shs);
                 KH_HOSOKHACHHANG hskh = DAL.C_DHN_ChoDanhBo.findbySHS(shs);
 
@@ -1080,7 +1088,7 @@ namespace TanHoaWater.View.Users.DONGHONUOC
             string shs = this.txtSoHoSo.Text;
             string danhbo = this.txtDanhBo.Text;
             string hoten = this.txtHoTen.Text;
-            string diachi = this.txtDiaChi.Text;
+            string diachi = this.txtSoNha.Text +" "+ this.txtDiaChi.Text;
             int soho = int.Parse(this.txtSoHo.Text);
             if (soho >= 1)
             {
@@ -1231,8 +1239,10 @@ namespace TanHoaWater.View.Users.DONGHONUOC
                          string DINHMUC = this.txtDMGoc.Text;
                          string SOHO = this.txtSoHo.Text;
                          string HOTEN = this.txtDHN_HOTEN.Text;
-                         string SONHA = this.txDHNSONHA.Text;
-                         string DUONG = this.txtDHNDUONG.Text;
+
+                         string SONHA = Utilities.Strings.convertToUnSign(this.txtSoNha.Text); 
+                         string DUONG =  Utilities.Strings.convertToUnSign(this.txtDiaChi.Text);
+                         
                          string PHUONG = kh.PHUONG;
                          string QUAN = kh.QUAN+"";
                          string HIEU = this.txtHieuĐHN.Text;
