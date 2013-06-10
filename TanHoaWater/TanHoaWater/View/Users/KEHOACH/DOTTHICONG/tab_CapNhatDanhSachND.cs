@@ -280,8 +280,8 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
                     if (xdcb != null)
                     {
 
-                        this.txtTaiLapMĐ.Text = xdcb.TAILAPMATDUONG + "";
-                        this.txtSoTien.Text = xdcb.TONGIATRI + "";
+                        this.txtTaiLapMĐ.Text = String.Format("{0:0,0}", xdcb.TAILAPMATDUONG).Replace(",", "");
+                        this.txtSoTien.Text = String.Format("{0:0,0}", xdcb.TONGIATRI).Replace(",", "");
 
                     }
                 }
