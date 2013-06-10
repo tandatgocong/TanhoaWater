@@ -192,6 +192,9 @@ namespace TanHoaWater.View.Users.KEHOACH
                     if ("".Equals(sohoso) == false)
                     {
                         DAL.C_DonKhachHang.ChuyenHSTaiXet(sohoso);
+
+                        DAL.LinQConnection.ExecuteCommand("UPDATE TOTHIETKE SET TRAHS='False', NGAYTRAHS = NULL,NGAYCHUYENHS= NULL ,BOPHANCHUYEN =NULL,NGAYTKGD=NULL,HOANTATTK='False', NGAYHOANTATTK=NULL  WHERE SHS='" + sohoso + "'");
+
                     }
 
                 }

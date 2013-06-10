@@ -892,7 +892,7 @@ namespace TanHoaWater.View.Users.DONGHONUOC
         }
 
         void capnhatDiaChiDHN(string shs) {
-            string sql = "UPDATE KH_HOSOKHACHHANG SET DHN_SONHA=N'"+this.txtSoNha.Text+"' WHERE SHS='"+shs+"' ";
+            string sql = "UPDATE KH_HOSOKHACHHANG SET DHN_SONHA=N'" + this.txtSoNha.Text + "', DHN_DIACHI=N'" + this.txtDiaChi.Text + "' WHERE SHS='" + shs + "' ";
             DAL.LinQConnection.ExecuteCommand_(sql);
         }
         private void btCapNhat_Click(object sender, EventArgs e)

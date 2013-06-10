@@ -246,7 +246,7 @@ namespace TanHoaWater.View.Users.KEHOACH
                             else
                             {
                                 DAL.C_DonKhachHang.InsertDonHK(donKH);
-                                DAL.C_DonKhachHang.chuyenhsbySHS(this.txtSHS.Text, DAL.C_USERS._userName, "VTTH");
+                                DAL.C_DonKhachHang.chuyenhsbySHS(this.txtSHS.Text, DAL.C_USERS._userName, "TTK");
                                 //chuyenttk
                                 try
                                 {

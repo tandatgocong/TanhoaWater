@@ -164,9 +164,9 @@ namespace TanHoaWater.DAL
             sql += " FROM DOT_NHAN_DON dot, LOAI_HOSO loai";
             sql += " WHERE loai.MALOAI = dot.LOAIDON";
             if (!"".Equals(madot))            {
-                sql += " AND dot.MADOT LIKE '" + madot + "%'";
+                sql += " AND dot.MADOT LIKE '%" + madot + "%'";
             }
-            if (!"1/1/0001".Equals(ngaylap.ToShortDateString()) && !"01/01/0001".Equals(ngaylap.ToShortDateString()))
+            if (!"1/1/0001".Equals(ngaylap.ToShortDateString()) && !"01/01/0001".Equals(ngaylap.ToShortDateString()) && !"01-01-0001".Equals(ngaylap.ToShortDateString()))
             {
                 sql += " AND dot.NGAYLAPDON = '" + ngaylap.ToShortDateString() + "'";
             }
@@ -174,7 +174,7 @@ namespace TanHoaWater.DAL
                 sql += " AND dot.LOAIDON = '" + maloai + "'";            
             }
             sql += " ORDER BY dot.CREATEDATE DESC ";
-            log.Error(sql);
+          //  log.Error(sql);
             return DAL.LinQConnection.getDataTable(sql); 
         }
 

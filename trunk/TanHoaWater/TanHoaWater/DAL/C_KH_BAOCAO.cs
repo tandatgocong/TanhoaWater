@@ -143,6 +143,10 @@ namespace TanHoaWater.DAL
                         try
                         {
                             string shs = table.Rows[i]["SHS"].ToString();
+                            string dottc = table.Rows[i]["SHS"].ToString();
+                            ///// quyet toan theo dot
+                            //KH_DOTTHICONG dotk = DAL.C_KH_DotThiCong.findByMadot();
+                            ////
                             TOTHIETKE ttk = DAL.C_ToThietKe.findBySHS(shs);
                             if (ttk != null && ttk.NGAYHOANTATTK != null)
                             {

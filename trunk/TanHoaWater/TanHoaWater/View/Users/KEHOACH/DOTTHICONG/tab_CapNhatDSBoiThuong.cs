@@ -111,10 +111,6 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
                             kh_sh.CPCABA = xdcb.CPCABA;
                             kh_sh.CHIPHITRUCTIEP = xdcb.CHIPHITRUCTIEP;
                             kh_sh.CHIPHICHUNG = xdcb.CHIPHICHUNG;
-
-                            
-                            
-                            
                             kh_sh.TLMDTRUOCTHUE = xdcb.TLMDTRUOCTHUE;
                             kh_sh.CONG1 = xdcb.CONG1;
                             kh_sh.THUE55 = xdcb.THUE55;
@@ -310,8 +306,8 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
                     if (xdcb != null)
                     {
 
-                        this.txtTaiLapMĐ.Text = xdcb.TAILAPMATDUONG + "";
-                        this.txtSoTien.Text = xdcb.TONGIATRI + "";
+                        this.txtTaiLapMĐ.Text = String.Format("{0:0,0}", xdcb.TAILAPMATDUONG).Replace(",","");
+                        this.txtSoTien.Text = String.Format("{0:0,0}", xdcb.TONGIATRI).Replace(",", "");
 
                     }
                 }

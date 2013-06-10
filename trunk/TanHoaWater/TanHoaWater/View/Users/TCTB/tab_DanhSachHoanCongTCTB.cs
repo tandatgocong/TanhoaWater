@@ -423,6 +423,7 @@ namespace TanHoaWater.View.Users.TCTB
                     }
                     catch (Exception)
                     { }
+                    hskh.HOANCONG = true;
                     hskh.SOTHANTLK = this.txtSoThan.Text;
                     hskh.HIEUDONGHO = this.txtHieu.Text;
                     hskh.TCTB_TONGGIATRI = ParseDouble(this.txtTongGiaTri.Text);
@@ -449,6 +450,7 @@ namespace TanHoaWater.View.Users.TCTB
                             {
                                 kh.NGAYTHAY = hskh.NGAYTHICONG;
                                 kh.NGAYKIEMDINH = hskh.DHN_NGAYKIEMDINH;
+                                kh.CODH = this.txtCoTLK.Text;
                                 kh.HIEUDH = hskh.HIEUDONGHO;
                                 kh.SOTHANDH = hskh.SOTHANTLK;
                                 kh.CHISOKYTRUOC = hskh.CHISO + "";
