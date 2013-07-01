@@ -906,6 +906,24 @@
     <Compile Include="View\Users\TinhDuToan\frmBoVT.Designer.cs">
       <DependentUpon>frmBoVT.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Users\TinhDuToan\report\rptBangGiaTuTaiLap-8.cs">
+      <DependentUpon>rptBangGiaTuTaiLap-8.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="View\Users\TinhDuToan\report\rptBangGiaTuTaiLap-9.cs">
+      <DependentUpon>rptBangGiaTuTaiLap-9.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="View\Users\TinhDuToan\report\rptBangGiaTuTaiLap-7.cs">
+      <DependentUpon>rptBangGiaTuTaiLap-7.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="View\Users\TinhDuToan\report\rptBangGia-9_BK.cs">
       <DependentUpon>rptBangGia-9_BK.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -1447,6 +1465,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\TinhDuToan\frmBoVT.resx">
       <DependentUpon>frmBoVT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\TinhDuToan\report\rptBangGiaTuTaiLap-8.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptBangGiaTuTaiLap-8.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\TinhDuToan\report\rptBangGiaTuTaiLap-9.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptBangGiaTuTaiLap-9.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\TinhDuToan\report\rptBangGiaTuTaiLap-7.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptBangGiaTuTaiLap-7.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\TinhDuToan\report\rptBangGia-9_BK.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

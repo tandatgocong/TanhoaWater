@@ -1970,7 +1970,23 @@ namespace TanHoaWater.View.Users.TinhDuToan
                 ReportDocument rp = null;
                 if (vatTuXDCBKhachHangCap.Checked)
                 {
-                    rp = new rptBangGiaTuTaiLap();
+                    if (fontSize.SelectedIndex == 0)
+                    {
+                        rp = new rptBangGiaTuTaiLap_7();
+                    }
+                    else if (fontSize.SelectedIndex == 1)
+                    {
+                        rp = new rptBangGiaTuTaiLap_8();
+                    }
+                    else if (fontSize.SelectedIndex == 2)
+                    {
+                        rp = new rptBangGiaTuTaiLap_9();
+                    }
+                    else
+                    {
+                        rp = new rptBangGiaTuTaiLap();
+                    }
+                 
                 }
                 else {
                     if (fontSize.SelectedIndex == 0) {
