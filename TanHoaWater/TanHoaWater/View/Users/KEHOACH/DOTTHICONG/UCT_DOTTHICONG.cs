@@ -970,5 +970,11 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
                 }
             }
         }
+
+        private void btTroNgaiTC_Click(object sender, EventArgs e)
+        {
+            optTroNgaiTC opt = new optTroNgaiTC();
+            opt.ShowDialog();
+        }
     }
 }

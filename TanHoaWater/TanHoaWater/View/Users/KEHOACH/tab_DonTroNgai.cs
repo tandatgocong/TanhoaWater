@@ -26,6 +26,7 @@ namespace TanHoaWater.View.Users.KEHOACH
             {
                 try
                 {
+                    refesh();
                     string _soHoSo = this.txtSHS.Text;
                     if (_soHoSo != null)
                     {
@@ -108,10 +109,8 @@ namespace TanHoaWater.View.Users.KEHOACH
                 MessageBox.Show(this, "Cập Nhật Hồ Sơ Lỗi !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        private void refresh_Click(object sender, EventArgs e)
-        {
-            this.txtSHS.Text = null;
+        void refesh() {
+           
             this.txtSoHoSo.Text = null;
             this.txtSoHo.Value = 0;
             this.txtHoTen.Text = null;
@@ -122,6 +121,13 @@ namespace TanHoaWater.View.Users.KEHOACH
             this.txtSoDT.Text = null;
             this.txtGhiChu.Text = null;
             this.txt_sdv.Text = null;
+            this.txtnoidungtrongai.Text = "";
+
+        }
+        private void refresh_Click(object sender, EventArgs e)
+        {
+            refesh();
+            this.txtSHS.Text = null;
             this.txtSHS.Focus();
         }
 
