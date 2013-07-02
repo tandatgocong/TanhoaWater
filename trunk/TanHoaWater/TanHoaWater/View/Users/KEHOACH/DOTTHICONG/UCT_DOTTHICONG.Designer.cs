@@ -108,6 +108,7 @@
             this.tabItem3 = new DevComponents.DotNetBar.TabItem(this.components);
             this.tabControlPanel1 = new DevComponents.DotNetBar.TabControlPanel();
             this.tabItem4 = new DevComponents.DotNetBar.TabItem(this.components);
+            this.btTroNgaiTC = new DevComponents.DotNetBar.ButtonX();
             this.tabDanhSachDot.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtcDenNgay)).BeginInit();
@@ -180,6 +181,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.btTroNgaiTC);
             this.panel1.Controls.Add(this.dtcDenNgay);
             this.panel1.Controls.Add(this.dtcTuNgay);
             this.panel1.Controls.Add(this.labelX19);
@@ -1340,6 +1342,21 @@
             this.tabItem4.Text = "Bảng Kê  Nhận Đơn";
             this.tabItem4.Click += new System.EventHandler(this.tabItem4_Click);
             // 
+            // btTroNgaiTC
+            // 
+            this.btTroNgaiTC.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btTroNgaiTC.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btTroNgaiTC.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btTroNgaiTC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btTroNgaiTC.Location = new System.Drawing.Point(701, 461);
+            this.btTroNgaiTC.Name = "btTroNgaiTC";
+            this.btTroNgaiTC.Size = new System.Drawing.Size(235, 23);
+            this.btTroNgaiTC.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
+            this.btTroNgaiTC.TabIndex = 721;
+            this.btTroNgaiTC.Text = "Hồ Sơ Trở Ngại Thi Công";
+            this.btTroNgaiTC.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
+            this.btTroNgaiTC.Click += new System.EventHandler(this.btTroNgaiTC_Click);
+            // 
             // UCT_DOTTHICONG
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -1449,6 +1466,7 @@
         private DevComponents.DotNetBar.LabelX labelX22;
         private DevComponents.Editors.DateTimeAdv.DateTimeInput dtcDenNgay;
         private DevComponents.Editors.DateTimeAdv.DateTimeInput dtcTuNgay;
+        private DevComponents.DotNetBar.ButtonX btTroNgaiTC;
 
     }
 }
