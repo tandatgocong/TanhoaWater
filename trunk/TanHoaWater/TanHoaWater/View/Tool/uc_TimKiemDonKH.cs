@@ -96,11 +96,20 @@ namespace TanHoaWater.View.Tool
                                             }
                                             if (hoskh.MADOTTC != null)
                                             {
-                                                KH_DOTTHICONG dotc = DAL.C_KH_DotThiCong.findByMadot(hoskh.MADOTTC);
-                                                DotThiCong.Text = dotc.MADOTTC;
-                                                NgayLenDotTC.Text = Utilities.DateToString.NgayVNVN(dotc.NGAYLAP.Value);
-                                                txtNgayChuyenTC.Text = Utilities.DateToString.NgayVNVN(dotc.NGAYCHUYENTC.Value);
-                                                txtDomViTC.Text = DAL.C_KH_DonViTC.findDVTCbyID(dotc.DONVITHICONG.Value).TENCONGTY;
+
+                                                try
+                                                {
+                                                        KH_DOTTHICONG dotc = DAL.C_KH_DotThiCong.findByMadot(hoskh.MADOTTC);
+                                                        DotThiCong.Text = dotc.MADOTTC;
+                                                        NgayLenDotTC.Text = Utilities.DateToString.NgayVNVN(dotc.NGAYLAP.Value);
+                                                        txtNgayChuyenTC.Text = Utilities.DateToString.NgayVNVN(dotc.NGAYCHUYENTC.Value);
+                                                        txtDomViTC.Text = DAL.C_KH_DonViTC.findDVTCbyID(dotc.DONVITHICONG.Value).TENCONGTY;
+                                                }
+                                                catch (Exception)
+                                                {
+                                                }
+                                               
+
                                                 NgayThiCong.Text = hoskh.NGAYTHICONG != null ? Utilities.DateToString.NgayVNVN(hoskh.NGAYTHICONG.Value) : "";
                                                 NgayHoanCong.Text = hoskh.NGAYHOANCONG != null ? Utilities.DateToString.NgayVNVN(hoskh.NGAYHOANCONG.Value) : "";
                                                 ChoDanhBo.Text = hoskh.DHN_NGAYCHOSODB != null ? Utilities.DateToString.NgayVNVN(hoskh.DHN_NGAYCHOSODB.Value) : "";
@@ -156,11 +165,23 @@ namespace TanHoaWater.View.Tool
                                         }
                                         if (hoskh.MADOTTC != null)
                                         {
-                                            KH_DOTTHICONG dotc = DAL.C_KH_DotThiCong.findByMadot(hoskh.MADOTTC);
-                                            DotThiCong.Text = dotc.MADOTTC;
-                                            NgayLenDotTC.Text = Utilities.DateToString.NgayVNVN(dotc.NGAYLAP.Value);
-                                            txtNgayChuyenTC.Text = Utilities.DateToString.NgayVNVN(dotc.NGAYCHUYENTC.Value);
-                                            txtDomViTC.Text = DAL.C_KH_DonViTC.findDVTCbyID(dotc.DONVITHICONG.Value).TENCONGTY;
+                                            try
+                                            {
+                                                KH_DOTTHICONG dotc = DAL.C_KH_DotThiCong.findByMadot(hoskh.MADOTTC);
+                                                if (dotc != null)
+                                                {
+                                                    DotThiCong.Text = dotc.MADOTTC;
+                                                    NgayLenDotTC.Text = Utilities.DateToString.NgayVNVN(dotc.NGAYLAP.Value);
+                                                    txtNgayChuyenTC.Text = Utilities.DateToString.NgayVNVN(dotc.NGAYCHUYENTC.Value);
+                                                    txtDomViTC.Text = DAL.C_KH_DonViTC.findDVTCbyID(dotc.DONVITHICONG.Value).TENCONGTY;
+                                                }
+                                            }
+                                            catch (Exception)
+                                            {
+
+
+                                            }
+
 
                                             NgayThiCong.Text = hoskh.NGAYTHICONG != null ? Utilities.DateToString.NgayVNVN(hoskh.NGAYTHICONG.Value) : "";
                                             NgayHoanCong.Text = hoskh.NGAYHOANCONG != null ? Utilities.DateToString.NgayVNVN(hoskh.NGAYHOANCONG.Value) : "";
@@ -239,11 +260,23 @@ namespace TanHoaWater.View.Tool
                     }
                     if (hoskh1.MADOTTC != null)
                     {
-                        KH_DOTTHICONG dotc = DAL.C_KH_DotThiCong.findByMadot(hoskh1.MADOTTC);
-                        DotThiCong.Text = dotc.MADOTTC;
-                        NgayLenDotTC.Text = Utilities.DateToString.NgayVNVN(dotc.NGAYLAP.Value);
-                        txtNgayChuyenTC.Text = Utilities.DateToString.NgayVNVN(dotc.NGAYCHUYENTC.Value);
-                        txtDomViTC.Text = DAL.C_KH_DonViTC.findDVTCbyID(dotc.DONVITHICONG.Value).TENCONGTY;
+                        try
+                        {
+                            KH_DOTTHICONG dotc = DAL.C_KH_DotThiCong.findByMadot(hoskh1.MADOTTC);
+                            if (dotc != null) {
+                                DotThiCong.Text = dotc.MADOTTC;
+                                NgayLenDotTC.Text = Utilities.DateToString.NgayVNVN(dotc.NGAYLAP.Value);
+                                txtNgayChuyenTC.Text = Utilities.DateToString.NgayVNVN(dotc.NGAYCHUYENTC.Value);
+                                txtDomViTC.Text = DAL.C_KH_DonViTC.findDVTCbyID(dotc.DONVITHICONG.Value).TENCONGTY;
+                            }
+                        }
+                        catch (Exception)
+                        {
+                            
+                           
+                        }
+                       
+                        
 
                         NgayThiCong.Text = hoskh1.NGAYTHICONG != null ? Utilities.DateToString.NgayVNVN(hoskh1.NGAYTHICONG.Value) : "";
                         NgayHoanCong.Text = hoskh1.NGAYHOANCONG != null ? Utilities.DateToString.NgayVNVN(hoskh1.NGAYHOANCONG.Value) : "";
