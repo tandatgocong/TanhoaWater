@@ -42,6 +42,20 @@ namespace TanHoaWater.DULIEUKH
             return null;
         }
 
+        public static TB_DULIEUKHACHHANG checkTrungHopDong(string danhbo,string hopdong)
+        {
+            try
+            {
+                var query = from q in db.TB_DULIEUKHACHHANGs where q.DANHBO == danhbo && q.HOPDONG==hopdong select q;
+                return query.SingleOrDefault();
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+            }
+            return null;
+        }
+
         public static TB_DULIEUKHACHHANG finByLoTrinh(string lotrinh)
         {
             try
