@@ -74,5 +74,20 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG.BC
                 print();
             }
         }
+
+        private void textBoxX2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                panel1.Visible = false;
+                ReportDocument rp = new rpt_DanhSachHSTC_DOIMP_GQSC_2();
+                rp.SetDataSource(DAL.C_KH_DotThiCong.BC_DanhSachDotThiCong_OC(_madotc));
+                rp.SetParameterValue("MaCT", this.textBoxX1.Text);
+                rp.SetParameterValue("MaCT2", this.textBoxX2.Text);
+                rp.SetParameterValue("ngaytk", _ngaytk);
+                crystalReportViewer1.ReportSource = rp;
+                this.WindowState = FormWindowState.Maximized;
+            }
+        }
     }
 }

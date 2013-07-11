@@ -33,6 +33,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.textBoxX1 = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
+            this.textBoxX2 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -44,18 +46,20 @@
             this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.Size = new System.Drawing.Size(660, 176);
+            this.crystalReportViewer1.Size = new System.Drawing.Size(690, 251);
             this.crystalReportViewer1.TabIndex = 0;
             this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.labelX2);
+            this.panel1.Controls.Add(this.textBoxX2);
             this.panel1.Controls.Add(this.textBoxX1);
             this.panel1.Controls.Add(this.labelX1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(660, 176);
+            this.panel1.Size = new System.Drawing.Size(690, 251);
             this.panel1.TabIndex = 1;
             // 
             // textBoxX1
@@ -67,7 +71,7 @@
             this.textBoxX1.Location = new System.Drawing.Point(23, 51);
             this.textBoxX1.Multiline = true;
             this.textBoxX1.Name = "textBoxX1";
-            this.textBoxX1.Size = new System.Drawing.Size(613, 87);
+            this.textBoxX1.Size = new System.Drawing.Size(613, 65);
             this.textBoxX1.TabIndex = 3;
             this.textBoxX1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxX1_KeyPress);
             // 
@@ -80,11 +84,33 @@
             this.labelX1.TabIndex = 2;
             this.labelX1.Text = "labelX1";
             // 
+            // textBoxX2
+            // 
+            // 
+            // 
+            // 
+            this.textBoxX2.Border.Class = "TextBoxBorder";
+            this.textBoxX2.Location = new System.Drawing.Point(23, 142);
+            this.textBoxX2.Multiline = true;
+            this.textBoxX2.Name = "textBoxX2";
+            this.textBoxX2.Size = new System.Drawing.Size(613, 65);
+            this.textBoxX2.TabIndex = 4;
+            this.textBoxX2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxX2_KeyPress);
+            // 
+            // labelX2
+            // 
+            this.labelX2.Location = new System.Drawing.Point(23, 222);
+            this.labelX2.Margin = new System.Windows.Forms.Padding(4);
+            this.labelX2.Name = "labelX2";
+            this.labelX2.Size = new System.Drawing.Size(654, 25);
+            this.labelX2.TabIndex = 5;
+            this.labelX2.Text = "tiêu đề có 2 dòng nhấn enter dòng  thứ 2";
+            // 
             // reportValues
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(660, 176);
+            this.ClientSize = new System.Drawing.Size(690, 251);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.crystalReportViewer1);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -104,6 +130,8 @@
         private System.Windows.Forms.Panel panel1;
         private DevComponents.DotNetBar.Controls.TextBoxX textBoxX1;
         private DevComponents.DotNetBar.LabelX labelX1;
+        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX2;
+        private DevComponents.DotNetBar.LabelX labelX2;
 
     }
 }

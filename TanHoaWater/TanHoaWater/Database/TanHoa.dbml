@@ -1668,16 +1668,6 @@
       <Association Name="KH_DONVITAILAP_KH_DOTTHICONG" Member="KH_DONVITAILAP" ThisKey="DONVITAILAP" OtherKey="ID" Type="KH_DONVITAILAP" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.TCTB_HESOHOANCONG" Member="TCTB_HESOHOANCONGs">
-    <Type Name="TCTB_HESOHOANCONG">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="HSGAN" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="HSNHUA" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="TONGGIATRI" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="CPNHANCONG" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="CPVATTU" Type="System.Double" DbType="Float" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.KH_XINPHEPDAODUONG" Member="KH_XINPHEPDAODUONGs">
     <Type Name="KH_XINPHEPDAODUONG">
       <Column Name="MADOT" Type="System.String" DbType="VarChar(250) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -1820,6 +1810,23 @@
     <Type Name="KH_XINPHEPDAODUONG_KETCAU">
       <Column Name="MADANHMUC" Type="System.String" DbType="NVarChar(250) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="TENKETCAU" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TCTB_HESOHOANCONG" Member="TCTB_HESOHOANCONGs">
+    <Type Name="TCTB_HESOHOANCONG">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="HSGAN" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="HSNHUA" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TONGGIATRI" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CPNHANCONG" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CPVATTU" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="KTGIAMDOC" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="PGDKYTHUAT" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CVDOITCTB" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CVDUYETGD" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NGUOIDUYETGD" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="KTKSCV" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="KTTSTEN" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
     </Type>
   </Table>
   <Function Name="dbo.TONGKETCHIPHI" Method="TONGKETCHIPHI">

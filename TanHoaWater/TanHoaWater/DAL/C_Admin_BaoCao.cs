@@ -52,6 +52,22 @@ namespace TanHoaWater.DAL
             return null;
         }
 
+        public static TCTB_HESOHOANCONG hoancongtctb()
+        {
+            try
+            {
+                var query = from q in db.TCTB_HESOHOANCONGs select q;
+                return query.ToList()[0];
+            }
+            catch (Exception ex)
+            {
+                log.Error("lay qldhn loi " + ex.Message);
+            }
+            return null;
+        }
+
+
+        
         public static void update() {
             try
             {

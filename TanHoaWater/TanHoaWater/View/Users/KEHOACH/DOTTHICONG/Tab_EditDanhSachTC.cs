@@ -144,6 +144,7 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
                 string stt = dataGridViewDotTC.Rows[i].Cells["STT"].Value + "";
                 string ghichu = dataGridViewDotTC.Rows[i].Cells["TINHTRANGTLK"].Value + "";
                 string danhbo = dataGridViewDotTC.Rows[i].Cells["DANHBO"].Value + "";
+                string sohoadon = dataGridViewDotTC.Rows[i].Cells["g_sohoadon"].Value + "";
                 double n_tlmt = 0;
                 double n_tongcong = 0;
                 try
@@ -162,7 +163,7 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
                 }
                 string sql = " UPDATE KH_HOSOKHACHHANG SET TONGIATRI='" + n_tongcong + "',TAILAPMATDUONG='" + n_tlmt + "' WHERE SHS='" + shs + "'";
                 DAL.LinQConnection.ExecuteCommand_(sql);
-                string sql1 = " UPDATE DON_KHACHHANG SET GHICHU=N'" + ghichu + "', DANHBO=N'" + danhbo + "' WHERE SHS='" + shs + "'";
+                string sql1 = " UPDATE DON_KHACHHANG SET GHICHU=N'" + ghichu + "' , SOHOADON=N'" + sohoadon + "', DANHBO=N'" + danhbo + "' WHERE SHS='" + shs + "'";
                 DAL.LinQConnection.ExecuteCommand_(sql1);
                 if (!"".Equals(stt))
                 {
