@@ -86,7 +86,7 @@ namespace TanHoaWater.View.Tool
                                             {
                                                 KH_XINPHEPDAODUONG xiphep = DAL.C_KH_XinPhepDD.finbyMaDot(hoskh.MADOTDD);
                                                 DotXinPhepDD.Text = xiphep.MAQUANLY;
-                                                NgayXinPhepDD.Text = Utilities.DateToString.NgayVNVN(xiphep.NGAYLAP.Value);
+                                                NgayXinPhepDD.Text = xiphep.NGAYLAP.Value!= null ? Utilities.DateToString.NgayVNVN(xiphep.NGAYLAP.Value):"";
                                                 NgayCoPhep.Text = xiphep.NGAYCOPHEP != null ? Utilities.DateToString.NgayVNVN(xiphep.NGAYCOPHEP.Value) : "";
                                                 title = "HỒ SƠ ĐÃ LÊN ĐỢT XIN PHÉP <br/>  ĐÀO ĐƯỜNG";
                                             }
@@ -101,9 +101,9 @@ namespace TanHoaWater.View.Tool
                                                 {
                                                         KH_DOTTHICONG dotc = DAL.C_KH_DotThiCong.findByMadot(hoskh.MADOTTC);
                                                         DotThiCong.Text = dotc.MADOTTC;
-                                                        NgayLenDotTC.Text = Utilities.DateToString.NgayVNVN(dotc.NGAYLAP.Value);
-                                                        txtNgayChuyenTC.Text = Utilities.DateToString.NgayVNVN(dotc.NGAYCHUYENTC.Value);
-                                                        txtDomViTC.Text = DAL.C_KH_DonViTC.findDVTCbyID(dotc.DONVITHICONG.Value).TENCONGTY;
+                                                        NgayLenDotTC.Text =dotc.NGAYLAP.Value!= null ? Utilities.DateToString.NgayVNVN(dotc.NGAYLAP.Value):"";
+                                                        txtNgayChuyenTC.Text = dotc.NGAYCHUYENTC.Value != null ? Utilities.DateToString.NgayVNVN(dotc.NGAYCHUYENTC.Value) : "";
+                                                        txtDomViTC.Text = dotc.DONVITHICONG.Value != null ? DAL.C_KH_DonViTC.findDVTCbyID(dotc.DONVITHICONG.Value).TENCONGTY : "";
                                                 }
                                                 catch (Exception)
                                                 {
@@ -125,14 +125,15 @@ namespace TanHoaWater.View.Tool
                                                 {
                                                     title = "HỒ SƠ ĐÃ HOÀN TẤT";
                                                 }
-                                                if (hoskh.TRONGAI == true)
-                                                {
-                                                    title = "HỒ SƠ TRỞ NGẠI THI CÔNG";
-                                                    noidungtrongai = hoskh.NOIDUNGTN;
-                                                }
+                                                
                                                 title = "HỒ SƠ ĐÃ LÊN ĐỢT <br/> THI CÔNG";
                                             }
                                             NgayThiCong.Text = hoskh.NGAYTHICONG != null ? Utilities.DateToString.NgayVNVN(hoskh.NGAYTHICONG.Value) : "";
+                                            if (hoskh.TRONGAI == true)
+                                            {
+                                                title = "HỒ SƠ TRỞ NGẠI THI CÔNG";
+                                                noidungtrongai = hoskh.NOIDUNGTN;
+                                            }
                                         }
                                         else
                                         {
@@ -145,6 +146,7 @@ namespace TanHoaWater.View.Tool
                                     {
                                         title = "HỒ SƠ CHƯA CHUYỂN <br/> KẾ HOẠCH";
                                     }
+                                   
                                 }
                                 else
                                 {
@@ -154,8 +156,8 @@ namespace TanHoaWater.View.Tool
                                         if (hoskh.MADOTDD != null)
                                         {
                                             KH_XINPHEPDAODUONG xiphep = DAL.C_KH_XinPhepDD.finbyMaDot(hoskh.MADOTDD);
-                                            DotXinPhepDD.Text = xiphep.MAQUANLY;
-                                            NgayXinPhepDD.Text = Utilities.DateToString.NgayVNVN(xiphep.NGAYLAP.Value);
+                                            DotXinPhepDD.Text = xiphep.MAQUANLY != null ? xiphep.MAQUANLY : "";
+                                            NgayXinPhepDD.Text = xiphep.NGAYLAP.Value != null ? Utilities.DateToString.NgayVNVN(xiphep.NGAYLAP.Value) : "" ;
                                             NgayCoPhep.Text = xiphep.NGAYCOPHEP != null ? Utilities.DateToString.NgayVNVN(xiphep.NGAYCOPHEP.Value) : "";
 
                                         }
@@ -171,9 +173,9 @@ namespace TanHoaWater.View.Tool
                                                 if (dotc != null)
                                                 {
                                                     DotThiCong.Text = dotc.MADOTTC;
-                                                    NgayLenDotTC.Text = Utilities.DateToString.NgayVNVN(dotc.NGAYLAP.Value);
-                                                    txtNgayChuyenTC.Text = Utilities.DateToString.NgayVNVN(dotc.NGAYCHUYENTC.Value);
-                                                    txtDomViTC.Text = DAL.C_KH_DonViTC.findDVTCbyID(dotc.DONVITHICONG.Value).TENCONGTY;
+                                                    NgayLenDotTC.Text = dotc.NGAYLAP.Value != null ? Utilities.DateToString.NgayVNVN(dotc.NGAYLAP.Value) : "";
+                                                    txtNgayChuyenTC.Text = dotc.NGAYCHUYENTC.Value != null ? Utilities.DateToString.NgayVNVN(dotc.NGAYCHUYENTC.Value) : "";
+                                                    txtDomViTC.Text = dotc.DONVITHICONG != null ? DAL.C_KH_DonViTC.findDVTCbyID(dotc.DONVITHICONG.Value).TENCONGTY : "";
                                                 }
                                             }
                                             catch (Exception)
@@ -198,16 +200,16 @@ namespace TanHoaWater.View.Tool
                                             {
                                                 title = "HỒ SƠ ĐÃ HOÀN TẤT";
                                             }
-                                            if (hoskh.TRONGAI == true)
-                                            {
-                                                title = "HỒ SƠ TRỞ NGẠI THI CÔNG";
-                                                noidungtrongai = hoskh.NOIDUNGTN;
-                                            }
-
                                         }
                                         else
                                         {
                                             title = "HỒ SƠ CHƯA LÊN ĐỢT <br/> THI CÔNG";
+                                        }
+
+                                        if (hoskh.TRONGAI == true)
+                                        {
+                                            title = "HỒ SƠ TRỞ NGẠI THI CÔNG";
+                                            noidungtrongai = hoskh.NOIDUNGTN;
                                         }
                                         
                                     }
@@ -243,7 +245,7 @@ namespace TanHoaWater.View.Tool
                 title = "CHƯA LÊN ĐỢT NHẬN ĐƠN <br/> CHUYỂN TỔ THIẾT KẾ";
             }
             // TRƯỜNG HỢP ĐẶT BIỆT HỒ SƠ CHẠY BẢNG GIÁ MẪU
-            if (donkh.TRONGAITHIETKE!=true) {
+            if (donkh.TRONGAITHIETKE!=true && donkh.TRONGAITHIETKE !=null) {
                 KH_HOSOKHACHHANG hoskh1 = DAL.C_KH_HoSoKhachHang.findBySHS(donkh.SHS);
                 if (hoskh1 != null)
                 {
@@ -307,7 +309,6 @@ namespace TanHoaWater.View.Tool
 
                 }
             }
-            
         }
        
         void search() {

@@ -57,10 +57,36 @@
             this.dhn_chucvuduyet = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX14 = new DevComponents.DotNetBar.LabelX();
             this.labelX11 = new DevComponents.DotNetBar.LabelX();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.labelX9 = new DevComponents.DotNetBar.LabelX();
+            this.CPNHANCONG_ = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.HSNHUA_ = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.TONGGIATRI_ = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX10 = new DevComponents.DotNetBar.LabelX();
+            this.HSGAN_ = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX15 = new DevComponents.DotNetBar.LabelX();
+            this.labelX16 = new DevComponents.DotNetBar.LabelX();
+            this.labelX17 = new DevComponents.DotNetBar.LabelX();
+            this.CVDUYETGD_ = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.PGDKYTHUAT_ = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.CVDOITCTB_ = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX18 = new DevComponents.DotNetBar.LabelX();
+            this.KTGIAMDOC_ = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX19 = new DevComponents.DotNetBar.LabelX();
+            this.labelX20 = new DevComponents.DotNetBar.LabelX();
+            this.labelX22 = new DevComponents.DotNetBar.LabelX();
+            this.KTKSCV_ = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.KTTSTEN_ = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.NGUOIDUYETGD_ = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX24 = new DevComponents.DotNetBar.LabelX();
+            this.labelX25 = new DevComponents.DotNetBar.LabelX();
+            this.CPVATTU_ = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX21 = new DevComponents.DotNetBar.LabelX();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -211,7 +237,7 @@
             // 
             this.thicong_capnhat.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.thicong_capnhat.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.thicong_capnhat.Location = new System.Drawing.Point(317, 280);
+            this.thicong_capnhat.Location = new System.Drawing.Point(272, 555);
             this.thicong_capnhat.Name = "thicong_capnhat";
             this.thicong_capnhat.Size = new System.Drawing.Size(100, 26);
             this.thicong_capnhat.TabIndex = 2;
@@ -362,11 +388,273 @@
             this.labelX11.TabIndex = 1;
             this.labelX11.Text = "CV Người Lập";
             // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.CPVATTU_);
+            this.groupBox4.Controls.Add(this.labelX21);
+            this.groupBox4.Controls.Add(this.labelX22);
+            this.groupBox4.Controls.Add(this.KTKSCV_);
+            this.groupBox4.Controls.Add(this.KTTSTEN_);
+            this.groupBox4.Controls.Add(this.NGUOIDUYETGD_);
+            this.groupBox4.Controls.Add(this.labelX24);
+            this.groupBox4.Controls.Add(this.labelX25);
+            this.groupBox4.Controls.Add(this.labelX17);
+            this.groupBox4.Controls.Add(this.CVDUYETGD_);
+            this.groupBox4.Controls.Add(this.PGDKYTHUAT_);
+            this.groupBox4.Controls.Add(this.CVDOITCTB_);
+            this.groupBox4.Controls.Add(this.labelX18);
+            this.groupBox4.Controls.Add(this.KTGIAMDOC_);
+            this.groupBox4.Controls.Add(this.labelX19);
+            this.groupBox4.Controls.Add(this.labelX20);
+            this.groupBox4.Controls.Add(this.labelX9);
+            this.groupBox4.Controls.Add(this.CPNHANCONG_);
+            this.groupBox4.Controls.Add(this.HSNHUA_);
+            this.groupBox4.Controls.Add(this.TONGGIATRI_);
+            this.groupBox4.Controls.Add(this.labelX10);
+            this.groupBox4.Controls.Add(this.HSGAN_);
+            this.groupBox4.Controls.Add(this.labelX15);
+            this.groupBox4.Controls.Add(this.labelX16);
+            this.groupBox4.Location = new System.Drawing.Point(19, 291);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(714, 258);
+            this.groupBox4.TabIndex = 3;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Hệ Số Hoàn Công TCTB";
+            // 
+            // labelX9
+            // 
+            this.labelX9.Location = new System.Drawing.Point(10, 28);
+            this.labelX9.Name = "labelX9";
+            this.labelX9.Size = new System.Drawing.Size(75, 23);
+            this.labelX9.TabIndex = 1;
+            this.labelX9.Text = "HSGAN";
+            // 
+            // CPNHANCONG_
+            // 
+            // 
+            // 
+            // 
+            this.CPNHANCONG_.Border.Class = "TextBoxBorder";
+            this.CPNHANCONG_.Location = new System.Drawing.Point(134, 113);
+            this.CPNHANCONG_.Name = "CPNHANCONG_";
+            this.CPNHANCONG_.Size = new System.Drawing.Size(58, 26);
+            this.CPNHANCONG_.TabIndex = 0;
+            // 
+            // HSNHUA_
+            // 
+            // 
+            // 
+            // 
+            this.HSNHUA_.Border.Class = "TextBoxBorder";
+            this.HSNHUA_.Location = new System.Drawing.Point(134, 52);
+            this.HSNHUA_.Name = "HSNHUA_";
+            this.HSNHUA_.Size = new System.Drawing.Size(58, 26);
+            this.HSNHUA_.TabIndex = 0;
+            // 
+            // TONGGIATRI_
+            // 
+            // 
+            // 
+            // 
+            this.TONGGIATRI_.Border.Class = "TextBoxBorder";
+            this.TONGGIATRI_.Location = new System.Drawing.Point(134, 84);
+            this.TONGGIATRI_.Name = "TONGGIATRI_";
+            this.TONGGIATRI_.Size = new System.Drawing.Size(58, 26);
+            this.TONGGIATRI_.TabIndex = 0;
+            // 
+            // labelX10
+            // 
+            this.labelX10.Location = new System.Drawing.Point(10, 116);
+            this.labelX10.Name = "labelX10";
+            this.labelX10.Size = new System.Drawing.Size(118, 23);
+            this.labelX10.TabIndex = 1;
+            this.labelX10.Text = "CPNHANCONG";
+            // 
+            // HSGAN_
+            // 
+            // 
+            // 
+            // 
+            this.HSGAN_.Border.Class = "TextBoxBorder";
+            this.HSGAN_.Location = new System.Drawing.Point(134, 25);
+            this.HSGAN_.Name = "HSGAN_";
+            this.HSGAN_.Size = new System.Drawing.Size(58, 26);
+            this.HSGAN_.TabIndex = 0;
+            // 
+            // labelX15
+            // 
+            this.labelX15.Location = new System.Drawing.Point(10, 57);
+            this.labelX15.Name = "labelX15";
+            this.labelX15.Size = new System.Drawing.Size(101, 23);
+            this.labelX15.TabIndex = 1;
+            this.labelX15.Text = "HSNHUA";
+            // 
+            // labelX16
+            // 
+            this.labelX16.Location = new System.Drawing.Point(10, 87);
+            this.labelX16.Name = "labelX16";
+            this.labelX16.Size = new System.Drawing.Size(101, 23);
+            this.labelX16.TabIndex = 1;
+            this.labelX16.Text = "TONGGIATRI";
+            // 
+            // labelX17
+            // 
+            this.labelX17.Location = new System.Drawing.Point(208, 28);
+            this.labelX17.Name = "labelX17";
+            this.labelX17.Size = new System.Drawing.Size(145, 23);
+            this.labelX17.TabIndex = 8;
+            this.labelX17.Text = "KTGIAMDOC";
+            // 
+            // CVDUYETGD_
+            // 
+            // 
+            // 
+            // 
+            this.CVDUYETGD_.Border.Class = "TextBoxBorder";
+            this.CVDUYETGD_.Location = new System.Drawing.Point(411, 113);
+            this.CVDUYETGD_.Name = "CVDUYETGD_";
+            this.CVDUYETGD_.Size = new System.Drawing.Size(263, 26);
+            this.CVDUYETGD_.TabIndex = 5;
+            // 
+            // PGDKYTHUAT_
+            // 
+            // 
+            // 
+            // 
+            this.PGDKYTHUAT_.Border.Class = "TextBoxBorder";
+            this.PGDKYTHUAT_.Location = new System.Drawing.Point(411, 52);
+            this.PGDKYTHUAT_.Name = "PGDKYTHUAT_";
+            this.PGDKYTHUAT_.Size = new System.Drawing.Size(263, 26);
+            this.PGDKYTHUAT_.TabIndex = 2;
+            // 
+            // CVDOITCTB_
+            // 
+            // 
+            // 
+            // 
+            this.CVDOITCTB_.Border.Class = "TextBoxBorder";
+            this.CVDOITCTB_.Location = new System.Drawing.Point(411, 84);
+            this.CVDOITCTB_.Name = "CVDOITCTB_";
+            this.CVDOITCTB_.Size = new System.Drawing.Size(263, 26);
+            this.CVDOITCTB_.TabIndex = 4;
+            // 
+            // labelX18
+            // 
+            this.labelX18.Location = new System.Drawing.Point(208, 116);
+            this.labelX18.Name = "labelX18";
+            this.labelX18.Size = new System.Drawing.Size(145, 23);
+            this.labelX18.TabIndex = 9;
+            this.labelX18.Text = "CVDUYETGD";
+            // 
+            // KTGIAMDOC_
+            // 
+            // 
+            // 
+            // 
+            this.KTGIAMDOC_.Border.Class = "TextBoxBorder";
+            this.KTGIAMDOC_.Location = new System.Drawing.Point(411, 25);
+            this.KTGIAMDOC_.Name = "KTGIAMDOC_";
+            this.KTGIAMDOC_.Size = new System.Drawing.Size(263, 26);
+            this.KTGIAMDOC_.TabIndex = 3;
+            // 
+            // labelX19
+            // 
+            this.labelX19.Location = new System.Drawing.Point(208, 57);
+            this.labelX19.Name = "labelX19";
+            this.labelX19.Size = new System.Drawing.Size(171, 23);
+            this.labelX19.TabIndex = 7;
+            this.labelX19.Text = "PGDKYTHUAT";
+            // 
+            // labelX20
+            // 
+            this.labelX20.Location = new System.Drawing.Point(208, 87);
+            this.labelX20.Name = "labelX20";
+            this.labelX20.Size = new System.Drawing.Size(171, 23);
+            this.labelX20.TabIndex = 6;
+            this.labelX20.Text = "CVDOITCTB";
+            // 
+            // labelX22
+            // 
+            this.labelX22.Location = new System.Drawing.Point(208, 155);
+            this.labelX22.Name = "labelX22";
+            this.labelX22.Size = new System.Drawing.Size(145, 23);
+            this.labelX22.TabIndex = 18;
+            this.labelX22.Text = "NGUOIDUYETGD";
+            // 
+            // KTKSCV_
+            // 
+            // 
+            // 
+            // 
+            this.KTKSCV_.Border.Class = "TextBoxBorder";
+            this.KTKSCV_.Location = new System.Drawing.Point(411, 179);
+            this.KTKSCV_.Name = "KTKSCV_";
+            this.KTKSCV_.Size = new System.Drawing.Size(263, 26);
+            this.KTKSCV_.TabIndex = 12;
+            // 
+            // KTTSTEN_
+            // 
+            // 
+            // 
+            // 
+            this.KTTSTEN_.Border.Class = "TextBoxBorder";
+            this.KTTSTEN_.Location = new System.Drawing.Point(411, 211);
+            this.KTTSTEN_.Name = "KTTSTEN_";
+            this.KTTSTEN_.Size = new System.Drawing.Size(263, 26);
+            this.KTTSTEN_.TabIndex = 14;
+            // 
+            // NGUOIDUYETGD_
+            // 
+            // 
+            // 
+            // 
+            this.NGUOIDUYETGD_.Border.Class = "TextBoxBorder";
+            this.NGUOIDUYETGD_.Location = new System.Drawing.Point(411, 152);
+            this.NGUOIDUYETGD_.Name = "NGUOIDUYETGD_";
+            this.NGUOIDUYETGD_.Size = new System.Drawing.Size(263, 26);
+            this.NGUOIDUYETGD_.TabIndex = 13;
+            // 
+            // labelX24
+            // 
+            this.labelX24.Location = new System.Drawing.Point(208, 184);
+            this.labelX24.Name = "labelX24";
+            this.labelX24.Size = new System.Drawing.Size(171, 23);
+            this.labelX24.TabIndex = 17;
+            this.labelX24.Text = "KTKSCV";
+            // 
+            // labelX25
+            // 
+            this.labelX25.Location = new System.Drawing.Point(208, 214);
+            this.labelX25.Name = "labelX25";
+            this.labelX25.Size = new System.Drawing.Size(171, 23);
+            this.labelX25.TabIndex = 16;
+            this.labelX25.Text = "KTTSTEN";
+            // 
+            // CPVATTU_
+            // 
+            // 
+            // 
+            // 
+            this.CPVATTU_.Border.Class = "TextBoxBorder";
+            this.CPVATTU_.Location = new System.Drawing.Point(134, 142);
+            this.CPVATTU_.Name = "CPVATTU_";
+            this.CPVATTU_.Size = new System.Drawing.Size(58, 26);
+            this.CPVATTU_.TabIndex = 19;
+            // 
+            // labelX21
+            // 
+            this.labelX21.Location = new System.Drawing.Point(10, 145);
+            this.labelX21.Name = "labelX21";
+            this.labelX21.Size = new System.Drawing.Size(118, 23);
+            this.labelX21.TabIndex = 20;
+            this.labelX21.Text = "CPVATTU";
+            // 
             // uct_PhongBanDoi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
+            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.thicong_capnhat);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox2);
@@ -380,6 +668,7 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -415,5 +704,30 @@
         private DevComponents.DotNetBar.LabelX labelX13;
         private DevComponents.DotNetBar.Controls.TextBoxX dhn_chucvuduyet;
         private DevComponents.DotNetBar.LabelX labelX14;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private DevComponents.DotNetBar.LabelX labelX9;
+        private DevComponents.DotNetBar.Controls.TextBoxX CPNHANCONG_;
+        private DevComponents.DotNetBar.Controls.TextBoxX HSNHUA_;
+        private DevComponents.DotNetBar.Controls.TextBoxX TONGGIATRI_;
+        private DevComponents.DotNetBar.LabelX labelX10;
+        private DevComponents.DotNetBar.Controls.TextBoxX HSGAN_;
+        private DevComponents.DotNetBar.LabelX labelX15;
+        private DevComponents.DotNetBar.LabelX labelX16;
+        private DevComponents.DotNetBar.LabelX labelX17;
+        private DevComponents.DotNetBar.Controls.TextBoxX CVDUYETGD_;
+        private DevComponents.DotNetBar.Controls.TextBoxX PGDKYTHUAT_;
+        private DevComponents.DotNetBar.Controls.TextBoxX CVDOITCTB_;
+        private DevComponents.DotNetBar.LabelX labelX18;
+        private DevComponents.DotNetBar.Controls.TextBoxX KTGIAMDOC_;
+        private DevComponents.DotNetBar.LabelX labelX19;
+        private DevComponents.DotNetBar.LabelX labelX20;
+        private DevComponents.DotNetBar.LabelX labelX22;
+        private DevComponents.DotNetBar.Controls.TextBoxX KTKSCV_;
+        private DevComponents.DotNetBar.Controls.TextBoxX KTTSTEN_;
+        private DevComponents.DotNetBar.Controls.TextBoxX NGUOIDUYETGD_;
+        private DevComponents.DotNetBar.LabelX labelX24;
+        private DevComponents.DotNetBar.LabelX labelX25;
+        private DevComponents.DotNetBar.Controls.TextBoxX CPVATTU_;
+        private DevComponents.DotNetBar.LabelX labelX21;
     }
 }
