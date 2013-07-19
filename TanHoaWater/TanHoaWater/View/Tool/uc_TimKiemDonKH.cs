@@ -45,6 +45,10 @@ namespace TanHoaWater.View.Tool
                 SoTienDong.Text = String.Format("{0:0,0}", donkh.SOTIEN != null ? donkh.SOTIEN : 0.0).Replace(",",".");
                 this.DotNhanDon.Text = donkh.MADOT;
                 this.NgayLenDotNhanDon.Text = Utilities.DateToString.NgayVNVN(donkh.CREATEDATE.Value);
+                if (donkh.HOSOCHA != null)
+                {
+                    donkh = DAL.C_DonKhachHang.searchTimKiemDon(donkh.HOSOCHA);
+                }
                 if (donkh.NGAYCHUYEN_HOSO != null)
                 {
                     this.txtNgayGiaoTTK.Text = Utilities.DateToString.NgayVNVN(donkh.NGAYCHUYEN_HOSO.Value);

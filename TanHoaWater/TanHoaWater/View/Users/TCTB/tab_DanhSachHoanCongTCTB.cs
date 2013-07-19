@@ -395,6 +395,52 @@ namespace TanHoaWater.View.Users.TCTB
             }
             return 0;
         }
+
+        public void CapNhatHandHeld(TB_DULIEUKHACHHANG hskh)
+        {
+            //Cap Nhat Du Lieu Cho HandHeld
+            try
+            {
+                DAL.C_PhienLoTrinh.CapNhatThongTinHandHeld(this.txtDanhBo.Text.Replace("-", ""), txtHieu.Text.Substring(0, 3), txtSoThan.Text,"","");
+                string loai = "1";
+                string sql = "INSERT INTO BAOTHAYDHN (DANHBA, TENKH, SO, DUONG, HIEUMOI, COMOI, NGAYTHAY, CSGAN, SOTHANMOI, VITRIMOI, MACHITHAN, MACHIGOC, LOAI) " +
+                " VALUES     ('" + this.txtDanhBo.Text.Replace("-", "") + "', " +
+                " '" + hskh.HOTEN + "', " +
+                " '" + hskh.SONHA + "' ," +
+                " '" + hskh.TENDUONG + "' , " +
+                " '" + txtHieu.Text.Substring(0, 3) + "', " +
+                " " + hskh.CODH + ", " +
+                " '" + dateNgayGan.Value.Date + "', " +            
+                " " + txtChiSo.Text + ", " +
+                " '" + txtSoThan.Text + "'," +
+                " N' ', " +
+                " ' '," +
+                " ' ', " +
+                "  " + loai + ")";
+                if (DAL.C_PhienLoTrinh.InsertBaoThayHandHeld(sql) == 0)
+                {
+
+                    sql = "UPDATE  BAOTHAYDHN  " +
+                    " SET  " +
+                    " TENKH='" + hskh.HOTEN + "', " +
+                    " SO='" + hskh.SONHA + "' ," +
+                    " DUONG='" + hskh.TENDUONG + "' , " +
+                    " HIEUMOI='" + txtHieu.Text.Substring(0, 3) + "', " +
+                    " COMOI=" + hskh.CODH + ", " +
+                    " NGAYTHAY='" + dateNgayGan.Value.Date + "', " +
+                    " CSGAN=" + txtChiSo.Text + ", " +                 
+                    " LOAI=" + loai + " " +
+                    " WHERE DANHBA='" + this.txtDanhBo.Text.Replace("-", "") + "' AND CONVERT(DATETIME,NGAYTHAY,103)='" + dateNgayGan.Value.ToShortDateString() + "'";
+                    DAL.C_PhienLoTrinh.InsertBaoThayHandHeld(sql);
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Error("Cap Nhat Du Lieu Cho HandHeld : " + ex.Message);
+            }
+            //// END
+        }
+        
         private void btHoanTat_Click(object sender, EventArgs e)
         {
             //updateDulieu();
@@ -455,7 +501,18 @@ namespace TanHoaWater.View.Users.TCTB
                                 kh.SOTHANDH = hskh.SOTHANTLK;
                                 kh.CHISOKYTRUOC = hskh.CHISO + "";
                                 DULIEUKH.C_DuLieuKhachHang.Update();
+
+                                try
+                                {
+                                    CapNhatHandHeld(kh);
+                                }
+                                catch (Exception)
+                                {
+
+                                }
                             }
+
+
                         }
                   }
                     catch (Exception ex)

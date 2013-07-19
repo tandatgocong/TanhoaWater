@@ -29,15 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabCapNhatDS = new DevComponents.DotNetBar.TabControlPanel();
             this.tabItem2 = new DevComponents.DotNetBar.TabItem(this.components);
             this.tabItem1 = new DevComponents.DotNetBar.TabItem(this.components);
             this.tabDanhSachDot = new DevComponents.DotNetBar.TabControlPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btTroNgaiTC = new DevComponents.DotNetBar.ButtonX();
             this.dtcDenNgay = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.dtcTuNgay = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.labelX19 = new DevComponents.DotNetBar.LabelX();
@@ -108,7 +109,7 @@
             this.tabItem3 = new DevComponents.DotNetBar.TabItem(this.components);
             this.tabControlPanel1 = new DevComponents.DotNetBar.TabControlPanel();
             this.tabItem4 = new DevComponents.DotNetBar.TabItem(this.components);
-            this.btTroNgaiTC = new DevComponents.DotNetBar.ButtonX();
+            this.btXoa = new DevComponents.DotNetBar.ButtonX();
             this.tabDanhSachDot.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtcDenNgay)).BeginInit();
@@ -181,6 +182,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.btXoa);
             this.panel1.Controls.Add(this.btTroNgaiTC);
             this.panel1.Controls.Add(this.dtcDenNgay);
             this.panel1.Controls.Add(this.dtcTuNgay);
@@ -243,6 +245,21 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(995, 585);
             this.panel1.TabIndex = 697;
+            // 
+            // btTroNgaiTC
+            // 
+            this.btTroNgaiTC.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btTroNgaiTC.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btTroNgaiTC.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btTroNgaiTC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btTroNgaiTC.Location = new System.Drawing.Point(701, 461);
+            this.btTroNgaiTC.Name = "btTroNgaiTC";
+            this.btTroNgaiTC.Size = new System.Drawing.Size(235, 23);
+            this.btTroNgaiTC.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
+            this.btTroNgaiTC.TabIndex = 721;
+            this.btTroNgaiTC.Text = "Hồ Sơ Trở Ngại Thi Công";
+            this.btTroNgaiTC.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
+            this.btTroNgaiTC.Click += new System.EventHandler(this.btTroNgaiTC_Click);
             // 
             // dtcDenNgay
             // 
@@ -798,9 +815,9 @@
             // 
             this.groupBox2.Controls.Add(this.btCapNhatBoiTuong);
             this.groupBox2.Controls.Add(this.btInDanhSachBt);
-            this.groupBox2.Location = new System.Drawing.Point(701, 490);
+            this.groupBox2.Location = new System.Drawing.Point(701, 556);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(225, 90);
+            this.groupBox2.Size = new System.Drawing.Size(225, 24);
             this.groupBox2.TabIndex = 706;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Hồ Sơ Bồi Thường";
@@ -839,27 +856,27 @@
             this.gridDotThiCong.AllowUserToDeleteRows = false;
             this.gridDotThiCong.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
             this.gridDotThiCong.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 12F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridDotThiCong.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Times New Roman", 12F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridDotThiCong.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.gridDotThiCong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridDotThiCong.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.gridSoDot,
             this.gridNgay,
             this.girdLoaiDot});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 12F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gridDotThiCong.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Times New Roman", 12F);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridDotThiCong.DefaultCellStyle = dataGridViewCellStyle8;
             this.gridDotThiCong.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.gridDotThiCong.Location = new System.Drawing.Point(13, 262);
             this.gridDotThiCong.Name = "gridDotThiCong";
@@ -874,8 +891,8 @@
             // gridSoDot
             // 
             this.gridSoDot.DataPropertyName = "MADOTTC";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.gridSoDot.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.gridSoDot.DefaultCellStyle = dataGridViewCellStyle6;
             this.gridSoDot.HeaderText = "Số Đợt TC";
             this.gridSoDot.Name = "gridSoDot";
             this.gridSoDot.ReadOnly = true;
@@ -884,9 +901,9 @@
             // gridNgay
             // 
             this.gridNgay.DataPropertyName = "NGAYLAP";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.Format = "dd/MM/yyyy";
-            this.gridNgay.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.Format = "dd/MM/yyyy";
+            this.gridNgay.DefaultCellStyle = dataGridViewCellStyle7;
             this.gridNgay.HeaderText = "Ngày Lập";
             this.gridNgay.Name = "gridNgay";
             this.gridNgay.ReadOnly = true;
@@ -1342,20 +1359,20 @@
             this.tabItem4.Text = "Bảng Kê  Nhận Đơn";
             this.tabItem4.Click += new System.EventHandler(this.tabItem4_Click);
             // 
-            // btTroNgaiTC
+            // btXoa
             // 
-            this.btTroNgaiTC.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btTroNgaiTC.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btTroNgaiTC.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btTroNgaiTC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btTroNgaiTC.Location = new System.Drawing.Point(701, 461);
-            this.btTroNgaiTC.Name = "btTroNgaiTC";
-            this.btTroNgaiTC.Size = new System.Drawing.Size(235, 23);
-            this.btTroNgaiTC.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
-            this.btTroNgaiTC.TabIndex = 721;
-            this.btTroNgaiTC.Text = "Hồ Sơ Trở Ngại Thi Công";
-            this.btTroNgaiTC.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
-            this.btTroNgaiTC.Click += new System.EventHandler(this.btTroNgaiTC_Click);
+            this.btXoa.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btXoa.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btXoa.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btXoa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btXoa.Location = new System.Drawing.Point(701, 494);
+            this.btXoa.Name = "btXoa";
+            this.btXoa.Size = new System.Drawing.Size(235, 23);
+            this.btXoa.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
+            this.btXoa.TabIndex = 722;
+            this.btXoa.Text = "Xóa Đợt Thi Công";
+            this.btXoa.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
+            this.btXoa.Click += new System.EventHandler(this.btXoa_Click);
             // 
             // UCT_DOTTHICONG
             // 
@@ -1467,6 +1484,7 @@
         private DevComponents.Editors.DateTimeAdv.DateTimeInput dtcDenNgay;
         private DevComponents.Editors.DateTimeAdv.DateTimeInput dtcTuNgay;
         private DevComponents.DotNetBar.ButtonX btTroNgaiTC;
+        private DevComponents.DotNetBar.ButtonX btXoa;
 
     }
 }

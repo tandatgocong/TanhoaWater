@@ -17,6 +17,7 @@ namespace TanHoaWater.View.Users.To_ThietKe
     public partial class tab_HoanTatTK : UserControl
     {
         private static readonly ILog log = LogManager.GetLogger(typeof(tab_HoanTatTK).Name);
+        string sohosohttk = "";
         public tab_HoanTatTK()
         {
             InitializeComponent();
@@ -29,7 +30,7 @@ namespace TanHoaWater.View.Users.To_ThietKe
             this.bophanChuyen.DisplayMember = "TENPHONG";
             this.bophanChuyen.ValueMember = "MAPHONG";
             #endregion
-
+            sohosohttk = "";
         }
         string _madot = "";
 
@@ -227,7 +228,18 @@ namespace TanHoaWater.View.Users.To_ThietKe
             }
 
         }
+        void LoadLuoi() {
+            if ("".Equals(sohosohttk))
+            {
+                this.dataGridView1.DataSource = DAL.C_ToThietKe.ListHoanTatTKByDate(Utilities.DateToString.NgayVN(datehttk_), "");
+                Utilities.DataGridV.formatRows(dataGridView1);
+            }
+            else {
+                this.dataGridView1.DataSource = DAL.C_ToThietKe.ListHoanTatTKByDate("", sohosohttk.Substring(0,sohosohttk.Length-1));
+                Utilities.DataGridV.formatRows(dataGridView1);
+            }
 
+        }
         private void txtGhiChu_KeyPress(object sender, KeyPressEventArgs e)
         {
             try
@@ -240,8 +252,8 @@ namespace TanHoaWater.View.Users.To_ThietKe
                         {
                             DAL.C_ToThietKe.HoaTatTK(txtSHS.Text.Trim(), this.txtGhiChu.Text);
                             DAL.C_ToThietKe.CapNhatHoanTatChoDot(madot);
-                            this.dataGridView1.DataSource = DAL.C_ToThietKe.ListHoanTatTKByDate(Utilities.DateToString.NgayVN(datehttk_));
-                            Utilities.DataGridV.formatRows(dataGridView1);
+                            sohosohttk += "'" + txtSHS.Text + "',";
+                            LoadLuoi();
 
                         }
                     }
@@ -307,7 +319,7 @@ namespace TanHoaWater.View.Users.To_ThietKe
             {
 
                 ReportDocument rp = new rpt_DSHoanTatbyDate();
-                rp.SetDataSource(DAL.C_ToThietKe.BC_HOANTATTK_BYDATE(Utilities.DateToString.NgayVN(DateTime.Now.Date), DAL.C_USERS._userName));
+                rp.SetDataSource(DAL.C_ToThietKe.BC_HOANTATTK_BYDATE(Utilities.DateToString.NgayVN(DateTime.Now.Date), DAL.C_USERS._userName, sohosohttk.Substring(0, sohosohttk.Length - 1)));
 
                 rp.SetParameterValue("ngay", Utilities.DateToString.NgayVN(DateTime.Now.Date));
              //   report.ReportSource = rp;
@@ -392,7 +404,7 @@ namespace TanHoaWater.View.Users.To_ThietKe
         private void btXem_Click(object sender, EventArgs e)
         {
             ReportDocument rp = new rpt_DSHoanTatbyDate();
-            rp.SetDataSource(DAL.C_ToThietKe.BC_HOANTATTK_BYDATE(Utilities.DateToString.NgayVN(bcDate), DAL.C_USERS._userName ));
+            rp.SetDataSource(DAL.C_ToThietKe.BC_HOANTATTK_BYDATE(Utilities.DateToString.NgayVN(bcDate), DAL.C_USERS._userName, sohosohttk));
 
             rp.SetParameterValue("ngay", Utilities.DateToString.NgayVN(bcDate));
             report.ReportSource = rp;

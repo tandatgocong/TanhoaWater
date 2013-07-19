@@ -897,7 +897,7 @@ namespace TanHoaWater.View.Users.DONGHONUOC
         }
         private void btCapNhat_Click(object sender, EventArgs e)
         {
-            if (DULIEUKH.C_DuLieuKhachHang.checkTrungHopDong(this.txtDanhBo.Text.Replace("-", ""), this.txtHopDong.Text) != null)
+            if (DULIEUKH.C_DuLieuKhachHang.checkTrungHopDong(this.txtDanhBo.Text.Replace("-", ""), this.txtHopDong.Text) == null)
             {
 
                 try

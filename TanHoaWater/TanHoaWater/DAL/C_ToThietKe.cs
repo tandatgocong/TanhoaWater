@@ -288,7 +288,7 @@ namespace TanHoaWater.DAL
             return dataset.Tables[0];
         }
 
-        public static DataTable ListHoanTatTKByDate(string ngayhoantat)
+        public static DataTable ListHoanTatTKByDate(string ngayhoantat, string shs)
         {
             TanHoaDataContext db = new TanHoaDataContext();
             db.Connection.Open();
@@ -298,7 +298,14 @@ namespace TanHoaWater.DAL
             sql += "  FROM TOTHIETKE ttk, DON_KHACHHANG kh,QUAN q,PHUONG p";
             sql += "  WHERE  kh.QUAN = q.MAQUAN AND q.MAQUAN=p.MAQUAN AND kh.PHUONG=p.MAPHUONG  AND ttk.SOHOSO=kh.SOHOSO ";
             //  sql += " AND ttk.MADOT='" + ttkMaDot + "'";
-            sql += " AND CONVERT(VARCHAR(10),ttk.NGAYTRAHS,103) ='" + ngayhoantat + "'";
+            if ("".Equals(shs))
+            {
+                sql += " AND CONVERT(VARCHAR(10),ttk.NGAYTRAHS,103) ='" + ngayhoantat + "'";
+            }
+            else {
+                sql += " AND ttk.SHS IN ("+shs+") ";
+            }
+            
 
             sql += " ORDER BY TINHTRANGSVD";
             SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
@@ -391,8 +398,10 @@ namespace TanHoaWater.DAL
                     totk.NGAYTRAHS = DateTime.Now.Date;
                     totk.NGAYCHUYENHS = DateTime.Now.Date;
                     totk.BOPHANCHUYEN = "VTTH";
+                    totk.TRONGAITHIETKE = false;
                     totk.GHICHU = ghichu;
                     db.SubmitChanges();
+                    LinQConnection.ExecuteCommand_("UPDATE DON_KHACHHANG SET TRONGAITHIETKE=0 WHERE SHS='"+shs+"'");
                     return true;
                 }
 
@@ -534,13 +543,23 @@ namespace TanHoaWater.DAL
             return ds.Tables[0];
         }
 
-        public static DataSet BC_HOANTATTK_BYDATE( string ngayhoantat ,string nguoilap)
+        public static DataSet BC_HOANTATTK_BYDATE( string ngayhoantat ,string nguoilap, string shs)
         {
             DataSet ds = new DataSet();
             TanHoaDataContext db = new TanHoaDataContext();
             db.Connection.Open();
             string sql = "SELECT * FROM V_TTK_HOANTATTK ";
-            sql += " WHERE NGAYHOANTATTK='" + ngayhoantat + "'";
+            if ("".Equals(shs))
+            {
+                sql += " WHERE NGAYHOANTATTK='" + ngayhoantat + "'";
+            }
+            else
+            {
+                sql += " AND SHS IN (" + shs + ") ";
+            }
+            
+
+           
             sql += " AND USERNAME='" + nguoilap + "'";
             sql += " AND TKHOANTAT='True' AND (TRONGAITHIETKE='False' OR TRONGAITHIETKE IS NULL) ";
              
