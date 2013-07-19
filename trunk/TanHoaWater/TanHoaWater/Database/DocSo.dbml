@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DocSo_PHT" Class="DocSoDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=HP_G7;Initial Catalog=DocSo_PHT;Persist Security Info=True;User ID=sa" SettingsObjectName="TanHoaWater.Properties.Settings" SettingsPropertyName="DocSo_PHTConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=HP_G7\KD;Initial Catalog=DocSo_PHT;Persist Security Info=True;User ID=sa" SettingsObjectName="TanHoaWater.Properties.Settings" SettingsPropertyName="DocSo_PHTConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.BAOTHAYDHN" Member="BAOTHAYDHNs">
     <Type Name="BAOTHAYDHN">
       <Column Name="ID_BAOTHAY" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -20,12 +20,16 @@
       <Column Name="NGAYCAPNHAT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.TINH_TRANG" Member="TINH_TRANGs">
-    <Type Name="TINH_TRANG">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="TINH_TRANG" Member="TINH_TRANG1" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
-      <Column Name="MO_TA" Type="System.String" DbType="NChar(255)" CanBeNull="true" />
-      <Column Name="CODE_TINH" Type="System.String" DbType="NChar(2)" CanBeNull="true" />
+  <Table Name="dbo.NHANVIEN" Member="NHANVIENs">
+    <Type Name="NHANVIEN">
+      <Column Name="MANV" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TENNHANVIEN" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+      <Column Name="TENDANGNHAP" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MATKHAU" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TODS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MAY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BANDOI" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+      <Column Name="QUYEN" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.BIENDONG_KHACHHANG" Member="BIENDONG_KHACHHANGs">
@@ -725,16 +729,12 @@
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
     </Type>
   </Table>
-  <Table Name="dbo.NHANVIEN" Member="NHANVIENs">
-    <Type Name="NHANVIEN">
-      <Column Name="MANV" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="TENNHANVIEN" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
-      <Column Name="TENDANGNHAP" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="MATKHAU" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="TODS" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="MAY" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="BANDOI" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
-      <Column Name="QUYEN" Type="System.Int32" DbType="Int" CanBeNull="true" />
+  <Table Name="dbo.TINH_TRANG" Member="TINH_TRANGs">
+    <Type Name="TINH_TRANG">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TINH_TRANG" Member="TINH_TRANG1" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="MO_TA" Type="System.String" DbType="NChar(255)" CanBeNull="true" />
+      <Column Name="CODE_TINH" Type="System.String" DbType="NChar(2)" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

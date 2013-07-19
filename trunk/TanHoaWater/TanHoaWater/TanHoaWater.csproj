@@ -162,6 +162,7 @@
     <Compile Include="DAL\C_LoaiNhanDon.cs" />
     <Compile Include="DAL\C_LoaiSD.cs" />
     <Compile Include="DAL\C_NhomVatTu.cs" />
+    <Compile Include="DAL\C_PhienLoTrinh.cs" />
     <Compile Include="DAL\C_PhongBan.cs" />
     <Compile Include="DAL\C_Phuong.cs" />
     <Compile Include="DAL\C_Quan.cs" />

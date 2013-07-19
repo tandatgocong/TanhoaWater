@@ -976,5 +976,24 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
             optTroNgaiTC opt = new optTroNgaiTC();
             opt.ShowDialog();
         }
+
+        private void btXoa_Click(object sender, EventArgs e)
+        {
+            string madot = "";
+            try
+            {
+                madot = gridDotThiCong.Rows[gridDotThiCong.CurrentRow.Index].Cells["gridSoDot"].Value + "";
+                if (MessageBox.Show(this, "..: Thông Báo:..", "Bạn chắc muốn xóa đợt thi công " + madot + " ?", MessageBoxButtons.YesNo) == DialogResult.Yes) {
+                    DAL.LinQConnection.ExecuteCommand_("DELETE FROM KH_DOTTHICONG WHERE MADOTTC='"+madot+"'");
+                    searchTimKiem_TextChanged(sender, e);
+                }
+
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+       
     }
 }

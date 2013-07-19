@@ -97,11 +97,11 @@ namespace TanHoaWater.DAL
                 TanHoaDataContext db = new TanHoaDataContext();
                 var data = from don in db.DON_KHACHHANGs where don.SHS == sohoso select don;
                 DON_KHACHHANG donkh = data.SingleOrDefault();
-                if (donkh.HOSOCHA != null)
-                {
-                    var hosocha = from don in db.DON_KHACHHANGs where don.SHS == donkh.HOSOCHA select don;
-                    return hosocha.SingleOrDefault();
-                }
+                //if (donkh.HOSOCHA != null)
+                //{
+                //    var hosocha = from don in db.DON_KHACHHANGs where don.SHS == donkh.HOSOCHA select don;
+                //    return hosocha.SingleOrDefault();
+                //}
                 return donkh;
             }
             catch (Exception ex)
