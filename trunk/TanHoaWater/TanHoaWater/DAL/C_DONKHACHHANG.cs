@@ -381,7 +381,7 @@ namespace TanHoaWater.DAL
             return dataset.Tables[0].Rows.Count;
         }
 
-        public static bool TroNgaiThietKe(string sohoso, string lydotrongai, string modifyby)
+        public static bool TroNgaiThietKe(bool tk,string sohoso, string lydotrongai, string modifyby)
         {
 
             try
@@ -391,7 +391,7 @@ namespace TanHoaWater.DAL
                 DON_KHACHHANG donkh = data.SingleOrDefault();
                 if (donkh != null)
                 {
-                    donkh.TRONGAITHIETKE = true;
+                    donkh.TRONGAITHIETKE = tk;
                     donkh.NOIDUNGTRONGAI = lydotrongai;
                     donkh.MODIFYBY = DAL.C_USERS._userName;
                     donkh.MODIFYDATE = DateTime.Now.Date;

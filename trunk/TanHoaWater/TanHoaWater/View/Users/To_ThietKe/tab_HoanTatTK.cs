@@ -319,7 +319,7 @@ namespace TanHoaWater.View.Users.To_ThietKe
             {
 
                 ReportDocument rp = new rpt_DSHoanTatbyDate();
-                rp.SetDataSource(DAL.C_ToThietKe.BC_HOANTATTK_BYDATE(Utilities.DateToString.NgayVN(DateTime.Now.Date), DAL.C_USERS._userName, sohosohttk.Substring(0, sohosohttk.Length - 1)));
+                rp.SetDataSource(DAL.C_ToThietKe.BC_HOANTATTK_BYDATE(Utilities.DateToString.NgayVN(DateTime.Now.Date), DAL.C_USERS._userName,sohosohttk));
 
                 rp.SetParameterValue("ngay", Utilities.DateToString.NgayVN(DateTime.Now.Date));
              //   report.ReportSource = rp;
@@ -348,7 +348,7 @@ namespace TanHoaWater.View.Users.To_ThietKe
             {
 
                 ReportDocument rp = new rpt_DSTroNgaiTK();
-                    rp.SetDataSource(DAL.C_ToThietKe.BC_TRONGAITK_BYDATE(Utilities.DateToString.NgayVN(DateTime.Now.Date), DAL.C_USERS._userName));
+                    rp.SetDataSource(DAL.C_ToThietKe.BC_TRONGAITK_BYDATE(Utilities.DateToString.NgayVN(DateTime.Now.Date), DAL.C_USERS._userName,sohosohttk));
                     rp.SetParameterValue("ngay", Utilities.DateToString.NgayVN(DateTime.Now.Date));
                     rpt_Main rpt = new rpt_Main(rp);
                     rpt.ShowDialog();
@@ -388,7 +388,7 @@ namespace TanHoaWater.View.Users.To_ThietKe
                 if (!"".Equals(cbDotNhanDon.Text))
                 {
                     ReportDocument rp = new rpt_DSHoanTat();
-                    rp.SetDataSource(DAL.C_ToThietKe.BC_TRONGAITK_BYDATE(cbDotNhanDon.Text, DAL.C_USERS._userName));
+                    rp.SetDataSource(DAL.C_ToThietKe.BC_TRONGAITK_BYDATE(cbDotNhanDon.Text, DAL.C_USERS._userName,sohosohttk));
                     rp.SetParameterValue("Title", "DANH SÁCH TRỞ NGẠI THIẾT KẾ");
                     rpt_Main rpt = new rpt_Main(rp);
                     rpt.ShowDialog();

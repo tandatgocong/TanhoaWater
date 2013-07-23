@@ -554,14 +554,25 @@ namespace TanHoaWater.View.Users.To_ThietKe
 
         private void btUpdate_Click(object sender, EventArgs e)
         {
+            string _soHoSo = this.txtSoHoSo.Text;
+            bool tk=false;
+            if (this.checkTroNgai.Checked == true)
+            {
+                tk = true;
+                DAL.LinQConnection.ExecuteCommand_("UPDATE DON_KHACHHANG SET TRONGAITHIETKE=1 WHERE SHS='" + _soHoSo + "'");
+            }
+            else {
+                DAL.LinQConnection.ExecuteCommand_("UPDATE DON_KHACHHANG SET TRONGAITHIETKE=0 WHERE SHS='" + _soHoSo + "'");
+            }
             try
             {
-                string _soHoSo = this.txtSoHoSo.Text;
+               
                 if (_soHoSo != null)
                 {
-                  bool result =  DAL.C_ToThietKe.TraHS(_soHoSo, this.txtNoiDungTN.Text);
-                  bool result1 = DAL.C_DonKhachHang.TroNgaiThietKe(_soHoSo, this.txtNoiDungTN.Text, DAL.C_USERS._userName);
+                  bool result =  DAL.C_ToThietKe.TraHS(tk,_soHoSo, this.txtNoiDungTN.Text);
+                  bool result1 = DAL.C_DonKhachHang.TroNgaiThietKe(tk, _soHoSo, this.txtNoiDungTN.Text, DAL.C_USERS._userName);
                   if (result && result1) {
+                    
                       MessageBox.Show(this,"Trả Hồ Sơ Thành Công !" , "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
                   
                       //txtResult.Text = "Trả Hồ Sơ Thành Công";

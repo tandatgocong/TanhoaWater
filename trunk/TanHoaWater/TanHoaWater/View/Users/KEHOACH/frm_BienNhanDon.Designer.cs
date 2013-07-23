@@ -220,7 +220,7 @@
             this.txtSoDanhBo.Mask = "0000-0000000";
             this.txtSoDanhBo.Name = "txtSoDanhBo";
             this.txtSoDanhBo.Size = new System.Drawing.Size(115, 26);
-            this.txtSoDanhBo.TabIndex = 45;
+            this.txtSoDanhBo.TabIndex = 10;
             // 
             // labelX17
             // 

@@ -90,11 +90,23 @@ namespace TanHoaWater.View.Users.KEHOACH
             try
             {
                 string _soHoSo = this.txtSoHoSo.Text;
+
+                bool tk = false;
+                if (this.ckTroNgai.Checked == true)
+                {
+                    tk = true;
+                    DAL.LinQConnection.ExecuteCommand_("UPDATE DON_KHACHHANG SET TRONGAITHIETKE=1 WHERE SHS='" + _soHoSo + "'");
+                }
+                else
+                {
+                    DAL.LinQConnection.ExecuteCommand_("UPDATE DON_KHACHHANG SET TRONGAITHIETKE=0 WHERE SHS='" + _soHoSo + "'");
+                }
                 if (_soHoSo != null)
                 {
-                    bool result1 = DAL.C_DonKhachHang.TroNgaiThietKe(_soHoSo, this.txtnoidungtrongai.Text, DAL.C_USERS._userName);
+                    bool result1 = DAL.C_DonKhachHang.TroNgaiThietKe(tk,_soHoSo, this.txtnoidungtrongai.Text, DAL.C_USERS._userName);
                     if (result1)
                     {
+                        DAL.LinQConnection.ExecuteCommand_("UPDATE DON_KHACHHANG SET TRONGAITHIETKE=0 WHERE SHS='" + _soHoSo + "'");
                         MessageBox.Show(this, "Cập Nhật Hồ Sơ Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else

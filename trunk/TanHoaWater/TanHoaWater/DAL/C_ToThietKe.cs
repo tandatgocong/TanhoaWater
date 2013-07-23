@@ -113,7 +113,7 @@ namespace TanHoaWater.DAL
             return ds;
         }
 
-        public static bool TraHS(string sohoso, string noidungtrongai)
+        public static bool TraHS(bool tk,string sohoso, string noidungtrongai)
         {
             try
             {
@@ -122,9 +122,10 @@ namespace TanHoaWater.DAL
                 TOTHIETKE totk = query.SingleOrDefault();
                 if (totk != null)
                 {
+                    
                     totk.TRAHS = true;
                     totk.NGAYTRAHS = DateTime.Now;
-                    totk.TRONGAITHIETKE = true;
+                    totk.TRONGAITHIETKE = tk;
                     totk.NOIDUNGTRONGAI = noidungtrongai;
                     db.SubmitChanges();
                     return true;
@@ -398,10 +399,10 @@ namespace TanHoaWater.DAL
                     totk.NGAYTRAHS = DateTime.Now.Date;
                     totk.NGAYCHUYENHS = DateTime.Now.Date;
                     totk.BOPHANCHUYEN = "VTTH";
-                    totk.TRONGAITHIETKE = false;
+                  //  totk.TRONGAITHIETKE = false;
                     totk.GHICHU = ghichu;
                     db.SubmitChanges();
-                    LinQConnection.ExecuteCommand_("UPDATE DON_KHACHHANG SET TRONGAITHIETKE=0 WHERE SHS='"+shs+"'");
+                  //  LinQConnection.ExecuteCommand_("UPDATE DON_KHACHHANG SET TRONGAITHIETKE=0 WHERE SHS='"+shs+"'");
                     return true;
                 }
 
@@ -555,33 +556,52 @@ namespace TanHoaWater.DAL
             }
             else
             {
-                sql += " AND SHS IN (" + shs + ") ";
+                sql += " WHERE SHS IN (" + shs.Substring(0, shs.Length - 1) + ") ";
             }
-            
-
-           
-            sql += " AND USERNAME='" + nguoilap + "'";
-            sql += " AND TKHOANTAT='True' AND (TRONGAITHIETKE='False' OR TRONGAITHIETKE IS NULL) ";
+                       
+          sql += " AND USERNAME='" + nguoilap + "'";
+            sql += " AND TKHOANTAT='True' AND (TRONGAITHIETKE='0' OR TRONGAITHIETKE IS NULL) ";
              
             SqlDataAdapter dond = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             dond.Fill(ds, "V_TTK_HOANTATTK");
 
             return ds;
         }
-        public static DataSet BC_TRONGAITK_BYDATE(string ngayhoantat, string nguoilap)
+        public static DataSet BC_TRONGAITK_BYDATE(string ngayhoantat, string nguoilap, string shs)
         {
+            //DataSet ds = new DataSet();
+            //TanHoaDataContext db = new TanHoaDataContext();
+            //db.Connection.Open();
+            //string sql = "SELECT  * FROM V_TTK_HOANTATTK ";
+            //sql += " WHERE NGAYHOANTATTK='" + ngayhoantat + "'";
+            //sql += " AND USERNAME='" + nguoilap + "'";
+            //sql += " AND TRONGAITHIETKE='True' ";
+
+            //SqlDataAdapter dond = new SqlDataAdapter(sql, db.Connection.ConnectionString);
+            //dond.Fill(ds, "V_TTK_HOANTATTK");
+
+            //return ds;
             DataSet ds = new DataSet();
             TanHoaDataContext db = new TanHoaDataContext();
             db.Connection.Open();
-            string sql = "SELECT  * FROM V_TTK_HOANTATTK ";
-            sql += " WHERE NGAYHOANTATTK='" + ngayhoantat + "'";
+            string sql = "SELECT * FROM V_TTK_HOANTATTK ";
+            if ("".Equals(shs))
+            {
+                sql += " WHERE NGAYHOANTATTK='" + ngayhoantat + "'";
+            }
+            else
+            {
+                sql += " WHERE SHS IN (" + shs.Substring(0, shs.Length - 1) + ") ";
+            }
+
             sql += " AND USERNAME='" + nguoilap + "'";
-            sql += " AND TRONGAITHIETKE='True' ";
+            sql += "  AND (TRONGAITHIETKE='True' OR TRONGAITHIETKE IS NULL) ";
 
             SqlDataAdapter dond = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             dond.Fill(ds, "V_TTK_HOANTATTK");
 
             return ds;
+
         }
 
     }
