@@ -459,6 +459,18 @@
       <DependentUpon>rpt_QuyetDinhTC.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="View\Users\KEHOACH\DOTTHICONG\frm_HoSoBoSung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Users\KEHOACH\DOTTHICONG\frm_HoSoBoSung.Designer.cs">
+      <DependentUpon>frm_HoSoBoSung.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Users\KEHOACH\DOTTHICONG\tab_CapNhatDanhSachBoSung.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Users\KEHOACH\DOTTHICONG\tab_CapNhatDanhSachBoSung.Designer.cs">
+      <DependentUpon>tab_CapNhatDanhSachBoSung.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Users\KEHOACH\DOTTHICONG\optTroNgaiTC.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1248,6 +1260,12 @@
     <EmbeddedResource Include="View\Users\KEHOACH\DOTTHICONG\BC\rpt_QuyetDinhTC.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_QuyetDinhTC.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\KEHOACH\DOTTHICONG\frm_HoSoBoSung.resx">
+      <DependentUpon>frm_HoSoBoSung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\KEHOACH\DOTTHICONG\tab_CapNhatDanhSachBoSung.resx">
+      <DependentUpon>tab_CapNhatDanhSachBoSung.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\KEHOACH\DOTTHICONG\optTroNgaiTC.resx">
       <DependentUpon>optTroNgaiTC.cs</DependentUpon>

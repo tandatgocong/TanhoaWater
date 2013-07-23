@@ -401,16 +401,26 @@ namespace TanHoaWater.View.Users.TCTB
             //Cap Nhat Du Lieu Cho HandHeld
             try
             {
+                int csgo = 0;
+                try
+                {
+                    csgo = int.Parse(this.txtCSGo.Text.Replace(" ",""));
+                }
+                catch (Exception)
+                {
+                    
+                }
                 DAL.C_PhienLoTrinh.CapNhatThongTinHandHeld(this.txtDanhBo.Text.Replace("-", ""), txtHieu.Text.Substring(0, 3), txtSoThan.Text,"","");
                 string loai = "1";
-                string sql = "INSERT INTO BAOTHAYDHN (DANHBA, TENKH, SO, DUONG, HIEUMOI, COMOI, NGAYTHAY, CSGAN, SOTHANMOI, VITRIMOI, MACHITHAN, MACHIGOC, LOAI) " +
+                string sql = "INSERT INTO BAOTHAYDHN (DANHBA, TENKH, SO, DUONG, HIEUMOI, COMOI, NGAYTHAY,CSGO, CSGAN, SOTHANMOI, VITRIMOI, MACHITHAN, MACHIGOC, LOAI) " +
                 " VALUES     ('" + this.txtDanhBo.Text.Replace("-", "") + "', " +
                 " '" + hskh.HOTEN + "', " +
                 " '" + hskh.SONHA + "' ," +
                 " '" + hskh.TENDUONG + "' , " +
                 " '" + txtHieu.Text.Substring(0, 3) + "', " +
                 " " + hskh.CODH + ", " +
-                " '" + dateNgayGan.Value.Date + "', " +            
+                " '" + csgo + "', " +
+                " '" + dateNgayGan.Value.Date + "', " + 
                 " " + txtChiSo.Text + ", " +
                 " '" + txtSoThan.Text + "'," +
                 " N' ', " +
@@ -427,6 +437,7 @@ namespace TanHoaWater.View.Users.TCTB
                     " DUONG='" + hskh.TENDUONG + "' , " +
                     " HIEUMOI='" + txtHieu.Text.Substring(0, 3) + "', " +
                     " COMOI=" + hskh.CODH + ", " +
+                    " CSGO='" + dateNgayGan.Value.Date + "', " +
                     " NGAYTHAY='" + dateNgayGan.Value.Date + "', " +
                     " CSGAN=" + txtChiSo.Text + ", " +                 
                     " LOAI=" + loai + " " +
@@ -475,7 +486,7 @@ namespace TanHoaWater.View.Users.TCTB
                     hskh.TCTB_TONGGIATRI = ParseDouble(this.txtTongGiaTri.Text);
                     hskh.TCTB_CPNHANCONG = ParseDouble(this.txtNhanCong.Text);
                     hskh.TCTB_CPVATTU = ParseDouble(this.txtVatTu.Text);
-
+                    hskh.TCTB_CSGO = this.txtCSGo.Text;
                     hskh.ONG20 = ParseDouble(this.txtO20.Text);
                     //  hskh.ONG25 = this.txtO25.Text;
                     hskh.ONG50 = ParseDouble(this.txtO50.Text);

@@ -249,7 +249,7 @@ namespace TanHoaWater.View.Tool
                 title = "CHƯA LÊN ĐỢT NHẬN ĐƠN <br/> CHUYỂN TỔ THIẾT KẾ";
             }
             // TRƯỜNG HỢP ĐẶT BIỆT HỒ SƠ CHẠY BẢNG GIÁ MẪU
-            if (donkh.TRONGAITHIETKE!=true && donkh.TRONGAITHIETKE !=null) {
+            if (donkh.TRONGAITHIETKE!=true || donkh.TRONGAITHIETKE !=null) {
                 KH_HOSOKHACHHANG hoskh1 = DAL.C_KH_HoSoKhachHang.findBySHS(donkh.SHS);
                 if (hoskh1 != null)
                 {

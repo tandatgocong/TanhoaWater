@@ -30,6 +30,7 @@
         {
             this.panel8 = new System.Windows.Forms.Panel();
             this.groupPanel2 = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.ck = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.SHS_DD = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,7 +66,7 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
+            this.ckTroNgai = new System.Windows.Forms.CheckBox();
             this.panel8.SuspendLayout();
             this.groupPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -117,6 +118,22 @@
             this.groupPanel2.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
             this.groupPanel2.TabIndex = 128;
             this.groupPanel2.Text = "Danh Sách Hồ Sơ Đại Diện";
+            // 
+            // buttonX1
+            // 
+            this.buttonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonX1.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.buttonX1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonX1.Image = global::TanHoaWater.Properties.Resources.update;
+            this.buttonX1.ImageFixedSize = new System.Drawing.Size(20, 20);
+            this.buttonX1.Location = new System.Drawing.Point(341, 211);
+            this.buttonX1.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonX1.Name = "buttonX1";
+            this.buttonX1.Size = new System.Drawing.Size(139, 28);
+            this.buttonX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
+            this.buttonX1.TabIndex = 132;
+            this.buttonX1.Text = "Cập Nhật";
+            this.buttonX1.Click += new System.EventHandler(this.buttonX1_Click);
             // 
             // dataGridView1
             // 
@@ -200,6 +217,7 @@
             // panelEx1
             // 
             this.panelEx1.CanvasColor = System.Drawing.SystemColors.Control;
+            this.panelEx1.Controls.Add(this.ckTroNgai);
             this.panelEx1.Controls.Add(this.buttonX4);
             this.panelEx1.Controls.Add(this.txtnoidungtrongai);
             this.panelEx1.Controls.Add(this.txt_sdv);
@@ -276,7 +294,7 @@
             this.txt_sdv.Multiline = true;
             this.txt_sdv.Name = "txt_sdv";
             this.txt_sdv.ReadOnly = true;
-            this.txt_sdv.Size = new System.Drawing.Size(337, 25);
+            this.txt_sdv.Size = new System.Drawing.Size(173, 25);
             this.txt_sdv.TabIndex = 119;
             // 
             // txtdiachi
@@ -563,21 +581,17 @@
             this.label15.TabIndex = 82;
             this.label15.Text = "Mã Hồ Sơ";
             // 
-            // buttonX1
+            // ckTroNgai
             // 
-            this.buttonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX1.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonX1.Image = global::TanHoaWater.Properties.Resources.update;
-            this.buttonX1.ImageFixedSize = new System.Drawing.Size(20, 20);
-            this.buttonX1.Location = new System.Drawing.Point(341, 211);
-            this.buttonX1.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonX1.Name = "buttonX1";
-            this.buttonX1.Size = new System.Drawing.Size(139, 28);
-            this.buttonX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
-            this.buttonX1.TabIndex = 132;
-            this.buttonX1.Text = "Cập Nhật";
-            this.buttonX1.Click += new System.EventHandler(this.buttonX1_Click);
+            this.ckTroNgai.AutoSize = true;
+            this.ckTroNgai.Checked = true;
+            this.ckTroNgai.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.ckTroNgai.Location = new System.Drawing.Point(283, 340);
+            this.ckTroNgai.Name = "ckTroNgai";
+            this.ckTroNgai.Size = new System.Drawing.Size(80, 20);
+            this.ckTroNgai.TabIndex = 132;
+            this.ckTroNgai.Text = "Trở Ngại";
+            this.ckTroNgai.UseVisualStyleBackColor = true;
             // 
             // tab_DonTroNgai
             // 
@@ -640,6 +654,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DIACHISHS;
         private System.Windows.Forms.DataGridViewTextBoxColumn DIENTHOAI_DD;
         private DevComponents.DotNetBar.ButtonX buttonX1;
+        private System.Windows.Forms.CheckBox ckTroNgai;
 
     }
 }

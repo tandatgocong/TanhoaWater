@@ -994,6 +994,23 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
             }
         }
 
+        private void buttonX1_Click(object sender, EventArgs e)
+        {
+            string madot = "";
+            string tendot = "";
+            try
+            {
+                madot = gridDotThiCong.Rows[gridDotThiCong.CurrentRow.Index].Cells["gridSoDot"].Value + "";
+                tendot = gridDotThiCong.Rows[gridDotThiCong.CurrentRow.Index].Cells["girdLoaiDot"].Value + "";
+            }
+            catch (Exception)
+            {
+
+            }
+            frm_HoSoBoSung obj = new frm_HoSoBoSung(madot);
+            obj.ShowDialog();
+        }
+
        
     }
 }
