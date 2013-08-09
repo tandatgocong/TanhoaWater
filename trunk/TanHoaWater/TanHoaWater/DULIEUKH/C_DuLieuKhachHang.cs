@@ -46,7 +46,7 @@ namespace TanHoaWater.DULIEUKH
         {
             try
             {
-                var query = from q in db.TB_DULIEUKHACHHANGs where q.DANHBO == danhbo && q.HOPDONG==hopdong select q;
+                var query = from q in db.TB_DULIEUKHACHHANGs where q.DANHBO != danhbo && q.HOPDONG==hopdong select q;
                 return query.SingleOrDefault();
             }
             catch (Exception ex)

@@ -22,7 +22,12 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
             InitializeComponent();
             this.cbCoTLK.Items.Add("15");
             this.cbCoTLK.Items.Add("25");
+            this.cbCoTLK.Items.Add("40");
             this.cbCoTLK.Items.Add("50");
+            this.cbCoTLK.Items.Add("80");
+            this.cbCoTLK.Items.Add("100");
+            this.cbCoTLK.Items.Add("150");
+            this.cbCoTLK.Items.Add("200");
             this.cbCoTLK.SelectedIndex = 0;
             lbDotTc.Text = "ĐỢT THI CÔNG : " + madot.ToUpper();
             _madot = madot;

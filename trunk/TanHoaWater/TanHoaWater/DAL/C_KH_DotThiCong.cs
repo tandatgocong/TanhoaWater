@@ -73,6 +73,23 @@ namespace TanHoaWater.DAL
             return false;
         }
 
+        public static bool InsertDotTC_BS(KH_HOSOKHACHHANG_BS dottc)
+        {
+            try
+            {
+                db.KH_HOSOKHACHHANG_BS.InsertOnSubmit(dottc);
+                db.SubmitChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+            }
+            return false;
+        }
+
+
+
         public static bool UpdateDotTC(KH_DOTTHICONG dottc)
         {
             try
@@ -218,6 +235,32 @@ namespace TanHoaWater.DAL
             return null;
         }
 
+        public static DataTable getListDotThiCong_BS(string madottc, string lan)
+        {
+
+            try
+            {
+                TanHoaDataContext db = new TanHoaDataContext();
+                db.Connection.Open();
+                string sql = " SELECT HUY=N'Hủy', donkh.SHS,donkh.SOHOSO,donkh.MADOT, hosokh.STT , HOTEN,SONHA, DUONG,TENPHUONG,DIENTHOAI, hosokh.MADOTDD,hosokh.NGAYNHAN, NGAYDONGTIEN,SOHOADON,ROUND(TONGIATRI,0) as 'TONGIATRI',ROUND(TAILAPMATDUONG,0) as 'TAILAPMATDUONG',ROUND(TONGIATRI,0)+ROUND(TAILAPMATDUONG,0) as 'TONGTIEN',COTLK,donkh.GHICHU,donkh.DANHBO  ";
+                sql += "  FROM DON_KHACHHANG donkh, PHUONG p, QUAN q, KH_HOSOKHACHHANG hosokh ";
+                sql += " WHERE donkh.QUAN = q.MAQUAN AND q.MAQUAN=p.MAQUAN AND donkh.PHUONG=p.MAPHUONG and donkh.SHS = hosokh.SHS ";
+                sql += " AND hosokh.SHS IN (SELECT SHS FROM KH_HOSOKHACHHANG_BS WHERE MADOTTC='" + madottc + "' AND LANBOSUNG=" + lan;
+                sql += ") ORDER BY hosokh.STT ASC ";
+
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
+                DataSet dataset = new DataSet();
+                adapter.Fill(dataset, "TABLE");
+                db.Connection.Close();
+                return dataset.Tables[0];
+            }
+            catch (Exception ex)
+            {
+                log.Error("Loi BC Danh Sach Thi Cong " + ex.Message);
+            }
+            return null;
+        }
+
         public static DataTable getListHSbyBangKe(string bangke)
         {
 
@@ -293,6 +336,33 @@ namespace TanHoaWater.DAL
             }
             return null;
         }
+
+        public static DataSet BC_DanhSachDotThiCong_BS(string madot,string lan)
+        {
+
+            try
+            {
+                TanHoaDataContext db = new TanHoaDataContext();
+                db.Connection.Open();
+                DataSet dataset = new DataSet();
+                string sql = " SELECT * FROM KH_TC_BAOCAO ";
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
+                adapter.Fill(dataset, "KH_TC_BAOCAO");
+
+                sql = " SELECT *  FROM V_DANHSACHTHICONG WHERE SHS IN (SELECT SHS FROM KH_HOSOKHACHHANG_BS WHERE MADOTTC='" + madot + "' AND LANBOSUNG='" + lan + "')  ORDER BY STT ASC ";
+                adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
+                adapter.Fill(dataset, "V_DANHSACHTHICONG_OC");
+
+                db.Connection.Close();
+                return dataset;
+            }
+            catch (Exception ex)
+            {
+                log.Error("Loi BC Danh Sach Thi Cong " + ex.Message);
+            }
+            return null;
+        }
+
 
         public static DataTable getListDotThiCongBT(string madottc)
         {

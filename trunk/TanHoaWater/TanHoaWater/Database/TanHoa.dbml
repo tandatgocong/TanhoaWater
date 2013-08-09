@@ -1830,6 +1830,14 @@
       <Association Name="KH_DOTTHICONG_KH_HOSOKHACHHANG" Member="KH_DOTTHICONG" ThisKey="MADOTTC" OtherKey="MADOTTC" Type="KH_DOTTHICONG" IsForeignKey="true" />
     </Type>
   </Table>
+  <Table Name="dbo.KH_HOSOKHACHHANG_BS" Member="KH_HOSOKHACHHANG_BS">
+    <Type Name="KH_HOSOKHACHHANG_BS">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SHS" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MADOTTC" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="LANBOSUNG" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
   <Function Name="dbo.TONGKETCHIPHI" Method="TONGKETCHIPHI">
     <Parameter Name="SHS" Parameter="sHS" Type="System.String" DbType="VarChar(50)" />
     <Parameter Name="A" Parameter="a" Type="System.Double" DbType="Float" Direction="InOut" />
