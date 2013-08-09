@@ -983,14 +983,17 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
             try
             {
                 madot = gridDotThiCong.Rows[gridDotThiCong.CurrentRow.Index].Cells["gridSoDot"].Value + "";
-                if (MessageBox.Show(this, "..: Thông Báo:..", "Bạn chắc muốn xóa đợt thi công " + madot + " ?", MessageBoxButtons.YesNo) == DialogResult.Yes) {
-                    DAL.LinQConnection.ExecuteCommand_("DELETE FROM KH_DOTTHICONG WHERE MADOTTC='"+madot+"'");
+                if (MessageBox.Show(this, "Bạn chắc muốn xóa đợt thi công " + madot + " ?", "..: Thông Báo:..", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    DAL.LinQConnection.ExecuteCommand("DELETE FROM KH_DOTTHICONG WHERE MADOTTC=N'"+madot+"'");
+                    gridDotThiCong.Rows.RemoveAt(gridDotThiCong.CurrentRow.Index);
                     searchTimKiem_TextChanged(sender, e);
                 }
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                MessageBox.Show(this, ex.Message);
             }
         }
 

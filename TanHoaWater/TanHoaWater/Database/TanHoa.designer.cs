@@ -192,6 +192,9 @@ namespace TanHoaWater.Database
     partial void InsertKH_HOSOKHACHHANG(KH_HOSOKHACHHANG instance);
     partial void UpdateKH_HOSOKHACHHANG(KH_HOSOKHACHHANG instance);
     partial void DeleteKH_HOSOKHACHHANG(KH_HOSOKHACHHANG instance);
+    partial void InsertKH_HOSOKHACHHANG_BS(KH_HOSOKHACHHANG_BS instance);
+    partial void UpdateKH_HOSOKHACHHANG_BS(KH_HOSOKHACHHANG_BS instance);
+    partial void DeleteKH_HOSOKHACHHANG_BS(KH_HOSOKHACHHANG_BS instance);
     #endregion
 		
 		public TanHoaDataContext() : 
@@ -893,6 +896,14 @@ namespace TanHoaWater.Database
 			get
 			{
 				return this.GetTable<KH_HOSOKHACHHANG>();
+			}
+		}
+		
+		public System.Data.Linq.Table<KH_HOSOKHACHHANG_BS> KH_HOSOKHACHHANG_BS
+		{
+			get
+			{
+				return this.GetTable<KH_HOSOKHACHHANG_BS>();
 			}
 		}
 		
@@ -38064,6 +38075,140 @@ namespace TanHoaWater.Database
 						this._MADOTTC = default(string);
 					}
 					this.SendPropertyChanged("KH_DOTTHICONG");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.KH_HOSOKHACHHANG_BS")]
+	public partial class KH_HOSOKHACHHANG_BS : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private string _SHS;
+		
+		private string _MADOTTC;
+		
+		private System.Nullable<int> _LANBOSUNG;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnSHSChanging(string value);
+    partial void OnSHSChanged();
+    partial void OnMADOTTCChanging(string value);
+    partial void OnMADOTTCChanged();
+    partial void OnLANBOSUNGChanging(System.Nullable<int> value);
+    partial void OnLANBOSUNGChanged();
+    #endregion
+		
+		public KH_HOSOKHACHHANG_BS()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SHS", DbType="VarChar(50)")]
+		public string SHS
+		{
+			get
+			{
+				return this._SHS;
+			}
+			set
+			{
+				if ((this._SHS != value))
+				{
+					this.OnSHSChanging(value);
+					this.SendPropertyChanging();
+					this._SHS = value;
+					this.SendPropertyChanged("SHS");
+					this.OnSHSChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MADOTTC", DbType="VarChar(250)")]
+		public string MADOTTC
+		{
+			get
+			{
+				return this._MADOTTC;
+			}
+			set
+			{
+				if ((this._MADOTTC != value))
+				{
+					this.OnMADOTTCChanging(value);
+					this.SendPropertyChanging();
+					this._MADOTTC = value;
+					this.SendPropertyChanged("MADOTTC");
+					this.OnMADOTTCChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LANBOSUNG", DbType="Int")]
+		public System.Nullable<int> LANBOSUNG
+		{
+			get
+			{
+				return this._LANBOSUNG;
+			}
+			set
+			{
+				if ((this._LANBOSUNG != value))
+				{
+					this.OnLANBOSUNGChanging(value);
+					this.SendPropertyChanging();
+					this._LANBOSUNG = value;
+					this.SendPropertyChanged("LANBOSUNG");
+					this.OnLANBOSUNGChanged();
 				}
 			}
 		}
