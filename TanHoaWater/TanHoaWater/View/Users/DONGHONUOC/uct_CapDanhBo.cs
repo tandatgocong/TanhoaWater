@@ -1145,6 +1145,16 @@ namespace TanHoaWater.View.Users.DONGHONUOC
                          string DANHBO = this.txtDanhBo.Text.Replace("-", "");
                          string HOPDONG = this.txtHopDong.Text;
                          DateTime NGAYGAN = this.dateNgayThiCong.Value;
+                         DateTime NGAYKD = new DateTime();
+                         try
+                         {
+                             NGAYKD = DAL.C_KH_HoSoKhachHang.findBySHS(SHS).DHN_NGAYKD.Value;
+                         }
+                         catch (Exception ex)
+                         {
+                             log.Error(ex);
+                         }
+                         
                          string HIEULUC = this.txtHieuLuc.Text;
                          string GIABIEU = this.txtGiaBieu.Text;
                          string DINHMUC = this.txtDMGoc.Text;
@@ -1230,8 +1240,8 @@ namespace TanHoaWater.View.Users.DONGHONUOC
                                     // DAL.OledbConnection.ExecuteCommand_UpdatLoTrinh(connectionString, DANHBO, LOTRINH);
 
                                      ////
-                                     string insert = "INSERT INTO TB_DULIEUKHACHHANG(DANHBO,HOPDONG,HOTEN,SONHA,TENDUONG,QUAN,PHUONG,GIABIEU,DINHMUC,NGAYGANDH,NGAYTHAY,HIEUDH,CODH,SOTHANDH,CHISOKYTRUOC,CODE, KY,NAM,LOTRINH,DIENTHOAI,KY_,MADMA) VALUES ";
-                                     insert += "('" + DANHBO + "','" + HOPDONG + "','" + HOTEN + "','" + SONHA + "','" + DUONG + "','" + QUAN + "','" + PHUONG + "','" + GIABIEU + "','" + DINHMUC + "','" + NGAYGAN + "','" + NGAYGAN + "','" + HIEU + "','" + COTLK + "','" + tb.SOTLK + "','" + CHISOTLK + "','M','" + ky + "','" + nam + "','" + LOTRINH + "','" + _dt + "','" + ky + "','"+txtMaDMA.Text+"')";
+                                     string insert = "INSERT INTO TB_DULIEUKHACHHANG(DANHBO,HOPDONG,HOTEN,SONHA,TENDUONG,QUAN,PHUONG,GIABIEU,DINHMUC,NGAYGANDH,NGAYTHAY,HIEUDH,CODH,SOTHANDH,CHISOKYTRUOC,CODE, KY,NAM,LOTRINH,DIENTHOAI,KY_,MADMA,NGAYKIEMDINH) VALUES ";
+                                     insert += "('" + DANHBO + "','" + HOPDONG + "','" + HOTEN + "','" + SONHA + "','" + DUONG + "','" + QUAN + "','" + PHUONG + "','" + GIABIEU + "','" + DINHMUC + "','" + NGAYGAN + "','" + NGAYGAN + "','" + HIEU + "','" + COTLK + "','" + tb.SOTLK + "','" + CHISOTLK + "','M','" + ky + "','" + nam + "','" + LOTRINH + "','" + _dt + "','" + ky + "','" + txtMaDMA.Text + "','" + NGAYKD + "')";
                                      if (DULIEUKH.C_GanMoi.ExecuteCommand_(insert) > 0)
                                      {
                                          log.Info("+++++++++++ TB_DULIEUKHACHHANG : " + DANHBO + "");

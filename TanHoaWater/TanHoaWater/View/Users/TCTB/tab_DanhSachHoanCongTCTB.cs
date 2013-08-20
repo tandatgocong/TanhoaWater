@@ -474,6 +474,12 @@ namespace TanHoaWater.View.Users.TCTB
                     {
                         hskh.NGAYTHICONG = dateNgayGan.Value.Date;
                     }
+
+                    if (!"1/1/0001".Equals(this.dateNgayKiemDinh.Value.ToShortDateString()))
+                    {
+                        hskh.DHN_NGAYKD = dateNgayKiemDinh.Value.Date;
+                    }
+
                     try
                     {
                         hskh.CHISO = int.Parse(this.txtChiSo.Text);
@@ -506,7 +512,7 @@ namespace TanHoaWater.View.Users.TCTB
                             if (kh != null)
                             {
                                 kh.NGAYTHAY = hskh.NGAYTHICONG;
-                                kh.NGAYKIEMDINH = hskh.DHN_NGAYKIEMDINH;
+                                kh.NGAYKIEMDINH = hskh.DHN_NGAYKD;
                                 kh.CODH = this.txtCoTLK.Text;
                                 kh.HIEUDH = hskh.HIEUDONGHO;
                                 kh.SOTHANDH = hskh.SOTHANTLK;
