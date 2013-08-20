@@ -1046,7 +1046,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                 ReportDocument rp = new ganthayongnganhdhn();
                 rp.PrintOptions.PaperSize = PaperSize.Paper11x17;
                 DataRow myDataRow = table.NewRow();
-                myDataRow["TITLE"] = "THƯ MỜI THANH TOÁN CHI PHÍ GẮN ỐNG NGÁNH ĐHN + ĐHN";
+                myDataRow["TITLE"] = "THƯ MỜI THANH TOÁN CHI PHÍ GẮN ỐNG NGÁNH + ĐHN";
                 myDataRow["HOTEN"] = txtHoTenKH.Text;
                 myDataRow["DIACHI"] = txtDiaChi.Text + ", Phường " + txtPhuong.Text + ", Quận " + txtQuan.Text;
                 myDataRow["TUNGAY"] = dateTuNgay.Text;
@@ -1114,6 +1114,45 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                 ds.Tables.Add(table);
                 rp.SetDataSource(ds);
                 rp.SetParameterValue("title", " bồi thường ĐHN ");
+                rpt_InBienNhan inp = new rpt_InBienNhan(rp);
+                inp.ShowDialog();
+            }
+
+            else if (comboBox1.SelectedIndex == 6)
+            { /// nâng cở
+                ReportDocument rp = new ganthayongnganhdhn();
+                rp.PrintOptions.PaperSize = PaperSize.Paper11x17;
+                DataRow myDataRow = table.NewRow();
+                myDataRow["TITLE"] = "THƯ MỜI THANH TOÁN CHI PHÍ NÂNG CỞ ĐỒNG HỒ NƯỚC";
+                myDataRow["HOTEN"] = txtHoTenKH.Text;
+                myDataRow["DIACHI"] = txtDiaChi.Text + ", Phường " + txtPhuong.Text + ", Quận " + txtQuan.Text;
+                myDataRow["TUNGAY"] = dateTuNgay.Text;
+                myDataRow["DENNGAY"] = dateDenNgay.Text;
+                myDataRow["SOTIEN"] = txtSoTien.Text;
+                myDataRow["DANHBO"] = textBoxX2DB.Text;
+                table.Rows.Add(myDataRow);
+                ds.Tables.Add(table);
+                rp.SetDataSource(ds);
+                rp.SetParameterValue("title", " nâng cở đồng hồ nước ");
+                rpt_InBienNhan inp = new rpt_InBienNhan(rp);
+                inp.ShowDialog();
+            }
+            else if (comboBox1.SelectedIndex == 7)
+            { /// nâng cở
+                ReportDocument rp = new ganthayongnganhdhn();
+                rp.PrintOptions.PaperSize = PaperSize.Paper11x17;
+                DataRow myDataRow = table.NewRow();
+                myDataRow["TITLE"] = "THƯ MỜI THANH TOÁN CHI PHÍ THIẾT KẾ ỐNG NGÁNH";
+                myDataRow["HOTEN"] = txtHoTenKH.Text;
+                myDataRow["DIACHI"] = txtDiaChi.Text + ", Phường " + txtPhuong.Text + ", Quận " + txtQuan.Text;
+                myDataRow["TUNGAY"] = dateTuNgay.Text;
+                myDataRow["DENNGAY"] = dateDenNgay.Text;
+                myDataRow["SOTIEN"] = txtSoTien.Text;
+                myDataRow["DANHBO"] = textBoxX2DB.Text;
+                table.Rows.Add(myDataRow);
+                ds.Tables.Add(table);
+                rp.SetDataSource(ds);
+                rp.SetParameterValue("title", " thiết kế ống ngánh ");
                 rpt_InBienNhan inp = new rpt_InBienNhan(rp);
                 inp.ShowDialog();
             }
