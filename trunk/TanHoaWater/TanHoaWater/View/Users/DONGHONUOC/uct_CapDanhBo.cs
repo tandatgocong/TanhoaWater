@@ -843,7 +843,12 @@ namespace TanHoaWater.View.Users.DONGHONUOC
                     {
                         this.dateNgayThiCong.ValueObject = this.gridHoanCong.Rows[e.RowIndex].Cells["hc_ngaythicong"].Value;
                     }
-
+                    //
+                    if (this.gridHoanCong.Rows[e.RowIndex].Cells["DHN_NGAYKD"].Value != null && !"".Equals(this.gridHoanCong.Rows[e.RowIndex].Cells["DHN_NGAYKD"].Value + ""))
+                    {
+                        this.dateNgayKD.ValueObject = this.gridHoanCong.Rows[e.RowIndex].Cells["DHN_NGAYKD"].Value;
+                    }
+                    //
                     this.txtDanhBo.Text = this.gridHoanCong.Rows[e.RowIndex].Cells["hc_SoDanhBo"].Value + "";
                     //if ("".Equals(this.gridHoanCong.Rows[e.RowIndex].Cells["hc_ChiSo"].Value + ""))
                     //{
@@ -916,16 +921,17 @@ namespace TanHoaWater.View.Users.DONGHONUOC
                         }
                         catch (Exception)
                         { }
-                        if (!"1/1/0001".Equals(this.dateNgayThiCong.Value.ToShortDateString()))
-                        {
-                            hskh.NGAYTHICONG = dateNgayThiCong.Value.Date;
-                        }
+                        
+                        hskh.NGAYTHICONG = dateNgayThiCong.Value.Date;
+                        hskh.DHN_NGAYKIEMDINH = dateNgayKD.Value.Date;
+                        hskh.DHN_NGAYKD = dateNgayKD.Value.Date;
                         try
                         {
                             hskh.CHISO = int.Parse(this.txtChiSo.Text);
                         }
                         catch (Exception)
                         { }
+
                         hskh.SOTHANTLK = this.txtSoTLK.Text;
                         hskh.DHN_SODANHBO = this.txtDanhBo.Text.Replace("-", "");
                         hskh.HIEUDONGHO = this.txtHieuĐHN.Text;
@@ -941,20 +947,19 @@ namespace TanHoaWater.View.Users.DONGHONUOC
                         hskh.DHN_HSCONGTY = this.txtHoSoCTy.Text;
                         hskh.DHN_SOHO = int.Parse(this.txtSoHo.Text);
                         hskh.DHN_SONHANKHAU = int.Parse(this.txtSoNhanKhau.Text);
-                        int flag = 0;
-                        int flag_SoHopDong = 0;
-                        for (int i = 0; i < gridHoanCong.Rows.Count; i++)
-                        {
-                            if (this.gridHoanCong.Rows[i].Cells["hc_MaDMA"].Value.ToString() == "")
-                            {
-                                flag++;
-                            }
-                            if (this.gridHoanCong.Rows[i].Cells["hc_hopdong"].Value.ToString() == "")
-                            {
-                                flag_SoHopDong++;
-                            }
-
-                        }
+                        //int flag = 0;
+                        //int flag_SoHopDong = 0;
+                        //for (int i = 0; i < gridHoanCong.Rows.Count; i++)
+                        //{
+                        //    if (this.gridHoanCong.Rows[i].Cells["hc_MaDMA"].Value.ToString() == "")
+                        //    {
+                        //        flag++;
+                        //    }
+                        //    if (this.gridHoanCong.Rows[i].Cells["hc_hopdong"].Value.ToString() == "")
+                        //    {
+                        //        flag_SoHopDong++;
+                        //    }
+                        //}
                         hskh.DHN_MADMA = txtMaDMA.Text;
                         hskh.DHN_CHODB = true;
                         if (DAL.C_DHN_ChoDanhBo.UpdateDB() == false)
@@ -971,7 +976,7 @@ namespace TanHoaWater.View.Users.DONGHONUOC
                 }
                 catch (Exception)
                 {
-
+                    MessageBox.Show(this, "Cập Nhật Thông Tin Danh Bộ Không Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
             }
@@ -1145,16 +1150,8 @@ namespace TanHoaWater.View.Users.DONGHONUOC
                          string DANHBO = this.txtDanhBo.Text.Replace("-", "");
                          string HOPDONG = this.txtHopDong.Text;
                          DateTime NGAYGAN = this.dateNgayThiCong.Value;
-                         DateTime NGAYKD = new DateTime();
-                         try
-                         {
-                             NGAYKD = DAL.C_KH_HoSoKhachHang.findBySHS(SHS).DHN_NGAYKD.Value;
-                         }
-                         catch (Exception ex)
-                         {
-                             log.Error(ex);
-                         }
-                         
+                         DateTime NGAYKD = this.dateNgayKD.Value;
+                                                
                          string HIEULUC = this.txtHieuLuc.Text;
                          string GIABIEU = this.txtGiaBieu.Text;
                          string DINHMUC = this.txtDMGoc.Text;
@@ -1195,8 +1192,14 @@ namespace TanHoaWater.View.Users.DONGHONUOC
                          {
 
                              TB_GANMOI tb = DULIEUKH.C_GanMoi.finByDanhBo(DANHBO);
-                             if (tb == null)
-                             {
+                             if (tb != null) {
+                                 DULIEUKH.C_GanMoi.ExecuteCommand_("DELETE FROM DocSo_PHT.dbo.KHACHHANG where danhba IN ('" + DANHBO + "')");
+                                 DULIEUKH.C_GanMoi.ExecuteCommand_("DELETE FROM TB_DULIEUKHACHHANG WHERE danhbo IN ('" + DANHBO + "')");
+                                 DULIEUKH.C_GanMoi.ExecuteCommand_("DELETE FROM TB_GANMOI WHERE danhbo IN ('" + DANHBO + "')");
+                                 DULIEUKH.C_GanMoi.ExecuteCommand_("DELETE FROM TB_YEUCAUDC WHERE danhbo IN ('" + DANHBO + "')");
+                             }
+                             //if (tb == null)
+                             //{
                                  tb = new TB_GANMOI();
                                  tb.SHS = SHS;
                                  tb.DANHBO = DANHBO;
@@ -1264,64 +1267,42 @@ namespace TanHoaWater.View.Users.DONGHONUOC
                                  {
                                      MessageBox.Show(this, "Cập Nhật Thông Tin Thất Bại !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                  }
-                             }
-                             else
-                             {
-                                 tb.SHS = SHS;
-                                 tb.DANHBO = DANHBO;
-                                 tb.HOPDONG = HOPDONG;
-                                 tb.HOTEN = HOTEN;
-                                 tb.SONHA = SONHA;
-                                 tb.DUONG = DUONG;
-                                 tb.MAPHUONG = PHUONG;
-                                 tb.MAQUAN = QUAN;
-                                 tb.GIABIEU = GIABIEU;
-                                 tb.DINHMUC = DINHMUC;
-                                 tb.HIEULUC = HIEULUC;
-                                 tb.NGAYGANTLK = NGAYGAN;
-                                 tb.HIEU = HIEU;
-                                 tb.COTLK = COTLK;
-                                 tb.SOTLK = SOTLK;
-                                 tb.CHISOTLK = CHISOTLK;
-                                 tb.SOHO = SOHO;
-                                 tb.TODS = TODS;
-                                 tb.DOT = DOTDS;
-                                 tb.PLT = LOTRINH;
-                                 tb.MAYDS = MAYDS;
-                                 tb.BANGKE = this.txtDotBangKe.Text;
-                                 tb.CREATEDATE = DateTime.Now;
-                                 tb.CREATEBY = DAL.C_USERS._userName;
-                                 if (DULIEUKH.C_GanMoi.Update())
-                                 {
-                                     MessageBox.Show(this, "Cập Nhật Thông Tin Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                     ///// CAP NHAT DANH DU LIEU KHACH AHNG
-                                     //TB_DULIEUKHACHHANG khUPdate = DULIEUKH.C_DuLieuKhachHang.finByDanhBo(DANHBO);
-                                     //if (khUPdate != null)
-                                     //{                                       
-                                     //    HIEU, CO, SOTHAN,LOAI_LENH, NGAYTHUCHIEN, GHICHU, NGAYCAPNHAT, SOLENH, NAM, CSDONG_MO) ";
-                                     //    insertGM += " VALUES ('" + DANHBO + "','" + HIEU + "','" + COTLK + "','" + tb.SOTLK + "','2','" + NGAYGAN + "','GM',GETDATE(),'123','" + nam + "','" + CHISOTLK + "')";
-
-                                     //    DULIEUKH.C_DuLieuKhachHang.Update();
-                                     //}
-
-                                     ////
-                                 }
-                                 else
-                                 {
-                                     MessageBox.Show(this, "Cập Nhật Thông Tin Thất Bại !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                 }
-                             }
-
-                             //try
-                             //{
-                             //    dataGanMoiBK.Rows[rowIndex].Cells["DOT"].Value = DOTDS;
-                             //    dataGanMoiBK.Rows[rowIndex].Cells["TODS"].Value = TODS;
-                             //    dataGanMoiBK.Rows[rowIndex].Cells["MAYDS"].Value = MAYDS;
-                             //    dataGanMoiBK.Rows[rowIndex].Cells["PLT"].Value = LOTRINH;
                              //}
-                             //catch (Exception)
+                             //else
                              //{
-
+                             //    tb.SHS = SHS;
+                             //    tb.DANHBO = DANHBO;
+                             //    tb.HOPDONG = HOPDONG;
+                             //    tb.HOTEN = HOTEN;
+                             //    tb.SONHA = SONHA;
+                             //    tb.DUONG = DUONG;
+                             //    tb.MAPHUONG = PHUONG;
+                             //    tb.MAQUAN = QUAN;
+                             //    tb.GIABIEU = GIABIEU;
+                             //    tb.DINHMUC = DINHMUC;
+                             //    tb.HIEULUC = HIEULUC;
+                             //    tb.NGAYGANTLK = NGAYGAN;
+                             //    tb.HIEU = HIEU;
+                             //    tb.COTLK = COTLK;
+                             //    tb.SOTLK = SOTLK;
+                             //    tb.CHISOTLK = CHISOTLK;
+                             //    tb.SOHO = SOHO;
+                             //    tb.TODS = TODS;
+                             //    tb.DOT = DOTDS;
+                             //    tb.PLT = LOTRINH;
+                             //    tb.MAYDS = MAYDS;
+                             //    tb.BANGKE = this.txtDotBangKe.Text;
+                             //    tb.CREATEDATE = DateTime.Now;
+                             //    tb.CREATEBY = DAL.C_USERS._userName;
+                             //    if (DULIEUKH.C_GanMoi.Update())
+                             //    {
+                             //        MessageBox.Show(this, "Cập Nhật Thông Tin Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    
+                             //    }
+                             //    else
+                             //    {
+                             //        MessageBox.Show(this, "Cập Nhật Thông Tin Thất Bại !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                             //    }
                              //}
                          }
                          else

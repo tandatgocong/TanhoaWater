@@ -216,7 +216,7 @@
             this.mainLayout.Location = new System.Drawing.Point(0, 0);
             this.mainLayout.Name = "mainLayout";
             this.mainLayout.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.mainLayout.Size = new System.Drawing.Size(983, 671);
+            this.mainLayout.Size = new System.Drawing.Size(1015, 671);
             this.mainLayout.TabIndex = 1;
             // 
             // PanelContent
@@ -227,7 +227,7 @@
             this.PanelContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelContent.Location = new System.Drawing.Point(0, 54);
             this.PanelContent.Name = "PanelContent";
-            this.PanelContent.Size = new System.Drawing.Size(983, 617);
+            this.PanelContent.Size = new System.Drawing.Size(1015, 617);
             this.PanelContent.TabIndex = 1;
             // 
             // PanelMain
@@ -246,7 +246,7 @@
             this.PanelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelMain.Location = new System.Drawing.Point(0, 0);
             this.PanelMain.Name = "PanelMain";
-            this.PanelMain.Size = new System.Drawing.Size(981, 615);
+            this.PanelMain.Size = new System.Drawing.Size(1013, 615);
             this.PanelMain.TabIndex = 0;
             // 
             // label2
@@ -914,7 +914,7 @@
             this.office2007StartButton1,
             this.buttonItem1,
             this.qatCustomizeItem1});
-            this.ribbonControl1.Size = new System.Drawing.Size(983, 54);
+            this.ribbonControl1.Size = new System.Drawing.Size(1015, 54);
             this.ribbonControl1.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.ribbonControl1.TabGroupHeight = 14;
             this.ribbonControl1.TabIndex = 0;
@@ -928,7 +928,7 @@
             this.ribbonPanel1.Location = new System.Drawing.Point(0, 28);
             this.ribbonPanel1.Name = "ribbonPanel1";
             this.ribbonPanel1.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.ribbonPanel1.Size = new System.Drawing.Size(983, 24);
+            this.ribbonPanel1.Size = new System.Drawing.Size(1015, 24);
             this.ribbonPanel1.TabIndex = 1;
             // 
             // menuStrip1
@@ -942,7 +942,7 @@
             this.subThoat});
             this.menuStrip1.Location = new System.Drawing.Point(3, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(977, 25);
+            this.menuStrip1.Size = new System.Drawing.Size(1009, 25);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -1691,7 +1691,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(983, 671);
+            this.ClientSize = new System.Drawing.Size(1015, 671);
             this.Controls.Add(this.mainLayout);
             this.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;

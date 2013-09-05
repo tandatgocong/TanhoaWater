@@ -52,6 +52,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtSoNha = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.btHuyLoTrinh = new DevComponents.DotNetBar.ButtonX();
             this.txtDHNDUONG = new System.Windows.Forms.TextBox();
             this.txDHNSONHA = new System.Windows.Forms.TextBox();
@@ -191,7 +192,8 @@
             this.gridHoanCong = new DevComponents.DotNetBar.Controls.DataGridViewX();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.txtSoNha = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.dateNgayKD = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
+            this.label25 = new System.Windows.Forms.Label();
             this.hc_SoDot = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hc_SHS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hc_chonin = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -221,10 +223,12 @@
             this.DHN_DIACHI = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.G_DUONG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.G_SONHA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DHN_NGAYKD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dateNgayThiCong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridHoanCong)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateNgayKD)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -240,6 +244,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.dateNgayKD);
+            this.panel1.Controls.Add(this.label25);
             this.panel1.Controls.Add(this.txtSoNha);
             this.panel1.Controls.Add(this.btHuyLoTrinh);
             this.panel1.Controls.Add(this.txtDHNDUONG);
@@ -310,6 +316,18 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1021, 629);
             this.panel1.TabIndex = 701;
+            // 
+            // txtSoNha
+            // 
+            // 
+            // 
+            // 
+            this.txtSoNha.Border.Class = "TextBoxBorder";
+            this.txtSoNha.ForeColor = System.Drawing.Color.Red;
+            this.txtSoNha.Location = new System.Drawing.Point(582, 50);
+            this.txtSoNha.Name = "txtSoNha";
+            this.txtSoNha.Size = new System.Drawing.Size(128, 25);
+            this.txtSoNha.TabIndex = 161;
             // 
             // btHuyLoTrinh
             // 
@@ -973,7 +991,7 @@
             // 
             this.txtSoTLK.Border.Class = "TextBoxBorder";
             this.txtSoTLK.ForeColor = System.Drawing.Color.Red;
-            this.txtSoTLK.Location = new System.Drawing.Point(582, 83);
+            this.txtSoTLK.Location = new System.Drawing.Point(714, 85);
             this.txtSoTLK.Name = "txtSoTLK";
             this.txtSoTLK.Size = new System.Drawing.Size(100, 25);
             this.txtSoTLK.TabIndex = 105;
@@ -981,7 +999,7 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(527, 88);
+            this.label20.Location = new System.Drawing.Point(659, 90);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(56, 17);
             this.label20.TabIndex = 81;
@@ -994,7 +1012,7 @@
             // 
             this.txtTLK.Border.Class = "TextBoxBorder";
             this.txtTLK.ForeColor = System.Drawing.Color.Red;
-            this.txtTLK.Location = new System.Drawing.Point(463, 85);
+            this.txtTLK.Location = new System.Drawing.Point(595, 87);
             this.txtTLK.Name = "txtTLK";
             this.txtTLK.Size = new System.Drawing.Size(46, 25);
             this.txtTLK.TabIndex = 104;
@@ -1002,7 +1020,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(406, 89);
+            this.label18.Location = new System.Drawing.Point(538, 91);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(59, 17);
             this.label18.TabIndex = 80;
@@ -1130,7 +1148,7 @@
             // 
             this.txtChiSo.Border.Class = "TextBoxBorder";
             this.txtChiSo.ForeColor = System.Drawing.Color.Red;
-            this.txtChiSo.Location = new System.Drawing.Point(739, 81);
+            this.txtChiSo.Location = new System.Drawing.Point(871, 83);
             this.txtChiSo.Name = "txtChiSo";
             this.txtChiSo.Size = new System.Drawing.Size(37, 25);
             this.txtChiSo.TabIndex = 106;
@@ -1139,7 +1157,7 @@
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(688, 85);
+            this.label22.Location = new System.Drawing.Point(820, 87);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(45, 17);
             this.label22.TabIndex = 66;
@@ -1152,15 +1170,15 @@
             // 
             this.txtHieuĐHN.Border.Class = "TextBoxBorder";
             this.txtHieuĐHN.ForeColor = System.Drawing.Color.Red;
-            this.txtHieuĐHN.Location = new System.Drawing.Point(274, 84);
+            this.txtHieuĐHN.Location = new System.Drawing.Point(446, 86);
             this.txtHieuĐHN.Name = "txtHieuĐHN";
-            this.txtHieuĐHN.Size = new System.Drawing.Size(128, 25);
+            this.txtHieuĐHN.Size = new System.Drawing.Size(88, 25);
             this.txtHieuĐHN.TabIndex = 103;
             // 
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(198, 88);
+            this.label19.Location = new System.Drawing.Point(372, 90);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(73, 17);
             this.label19.TabIndex = 64;
@@ -1566,7 +1584,8 @@
             this.DHN_SONHA,
             this.DHN_DIACHI,
             this.G_DUONG,
-            this.G_SONHA});
+            this.G_SONHA,
+            this.DHN_NGAYKD});
             dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle21.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1613,17 +1632,59 @@
             this.label12.TabIndex = 63;
             this.label12.Text = "ĐM Bù";
             // 
-            // txtSoNha
+            // dateNgayKD
             // 
             // 
             // 
             // 
-            this.txtSoNha.Border.Class = "TextBoxBorder";
-            this.txtSoNha.ForeColor = System.Drawing.Color.Red;
-            this.txtSoNha.Location = new System.Drawing.Point(582, 50);
-            this.txtSoNha.Name = "txtSoNha";
-            this.txtSoNha.Size = new System.Drawing.Size(128, 25);
-            this.txtSoNha.TabIndex = 161;
+            this.dateNgayKD.BackgroundStyle.Class = "DateTimeInputBackground";
+            this.dateNgayKD.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
+            this.dateNgayKD.ButtonDropDown.Visible = true;
+            this.dateNgayKD.CustomFormat = "dd/MM/yyyy";
+            this.dateNgayKD.ForeColor = System.Drawing.Color.Red;
+            this.dateNgayKD.Format = DevComponents.Editors.eDateTimePickerFormat.Custom;
+            this.dateNgayKD.Location = new System.Drawing.Point(258, 84);
+            // 
+            // 
+            // 
+            this.dateNgayKD.MonthCalendar.AnnuallyMarkedDates = new System.DateTime[0];
+            // 
+            // 
+            // 
+            this.dateNgayKD.MonthCalendar.BackgroundStyle.BackColor = System.Drawing.SystemColors.Window;
+            this.dateNgayKD.MonthCalendar.ClearButtonVisible = true;
+            // 
+            // 
+            // 
+            this.dateNgayKD.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
+            this.dateNgayKD.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90;
+            this.dateNgayKD.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
+            this.dateNgayKD.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.dateNgayKD.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
+            this.dateNgayKD.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1;
+            this.dateNgayKD.MonthCalendar.DisplayMonth = new System.DateTime(2011, 11, 1, 0, 0, 0, 0);
+            this.dateNgayKD.MonthCalendar.MarkedDates = new System.DateTime[0];
+            this.dateNgayKD.MonthCalendar.MonthlyMarkedDates = new System.DateTime[0];
+            // 
+            // 
+            // 
+            this.dateNgayKD.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.dateNgayKD.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90;
+            this.dateNgayKD.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.dateNgayKD.MonthCalendar.TodayButtonVisible = true;
+            this.dateNgayKD.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
+            this.dateNgayKD.Name = "dateNgayKD";
+            this.dateNgayKD.Size = new System.Drawing.Size(108, 25);
+            this.dateNgayKD.TabIndex = 163;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(192, 87);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(66, 17);
+            this.label25.TabIndex = 162;
+            this.label25.Text = "Ngày KĐ";
             // 
             // hc_SoDot
             // 
@@ -1884,6 +1945,13 @@
             this.G_SONHA.Name = "G_SONHA";
             this.G_SONHA.Visible = false;
             // 
+            // DHN_NGAYKD
+            // 
+            this.DHN_NGAYKD.DataPropertyName = "DHN_NGAYKD";
+            this.DHN_NGAYKD.HeaderText = "DHN_NGAYKD";
+            this.DHN_NGAYKD.Name = "DHN_NGAYKD";
+            this.DHN_NGAYKD.Visible = false;
+            // 
             // UCT_CapDanhBo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -1899,6 +1967,7 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dateNgayThiCong)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridHoanCong)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateNgayKD)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2047,6 +2116,8 @@
         private System.Windows.Forms.TextBox txtDHN_HOTEN;
         private DevComponents.DotNetBar.ButtonX btHuyLoTrinh;
         private DevComponents.DotNetBar.Controls.TextBoxX txtSoNha;
+        private DevComponents.Editors.DateTimeAdv.DateTimeInput dateNgayKD;
+        private System.Windows.Forms.Label label25;
         private System.Windows.Forms.DataGridViewTextBoxColumn hc_SoDot;
         private System.Windows.Forms.DataGridViewTextBoxColumn hc_SHS;
         private System.Windows.Forms.DataGridViewCheckBoxColumn hc_chonin;
@@ -2076,5 +2147,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DHN_DIACHI;
         private System.Windows.Forms.DataGridViewTextBoxColumn G_DUONG;
         private System.Windows.Forms.DataGridViewTextBoxColumn G_SONHA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DHN_NGAYKD;
     }
 }
