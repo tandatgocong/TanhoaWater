@@ -185,6 +185,9 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
                     this.txtNhanCong.Text = formatNumber(this.gridHoanCong.Rows[e.RowIndex].Cells["hc_NhanCong"].Value + "");
                     this.txtVatTu.Text = formatNumber(this.gridHoanCong.Rows[e.RowIndex].Cells["hc_ChiPhiVT"].Value + "");
                     this.txtMayTC.Text = formatNumber(this.gridHoanCong.Rows[e.RowIndex].Cells["hc_MayThiCong"].Value + "");
+
+                    this.txtDanhBo.Text = this.gridHoanCong.Rows[e.RowIndex].Cells["DHN_SODANHBO"].Value + "";
+                    this.txtHopDong.Text = this.gridHoanCong.Rows[e.RowIndex].Cells["DHN_SOHOPDONG"].Value + "";
                 }
                 
                
@@ -571,6 +574,9 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
                 flag = DAL.C_KH_HoanCong.HoanCong(shs, ngaytc, cs, cotlk, sothanTLK.ToUpper(), hieudongho, HoanCong, ngaykd);
                 if (flag)
                 {
+                    //
+                    UpdateDocSo();
+                    //
                     MessageBox.Show(this, "Cập Nhật Thông Tin Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     gridHoanCong.DataSource = DAL.C_KH_HoanCong.getListHoanCong(this.cbDotTC.Text, 0);
                     Refresh();
@@ -583,6 +589,21 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
             }
         }
 
+        public void UpdateDocSo() {
+            try
+            {
+                if (!"".Equals(this.txtDanhBo.Text.Trim().Replace("-", "")))
+                {
+                    string insert = "UPDATE TB_DULIEUKHACHHANG SET NGAYKIEMDINH='" + this.txtNgayKiemDinh.Value + "' WHERE DANHBO='" + this.txtDanhBo.Text.Trim().Replace("-", "") + "'";
+                    DULIEUKH.C_GanMoi.ExecuteCommand_(insert);
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+            }
+            
+        }
         private void txtSoHoSo_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 13) {
