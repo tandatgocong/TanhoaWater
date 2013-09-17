@@ -104,7 +104,7 @@ namespace TanHoaWater.View.Users.TCTB
             try
             {
 
-                string sql = "SELECT [SHS],'True' as 'IN',[HOTEN],[DIACHI],[COTLK],[NGAYTHICONG],[CHISO],[SOTHANTLK],[HIEUDONGHO],[SOHOADON],[NGAYDONGTIEN] ,[TCTB_TONGGIATRI],[TCTB_CPNHANCONG],[TCTB_CPVATTU],[ONG20],[ONG25],[ONG50],[ONG100],[ONG150],[ONGKHAC],[MADOTTC],[DHN_NGAYKIEMDINH],DANHBO ";
+                string sql = "SELECT [SHS],'True' as 'IN',[HOTEN],[DIACHI],[COTLK],[NGAYTHICONG],[CHISO],[SOTHANTLK],[HIEUDONGHO],[SOHOADON],[NGAYDONGTIEN] ,[TCTB_TONGGIATRI],[TCTB_CPNHANCONG],[TCTB_CPVATTU],[ONG20],[ONG25],[ONG50],[ONG100],[ONG150],[ONGKHAC],[MADOTTC],[DHN_NGAYKIEMDINH],DANHBO,TCTB_CSGO ";
                 sql += " FROM V_HOANGCONGTCTB WHERE MADOTTC='" + this.cbDotTC.Text.Replace(" ", "") + "'"; 
                 gridHoanCong.DataSource = DAL.LinQConnection.getDataTable(sql);
                 TongKetGanNhua();
@@ -156,11 +156,26 @@ namespace TanHoaWater.View.Users.TCTB
                this.dateNgayDongTien.ValueObject = this.gridHoanCong.Rows[e.RowIndex].Cells["hc_NgayDongTein"].Value;
                this.txtDanhBo.Text = this.gridHoanCong.Rows[e.RowIndex].Cells["DANHBO"].Value + "";
                this.dateNgayGan.ValueObject = this.gridHoanCong.Rows[e.RowIndex].Cells["hc_NgayTC"].Value;
-               if ("".Equals(this.gridHoanCong.Rows[e.RowIndex].Cells["hc_ChiSo"].Value + "")) {
+               this.dateNgayKiemDinh.ValueObject = this.gridHoanCong.Rows[e.RowIndex].Cells["DHN_NGAYKIEMDINH"].Value;
+               if ("".Equals(this.gridHoanCong.Rows[e.RowIndex].Cells["hc_ChiSo"].Value + ""))
+               {
                    this.txtChiSo.Text = "00";
-               } else { 
-             this.txtChiSo.Text = this.gridHoanCong.Rows[e.RowIndex].Cells["hc_ChiSo"].Value + "";
                }
+               else
+               {
+                   this.txtChiSo.Text = this.gridHoanCong.Rows[e.RowIndex].Cells["hc_ChiSo"].Value + "";
+               }
+
+               if ("".Equals(this.gridHoanCong.Rows[e.RowIndex].Cells["CSGO"].Value + ""))
+               {
+                   this.txtCSGo.Text = "0"; 
+               }
+               else
+               {
+                   this.txtCSGo.Text = this.gridHoanCong.Rows[e.RowIndex].Cells["CSGO"].Value + "";
+               }
+
+                           
               
                this.txtSoThan.Text = this.gridHoanCong.Rows[e.RowIndex].Cells["hc_SoTLK"].Value + "";
                this.txtHieu.Text = this.gridHoanCong.Rows[e.RowIndex].Cells["gr_TenDongHo"].Value + "";
@@ -419,8 +434,8 @@ namespace TanHoaWater.View.Users.TCTB
                 " '" + hskh.TENDUONG + "' , " +
                 " '" + txtHieu.Text.Substring(0, 3) + "', " +
                 " " + hskh.CODH + ", " +
+                " '" + dateNgayGan.Value.Date + "', " +
                 " '" + csgo + "', " +
-                " '" + dateNgayGan.Value.Date + "', " + 
                 " " + txtChiSo.Text + ", " +
                 " '" + txtSoThan.Text + "'," +
                 " N' ', " +
@@ -437,7 +452,7 @@ namespace TanHoaWater.View.Users.TCTB
                     " DUONG='" + hskh.TENDUONG + "' , " +
                     " HIEUMOI='" + txtHieu.Text.Substring(0, 3) + "', " +
                     " COMOI=" + hskh.CODH + ", " +
-                    " CSGO='" + dateNgayGan.Value.Date + "', " +
+                    " CSGO='" + csgo + "', " +
                     " NGAYTHAY='" + dateNgayGan.Value.Date + "', " +
                     " CSGAN=" + txtChiSo.Text + ", " +                 
                     " LOAI=" + loai + " " +

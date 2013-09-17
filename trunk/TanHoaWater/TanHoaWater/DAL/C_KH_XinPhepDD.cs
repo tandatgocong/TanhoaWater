@@ -217,11 +217,12 @@ namespace TanHoaWater.DAL
 
                         k++;
                     }
-                    if (DAL.C_DonKhachHang.findBySHS(shs).SOHO > 1) {
-                        item.KICHTHUOC = DAL.C_DonKhachHang.findBySHS(shs).SOHO +""+ kichthuoc;
-                    } else {
+                    //if (DAL.C_DonKhachHang.findBySHS(shs).SOHO > 1) {
+                    //    item.KICHTHUOC = DAL.C_DonKhachHang.findBySHS(shs).SOHO +""+ kichthuoc;
+                    //} else {
                         item.KICHTHUOC = kichthuoc;
-                    }
+                    //}
+
                     
                     item.DAI = String.Format("{0:0.00}", dai);
                     item.SAU = "0.6";
