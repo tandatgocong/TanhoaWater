@@ -131,6 +131,34 @@ namespace TanHoaWater.DAL
             db.Connection.Close();
             return dataset.Tables[0];
         }
+
+        public static bool HoanCong_Clear(string shs)
+        {
+            try
+            {
+                var query = from q in db.KH_HOSOKHACHHANGs where q.SHS == shs select q;
+                KH_HOSOKHACHHANG hosokh = query.SingleOrDefault();
+                if (hosokh != null)
+                {
+                    hosokh.NGAYTHICONG = null;
+                    hosokh.CHISO = null;
+                    hosokh.COTLK = null;
+                    hosokh.SOTHANTLK = null;
+                    hosokh.HIEUDONGHO = null;
+                    hosokh.HOANCONG = null;
+                    hosokh.NGAYHOANCONG = null;
+                    hosokh.DHN_NGAYKD = null;
+                    db.SubmitChanges();
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Error("Chuyen Hoan Cong :" + ex.Message);
+            }
+            return false;
+        }
+
         public static bool HoanCong(string shs, DateTime ngaytc, int chiso, int cotlk, string sotlk, string tendongho, bool hoancong, DateTime ngaykd) {
             try
             {

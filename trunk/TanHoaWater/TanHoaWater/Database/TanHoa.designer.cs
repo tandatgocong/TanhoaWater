@@ -38114,6 +38114,10 @@ namespace TanHoaWater.Database
 		
 		private System.Nullable<int> _LANBOSUNG;
 		
+		private System.Nullable<double> _TAILAPMATDUONG;
+		
+		private System.Nullable<double> _TONGIATRI;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -38126,6 +38130,10 @@ namespace TanHoaWater.Database
     partial void OnMADOTTCChanged();
     partial void OnLANBOSUNGChanging(System.Nullable<int> value);
     partial void OnLANBOSUNGChanged();
+    partial void OnTAILAPMATDUONGChanging(System.Nullable<double> value);
+    partial void OnTAILAPMATDUONGChanged();
+    partial void OnTONGIATRIChanging(System.Nullable<double> value);
+    partial void OnTONGIATRIChanged();
     #endregion
 		
 		public KH_HOSOKHACHHANG_BS()
@@ -38209,6 +38217,46 @@ namespace TanHoaWater.Database
 					this._LANBOSUNG = value;
 					this.SendPropertyChanged("LANBOSUNG");
 					this.OnLANBOSUNGChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TAILAPMATDUONG", DbType="Float")]
+		public System.Nullable<double> TAILAPMATDUONG
+		{
+			get
+			{
+				return this._TAILAPMATDUONG;
+			}
+			set
+			{
+				if ((this._TAILAPMATDUONG != value))
+				{
+					this.OnTAILAPMATDUONGChanging(value);
+					this.SendPropertyChanging();
+					this._TAILAPMATDUONG = value;
+					this.SendPropertyChanged("TAILAPMATDUONG");
+					this.OnTAILAPMATDUONGChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TONGIATRI", DbType="Float")]
+		public System.Nullable<double> TONGIATRI
+		{
+			get
+			{
+				return this._TONGIATRI;
+			}
+			set
+			{
+				if ((this._TONGIATRI != value))
+				{
+					this.OnTONGIATRIChanging(value);
+					this.SendPropertyChanging();
+					this._TONGIATRI = value;
+					this.SendPropertyChanged("TONGIATRI");
+					this.OnTONGIATRIChanged();
 				}
 			}
 		}
