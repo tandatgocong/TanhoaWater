@@ -46,9 +46,9 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
             }
             cbDotTC.Text = DAL.C_KH_DotThiCong.__dotthicong;
 
-           txtHieuDN.AutoCompleteMode = AutoCompleteMode.Suggest;
-           txtHieuDN.AutoCompleteSource = AutoCompleteSource.CustomSource;
-           txtHieuDN.AutoCompleteCustomSource = namesCollection;
+            txtHieuDN.AutoCompleteMode = AutoCompleteMode.Suggest;
+            txtHieuDN.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            txtHieuDN.AutoCompleteCustomSource = namesCollection;
         }
         public void loadData()
         {
@@ -111,17 +111,18 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
         {
             hoantat();
         }
-        string formatNumber(string db) {
+        string formatNumber(string db)
+        {
             try
             {
                 return double.Parse(db).ToString("N0");
             }
             catch (Exception)
             {
-                
-                
+
+
             }
-           
+
             return "0";
         }
         public void Refresh()
@@ -148,7 +149,7 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
             try
             {
                 if (gridHoanCong.CurrentCell.OwningColumn.Name == "hc_ChonIn")
-                { 
+                {
                 }
                 else
                 {
@@ -189,8 +190,8 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
                     this.txtDanhBo.Text = this.gridHoanCong.Rows[e.RowIndex].Cells["DHN_SODANHBO"].Value + "";
                     this.txtHopDong.Text = this.gridHoanCong.Rows[e.RowIndex].Cells["DHN_SOHOPDONG"].Value + "";
                 }
-                
-               
+
+
             }
             catch (Exception)
             {
@@ -375,18 +376,21 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
                         {
 
                         }
-                   //     DAL.C_KH_HoanCong.HoanCong(shs, DateTime.ParseExact(ngaytc, "dd/MM/yyyy", null), int.Parse(chiso), cotlk, sothanTLK.ToUpper(), hieudongho, HoanCong);
+                        //     DAL.C_KH_HoanCong.HoanCong(shs, DateTime.ParseExact(ngaytc, "dd/MM/yyyy", null), int.Parse(chiso), cotlk, sothanTLK.ToUpper(), hieudongho, HoanCong);
                         flag = true;
                     }
 
                 }
 
-                if (flag) {
+                if (flag)
+                {
                     MessageBox.Show(this, "Hoàn Tất.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                } else {
+                }
+                else
+                {
                     MessageBox.Show(this, "Lỗi Cập Nhật Dữ Liệu.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                
+
                 this.btInBangKe.Enabled = true;
                 //hoantat();
             }
@@ -430,9 +434,10 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
             }
         }
 
-        public string DemHS() {
+        public string DemHS()
+        {
             int count = 0;
-            int hs=0;
+            int hs = 0;
             for (int i = 0; i < gridHoanCong.Rows.Count; i++)
             {
                 string hc_ChiPhiVT = this.gridHoanCong.Rows[i].Cells["hc_TongGTXL"].Value + "";
@@ -469,12 +474,12 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
 
         }
 
-        public int checktrungsothan(string hopdong,string shs)
+        public int checktrungsothan(string hopdong, string shs)
         {
             int count = 0;
             for (int i = 0; i < gridHoanCong.Rows.Count; i++)
                 if (hopdong.Equals((this.gridHoanCong.Rows[i].Cells["hc_SoTLK"].Value + "").Trim()) && !shs.Equals((this.gridHoanCong.Rows[i].Cells["hc_SHS"].Value + "").Trim()))
-                  count++;
+                    count++;
             return count;
         }
         private void gridHoanCong_CellEndEdit(object sender, DataGridViewCellEventArgs e)
@@ -532,7 +537,7 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
             }
             catch (Exception)
             {
-              
+
             }
             DateTime ngaykd = new DateTime();
             if (!"1/1/0001".Equals(this.txtNgayKiemDinh.Value.ToShortDateString()))
@@ -589,7 +594,8 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
             }
         }
 
-        public void UpdateDocSo() {
+        public void UpdateDocSo()
+        {
             try
             {
                 if (!"".Equals(this.txtDanhBo.Text.Trim().Replace("-", "")))
@@ -602,12 +608,14 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
             {
                 log.Error(ex.Message);
             }
-            
+
         }
         private void txtSoHoSo_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == 13) {
-                for (int i = 0; i < gridHoanCong.Rows.Count; i++) {
+            if (e.KeyChar == 13)
+            {
+                for (int i = 0; i < gridHoanCong.Rows.Count; i++)
+                {
                     if (this.txtSoHoSo.Text.Equals(this.gridHoanCong.Rows[i].Cells["hc_SHS"].Value + ""))
                     {
                         this.txtHoTen.Text = this.gridHoanCong.Rows[i].Cells["hc_HoTen"].Value + "";
@@ -643,9 +651,26 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
 
                         break;
                     }
-                
+
                 }
             }
+        }
+
+        private void btXoaHC_Click(object sender, EventArgs e)
+        {
+            string shs = this.txtSoHoSo.Text;
+            flag = DAL.C_KH_HoanCong.HoanCong_Clear(shs);
+            if (flag)
+            {
+                MessageBox.Show(this, "Cập Nhật Thông Tin Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                gridHoanCong.DataSource = DAL.C_KH_HoanCong.getListHoanCong(this.cbDotTC.Text, 0);
+                Refresh();
+            }
+            else
+            {
+                MessageBox.Show(this, "Cập Nhật Thông Tin Thất Bại !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
     }
 }

@@ -92,7 +92,15 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
                     dottc.SHS = this.txtSHS.Text;
                     dottc.MADOTTC = _madot;
                     dottc.LANBOSUNG = int.Parse(this.cbSoLan.Text);
+                    try
+                    {
+                        dottc.TAILAPMATDUONG = double.Parse(this.txtTaiLapMĐ.Text);
+                        dottc.TONGIATRI = double.Parse(this.txtSoTien.Text);
+                    }
+                    catch (Exception)
+                    {
 
+                    }
                     if (DAL.C_KH_DotThiCong.InsertDotTC_BS(dottc) == false)
                     {
                         MessageBox.Show(this, "Lỗi Thêm Đợt Thi Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -162,14 +170,21 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
             string ngaytk = "";
           //  KH_DOTTHICONG dotc = DAL.C_KH_DotThiCong.findByMadot(madot);
             ngaytk = "Ngày " + DateTime.Now.Date.Day + " tháng " + DateTime.Now.Date.Month + " năm " + DateTime.Now.Date.Year;
+            
+            string tendot = "GẮN MỚI";
+            
+            if (_madot.Contains("D"))
+                tendot = "DỜI";
 
-         
             ReportDocument rp = new rpt_DanhSachHSTC_BOSUNG();
             rp.SetDataSource(DAL.C_KH_DotThiCong.BC_DanhSachDotThiCong_BS(_madot,cbSoLan.Text));
             rp.SetParameterValue("bs", cbSoLan.Text);
             rp.SetParameterValue("cc1", this.txtCanCu1.Text);
             rp.SetParameterValue("cc2", this.txtCanCu2.Text);
             rp.SetParameterValue("ngaytk", ngaytk);
+            rp.SetParameterValue("tendot", tendot);
+            
+
             rpt_Main mainReport = new rpt_Main(rp);
             mainReport.ShowDialog();
             

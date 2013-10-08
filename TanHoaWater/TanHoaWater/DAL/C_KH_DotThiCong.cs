@@ -337,7 +337,7 @@ namespace TanHoaWater.DAL
             return null;
         }
 
-        public static DataSet BC_DanhSachDotThiCong_BS(string madot,string lan)
+        public static DataSet BC_DanhSachDotThiCong_BS(string madot, string lan)
         {
 
             try
@@ -349,7 +349,13 @@ namespace TanHoaWater.DAL
                 SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
                 adapter.Fill(dataset, "KH_TC_BAOCAO");
 
-                sql = " SELECT *  FROM V_DANHSACHTHICONG WHERE SHS IN (SELECT SHS FROM KH_HOSOKHACHHANG_BS WHERE MADOTTC='" + madot + "' AND LANBOSUNG='" + lan + "')  ORDER BY STT ASC ";
+                sql = "SELECT bs.SHS, SOHOSO, MADOT, HOTEN, DIENTHOAI, SONHA, DUONG, TENPHUONG, TENQUAN, MADOTDD, CHOPHEP, NGAYCOPHEP, bs.MADOTTC, TRONGAI, NOIDUNGTN, GHICHU, ";
+                sql += "COTLK, CPVATTU, CPNHANCONG, CPMAYTHICONG, CPCABA, CHIPHITRUCTIEP, CHIPHICHUNG, bs.TAILAPMATDUONG, TLMDTRUOCTHUE, CONG1, THUE55, CONG3, THUEGTGT, bs.TONGIATRI, ";
+                sql += "CREATEBY, CREATEDATE, MODIFYBY, MODIFYDATE, MODIFYLOG, TONGTIEN, NGAYLAP, SOLUONGTLK, DONVITHICONG, DONVITAILAP, NGAYCHUYENDVTC, CHUYENBUHANMUC, BANGKE, ";
+                sql += "LOAIBANGKE, NGAYHC, GHICHUHC, SOLUONG_HCTLK, CONLAI_TLK, QUYETTOAN, NGAYCHUYENKT, NGAYTHANHTOAN, TRONGAITC, STT ";
+                sql += "FROM V_DANHSACHTHICONG tc, KH_HOSOKHACHHANG_BS bs ";
+                sql += "WHERE tc.SHS=bs.SHS AND bs.MADOTTC='" + madot + "' ";
+                //  sql = " SELECT *  FROM V_DANHSACHTHICONG WHERE SHS IN (SELECT SHS FROM KH_HOSOKHACHHANG_BS WHERE MADOTTC='" + madot + "' AND LANBOSUNG='" + lan + "')  ORDER BY STT ASC ";
                 adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
                 adapter.Fill(dataset, "V_DANHSACHTHICONG_OC");
 
@@ -362,8 +368,7 @@ namespace TanHoaWater.DAL
             }
             return null;
         }
-
-
+  
         public static DataTable getListDotThiCongBT(string madottc)
         {
 

@@ -105,6 +105,8 @@
             this.SearchMaHoSo = new System.Windows.Forms.TextBox();
             this.searchDienThoai = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
+            this.txtTapThe = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.label28 = new System.Windows.Forms.Label();
             this.groupPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -222,6 +224,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.txtTapThe);
+            this.panel1.Controls.Add(this.label28);
             this.panel1.Controls.Add(this.label26);
             this.panel1.Controls.Add(this.txtNgayChuyenTC);
             this.panel1.Controls.Add(this.buttonX3);
@@ -237,7 +241,6 @@
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.SoTienDong);
             this.panel1.Controls.Add(this.label13);
-            this.panel1.Controls.Add(this.label16);
             this.panel1.Controls.Add(this.NgayXinPhepDD);
             this.panel1.Controls.Add(this.txtNgayDongTien);
             this.panel1.Controls.Add(this.SoDoVienTK);
@@ -270,6 +273,7 @@
             this.panel1.Controls.Add(this.label21);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.label25);
+            this.panel1.Controls.Add(this.label16);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -630,12 +634,12 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Times New Roman", 10F);
-            this.label16.Location = new System.Drawing.Point(593, 189);
+            this.label16.Location = new System.Drawing.Point(589, 189);
             this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(118, 16);
+            this.label16.Size = new System.Drawing.Size(89, 16);
             this.label16.TabIndex = 163;
-            this.label16.Text = "Trả Hồ Sơ Ban K/H";
+            this.label16.Text = "Trả Hồ Sơ KH";
             // 
             // NgayXinPhepDD
             // 
@@ -807,11 +811,11 @@
             // 
             // 
             this.NgayTraHoSoKH.Border.Class = "TextBoxBorder";
-            this.NgayTraHoSoKH.Location = new System.Drawing.Point(711, 183);
+            this.NgayTraHoSoKH.Location = new System.Drawing.Point(677, 184);
             this.NgayTraHoSoKH.Margin = new System.Windows.Forms.Padding(4);
             this.NgayTraHoSoKH.Name = "NgayTraHoSoKH";
             this.NgayTraHoSoKH.ReadOnly = true;
-            this.NgayTraHoSoKH.Size = new System.Drawing.Size(262, 26);
+            this.NgayTraHoSoKH.Size = new System.Drawing.Size(113, 26);
             this.NgayTraHoSoKH.TabIndex = 161;
             // 
             // NgayHoanTat
@@ -1086,6 +1090,31 @@
             this.label27.TabIndex = 144;
             this.label27.Text = "ĐT";
             // 
+            // txtTapThe
+            // 
+            this.txtTapThe.BackColor = System.Drawing.SystemColors.Window;
+            // 
+            // 
+            // 
+            this.txtTapThe.Border.Class = "TextBoxBorder";
+            this.txtTapThe.Location = new System.Drawing.Point(880, 184);
+            this.txtTapThe.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTapThe.Name = "txtTapThe";
+            this.txtTapThe.ReadOnly = true;
+            this.txtTapThe.Size = new System.Drawing.Size(92, 26);
+            this.txtTapThe.TabIndex = 681;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Times New Roman", 10F);
+            this.label28.Location = new System.Drawing.Point(798, 190);
+            this.label28.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(77, 16);
+            this.label28.TabIndex = 682;
+            this.label28.Text = "HS Tập Thể";
+            // 
             // uc_TimKiemDonKH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -1199,6 +1228,8 @@
         private DevComponents.DotNetBar.Controls.TextBoxX txtNgayChuyenTC;
         private System.Windows.Forms.TextBox searchDienThoai;
         private System.Windows.Forms.Label label27;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtTapThe;
+        private System.Windows.Forms.Label label28;
 
     }
 }

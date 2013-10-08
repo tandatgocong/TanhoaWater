@@ -47,7 +47,8 @@ namespace TanHoaWater.View.Tool
                 this.NgayLenDotNhanDon.Text = Utilities.DateToString.NgayVNVN(donkh.CREATEDATE.Value);
                 //if (donkh.HOSOCHA != null)
                 //{
-                //    donkh = DAL.C_DonKhachHang.searchTimKiemDon(donkh.HOSOCHA);
+                   // donkh = DAL.C_DonKhachHang.searchTimKiemDon(donkh.HOSOCHA);
+                    txtTapThe.Text = donkh.HOSOCHA;
                 //}
                 if (donkh.NGAYCHUYEN_HOSO != null)
                 {
@@ -59,6 +60,11 @@ namespace TanHoaWater.View.Tool
                         {
                             this.SoDoVienTK.Text = DAL.C_USERS.findByUserName(ttk.SODOVIEN).FULLNAME;
                             this.txtNgayGiaoSDV.Text = ttk.NGAYGIAOSDV != null ? Utilities.DateToString.NgayVNVN(ttk.NGAYGIAOSDV.Value) : "";
+                            NgayTrinhKyGD.Text = ttk.NGAYTKGD != null ? Utilities.DateToString.NgayVNVN(ttk.NGAYTKGD.Value) : "";
+                            NgayHoanTat.Text = ttk.NGAYHOANTATTK != null ? Utilities.DateToString.NgayVNVN(ttk.NGAYHOANTATTK.Value) : "";
+                            NgayTraHoSoKH.Text = ttk.NGAYTRAHS != null ? Utilities.DateToString.NgayVNVN(ttk.NGAYTRAHS.Value) : "";
+
+
                             if (ttk.TRONGAITHIETKE == true)
                             {
                                 title = "HỒ SƠ TRỞ NGẠI THIẾT KẾ";
@@ -76,11 +82,7 @@ namespace TanHoaWater.View.Tool
                                     NgayLapBG.Text = xdcb.CREATEDATE != null ? Utilities.DateToString.NgayVNVN(xdcb.CREATEDATE.Value) : "";
                                   //  SoTienDong.Text = String.Format("{0:0,0.00}", xdcb.TONGIATRI != null ? xdcb.TONGIATRI : 0.0);
                                     SoTienDong.Text = String.Format("{0:0,0}", xdcb.TONGIATRI != null ? xdcb.TONGIATRI : 0.0).Replace(",", ".");
-
-                                    NgayTrinhKyGD.Text = ttk.NGAYTKGD != null ? Utilities.DateToString.NgayVNVN(ttk.NGAYTKGD.Value) : "";
-                                    NgayHoanTat.Text = ttk.NGAYHOANTATTK != null ? Utilities.DateToString.NgayVNVN(ttk.NGAYHOANTATTK.Value) : "";
-                                    NgayTraHoSoKH.Text = ttk.NGAYTRAHS != null ? Utilities.DateToString.NgayVNVN(ttk.NGAYTRAHS.Value) : "";
-
+                                                                      
                                     if (ttk.NGAYCHUYENHS != null)
                                     {
                                         KH_HOSOKHACHHANG hoskh = DAL.C_KH_HoSoKhachHang.findBySHS(donkh.SHS);
@@ -217,7 +219,17 @@ namespace TanHoaWater.View.Tool
                                         }
                                         
                                     }
-                                    else { title = "HỒ SƠ CHƯA CHẠY BẢNG GIÁ."; }
+                                    else {
+
+                                        if ("".Equals(NgayHoanTat.Text.Trim()))
+                                        {
+                                            title = "HỒ SƠ CHƯA CHẠY BẢNG GIÁ.";
+                                        }
+                                        else {
+                                            title = "HỒ SƠ ĐÃ HOÀN TẤT THIẾT KẾ";
+                                        }
+                                    
+                                    }
 
                                 }
                             }

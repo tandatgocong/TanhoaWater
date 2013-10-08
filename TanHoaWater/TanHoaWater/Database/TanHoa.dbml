@@ -1836,6 +1836,8 @@
       <Column Name="SHS" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="MADOTTC" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
       <Column Name="LANBOSUNG" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TAILAPMATDUONG" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TONGIATRI" Type="System.Double" DbType="Float" CanBeNull="true" />
     </Type>
   </Table>
   <Function Name="dbo.TONGKETCHIPHI" Method="TONGKETCHIPHI">
