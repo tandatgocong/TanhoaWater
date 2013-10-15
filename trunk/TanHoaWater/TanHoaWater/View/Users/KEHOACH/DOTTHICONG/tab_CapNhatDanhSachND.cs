@@ -148,6 +148,8 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
                             if (MessageBox.Show(this, "Đã Lên Đơt Thi Công Cho Số Hồ Sơ Rồi.", "..: Thông Báo :..", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                             {
                                 kh_sh.MADOTTC = _madot;
+                                kh_sh.TRONGAI = false;
+                                kh_sh.NOIDUNGTN = "";
                                 kh_sh.COTLK = int.Parse(this.cbCoTLK.Text);
                                 kh_sh.MODIFYBY = DAL.C_USERS._userName;
                                 kh_sh.MODIFYDATE = DateTime.Now;

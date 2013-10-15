@@ -92,6 +92,7 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
                     dottc.SHS = this.txtSHS.Text;
                     dottc.MADOTTC = _madot;
                     dottc.LANBOSUNG = int.Parse(this.cbSoLan.Text);
+                    dottc.SOHOADON = this.txtSoHoaDon.Text;
                     try
                     {
                         dottc.TAILAPMATDUONG = double.Parse(this.txtTaiLapMĐ.Text);
@@ -100,6 +101,14 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
                     catch (Exception)
                     {
 
+                    }
+                    try
+                    {
+                        dottc.NGAYDONGTIEN = dateNgayDongTien.Value.Date;
+                    }
+                    catch (Exception)
+                    {
+                        
                     }
                     if (DAL.C_KH_DotThiCong.InsertDotTC_BS(dottc) == false)
                     {

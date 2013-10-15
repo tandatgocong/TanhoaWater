@@ -254,11 +254,11 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(22)))), ((int)(((byte)(111)))));
-            this.label2.Location = new System.Drawing.Point(259, 428);
+            this.label2.Location = new System.Drawing.Point(80, 433);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(468, 40);
+            this.label2.Size = new System.Drawing.Size(872, 40);
             this.label2.TabIndex = 18;
-            this.label2.Text = "GẮN MỚI ĐỒNG HỒ NƯỚC";
+            this.label2.Text = "GẮN MỚI - DI DỜI - BỒI THƯỜNG ĐỒNG HỒ NƯỚC";
             // 
             // reflectionLabel3
             // 
@@ -878,7 +878,7 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(22)))), ((int)(((byte)(111)))));
             this.label1.Location = new System.Drawing.Point(107, 376);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(816, 40);
+            this.label1.Size = new System.Drawing.Size(814, 40);
             this.label1.TabIndex = 10;
             this.label1.Text = "HỆ QUẢN LÝ HỒ SƠ THÔNG TIN KHÁCH HÀNG";
             // 
@@ -1145,7 +1145,7 @@
             this.microsoftWord.ForeColor = System.Drawing.Color.RoyalBlue;
             this.microsoftWord.Image = global::TanHoaWater.Properties.Resources.WINWORD;
             this.microsoftWord.Name = "microsoftWord";
-            this.microsoftWord.Size = new System.Drawing.Size(144, 21);
+            this.microsoftWord.Size = new System.Drawing.Size(143, 21);
             this.microsoftWord.Text = "Microsoft Word ";
             this.microsoftWord.Click += new System.EventHandler(this.microsoftWord_Click);
             // 
@@ -1163,7 +1163,7 @@
             this.microsoftAccess.ForeColor = System.Drawing.Color.RoyalBlue;
             this.microsoftAccess.Image = global::TanHoaWater.Properties.Resources.MSACCESS;
             this.microsoftAccess.Name = "microsoftAccess";
-            this.microsoftAccess.Size = new System.Drawing.Size(151, 21);
+            this.microsoftAccess.Size = new System.Drawing.Size(150, 21);
             this.microsoftAccess.Text = "Microsoft Access";
             this.microsoftAccess.Click += new System.EventHandler(this.microsoftAccess_Click);
             // 
@@ -1208,7 +1208,7 @@
             this.menuQuyetToan.Image = global::TanHoaWater.Properties.Resources.Currency_Euro;
             this.menuQuyetToan.Name = "menuQuyetToan";
             this.menuQuyetToan.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.C)));
-            this.menuQuyetToan.Size = new System.Drawing.Size(153, 20);
+            this.menuQuyetToan.Size = new System.Drawing.Size(152, 20);
             this.menuQuyetToan.Text = "Quyết Toán Gắn ĐHN";
             this.menuQuyetToan.Click += new System.EventHandler(this.menuQuyetToan_Click);
             // 
@@ -1295,7 +1295,7 @@
             this.tínhDựToánHSKToolStripMenuItem.ForeColor = System.Drawing.Color.RoyalBlue;
             this.tínhDựToánHSKToolStripMenuItem.Image = global::TanHoaWater.Properties.Resources.dutoan;
             this.tínhDựToánHSKToolStripMenuItem.Name = "tínhDựToánHSKToolStripMenuItem";
-            this.tínhDựToánHSKToolStripMenuItem.Size = new System.Drawing.Size(131, 21);
+            this.tínhDựToánHSKToolStripMenuItem.Size = new System.Drawing.Size(130, 21);
             this.tínhDựToánHSKToolStripMenuItem.Text = "Tính Dự Toán ";
             this.tínhDựToánHSKToolStripMenuItem.Click += new System.EventHandler(this.tínhDựToánHSKToolStripMenuItem_Click);
             // 

@@ -38118,6 +38118,10 @@ namespace TanHoaWater.Database
 		
 		private System.Nullable<double> _TONGIATRI;
 		
+		private System.Nullable<System.DateTime> _NGAYDONGTIEN;
+		
+		private string _SOHOADON;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -38134,6 +38138,10 @@ namespace TanHoaWater.Database
     partial void OnTAILAPMATDUONGChanged();
     partial void OnTONGIATRIChanging(System.Nullable<double> value);
     partial void OnTONGIATRIChanged();
+    partial void OnNGAYDONGTIENChanging(System.Nullable<System.DateTime> value);
+    partial void OnNGAYDONGTIENChanged();
+    partial void OnSOHOADONChanging(string value);
+    partial void OnSOHOADONChanged();
     #endregion
 		
 		public KH_HOSOKHACHHANG_BS()
@@ -38257,6 +38265,46 @@ namespace TanHoaWater.Database
 					this._TONGIATRI = value;
 					this.SendPropertyChanged("TONGIATRI");
 					this.OnTONGIATRIChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAYDONGTIEN", DbType="DateTime")]
+		public System.Nullable<System.DateTime> NGAYDONGTIEN
+		{
+			get
+			{
+				return this._NGAYDONGTIEN;
+			}
+			set
+			{
+				if ((this._NGAYDONGTIEN != value))
+				{
+					this.OnNGAYDONGTIENChanging(value);
+					this.SendPropertyChanging();
+					this._NGAYDONGTIEN = value;
+					this.SendPropertyChanged("NGAYDONGTIEN");
+					this.OnNGAYDONGTIENChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SOHOADON", DbType="VarChar(MAX)")]
+		public string SOHOADON
+		{
+			get
+			{
+				return this._SOHOADON;
+			}
+			set
+			{
+				if ((this._SOHOADON != value))
+				{
+					this.OnSOHOADONChanging(value);
+					this.SendPropertyChanging();
+					this._SOHOADON = value;
+					this.SendPropertyChanged("SOHOADON");
+					this.OnSOHOADONChanged();
 				}
 			}
 		}

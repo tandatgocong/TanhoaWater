@@ -1838,6 +1838,8 @@
       <Column Name="LANBOSUNG" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="TAILAPMATDUONG" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="TONGIATRI" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="NGAYDONGTIEN" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SOHOADON" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
     </Type>
   </Table>
   <Function Name="dbo.TONGKETCHIPHI" Method="TONGKETCHIPHI">

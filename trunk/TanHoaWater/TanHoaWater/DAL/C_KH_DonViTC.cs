@@ -16,7 +16,7 @@ namespace TanHoaWater.DAL
 
         public static List<KH_DONVITHICONG> getDonViThiCong() {
             TanHoaDataContext data = new TanHoaDataContext();
-            var list = from query in data.KH_DONVITHICONGs where query.XOA != true orderby query.ID descending select query;
+            var list = from query in data.KH_DONVITHICONGs where query.XOA != true orderby query.ID ascending select query;
             return list.ToList();
         }
 
@@ -54,13 +54,13 @@ namespace TanHoaWater.DAL
         public static List<KH_DONVITAILAP> getDonViTaiLap()
         {
             TanHoaDataContext data = new TanHoaDataContext();
-            var list = from query in data.KH_DONVITAILAPs where query.XOA != true orderby query.ID descending select query;
+            var list = from query in data.KH_DONVITAILAPs where query.XOA != true orderby query.ID ascending select query;
             return list.ToList();
         }
         public static List<KH_DONVIGIAMSATTL> getDonViGiamSatTL()
         {
             TanHoaDataContext data = new TanHoaDataContext();
-            var list = from query in data.KH_DONVIGIAMSATTLs where query.XOA != true orderby query.ID descending select query;
+            var list = from query in data.KH_DONVIGIAMSATTLs where query.XOA != true orderby query.ID ascending select query;
             return list.ToList();
         }
        

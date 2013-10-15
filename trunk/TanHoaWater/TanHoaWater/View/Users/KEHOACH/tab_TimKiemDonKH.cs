@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using log4net;
 using System.Collections;
 using TanHoaWater.Database;
+using TanHoaWater.Utilities;
 
 namespace TanHoaWater.View.Users.HSKHACHHANG
 {
@@ -335,7 +336,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                         }
                         donkh.MODIFYBY = DAL.C_USERS._userName;
                         donkh.MODIFYDATE = DateTime.Now;
-                        donkh.MODIFYLOG = donkh.MODIFYLOG + " ..|.. " + DAL.C_USERS._userName + " đã chỉnh sửa thông tin:  `" + txtghichusua.Text + "` ngày " + DateTime.Now;
+                        donkh.MODIFYLOG = donkh.MODIFYLOG + " ..|.. " + DAL.C_USERS._userName + " đã chỉnh sửa thông tin:  `" + txtghichusua.Text + "` ngày " + DateToString.NgayVNVN(DateTime.Now.Date)+ " "+ DateTime.Now.TimeOfDay;
                         try
                         {
                             DAL.C_DonKhachHang.SHSupdate(donkh);
