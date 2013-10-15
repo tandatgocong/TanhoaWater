@@ -108,8 +108,12 @@ namespace TanHoaWater.View.Tool
                                                         KH_DOTTHICONG dotc = DAL.C_KH_DotThiCong.findByMadot(hoskh.MADOTTC);
                                                         DotThiCong.Text = dotc.MADOTTC;
                                                         NgayLenDotTC.Text =dotc.NGAYLAP.Value!= null ? Utilities.DateToString.NgayVNVN(dotc.NGAYLAP.Value):"";
-                                                        txtNgayChuyenTC.Text = dotc.NGAYCHUYENTC.Value != null ? Utilities.DateToString.NgayVNVN(dotc.NGAYCHUYENTC.Value) : "";
                                                         txtDomViTC.Text = dotc.DONVITHICONG.Value != null ? DAL.C_KH_DonViTC.findDVTCbyID(dotc.DONVITHICONG.Value).TENCONGTY : "";
+                                                        txtNgayChuyenTC.Text = dotc.NGAYCHUYENTC.Value != null ? Utilities.DateToString.NgayVNVN(dotc.NGAYCHUYENTC.Value) : "";
+
+                                                        txtTuNgay.Text = dotc.TCTUNGAY.Value != null ? Utilities.DateToString.NgayVNVN(dotc.TCTUNGAY.Value) : "";
+                                                        txtDenNgay.Text = dotc.TCDENNGAY.Value != null ? Utilities.DateToString.NgayVNVN(dotc.TCDENNGAY.Value) : "";
+                                                        
                                                 }
                                                 catch (Exception)
                                                 {
@@ -146,7 +150,11 @@ namespace TanHoaWater.View.Tool
                                             title = "HỒ SƠ CHƯA LÊN ĐỢT <br/> THI CÔNG";
                                         }
 
-
+                                        if (hoskh.TRONGAI == true)
+                                        {
+                                            title = "HỒ SƠ TRỞ NGẠI THI CÔNG";
+                                            noidungtrongai = hoskh.NOIDUNGTN;
+                                        }
                                     }
                                     else
                                     {
@@ -180,8 +188,11 @@ namespace TanHoaWater.View.Tool
                                                 {
                                                     DotThiCong.Text = dotc.MADOTTC;
                                                     NgayLenDotTC.Text = dotc.NGAYLAP.Value != null ? Utilities.DateToString.NgayVNVN(dotc.NGAYLAP.Value) : "";
-                                                    txtNgayChuyenTC.Text = dotc.NGAYCHUYENTC.Value != null ? Utilities.DateToString.NgayVNVN(dotc.NGAYCHUYENTC.Value) : "";
                                                     txtDomViTC.Text = dotc.DONVITHICONG != null ? DAL.C_KH_DonViTC.findDVTCbyID(dotc.DONVITHICONG.Value).TENCONGTY : "";
+                                                    txtNgayChuyenTC.Text = dotc.NGAYCHUYENTC.Value != null ? Utilities.DateToString.NgayVNVN(dotc.NGAYCHUYENTC.Value) : "";
+                                                    txtTuNgay.Text = dotc.TCTUNGAY.Value != null ? Utilities.DateToString.NgayVNVN(dotc.TCTUNGAY.Value) : "";
+                                                    txtDenNgay.Text = dotc.TCDENNGAY.Value != null ? Utilities.DateToString.NgayVNVN(dotc.TCDENNGAY.Value) : "";
+                                                  
                                                 }
                                             }
                                             catch (Exception)
@@ -284,8 +295,10 @@ namespace TanHoaWater.View.Tool
                             if (dotc != null) {
                                 DotThiCong.Text = dotc.MADOTTC;
                                 NgayLenDotTC.Text = Utilities.DateToString.NgayVNVN(dotc.NGAYLAP.Value);
-                                txtNgayChuyenTC.Text = Utilities.DateToString.NgayVNVN(dotc.NGAYCHUYENTC.Value);
                                 txtDomViTC.Text = DAL.C_KH_DonViTC.findDVTCbyID(dotc.DONVITHICONG.Value).TENCONGTY;
+                                txtNgayChuyenTC.Text = Utilities.DateToString.NgayVNVN(dotc.NGAYCHUYENTC.Value);
+                                txtTuNgay.Text = dotc.TCTUNGAY.Value != null ? Utilities.DateToString.NgayVNVN(dotc.TCTUNGAY.Value) : "";
+                                txtDenNgay.Text = dotc.TCDENNGAY.Value != null ? Utilities.DateToString.NgayVNVN(dotc.TCDENNGAY.Value) : "";
                             }
                         }
                         catch (Exception)
@@ -311,16 +324,16 @@ namespace TanHoaWater.View.Tool
                         else
                         {
                             title = "HỒ SƠ ĐÃ HOÀN TẤT";
-                        }
-                        if (hoskh1.TRONGAI == true)
-                        {
-                            title = "HỒ SƠ TRỞ NGẠI THI CÔNG";
-                            noidungtrongai = hoskh1.NOIDUNGTN;
-                        }
+                        }                       
                     }
                     else
                     {
                         title = "HỒ SƠ CHƯA LÊN ĐỢT <br/> THI CÔNG";
+                    }
+                    if (hoskh1.TRONGAI == true)
+                    {
+                        title = "HỒ SƠ TRỞ NGẠI THI CÔNG";
+                        noidungtrongai = hoskh1.NOIDUNGTN;
                     }
 
                 }

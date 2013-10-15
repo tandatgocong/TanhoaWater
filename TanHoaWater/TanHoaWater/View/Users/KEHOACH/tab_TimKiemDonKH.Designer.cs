@@ -658,7 +658,7 @@
             this.txtHoTen.Border.Class = "TextBoxBorder";
             this.txtHoTen.Location = new System.Drawing.Point(92, 38);
             this.txtHoTen.Name = "txtHoTen";
-            this.txtHoTen.Size = new System.Drawing.Size(320, 25);
+            this.txtHoTen.Size = new System.Drawing.Size(320, 22);
             this.txtHoTen.TabIndex = 11;
             // 
             // ghichu
@@ -681,7 +681,7 @@
             this.txtsonha.Border.Class = "TextBoxBorder";
             this.txtsonha.Location = new System.Drawing.Point(92, 68);
             this.txtsonha.Name = "txtsonha";
-            this.txtsonha.Size = new System.Drawing.Size(78, 25);
+            this.txtsonha.Size = new System.Drawing.Size(78, 22);
             this.txtsonha.TabIndex = 12;
             // 
             // label10
@@ -701,7 +701,7 @@
             this.duong.Border.Class = "TextBoxBorder";
             this.duong.Location = new System.Drawing.Point(193, 68);
             this.duong.Name = "duong";
-            this.duong.Size = new System.Drawing.Size(219, 25);
+            this.duong.Size = new System.Drawing.Size(219, 22);
             this.duong.TabIndex = 13;
             // 
             // cbLoaiHS

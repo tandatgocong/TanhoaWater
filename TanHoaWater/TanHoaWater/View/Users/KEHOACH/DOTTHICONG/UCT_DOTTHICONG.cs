@@ -68,18 +68,22 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
             cbDonViThiCong.DataSource = DAL.C_KH_DonViTC.getDonViThiCong();
             cbDonViThiCong.DisplayMember = "TENCONGTY";
             cbDonViThiCong.ValueMember = "ID";
+            cbDonViThiCong.SelectedIndex = cbDonViThiCong.Items.Count-1;
 
             cbDonViTaiLapMD.DataSource = DAL.C_KH_DonViTC.getDonViTaiLap();
             cbDonViTaiLapMD.DisplayMember = "TENCONGTY";
             cbDonViTaiLapMD.ValueMember = "ID";
+            cbDonViTaiLapMD.SelectedIndex = cbDonViTaiLapMD.Items.Count-1;
 
             cbDonViTuVanGSTLMD.DataSource = DAL.C_KH_DonViTC.getDonViGiamSatTL();
             cbDonViTuVanGSTLMD.DisplayMember = "TENCONGTY";
             cbDonViTuVanGSTLMD.ValueMember = "ID";
+            cbDonViTuVanGSTLMD.SelectedIndex = cbDonViTuVanGSTLMD.Items.Count-1;
 
             cbDonViGiamSatTC.DataSource = DAL.C_KH_DotThiCong.DonViGiamSat();
             this.cbDonViGiamSatTC.ValueMember = "TENDONVI";
             this.cbDonViGiamSatTC.DisplayMember = "TENDONVI";
+            cbDonViGiamSatTC.SelectedIndex = cbDonViGiamSatTC.Items.Count-1;
            
             cbLoaiBangKe.DataSource = DAL.C_KH_DonViTC.getLoaiBangKe();
             cbLoaiBangKe.DisplayMember = "TENBANGKE";
