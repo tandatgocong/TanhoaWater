@@ -102,9 +102,14 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
                     {
 
                     }
+
                     try
                     {
-                        dottc.NGAYDONGTIEN = dateNgayDongTien.Value.Date;
+                        if (!"".Equals(this.txtSoHoaDon.Text) && !"1/1/0001".Equals(this.dateNgayDongTien.Value.ToShortDateString()))
+                        {
+
+                            dottc.NGAYDONGTIEN = dateNgayDongTien.Value.Date;
+                        }
                     }
                     catch (Exception)
                     {
