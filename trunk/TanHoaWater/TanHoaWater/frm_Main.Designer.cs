@@ -886,13 +886,13 @@
             // 
             this.ribbonControl1.AutoScroll = true;
             this.ribbonControl1.Controls.Add(this.ribbonPanel1);
+            this.ribbonControl1.Controls.Add(this.ribbonPanel2);
+            this.ribbonControl1.Controls.Add(this.ribbonPanel3);
+            this.ribbonControl1.Controls.Add(this.ribbonPanel6);
             this.ribbonControl1.Controls.Add(this.ribbonPanel9);
             this.ribbonControl1.Controls.Add(this.ribbonPanel4);
             this.ribbonControl1.Controls.Add(this.ribbonPanel8);
-            this.ribbonControl1.Controls.Add(this.ribbonPanel6);
-            this.ribbonControl1.Controls.Add(this.ribbonPanel3);
             this.ribbonControl1.Controls.Add(this.ribbonPanel5);
-            this.ribbonControl1.Controls.Add(this.ribbonPanel2);
             this.ribbonControl1.Controls.Add(this.ribbonPanel7);
             this.ribbonControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.ribbonControl1.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1220,7 +1220,7 @@
             this.ribbonPanel6.Location = new System.Drawing.Point(0, 28);
             this.ribbonPanel6.Name = "ribbonPanel6";
             this.ribbonPanel6.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.ribbonPanel6.Size = new System.Drawing.Size(1010, 24);
+            this.ribbonPanel6.Size = new System.Drawing.Size(1015, 24);
             this.ribbonPanel6.TabIndex = 6;
             this.ribbonPanel6.Visible = false;
             // 
@@ -1233,7 +1233,7 @@
             this.toolStripMenuItem4});
             this.menuStrip5.Location = new System.Drawing.Point(3, 0);
             this.menuStrip5.Name = "menuStrip5";
-            this.menuStrip5.Size = new System.Drawing.Size(1004, 25);
+            this.menuStrip5.Size = new System.Drawing.Size(1009, 25);
             this.menuStrip5.TabIndex = 2;
             this.menuStrip5.Text = "menuStrip5";
             // 
@@ -1262,7 +1262,7 @@
             this.ribbonPanel3.Location = new System.Drawing.Point(0, 28);
             this.ribbonPanel3.Name = "ribbonPanel3";
             this.ribbonPanel3.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.ribbonPanel3.Size = new System.Drawing.Size(1010, 24);
+            this.ribbonPanel3.Size = new System.Drawing.Size(1015, 24);
             this.ribbonPanel3.TabIndex = 3;
             this.ribbonPanel3.Visible = false;
             // 
@@ -1277,7 +1277,7 @@
             this.toolStripMenuItem3});
             this.menuStrip2.Location = new System.Drawing.Point(3, 0);
             this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(1004, 25);
+            this.menuStrip2.Size = new System.Drawing.Size(1009, 25);
             this.menuStrip2.TabIndex = 1;
             this.menuStrip2.Text = "menuStrip2";
             // 
@@ -1315,6 +1315,7 @@
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
             this.toolStripMenuItem3.Size = new System.Drawing.Size(159, 21);
             this.toolStripMenuItem3.Text = "Báo Cáo Tổng Kết";
+            this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
             // 
             // ribbonPanel5
             // 
@@ -1335,7 +1336,7 @@
             this.ribbonPanel2.Location = new System.Drawing.Point(0, 28);
             this.ribbonPanel2.Name = "ribbonPanel2";
             this.ribbonPanel2.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.ribbonPanel2.Size = new System.Drawing.Size(1010, 24);
+            this.ribbonPanel2.Size = new System.Drawing.Size(1015, 24);
             this.ribbonPanel2.TabIndex = 2;
             this.ribbonPanel2.Visible = false;
             // 
@@ -1353,7 +1354,7 @@
             this.khvt_bctk});
             this.menuStrip3.Location = new System.Drawing.Point(3, 0);
             this.menuStrip3.Name = "menuStrip3";
-            this.menuStrip3.Size = new System.Drawing.Size(1004, 25);
+            this.menuStrip3.Size = new System.Drawing.Size(1009, 25);
             this.menuStrip3.TabIndex = 0;
             this.menuStrip3.Text = "menuStrip3";
             // 

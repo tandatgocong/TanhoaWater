@@ -521,7 +521,7 @@ namespace TanHoaWater.View.Users.TCTB
                 {
                     try
                     {
-                        if (this.cbDotTC.Text.Contains("BT"))
+                        if (shs.Contains("BT"))
                         {
                             TB_DULIEUKHACHHANG kh = DULIEUKH.C_DuLieuKhachHang.finByDanhBo(txtDanhBo.Text.Replace(" ", "").Replace("-", ""));
                             if (kh != null)
@@ -543,8 +543,6 @@ namespace TanHoaWater.View.Users.TCTB
 
                                 }
                             }
-
-
                         }
                   }
                     catch (Exception ex)
@@ -595,12 +593,12 @@ namespace TanHoaWater.View.Users.TCTB
             {
                 rp = new rpt_HoanCongTCTB();
             }
-            else if (this.cbDotTC.Text.Contains("D"))
+            else if (this.cbDotTC.Text.Contains("GM"))
             {
-                rp = new rpt_HoanCongTCTB_DD();
+                rp = new rpt_HoanCongTCTB_GM();
 
             } else {
-                rp = new rpt_HoanCongTCTB_GM();
+                rp = new rpt_HoanCongTCTB_DD();
             }
 
                 rp.SetDataSource(DAL.C_HoanCongDHN_DotTCTB.BC_HOANCONG_TCTB(this.cbDotTC.Text));
