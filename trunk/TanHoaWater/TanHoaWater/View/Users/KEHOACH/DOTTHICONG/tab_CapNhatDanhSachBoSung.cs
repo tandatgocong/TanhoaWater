@@ -189,6 +189,9 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
             
             if (_madot.Contains("D"))
                 tendot = "DỜI";
+            else if  (_madot.Contains("BT"))
+                tendot = "BỒI THƯỜNG";
+                
 
             ReportDocument rp = new rpt_DanhSachHSTC_BOSUNG();
             rp.SetDataSource(DAL.C_KH_DotThiCong.BC_DanhSachDotThiCong_BS(_madot,cbSoLan.Text));
