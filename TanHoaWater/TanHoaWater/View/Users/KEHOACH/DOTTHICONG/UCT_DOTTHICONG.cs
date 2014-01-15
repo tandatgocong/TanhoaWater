@@ -667,6 +667,10 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
             if (!"".Equals(madot))
             {
                 ReportDocument rp = new rpt_QuyetDinhTC();
+                if (DAL.C_KH_DonViTC.findDVTLbyTENCTY(this.cbDonViTaiLapMD.Text).ID == 17 || DAL.C_KH_DonViTC.findDVTLbyTENCTY(this.cbDonViTaiLapMD.Text).ID == 19)
+                {
+                    rp = new rpt_QuyetDinhTCKoDVTL();
+                }
                 rp.SetDataSource(DAL.C_KH_DotThiCong.BC_QuyetDinhThiCong(madot, "", "", ""));
                // crystalReportViewer1.ReportSource = rp;
 

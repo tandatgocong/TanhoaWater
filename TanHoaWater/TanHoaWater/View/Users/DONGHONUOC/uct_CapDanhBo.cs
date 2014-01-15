@@ -1108,9 +1108,14 @@ namespace TanHoaWater.View.Users.DONGHONUOC
                 {
                     this.cbToDocSo.SelectedIndex = 1;
                 }
-                else if (t2 > 30)
+                else if (t2 > 30 && t2 < 50)
                 {
                     this.cbToDocSo.SelectedIndex = 2;
+
+                }
+                else if (t2 > 50)
+                {
+                    this.cbToDocSo.SelectedIndex = 3;
 
                 }
                 string dot = t1 + "";
@@ -1181,7 +1186,12 @@ namespace TanHoaWater.View.Users.DONGHONUOC
                          else if (this.cbToDocSo.SelectedIndex == 2)
                          {
                              tods = 3;
-                             TODS = "TP";
+                             TODS = "TP01";
+                         }
+                         else if (this.cbToDocSo.SelectedIndex == 3)
+                         {
+                             tods = 4;
+                             TODS = "TP02";
                          }
                          else
                          {

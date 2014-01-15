@@ -52,6 +52,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dateNgayKD = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
+            this.label25 = new System.Windows.Forms.Label();
             this.txtSoNha = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.btHuyLoTrinh = new DevComponents.DotNetBar.ButtonX();
             this.txtDHNDUONG = new System.Windows.Forms.TextBox();
@@ -119,6 +121,26 @@
             this.comboItem73 = new DevComponents.Editors.ComboItem();
             this.comboItem74 = new DevComponents.Editors.ComboItem();
             this.comboItem75 = new DevComponents.Editors.ComboItem();
+            this.comboItem65 = new DevComponents.Editors.ComboItem();
+            this.comboItem76 = new DevComponents.Editors.ComboItem();
+            this.comboItem77 = new DevComponents.Editors.ComboItem();
+            this.comboItem78 = new DevComponents.Editors.ComboItem();
+            this.comboItem79 = new DevComponents.Editors.ComboItem();
+            this.comboItem80 = new DevComponents.Editors.ComboItem();
+            this.comboItem81 = new DevComponents.Editors.ComboItem();
+            this.comboItem82 = new DevComponents.Editors.ComboItem();
+            this.comboItem83 = new DevComponents.Editors.ComboItem();
+            this.comboItem84 = new DevComponents.Editors.ComboItem();
+            this.comboItem85 = new DevComponents.Editors.ComboItem();
+            this.comboItem86 = new DevComponents.Editors.ComboItem();
+            this.comboItem87 = new DevComponents.Editors.ComboItem();
+            this.comboItem88 = new DevComponents.Editors.ComboItem();
+            this.comboItem89 = new DevComponents.Editors.ComboItem();
+            this.comboItem90 = new DevComponents.Editors.ComboItem();
+            this.comboItem91 = new DevComponents.Editors.ComboItem();
+            this.comboItem92 = new DevComponents.Editors.ComboItem();
+            this.comboItem93 = new DevComponents.Editors.ComboItem();
+            this.comboItem94 = new DevComponents.Editors.ComboItem();
             this.cbDotDS = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.comboItem1 = new DevComponents.Editors.ComboItem();
             this.comboItem2 = new DevComponents.Editors.ComboItem();
@@ -190,10 +212,6 @@
             this.btInBangKe = new DevComponents.DotNetBar.ButtonX();
             this.reflectionLabel2 = new DevComponents.DotNetBar.Controls.ReflectionLabel();
             this.gridHoanCong = new DevComponents.DotNetBar.Controls.DataGridViewX();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.dateNgayKD = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
-            this.label25 = new System.Windows.Forms.Label();
             this.hc_SoDot = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hc_SHS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hc_chonin = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -224,11 +242,14 @@
             this.G_DUONG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.G_SONHA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DHN_NGAYKD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.comboItem95 = new DevComponents.Editors.ComboItem();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dateNgayKD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateNgayThiCong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridHoanCong)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateNgayKD)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -316,6 +337,60 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1021, 629);
             this.panel1.TabIndex = 701;
+            // 
+            // dateNgayKD
+            // 
+            // 
+            // 
+            // 
+            this.dateNgayKD.BackgroundStyle.Class = "DateTimeInputBackground";
+            this.dateNgayKD.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
+            this.dateNgayKD.ButtonDropDown.Visible = true;
+            this.dateNgayKD.CustomFormat = "dd/MM/yyyy";
+            this.dateNgayKD.ForeColor = System.Drawing.Color.Red;
+            this.dateNgayKD.Format = DevComponents.Editors.eDateTimePickerFormat.Custom;
+            this.dateNgayKD.Location = new System.Drawing.Point(258, 84);
+            // 
+            // 
+            // 
+            this.dateNgayKD.MonthCalendar.AnnuallyMarkedDates = new System.DateTime[0];
+            // 
+            // 
+            // 
+            this.dateNgayKD.MonthCalendar.BackgroundStyle.BackColor = System.Drawing.SystemColors.Window;
+            this.dateNgayKD.MonthCalendar.ClearButtonVisible = true;
+            // 
+            // 
+            // 
+            this.dateNgayKD.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
+            this.dateNgayKD.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90;
+            this.dateNgayKD.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
+            this.dateNgayKD.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.dateNgayKD.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
+            this.dateNgayKD.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1;
+            this.dateNgayKD.MonthCalendar.DisplayMonth = new System.DateTime(2011, 11, 1, 0, 0, 0, 0);
+            this.dateNgayKD.MonthCalendar.MarkedDates = new System.DateTime[0];
+            this.dateNgayKD.MonthCalendar.MonthlyMarkedDates = new System.DateTime[0];
+            // 
+            // 
+            // 
+            this.dateNgayKD.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.dateNgayKD.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90;
+            this.dateNgayKD.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.dateNgayKD.MonthCalendar.TodayButtonVisible = true;
+            this.dateNgayKD.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
+            this.dateNgayKD.Name = "dateNgayKD";
+            this.dateNgayKD.Size = new System.Drawing.Size(108, 25);
+            this.dateNgayKD.TabIndex = 163;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(192, 87);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(66, 17);
+            this.label25.TabIndex = 162;
+            this.label25.Text = "Ngày KĐ";
             // 
             // txtSoNha
             // 
@@ -439,7 +514,8 @@
             this.cbToDocSo.Items.AddRange(new object[] {
             this.comboItem61,
             this.comboItem62,
-            this.comboItem63});
+            this.comboItem63,
+            this.comboItem95});
             this.cbToDocSo.Location = new System.Drawing.Point(546, 185);
             this.cbToDocSo.Name = "cbToDocSo";
             this.cbToDocSo.Size = new System.Drawing.Size(136, 25);
@@ -455,7 +531,7 @@
             // 
             // comboItem63
             // 
-            this.comboItem63.Text = "TÂN PHÚ";
+            this.comboItem63.Text = "TÂN PHÚ 01";
             // 
             // cbMayDocSo
             // 
@@ -516,7 +592,27 @@
             this.comboItem72,
             this.comboItem73,
             this.comboItem74,
-            this.comboItem75});
+            this.comboItem75,
+            this.comboItem65,
+            this.comboItem76,
+            this.comboItem77,
+            this.comboItem78,
+            this.comboItem79,
+            this.comboItem80,
+            this.comboItem81,
+            this.comboItem82,
+            this.comboItem83,
+            this.comboItem84,
+            this.comboItem85,
+            this.comboItem86,
+            this.comboItem87,
+            this.comboItem88,
+            this.comboItem89,
+            this.comboItem90,
+            this.comboItem91,
+            this.comboItem92,
+            this.comboItem93,
+            this.comboItem94});
             this.cbMayDocSo.Location = new System.Drawing.Point(415, 186);
             this.cbMayDocSo.Name = "cbMayDocSo";
             this.cbMayDocSo.Size = new System.Drawing.Size(73, 25);
@@ -829,6 +925,127 @@
             this.comboItem75.TextAlignment = System.Drawing.StringAlignment.Center;
             this.comboItem75.TextLineAlignment = System.Drawing.StringAlignment.Center;
             // 
+            // comboItem65
+            // 
+            this.comboItem65.Text = "51";
+            this.comboItem65.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.comboItem65.TextLineAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // comboItem76
+            // 
+            this.comboItem76.ImagePosition = System.Windows.Forms.HorizontalAlignment.Center;
+            this.comboItem76.Text = "52";
+            this.comboItem76.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.comboItem76.TextLineAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // comboItem77
+            // 
+            this.comboItem77.Text = "53";
+            this.comboItem77.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.comboItem77.TextLineAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // comboItem78
+            // 
+            this.comboItem78.Text = "54";
+            this.comboItem78.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.comboItem78.TextLineAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // comboItem79
+            // 
+            this.comboItem79.Text = "55";
+            this.comboItem79.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.comboItem79.TextLineAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // comboItem80
+            // 
+            this.comboItem80.Text = "56";
+            this.comboItem80.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.comboItem80.TextLineAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // comboItem81
+            // 
+            this.comboItem81.Text = "57";
+            this.comboItem81.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.comboItem81.TextLineAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // comboItem82
+            // 
+            this.comboItem82.Text = "58";
+            this.comboItem82.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.comboItem82.TextLineAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // comboItem83
+            // 
+            this.comboItem83.Text = "59";
+            this.comboItem83.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.comboItem83.TextLineAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // comboItem84
+            // 
+            this.comboItem84.Text = "60";
+            this.comboItem84.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.comboItem84.TextLineAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // comboItem85
+            // 
+            this.comboItem85.Text = "61";
+            this.comboItem85.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.comboItem85.TextLineAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // comboItem86
+            // 
+            this.comboItem86.Text = "63";
+            this.comboItem86.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.comboItem86.TextLineAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // comboItem87
+            // 
+            this.comboItem87.Text = "63";
+            this.comboItem87.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.comboItem87.TextLineAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // comboItem88
+            // 
+            this.comboItem88.Text = "64";
+            this.comboItem88.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.comboItem88.TextLineAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // comboItem89
+            // 
+            this.comboItem89.Text = "65";
+            this.comboItem89.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.comboItem89.TextLineAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // comboItem90
+            // 
+            this.comboItem90.Text = "66";
+            this.comboItem90.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.comboItem90.TextLineAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // comboItem91
+            // 
+            this.comboItem91.Text = "67";
+            this.comboItem91.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.comboItem91.TextLineAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // comboItem92
+            // 
+            this.comboItem92.Text = "68";
+            this.comboItem92.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.comboItem92.TextLineAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // comboItem93
+            // 
+            this.comboItem93.Text = "69";
+            this.comboItem93.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.comboItem93.TextLineAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // comboItem94
+            // 
+            this.comboItem94.Text = "70";
+            this.comboItem94.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.comboItem94.TextLineAlignment = System.Drawing.StringAlignment.Center;
+            // 
             // cbDotDS
             // 
             this.cbDotDS.DisplayMember = "Text";
@@ -1077,7 +1294,7 @@
             this.label16.AutoSize = true;
             this.label16.Location = new System.Drawing.Point(18, 157);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(57, 17);
+            this.label16.Size = new System.Drawing.Size(56, 17);
             this.label16.TabIndex = 74;
             this.label16.Text = "HS CTy";
             // 
@@ -1341,7 +1558,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(683, 189);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(96, 17);
+            this.label1.Size = new System.Drawing.Size(95, 17);
             this.label1.TabIndex = 36;
             this.label1.Text = "Phiên Lộ Trình";
             // 
@@ -1614,78 +1831,6 @@
             this.gridHoanCong.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.gridHoanCong_DataError);
             this.gridHoanCong.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.gridHoanCong_EditingControlShowing);
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(701, 119);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(32, 17);
-            this.label11.TabIndex = 62;
-            this.label11.Text = "ĐM";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(801, 118);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(53, 17);
-            this.label12.TabIndex = 63;
-            this.label12.Text = "ĐM Bù";
-            // 
-            // dateNgayKD
-            // 
-            // 
-            // 
-            // 
-            this.dateNgayKD.BackgroundStyle.Class = "DateTimeInputBackground";
-            this.dateNgayKD.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
-            this.dateNgayKD.ButtonDropDown.Visible = true;
-            this.dateNgayKD.CustomFormat = "dd/MM/yyyy";
-            this.dateNgayKD.ForeColor = System.Drawing.Color.Red;
-            this.dateNgayKD.Format = DevComponents.Editors.eDateTimePickerFormat.Custom;
-            this.dateNgayKD.Location = new System.Drawing.Point(258, 84);
-            // 
-            // 
-            // 
-            this.dateNgayKD.MonthCalendar.AnnuallyMarkedDates = new System.DateTime[0];
-            // 
-            // 
-            // 
-            this.dateNgayKD.MonthCalendar.BackgroundStyle.BackColor = System.Drawing.SystemColors.Window;
-            this.dateNgayKD.MonthCalendar.ClearButtonVisible = true;
-            // 
-            // 
-            // 
-            this.dateNgayKD.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
-            this.dateNgayKD.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90;
-            this.dateNgayKD.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
-            this.dateNgayKD.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.dateNgayKD.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
-            this.dateNgayKD.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1;
-            this.dateNgayKD.MonthCalendar.DisplayMonth = new System.DateTime(2011, 11, 1, 0, 0, 0, 0);
-            this.dateNgayKD.MonthCalendar.MarkedDates = new System.DateTime[0];
-            this.dateNgayKD.MonthCalendar.MonthlyMarkedDates = new System.DateTime[0];
-            // 
-            // 
-            // 
-            this.dateNgayKD.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.dateNgayKD.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90;
-            this.dateNgayKD.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.dateNgayKD.MonthCalendar.TodayButtonVisible = true;
-            this.dateNgayKD.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
-            this.dateNgayKD.Name = "dateNgayKD";
-            this.dateNgayKD.Size = new System.Drawing.Size(108, 25);
-            this.dateNgayKD.TabIndex = 163;
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(192, 87);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(66, 17);
-            this.label25.TabIndex = 162;
-            this.label25.Text = "Ngày KĐ";
-            // 
             // hc_SoDot
             // 
             this.hc_SoDot.DataPropertyName = "DHN_SODOT";
@@ -1952,6 +2097,28 @@
             this.DHN_NGAYKD.Name = "DHN_NGAYKD";
             this.DHN_NGAYKD.Visible = false;
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(701, 119);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(32, 17);
+            this.label11.TabIndex = 62;
+            this.label11.Text = "ĐM";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(801, 118);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(53, 17);
+            this.label12.TabIndex = 63;
+            this.label12.Text = "ĐM Bù";
+            // 
+            // comboItem95
+            // 
+            this.comboItem95.Text = "TÂN PHÚ 02";
+            // 
             // UCT_CapDanhBo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -1965,9 +2132,9 @@
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dateNgayKD)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateNgayThiCong)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridHoanCong)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateNgayKD)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2148,5 +2315,26 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn G_DUONG;
         private System.Windows.Forms.DataGridViewTextBoxColumn G_SONHA;
         private System.Windows.Forms.DataGridViewTextBoxColumn DHN_NGAYKD;
+        private DevComponents.Editors.ComboItem comboItem65;
+        private DevComponents.Editors.ComboItem comboItem76;
+        private DevComponents.Editors.ComboItem comboItem77;
+        private DevComponents.Editors.ComboItem comboItem78;
+        private DevComponents.Editors.ComboItem comboItem79;
+        private DevComponents.Editors.ComboItem comboItem80;
+        private DevComponents.Editors.ComboItem comboItem81;
+        private DevComponents.Editors.ComboItem comboItem82;
+        private DevComponents.Editors.ComboItem comboItem83;
+        private DevComponents.Editors.ComboItem comboItem84;
+        private DevComponents.Editors.ComboItem comboItem85;
+        private DevComponents.Editors.ComboItem comboItem86;
+        private DevComponents.Editors.ComboItem comboItem87;
+        private DevComponents.Editors.ComboItem comboItem88;
+        private DevComponents.Editors.ComboItem comboItem89;
+        private DevComponents.Editors.ComboItem comboItem90;
+        private DevComponents.Editors.ComboItem comboItem91;
+        private DevComponents.Editors.ComboItem comboItem92;
+        private DevComponents.Editors.ComboItem comboItem93;
+        private DevComponents.Editors.ComboItem comboItem94;
+        private DevComponents.Editors.ComboItem comboItem95;
     }
 }
