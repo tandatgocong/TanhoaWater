@@ -38,6 +38,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new DevComponents.DotNetBar.TabControl();
             this.tabDanhSachDot = new DevComponents.DotNetBar.TabControlPanel();
+            this.btDonCapPhep = new DevComponents.DotNetBar.ButtonX();
             this.btExport = new DevComponents.DotNetBar.ButtonX();
             this.btCapNhatCoPhep = new DevComponents.DotNetBar.ButtonX();
             this.dateNgayCoPhep = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
@@ -74,10 +75,10 @@
             this.next = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tabItem1 = new DevComponents.DotNetBar.TabItem(this.components);
-            this.tabHoSoDuAn = new DevComponents.DotNetBar.TabControlPanel();
-            this.tabItem3 = new DevComponents.DotNetBar.TabItem(this.components);
             this.tabCapNhatDS = new DevComponents.DotNetBar.TabControlPanel();
             this.tabItem2 = new DevComponents.DotNetBar.TabItem(this.components);
+            this.tabHoSoDuAn = new DevComponents.DotNetBar.TabControlPanel();
+            this.tabItem3 = new DevComponents.DotNetBar.TabItem(this.components);
             this.reflectionLabel1 = new DevComponents.DotNetBar.Controls.ReflectionLabel();
             ((System.ComponentModel.ISupportInitialize)(this.tabControl1)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -112,8 +113,8 @@
             new DevComponents.DotNetBar.BackgroundColorBlend(System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(254))))), 1F)});
             this.tabControl1.ColorScheme.TabItemSelectedText = System.Drawing.Color.Red;
             this.tabControl1.Controls.Add(this.tabDanhSachDot);
-            this.tabControl1.Controls.Add(this.tabHoSoDuAn);
             this.tabControl1.Controls.Add(this.tabCapNhatDS);
+            this.tabControl1.Controls.Add(this.tabHoSoDuAn);
             this.tabControl1.Location = new System.Drawing.Point(3, 36);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedTabFont = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -129,6 +130,7 @@
             // 
             // tabDanhSachDot
             // 
+            this.tabDanhSachDot.Controls.Add(this.btDonCapPhep);
             this.tabDanhSachDot.Controls.Add(this.btExport);
             this.tabDanhSachDot.Controls.Add(this.btCapNhatCoPhep);
             this.tabDanhSachDot.Controls.Add(this.dateNgayCoPhep);
@@ -170,13 +172,27 @@
             this.tabDanhSachDot.TabIndex = 1;
             this.tabDanhSachDot.TabItem = this.tabItem1;
             // 
+            // btDonCapPhep
+            // 
+            this.btDonCapPhep.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btDonCapPhep.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btDonCapPhep.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btDonCapPhep.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btDonCapPhep.Location = new System.Drawing.Point(758, 421);
+            this.btDonCapPhep.Name = "btDonCapPhep";
+            this.btDonCapPhep.Size = new System.Drawing.Size(175, 26);
+            this.btDonCapPhep.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
+            this.btDonCapPhep.TabIndex = 711;
+            this.btDonCapPhep.Text = "Đơn Đề Nghị Cấp Phép";
+            this.btDonCapPhep.Click += new System.EventHandler(this.btDonCapPhep_Click);
+            // 
             // btExport
             // 
             this.btExport.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btExport.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btExport.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btExport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btExport.Location = new System.Drawing.Point(756, 434);
+            this.btExport.Location = new System.Drawing.Point(758, 481);
             this.btExport.Name = "btExport";
             this.btExport.Size = new System.Drawing.Size(173, 26);
             this.btExport.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
@@ -607,7 +623,7 @@
             this.huyDotXP.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.huyDotXP.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.huyDotXP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.huyDotXP.Location = new System.Drawing.Point(756, 466);
+            this.huyDotXP.Location = new System.Drawing.Point(758, 513);
             this.huyDotXP.Name = "huyDotXP";
             this.huyDotXP.Size = new System.Drawing.Size(175, 26);
             this.huyDotXP.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
@@ -754,30 +770,6 @@
             this.tabItem1.Text = "Danh Sách Xin Phép ĐĐ";
             this.tabItem1.Click += new System.EventHandler(this.tabItem1_Click);
             // 
-            // tabHoSoDuAn
-            // 
-            this.tabHoSoDuAn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabHoSoDuAn.Location = new System.Drawing.Point(0, 27);
-            this.tabHoSoDuAn.Name = "tabHoSoDuAn";
-            this.tabHoSoDuAn.Padding = new System.Windows.Forms.Padding(1);
-            this.tabHoSoDuAn.Size = new System.Drawing.Size(982, 560);
-            this.tabHoSoDuAn.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(254)))));
-            this.tabHoSoDuAn.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(188)))), ((int)(((byte)(227)))));
-            this.tabHoSoDuAn.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.tabHoSoDuAn.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(165)))), ((int)(((byte)(199)))));
-            this.tabHoSoDuAn.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right)
-                        | DevComponents.DotNetBar.eBorderSide.Bottom)));
-            this.tabHoSoDuAn.Style.GradientAngle = 90;
-            this.tabHoSoDuAn.TabIndex = 3;
-            this.tabHoSoDuAn.TabItem = this.tabItem3;
-            // 
-            // tabItem3
-            // 
-            this.tabItem3.AttachedControl = this.tabHoSoDuAn;
-            this.tabItem3.Name = "tabItem3";
-            this.tabItem3.Text = "Cập Nhật HS Dự Án";
-            this.tabItem3.Click += new System.EventHandler(this.tabItem3_Click);
-            // 
             // tabCapNhatDS
             // 
             this.tabCapNhatDS.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -801,6 +793,30 @@
             this.tabItem2.Name = "tabItem2";
             this.tabItem2.Text = "Cập Nhật Danh Sách Theo Đợt";
             this.tabItem2.Click += new System.EventHandler(this.tabItem2_Click);
+            // 
+            // tabHoSoDuAn
+            // 
+            this.tabHoSoDuAn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabHoSoDuAn.Location = new System.Drawing.Point(0, 27);
+            this.tabHoSoDuAn.Name = "tabHoSoDuAn";
+            this.tabHoSoDuAn.Padding = new System.Windows.Forms.Padding(1);
+            this.tabHoSoDuAn.Size = new System.Drawing.Size(982, 560);
+            this.tabHoSoDuAn.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(254)))));
+            this.tabHoSoDuAn.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(188)))), ((int)(((byte)(227)))));
+            this.tabHoSoDuAn.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.tabHoSoDuAn.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(165)))), ((int)(((byte)(199)))));
+            this.tabHoSoDuAn.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right)
+                        | DevComponents.DotNetBar.eBorderSide.Bottom)));
+            this.tabHoSoDuAn.Style.GradientAngle = 90;
+            this.tabHoSoDuAn.TabIndex = 3;
+            this.tabHoSoDuAn.TabItem = this.tabItem3;
+            // 
+            // tabItem3
+            // 
+            this.tabItem3.AttachedControl = this.tabHoSoDuAn;
+            this.tabItem3.Name = "tabItem3";
+            this.tabItem3.Text = "Cập Nhật HS Dự Án";
+            this.tabItem3.Click += new System.EventHandler(this.tabItem3_Click);
             // 
             // reflectionLabel1
             // 
@@ -883,5 +899,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn MADOTXP;
         private DevComponents.DotNetBar.TabControlPanel tabHoSoDuAn;
         private DevComponents.DotNetBar.TabItem tabItem3;
+        private DevComponents.DotNetBar.ButtonX btDonCapPhep;
     }
 }

@@ -502,5 +502,20 @@ namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
 
             
         }
+
+        private void btDonCapPhep_Click(object sender, EventArgs e)
+        {
+            string madot = "";
+            try
+            {
+                madot = dataDanhSachDaoDuong.Rows[dataDanhSachDaoDuong.CurrentRow.Index].Cells["MADOTXP"].Value + "";
+
+            }
+            catch (Exception)
+            {
+            }
+            frmDialogDonXP frm = new frmDialogDonXP(madot);
+            frm.ShowDialog();
+        }
     }
 }

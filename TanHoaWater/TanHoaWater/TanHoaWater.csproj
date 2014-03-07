@@ -739,6 +739,12 @@
     <Compile Include="View\Users\KEHOACH\HS_KhachHang.Designer.cs">
       <DependentUpon>HS_KhachHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Users\KEHOACH\XINPHEPDD\BC\rpt_XinPhep2014.cs">
+      <DependentUpon>rpt_XinPhep2014.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="View\Users\KEHOACH\XINPHEPDD\BC\rpt_XinPhep.cs">
       <DependentUpon>rpt_XinPhep.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -765,6 +771,12 @@
     </Compile>
     <Compile Include="View\Users\KEHOACH\DOTTHICONG\frmDialogPrintting.Designer.cs">
       <DependentUpon>frmDialogPrintting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Users\KEHOACH\XINPHEPDD\frmDialogDonXP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Users\KEHOACH\XINPHEPDD\frmDialogDonXP.Designer.cs">
+      <DependentUpon>frmDialogDonXP.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Users\KEHOACH\XINPHEPDD\tab_XinPhepDuAn.cs">
       <SubType>UserControl</SubType>
@@ -1420,6 +1432,10 @@
       <DependentUpon>HS_KhachHang.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\KEHOACH\XINPHEPDD\BC\rpt_XinPhep2014.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_XinPhep2014.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Users\KEHOACH\XINPHEPDD\BC\rpt_XinPhep.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_XinPhep.cs</LastGenOutput>
@@ -1430,6 +1446,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\KEHOACH\DOTTHICONG\frmDialogPrintting.resx">
       <DependentUpon>frmDialogPrintting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\KEHOACH\XINPHEPDD\frmDialogDonXP.resx">
+      <DependentUpon>frmDialogDonXP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\KEHOACH\XINPHEPDD\tab_XinPhepDuAn.resx">
       <DependentUpon>tab_XinPhepDuAn.cs</DependentUpon>

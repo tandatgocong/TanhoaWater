@@ -1273,6 +1273,14 @@ namespace TanHoaWater.View.Users.TinhDuToan
 	                    }                        
                         congtacbg.CREATEBY = DAL.C_USERS._userName;
                         congtacbg.CREATEDATE = DateTime.Now;
+                        try
+                        {
+                            DAL.LinQConnection.ExecuteCommand_("DELETE FROM BG_CONGTACBANGIA where SHS='" + congtacbg.SHS + "' AND MAHIEU='" + congtacbg.MAHIEU + "' AND LOAISN='" + congtacbg.LOAISN + "' "); 
+                        }
+                        catch (Exception ex)
+                        {
+                            log.Error(ex.ToString());
+                        }
                         DAL.C_CongTacBangGia.InsertCongTacBG(congtacbg);
 
                         //DAL.C_BG_KICHTHUOCPHUIDAO.InsertKTPD(phuidao);
@@ -2073,7 +2081,7 @@ namespace TanHoaWater.View.Users.TinhDuToan
            if (!"".Equals(_shs))
             {
                /////
-                string updateDanhBo = "UPDATE [DON_KHACHHANG] SET DANHBO='"+this+"' WHERE SHS=''";
+                //string updateDanhBo = "UPDATE [DON_KHACHHANG] SET DANHBO='"+this+"' WHERE SHS=''";
                /////
                 string logText = "";
                 try

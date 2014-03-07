@@ -512,6 +512,37 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
             }
         }
 
+        void UpdateGrid(int index)
+        {
+         //   MessageBox.Show(this, index.ToString());
+            try
+            {
+                this.gridHoanCong.Rows[index].Cells["hc_TLK"].Value = this.CoTLK.Text;
+                this.gridHoanCong.Rows[index].Cells["hc_ChiSo"].Value = this.txtChiSo.Text;
+                this.gridHoanCong.Rows[index].Cells["hc_SoTLK"].Value = this.txtSoThan.Text;
+                this.gridHoanCong.Rows[index].Cells["gr_TenDongHo"].Value = this.txtHieuDN.Text;
+                this.gridHoanCong.Rows[index].Cells["hc_NgayTC"].Value = this.txtNgayTC.Value;
+
+                try
+                {
+                    this.gridHoanCong.Rows[index].Cells["hc_DHN"].Value = this.ckChuyenDHN.Checked;
+                }
+                catch (Exception)
+                {
+
+                    this.ckChuyenDHN.Checked = true;
+                }
+
+            }
+            catch (Exception)
+            {
+            }
+            
+           // gridHoanCong.DataSource = DAL.C_KH_HoanCong.getListHoanCong(this.cbDotTC.Text, 0);
+
+            
+
+        }
         private void buttonX2_Click(object sender, EventArgs e)
         {
             string shs = this.txtSoHoSo.Text;
@@ -565,14 +596,14 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
 
             }
 
-
+            List<KH_HOSOKHACHHANG> tlk = DAL.C_KH_HoSoKhachHang.ListSoThanTLK(sothanTLK, shs);
             if (checktrungsothan(sothanTLK + "", shs) > 1)
             {
-                MessageBox.Show(this, "Số Thân TLK Đã Tồn Tại.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(this, "Số Thân TLK Đã Tồn Tại. Kiểm tra Đợt Thi Công : " +this.cbDotTC.Text, "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            else if (DAL.C_KH_HoSoKhachHang.checkSoThanTLK(sothanTLK, shs) >= 1)
+            else if (tlk.Count > 1)
             {
-                MessageBox.Show(this, "Số Thân TLK Đã Tồn Tại.", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(this, "Số Thân TLK Đã Tồn Tại. Kiểm Tra SHS-Đợt TC : [" + tlk[0].SHS + "-" + tlk[0].MADOTTC + "] và [" + tlk[1].SHS + "-" + tlk[1].MADOTTC + "]", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
@@ -583,7 +614,8 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
                     UpdateDocSo();
                     //
                     MessageBox.Show(this, "Cập Nhật Thông Tin Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    gridHoanCong.DataSource = DAL.C_KH_HoanCong.getListHoanCong(this.cbDotTC.Text, 0);
+                    ///gridHoanCong.DataSource = DAL.C_KH_HoanCong.getListHoanCong(this.cbDotTC.Text, 0);
+                    UpdateGrid(this.gridHoanCong.CurrentCell.RowIndex);
                     Refresh();
                 }
                 else
