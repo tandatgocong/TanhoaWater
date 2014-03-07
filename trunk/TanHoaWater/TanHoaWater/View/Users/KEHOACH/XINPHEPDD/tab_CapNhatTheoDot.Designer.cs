@@ -45,6 +45,14 @@
             this.txtGhiChu = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.checkLayBangGia = new System.Windows.Forms.CheckBox();
             this.GridViewPhuiDao = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SHS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phuidaoKetCau = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phudaoTenKetCau = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.g_Dai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.g_RONG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.g_Sau = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phuiKetCau = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gridXiPhepDD = new DevComponents.DotNetBar.Controls.DataGridViewX();
             this.gridMaHS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gridHoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,14 +71,7 @@
             this.cbDonViTaiLap = new System.Windows.Forms.ComboBox();
             this.btThem = new DevComponents.DotNetBar.ButtonX();
             this.btExport = new DevComponents.DotNetBar.ButtonX();
-            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SHS = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phuidaoKetCau = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phudaoTenKetCau = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.g_Dai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.g_RONG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.g_Sau = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phuiKetCau = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btDonCapPhep = new DevComponents.DotNetBar.ButtonX();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewPhuiDao)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridXiPhepDD)).BeginInit();
             this.SuspendLayout();
@@ -238,6 +239,63 @@
             this.GridViewPhuiDao.Size = new System.Drawing.Size(480, 140);
             this.GridViewPhuiDao.TabIndex = 7;
             this.GridViewPhuiDao.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridViewPhuiDao_CellEndEdit);
+            // 
+            // STT
+            // 
+            this.STT.DataPropertyName = "STT";
+            this.STT.HeaderText = "STT";
+            this.STT.Name = "STT";
+            this.STT.Visible = false;
+            // 
+            // SHS
+            // 
+            this.SHS.DataPropertyName = "SHS";
+            this.SHS.HeaderText = "SHS";
+            this.SHS.Name = "SHS";
+            this.SHS.Visible = false;
+            // 
+            // phuidaoKetCau
+            // 
+            this.phuidaoKetCau.DataPropertyName = "MADANHMUC";
+            this.phuidaoKetCau.HeaderText = "Mã KC";
+            this.phuidaoKetCau.Name = "phuidaoKetCau";
+            this.phuidaoKetCau.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.phuidaoKetCau.Width = 80;
+            // 
+            // phudaoTenKetCau
+            // 
+            this.phudaoTenKetCau.DataPropertyName = "TENKETCAU";
+            this.phudaoTenKetCau.HeaderText = "Tên Kết Cấu";
+            this.phudaoTenKetCau.Name = "phudaoTenKetCau";
+            this.phudaoTenKetCau.Width = 160;
+            // 
+            // g_Dai
+            // 
+            this.g_Dai.DataPropertyName = "DAI";
+            this.g_Dai.HeaderText = "Dài";
+            this.g_Dai.Name = "g_Dai";
+            this.g_Dai.Width = 50;
+            // 
+            // g_RONG
+            // 
+            this.g_RONG.DataPropertyName = "RONG";
+            this.g_RONG.HeaderText = "Rộng";
+            this.g_RONG.Name = "g_RONG";
+            this.g_RONG.Width = 50;
+            // 
+            // g_Sau
+            // 
+            this.g_Sau.DataPropertyName = "SAU";
+            this.g_Sau.HeaderText = "Sâu";
+            this.g_Sau.Name = "g_Sau";
+            this.g_Sau.Width = 50;
+            // 
+            // phuiKetCau
+            // 
+            this.phuiKetCau.DataPropertyName = "KICHTHUOC";
+            this.phuiKetCau.HeaderText = "Kích Thước";
+            this.phuiKetCau.Name = "phuiKetCau";
+            this.phuiKetCau.Width = 240;
             // 
             // gridXiPhepDD
             // 
@@ -437,7 +495,7 @@
             this.btExport.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btExport.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btExport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btExport.Location = new System.Drawing.Point(452, 521);
+            this.btExport.Location = new System.Drawing.Point(244, 521);
             this.btExport.Name = "btExport";
             this.btExport.Size = new System.Drawing.Size(175, 26);
             this.btExport.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
@@ -445,68 +503,26 @@
             this.btExport.Text = "Xuất File Gửi Xin Phép";
             this.btExport.Click += new System.EventHandler(this.btExport_Click);
             // 
-            // STT
+            // btDonCapPhep
             // 
-            this.STT.DataPropertyName = "STT";
-            this.STT.HeaderText = "STT";
-            this.STT.Name = "STT";
-            this.STT.Visible = false;
-            // 
-            // SHS
-            // 
-            this.SHS.DataPropertyName = "SHS";
-            this.SHS.HeaderText = "SHS";
-            this.SHS.Name = "SHS";
-            this.SHS.Visible = false;
-            // 
-            // phuidaoKetCau
-            // 
-            this.phuidaoKetCau.DataPropertyName = "MADANHMUC";
-            this.phuidaoKetCau.HeaderText = "Mã KC";
-            this.phuidaoKetCau.Name = "phuidaoKetCau";
-            this.phuidaoKetCau.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.phuidaoKetCau.Width = 80;
-            // 
-            // phudaoTenKetCau
-            // 
-            this.phudaoTenKetCau.DataPropertyName = "TENKETCAU";
-            this.phudaoTenKetCau.HeaderText = "Tên Kết Cấu";
-            this.phudaoTenKetCau.Name = "phudaoTenKetCau";
-            this.phudaoTenKetCau.Width = 160;
-            // 
-            // g_Dai
-            // 
-            this.g_Dai.DataPropertyName = "DAI";
-            this.g_Dai.HeaderText = "Dài";
-            this.g_Dai.Name = "g_Dai";
-            this.g_Dai.Width = 50;
-            // 
-            // g_RONG
-            // 
-            this.g_RONG.DataPropertyName = "RONG";
-            this.g_RONG.HeaderText = "Rộng";
-            this.g_RONG.Name = "g_RONG";
-            this.g_RONG.Width = 50;
-            // 
-            // g_Sau
-            // 
-            this.g_Sau.DataPropertyName = "SAU";
-            this.g_Sau.HeaderText = "Sâu";
-            this.g_Sau.Name = "g_Sau";
-            this.g_Sau.Width = 50;
-            // 
-            // phuiKetCau
-            // 
-            this.phuiKetCau.DataPropertyName = "KICHTHUOC";
-            this.phuiKetCau.HeaderText = "Kích Thước";
-            this.phuiKetCau.Name = "phuiKetCau";
-            this.phuiKetCau.Width = 240;
+            this.btDonCapPhep.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btDonCapPhep.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btDonCapPhep.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btDonCapPhep.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btDonCapPhep.Location = new System.Drawing.Point(437, 521);
+            this.btDonCapPhep.Name = "btDonCapPhep";
+            this.btDonCapPhep.Size = new System.Drawing.Size(175, 26);
+            this.btDonCapPhep.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
+            this.btDonCapPhep.TabIndex = 713;
+            this.btDonCapPhep.Text = "Đơn Đề Nghị Cấp Phép";
+            this.btDonCapPhep.Click += new System.EventHandler(this.btDonCapPhep_Click);
             // 
             // tab_CapNhatTheoDot
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
+            this.Controls.Add(this.btDonCapPhep);
             this.Controls.Add(this.btExport);
             this.Controls.Add(this.btThem);
             this.Controls.Add(this.cbDonViTaiLap);
@@ -584,5 +600,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn g_RONG;
         private System.Windows.Forms.DataGridViewTextBoxColumn g_Sau;
         private System.Windows.Forms.DataGridViewTextBoxColumn phuiKetCau;
+        private DevComponents.DotNetBar.ButtonX btDonCapPhep;
     }
 }

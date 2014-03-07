@@ -160,20 +160,23 @@ namespace TanHoaWater.DAL
             return result;
         }
 
-        
 
-        public static int checkSoThanTLK(string sodotxp,string shs)
+
+        public static List<KH_HOSOKHACHHANG> ListSoThanTLK(string sodotxp, string shs)
         {
-            TanHoaDataContext db = new TanHoaDataContext();
-            SqlConnection conn = new SqlConnection(db.Connection.ConnectionString);
-            conn.Open();
-            string sql = " SELECT COUNT(*) ";
-            sql += "  FROM KH_HOSOKHACHHANG  ";
-            sql += " WHERE SOTHANTLK='" + sodotxp + "' AND SHS <> '"+shs+"'";
-            SqlCommand cmd = new SqlCommand(sql, conn);
-            int result = Convert.ToInt32(cmd.ExecuteScalar());
-            conn.Close();
-            return result;
+            //SqlConnection conn = new SqlConnection(db.Connection.ConnectionString);
+            //conn.Open();
+            //string sql = " SELECT COUNT(*) ";
+            //sql += "  FROM KH_HOSOKHACHHANG  ";
+            //sql += " WHERE SOTHANTLK='" + sodotxp + "' AND SHS <> '"+shs+"'";
+            //SqlCommand cmd = new SqlCommand(sql, conn);
+            //int result = Convert.ToInt32(cmd.ExecuteScalar());
+            //conn.Close();
+            //return result;
+
+            var obj = from dd in db.KH_HOSOKHACHHANGs where dd.SHS == shs && dd.SOTHANTLK==sodotxp select dd;
+            return obj.ToList();
+
         }
         
         public static int checkSoDanhBo(string sodanhbo)
