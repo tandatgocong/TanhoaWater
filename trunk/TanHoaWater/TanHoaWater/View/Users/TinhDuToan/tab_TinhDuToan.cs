@@ -135,7 +135,7 @@ namespace TanHoaWater.View.Users.TinhDuToan
                     GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells["phuidao_dvt"].Value = dmvt.DVT;
                     if (mahieuvt.Equals("TNHA")) {
                         GridPhuiDao.Rows[GridPhuiDao.CurrentRow.Index].Cells["phuidao_Daii"].Value = this.txtSoHo.Value;
-                    }
+                    }                   
                 }
                 else
                 {
@@ -145,6 +145,8 @@ namespace TanHoaWater.View.Users.TinhDuToan
                 }
                 //Utilities.DataGridV.formatRows(GridPhuiDao);
             }
+            view = true;
+            loadcongtac = true;
 
         }
         private void GridPhuiDao_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
