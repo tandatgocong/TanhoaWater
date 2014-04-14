@@ -596,8 +596,9 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
 
             }
 
-            List<KH_HOSOKHACHHANG> tlk = DAL.C_KH_HoSoKhachHang.ListSoThanTLK(sothanTLK, shs);
-            if (checktrungsothan(sothanTLK + "", shs) > 1)
+            List<KH_HOSOKHACHHANG> tlk = DAL.C_KH_HoSoKhachHang.ListSoThanTLK(sothanTLK.Trim(), shs);
+
+            if (checktrungsothan(sothanTLK.Trim() + "", shs) > 0)
             {
                 MessageBox.Show(this, "Số Thân TLK Đã Tồn Tại. Kiểm tra Đợt Thi Công : " +this.cbDotTC.Text, "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
