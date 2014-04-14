@@ -36,6 +36,8 @@ namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
             rp.SetParameterValue("congtac", this.txtCongTac.Text);
             rp.SetParameterValue("tungay", TUNGAY);
             rp.SetParameterValue("denngay", DENNGAY);
+            rp.SetParameterValue("tc1", this.thicong.Text);       
+            
             crystalReportViewer1.ReportSource = rp;
         }
 
