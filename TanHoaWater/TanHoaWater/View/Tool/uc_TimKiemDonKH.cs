@@ -221,6 +221,12 @@ namespace TanHoaWater.View.Tool
                                         else
                                         {
                                             title = "HỒ SƠ CHƯA LÊN ĐỢT <br/> THI CÔNG";
+                                            if (donkh.TRONGAITHIETKE == true)
+                                            {
+                                                title = "HỒ SƠ TRỞ NGẠI THI CÔNG";
+                                                noidungtrongai = donkh.NOIDUNGTRONGAI;
+                                            }
+
                                         }
 
                                         if (hoskh.TRONGAI == true)
@@ -239,7 +245,11 @@ namespace TanHoaWater.View.Tool
                                         else {
                                             title = "HỒ SƠ ĐÃ HOÀN TẤT THIẾT KẾ";
                                         }
-                                    
+                                        if (donkh.TRONGAITHIETKE == true)
+                                        {
+                                            title = "HỒ SƠ TRỞ NGẠI THI CÔNG";
+                                            noidungtrongai = donkh.NOIDUNGTRONGAI;
+                                        }
                                     }
 
                                 }
