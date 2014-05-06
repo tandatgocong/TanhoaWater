@@ -174,7 +174,7 @@ namespace TanHoaWater.DAL
             //conn.Close();
             //return result;
 
-            var obj = from dd in db.KH_HOSOKHACHHANGs where dd.SOTHANTLK==sodotxp select dd;
+            var obj = from dd in db.KH_HOSOKHACHHANGs where dd.SOTHANTLK==sodotxp && dd.SHS !=shs select dd;
             return obj.ToList();
 
         }

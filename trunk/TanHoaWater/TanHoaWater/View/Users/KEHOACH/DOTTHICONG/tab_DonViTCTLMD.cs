@@ -244,7 +244,7 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
                     {
                         dovtc.TENCONGTY = tencty;
                         dovtc.SOHOPDONG = sohop;
-                        dovtc.NGAYKYHD = this.dottc_NgayKyhd.Value.Date;
+                        dovtc.NGAYKYHD = this.gstl_NgayKyHD.Value.Date;
                         dovtc.XOA = false;
                         dovtc.MODIFYDATE = DateTime.Now;
                         dovtc.MODIFYBY = DAL.C_USERS._userName;

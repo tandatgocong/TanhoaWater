@@ -602,9 +602,9 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
             {
                 MessageBox.Show(this, "Số Thân TLK Đã Tồn Tại. Kiểm tra Đợt Thi Công : " +this.cbDotTC.Text, "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            else if (tlk.Count > 1)
+            else if (tlk.Count > 0)
             {
-                MessageBox.Show(this, "Số Thân TLK Đã Tồn Tại. Kiểm Tra SHS-Đợt TC : [" + tlk[0].SHS + "-" + tlk[0].MADOTTC + "] và [" + tlk[1].SHS + "-" + tlk[1].MADOTTC + "]", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(this, "Số Thân TLK Đã Tồn Tại. Kiểm Tra SHS-Đợt TC : [" + tlk[0].SHS + "-" + tlk[0].MADOTTC + "] ", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {

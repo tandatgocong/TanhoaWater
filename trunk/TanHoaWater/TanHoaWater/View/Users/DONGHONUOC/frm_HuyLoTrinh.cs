@@ -27,9 +27,9 @@ namespace TanHoaWater.View.Users.DONGHONUOC
         TB_DULIEUKHACHHANG khachhang = null;
         void LoadThongTinDB()
         {
-            string sodanhbo = this.txtDanhBo.Text.Replace("-", "");
-            if (sodanhbo.Length == 11)
-            {
+            string sodanhbo = this.txtDanhBo.Text.Replace("-", "").Replace("_","");
+            //if (sodanhbo.Length == 11)
+            //{
                 khachhang = DULIEUKH.C_DuLieuKhachHang.finByDanhBo(sodanhbo);
                 if (khachhang != null)
                 {
@@ -69,7 +69,7 @@ namespace TanHoaWater.View.Users.DONGHONUOC
                     txtGhiChu.Text = "";
                 }
                 
-            }
+            //}
         }
 
         public void Refesh()
