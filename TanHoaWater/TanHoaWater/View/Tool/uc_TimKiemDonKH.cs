@@ -50,6 +50,8 @@ namespace TanHoaWater.View.Tool
                    // donkh = DAL.C_DonKhachHang.searchTimKiemDon(donkh.HOSOCHA);
                     txtTapThe.Text = donkh.HOSOCHA;
                 //}
+                    this.txtGhiChu.Text = donkh.GHICHU;
+
                 if (donkh.NGAYCHUYEN_HOSO != null)
                 {
                     this.txtNgayGiaoTTK.Text = Utilities.DateToString.NgayVNVN(donkh.NGAYCHUYEN_HOSO.Value);
