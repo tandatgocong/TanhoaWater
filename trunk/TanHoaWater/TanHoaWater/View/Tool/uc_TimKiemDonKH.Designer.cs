@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.searchDiaChi = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.searchHoTenKH = new System.Windows.Forms.TextBox();
@@ -38,7 +38,23 @@
             this.btSearch = new DevComponents.DotNetBar.ButtonX();
             this.buttonX2 = new DevComponents.DotNetBar.ButtonX();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.lbsohoso = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.next = new System.Windows.Forms.PictureBox();
+            this.lbPaing = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.g_SoHoSo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gr_HoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DIACHI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gr_DienThoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LOAIHS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NGAYNHAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ChoDanhBo = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.label22 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtGhiChu = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.label31 = new System.Windows.Forms.Label();
             this.txtTuNgay = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtTapThe = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtDenNgay = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -97,29 +113,13 @@
             this.SearchMaHoSo = new System.Windows.Forms.TextBox();
             this.searchDienThoai = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.lbsohoso = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.next = new System.Windows.Forms.PictureBox();
-            this.lbPaing = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.g_SoHoSo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gr_HoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DIACHI = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gr_DienThoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LOAIHS = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NGAYNHAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ChoDanhBo = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
-            this.txtGhiChu = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.groupPanel1.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.next)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // searchDiaChi
@@ -228,6 +228,171 @@
             this.groupPanel1.TabIndex = 143;
             this.groupPanel1.Text = "Danh Sách Hồ Sơ Khách Hàng";
             // 
+            // panel2
+            // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.lbsohoso);
+            this.panel2.Controls.Add(this.pictureBox2);
+            this.panel2.Controls.Add(this.next);
+            this.panel2.Controls.Add(this.lbPaing);
+            this.panel2.Controls.Add(this.dataGridView1);
+            this.panel2.Controls.Add(this.ChoDanhBo);
+            this.panel2.Controls.Add(this.label22);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(603, 558);
+            this.panel2.TabIndex = 174;
+            // 
+            // lbsohoso
+            // 
+            this.lbsohoso.AutoSize = true;
+            this.lbsohoso.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbsohoso.ForeColor = System.Drawing.Color.Red;
+            this.lbsohoso.Location = new System.Drawing.Point(2, 517);
+            this.lbsohoso.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbsohoso.Name = "lbsohoso";
+            this.lbsohoso.Size = new System.Drawing.Size(25, 19);
+            this.lbsohoso.TabIndex = 174;
+            this.lbsohoso.Text = "db";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox2.Image = global::TanHoaWater.Properties.Resources.Previous;
+            this.pictureBox2.Location = new System.Drawing.Point(508, 517);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(19, 16);
+            this.pictureBox2.TabIndex = 172;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pre);
+            // 
+            // next
+            // 
+            this.next.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.next.Image = global::TanHoaWater.Properties.Resources.Next;
+            this.next.Location = new System.Drawing.Point(567, 517);
+            this.next.Name = "next";
+            this.next.Size = new System.Drawing.Size(19, 16);
+            this.next.TabIndex = 171;
+            this.next.TabStop = false;
+            this.next.Click += new System.EventHandler(this.next_Click);
+            // 
+            // lbPaing
+            // 
+            this.lbPaing.AutoSize = true;
+            this.lbPaing.BackColor = System.Drawing.Color.Transparent;
+            this.lbPaing.Location = new System.Drawing.Point(526, 517);
+            this.lbPaing.Name = "lbPaing";
+            this.lbPaing.Size = new System.Drawing.Size(45, 19);
+            this.lbPaing.TabIndex = 173;
+            this.lbPaing.Text = "20/20";
+            this.lbPaing.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.g_SoHoSo,
+            this.gr_HoTen,
+            this.DIACHI,
+            this.gr_DienThoai,
+            this.LOAIHS,
+            this.NGAYNHAN});
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView1.MultiSelect = false;
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersWidth = 20;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(599, 554);
+            this.dataGridView1.TabIndex = 170;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            // 
+            // g_SoHoSo
+            // 
+            this.g_SoHoSo.DataPropertyName = "SHS";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.g_SoHoSo.DefaultCellStyle = dataGridViewCellStyle3;
+            this.g_SoHoSo.HeaderText = "Số HS";
+            this.g_SoHoSo.Name = "g_SoHoSo";
+            this.g_SoHoSo.ReadOnly = true;
+            this.g_SoHoSo.Width = 83;
+            // 
+            // gr_HoTen
+            // 
+            this.gr_HoTen.DataPropertyName = "HOTEN";
+            this.gr_HoTen.HeaderText = "Họ Tên";
+            this.gr_HoTen.Name = "gr_HoTen";
+            this.gr_HoTen.ReadOnly = true;
+            this.gr_HoTen.Width = 190;
+            // 
+            // DIACHI
+            // 
+            this.DIACHI.DataPropertyName = "DIACHI";
+            this.DIACHI.HeaderText = "Địa Chỉ";
+            this.DIACHI.Name = "DIACHI";
+            this.DIACHI.ReadOnly = true;
+            this.DIACHI.Width = 293;
+            // 
+            // gr_DienThoai
+            // 
+            this.gr_DienThoai.DataPropertyName = "DIENTHOAI";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.gr_DienThoai.DefaultCellStyle = dataGridViewCellStyle4;
+            this.gr_DienThoai.HeaderText = "Điện Thoại";
+            this.gr_DienThoai.Name = "gr_DienThoai";
+            this.gr_DienThoai.ReadOnly = true;
+            // 
+            // LOAIHS
+            // 
+            this.LOAIHS.DataPropertyName = "LOAIHS";
+            this.LOAIHS.HeaderText = "LOAIHS";
+            this.LOAIHS.Name = "LOAIHS";
+            this.LOAIHS.ReadOnly = true;
+            this.LOAIHS.Visible = false;
+            // 
+            // NGAYNHAN
+            // 
+            this.NGAYNHAN.DataPropertyName = "NGAYNHAN";
+            this.NGAYNHAN.HeaderText = "NGAYNHAN";
+            this.NGAYNHAN.Name = "NGAYNHAN";
+            this.NGAYNHAN.ReadOnly = true;
+            this.NGAYNHAN.Visible = false;
+            // 
+            // ChoDanhBo
+            // 
+            this.ChoDanhBo.BackColor = System.Drawing.SystemColors.Window;
+            // 
+            // 
+            // 
+            this.ChoDanhBo.Border.Class = "TextBoxBorder";
+            this.ChoDanhBo.Location = new System.Drawing.Point(373, 513);
+            this.ChoDanhBo.Margin = new System.Windows.Forms.Padding(4);
+            this.ChoDanhBo.Name = "ChoDanhBo";
+            this.ChoDanhBo.ReadOnly = true;
+            this.ChoDanhBo.Size = new System.Drawing.Size(103, 26);
+            this.ChoDanhBo.TabIndex = 161;
+            this.ChoDanhBo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.ChoDanhBo.Visible = false;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Times New Roman", 10F);
+            this.label22.Location = new System.Drawing.Point(290, 518);
+            this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(84, 16);
+            this.label22.TabIndex = 159;
+            this.label22.Text = "Cho Danh Bộ";
+            this.label22.Visible = false;
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.txtGhiChu);
@@ -289,6 +454,32 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(391, 584);
             this.panel1.TabIndex = 0;
+            // 
+            // txtGhiChu
+            // 
+            this.txtGhiChu.BackColor = System.Drawing.SystemColors.Window;
+            // 
+            // 
+            // 
+            this.txtGhiChu.Border.Class = "TextBoxBorder";
+            this.txtGhiChu.Location = new System.Drawing.Point(76, 438);
+            this.txtGhiChu.Margin = new System.Windows.Forms.Padding(4);
+            this.txtGhiChu.Multiline = true;
+            this.txtGhiChu.Name = "txtGhiChu";
+            this.txtGhiChu.ReadOnly = true;
+            this.txtGhiChu.Size = new System.Drawing.Size(313, 44);
+            this.txtGhiChu.TabIndex = 688;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Times New Roman", 10F);
+            this.label31.Location = new System.Drawing.Point(10, 448);
+            this.label31.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(58, 16);
+            this.label31.TabIndex = 687;
+            this.label31.Text = "Ghi Chú:";
             // 
             // txtTuNgay
             // 
@@ -1014,194 +1205,6 @@
             this.label27.TabIndex = 144;
             this.label27.Text = "ĐT";
             // 
-            // panel2
-            // 
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2.Controls.Add(this.lbsohoso);
-            this.panel2.Controls.Add(this.pictureBox2);
-            this.panel2.Controls.Add(this.next);
-            this.panel2.Controls.Add(this.lbPaing);
-            this.panel2.Controls.Add(this.dataGridView1);
-            this.panel2.Controls.Add(this.ChoDanhBo);
-            this.panel2.Controls.Add(this.label22);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(603, 558);
-            this.panel2.TabIndex = 174;
-            // 
-            // lbsohoso
-            // 
-            this.lbsohoso.AutoSize = true;
-            this.lbsohoso.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbsohoso.ForeColor = System.Drawing.Color.Red;
-            this.lbsohoso.Location = new System.Drawing.Point(2, 517);
-            this.lbsohoso.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbsohoso.Name = "lbsohoso";
-            this.lbsohoso.Size = new System.Drawing.Size(25, 19);
-            this.lbsohoso.TabIndex = 174;
-            this.lbsohoso.Text = "db";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox2.Image = global::TanHoaWater.Properties.Resources.Previous;
-            this.pictureBox2.Location = new System.Drawing.Point(508, 517);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(19, 16);
-            this.pictureBox2.TabIndex = 172;
-            this.pictureBox2.TabStop = false;
-            // 
-            // next
-            // 
-            this.next.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.next.Image = global::TanHoaWater.Properties.Resources.Next;
-            this.next.Location = new System.Drawing.Point(567, 517);
-            this.next.Name = "next";
-            this.next.Size = new System.Drawing.Size(19, 16);
-            this.next.TabIndex = 171;
-            this.next.TabStop = false;
-            // 
-            // lbPaing
-            // 
-            this.lbPaing.AutoSize = true;
-            this.lbPaing.BackColor = System.Drawing.Color.Transparent;
-            this.lbPaing.Location = new System.Drawing.Point(526, 517);
-            this.lbPaing.Name = "lbPaing";
-            this.lbPaing.Size = new System.Drawing.Size(45, 19);
-            this.lbPaing.TabIndex = 173;
-            this.lbPaing.Text = "20/20";
-            this.lbPaing.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.g_SoHoSo,
-            this.gr_HoTen,
-            this.DIACHI,
-            this.gr_DienThoai,
-            this.LOAIHS,
-            this.NGAYNHAN});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.MultiSelect = false;
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersWidth = 20;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(599, 554);
-            this.dataGridView1.TabIndex = 170;
-            // 
-            // g_SoHoSo
-            // 
-            this.g_SoHoSo.DataPropertyName = "SHS";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.g_SoHoSo.DefaultCellStyle = dataGridViewCellStyle5;
-            this.g_SoHoSo.HeaderText = "Số HS";
-            this.g_SoHoSo.Name = "g_SoHoSo";
-            this.g_SoHoSo.ReadOnly = true;
-            this.g_SoHoSo.Width = 83;
-            // 
-            // gr_HoTen
-            // 
-            this.gr_HoTen.DataPropertyName = "HOTEN";
-            this.gr_HoTen.HeaderText = "Họ Tên";
-            this.gr_HoTen.Name = "gr_HoTen";
-            this.gr_HoTen.ReadOnly = true;
-            this.gr_HoTen.Width = 190;
-            // 
-            // DIACHI
-            // 
-            this.DIACHI.DataPropertyName = "DIACHI";
-            this.DIACHI.HeaderText = "Địa Chỉ";
-            this.DIACHI.Name = "DIACHI";
-            this.DIACHI.ReadOnly = true;
-            this.DIACHI.Width = 293;
-            // 
-            // gr_DienThoai
-            // 
-            this.gr_DienThoai.DataPropertyName = "DIENTHOAI";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.gr_DienThoai.DefaultCellStyle = dataGridViewCellStyle6;
-            this.gr_DienThoai.HeaderText = "Điện Thoại";
-            this.gr_DienThoai.Name = "gr_DienThoai";
-            this.gr_DienThoai.ReadOnly = true;
-            // 
-            // LOAIHS
-            // 
-            this.LOAIHS.DataPropertyName = "LOAIHS";
-            this.LOAIHS.HeaderText = "LOAIHS";
-            this.LOAIHS.Name = "LOAIHS";
-            this.LOAIHS.ReadOnly = true;
-            this.LOAIHS.Visible = false;
-            // 
-            // NGAYNHAN
-            // 
-            this.NGAYNHAN.DataPropertyName = "NGAYNHAN";
-            this.NGAYNHAN.HeaderText = "NGAYNHAN";
-            this.NGAYNHAN.Name = "NGAYNHAN";
-            this.NGAYNHAN.ReadOnly = true;
-            this.NGAYNHAN.Visible = false;
-            // 
-            // ChoDanhBo
-            // 
-            this.ChoDanhBo.BackColor = System.Drawing.SystemColors.Window;
-            // 
-            // 
-            // 
-            this.ChoDanhBo.Border.Class = "TextBoxBorder";
-            this.ChoDanhBo.Location = new System.Drawing.Point(373, 513);
-            this.ChoDanhBo.Margin = new System.Windows.Forms.Padding(4);
-            this.ChoDanhBo.Name = "ChoDanhBo";
-            this.ChoDanhBo.ReadOnly = true;
-            this.ChoDanhBo.Size = new System.Drawing.Size(103, 26);
-            this.ChoDanhBo.TabIndex = 161;
-            this.ChoDanhBo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.ChoDanhBo.Visible = false;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Times New Roman", 10F);
-            this.label22.Location = new System.Drawing.Point(290, 518);
-            this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(84, 16);
-            this.label22.TabIndex = 159;
-            this.label22.Text = "Cho Danh Bộ";
-            this.label22.Visible = false;
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Font = new System.Drawing.Font("Times New Roman", 10F);
-            this.label31.Location = new System.Drawing.Point(10, 448);
-            this.label31.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(58, 16);
-            this.label31.TabIndex = 687;
-            this.label31.Text = "Ghi Chú:";
-            // 
-            // txtGhiChu
-            // 
-            this.txtGhiChu.BackColor = System.Drawing.SystemColors.Window;
-            // 
-            // 
-            // 
-            this.txtGhiChu.Border.Class = "TextBoxBorder";
-            this.txtGhiChu.Location = new System.Drawing.Point(76, 438);
-            this.txtGhiChu.Margin = new System.Windows.Forms.Padding(4);
-            this.txtGhiChu.Multiline = true;
-            this.txtGhiChu.Name = "txtGhiChu";
-            this.txtGhiChu.ReadOnly = true;
-            this.txtGhiChu.Size = new System.Drawing.Size(313, 44);
-            this.txtGhiChu.TabIndex = 688;
-            // 
             // uc_TimKiemDonKH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -1225,14 +1228,14 @@
             this.Size = new System.Drawing.Size(1008, 640);
             this.Load += new System.EventHandler(this.uc_TimKiemDonKH_Load);
             this.groupPanel1.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.next)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

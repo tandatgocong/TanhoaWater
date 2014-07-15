@@ -803,9 +803,14 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
                     reportValues rpt = new reportValues(3, madot,ngaytk);
                     rpt.ShowDialog();
                 }
+                else if (tendot.Equals("Di Dời TCH"))
+                {
+                    reportValues rpt = new reportValues(4, madot,ngaytk);
+                    rpt.ShowDialog();
+                }
                 else
                 {
-                    reportValues rpt = new reportValues(1, madot,ngaytk);
+                    reportValues rpt = new reportValues(1, madot, ngaytk);
                     rpt.ShowDialog();
                 }
             }

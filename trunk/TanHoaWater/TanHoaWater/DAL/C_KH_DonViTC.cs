@@ -35,14 +35,14 @@ namespace TanHoaWater.DAL
         public static KH_DONVITHICONG findDVTCbyTENCTY(string name)
         {
             TanHoaDataContext data = new TanHoaDataContext();
-            var list = from query in data.KH_DONVITHICONGs where query.TENCONGTY == name select query;
+            var list = from query in data.KH_DONVITHICONGs where query.TENCONGTY == name && query.XOA == false select query;
             return list.SingleOrDefault();
         }
 
         public static KH_DONVIGIAMSATTL findDVGSTCbyName(string name)
         {
             TanHoaDataContext data = new TanHoaDataContext();
-            var list = from query in data.KH_DONVIGIAMSATTLs where query.TENCONGTY == name select query;
+            var list = from query in data.KH_DONVIGIAMSATTLs where query.TENCONGTY == name && query.XOA==false  select query;
             return list.SingleOrDefault();
         }
         public static KH_DONVIGIAMSATTL findDVGSTCbyID(int id)
