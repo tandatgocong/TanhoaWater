@@ -446,30 +446,60 @@ namespace TanHoaWater.View.Tool
        
         void clearText()
         {
-            this.txtNgayNhanHS.Text = "";
-            this.txtLoaiHS.Text = "";
-            this.txtNgayNhanHS.Text = "";
-            this.txtLoaiHS.Text = "";
-            this.DotNhanDon.Text = "";
-            this.NgayLenDotNhanDon.Text = "";
-            this.txtNgayGiaoTTK.Text = "";
-            this.SoDoVienTK.Text = "";
-            this.txtNgayGiaoSDV.Text = "";
-            this.txtDomViTC.Text = "";
-            this.txtNgayChuyenTC.Text = "";
-            NgayLapBG.Text = "";
-            SoTienDong.Text = "";
+
             NgayTrinhKyGD.Text = "";
-            NgayHoanTat.Text = "";
+            SoDoVienTK.Text = "";
             NgayTraHoSoKH.Text = "";
+            txtNgayGiaoTTK.Text = "";
+            txtNgayNhanHS.Text = "";
+            txtLoaiHS.Text = "";
+            DotNhanDon.Text = "";
+            txtNgayGiaoSDV.Text = "";
+            SoTienDong.Text = "";
+            NgayHoanTat.Text = "";
             DotXinPhepDD.Text = "";
             NgayXinPhepDD.Text = "";
             NgayCoPhep.Text = "";
+            NgayLapBG.Text = "";
             DotThiCong.Text = "";
-            NgayLenDotTC.Text = "";
             NgayThiCong.Text = "";
             NgayHoanCong.Text = "";
+            NgayLenDotTC.Text = "";
+            NgayLenDotNhanDon.Text = "";
+            txtDomViTC.Text = "";
+            txtNgayDongTien.Text = "";
+            txtNgayChuyenTC.Text = "";
+            txtTapThe.Text = "";
+            txtTuNgay.Text = "";
+            txtDenNgay.Text = "";
             ChoDanhBo.Text = "";
+            txtGhiChu.Text = "";
+        
+
+            //this.txtNgayNhanHS.Text = "";
+            //this.txtLoaiHS.Text = "";
+            //this.txtNgayNhanHS.Text = "";
+            //this.txtLoaiHS.Text = "";
+            //this.DotNhanDon.Text = "";
+            //this.NgayLenDotNhanDon.Text = "";
+            //this.txtNgayGiaoTTK.Text = "";
+            //this.SoDoVienTK.Text = "";
+            //this.txtNgayGiaoSDV.Text = "";
+            //this.txtDomViTC.Text = "";
+            //this.txtNgayChuyenTC.Text = "";
+            //NgayLapBG.Text = "";
+            //SoTienDong.Text = "";
+            //NgayTrinhKyGD.Text = "";
+            //NgayHoanTat.Text = "";
+            //NgayTraHoSoKH.Text = "";
+            //DotXinPhepDD.Text = "";
+            //NgayXinPhepDD.Text = "";
+            //NgayCoPhep.Text = "";
+            //DotThiCong.Text = "";
+            //NgayLenDotTC.Text = "";
+            //NgayThiCong.Text = "";
+            //NgayHoanCong.Text = "";
+            //ChoDanhBo.Text = "";
             title = "";
             noidungtrongai = "";
             this.resultNoiDung.Text = "";

@@ -8,6 +8,8 @@ using System.Text;
 using System.Windows.Forms;
 using CrystalDecisions.CrystalReports.Engine;
 using TanHoaWater.View.Users.KEHOACH.XINPHEPDD.BC;
+using System.IO;
+using System.Data.OleDb;
 
 namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
 {
@@ -21,6 +23,7 @@ namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
             this.cbMaDot.ValueMember = "MADOT";
             this.cbMaDot.DisplayMember = "MADOT";
             cbMaDot.Text = madot;
+            Load();
         }
 
         private void btPrint_Click(object sender, EventArgs e)
@@ -36,14 +39,33 @@ namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
             rp.SetParameterValue("congtac", this.txtCongTac.Text);
             rp.SetParameterValue("tungay", TUNGAY);
             rp.SetParameterValue("denngay", DENNGAY);
-            rp.SetParameterValue("tc1", this.thicong.Text);       
-            
+            rp.SetParameterValue("tc1", this.thicong.Text);
+
             crystalReportViewer1.ReportSource = rp;
         }
 
         private void btExit_Click(object sender, EventArgs e)
         {
+           
+        }
 
+        void Load()
+        {
+            string filePath = AppDomain.CurrentDomain.BaseDirectory + @"XINPHEPDAODUONG.xls";
+            if (!File.Exists(filePath))
+            {
+                System.Windows.Forms.MessageBox.Show("Không tìm thấy tập tin.");
+                return;
+            }
+            var connectionString = string.Format("Provider=Microsoft.Jet.OLEDB.4.0; data source={0}; Extended Properties=Excel 8.0;", filePath);
+            var adapter = new OleDbDataAdapter("select * from [Sheet1$]", connectionString);
+            var ds = new DataSet();
+            string tableName = "excelData";
+            adapter.Fill(ds, tableName);
+            DataTable data = ds.Tables[tableName];
+            this.thicong.Text = data.Rows[0][0].ToString();
+            //MessageBox.Show(this, data.Rows[0][0].ToString());
+            //MessageBox.Show(this, data.Rows[1][0].ToString());
         }
     }
 }

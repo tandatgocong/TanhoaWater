@@ -41,6 +41,7 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG.BC
                 panel1.Visible = false;
                 ReportDocument rp = new rpt_DanhSachHSTC_DOIMP();
                 rp.SetDataSource(DAL.C_KH_DotThiCong.BC_DanhSachDotThiCong_OC(_madotc));
+                rp.SetParameterValue("tenloai", " DỜI ĐHN MIỄN PHÍA ");
                 rp.SetParameterValue("MaCT",this.textBoxX1.Text);
                 rp.SetParameterValue("ngaytk", _ngaytk);
                 crystalReportViewer1.ReportSource = rp;
@@ -61,6 +62,17 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG.BC
                 panel1.Visible = false;
                 ReportDocument rp = new rpt_DanhSachHSTC_DOIMP_GQSC();
                 rp.SetDataSource(DAL.C_KH_DotThiCong.BC_DanhSachDotThiCong_OC(_madotc));
+                rp.SetParameterValue("MaCT", this.textBoxX1.Text);
+                rp.SetParameterValue("ngaytk", _ngaytk);
+                crystalReportViewer1.ReportSource = rp;
+                this.WindowState = FormWindowState.Maximized;
+            }
+            else if (_flag == 4)
+            {
+                panel1.Visible = false;
+                ReportDocument rp = new rpt_DanhSachHSTC_DOITCH();
+                rp.SetDataSource(DAL.C_KH_DotThiCong.BC_DanhSachDotThiCong_OC(_madotc));
+                rp.SetParameterValue("tenloai"," DỜI TRỤ CỨU HỎA ");
                 rp.SetParameterValue("MaCT", this.textBoxX1.Text);
                 rp.SetParameterValue("ngaytk", _ngaytk);
                 crystalReportViewer1.ReportSource = rp;
