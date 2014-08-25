@@ -50,7 +50,22 @@ namespace TanHoaWater.View.Users.KEHOACH
                 cbPhuongQuan.DataSource = DAL.C_Quan.getList();
                 cbPhuongQuan.ValueMember = "MAQUAN";
                 cbPhuongQuan.DisplayMember = "TENQUAN";
-               
+
+
+                this.tnLoaiCT.DataSource = DAL.C_LoaiNhanDon.getList();
+                this.tnLoaiCT.ValueMember = "LOAIDON";
+                this.tnLoaiCT.DisplayMember = "TENLOAI";
+                this.tnLoaiCT.SelectedIndex = 2;
+
+
+                tn_Quan.DataSource = DAL.C_Quan.getList();
+                tn_Quan.ValueMember = "MAQUAN";
+                tn_Quan.DisplayMember = "TENQUAN";
+
+                tnPhuong.DataSource = DAL.C_Quan.getList();
+                tnPhuong.ValueMember = "MAQUAN";
+                tnPhuong.DisplayMember = "TENQUAN";
+  
             }
             catch (Exception ex)
             {
@@ -161,6 +176,67 @@ namespace TanHoaWater.View.Users.KEHOACH
             //    log.Error(" Xem Bao Cao Tong Ket Kinh Phi Loi " + ex.Message);
 
             //}
+        }
+
+        private void btTroNgai_Click(object sender, EventArgs e)
+        {
+            //try
+            //{
+            //    DataSet ds = new DataSet();
+            //    ReportDocument rp = new rpt_BCTONGKET();
+            //    ds = DAL.C_KH_BAOCAO.BC_TONGKET();
+            //    rp.SetDataSource(ds);
+            //    rpt_Main rpt = new rpt_Main(rp);
+            //    rpt.ShowDialog();
+
+
+            try
+            {
+                int type = 1;
+                DataSet ds = new DataSet();
+
+                ReportDocument rp = new Rpt_BCTONGKET_QTB_TN();
+                if (tabItem9.IsSelected == true)
+                {
+                    ds = DAL.C_KH_BAOCAO.BC_TONGKET_TH(tnLoaiCT.SelectedValue + "", 1, "", this.tn_Quan.SelectedValue + "", Utilities.DateToString.NgayVN(trongaiTuNgay), Utilities.DateToString.NgayVN(trongaidenngay));
+                }
+                else if (tabItem10.IsSelected == true)
+                {
+                    type = 2;
+                    ds = DAL.C_KH_BAOCAO.BC_TONGKET_TH(tnLoaiCT.SelectedValue + "", 2, this.tnPhuong.SelectedValue + "", this.tnQuan2.SelectedValue + "", Utilities.DateToString.NgayVN(trongaiTuNgay), Utilities.DateToString.NgayVN(trongaidenngay));
+
+                }
+
+                rp.SetDataSource(ds);
+                rp.SetParameterValue("TUNGAY", Utilities.DateToString.NgayVN(trongaiTuNgay));
+                rp.SetParameterValue("DENNGAY", Utilities.DateToString.NgayVN(trongaidenngay));
+                rp.SetParameterValue("type", type);
+                rpt_Main rpt = new rpt_Main(rp);
+                rpt.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                log.Error(" Xem Bao Cao Tong Ket Kinh Phi Loi " + ex.Message);
+
+            }
+        }
+
+        private void tnPhuong_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                List<PHUONG> phuong = DAL.C_Phuong.ListPhuongByTenPhuong(this.tnPhuong.Text);
+                if (phuong.Count > 0)
+                {
+                    PHUONG p = phuong[0];
+                    tnQuan2.Text = p.QUAN.TENQUAN;
+
+                }
+            }
+            catch (Exception)
+            {
+
+            }
         }
     }
 }

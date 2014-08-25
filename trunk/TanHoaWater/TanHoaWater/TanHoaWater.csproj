@@ -335,6 +335,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BC_TONGKET.xsd</DependentUpon>
     </Compile>
+    <Compile Include="View\Users\KEHOACH\BAOCAOTK\rpt_BCTONGKET_QTP_TN.cs">
+      <DependentUpon>rpt_BCTONGKET_QTP_TN.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="View\Users\KEHOACH\BAOCAOTK\Rpt_BCTONGKET_QTB_TN.cs">
+      <DependentUpon>Rpt_BCTONGKET_QTB_TN.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="View\Users\KEHOACH\BAOCAOTK\Rpt_BCTONGKET_QTB.cs">
       <DependentUpon>Rpt_BCTONGKET_QTB.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -896,6 +908,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>bangkevt.xsd</DependentUpon>
     </Compile>
+    <Compile Include="View\Users\TinhDuToan\BGDieuChinh\report\rptBangGia_khtl.cs">
+      <DependentUpon>rptBangGia_khtl.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="View\Users\TinhDuToan\BGDieuChinh\report\subXDCB.cs">
       <DependentUpon>subXDCB.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -1229,6 +1247,14 @@
     <EmbeddedResource Include="View\Users\DONGHONUOC\uct_CapDanhBo.resx">
       <DependentUpon>uct_CapDanhBo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\KEHOACH\BAOCAOTK\rpt_BCTONGKET_QTP_TN.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_BCTONGKET_QTP_TN.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\KEHOACH\BAOCAOTK\Rpt_BCTONGKET_QTB_TN.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Rpt_BCTONGKET_QTB_TN.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Users\KEHOACH\BAOCAOTK\Rpt_BCTONGKET_QTB.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Rpt_BCTONGKET_QTB.cs</LastGenOutput>
@@ -1515,6 +1541,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\TinhDuToan\BGDieuChinh\frm_VatTuDieuChinh.resx">
       <DependentUpon>frm_VatTuDieuChinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\TinhDuToan\BGDieuChinh\report\rptBangGia_khtl.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptBangGia_khtl.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\TinhDuToan\BGDieuChinh\report\subXDCB.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

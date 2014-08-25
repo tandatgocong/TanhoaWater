@@ -16,14 +16,14 @@ namespace TanHoaWater.View.Users.TinhDuToan.BGDieuChinh.report {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class rptBangGiaTuTaiLap00 : ReportClass {
+    public class rptBangGia_khtl : ReportClass {
         
-        public rptBangGiaTuTaiLap00() {
+        public rptBangGia_khtl() {
         }
         
         public override string ResourceName {
             get {
-                return "rptBangGiaTuTaiLap00.rpt";
+                return "rptBangGia_khtl.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace TanHoaWater.View.Users.TinhDuToan.BGDieuChinh.report {
         
         public override string FullResourceName {
             get {
-                return "TanHoaWater.View.Users.TinhDuToan.BGDieuChinh.report.rptBangGiaTuTaiLap00.rpt";
+                return "TanHoaWater.View.Users.TinhDuToan.BGDieuChinh.report.rptBangGia_khtl.rpt";
             }
             set {
                 // Do nothing
@@ -202,9 +202,9 @@ namespace TanHoaWater.View.Users.TinhDuToan.BGDieuChinh.report {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedrptBangGiaTuTaiLap00 : Component, ICachedReport {
+    public class CachedrptBangGia_khtl : Component, ICachedReport {
         
-        public CachedrptBangGiaTuTaiLap00() {
+        public CachedrptBangGia_khtl() {
         }
         
         [Browsable(false)]
@@ -241,7 +241,7 @@ namespace TanHoaWater.View.Users.TinhDuToan.BGDieuChinh.report {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            rptBangGiaTuTaiLap00 rpt = new rptBangGiaTuTaiLap00();
+            rptBangGia_khtl rpt = new rptBangGia_khtl();
             rpt.Site = this.Site;
             return rpt;
         }

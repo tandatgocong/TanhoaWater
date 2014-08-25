@@ -1826,10 +1826,20 @@ namespace TanHoaWater.View.Users.BGDieuChinh
                 //ds.Tables.Add(TongKetChiPhi(_shs, phiC3, phiGS, phiQL));
                 ds.Tables.Add(TongKetChiPhi(_shs, phiC3, phiGS, phiQL));
 
-                double TongThanhTien = total + double.Parse(ds.Tables["BG_SUMTAILAPMATDUONG"].Rows[0][1].ToString());
+                double TongThanhTien = total;
+                try
+                {
+                    // khong tlmd
+                    TongThanhTien=total + double.Parse(ds.Tables["BG_SUMTAILAPMATDUONG"].Rows[0][1].ToString());
+
+                }
+                catch (Exception)
+                {
+                }
+
                 CrystalReportViewer r = new CrystalReportViewer();
                 ReportDocument rp = new ReportDocument();
-                if (vatTuXDCBKhachHangCap.Checked && khachangtuTaiLap==false)
+                if ((vatTuXDCBKhachHangCap.Checked && khachangtuTaiLap == false) )
                 {
 
                     rp = new rptBangGiaTuTaiLap();
@@ -1838,6 +1848,8 @@ namespace TanHoaWater.View.Users.BGDieuChinh
                 {
                     rp = new rptBangGiaTuTaiLap00();
                 }
+                else if(checkKhongTLMD.Checked)
+                    rp = new rptBangGia_khtl();
                 else
                 {
                     rp = new rptBangGia();
@@ -1919,7 +1931,8 @@ namespace TanHoaWater.View.Users.BGDieuChinh
                     {
                        
                         tinhlai = false;
-                        InsertBG_KICHTHUOCPHUIDAO();
+                        if(checkKhongTLMD.Checked==false)
+                            InsertBG_KICHTHUOCPHUIDAO();
                         InsertCONGTACBANGGIA();
                         InsertKHOILUONGXDCB();
                         INBANGIA(_shs, solandieuchinh, false);
