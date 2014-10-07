@@ -526,9 +526,15 @@ namespace TanHoaWater.DAL
                     if (ttk != null)
                     {
                         ttk.SODOVIEN = null;
+                        ttk.NGAYGIAOSDV = null;
                         ttk.NGAYNHAN = DateTime.Now.Date;
                         ttk.TRAHS = false;
                         ttk.TRONGAITHIETKE = null;
+                        ttk.NGAYTRAHS = null;
+                        ttk.BOPHANCHUYEN = null;
+                        ttk.HOANTATTK = false;
+                        ttk.NGAYHOANTATTK = null;
+
                     }
                     else
                     {

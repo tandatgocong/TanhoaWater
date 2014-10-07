@@ -62,9 +62,31 @@ namespace TanHoaWater.View.Users.KEHOACH
                 tn_Quan.ValueMember = "MAQUAN";
                 tn_Quan.DisplayMember = "TENQUAN";
 
-                tnPhuong.DataSource = DAL.C_Quan.getList();
-                tnPhuong.ValueMember = "MAQUAN";
-                tnPhuong.DisplayMember = "TENQUAN";
+                tnQuan2.DataSource = DAL.C_Quan.getList();
+                tnQuan2.ValueMember = "MAQUAN";
+                tnQuan2.DisplayMember = "TENQUAN";
+
+
+                this.tnPhuong.DataSource = DAL.C_Phuong.getListPhuong();
+                this.tnPhuong.DisplayMember = "Display";
+                this.tnPhuong.ValueMember = "Value"; 
+              
+
+                ocQuan.DataSource = DAL.C_Quan.getList();
+                ocQuan.ValueMember = "MAQUAN";
+                ocQuan.DisplayMember = "TENQUAN";
+
+
+
+                this.ocPhuong.DataSource = DAL.C_Phuong.getListPhuong();
+                this.ocPhuong.DisplayMember = "Display";
+                this.ocPhuong.ValueMember = "Value";
+
+                ocQuanPhuong.DataSource = DAL.C_Quan.getList();
+                ocQuanPhuong.ValueMember = "MAQUAN";
+                ocQuanPhuong.DisplayMember = "TENQUAN";
+
+
   
             }
             catch (Exception ex)
@@ -230,6 +252,64 @@ namespace TanHoaWater.View.Users.KEHOACH
                 {
                     PHUONG p = phuong[0];
                     tnQuan2.Text = p.QUAN.TENQUAN;
+
+                }
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+
+        private void ocView_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                int type = 4;
+                DataSet ds = new DataSet(); ReportDocument rp = new ReportDocument();
+                if ("31".Equals(this.ocQuan.SelectedValue + "") || "31".Equals(this.ocQuanPhuong.SelectedValue + ""))
+                    rp = new rpt_BCTONGKET_QTP();
+                else
+                    rp = new Rpt_BCTONGKET_QTB();
+
+                if (tabItem12.IsSelected == true)
+                {
+                    ds = DAL.C_KH_BAOCAO.BC_TONGKET_OC("GM", type, "", this.ocQuan.SelectedValue + "", Utilities.DateToString.NgayVN(ocTuNgay), Utilities.DateToString.NgayVN(ocDenNgay));
+                }
+                else if (tabItem11.IsSelected == true)
+                {
+                    type = 3;
+                    ds = DAL.C_KH_BAOCAO.BC_TONGKET_OC("GM", type, this.ocPhuong.SelectedValue + "", this.ocQuanPhuong.SelectedValue + "", Utilities.DateToString.NgayVN(ocTuNgay), Utilities.DateToString.NgayVN(ocDenNgay));
+
+                }
+
+                rp.SetDataSource(ds);
+                rp.SetParameterValue("TUNGAY", Utilities.DateToString.NgayVN(ocTuNgay));
+                rp.SetParameterValue("DENNGAY", Utilities.DateToString.NgayVN(ocDenNgay));
+                rp.SetParameterValue("type", type);
+                rpt_Main rpt = new rpt_Main(rp);
+                rpt.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                log.Error(" Xem Bao Cao Tong Ket Kinh Phi Loi " + ex.Message);
+
+            }
+
+        }
+
+      
+
+        private void ocPhuong_SelectedValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                List<PHUONG> phuong = DAL.C_Phuong.ListPhuongByTenPhuong(this.ocPhuong.Text);
+                if (phuong.Count > 0)
+                {
+                    PHUONG p = phuong[0];
+                    ocQuanPhuong.Text = p.QUAN.TENQUAN;
 
                 }
             }
