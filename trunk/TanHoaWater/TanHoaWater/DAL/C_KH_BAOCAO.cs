@@ -201,9 +201,6 @@ namespace TanHoaWater.DAL
             {
 
 
-
-               
-
                 string sql = "SELECT * FROM W_KH_BCTONGKET ";
 
                 if ("BT".Equals(loaidon))
@@ -279,6 +276,117 @@ namespace TanHoaWater.DAL
             }
             return null;
         }
+
+
+        public static DataSet BC_TONGKET_OC(string loaidon, int type, string maphuong, string maquan, string tungay, string denngay)
+        {
+            try
+            {
+
+
+
+                string sqltongket = " SELECT COUNT(KH_SHS) as 'HOSO', ";
+                sqltongket += " 	COUNT(TTK_SHS) as 'GIAOKT',";
+                sqltongket += " 		COUNT(CASE WHEN (HOANTATTK =1 AND NGAYHOANTATTK IS NOT NULL)  AND (TRONGAITHIETKE IS NULL OR TRONGAITHIETKE=0) THEN 1 ELSE NULL END) as 'HOANTATTK',";
+                sqltongket += " 		COUNT(CASE WHEN TRONGAITHIETKE =1  THEN 1 ELSE NULL END ) as 'TRONGAITHIETKE',";
+                sqltongket += " 		COUNT(KH_SHS) - (COUNT(CASE WHEN HOANTATTK =1  AND (TRONGAITHIETKE IS NULL OR TRONGAITHIETKE=0) THEN 1 ELSE NULL END) + COUNT(CASE WHEN TRONGAITHIETKE =1  THEN 1 ELSE NULL END )) as 'TONTK',  ";
+                sqltongket += " 		COUNT(CASE WHEN NGAYDONGTIEN  IS NOT NULL  THEN 1 ELSE NULL END  ) as 'DONGTIEN',  ";
+                sqltongket += " 		COUNT(CASE WHEN NGAYDONGTIEN  IS  NULL  AND MADOTTC <> '' THEN 1 ELSE NULL END  ) as 'MIENPHI',";
+                sqltongket += " 		COUNT(CASE WHEN MADOTTC <> ''  THEN 1 ELSE NULL END ) as 'CHUYENTC', ";
+                sqltongket += " 		COUNT(SHS) - COUNT(CASE WHEN MADOTTC <> ''  THEN 1 ELSE NULL END ) as 'TONTC',  ";
+                sqltongket += " 		COUNT(CASE WHEN HOANCONG <> ''  THEN 1 ELSE NULL END ) as 'HOANCONG'  ";
+                sqltongket += " FROM ";
+                sqltongket += " (SELECT *";
+                sqltongket += " FROM (";
+                sqltongket += " 	SELECT LOAIHOSO,DON_KHACHHANG.NGAYNHAN as 'NHANHOSO',";
+                sqltongket += " 		DON_KHACHHANG.PHUONG,DON_KHACHHANG.QUAN, DON_KHACHHANG.SHS as 'KH_SHS',";
+                sqltongket += " 		TOTHIETKE.SHS as'TTK_SHS' ,TOTHIETKE.HOANTATTK,TOTHIETKE.TRONGAITHIETKE,DON_KHACHHANG.NGAYDONGTIEN,TOTHIETKE.NGAYHOANTATTK FROM  DON_KHACHHANG  ";
+                sqltongket += " 	LEFT JOIN TOTHIETKE ";
+                sqltongket += " 	ON DON_KHACHHANG.SHS = TOTHIETKE.SHS) AS T1";
+                sqltongket += " LEFT JOIN KH_HOSOKHACHHANG AS T2";
+                sqltongket += " ON T1.TTK_SHS = T2.SHS";
+                sqltongket += "  ) as T9";
+
+                string sql = "SELECT * FROM W_KH_BCTONGKET_OC ";
+
+                sql += " WHERE  (SHS LIKE'%B' OR LOAIHOSO=N'OC')  AND LOAIHOSO IN ('GM','OC') AND CONVERT(DATETIME,NGAYNHAN,103) BETWEEN CONVERT(DATETIME,'" + tungay + "',103) AND CONVERT(DATETIME,'" + denngay + "',103) ";
+                sqltongket += " WHERE  (SHS LIKE'%B' OR LOAIHOSO=N'OC')  AND LOAIHOSO IN ('GM','OC') AND CONVERT(DATETIME,NHANHOSO,103) BETWEEN CONVERT(DATETIME,'" + tungay + "',103) AND CONVERT(DATETIME,'" + denngay + "',103) ";
+               
+
+                if (type == 3)
+                {
+                    sql += " AND  QUAN='" + maquan + "' AND PHUONG='" + maphuong + "' ";
+                    sqltongket += " AND  QUAN='" + maquan + "' AND PHUONG='" + maphuong + "' ";
+                }
+                else
+                {
+                    sql += " AND  QUAN='" + maquan + "'";
+                    sqltongket += " AND  QUAN='" + maquan + "'";
+                }
+                TanHoaDataContext db = new TanHoaDataContext();
+                db.Connection.Open();
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
+                DataTable table = new DataTable("W_KH_BCTONGKET");
+                adapter.Fill(table);
+                if (table.Rows.Count > 0)
+                {
+                    for (int i = 0; i < table.Rows.Count; i++)
+                    {
+                        try
+                        {
+                            string shs = table.Rows[i]["SHS"].ToString();
+                            string dottc = table.Rows[i]["SHS"].ToString();
+                            ///// quyet toan theo dot
+                            //KH_DOTTHICONG dotk = DAL.C_KH_DotThiCong.findByMadot();
+                            ////
+                            TOTHIETKE ttk = DAL.C_ToThietKe.findBySHS(shs);
+                            if (ttk != null && ttk.NGAYHOANTATTK != null)
+                            {
+                                table.Rows[i]["HOANTATTK"] = Utilities.DateToString.NgayVN(ttk.NGAYHOANTATTK.Value);
+                            }
+                            if (ttk.TRONGAITHIETKE == true)
+                            {
+                                table.Rows[i]["HOANTATTK"] = "";
+                                table.Rows[i]["NOIDUNGTRONGAI"] = Utilities.DateToString.NgayVN(ttk.NGAYHOANTATTK.Value) + "-" + table.Rows[i]["NOIDUNGTRONGAI"];
+                            }
+                            if (!"".Equals(table.Rows[i]["DONVITHICONG"] + ""))
+                            {
+                                KH_DONVITHICONG bctc = DAL.C_KH_DonViTC.findDVTCbyID(int.Parse(table.Rows[i]["DONVITHICONG"] + ""));
+                                if (bctc != null)
+                                {
+                                    table.Rows[i]["DONVITC"] = bctc.TENCONGTY.Replace("C.Ty", "").Replace("TNHH", "").Replace("Cổ Phần", "");
+                                }
+                            }
+                        }
+                        catch (Exception)
+                        {
+                        }
+
+                    }
+                }
+
+                DataSet dataset = new DataSet();
+                sql = " SELECT * FROM KH_TC_BAOCAO ";
+                adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
+                adapter.Fill(dataset, "KH_TC_BAOCAO");
+
+                adapter = new SqlDataAdapter(sqltongket.Replace(@"\t", ""), db.Connection.ConnectionString);
+                adapter.Fill(dataset, "W_KH_BCTONGCONG");
+
+                dataset.Tables.Add(table);
+
+                db.Connection.Close();
+
+                return dataset;
+
+            }
+            catch (Exception ex)
+            {
+                log.Error("Loi BC Danh Sach Thi Cong " + ex.Message);
+            }
+            return null;
+        }
+
     }
 }
 

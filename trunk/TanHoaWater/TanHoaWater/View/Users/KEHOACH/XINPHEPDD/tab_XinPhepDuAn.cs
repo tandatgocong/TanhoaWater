@@ -432,6 +432,12 @@ namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
             }
         }
 
+        private void buttonX1_Click(object sender, EventArgs e)
+        {
+            optThemKetCAU opt = new optThemKetCAU();
+            opt.ShowDialog();
+        }
+
        
     }
 }

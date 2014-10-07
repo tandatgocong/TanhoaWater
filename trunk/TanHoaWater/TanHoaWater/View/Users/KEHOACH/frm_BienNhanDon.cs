@@ -96,16 +96,18 @@ namespace TanHoaWater.View.Users.KEHOACH
       
         private void cbLoaiBN_SelectedValueChanged(object sender, EventArgs e)
         {
-
+            this.ckOngCai.Visible = false; 
             this.soBienNhan.Text = DAL.Idetity.IdentityBienNhan(this.cbLoaiBN.SelectedValue + "");
             if ((this.cbLoaiBN.SelectedValue + "").Equals("GM")) {
                 groupDiDoi.Visible = false;
                 groupganmoi.Visible = true;
+                this.ckOngCai.Visible =true ;
             }
             else if ((this.cbLoaiBN.SelectedValue + "").Equals("DD"))
             {
                 groupDiDoi.Visible = true;
                 groupganmoi.Visible = false;
+
             }
             else {
                 groupDiDoi.Visible = false;
@@ -793,6 +795,14 @@ namespace TanHoaWater.View.Users.KEHOACH
         private void panelEx1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void ckOngCai_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckOngCai.Checked)
+                this.soBienNhan.Text = soBienNhan.Text.Replace("B", "") + "B";
+            else
+                this.soBienNhan.Text = soBienNhan.Text.Replace("B", "");
         }
     }
 }

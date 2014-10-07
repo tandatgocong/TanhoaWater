@@ -796,6 +796,12 @@
     <Compile Include="View\Users\KEHOACH\XINPHEPDD\frmDialogDonXP.Designer.cs">
       <DependentUpon>frmDialogDonXP.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Users\KEHOACH\XINPHEPDD\optThemKetCAU.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Users\KEHOACH\XINPHEPDD\optThemKetCAU.Designer.cs">
+      <DependentUpon>optThemKetCAU.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Users\KEHOACH\XINPHEPDD\tab_XinPhepDuAn.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -1485,6 +1491,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\KEHOACH\XINPHEPDD\frmDialogDonXP.resx">
       <DependentUpon>frmDialogDonXP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\KEHOACH\XINPHEPDD\optThemKetCAU.resx">
+      <DependentUpon>optThemKetCAU.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\KEHOACH\XINPHEPDD\tab_XinPhepDuAn.resx">
       <DependentUpon>tab_XinPhepDuAn.cs</DependentUpon>

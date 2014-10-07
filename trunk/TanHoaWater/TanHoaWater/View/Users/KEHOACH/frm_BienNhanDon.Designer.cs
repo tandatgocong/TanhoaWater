@@ -124,6 +124,7 @@
             this.SOHS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TENLOAI = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TENQUAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ckOngCai = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.tabControl1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabControlPanel1.SuspendLayout();
@@ -173,8 +174,8 @@
             this.tabControlPanel1.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(188)))), ((int)(((byte)(227)))));
             this.tabControlPanel1.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
             this.tabControlPanel1.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(165)))), ((int)(((byte)(199)))));
-            this.tabControlPanel1.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right)
-                        | DevComponents.DotNetBar.eBorderSide.Bottom)));
+            this.tabControlPanel1.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
+            | DevComponents.DotNetBar.eBorderSide.Bottom)));
             this.tabControlPanel1.Style.GradientAngle = 90;
             this.tabControlPanel1.TabIndex = 1;
             this.tabControlPanel1.TabItem = this.tabItem1;
@@ -182,6 +183,7 @@
             // panelEx1
             // 
             this.panelEx1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
+            this.panelEx1.Controls.Add(this.ckOngCai);
             this.panelEx1.Controls.Add(this.txtSoDanhBo);
             this.panelEx1.Controls.Add(this.labelX17);
             this.panelEx1.Controls.Add(this.groupDiDoi);
@@ -247,7 +249,7 @@
             this.checkBienLaiTN.AutoSize = true;
             this.checkBienLaiTN.Location = new System.Drawing.Point(19, 24);
             this.checkBienLaiTN.Name = "checkBienLaiTN";
-            this.checkBienLaiTN.Size = new System.Drawing.Size(125, 17);
+            this.checkBienLaiTN.Size = new System.Drawing.Size(154, 23);
             this.checkBienLaiTN.TabIndex = 10;
             this.checkBienLaiTN.Text = "Biên lai thu tiền nước";
             this.checkBienLaiTN.UseVisualStyleBackColor = true;
@@ -257,7 +259,7 @@
             this.DD_GiayToKhac.AutoSize = true;
             this.DD_GiayToKhac.Location = new System.Drawing.Point(19, 48);
             this.DD_GiayToKhac.Name = "DD_GiayToKhac";
-            this.DD_GiayToKhac.Size = new System.Drawing.Size(86, 17);
+            this.DD_GiayToKhac.Size = new System.Drawing.Size(105, 23);
             this.DD_GiayToKhac.TabIndex = 11;
             this.DD_GiayToKhac.Text = "Giấy tờ khác";
             this.DD_GiayToKhac.UseVisualStyleBackColor = true;
@@ -282,7 +284,7 @@
             this.checkSoTTKT3.AutoSize = true;
             this.checkSoTTKT3.Location = new System.Drawing.Point(231, 25);
             this.checkSoTTKT3.Name = "checkSoTTKT3";
-            this.checkSoTTKT3.Size = new System.Drawing.Size(97, 17);
+            this.checkSoTTKT3.Size = new System.Drawing.Size(124, 23);
             this.checkSoTTKT3.TabIndex = 12;
             this.checkSoTTKT3.Text = "Sổ tạm trú KT3";
             this.checkSoTTKT3.UseVisualStyleBackColor = true;
@@ -292,7 +294,7 @@
             this.checkHK.AutoSize = true;
             this.checkHK.Location = new System.Drawing.Point(19, 24);
             this.checkHK.Name = "checkHK";
-            this.checkHK.Size = new System.Drawing.Size(84, 17);
+            this.checkHK.Size = new System.Drawing.Size(101, 23);
             this.checkHK.TabIndex = 11;
             this.checkHK.Text = "Sổ hộ khẩu.";
             this.checkHK.UseVisualStyleBackColor = true;
@@ -302,7 +304,7 @@
             this.checkChuQuyen.AutoSize = true;
             this.checkChuQuyen.Location = new System.Drawing.Point(19, 48);
             this.checkChuQuyen.Name = "checkChuQuyen";
-            this.checkChuQuyen.Size = new System.Drawing.Size(145, 17);
+            this.checkChuQuyen.Size = new System.Drawing.Size(173, 23);
             this.checkChuQuyen.TabIndex = 13;
             this.checkChuQuyen.Text = "Giấy chủ quyền nhà/đất.";
             this.checkChuQuyen.UseVisualStyleBackColor = true;
@@ -312,7 +314,7 @@
             this.checkGiayPhepKD.AutoSize = true;
             this.checkGiayPhepKD.Location = new System.Drawing.Point(19, 74);
             this.checkGiayPhepKD.Name = "checkGiayPhepKD";
-            this.checkGiayPhepKD.Size = new System.Drawing.Size(130, 17);
+            this.checkGiayPhepKD.Size = new System.Drawing.Size(160, 23);
             this.checkGiayPhepKD.TabIndex = 15;
             this.checkGiayPhepKD.Text = "Giấy phép kinh doanh";
             this.checkGiayPhepKD.UseVisualStyleBackColor = true;
@@ -322,7 +324,7 @@
             this.GM_giaytokhac.AutoSize = true;
             this.GM_giaytokhac.Location = new System.Drawing.Point(229, 74);
             this.GM_giaytokhac.Name = "GM_giaytokhac";
-            this.GM_giaytokhac.Size = new System.Drawing.Size(86, 17);
+            this.GM_giaytokhac.Size = new System.Drawing.Size(105, 23);
             this.GM_giaytokhac.TabIndex = 16;
             this.GM_giaytokhac.Text = "Giấy tờ khác";
             this.GM_giaytokhac.UseVisualStyleBackColor = true;
@@ -332,7 +334,7 @@
             this.checkGiayPhepXD.AutoSize = true;
             this.checkGiayPhepXD.Location = new System.Drawing.Point(230, 47);
             this.checkGiayPhepXD.Name = "checkGiayPhepXD";
-            this.checkGiayPhepXD.Size = new System.Drawing.Size(120, 17);
+            this.checkGiayPhepXD.Size = new System.Drawing.Size(150, 23);
             this.checkGiayPhepXD.TabIndex = 14;
             this.checkGiayPhepXD.Text = "Giấy phép xây dựng";
             this.checkGiayPhepXD.UseVisualStyleBackColor = true;
@@ -565,7 +567,7 @@
             this.reflectionLabel1.Size = new System.Drawing.Size(388, 67);
             this.reflectionLabel1.TabIndex = 16;
             this.reflectionLabel1.Text = "<b><font size=\"+6\"><font color=\"#ED1C24\">BIÊN NHẬN ĐƠN KHÁCH HÀNG</font></font></" +
-                "b>";
+    "b>";
             // 
             // tabItem1
             // 
@@ -585,8 +587,8 @@
             this.tabControlPanel3.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(188)))), ((int)(((byte)(227)))));
             this.tabControlPanel3.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
             this.tabControlPanel3.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(165)))), ((int)(((byte)(199)))));
-            this.tabControlPanel3.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right)
-                        | DevComponents.DotNetBar.eBorderSide.Bottom)));
+            this.tabControlPanel3.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
+            | DevComponents.DotNetBar.eBorderSide.Bottom)));
             this.tabControlPanel3.Style.GradientAngle = 90;
             this.tabControlPanel3.TabIndex = 3;
             this.tabControlPanel3.TabItem = this.tabItem3;
@@ -661,7 +663,7 @@
             this.editbienlaithutien.AutoSize = true;
             this.editbienlaithutien.Location = new System.Drawing.Point(19, 24);
             this.editbienlaithutien.Name = "editbienlaithutien";
-            this.editbienlaithutien.Size = new System.Drawing.Size(125, 17);
+            this.editbienlaithutien.Size = new System.Drawing.Size(154, 23);
             this.editbienlaithutien.TabIndex = 50;
             this.editbienlaithutien.Text = "Biên lai thu tiền nước";
             this.editbienlaithutien.UseVisualStyleBackColor = true;
@@ -671,7 +673,7 @@
             this.editddgiaytokhac.AutoSize = true;
             this.editddgiaytokhac.Location = new System.Drawing.Point(19, 48);
             this.editddgiaytokhac.Name = "editddgiaytokhac";
-            this.editddgiaytokhac.Size = new System.Drawing.Size(86, 17);
+            this.editddgiaytokhac.Size = new System.Drawing.Size(105, 23);
             this.editddgiaytokhac.TabIndex = 51;
             this.editddgiaytokhac.Text = "Giấy tờ khác";
             this.editddgiaytokhac.UseVisualStyleBackColor = true;
@@ -696,7 +698,7 @@
             this.edit_tamtrukt3.AutoSize = true;
             this.edit_tamtrukt3.Location = new System.Drawing.Point(231, 25);
             this.edit_tamtrukt3.Name = "edit_tamtrukt3";
-            this.edit_tamtrukt3.Size = new System.Drawing.Size(97, 17);
+            this.edit_tamtrukt3.Size = new System.Drawing.Size(124, 23);
             this.edit_tamtrukt3.TabIndex = 12;
             this.edit_tamtrukt3.Text = "Sổ tạm trú KT3";
             this.edit_tamtrukt3.UseVisualStyleBackColor = true;
@@ -706,7 +708,7 @@
             this.eddit_checkhokhau.AutoSize = true;
             this.eddit_checkhokhau.Location = new System.Drawing.Point(19, 24);
             this.eddit_checkhokhau.Name = "eddit_checkhokhau";
-            this.eddit_checkhokhau.Size = new System.Drawing.Size(84, 17);
+            this.eddit_checkhokhau.Size = new System.Drawing.Size(101, 23);
             this.eddit_checkhokhau.TabIndex = 11;
             this.eddit_checkhokhau.Text = "Sổ hộ khẩu.";
             this.eddit_checkhokhau.UseVisualStyleBackColor = true;
@@ -716,7 +718,7 @@
             this.editcheckchuquyennha.AutoSize = true;
             this.editcheckchuquyennha.Location = new System.Drawing.Point(19, 48);
             this.editcheckchuquyennha.Name = "editcheckchuquyennha";
-            this.editcheckchuquyennha.Size = new System.Drawing.Size(145, 17);
+            this.editcheckchuquyennha.Size = new System.Drawing.Size(173, 23);
             this.editcheckchuquyennha.TabIndex = 13;
             this.editcheckchuquyennha.Text = "Giấy chủ quyền nhà/đất.";
             this.editcheckchuquyennha.UseVisualStyleBackColor = true;
@@ -726,7 +728,7 @@
             this.edit_giayphepkd.AutoSize = true;
             this.edit_giayphepkd.Location = new System.Drawing.Point(19, 74);
             this.edit_giayphepkd.Name = "edit_giayphepkd";
-            this.edit_giayphepkd.Size = new System.Drawing.Size(130, 17);
+            this.edit_giayphepkd.Size = new System.Drawing.Size(160, 23);
             this.edit_giayphepkd.TabIndex = 15;
             this.edit_giayphepkd.Text = "Giấy phép kinh doanh";
             this.edit_giayphepkd.UseVisualStyleBackColor = true;
@@ -736,7 +738,7 @@
             this.editgiaytokhac.AutoSize = true;
             this.editgiaytokhac.Location = new System.Drawing.Point(229, 74);
             this.editgiaytokhac.Name = "editgiaytokhac";
-            this.editgiaytokhac.Size = new System.Drawing.Size(86, 17);
+            this.editgiaytokhac.Size = new System.Drawing.Size(105, 23);
             this.editgiaytokhac.TabIndex = 16;
             this.editgiaytokhac.Text = "Giấy tờ khác";
             this.editgiaytokhac.UseVisualStyleBackColor = true;
@@ -746,7 +748,7 @@
             this.edit_giayphepxd.AutoSize = true;
             this.edit_giayphepxd.Location = new System.Drawing.Point(230, 47);
             this.edit_giayphepxd.Name = "edit_giayphepxd";
-            this.edit_giayphepxd.Size = new System.Drawing.Size(120, 17);
+            this.edit_giayphepxd.Size = new System.Drawing.Size(150, 23);
             this.edit_giayphepxd.TabIndex = 14;
             this.edit_giayphepxd.Text = "Giấy phép xây dựng";
             this.edit_giayphepxd.UseVisualStyleBackColor = true;
@@ -952,7 +954,7 @@
             this.reflectionLabel2.Size = new System.Drawing.Size(434, 67);
             this.reflectionLabel2.TabIndex = 16;
             this.reflectionLabel2.Text = "<b><font size=\"+6\"><font color=\"#ED1C24\">SỬA BIÊN NHẬN ĐƠN KHÁCH HÀNG</font></fon" +
-                "t></b>";
+    "t></b>";
             // 
             // tabItem3
             // 
@@ -973,8 +975,8 @@
             this.tabControlPanel2.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(188)))), ((int)(((byte)(227)))));
             this.tabControlPanel2.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
             this.tabControlPanel2.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(165)))), ((int)(((byte)(199)))));
-            this.tabControlPanel2.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right)
-                        | DevComponents.DotNetBar.eBorderSide.Bottom)));
+            this.tabControlPanel2.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
+            | DevComponents.DotNetBar.eBorderSide.Bottom)));
             this.tabControlPanel2.Style.GradientAngle = 90;
             this.tabControlPanel2.TabIndex = 2;
             this.tabControlPanel2.TabItem = this.tabItem2;
@@ -1165,6 +1167,17 @@
             this.TENQUAN.HeaderText = "Quận";
             this.TENQUAN.Name = "TENQUAN";
             // 
+            // ckOngCai
+            // 
+            this.ckOngCai.AutoSize = true;
+            this.ckOngCai.Location = new System.Drawing.Point(355, 84);
+            this.ckOngCai.Name = "ckOngCai";
+            this.ckOngCai.Size = new System.Drawing.Size(79, 23);
+            this.ckOngCai.TabIndex = 45;
+            this.ckOngCai.Text = "Ống Cái";
+            this.ckOngCai.UseVisualStyleBackColor = true;
+            this.ckOngCai.CheckedChanged += new System.EventHandler(this.ckOngCai_CheckedChanged);
+            // 
             // frm_BienNhanDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -1299,6 +1312,7 @@
         private DevComponents.DotNetBar.LabelX labelX2;
         private DevComponents.DotNetBar.LabelX labelX17;
         private System.Windows.Forms.MaskedTextBox txtSoDanhBo;
+        private System.Windows.Forms.CheckBox ckOngCai;
 
 
     }
