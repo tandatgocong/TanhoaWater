@@ -265,6 +265,8 @@ namespace TanHoaWater.View.Tool
                         if (DAL.C_DonKhachHang.dontaixet(donkh.SOHOSO))
                         {
                             groupBox1.Text = "Kết Quả ----> ĐƠN TÁI XÉT";
+                            lbTMP.Text = "Ghi Chú TX";
+                            txtGhiChu.Text = DAL.C_DonKhachHang.rTX;
                         }
                     }
                     else

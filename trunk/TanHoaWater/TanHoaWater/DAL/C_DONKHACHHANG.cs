@@ -426,6 +426,7 @@ namespace TanHoaWater.DAL
                     TMP_TAIXET tx = new TMP_TAIXET();
                     tx.MAHOSO = donkh.SOHOSO;
                     tx.CHUYEN = false;
+                    tx.GHICHUTR = donkh.GHICHU;
                     tx.CREATEDATE = DateTime.Now.Date;
                     db.TMP_TAIXETs.InsertOnSubmit(tx);
                     #endregion
@@ -738,11 +739,16 @@ namespace TanHoaWater.DAL
             conn.Close();
         }
 
+        public static string rTX = "";
         public static bool dontaixet(string sohoso) {
             TanHoaDataContext db = new TanHoaDataContext();
             var data = from don in db.TMP_TAIXETs where don.MAHOSO == sohoso select don;
-            if(data.SingleOrDefault()!=null)
+            if (data.SingleOrDefault() != null)
+            {
+                rTX = data.SingleOrDefault().GHICHUTR;
                 return true;
+
+            }
             return false;
 
         }

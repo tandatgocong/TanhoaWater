@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.searchDiaChi = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.searchHoTenKH = new System.Windows.Forms.TextBox();
@@ -54,7 +54,7 @@
             this.label22 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtGhiChu = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.label31 = new System.Windows.Forms.Label();
+            this.lbTMP = new System.Windows.Forms.Label();
             this.txtTuNgay = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtTapThe = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtDenNgay = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -317,8 +317,8 @@
             // g_SoHoSo
             // 
             this.g_SoHoSo.DataPropertyName = "SHS";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.g_SoHoSo.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.g_SoHoSo.DefaultCellStyle = dataGridViewCellStyle1;
             this.g_SoHoSo.HeaderText = "Số HS";
             this.g_SoHoSo.Name = "g_SoHoSo";
             this.g_SoHoSo.ReadOnly = true;
@@ -343,8 +343,8 @@
             // gr_DienThoai
             // 
             this.gr_DienThoai.DataPropertyName = "DIENTHOAI";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.gr_DienThoai.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.gr_DienThoai.DefaultCellStyle = dataGridViewCellStyle2;
             this.gr_DienThoai.HeaderText = "Điện Thoại";
             this.gr_DienThoai.Name = "gr_DienThoai";
             this.gr_DienThoai.ReadOnly = true;
@@ -396,7 +396,7 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.txtGhiChu);
-            this.panel1.Controls.Add(this.label31);
+            this.panel1.Controls.Add(this.lbTMP);
             this.panel1.Controls.Add(this.txtTuNgay);
             this.panel1.Controls.Add(this.txtTapThe);
             this.panel1.Controls.Add(this.txtDenNgay);
@@ -470,16 +470,16 @@
             this.txtGhiChu.Size = new System.Drawing.Size(313, 44);
             this.txtGhiChu.TabIndex = 688;
             // 
-            // label31
+            // lbTMP
             // 
-            this.label31.AutoSize = true;
-            this.label31.Font = new System.Drawing.Font("Times New Roman", 10F);
-            this.label31.Location = new System.Drawing.Point(10, 448);
-            this.label31.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(58, 16);
-            this.label31.TabIndex = 687;
-            this.label31.Text = "Ghi Chú:";
+            this.lbTMP.AutoSize = true;
+            this.lbTMP.Font = new System.Drawing.Font("Times New Roman", 10F);
+            this.lbTMP.Location = new System.Drawing.Point(10, 448);
+            this.lbTMP.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbTMP.Name = "lbTMP";
+            this.lbTMP.Size = new System.Drawing.Size(58, 16);
+            this.lbTMP.TabIndex = 687;
+            this.lbTMP.Text = "Ghi Chú:";
             // 
             // txtTuNgay
             // 
@@ -1326,7 +1326,7 @@
         private DevComponents.DotNetBar.Controls.TextBoxX ChoDanhBo;
         private System.Windows.Forms.Label label22;
         private DevComponents.DotNetBar.Controls.TextBoxX txtGhiChu;
-        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label lbTMP;
 
     }
 }
