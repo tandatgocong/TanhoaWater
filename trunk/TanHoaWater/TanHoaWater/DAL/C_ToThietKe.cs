@@ -157,7 +157,7 @@ namespace TanHoaWater.DAL
 
             TanHoaDataContext db = new TanHoaDataContext();
             db.Connection.Open();
-            string sql = " SELECT ttk.MADOT,ttk.SHS,HOTEN,(SONHA +' '+ DUONG +', P.'+p.TENPHUONG+', Q.'+ q.TENQUAN ) as 'DIACHI', NGAYNHAN= CONVERT(VARCHAR(10),kh.NGAYNHAN,103), lhs.TENLOAI, p.TENPHUONG, q.TENQUAN, DUONG, SONHA  ";
+            string sql = " SELECT ttk.MADOT,ttk.SHS,HOTEN,(SONHA +' '+ DUONG +', P.'+p.TENPHUONG+', Q.'+ q.TENQUAN ) as 'DIACHI', NGAYNHAN= CONVERT(VARCHAR(10),kh.NGAYNHAN,103), lhs.TENLOAI, p.TENPHUONG, q.TENQUAN, DUONG, SONHA,CHUYENTK= CONVERT(VARCHAR(10),ttk.NGAYNHAN,103),NGAYTRAHS= CONVERT(VARCHAR(10),ttk.NGAYTRAHS,103)  ";
             sql += " FROM TOTHIETKE ttk, DON_KHACHHANG kh,QUAN q,PHUONG p, LOAI_HOSO lhs ";
             sql += " WHERE  kh.QUAN = q.MAQUAN AND q.MAQUAN=p.MAQUAN AND kh.PHUONG=p.MAPHUONG AND lhs.MALOAI=kh.LOAIHOSO AND ttk.SOHOSO=kh.SOHOSO ";
             if (madot != null)
@@ -175,7 +175,7 @@ namespace TanHoaWater.DAL
             }
 
             sql += " AND ttk.TRAHS='" + tinhtrang + "'";
-            sql += " ORDER BY q.TENQUAN,p.TENPHUONG,DUONG,SONHA DESC ";
+            sql += " ORDER BY kh.NGAYNHAN ASC ";
             SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             DataSet dataset = new DataSet();
             adapter.Fill(dataset, "TABLE");

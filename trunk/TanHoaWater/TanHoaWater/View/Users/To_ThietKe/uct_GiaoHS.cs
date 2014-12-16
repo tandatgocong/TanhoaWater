@@ -455,18 +455,38 @@ namespace TanHoaWater.View.Users.To_ThietKe
                 int countChuaHT = 0;
                 if (this.thedoi_all.Checked)
                 {
-                    tableHT = DAL.C_ToThietKe.TinhHinhKSTK(null, null, null, this.theodoi_SDV.SelectedValue.ToString(), true);
-                    tableChuaHT = DAL.C_ToThietKe.TinhHinhKSTK(null, null, null, this.theodoi_SDV.SelectedValue.ToString(), false);
-                    countHT = DAL.C_ToThietKe.CountTinhHinhKSTK(null, null, null, this.theodoi_SDV.SelectedValue.ToString(), true);
-                    countChuaHT = DAL.C_ToThietKe.CountTinhHinhKSTK(null, null, null, this.theodoi_SDV.SelectedValue.ToString(), false);
+                    if (checkTen.Checked)
+                    {
+                        tableHT = DAL.C_ToThietKe.TinhHinhKSTK(null, null, null, this.theodoi_SDV.SelectedValue.ToString(), true);
+                        tableChuaHT = DAL.C_ToThietKe.TinhHinhKSTK(null, null, null, this.theodoi_SDV.SelectedValue.ToString(), false);
+                        countHT = DAL.C_ToThietKe.CountTinhHinhKSTK(null, null, null, this.theodoi_SDV.SelectedValue.ToString(), true);
+                        countChuaHT = DAL.C_ToThietKe.CountTinhHinhKSTK(null, null, null, this.theodoi_SDV.SelectedValue.ToString(), false);
+                    }
+                    else
+                    {
+                        tableHT = DAL.C_ToThietKe.TinhHinhKSTK(null, null, null, null, true);
+                        tableChuaHT = DAL.C_ToThietKe.TinhHinhKSTK(null, null, null, null, false);
+                        countHT = DAL.C_ToThietKe.CountTinhHinhKSTK(null, null, null, null, true);
+                        countChuaHT = DAL.C_ToThietKe.CountTinhHinhKSTK(null, null, null, null, false);
+                    }
                 }
                 else if (this.theodoi_ngay.Checked)
                 {
-                    tableHT = DAL.C_ToThietKe.TinhHinhKSTK(null, Utilities.DateToString.NgayVN(theodoi_tungay), Utilities.DateToString.NgayVN(theodoi_denngay), this.theodoi_SDV.SelectedValue.ToString(), true);
-                    tableChuaHT = DAL.C_ToThietKe.TinhHinhKSTK(null, Utilities.DateToString.NgayVN(theodoi_tungay), Utilities.DateToString.NgayVN(theodoi_denngay), this.theodoi_SDV.SelectedValue.ToString(), false);
-                    countHT = DAL.C_ToThietKe.CountTinhHinhKSTK(null, Utilities.DateToString.NgayVN(theodoi_tungay), Utilities.DateToString.NgayVN(theodoi_denngay), this.theodoi_SDV.SelectedValue.ToString(), true);
-                    countChuaHT = DAL.C_ToThietKe.CountTinhHinhKSTK(null, Utilities.DateToString.NgayVN(theodoi_tungay), Utilities.DateToString.NgayVN(theodoi_denngay), this.theodoi_SDV.SelectedValue.ToString(), false);
-                }
+                    if (checkTen.Checked)
+                    {
+                        tableHT = DAL.C_ToThietKe.TinhHinhKSTK(null, Utilities.DateToString.NgayVN(theodoi_tungay), Utilities.DateToString.NgayVN(theodoi_denngay), this.theodoi_SDV.SelectedValue.ToString(), true);
+                        tableChuaHT = DAL.C_ToThietKe.TinhHinhKSTK(null, Utilities.DateToString.NgayVN(theodoi_tungay), Utilities.DateToString.NgayVN(theodoi_denngay), this.theodoi_SDV.SelectedValue.ToString(), false);
+                        countHT = DAL.C_ToThietKe.CountTinhHinhKSTK(null, Utilities.DateToString.NgayVN(theodoi_tungay), Utilities.DateToString.NgayVN(theodoi_denngay), this.theodoi_SDV.SelectedValue.ToString(), true);
+                        countChuaHT = DAL.C_ToThietKe.CountTinhHinhKSTK(null, Utilities.DateToString.NgayVN(theodoi_tungay), Utilities.DateToString.NgayVN(theodoi_denngay), this.theodoi_SDV.SelectedValue.ToString(), false);
+                    }
+                    else
+                    {
+                        tableHT = DAL.C_ToThietKe.TinhHinhKSTK(null, Utilities.DateToString.NgayVN(theodoi_tungay), Utilities.DateToString.NgayVN(theodoi_denngay), null, true);
+                        tableChuaHT = DAL.C_ToThietKe.TinhHinhKSTK(null, Utilities.DateToString.NgayVN(theodoi_tungay), Utilities.DateToString.NgayVN(theodoi_denngay), null, false);
+                        countHT = DAL.C_ToThietKe.CountTinhHinhKSTK(null, Utilities.DateToString.NgayVN(theodoi_tungay), Utilities.DateToString.NgayVN(theodoi_denngay), null, true);
+                        countChuaHT = DAL.C_ToThietKe.CountTinhHinhKSTK(null, Utilities.DateToString.NgayVN(theodoi_tungay), Utilities.DateToString.NgayVN(theodoi_denngay), null, false);
+                    }
+                         }
                 else if (this.theodoi_bydot.Checked)
                 {
                     tableHT = DAL.C_ToThietKe.TinhHinhKSTK(cb_TheoDot.SelectedValue.ToString(), null, null, this.theodoi_SDV.SelectedValue.ToString(), true);
@@ -663,6 +683,11 @@ namespace TanHoaWater.View.Users.To_ThietKe
         {
             this.panelGhepHs.Controls.Clear();
             this.panelGhepHs.Controls.Add(new tab_GhepHoSo());
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
