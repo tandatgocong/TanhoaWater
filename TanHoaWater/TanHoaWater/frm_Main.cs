@@ -273,6 +273,33 @@ namespace TanHoaWater
                     this.menuDoiTCTB.Visible = true;
                     this.iconMenuPanel.Controls.Clear();
                 }
+                else if ("TIT".Equals(DAL.C_USERS._maphong.Trim()))
+                {
+
+                    menuQuanTri.Visible = false;
+
+                    this.menuToThietKe.Visible = true;
+                    this.iconMenuPanel.Controls.Clear();
+                    this.iconMenuPanel.Controls.Add(groupTTK);
+                    groupTTK.Visible = true;
+                    this.menuKHVT.Visible = true;
+                    this.iconMenuPanel.Controls.Add(group_VTTH);
+                    group_VTTH.Visible = true;
+                    this.KH_DotNhanDon.Visible = true;
+                    this.KH_biennhan.Visible = true;
+                    this.KH_DonKhachHang.Visible = true;
+                    this.KH_DotNhanDon.Visible = true;
+                    this.KH_biennhan.Visible = true;
+                    this.KH_DonKhachHang.Visible = true;
+                    this.TC_DotThiCong.Visible = true;
+                    this.TC_DotThiCong.Visible = true;
+                    this.HC_HoanCong.Visible = true;
+                    this.DD_XinPhepDD.Visible = true;
+                    this.menuQLDHNuoc.Visible = true;
+                    this.menuDoiTCTB.Visible = true;
+
+                }
+
             }
             else if ("QT".Equals(DAL.C_USERS._roles.Trim()))
             {
