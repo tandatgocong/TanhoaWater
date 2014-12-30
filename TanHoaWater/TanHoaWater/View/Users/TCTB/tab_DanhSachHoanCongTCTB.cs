@@ -502,6 +502,7 @@ namespace TanHoaWater.View.Users.TCTB
                     catch (Exception)
                     { }
                     hskh.HOANCONG = true;
+                    hskh.NGAYHOANCONG = DateTime.Now.Date;
                     hskh.SOTHANTLK = this.txtSoThan.Text;
                     hskh.HIEUDONGHO = this.txtHieu.Text;
                     hskh.TCTB_TONGGIATRI = ParseDouble(this.txtTongGiaTri.Text);
@@ -515,6 +516,8 @@ namespace TanHoaWater.View.Users.TCTB
                     hskh.ONGKHAC = ParseDouble(this.txtOK.Text);
                     hskh.TRONGAI = false;
                     hskh.NOIDUNGTN = "";
+                    hskh.MODIFYBY = DAL.C_USERS._userName;
+                    hskh.MODIFYDATE = DateTime.Now.Date;
                 }
 
                 if (DAL.C_HoanCongDHN_DotTCTB.Update() == true)

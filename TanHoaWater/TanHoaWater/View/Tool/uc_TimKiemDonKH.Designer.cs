@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.searchDiaChi = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.searchHoTenKH = new System.Windows.Forms.TextBox();
@@ -317,8 +317,8 @@
             // g_SoHoSo
             // 
             this.g_SoHoSo.DataPropertyName = "SHS";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.g_SoHoSo.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.g_SoHoSo.DefaultCellStyle = dataGridViewCellStyle3;
             this.g_SoHoSo.HeaderText = "Số HS";
             this.g_SoHoSo.Name = "g_SoHoSo";
             this.g_SoHoSo.ReadOnly = true;
@@ -343,8 +343,8 @@
             // gr_DienThoai
             // 
             this.gr_DienThoai.DataPropertyName = "DIENTHOAI";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.gr_DienThoai.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.gr_DienThoai.DefaultCellStyle = dataGridViewCellStyle4;
             this.gr_DienThoai.HeaderText = "Điện Thoại";
             this.gr_DienThoai.Name = "gr_DienThoai";
             this.gr_DienThoai.ReadOnly = true;
@@ -474,7 +474,7 @@
             // 
             this.lbTMP.AutoSize = true;
             this.lbTMP.Font = new System.Drawing.Font("Times New Roman", 10F);
-            this.lbTMP.Location = new System.Drawing.Point(10, 448);
+            this.lbTMP.Location = new System.Drawing.Point(4, 448);
             this.lbTMP.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbTMP.Name = "lbTMP";
             this.lbTMP.Size = new System.Drawing.Size(58, 16);
