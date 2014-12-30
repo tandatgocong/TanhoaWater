@@ -423,10 +423,22 @@ namespace TanHoaWater.DAL
                     donkh.MODIFYBY = DAL.C_USERS._userName;
                     donkh.MODIFYDATE = DateTime.Now.Date;
                     #region Insert Tai Xet
-                    TMP_TAIXET tx = new TMP_TAIXET();
+                    TMP_TAIXET tx= new TMP_TAIXET();;
+                    try
+                    {
+                        var data1 = from don in db.TMP_TAIXETs where don.MAHOSO == sohoso select don;
+                        if (data1.SingleOrDefault() == null)
+                            tx = new TMP_TAIXET();
+                        else
+                            tx = data1.SingleOrDefault();
+                    }
+                    catch (Exception)
+                    {
+                        
+                    }                   
                     tx.MAHOSO = donkh.SOHOSO;
                     tx.CHUYEN = false;
-                    tx.GHICHUTR = donkh.GHICHU;
+                    tx.GHICHUTR ="TX ("+Utilities.DateToString.NgayVNVN(donkh.MODIFYDATE.Value)+ "): "+ donkh.GHICHU + "- " + donkh.NOIDUNGTRONGAI;
                     tx.CREATEDATE = DateTime.Now.Date;
                     db.TMP_TAIXETs.InsertOnSubmit(tx);
                     #endregion

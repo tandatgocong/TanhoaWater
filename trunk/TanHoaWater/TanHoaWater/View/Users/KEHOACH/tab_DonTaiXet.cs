@@ -55,6 +55,7 @@ namespace TanHoaWater.View.Users.KEHOACH
                 string _soHoSo = this.taix_sohoso.Text;
                 if (_soHoSo != null)
                 {
+                    DAL.LinQConnection.ExecuteCommand_("DELETE FROMTMP_TAIXET WHERE MAHOSO='" + _soHoSo + "'");
                     if (DAL.C_DonKhachHang.finbyDTX(_soHoSo) == null)
                     {
                         bool result1 = DAL.C_DonKhachHang.HoSoTaiXet(_soHoSo, DAL.C_USERS._userName);
@@ -67,20 +68,20 @@ namespace TanHoaWater.View.Users.KEHOACH
                             MessageBox.Show(this, "Tái Xét Hồ Sơ Lỗi !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
-                    else {
-                        if (MessageBox.Show(this, "Hồ Sơ Đã Được Tái Xét rồi. Có Muốn Cập Nhât Lại ?", "..: Thông Báo :..", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) {
+                    //else {
+                    //    if (MessageBox.Show(this, "Hồ Sơ Đã Được Tái Xét rồi. Có Muốn Cập Nhât Lại ?", "..: Thông Báo :..", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) {
                             
-                            bool result1 = DAL.C_DonKhachHang.UpdateDonTX(_soHoSo);
-                            if (result1)
-                            {
-                                MessageBox.Show(this, "Tái Xét Hồ Sơ Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            }
-                            else
-                            {
-                                MessageBox.Show(this, "Tái Xét Hồ Sơ Lỗi !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            }
-                        }
-                    }
+                    //        bool result1 = DAL.C_DonKhachHang.UpdateDonTX(_soHoSo);
+                    //        if (result1)
+                    //        {
+                    //            MessageBox.Show(this, "Tái Xét Hồ Sơ Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //        }
+                    //        else
+                    //        {
+                    //            MessageBox.Show(this, "Tái Xét Hồ Sơ Lỗi !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    //        }
+                    //    }
+                    //}
                    
                 }
             }

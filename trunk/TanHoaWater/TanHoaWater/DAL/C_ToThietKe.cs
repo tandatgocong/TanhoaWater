@@ -152,7 +152,7 @@ namespace TanHoaWater.DAL
             var ttk = from query in db.TOTHIETKEs where query.SHS == shs select query;
             return ttk.SingleOrDefault();
         }
-        public static DataTable TinhHinhKSTK(string madot, string tungay, string denngay, string tensdv, bool tinhtrang)
+        public static DataTable TinhHinhKSTK(string madot, string tungay, string denngay, string tensdv, bool tinhtrang, string loaihs)
         {
 
             TanHoaDataContext db = new TanHoaDataContext();
@@ -160,9 +160,17 @@ namespace TanHoaWater.DAL
             string sql = " SELECT ttk.MADOT,ttk.SHS,HOTEN,(SONHA +' '+ DUONG +', P.'+p.TENPHUONG+', Q.'+ q.TENQUAN ) as 'DIACHI', NGAYNHAN= CONVERT(VARCHAR(10),kh.NGAYNHAN,103), lhs.TENLOAI, p.TENPHUONG, q.TENQUAN, DUONG, SONHA,CHUYENTK= CONVERT(VARCHAR(10),ttk.NGAYNHAN,103),NGAYTRAHS= CONVERT(VARCHAR(10),ttk.NGAYTRAHS,103)  ";
             sql += " FROM TOTHIETKE ttk, DON_KHACHHANG kh,QUAN q,PHUONG p, LOAI_HOSO lhs ";
             sql += " WHERE  kh.QUAN = q.MAQUAN AND q.MAQUAN=p.MAQUAN AND kh.PHUONG=p.MAPHUONG AND lhs.MALOAI=kh.LOAIHOSO AND ttk.SOHOSO=kh.SOHOSO ";
-            if (madot != null)
+            sql += " AND  (ttk.TRONGAITHIETKE is null or ttk.TRONGAITHIETKE=0) and ttk.TRAHS=0 ";
+            sql += "  AND ttk.TRAHS='False'  AND ttk.SOHOSO not in (select MAHOSO from TMP_TAIXET) AND NGAYTRAHS is null and HOANTATTK is null  ";
+            if (loaihs != null)
             {
-                sql += " AND ttk.MADOT='" + madot + "'";
+                if (loaihs == "GM")
+                {
+                    sql += " AND kh.LOAIHOSO='" + loaihs + "' AND ISNUMERIC(ttk.SHS)=1  ";
+                }
+                else
+                    sql += " AND kh.LOAIHOSO='" + loaihs + "'";
+
             }
             if (tungay != null)
             {

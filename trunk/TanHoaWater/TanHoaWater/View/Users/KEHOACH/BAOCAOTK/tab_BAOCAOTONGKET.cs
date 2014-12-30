@@ -167,6 +167,11 @@ namespace TanHoaWater.View.Users.KEHOACH
                     else
                         rp = new Rpt_BCTONGKET_QTB();
 
+                    //if (cbLoaiBN.SelectedValue.ToString() == "BT")
+                    //{
+                    //    rp = new rpt_BCTONGKET_QTB_BT();
+                    //}
+
                     if (tabItem7.IsSelected == true)
                     {
                         ds = DAL.C_KH_BAOCAO.BC_TONGKET(cbLoaiBN.SelectedValue + "", 1, "", this.cbQuan.SelectedValue + "", Utilities.DateToString.NgayVN(congtaTuNgay), Utilities.DateToString.NgayVN(congtacDenNgay));
