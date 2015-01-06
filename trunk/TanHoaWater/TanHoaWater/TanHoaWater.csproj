@@ -1830,7 +1830,6 @@
     <Compile Include="View\Main\frm_Login.Designer.cs">
       <DependentUpon>frm_Login.cs</DependentUpon>
     </Compile>
-    <None Include="TanHoaWater_TemporaryKey.pfx" />
     <None Include="View\Users\DONGHONUOC\BC\chodanhbo.xsc">
       <DependentUpon>chodanhbo.xsd</DependentUpon>
     </None>

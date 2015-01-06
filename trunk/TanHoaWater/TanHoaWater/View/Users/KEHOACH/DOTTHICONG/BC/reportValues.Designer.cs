@@ -31,10 +31,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(reportValues));
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.labelX2 = new DevComponents.DotNetBar.LabelX();
+            this.textBoxX2 = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.textBoxX1 = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
-            this.textBoxX2 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.labelX2 = new DevComponents.DotNetBar.LabelX();
+            this.textBoxX3 = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,12 +47,13 @@
             this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.Size = new System.Drawing.Size(690, 251);
+            this.crystalReportViewer1.Size = new System.Drawing.Size(690, 303);
             this.crystalReportViewer1.TabIndex = 0;
             this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.textBoxX3);
             this.panel1.Controls.Add(this.labelX2);
             this.panel1.Controls.Add(this.textBoxX2);
             this.panel1.Controls.Add(this.textBoxX1);
@@ -59,8 +61,30 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(690, 251);
+            this.panel1.Size = new System.Drawing.Size(690, 303);
             this.panel1.TabIndex = 1;
+            // 
+            // labelX2
+            // 
+            this.labelX2.Location = new System.Drawing.Point(23, 265);
+            this.labelX2.Margin = new System.Windows.Forms.Padding(4);
+            this.labelX2.Name = "labelX2";
+            this.labelX2.Size = new System.Drawing.Size(654, 25);
+            this.labelX2.TabIndex = 5;
+            this.labelX2.Text = "tiêu đề có 2 dòng nhấn enter dòng  thứ 2";
+            // 
+            // textBoxX2
+            // 
+            // 
+            // 
+            // 
+            this.textBoxX2.Border.Class = "TextBoxBorder";
+            this.textBoxX2.Location = new System.Drawing.Point(23, 179);
+            this.textBoxX2.Multiline = true;
+            this.textBoxX2.Name = "textBoxX2";
+            this.textBoxX2.Size = new System.Drawing.Size(613, 65);
+            this.textBoxX2.TabIndex = 4;
+            this.textBoxX2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxX2_KeyPress);
             // 
             // textBoxX1
             // 
@@ -68,7 +92,7 @@
             // 
             // 
             this.textBoxX1.Border.Class = "TextBoxBorder";
-            this.textBoxX1.Location = new System.Drawing.Point(23, 51);
+            this.textBoxX1.Location = new System.Drawing.Point(23, 94);
             this.textBoxX1.Multiline = true;
             this.textBoxX1.Name = "textBoxX1";
             this.textBoxX1.Size = new System.Drawing.Size(613, 65);
@@ -84,33 +108,24 @@
             this.labelX1.TabIndex = 2;
             this.labelX1.Text = "labelX1";
             // 
-            // textBoxX2
+            // textBoxX3
             // 
             // 
             // 
             // 
-            this.textBoxX2.Border.Class = "TextBoxBorder";
-            this.textBoxX2.Location = new System.Drawing.Point(23, 142);
-            this.textBoxX2.Multiline = true;
-            this.textBoxX2.Name = "textBoxX2";
-            this.textBoxX2.Size = new System.Drawing.Size(613, 65);
-            this.textBoxX2.TabIndex = 4;
-            this.textBoxX2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxX2_KeyPress);
-            // 
-            // labelX2
-            // 
-            this.labelX2.Location = new System.Drawing.Point(23, 222);
-            this.labelX2.Margin = new System.Windows.Forms.Padding(4);
-            this.labelX2.Name = "labelX2";
-            this.labelX2.Size = new System.Drawing.Size(654, 25);
-            this.labelX2.TabIndex = 5;
-            this.labelX2.Text = "tiêu đề có 2 dòng nhấn enter dòng  thứ 2";
+            this.textBoxX3.Border.Class = "TextBoxBorder";
+            this.textBoxX3.Location = new System.Drawing.Point(23, 51);
+            this.textBoxX3.Multiline = true;
+            this.textBoxX3.Name = "textBoxX3";
+            this.textBoxX3.Size = new System.Drawing.Size(613, 37);
+            this.textBoxX3.TabIndex = 6;
+            this.textBoxX3.Text = "BẢNG KÊ THI CÔNG DỜI ĐHN MIỄN PHÍ";
             // 
             // reportValues
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(690, 251);
+            this.ClientSize = new System.Drawing.Size(690, 303);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.crystalReportViewer1);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -132,6 +147,7 @@
         private DevComponents.DotNetBar.LabelX labelX1;
         private DevComponents.DotNetBar.Controls.TextBoxX textBoxX2;
         private DevComponents.DotNetBar.LabelX labelX2;
+        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX3;
 
     }
 }
