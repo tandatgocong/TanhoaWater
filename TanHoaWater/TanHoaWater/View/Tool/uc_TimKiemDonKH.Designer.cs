@@ -871,7 +871,7 @@
             // 
             // DotThiCong
             // 
-            this.DotThiCong.BackColor = System.Drawing.SystemColors.Window;
+            this.DotThiCong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             // 
             // 
             // 
@@ -879,9 +879,10 @@
             this.DotThiCong.Location = new System.Drawing.Point(99, 293);
             this.DotThiCong.Margin = new System.Windows.Forms.Padding(4);
             this.DotThiCong.Name = "DotThiCong";
-            this.DotThiCong.ReadOnly = true;
             this.DotThiCong.Size = new System.Drawing.Size(290, 26);
             this.DotThiCong.TabIndex = 161;
+            this.DotThiCong.WatermarkText = "Tìm Kiếm Đợt Thi Công";
+            this.DotThiCong.Leave += new System.EventHandler(this.DotThiCong_Leave);
             // 
             // label4
             // 

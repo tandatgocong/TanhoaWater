@@ -157,14 +157,14 @@ namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
                 }
             }
         }
-        public void Refresh()
-        {
-            txtMaSHS.Text = "";
-            txtHoTen.Text = "";
-            txtDiaChi.Text = "";
-            txtGhiChu.Text = "";
-            txtMaSHS.Focus();
-        }
+        //public void Refresh()
+        //{
+        //    txtMaSHS.Text = "";
+        //    txtHoTen.Text = "";
+        //    txtDiaChi.Text = "";
+        //    txtGhiChu.Text = "";
+        //    txtMaSHS.Focus();
+        //}
 
         public void loadDataGrid(string sodot) {
             DataTable table = DAL.C_KH_HoSoKhachHang.getListHSbyDot(sodot); 

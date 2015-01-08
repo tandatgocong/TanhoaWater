@@ -14,9 +14,20 @@ namespace TanHoaWater.View.Tool
     public partial class uc_TimKiemDonKH : UserControl
     {
         private static readonly ILog log = LogManager.GetLogger(typeof(uc_TimKiemDonKH).Name);
+        AutoCompleteStringCollection namesCollection = new AutoCompleteStringCollection();
+
         public uc_TimKiemDonKH()
         {
             InitializeComponent();
+
+            List<KH_DOTTHICONG> list = DAL.C_KH_DotThiCong.getListDTC();
+            foreach (var item in list)
+            {
+                namesCollection.Add(item.MADOTTC);
+            }
+            DotThiCong.AutoCompleteMode = AutoCompleteMode.Suggest;
+            DotThiCong.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            DotThiCong.AutoCompleteCustomSource = namesCollection;
         }
 
         private void uc_TimKiemDonKH_Load(object sender, EventArgs e)
@@ -544,9 +555,7 @@ namespace TanHoaWater.View.Tool
 
         private void SearchMaHoSo_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == 13) {
-                search();
-            }
+
         }
 
         private void searchHoTenKH_KeyPress(object sender, KeyPressEventArgs e)
@@ -659,6 +668,17 @@ namespace TanHoaWater.View.Tool
             }
         }
 
+       
+
+        private void DotThiCong_Leave(object sender, EventArgs e)
+        {
+            DataTable table = DAL.C_TimKiemDonKhachHang.TimDonKH_DOTTHICONG(DotThiCong.Text);
+            this.dataGridView1.DataSource = table;
+            lbsohoso.Text = "Tổng Số Có " + dataGridView1.Rows.Count + " Hồ Sơ.";
+            Utilities.DataGridV.formatRows(dataGridView1);
+        }
+
+       
     
     
     }

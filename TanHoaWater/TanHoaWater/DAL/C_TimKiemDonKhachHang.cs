@@ -94,13 +94,16 @@ namespace TanHoaWater.DAL
             {
                 sql += " AND  replace(( SONHA +'  '+DUONG+',  P.'+ p.TENPHUONG+',  Q.'+q.TENQUAN),' ','')  LIKE N'%" + diachi.Replace(" ", "") + "%'";
             }
-            TanHoaDataContext db = new TanHoaDataContext();
-            db.Connection.Open();
-            SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
-            DataSet dataset = new DataSet();
-            adapter.Fill(dataset, FirstRow, pageSize, "TABLE");
-            db.Connection.Close();
-            return dataset.Tables[0];
+            return LinQConnection.getDataTable(sql);
+        }
+
+        public static DataTable TimDonKH_DOTTHICONG(string shs)
+        {
+            string sql = "SELECT  biennhan.SHS, biennhan.HOTEN,( SONHA +'  '+DUONG+',  P.'+ p.TENPHUONG+',  Q.'+q.TENQUAN) as 'DIACHI',DIENTHOAI ,CONVERT(VARCHAR(20),biennhan.NGAYNHAN,103) AS 'NGAYNHAN',lhs.TENLOAI as 'LOAIHS' ";
+            sql += " FROM QUAN q,PHUONG p,DON_KHACHHANG biennhan, LOAI_HOSO lhs , KH_HOSOKHACHHANG hskh ";
+            sql += " WHERE biennhan.QUAN = q.MAQUAN AND q.MAQUAN=p.MAQUAN  AND biennhan.PHUONG=p.MAPHUONG AND lhs.MALOAI=biennhan.LOAIHOSO AND hskh.SHS=biennhan.SHS ";
+            sql += " AND hskh.MADOTTC=N'" + shs + "' ";
+            return LinQConnection.getDataTable(sql);
         }
 
         public static int TotalTimDonKH(string shs, string hoten, string diachi, string dienthoai)
