@@ -209,23 +209,24 @@ namespace TanHoaWater
                 this.PanelContent.Controls.Clear();
                 this.PanelContent.Controls.Add(new Admin_Main());
             }
+
             else if ("US".Equals(DAL.C_USERS._roles.Trim()))
             {
                 menuQuanTri.Visible = false;
                 if ("TTK".Equals(DAL.C_USERS._maphong.Trim()))
                 {
                     this.menuToThietKe.Visible = true;
-                    this.iconMenuPanel.Controls.Clear();
-                    this.iconMenuPanel.Controls.Add(groupTTK);
-                    groupTTK.Visible = true;
+                   // this.iconMenuPanel.Controls.Clear();
+                  //  this.iconMenuPanel.Controls.Add(groupTTK);
+                //    groupTTK.Visible = true;
 
                 }
                 else if ("VTTH".Equals(DAL.C_USERS._maphong.Trim()))
                 {
                     this.menuKHVT.Visible = true;
-                    this.iconMenuPanel.Controls.Clear();
-                    this.iconMenuPanel.Controls.Add(group_VTTH);
-                    group_VTTH.Visible = true;
+                //    this.iconMenuPanel.Controls.Clear();
+               //     this.iconMenuPanel.Controls.Add(group_VTTH);
+              //      group_VTTH.Visible = true;
 
 
                     if ("KH".Equals(DAL.C_USERS._maquyen))
@@ -263,7 +264,7 @@ namespace TanHoaWater
                 else if ("DHN".Equals(DAL.C_USERS._maphong.Trim()))
                 {
                     this.menuQLDHNuoc.Visible = true;
-                    this.iconMenuPanel.Controls.Clear();
+                //    this.iconMenuPanel.Controls.Clear();
                   //  this.iconMenuPanel.Controls.Add(group_DoiDHN);
                   //  group_DoiDHN.Visible = true;
 
@@ -271,7 +272,7 @@ namespace TanHoaWater
                 else if ("TCTB".Equals(DAL.C_USERS._maphong.Trim()))
                 {
                     this.menuDoiTCTB.Visible = true;
-                    this.iconMenuPanel.Controls.Clear();
+                //    this.iconMenuPanel.Controls.Clear();
                 }
                 else if ("TIT".Equals(DAL.C_USERS._maphong.Trim()))
                 {
@@ -279,12 +280,12 @@ namespace TanHoaWater
                     menuQuanTri.Visible = false;
 
                     this.menuToThietKe.Visible = true;
-                    this.iconMenuPanel.Controls.Clear();
-                    this.iconMenuPanel.Controls.Add(groupTTK);
-                    groupTTK.Visible = true;
+                 //   this.iconMenuPanel.Controls.Clear();
+                   // this.iconMenuPanel.Controls.Add(groupTTK);
+                 //   groupTTK.Visible = true;
                     this.menuKHVT.Visible = true;
-                    this.iconMenuPanel.Controls.Add(group_VTTH);
-                    group_VTTH.Visible = true;
+                 //   this.iconMenuPanel.Controls.Add(group_VTTH);
+                //    group_VTTH.Visible = true;
                     this.KH_DotNhanDon.Visible = true;
                     this.KH_biennhan.Visible = true;
                     this.KH_DonKhachHang.Visible = true;
@@ -299,13 +300,19 @@ namespace TanHoaWater
                     this.menuDoiTCTB.Visible = true;
 
                 }
+                else if ("USE".Equals(DAL.C_USERS._maphong.Trim()))
+                {
+                    menuQuanTri.Visible = false;
+
+                }
+
 
             }
             else if ("QT".Equals(DAL.C_USERS._roles.Trim()))
             {
 
                 this.menuToThietKe.Visible = true;
-                this.iconMenuPanel.Controls.Clear();
+            //    this.iconMenuPanel.Controls.Clear();
                 this.menuKHVT.Visible = true;
                 this.menuQLDHNuoc.Visible = true;
             }
@@ -533,7 +540,7 @@ namespace TanHoaWater
             this.menuQLDHNuoc.Visible = false;
             this.menuKHVT.Visible = false;
             menuQuanTri.Visible = false;
-            iconMenuPanel.Controls.Clear();
+         //   iconMenuPanel.Controls.Clear();
             DAL.C_USERS._fullName = null;
             DAL.C_USERS._roles = null;
             DAL.C_USERS._userName = null;
