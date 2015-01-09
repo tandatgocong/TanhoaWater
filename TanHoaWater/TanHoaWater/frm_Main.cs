@@ -199,6 +199,7 @@ namespace TanHoaWater
             TC_DotThiCong.Visible = b;
             HC_HoanCong.Visible = b;
 
+
         }
         public void role(string role)
         {
@@ -244,6 +245,8 @@ namespace TanHoaWater
                         this.TC_DotThiCong.Visible = true;
                     }
 
+                   
+
                     if ("TC".Equals(DAL.C_USERS._maquyen))
                     {
                         this.TC_DotThiCong.Visible = true;
@@ -273,6 +276,11 @@ namespace TanHoaWater
                 {
                     this.menuDoiTCTB.Visible = true;
                 //    this.iconMenuPanel.Controls.Clear();
+                }
+                else if ("DA".Equals(DAL.C_USERS._maphong.Trim()))
+                {
+                    this.menuQLDA.Visible = true;
+                    //    this.iconMenuPanel.Controls.Clear();
                 }
                 else if ("TIT".Equals(DAL.C_USERS._maphong.Trim()))
                 {
@@ -362,7 +370,7 @@ namespace TanHoaWater
                 this.menuKHVT.Visible = true;
                 this.menuKHVT.Select();
                 this.PanelContent.Controls.Clear();
-                this.PanelContent.Controls.Add(new UCT_XINPHEPDD());
+                this.PanelContent.Controls.Add(new UCT_XINPHEPDD(0));
             }
             catch (Exception ex)
             {
@@ -737,7 +745,7 @@ namespace TanHoaWater
             {
 
                 this.PanelContent.Controls.Clear();
-                this.PanelContent.Controls.Add(new UCT_XINPHEPDD());
+                this.PanelContent.Controls.Add(new UCT_XINPHEPDD(0));
                 this.menuKHVT.Select();
             }
             catch (Exception ex)
@@ -898,6 +906,23 @@ namespace TanHoaWater
                 this.PanelContent.Controls.Clear();
                 this.PanelContent.Controls.Add(new tab_BAOCAOTONGKET());
                 this.menuToThietKe.Select();
+            }
+            catch (Exception ex)
+            {
+                log.Error("Loi Load Form " + ex.Message);
+                MessageBox.Show(this, "Lỗi Load Dữ Liệu", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Application.Exit();
+            }
+        }
+
+        private void menuQLDA_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                this.PanelContent.Controls.Clear();
+                this.PanelContent.Controls.Add(new UCT_XINPHEPDD(1));
+                this.menuQLDA.Select();
             }
             catch (Exception ex)
             {

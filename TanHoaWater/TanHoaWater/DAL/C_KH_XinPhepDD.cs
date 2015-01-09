@@ -19,7 +19,7 @@ namespace TanHoaWater.DAL
             SqlConnection conn = new SqlConnection(db.Connection.ConnectionString);
             conn.Open();
             string sql = " SELECT COUNT(*)";
-            sql += " FROM KH_XINPHEPDAODUONG WHERE MADOT IS NOT NULL ";
+            sql += " FROM KH_XINPHEPDAODUONG WHERE MADOT IS NOT NULL AND CREATEBY='" + DAL.C_USERS._userName + "' ";
             if (!"".Equals(sodot))
             {
                 sql += " AND MADOT LIKE '%" + sodot + "%'";
@@ -61,7 +61,7 @@ namespace TanHoaWater.DAL
             TanHoaDataContext db = new TanHoaDataContext();
             db.Connection.Open();
             string sql = " SELECT MADOTXP,MADOT,NOICAPPHEP,NGAYLAP,MAQUANLY,NGAYCOPHEP";
-            sql += " FROM KH_XINPHEPDAODUONG WHERE MADOT IS NOT NULL";
+            sql += " FROM KH_XINPHEPDAODUONG WHERE MADOT IS NOT NULL AND CREATEBY='"+ DAL.C_USERS._userName +"'";
             if (!"".Equals(sodot))
             {
                 sql += " AND MADOT LIKE '%" + sodot + "%'";
@@ -89,15 +89,51 @@ namespace TanHoaWater.DAL
             return obj.ToList();
         }
         public static KH_XINPHEPDAODUONG finbyMaDot(string madot) {
-            TanHoaDataContext db = new TanHoaDataContext();
-            var obj = from dd in db.KH_XINPHEPDAODUONGs where dd.MADOT == madot select dd ;
+            var obj = from dd in db.KH_XINPHEPDAODUONGs where dd.MADOT == madot  select dd ;
             return obj.SingleOrDefault();
+        }
+
+        public static DA_XINPHEP finbyMaDotDA(string madot)
+        {
+            var obj = from dd in db.DA_XINPHEPs where dd.MADOT == madot select dd;
+            return obj.SingleOrDefault();
+        }
+
+        public static bool InsertDA(DA_XINPHEP xpdd)
+        {
+            try
+            {
+                TanHoaDataContext db = new TanHoaDataContext();
+                db.DA_XINPHEPs.InsertOnSubmit(xpdd);
+                db.SubmitChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                log.Error("Insert Xin Phep Dao Duong Loi. " + ex.Message);
+            }
+            return false;
+        }
+
+        public static bool Update()
+        {
+            try
+            {
+               
+                db.SubmitChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                log.Error("Insert Xin Phep Dao Duong Loi. " + ex.Message);
+            }
+            return false;
         }
 
         public static List<KH_XINPHEPDAODUONG> ListAllXinPhepDD()
         {
             TanHoaDataContext db = new TanHoaDataContext();
-            var obj = from dd in db.KH_XINPHEPDAODUONGs orderby dd.NGAYLAP ascending  select dd;
+            var obj = from dd in db.KH_XINPHEPDAODUONGs where dd.CREATEBY== DAL.C_USERS._userName orderby dd.NGAYLAP ascending  select dd;
             return obj.ToList();
         }
      

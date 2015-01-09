@@ -34,7 +34,8 @@ namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
             }
 
         }
-        public UCT_XINPHEPDD()
+        int flag_ = 0;
+        public UCT_XINPHEPDD(int flag)
         {
             InitializeComponent();
             this.tabControl1.SelectedTabIndex = 0;
@@ -46,6 +47,30 @@ namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
             this.cbNoiCap.DisplayMember = "MACAPPHEP";
             this.cbNoiCap.ValueMember = "MACAPPHEP";
             #endregion
+
+            if (flag == 0)
+            {
+                tabItem2.Visible = true;
+                btCapNhatCoPhep.Visible = true;
+                capnhatDSChoDot.Visible = true;
+                btExport.Visible = true;
+               // txtSoDot.ReadOnly = false;
+                btInDanhSachMienPhep.Visible = true;
+                inDanhSachCoPhep.Visible = true;
+            }
+            else
+            {
+                tabItem2.Visible = false;
+                btCapNhatCoPhep.Visible = false;
+                capnhatDSChoDot.Visible = false;
+                btExport.Visible = false;
+                btInDanhSachMienPhep.Visible = false;
+                inDanhSachCoPhep.Visible = false;
+                //txtSoDot.ReadOnly = true;
+                txtSoDot.Text = DAL.Idetity.IdentityDUAN("");
+                flag_ = 1;
+
+            }
                 
         }
         public void loadData()
@@ -514,8 +539,16 @@ namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
             catch (Exception)
             {
             }
-            frmDialogDonXP frm = new frmDialogDonXP(madot);
-            frm.ShowDialog();
+            if (flag_ == 1)
+            {
+                frmDialogDonXP_DA frm = new frmDialogDonXP_DA(madot);
+                frm.ShowDialog();
+            }
+            else
+            {
+                frmDialogDonXP frm = new frmDialogDonXP(madot);
+                frm.ShowDialog();
+            }
         }
     }
 }
