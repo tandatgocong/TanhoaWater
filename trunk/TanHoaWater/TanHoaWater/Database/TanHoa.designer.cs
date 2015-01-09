@@ -195,6 +195,9 @@ namespace TanHoaWater.Database
     partial void InsertTMP_TAIXET(TMP_TAIXET instance);
     partial void UpdateTMP_TAIXET(TMP_TAIXET instance);
     partial void DeleteTMP_TAIXET(TMP_TAIXET instance);
+    partial void InsertDA_XINPHEP(DA_XINPHEP instance);
+    partial void UpdateDA_XINPHEP(DA_XINPHEP instance);
+    partial void DeleteDA_XINPHEP(DA_XINPHEP instance);
     #endregion
 		
 		public TanHoaDataContext() : 
@@ -904,6 +907,14 @@ namespace TanHoaWater.Database
 			get
 			{
 				return this.GetTable<TMP_TAIXET>();
+			}
+		}
+		
+		public System.Data.Linq.Table<DA_XINPHEP> DA_XINPHEPs
+		{
+			get
+			{
+				return this.GetTable<DA_XINPHEP>();
 			}
 		}
 		
@@ -38329,6 +38340,212 @@ namespace TanHoaWater.Database
 					this._GHICHUTR = value;
 					this.SendPropertyChanged("GHICHUTR");
 					this.OnGHICHUTRChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.DA_XINPHEP")]
+	public partial class DA_XINPHEP : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _MADOT;
+		
+		private string _VV;
+		
+		private string _CONGTAC;
+		
+		private string _DVTC;
+		
+		private string _DVTL;
+		
+		private System.Nullable<System.DateTime> _TUNGAY;
+		
+		private System.Nullable<System.DateTime> _DENNGAY;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMADOTChanging(string value);
+    partial void OnMADOTChanged();
+    partial void OnVVChanging(string value);
+    partial void OnVVChanged();
+    partial void OnCONGTACChanging(string value);
+    partial void OnCONGTACChanged();
+    partial void OnDVTCChanging(string value);
+    partial void OnDVTCChanged();
+    partial void OnDVTLChanging(string value);
+    partial void OnDVTLChanged();
+    partial void OnTUNGAYChanging(System.Nullable<System.DateTime> value);
+    partial void OnTUNGAYChanged();
+    partial void OnDENNGAYChanging(System.Nullable<System.DateTime> value);
+    partial void OnDENNGAYChanged();
+    #endregion
+		
+		public DA_XINPHEP()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MADOT", DbType="NVarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string MADOT
+		{
+			get
+			{
+				return this._MADOT;
+			}
+			set
+			{
+				if ((this._MADOT != value))
+				{
+					this.OnMADOTChanging(value);
+					this.SendPropertyChanging();
+					this._MADOT = value;
+					this.SendPropertyChanged("MADOT");
+					this.OnMADOTChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VV", DbType="NVarChar(255)")]
+		public string VV
+		{
+			get
+			{
+				return this._VV;
+			}
+			set
+			{
+				if ((this._VV != value))
+				{
+					this.OnVVChanging(value);
+					this.SendPropertyChanging();
+					this._VV = value;
+					this.SendPropertyChanged("VV");
+					this.OnVVChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CONGTAC", DbType="NVarChar(255)")]
+		public string CONGTAC
+		{
+			get
+			{
+				return this._CONGTAC;
+			}
+			set
+			{
+				if ((this._CONGTAC != value))
+				{
+					this.OnCONGTACChanging(value);
+					this.SendPropertyChanging();
+					this._CONGTAC = value;
+					this.SendPropertyChanged("CONGTAC");
+					this.OnCONGTACChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DVTC", DbType="NVarChar(255)")]
+		public string DVTC
+		{
+			get
+			{
+				return this._DVTC;
+			}
+			set
+			{
+				if ((this._DVTC != value))
+				{
+					this.OnDVTCChanging(value);
+					this.SendPropertyChanging();
+					this._DVTC = value;
+					this.SendPropertyChanged("DVTC");
+					this.OnDVTCChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DVTL", DbType="NVarChar(255)")]
+		public string DVTL
+		{
+			get
+			{
+				return this._DVTL;
+			}
+			set
+			{
+				if ((this._DVTL != value))
+				{
+					this.OnDVTLChanging(value);
+					this.SendPropertyChanging();
+					this._DVTL = value;
+					this.SendPropertyChanged("DVTL");
+					this.OnDVTLChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TUNGAY", DbType="DateTime")]
+		public System.Nullable<System.DateTime> TUNGAY
+		{
+			get
+			{
+				return this._TUNGAY;
+			}
+			set
+			{
+				if ((this._TUNGAY != value))
+				{
+					this.OnTUNGAYChanging(value);
+					this.SendPropertyChanging();
+					this._TUNGAY = value;
+					this.SendPropertyChanged("TUNGAY");
+					this.OnTUNGAYChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DENNGAY", DbType="DateTime")]
+		public System.Nullable<System.DateTime> DENNGAY
+		{
+			get
+			{
+				return this._DENNGAY;
+			}
+			set
+			{
+				if ((this._DENNGAY != value))
+				{
+					this.OnDENNGAYChanging(value);
+					this.SendPropertyChanging();
+					this._DENNGAY = value;
+					this.SendPropertyChanged("DENNGAY");
+					this.OnDENNGAYChanged();
 				}
 			}
 		}

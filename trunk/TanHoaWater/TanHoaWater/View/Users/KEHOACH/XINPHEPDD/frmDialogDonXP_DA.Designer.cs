@@ -1,6 +1,6 @@
 ﻿namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
 {
-    partial class frmDialogDonXP
+    partial class frmDialogDonXP_DA
     {
         /// <summary>
         /// Required designer variable.
@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDialogDonXP));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDialogDonXP_DA));
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.labelX7 = new DevComponents.DotNetBar.LabelX();
             this.thicong = new System.Windows.Forms.RichTextBox();
             this.txtCongTac = new System.Windows.Forms.RichTextBox();
             this.txtVv = new System.Windows.Forms.RichTextBox();
@@ -63,6 +65,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
+            this.panel1.Controls.Add(this.richTextBox1);
+            this.panel1.Controls.Add(this.labelX7);
             this.panel1.Controls.Add(this.thicong);
             this.panel1.Controls.Add(this.txtCongTac);
             this.panel1.Controls.Add(this.txtVv);
@@ -84,11 +88,30 @@
             this.panel1.Size = new System.Drawing.Size(567, 418);
             this.panel1.TabIndex = 1;
             // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(83, 265);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(472, 27);
+            this.richTextBox1.TabIndex = 16;
+            this.richTextBox1.Text = "";
+            this.richTextBox1.Visible = false;
+            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
+            // 
+            // labelX7
+            // 
+            this.labelX7.Location = new System.Drawing.Point(13, 265);
+            this.labelX7.Name = "labelX7";
+            this.labelX7.Size = new System.Drawing.Size(74, 23);
+            this.labelX7.TabIndex = 17;
+            this.labelX7.Text = "Tư vấn giám sát";
+            this.labelX7.Visible = false;
+            // 
             // thicong
             // 
             this.thicong.Location = new System.Drawing.Point(82, 174);
             this.thicong.Name = "thicong";
-            this.thicong.Size = new System.Drawing.Size(472, 82);
+            this.thicong.Size = new System.Drawing.Size(472, 85);
             this.thicong.TabIndex = 14;
             this.thicong.Text = "";
             // 
@@ -209,9 +232,9 @@
             this.labelX6.Name = "labelX6";
             this.labelX6.Size = new System.Drawing.Size(75, 23);
             this.labelX6.TabIndex = 15;
-            this.labelX6.Text = "Thi Công :";
+            this.labelX6.Text = "TLMĐ :";
             // 
-            // frmDialogDonXP
+            // frmDialogDonXP_DA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -219,7 +242,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.crystalReportViewer1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "frmDialogDonXP";
+            this.Name = "frmDialogDonXP_DA";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "In Danh Sách Xin Phép Đào Đường";
@@ -246,5 +269,7 @@
         private System.Windows.Forms.RichTextBox txtVv;
         private System.Windows.Forms.RichTextBox thicong;
         private DevComponents.DotNetBar.LabelX labelX6;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private DevComponents.DotNetBar.LabelX labelX7;
     }
 }

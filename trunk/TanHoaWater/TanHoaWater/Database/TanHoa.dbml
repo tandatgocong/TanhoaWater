@@ -1843,6 +1843,17 @@
       <Column Name="GHICHUTR" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.DA_XINPHEP" Member="DA_XINPHEPs">
+    <Type Name="DA_XINPHEP">
+      <Column Name="MADOT" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="VV" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="CONGTAC" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="DVTC" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="DVTL" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="TUNGAY" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DENNGAY" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
   <Function Name="dbo.TONGKETCHIPHI" Method="TONGKETCHIPHI">
     <Parameter Name="SHS" Parameter="sHS" Type="System.String" DbType="VarChar(50)" />
     <Parameter Name="A" Parameter="a" Type="System.Double" DbType="Float" Direction="InOut" />
