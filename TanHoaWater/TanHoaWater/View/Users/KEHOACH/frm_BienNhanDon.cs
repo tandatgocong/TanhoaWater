@@ -35,7 +35,7 @@ namespace TanHoaWater.View.Users.KEHOACH
                 this.cbLoaiBN.DataSource = DAL.C_LoaiNhanDon.getList();
                 this.cbLoaiBN.ValueMember = "LOAIDON";
                 this.cbLoaiBN.DisplayMember = "TENLOAI";
-                this.cbLoaiBN.SelectedIndex = 2;
+             //   this.cbLoaiBN.SelectedIndex = 2;
 
                 List <TENDUONG> list  = DAL.C_TenDuong.getList();
                 foreach (var item in list)

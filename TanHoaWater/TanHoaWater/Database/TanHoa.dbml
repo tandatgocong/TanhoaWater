@@ -656,13 +656,6 @@
       <Association Name="LOAI_KHACHHANG_DON_KHACHHANG" Member="DON_KHACHHANGs" ThisKey="MALOAI" OtherKey="LOAIKH" Type="DON_KHACHHANG" />
     </Type>
   </Table>
-  <Table Name="dbo.LOAI_NHANDON" Member="LOAI_NHANDONs">
-    <Type Name="LOAI_NHANDON">
-      <Column Name="LOAIDON" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="TENLOAI" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Association Name="LOAI_NHANDON_BIENNHANDON" Member="BIENNHANDONs" ThisKey="LOAIDON" OtherKey="LOAIDON" Type="BIENNHANDON" />
-    </Type>
-  </Table>
   <Table Name="dbo.LOAISD" Member="LOAISDs">
     <Type Name="LOAISD">
       <Column Name="MALOAI" Type="System.String" DbType="VarChar(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -1852,6 +1845,14 @@
       <Column Name="DVTL" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="TUNGAY" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="DENNGAY" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LOAI_NHANDON" Member="LOAI_NHANDONs">
+    <Type Name="LOAI_NHANDON">
+      <Column Name="LOAIDON" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TENLOAI" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="STT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="LOAI_NHANDON_BIENNHANDON" Member="BIENNHANDONs" ThisKey="LOAIDON" OtherKey="LOAIDON" Type="BIENNHANDON" />
     </Type>
   </Table>
   <Function Name="dbo.TONGKETCHIPHI" Method="TONGKETCHIPHI">

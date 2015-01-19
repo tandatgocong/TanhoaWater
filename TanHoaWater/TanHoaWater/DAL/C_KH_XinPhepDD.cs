@@ -88,6 +88,8 @@ namespace TanHoaWater.DAL
             var obj = from dd in db.KH_NOICAPPHEPs select dd;
             return obj.ToList();
         }
+        
+        
         public static KH_XINPHEPDAODUONG finbyMaDot(string madot) {
             var obj = from dd in db.KH_XINPHEPDAODUONGs where dd.MADOT == madot  select dd ;
             return obj.SingleOrDefault();
