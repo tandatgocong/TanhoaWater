@@ -40,7 +40,8 @@ namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
             rp.SetParameterValue("tungay", TUNGAY);
             rp.SetParameterValue("denngay", DENNGAY);
             rp.SetParameterValue("tc1", this.thicong.Text);
-
+            rp.SetParameterValue("tt", 1);
+            
             crystalReportViewer1.ReportSource = rp;
            
             try

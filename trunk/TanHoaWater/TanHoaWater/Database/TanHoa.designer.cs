@@ -138,9 +138,6 @@ namespace TanHoaWater.Database
     partial void InsertLOAI_KHACHHANG(LOAI_KHACHHANG instance);
     partial void UpdateLOAI_KHACHHANG(LOAI_KHACHHANG instance);
     partial void DeleteLOAI_KHACHHANG(LOAI_KHACHHANG instance);
-    partial void InsertLOAI_NHANDON(LOAI_NHANDON instance);
-    partial void UpdateLOAI_NHANDON(LOAI_NHANDON instance);
-    partial void DeleteLOAI_NHANDON(LOAI_NHANDON instance);
     partial void InsertLOAISD(LOAISD instance);
     partial void UpdateLOAISD(LOAISD instance);
     partial void DeleteLOAISD(LOAISD instance);
@@ -198,6 +195,9 @@ namespace TanHoaWater.Database
     partial void InsertDA_XINPHEP(DA_XINPHEP instance);
     partial void UpdateDA_XINPHEP(DA_XINPHEP instance);
     partial void DeleteDA_XINPHEP(DA_XINPHEP instance);
+    partial void InsertLOAI_NHANDON(LOAI_NHANDON instance);
+    partial void UpdateLOAI_NHANDON(LOAI_NHANDON instance);
+    partial void DeleteLOAI_NHANDON(LOAI_NHANDON instance);
     #endregion
 		
 		public TanHoaDataContext() : 
@@ -515,14 +515,6 @@ namespace TanHoaWater.Database
 			get
 			{
 				return this.GetTable<LOAI_KHACHHANG>();
-			}
-		}
-		
-		public System.Data.Linq.Table<LOAI_NHANDON> LOAI_NHANDONs
-		{
-			get
-			{
-				return this.GetTable<LOAI_NHANDON>();
 			}
 		}
 		
@@ -915,6 +907,14 @@ namespace TanHoaWater.Database
 			get
 			{
 				return this.GetTable<DA_XINPHEP>();
+			}
+		}
+		
+		public System.Data.Linq.Table<LOAI_NHANDON> LOAI_NHANDONs
+		{
+			get
+			{
+				return this.GetTable<LOAI_NHANDON>();
 			}
 		}
 		
@@ -17712,120 +17712,6 @@ namespace TanHoaWater.Database
 		{
 			this.SendPropertyChanging();
 			entity.LOAI_KHACHHANG = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.LOAI_NHANDON")]
-	public partial class LOAI_NHANDON : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _LOAIDON;
-		
-		private string _TENLOAI;
-		
-		private EntitySet<BIENNHANDON> _BIENNHANDONs;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnLOAIDONChanging(string value);
-    partial void OnLOAIDONChanged();
-    partial void OnTENLOAIChanging(string value);
-    partial void OnTENLOAIChanged();
-    #endregion
-		
-		public LOAI_NHANDON()
-		{
-			this._BIENNHANDONs = new EntitySet<BIENNHANDON>(new Action<BIENNHANDON>(this.attach_BIENNHANDONs), new Action<BIENNHANDON>(this.detach_BIENNHANDONs));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LOAIDON", DbType="VarChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string LOAIDON
-		{
-			get
-			{
-				return this._LOAIDON;
-			}
-			set
-			{
-				if ((this._LOAIDON != value))
-				{
-					this.OnLOAIDONChanging(value);
-					this.SendPropertyChanging();
-					this._LOAIDON = value;
-					this.SendPropertyChanged("LOAIDON");
-					this.OnLOAIDONChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENLOAI", DbType="NVarChar(100)")]
-		public string TENLOAI
-		{
-			get
-			{
-				return this._TENLOAI;
-			}
-			set
-			{
-				if ((this._TENLOAI != value))
-				{
-					this.OnTENLOAIChanging(value);
-					this.SendPropertyChanging();
-					this._TENLOAI = value;
-					this.SendPropertyChanged("TENLOAI");
-					this.OnTENLOAIChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LOAI_NHANDON_BIENNHANDON", Storage="_BIENNHANDONs", ThisKey="LOAIDON", OtherKey="LOAIDON")]
-		public EntitySet<BIENNHANDON> BIENNHANDONs
-		{
-			get
-			{
-				return this._BIENNHANDONs;
-			}
-			set
-			{
-				this._BIENNHANDONs.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_BIENNHANDONs(BIENNHANDON entity)
-		{
-			this.SendPropertyChanging();
-			entity.LOAI_NHANDON = this;
-		}
-		
-		private void detach_BIENNHANDONs(BIENNHANDON entity)
-		{
-			this.SendPropertyChanging();
-			entity.LOAI_NHANDON = null;
 		}
 	}
 	
@@ -38568,6 +38454,144 @@ namespace TanHoaWater.Database
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.LOAI_NHANDON")]
+	public partial class LOAI_NHANDON : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _LOAIDON;
+		
+		private string _TENLOAI;
+		
+		private System.Nullable<int> _STT;
+		
+		private EntitySet<BIENNHANDON> _BIENNHANDONs;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnLOAIDONChanging(string value);
+    partial void OnLOAIDONChanged();
+    partial void OnTENLOAIChanging(string value);
+    partial void OnTENLOAIChanged();
+    partial void OnSTTChanging(System.Nullable<int> value);
+    partial void OnSTTChanged();
+    #endregion
+		
+		public LOAI_NHANDON()
+		{
+			this._BIENNHANDONs = new EntitySet<BIENNHANDON>(new Action<BIENNHANDON>(this.attach_BIENNHANDONs), new Action<BIENNHANDON>(this.detach_BIENNHANDONs));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LOAIDON", DbType="VarChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string LOAIDON
+		{
+			get
+			{
+				return this._LOAIDON;
+			}
+			set
+			{
+				if ((this._LOAIDON != value))
+				{
+					this.OnLOAIDONChanging(value);
+					this.SendPropertyChanging();
+					this._LOAIDON = value;
+					this.SendPropertyChanged("LOAIDON");
+					this.OnLOAIDONChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENLOAI", DbType="NVarChar(100)")]
+		public string TENLOAI
+		{
+			get
+			{
+				return this._TENLOAI;
+			}
+			set
+			{
+				if ((this._TENLOAI != value))
+				{
+					this.OnTENLOAIChanging(value);
+					this.SendPropertyChanging();
+					this._TENLOAI = value;
+					this.SendPropertyChanged("TENLOAI");
+					this.OnTENLOAIChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_STT", DbType="Int")]
+		public System.Nullable<int> STT
+		{
+			get
+			{
+				return this._STT;
+			}
+			set
+			{
+				if ((this._STT != value))
+				{
+					this.OnSTTChanging(value);
+					this.SendPropertyChanging();
+					this._STT = value;
+					this.SendPropertyChanged("STT");
+					this.OnSTTChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LOAI_NHANDON_BIENNHANDON", Storage="_BIENNHANDONs", ThisKey="LOAIDON", OtherKey="LOAIDON")]
+		public EntitySet<BIENNHANDON> BIENNHANDONs
+		{
+			get
+			{
+				return this._BIENNHANDONs;
+			}
+			set
+			{
+				this._BIENNHANDONs.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_BIENNHANDONs(BIENNHANDON entity)
+		{
+			this.SendPropertyChanging();
+			entity.LOAI_NHANDON = this;
+		}
+		
+		private void detach_BIENNHANDONs(BIENNHANDON entity)
+		{
+			this.SendPropertyChanging();
+			entity.LOAI_NHANDON = null;
 		}
 	}
 }

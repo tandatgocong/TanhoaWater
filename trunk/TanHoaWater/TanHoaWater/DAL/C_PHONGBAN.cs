@@ -12,7 +12,7 @@ namespace TanHoaWater.DAL
         public static List<PHONGBANDOI> getList()
         {
             TanHoaDataContext data = new TanHoaDataContext();
-            var phongab = from pb in data.PHONGBANDOIs orderby pb.TENPHONG descending select pb ;
+            var phongab = from pb in data.PHONGBANDOIs orderby pb.CREATEBY ascending select pb ;
             return phongab.ToList();
         }
         public static PHONGBANDOI findbyMaPhong(string maphong) {

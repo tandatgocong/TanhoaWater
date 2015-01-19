@@ -11,7 +11,7 @@ namespace TanHoaWater.DAL
     {
         public static List<LOAI_NHANDON> getList() {
             TanHoaDataContext db = new TanHoaDataContext();
-            var query = from lhs in db.LOAI_NHANDONs select lhs;
+            var query = from lhs in db.LOAI_NHANDONs orderby lhs.STT ascending select lhs;
             return query.ToList();
         }
     }
