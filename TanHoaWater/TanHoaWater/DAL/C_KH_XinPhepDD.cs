@@ -293,9 +293,10 @@ namespace TanHoaWater.DAL
                 string sql = "SELECT *,TUNGAY='" + TUNGAY + "',DENNGAY='" + DENNGAY + "',NGAYKHOICONGDAO='" + NGAYKHOICONGDAO + "',NGAYHOANTATTL='" + NGAYHOANTATTL + "' FROM V_XINPHEPDAODUONG  WHERE MADOTDD='"+ madot+"'";
 
                 SqlDataAdapter dond = new SqlDataAdapter(sql, db.Connection.ConnectionString);
-                dond.Fill(ds, "V_XINPHEPDAODUONG");
-
+                dond.Fill(ds, "V_XINPHEPDAODUONG");                                
                 sql = "SELECT * FROM KH_BC_XINPHEPDD ";
+                if (!"duan".Equals(DAL.C_USERS._userName))
+                    sql = "SELECT * FROM KH_BC_XINPHEPDD_KH ";
                 dond = new SqlDataAdapter(sql, db.Connection.ConnectionString);
                 dond.Fill(ds, "KH_BC_XINPHEPDD");
 
