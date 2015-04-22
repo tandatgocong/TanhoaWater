@@ -779,5 +779,15 @@ namespace TanHoaWater.View.Users.TinhDuToan
 
             }
         }
+
+        private void tabAmSauDoi_Click(object sender, EventArgs e)
+        {
+            this.tabControlPanel6.Visible = true;
+            tabControlPanel6.Controls.Clear();
+            tabControlPanel6.Controls.Add(new tab_TinhDuToan2015());
+            this.panelDanhMucVT.Visible = false;       
+        }
+
+     
     }
 }

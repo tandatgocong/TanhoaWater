@@ -1855,6 +1855,22 @@
       <Association Name="LOAI_NHANDON_BIENNHANDON" Member="BIENNHANDONs" ThisKey="LOAIDON" OtherKey="LOAIDON" Type="BIENNHANDON" />
     </Type>
   </Table>
+  <Table Name="dbo.AS_KHACHHANG" Member="AS_KHACHHANGs">
+    <Type Name="AS_KHACHHANG">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MADOT" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="SHS" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DANHBO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="HOPDONG" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="HOTEN" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="SOHO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SONHA" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DUONG" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="PHUONG" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="QUAN" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NGAYNHAN" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
   <Function Name="dbo.TONGKETCHIPHI" Method="TONGKETCHIPHI">
     <Parameter Name="SHS" Parameter="sHS" Type="System.String" DbType="VarChar(50)" />
     <Parameter Name="A" Parameter="a" Type="System.Double" DbType="Float" Direction="InOut" />
