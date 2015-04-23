@@ -11,6 +11,7 @@ using TanHoaWater.Database;
 using System.Text.RegularExpressions;
 using TanHoaWater.View.Users.TinhDuToan.BGDieuChinh;
 using TanHoaWater.View.Users.BGDieuChinh;
+using TanHoaWater.View.Users.TinhDuToan.BGAmSau;
 
 namespace TanHoaWater.View.Users.TinhDuToan
 {
