@@ -13,14 +13,14 @@ namespace TanHoaWater.DAL
     class C_CongTacBangGia_AS
     {
 
-        private static readonly ILog log = LogManager.GetLogger(typeof(C_CongTacBangGia).Name);
-        
-        public static bool InsertCongTacBG(BG_CONGTACBANGIA dm)
+        private static readonly ILog log = LogManager.GetLogger(typeof(C_CongTacBangGia_AS).Name);
+
+        public static bool InsertCongTacBG(AS_BG_CONGTACBANGIA dm)
         {
             try
             {
                 TanHoaDataContext db = new TanHoaDataContext();
-                db.BG_CONGTACBANGIAs.InsertOnSubmit(dm);
+                db.AS_BG_CONGTACBANGIAs.InsertOnSubmit(dm);
                 db.SubmitChanges();
                 return true;
             }
@@ -43,7 +43,7 @@ namespace TanHoaWater.DAL
             db.Connection.Open();
             //string sql = " SELECT MAHIEU, MAHDG, TENVT, DVT, NHOM as 'NHOMVT', LOAISN,CASE WHEN NHOM='XDCB' THEN KHOILUONG*1000 ELSE KHOILUONG END as 'KHOILUONG' , DONGIAVL, DONGIANC, DONGIAMTC ";
             string sql = " SELECT MAHIEU, MAHDG, TENVT, DVT, NHOM as 'NHOMVT', LOAISN, KHOILUONG , DONGIAVL, DONGIANC, DONGIAMTC ";
-            sql += " FROM BG_CONGTACBANGIA ";
+            sql += " FROM AS_BG_CONGTACBANGIA ";
             sql += " WHERE  SHS='" + shs + "' ";
             SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             DataSet dataset = new DataSet();
@@ -89,7 +89,7 @@ namespace TanHoaWater.DAL
             SqlConnection conn = new SqlConnection(db.Connection.ConnectionString);
 
             conn.Open();
-            SqlCommand cmd = new SqlCommand("TONGKETCHIPHI", conn);
+            SqlCommand cmd = new SqlCommand("TONGKETCHIPHI_AS", conn);
             cmd.CommandType = CommandType.StoredProcedure;
 
             SqlParameter inparm = cmd.Parameters.Add("@shs", SqlDbType.VarChar);
@@ -373,7 +373,7 @@ namespace TanHoaWater.DAL
             SqlConnection conn = new SqlConnection(db.Connection.ConnectionString);
 
             conn.Open();
-            SqlCommand cmd = new SqlCommand("DELETEDATABG", conn);
+            SqlCommand cmd = new SqlCommand("DELETEDATABG_AS", conn);
             cmd.CommandType = CommandType.StoredProcedure;
 
             SqlParameter inparm = cmd.Parameters.Add("@shs", SqlDbType.VarChar);
@@ -386,8 +386,8 @@ namespace TanHoaWater.DAL
             try
             {
                 TanHoaDataContext db = new TanHoaDataContext();
-                var hs = from dm in db.BG_KHOILUONGXDCBs where dm.SHS== shs select dm;
-                BG_KHOILUONGXDCB xdcb = hs.SingleOrDefault();
+                var hs = from dm in db.AS_BG_KHOILUONGXDCBs where dm.SHS == shs select dm;
+                AS_BG_KHOILUONGXDCB xdcb = hs.SingleOrDefault();
                 if (xdcb != null)
                 {
                     xdcb.BGLOG = note;
@@ -405,50 +405,50 @@ namespace TanHoaWater.DAL
         {
              
                 TanHoaDataContext db = new TanHoaDataContext();
-                var hs = from dm in db.BG_KHOILUONGXDCBs where dm.SHS == shs select dm;
-                BG_KHOILUONGXDCB xdcb = hs.SingleOrDefault();
+                var hs = from dm in db.AS_BG_KHOILUONGXDCBs where dm.SHS == shs select dm;
+                AS_BG_KHOILUONGXDCB xdcb = hs.SingleOrDefault();
                 if (xdcb != null)
                 {
                      return xdcb.BGLOG;
                 }
              return "";
         }
-        public static void CapNhatHoanTatTK(string shs) {
-            try
-            {
-                TanHoaDataContext db = new TanHoaDataContext();
-                var ttk = from query in db.TOTHIETKEs where query.SHS == shs select query;
-                TOTHIETKE totk = ttk.SingleOrDefault();
-                if (totk != null) {
-                    totk.HOANTATTK = true;
-                    totk.NGAYTKGD = DateTime.Now.Date;
-                }
-                db.SubmitChanges();
-            }
-            catch (Exception ex)
-            {
-                log.Error("Cap Nhat Hoan Tat Thiet Ke" + ex.Message);
-            }   
-        }
+        //public static void CapNhatHoanTatTK(string shs) {
+        //    try
+        //    {
+        //        TanHoaDataContext db = new TanHoaDataContext();
+        //        var ttk = from query in db.TOTHIETKEs where query.SHS == shs select query;
+        //        TOTHIETKE totk = ttk.SingleOrDefault();
+        //        if (totk != null) {
+        //            totk.HOANTATTK = true;
+        //            totk.NGAYTKGD = DateTime.Now.Date;
+        //        }
+        //        db.SubmitChanges();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        log.Error("Cap Nhat Hoan Tat Thiet Ke" + ex.Message);
+        //    }   
+        //}
        
-        public static void updateSDVKS(string shs, string sdv)
-        {
-            try
-            {
-                TanHoaDataContext db = new TanHoaDataContext();
-                var ttk = from query in db.TOTHIETKEs where query.SHS == shs select query;
-                TOTHIETKE totk = ttk.SingleOrDefault();
-                if (totk != null)
-                {
-                    totk.SODOVIEN = sdv;
-                }
-                db.SubmitChanges();
-            }
-            catch (Exception ex)
-            {
-                log.Error("Cap Nhat Hoan Tat Thiet Ke" + ex.Message);
-            }
+        //public static void updateSDVKS(string shs, string sdv)
+        //{
+        //    try
+        //    {
+        //        TanHoaDataContext db = new TanHoaDataContext();
+        //        var ttk = from query in db.TOTHIETKEs where query.SHS == shs select query;
+        //        TOTHIETKE totk = ttk.SingleOrDefault();
+        //        if (totk != null)
+        //        {
+        //            totk.SODOVIEN = sdv;
+        //        }
+        //        db.SubmitChanges();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        log.Error("Cap Nhat Hoan Tat Thiet Ke" + ex.Message);
+        //    }
 
-        }
+        //}
     }
 }

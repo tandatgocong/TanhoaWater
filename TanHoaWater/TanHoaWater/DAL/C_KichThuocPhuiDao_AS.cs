@@ -8,17 +8,18 @@ using log4net;
 using System.Data;
 namespace TanHoaWater.DAL
 {
-    class C_BG_KichThuocPhuiDao
+    class C_KichThuocPhuiDao_AS
     {
-        private static readonly ILog log = LogManager.GetLogger(typeof(C_BG_KichThuocPhuiDao).Name);
+        private static readonly ILog log = LogManager.GetLogger(typeof(C_KichThuocPhuiDao_AS).Name);
         static TanHoaDataContext db = new TanHoaDataContext();
     
-        public static void InsertKTPD(BG_KICHTHUOCPHUIDAO ktpd) {          
-            db.BG_KICHTHUOCPHUIDAOs.InsertOnSubmit(ktpd);
+        public static void InsertKTPD(AS_BG_KICHTHUOCPHUIDAO ktpd) {
+            db.AS_BG_KICHTHUOCPHUIDAOs.InsertOnSubmit(ktpd);
             db.SubmitChanges();
         }
-        public static BG_KICHTHUOCPHUIDAO finbySTTAndSHS(int stt) {
-            var query = from kt in db.BG_KICHTHUOCPHUIDAOs where kt.STT == stt select kt;
+        public static AS_BG_KICHTHUOCPHUIDAO finbySTTAndSHS(int stt)
+        {
+            var query = from kt in db.AS_BG_KICHTHUOCPHUIDAOs where kt.STT == stt select kt;
             return query.SingleOrDefault();
         }
         //public static List<BG_KICHTHUOCPHUIDAO> getListBySHS(string shs) {
@@ -30,7 +31,7 @@ namespace TanHoaWater.DAL
             TanHoaDataContext db = new TanHoaDataContext();
             db.Connection.Open();
             string sql = " SELECT MADANHMUC, TENKETCAU, DVT, DAI, RONG, DOSAU, SOLUONG, KHOILUONG, CHUVI, THETICH, COTINHTL ";
-            sql += " FROM BG_KICHTHUOCPHUIDAO ";
+            sql += " FROM AS_BG_KICHTHUOCPHUIDAO ";
             sql += " WHERE  SHS='" + shs + "' ";
             SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             DataSet dataset = new DataSet();
@@ -40,14 +41,15 @@ namespace TanHoaWater.DAL
 
         }
 
-        public void DeleteByKTPD(BG_KICHTHUOCPHUIDAO kt) {
-            db.BG_KICHTHUOCPHUIDAOs.DeleteOnSubmit(kt);
+        public void DeleteByKTPD(AS_BG_KICHTHUOCPHUIDAO kt)
+        {
+            db.AS_BG_KICHTHUOCPHUIDAOs.DeleteOnSubmit(kt);
             db.SubmitChanges();        
         }
         public void DeleteBySHS(string shs) {
             SqlConnection conn = new SqlConnection(db.Connection.ConnectionString);
             conn.Open();
-            string sql = " DELETE BG_KICHTHUOCPHUIDAO WHERE SHS='"+ shs +"' ";
+            string sql = " DELETE AS_BG_KICHTHUOCPHUIDAO WHERE SHS='" + shs + "' ";
             SqlCommand cmd = new SqlCommand(sql, conn);
             cmd.ExecuteNonQuery();
             conn.Close();
