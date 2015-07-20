@@ -550,5 +550,23 @@ namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
                 frm.ShowDialog();
             }
         }
+
+        private void buttonX1_Click(object sender, EventArgs e)
+        {
+            string madot = "";
+            try
+            {
+                madot = dataDanhSachDaoDuong.Rows[dataDanhSachDaoDuong.CurrentRow.Index].Cells["MADOTXP"].Value + "";
+
+            }
+            catch (Exception)
+            {
+            }
+
+            ReportDocument rp = new rptBienPhapThiCong();
+            rp.SetDataSource(DAL.C_KH_XinPhepDD.ReportxinPhepDD(madot));
+            rpt_Main mainreport = new rpt_Main(rp);
+            mainreport.ShowDialog();
+        }
     }
 }

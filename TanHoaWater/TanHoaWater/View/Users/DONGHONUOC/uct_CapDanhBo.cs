@@ -727,10 +727,21 @@ namespace TanHoaWater.View.Users.DONGHONUOC
                 MessageBox.Show(this, "Cần Chọn Hồ Sơ In", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
             {
-                ReportDocument rp = new rpt_DANHBO();
-                rp.SetDataSource(DAL.C_DHN_ChoDanhBo.BC_CHODANHBO(bangke, getSHS()));
-                rpt_Main rpt = new rpt_Main(rp);
-                rpt.ShowDialog();
+                if (gdky.Checked)
+                {
+                    ReportDocument rp = new rpt_DANHBO_GD();
+                    rp.SetDataSource(DAL.C_DHN_ChoDanhBo.BC_CHODANHBO(bangke, getSHS()));
+                    rpt_Main rpt = new rpt_Main(rp);
+                    rpt.ShowDialog();
+                }
+                else
+                {
+                    ReportDocument rp = new rpt_DANHBO();
+                    rp.SetDataSource(DAL.C_DHN_ChoDanhBo.BC_CHODANHBO(bangke, getSHS()));
+                    rpt_Main rpt = new rpt_Main(rp);
+                    rpt.ShowDialog();
+                }
+                
 
             }
         }
@@ -769,10 +780,23 @@ namespace TanHoaWater.View.Users.DONGHONUOC
 
             else
             {
-                ReportDocument rp = new rpt_DIEUCHINH();
-                rp.SetDataSource(DAL.C_DHN_ChoDanhBo.BC_DIEUCHINH(bangke, getSHS()));
-                rpt_Main rpt = new rpt_Main(rp);
-                rpt.ShowDialog();
+                if (gdky.Checked)
+                {
+
+                    ReportDocument rp = new rpt_DIEUCHINH_GD();
+                    rp.SetDataSource(DAL.C_DHN_ChoDanhBo.BC_DIEUCHINH(bangke, getSHS()));
+                    rpt_Main rpt = new rpt_Main(rp);
+                    rpt.ShowDialog();
+                }
+                else
+                {
+
+                    ReportDocument rp = new rpt_DIEUCHINH();
+                    rp.SetDataSource(DAL.C_DHN_ChoDanhBo.BC_DIEUCHINH(bangke, getSHS()));
+                    rpt_Main rpt = new rpt_Main(rp);
+                    rpt.ShowDialog();
+                }
+
 
             }
         }

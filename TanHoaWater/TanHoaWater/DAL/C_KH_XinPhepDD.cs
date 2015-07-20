@@ -308,6 +308,27 @@ namespace TanHoaWater.DAL
             }
             return null;
         }
+        public static DataSet ReportxinPhepDD(string madot)
+        {
+            try
+            {
+                DataSet ds = new DataSet();
+                TanHoaDataContext db = new TanHoaDataContext();
+                db.Connection.Open();
+
+                string sql = "SELECT DISTINCT DIACHI FROM V_XINPHEPDAODUONG  WHERE MADOTDD='" + madot + "'";
+
+                SqlDataAdapter dond = new SqlDataAdapter(sql, db.Connection.ConnectionString);
+                dond.Fill(ds, "V_XINPHEPDAODUONG");
+              
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+            }
+            return null;
+        }
 
         public static bool UpdateCoPhep(string madot, DateTime ngaycophep)
         {

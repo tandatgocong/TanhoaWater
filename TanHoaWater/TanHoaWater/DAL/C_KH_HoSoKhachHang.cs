@@ -42,6 +42,7 @@ namespace TanHoaWater.DAL
             db.Connection.Close();
             return dataset.Tables[0];
         }
+              
         static  TanHoaDataContext db = new TanHoaDataContext();
         public static KH_HOSOKHACHHANG findBySHS(string shs)
         {
