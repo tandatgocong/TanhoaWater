@@ -21,6 +21,7 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
         {
             InitializeComponent();
             this.cbCoTLK.Items.Add("15");
+            this.cbCoTLK.Items.Add("20");
             this.cbCoTLK.Items.Add("25");
             this.cbCoTLK.Items.Add("40");
             this.cbCoTLK.Items.Add("50");
