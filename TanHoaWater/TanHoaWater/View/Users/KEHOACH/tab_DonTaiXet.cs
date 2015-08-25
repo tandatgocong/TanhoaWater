@@ -55,7 +55,7 @@ namespace TanHoaWater.View.Users.KEHOACH
                 string _soHoSo = this.taix_sohoso.Text;
                 if (_soHoSo != null)
                 {
-                    DAL.LinQConnection.ExecuteCommand_("DELETE FROMTMP_TAIXET WHERE MAHOSO='" + _soHoSo + "'");
+                    DAL.LinQConnection.ExecuteCommand_("DELETE FROM TMP_TAIXET WHERE MAHOSO='" + _soHoSo + "'");
                     if (DAL.C_DonKhachHang.finbyDTX(_soHoSo) == null)
                     {
                         bool result1 = DAL.C_DonKhachHang.HoSoTaiXet(_soHoSo, DAL.C_USERS._userName);
