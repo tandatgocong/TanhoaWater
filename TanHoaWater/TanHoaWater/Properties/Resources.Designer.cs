@@ -73,6 +73,26 @@ namespace TanHoaWater.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Arrow1_Down {
+            get {
+                object obj = ResourceManager.GetObject("Arrow1 Down", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Arrow1_Up {
+            get {
+                object obj = ResourceManager.GetObject("Arrow1 Up", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Arrow2_Left {
             get {
                 object obj = ResourceManager.GetObject("Arrow2 Left", resourceCulture);

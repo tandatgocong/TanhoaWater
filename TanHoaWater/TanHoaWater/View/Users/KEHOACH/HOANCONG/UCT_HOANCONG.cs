@@ -121,5 +121,12 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
             this.tabControlPanel2.Controls.Add(new tab_TraHoSoHC());
             this.tabControl1.SelectedTabIndex = 3;
         }
+
+        private void tabItem5_Click(object sender, EventArgs e)
+        {
+            this.tabControlPanel3.Controls.Clear();
+            this.tabControlPanel3.Controls.Add(new tab_DSKHHoangCongTcy());
+            this.tabControl1.SelectedTabIndex = 4;
+        }
     }
 }
