@@ -40,16 +40,18 @@ namespace TanHoaWater.DAL
                 string G_DANHBO = dataGridView1.Rows[i].Cells["C_SODANHBO"].Value + "";
                 string G_DONGHO = dataGridView1.Rows[i].Cells["C_HIEU"].Value + "-" + dataGridView1.Rows[i].Cells["C_CO"].Value + " Ly";
                 string g_BB =g_DOT+"/" +dataGridView1.Rows[i].Cells["C_STT"].Value + "";
-
-               
+                string G_NGAYTHICONG = dataGridView1.Rows[i].Cells["G_NGAYTHICONG"].Value + "";
+                            
                 
                 exSheet.Cells[rows, 2] = STT;
                 exSheet.Cells[rows, 3] = G_TENKH;
                 exSheet.Cells[rows, 4] = G_DIACHI;
                 exSheet.Cells[rows, 5] = g_DOT;
                 exSheet.Cells[rows, 6] = G_DANHBO;
-                exSheet.Cells[rows, 7] = G_DONGHO;
+                exSheet.Cells[rows, 7] = G_DONGHO;                
                 exSheet.Cells[rows, 8] = g_BB;
+                exSheet.Cells[rows, 9] = G_NGAYTHICONG;
+
                 rows++;
 
             }
