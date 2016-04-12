@@ -64,6 +64,7 @@ namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
             adapter.Fill(ds, tableName);
             DataTable data = ds.Tables[tableName];
             this.thicong.Text = data.Rows[0][0].ToString();
+            this.txtVv.Text = data.Rows[1][0].ToString();
             //MessageBox.Show(this, data.Rows[0][0].ToString());
             //MessageBox.Show(this, data.Rows[1][0].ToString());
         }
