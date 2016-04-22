@@ -1286,9 +1286,14 @@ namespace TanHoaWater.View.Users.DONGHONUOC
                                          //int dot = int.Parse(cbDotDS.Items[cbDotDS.SelectedIndex].ToString());
                                          // inset Table Doc So
 
-                                         string insertGM = "INSERT INTO LENHDONGNUOC(DANHBA, HIEU, CO, SOTHAN,LOAI_LENH, NGAYTHUCHIEN, GHICHU, NGAYCAPNHAT, SOLENH, NAM, CSDONG_MO) ";
-                                         insertGM += " VALUES ('" + DANHBO + "','" + HIEU + "','" + COTLK + "','" + tb.SOTLK + "','2','" + NGAYGAN + "','GM',GETDATE(),'123','" + nam + "','" + CHISOTLK + "')";
+                                         //string insertGM = "INSERT INTO LENHDONGNUOC(DANHBA, HIEU, CO, SOTHAN,LOAI_LENH, NGAYTHUCHIEN, GHICHU, NGAYCAPNHAT, SOLENH, NAM, CSDONG_MO) ";
+                                         //insertGM += " VALUES ('" + DANHBO + "','" + HIEU + "','" + COTLK + "','" + tb.SOTLK + "','2','" + NGAYGAN + "','GM',GETDATE(),'123','" + nam + "','" + CHISOTLK + "')";
+                                         //log.Info("+++++++++++ LENHDONGNUOC : " + DANHBO + "");
+
+                                         string insertGM = "INSERT INTO ThongBao(LoaiLenh,DanhBa,SoLenh, Hieu, Co, ChiSo, NoiDung, NgayKiem, NgayCapNhat,NVCapNhat,SoThan) ";
+                                         insertGM += " VALUES (27,'" + DANHBO + "','" + cbDotTC.Text + "','" + HIEU + "','" + COTLK + "'," + CHISOTLK + ",N'ĐHN gắn ngày " + Utilities.DateToString.NgayVNVN(NGAYGAN) + " ','" + NGAYGAN + "',GETDATE(),'" + DAL.C_USERS._userName + "'," + tb.SOTLK + ")";
                                          log.Info("+++++++++++ LENHDONGNUOC : " + DANHBO + "");
+
                                          DULIEUKH.C_GanMoi.InsertDocSo_(insertGM);
                                          MessageBox.Show(this, "Cập Nhật Thông Tin Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                      }
