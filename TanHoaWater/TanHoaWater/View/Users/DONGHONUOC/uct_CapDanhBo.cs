@@ -1292,7 +1292,7 @@ namespace TanHoaWater.View.Users.DONGHONUOC
 
                                          string insertGM = "INSERT INTO ThongBao(LoaiLenh,DanhBa,SoLenh, Hieu, Co, ChiSo, NoiDung, NgayKiem, NgayCapNhat,NVCapNhat,SoThan) ";
                                          insertGM += " VALUES (27,'" + DANHBO + "','" + cbDotTC.Text + "','" + HIEU + "','" + COTLK + "'," + CHISOTLK + ",N'ĐHN gắn ngày " + Utilities.DateToString.NgayVNVN(NGAYGAN) + " ','" + NGAYGAN + "',GETDATE(),'" + DAL.C_USERS._userName + "'," + tb.SOTLK + ")";
-                                         log.Info("+++++++++++ LENHDONGNUOC : " + DANHBO + "");
+                                         log.Info("+++++++++++ INSERT INTO ThongBao : " + DANHBO + "");
 
                                          DULIEUKH.C_GanMoi.InsertDocSo_(insertGM);
                                          MessageBox.Show(this, "Cập Nhật Thông Tin Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
