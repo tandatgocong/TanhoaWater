@@ -1157,6 +1157,26 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                 inp.ShowDialog();
             }
 
+            else if (comboBox1.SelectedIndex == 8)
+            { /// bồi thường hộp bảo vệ 
+                ReportDocument rp = new ganthayongnganhdhn();
+                rp.PrintOptions.PaperSize = PaperSize.Paper11x17;
+                DataRow myDataRow = table.NewRow();
+                myDataRow["TITLE"] = "THƯ MỜI THANH TOÁN CHI PHÍ BỒI THƯỜNG HỘP BẢO VỆ ĐHN"; 
+                myDataRow["HOTEN"] = txtHoTenKH.Text;
+                myDataRow["DIACHI"] = txtDiaChi.Text + ", Phường " + txtPhuong.Text + ", Quận " + txtQuan.Text;
+                myDataRow["TUNGAY"] = dateTuNgay.Text;
+                myDataRow["DENNGAY"] = dateDenNgay.Text;
+                myDataRow["SOTIEN"] = txtSoTien.Text;
+                myDataRow["DANHBO"] = textBoxX2DB.Text;
+                table.Rows.Add(myDataRow);
+                ds.Tables.Add(table);
+                rp.SetDataSource(ds);
+                rp.SetParameterValue("title", " bồi thường hộp bảo vệ ");
+                rpt_InBienNhan inp = new rpt_InBienNhan(rp);
+                inp.ShowDialog();
+            }
+
 
         }
 
