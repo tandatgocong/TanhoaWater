@@ -181,24 +181,26 @@ namespace TanHoaWater.View.Users.KEHOACH
         {
             try
             {
+               
+
                 #region Printing
                 ReportDocument rp = new rpt_DonTaiXet();
                 rp.SetDataSource(DAL.C_DonKhachHang.In_Dontaixet(this.CD_NguoiDuyetDon.SelectedValue+""));
                 reportView rpt = new reportView(rp);
                 rpt.ShowDialog();
                 #endregion
+
                 for (int i = 0; i < this.dataG.Rows.Count; i++)
                 {
                     string sohoso = dataG.Rows[i].Cells[0].Value + "";
                     if ("".Equals(sohoso) == false)
                     {
                         DAL.C_DonKhachHang.ChuyenHSTaiXet(sohoso);
-
-                        DAL.LinQConnection.ExecuteCommand("UPDATE TOTHIETKE SET NGAYTRAHS=NULL,BOPHANCHUYEN= NULL,HOANTATTK= NULL,NGAYHOANTATTK= NULL,  TRAHS='False', NGAYTRAHS = NULL,NGAYCHUYENHS= NULL ,BOPHANCHUYEN =NULL,NGAYTKGD=NULL,HOANTATTK='False', NGAYHOANTATTK=NULL  WHERE SHS='" + sohoso + "'");
-
+                        DAL.LinQConnection.ExecuteCommand("UPDATE TOTHIETKE SET NGAYTRAHS=null,BOPHANCHUYEN= NULL,HOANTATTK= NULL,NGAYHOANTATTK= NULL,TRAHS='False',NGAYCHUYENHS= NULL ,NGAYTKGD=NULL   WHERE SHS='" + sohoso + "'");
+                        DAL.LinQConnection.ExecuteCommand_("UPDATE TOTHIETKE SET NGAYTRAHS=null,BOPHANCHUYEN= NULL,HOANTATTK= NULL,NGAYHOANTATTK= NULL,TRAHS='False',NGAYCHUYENHS= NULL ,NGAYTKGD=NULL   WHERE SHS='" + sohoso + "'");
                     }
-
                 }
+
                 refesh();
             }
             catch (Exception)

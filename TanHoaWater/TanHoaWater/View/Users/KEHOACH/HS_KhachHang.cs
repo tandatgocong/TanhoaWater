@@ -31,7 +31,12 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
         public HSKHACHHANG(int tab)
         {
             InitializeComponent();
+            
+            comboBox1.DataSource = DAL.LinQConnection.getDataTable("SELECT * FROM T_THUMOI ORDER BY STT ASC");
+            comboBox1.DisplayMember = "TIEUDE";
+            comboBox1.ValueMember = "TIEUDE";
             comboBox1.SelectedIndex = 0;
+
             if (tab == 2)
             {
                 tabControl1.SelectedTabIndex = 1;

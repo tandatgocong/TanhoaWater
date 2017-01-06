@@ -479,7 +479,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(999, 585);
+            this.panel2.Size = new System.Drawing.Size(999, 587);
             this.panel2.TabIndex = 699;
             // 
             // txtCSGo
@@ -1161,7 +1161,7 @@
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "tab_DanhSachHoanCongTCTB";
-            this.Size = new System.Drawing.Size(999, 585);
+            this.Size = new System.Drawing.Size(999, 587);
             ((System.ComponentModel.ISupportInitialize)(this.gridHoanCong)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
