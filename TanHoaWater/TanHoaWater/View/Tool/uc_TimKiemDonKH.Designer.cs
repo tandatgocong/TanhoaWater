@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.searchDiaChi = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.searchHoTenKH = new System.Windows.Forms.TextBox();
@@ -69,7 +69,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lbresult = new DevComponents.DotNetBar.LabelX();
-            this.resultNoiDung = new System.Windows.Forms.RichTextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
@@ -113,6 +112,7 @@
             this.SearchMaHoSo = new System.Windows.Forms.TextBox();
             this.searchDienThoai = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
+            this.resultNoiDung = new System.Windows.Forms.RichTextBox();
             this.groupPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -317,8 +317,8 @@
             // g_SoHoSo
             // 
             this.g_SoHoSo.DataPropertyName = "SHS";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.g_SoHoSo.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.g_SoHoSo.DefaultCellStyle = dataGridViewCellStyle1;
             this.g_SoHoSo.HeaderText = "Số HS";
             this.g_SoHoSo.Name = "g_SoHoSo";
             this.g_SoHoSo.ReadOnly = true;
@@ -343,8 +343,8 @@
             // gr_DienThoai
             // 
             this.gr_DienThoai.DataPropertyName = "DIENTHOAI";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.gr_DienThoai.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.gr_DienThoai.DefaultCellStyle = dataGridViewCellStyle2;
             this.gr_DienThoai.HeaderText = "Điện Thoại";
             this.gr_DienThoai.Name = "gr_DienThoai";
             this.gr_DienThoai.ReadOnly = true;
@@ -650,15 +650,6 @@
             this.lbresult.TabIndex = 2;
             this.lbresult.Text = "  <br/> ";
             this.lbresult.TextAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // resultNoiDung
-            // 
-            this.resultNoiDung.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.resultNoiDung.Location = new System.Drawing.Point(6, 60);
-            this.resultNoiDung.Name = "resultNoiDung";
-            this.resultNoiDung.Size = new System.Drawing.Size(358, 38);
-            this.resultNoiDung.TabIndex = 1;
-            this.resultNoiDung.Text = "";
             // 
             // label20
             // 
@@ -1206,6 +1197,15 @@
             this.label27.TabIndex = 144;
             this.label27.Text = "ĐT";
             // 
+            // resultNoiDung
+            // 
+            this.resultNoiDung.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.resultNoiDung.Location = new System.Drawing.Point(6, 60);
+            this.resultNoiDung.Name = "resultNoiDung";
+            this.resultNoiDung.Size = new System.Drawing.Size(358, 38);
+            this.resultNoiDung.TabIndex = 1;
+            this.resultNoiDung.Text = "";
+            // 
             // uc_TimKiemDonKH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -1266,7 +1266,6 @@
         private System.Windows.Forms.Label label10;
         private DevComponents.DotNetBar.Controls.TextBoxX txtLoaiHS;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RichTextBox resultNoiDung;
         private DevComponents.DotNetBar.Controls.TextBoxX DotNhanDon;
         private System.Windows.Forms.Label label8;
         private DevComponents.DotNetBar.Controls.TextBoxX txtNgayGiaoSDV;
@@ -1328,6 +1327,7 @@
         private System.Windows.Forms.Label label22;
         private DevComponents.DotNetBar.Controls.TextBoxX txtGhiChu;
         private System.Windows.Forms.Label lbTMP;
+        private System.Windows.Forms.RichTextBox resultNoiDung;
 
     }
 }

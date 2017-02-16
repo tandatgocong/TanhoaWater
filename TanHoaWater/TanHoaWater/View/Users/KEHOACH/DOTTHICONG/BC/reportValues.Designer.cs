@@ -31,11 +31,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(reportValues));
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textBoxX3 = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.textBoxX2 = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.textBoxX1 = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
-            this.textBoxX3 = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,6 +63,20 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(690, 303);
             this.panel1.TabIndex = 1;
+            // 
+            // textBoxX3
+            // 
+            // 
+            // 
+            // 
+            this.textBoxX3.Border.Class = "TextBoxBorder";
+            this.textBoxX3.Location = new System.Drawing.Point(23, 51);
+            this.textBoxX3.Multiline = true;
+            this.textBoxX3.Name = "textBoxX3";
+            this.textBoxX3.Size = new System.Drawing.Size(613, 37);
+            this.textBoxX3.TabIndex = 6;
+            this.textBoxX3.Text = "BẢNG KÊ THI CÔNG DỜI ĐHN MIỄN PHÍ";
+            this.textBoxX3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxX3_KeyPress);
             // 
             // labelX2
             // 
@@ -107,19 +121,6 @@
             this.labelX1.Size = new System.Drawing.Size(413, 25);
             this.labelX1.TabIndex = 2;
             this.labelX1.Text = "labelX1";
-            // 
-            // textBoxX3
-            // 
-            // 
-            // 
-            // 
-            this.textBoxX3.Border.Class = "TextBoxBorder";
-            this.textBoxX3.Location = new System.Drawing.Point(23, 51);
-            this.textBoxX3.Multiline = true;
-            this.textBoxX3.Name = "textBoxX3";
-            this.textBoxX3.Size = new System.Drawing.Size(613, 37);
-            this.textBoxX3.TabIndex = 6;
-            this.textBoxX3.Text = "BẢNG KÊ THI CÔNG DỜI ĐHN MIỄN PHÍ";
             // 
             // reportValues
             // 

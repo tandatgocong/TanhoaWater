@@ -986,6 +986,7 @@ namespace TanHoaWater.View.Users.DONGHONUOC
                         //}
                         hskh.DHN_MADMA = txtMaDMA.Text;
                         hskh.DHN_CHODB = true;
+                        hskh.DHN_NGAYCHOSODB = DateTime.Now.Date;
                         if (DAL.C_DHN_ChoDanhBo.UpdateDB() == false)
                             MessageBox.Show(this, "Cập Nhật Thông Tin Danh Bộ Không Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         else

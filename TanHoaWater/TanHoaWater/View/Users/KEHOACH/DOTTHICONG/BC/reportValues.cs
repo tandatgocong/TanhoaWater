@@ -21,6 +21,7 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG.BC
             _flag = flag;
             _madotc = madotc;
             _ngaytk = ngaytk;
+            textBoxX1.Focus();
             if (flag == 1) {
                 this.labelX1.Text = "Nhập Mã Công Trình";
             }
@@ -32,7 +33,14 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG.BC
             {
                 this.labelX1.Text = "Thông Tin";
             }
-            textBoxX1.Focus();
+             else if (flag == 5)
+            {
+                this.textBoxX3.Text = "DỜI - BỒI THƯỜNG HỘP BẢO VỆ ĐỒNG HỒ NƯỚC";
+                this.textBoxX3.Focus();
+            }
+
+            
+            
         }
         //MaCT
         //KETHOP
@@ -78,6 +86,7 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG.BC
                 crystalReportViewer1.ReportSource = rp;
                 this.WindowState = FormWindowState.Maximized;
             }
+             
         }
 
         private void textBoxX1_KeyPress(object sender, KeyPressEventArgs e)
@@ -100,6 +109,23 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG.BC
                 rp.SetParameterValue("TTT", textBoxX3.Text);
                 crystalReportViewer1.ReportSource = rp;
                 this.WindowState = FormWindowState.Maximized;
+            }
+        }
+
+        private void textBoxX3_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                if (_flag == 5)
+                {
+                    panel1.Visible = false;
+                    ReportDocument rp = new rpt_DanhSachHSTC_BT_DOI_HBV();
+                    rp.SetDataSource(DAL.C_KH_DotThiCong.BC_DanhSachDotThiCong_BT(_madotc));
+                    rp.SetParameterValue("tt", this.textBoxX3.Text.ToUpper());
+                    rp.SetParameterValue("ngaytk", _ngaytk);
+                    crystalReportViewer1.ReportSource = rp;
+                    this.WindowState = FormWindowState.Maximized;
+                }
             }
         }
     }
