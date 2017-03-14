@@ -138,6 +138,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL\CCallCenter.cs" />
     <Compile Include="DAL\C_KhoiLuongXDCB_AS.cs" />
     <Compile Include="DAL\C_KichThuocPhuiDao_AS.cs" />
     <Compile Include="DAL\C_CongTacBangGia_AS.cs" />
@@ -196,6 +197,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CapNuocTanHoa.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Database\dbCallCenter.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbCallCenter.dbml</DependentUpon>
     </Compile>
     <Compile Include="Database\DocSo.designer.cs">
       <AutoGen>True</AutoGen>
@@ -282,6 +288,12 @@
     </Compile>
     <Compile Include="View\Report\rpt_Main.Designer.cs">
       <DependentUpon>rpt_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Tool\frmTTKhachHang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Tool\frmTTKhachHang.designer.cs">
+      <DependentUpon>frmTTKhachHang.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Tool\frm_ChangePassword.cs">
       <SubType>Form</SubType>
@@ -1275,6 +1287,11 @@
       <LastGenOutput>CapNuocTanHoa.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
+    <None Include="Database\dbCallCenter.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>dbCallCenter.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Database\DocSo.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>DocSo.designer.cs</LastGenOutput>
@@ -1288,6 +1305,9 @@
     </None>
     <None Include="Database\DocSo.dbml.layout">
       <DependentUpon>DocSo.dbml</DependentUpon>
+    </None>
+    <None Include="Database\dbCallCenter.dbml.layout">
+      <DependentUpon>dbCallCenter.dbml</DependentUpon>
     </None>
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
@@ -1309,6 +1329,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Report\rpt_Main.resx">
       <DependentUpon>rpt_Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Tool\frmTTKhachHang.resx">
+      <DependentUpon>frmTTKhachHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Tool\frm_ChangePassword.resx">
       <DependentUpon>frm_ChangePassword.cs</DependentUpon>

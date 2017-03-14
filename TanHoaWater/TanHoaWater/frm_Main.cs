@@ -932,6 +932,20 @@ namespace TanHoaWater
             }
         }
 
+        private void menuKhachHang_Click(object sender, EventArgs e)
+        {
+            this.PanelContent.Controls.Clear();
+            this.PanelContent.Controls.Add(new frmTTKhachHang("KH"));
+            this.menuKHVT.Select();
+        }
+
+        private void mneKTthuat_Click(object sender, EventArgs e)
+        {
+            this.PanelContent.Controls.Clear();
+            this.PanelContent.Controls.Add(new frmTTKhachHang("KT"));
+            this.menuToThietKe.Select();
+        }
+
         //private void menuDieuChinh_Click(object sender, EventArgs e)
         //{
         //    try
