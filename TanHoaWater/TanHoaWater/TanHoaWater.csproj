@@ -301,6 +301,12 @@
     <Compile Include="View\Tool\frm_ChangePassword.Designer.cs">
       <DependentUpon>frm_ChangePassword.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Tool\MessChuaXL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Tool\MessChuaXL.designer.cs">
+      <DependentUpon>MessChuaXL.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Tool\uc_TimKiemDonKH.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -1335,6 +1341,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Tool\frm_ChangePassword.resx">
       <DependentUpon>frm_ChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Tool\MessChuaXL.resx">
+      <DependentUpon>MessChuaXL.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Tool\uc_TimKiemDonKH.resx">
       <DependentUpon>uc_TimKiemDonKH.cs</DependentUpon>

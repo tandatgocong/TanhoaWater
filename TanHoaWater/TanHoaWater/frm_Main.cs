@@ -935,14 +935,14 @@ namespace TanHoaWater
         private void menuKhachHang_Click(object sender, EventArgs e)
         {
             this.PanelContent.Controls.Clear();
-            this.PanelContent.Controls.Add(new frmTTKhachHang("KH"));
+            this.PanelContent.Controls.Add(new frmTTKhachHang("4"));
             this.menuKHVT.Select();
         }
 
         private void mneKTthuat_Click(object sender, EventArgs e)
         {
             this.PanelContent.Controls.Clear();
-            this.PanelContent.Controls.Add(new frmTTKhachHang("KT"));
+            this.PanelContent.Controls.Add(new frmTTKhachHang("8"));
             this.menuToThietKe.Select();
         }
 
