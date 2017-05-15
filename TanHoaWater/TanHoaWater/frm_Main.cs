@@ -942,7 +942,7 @@ namespace TanHoaWater
         private void mneKTthuat_Click(object sender, EventArgs e)
         {
             this.PanelContent.Controls.Clear();
-            this.PanelContent.Controls.Add(new frmTTKhachHang("8"));
+            this.PanelContent.Controls.Add(new frmTTKhachHang("9"));
             this.menuToThietKe.Select();
         }
 
