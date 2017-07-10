@@ -243,6 +243,7 @@ namespace TanHoaWater
                         this.KH_biennhan.Visible = true;
                         this.KH_DonKhachHang.Visible = true;
                         this.TC_DotThiCong.Visible = true;
+                        this.HC_HoanCong.Visible = true;
                     }
 
                    
@@ -259,6 +260,15 @@ namespace TanHoaWater
 
                     if ("DD".Equals(DAL.C_USERS._maquyen))
                     {
+                        this.DD_XinPhepDD.Visible = true;
+                    }
+                    if ("QL".Equals(DAL.C_USERS._maquyen))
+                    {
+                        this.KH_DotNhanDon.Visible = true;
+                        this.KH_biennhan.Visible = true;
+                        this.KH_DonKhachHang.Visible = true;
+                        this.TC_DotThiCong.Visible = true;
+                        this.HC_HoanCong.Visible = true;
                         this.DD_XinPhepDD.Visible = true;
                     }
 

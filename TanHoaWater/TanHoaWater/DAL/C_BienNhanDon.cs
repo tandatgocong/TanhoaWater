@@ -20,7 +20,7 @@ namespace TanHoaWater.DAL
             TanHoaDataContext db = new TanHoaDataContext();
             db.Connection.Open();
             string sql = " SELECT * FROM V_BIENNHANDON ";
-            sql += " WHERE SHS='" + soshs + "' AND USERNAME='" + user + "'";
+            sql += " WHERE SHS='" + soshs + "' ";
 
             SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             DataSet dataset = new DataSet();

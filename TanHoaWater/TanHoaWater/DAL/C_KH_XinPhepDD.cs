@@ -61,7 +61,7 @@ namespace TanHoaWater.DAL
             TanHoaDataContext db = new TanHoaDataContext();
             db.Connection.Open();
             string sql = " SELECT MADOTXP,MADOT,NOICAPPHEP,NGAYLAP,MAQUANLY,NGAYCOPHEP";
-            sql += " FROM KH_XINPHEPDAODUONG WHERE MADOT IS NOT NULL AND CREATEBY='"+ DAL.C_USERS._userName +"'";
+            sql += " FROM KH_XINPHEPDAODUONG WHERE MADOT IS NOT NULL ";//AND CREATEBY='"+ DAL.C_USERS._userName +"'";
             if (!"".Equals(sodot))
             {
                 sql += " AND MADOT LIKE '%" + sodot + "%'";
