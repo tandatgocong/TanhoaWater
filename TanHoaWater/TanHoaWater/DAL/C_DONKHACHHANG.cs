@@ -691,6 +691,29 @@ namespace TanHoaWater.DAL
                 log.Error(ex.Message);
             }
         }
+        public static void DongTienKH2(string shs,   string _DANHBO,  string _GHICHU)
+        {
+            try
+            {
+                TanHoaDataContext db = new TanHoaDataContext();
+                var data = from don in db.DON_KHACHHANGs where don.SHS == shs select don;
+                DON_KHACHHANG donkh = data.SingleOrDefault();
+                if (donkh != null)
+                {
+                    donkh.DANHBO = _DANHBO;
+                    donkh.GHICHU = _GHICHU;
+                    donkh.MODIFYBY = DAL.C_USERS._userName;
+                    donkh.MODIFYDATE = DateTime.Now;
+
+                    db.SubmitChanges();
+                    
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+            }
+        }
         /// <summary>
         /// /
         public static void DongTienKH_(string shs, DateTime ngaydong, string sohoadon)

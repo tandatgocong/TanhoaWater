@@ -63,11 +63,14 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
                     catch (Exception)
                     {
                     }
-
-
                     DAL.C_DonKhachHang.DongTienKH(this.txtSHS.Text, this.dateNgayDongTien.Value.Date, this.txtSoHoaDon.Text, this.txtSoDanhBo.Text, sotien, this.txtTinhTrangTLK.Text);
-                };
+                }
             }
+            else
+            {
+                DAL.C_DonKhachHang.DongTienKH2(this.txtSHS.Text, this.txtSoDanhBo.Text, this.txtTinhTrangTLK.Text);            
+            }
+            
         }
         bool flag = true;
        public void add()

@@ -28,11 +28,11 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>\\SERVER9\Programs\Test\</InstallUrl>
     <UpdateUrl>\\192.168.90.9\Programs\Test\</UpdateUrl>
     <PublisherName>TanHoaWater</PublisherName>
-    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationRevision>15</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -61,7 +61,7 @@
     <ApplicationIcon>favicon.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>17CC1C6B454217F2563EE3C90243053002FFFECC</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>2867C0805F895181ABC958E23784D0ABA4FA7C19</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestKeyFile>TanHoaWater_TemporaryKey.pfx</ManifestKeyFile>
@@ -71,6 +71,9 @@
   </PropertyGroup>
   <PropertyGroup>
     <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CNTANHOA">
@@ -97,9 +100,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\IrisSkin2.dll</HintPath>
     </Reference>
-    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=x86">
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\log4net.dll</HintPath>
+      <HintPath>Lib\log4net.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -427,6 +430,12 @@
     <Compile Include="View\Users\KEHOACH\dialogNhapDon.Designer.cs">
       <DependentUpon>dialogNhapDon.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Users\KEHOACH\DOTTHICONG\BC\rpt_DanhSachHSTC_HUYDB.cs">
+      <DependentUpon>rpt_DanhSachHSTC_HUYDB.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="View\Users\KEHOACH\DOTTHICONG\BC\rpt_DanhSachHSTC_BT_DOI_HBV.cs">
       <DependentUpon>rpt_DanhSachHSTC_BT_DOI_HBV.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -672,6 +681,12 @@
     </Compile>
     <Compile Include="View\Users\KEHOACH\reportView.Designer.cs">
       <DependentUpon>reportView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Users\KEHOACH\Report\rpt_DOT_CATHUYDB.cs">
+      <DependentUpon>rpt_DOT_CATHUYDB.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="View\Users\KEHOACH\Report\rpt_DOT_QUAN_TCTB.cs">
       <DependentUpon>rpt_DOT_QUAN_TCTB.rpt</DependentUpon>
@@ -1404,6 +1419,10 @@
     <EmbeddedResource Include="View\Users\KEHOACH\dialogNhapDon.resx">
       <DependentUpon>dialogNhapDon.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\KEHOACH\DOTTHICONG\BC\rpt_DanhSachHSTC_HUYDB.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_DanhSachHSTC_HUYDB.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Users\KEHOACH\DOTTHICONG\BC\rpt_DanhSachHSTC_BT_DOI_HBV.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_DanhSachHSTC_BT_DOI_HBV.cs</LastGenOutput>
@@ -1522,6 +1541,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\KEHOACH\reportView.resx">
       <DependentUpon>reportView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\KEHOACH\Report\rpt_DOT_CATHUYDB.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_DOT_CATHUYDB.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\KEHOACH\Report\rpt_DOT_QUAN_TCTB.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -1959,6 +1982,7 @@
     <Compile Include="View\Main\frm_Login.Designer.cs">
       <DependentUpon>frm_Login.cs</DependentUpon>
     </Compile>
+    <None Include="TanHoaWater_TemporaryKey.pfx" />
     <None Include="View\Users\DONGHONUOC\BC\chodanhbo.xsc">
       <DependentUpon>chodanhbo.xsd</DependentUpon>
     </None>
@@ -2379,16 +2403,6 @@
     <None Include="Resources\Icon_maps.png" />
   </ItemGroup>
   <ItemGroup>
-    <PublishFile Include="CNTANHOA">
-      <Visible>False</Visible>
-      <Group>
-      </Group>
-      <TargetPath>
-      </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
-      <FileType>Assembly</FileType>
-    </PublishFile>
     <PublishFile Include="CrystalDecisions.CrystalReports.Engine">
       <Visible>False</Visible>
       <Group>
@@ -2529,7 +2543,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
-    <PublishFile Include="CrystalDecisions.Windows.Forms">
+    <PublishFile Include="CrystalDecisions.Shared">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -2539,7 +2553,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
-    <PublishFile Include="DevComponents.DotNetBar2">
+    <PublishFile Include="CrystalDecisions.Windows.Forms">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -2559,25 +2573,15 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
-    <PublishFile Include="IrisSkin2">
+    <PublishFile Include="Lib\log4net.dll">
       <Visible>False</Visible>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Include</PublishState>
+      <PublishState>DataFile</PublishState>
       <IncludeHash>True</IncludeHash>
-      <FileType>Assembly</FileType>
-    </PublishFile>
-    <PublishFile Include="log4net">
-      <Visible>False</Visible>
-      <Group>
-      </Group>
-      <TargetPath>
-      </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
-      <FileType>Assembly</FileType>
+      <FileType>File</FileType>
     </PublishFile>
     <PublishFile Include="Microsoft.ReportViewer.Common">
       <Visible>False</Visible>

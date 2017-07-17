@@ -847,8 +847,21 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                 if ("TCTB".Equals(this.bophanChuyen.SelectedValue.ToString())) {
                     flag = true;
                 }
-                rpt_DanhSachChuyen ds = new rpt_DanhSachChuyen(_madot, DAL.C_USERS._userName, CD_NguoiDuyetDon.SelectedValue.ToString(), flag);
-                ds.ShowDialog();
+                if (DAL.C_DotNhanDon.findByMaDot(_madot).LOAIDON.Equals("HD"))
+                {
+                    ReportDocument rp = new rpt_DOT_CATHUYDB();
+                    rp.SetDataSource(DAL.C_BAOCAO_VIEW.BC_DOTNHANDON_DOT(_madot, DAL.C_USERS._userName, DAL.C_USERS.KHVTDuyet(), null, null));
+                    DOT_NHAN_DON dotnd = DAL.C_DotNhanDon.findByMaDot(_madot);
+                    rp.SetParameterValue("ngaylapdot", " ngày " + dotnd.NGAYLAPDON.Date.Day + " tháng " + dotnd.NGAYLAPDON.Date.Month + " năm " + dotnd.NGAYLAPDON.Date.Year);
+                    rpt_Main main = new rpt_Main(rp);
+                    main.ShowDialog();
+
+                }
+                else
+                {
+                    rpt_DanhSachChuyen ds = new rpt_DanhSachChuyen(_madot, DAL.C_USERS._userName, CD_NguoiDuyetDon.SelectedValue.ToString(), flag);
+                    ds.ShowDialog();
+                }
             }
             catch (Exception ex)
             {

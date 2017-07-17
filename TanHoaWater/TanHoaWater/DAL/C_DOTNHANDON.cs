@@ -130,7 +130,7 @@ namespace TanHoaWater.DAL
             string sql = " SELECT MADOT , NGAYLAPDON= CONVERT(VARCHAR(10),NGAYLAPDON,103), TENLOAI,";
             sql += " CASE WHEN CHUYENDON='False' THEN N'Chưa chuyển'  WHEN CHUYENDON='True' THEN N'Đã chuyển' ELSE N'Chuyển 1 phần'   END as 'CHUYEN', NGAYCHUYEN= CONVERT(VARCHAR(10),NGAYCHUYEN,103),NGAYTRAHS= CONVERT(VARCHAR(10),NGAYTRAHS,103), dot.CREATEBY ";
             sql += " FROM DOT_NHAN_DON dot, LOAI_HOSO loai";
-            sql += " WHERE loai.MALOAI = dot.LOAIDON";
+            sql += " WHERE loai.MALOAI = dot.LOAIDON AND YEAR(NGAYLAPDON)>=" + (DateTime.Now.Year - 1);
             sql += " ORDER BY dot.CREATEDATE DESC ";
             SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             DataSet dataset = new DataSet();
@@ -143,7 +143,7 @@ namespace TanHoaWater.DAL
         {
             string sql = " SELECT COUNT(*) ";
             sql += " FROM DOT_NHAN_DON dot, LOAI_HOSO loai";
-            sql += " WHERE loai.MALOAI = dot.LOAIDON";
+            sql += " WHERE loai.MALOAI = dot.LOAIDON AND YEAR(NGAYLAPDON)>=" + (DateTime.Now.Year-1);
             //TanHoaDataContext db = new TanHoaDataContext();
             //SqlConnection conn = new SqlConnection(db.Connection.ConnectionString);
             //conn.Open();

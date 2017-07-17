@@ -813,6 +813,15 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
                     reportValues rpt = new reportValues(5, madot,ngaytk);
                     rpt.ShowDialog();
                 }
+
+                else if (tendot.Equals("Cắt Hủy Danh Bộ"))
+                {
+                    ReportDocument rp = new rpt_DanhSachHSTC_HUYDB();
+                    rp.SetDataSource(DAL.C_KH_DotThiCong.BC_DanhSachDotThiCong_BT(madot));
+                    rp.SetParameterValue("ngaytk", ngaytk);
+                    rpt_Main mainReport = new rpt_Main(rp);
+                    mainReport.ShowDialog();
+                }
                 else
                 {
                     reportValues rpt = new reportValues(1, madot, ngaytk);
