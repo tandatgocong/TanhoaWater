@@ -205,6 +205,34 @@ namespace TanHoaWater.DAL
             return false;
         }
 
+        public static bool HoanCongHuyDB(string shs, DateTime ngaytc, DateTime ngaykd)
+        {
+            try
+            {
+                var query = from q in db.KH_HOSOKHACHHANGs where q.SHS == shs select q;
+                KH_HOSOKHACHHANG hosokh = query.SingleOrDefault();
+                if (hosokh != null)
+                {
+                    hosokh.NGAYTHICONG = ngaytc;
+                    hosokh.HOANCONG = true;
+                    hosokh.NGAYHOANCONG = ngaykd;
+                    //if (!"1".Equals(ngaykd.Year.ToString()))
+                    //{
+                    //    hosokh.DHN_NGAYKD = ngaykd;
+                    //}
+
+                    db.SubmitChanges();
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Error("Hoan Cong  Huy DB:" + ex.Message);
+            }
+            return false;
+        }
+
+
         public static void TroNgai(string shs,bool trongai, string noidungtrongai)
         {
             try
