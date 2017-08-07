@@ -330,16 +330,17 @@ namespace TanHoaWater.DAL
             return null;
         }
 
-        public static bool UpdateCoPhep(string madot, DateTime ngaycophep)
+        public static bool UpdateCoPhep(string madot,string noicapphep, DateTime ngaycophep)
         {
             try
             {
                 TanHoaDataContext db = new TanHoaDataContext();
-                var obj = from dd in db.KH_XINPHEPDAODUONGs where dd.MADOT == madot select dd;
-                if (obj.SingleOrDefault() != null)
+                var obj = from dd in db.KH_XINPHEPDAODUONGs where dd.MADOTXP == madot && dd.NOICAPPHEP == noicapphep select dd;
+                KH_XINPHEPDAODUONG xdd = obj.SingleOrDefault();
+                if (xdd != null)
                 {
-                    obj.SingleOrDefault().COPHEP = true;
-                    obj.SingleOrDefault().NGAYCOPHEP = ngaycophep;
+                    xdd.COPHEP = true;
+                    xdd.NGAYCOPHEP = ngaycophep;
                     db.SubmitChanges();
                     return true;
                 }

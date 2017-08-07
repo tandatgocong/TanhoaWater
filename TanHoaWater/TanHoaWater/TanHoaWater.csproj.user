@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <ProjectView>ProjectFiles</ProjectView>
+    <ProjectView>ShowAllFiles</ProjectView>
     <PublishUrlHistory>\\SERVER9\Programs\Test\|\\192.168.1.9\Programs\Test\|\\SERVER9\Programs\Bulid_New\|\\192.168.90.9\Programs\Bulid_New\|publish\</PublishUrlHistory>
     <InstallUrlHistory>\\SERVER9\Programs\Test\|\\192.168.1.9\Programs\Test\</InstallUrlHistory>
     <SupportUrlHistory />

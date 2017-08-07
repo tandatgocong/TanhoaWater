@@ -135,5 +135,10 @@ namespace TanHoaWater.View.Users.KEHOACH.HOANCONG
             this.tabControlPanel4.Controls.Add(new tab_DanhSachHoanCong_HuyDB(this.cbDotTC.Text));
             this.tabControl1.SelectedTabIndex = 5;
         }
+
+        private void tabControl1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -390,9 +390,11 @@ namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
         private void btCapNhatCoPhep_Click(object sender, EventArgs e)
         {
             string madot = "";
+            string noicapphep = "";
             try
             {
                 madot = dataDanhSachDaoDuong.Rows[dataDanhSachDaoDuong.CurrentRow.Index].Cells["gridSoDot"].Value + "";
+                noicapphep = dataDanhSachDaoDuong.Rows[dataDanhSachDaoDuong.CurrentRow.Index].Cells["gridNoiCapPhep"].Value + "";
 
             }
             catch (Exception)
@@ -407,7 +409,7 @@ namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
                 }
                 else {
                   
-                    if (DAL.C_KH_XinPhepDD.UpdateCoPhep(madot, this.dateNgayCoPhep.Value.Date) == false) {
+                    if (DAL.C_KH_XinPhepDD.UpdateCoPhep(madot,noicapphep, this.dateNgayCoPhep.Value.Date) == false) {
                         MessageBox.Show(this, "Cập Nhật Ngày Có Phép Đào Đường Lỗi !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     } else {
                         search();
