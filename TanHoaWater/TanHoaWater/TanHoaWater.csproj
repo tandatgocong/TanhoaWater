@@ -32,7 +32,7 @@
     <UpdateUrl>\\192.168.90.9\Programs\Test\</UpdateUrl>
     <PublisherName>TanHoaWater</PublisherName>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>19</ApplicationRevision>
+    <ApplicationRevision>20</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -70,7 +70,7 @@
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>false</SignAssembly>
@@ -1995,7 +1995,6 @@
     <Compile Include="View\Main\frm_Login.Designer.cs">
       <DependentUpon>frm_Login.cs</DependentUpon>
     </Compile>
-    <None Include="TanHoaWater_TemporaryKey.pfx" />
     <None Include="View\Users\DONGHONUOC\BC\chodanhbo.xsc">
       <DependentUpon>chodanhbo.xsd</DependentUpon>
     </None>
