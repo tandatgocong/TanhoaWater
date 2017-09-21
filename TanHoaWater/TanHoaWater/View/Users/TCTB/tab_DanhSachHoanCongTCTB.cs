@@ -551,29 +551,29 @@ namespace TanHoaWater.View.Users.TCTB
                 {
                     try
                     {
-                        if (shs.Contains("BT"))
-                        {
-                            TB_DULIEUKHACHHANG kh = DULIEUKH.C_DuLieuKhachHang.finByDanhBo(txtDanhBo.Text.Replace(" ", "").Replace("-", ""));
-                            if (kh != null)
-                            {
-                                //kh.NGAYTHAY = hskh.NGAYTHICONG;
-                                //kh.NGAYKIEMDINH = hskh.DHN_NGAYKD;
-                                //kh.CODH = this.txtCoTLK.Text;
-                                //kh.HIEUDH = hskh.HIEUDONGHO;
-                                //kh.SOTHANDH = hskh.SOTHANTLK;
-                                //kh.CHISOKYTRUOC = hskh.CHISO + "";
-                                //DULIEUKH.C_DuLieuKhachHang.Update();
+                        //if (shs.Contains("BT"))
+                        //{
+                        //    TB_DULIEUKHACHHANG kh = DULIEUKH.C_DuLieuKhachHang.finByDanhBo(txtDanhBo.Text.Replace(" ", "").Replace("-", ""));
+                        //    if (kh != null)
+                        //    {
+                        //        //kh.NGAYTHAY = hskh.NGAYTHICONG;
+                        //        //kh.NGAYKIEMDINH = hskh.DHN_NGAYKD;
+                        //        //kh.CODH = this.txtCoTLK.Text;
+                        //        //kh.HIEUDH = hskh.HIEUDONGHO;
+                        //        //kh.SOTHANDH = hskh.SOTHANTLK;
+                        //        //kh.CHISOKYTRUOC = hskh.CHISO + "";
+                        //        //DULIEUKH.C_DuLieuKhachHang.Update();
 
-                                try
-                                {
-                                    CapNhatHandHeld(kh);
-                                }
-                                catch (Exception)
-                                {
+                        //        try
+                        //        {
+                        //            CapNhatHandHeld(kh);
+                        //        }
+                        //        catch (Exception)
+                        //        {
 
-                                }
-                            }
-                        }
+                        //        }
+                        //    }
+                        //}
                   }
                     catch (Exception ex)
                     {
