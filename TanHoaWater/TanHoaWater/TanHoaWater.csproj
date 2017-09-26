@@ -18,7 +18,7 @@
     </UpgradeBackupLocation>
     <OldToolsVersion>3.5</OldToolsVersion>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>\\SERVER9\Programs\Test\</PublishUrl>
+    <PublishUrl>\\HP_G7\dhn%24\QUAN LY GAN MOI\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Unc</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -28,11 +28,12 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>\\SERVER9\Programs\Test\</InstallUrl>
-    <UpdateUrl>\\192.168.90.9\Programs\Test\</UpdateUrl>
+    <InstallUrl>\\HP_G7\dhn%24\QUAN LY GAN MOI\</InstallUrl>
+    <UpdateUrl>\\HP_G7\dhn%24\QUAN LY GAN MOI\</UpdateUrl>
     <PublisherName>TanHoaWater</PublisherName>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>22</ApplicationRevision>
+    <ApplicationRevision>8</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -222,12 +223,6 @@
     <Compile Include="DULIEUKH\C_DuLieuKhachHang.cs" />
     <Compile Include="DULIEUKH\C_GanMoi.cs" />
     <Compile Include="DULIEUKH\C_PhienLoTrinh.cs" />
-    <Compile Include="Form2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
-    </Compile>
     <Compile Include="Lib\app.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
@@ -429,6 +424,30 @@
     </Compile>
     <Compile Include="View\Users\KEHOACH\dialogNhapDon.Designer.cs">
       <DependentUpon>dialogNhapDon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Users\KEHOACH\DOTTHICONG\BC\rpt_ThongBaoKhoiCong_dsdk.cs">
+      <DependentUpon>rpt_ThongBaoKhoiCong_dsdk.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="View\Users\KEHOACH\DOTTHICONG\BC\CrystalReport1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\Users\KEHOACH\DOTTHICONG\BC\frmThongBaoThiCong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Users\KEHOACH\DOTTHICONG\BC\frmThongBaoThiCong.Designer.cs">
+      <DependentUpon>frmThongBaoThiCong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Users\KEHOACH\DOTTHICONG\BC\rpt_ThongBaoKhoiCong.cs">
+      <DependentUpon>rpt_ThongBaoKhoiCong.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="View\Users\KEHOACH\DOTTHICONG\BC\rpt_DanhSachHSTC_HUYDB.cs">
       <DependentUpon>rpt_DanhSachHSTC_HUYDB.rpt</DependentUpon>
@@ -1338,9 +1357,6 @@
     <None Include="Database\dbCallCenter.dbml.layout">
       <DependentUpon>dbCallCenter.dbml</DependentUpon>
     </None>
-    <EmbeddedResource Include="Form2.resx">
-      <DependentUpon>Form2.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Roles\TTK.resx">
       <DependentUpon>TTK.cs</DependentUpon>
     </EmbeddedResource>
@@ -1425,6 +1441,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\KEHOACH\dialogNhapDon.resx">
       <DependentUpon>dialogNhapDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\KEHOACH\DOTTHICONG\BC\rpt_ThongBaoKhoiCong_dsdk.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_ThongBaoKhoiCong_dsdk.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\KEHOACH\DOTTHICONG\BC\CrystalReport1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\KEHOACH\DOTTHICONG\BC\frmThongBaoThiCong.resx">
+      <DependentUpon>frmThongBaoThiCong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\KEHOACH\DOTTHICONG\BC\rpt_ThongBaoKhoiCong.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_ThongBaoKhoiCong.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\KEHOACH\DOTTHICONG\BC\rpt_DanhSachHSTC_HUYDB.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

@@ -5,11 +5,13 @@ using System.Drawing;
 using System.Data;
 using System.Linq;
 using System.Text;
+using ExcelCOM = Microsoft.Office.Interop.Excel;
 using System.Windows.Forms;
 using log4net;
 using TanHoaWater.View.Users.Report;
 using CrystalDecisions.CrystalReports.Engine;
 using TanHoaWater.View.Users.KEHOACH.XINPHEPDD.BC;
+using TanHoaWater.Database;
 
 namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
 {
@@ -433,17 +435,97 @@ namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
             this.txtMaQuanLy.Text = this.txtSoDot.Text + "-" + this.cbNoiCap.Text;
             this.txtMaQuanLy.Text = this.txtMaQuanLy.Text.ToUpper();
         }
+        public string export(string _dotdd)
+        {
+            ExcelCOM.Application exApp = new ExcelCOM.Application();
+            string workbookPath = AppDomain.CurrentDomain.BaseDirectory + @"\XINPHEPDAODUONGTP.xls";
+            ExcelCOM.Workbook exBook = exApp.Workbooks.Open(workbookPath,
+        0, false, 5, "", "", false, Microsoft.Office.Interop.Excel.XlPlatform.xlWindows, "",
+        true, false, 0, true, false, false);
+            ExcelCOM.Worksheet exSheet = (ExcelCOM.Worksheet)exBook.Worksheets[1];
 
+
+            exSheet.Name = "TAN HOA - XIN PHEP DAO DUONG";
+            exSheet.Cells[4, 4] = "TP.Hồ Chí Minh, ngày " + DateTime.Now.Day + " tháng " + DateTime.Now.Month + " năm " + DateTime.Now.Year;
+            exSheet.Cells[6, 4] = "Danh sách đào đường đợt : " + _dotdd.ToUpper() + "-QTP/CNTH";
+            List<KH_HOSOKHACHHANG> list = DAL.C_KH_XinPhepDD.ListHSKHByDotTC(_dotdd + "-QTP");
+            int rows = 11;
+            for (int i = 0; i < list.Count; i++)
+            {
+
+                //if (rows > 11)
+                //{
+                //    exSheet.Cells[rows, 2] = "\"";
+                //    exSheet.Cells[rows, 3] = "\"";
+                //    exSheet.Cells[rows, 4] = "\"";
+                //}
+                KH_HOSOKHACHHANG hskh = list[i];
+                exSheet.Cells[rows, 1] = i + 1;
+                DON_KHACHHANG donkh = DAL.C_DonKhachHang.findBySHS(hskh.SHS);
+
+                exSheet.Cells[rows, 2] = donkh.SONHA+ " " +  donkh.DUONG + ", P." + DAL.C_Phuong.finbyPhuong(donkh.QUAN, donkh.PHUONG).TENPHUONG;//PHUON
+
+                List<KH_BAOCAOPHUIDAO> listPhui = DAL.C_KH_XinPhepDD.getListBCPhuiDao(donkh.SHS);
+                string ketcau = "";
+                foreach (KH_BAOCAOPHUIDAO item in listPhui)
+                {
+                    if ("L"==item.TENKETCAU.Substring(0,1))
+                        exSheet.Cells[rows, 4] = item.KICHTHUOC;
+                    else
+                        exSheet.Cells[rows, 3] = item.KICHTHUOC;
+
+                    ketcau += item.TENKETCAU + " ; " ;
+                    //TENKETCAU
+                }
+                exSheet.Cells[rows, 5] = ketcau;
+
+                rows++;
+
+            }
+
+            string file = _dotdd.Replace(@"/","-") + "-QTP.xls";
+            exApp.Visible = false;
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            saveFileDialog1.InitialDirectory = @"C:\";
+            saveFileDialog1.Title = "Save text Files";
+            saveFileDialog1.FileName = file;
+            saveFileDialog1.DefaultExt = ".xls";
+            saveFileDialog1.Filter = "All files (*.*)|*.*";
+            string path = "";
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                path = saveFileDialog1.FileName; ;
+                exBook.SaveAs(path, ExcelCOM.XlFileFormat.xlWorkbookNormal,
+                    null, null, false, false,
+                    ExcelCOM.XlSaveAsAccessMode.xlExclusive,
+                    false, false, false, false, false);
+            }
+
+
+            exBook.Close(false, false, false);
+          
+            //string path = "C:\\ThayDoiPhienLoTrinh." + ky + "." + nam + ".xls";
+            //exBook.SaveAs(path.Replace("\\\\", "\\"), ExcelCOM.XlFileFormat.xlWorkbookNormal,
+            //    null, null, false, false,
+            //    ExcelCOM.XlSaveAsAccessMode.xlExclusive,
+            //    false, false, false, false, false);
+            exBook.Close(false, false, false);
+            exApp.Quit();
+            
+            MessageBox.Show(this, "Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            return path;
+        }
         private void btExport_Click(object sender, EventArgs e)
         {
             string madot = "";
             try
             {
                 madot = dataDanhSachDaoDuong.Rows[dataDanhSachDaoDuong.CurrentRow.Index].Cells["gridSoDot"].Value + "";
+                export(madot);
                 //if ((dataDanhSachDaoDuong.Rows[dataDanhSachDaoDuong.CurrentRow.Index].Cells["gridMaQuanLy"].Value + "").Contains("QTP"))
                 //{
-                    frm_Export frm = new frm_Export(madot);
-                    frm.ShowDialog();
+                //frm_Export frm = new frm_Export(madot);
+                //frm.ShowDialog();
                 //}
                 //else {
 

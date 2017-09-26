@@ -311,6 +311,40 @@ namespace TanHoaWater.DAL
             }
             return null;
         }
+        public static DataSet BC_ThongBaoThiCong(string madot )
+        {
+
+            try
+            {
+                TanHoaDataContext db = new TanHoaDataContext();
+                db.Connection.Open();
+                DataSet dataset = new DataSet();
+                string sql = " SELECT * FROM KH_TC_BAOCAO ";
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
+                adapter.Fill(dataset, "KH_TC_BAOCAO");
+
+                sql = " select N'- UBND PHƯỜNG '+ UPPER(p.TENPHUONG) as TENPHUONG from DON_KHACHHANG don,PHUONG p,KH_HOSOKHACHHANG hs ";
+                sql+=" where don.QUAN=p.MAQUAN and don.PHUONG=p.MAPHUONG and don.SHS=hs.SHS and hs.MADOTTC=N'"+madot+"' GROUP BY p.TENPHUONG ";
+                adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
+                adapter.Fill(dataset, "thongbao_phuong");
+
+
+                sql = " SELECT *  FROM V_DANHSACHTHICONG WHERE MADOTTC=N'" + madot + "' ORDER BY STT ASC ";
+                adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
+                adapter.Fill(dataset, "V_DANHSACHTHICONG");
+
+
+
+                db.Connection.Close();
+                return dataset;
+            }
+            catch (Exception ex)
+            {
+                log.Error("Loi BC Danh Sach Thi Cong " + ex.Message);
+            }
+            return null;
+        }
+
         public static DataSet BC_DanhSachDotThiCong(string madot)
         {
 

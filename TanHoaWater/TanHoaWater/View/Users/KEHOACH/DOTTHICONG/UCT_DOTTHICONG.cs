@@ -1041,6 +1041,29 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG
             obj.ShowDialog();
         }
 
+        private void btThongBao_Click(object sender, EventArgs e)
+        {
+            string madot = "";
+            try
+            {
+                madot = gridDotThiCong.Rows[gridDotThiCong.CurrentRow.Index].Cells["gridSoDot"].Value + "";
+
+            }
+            catch (Exception)
+            {
+            }
+            if (!"".Equals(madot))
+            {
+
+                frmThongBaoThiCong  obj = new frmThongBaoThiCong(madot);
+                obj.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show(this, "Cần Chọn Đợt Thi Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
        
     }
 }
