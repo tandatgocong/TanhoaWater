@@ -16,6 +16,7 @@ namespace TanHoaWater.View.Users.KEHOACH
         {
             InitializeComponent();
             this.crystalReportViewer1.ReportSource = rp;
+            
         }
     }
 }

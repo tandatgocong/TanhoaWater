@@ -33,7 +33,7 @@
     <PublisherName>TanHoaWater</PublisherName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>8</ApplicationRevision>
+    <ApplicationRevision>9</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -144,6 +144,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAL\CCallCenter.cs" />
+    <Compile Include="DAL\C_KHDonBamChi.cs" />
     <Compile Include="DAL\C_KhoiLuongXDCB_AS.cs" />
     <Compile Include="DAL\C_KichThuocPhuiDao_AS.cs" />
     <Compile Include="DAL\C_CongTacBangGia_AS.cs" />
@@ -418,6 +419,18 @@
       <AutoGen>True</AutoGen>
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="View\Users\KEHOACH\Report\rptBamChiKhoaGoc.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptBamChiKhoaGoc.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\Users\KEHOACH\tab_BamChiKhoaGoc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Users\KEHOACH\tab_BamChiKhoaGoc.Designer.cs">
+      <DependentUpon>tab_BamChiKhoaGoc.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Users\KEHOACH\dialogNhapDon.cs">
       <SubType>Form</SubType>
@@ -1438,6 +1451,13 @@
     <EmbeddedResource Include="View\Users\KEHOACH\BAOCAOTK\rpt_BCKINHPHI.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_BCKINHPHI.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\KEHOACH\Report\rptBamChiKhoaGoc.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptBamChiKhoaGoc.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\KEHOACH\tab_BamChiKhoaGoc.resx">
+      <DependentUpon>tab_BamChiKhoaGoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\KEHOACH\dialogNhapDon.resx">
       <DependentUpon>dialogNhapDon.cs</DependentUpon>

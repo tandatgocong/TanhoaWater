@@ -5021,7 +5021,7 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG.BC.DataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::TanHoaWater.Properties.Settings.Default.TANHOA_WATERConnectionString2;
+            this._connection.ConnectionString = global::TanHoaWater.Properties.Settings.Default.TANHOA_WATERConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5223,7 +5223,7 @@ SELECT ID, CVDUYET, NGUOIDUYET, CVKEHOACH, NGUOITL, KTGIAMDOC, TENNGUOITL FROM K
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::TanHoaWater.Properties.Settings.Default.TANHOA_WATERConnectionString2;
+            this._connection.ConnectionString = global::TanHoaWater.Properties.Settings.Default.TANHOA_WATERConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5618,7 +5618,7 @@ SELECT ID, CVDUYET, NGUOIDUYET, CVKEHOACH, NGUOITL, KTGIAMDOC, TENNGUOITL FROM K
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::TanHoaWater.Properties.Settings.Default.TANHOA_WATERConnectionString2;
+            this._connection.ConnectionString = global::TanHoaWater.Properties.Settings.Default.TANHOA_WATERConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

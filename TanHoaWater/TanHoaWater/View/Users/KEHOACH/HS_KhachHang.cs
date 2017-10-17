@@ -1228,5 +1228,11 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
             rpt_Main main = new rpt_Main(rp);
             main.ShowDialog();
         }
+
+        private void tabItem6_Click(object sender, EventArgs e)
+        {
+            this.tabControlPanel9.Controls.Clear();
+            this.tabControlPanel9.Controls.Add(new tab_BamChiKhoaGoc());
+        }
     }
 }
