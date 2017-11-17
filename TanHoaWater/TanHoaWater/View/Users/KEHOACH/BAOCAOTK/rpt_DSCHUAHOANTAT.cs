@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TanHoaWater.View.Users.TinhDuToan.report {
+namespace TanHoaWater.View.Users.KEHOACH.BAOCAOTK {
     using System;
     using System.ComponentModel;
     using CrystalDecisions.Shared;
@@ -16,14 +16,14 @@ namespace TanHoaWater.View.Users.TinhDuToan.report {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class rptBangGiaTuTaiLap : ReportClass {
+    public class rpt_DSCHUAHOANTAT : ReportClass {
         
-        public rptBangGiaTuTaiLap() {
+        public rpt_DSCHUAHOANTAT() {
         }
         
         public override string ResourceName {
             get {
-                return "rptBangGiaTuTaiLap.rpt";
+                return "rpt_DSCHUAHOANTAT.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace TanHoaWater.View.Users.TinhDuToan.report {
         
         public override string FullResourceName {
             get {
-                return "TanHoaWater.View.Users.TinhDuToan.report.rptBangGiaTuTaiLap.rpt";
+                return "TanHoaWater.View.Users.KEHOACH.BAOCAOTK.rpt_DSCHUAHOANTAT.rpt";
             }
             set {
                 // Do nothing
@@ -66,7 +66,7 @@ namespace TanHoaWater.View.Users.TinhDuToan.report {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupHeaderSection2 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
             get {
                 return this.ReportDefinition.Sections[2];
             }
@@ -74,7 +74,7 @@ namespace TanHoaWater.View.Users.TinhDuToan.report {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section DetailSection1 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
             get {
                 return this.ReportDefinition.Sections[3];
             }
@@ -82,7 +82,7 @@ namespace TanHoaWater.View.Users.TinhDuToan.report {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection2 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section5 {
             get {
                 return this.ReportDefinition.Sections[4];
             }
@@ -90,23 +90,7 @@ namespace TanHoaWater.View.Users.TinhDuToan.report {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
-            get {
-                return this.ReportDefinition.Sections[5];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section5 {
-            get {
-                return this.ReportDefinition.Sections[6];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_Tienchu {
+        public CrystalDecisions.Shared.IParameterField Parameter_TUNGAY {
             get {
                 return this.DataDefinition.ParameterFields[0];
             }
@@ -114,49 +98,17 @@ namespace TanHoaWater.View.Users.TinhDuToan.report {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_gan {
+        public CrystalDecisions.Shared.IParameterField Parameter_DENNGAY {
             get {
                 return this.DataDefinition.ParameterFields[1];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_nhua {
-            get {
-                return this.DataDefinition.ParameterFields[2];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_khachhangdautu {
-            get {
-                return this.DataDefinition.ParameterFields[3];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_title_p {
-            get {
-                return this.DataDefinition.ParameterFields[4];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_subReportrpt_subTienchu {
-            get {
-                return this.DataDefinition.ParameterFields[5];
             }
         }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedrptBangGiaTuTaiLap : Component, ICachedReport {
+    public class Cachedrpt_DSCHUAHOANTAT : Component, ICachedReport {
         
-        public CachedrptBangGiaTuTaiLap() {
+        public Cachedrpt_DSCHUAHOANTAT() {
         }
         
         [Browsable(false)]
@@ -193,7 +145,7 @@ namespace TanHoaWater.View.Users.TinhDuToan.report {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            rptBangGiaTuTaiLap rpt = new rptBangGiaTuTaiLap();
+            rpt_DSCHUAHOANTAT rpt = new rpt_DSCHUAHOANTAT();
             rpt.Site = this.Site;
             return rpt;
         }

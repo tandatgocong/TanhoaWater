@@ -10,6 +10,7 @@ using log4net;
 using TanHoaWater.Database;
 using CrystalDecisions.CrystalReports.Engine;
 using TanHoaWater.View.Users.KEHOACH.Report;
+using TanHoaWater.DULIEUKH;
 
 namespace TanHoaWater.View.Users.KEHOACH
 {
@@ -41,7 +42,7 @@ namespace TanHoaWater.View.Users.KEHOACH
                 DataTable table = DAL.C_KHDonBamChi.findByHSHT(this.txtShS.Text);
                 if (table.Rows.Count <= 0)
                 {
-                    MessageBox.Show(this, "Không Tìm Thấy Hồ Sơ Hoàn Tất Thiết Kế !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(this, "Không Tìm Thấy Hồ Sơ !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
@@ -110,6 +111,24 @@ namespace TanHoaWater.View.Users.KEHOACH
             DAL.LinQConnection.ExecuteCommand("DELETE FROM KH_HOSOBAMCHIGOC WHERE ID='" + dataGridView1.CurrentRow.Cells["ID"].Value + "'");
             dataGridView1.DataSource = DAL.C_KHDonBamChi.getListbyDot(this.txtSoBangKe.Text);
             pLoad();
+        }
+
+        private void textBoxX2DB_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                DataTable table = C_DuLieuKhachHang.getDanhBo(this.textBoxX2DB.Text.Replace("-",""));
+                if (table.Rows.Count <= 0)
+                {
+                    MessageBox.Show(this, "Không Tìm Thấy Hồ Sơ Hoàn Tất Thiết Kế !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    this.txtHoTenKH.Text = table.Rows[0][0].ToString();
+                    this.txtDiaChi.Text = table.Rows[0][1].ToString();
+                   
+                }
+            }
         }
     }
 }

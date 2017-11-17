@@ -41,6 +41,7 @@ namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG.BC
             rp.SetParameterValue("ngayxp", ngayphep);
             rp.SetParameterValue("tungay", ngaytc);
             rp.SetParameterValue("dennay", ngayden);
+            rp.SetParameterValue("giamsat", txtGiamSatVien.Text);
             crystalReportViewer1.ReportSource = rp;
             this.WindowState = FormWindowState.Maximized;
             this.panel1.Visible = false;

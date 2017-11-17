@@ -33,7 +33,7 @@
     <PublisherName>TanHoaWater</PublisherName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>9</ApplicationRevision>
+    <ApplicationRevision>20</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -384,6 +384,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BC_TONGKET.xsd</DependentUpon>
     </Compile>
+    <Compile Include="View\Users\KEHOACH\BAOCAOTK\rpt_DSCHUAHOANTAT.cs">
+      <DependentUpon>rpt_DSCHUAHOANTAT.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="View\Users\KEHOACH\BAOCAOTK\rpt_BCTONGKET_QTB_BT.cs">
       <DependentUpon>rpt_BCTONGKET_QTB_BT.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -420,6 +426,18 @@
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="View\Users\KEHOACH\DOTTHICONG\BC\rpt_QuyetDinhTCKoDVTL.cs">
+      <DependentUpon>rpt_QuyetDinhTCKoDVTL.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="View\Users\KEHOACH\DOTTHICONG\BC\rpt_ThongBaoKhoiCong_dsdk.cs">
+      <DependentUpon>rpt_ThongBaoKhoiCong_dsdk.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="View\Users\KEHOACH\Report\rptBamChiKhoaGoc.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -438,8 +456,8 @@
     <Compile Include="View\Users\KEHOACH\dialogNhapDon.Designer.cs">
       <DependentUpon>dialogNhapDon.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Users\KEHOACH\DOTTHICONG\BC\rpt_ThongBaoKhoiCong_dsdk.cs">
-      <DependentUpon>rpt_ThongBaoKhoiCong_dsdk.rpt</DependentUpon>
+    <Compile Include="View\Users\KEHOACH\DOTTHICONG\BC\rpt_ThongBaoKhoiCong_dsdk22.cs">
+      <DependentUpon>rpt_ThongBaoKhoiCong_dsdk22.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
@@ -476,12 +494,6 @@
     </Compile>
     <Compile Include="View\Users\KEHOACH\DOTTHICONG\BC\rpt_DanhSachHSTC_DOITCH.cs">
       <DependentUpon>rpt_DanhSachHSTC_DOITCH.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <SubType>Component</SubType>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="View\Users\KEHOACH\DOTTHICONG\BC\rpt_QuyetDinhTCKoDVTL.cs">
-      <DependentUpon>rpt_QuyetDinhTCKoDVTL.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
@@ -1428,6 +1440,10 @@
     <EmbeddedResource Include="View\Users\DONGHONUOC\uct_CapDanhBo.resx">
       <DependentUpon>uct_CapDanhBo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\KEHOACH\BAOCAOTK\rpt_DSCHUAHOANTAT.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_DSCHUAHOANTAT.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Users\KEHOACH\BAOCAOTK\rpt_BCTONGKET_QTB_BT.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_BCTONGKET_QTB_BT.cs</LastGenOutput>
@@ -1452,6 +1468,14 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_BCKINHPHI.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\KEHOACH\DOTTHICONG\BC\rpt_QuyetDinhTCKoDVTL.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_QuyetDinhTCKoDVTL.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\KEHOACH\DOTTHICONG\BC\rpt_ThongBaoKhoiCong_dsdk.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_ThongBaoKhoiCong_dsdk.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Users\KEHOACH\Report\rptBamChiKhoaGoc.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptBamChiKhoaGoc.cs</LastGenOutput>
@@ -1462,9 +1486,9 @@
     <EmbeddedResource Include="View\Users\KEHOACH\dialogNhapDon.resx">
       <DependentUpon>dialogNhapDon.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Users\KEHOACH\DOTTHICONG\BC\rpt_ThongBaoKhoiCong_dsdk.rpt">
+    <EmbeddedResource Include="View\Users\KEHOACH\DOTTHICONG\BC\rpt_ThongBaoKhoiCong_dsdk22.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>rpt_ThongBaoKhoiCong_dsdk.cs</LastGenOutput>
+      <LastGenOutput>rpt_ThongBaoKhoiCong_dsdk22.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\KEHOACH\DOTTHICONG\BC\CrystalReport1.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -1488,10 +1512,6 @@
     <EmbeddedResource Include="View\Users\KEHOACH\DOTTHICONG\BC\rpt_DanhSachHSTC_DOITCH.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_DanhSachHSTC_DOITCH.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Users\KEHOACH\DOTTHICONG\BC\rpt_QuyetDinhTCKoDVTL.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>rpt_QuyetDinhTCKoDVTL.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\KEHOACH\DOTTHICONG\BC\rpt_DanhSachHSTC_BOSUNG.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

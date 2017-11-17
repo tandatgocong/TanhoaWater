@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TanHoaWater.View.Users.TinhDuToan.report {
+namespace TanHoaWater.View.Users.KEHOACH.DOTTHICONG.BC {
     using System;
     using System.ComponentModel;
     using CrystalDecisions.Shared;
@@ -16,14 +16,14 @@ namespace TanHoaWater.View.Users.TinhDuToan.report {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class rptBangGiaTuTaiLap : ReportClass {
+    public class rpt_ThongBaoKhoiCong_dsdk22 : ReportClass {
         
-        public rptBangGiaTuTaiLap() {
+        public rpt_ThongBaoKhoiCong_dsdk22() {
         }
         
         public override string ResourceName {
             get {
-                return "rptBangGiaTuTaiLap.rpt";
+                return "rpt_ThongBaoKhoiCong_dsdk22.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace TanHoaWater.View.Users.TinhDuToan.report {
         
         public override string FullResourceName {
             get {
-                return "TanHoaWater.View.Users.TinhDuToan.report.rptBangGiaTuTaiLap.rpt";
+                return "TanHoaWater.View.Users.KEHOACH.DOTTHICONG.BC.rpt_ThongBaoKhoiCong_dsdk22.rpt";
             }
             set {
                 // Do nothing
@@ -66,7 +66,7 @@ namespace TanHoaWater.View.Users.TinhDuToan.report {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupHeaderSection2 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
             get {
                 return this.ReportDefinition.Sections[2];
             }
@@ -74,7 +74,7 @@ namespace TanHoaWater.View.Users.TinhDuToan.report {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section DetailSection1 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
             get {
                 return this.ReportDefinition.Sections[3];
             }
@@ -82,7 +82,7 @@ namespace TanHoaWater.View.Users.TinhDuToan.report {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection2 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section5 {
             get {
                 return this.ReportDefinition.Sections[4];
             }
@@ -90,23 +90,7 @@ namespace TanHoaWater.View.Users.TinhDuToan.report {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
-            get {
-                return this.ReportDefinition.Sections[5];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section5 {
-            get {
-                return this.ReportDefinition.Sections[6];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_Tienchu {
+        public CrystalDecisions.Shared.IParameterField Parameter_sophepdd {
             get {
                 return this.DataDefinition.ParameterFields[0];
             }
@@ -114,7 +98,7 @@ namespace TanHoaWater.View.Users.TinhDuToan.report {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_gan {
+        public CrystalDecisions.Shared.IParameterField Parameter_ngayxp {
             get {
                 return this.DataDefinition.ParameterFields[1];
             }
@@ -122,7 +106,7 @@ namespace TanHoaWater.View.Users.TinhDuToan.report {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_nhua {
+        public CrystalDecisions.Shared.IParameterField Parameter_tungay {
             get {
                 return this.DataDefinition.ParameterFields[2];
             }
@@ -130,7 +114,7 @@ namespace TanHoaWater.View.Users.TinhDuToan.report {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_khachhangdautu {
+        public CrystalDecisions.Shared.IParameterField Parameter_dennay {
             get {
                 return this.DataDefinition.ParameterFields[3];
             }
@@ -138,25 +122,17 @@ namespace TanHoaWater.View.Users.TinhDuToan.report {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_title_p {
+        public CrystalDecisions.Shared.IParameterField Parameter_sodottc {
             get {
                 return this.DataDefinition.ParameterFields[4];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_subReportrpt_subTienchu {
-            get {
-                return this.DataDefinition.ParameterFields[5];
             }
         }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedrptBangGiaTuTaiLap : Component, ICachedReport {
+    public class Cachedrpt_ThongBaoKhoiCong_dsdk22 : Component, ICachedReport {
         
-        public CachedrptBangGiaTuTaiLap() {
+        public Cachedrpt_ThongBaoKhoiCong_dsdk22() {
         }
         
         [Browsable(false)]
@@ -193,7 +169,7 @@ namespace TanHoaWater.View.Users.TinhDuToan.report {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            rptBangGiaTuTaiLap rpt = new rptBangGiaTuTaiLap();
+            rpt_ThongBaoKhoiCong_dsdk22 rpt = new rpt_ThongBaoKhoiCong_dsdk22();
             rpt.Site = this.Site;
             return rpt;
         }

@@ -40,8 +40,10 @@
             this.tcDenNgay = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.btIN = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.checkDinhKem = new System.Windows.Forms.CheckBox();
+            this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.txtGiamSatVien = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dCoPhep)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tcTuNgay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tcDenNgay)).BeginInit();
@@ -134,7 +136,7 @@
             // 
             this.txtDot.Location = new System.Drawing.Point(128, 14);
             this.txtDot.Name = "txtDot";
-            this.txtDot.Size = new System.Drawing.Size(160, 27);
+            this.txtDot.Size = new System.Drawing.Size(329, 27);
             this.txtDot.TabIndex = 722;
             // 
             // label4
@@ -249,7 +251,7 @@
             // 
             // btIN
             // 
-            this.btIN.Location = new System.Drawing.Point(128, 198);
+            this.btIN.Location = new System.Drawing.Point(128, 255);
             this.btIN.Name = "btIN";
             this.btIN.Size = new System.Drawing.Size(108, 33);
             this.btIN.TabIndex = 726;
@@ -259,6 +261,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.txtGiamSatVien);
+            this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.checkDinhKem);
             this.panel1.Controls.Add(this.txtDot);
             this.panel1.Controls.Add(this.btIN);
@@ -274,8 +278,18 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(518, 258);
+            this.panel1.Size = new System.Drawing.Size(518, 342);
             this.panel1.TabIndex = 727;
+            // 
+            // checkDinhKem
+            // 
+            this.checkDinhKem.AutoSize = true;
+            this.checkDinhKem.Location = new System.Drawing.Point(128, 216);
+            this.checkDinhKem.Name = "checkDinhKem";
+            this.checkDinhKem.Size = new System.Drawing.Size(177, 24);
+            this.checkDinhKem.TabIndex = 727;
+            this.checkDinhKem.Text = "Danh sách đính kèm";
+            this.checkDinhKem.UseVisualStyleBackColor = true;
             // 
             // crystalReportViewer1
             // 
@@ -285,25 +299,33 @@
             this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.Size = new System.Drawing.Size(518, 258);
+            this.crystalReportViewer1.Size = new System.Drawing.Size(518, 342);
             this.crystalReportViewer1.TabIndex = 728;
             this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
-            // checkDinhKem
+            // txtGiamSatVien
             // 
-            this.checkDinhKem.AutoSize = true;
-            this.checkDinhKem.Location = new System.Drawing.Point(128, 159);
-            this.checkDinhKem.Name = "checkDinhKem";
-            this.checkDinhKem.Size = new System.Drawing.Size(177, 24);
-            this.checkDinhKem.TabIndex = 727;
-            this.checkDinhKem.Text = "Danh sách đính kèm";
-            this.checkDinhKem.UseVisualStyleBackColor = true;
+            this.txtGiamSatVien.Location = new System.Drawing.Point(128, 164);
+            this.txtGiamSatVien.Name = "txtGiamSatVien";
+            this.txtGiamSatVien.Size = new System.Drawing.Size(329, 27);
+            this.txtGiamSatVien.TabIndex = 729;
+            this.txtGiamSatVien.Text = "Nguyễn Minh Tâm - 0945 434 198";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(12, 167);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(113, 20);
+            this.label6.TabIndex = 728;
+            this.label6.Text = "Giám Sát Viên";
             // 
             // frmThongBaoThiCong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(518, 258);
+            this.ClientSize = new System.Drawing.Size(518, 342);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.crystalReportViewer1);
             this.Font = new System.Drawing.Font("Times New Roman", 13F);
@@ -336,5 +358,7 @@
         private System.Windows.Forms.Panel panel1;
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
         private System.Windows.Forms.CheckBox checkDinhKem;
+        private System.Windows.Forms.TextBox txtGiamSatVien;
+        private System.Windows.Forms.Label label6;
     }
 }

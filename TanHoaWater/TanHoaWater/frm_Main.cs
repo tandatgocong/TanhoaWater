@@ -33,7 +33,7 @@ namespace TanHoaWater
         private static readonly ILog log = LogManager.GetLogger(typeof(frm_Main).Name);
         public void start()
         {
-            Application.Run(new SplashScreen());
+           // Application.Run(new SplashScreen());
         }
         public frm_Main()
         {

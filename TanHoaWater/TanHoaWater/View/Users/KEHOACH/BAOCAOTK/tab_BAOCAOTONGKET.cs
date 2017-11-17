@@ -87,6 +87,10 @@ namespace TanHoaWater.View.Users.KEHOACH
                 ocQuanPhuong.DisplayMember = "TENQUAN";
 
 
+                this.cHT.DataSource = DAL.C_LoaiNhanDon.getList();
+                this.cHT.ValueMember = "LOAIDON";
+                this.cHT.DisplayMember = "TENLOAI";
+                this.cHT.SelectedIndex = 2;
   
             }
             catch (Exception ex)
@@ -323,5 +327,32 @@ namespace TanHoaWater.View.Users.KEHOACH
 
             }
         }
+
+        private void btChuHoanTat_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int type = 1;
+                DataSet ds = new DataSet();
+
+                ReportDocument rp = new rpt_DSCHUAHOANTAT();
+
+                ds = DAL.C_KH_BAOCAO.BC_TONGKET_CHUAHT(cHT.SelectedValue + "", Utilities.DateToString.NgayVN(cTuNgay), Utilities.DateToString.NgayVN(cDenNgay));
+                 
+
+                rp.SetDataSource(ds);
+                rp.SetParameterValue("TUNGAY", Utilities.DateToString.NgayVN(cTuNgay));
+                rp.SetParameterValue("DENNGAY", Utilities.DateToString.NgayVN(cDenNgay));
+                rpt_Main rpt = new rpt_Main(rp);
+                rpt.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                log.Error(" Xem Bao Cao Tong Ket Kinh Phi Loi " + ex.Message);
+
+            }
+        }
+
+      
     }
 }

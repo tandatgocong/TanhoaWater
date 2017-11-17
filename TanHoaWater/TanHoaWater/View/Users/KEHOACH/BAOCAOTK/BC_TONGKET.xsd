@@ -2,9 +2,10 @@
 <xs:schema id="BC_TONGKET" targetNamespace="http://tempuri.org/BC_TONGKET.xsd" xmlns:mstns="http://tempuri.org/BC_TONGKET.xsd" xmlns="http://tempuri.org/BC_TONGKET.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
-      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="TANHOA_WATERConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="TANHOA_WATERConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.TanHoaWater.Properties.Settings.GlobalReference.Default.TANHOA_WATERConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="TANHOA_WATERConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="TANHOA_WATERConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.TanHoaWater.Properties.Settings.GlobalReference.Default.TANHOA_WATERConnectionString1" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="KH_TC_BAOCAOTableAdapter" GeneratorDataComponentClassName="KH_TC_BAOCAOTableAdapter" Name="KH_TC_BAOCAO" UserDataComponentName="KH_TC_BAOCAOTableAdapter">
@@ -137,6 +138,33 @@ SELECT ID, CVDUYET, NGUOIDUYET, CVKEHOACH, NGUOITL FROM KH_TC_BAOCAO WHERE (ID =
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="KIEMTRA_HOSOTableAdapter" GeneratorDataComponentClassName="KIEMTRA_HOSOTableAdapter" Name="KIEMTRA_HOSO" UserDataComponentName="KIEMTRA_HOSOTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TANHOA_WATERConnectionString1 (Settings)" DbObjectName="TANHOA_WATER.dbo.KIEMTRA_HOSO" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT LOAIHOSO, NHANHOSO, SHS, HOTEN, SONHA, DUONG, NGAYCHUYEN_HOSO, CHUYEN_HOSO, BOPHANCHUYEN, HOANTATTK, TRONGAITHIETKE, NGAYHOANTATTK FROM dbo.KIEMTRA_HOSO</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="LOAIHOSO" DataSetColumn="LOAIHOSO" />
+              <Mapping SourceColumn="NHANHOSO" DataSetColumn="NHANHOSO" />
+              <Mapping SourceColumn="SHS" DataSetColumn="SHS" />
+              <Mapping SourceColumn="HOTEN" DataSetColumn="HOTEN" />
+              <Mapping SourceColumn="SONHA" DataSetColumn="SONHA" />
+              <Mapping SourceColumn="DUONG" DataSetColumn="DUONG" />
+              <Mapping SourceColumn="NGAYCHUYEN_HOSO" DataSetColumn="NGAYCHUYEN_HOSO" />
+              <Mapping SourceColumn="CHUYEN_HOSO" DataSetColumn="CHUYEN_HOSO" />
+              <Mapping SourceColumn="BOPHANCHUYEN" DataSetColumn="BOPHANCHUYEN" />
+              <Mapping SourceColumn="HOANTATTK" DataSetColumn="HOANTATTK" />
+              <Mapping SourceColumn="TRONGAITHIETKE" DataSetColumn="TRONGAITHIETKE" />
+              <Mapping SourceColumn="NGAYHOANTATTK" DataSetColumn="NGAYHOANTATTK" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -145,7 +173,7 @@ SELECT ID, CVDUYET, NGUOIDUYET, CVKEHOACH, NGUOITL FROM KH_TC_BAOCAO WHERE (ID =
   <xs:element name="BC_TONGKET" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="BC_TONGKET" msprop:Generator_UserDSName="BC_TONGKET">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="KH_TC_BAOCAO" msprop:Generator_TableClassName="KH_TC_BAOCAODataTable" msprop:Generator_TableVarName="tableKH_TC_BAOCAO" msprop:Generator_TablePropName="KH_TC_BAOCAO" msprop:Generator_RowDeletingName="KH_TC_BAOCAORowDeleting" msprop:Generator_UserTableName="KH_TC_BAOCAO" msprop:Generator_RowChangingName="KH_TC_BAOCAORowChanging" msprop:Generator_RowEvHandlerName="KH_TC_BAOCAORowChangeEventHandler" msprop:Generator_RowDeletedName="KH_TC_BAOCAORowDeleted" msprop:Generator_RowEvArgName="KH_TC_BAOCAORowChangeEvent" msprop:Generator_RowChangedName="KH_TC_BAOCAORowChanged" msprop:Generator_RowClassName="KH_TC_BAOCAORow">
+        <xs:element name="KH_TC_BAOCAO" msprop:Generator_TableClassName="KH_TC_BAOCAODataTable" msprop:Generator_TableVarName="tableKH_TC_BAOCAO" msprop:Generator_RowChangedName="KH_TC_BAOCAORowChanged" msprop:Generator_TablePropName="KH_TC_BAOCAO" msprop:Generator_RowDeletingName="KH_TC_BAOCAORowDeleting" msprop:Generator_RowChangingName="KH_TC_BAOCAORowChanging" msprop:Generator_RowEvHandlerName="KH_TC_BAOCAORowChangeEventHandler" msprop:Generator_RowDeletedName="KH_TC_BAOCAORowDeleted" msprop:Generator_RowClassName="KH_TC_BAOCAORow" msprop:Generator_UserTableName="KH_TC_BAOCAO" msprop:Generator_RowEvArgName="KH_TC_BAOCAORowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
@@ -180,7 +208,7 @@ SELECT ID, CVDUYET, NGUOIDUYET, CVKEHOACH, NGUOITL FROM KH_TC_BAOCAO WHERE (ID =
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="W_KH_BCTONGKET" msprop:Generator_TableClassName="W_KH_BCTONGKETDataTable" msprop:Generator_TableVarName="tableW_KH_BCTONGKET" msprop:Generator_TablePropName="W_KH_BCTONGKET" msprop:Generator_RowDeletingName="W_KH_BCTONGKETRowDeleting" msprop:Generator_UserTableName="W_KH_BCTONGKET" msprop:Generator_RowChangingName="W_KH_BCTONGKETRowChanging" msprop:Generator_RowEvHandlerName="W_KH_BCTONGKETRowChangeEventHandler" msprop:Generator_RowDeletedName="W_KH_BCTONGKETRowDeleted" msprop:Generator_RowEvArgName="W_KH_BCTONGKETRowChangeEvent" msprop:Generator_RowChangedName="W_KH_BCTONGKETRowChanged" msprop:Generator_RowClassName="W_KH_BCTONGKETRow">
+        <xs:element name="W_KH_BCTONGKET" msprop:Generator_TableClassName="W_KH_BCTONGKETDataTable" msprop:Generator_TableVarName="tableW_KH_BCTONGKET" msprop:Generator_RowChangedName="W_KH_BCTONGKETRowChanged" msprop:Generator_TablePropName="W_KH_BCTONGKET" msprop:Generator_RowDeletingName="W_KH_BCTONGKETRowDeleting" msprop:Generator_RowChangingName="W_KH_BCTONGKETRowChanging" msprop:Generator_RowEvHandlerName="W_KH_BCTONGKETRowChangeEventHandler" msprop:Generator_RowDeletedName="W_KH_BCTONGKETRowDeleted" msprop:Generator_RowClassName="W_KH_BCTONGKETRow" msprop:Generator_UserTableName="W_KH_BCTONGKET" msprop:Generator_RowEvArgName="W_KH_BCTONGKETRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="SHS" msprop:Generator_ColumnVarNameInTable="columnSHS" msprop:Generator_ColumnPropNameInRow="SHS" msprop:Generator_ColumnPropNameInTable="SHSColumn" msprop:Generator_UserColumnName="SHS">
@@ -300,7 +328,7 @@ SELECT ID, CVDUYET, NGUOIDUYET, CVKEHOACH, NGUOITL FROM KH_TC_BAOCAO WHERE (ID =
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="W_KH_BCTONGCONG" msprop:Generator_TableClassName="W_KH_BCTONGCONGDataTable" msprop:Generator_TableVarName="tableW_KH_BCTONGCONG" msprop:Generator_TablePropName="W_KH_BCTONGCONG" msprop:Generator_RowDeletingName="W_KH_BCTONGCONGRowDeleting" msprop:Generator_UserTableName="W_KH_BCTONGCONG" msprop:Generator_RowChangingName="W_KH_BCTONGCONGRowChanging" msprop:Generator_RowEvHandlerName="W_KH_BCTONGCONGRowChangeEventHandler" msprop:Generator_RowDeletedName="W_KH_BCTONGCONGRowDeleted" msprop:Generator_RowEvArgName="W_KH_BCTONGCONGRowChangeEvent" msprop:Generator_RowChangedName="W_KH_BCTONGCONGRowChanged" msprop:Generator_RowClassName="W_KH_BCTONGCONGRow">
+        <xs:element name="W_KH_BCTONGCONG" msprop:Generator_TableClassName="W_KH_BCTONGCONGDataTable" msprop:Generator_TableVarName="tableW_KH_BCTONGCONG" msprop:Generator_RowChangedName="W_KH_BCTONGCONGRowChanged" msprop:Generator_TablePropName="W_KH_BCTONGCONG" msprop:Generator_RowDeletingName="W_KH_BCTONGCONGRowDeleting" msprop:Generator_RowChangingName="W_KH_BCTONGCONGRowChanging" msprop:Generator_RowEvHandlerName="W_KH_BCTONGCONGRowChangeEventHandler" msprop:Generator_RowDeletedName="W_KH_BCTONGCONGRowDeleted" msprop:Generator_RowClassName="W_KH_BCTONGCONGRow" msprop:Generator_UserTableName="W_KH_BCTONGCONG" msprop:Generator_RowEvArgName="W_KH_BCTONGCONGRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="HOSO" msprop:Generator_ColumnVarNameInTable="columnHOSO" msprop:Generator_ColumnPropNameInRow="HOSO" msprop:Generator_ColumnPropNameInTable="HOSOColumn" msprop:Generator_UserColumnName="HOSO" type="xs:int" minOccurs="0" />
@@ -316,6 +344,60 @@ SELECT ID, CVDUYET, NGUOIDUYET, CVKEHOACH, NGUOITL FROM KH_TC_BAOCAO WHERE (ID =
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="KIEMTRA_HOSO" msprop:Generator_TableClassName="KIEMTRA_HOSODataTable" msprop:Generator_TableVarName="tableKIEMTRA_HOSO" msprop:Generator_TablePropName="KIEMTRA_HOSO" msprop:Generator_RowDeletingName="KIEMTRA_HOSORowDeleting" msprop:Generator_RowChangingName="KIEMTRA_HOSORowChanging" msprop:Generator_RowEvHandlerName="KIEMTRA_HOSORowChangeEventHandler" msprop:Generator_RowDeletedName="KIEMTRA_HOSORowDeleted" msprop:Generator_UserTableName="KIEMTRA_HOSO" msprop:Generator_RowChangedName="KIEMTRA_HOSORowChanged" msprop:Generator_RowEvArgName="KIEMTRA_HOSORowChangeEvent" msprop:Generator_RowClassName="KIEMTRA_HOSORow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="LOAIHOSO" msprop:Generator_ColumnVarNameInTable="columnLOAIHOSO" msprop:Generator_ColumnPropNameInRow="LOAIHOSO" msprop:Generator_ColumnPropNameInTable="LOAIHOSOColumn" msprop:Generator_UserColumnName="LOAIHOSO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NHANHOSO" msprop:Generator_ColumnVarNameInTable="columnNHANHOSO" msprop:Generator_ColumnPropNameInRow="NHANHOSO" msprop:Generator_ColumnPropNameInTable="NHANHOSOColumn" msprop:Generator_UserColumnName="NHANHOSO" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="SHS" msprop:Generator_ColumnVarNameInTable="columnSHS" msprop:Generator_ColumnPropNameInRow="SHS" msprop:Generator_ColumnPropNameInTable="SHSColumn" msprop:Generator_UserColumnName="SHS">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="HOTEN" msprop:Generator_ColumnVarNameInTable="columnHOTEN" msprop:Generator_ColumnPropNameInRow="HOTEN" msprop:Generator_ColumnPropNameInTable="HOTENColumn" msprop:Generator_UserColumnName="HOTEN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SONHA" msprop:Generator_ColumnVarNameInTable="columnSONHA" msprop:Generator_ColumnPropNameInRow="SONHA" msprop:Generator_ColumnPropNameInTable="SONHAColumn" msprop:Generator_UserColumnName="SONHA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DUONG" msprop:Generator_ColumnVarNameInTable="columnDUONG" msprop:Generator_ColumnPropNameInRow="DUONG" msprop:Generator_ColumnPropNameInTable="DUONGColumn" msprop:Generator_UserColumnName="DUONG" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NGAYCHUYEN_HOSO" msprop:Generator_ColumnVarNameInTable="columnNGAYCHUYEN_HOSO" msprop:Generator_ColumnPropNameInRow="NGAYCHUYEN_HOSO" msprop:Generator_ColumnPropNameInTable="NGAYCHUYEN_HOSOColumn" msprop:Generator_UserColumnName="NGAYCHUYEN_HOSO" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="CHUYEN_HOSO" msprop:Generator_ColumnVarNameInTable="columnCHUYEN_HOSO" msprop:Generator_ColumnPropNameInRow="CHUYEN_HOSO" msprop:Generator_ColumnPropNameInTable="CHUYEN_HOSOColumn" msprop:Generator_UserColumnName="CHUYEN_HOSO" type="xs:boolean" minOccurs="0" />
+              <xs:element name="BOPHANCHUYEN" msprop:Generator_ColumnVarNameInTable="columnBOPHANCHUYEN" msprop:Generator_ColumnPropNameInRow="BOPHANCHUYEN" msprop:Generator_ColumnPropNameInTable="BOPHANCHUYENColumn" msprop:Generator_UserColumnName="BOPHANCHUYEN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="HOANTATTK" msprop:Generator_ColumnVarNameInTable="columnHOANTATTK" msprop:Generator_ColumnPropNameInRow="HOANTATTK" msprop:Generator_ColumnPropNameInTable="HOANTATTKColumn" msprop:Generator_UserColumnName="HOANTATTK" type="xs:boolean" minOccurs="0" />
+              <xs:element name="TRONGAITHIETKE" msprop:Generator_ColumnVarNameInTable="columnTRONGAITHIETKE" msprop:Generator_ColumnPropNameInRow="TRONGAITHIETKE" msprop:Generator_ColumnPropNameInTable="TRONGAITHIETKEColumn" msprop:Generator_UserColumnName="TRONGAITHIETKE" type="xs:boolean" minOccurs="0" />
+              <xs:element name="NGAYHOANTATTK" msprop:Generator_ColumnVarNameInTable="columnNGAYHOANTATTK" msprop:Generator_ColumnPropNameInRow="NGAYHOANTATTK" msprop:Generator_ColumnPropNameInTable="NGAYHOANTATTKColumn" msprop:Generator_UserColumnName="NGAYHOANTATTK" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
@@ -324,6 +406,10 @@ SELECT ID, CVDUYET, NGUOIDUYET, CVKEHOACH, NGUOITL FROM KH_TC_BAOCAO WHERE (ID =
     </xs:unique>
     <xs:unique name="W_KH_BCTONGKET_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:W_KH_BCTONGKET" />
+      <xs:field xpath="mstns:SHS" />
+    </xs:unique>
+    <xs:unique name="KIEMTRA_HOSO_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:KIEMTRA_HOSO" />
       <xs:field xpath="mstns:SHS" />
     </xs:unique>
   </xs:element>

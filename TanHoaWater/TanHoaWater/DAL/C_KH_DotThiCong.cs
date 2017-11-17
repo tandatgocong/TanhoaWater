@@ -323,7 +323,7 @@ namespace TanHoaWater.DAL
                 SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
                 adapter.Fill(dataset, "KH_TC_BAOCAO");
 
-                sql = " select N'- UBND PHƯỜNG '+ UPPER(p.TENPHUONG) as TENPHUONG from DON_KHACHHANG don,PHUONG p,KH_HOSOKHACHHANG hs ";
+                sql = " select N'- UBND Phường '+  p.TENPHUONG  as TENPHUONG from DON_KHACHHANG don,PHUONG p,KH_HOSOKHACHHANG hs ";
                 sql+=" where don.QUAN=p.MAQUAN and don.PHUONG=p.MAPHUONG and don.SHS=hs.SHS and hs.MADOTTC=N'"+madot+"' GROUP BY p.TENPHUONG ";
                 adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
                 adapter.Fill(dataset, "thongbao_phuong");

@@ -176,6 +176,21 @@ namespace TanHoaWater.DULIEUKH
             return ds;
         }
 
+        public static DataTable getDanhBo(string danhbo)
+        {
+            DataSet ds = new DataSet();
+            CapNuocTanHoaDataContext db = new CapNuocTanHoaDataContext();
+            db.Connection.Open();
+            string query = " select HOTEN, SONHA + ' ' + TENDUONG + ', P.'+ p.TENPHUONG +', Q.'+ q.TENQUAN ";
+            query += " from TB_DULIEUKHACHHANG tb, QUAN q, PHUONG p ";
+            query += " where  tb.QUAN=q.MAQUAN AND q.MAQUAN = p.MAQUAN AND tb.PHUONG=p.MAPHUONG AND DANHBO= '" + danhbo + "'  ";
+
+            SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
+            adapter.Fill(ds, "TB_DULIEUKHACHHANG");
+            return ds.Tables["TB_DULIEUKHACHHANG"];
+        }
+
+
         //public static bool HuyDanhBo(TB_DULIEUKHACHHANG_HUYDB huy, TB_DULIEUKHACHHANG kh)
         //{
 

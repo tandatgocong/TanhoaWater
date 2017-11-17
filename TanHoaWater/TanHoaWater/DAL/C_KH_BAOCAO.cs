@@ -387,6 +387,47 @@ namespace TanHoaWater.DAL
             return null;
         }
 
+        public static DataSet BC_TONGKET_CHUAHT(string loaidon,  string tungay, string denngay)
+        {
+            try
+            {
+
+
+               
+
+              
+                TanHoaDataContext db = new TanHoaDataContext();
+                db.Connection.Open();
+               // SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
+                //DataTable table = new DataTable("KIEMTRA_HOSO");
+                //adapter.Fill(table);
+                
+
+                DataSet dataset = new DataSet();
+                string sql = "SELECT * FROM KIEMTRA_HOSO ";
+                sql += " WHERE BOPHANCHUYEN='TTK' and  ISNULL(HOANTATTK,0) <> '1' AND LOAIHOSO=N'" + loaidon + "' AND CONVERT(DATETIME,NHANHOSO,103) BETWEEN CONVERT(DATETIME,'" + tungay + "',103) AND CONVERT(DATETIME,'" + denngay + "',103)  ORDER BY NHANHOSO ASC";
+             //   sql += " WHERE   CONVERT(DATETIME,NHANHOSO,103) BETWEEN CONVERT(DATETIME,'" + tungay + "',103) AND CONVERT(DATETIME,'" + denngay + "',103) ";
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
+                adapter.Fill(dataset, "KIEMTRA_HOSO");
+
+                //adapter = new SqlDataAdapter(sqltongket.Replace(@"\t", ""), db.Connection.ConnectionString);
+                //adapter.Fill(dataset, "W_KH_BCTONGCONG");
+
+             //   dataset.Tables.Add(table);
+
+                db.Connection.Close();
+
+                return dataset;
+
+            }
+            catch (Exception ex)
+            {
+                log.Error("Loi BC Danh Sach Thi Cong " + ex.Message);
+            }
+            return null;
+        }
+
+
     }
 }
 

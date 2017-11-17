@@ -30,6 +30,7 @@
         {
             this.panel8 = new System.Windows.Forms.Panel();
             this.tabControlPanel8 = new DevComponents.DotNetBar.TabControlPanel();
+            this.btXoa = new DevComponents.DotNetBar.ButtonX();
             this.btin = new DevComponents.DotNetBar.ButtonX();
             this.txtGHiChu = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
@@ -37,6 +38,17 @@
             this.txtSoBangKe = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.G_SOHOSO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoBangKe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.G_HOTEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.G_DANHBO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DCDiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.G_NGAYDONGTIEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoBienLai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.G_GhiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CreateDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CreateBy = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textBoxX2DB = new System.Windows.Forms.MaskedTextBox();
             this.labelX13 = new DevComponents.DotNetBar.LabelX();
             this.txtSoTien = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -53,18 +65,6 @@
             this.labelX10 = new DevComponents.DotNetBar.LabelX();
             this.labelX9 = new DevComponents.DotNetBar.LabelX();
             this.labelX11 = new DevComponents.DotNetBar.LabelX();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.G_SOHOSO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoBangKe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.G_HOTEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.G_DANHBO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DCDiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.G_NGAYDONGTIEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoBienLai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.G_GhiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CreateDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CreateBy = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btXoa = new DevComponents.DotNetBar.ButtonX();
             this.panel8.SuspendLayout();
             this.tabControlPanel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -121,6 +121,19 @@
                         | DevComponents.DotNetBar.eBorderSide.Bottom)));
             this.tabControlPanel8.Style.GradientAngle = 90;
             this.tabControlPanel8.TabIndex = 9;
+            // 
+            // btXoa
+            // 
+            this.btXoa.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btXoa.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btXoa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btXoa.Location = new System.Drawing.Point(646, 225);
+            this.btXoa.Name = "btXoa";
+            this.btXoa.Size = new System.Drawing.Size(64, 22);
+            this.btXoa.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
+            this.btXoa.TabIndex = 38;
+            this.btXoa.Text = "Xóa";
+            this.btXoa.Click += new System.EventHandler(this.btXoa_Click);
             // 
             // btin
             // 
@@ -211,12 +224,86 @@
             this.dataGridView1.TabIndex = 31;
             this.dataGridView1.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dataGridView1_RowPostPaint);
             // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.Visible = false;
+            // 
+            // G_SOHOSO
+            // 
+            this.G_SOHOSO.DataPropertyName = "SHS";
+            this.G_SOHOSO.HeaderText = "Số SHS";
+            this.G_SOHOSO.Name = "G_SOHOSO";
+            // 
+            // SoBangKe
+            // 
+            this.SoBangKe.DataPropertyName = "SoBangKe";
+            this.SoBangKe.HeaderText = "SoBangKe";
+            this.SoBangKe.Name = "SoBangKe";
+            this.SoBangKe.Visible = false;
+            // 
+            // G_HOTEN
+            // 
+            this.G_HOTEN.DataPropertyName = "HoTen";
+            this.G_HOTEN.HeaderText = "Họ Tên";
+            this.G_HOTEN.Name = "G_HOTEN";
+            this.G_HOTEN.Width = 150;
+            // 
+            // G_DANHBO
+            // 
+            this.G_DANHBO.DataPropertyName = "DanhBo";
+            this.G_DANHBO.HeaderText = "Danh Bộ";
+            this.G_DANHBO.Name = "G_DANHBO";
+            // 
+            // DCDiaChi
+            // 
+            this.DCDiaChi.DataPropertyName = "DiaChi";
+            this.DCDiaChi.HeaderText = "Địa Chỉ";
+            this.DCDiaChi.Name = "DCDiaChi";
+            this.DCDiaChi.Width = 200;
+            // 
+            // G_NGAYDONGTIEN
+            // 
+            this.G_NGAYDONGTIEN.DataPropertyName = "NgayDongTien";
+            this.G_NGAYDONGTIEN.HeaderText = "Ngày ĐT";
+            this.G_NGAYDONGTIEN.Name = "G_NGAYDONGTIEN";
+            // 
+            // SoBienLai
+            // 
+            this.SoBienLai.DataPropertyName = "SoBienLai";
+            this.SoBienLai.HeaderText = "SoBienLai";
+            this.SoBienLai.Name = "SoBienLai";
+            this.SoBienLai.Visible = false;
+            // 
+            // G_GhiChu
+            // 
+            this.G_GhiChu.DataPropertyName = "GhiChu";
+            this.G_GhiChu.HeaderText = "Ghi Chú";
+            this.G_GhiChu.Name = "G_GhiChu";
+            // 
+            // CreateDate
+            // 
+            this.CreateDate.DataPropertyName = "CreateDate";
+            this.CreateDate.HeaderText = "CreateDate";
+            this.CreateDate.Name = "CreateDate";
+            this.CreateDate.Visible = false;
+            // 
+            // CreateBy
+            // 
+            this.CreateBy.DataPropertyName = "CreateBy";
+            this.CreateBy.HeaderText = "CreateBy";
+            this.CreateBy.Name = "CreateBy";
+            this.CreateBy.Visible = false;
+            // 
             // textBoxX2DB
             // 
             this.textBoxX2DB.Location = new System.Drawing.Point(158, 131);
             this.textBoxX2DB.Name = "textBoxX2DB";
             this.textBoxX2DB.Size = new System.Drawing.Size(157, 22);
             this.textBoxX2DB.TabIndex = 30;
+            this.textBoxX2DB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxX2DB_KeyPress);
             // 
             // labelX13
             // 
@@ -406,92 +493,6 @@
             this.labelX11.Size = new System.Drawing.Size(88, 23);
             this.labelX11.TabIndex = 12;
             this.labelX11.Text = "Mã số hồ sơ";
-            // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "ID";
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.Visible = false;
-            // 
-            // G_SOHOSO
-            // 
-            this.G_SOHOSO.DataPropertyName = "SHS";
-            this.G_SOHOSO.HeaderText = "Số SHS";
-            this.G_SOHOSO.Name = "G_SOHOSO";
-            // 
-            // SoBangKe
-            // 
-            this.SoBangKe.DataPropertyName = "SoBangKe";
-            this.SoBangKe.HeaderText = "SoBangKe";
-            this.SoBangKe.Name = "SoBangKe";
-            this.SoBangKe.Visible = false;
-            // 
-            // G_HOTEN
-            // 
-            this.G_HOTEN.DataPropertyName = "HoTen";
-            this.G_HOTEN.HeaderText = "Họ Tên";
-            this.G_HOTEN.Name = "G_HOTEN";
-            this.G_HOTEN.Width = 150;
-            // 
-            // G_DANHBO
-            // 
-            this.G_DANHBO.DataPropertyName = "DanhBo";
-            this.G_DANHBO.HeaderText = "Danh Bộ";
-            this.G_DANHBO.Name = "G_DANHBO";
-            // 
-            // DCDiaChi
-            // 
-            this.DCDiaChi.DataPropertyName = "DiaChi";
-            this.DCDiaChi.HeaderText = "Địa Chỉ";
-            this.DCDiaChi.Name = "DCDiaChi";
-            this.DCDiaChi.Width = 200;
-            // 
-            // G_NGAYDONGTIEN
-            // 
-            this.G_NGAYDONGTIEN.DataPropertyName = "NgayDongTien";
-            this.G_NGAYDONGTIEN.HeaderText = "Ngày ĐT";
-            this.G_NGAYDONGTIEN.Name = "G_NGAYDONGTIEN";
-            // 
-            // SoBienLai
-            // 
-            this.SoBienLai.DataPropertyName = "SoBienLai";
-            this.SoBienLai.HeaderText = "SoBienLai";
-            this.SoBienLai.Name = "SoBienLai";
-            this.SoBienLai.Visible = false;
-            // 
-            // G_GhiChu
-            // 
-            this.G_GhiChu.DataPropertyName = "GhiChu";
-            this.G_GhiChu.HeaderText = "Ghi Chú";
-            this.G_GhiChu.Name = "G_GhiChu";
-            // 
-            // CreateDate
-            // 
-            this.CreateDate.DataPropertyName = "CreateDate";
-            this.CreateDate.HeaderText = "CreateDate";
-            this.CreateDate.Name = "CreateDate";
-            this.CreateDate.Visible = false;
-            // 
-            // CreateBy
-            // 
-            this.CreateBy.DataPropertyName = "CreateBy";
-            this.CreateBy.HeaderText = "CreateBy";
-            this.CreateBy.Name = "CreateBy";
-            this.CreateBy.Visible = false;
-            // 
-            // btXoa
-            // 
-            this.btXoa.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btXoa.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btXoa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btXoa.Location = new System.Drawing.Point(646, 225);
-            this.btXoa.Name = "btXoa";
-            this.btXoa.Size = new System.Drawing.Size(64, 22);
-            this.btXoa.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
-            this.btXoa.TabIndex = 38;
-            this.btXoa.Text = "Xóa";
-            this.btXoa.Click += new System.EventHandler(this.btXoa_Click);
             // 
             // tab_BamChiKhoaGoc
             // 
