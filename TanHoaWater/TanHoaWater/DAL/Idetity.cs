@@ -292,5 +292,56 @@ namespace TanHoaWater.DAL
 
         }
 
+        public static string IdentityToMangLuoi()
+        {
+            string loaihs = "ML";
+            string year = DateTime.Now.Year.ToString().Substring(2);
+            string kytumacdinh = year + loaihs;
+
+
+            string id = kytumacdinh + "0001";
+            try
+            {
+
+                String_Indentity.String_Indentity obj = new String_Indentity.String_Indentity();
+                TanHoaDataContext db = new TanHoaDataContext();
+                db.Connection.Open();
+                string sql = " SELECT MAX(SOHOSO)   FROM TOQLMANGLUOI ";
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+                if (table.Rows.Count > 0)
+                {
+                    if (table.Rows[0][0].ToString().Trim().Substring(0, 2).Equals(year))
+                    {
+                        int number = 1;
+                        //if (int.Parse(table.Rows[0][1] + "") > 1)
+                        //    number = int.Parse(table.Rows[0][1] + "");
+
+                        id = obj.ID(kytumacdinh, table.Rows[0][0].ToString().Trim(), "0000", number) + "";
+                    }
+                    else
+                    {
+                        id = obj.ID(year + loaihs, year + loaihs + "0000", "0000") + "";
+                    }
+                }
+                else
+                {
+                    id = obj.ID(kytumacdinh, table.Rows[0][0].ToString().Trim(), "0000") + "";
+                }
+
+                db.Connection.Close();
+
+            }
+            catch (Exception)
+            {
+
+            }
+
+            return id;
+
+        }
+
+
     }
 }

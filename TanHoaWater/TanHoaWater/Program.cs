@@ -18,11 +18,11 @@ namespace TanHoaWater
         static void Main()
         {
             Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US");
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
-            
-
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");            
+            //System.Globalization.CultureInfo cul = System.Globalization.CultureInfo.GetCultureInfo("en-US");
+            //cul.
+            //Application.EnableVisualStyles();
+            //Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new frm_Main());
             // Application.Run(new frm_VatTuDieuChinh());
         }

@@ -10,6 +10,7 @@ using log4net;
 using System.Collections;
 using TanHoaWater.Database;
 using TanHoaWater.Utilities;
+using System.Globalization;
 
 namespace TanHoaWater.View.Users.HSKHACHHANG
 {
@@ -335,7 +336,9 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                             donkh.MADOT = this.cbDotNhanDon.Text;
                         }
                         donkh.MODIFYBY = DAL.C_USERS._userName;
-                        donkh.MODIFYDATE = DateTime.Now;
+                     //   donkh.MODIFYDATE = DateTime.Parse(DateTime.Now.ToString("dd/MM/yyyy"), new CultureInfo("en-US", false));
+                       // DateTime.ParseExact(DateTime.Now, "MM/dd/yyyy", CultureInfo.InvariantCulture);
+
                         donkh.MODIFYLOG = donkh.MODIFYLOG + " ..|.. " + DAL.C_USERS._userName + " đã chỉnh sửa thông tin:  `" + txtghichusua.Text + "` ngày " + DateToString.NgayVNVN(DateTime.Now.Date)+ " "+ DateTime.Now.TimeOfDay;
                         try
                         {

@@ -375,6 +375,7 @@ namespace TanHoaWater.View.Users.KEHOACH.XINPHEPDD
                     donKH.CREATEDATE = DateTime.Now;
                     DAL.C_DonKhachHang.InsertDonHK(donKH);
         }
+
         public void InsertHoSoKhachHang()
         {
 

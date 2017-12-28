@@ -779,7 +779,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                     DAL.C_DonKhachHang.chuyenhsbydot(_madot, _user, _bpchuyen);
                     #endregion
 
-                    MessageBox.Show(this, "Chuyển Đợt Nhận Đơn Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    
                     load_cd_Grid();
                     #region Add Chuyen TTK
                     if (_madot != null)
@@ -818,6 +818,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
                         this.resultPrint.Visible = true;
                         Utilities.DataGridV.formatRows(resultDGChuyen);
                     }
+                    MessageBox.Show(this, "Chuyển Đợt Nhận Đơn Thành Công !", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)

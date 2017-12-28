@@ -62,6 +62,7 @@ namespace TanHoaWater.View.Tool
                     txtTapThe.Text = donkh.HOSOCHA;
                 //}
                     this.txtGhiChu.Text = donkh.GHICHU;
+                    this.txtGhiChuDon.Text = donkh.GHICHU;
 
                 if (donkh.NGAYCHUYEN_HOSO != null)
                 {

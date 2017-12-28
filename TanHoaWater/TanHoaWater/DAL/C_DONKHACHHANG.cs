@@ -162,16 +162,19 @@ namespace TanHoaWater.DAL
         }
         public static void chuyenhsbydot(string sodot, string nguoichuyen, string pbchuyen)
         {
-            TanHoaDataContext db = new TanHoaDataContext();
-            SqlConnection conn = new SqlConnection(db.Connection.ConnectionString);
-            conn.Open();
+            //TanHoaDataContext db = new TanHoaDataContext();
+            //SqlConnection conn = new SqlConnection(db.Connection.ConnectionString);
+            //conn.Open();
+           
             string sql = " UPDATE DON_KHACHHANG SET CHUYEN_HOSO='True' ";
             sql += ",BOPHANCHUYEN = '" + pbchuyen + "', NGUOICHUYEN_HOSO = '" + nguoichuyen + "', NGAYCHUYEN_HOSO='" + DateTime.Now + "'";
             sql += " WHERE MADOT='" + sodot + "'";
-            SqlCommand cmd = new SqlCommand(sql, conn);
-            cmd.ExecuteNonQuery();
-            conn.Close();
-            db.SubmitChanges();
+            DAL.LinQConnection.ExecuteCommand_(sql);
+
+            //SqlCommand cmd = new SqlCommand(sql, conn);
+            //cmd.ExecuteNonQuery();
+            //conn.Close();
+            //db.SubmitChanges();
         }
 
         public static bool InsertDonHK(DON_KHACHHANG donkh)
@@ -294,6 +297,7 @@ namespace TanHoaWater.DAL
 
             return false;
         }
+
         public static bool findByAddressAndLoaiHS_(string dot, string loaiHS, string sonha, string duong, string phuong, string quan)
         {
             TanHoaDataContext db = new TanHoaDataContext();
@@ -766,7 +770,7 @@ namespace TanHoaWater.DAL
             sql += ", GHICHU = N'" + donkh.GHICHU + "'";
             sql += ", MADOT = '" + donkh.MADOT + "'";
             sql += ", MODIFYBY = '" + donkh.MODIFYBY + "'";
-            sql += ", MODIFYDATE = '" + donkh.MODIFYDATE + "'";
+            sql += ", MODIFYDATE = GETDATE() ";
             sql += ", MODIFYLOG = N'" + donkh.MODIFYLOG + "'";
             sql += " WHERE SHS='" + donkh.SHS + "'";
             SqlCommand cmd = new SqlCommand(sql, conn);

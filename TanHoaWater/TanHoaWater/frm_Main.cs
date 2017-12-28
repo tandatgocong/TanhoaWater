@@ -198,6 +198,7 @@ namespace TanHoaWater
             DD_XinPhepDD.Visible = b;
             TC_DotThiCong.Visible = b;
             HC_HoanCong.Visible = b;
+            
 
 
         }
@@ -214,6 +215,14 @@ namespace TanHoaWater
             else if ("US".Equals(DAL.C_USERS._roles.Trim()))
             {
                 menuQuanTri.Visible = false;
+                if ("TML".Equals(DAL.C_USERS._maphong.Trim()))
+                {
+                  //  this.menuToThietKe.Visible = true;
+                    // this.iconMenuPanel.Controls.Clear();
+                    //  this.iconMenuPanel.Controls.Add(groupTTK);
+                    //    groupTTK.Visible = true;
+                    this.mnToMangLuoi.Visible = true;
+                }
                 if ("TTK".Equals(DAL.C_USERS._maphong.Trim()))
                 {
                     this.menuToThietKe.Visible = true;
@@ -954,6 +963,21 @@ namespace TanHoaWater
             this.PanelContent.Controls.Clear();
             this.PanelContent.Controls.Add(new frmTTKhachHang("9"));
             this.menuToThietKe.Select();
+        }
+
+        private void mnToMangLuoi_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.PanelContent.Controls.Clear();
+                this.PanelContent.Controls.Add(new tab_TinhDuToanQLML());
+            }
+            catch (Exception ex)
+            {
+                log.Error("Loi Load Form " + ex.Message);
+                MessageBox.Show(this, "Lỗi Load Dữ Liệu", "..: Thông Báo :..", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Application.Exit();
+            }
         }
 
         //private void menuDieuChinh_Click(object sender, EventArgs e)

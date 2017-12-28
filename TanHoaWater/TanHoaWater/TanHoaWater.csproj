@@ -33,7 +33,7 @@
     <PublisherName>TanHoaWater</PublisherName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>20</ApplicationRevision>
+    <ApplicationRevision>30</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -1146,6 +1146,18 @@
     <Compile Include="View\Users\TinhDuToan\BGAmSau\tab_TinhDuToan2015.Designer.cs">
       <DependentUpon>tab_TinhDuToan2015.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Users\TinhDuToan\report\rptBangGiaQLML.cs">
+      <DependentUpon>rptBangGiaQLML.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="View\Users\TinhDuToan\tab_TinhDuToanQLML.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Users\TinhDuToan\tab_TinhDuToanQLML.Designer.cs">
+      <DependentUpon>tab_TinhDuToanQLML.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Users\TinhDuToan\frmBoVT.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1845,6 +1857,13 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\TinhDuToan\BGAmSau\tab_TinhDuToan2015.resx">
       <DependentUpon>tab_TinhDuToan2015.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\TinhDuToan\report\rptBangGiaQLML.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptBangGiaQLML.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Users\TinhDuToan\tab_TinhDuToanQLML.resx">
+      <DependentUpon>tab_TinhDuToanQLML.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Users\TinhDuToan\frmBoVT.resx">
       <DependentUpon>frmBoVT.cs</DependentUpon>
