@@ -231,31 +231,31 @@ namespace TanHoaWater
                 //    groupTTK.Visible = true;
 
                 }
+                else if ("KD".Equals(DAL.C_USERS._maphong.Trim())) {
+                    menuKHVT.Text = "Kinh Doanh";
+                    this.menuKHVT.Visible = true;
+                    this.KH_DotNhanDon.Visible = true;
+                    this.KH_biennhan.Visible = true;
+                    this.KH_DonKhachHang.Visible = true;
+                }
                 else if ("VTTH".Equals(DAL.C_USERS._maphong.Trim()))
                 {
                     this.menuKHVT.Visible = true;
-                //    this.iconMenuPanel.Controls.Clear();
-               //     this.iconMenuPanel.Controls.Add(group_VTTH);
-              //      group_VTTH.Visible = true;
+                    //    this.iconMenuPanel.Controls.Clear();
+                    //     this.iconMenuPanel.Controls.Add(group_VTTH);
+                    //      group_VTTH.Visible = true;
 
 
-                    if ("KH".Equals(DAL.C_USERS._maquyen))
-                    {
-                        this.KH_DotNhanDon.Visible = true;
-                        this.KH_biennhan.Visible = true;
-                        this.KH_DonKhachHang.Visible = true;
-                    }
+
 
                     if ("KHTC".Equals(DAL.C_USERS._maquyen))
                     {
-                        this.KH_DotNhanDon.Visible = true;
-                        this.KH_biennhan.Visible = true;
-                        this.KH_DonKhachHang.Visible = true;
+                        //this.KH_DotNhanDon.Visible = true;
+                        //this.KH_biennhan.Visible = true;
+                        //this.KH_DonKhachHang.Visible = true;
                         this.TC_DotThiCong.Visible = true;
                         this.HC_HoanCong.Visible = true;
                     }
-
-                   
 
                     if ("TC".Equals(DAL.C_USERS._maquyen))
                     {
@@ -273,9 +273,9 @@ namespace TanHoaWater
                     }
                     if ("QL".Equals(DAL.C_USERS._maquyen))
                     {
-                        this.KH_DotNhanDon.Visible = true;
-                        this.KH_biennhan.Visible = true;
-                        this.KH_DonKhachHang.Visible = true;
+                        //this.KH_DotNhanDon.Visible = true;
+                        //this.KH_biennhan.Visible = true;
+                        //this.KH_DonKhachHang.Visible = true;
                         this.TC_DotThiCong.Visible = true;
                         this.HC_HoanCong.Visible = true;
                         this.DD_XinPhepDD.Visible = true;
@@ -286,15 +286,15 @@ namespace TanHoaWater
                 else if ("DHN".Equals(DAL.C_USERS._maphong.Trim()))
                 {
                     this.menuQLDHNuoc.Visible = true;
-                //    this.iconMenuPanel.Controls.Clear();
-                  //  this.iconMenuPanel.Controls.Add(group_DoiDHN);
-                  //  group_DoiDHN.Visible = true;
+                    //    this.iconMenuPanel.Controls.Clear();
+                    //  this.iconMenuPanel.Controls.Add(group_DoiDHN);
+                    //  group_DoiDHN.Visible = true;
 
                 }
                 else if ("TCTB".Equals(DAL.C_USERS._maphong.Trim()))
                 {
                     this.menuDoiTCTB.Visible = true;
-                //    this.iconMenuPanel.Controls.Clear();
+                    //    this.iconMenuPanel.Controls.Clear();
                 }
                 else if ("DA".Equals(DAL.C_USERS._maphong.Trim()))
                 {
@@ -307,12 +307,12 @@ namespace TanHoaWater
                     menuQuanTri.Visible = false;
 
                     this.menuToThietKe.Visible = true;
-                 //   this.iconMenuPanel.Controls.Clear();
-                   // this.iconMenuPanel.Controls.Add(groupTTK);
-                 //   groupTTK.Visible = true;
+                    //   this.iconMenuPanel.Controls.Clear();
+                    // this.iconMenuPanel.Controls.Add(groupTTK);
+                    //   groupTTK.Visible = true;
                     this.menuKHVT.Visible = true;
-                 //   this.iconMenuPanel.Controls.Add(group_VTTH);
-                //    group_VTTH.Visible = true;
+                    //   this.iconMenuPanel.Controls.Add(group_VTTH);
+                    //    group_VTTH.Visible = true;
                     this.KH_DotNhanDon.Visible = true;
                     this.KH_biennhan.Visible = true;
                     this.KH_DonKhachHang.Visible = true;

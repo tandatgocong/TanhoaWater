@@ -33,7 +33,7 @@ namespace TanHoaWater.DAL
         public static string KHVTDuyet()
         {
             TanHoaDataContext db = new TanHoaDataContext();
-            var data = from user in db.USERs where user.DUYET == true && user.MAPHONG.Equals("VTTH")==true select user;
+            var data = from user in db.USERs where user.DUYET == true && user.MAPHONG.Equals("KD") == true select user;
            return data.SingleOrDefault().USERNAME;     
         }
         static TanHoaDataContext db = new TanHoaDataContext();
