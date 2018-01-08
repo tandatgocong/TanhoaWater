@@ -1013,7 +1013,7 @@ namespace TanHoaWater.View.Users.HSKHACHHANG
             TanHoaDataContext db = new TanHoaDataContext();
             db.Connection.Open();
 
-            string sql = " SELECT * FROM KH_TC_BAOCAO ";
+            string sql = " SELECT * FROM KD_TC_BAOCAO ";
             SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             adapter.Fill(ds, "KH_TC_BAOCAO");
 
