@@ -59,8 +59,19 @@ namespace TanHoaWater.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.1.9;Initial Catalog=TANHOA_WATER;Persist Security Info=True;U" +
-            "ser ID=sa;Password=123@tanhoa")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=SERVER9;Initial Catalog=TANHOA_WATER;Persist Security Info=True;User " +
+            "ID=sa;Password=123@tanhoa")]
+        public string TANHOA_WATERConnectionString1 {
+            get {
+                return ((string)(this["TANHOA_WATERConnectionString1"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.90.9;Initial Catalog=TANHOA_WATER;Persist Security Info=True;" +
+            "User ID=sa;Password=123@tanhoa")]
         public string TANHOA_WATERConnectionString {
             get {
                 return ((string)(this["TANHOA_WATERConnectionString"]));
@@ -70,22 +81,11 @@ namespace TanHoaWater.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.1.9;Initial Catalog=KTKS_DonKH;Persist Security Info=True;Use" +
-            "r ID=sa;Password=123@tanhoa")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.90.9;Initial Catalog=KTKS_DonKH;Persist Security Info=True;Us" +
+            "er ID=sa;Password=123@tanhoa")]
         public string KTKS_DonKHConnectionString {
             get {
                 return ((string)(this["KTKS_DonKHConnectionString"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=SERVER9;Initial Catalog=TANHOA_WATER;Persist Security Info=True;User " +
-            "ID=sa;Password=123@tanhoa")]
-        public string TANHOA_WATERConnectionString1 {
-            get {
-                return ((string)(this["TANHOA_WATERConnectionString1"]));
             }
         }
     }
